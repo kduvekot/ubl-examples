@@ -416,7 +416,7 @@
       <cbc:NetVolumeMeasure unitCode="MTQ">130</cbc:NetVolumeMeasure>
       <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
       <cbc:ChargeableQuantity unitCode="TNE">120</cbc:ChargeableQuantity>
-      <cbc:ReturnableQuantity unitCode="H87">120</cbc:ReturnableQuantity>
+      <cbc:ReturnableQuantity unitCode="EA">120</cbc:ReturnableQuantity>
       <cbc:TraceID>RR-PE-LOT-26-0416</cbc:TraceID>
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
@@ -459,7 +459,7 @@
       </cac:MeasurementDimension>
       <cac:ContainingPackage>
         <cbc:ID>JB-001..120</cbc:ID>
-        <cbc:Quantity unitCode="H87">120</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">120</cbc:Quantity>
         <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
         <cbc:PackagingTypeCode>JB</cbc:PackagingTypeCode>
         <cbc:PackagingType>Jumbo bag of one tonne with four lifting loops</cbc:PackagingType>

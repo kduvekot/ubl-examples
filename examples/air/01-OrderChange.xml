@@ -340,11 +340,11 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

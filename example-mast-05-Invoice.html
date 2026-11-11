@@ -616,7 +616,7 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>InvoicedQuantity</code> = <strong>6</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 The quantity delivered.</li>
 <li><code>LineExtensionAmount</code> = <strong>14400.00</strong>
 (currencyID <code>XBL</code>)<br />
@@ -627,7 +627,7 @@ The order line this invoice line bills.</li>
 = <strong>true</strong><br />
 The batteries are dangerous goods wherever they are delivered.</li>
 <li><code>PricingReference/OriginalItemLocationQuantity/DeliveryUnit/BatchQuantity</code>
-= <strong>1</strong> (unitCode <code>C62</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 Delivered in single crates.</li>
 <li><code>PricingReference/OriginalItemLocationQuantity/DeliveryUnit/HazardousRiskIndicator</code>
 = <strong>true</strong><br />
@@ -721,7 +721,7 @@ UN/EDIFACT 5153 code of the seller's tax: state sales tax.</li>
 <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 The price is per one unit.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The line number.</li>
@@ -1242,7 +1242,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;6&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;14400.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
@@ -1251,7 +1251,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OriginalItemLocationQuantity</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DeliveryUnit</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BatchQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1&lt;/<span class="kw">cbc:BatchQuantity</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BatchQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BatchQuantity</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DeliveryUnit</span>&gt;</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OriginalItemLocationQuantity</span>&gt;</span>
@@ -1299,7 +1299,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2400&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
@@ -1434,6 +1434,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

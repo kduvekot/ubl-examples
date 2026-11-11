@@ -679,7 +679,7 @@ associations.</li>
 = <strong>XU</strong><br />
 The register covers the whole country.</li>
 <li><code>PartyLegalEntity/SecurityListing/ID</code> =
-<strong>XU0001042505</strong><br />
+<strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
 world's country code.</li>
 <li><code>PartyLegalEntity/SecurityListing/Description</code> =
@@ -789,13 +789,13 @@ The goods alone, without any packaging.</li>
 <code>MTQ</code>)<br />
 The volume of the 25 loaded pallets.</li>
 <li><code>TotalGoodsItemQuantity</code> = <strong>2</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 Two kinds of goods: benches and side frames.</li>
 <li><code>SplitConsignmentIndicator</code> =
 <strong>false</strong><br />
 The whole consignment travels on this truck.</li>
 <li><code>ConsignmentQuantity</code> = <strong>1</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 One consignment on the truck.</li>
 <li><code>Consignment/ID</code> = <strong>LD-CS-26-0152</strong><br />
 The distributor's consignment number, from its booking.</li>
@@ -835,7 +835,7 @@ The consignee, who booked the truck, pays the freight.</li>
 distributor at the border.</strong><br />
 Who clears the goods through customs.</li>
 <li><code>Consignment/TotalTransportHandlingUnitQuantity</code> =
-<strong>25</strong> (unitCode <code>H87</code>)<br />
+<strong>25</strong> (unitCode <code>EA</code>)<br />
 25 pallets.</li>
 <li><code>Consignment/DeliveryInstructions</code> = <strong>Unload at
 dock 4; report to the gatehouse first.</strong><br />
@@ -845,7 +845,7 @@ warehouse until customs has released the export
 declaration.</strong><br />
 What the driver must do before leaving.</li>
 <li><code>Consignment/TotalPackagesQuantity</code> =
-<strong>108</strong> (unitCode <code>H87</code>)<br />
+<strong>108</strong> (unitCode <code>EA</code>)<br />
 96 benches and 12 boxed frames.</li>
 <li><code>Consignment/CustomsDeclaration/ID</code> =
 <strong>VI-CD-26-0156</strong><br />
@@ -1050,10 +1050,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 001 of 025</strong><br />
@@ -1066,7 +1066,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-001</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1104,12 +1104,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-001-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1140,10 +1141,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 002 of 025</strong><br />
@@ -1156,7 +1157,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-002</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1194,12 +1195,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-002-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1230,10 +1232,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 003 of 025</strong><br />
@@ -1246,7 +1248,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-003</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1284,12 +1286,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-003-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1320,10 +1323,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 004 of 025</strong><br />
@@ -1336,7 +1339,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-004</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1374,12 +1377,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-004-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1410,10 +1414,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 005 of 025</strong><br />
@@ -1426,7 +1430,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-005</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1464,12 +1468,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-005-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1500,10 +1505,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 006 of 025</strong><br />
@@ -1516,7 +1521,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-006</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1554,12 +1559,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-006-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1590,10 +1596,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 007 of 025</strong><br />
@@ -1606,7 +1612,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-007</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1644,12 +1650,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-007-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1680,10 +1687,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 008 of 025</strong><br />
@@ -1696,7 +1703,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-008</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1734,12 +1741,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-008-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1770,10 +1778,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 009 of 025</strong><br />
@@ -1786,7 +1794,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-009</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1824,12 +1832,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-009-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1860,10 +1869,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 010 of 025</strong><br />
@@ -1876,7 +1885,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-010</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1914,12 +1923,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-010-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -1950,10 +1960,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 011 of 025</strong><br />
@@ -1966,7 +1976,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-011</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2004,12 +2014,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-011-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2040,10 +2051,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 012 of 025</strong><br />
@@ -2056,7 +2067,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-012</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2094,12 +2105,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-012-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2130,10 +2142,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 013 of 025</strong><br />
@@ -2146,7 +2158,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-013</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2184,12 +2196,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-013-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2220,10 +2233,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 014 of 025</strong><br />
@@ -2236,7 +2249,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-014</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2274,12 +2287,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-014-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2310,10 +2324,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 015 of 025</strong><br />
@@ -2326,7 +2340,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-015</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2364,12 +2378,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-015-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2400,10 +2415,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 016 of 025</strong><br />
@@ -2416,7 +2431,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-016</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2454,12 +2469,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-016-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2490,10 +2506,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 017 of 025</strong><br />
@@ -2506,7 +2522,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-017</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2544,12 +2560,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-017-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2580,10 +2597,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 018 of 025</strong><br />
@@ -2596,7 +2613,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-018</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2634,12 +2651,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-018-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2670,10 +2688,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 019 of 025</strong><br />
@@ -2686,7 +2704,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-019</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2724,12 +2742,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-019-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2760,10 +2779,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 020 of 025</strong><br />
@@ -2776,7 +2795,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-020</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2814,12 +2833,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-020-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2850,10 +2870,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 021 of 025</strong><br />
@@ -2866,7 +2886,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-021</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2904,12 +2924,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-021-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -2940,10 +2961,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 022 of 025</strong><br />
@@ -2956,7 +2977,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-022</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -2994,12 +3015,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-022-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -3030,10 +3052,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 023 of 025</strong><br />
@@ -3046,7 +3068,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-023</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -3084,12 +3106,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-023-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -3120,10 +3143,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 frames.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>4</strong> (unitCode <code>H87</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 4 benches on the pallet, each wrapped in film.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 024 of 025</strong><br />
@@ -3136,7 +3159,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-024</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -3174,12 +3197,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>0.5</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-024-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>4</strong> (unitCode <code>H87</code>)<br />
+<strong>4</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -3210,10 +3234,10 @@ The carrier's handling code: two high, or nothing on top.</li>
 boxes.</strong><br />
 The handling, in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalGoodsItemQuantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/TotalPackageQuantity</code>
-= <strong>12</strong> (unitCode <code>H87</code>)<br />
+= <strong>12</strong> (unitCode <code>EA</code>)<br />
 12 boxed side frames on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ShippingMarks</code> =
 <strong>LD MARROWDALE / 025 of 025</strong><br />
@@ -3226,7 +3250,7 @@ The pallet's barcode, scanned at each handover.</li>
 <strong>CL-26-025</strong><br />
 The pallet itself, as packed.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/Quantity</code>
-= <strong>1</strong> (unitCode <code>H87</code>)<br />
+= <strong>1</strong> (unitCode <code>EA</code>)<br />
 One pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -3264,12 +3288,13 @@ The pallet places taken on the truck.</li>
 <li><code>Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure</code>
 = <strong>1</strong> (unitCode <code>C62</code>)<br />
 Half a place when two pallets are stacked; the castings take a whole
-one.</li>
+one. A number of places, not of articles, so unit C62 (one), which
+allows a half.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ID</code> =
 <strong>CL-26-025-1</strong><br />
 The packages on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>12</strong> (unitCode <code>H87</code>)<br />
+<strong>12</strong> (unitCode <code>EA</code>)<br />
 The packages of this kind on the pallet.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
@@ -3770,7 +3795,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SecurityListing</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
@@ -3824,9 +3849,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;4106.4&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NetNetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;3762&lt;/<span class="kw">cbc:NetNetWeightMeasure</span>&gt;</span>
 <span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;41.5&lt;/<span class="kw">cbc:GrossVolumeMeasure</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;2&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
 <span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SplitConsignmentIndicator</span>&gt;false&lt;/<span class="kw">cbc:SplitConsignmentIndicator</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsignmentQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:ConsignmentQuantity</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsignmentQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ConsignmentQuantity</span>&gt;</span>
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0152&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;TH-26-04471&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
@@ -3840,10 +3865,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GeneralCargoIndicator</span>&gt;true&lt;/<span class="kw">cbc:GeneralCargoIndicator</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ThirdPartyPayerIndicator</span>&gt;false&lt;/<span class="kw">cbc:ThirdPartyPayerIndicator</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CustomsClearanceServiceInstructions</span>&gt;The export is declared by the 3PL in Ferrano; the import by the distributor at the border.&lt;/<span class="kw">cbc:CustomsClearanceServiceInstructions</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;25&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;25&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeliveryInstructions</span>&gt;Unload at dock 4; report to the gatehouse first.&lt;/<span class="kw">cbc:DeliveryInstructions</span>&gt;</span>
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HaulageInstructions</span>&gt;Wait at the warehouse until customs has released the export declaration.&lt;/<span class="kw">cbc:HaulageInstructions</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalPackagesQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;108&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalPackagesQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;108&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
 <span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CustomsDeclaration</span>&gt;</span>
 <span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-CD-26-0156&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
@@ -3975,13 +4000,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 001 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-001&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-001&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4007,7 +4032,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-001-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4020,13 +4045,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 002 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-002&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-002&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4052,7 +4077,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-002-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4065,13 +4090,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 003 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-003&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-003&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4097,7 +4122,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-003-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4110,13 +4135,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 004 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-004&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-004&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4142,7 +4167,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-004-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4155,13 +4180,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 005 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-005&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-005&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4187,7 +4212,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-005-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4200,13 +4225,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-713"><a href="#cb1-713" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 006 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-714"><a href="#cb1-714" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-006&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-715"><a href="#cb1-715" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-716"><a href="#cb1-716" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-006&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4232,7 +4257,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-741"><a href="#cb1-741" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-742"><a href="#cb1-742" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-006-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-744"><a href="#cb1-744" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-745"><a href="#cb1-745" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-746"><a href="#cb1-746" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4245,13 +4270,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-753"><a href="#cb1-753" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-754"><a href="#cb1-754" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-755"><a href="#cb1-755" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-756"><a href="#cb1-756" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-757"><a href="#cb1-757" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-756"><a href="#cb1-756" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-757"><a href="#cb1-757" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-758"><a href="#cb1-758" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 007 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-759"><a href="#cb1-759" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-007&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-760"><a href="#cb1-760" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-761"><a href="#cb1-761" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-007&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-763"><a href="#cb1-763" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-764"><a href="#cb1-764" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-765"><a href="#cb1-765" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4277,7 +4302,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-787"><a href="#cb1-787" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-007-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4290,13 +4315,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 008 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-008&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-008&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4322,7 +4347,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-008-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4335,13 +4360,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-844"><a href="#cb1-844" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-845"><a href="#cb1-845" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 009 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-009&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-009&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-855"><a href="#cb1-855" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4367,7 +4392,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-875"><a href="#cb1-875" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-009-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-879"><a href="#cb1-879" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-881"><a href="#cb1-881" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4380,13 +4405,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 010 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-010&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-010&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4412,7 +4437,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-010-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4425,13 +4450,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 011 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-011&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-940"><a href="#cb1-940" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-941"><a href="#cb1-941" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-011&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-943"><a href="#cb1-943" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-944"><a href="#cb1-944" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4457,7 +4482,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-011-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4470,13 +4495,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 012 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-012&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4502,7 +4527,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-012-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4515,13 +4540,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 013 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-013&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-013&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1033"><a href="#cb1-1033" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1034"><a href="#cb1-1034" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4547,7 +4572,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-013-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1060"><a href="#cb1-1060" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4560,13 +4585,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 014 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1074"><a href="#cb1-1074" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-014&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1075"><a href="#cb1-1075" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4592,7 +4617,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-014-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4605,13 +4630,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1114"><a href="#cb1-1114" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1115"><a href="#cb1-1115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1118"><a href="#cb1-1118" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 015 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-015&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4637,7 +4662,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-015-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4650,13 +4675,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1158"><a href="#cb1-1158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1160"><a href="#cb1-1160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1161"><a href="#cb1-1161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1162"><a href="#cb1-1162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1161"><a href="#cb1-1161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1162"><a href="#cb1-1162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1163"><a href="#cb1-1163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 016 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1164"><a href="#cb1-1164" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-016&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1165"><a href="#cb1-1165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1168"><a href="#cb1-1168" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1169"><a href="#cb1-1169" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1170"><a href="#cb1-1170" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4682,7 +4707,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1191"><a href="#cb1-1191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1192"><a href="#cb1-1192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-016-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1194"><a href="#cb1-1194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1195"><a href="#cb1-1195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1196"><a href="#cb1-1196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4695,13 +4720,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1203"><a href="#cb1-1203" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1204"><a href="#cb1-1204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1205"><a href="#cb1-1205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1206"><a href="#cb1-1206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1207"><a href="#cb1-1207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1206"><a href="#cb1-1206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1207"><a href="#cb1-1207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1208"><a href="#cb1-1208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 017 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1209"><a href="#cb1-1209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-017&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1210"><a href="#cb1-1210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1211"><a href="#cb1-1211" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-017&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1212"><a href="#cb1-1212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1212"><a href="#cb1-1212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1213"><a href="#cb1-1213" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1214"><a href="#cb1-1214" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1215"><a href="#cb1-1215" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4727,7 +4752,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1236"><a href="#cb1-1236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-017-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1239"><a href="#cb1-1239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1240"><a href="#cb1-1240" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1241"><a href="#cb1-1241" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4740,13 +4765,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1249"><a href="#cb1-1249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1253"><a href="#cb1-1253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 018 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1254"><a href="#cb1-1254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-018&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1255"><a href="#cb1-1255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1256"><a href="#cb1-1256" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-018&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1258"><a href="#cb1-1258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1259"><a href="#cb1-1259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1260"><a href="#cb1-1260" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4772,7 +4797,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1280"><a href="#cb1-1280" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1281"><a href="#cb1-1281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1282"><a href="#cb1-1282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-018-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1284"><a href="#cb1-1284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1285"><a href="#cb1-1285" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1286"><a href="#cb1-1286" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4785,13 +4810,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1293"><a href="#cb1-1293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1294"><a href="#cb1-1294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 019 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-019&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-019&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1304"><a href="#cb1-1304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1305"><a href="#cb1-1305" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4817,7 +4842,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1325"><a href="#cb1-1325" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1326"><a href="#cb1-1326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1327"><a href="#cb1-1327" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-019-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1328"><a href="#cb1-1328" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1328"><a href="#cb1-1328" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1329"><a href="#cb1-1329" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1330"><a href="#cb1-1330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1331"><a href="#cb1-1331" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4830,13 +4855,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1338"><a href="#cb1-1338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1339"><a href="#cb1-1339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1340"><a href="#cb1-1340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1341"><a href="#cb1-1341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1341"><a href="#cb1-1341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1343"><a href="#cb1-1343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 020 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1344"><a href="#cb1-1344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-020&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1346"><a href="#cb1-1346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-020&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1348"><a href="#cb1-1348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1349"><a href="#cb1-1349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1350"><a href="#cb1-1350" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4862,7 +4887,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1370"><a href="#cb1-1370" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1372"><a href="#cb1-1372" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-020-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1374"><a href="#cb1-1374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1375"><a href="#cb1-1375" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1376"><a href="#cb1-1376" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4875,13 +4900,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1383"><a href="#cb1-1383" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1384"><a href="#cb1-1384" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1385"><a href="#cb1-1385" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1387"><a href="#cb1-1387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1387"><a href="#cb1-1387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1388"><a href="#cb1-1388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 021 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1389"><a href="#cb1-1389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-021&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1390"><a href="#cb1-1390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1391"><a href="#cb1-1391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-021&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1392"><a href="#cb1-1392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1392"><a href="#cb1-1392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1393"><a href="#cb1-1393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1394"><a href="#cb1-1394" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1395"><a href="#cb1-1395" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4907,7 +4932,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1415"><a href="#cb1-1415" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1416"><a href="#cb1-1416" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1417"><a href="#cb1-1417" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-021-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1419"><a href="#cb1-1419" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1420"><a href="#cb1-1420" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1421"><a href="#cb1-1421" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4920,13 +4945,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1428"><a href="#cb1-1428" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1429"><a href="#cb1-1429" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1430"><a href="#cb1-1430" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1432"><a href="#cb1-1432" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1432"><a href="#cb1-1432" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1433"><a href="#cb1-1433" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 022 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1434"><a href="#cb1-1434" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-022&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1435"><a href="#cb1-1435" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1436"><a href="#cb1-1436" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-022&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1437"><a href="#cb1-1437" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1437"><a href="#cb1-1437" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1438"><a href="#cb1-1438" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1439"><a href="#cb1-1439" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1440"><a href="#cb1-1440" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4952,7 +4977,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1460"><a href="#cb1-1460" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1461"><a href="#cb1-1461" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1462"><a href="#cb1-1462" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-022-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1463"><a href="#cb1-1463" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1463"><a href="#cb1-1463" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1464"><a href="#cb1-1464" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1465"><a href="#cb1-1465" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1466"><a href="#cb1-1466" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -4965,13 +4990,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1473"><a href="#cb1-1473" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1474"><a href="#cb1-1474" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1475"><a href="#cb1-1475" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1476"><a href="#cb1-1476" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1477"><a href="#cb1-1477" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1476"><a href="#cb1-1476" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1477"><a href="#cb1-1477" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1478"><a href="#cb1-1478" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 023 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1479"><a href="#cb1-1479" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-023&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1480"><a href="#cb1-1480" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1481"><a href="#cb1-1481" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-023&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1482"><a href="#cb1-1482" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1482"><a href="#cb1-1482" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1483"><a href="#cb1-1483" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1484"><a href="#cb1-1484" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1485"><a href="#cb1-1485" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -4997,7 +5022,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1505"><a href="#cb1-1505" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1506"><a href="#cb1-1506" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1507"><a href="#cb1-1507" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-023-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1508"><a href="#cb1-1508" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1508"><a href="#cb1-1508" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1509"><a href="#cb1-1509" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1510"><a href="#cb1-1510" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1511"><a href="#cb1-1511" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -5010,13 +5035,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1518"><a href="#cb1-1518" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1519"><a href="#cb1-1519" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;Stack2&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1520"><a href="#cb1-1520" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;May be stacked two high, steel frames on steel frames.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1521"><a href="#cb1-1521" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1522"><a href="#cb1-1522" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1521"><a href="#cb1-1521" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1522"><a href="#cb1-1522" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1523"><a href="#cb1-1523" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 024 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1524"><a href="#cb1-1524" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-024&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1525"><a href="#cb1-1525" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1526"><a href="#cb1-1526" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-024&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1527"><a href="#cb1-1527" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1527"><a href="#cb1-1527" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1528"><a href="#cb1-1528" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1529"><a href="#cb1-1529" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1530"><a href="#cb1-1530" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -5042,7 +5067,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1550"><a href="#cb1-1550" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1551"><a href="#cb1-1551" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1552"><a href="#cb1-1552" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-024-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1553"><a href="#cb1-1553" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1553"><a href="#cb1-1553" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1554"><a href="#cb1-1554" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1555"><a href="#cb1-1555" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1556"><a href="#cb1-1556" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;SW&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -5055,13 +5080,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1563"><a href="#cb1-1563" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:TransportHandlingUnitTypeCode</span>&gt;</span>
 <span id="cb1-1564"><a href="#cb1-1564" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingCode</span>&gt;NoStack&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-1565"><a href="#cb1-1565" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HandlingInstructions</span>&gt;Load on top: nothing may be stacked on the boxes.&lt;/<span class="kw">cbc:HandlingInstructions</span>&gt;</span>
-<span id="cb1-1566"><a href="#cb1-1566" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
-<span id="cb1-1567"><a href="#cb1-1567" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;12&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
+<span id="cb1-1566"><a href="#cb1-1566" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-1567"><a href="#cb1-1567" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalPackageQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:TotalPackageQuantity</span>&gt;</span>
 <span id="cb1-1568"><a href="#cb1-1568" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ShippingMarks</span>&gt;LD MARROWDALE / 025 of 025&lt;/<span class="kw">cbc:ShippingMarks</span>&gt;</span>
 <span id="cb1-1569"><a href="#cb1-1569" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TraceID</span>&gt;CL-26-025&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-1570"><a href="#cb1-1570" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ActualPackage</span>&gt;</span>
 <span id="cb1-1571"><a href="#cb1-1571" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-025&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1572"><a href="#cb1-1572" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1572"><a href="#cb1-1572" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1573"><a href="#cb1-1573" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1574"><a href="#cb1-1574" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-1575"><a href="#cb1-1575" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ActualPackage</span>&gt;</span>
@@ -5087,7 +5112,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1595"><a href="#cb1-1595" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PalletSpaceMeasurementDimension</span>&gt;</span>
 <span id="cb1-1596"><a href="#cb1-1596" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-1597"><a href="#cb1-1597" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CL-26-025-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-1598"><a href="#cb1-1598" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-1598"><a href="#cb1-1598" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-1599"><a href="#cb1-1599" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-1600"><a href="#cb1-1600" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
 <span id="cb1-1601"><a href="#cb1-1601" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;BX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
@@ -5188,6 +5213,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-1696"><a href="#cb1-1696" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

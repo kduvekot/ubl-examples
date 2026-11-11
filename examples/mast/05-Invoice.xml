@@ -266,7 +266,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -275,7 +275,7 @@
       <cac:OriginalItemLocationQuantity>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:DeliveryUnit>
-          <cbc:BatchQuantity unitCode="C62">1</cbc:BatchQuantity>
+          <cbc:BatchQuantity unitCode="EA">1</cbc:BatchQuantity>
           <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         </cac:DeliveryUnit>
       </cac:OriginalItemLocationQuantity>
@@ -323,7 +323,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>

@@ -658,8 +658,8 @@ The tenderer's situation.</li>
 <strong>3</strong> (unitCode <code>ANN</code>)<br />
 At least three years in business.</li>
 <li><code>TendererQualificationRequest/EmployeeQuantity</code> =
-<strong>10</strong> (unitCode <code>C62</code>)<br />
-At least ten employees.</li>
+<strong>10</strong> (unitCode <code>IE</code>)<br />
+At least ten employees (persons).</li>
 <li><code>TendererQualificationRequest/Description</code> =
 <strong>Economic and technical capacity.</strong><br />
 What is asked.</li>
@@ -682,7 +682,7 @@ References.</li>
 = <strong>Three similar supplies in five years.</strong><br />
 What.</li>
 <li><code>TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity</code>
-= <strong>3</strong> (unitCode <code>C62</code>)<br />
+= <strong>3</strong> (unitCode <code>EA</code>)<br />
 Three.</li>
 <li><code>TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure</code>
 = <strong>5</strong> (unitCode <code>ANN</code>)<br />
@@ -1096,7 +1096,7 @@ The fee.</li>
 <strong>2026-04-02</strong><br />
 The first release.</li>
 <li><code>EstimatedOverallContractQuantity</code> = <strong>240</strong>
-(unitCode <code>H87</code>)<br />
+(unitCode <code>EA</code>)<br />
 240 benches over the contract.</li>
 <li><code>Note</code> = <strong>Part of the parks renewal programme
 2026.</strong><br />
@@ -1200,13 +1200,13 @@ Its UUID.</li>
 hardwood slats, ground anchors.</strong><br />
 The requirement.</li>
 <li><code>RequestForTenderLine/Quantity</code> = <strong>240</strong>
-(unitCode <code>H87</code>)<br />
+(unitCode <code>EA</code>)<br />
 Over the contract.</li>
 <li><code>RequestForTenderLine/MinimumQuantity</code> =
-<strong>120</strong> (unitCode <code>H87</code>)<br />
+<strong>120</strong> (unitCode <code>EA</code>)<br />
 At least.</li>
 <li><code>RequestForTenderLine/MaximumQuantity</code> =
-<strong>288</strong> (unitCode <code>H87</code>)<br />
+<strong>288</strong> (unitCode <code>EA</code>)<br />
 At most.</li>
 <li><code>RequestForTenderLine/TaxIncludedIndicator</code> =
 <strong>false</strong><br />
@@ -1563,7 +1563,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Consortia must name a lead member.&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PersonalSituation</span>&gt;No exclusion grounds.&lt;/<span class="kw">cbc:PersonalSituation</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OperatingYearsQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;3&lt;/<span class="kw">cbc:OperatingYearsQuantity</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EmployeeQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;10&lt;/<span class="kw">cbc:EmployeeQuantity</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EmployeeQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;10&lt;/<span class="kw">cbc:EmployeeQuantity</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Economic and technical capacity.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RequiredBusinessClassificationScheme</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ISIC4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1576,7 +1576,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TechnicalEvaluationCriterion</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EvaluationCriterionTypeCode</span>&gt;References&lt;/<span class="kw">cbc:EvaluationCriterionTypeCode</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Three similar supplies in five years.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ThresholdQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;3&lt;/<span class="kw">cbc:ThresholdQuantity</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ThresholdQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;3&lt;/<span class="kw">cbc:ThresholdQuantity</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DurationPeriod</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DurationPeriod</span>&gt;</span>
@@ -1834,7 +1834,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RequiredFeeAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;50.00&lt;/<span class="kw">cbc:RequiredFeeAmount</span>&gt;</span>
 <span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FeeDescription</span>&gt;Electronic documents are free; paper copies cost 50 lume.&lt;/<span class="kw">cbc:FeeDescription</span>&gt;</span>
 <span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RequestedDeliveryDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:RequestedDeliveryDate</span>&gt;</span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EstimatedOverallContractQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;240&lt;/<span class="kw">cbc:EstimatedOverallContractQuantity</span>&gt;</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EstimatedOverallContractQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;240&lt;/<span class="kw">cbc:EstimatedOverallContractQuantity</span>&gt;</span>
 <span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Part of the parks renewal programme 2026.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SMESuitableIndicator</span>&gt;true&lt;/<span class="kw">cbc:SMESuitableIndicator</span>&gt;</span>
 <span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcurementAdditionalType</span>&gt;</span>
@@ -1898,9 +1898,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UUID</span>&gt;b98b5bc4-6b96-59da-b8e9-89fc28afcae4&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Steel frame, five hardwood slats, ground anchors.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;120&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
-<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;288&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;120&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;288&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
 <span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxIncludedIndicator</span>&gt;false&lt;/<span class="kw">cbc:TaxIncludedIndicator</span>&gt;</span>
 <span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;350.00&lt;/<span class="kw">cbc:MinimumAmount</span>&gt;</span>
 <span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;600.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
@@ -1947,6 +1947,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PriorInformationNotice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

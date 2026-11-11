@@ -170,7 +170,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -490,8 +490,8 @@
       <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
       <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
       <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
-      <cbc:CrewQuantity unitCode="C62">2</cbc:CrewQuantity>
-      <cbc:PassengerQuantity unitCode="C62">0</cbc:PassengerQuantity>
+      <cbc:CrewQuantity unitCode="IE">2</cbc:CrewQuantity>
+      <cbc:PassengerQuantity unitCode="IE">0</cbc:PassengerQuantity>
       <cac:TransportMeans>
         <cbc:JourneyID>CT 4471</cbc:JourneyID>
         <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>

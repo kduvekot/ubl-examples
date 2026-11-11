@@ -102,7 +102,7 @@ The bank's guarantee deed.</li>
 <li><code>ImmobilizationCertificateID</code> =
 <strong>BLUM-IMM-26-0044</strong><br />
 The certificate of the pledged securities.</li>
-<li><code>SecurityID</code> = <strong>XU0001042505</strong><br />
+<li><code>SecurityID</code> = <strong>XU0001042501</strong><br />
 The manufacturer's own shares, pledged.</li>
 <li><code>IssueDate</code> = <strong>2026-02-21</strong><br />
 Pledged.</li>
@@ -113,8 +113,8 @@ Their face value.</li>
 (currencyID <code>XBL</code>)<br />
 Their market value.</li>
 <li><code>SharesNumberQuantity</code> = <strong>250</strong> (unitCode
-<code>C62</code>)<br />
-250 shares.</li>
+<code>E21</code>)<br />
+250 shares (unit: shares).</li>
 <li><code>IssuerParty/PartyIdentification/ID</code> =
 <strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
@@ -496,7 +496,7 @@ associations.</li>
 = <strong>XU</strong><br />
 The register covers the whole country.</li>
 <li><code>PartyLegalEntity/SecurityListing/ID</code> =
-<strong>XU0001042505</strong><br />
+<strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
 world's country code.</li>
 <li><code>PartyLegalEntity/SecurityListing/Description</code> =
@@ -828,11 +828,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GuaranteeDocumentReference</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ImmobilizedSecurity</span>&gt;</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ImmobilizationCertificateID</span>&gt;BLUM-IMM-26-0044&lt;/<span class="kw">cbc:ImmobilizationCertificateID</span>&gt;</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SecurityID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:SecurityID</span>&gt;</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SecurityID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:SecurityID</span>&gt;</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-21&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FaceValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2500.00&lt;/<span class="kw">cbc:FaceValueAmount</span>&gt;</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MarketValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;3100.00&lt;/<span class="kw">cbc:MarketValueAmount</span>&gt;</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SharesNumberQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;250&lt;/<span class="kw">cbc:SharesNumberQuantity</span>&gt;</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SharesNumberQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E21&quot;</span>&gt;250&lt;/<span class="kw">cbc:SharesNumberQuantity</span>&gt;</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -999,7 +999,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SecurityListing</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
@@ -1135,6 +1135,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">GuaranteeCertificate</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

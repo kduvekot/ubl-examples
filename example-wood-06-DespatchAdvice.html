@@ -440,7 +440,7 @@ associations.</li>
 = <strong>XU</strong><br />
 The register covers the whole country.</li>
 <li><code>Party/PartyLegalEntity/SecurityListing/ID</code> =
-<strong>XU0001042505</strong><br />
+<strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
 world's country code.</li>
 <li><code>Party/PartyLegalEntity/SecurityListing/Description</code> =
@@ -779,7 +779,7 @@ The line as the order put it.</li>
 <li><code>LineStatusCode</code> = <strong>NoStatus</strong><br />
 Despatched as ordered.</li>
 <li><code>DeliveredQuantity</code> = <strong>4800</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 What was despatched.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>1</strong><br />
 The order line this line fulfils.</li>
@@ -788,7 +788,7 @@ The order line this line fulfils.</li>
 The seller's description; item slat-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>Item/PackQuantity</code> = <strong>1</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 One pack of this item.</li>
 <li><code>Item/PackSizeNumeric</code> = <strong>50</strong><br />
 The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale
@@ -1157,7 +1157,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecurityListing</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
@@ -1320,13 +1320,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Slats for 960 benches: five per bench, 96 bundles of 50.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineStatusCode</span>&gt;NoStatus&lt;/<span class="kw">cbc:LineStatusCode</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4800&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4800&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Hardwood bench slat 1800&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
@@ -1444,6 +1444,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

@@ -763,7 +763,7 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>InvoicedQuantity</code> = <strong>20000</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 The bags delivered.</li>
 <li><code>LineExtensionAmount</code> = <strong>1600.00</strong>
 (currencyID <code>XBL</code>)<br />
@@ -817,7 +817,7 @@ UN/EDIFACT 5153 code of the seller's tax: state sales tax.</li>
 <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 The price is per one unit.</li>
 </ul>
 <h2 id="the-document">The document</h2>
@@ -1152,7 +1152,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;20000&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;20000&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;1600.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Garment bag of recycled polyethylene, 60 cm, boxes of 500.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -1182,12 +1182,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.08&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

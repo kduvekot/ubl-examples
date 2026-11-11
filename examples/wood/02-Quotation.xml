@@ -195,7 +195,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -269,7 +269,7 @@
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>As drawn; ash or oak.</cbc:Note>
-    <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">34560.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
@@ -279,16 +279,16 @@
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">7.2</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:OrderableUnitFactorRate>50</cbc:OrderableUnitFactorRate>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
         <cac:SellersItemIdentification>
@@ -392,14 +392,14 @@
     </cac:LineItem>
     <cac:SellerProposedSubstituteLineItem>
       <cbc:ID>1-S</cbc:ID>
-      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Hardwood bench slat 1800 × 95 × 35</cbc:Name>
       </cac:Item>
     </cac:SellerProposedSubstituteLineItem>
     <cac:AlternativeLineItem>
       <cbc:ID>1-A</cbc:ID>
-      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Oak bench slat 1800</cbc:Name>
       </cac:Item>

@@ -297,7 +297,7 @@
             <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
             <cbc:NetWeightMeasure unitCode="KGM">312</cbc:NetWeightMeasure>
             <cbc:NetVolumeMeasure unitCode="MTQ">0.24</cbc:NetVolumeMeasure>
-            <cbc:Quantity unitCode="H87">6</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">6</cbc:Quantity>
             <cac:ContactParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
@@ -336,7 +336,7 @@
             </cac:PositionOnBoardStowage>
             <cac:Package>
               <cbc:ID>SE-CR-1..6</cbc:ID>
-              <cbc:Quantity unitCode="H87">6</cbc:Quantity>
+              <cbc:Quantity unitCode="EA">6</cbc:Quantity>
               <cbc:PackagingTypeCode>CR</cbc:PackagingTypeCode>
             </cac:Package>
           </cac:LoadedHazardousItem>

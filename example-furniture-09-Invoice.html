@@ -792,7 +792,7 @@ The price is per one unit.</li>
 <li><code>SubInvoiceLine/ID</code> = <strong>1.1</strong><br />
 A part of the set.</li>
 <li><code>SubInvoiceLine/InvoicedQuantity</code> = <strong>20</strong>
-(unitCode <code>H87</code>)<br />
+(unitCode <code>EA</code>)<br />
 1 per set.</li>
 <li><code>SubInvoiceLine/LineExtensionAmount</code> =
 <strong>7600.00</strong> (currencyID <code>XBL</code>)<br />
@@ -809,7 +809,7 @@ The part's share of the set price.</li>
 <li><code>SubInvoiceLine/ID</code> = <strong>1.2</strong><br />
 A part of the set.</li>
 <li><code>SubInvoiceLine/InvoicedQuantity</code> = <strong>40</strong>
-(unitCode <code>H87</code>)<br />
+(unitCode <code>EA</code>)<br />
 2 per set.</li>
 <li><code>SubInvoiceLine/LineExtensionAmount</code> =
 <strong>4600.00</strong> (currencyID <code>XBL</code>)<br />
@@ -829,7 +829,7 @@ A line without charge.</li>
 hand to its customers.</strong><br />
 What they are.</li>
 <li><code>InvoicedQuantity</code> = <strong>20</strong> (unitCode
-<code>C62</code>)<br />
+<code>EA</code>)<br />
 One care kit with each set.</li>
 <li><code>LineExtensionAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
@@ -1212,7 +1212,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubInvoiceLine</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;20&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;20&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;7600.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Garden bench Marrow, 1400 mm&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1226,7 +1226,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubInvoiceLine</span>&gt;</span>
 <span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubInvoiceLine</span>&gt;</span>
 <span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;40&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;40&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4600.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Garden chair Marrow&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1242,7 +1242,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Wood oil and a cloth, for the store to hand to its customers.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;20&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;20&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FreeOfChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:FreeOfChargeIndicator</span>&gt;</span>
 <span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
@@ -1264,6 +1264,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

@@ -196,11 +196,11 @@
       <cbc:ID>LD-CS-26-0324</cbc:ID>
       <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
-      <cbc:TotalGoodsItemQuantity unitCode="C62">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
-      <cbc:ConsignmentQuantity unitCode="C62">1</cbc:ConsignmentQuantity>
+      <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -289,12 +289,12 @@
         </cac:ReferencedShipment>
         <cac:Package>
           <cbc:ID>LD-AIR-BOX</cbc:ID>
-          <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">8</cbc:Quantity>
           <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
           <cbc:TraceID>LD-AIR-0001..0008</cbc:TraceID>
           <cac:ContainedPackage>
             <cbc:ID>LD-AIR-BAG</cbc:ID>
-            <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">8</cbc:Quantity>
             <cbc:PackagingTypeCode>BG</cbc:PackagingTypeCode>
           </cac:ContainedPackage>
           <cac:GoodsItem>
@@ -314,7 +314,7 @@
             <cbc:Measure unitCode="MMT">300</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:DeliveryUnit>
-            <cbc:BatchQuantity unitCode="H87">8</cbc:BatchQuantity>
+            <cbc:BatchQuantity unitCode="EA">8</cbc:BatchQuantity>
           </cac:DeliveryUnit>
           <cac:Delivery>
             <cac:RequestedDeliveryPeriod>

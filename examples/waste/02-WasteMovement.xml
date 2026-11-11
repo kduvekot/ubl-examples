@@ -10,7 +10,7 @@
   <cbc:IssueTime>12:34:00</cbc:IssueTime>
   <cbc:WasteMovementTypeCode>Recovery</cbc:WasteMovementTypeCode>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cbc:ConsignmentQuantity unitCode="EA">12</cbc:ConsignmentQuantity>
   <cac:Signature>
     <cbc:ID>RR-SIG-WM</cbc:ID>
     <cac:SignatoryParty>
@@ -269,7 +269,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>

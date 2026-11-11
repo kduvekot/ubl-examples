@@ -774,11 +774,32 @@
       <listitem>
         <para>
           <emphasis role="strong">No empty elements (IND5).</emphasis> A
-          UBL document never contains an element without content. Every
-          party element must therefore hold at least one of its parts,
-          even though none of them is mandatory in the schema. The
-          identity of every party makes sure there is always something
-          to put in it.
+          UBL document never contains an element without content: an
+          aggregate needs a child, a basic element a value, and a value
+          of only spaces counts as empty. Every party element must
+          therefore hold at least one of its parts, even though none of
+          them is mandatory in the schema. The identity of every party
+          makes sure there is always something to put in it.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">One text per language (IND7,
+          IND8).</emphasis> Two sibling text elements of the same name
+          never have the same <literal>languageID</literal>, and never
+          both lack one. A text element repeats only to give the same
+          text in another language, as the bilingual notes do; several
+          keywords of an item therefore go in one search string. The
+          text elements are the basic properties whose data type in the
+          UBL 2.5 model is Text or Name: their schema types derive from
+          the CCTS text type, which carries
+          <literal>languageID</literal>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">No empty attributes (IND9).</emphasis>
+          Every attribute that is present has a value.
         </para>
       </listitem>
       <listitem>
@@ -804,7 +825,8 @@
       town or locality of the party's own country and state; every
       account is held at a bank of the world in the same country; and a
       bank named in a document is the bank where that party keeps its
-      account.
+      account. The ISIN of a listed company has the structure and check
+      digit of ISO 6166 and starts with its country's code.
     </para>
   </section>
   <section id="S-05-validation-the-items">
@@ -832,8 +854,9 @@
   <section id="S-05-validation-the-example-documents">
     <title>The example documents</title>
     <para>
-      Every example document is validated in the two phases UBL
-      prescribes:
+      The build checks that a reference to another document of the same
+      flow quotes that document's UUID wherever it gives one. Every
+      example document is validated in the two phases UBL prescribes:
     </para>
     <itemizedlist spacing="compact">
       <listitem>

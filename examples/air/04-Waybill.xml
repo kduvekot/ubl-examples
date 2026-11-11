@@ -289,7 +289,7 @@
       <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
       <cbc:SequenceID>1</cbc:SequenceID>
       <cbc:ShippingPriorityLevelCode>Priority</cbc:ShippingPriorityLevelCode>
-      <cbc:ChildConsignmentQuantity unitCode="C62">1</cbc:ChildConsignmentQuantity>
+      <cbc:ChildConsignmentQuantity unitCode="EA">1</cbc:ChildConsignmentQuantity>
       <cac:ConsolidatedShipment>
         <cbc:ID>BF-CONS-26-0207</cbc:ID>
       </cac:ConsolidatedShipment>

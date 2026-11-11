@@ -500,7 +500,7 @@ The castings alone.</li>
 (unitCode <code>MTQ</code>)<br />
 The frames' own volume.</li>
 <li><code>Consignment/TotalGoodsItemQuantity</code> = <strong>1</strong>
-(unitCode <code>C62</code>)<br />
+(unitCode <code>EA</code>)<br />
 One kind of goods.</li>
 <li><code>Consignment/DeclaredForCarriageValueAmount</code> =
 <strong>512.00</strong> (currencyID <code>XBL</code>)<br />
@@ -513,7 +513,7 @@ The value for the export statistics.</li>
 <strong>false</strong><br />
 All eight boxes on one flight.</li>
 <li><code>Consignment/ConsignmentQuantity</code> = <strong>1</strong>
-(unitCode <code>C62</code>)<br />
+(unitCode <code>EA</code>)<br />
 One consignment.</li>
 <li><code>Consignment/ConsigneeParty/WebsiteURI</code> = <strong><a
 href="https://www.velumi.example">https://www.velumi.example</a></strong><br />
@@ -710,7 +710,7 @@ The distributor's shipment on the skid.</li>
 <strong>LD-AIR-BOX</strong><br />
 The boxes, numbered 1 to 8 on their labels.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Quantity</code> =
-<strong>8</strong> (unitCode <code>H87</code>)<br />
+<strong>8</strong> (unitCode <code>EA</code>)<br />
 Eight boxes.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/PackagingTypeCode</code>
 = <strong>BX</strong><br />
@@ -722,7 +722,7 @@ The barcodes on the boxes.</li>
 = <strong>LD-AIR-BAG</strong><br />
 Inside each box, the frame in a plastic bag.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ContainedPackage/Quantity</code>
-= <strong>8</strong> (unitCode <code>H87</code>)<br />
+= <strong>8</strong> (unitCode <code>EA</code>)<br />
 One bag per box.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/ContainedPackage/PackagingTypeCode</code>
 = <strong>BG</strong><br />
@@ -752,7 +752,7 @@ Of one box.</li>
 = <strong>300</strong> (unitCode <code>MMT</code>)<br />
 In millimetres.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/DeliveryUnit/BatchQuantity</code>
-= <strong>8</strong> (unitCode <code>H87</code>)<br />
+= <strong>8</strong> (unitCode <code>EA</code>)<br />
 All eight delivered together.</li>
 <li><code>Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/StartDate</code>
 = <strong>2026-05-14</strong><br />
@@ -1036,11 +1036,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0324&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetNetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;76&lt;/<span class="kw">cbc:NetNetWeightMeasure</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;0.42&lt;/<span class="kw">cbc:NetVolumeMeasure</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredForCarriageValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;512.00&lt;/<span class="kw">cbc:DeclaredForCarriageValueAmount</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredStatisticsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;512.00&lt;/<span class="kw">cbc:DeclaredStatisticsValueAmount</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SplitConsignmentIndicator</span>&gt;false&lt;/<span class="kw">cbc:SplitConsignmentIndicator</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ConsignmentQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1&lt;/<span class="kw">cbc:ConsignmentQuantity</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ConsignmentQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ConsignmentQuantity</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:WebsiteURI</span>&gt;https://www.velumi.example&lt;/<span class="kw">cbc:WebsiteURI</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IndustryClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISIC Rev.4&quot;</span>&gt;4649&lt;/<span class="kw">cbc:IndustryClassificationCode</span>&gt;</span>
@@ -1129,12 +1129,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ReferencedShipment</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-AIR-BOX&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;BX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TraceID</span>&gt;LD-AIR-0001..0008&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;LD-AIR-BAG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;BG&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
@@ -1154,7 +1154,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;300&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DeliveryUnit</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BatchQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;8&lt;/<span class="kw">cbc:BatchQuantity</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BatchQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:BatchQuantity</span>&gt;</span>
 <span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DeliveryUnit</span>&gt;</span>
 <span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:RequestedDeliveryPeriod</span>&gt;</span>
@@ -1220,6 +1220,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

@@ -277,7 +277,7 @@
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">96</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -292,8 +292,7 @@
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -350,7 +349,6 @@
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -416,7 +414,7 @@
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -477,8 +475,8 @@
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>One box crushed at the port; the frame inside is cracked.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">11</cbc:ReceivedQuantity>
-    <cbc:RejectedQuantity unitCode="H87">1</cbc:RejectedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
+    <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
     <cbc:RejectReasonCode>Damaged</cbc:RejectReasonCode>
     <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
     <cbc:RejectActionCode>Credit</cbc:RejectActionCode>

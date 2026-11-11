@@ -806,8 +806,8 @@ Cigarettes.</li>
 <strong>Cigarettes</strong><br />
 What.</li>
 <li><code>ShipmentStage/ShipStoreArticle/Quantity</code> =
-<strong>2000</strong> (unitCode <code>H87</code>)<br />
-Pieces.</li>
+<strong>2000</strong> (unitCode <code>EA</code>)<br />
+Pieces, counted each (EA).</li>
 <li><code>ShipmentStage/CrewPersonEffect/EffectDescription</code> =
 <strong>One camera, one laptop.</strong><br />
 What the crew member declares.</li>
@@ -876,16 +876,16 @@ And followed.</li>
 = <strong>true</strong><br />
 The IMO guidelines are on board.</li>
 <li><code>ShipmentStage/BallastWaterSummary/TotalBallastTanksOnBoardQuantity</code>
-= <strong>8</strong> (unitCode <code>C62</code>)<br />
+= <strong>8</strong> (unitCode <code>EA</code>)<br />
 Ballast tanks.</li>
 <li><code>ShipmentStage/BallastWaterSummary/TanksInBallastQuantity</code>
-= <strong>4</strong> (unitCode <code>C62</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 Tanks with ballast now.</li>
 <li><code>ShipmentStage/BallastWaterSummary/TanksExchangedQuantity</code>
-= <strong>4</strong> (unitCode <code>C62</code>)<br />
+= <strong>4</strong> (unitCode <code>EA</code>)<br />
 Exchanged at sea.</li>
 <li><code>ShipmentStage/BallastWaterSummary/TanksNotExchangedQuantity</code>
-= <strong>0</strong> (unitCode <code>C62</code>)<br />
+= <strong>0</strong> (unitCode <code>EA</code>)<br />
 None left unexchanged.</li>
 <li><code>ShipmentStage/BallastWaterSummary/TotalBallastWaterOnBoardMeasure</code>
 = <strong>1240</strong> (unitCode <code>TNE</code>)<br />
@@ -907,8 +907,10 @@ The tank.</li>
 = <strong>Wing</strong><br />
 A wing tank.</li>
 <li><code>ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure</code>
-= <strong>310</strong> (unitCode <code>TNE</code>)<br />
-Taken up at Lumeport.</li>
+= <strong>310</strong> (unitCode <code>MTQ</code>)<br />
+Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit;
+the 310 were meant as tonnes of water, which is about the same number of
+cubic metres.</li>
 <li><code>ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure</code>
 = <strong>2</strong> (unitCode <code>MTR</code>)<br />
 The depth of the intake.</li>
@@ -944,8 +946,9 @@ Emptied and refilled.</li>
 = <strong>95</strong><br />
 Of the volume.</li>
 <li><code>ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure</code>
-= <strong>310</strong> (unitCode <code>TNE</code>)<br />
-Exchanged.</li>
+= <strong>310</strong> (unitCode <code>MTQ</code>)<br />
+Exchanged: the same 310 cubic metres (a volume, so in cubic metres; a
+tonne of water is about a cubic metre).</li>
 <li><code>ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate</code>
 = <strong>2026-05-16</strong><br />
 At sea.</li>
@@ -956,8 +959,9 @@ Where.</li>
 = <strong>BT-3</strong><br />
 The tank.</li>
 <li><code>ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/VolumeMeasure</code>
-= <strong>120</strong> (unitCode <code>TNE</code>)<br />
-To be discharged at Selanu.</li>
+= <strong>120</strong> (unitCode <code>MTQ</code>)<br />
+To be discharged at Selanu: 120 cubic metres (a volume; a tonne of water
+is about a cubic metre, so the number stays).</li>
 <li><code>ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TransactionDate</code>
 = <strong>2026-05-18</strong><br />
 In port.</li>
@@ -1098,11 +1102,11 @@ The certificate is valid.</li>
 = <strong>false</strong><br />
 No reinspection needed.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/TotalDeadPersonQuantity</code>
-= <strong>0</strong> (unitCode <code>C62</code>)<br />
-None.</li>
+= <strong>0</strong> (unitCode <code>IE</code>)<br />
+No persons.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity</code>
-= <strong>1</strong> (unitCode <code>C62</code>)<br />
-One crew member with a sprained wrist.</li>
+= <strong>1</strong> (unitCode <code>IE</code>)<br />
+One person: a crew member with a sprained wrist.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/SickAnimalDescription</code>
 = <strong>None on board.</strong><br />
 No animals.</li>
@@ -1306,8 +1310,8 @@ Course over ground, in degrees.</li>
 = <strong>13.5</strong> (unitCode <code>KNT</code>)<br />
 Speed over ground.</li>
 <li><code>MaritimeTransport/VesselDynamics/RateOfTurnMeasure</code> =
-<strong>0</strong> (unitCode <code>C62</code>)<br />
-Not turning.</li>
+<strong>0</strong> (unitCode <code>E96</code>)<br />
+Not turning: 0 degrees per second.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
@@ -1681,7 +1685,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ShipStoreArticle</span>&gt;</span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ST-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Cigarettes&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;2000&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2000&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ShipStoreArticle</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CrewPersonEffect</span>&gt;</span>
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EffectDescription</span>&gt;One camera, one laptop.&lt;/<span class="kw">cbc:EffectDescription</span>&gt;</span>
@@ -1720,10 +1724,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManagementPlanOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:ManagementPlanOnBoardIndicator</span>&gt;</span>
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManagementPlanImplementedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ManagementPlanImplementedIndicator</span>&gt;</span>
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IMOGuidelinesOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:IMOGuidelinesOnBoardIndicator</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalBallastTanksOnBoardQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;8&lt;/<span class="kw">cbc:TotalBallastTanksOnBoardQuantity</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TanksInBallastQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;4&lt;/<span class="kw">cbc:TanksInBallastQuantity</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TanksExchangedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;4&lt;/<span class="kw">cbc:TanksExchangedQuantity</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TanksNotExchangedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;0&lt;/<span class="kw">cbc:TanksNotExchangedQuantity</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalBallastTanksOnBoardQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:TotalBallastTanksOnBoardQuantity</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TanksInBallastQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TanksInBallastQuantity</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TanksExchangedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:TanksExchangedQuantity</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TanksNotExchangedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;0&lt;/<span class="kw">cbc:TanksNotExchangedQuantity</span>&gt;</span>
 <span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalBallastWaterOnBoardMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1240&lt;/<span class="kw">cbc:TotalBallastWaterOnBoardMeasure</span>&gt;</span>
 <span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalBallastWaterCapacityMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;2480&lt;/<span class="kw">cbc:TotalBallastWaterCapacityMeasure</span>&gt;</span>
 <span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OtherControlActions</span>&gt;None.&lt;/<span class="kw">cbc:OtherControlActions</span>&gt;</span>
@@ -1731,7 +1735,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:UptakeBallastWaterTransaction</span>&gt;</span>
 <span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TankID</span>&gt;BT-3&lt;/<span class="kw">cbc:TankID</span>&gt;</span>
 <span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TankTypeCode</span>&gt;Wing&lt;/<span class="kw">cbc:TankTypeCode</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;310&lt;/<span class="kw">cbc:VolumeMeasure</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;310&lt;/<span class="kw">cbc:VolumeMeasure</span>&gt;</span>
 <span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SeaHeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTR&quot;</span>&gt;2&lt;/<span class="kw">cbc:SeaHeightMeasure</span>&gt;</span>
 <span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SalinityMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;GL&quot;</span>&gt;30&lt;/<span class="kw">cbc:SalinityMeasure</span>&gt;</span>
 <span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransactionDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:TransactionDate</span>&gt;</span>
@@ -1753,7 +1757,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TankID</span>&gt;BT-3&lt;/<span class="kw">cbc:TankID</span>&gt;</span>
 <span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExchangeMethodCode</span>&gt;Sequential&lt;/<span class="kw">cbc:ExchangeMethodCode</span>&gt;</span>
 <span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExchangedPercent</span>&gt;95&lt;/<span class="kw">cbc:ExchangedPercent</span>&gt;</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;310&lt;/<span class="kw">cbc:VolumeMeasure</span>&gt;</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;310&lt;/<span class="kw">cbc:VolumeMeasure</span>&gt;</span>
 <span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransactionDate</span>&gt;2026-05-16&lt;/<span class="kw">cbc:TransactionDate</span>&gt;</span>
 <span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;At sea, 120 nautical miles west of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1761,7 +1765,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ExchangeBallastWaterTransaction</span>&gt;</span>
 <span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DischargeBallastWaterTransaction</span>&gt;</span>
 <span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TankID</span>&gt;BT-3&lt;/<span class="kw">cbc:TankID</span>&gt;</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;120&lt;/<span class="kw">cbc:VolumeMeasure</span>&gt;</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;120&lt;/<span class="kw">cbc:VolumeMeasure</span>&gt;</span>
 <span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransactionDate</span>&gt;2026-05-18&lt;/<span class="kw">cbc:TransactionDate</span>&gt;</span>
 <span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DischargeBallastWaterTransaction</span>&gt;</span>
 <span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResponsibleOfficerPerson</span>&gt;</span>
@@ -1846,8 +1850,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;true&lt;/<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;</span>
 <span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;</span>
 <span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReinspectionRequiredIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReinspectionRequiredIndicator</span>&gt;</span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalDeadPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalDeadPersonQuantity</span>&gt;</span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalIllPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalIllPersonQuantity</span>&gt;</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalDeadPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalDeadPersonQuantity</span>&gt;</span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalIllPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalIllPersonQuantity</span>&gt;</span>
 <span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalDescription</span>&gt;None on board.&lt;/<span class="kw">cbc:SickAnimalDescription</span>&gt;</span>
 <span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StowawayDescription</span>&gt;None found in the search before departure.&lt;/<span class="kw">cbc:StowawayDescription</span>&gt;</span>
 <span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LastDrinkingWaterAnalysisDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:LastDrinkingWaterAnalysisDate</span>&gt;</span>
@@ -1958,7 +1962,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AtAnchorageIndicator</span>&gt;false&lt;/<span class="kw">cbc:AtAnchorageIndicator</span>&gt;</span>
 <span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CourseOverGroundDirection</span>&gt;088&lt;/<span class="kw">cbc:CourseOverGroundDirection</span>&gt;</span>
 <span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SpeedOverGroundMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KNT&quot;</span>&gt;13.5&lt;/<span class="kw">cbc:SpeedOverGroundMeasure</span>&gt;</span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RateOfTurnMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;0&lt;/<span class="kw">cbc:RateOfTurnMeasure</span>&gt;</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RateOfTurnMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;E96&quot;</span>&gt;0&lt;/<span class="kw">cbc:RateOfTurnMeasure</span>&gt;</span>
 <span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:VesselDynamics</span>&gt;</span>
 <span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MaritimeTransport</span>&gt;</span>
 <span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
@@ -1979,6 +1983,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CommonTransportationReport</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

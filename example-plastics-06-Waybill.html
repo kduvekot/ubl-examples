@@ -955,7 +955,7 @@ The granulate's own volume, at 0.92 tonne per m³.</li>
 (unitCode <code>TNE</code>)<br />
 The tonnes charged.</li>
 <li><code>GoodsItem/ReturnableQuantity</code> = <strong>120</strong>
-(unitCode <code>H87</code>)<br />
+(unitCode <code>EA</code>)<br />
 The 120 jumbo bags go back to the recovery plant.</li>
 <li><code>GoodsItem/TraceID</code> =
 <strong>RR-PE-LOT-26-0416</strong><br />
@@ -1057,7 +1057,7 @@ In millimetres.</li>
 <strong>JB-001..120</strong><br />
 The bags, numbered 1 to 120.</li>
 <li><code>GoodsItem/ContainingPackage/Quantity</code> =
-<strong>120</strong> (unitCode <code>H87</code>)<br />
+<strong>120</strong> (unitCode <code>EA</code>)<br />
 120 bags.</li>
 <li><code>GoodsItem/ContainingPackage/ReturnableMaterialIndicator</code>
 = <strong>true</strong><br />
@@ -1566,7 +1566,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;130&lt;/<span class="kw">cbc:NetVolumeMeasure</span>&gt;</span>
 <span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;120&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeableQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;120&lt;/<span class="kw">cbc:ChargeableQuantity</span>&gt;</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ReturnableQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;120&lt;/<span class="kw">cbc:ReturnableQuantity</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ReturnableQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;120&lt;/<span class="kw">cbc:ReturnableQuantity</span>&gt;</span>
 <span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TraceID</span>&gt;RR-PE-LOT-26-0416&lt;/<span class="kw">cbc:TraceID</span>&gt;</span>
 <span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
@@ -1609,7 +1609,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
 <span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
 <span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;JB-001..120&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;120&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;120&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
 <span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;JB&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingType</span>&gt;Jumbo bag of one tonne with four lifting loops&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
@@ -1672,6 +1672,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

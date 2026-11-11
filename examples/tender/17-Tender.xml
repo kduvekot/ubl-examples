@@ -261,15 +261,15 @@
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
       <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
-      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">112800.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">112800.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-      <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+      <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
       <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-      <cbc:MinimumOrderQuantity unitCode="H87">20</cbc:MinimumOrderQuantity>
-      <cbc:MaximumOrderQuantity unitCode="H87">96</cbc:MaximumOrderQuantity>
+      <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
       <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
       <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
       <cac:DocumentReference>
@@ -283,7 +283,7 @@
       </cac:OfferedItemLocationQuantity>
       <cac:ReplacementRelatedItem>
         <cbc:ID>BF-SLAT-PB2</cbc:ID>
-        <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       </cac:ReplacementRelatedItem>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -312,7 +312,7 @@
     </cac:TenderLine>
     <cac:TenderLine>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">3840.00</cbc:LineExtensionAmount>
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>

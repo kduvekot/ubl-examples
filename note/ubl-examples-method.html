@@ -706,11 +706,26 @@ a[href]:hover { background: #ffa }
       Two rules of the UBL specification shape the data the world needs:
     </p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>
           <span class="strong"><strong>No empty elements (IND5).</strong></span> A
-          UBL document never contains an element without content. Every
-          party element must therefore hold at least one of its parts,
-          even though none of them is mandatory in the schema. The
-          identity of every party makes sure there is always something
-          to put in it.
+          UBL document never contains an element without content: an
+          aggregate needs a child, a basic element a value, and a value
+          of only spaces counts as empty. Every party element must
+          therefore hold at least one of its parts, even though none of
+          them is mandatory in the schema. The identity of every party
+          makes sure there is always something to put in it.
+        </p></li><li class="listitem"><p>
+          <span class="strong"><strong>One text per language (IND7,
+          IND8).</strong></span> Two sibling text elements of the same name
+          never have the same <code class="literal">languageID</code>, and never
+          both lack one. A text element repeats only to give the same
+          text in another language, as the bilingual notes do; several
+          keywords of an item therefore go in one search string. The
+          text elements are the basic properties whose data type in the
+          UBL 2.5 model is Text or Name: their schema types derive from
+          the CCTS text type, which carries
+          <code class="literal">languageID</code>.
+        </p></li><li class="listitem"><p>
+          <span class="strong"><strong>No empty attributes (IND9).</strong></span>
+          Every attribute that is present has a value.
         </p></li><li class="listitem"><p>
           <span class="strong"><strong>An absence carries no meaning
           (IND6).</strong></span> Leaving an element out never says anything;
@@ -727,7 +742,8 @@ a[href]:hover { background: #ffa }
       town or locality of the party's own country and state; every
       account is held at a bank of the world in the same country; and a
       bank named in a document is the bank where that party keeps its
-      account.
+      account. The ISIN of a listed company has the structure and check
+      digit of ISO 6166 and starts with its country's code.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-05-validation-the-items"></a>5.5 The items</h3></div></div></div><p>
       Units and packaging types must be codes of the UBL default lists;
       world item numbers carry a valid check digit and are unique;
@@ -743,8 +759,9 @@ a[href]:hover { background: #ffa }
       The world's code lists are checked to hold exactly the codes of
       the countries layer.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-05-validation-the-example-documents"></a>5.7 The example documents</h3></div></div></div><p>
-      Every example document is validated in the two phases UBL
-      prescribes:
+      The build checks that a reference to another document of the same
+      flow quotes that document's UUID wherever it gives one. Every
+      example document is validated in the two phases UBL prescribes:
     </p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>
           <span class="strong"><strong>Phase 1:</strong></span> against the UBL
           2.5 runtime schema of its document type, from the endorsed

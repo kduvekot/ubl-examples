@@ -321,13 +321,13 @@
     <cac:TransportHandlingUnit>
       <cbc:ID>LD-RT-001</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>LD-RT-001</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:OrderLineReference>
@@ -361,13 +361,13 @@
     <cac:TransportHandlingUnit>
       <cbc:ID>LD-RT-002</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>LD-RT-002</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>2</cbc:ID>
-        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:OrderLineReference>
@@ -382,13 +382,13 @@
     <cac:TransportHandlingUnit>
       <cbc:ID>LD-RT-003</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>LD-RT-003</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>3</cbc:ID>
-        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:OrderLineReference>
@@ -403,13 +403,13 @@
     <cac:TransportHandlingUnit>
       <cbc:ID>LD-RT-004</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>LD-RT-004</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>4</cbc:ID>
-        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:OrderLineReference>
@@ -424,13 +424,13 @@
     <cac:TransportHandlingUnit>
       <cbc:ID>LD-RT-005</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>LD-RT-005</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>5</cbc:ID>
-        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:OrderLineReference>
@@ -445,13 +445,13 @@
     <cac:TransportHandlingUnit>
       <cbc:ID>LD-RT-006</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>LD-RT-006</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>6</cbc:ID>
-        <cbc:DeliveredQuantity unitCode="H87">4</cbc:DeliveredQuantity>
+        <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
         </cac:OrderLineReference>
@@ -468,7 +468,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Six pallets for the garden department's spring promotion.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">24</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">24</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -476,8 +476,7 @@
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -537,7 +536,6 @@
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -613,7 +611,7 @@
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>

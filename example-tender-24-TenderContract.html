@@ -498,7 +498,7 @@ associations.</li>
 = <strong>XU</strong><br />
 The register covers the whole country.</li>
 <li><code>Party/PartyLegalEntity/SecurityListing/ID</code> =
-<strong>XU0001042505</strong><br />
+<strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
 world's country code.</li>
 <li><code>Party/PartyLegalEntity/SecurityListing/Description</code> =
@@ -713,8 +713,8 @@ The tenderer's situation.</li>
 <strong>3</strong> (unitCode <code>ANN</code>)<br />
 At least three years in business.</li>
 <li><code>TendererQualificationRequest/EmployeeQuantity</code> =
-<strong>10</strong> (unitCode <code>C62</code>)<br />
-At least ten employees.</li>
+<strong>10</strong> (unitCode <code>IE</code>)<br />
+At least ten employees (persons).</li>
 <li><code>TendererQualificationRequest/Description</code> =
 <strong>Economic and technical capacity.</strong><br />
 What is asked.</li>
@@ -737,7 +737,7 @@ References.</li>
 = <strong>Three similar supplies in five years.</strong><br />
 What.</li>
 <li><code>TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity</code>
-= <strong>3</strong> (unitCode <code>C62</code>)<br />
+= <strong>3</strong> (unitCode <code>EA</code>)<br />
 Three.</li>
 <li><code>TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure</code>
 = <strong>5</strong> (unitCode <code>ANN</code>)<br />
@@ -1159,7 +1159,7 @@ The day of the award decision.</li>
 <li><code>AwardTime</code> = <strong>09:30:00</strong><br />
 The time of the decision, before the tenderers are told.</li>
 <li><code>ReceivedTenderQuantity</code> = <strong>2</strong> (unitCode
-<code>C62</code>)<br />
+<code>EA</code>)<br />
 Two tenders: the furniture maker's first tender was withdrawn and
 replaced.</li>
 <li><code>LowerTenderAmount</code> = <strong>119040.00</strong>
@@ -1171,10 +1171,10 @@ The highest, the manufacturer's.</li>
 <li><code>StartDate</code> = <strong>2026-03-23</strong><br />
 The contract starts with the first call-off.</li>
 <li><code>ReceivedElectronicTenderQuantity</code> = <strong>2</strong>
-(unitCode <code>C62</code>)<br />
+(unitCode <code>EA</code>)<br />
 Both through the platform.</li>
 <li><code>ReceivedForeignTenderQuantity</code> = <strong>1</strong>
-(unitCode <code>C62</code>)<br />
+(unitCode <code>EA</code>)<br />
 The manufacturer is established in Urvania.</li>
 <li><code>Contract/ID</code> = <strong>PWD-2026-PARKS</strong><br />
 The framework contract.</li>
@@ -1440,7 +1440,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecurityListing</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
@@ -1554,7 +1554,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Consortia must name a lead member.&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PersonalSituation</span>&gt;No exclusion grounds.&lt;/<span class="kw">cbc:PersonalSituation</span>&gt;</span>
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OperatingYearsQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;3&lt;/<span class="kw">cbc:OperatingYearsQuantity</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EmployeeQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;10&lt;/<span class="kw">cbc:EmployeeQuantity</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EmployeeQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;10&lt;/<span class="kw">cbc:EmployeeQuantity</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Economic and technical capacity.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RequiredBusinessClassificationScheme</span>&gt;</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ISIC4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1567,7 +1567,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TechnicalEvaluationCriterion</span>&gt;</span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EvaluationCriterionTypeCode</span>&gt;References&lt;/<span class="kw">cbc:EvaluationCriterionTypeCode</span>&gt;</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Three similar supplies in five years.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ThresholdQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;3&lt;/<span class="kw">cbc:ThresholdQuantity</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ThresholdQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;3&lt;/<span class="kw">cbc:ThresholdQuantity</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DurationPeriod</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DurationPeriod</span>&gt;</span>
@@ -1832,12 +1832,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdvertisementAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;320.00&lt;/<span class="kw">cbc:AdvertisementAmount</span>&gt;</span>
 <span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardDate</span>&gt;2026-03-09&lt;/<span class="kw">cbc:AwardDate</span>&gt;</span>
 <span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedTenderQuantity</span>&gt;</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedTenderQuantity</span>&gt;</span>
 <span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LowerTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:LowerTenderAmount</span>&gt;</span>
 <span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:HigherTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:HigherTenderAmount</span>&gt;</span>
 <span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedElectronicTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedElectronicTenderQuantity</span>&gt;</span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedForeignTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;1&lt;/<span class="kw">cbc:ReceivedForeignTenderQuantity</span>&gt;</span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedElectronicTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedElectronicTenderQuantity</span>&gt;</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedForeignTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ReceivedForeignTenderQuantity</span>&gt;</span>
 <span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contract</span>&gt;</span>
 <span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span>&gt;Framework&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
@@ -1882,6 +1882,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TenderContract</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

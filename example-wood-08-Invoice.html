@@ -449,7 +449,7 @@ associations.</li>
 = <strong>XU</strong><br />
 The register covers the whole country.</li>
 <li><code>Party/PartyLegalEntity/SecurityListing/ID</code> =
-<strong>XU0001042505</strong><br />
+<strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
 world's country code.</li>
 <li><code>Party/PartyLegalEntity/SecurityListing/Description</code> =
@@ -768,7 +768,7 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>InvoicedQuantity</code> = <strong>4800</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 The slats despatched.</li>
 <li><code>LineExtensionAmount</code> = <strong>34560.00</strong>
 (currencyID <code>XBL</code>)<br />
@@ -778,7 +778,7 @@ The slats despatched.</li>
 The seller's description; item slat-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>Item/PackQuantity</code> = <strong>1</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 One pack of this item.</li>
 <li><code>Item/PackSizeNumeric</code> = <strong>50</strong><br />
 The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale
@@ -972,7 +972,7 @@ Its size.</li>
 <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 The price is per one unit.</li>
 <li><code>Price/OrderableUnitFactorRate</code> =
 <strong>50</strong><br />
@@ -1163,7 +1163,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecurityListing</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
@@ -1320,11 +1320,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;4800&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4800&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Hardwood bench slat 1800&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1437,13 +1437,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;7.2&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OrderableUnitFactorRate</span>&gt;50&lt;/<span class="kw">cbc:OrderableUnitFactorRate</span>&gt;</span>
 <span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

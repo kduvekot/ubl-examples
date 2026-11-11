@@ -261,7 +261,7 @@
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Box crushed at the port of Selanu.</cbc:Note>
-    <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
+    <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">64.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
@@ -305,7 +305,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>
 </CreditNote>

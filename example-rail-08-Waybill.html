@@ -447,7 +447,7 @@ associations.</li>
 = <strong>XU</strong><br />
 The register covers the whole country.</li>
 <li><code>PartyLegalEntity/SecurityListing/ID</code> =
-<strong>XU0001042505</strong><br />
+<strong>XU0001042501</strong><br />
 The identifier of the listed shares, in the form of an ISIN with the
 world's country code.</li>
 <li><code>PartyLegalEntity/SecurityListing/Description</code> =
@@ -573,7 +573,7 @@ The goods in a few words.</li>
 <strong>true</strong><br />
 Two full containers.</li>
 <li><code>Consignment/TotalTransportHandlingUnitQuantity</code> =
-<strong>2</strong> (unitCode <code>C62</code>)<br />
+<strong>2</strong> (unitCode <code>EA</code>)<br />
 Two containers.</li>
 <li><code>Consignment/LoadingSequenceID</code> =
 <strong>7</strong><br />
@@ -844,11 +844,11 @@ What the railway must do.</li>
 container day.</strong><br />
 What waiting costs.</li>
 <li><code>Consignment/MainCarriageShipmentStage/CrewQuantity</code> =
-<strong>2</strong> (unitCode <code>C62</code>)<br />
-A driver and a train manager.</li>
+<strong>2</strong> (unitCode <code>IE</code>)<br />
+Two persons: a driver and a train manager.</li>
 <li><code>Consignment/MainCarriageShipmentStage/PassengerQuantity</code>
-= <strong>0</strong> (unitCode <code>C62</code>)<br />
-A freight train carries no passengers.</li>
+= <strong>0</strong> (unitCode <code>IE</code>)<br />
+No persons: a freight train carries no passengers.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID</code>
 = <strong>CT 4471</strong><br />
 The number of the container train in the hub's timetable.</li>
@@ -1479,7 +1479,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SecurityListing</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042505&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU0001042501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Ordinary shares of Valdara Industries&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketName</span>&gt;Ferrano Stock Exchange&lt;/<span class="kw">cbc:MarketName</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarketCode</span>&gt;FSE&lt;/<span class="kw">cbc:MarketCode</span>&gt;</span>
@@ -1543,7 +1543,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PerformingCarrierAssignedID</span>&gt;FRC-J-26-3318&lt;/<span class="kw">cbc:PerformingCarrierAssignedID</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SummaryDescription</span>&gt;192 park benches in two 40-foot containers.&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContainerizedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ContainerizedIndicator</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;2&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LoadingSequenceID</span>&gt;7&lt;/<span class="kw">cbc:LoadingSequenceID</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:WebsiteURI</span>&gt;https://www.lumeway.example&lt;/<span class="kw">cbc:WebsiteURI</span>&gt;</span>
@@ -1658,8 +1658,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SuccessiveSequenceID</span>&gt;1&lt;/<span class="kw">cbc:SuccessiveSequenceID</span>&gt;</span>
 <span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Instructions</span>&gt;Shunt to the Lumeway siding on arrival in Marrowdale.&lt;/<span class="kw">cbc:Instructions</span>&gt;</span>
 <span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DemurrageInstructions</span>&gt;Free time five days at the siding, then demurrage per container day.&lt;/<span class="kw">cbc:DemurrageInstructions</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CrewQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;2&lt;/<span class="kw">cbc:CrewQuantity</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PassengerQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;0&lt;/<span class="kw">cbc:PassengerQuantity</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CrewQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;2&lt;/<span class="kw">cbc:CrewQuantity</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PassengerQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:PassengerQuantity</span>&gt;</span>
 <span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
 <span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JourneyID</span>&gt;CT 4471&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
 <span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationNationalityID</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
@@ -1960,6 +1960,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

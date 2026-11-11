@@ -195,7 +195,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -302,11 +302,11 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cac:PricingExchangeRate>
           <cbc:SourceCurrencyCode>XUF</cbc:SourceCurrencyCode>
           <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
@@ -323,8 +323,7 @@
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-        <cbc:Keyword>park bench</cbc:Keyword>
-        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:Keyword>park bench, street furniture</cbc:Keyword>
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -373,7 +372,6 @@
           <cbc:Name>Frame colour</cbc:Name>
           <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
           <cbc:ListValue>Ferro grey</cbc:ListValue>
-          <cbc:ListValue>Moss green</cbc:ListValue>
           <cac:ItemPropertyGroup>
             <cbc:ID>APP</cbc:ID>
             <cbc:Name>Appearance</cbc:Name>
@@ -431,7 +429,7 @@
           <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
           <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
           <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
           <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
           <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
           <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>

@@ -962,7 +962,7 @@ The packs alone.</li>
 = <strong>0.24</strong> (unitCode <code>MTQ</code>)<br />
 Their volume.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity</code>
-= <strong>6</strong> (unitCode <code>H87</code>)<br />
+= <strong>6</strong> (unitCode <code>EA</code>)<br />
 Six packs.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyIdentification/ID</code>
 = <strong>20410685</strong> (schemeID
@@ -1026,7 +1026,7 @@ Where it flies.</li>
 = <strong>SE-CR-1..6</strong><br />
 The six crates.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/Quantity</code>
-= <strong>6</strong> (unitCode <code>H87</code>)<br />
+= <strong>6</strong> (unitCode <code>EA</code>)<br />
 Six.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/PackagingTypeCode</code>
 = <strong>CR</strong><br />
@@ -1537,7 +1537,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;348&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:NetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;312&lt;/<span class="kw">cbc:NetWeightMeasure</span>&gt;</span>
 <span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:NetVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;0.24&lt;/<span class="kw">cbc:NetVolumeMeasure</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ContactParty</span>&gt;</span>
 <span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410685&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1576,7 +1576,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PositionOnBoardStowage</span>&gt;</span>
 <span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span>&gt;SE-CR-1..6&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:PackagingTypeCode</span>&gt;CR&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
 <span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:LoadedHazardousItem</span>&gt;</span>
@@ -1649,6 +1649,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

@@ -211,7 +211,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -325,7 +325,7 @@
       <cbc:CompanyLegalForm>Consortia must name a lead member.</cbc:CompanyLegalForm>
       <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">10</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
       <cac:RequiredBusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
@@ -338,7 +338,7 @@
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode>References</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Three similar supplies in five years.</cbc:Description>
-        <cbc:ThresholdQuantity unitCode="C62">3</cbc:ThresholdQuantity>
+        <cbc:ThresholdQuantity unitCode="EA">3</cbc:ThresholdQuantity>
         <cac:DurationPeriod>
           <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
         </cac:DurationPeriod>
@@ -603,12 +603,12 @@
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
     <cbc:AwardTime>09:30:00</cbc:AwardTime>
-    <cbc:ReceivedTenderQuantity unitCode="C62">2</cbc:ReceivedTenderQuantity>
+    <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">119040.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:ReceivedElectronicTenderQuantity unitCode="C62">2</cbc:ReceivedElectronicTenderQuantity>
-    <cbc:ReceivedForeignTenderQuantity unitCode="C62">1</cbc:ReceivedForeignTenderQuantity>
+    <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
+    <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode>Framework</cbc:ContractTypeCode>

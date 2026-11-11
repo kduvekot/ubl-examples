@@ -261,7 +261,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -311,7 +311,7 @@
     <cbc:CapabilityTypeCode>Production</cbc:CapabilityTypeCode>
     <cbc:Description>Steel frame benches, cast, galvanised and coated in its own plant.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">4800000.00</cbc:ValueAmount>
-    <cbc:ValueQuantity unitCode="H87">6000</cbc:ValueQuantity>
+    <cbc:ValueQuantity unitCode="EA">6000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-2025</cbc:ID>
       <cbc:Name>Annual accounts</cbc:Name>

@@ -88,7 +88,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -256,7 +256,7 @@
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
@@ -279,7 +279,7 @@
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
@@ -289,7 +289,7 @@
     </cac:LineItem>
     <cac:SellerProposedSubstituteLineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting, 2025, from stock</cbc:Name>
         <cac:SellersItemIdentification>
@@ -300,10 +300,10 @@
     </cac:SellerProposedSubstituteLineItem>
     <cac:SellerSubstitutedLineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Price>
         <cbc:PriceAmount currencyID="XUF">5980</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Name>Bench side frame casting, 2026</cbc:Name>

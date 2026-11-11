@@ -562,7 +562,7 @@ The first and only line.</li>
 promotion.</strong><br />
 Why it matters.</li>
 <li><code>Quantity</code> = <strong>3</strong> (unitCode
-<code>H87</code>)<br />
+<code>EA</code>)<br />
 Three benches left in the garden department.</li>
 <li><code>InventoryValueAmount</code> = <strong>1560.00</strong>
 (currencyID <code>XBL</code>)<br />
@@ -583,10 +583,12 @@ The item's short name; item bench-serra-b of Lumeway Distribution
 ground anchors and the bolts to fix them.</strong><br />
 What comes with the item; item bench-serra of Valdara Industries
 (world/items.json).</li>
-<li><code>Item/Keyword</code> = <strong>park bench</strong><br />
-A word buyers search the item by.</li>
-<li><code>Item/Keyword</code> = <strong>street furniture</strong><br />
-A word buyers search the item by.</li>
+<li><code>Item/Keyword</code> = <strong>park bench, street
+furniture</strong><br />
+The search string buyers find the item by, the maker's keywords in one
+element; item bench-serra of Valdara Industries (world/items.json). A
+second Keyword would have to be in another language (UBL rule
+IND7).</li>
 <li><code>Item/BrandName</code> = <strong>Valdara</strong><br />
 The brand the maker sells the item under; item bench-serra of Valdara
 Industries (world/items.json).</li>
@@ -687,16 +689,16 @@ Its value; item bench-serra of Valdara Industries
 The maker's identifier for the property.</li>
 <li><code>Item/AdditionalItemProperty/Name</code> = <strong>Frame
 colour</strong><br />
-The colours the frame is offered in.</li>
+The colour of the frame, one of the colours it is offered in.</li>
 <li><code>Item/AdditionalItemProperty/ImportanceCode</code> =
 <strong>Optional</strong><br />
 How much the property matters in describing the item.</li>
 <li><code>Item/AdditionalItemProperty/ListValue</code> = <strong>Ferro
 grey</strong><br />
-One of the values the property can take.</li>
-<li><code>Item/AdditionalItemProperty/ListValue</code> = <strong>Moss
-green</strong><br />
-One of the values the property can take.</li>
+The property's value, taken from the maker's list of values (Ferro grey,
+Moss green; item bench-serra of Valdara Industries (world/items.json)).
+One ListValue only: UBL rule IND7 allows a second one only in another
+language.</li>
 <li><code>Item/AdditionalItemProperty/ItemPropertyGroup/ID</code> =
 <strong>APP</strong><br />
 The group of properties this one belongs to.</li>
@@ -812,7 +814,7 @@ The emission of one item.</li>
 <strong>0.82</strong><br />
 The share of the footprint the steel frame accounts for.</li>
 <li><code>Item/EnvironmentalEmission/ValueBaseMeasure</code> =
-<strong>1</strong> (unitCode <code>H87</code>)<br />
+<strong>1</strong> (unitCode <code>EA</code>)<br />
 The emission is per one bench.</li>
 <li><code>Item/EnvironmentalEmission/EmissionStandardReference</code> =
 <strong>Greenhouse Gas Protocol Product Standard</strong><br />
@@ -1150,7 +1152,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InventoryReportLine</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Below the minimum of 6 before the promotion.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;3&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;3&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InventoryValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;1560.00&lt;/<span class="kw">cbc:InventoryValueAmount</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AvailabilityDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:AvailabilityDate</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AvailabilityStatusCode</span>&gt;Available&lt;/<span class="kw">cbc:AvailabilityStatusCode</span>&gt;</span>
@@ -1158,194 +1160,192 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The manufacturer&#39;s Serra bench, from the distributor&#39;s stock.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Supplied with four ground anchors and the bolts to fix them.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Keyword</span>&gt;park bench&lt;/<span class="kw">cbc:Keyword</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Keyword</span>&gt;street furniture&lt;/<span class="kw">cbc:Keyword</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BrandName</span>&gt;Valdara&lt;/<span class="kw">cbc:BrandName</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ModelName</span>&gt;Serra 180&lt;/<span class="kw">cbc:ModelName</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WarrantyInformation</span>&gt;Five years on the frame against corrosion.&lt;/<span class="kw">cbc:WarrantyInformation</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-10442&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span>&gt;Colour&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000027&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;771&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemSpecificationDocumentReference</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-DS-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemSpecificationDocumentReference</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CommodityCode</span>&gt;9401.79.10&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;9401.79&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransactionConditions</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-TC-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActionCode</span>&gt;Trade&lt;/<span class="kw">cbc:ActionCode</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Sold to trade customers only, per pallet of four benches.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-GTC-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransactionConditions</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Frame material&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;Cast steel, hot-dip galvanised&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Slat wood&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;Kiln-dried hardwood&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Seats&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;3&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;COL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Frame colour&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Optional&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ListValue</span>&gt;Ferro grey&lt;/<span class="kw">cbc:ListValue</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ListValue</span>&gt;Moss green&lt;/<span class="kw">cbc:ListValue</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;APP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Appearance&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Optional&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOAD&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Load capacity&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:NameCode</span>&gt;LOAD&lt;/<span class="kw">cbc:NameCode</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TestMethod</span>&gt;Static load on the seat for one hour, three seats loaded evenly, no lasting deformation&lt;/<span class="kw">cbc:TestMethod</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;450&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQualifier</span>&gt;Distributed over the seat&lt;/<span class="kw">cbc:ValueQualifier</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Mandatory&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SAF&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Safety&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Mandatory&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardPropertyIdentification</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;UR-SF-0450&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;Codana street furniture properties&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Codana Identification Agency&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardPropertyIdentification</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturerParty</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Length&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;1800&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Over the armrests&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Depth&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;620&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Height&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;780&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Seat back at its highest point&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Seat height&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;450&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Above the ground when anchored&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;440&lt;/<span class="kw">cbc:MinimumMeasure</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;460&lt;/<span class="kw">cbc:MaximumMeasure</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;CO2e&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;96&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueFactorNumeric</span>&gt;0.82&lt;/<span class="kw">cbc:ValueFactorNumeric</span>&gt;</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueBaseMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;H87&quot;</span>&gt;1&lt;/<span class="kw">cbc:ValueBaseMeasure</span>&gt;</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmissionStandardReference</span>&gt;Greenhouse Gas Protocol Product Standard&lt;/<span class="kw">cbc:EmissionStandardReference</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageCode</span>&gt;Manufacturing&lt;/<span class="kw">cbc:LifecycleStageCode</span>&gt;</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageDescription</span>&gt;From the ore at the mine to the bench leaving the factory gate.&lt;/<span class="kw">cbc:LifecycleStageDescription</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Mining, steel making, casting, galvanising, sawing and the transport between them.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EmissionCalculationMethod</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CalculationMethodCode</span>&gt;Calculated&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FullnessIndicationCode</span>&gt;Cradle to gate&lt;/<span class="kw">cbc:FullnessIndicationCode</span>&gt;</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmissionFactorSource</span>&gt;The steelworks&#39; and sawmill&#39;s measured energy use of 2025&lt;/<span class="kw">cbc:EmissionFactorSource</span>&gt;</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;VI-LCA-2025&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EmissionCalculationMethod</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CircularityProfile</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaintenanceFrequencyCode</span>&gt;Yearly&lt;/<span class="kw">cbc:MaintenanceFrequencyCode</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaintenanceFrequencyDescription</span>&gt;Tighten the slat bolts and touch up the coating once a year.&lt;/<span class="kw">cbc:MaintenanceFrequencyDescription</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span>&gt;Steel&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;34&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Steel made from Serravona ore in Urvania&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span>&gt;Hardwood&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;22.5&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Slats from Upland State, Bayvarra&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:WasteGenerated</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeCode</span>&gt;Packaging&lt;/<span class="kw">cbc:WasteTypeCode</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeDescription</span>&gt;Stretch film and pallet straps, per bench&lt;/<span class="kw">cbc:WasteTypeDescription</span>&gt;</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;0.4&lt;/<span class="kw">cbc:WasteMeasure</span>&gt;</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:WasteGenerated</span>&gt;</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RepairabilityScore</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoreNumeric</span>&gt;8&lt;/<span class="kw">cbc:ScoreNumeric</span>&gt;</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoringSystemCode</span>&gt;Repairability index, 0–10&lt;/<span class="kw">cbc:ScoringSystemCode</span>&gt;</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RepairabilityScore</span>&gt;</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-RM-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CircularityProfile</span>&gt;</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:InventoryLocation</span>&gt;</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Garden department, ground floor&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:InventoryLocation</span>&gt;</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InventoryReportLine</span>&gt;</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">InventoryReport</span>&gt;</span></code></pre></div>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Keyword</span>&gt;park bench, street furniture&lt;/<span class="kw">cbc:Keyword</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BrandName</span>&gt;Valdara&lt;/<span class="kw">cbc:BrandName</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ModelName</span>&gt;Serra 180&lt;/<span class="kw">cbc:ModelName</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WarrantyInformation</span>&gt;Five years on the frame against corrosion.&lt;/<span class="kw">cbc:WarrantyInformation</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-10442&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span>&gt;Colour&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000027&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;771&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemSpecificationDocumentReference</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-DS-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemSpecificationDocumentReference</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CommodityCode</span>&gt;9401.79.10&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;HS&quot;</span>&gt;9401.79&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransactionConditions</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-TC-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActionCode</span>&gt;Trade&lt;/<span class="kw">cbc:ActionCode</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Sold to trade customers only, per pallet of four benches.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-GTC-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransactionConditions</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Frame material&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;Cast steel, hot-dip galvanised&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Slat wood&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;Kiln-dried hardwood&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Seats&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;3&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;COL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Frame colour&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Optional&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ListValue</span>&gt;Ferro grey&lt;/<span class="kw">cbc:ListValue</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;APP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Appearance&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Optional&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOAD&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Load capacity&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:NameCode</span>&gt;LOAD&lt;/<span class="kw">cbc:NameCode</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TestMethod</span>&gt;Static load on the seat for one hour, three seats loaded evenly, no lasting deformation&lt;/<span class="kw">cbc:TestMethod</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;450&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueQualifier</span>&gt;Distributed over the seat&lt;/<span class="kw">cbc:ValueQualifier</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Mandatory&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SAF&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Safety&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ImportanceCode</span>&gt;Mandatory&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardPropertyIdentification</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;UR-SF-0450&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;Codana street furniture properties&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Codana Identification Agency&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardPropertyIdentification</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturerParty</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Length&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;1800&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Over the armrests&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Depth&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;620&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Height&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;780&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Seat back at its highest point&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span>&gt;Seat height&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;450&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Above the ground when anchored&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;440&lt;/<span class="kw">cbc:MinimumMeasure</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;460&lt;/<span class="kw">cbc:MaximumMeasure</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;CO2e&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;96&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueFactorNumeric</span>&gt;0.82&lt;/<span class="kw">cbc:ValueFactorNumeric</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueBaseMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ValueBaseMeasure</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmissionStandardReference</span>&gt;Greenhouse Gas Protocol Product Standard&lt;/<span class="kw">cbc:EmissionStandardReference</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageCode</span>&gt;Manufacturing&lt;/<span class="kw">cbc:LifecycleStageCode</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageDescription</span>&gt;From the ore at the mine to the bench leaving the factory gate.&lt;/<span class="kw">cbc:LifecycleStageDescription</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Mining, steel making, casting, galvanising, sawing and the transport between them.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EmissionCalculationMethod</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CalculationMethodCode</span>&gt;Calculated&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FullnessIndicationCode</span>&gt;Cradle to gate&lt;/<span class="kw">cbc:FullnessIndicationCode</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmissionFactorSource</span>&gt;The steelworks&#39; and sawmill&#39;s measured energy use of 2025&lt;/<span class="kw">cbc:EmissionFactorSource</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;VI-LCA-2025&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EmissionCalculationMethod</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaintenanceFrequencyCode</span>&gt;Yearly&lt;/<span class="kw">cbc:MaintenanceFrequencyCode</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaintenanceFrequencyDescription</span>&gt;Tighten the slat bolts and touch up the coating once a year.&lt;/<span class="kw">cbc:MaintenanceFrequencyDescription</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span>&gt;Steel&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;34&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Steel made from Serravona ore in Urvania&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span>&gt;Hardwood&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;22.5&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Slats from Upland State, Bayvarra&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:WasteGenerated</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeCode</span>&gt;Packaging&lt;/<span class="kw">cbc:WasteTypeCode</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeDescription</span>&gt;Stretch film and pallet straps, per bench&lt;/<span class="kw">cbc:WasteTypeDescription</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;0.4&lt;/<span class="kw">cbc:WasteMeasure</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:WasteGenerated</span>&gt;</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RepairabilityScore</span>&gt;</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoreNumeric</span>&gt;8&lt;/<span class="kw">cbc:ScoreNumeric</span>&gt;</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoringSystemCode</span>&gt;Repairability index, 0–10&lt;/<span class="kw">cbc:ScoringSystemCode</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RepairabilityScore</span>&gt;</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-RM-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:InventoryLocation</span>&gt;</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Garden department, ground floor&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:InventoryLocation</span>&gt;</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InventoryReportLine</span>&gt;</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">InventoryReport</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>a20c911</code></p></div></footer>
 </body>
 </html>

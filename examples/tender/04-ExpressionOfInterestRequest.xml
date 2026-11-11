@@ -33,7 +33,7 @@
     <cac:QualifyingParty>
       <cbc:ParticipationPercent>60</cbc:ParticipationPercent>
       <cbc:OperatingYearsQuantity unitCode="ANN">22</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">85</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">85</cbc:EmployeeQuantity>
       <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
       <cac:Party>
         <cac:PartyIdentification>
