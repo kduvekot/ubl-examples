@@ -72,8 +72,31 @@ other.
 
 The map is checked as a structure: one connected road network per
 landmass, houses on streets, nothing built on roads or water, believable
-terrain, and customs posts where roads cross a border. The world's code
-lists are checked to hold exactly the codes of the countries layer.
+terrain, and customs posts where roads cross a border.
+
+The world's code lists are made from one source, `world/codelists/lists.json`,
+and the committed files must be what it makes. The country and currency
+lists hold exactly the codes of the countries layer. No invented code may be
+a real one: the currencies are checked against ISO 4217 and the market
+identifier codes against ISO 10383, both kept in `world/codelists/sources`.
+A copy of a real list may hold only codes that its source has.
+
+## The codes in the documents
+
+The build gives every code its list. A code must be a code of its list,
+compared exactly, so `en` is not `EN`; the element gets the list's `listID`,
+and its reason says what the code means in the list. A text next to a code,
+such as `CertificateType` beside `CertificateTypeCode`, carries the list's
+name for the code. The build also checks what agrees between codes:
+
+- every allowance and charge has a reason code;
+- a tax exemption reason comes from the list of the seller's country;
+- a payment's clearing channel is one its payment system has, and the
+  service level fits it (decision Q18);
+- the packing group and the packaging danger level of a UN number agree
+  (I and 1, II and 2, III and 3, NA and 4), the hazardous category is the
+  class, and an emergency card belongs to a class of the goods;
+- a size class follows from the company's headcount and turnover.
 
 ## The example documents
 
@@ -83,13 +106,22 @@ validated in the two phases UBL prescribes:
 
 - **Phase 1:** against the UBL 2.5 runtime schema of its document type,
   from the endorsed set.
-- **Phase 2:** its coded values against the code lists, using UBL's
+- **Phase 2:** its coded values against the code lists, using
   context/value associations (CVA). It runs twice. First UBL's own phase 2,
-  unchanged, with the UBL default code lists: it must object to exactly the
-  world's country and currency codes and to nothing else. Then the same
-  associations with the world's code lists in place of the defaults: here
-  every value, and the list identifier where a document gives one, must
-  pass.
+  unchanged, with the UBL default code lists. The world replaces some of
+  those lists, so this run may object only to values in their contexts:
+  the countries and currencies, the lower-case languages, the allowance and
+  charge codes, and the lists to which the world gives a `listID`. Then the
+  world's own associations (`world/codelists/UBL-World-2.5.cva`), which
+  replace UBL's: every code element must carry the `listID` of its list and
+  a code of that list. An element with several meanings is bound by its
+  parent element; an allowance by its `ChargeIndicator` (UN/EDIFACT 5189 for
+  an allowance, 7161 or 5189 for a charge); where a context allows several
+  lists, the `listID` chooses. A code element that no association covers is
+  an error, unless it is a code a party defines for itself. The attributes
+  are checked too: `currencyID` against the world's currencies, `unitCode`
+  and `mimeCode` against UBL's lists, and `languageID` as a BCP 47 tag, a
+  language of the world's ISO 639 list with an optional region.
 
 The committed examples must also be up to date: they are generated again
 from the world's layers and compared, so a change in the world cannot leave

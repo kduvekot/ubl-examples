@@ -100,7 +100,7 @@
             <literal>world/codelists/</literal>
           </entry>
           <entry>
-            UBL default code lists with the world's codes added
+            the world's code lists, and which code element uses which
           </entry>
         </row>
       </tbody>
@@ -276,6 +276,126 @@
       arrangements.
     </para>
   </section>
+  <section id="S-03-world-code-lists">
+    <title>Code lists</title>
+    <para>
+      Every code in the examples comes from a code list, and every code
+      element names its list in <literal>listID</literal>. The lists are
+      made from one source,
+      <literal>world/codelists/lists.json</literal>, as genericode
+      files, together with the world's context/value associations, which
+      say which list each element uses. Where a standard has a list for
+      a concept, the world uses it; otherwise the Lumeport Trade Accord,
+      the treaty between the three countries, has a regional list. A few
+      lists are national, because the countries differ: legal forms, tax
+      exemption reasons, Bayvarra's states and Urvania's customs tariff.
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          <emphasis role="strong">Lists of standards</emphasis> are used
+          where UBL uses them (its default lists), where practice uses
+          them (EN 16931 uses UN/EDIFACT 1001, 5189 and 7161), or where
+          a standard is the authority for its domain: the IMO for
+          emergency schedules and security levels, the WCO for the
+          Harmonized System, the UN for product classification (CPC) and
+          dangerous goods, ISO 20022 for payments, EPSG for coordinates,
+          PRONOM for file formats. UBL is not &quot;EDIFACT in
+          XML&quot;, so a UN/EDIFACT list is not used just because it
+          exists. Each is a world copy of the codes the world uses, with
+          others of the same list, made from the copy of the source kept
+          in <literal>world/codelists/sources</literal>; its
+          <literal>listID</literal> is in UBL's text style, such as
+          <literal>UN/EDIFACT EDED 1001</literal> or
+          <literal>WCO HS 2022</literal>. No code of such a list is
+          invented.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Regional and national lists</emphasis>
+          have short upper-case codes and a name in English, Urvanian
+          and Lisavan; their <literal>listID</literal> is a URN such as
+          <literal>urn:ubl-examples:world:codelist:AddressTypeCode</literal>
+          or
+          <literal>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</literal>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">One list per concept.</emphasis>
+          Elements that only qualify one concept share its list, as
+          <literal>PreviousMeterReadingMethodCode</literal> and
+          <literal>LatestMeterReadingMethodCode</literal> do. An element
+          used for several things, such as <literal>TypeCode</literal>,
+          gets one list per meaning, chosen by its parent element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">No filler.</emphasis> A code says
+          something the receiver needs. Where &quot;none&quot; matters,
+          it is a defined code, such as UN/EDIFACT 8339 code 4 &quot;Not
+          assigned&quot; for goods without a packing group.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      Some choices differ from common practice, on purpose:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          <emphasis role="strong">Allowances and charges.</emphasis> An
+          allowance takes its reason from UN/EDIFACT 5189 and a charge
+          from 7161, as in EN 16931. Where 7161 has no code, the world
+          uses 5189 for a charge too, with that list's
+          <literal>listID</literal> (96 insurance, 48 interest on
+          arrears), which EN 16931 does not allow. UBL's own default
+          list for this element is labelled 5189 but holds the codes of
+          UN/EDIFACT 4465, so the world replaces it.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Languages.</emphasis> Language codes
+          are written in lower case, as ISO 639 and BCP 47 recommend;
+          UBL's copy of the list is in upper case and merges the two
+          alpha-3 codes of a language into one value. The world's list
+          follows the ISO 639-2 registration authority and adds
+          <literal>qau</literal> and <literal>qal</literal>. Each sender
+          tags its English texts with its own country as the region,
+          <literal>en-XU</literal>, <literal>en-XB</literal> or
+          <literal>en-XL</literal>, which BCP 47 allows for private use.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Invoice periods.</emphasis>
+          <literal>InvoicePeriod/DescriptionCode</literal> describes the
+          period (a month), as UBL defines it, not the tax point date
+          code that EN 16931 puts there.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Procurement.</emphasis> The Accord's
+          procurement rules are modelled on the EU's, without being EU
+          law: its lists give the matching eForms or ESPD code.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="strong">Customs.</emphasis> The Accord is a
+          free trade area, not a customs union: it has one customs data
+          model with common procedures and statuses, while tariffs stay
+          national. A procedure code is the requested procedure followed
+          by the previous one, numbered differently from the EU's, so
+          release for free circulation is <literal>1000</literal>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </section>
   <section id="S-03-world-parties">
     <title>Parties</title>
     <para>
@@ -301,7 +421,16 @@
           an <emphasis role="strong">identity</emphasis>: a name, the
           identifiers of its country's schemes, a postal address in its
           country's format, an electronic address, a contact, and, where
-          it is paid, an account at one of the world's banks.
+          it is paid, an account at one of the world's banks;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          for a company, its <emphasis role="strong">headcount and
+          turnover</emphasis>, from which its size class follows by the
+          Trade Accord's limits, modelled on the EU definition of small
+          and medium-sized enterprises and given in all three
+          currencies.
         </para>
       </listitem>
     </itemizedlist>
@@ -326,15 +455,16 @@
       Every party that sells has items. Goods carry what the documents
       along their way need: a seller's item identifier, a world item
       number issued by the identifier issuing agency (twelve digits with
-      a check digit, a scheme of the world, not a GTIN), a Harmonized
-      System customs tariff code, the country of origin, dimensions, net
-      and gross weight, and the packaging. Services have a unit and a
-      price. Units of measure and packaging types are UN/ECE
-      Recommendation 20 and 21 codes from the UBL default code lists.
-      Prices are in the seller's currency. A unit price may be finer
-      than the currency, as an electricity tariff of 27.3 ferra per
-      kilowatt hour is, but every amount to pay is rounded to the
-      currency's minor unit.
+      a check digit, a scheme of the world, not a GTIN), its
+      classification in the UN Central Product Classification (CPC), its
+      Harmonized System subheading and, in Urvania, the national tariff
+      code below it, the country of origin, dimensions, net and gross
+      weight, and the packaging. Services have a unit and a price. Units
+      of measure and packaging types are UN/ECE Recommendation 20 and 21
+      codes from the UBL default code lists. Prices are in the seller's
+      currency. A unit price may be finer than the currency, as an
+      electricity tariff of 27.3 ferra per kilowatt hour is, but every
+      amount to pay is rounded to the currency's minor unit.
     </para>
     <para>
       Items connect the chains. The park bench is made with slats from

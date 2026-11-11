@@ -129,9 +129,63 @@
       The map is checked as a structure: one connected road network per
       landmass, houses on streets, nothing built on roads or water,
       believable terrain, and customs posts where roads cross a border.
-      The world's code lists are checked to hold exactly the codes of
-      the countries layer.
     </para>
+    <para>
+      The world's code lists are made from one source,
+      <literal>world/codelists/lists.json</literal>, and the committed
+      files must be what it makes. The country and currency lists hold
+      exactly the codes of the countries layer. No invented code may be
+      a real one: the currencies are checked against ISO 4217 and the
+      market identifier codes against ISO 10383, both kept in
+      <literal>world/codelists/sources</literal>. A copy of a real list
+      may hold only codes that its source has.
+    </para>
+  </section>
+  <section id="S-05-validation-the-codes-in-the-documents">
+    <title>The codes in the documents</title>
+    <para>
+      The build gives every code its list. A code must be a code of its
+      list, compared exactly, so <literal>en</literal> is not
+      <literal>EN</literal>; the element gets the list's
+      <literal>listID</literal>, and its reason says what the code means
+      in the list. A text next to a code, such as
+      <literal>CertificateType</literal> beside
+      <literal>CertificateTypeCode</literal>, carries the list's name
+      for the code. The build also checks what agrees between codes:
+    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          every allowance and charge has a reason code;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          a tax exemption reason comes from the list of the seller's
+          country;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          a payment's clearing channel is one its payment system has,
+          and the service level fits it (decision Q18);
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          the packing group and the packaging danger level of a UN
+          number agree (I and 1, II and 2, III and 3, NA and 4), the
+          hazardous category is the class, and an emergency card belongs
+          to a class of the goods;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          a size class follows from the company's headcount and
+          turnover.
+        </para>
+      </listitem>
+    </itemizedlist>
   </section>
   <section id="S-05-validation-the-example-documents">
     <title>The example documents</title>
@@ -151,13 +205,29 @@
       <listitem>
         <para>
           <emphasis role="strong">Phase 2:</emphasis> its coded values
-          against the code lists, using UBL's context/value associations
+          against the code lists, using context/value associations
           (CVA). It runs twice. First UBL's own phase 2, unchanged, with
-          the UBL default code lists: it must object to exactly the
-          world's country and currency codes and to nothing else. Then
-          the same associations with the world's code lists in place of
-          the defaults: here every value, and the list identifier where
-          a document gives one, must pass.
+          the UBL default code lists. The world replaces some of those
+          lists, so this run may object only to values in their
+          contexts: the countries and currencies, the lower-case
+          languages, the allowance and charge codes, and the lists to
+          which the world gives a <literal>listID</literal>. Then the
+          world's own associations
+          (<literal>world/codelists/UBL-World-2.5.cva</literal>), which
+          replace UBL's: every code element must carry the
+          <literal>listID</literal> of its list and a code of that list.
+          An element with several meanings is bound by its parent
+          element; an allowance by its
+          <literal>ChargeIndicator</literal> (UN/EDIFACT 5189 for an
+          allowance, 7161 or 5189 for a charge); where a context allows
+          several lists, the <literal>listID</literal> chooses. A code
+          element that no association covers is an error, unless it is a
+          code a party defines for itself. The attributes are checked
+          too: <literal>currencyID</literal> against the world's
+          currencies, <literal>unitCode</literal> and
+          <literal>mimeCode</literal> against UBL's lists, and
+          <literal>languageID</literal> as a BCP 47 tag, a language of
+          the world's ISO 639 list with an optional region.
         </para>
       </listitem>
     </itemizedlist>

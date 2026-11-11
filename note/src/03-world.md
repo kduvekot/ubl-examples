@@ -12,7 +12,7 @@ before the next layer builds on it.
 | Documents | `world/documents.json` | the flows of documents between the parties |
 | Items | `world/items.json` | what the parties sell: goods and services, with prices |
 | UBL model | `world/ubl-model.json` | extracted from the UBL 2.5 semantic model |
-| Code lists | `world/codelists/` | UBL default code lists with the world's codes added |
+| Code lists | `world/codelists/` | the world's code lists, and which code element uses which |
 
 ## Countries
 
@@ -134,6 +134,65 @@ north coast and crosses the border by pipeline. In Bayvarra and on the
 island one company still does everything, so the three countries show
 three arrangements.
 
+## Code lists
+
+Every code in the examples comes from a code list, and every code element
+names its list in `listID`. The lists are made from one source,
+`world/codelists/lists.json`, as genericode files, together with the world's
+context/value associations, which say which list each element uses. Where a
+standard has a list for a concept, the world uses it; otherwise the Lumeport
+Trade Accord, the treaty between the three countries, has a regional list.
+A few lists are national, because the countries differ: legal forms, tax
+exemption reasons, Bayvarra's states and Urvania's customs tariff.
+
+- **Lists of standards** are used where UBL uses them (its default lists),
+  where practice uses them (EN 16931 uses UN/EDIFACT 1001, 5189 and 7161),
+  or where a standard is the authority for its domain: the IMO for
+  emergency schedules and security levels, the WCO for the Harmonized
+  System, the UN for product classification (CPC) and dangerous goods,
+  ISO 20022 for payments, EPSG for coordinates, PRONOM for file formats.
+  UBL is not "EDIFACT in XML", so a UN/EDIFACT list is not used just because
+  it exists. Each is a world copy of the codes the world uses, with others of
+  the same list, made from the copy of the source kept in
+  `world/codelists/sources`; its `listID` is in UBL's text style, such as
+  `UN/EDIFACT EDED 1001` or `WCO HS 2022`. No code of such a list is invented.
+- **Regional and national lists** have short upper-case codes and a name in
+  English, Urvanian and Lisavan; their `listID` is a URN such as
+  `urn:ubl-examples:world:codelist:AddressTypeCode` or
+  `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`.
+- **One list per concept.** Elements that only qualify one concept share its
+  list, as `PreviousMeterReadingMethodCode` and `LatestMeterReadingMethodCode`
+  do. An element used for several things, such as `TypeCode`, gets one list
+  per meaning, chosen by its parent element.
+- **No filler.** A code says something the receiver needs. Where "none"
+  matters, it is a defined code, such as UN/EDIFACT 8339 code 4 "Not
+  assigned" for goods without a packing group.
+
+Some choices differ from common practice, on purpose:
+
+- **Allowances and charges.** An allowance takes its reason from
+  UN/EDIFACT 5189 and a charge from 7161, as in EN 16931. Where 7161 has no
+  code, the world uses 5189 for a charge too, with that list's `listID`
+  (96 insurance, 48 interest on arrears), which EN 16931 does not allow.
+  UBL's own default list for this element is labelled 5189 but holds the
+  codes of UN/EDIFACT 4465, so the world replaces it.
+- **Languages.** Language codes are written in lower case, as ISO 639 and
+  BCP 47 recommend; UBL's copy of the list is in upper case and merges the
+  two alpha-3 codes of a language into one value. The world's list follows
+  the ISO 639-2 registration authority and adds `qau` and `qal`. Each
+  sender tags its English texts with its own country as the region,
+  `en-XU`, `en-XB` or `en-XL`, which BCP 47 allows for private use.
+- **Invoice periods.** `InvoicePeriod/DescriptionCode` describes the
+  period (a month), as UBL defines it, not the tax point date code that
+  EN 16931 puts there.
+- **Procurement.** The Accord's procurement rules are modelled on the EU's,
+  without being EU law: its lists give the matching eForms or ESPD code.
+- **Customs.** The Accord is a free trade area, not a customs union: it has
+  one customs data model with common procedures and statuses, while tariffs
+  stay national. A procedure code is the requested procedure followed by the
+  previous one, numbered differently from the EU's, so release for free
+  circulation is `1000`.
+
 ## Parties
 
 The parties are the organisations of the world, chosen so that every party
@@ -144,7 +203,10 @@ analysis). Each party has:
 - a **place** on the map, in a town or a locality;
 - an **identity**: a name, the identifiers of its country's schemes, a
   postal address in its country's format, an electronic address, a contact,
-  and, where it is paid, an account at one of the world's banks.
+  and, where it is paid, an account at one of the world's banks;
+- for a company, its **headcount and turnover**, from which its size class
+  follows by the Trade Accord's limits, modelled on the EU definition of
+  small and medium-sized enterprises and given in all three currencies.
 
 Names are invented and checked against real organisations. E-mail
 addresses use the reserved domain `.example` (RFC 2606), so that none can
@@ -162,8 +224,9 @@ countries.
 Every party that sells has items. Goods carry what the documents along
 their way need: a seller's item identifier, a world item number issued by
 the identifier issuing agency (twelve digits with a check digit, a scheme of
-the world, not a GTIN), a Harmonized System customs tariff code, the country
-of origin, dimensions, net and gross weight, and the packaging. Services
+the world, not a GTIN), its classification in the UN Central Product
+Classification (CPC), its Harmonized System subheading and, in Urvania, the
+national tariff code below it, the country of origin, dimensions, net and gross weight, and the packaging. Services
 have a unit and a price. Units of measure and packaging types are UN/ECE
 Recommendation 20 and 21 codes from the UBL default code lists. Prices are
 in the seller's currency. A unit price may be finer than the currency, as
