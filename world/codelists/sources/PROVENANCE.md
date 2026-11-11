@@ -12,12 +12,15 @@ Machine-readable copies of the authoritative lists the world's code lists are bu
 | cpc/ | https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/CPC_Ver_2_1_english_structure.txt | CPC Ver.2.1 (Ver.3.0 was published in June 2025) |
 | iana/ | https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (BCP 47) | as published 2026-11-11 |
 | epsg/ | https://apps.epsg.org/api/v1/CoordRefSystem/4326/ | as published 2026-11-11 |
+| bic/ | https://www.bic-code.org/bic-codes/&lt;code&gt;/ (the BIC register of ISO 6346 owner codes): the result of looking up the world's container owner codes, not a copy of the register | 2026-11-11 |
 | pronom/ | https://www.nationalarchives.gov.uk/PRONOM/fmt/479.xml, fmt/480.xml, fmt/481.xml (PDF/A-3a, -3b, -3u) | as published 2026-11-11 |
 | rec28/ | https://unece.org/trade/uncefact/cl-recommendations (Rec 28): `Rec28_Rev4.2e_2018.xls`, the code list "Revision 4.2" (2018, the current code list; sheet header "CODES FOR TYPES OF MEANS OF TRANSPORT Revision 4.2"), and `Rec28_Rev3e_2010.pdf`, the Recommendation text, Revision 3 (CEFACT/ICG/2010/IC011, approved 12 July 2010). Downloaded by the project owner from a normal browser on 2026-11-11, because unece.org blocks automated access. | Revision 4.2 (code list), Revision 3 (text) |
+| optd/ | https://raw.githubusercontent.com/opentraveldata/opentraveldata/master/opentraveldata/optd_aircraft.csv (OpenTravelData, CC BY 4.0): IATA aircraft type codes with ICAO codes. A secondary source: the official list, IATA SSIM Appendix A, is not public. ATF = ATR 72 Freighter (ICAO AT72) is confirmed by Airport Coordination Netherlands, "Noise values for slot allocation" S25 (note 22.913.02, 30 August 2024), and by avcodes.co.uk and SeatLink, all read 2026-11-11. | commit cfc7b82f6c96cdf7cd12c7be000bc2e0f82dbdaf |
 
 ## SHA-256
 
 ```
+06c22576347c5b44cb83e1113a0bd2702418cd2fa61838dc1ace37b57a7b2693  ./optd/optd_aircraft.csv
 cb572a961ad83e131e0fb71b38c591d591c9187e32e2733d48e50ca43596d2a7  ./rec28/Rec28_Rev3e_2010.pdf
 69d9c888a31609943c568b48a8f4bb202f54f6cd1e402ee9616062cccab7c96b  ./rec28/Rec28_Rev4.2e_2018.xls
 1c3e88e5fa67b9ba0d27594cb3363f717321f58fe0308be60b326ebf927c1b92  ./cpc/CPC_Ver_2_1_english_structure.txt
@@ -35,6 +38,7 @@ eb56a731294d8b6f816e829d28391f191c00ebbbc3a562a1e8208777e592b495  ./pronom/fmt-4
 9c99c340d597793064c54b8944ad7626d3e34b50e71e82d37279e8f7d43654bb  ./pronom/fmt-480.xml
 46a53c29812a821a1f5ffd89632db0821163e0cbe71081d80e29fdbadf98a2f9  ./pronom/fmt-481.xml
 63b3fc56d73c8c4a7d8c6488aba0d76bf21218da8eef7fd2702af6c7acaf6b95  ./uncefact/PROVENANCE.txt
+928503255be4e2c53abc18d2e7b6e750e701b2f881a42b6c54a399d36d0860b6  ./bic/owner-codes.txt
 e84677fbd02f65cc8c123412d15e5ce566d89a873f4e8cd845eb454b713aa518  ./uncefact/allowancechargeidcodelist.json
 2fb6e178cffea3181849e6c220e33619f0ca3a27aedab2501f661f8d60b4339c  ./uncefact/allowancechargereasoncodelist.json
 d33c42ffa70af3c095630f9484ff9bbafc655d08303fb4216fc78aa863edf62d  ./uncefact/cargocategorycodelist.json
