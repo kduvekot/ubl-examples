@@ -33,7 +33,7 @@
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qau</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -54,10 +54,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-        <cbc:CompanyID>XU007318479</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007318479</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
@@ -68,7 +68,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-        <cbc:CompanyID>XU-R-104548</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
@@ -133,7 +133,7 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qau</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -154,10 +154,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID>XU007299291</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
@@ -168,7 +168,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
         <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
@@ -194,7 +194,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042501</cbc:ID>
+          <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
@@ -213,7 +213,7 @@
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
-        <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+        <cbc:ID>VI-SP-2026-01</cbc:ID>
         <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
         <cac:Party>
@@ -242,7 +242,7 @@
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF84RRINV260208</cbc:InstructionNote>
-    <cbc:PaymentID>RF84RRINV260208</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF84RRINV260208</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU45CREV0000418916</cbc:ID>
       <cbc:Name>Rinova Recovery SRU</cbc:Name>
@@ -302,10 +302,10 @@
       <cbc:TaxableAmount currencyID="XUF">471770</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">94354</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -330,11 +330,11 @@
         <cbc:ID>RR-SVC-01</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
     </cac:Item>

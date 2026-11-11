@@ -7247,6 +7247,203 @@
      "The verification could not decide."
     ]
    }
+  },
+  "UNCL5305": {
+   "scope": "external",
+   "name": "UN/EDIFACT 5305 Duty or tax or fee category",
+   "listID": "UN/EDIFACT EDED 5305",
+   "agency": "UN/CEFACT",
+   "version": "D22A",
+   "source": {
+    "format": "cefact",
+    "file": "uncefact/taxcategorycodelist.json",
+    "version": "D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)"
+   },
+   "codes": "all"
+  },
+  "UNCL5153": {
+   "scope": "external",
+   "name": "UN/EDIFACT 5153 Duty or tax or fee type name",
+   "listID": "UN/EDIFACT EDED 5153",
+   "agency": "UN/CEFACT",
+   "version": "D22A",
+   "source": {
+    "format": "cefact",
+    "file": "uncefact/taxtypecodelist.json",
+    "version": "D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)"
+   },
+   "codes": "all"
+  },
+  "Incoterms": {
+   "scope": "external",
+   "name": "Incoterms 2020",
+   "listID": "INCOTERMS",
+   "agency": "International Chamber of Commerce",
+   "version": "Incoterms 2020",
+   "reference": "ICC Incoterms 2020 (ICC publication 723E; the rules' three-letter names as the ICC publishes them)",
+   "codes": {
+    "EXW": [
+     "Ex Works",
+     ""
+    ],
+    "FCA": [
+     "Free Carrier",
+     ""
+    ],
+    "CPT": [
+     "Carriage Paid To",
+     ""
+    ],
+    "CIP": [
+     "Carriage and Insurance Paid To",
+     ""
+    ],
+    "DAP": [
+     "Delivered at Place",
+     ""
+    ],
+    "DPU": [
+     "Delivered at Place Unloaded",
+     ""
+    ],
+    "DDP": [
+     "Delivered Duty Paid",
+     ""
+    ],
+    "FAS": [
+     "Free Alongside Ship",
+     "Sea and inland waterway transport only."
+    ],
+    "FOB": [
+     "Free On Board",
+     "Sea and inland waterway transport only."
+    ],
+    "CFR": [
+     "Cost and Freight",
+     "Sea and inland waterway transport only."
+    ],
+    "CIF": [
+     "Cost, Insurance and Freight",
+     "Sea and inland waterway transport only."
+    ]
+   }
+  },
+  "DimensionAttribute": {
+   "scope": "regional",
+   "name": "Dimension attribute",
+   "description": "Which dimension of a thing a measure gives: for Dimension, MeasurementDimension and RangeDimension. Each code names the UN/EDIFACT 6313 measured attribute it corresponds to.",
+   "codes": {
+    "LENGTH": [
+     "Length",
+     "The longest horizontal dimension. UN/EDIFACT 6313: LN."
+    ],
+    "WIDTH": [
+     "Width",
+     "The horizontal dimension across the length. UN/EDIFACT 6313: WD."
+    ],
+    "HEIGHT": [
+     "Height",
+     "The vertical dimension. UN/EDIFACT 6313: HT."
+    ],
+    "DEPTH": [
+     "Depth",
+     "The dimension from front to back. UN/EDIFACT 6313: DP."
+    ],
+    "THICKNESS": [
+     "Thickness",
+     "The smallest dimension of a sheet, board or film. UN/EDIFACT 6313: TH."
+    ],
+    "DIAMETER": [
+     "Diameter",
+     "The diameter of a round thing. UN/EDIFACT 6313: DI."
+    ],
+    "SEATHEIGHT": [
+     "Seat height",
+     "The height of a seat above the floor. UN/EDIFACT 6313: HT."
+    ],
+    "BENCHLENGTH": [
+     "Bench length",
+     "The length of the seat of a bench. UN/EDIFACT 6313: LN."
+    ],
+    "LOADINGLENGTH": [
+     "Loading length",
+     "The length of the loading floor of a vehicle. UN/EDIFACT 6313: LN."
+    ],
+    "SLOTLENGTH": [
+     "Slot length",
+     "The length of the slot a thing occupies on a carrier, such as a container on a wagon. UN/EDIFACT 6313: LN."
+    ]
+   }
+  },
+  "TemperatureAttribute": {
+   "scope": "regional",
+   "name": "Temperature attribute",
+   "description": "What a temperature is the temperature of, or what it is for: for every Temperature element.",
+   "codes": {
+    "STORAGE": [
+     "Storage temperature",
+     "The temperature the goods are to be stored at."
+    ],
+    "TRANSPORT": [
+     "Transport temperature",
+     "The temperature in the cargo space during transport."
+    ],
+    "PRODUCT": [
+     "Product temperature",
+     "The temperature of the goods themselves."
+    ],
+    "AMBIENT": [
+     "Ambient temperature",
+     "The temperature of the space around the goods, such as a hall."
+    ],
+    "FLASHPOINT": [
+     "Flashpoint",
+     "The lowest temperature at which the vapour of a liquid ignites."
+    ],
+    "EMERGENCY": [
+     "Emergency temperature",
+     "The temperature above which emergency procedures apply."
+    ],
+    "CONTROL": [
+     "Control temperature",
+     "The highest temperature at which a substance can be transported safely."
+    ],
+    "WATER": [
+     "Water temperature",
+     "The temperature of water, such as ballast water."
+    ]
+   }
+  },
+  "OtherAttribute": {
+   "scope": "regional",
+   "name": "Attribute",
+   "description": "Other attributes measured or described: space, capacity, colour and conditions.",
+   "codes": {
+    "COLOUR": [
+     "Colour",
+     "The colour of an item or of a part of it."
+    ],
+    "FLOORSPACE": [
+     "Floor space",
+     "The floor area a thing takes."
+    ],
+    "PALLETPLACES": [
+     "Pallet places",
+     "The number of pallet places a thing takes."
+    ],
+    "TEU": [
+     "Container capacity",
+     "A capacity in twenty-foot equivalent units."
+    ],
+    "SEAL": [
+     "Seal",
+     "The state of a seal."
+    ],
+    "WEIGHT": [
+     "Weight",
+     "The weight of a thing."
+    ]
+   }
   }
  },
  "bindings": [
@@ -8811,6 +9008,107 @@
   {
    "element": "ValidationResultCode",
    "list": "ValidationResult"
+  },
+  {
+   "element": "ID",
+   "list": "UNCL5305",
+   "parents": [
+    "TaxCategory",
+    "ClassifiedTaxCategory",
+    "ApplicableTaxCategory"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "list": "UNCL5153",
+   "parents": [
+    "TaxScheme"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "list": "Language",
+   "parents": [
+    "Language",
+    "AdditionalNoticeLanguage",
+    "DefaultLanguage",
+    "RequestedLanguage"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "HazardClassID",
+   "list": "UNModelRegsClass",
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "list": "UNModelRegsClass",
+   "parents": [
+    "SecondaryHazard"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "list": "Incoterms",
+   "parents": [
+    "DeliveryTerms"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "RegistrationNationalityID",
+   "list": "Country",
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "list": "DimensionAttribute",
+   "parents": [
+    "Dimension",
+    "MeasurementDimension",
+    "RangeDimension"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "list": "TemperatureAttribute",
+   "parents": [
+    "Temperature",
+    "AdditionalTemperature",
+    "BallastWaterTemperature",
+    "EmergencyTemperature",
+    "FlashpointTemperature",
+    "MaximumTemperature",
+    "MinimumTemperature"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "list": [
+    "OtherAttribute",
+    "TemperatureAttribute"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "list": "OtherAttribute",
+   "parents": [
+    "FloorSpaceMeasurementDimension",
+    "PalletSpaceMeasurementDimension",
+    "TotalCapacityDimension",
+    "PhysicalAttribute"
+   ],
+   "attribute": "schemeID"
   }
  ],
  "unlisted": [

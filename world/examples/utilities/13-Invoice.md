@@ -75,8 +75,8 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Selanu Telecom**  
   The trading name; identity of Selanu Telecom (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -99,8 +99,8 @@ Inside `AccountingSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Telecom Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Telecom (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42407**  
-  Number in the Island companies register; identity of Selanu Telecom (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Telecom (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Telecom (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -156,8 +156,8 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -180,8 +180,8 @@ Inside `AccountingCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
   The name under which the party is registered, with its legal form; identity of Velumi Trading (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC41859**  
-  Number in the Island companies register; identity of Velumi Trading (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Velumi Trading (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -259,8 +259,8 @@ Inside `PaymentMeans`:
   The payment system the transfer runs over: the domestic clearing.
 - `InstructionNote` = **Quote RF26STINV260323**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF26STINV260323**  
-  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `PaymentID` = **RF26STINV260323** (schemeID `ISO 11649`)  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XL88BSEL0004293889** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Selanu Telecom Ltd**  
@@ -337,8 +337,8 @@ Inside `AllowanceCharge`:
   5 % of the six subscriptions.
 - `BaseAmount` = **127.080** (currencyID `XLC`)  
   The six subscriptions.
-- `TaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxCategory/TaxScheme/Name` = **No general sales tax**  
@@ -354,8 +354,8 @@ Inside `TaxTotal`:
   The lines less the discount: no tax applies on the island.
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
@@ -402,8 +402,8 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/SellersItemIdentification/ID` = **ST-BL**  
   The seller's own item number; item telecom-line of Selanu Telecom (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
@@ -434,8 +434,8 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/SellersItemIdentification/ID` = **ST-GB**  
   The seller's own item number; item telecom-data of Selanu Telecom (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
@@ -488,7 +488,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -506,7 +506,7 @@ Inside `InvoiceLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42407</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -558,7 +558,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -576,7 +576,7 @@ Inside `InvoiceLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC41859</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -642,7 +642,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF26STINV260323</cbc:InstructionNote>
-    <cbc:PaymentID>RF26STINV260323</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF26STINV260323</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL88BSEL0004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
@@ -699,7 +699,7 @@ Inside `InvoiceLine`:
     <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
     <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
     <cac:TaxCategory>
-      <cbc:ID>O</cbc:ID>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
       <cac:TaxScheme>
         <cbc:Name>No general sales tax</cbc:Name>
@@ -712,7 +712,7 @@ Inside `InvoiceLine`:
       <cbc:TaxableAmount currencyID="XLC">135.566</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
@@ -745,7 +745,7 @@ Inside `InvoiceLine`:
         <cbc:ID>ST-BL</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
@@ -775,7 +775,7 @@ Inside `InvoiceLine`:
         <cbc:ID>ST-GB</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>

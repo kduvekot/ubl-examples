@@ -95,8 +95,8 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -119,8 +119,8 @@ Inside `AccountingCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
   The name under which the party is registered, with its legal form; identity of Velumi Trading (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC41859**  
-  Number in the Island companies register; identity of Velumi Trading (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Velumi Trading (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -174,8 +174,8 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Selanu Telecom**  
   The trading name; identity of Selanu Telecom (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -198,8 +198,8 @@ Inside `AccountingSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Telecom Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Telecom (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42407**  
-  Number in the Island companies register; identity of Selanu Telecom (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Telecom (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Telecom (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -249,8 +249,8 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `InstructionID` = **VT-PAY-26-0313**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF26STINV260323**  
-  The creditor reference from the invoice, quoted so the payee can match the payment automatically.
+- `PaymentID` = **RF26STINV260323** (schemeID `ISO 11649`)  
+  The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XL13BSEL0003665515** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Velumi Trading Ltd**  
@@ -419,7 +419,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -437,7 +437,7 @@ Inside `RemittanceAdviceLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC41859</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -486,7 +486,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -504,7 +504,7 @@ Inside `RemittanceAdviceLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42407</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -545,7 +545,7 @@ Inside `RemittanceAdviceLine`:
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>VT-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID>RF26STINV260323</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF26STINV260323</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>

@@ -83,8 +83,8 @@ Inside `DespatchSupplierParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The trading name; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -149,8 +149,8 @@ Inside `DespatchSupplierParty`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42544**  
-  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **2009-08-17**  
   The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
@@ -210,8 +210,8 @@ Inside `DeliveryCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -234,8 +234,8 @@ Inside `DeliveryCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42681**  
-  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -401,7 +401,7 @@ Inside `DespatchLine`:
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -454,7 +454,7 @@ Inside `DespatchLine`:
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
-        <cbc:CompanyID>IC42544</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
@@ -508,7 +508,7 @@ Inside `DespatchLine`:
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -526,7 +526,7 @@ Inside `DespatchLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>

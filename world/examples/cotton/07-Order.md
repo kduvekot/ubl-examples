@@ -53,8 +53,8 @@ Inside `BuyerCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PartyName/Name` = **Lumeport Textile Mill**  
   The trading name; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -85,12 +85,12 @@ Inside `BuyerCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeport Textile Mill Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-1237809**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Textile Mill (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-1237809** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Textile Mill (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -99,8 +99,8 @@ Inside `BuyerCustomerParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Textile Mill Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20412603**  
-  Number in the Federal business register of Bayvarra; identity of Lumeport Textile Mill (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeport Textile Mill (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -154,8 +154,8 @@ Inside `SellerSupplierParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -178,8 +178,8 @@ Inside `SellerSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42681**  
-  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -242,7 +242,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **FOB** (schemeID `INCOTERMS`)  
-  Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk passes when the bales are on board.
+  Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk passes when the bales are on board. The code is from the world's copy of Incoterms 2020: FOB = Free On Board. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/Description` = **Port of Selanu**  
   Where the delivery terms place the handover of the goods.
 
@@ -263,8 +263,8 @@ Inside `TaxTotal`:
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
@@ -385,7 +385,7 @@ Inside `OrderLine`:
         <cbc:Name>Lumeport Textile Mill</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -407,10 +407,10 @@ Inside `OrderLine`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1237809</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1237809</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -422,7 +422,7 @@ Inside `OrderLine`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20412603</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -473,7 +473,7 @@ Inside `OrderLine`:
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -491,7 +491,7 @@ Inside `OrderLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -561,7 +561,7 @@ Inside `OrderLine`:
       <cbc:TaxableAmount currencyID="XLC">6055.452</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>

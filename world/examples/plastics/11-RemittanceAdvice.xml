@@ -31,7 +31,7 @@
         <cbc:Name>Rivermouth Packaging</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -53,10 +53,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1238220</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1238220</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -68,7 +68,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20412740</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -152,7 +152,7 @@
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qau</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -173,10 +173,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-        <cbc:CompanyID>XU007318479</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007318479</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
@@ -187,7 +187,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-        <cbc:CompanyID>XU-R-104548</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
@@ -239,7 +239,7 @@
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>RP-PAY-26-0882</cbc:InstructionID>
-    <cbc:PaymentID>RF89RRINV260894</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF89RRINV260894</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB66BLUM0004712805</cbc:ID>
       <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>

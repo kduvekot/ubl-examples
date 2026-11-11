@@ -31,7 +31,7 @@
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -55,10 +55,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -70,7 +70,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -118,7 +118,7 @@
       <cbc:Name>Tidewell Ocean Lines</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -140,10 +140,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1235754</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -155,7 +155,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>20411918</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -203,7 +203,7 @@
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -225,10 +225,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -240,7 +240,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -311,7 +311,7 @@
           <cbc:Name>Velumi Trading</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -329,7 +329,7 @@
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC41859</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -375,7 +375,7 @@
           <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -393,7 +393,7 @@
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Nalevi Warehousing Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC41722</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -468,7 +468,7 @@
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:FinalDestinationCountry>
       <cac:DeliveryTerms>
-        <cbc:ID>CIF</cbc:ID>
+        <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
         <cbc:Amount currencyID="XBL">53778.00</cbc:Amount>
@@ -517,7 +517,7 @@
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
         <cac:TransportMeans>
           <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
-          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
@@ -526,15 +526,15 @@
             <cbc:LocationID>140282</cbc:LocationID>
             <cbc:Location>On deck, aft of the bridge</cbc:Location>
             <cac:MeasurementDimension>
-              <cbc:AttributeID>Slot</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SLOTLENGTH</cbc:AttributeID>
               <cbc:Measure unitCode="MTR">12.2</cbc:Measure>
             </cac:MeasurementDimension>
           </cac:Stowage>
           <cac:MaritimeTransport>
             <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
-            <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
-            <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+            <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
             <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
@@ -608,12 +608,12 @@
           </cac:PartyName>
         </cac:CarrierParty>
         <cac:TransportMeans>
-          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
-            <cbc:LicensePlateID>BV LP 2205</cbc:LicensePlateID>
-            <cbc:TrailerLicensePlateID>BV CH 0412</cbc:TrailerLicensePlateID>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2205</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:TrailerLicensePlateID>
           </cac:RoadTransport>
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
@@ -874,7 +874,7 @@
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
-            <cbc:ID>BV CH 0412</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>
@@ -889,10 +889,10 @@
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
             <cac:GoodsItemContainer>
-              <cbc:ID>TWLU4120872</cbc:ID>
+              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
               <cbc:Quantity unitCode="EA">25</cbc:Quantity>
               <cac:TransportEquipment>
-                <cbc:ID>TWLU4120872</cbc:ID>
+                <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
               </cac:TransportEquipment>
             </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
@@ -1012,7 +1012,7 @@
           <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
           <cbc:Name>English</cbc:Name>
           <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
@@ -1034,10 +1034,10 @@
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Wavesure Cargo Insurance Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>CO-1234521</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234521</cbc:CompanyID>
           <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
           <cac:TaxScheme>
-            <cbc:ID>STT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
             <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1049,7 +1049,7 @@
         </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Wavesure Cargo Insurance Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>20411507</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>

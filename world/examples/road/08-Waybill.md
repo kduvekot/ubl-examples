@@ -70,8 +70,8 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Trasvia Haulage**  
   The trading name; identity of Trasvia Haulage (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -100,20 +100,20 @@ Inside `SenderParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Trasvia Haulage SRU**  
   The name under which the party is registered for value added tax; identity of Trasvia Haulage (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007337656**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Trasvia Haulage (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007337656** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Trasvia Haulage (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Trasvia Haulage SRU**  
   The name under which the party is registered, with its legal form; identity of Trasvia Haulage (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104822**  
-  Number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Trasvia Haulage (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -181,8 +181,8 @@ Inside `ReceiverParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -217,12 +217,12 @@ Inside `ReceiverParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -231,8 +231,8 @@ Inside `ReceiverParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410274**  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -290,8 +290,8 @@ Inside `ConsignorParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -320,20 +320,20 @@ Inside `ConsignorParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered for value added tax; identity of Valdara Industries (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007299291**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007299291** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered, with its legal form; identity of Valdara Industries (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104274**  
-  Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/RegistrationDate` = **1962-04-12**  
   The day the company was entered in the register; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -362,8 +362,8 @@ Inside `ConsignorParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
-  The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501** (schemeID `ISO 6166`)  
+  The identifier of the listed shares, in the form of an ISIN with the world's country code. The schemeID names the scheme it is from: the ISO 6166 International Securities Identification Number (the issuer's country code, nine letters or digits, a check digit (Luhn)).
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
 - `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
@@ -386,8 +386,8 @@ Inside `ConsignorParty`:
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
   The sales desk's mobile number, also under the reserved +999.
-- `ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
-  The service contract between the two.
+- `ServiceProviderParty/ID` = **VI-SP-2026-01**  
+  The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
   The kind of service, as a code. The code is from the Trade Accord's service type list: LOGISTICS = Logistics service.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
@@ -490,8 +490,8 @@ Inside `Shipment`:
   The goods start in Urvania. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/FinalDestinationCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   And end in Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/DeliveryTerms/ID` = **FCA**  
-  Incoterms 2020: free carrier at the seller's warehouse.
+- `Consignment/DeliveryTerms/ID` = **FCA** (schemeID `INCOTERMS`)  
+  Incoterms 2020: free carrier at the seller's warehouse. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/DeliveryTerms/SpecialTerms` = **The buyer's carrier presents the truck; the seller loads it.**  
   Who loads, under FCA at the seller's premises.
 - `Consignment/DeliveryTerms/LossRiskResponsibilityCode` = **BUYER** (listID `urn:ubl-examples:world:codelist:RiskResponsiblePartyCode`)  
@@ -524,24 +524,24 @@ Inside `Shipment`:
   Delivered in the morning, after the night rest of the driver and the border.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **TH-26-04471**  
   The carrier's job number, the same on every document of this truck.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
-  The country the means of transport is registered in.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
   The same, in words.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **WB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
   The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: WB = Westbound.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **TRUCKTRAILER** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
   The kind of means of transport: tractor unit 07 with curtain-side trailer; the fleet of Trasvia Haulage (world/parties.json). The code is from the Trade Accord's transport means type list: TRUCKTRAILER = Truck with trailer.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT**  
-  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json).
-- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR TR 3381**  
-  The trailer's own plate.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
+  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json). The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR 4160 TR** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
+  The trailer's own plate. The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/OwnerParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/OwnerParty/PartyName/Name` = **Trasvia Haulage**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **Loading length**  
-  The length of the loading floor.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **LOADINGLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The length of the loading floor. The code is from the Trade Accord's dimension attribute list: LOADINGLENGTH = Loading length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
   Room for 33 pallets.
 - `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
@@ -602,24 +602,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-001-1**  
@@ -660,24 +660,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-002-1**  
@@ -718,24 +718,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-003-1**  
@@ -776,24 +776,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-004-1**  
@@ -834,24 +834,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-005-1**  
@@ -892,24 +892,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-006-1**  
@@ -950,24 +950,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-007-1**  
@@ -1008,24 +1008,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-008-1**  
@@ -1066,24 +1066,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-009-1**  
@@ -1124,24 +1124,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-010-1**  
@@ -1182,24 +1182,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-011-1**  
@@ -1240,24 +1240,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-012-1**  
@@ -1298,24 +1298,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-013-1**  
@@ -1356,24 +1356,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-014-1**  
@@ -1414,24 +1414,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-015-1**  
@@ -1472,24 +1472,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-016-1**  
@@ -1530,24 +1530,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-017-1**  
@@ -1588,24 +1588,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-018-1**  
@@ -1646,24 +1646,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-019-1**  
@@ -1704,24 +1704,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-020-1**  
@@ -1762,24 +1762,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-021-1**  
@@ -1820,24 +1820,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-022-1**  
@@ -1878,24 +1878,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-023-1**  
@@ -1936,24 +1936,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **650** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1650** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **1.2** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-024-1**  
@@ -1994,24 +1994,24 @@ Inside `Shipment`:
   The pallet is exchanged with the carrier and goes back.
 - `Consignment/TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Length**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **1200** (unitCode `MMT`)  
   Its length.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Width**  
-  The pallet's footprint.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **800** (unitCode `MMT`)  
   Its width.
-- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **Height**  
-  The height of the loaded pallet.
+- `Consignment/TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MeasurementDimension/Measure` = **900** (unitCode `MMT`)  
   Its height.
-- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **Floor space**  
-  The floor the pallet takes.
+- `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/AttributeID` = **FLOORSPACE** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The floor the pallet takes. The code is from the Trade Accord's attribute list: FLOORSPACE = Floor space. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/FloorSpaceMeasurementDimension/Measure` = **0.96** (unitCode `MTK`)  
   In square metres.
-- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
-  The pallet places taken on the truck.
+- `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **PALLETPLACES** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The pallet places taken on the truck. The code is from the Trade Accord's attribute list: PALLETPLACES = Pallet places. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **1** (unitCode `C62`)  
   Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-025-1**  
@@ -2173,7 +2173,7 @@ Inside `Signature`:
       <cbc:Name>Trasvia Haulage</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -2194,10 +2194,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU007337656</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007337656</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -2208,7 +2208,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
@@ -2270,7 +2270,7 @@ Inside `Signature`:
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -2294,10 +2294,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -2309,7 +2309,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -2360,7 +2360,7 @@ Inside `Signature`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -2381,10 +2381,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU007299291</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -2395,7 +2395,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
@@ -2421,7 +2421,7 @@ Inside `Signature`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042501</cbc:ID>
+        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
@@ -2440,7 +2440,7 @@ Inside `Signature`:
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
-      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ID>VI-SP-2026-01</cbc:ID>
       <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
@@ -2534,7 +2534,7 @@ Inside `Signature`:
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:FinalDestinationCountry>
       <cac:DeliveryTerms>
-        <cbc:ID>FCA</cbc:ID>
+        <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
         <cbc:SpecialTerms>The buyer's carrier presents the truck; the seller loads it.</cbc:SpecialTerms>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>The risk passes on loading at the 3PL's warehouse.</cbc:LossRisk>
@@ -2558,13 +2558,13 @@ Inside `Signature`:
         </cac:TransitPeriod>
         <cac:TransportMeans>
           <cbc:JourneyID>TH-26-04471</cbc:JourneyID>
-          <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
           <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
-            <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
-            <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 KT</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 TR</cbc:TrailerLicensePlateID>
           </cac:RoadTransport>
           <cac:OwnerParty>
             <cac:PartyIdentification>
@@ -2575,7 +2575,7 @@ Inside `Signature`:
             </cac:PartyName>
           </cac:OwnerParty>
           <cac:MeasurementDimension>
-            <cbc:AttributeID>Loading length</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
             <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
           </cac:MeasurementDimension>
         </cac:TransportMeans>
@@ -2637,23 +2637,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2682,23 +2682,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2727,23 +2727,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2772,23 +2772,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2817,23 +2817,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2862,23 +2862,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2907,23 +2907,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2952,23 +2952,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -2997,23 +2997,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3042,23 +3042,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3087,23 +3087,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3132,23 +3132,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3177,23 +3177,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3222,23 +3222,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3267,23 +3267,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3312,23 +3312,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3357,23 +3357,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3402,23 +3402,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3447,23 +3447,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3492,23 +3492,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3537,23 +3537,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3582,23 +3582,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3627,23 +3627,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3672,23 +3672,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1850</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1650</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">1.2</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">0.5</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
@@ -3717,23 +3717,23 @@ Inside `Signature`:
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1200</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">800</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Height</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">900</cbc:Measure>
         </cac:MeasurementDimension>
         <cac:FloorSpaceMeasurementDimension>
-          <cbc:AttributeID>Floor space</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">FLOORSPACE</cbc:AttributeID>
           <cbc:Measure unitCode="MTK">0.96</cbc:Measure>
         </cac:FloorSpaceMeasurementDimension>
         <cac:PalletSpaceMeasurementDimension>
-          <cbc:AttributeID>Pallet places</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">PALLETPLACES</cbc:AttributeID>
           <cbc:Measure unitCode="C62">1</cbc:Measure>
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>

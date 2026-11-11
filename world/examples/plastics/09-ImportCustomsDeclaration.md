@@ -74,8 +74,8 @@ Inside `ImporterParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Rivermouth Packaging (world/parties.json).
 - `PartyName/Name` = **Rivermouth Packaging**  
   The trading name; identity of Rivermouth Packaging (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -106,12 +106,12 @@ Inside `ImporterParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Rivermouth Packaging Ltd**  
   The name under which the party is registered for state sales tax; identity of Rivermouth Packaging (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1238220**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Rivermouth Packaging (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1238220** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Rivermouth Packaging (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -120,8 +120,8 @@ Inside `ImporterParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Rivermouth Packaging Ltd**  
   The name under which the party is registered, with its legal form; identity of Rivermouth Packaging (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20412740**  
-  Number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Rivermouth Packaging (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -209,8 +209,8 @@ Inside `ConsignorParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
 - `PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -239,20 +239,20 @@ Inside `ConsignorParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Rinova Recovery SRU**  
   The name under which the party is registered for value added tax; identity of Rinova Recovery (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007318479**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Rinova Recovery (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007318479** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Rinova Recovery SRU**  
   The name under which the party is registered, with its legal form; identity of Rinova Recovery (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104548**  
-  Number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Rinova Recovery (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -323,8 +323,8 @@ Inside `CustomsParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Customs and Border Service of Bayvarra**  
   The trading name; identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -353,8 +353,8 @@ Inside `CustomsParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Customs and Border Service of Bayvarra**  
   The name under which the party is registered, with its legal form; identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410137**  
-  Number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410137** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -499,16 +499,16 @@ Inside `Shipment`:
   Not refrigerated.
 - `GoodsItem/BondedWarehouseLocation/Storage/PowerIndicator` = **true**  
   Power for the forklifts and lighting.
-- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/AttributeID` = **Hall**  
-  The temperature of the hall.
+- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/AttributeID` = **AMBIENT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The temperature of the hall. The code is from the Trade Accord's temperature attribute list: AMBIENT = Ambient temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   At least 5 °C.
 - `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/MeasureCode` = **MIN** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
   The lowest. The code is from the Trade Accord's temperature qualifier list: MIN = Minimum.
 - `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/Description` = **Kept frost-free.**  
   Why.
-- `GoodsItem/BondedWarehouseLocation/Storage/MaximumTemperature/AttributeID` = **Hall**  
-  The temperature of the hall.
+- `GoodsItem/BondedWarehouseLocation/Storage/MaximumTemperature/AttributeID` = **AMBIENT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The temperature of the hall. The code is from the Trade Accord's temperature attribute list: AMBIENT = Ambient temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/BondedWarehouseLocation/Storage/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   At most 35 °C.
 - `GoodsItem/BondedWarehouseLocation/Storage/Certificate/ID` = **XB-BOND-LIC-0388**  
@@ -581,7 +581,7 @@ Inside `Signature`:
       <cbc:Name>Rivermouth Packaging</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -603,10 +603,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1238220</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1238220</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -618,7 +618,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20412740</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -700,7 +700,7 @@ Inside `Signature`:
       <cbc:Name>Rinova Recovery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -721,10 +721,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU007318479</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007318479</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -735,7 +735,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104548</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
@@ -800,7 +800,7 @@ Inside `Signature`:
       <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -821,7 +821,7 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
-      <cbc:CompanyID>20410137</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
@@ -934,13 +934,13 @@ Inside `Signature`:
           <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
           <cbc:PowerIndicator>true</cbc:PowerIndicator>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Hall</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">AMBIENT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
             <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">MIN</cbc:MeasureCode>
             <cbc:Description>Kept frost-free.</cbc:Description>
           </cac:MinimumTemperature>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Hall</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">AMBIENT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:Certificate>

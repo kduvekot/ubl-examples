@@ -43,8 +43,8 @@ Inside `ExportingCustomsParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **POSTAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -75,20 +75,20 @@ Inside `ExportingCustomsParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Customs Administration of Urvania**  
   The name under which the party is registered for value added tax; identity of Customs Administration of Urvania (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007385602**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Customs Administration of Urvania (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007385602** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Customs Administration of Urvania (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Customs Administration of Urvania**  
   The name under which the party is registered, with its legal form; identity of Customs Administration of Urvania (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-105507**  
-  Number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
@@ -132,8 +132,8 @@ Inside `ImportingGuarantorParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Chamber of Commerce**  
   The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -156,8 +156,8 @@ Inside `ImportingGuarantorParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Selanu Chamber of Commerce**  
   The name under which the party is registered, with its legal form; identity of Selanu Chamber of Commerce (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **IC42133**  
-  Number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
@@ -199,8 +199,8 @@ Inside `ExportingGuarantorParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -229,20 +229,20 @@ Inside `ExportingGuarantorParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Ferrano Chamber of Commerce**  
   The name under which the party is registered for value added tax; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007376017**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007376017** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Ferrano Chamber of Commerce**  
   The name under which the party is registered, with its legal form; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-105370**  
-  Number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
@@ -344,7 +344,7 @@ Inside `Signature`:
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -366,10 +366,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
-      <cbc:CompanyID>XU007385602</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007385602</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -380,7 +380,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-105507</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
@@ -422,7 +422,7 @@ Inside `Signature`:
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qal</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -440,7 +440,7 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
-      <cbc:CompanyID>IC42133</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
@@ -481,7 +481,7 @@ Inside `Signature`:
       <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -502,10 +502,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
-      <cbc:CompanyID>XU007376017</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007376017</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -516,7 +516,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-105370</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>

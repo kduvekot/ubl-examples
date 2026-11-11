@@ -132,24 +132,24 @@
    "quantity_properties": [],
    "dimensions": [
     [
-     "Length",
+     "LENGTH",
      "1800",
      "MMT",
      "Over the armrests"
     ],
     [
-     "Depth",
+     "DEPTH",
      "620",
      "MMT"
     ],
     [
-     "Height",
+     "HEIGHT",
      "780",
      "MMT",
      "Seat back at its highest point"
     ],
     [
-     "Seat height",
+     "SEATHEIGHT",
      "450",
      "MMT",
      "Above the ground when anchored",
@@ -189,7 +189,7 @@
    "variant": {
     "extended": "GRY",
     "attribute": [
-     "Colour",
+     "COLOUR",
      "GRY",
      "Frame in Ferro grey"
     ]
@@ -441,17 +441,17 @@
    },
    "dimensions": [
     [
-     "Length",
+     "LENGTH",
      "1800",
      "MMT"
     ],
     [
-     "Width",
+     "WIDTH",
      "95",
      "MMT"
     ],
     [
-     "Thickness",
+     "THICKNESS",
      "38",
      "MMT"
     ]
@@ -498,7 +498,7 @@
     {
      "name": "Thickness tolerance",
      "range_dim": [
-      "Thickness",
+      "THICKNESS",
       "38",
       "37.5",
       "38.5",
@@ -522,7 +522,7 @@
    "pack_standard_id": "772010000065",
    "variant": {
     "measure": [
-     "Length",
+     "LENGTH",
      "1800",
      "MMT"
     ]
@@ -583,7 +583,7 @@
    "model": "Marrow",
    "dimensions": [
     [
-     "Bench length",
+     "BENCHLENGTH",
      "1400",
      "MMT"
     ]
@@ -619,17 +619,17 @@
    "brand": "Brackenmere",
    "dimensions": [
     [
-     "Length",
+     "LENGTH",
      "1600",
      "MMT"
     ],
     [
-     "Width",
+     "WIDTH",
      "800",
      "MMT"
     ],
     [
-     "Height",
+     "HEIGHT",
      "740",
      "MMT"
     ]

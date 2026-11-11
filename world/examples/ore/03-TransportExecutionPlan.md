@@ -55,8 +55,8 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Rail Cargo**  
   The trading name; identity of Ferrano Rail Cargo (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -85,20 +85,20 @@ Inside `SenderParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Ferrano Rail Cargo SRU**  
   The name under which the party is registered for value added tax; identity of Ferrano Rail Cargo (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007328060**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Rail Cargo (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007328060** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Ferrano Rail Cargo SRU**  
   The name under which the party is registered, with its legal form; identity of Ferrano Rail Cargo (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104685**  
-  Number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Ferrano Rail Cargo (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -154,8 +154,8 @@ Inside `ReceiverParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -184,20 +184,20 @@ Inside `ReceiverParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered for value added tax; identity of Valdara Industries (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007299291**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **XU007299291** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered, with its legal form; identity of Valdara Industries (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104274**  
-  Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/RegistrationDate` = **1962-04-12**  
   The day the company was entered in the register; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -226,8 +226,8 @@ Inside `ReceiverParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
-  The identifier of the listed shares, in the form of an ISIN with the world's country code.
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501** (schemeID `ISO 6166`)  
+  The identifier of the listed shares, in the form of an ISIN with the world's country code. The schemeID names the scheme it is from: the ISO 6166 International Securities Identification Number (the issuer's country code, nine letters or digits, a check digit (Luhn)).
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
 - `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
@@ -250,8 +250,8 @@ Inside `ReceiverParty`:
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
   The sales desk's mobile number, also under the reserved +999.
-- `ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
-  The service contract between the two.
+- `ServiceProviderParty/ID` = **VI-SP-2026-01**  
+  The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
   The kind of service, as a code. The code is from the Trade Accord's service type list: LOGISTICS = Logistics service.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
@@ -479,7 +479,7 @@ Inside `TransportExecutionTerms`:
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
   When the freight is paid.
 - `DeliveryTerms/ID` = **FCA** (schemeID `INCOTERMS`)  
-  The buyer's terms with the mine, for the carrier's information.
+  The buyer's terms with the mine, for the carrier's information. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `BonusPaymentTerms/Note` = **None.**  
   No bonus for early delivery: the slot is fixed.
 - `CommissionPaymentTerms/Note` = **No commission: booked directly with the carrier.**  
@@ -531,8 +531,8 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Serravona Mining (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ConsignorParty/PartyName/Name` = **Serravona Mining**  
   The trading name; identity of Serravona Mining (world/parties.json).
-- `ConsignorParty/Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ConsignorParty/Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `ConsignorParty/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `ConsignorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -583,20 +583,20 @@ Inside `Consignment`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `ConsignorParty/PartyTaxScheme/RegistrationName` = **Serravona Mining SUA**  
   The name under which the party is registered for value added tax; identity of Serravona Mining (world/parties.json).
-- `ConsignorParty/PartyTaxScheme/CompanyID` = **XU007289704**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Serravona Mining (world/parties.json).
+- `ConsignorParty/PartyTaxScheme/CompanyID` = **XU007289704** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Serravona Mining (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `ConsignorParty/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `ConsignorParty/PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `ConsignorParty/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `ConsignorParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `ConsignorParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ConsignorParty/PartyLegalEntity/RegistrationName` = **Serravona Mining SUA**  
   The name under which the party is registered, with its legal form; identity of Serravona Mining (world/parties.json).
-- `ConsignorParty/PartyLegalEntity/CompanyID` = **XU-R-104137**  
-  Number in the Commercial register of Urvania; identity of Serravona Mining (world/parties.json).
+- `ConsignorParty/PartyLegalEntity/CompanyID` = **XU-R-104137** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Serravona Mining (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `ConsignorParty/PartyLegalEntity/RegistrationDate` = **1958-06-30**  
   The day the company was entered in the register; identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -673,7 +673,7 @@ Inside `Consignment`:
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -694,10 +694,10 @@ Inside `Consignment`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU007328060</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007328060</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -708,7 +708,7 @@ Inside `Consignment`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104685</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
@@ -758,7 +758,7 @@ Inside `Consignment`:
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -779,10 +779,10 @@ Inside `Consignment`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU007299291</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -793,7 +793,7 @@ Inside `Consignment`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
@@ -819,7 +819,7 @@ Inside `Consignment`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042501</cbc:ID>
+        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
@@ -838,7 +838,7 @@ Inside `Consignment`:
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
-      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ID>VI-SP-2026-01</cbc:ID>
       <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
@@ -1043,7 +1043,7 @@ Inside `Consignment`:
         <cbc:Name>Serravona Mining</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qau</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -1079,10 +1079,10 @@ Inside `Consignment`:
       </cac:PhysicalLocation>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Serravona Mining SUA</cbc:RegistrationName>
-        <cbc:CompanyID>XU007289704</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007289704</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
@@ -1093,7 +1093,7 @@ Inside `Consignment`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Serravona Mining SUA</cbc:RegistrationName>
-        <cbc:CompanyID>XU-R-104137</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104137</cbc:CompanyID>
         <cbc:RegistrationDate>1958-06-30</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>

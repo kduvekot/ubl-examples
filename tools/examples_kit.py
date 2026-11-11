@@ -17,6 +17,7 @@ import zlib
 from decimal import Decimal
 
 import codelists
+import world_ids
 from build_examples import ITEM, PARTY, WORLD, V, account, amount, item, money, price, qty
 
 CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "Invoice": "INV", "CreditNote": "CN",
@@ -987,7 +988,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
     p = price_block(iid)
     p["ValidityPeriod"] = {"StartDate": V(flow.date(day), "The price applies from the catalogue's issue date."),
                            "EndDate": V(flow.date(day + validity_days), "And until the catalogue ends.")}
-    p["PriceList"] = {"ID": V(f"{seller['identity'].get('short', doc['from']).upper()}-PL-{flow.date(day)[:4]}",
+    p["PriceList"] = {"ID": V(f"{initials(doc['from'])}-PL-{flow.date(day)[:4]}",
                               "The seller's price list this price is taken from."),
                       "StatusCode": V("ACTIVE", "The price list is in force.")}
     out = {"LeadTimeMeasure": V(it.get("lead_days", 5), "The days between order and despatch.", unitCode="DAY"),
@@ -1134,12 +1135,10 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
 
 # ---------------------------------------------------------------- containers
 def container_number(owner, serial):
-    """An ISO 6346 container number: owner code, U (freight container), six digits and the check digit."""
-    values = {c: v for c, v in zip("ABCDEFGHIJKLMNOPQRSTUVWXYZ", [10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25,
-                                                                   26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38])}
+    """An ISO 6346 container number: owner code, U (freight container), six digits and the check digit. The owner
+    codes are ones the BIC register does not hold (world/codelists/sources/bic)."""
     code = f"{owner}U{serial:06d}"
-    total = sum((values[c] if c.isalpha() else int(c)) * 2 ** i for i, c in enumerate(code))
-    return f"{code}{total % 11 % 10}"
+    return f"{code}{world_ids.iso6346_digit(code)}"
 
 
 # ---------------------------------------------------------------- transport: places, means, events, units
@@ -1188,7 +1187,7 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
         if f.get("trailer"):
             out["RoadTransport"]["TrailerLicensePlateID"] = V(f["trailer"], "The trailer's own plate.")
         if f.get("loading_m"):
-            out["MeasurementDimension"] = {"AttributeID": V("Loading length", "The length of the loading floor."),
+            out["MeasurementDimension"] = {"AttributeID": V("LOADINGLENGTH", "The length of the loading floor."),
                                            "Measure": V(f["loading_m"], f"Room for {f['pallets']} pallets.",
                                                         unitCode="MTR")}
     if f["kind"] == "rail":
@@ -1197,9 +1196,13 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
         m = {"VesselID": V(f["vessel_id"], "The vessel's number in its country's register of ships; a number of the "
                                            "world, not an IMO number.", schemeID="urn:ubl-examples:world:vessel"),
              "VesselName": V(f["name"], f"The vessel's name; {src}."),
-             "RadioCallSignID": V(f["call_sign"], "The radio call sign, with the world's country code."),
-             "MMSIRegistrationID": V(f["mmsi"], "The Maritime Mobile Service Identity, nine digits; 999 is no real "
-                                                "country's maritime identification digits."),
+             "RadioCallSignID": V(f["call_sign"], f"The radio call sign, in {WORLD['countries'][c]['name']}'s call "
+                                                  f"sign series {f['call_sign'][:2]}: no ITU series starts with Q, so "
+                                                  "the sign belongs to no real station (world/countries.json)."),
+             "MMSIRegistrationID": V(f["mmsi"], "The Maritime Mobile Service Identity, nine digits: the maritime "
+                                                f"identification digits {f['mmsi'][:3]} of "
+                                                f"{WORLD['countries'][c]['name']}, which the ITU has not allocated to "
+                                                "any real country, and the ship's six digits."),
              "GrossTonnageMeasure": V(f["gross_t"], "The gross tonnage of the vessel, a number without a unit.", unitCode="C62"),
              "NetTonnageMeasure": V(f["net_t"], "Its net tonnage, also without a unit.", unitCode="C62"),
              "ShipConfigurationCode": V(f["config"], "The kind of vessel"
@@ -1213,8 +1216,10 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
                                                                  "of registry.")}
         out["MaritimeTransport"] = m
     if f["kind"] == "air":
-        out["AirTransport"] = {"AircraftID": V(f["aircraft"], "The aircraft's registration, with the world's country "
-                                                              "code as its nationality mark.")}
+        out["AirTransport"] = {"AircraftID": V(f["aircraft"], "The aircraft's registration: the nationality mark "
+                                                              f"{f['aircraft'][:2]} of {WORLD['countries'][c]['name']}, "
+                                                              "a mark no real state uses, and three letters; "
+                                                              f"{src}.")}
     if f.get("owner"):
         out["OwnerParty"] = party_short(f["owner"])
     return out
@@ -1295,16 +1300,16 @@ def handling_units(flow, deal, prefix, marks, detail=False):
             x["HandlingInstructions"] = V("May be stacked two high, steel frames on steel frames." if pal else
                                           "Load on top: nothing may be stacked on the boxes.", "The handling, in words.")
             x["MeasurementDimension"] = [
-                {"AttributeID": V("Length", "The pallet's footprint."),
+                {"AttributeID": V("LENGTH", "The pallet's footprint."),
                  "Measure": V("1850" if pal else "1200", "Its length.", unitCode="MMT")},
-                {"AttributeID": V("Width", "The pallet's footprint."),
+                {"AttributeID": V("WIDTH", "The pallet's footprint."),
                  "Measure": V("650" if pal else "800", "Its width.", unitCode="MMT")},
-                {"AttributeID": V("Height", "The height of the loaded pallet."),
+                {"AttributeID": V("HEIGHT", "The height of the loaded pallet."),
                  "Measure": V("1650" if pal else "900", "Its height.", unitCode="MMT")}]
-            x["FloorSpaceMeasurementDimension"] = {"AttributeID": V("Floor space", "The floor the pallet takes."),
+            x["FloorSpaceMeasurementDimension"] = {"AttributeID": V("FLOORSPACE", "The floor the pallet takes."),
                                                    "Measure": V("1.2" if pal else "0.96", "In square metres.",
                                                                 unitCode="MTK")}
-            x["PalletSpaceMeasurementDimension"] = {"AttributeID": V("Pallet places", "The pallet places taken on "
+            x["PalletSpaceMeasurementDimension"] = {"AttributeID": V("PALLETPLACES", "The pallet places taken on "
                                                                                       "the truck."),
                                                     "Measure": V("0.5" if pal else "1", "Half a place when two pallets "
                                                                  "are stacked; the castings take a whole one. A number "

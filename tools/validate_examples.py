@@ -17,7 +17,9 @@ Phase 2  code values, twice:
          code of that list, compared exactly; an element with several possible lists
          (by parent element, by ChargeIndicator, or by listID) must use one of them; a
          code element no association covers is an error, unless the world lists it as
-         a code a party defines for itself. Code attributes: @currencyID (the world's
+         a code a party defines for itself. An identifier element that holds a code
+         (TaxCategory/ID, TaxScheme/ID, Language/ID, HazardClassID, DeliveryTerms/ID,
+         AttributeID ...) is checked the same way, with its schemeID naming the list. Code attributes: @currencyID (the world's
          currency list), @unitCode and @mimeCode (UBL's lists), @languageID (BCP 47: a
          language of the world's ISO 639 list and an optional region subtag).
 
@@ -109,14 +111,15 @@ def phase2b(path, cva):
             if node in done:
                 continue
             done.add(node)
-            where, value, given = tree.getpath(node), node.text, node.get("listID")
+            attr = ctx.get("attribute", "listID")      # an identifier holding a code names its list in schemeID
+            where, value, given = tree.getpath(node), node.text, node.get(attr)
             names = " or ".join(l["listID"] for l in cand)
             if given is None:
-                problems.append(f"phase 2b: {where}: no listID (the world's list: {names})")
+                problems.append(f"phase 2b: {where}: no {attr} (the world's list: {names})")
                 continue
             lst = next((l for l in cand if l["listID"] == given), None)
             if lst is None:
-                problems.append(f"phase 2b: {where}: listID '{given}' is not the list for this context ({names})")
+                problems.append(f"phase 2b: {where}: {attr} '{given}' is not the list for this context ({names})")
             elif value not in lst["codes"]:
                 problems.append(f"phase 2b: {where}: '{value}' is not a code of {given}")
     for node in tree.xpath("//cbc:*[substring(local-name(), string-length(local-name()) - 3) = 'Code']",

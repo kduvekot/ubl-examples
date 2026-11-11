@@ -202,8 +202,8 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -226,8 +226,8 @@ Inside `AccountingCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42681**  
-  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -281,8 +281,8 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The trading name; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -347,8 +347,8 @@ Inside `AccountingSupplierParty`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42544**  
-  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **2009-08-17**  
   The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
@@ -442,7 +442,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
-  As on the self-billed invoice.
+  As on the self-billed invoice. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 
 ### Payment Means
 
@@ -541,8 +541,8 @@ Inside `TaxTotal`:
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
@@ -617,8 +617,8 @@ Inside `CreditNoteLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `Item/ClassifiedTaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
@@ -737,7 +737,7 @@ Inside `CreditNoteLine`:
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -755,7 +755,7 @@ Inside `CreditNoteLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -804,7 +804,7 @@ Inside `CreditNoteLine`:
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -857,7 +857,7 @@ Inside `CreditNoteLine`:
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
-        <cbc:CompanyID>IC42544</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
@@ -985,7 +985,7 @@ Inside `CreditNoteLine`:
       <cbc:TaxableAmount currencyID="XLC">75.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
@@ -1043,7 +1043,7 @@ Inside `CreditNoteLine`:
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>

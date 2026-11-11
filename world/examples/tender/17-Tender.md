@@ -79,8 +79,8 @@ Inside `TendererParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Brackenmere Furniture**  
   The trading name; identity of Brackenmere Furniture (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -109,12 +109,12 @@ Inside `TendererParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Brackenmere Furniture Ltd**  
   The name under which the party is registered for state sales tax; identity of Brackenmere Furniture (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1237398**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brackenmere Furniture (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **UL-1237398** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -123,8 +123,8 @@ Inside `TendererParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Brackenmere Furniture Ltd**  
   The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20412466**  
-  Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Brackenmere Furniture (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -183,8 +183,8 @@ Inside `ContractingParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyName/Name` = **Lumeport Public Works Department**  
   The trading name; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -223,8 +223,8 @@ Inside `ContractingParty`:
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered for state sales tax; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-0900002**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-0900002** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
@@ -237,8 +237,8 @@ Inside `ContractingParty`:
   Its state or territory.
 - `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -247,8 +247,8 @@ Inside `ContractingParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered, with its legal form; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20410548**  
-  Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
@@ -456,7 +456,7 @@ Inside `TenderedProject`:
       <cbc:Name>Brackenmere Furniture</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -477,10 +477,10 @@ Inside `TenderedProject`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1237398</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1237398</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -492,7 +492,7 @@ Inside `TenderedProject`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20412466</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -544,7 +544,7 @@ Inside `TenderedProject`:
         <cbc:Name>Lumeport Public Works Department</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -570,7 +570,7 @@ Inside `TenderedProject`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID>CO-0900002</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
         <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
@@ -582,7 +582,7 @@ Inside `TenderedProject`:
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -594,7 +594,7 @@ Inside `TenderedProject`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID>20410548</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:CompanyID>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>

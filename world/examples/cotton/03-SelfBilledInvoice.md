@@ -189,8 +189,8 @@ Inside `AccountingCustomerParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -213,8 +213,8 @@ Inside `AccountingCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42681**  
-  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -268,8 +268,8 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The trading name; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -334,8 +334,8 @@ Inside `AccountingSupplierParty`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42544**  
-  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **2009-08-17**  
   The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
@@ -449,7 +449,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
-  Delivered at the gin: the farm brings the cotton with its own tractor.
+  Delivered at the gin: the farm brings the cotton with its own tractor. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 
 ### Payment Means
 
@@ -469,8 +469,8 @@ Inside `PaymentMeans`:
   The payment system the transfer runs over: the domestic clearing.
 - `InstructionNote` = **Quote RF07SCGSBI260193**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF07SCGSBI260193**  
-  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
+- `PaymentID` = **RF07SCGSBI260193** (schemeID `ISO 11649`)  
+  The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XL05BSEL0004817534** (schemeID `urn:ubl-examples:world:account`)  
   The supplier's account, where the customer pays what it billed itself. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Lisavu Cotton Farm**  
@@ -568,8 +568,8 @@ Inside `AllowanceCharge`:
   In words.
 - `PerUnitAmount` = **0.010** (currencyID `XLC`)  
   0.010 coral per kilogram.
-- `TaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxCategory/TaxScheme/Name` = **No general sales tax**  
@@ -649,8 +649,8 @@ Inside `TaxTotal`:
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
@@ -672,16 +672,16 @@ Inside `WithholdingTaxTotal`:
   The tier.
 - `TaxSubtotal/TierRatePercent` = **1**  
   The rate within the tier.
-- `TaxSubtotal/TaxCategory/ID` = **S**  
-  The withholding applies.
+- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The withholding applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **1**  
   The rate of the tier.
 - `TaxSubtotal/TaxCategory/TierRange` = **Up to 2,000 coral of the delivery's value**  
   The tier.
 - `TaxSubtotal/TaxCategory/TierRatePercent` = **1**  
   The rate within the tier.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH**  
-  UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Presumptive tax on farm produce**  
   The tax in words.
 - `TaxSubtotal/TaxableAmount` = **2068.000** (currencyID `XLC`)  
@@ -694,16 +694,16 @@ Inside `WithholdingTaxTotal`:
   The tier.
 - `TaxSubtotal/TierRatePercent` = **2**  
   The rate within the tier.
-- `TaxSubtotal/TaxCategory/ID` = **S**  
-  The withholding applies.
+- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The withholding applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **2**  
   The rate of the tier.
 - `TaxSubtotal/TaxCategory/TierRange` = **Above 2,000 coral**  
   The tier.
 - `TaxSubtotal/TaxCategory/TierRatePercent` = **2**  
   The rate within the tier.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH**  
-  UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Presumptive tax on farm produce**  
   The tax in words.
 
@@ -783,8 +783,8 @@ Inside `InvoiceLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `Item/ClassifiedTaxCategory/ID` = **O**  
-  Lisavu has no sales tax or value added tax: no tax applies (category O).
+- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
@@ -897,7 +897,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -915,7 +915,7 @@ Inside `InvoiceLine`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -964,7 +964,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -1017,7 +1017,7 @@ Inside `InvoiceLine`:
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
-        <cbc:CompanyID>IC42544</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
@@ -1128,7 +1128,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF07SCGSBI260193</cbc:InstructionNote>
-    <cbc:PaymentID>RF07SCGSBI260193</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF07SCGSBI260193</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL05BSEL0004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
@@ -1195,7 +1195,7 @@ Inside `InvoiceLine`:
     <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
     <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
     <cac:TaxCategory>
-      <cbc:ID>O</cbc:ID>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
       <cac:TaxScheme>
         <cbc:Name>No general sales tax</cbc:Name>
@@ -1242,7 +1242,7 @@ Inside `InvoiceLine`:
       <cbc:TaxableAmount currencyID="XLC">4068.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
@@ -1259,12 +1259,12 @@ Inside `InvoiceLine`:
       <cbc:TierRange>Up to 2,000 coral of the delivery's value</cbc:TierRange>
       <cbc:TierRatePercent>1</cbc:TierRatePercent>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>1</cbc:Percent>
         <cbc:TierRange>Up to 2,000 coral of the delivery's value</cbc:TierRange>
         <cbc:TierRatePercent>1</cbc:TierRatePercent>
         <cac:TaxScheme>
-          <cbc:ID>OTH</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
           <cbc:Name>Presumptive tax on farm produce</cbc:Name>
         </cac:TaxScheme>
       </cac:TaxCategory>
@@ -1276,12 +1276,12 @@ Inside `InvoiceLine`:
       <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
       <cbc:TierRatePercent>2</cbc:TierRatePercent>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>2</cbc:Percent>
         <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
         <cbc:TierRatePercent>2</cbc:TierRatePercent>
         <cac:TaxScheme>
-          <cbc:ID>OTH</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
           <cbc:Name>Presumptive tax on farm produce</cbc:Name>
         </cac:TaxScheme>
       </cac:TaxCategory>
@@ -1347,7 +1347,7 @@ Inside `InvoiceLine`:
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>

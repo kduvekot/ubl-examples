@@ -56,8 +56,8 @@ Inside `SenderParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -92,12 +92,12 @@ Inside `SenderParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -106,8 +106,8 @@ Inside `SenderParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410274**  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -163,8 +163,8 @@ Inside `ReceiverParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Tidewell Ocean Lines**  
   The trading name; identity of Tidewell Ocean Lines (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -195,12 +195,12 @@ Inside `ReceiverParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered for state sales tax; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1235754**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1235754** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -209,8 +209,8 @@ Inside `ReceiverParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered, with its legal form; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411918**  
-  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1974-03-01**  
   The day the company was entered in the register; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -309,7 +309,7 @@ Inside `TransportationService`:
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -333,10 +333,10 @@ Inside `TransportationService`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -348,7 +348,7 @@ Inside `TransportationService`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -396,7 +396,7 @@ Inside `TransportationService`:
       <cbc:Name>Tidewell Ocean Lines</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -418,10 +418,10 @@ Inside `TransportationService`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1235754</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -433,7 +433,7 @@ Inside `TransportationService`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>20411918</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>

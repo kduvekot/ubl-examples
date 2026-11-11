@@ -95,8 +95,8 @@ Inside `AccountingCustomerParty`:
   The trading name; identity of Brightmarket Stores (world/parties.json).
 - `Party/TradePartyName/Name` = **Brightmarket**  
   The name the shops trade under, shorter than the company's name; identity of Brightmarket Stores (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -127,12 +127,12 @@ Inside `AccountingCustomerParty`:
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Brightmarket Stores Corp**  
   The name under which the party is registered for state sales tax; identity of Brightmarket Stores (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-1231233**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brightmarket Stores (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-1231233** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -141,8 +141,8 @@ Inside `AccountingCustomerParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Brightmarket Stores Corp**  
   The name under which the party is registered, with its legal form; identity of Brightmarket Stores (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20410411**  
-  Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1979-02-14**  
   The day the company was entered in the register; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -212,8 +212,8 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Coastal State Water Company**  
   The trading name; identity of Coastal State Water Company (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -244,12 +244,12 @@ Inside `AccountingSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Coastal State Water Company Ltd**  
   The name under which the party is registered for state sales tax; identity of Coastal State Water Company (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-1236576**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Coastal State Water Company (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-1236576** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Coastal State Water Company (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -258,8 +258,8 @@ Inside `AccountingSupplierParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Coastal State Water Company Ltd**  
   The name under which the party is registered, with its legal form; identity of Coastal State Water Company (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20412192**  
-  Number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Coastal State Water Company (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -307,8 +307,8 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `InstructionID` = **BS-PAY-26-0313**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF03CSWCINV260317**  
-  The creditor reference from the invoice, quoted so the payee can match the payment automatically.
+- `PaymentID` = **RF03CSWCINV260317** (schemeID `ISO 11649`)  
+  The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XB79BLUM0001570935** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Brightmarket Stores Corp**  
@@ -475,7 +475,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Brightmarket</cbc:Name>
       </cac:TradePartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -497,10 +497,10 @@ Inside `RemittanceAdviceLine`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1231233</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -512,7 +512,7 @@ Inside `RemittanceAdviceLine`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-        <cbc:CompanyID>20410411</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
         <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -573,7 +573,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Coastal State Water Company</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -595,10 +595,10 @@ Inside `RemittanceAdviceLine`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1236576</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1236576</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -610,7 +610,7 @@ Inside `RemittanceAdviceLine`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20412192</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -650,7 +650,7 @@ Inside `RemittanceAdviceLine`:
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>BS-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID>RF03CSWCINV260317</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF03CSWCINV260317</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB79BLUM0001570935</cbc:ID>
       <cbc:Name>Brightmarket Stores Corp</cbc:Name>

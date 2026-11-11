@@ -96,7 +96,7 @@
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -114,7 +114,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42681</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -163,7 +163,7 @@
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -216,7 +216,7 @@
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
-        <cbc:CompanyID>IC42544</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
@@ -327,7 +327,7 @@
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF07SCGSBI260193</cbc:InstructionNote>
-    <cbc:PaymentID>RF07SCGSBI260193</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF07SCGSBI260193</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL05BSEL0004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
@@ -394,7 +394,7 @@
     <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
     <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
     <cac:TaxCategory>
-      <cbc:ID>O</cbc:ID>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
       <cac:TaxScheme>
         <cbc:Name>No general sales tax</cbc:Name>
@@ -441,7 +441,7 @@
       <cbc:TaxableAmount currencyID="XLC">4068.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
@@ -458,12 +458,12 @@
       <cbc:TierRange>Up to 2,000 coral of the delivery's value</cbc:TierRange>
       <cbc:TierRatePercent>1</cbc:TierRatePercent>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>1</cbc:Percent>
         <cbc:TierRange>Up to 2,000 coral of the delivery's value</cbc:TierRange>
         <cbc:TierRatePercent>1</cbc:TierRatePercent>
         <cac:TaxScheme>
-          <cbc:ID>OTH</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
           <cbc:Name>Presumptive tax on farm produce</cbc:Name>
         </cac:TaxScheme>
       </cac:TaxCategory>
@@ -475,12 +475,12 @@
       <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
       <cbc:TierRatePercent>2</cbc:TierRatePercent>
       <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>2</cbc:Percent>
         <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
         <cbc:TierRatePercent>2</cbc:TierRatePercent>
         <cac:TaxScheme>
-          <cbc:ID>OTH</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
           <cbc:Name>Presumptive tax on farm produce</cbc:Name>
         </cac:TaxScheme>
       </cac:TaxCategory>
@@ -546,7 +546,7 @@
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID>O</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>

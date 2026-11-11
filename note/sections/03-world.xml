@@ -396,6 +396,65 @@
       </listitem>
     </itemizedlist>
   </section>
+  <section id="S-03-world-identifiers">
+    <title>Identifiers</title>
+    <para>
+      An identifier that comes from a scheme names it in
+      <literal>schemeID</literal>; one that only its sender assigns,
+      such as a document number or a line number, does not. The world's
+      own schemes have lowercase URNs, as its first ones had
+      (<literal>urn:ubl-examples:world:XB:register</literal>,
+      <literal>urn:ubl-examples:world:endpoint</literal>), and a
+      country's scheme carries its code
+      (<literal>urn:ubl-examples:world:XU:tax</literal>,
+      <literal>urn:ubl-examples:world:XB:vehicle-register</literal>).
+      Real schemes keep the name their standard gives them, in the text
+      style of UBL's <literal>listID</literal>s:
+      <literal>ISO 11649</literal> for the creditor references,
+      <literal>ISO 6166</literal> for the securities,
+      <literal>ISO6346</literal> for the containers. Each scheme has its
+      format in <literal>world/countries.json</literal>, with its check
+      digit where it has one, and the build checks every identifier
+      against it, as it checks the telephone numbers. A
+      <literal>schemeID</literal> has no fixed format; the examples show
+      two.
+    </para>
+    <para>
+      A code held in an identifier element, such as the tax category in
+      <literal>TaxCategory/ID</literal>, the language in
+      <literal>Language/ID</literal>, the hazard class or the Incoterms
+      rule in <literal>DeliveryTerms/ID</literal>, names its code list
+      in <literal>schemeID</literal>, with the list's
+      <literal>listID</literal>
+      (<literal>UN/EDIFACT EDED 5305</literal>,
+      <literal>ISO 639</literal>), and the world's code list validation
+      checks it like any code. What a dimension or a temperature is
+      (<literal>AttributeID</literal>) is a code too, from three lists
+      of the Trade Accord: one for dimensions
+      (<literal>LENGTH</literal>, <literal>SEATHEIGHT</literal> …), each
+      mapped to the UN/EDIFACT 6313 measured attribute in its
+      description, one for temperatures (<literal>STORAGE</literal>,
+      <literal>PRODUCT</literal>, <literal>AMBIENT</literal> …) and one
+      for the rest (<literal>COLOUR</literal>,
+      <literal>PALLETPLACES</literal>, <literal>TEU</literal> …).
+    </para>
+    <para>
+      Vehicles are registered nationally: plates, aircraft and railway
+      wagons each have a national scheme. A wagon number follows the
+      UIC's twelve digits with its check digit. Driving licences and
+      identity numbers carry no <literal>schemeID</literal>: the element
+      already says what they are, and the person's country says whose.
+      Values that would look like real ones are made visibly fictional
+      in the right format: the call signs and aircraft nationality marks
+      use the series <literal>QU</literal>, <literal>QB</literal> and
+      <literal>QL</literal>, which the ITU has not allocated, the ships'
+      MMSIs the unallocated maritime identification digits 297, 298 and
+      299, and the wagons the UIC country codes 46, 47 and 48, which no
+      railway uses. A container owner code is one the container register
+      of the Bureau International des Containers does not hold, looked
+      up on its public site.
+    </para>
+  </section>
   <section id="S-03-world-parties">
     <title>Parties</title>
     <para>

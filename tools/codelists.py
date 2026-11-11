@@ -206,6 +206,11 @@ def binding(element, parent, siblings=None):
     return None
 
 
+def id_bound(element):
+    """Whether an identifier element (not a ...Code) holds codes of a list in some context (decision ID-Q2)."""
+    return any(b["element"] == element and b.get("attribute") == "schemeID" for b in load()["bindings"])
+
+
 def choose(b, code, list_id_given=None):
     """The list of a binding that holds the code: the one the listID names, else the first that has the code."""
     lists = load()["lists"]

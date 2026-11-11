@@ -48,7 +48,7 @@
         <cbc:Name>Marrowdale Sawmill</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -69,10 +69,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1236987</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1236987</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -84,7 +84,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20412329</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -135,7 +135,7 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qau</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -156,10 +156,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID>XU007299291</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
@@ -170,7 +170,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
         <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
@@ -195,7 +195,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042501</cbc:ID>
+          <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
@@ -214,7 +214,7 @@
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
-        <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+        <cbc:ID>VI-SP-2026-01</cbc:ID>
         <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
         <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
         <cac:Party>
@@ -295,7 +295,7 @@
         <cac:SellersItemIdentification>
           <cbc:ID>MS-SL-1800</cbc:ID>
           <cac:MeasurementDimension>
-            <cbc:AttributeID>Length</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
             <cbc:Measure unitCode="MMT">1800</cbc:Measure>
           </cac:MeasurementDimension>
         </cac:SellersItemIdentification>
@@ -330,7 +330,7 @@
             <cbc:MaximumValue>14</cbc:MaximumValue>
           </cac:ItemPropertyRange>
           <cac:StandardPropertyIdentification>
-            <cbc:ID>UR-WD-0012</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-WD-0012</cbc:ID>
             <cbc:IssuerScopeID>Codana timber properties</cbc:IssuerScopeID>
             <cac:IssuerParty>
               <cac:PartyIdentification>
@@ -349,7 +349,7 @@
         <cac:AdditionalItemProperty>
           <cbc:Name>Thickness tolerance</cbc:Name>
           <cac:RangeDimension>
-            <cbc:AttributeID>Thickness</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
             <cbc:Measure unitCode="MMT">38</cbc:Measure>
             <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
             <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
@@ -379,15 +379,15 @@
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>
-          <cbc:AttributeID>Length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1800</cbc:Measure>
         </cac:Dimension>
         <cac:Dimension>
-          <cbc:AttributeID>Width</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">95</cbc:Measure>
         </cac:Dimension>
         <cac:Dimension>
-          <cbc:AttributeID>Thickness</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">38</cbc:Measure>
         </cac:Dimension>
       </cac:Item>

@@ -263,7 +263,8 @@ def world_lists():
         lists[key] = entry
     contexts = [{"element": b["element"], "address": address(b), "lists": b["lists"],
                  **({"parents": b["parents"]} if b.get("parents") else {}),
-                 **({"when": b["when"]} if b.get("when") else {})} for b in model["bindings"]]
+                 **({"when": b["when"]} if b.get("when") else {}),
+                 **({"attribute": b["attribute"]} if b.get("attribute") else {})} for b in model["bindings"]]
     attrs = []
     for name, key in model["attributes"].items():
         if key == "ubl":                   # the attribute contexts of UBL's CVA, as they are
@@ -280,6 +281,8 @@ def world_lists():
     cva = {"description": "The context/value associations of the UBL example world, made by tools/build_codelists.py "
                           "from world/codelists/lists.json. Every code element is checked against the list its "
                           "context names; where a context names several lists, the code's listID chooses one. "
+                          "An identifier element that holds a code (TaxCategory/ID, Language/ID, AttributeID ...) is "
+                          "checked the same way, its schemeID naming the list. "
                           "They replace UBL's own associations for the world's documents.",
            "contexts": contexts, "unlisted": model["unlisted"], "attributes": attrs, "lists": lists}
     if model.get("pending"):
@@ -301,10 +304,12 @@ def cva_xml(cva):
         ET.SubElement(vls, "ValueList", {"xml:id": key.replace(":", "-"), "uri": uri})
     ims = ET.SubElement(ET.SubElement(root, "InstanceMetadataSets"), "InstanceMetadataSet", {"xml:id": "code"})
     ET.SubElement(ims, "InstanceMetadata", address="@listID", identification="LongName[@Identifier='listID']")
+    ims = ET.SubElement(root.find("InstanceMetadataSets"), "InstanceMetadataSet", {"xml:id": "scheme"})
+    ET.SubElement(ims, "InstanceMetadata", address="@schemeID", identification="LongName[@Identifier='listID']")
     ctxs = ET.SubElement(root, "Contexts")
     for c in cva["contexts"]:
         ET.SubElement(ctxs, "Context", address=c["address"], values=" ".join(k.replace(":", "-") for k in c["lists"]),
-                      metadata="code")
+                      metadata="scheme" if c.get("attribute") == "schemeID" else "code")
     for a in cva["attributes"]:
         ET.SubElement(ctxs, "Context", address=a["address"], values=" ".join(k.replace(":", "-") for k in a["lists"]))
     ET.indent(root, space="   ")

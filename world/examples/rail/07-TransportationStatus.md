@@ -55,8 +55,8 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CarrierParty/PartyName/Name` = **Ferrano Rail Cargo**  
   The trading name; identity of Ferrano Rail Cargo (world/parties.json).
-- `CarrierParty/Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `CarrierParty/Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `CarrierParty/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -85,20 +85,20 @@ Inside `Consignment`:
   The country's name, for readers of the address.
 - `CarrierParty/PartyTaxScheme/RegistrationName` = **Ferrano Rail Cargo SRU**  
   The name under which the party is registered for value added tax; identity of Ferrano Rail Cargo (world/parties.json).
-- `CarrierParty/PartyTaxScheme/CompanyID` = **XU007328060**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/PartyTaxScheme/CompanyID` = **XU007328060** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `CarrierParty/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `CarrierParty/PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `CarrierParty/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `CarrierParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `CarrierParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `CarrierParty/PartyLegalEntity/RegistrationName` = **Ferrano Rail Cargo SRU**  
   The name under which the party is registered, with its legal form; identity of Ferrano Rail Cargo (world/parties.json).
-- `CarrierParty/PartyLegalEntity/CompanyID` = **XU-R-104685**  
-  Number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/PartyLegalEntity/CompanyID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `CarrierParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -165,8 +165,8 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyName/Name` = **Ferrano Intermodal Hub**  
   The trading name; identity of Ferrano Intermodal Hub (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -195,20 +195,20 @@ Inside `Consignment`:
   The country's name, for readers of the address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/RegistrationName` = **Ferrano Intermodal Hub SRU**  
   The name under which the party is registered for value added tax; identity of Ferrano Intermodal Hub (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/CompanyID` = **XU007356833**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/CompanyID` = **XU007356833** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Intermodal Hub (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationName` = **Ferrano Intermodal Hub SRU**  
   The name under which the party is registered, with its legal form; identity of Ferrano Intermodal Hub (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyID` = **XU-R-105096**  
-  Number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -358,7 +358,7 @@ Inside `StatusPeriod`:
         <cbc:Name>Ferrano Rail Cargo</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qau</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -379,10 +379,10 @@ Inside `StatusPeriod`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-        <cbc:CompanyID>XU007328060</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007328060</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
@@ -393,7 +393,7 @@ Inside `StatusPeriod`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-        <cbc:CompanyID>XU-R-104685</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
@@ -456,7 +456,7 @@ Inside `StatusPeriod`:
           <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qau</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qau</cbc:ID>
           <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -477,10 +477,10 @@ Inside `StatusPeriod`:
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Ferrano Intermodal Hub SRU</cbc:RegistrationName>
-          <cbc:CompanyID>XU007356833</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007356833</cbc:CompanyID>
           <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
           <cac:TaxScheme>
-            <cbc:ID>VAT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
             <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
@@ -491,7 +491,7 @@ Inside `StatusPeriod`:
         </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Ferrano Intermodal Hub SRU</cbc:RegistrationName>
-          <cbc:CompanyID>XU-R-105096</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>

@@ -74,8 +74,8 @@ Inside `GovernorParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Lumeport Trade Accord Council**  
   The trading name; identity of Lumeport Trade Accord Council (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -106,8 +106,8 @@ Inside `GovernorParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Lumeport Trade Accord Council**  
   The name under which the party is registered, with its legal form; identity of Lumeport Trade Accord Council (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411096**  
-  Number in the Federal business register of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
@@ -161,8 +161,8 @@ Inside `ParticipantParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -197,12 +197,12 @@ Inside `ParticipantParty`:
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **UL-1230822**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -211,8 +211,8 @@ Inside `ParticipantParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20410274**  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -281,8 +281,8 @@ Inside `ParticipantParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -305,8 +305,8 @@ Inside `ParticipantParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
   The name under which the party is registered, with its legal form; identity of Velumi Trading (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC41859**  
-  Number in the Island companies register; identity of Velumi Trading (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Velumi Trading (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -521,20 +521,20 @@ Inside `DigitalProcess`:
   The document type, as a code. The code is from the Trade Accord's ubl document type list: Order.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859**  
-  The party's address on it.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-1-xl**  
-  The access point's certificate.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
+  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
   The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.1-xl.example/as4**  
-  The access point.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
+  The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
   The trade accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-Order-IN**  
@@ -553,20 +553,20 @@ Inside `DigitalProcess`:
   The document type, as a code. The code is from the Trade Accord's ubl document type list: Order.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274**  
-  The party's address on it.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-6-xb**  
-  The access point's certificate.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
+  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
   The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.6-xb.example/as4**  
-  The access point.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
+  The access point, under the party's own domain.
 - `CertificationDocumentReference/ID` = **ACCORD-CERT-PROC-ordering**  
   The council's certification of the process.
 - `ID` = **billing**  
@@ -593,20 +593,20 @@ Inside `DigitalProcess`:
   The document type, as a code. The code is from the Trade Accord's ubl document type list: Invoice.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274**  
-  The party's address on it.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-6-xb**  
-  The access point's certificate.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
+  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
   The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.6-xb.example/as4**  
-  The access point.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
+  The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
   The trade accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-Invoice-IN**  
@@ -625,20 +625,20 @@ Inside `DigitalProcess`:
   The document type, as a code. The code is from the Trade Accord's ubl document type list: Invoice.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859**  
-  The party's address on it.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **ACCORD-CERT-1-xl**  
-  The access point's certificate.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
+  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
   The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.1-xl.example/as4**  
-  The access point.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
+  The access point, under the party's own domain.
 - `CertificationDocumentReference/ID` = **ACCORD-CERT-PROC-billing**  
   The council's certification of the process.
 
@@ -692,7 +692,7 @@ Inside `DigitalProcess`:
       <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -714,7 +714,7 @@ Inside `DigitalProcess`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeport Trade Accord Council</cbc:RegistrationName>
-      <cbc:CompanyID>20411096</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
@@ -764,7 +764,7 @@ Inside `DigitalProcess`:
         <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -788,10 +788,10 @@ Inside `DigitalProcess`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -803,7 +803,7 @@ Inside `DigitalProcess`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20410274</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
         <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -872,7 +872,7 @@ Inside `DigitalProcess`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -890,7 +890,7 @@ Inside `DigitalProcess`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC41859</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -1049,16 +1049,16 @@ Inside `DigitalProcess`:
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XL:IC41859</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-1-xl</cbc:ID>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
         <cac:CertificationDocumentReference>
@@ -1077,16 +1077,16 @@ Inside `DigitalProcess`:
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XB:20410274</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-6-xb</cbc:ID>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>
@@ -1113,16 +1113,16 @@ Inside `DigitalProcess`:
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XB:20410274</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-6-xb</cbc:ID>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.6-xb.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
         <cac:CertificationDocumentReference>
@@ -1141,16 +1141,16 @@ Inside `DigitalProcess`:
         </cac:DigitalDocumentMetadata>
         <cac:DigitalDeliveryChannel>
           <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
-          <cbc:ParticipantID>XL:IC41859</cbc:ParticipantID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
           <cbc:TestIndicator>false</cbc:TestIndicator>
           <cac:DigitalCertificate>
-            <cbc:ID>ACCORD-CERT-1-xl</cbc:ID>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
-            <cbc:EndpointURI>https://ap.1-xl.example/as4</cbc:EndpointURI>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>

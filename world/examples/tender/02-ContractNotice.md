@@ -47,8 +47,8 @@ The call for competition is published; it names the review body for appeals and 
 
 Inside `AdditionalNoticeLanguage`:
 
-- `ID` = **qau**  
-  Also published in Urvanian, for tenderers from Urvania (a code from ISO 639's local-use range: the world's languages are invented).
+- `ID` = **qau** (schemeID `ISO 639`)  
+  Also published in Urvanian, for tenderers from Urvania (a code from ISO 639's local-use range: the world's languages are invented). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Name` = **Urvanian**  
   The language's name.
 
@@ -96,8 +96,8 @@ Inside `ContractingParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyName/Name` = **Lumeport Public Works Department**  
   The trading name; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/Language/ID` = **en**  
-  English, the language the party does business in.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -136,8 +136,8 @@ Inside `ContractingParty`:
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered for state sales tax; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-0900002**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **CO-0900002** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
@@ -150,8 +150,8 @@ Inside `ContractingParty`:
   Its state or territory.
 - `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -160,8 +160,8 @@ Inside `ContractingParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered, with its legal form; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20410548**  
-  Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
@@ -221,8 +221,8 @@ Inside `ReceiverParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayvarra Information Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayvarra Information Service**  
   The trading name; identity of Bayvarra Information Service (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -253,8 +253,8 @@ Inside `ReceiverParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Bayvarra Information Service**  
   The name under which the party is registered, with its legal form; identity of Bayvarra Information Service (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410959**  
-  Number in the Federal business register of Bayvarra; identity of Bayvarra Information Service (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410959** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Bayvarra Information Service (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
@@ -578,8 +578,8 @@ Inside `TenderingTerms`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AppealTerms/AppealReceiverParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
   The trading name; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/Language/ID` = **en**  
-  English, the language the party does business in.
+- `AppealTerms/AppealReceiverParty/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `AppealTerms/AppealReceiverParty/Language/Name` = **English**  
   The language's name.
 - `AppealTerms/AppealReceiverParty/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -610,8 +610,8 @@ Inside `TenderingTerms`:
   The country's name, for readers of the address.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationName` = **Procurement Review Board of Bayvarra**  
   The name under which the party is registered, with its legal form; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyID` = **20410822**  
-  Number in the Federal business register of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json).
+- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyID` = **20410822** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
@@ -646,8 +646,8 @@ Inside `TenderingTerms`:
   The same party as at TenderingTerms/AppealTerms/AppealReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `AppealTerms/MediationParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
   The same party as at TenderingTerms/AppealTerms/AppealReceiverParty, where its full details are given; only its identifier and name are repeated.
-- `Language/ID` = **en**  
-  English.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   In words.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -874,16 +874,16 @@ Inside `ProcurementProject`:
   What the amount covers.
 - `RequestedTenderTotal/AverageSubsequentContractAmount` = **20680.00** (currencyID `XBL`)  
   Six releases on average.
-- `RequestedTenderTotal/ApplicableTaxCategory/ID` = **E**  
-  A sale to a public body is exempt from the state sales tax (category E).
+- `RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
 - `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
-- `RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
@@ -1015,16 +1015,16 @@ Inside `ProcurementProjectLot`:
   What the amount covers.
 - `ProcurementProject/RequestedTenderTotal/AverageSubsequentContractAmount` = **19960.00** (currencyID `XBL`)  
   Six releases on average.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/ID` = **E**  
-  A sale to a public body is exempt from the state sales tax (category E).
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `ProcurementProject/AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
@@ -1151,16 +1151,16 @@ Inside `ProcurementProjectLot`:
   What the amount covers.
 - `ProcurementProject/RequestedTenderTotal/AverageSubsequentContractAmount` = **720.00** (currencyID `XBL`)  
   Six releases on average.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/ID` = **E**  
-  A sale to a public body is exempt from the state sales tax (category E).
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **87390** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies services as well: installation services of other goods. The code is from the world's copy of UN Central Product Classification, Version 2.1: 87390 = Installation services of other goods n.e.c..
 - `ProcurementProject/AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
@@ -1212,7 +1212,7 @@ Inside `ProcurementProjectLot`:
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
   <cac:AdditionalNoticeLanguage>
-    <cbc:ID>qau</cbc:ID>
+    <cbc:ID schemeID="ISO 639">qau</cbc:ID>
     <cbc:Name>Urvanian</cbc:Name>
   </cac:AdditionalNoticeLanguage>
   <cac:FrequencyPeriod>
@@ -1255,7 +1255,7 @@ Inside `ProcurementProjectLot`:
         <cbc:Name>Lumeport Public Works Department</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -1281,7 +1281,7 @@ Inside `ProcurementProjectLot`:
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID>CO-0900002</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
         <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
@@ -1293,7 +1293,7 @@ Inside `ProcurementProjectLot`:
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1305,7 +1305,7 @@ Inside `ProcurementProjectLot`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID>20410548</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:CompanyID>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
@@ -1365,7 +1365,7 @@ Inside `ProcurementProjectLot`:
       <cbc:Name>Bayvarra Information Service</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1387,7 +1387,7 @@ Inside `ProcurementProjectLot`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayvarra Information Service</cbc:RegistrationName>
-      <cbc:CompanyID>20410959</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410959</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
@@ -1693,7 +1693,7 @@ Inside `ProcurementProjectLot`:
           <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
           <cbc:Name>English</cbc:Name>
           <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
@@ -1715,7 +1715,7 @@ Inside `ProcurementProjectLot`:
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Procurement Review Board of Bayvarra</cbc:RegistrationName>
-          <cbc:CompanyID>20410822</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410822</cbc:CompanyID>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Lumeport</cbc:CityName>
@@ -1757,7 +1757,7 @@ Inside `ProcurementProjectLot`:
       </cac:MediationParty>
     </cac:AppealTerms>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1943,12 +1943,12 @@ Inside `ProcurementProjectLot`:
       <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
       <cbc:AverageSubsequentContractAmount currencyID="XBL">20680.00</cbc:AverageSubsequentContractAmount>
       <cac:ApplicableTaxCategory>
-        <cbc:ID>E</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
     </cac:RequestedTenderTotal>
@@ -2072,12 +2072,12 @@ Inside `ProcurementProjectLot`:
         <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
         <cbc:AverageSubsequentContractAmount currencyID="XBL">19960.00</cbc:AverageSubsequentContractAmount>
         <cac:ApplicableTaxCategory>
-          <cbc:ID>E</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
           <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
           <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
-            <cbc:ID>STT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           </cac:TaxScheme>
         </cac:ApplicableTaxCategory>
       </cac:RequestedTenderTotal>
@@ -2202,12 +2202,12 @@ Inside `ProcurementProjectLot`:
         <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
         <cbc:AverageSubsequentContractAmount currencyID="XBL">720.00</cbc:AverageSubsequentContractAmount>
         <cac:ApplicableTaxCategory>
-          <cbc:ID>E</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
           <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
           <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
-            <cbc:ID>STT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           </cac:TaxScheme>
         </cac:ApplicableTaxCategory>
       </cac:RequestedTenderTotal>

@@ -32,7 +32,7 @@
       <cbc:Name>Ferrano Energy</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -53,10 +53,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Ferrano Energy SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU007404785</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007404785</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -67,7 +67,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Energy SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-105781</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:CompanyID>
       <cbc:RegistrationDate>1949-01-15</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
@@ -119,7 +119,7 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qau</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -140,10 +140,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU007299291</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
@@ -154,7 +154,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
@@ -180,7 +180,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042501</cbc:ID>
+        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
@@ -199,7 +199,7 @@
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
-      <cbc:ID>5-xu-SP-8-xu</cbc:ID>
+      <cbc:ID>VI-SP-2026-01</cbc:ID>
       <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
@@ -363,7 +363,7 @@
           <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
           <cbc:TaxEnergyBalanceAmount currencyID="XUF">288840</cbc:TaxEnergyBalanceAmount>
           <cac:TaxScheme>
-            <cbc:ID>EXC</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
           </cac:TaxScheme>
         </cac:EnergyTaxReport>
         <cac:ConsumptionAverage>
@@ -443,10 +443,10 @@
           <cbc:OneTimeChargeType>Connection to the 10 kV grid, paid once in 2024</cbc:OneTimeChargeType>
           <cbc:OneTimeChargeTypeCode listID="urn:ubl-examples:world:codelist:OneTimeChargeTypeCode">CONN</cbc:OneTimeChargeTypeCode>
           <cac:TaxCategory>
-            <cbc:ID>S</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
             <cbc:Percent>20</cbc:Percent>
             <cac:TaxScheme>
-              <cbc:ID>VAT</cbc:ID>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
             </cac:TaxScheme>
           </cac:TaxCategory>
           <cac:Contract>

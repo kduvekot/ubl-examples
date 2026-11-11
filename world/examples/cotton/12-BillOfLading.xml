@@ -26,7 +26,7 @@
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qal</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -44,7 +44,7 @@
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>IC42681</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -90,7 +90,7 @@
       <cbc:Name>Tidewell Ocean Lines</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -112,10 +112,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1235754</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -127,7 +127,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>20411918</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -175,7 +175,7 @@
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -197,10 +197,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -212,7 +212,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -266,7 +266,7 @@
           <cbc:Name>Lumeport Textile Mill</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
           <cbc:Name>English</cbc:Name>
           <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
@@ -288,10 +288,10 @@
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>CO-1237809</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1237809</cbc:CompanyID>
           <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
           <cac:TaxScheme>
-            <cbc:ID>STT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
             <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -303,7 +303,7 @@
         </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>20412603</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>

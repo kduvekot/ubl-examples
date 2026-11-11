@@ -61,8 +61,8 @@ Inside `ConsignorParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -97,12 +97,12 @@ Inside `ConsignorParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -111,8 +111,8 @@ Inside `ConsignorParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410274**  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -168,8 +168,8 @@ Inside `CarrierParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Tidewell Ocean Lines**  
   The trading name; identity of Tidewell Ocean Lines (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -200,12 +200,12 @@ Inside `CarrierParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered for state sales tax; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1235754**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1235754** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -214,8 +214,8 @@ Inside `CarrierParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered, with its legal form; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411918**  
-  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1974-03-01**  
   The day the company was entered in the register; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -271,8 +271,8 @@ Inside `FreightForwarderParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayforth Forwarding**  
   The trading name; identity of Bayforth Forwarding (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -303,12 +303,12 @@ Inside `FreightForwarderParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Bayforth Forwarding Ltd**  
   The name under which the party is registered for state sales tax; identity of Bayforth Forwarding (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1234932**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Bayforth Forwarding (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1234932** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -317,8 +317,8 @@ Inside `FreightForwarderParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Bayforth Forwarding Ltd**  
   The name under which the party is registered, with its legal form; identity of Bayforth Forwarding (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411644**  
-  Number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Bayforth Forwarding (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -412,8 +412,8 @@ Inside `Shipment`:
   A second identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Consignment/ConsigneeParty/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/ConsigneeParty/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/ConsigneeParty/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -436,8 +436,8 @@ Inside `Shipment`:
   The country's name, for readers of the address.
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
   The name under which the party is registered, with its legal form; identity of Velumi Trading (world/parties.json).
-- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyID` = **IC41859**  
-  Number in the Island companies register; identity of Velumi Trading (world/parties.json).
+- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Velumi Trading (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -484,8 +484,8 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/NotifyParty/PartyName/Name` = **Nalevi Warehousing**  
   The trading name; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/NotifyParty/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/NotifyParty/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/NotifyParty/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Consignment/NotifyParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -508,8 +508,8 @@ Inside `Shipment`:
   The country's name, for readers of the address.
 - `Consignment/NotifyParty/PartyLegalEntity/RegistrationName` = **Nalevi Warehousing Ltd**  
   The name under which the party is registered, with its legal form; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/NotifyParty/PartyLegalEntity/CompanyID` = **IC41722**  
-  Number in the Island companies register; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/NotifyParty/PartyLegalEntity/CompanyID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Consignment/NotifyParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/NotifyParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -568,8 +568,8 @@ Inside `Shipment`:
   From Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/FinalDestinationCountry/IdentificationCode` = **XL** (listID `ISO 3166`)  
   To the island. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Consignment/DeliveryTerms/ID` = **CIF**  
-  Incoterms 2020: cost, insurance and freight to the port of Selanu.
+- `Consignment/DeliveryTerms/ID` = **CIF** (schemeID `INCOTERMS`)  
+  Incoterms 2020: cost, insurance and freight to the port of Selanu. The code is from the world's copy of Incoterms 2020: CIF = Cost, Insurance and Freight. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/DeliveryTerms/LossRiskResponsibilityCode` = **BUYER** (listID `urn:ubl-examples:world:codelist:RiskResponsiblePartyCode`)  
   The risk is the buyer's from on board in Lumeport. The code is from the Trade Accord's party bearing the risk list: BUYER = Buyer.
 - `Consignment/DeliveryTerms/LossRisk` = **Risk passes when the goods are on board the vessel in Lumeport.**  
@@ -620,8 +620,8 @@ Inside `Shipment`:
   Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **TH-26-19E**  
   The voyage number.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB**  
-  The country the means of transport is registered in.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
   The same, in words.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **EB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
@@ -634,18 +634,18 @@ Inside `Shipment`:
   Bay 14, row 02, tier 82.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/Location` = **On deck, aft of the bridge**  
   In words.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/MeasurementDimension/AttributeID` = **Slot**  
-  The slot length.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/MeasurementDimension/AttributeID` = **SLOTLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The slot length. The code is from the Trade Accord's dimension attribute list: SLOTLENGTH = Slot length. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/MeasurementDimension/Measure` = **12.2** (unitCode `MTR`)  
   A 40-foot slot.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
   The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **XBTH7**  
-  The radio call sign, with the world's country code.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **999702117**  
-  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTH7**  
+  The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702117**  
+  The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
   What the ship needs in port.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
@@ -710,16 +710,16 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/PreCarriageShipmentStage/CarrierParty/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB**  
-  The country the means of transport is registered in.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
   The same, in words.
 - `Consignment/PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **TRUCKTRAILER** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
   The kind of means of transport: container chassis truck; the fleet of Bayforth Forwarding (world/parties.json). The code is from the Trade Accord's transport means type list: TRUCKTRAILER = Truck with trailer.
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2205**  
-  The registration plate of the truck; the fleet of Bayforth Forwarding (world/parties.json).
-- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV CH 0412**  
-  The trailer's own plate.
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2205** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The registration plate of the truck; the fleet of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+- `Consignment/PreCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV CH 0412** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceDate` = **2026-05-13**  
   The container was dropped at the container quay.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00**  
@@ -1076,8 +1076,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **LD-26-025**  
   The pallet's barcode, scanned at each handover.
-- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412**  
-  The forwarder's chassis the container rode on to the port.
+- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The forwarder's chassis the container rode on to the port. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code TE: trailer. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: TE = Trailer.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **LD-26-025**  
@@ -1092,12 +1092,12 @@ Inside `Shipment`:
   The goods in the container, as one item for the carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/Description` = **Park benches and spare side frames**  
   In words.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872**  
-  The container the goods are in.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872** (schemeID `ISO6346`)  
+  The container the goods are in. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **25** (unitCode `EA`)  
   25 pallets in it.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872**  
-  The container itself, as equipment.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
+  The container itself, as equipment. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.1**  
   The benches.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/Description` = **Park benches**  
@@ -1186,8 +1186,8 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `InsurancePolicy/InsurerParty/PartyName/Name` = **Wavesure Cargo Insurance**  
   The trading name; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Language/ID` = **en**  
-  English, the language the party does business in.
+- `InsurancePolicy/InsurerParty/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `InsurancePolicy/InsurerParty/Language/Name` = **English**  
   The language's name.
 - `InsurancePolicy/InsurerParty/Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -1218,12 +1218,12 @@ Inside `Shipment`:
   The country's name, for readers of the address.
 - `InsurancePolicy/InsurerParty/PartyTaxScheme/RegistrationName` = **Wavesure Cargo Insurance Ltd**  
   The name under which the party is registered for state sales tax; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PartyTaxScheme/CompanyID` = **CO-1234521**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PartyTaxScheme/CompanyID` = **CO-1234521** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Wavesure Cargo Insurance (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `InsurancePolicy/InsurerParty/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `InsurancePolicy/InsurerParty/PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `InsurancePolicy/InsurerParty/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `InsurancePolicy/InsurerParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `InsurancePolicy/InsurerParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -1232,8 +1232,8 @@ Inside `Shipment`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `InsurancePolicy/InsurerParty/PartyLegalEntity/RegistrationName` = **Wavesure Cargo Insurance Ltd**  
   The name under which the party is registered, with its legal form; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PartyLegalEntity/CompanyID` = **20411507**  
-  Number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PartyLegalEntity/CompanyID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `InsurancePolicy/InsurerParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -1357,7 +1357,7 @@ Inside `Signature`:
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1381,10 +1381,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -1396,7 +1396,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -1444,7 +1444,7 @@ Inside `Signature`:
       <cbc:Name>Tidewell Ocean Lines</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1466,10 +1466,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1235754</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1481,7 +1481,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>20411918</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -1529,7 +1529,7 @@ Inside `Signature`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1551,10 +1551,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1566,7 +1566,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -1637,7 +1637,7 @@ Inside `Signature`:
           <cbc:Name>Velumi Trading</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -1655,7 +1655,7 @@ Inside `Signature`:
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC41859</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -1701,7 +1701,7 @@ Inside `Signature`:
           <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -1719,7 +1719,7 @@ Inside `Signature`:
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Nalevi Warehousing Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC41722</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -1794,7 +1794,7 @@ Inside `Signature`:
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:FinalDestinationCountry>
       <cac:DeliveryTerms>
-        <cbc:ID>CIF</cbc:ID>
+        <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
         <cbc:Amount currencyID="XBL">53778.00</cbc:Amount>
@@ -1843,7 +1843,7 @@ Inside `Signature`:
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
         <cac:TransportMeans>
           <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
-          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
@@ -1852,15 +1852,15 @@ Inside `Signature`:
             <cbc:LocationID>140282</cbc:LocationID>
             <cbc:Location>On deck, aft of the bridge</cbc:Location>
             <cac:MeasurementDimension>
-              <cbc:AttributeID>Slot</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SLOTLENGTH</cbc:AttributeID>
               <cbc:Measure unitCode="MTR">12.2</cbc:Measure>
             </cac:MeasurementDimension>
           </cac:Stowage>
           <cac:MaritimeTransport>
             <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
-            <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
-            <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+            <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
             <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
@@ -1934,12 +1934,12 @@ Inside `Signature`:
           </cac:PartyName>
         </cac:CarrierParty>
         <cac:TransportMeans>
-          <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
-            <cbc:LicensePlateID>BV LP 2205</cbc:LicensePlateID>
-            <cbc:TrailerLicensePlateID>BV CH 0412</cbc:TrailerLicensePlateID>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2205</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:TrailerLicensePlateID>
           </cac:RoadTransport>
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
@@ -2200,7 +2200,7 @@ Inside `Signature`:
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
-            <cbc:ID>BV CH 0412</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>
@@ -2215,10 +2215,10 @@ Inside `Signature`:
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
             <cac:GoodsItemContainer>
-              <cbc:ID>TWLU4120872</cbc:ID>
+              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
               <cbc:Quantity unitCode="EA">25</cbc:Quantity>
               <cac:TransportEquipment>
-                <cbc:ID>TWLU4120872</cbc:ID>
+                <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
               </cac:TransportEquipment>
             </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
@@ -2338,7 +2338,7 @@ Inside `Signature`:
           <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
           <cbc:Name>English</cbc:Name>
           <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
@@ -2360,10 +2360,10 @@ Inside `Signature`:
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Wavesure Cargo Insurance Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>CO-1234521</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234521</cbc:CompanyID>
           <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
           <cac:TaxScheme>
-            <cbc:ID>STT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
             <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -2375,7 +2375,7 @@ Inside `Signature`:
         </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Wavesure Cargo Insurance Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>20411507</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>

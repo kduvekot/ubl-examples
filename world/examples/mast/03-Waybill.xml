@@ -33,7 +33,7 @@
       <cbc:Name>Kelaro Air Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qal</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -51,7 +51,7 @@
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Kelaro Air Cargo Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>IC41311</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -98,7 +98,7 @@
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -120,10 +120,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -135,7 +135,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -180,7 +180,7 @@
       <cbc:Name>Saltmere Engineering</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -201,10 +201,10 @@
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1232055</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -216,7 +216,7 @@
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-      <cbc:CompanyID>20410685</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
@@ -280,7 +280,7 @@
           <cbc:Name>Selanu Telecom</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -298,7 +298,7 @@
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC42407</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -349,19 +349,19 @@
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:TransportMeans>
           <cbc:JourneyID>KAC209</cbc:JourneyID>
-          <cbc:RegistrationNationalityID>XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
           <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CARGOAIRCRAFT</cbc:TransportMeansTypeCode>
           <cac:AirTransport>
-            <cbc:AircraftID>XL-KAC</cbc:AircraftID>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KAC</cbc:AircraftID>
           </cac:AirTransport>
         </cac:TransportMeans>
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
-        <cbc:ID>RKN-41207-KC</cbc:ID>
+        <cbc:ID>RKN41207K0</cbc:ID>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:TransportEquipment>
-          <cbc:ID>RKN-41207-KC</cbc:ID>
+          <cbc:ID>RKN41207K0</cbc:ID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">AM</cbc:TransportEquipmentTypeCode>
           <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
           <cbc:AirFlowPercent>40</cbc:AirFlowPercent>
@@ -372,11 +372,11 @@
           <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
           <cbc:PowerIndicator>true</cbc:PowerIndicator>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
           </cac:MinimumTemperature>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:HazardousGoodsTransit>
@@ -387,11 +387,11 @@
             <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
             <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
             <cac:MaximumTemperature>
-              <cbc:AttributeID>Battery</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">35</cbc:Measure>
             </cac:MaximumTemperature>
             <cac:MinimumTemperature>
-              <cbc:AttributeID>Battery</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">5</cbc:Measure>
             </cac:MinimumTemperature>
           </cac:HazardousGoodsTransit>
@@ -402,7 +402,7 @@
             <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
             <cbc:UpperOrangeHazardPlacardID>90</cbc:UpperOrangeHazardPlacardID>
             <cbc:LowerOrangeHazardPlacardID>3480</cbc:LowerOrangeHazardPlacardID>
-            <cbc:HazardClassID>9</cbc:HazardClassID>
+            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
             <cbc:HazardousTypeCode listID="urn:ubl-examples:world:codelist:HazardousGoodsTypeCode">ARTICLE</cbc:HazardousTypeCode>
             <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
             <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
@@ -425,20 +425,20 @@
               <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
               <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
               <cac:MaximumTemperature>
-                <cbc:AttributeID>Battery</cbc:AttributeID>
+                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
                 <cbc:Measure unitCode="CEL">35</cbc:Measure>
               </cac:MaximumTemperature>
               <cac:MinimumTemperature>
-                <cbc:AttributeID>Battery</cbc:AttributeID>
+                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
                 <cbc:Measure unitCode="CEL">5</cbc:Measure>
               </cac:MinimumTemperature>
             </cac:HazardousGoodsTransit>
             <cac:EmergencyTemperature>
-              <cbc:AttributeID>Emergency</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">EMERGENCY</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">60</cbc:Measure>
             </cac:EmergencyTemperature>
             <cac:AdditionalTemperature>
-              <cbc:AttributeID>Storage</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">STORAGE</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">20</cbc:Measure>
             </cac:AdditionalTemperature>
             <cac:PositionOnBoardStowage>
@@ -460,20 +460,20 @@
           <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
           <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
           </cac:MinimumTemperature>
         </cac:HazardousGoodsTransit>
         <cac:MinimumTemperature>
-          <cbc:AttributeID>Battery</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">5</cbc:Measure>
         </cac:MinimumTemperature>
         <cac:MaximumTemperature>
-          <cbc:AttributeID>Battery</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">35</cbc:Measure>
         </cac:MaximumTemperature>
       </cac:TransportHandlingUnit>

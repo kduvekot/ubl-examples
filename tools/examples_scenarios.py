@@ -397,7 +397,7 @@ def road(n, doc):
                         "IndicationIndicator": V("true", "The status applies: the truck is on time."),
                         "Percent": V("70", "The share of the route driven."),
                         "ReliabilityPercent": V("90", "How sure the carrier is of the arrival time."),
-                        "Condition": {"AttributeID": V("Seal", "The condition checked."),
+                        "Condition": {"AttributeID": V("SEAL", "The condition checked."),
                                       "Description": V("Intact, as checked by customs.", "Its state.")},
                         "DocumentationAttachment": {"ExternalReference": {
                             "URI": V("https://www.trasvia.example/tracking/TH-26-04471/seal.jpg", "A photograph of "
@@ -475,7 +475,7 @@ RAIL = kit.Flow("rail", "2026-04-06", [
     {"item": "bench-serra", "ordered": 192, "why": "Two containers of 24 pallets, 4 benches on each pallet."}])
 
 
-RAIL_BOXES = [kit.container_number("FRC", 104417), kit.container_number("FRC", 104418)]
+RAIL_BOXES = [kit.container_number("FRX", 104417), kit.container_number("FRX", 104418)]
 RAIL_SEALS = ["XU-VI-30411", "XU-VI-30412"]
 
 
@@ -516,7 +516,7 @@ def rail_container(f, k, full):
         "PowerIndicator": V("false", "It needs no power: not a reefer."),
         "TraceID": V(f"TRK-{box}", "The tracker's number."),
         "StowagePositionID": V(f"{wagon} / A", "The wagon and the slot on it the box rides in."),
-        "MeasurementDimension": {"AttributeID": V("Length", "The outside length."),
+        "MeasurementDimension": {"AttributeID": V("LENGTH", "The outside length."),
                                  "Measure": V("12192", "Forty feet.", unitCode="MMT")},
         "OwnerParty": party("14-xu", short=True),
         "OperatingParty": party("18-xu", short=True),
@@ -768,7 +768,7 @@ def barge_goods(f, w):
                                   "PackagingType": V("Jumbo bag of one tonne with four lifting loops", "In words."),
                                   "PackingMaterial": V("Woven polypropylene", "What the bags are made of."),
                                   "ReturnableMaterialIndicator": V("true", "The bags go back for reuse.")},
-            "MeasurementDimension": {"AttributeID": V("Height", "The height of one filled bag."),
+            "MeasurementDimension": {"AttributeID": V("HEIGHT", "The height of one filled bag."),
                                      "Measure": V("1300", "In millimetres.", unitCode="MMT")},
             "Pickup": {"EarliestPickupDate": V(f.date(6), "The bags are ready on the quay."),
                        "EarliestPickupTime": V("08:00:00", "From eight."),
@@ -1294,7 +1294,7 @@ def sea_consignment(f, view):
                                "TradeServiceCode": V("TWL-ISL", "The carrier's code for its island service."),
                                "Stowage": {"LocationID": V("140282", "Bay 14, row 02, tier 82."),
                                            "Location": V("On deck, aft of the bridge", "In words."),
-                                           "MeasurementDimension": {"AttributeID": V("Slot", "The slot length."),
+                                           "MeasurementDimension": {"AttributeID": V("SLOTLENGTH", "The slot length."),
                                                                     "Measure": V("12.2", "A 40-foot slot.",
                                                                                  unitCode="MTR")}}},
             "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
@@ -1883,11 +1883,11 @@ def air_consignment(f, doc):
            "Quantity": qty(8, "EA", "Eight boxes."),
            "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
            "TraceID": V("LD-AIR-0001..0008", "The barcodes on the boxes."),
-           "MeasurementDimension": [{"AttributeID": V("Length", "Of one box."),
+           "MeasurementDimension": [{"AttributeID": V("LENGTH", "Of one box."),
                                      "Measure": V("800", "In millimetres.", unitCode="MMT")},
-                                    {"AttributeID": V("Width", "Of one box."),
+                                    {"AttributeID": V("WIDTH", "Of one box."),
                                      "Measure": V("300", "In millimetres.", unitCode="MMT")},
-                                    {"AttributeID": V("Height", "Of one box."),
+                                    {"AttributeID": V("HEIGHT", "Of one box."),
                                      "Measure": V("300", "In millimetres.", unitCode="MMT")}],
            "ContainedPackage": {"ID": V("LD-AIR-BAG", "Inside each box, the frame in a plastic bag."),
                                 "Quantity": qty(8, "EA", "One bag per box."),
@@ -3538,13 +3538,13 @@ def sea(n, doc):
             "NominationTime": V("10:00:00", "In the morning."),
             "SequenceNumeric": V("1", "The first of the services offered."),
             "SupportedTransportEquipment": [
-                {"ID": V("22G1", "20-foot dry container."), "SizeTypeCode": V("22G1", "ISO 6346 size and type.")},
-                {"ID": V("42G1", "40-foot dry container."), "SizeTypeCode": V("42G1", "ISO 6346 size and type.")}],
-            "UnsupportedTransportEquipment": {"ID": V("45R1", "40-foot reefer: the island port has no reefer "
-                                                              "plugs."),
-                                              "SizeTypeCode": V("45R1", "ISO 6346 size and type.")},
-            "TransportEquipment": {"ID": V("42G1", "The equipment offered for this shipment."),
-                                   "SizeTypeCode": V("42G1", "A 40-foot dry container.")},
+                {"SizeTypeCode": V("22G1", "A 20-foot dry container, as an ISO 6346 size and type: the size type "
+                                           "says what equipment is meant, so no identifier is given.")},
+                {"SizeTypeCode": V("42G1", "A 40-foot dry container, as an ISO 6346 size and type.")}],
+            "UnsupportedTransportEquipment": {"SizeTypeCode": V("45R1", "A 40-foot reefer, as an ISO 6346 size and "
+                                                                        "type: the island port has no reefer plugs.")},
+            "TransportEquipment": {"SizeTypeCode": V("42G1", "The equipment offered for this shipment: a 40-foot dry "
+                                                             "container.")},
             "SupportedCommodityClassification": {"CargoTypeCode": V("GEN", "General cargo in containers.")},
             "UnsupportedCommodityClassification": {"CargoTypeCode": V("BULK", "No loose bulk on this service.")},
             "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a subclass of the UN Central Product Classification: seats with metal frames.")},
@@ -3605,14 +3605,14 @@ def retail(n, doc):
                                                                                         "frame, down from 64.00."),
                                                    "BaseQuantity": qty(1, "EA", "Per piece (unit EA: each)."),
                                                    "PriceList": {
-                                                       "ID": V("6-XB-PL-2026-2", "The new price list."),
+                                                       "ID": V("LD-PL-2026-2", "The new price list."),
                                                        "StatusCode": V("ACTIVE", "It is in force from today."),
                                                        "ValidityPeriod": {"StartDate": V(f.date(30), "From the "
                                                                                          "update."),
                                                                           "EndDate": V(f.date(90), "Until the "
                                                                                        "catalogue ends.")},
                                                        "PreviousPriceList": {
-                                                           "ID": V("6-XB-PL-2026", "The price list of the spring "
+                                                           "ID": V("LD-PL-2026", "The price list of the spring "
                                                                                    "catalogue it replaces."),
                                                            "StatusCode": V("REPLACED", "No longer in force.")}}}}}}
     if d == "CatalogueItemSpecificationUpdate":
@@ -4805,10 +4805,14 @@ def digital_service(pid, doc_type, sending):
                                        "DigitalMessageDelivery": {"ProtocolID": V("AS4", "The transport protocol."),
                                                                   "EnvelopeTypeCode": V("SBDH", "The business "
                                                                                                 "envelope."),
-                                                                  "EndpointURI": V(f"https://ap.{pid}.example/as4",
-                                                                                   "The access point.")},
-                                       "DigitalCertificate": {"ID": V(f"ACCORD-CERT-{pid}", "The access point's "
-                                                                                            "certificate."),
+                                                                  "EndpointURI": V("https://ap." + PARTY[pid]["identity"]
+                                                                                   ["website"].split("//www.")[1]
+                                                                                   + "/as4", "The access point, under "
+                                                                                   "the party's own domain.")},
+                                       "DigitalCertificate": {"ID": V("LTAC-AP-" + PARTY[pid]["identity"]["registry_id"]
+                                                                      .replace("IC", ""), "The serial number of the "
+                                                                      "access point's certificate, which the Trade "
+                                                                      "Accord Council issues to every access point."),
                                                               "CertificateType": V("Access point", "Its kind.")}}}
 
 
@@ -5266,11 +5270,11 @@ def _(f, n, doc, out):
                     "DangerousGoodsApprovedIndicator": V("false", "Not approved for dangerous goods."),
                     "RefrigeratedIndicator": V("false", "Not refrigerated."),
                     "PowerIndicator": V("true", "Power for the forklifts and lighting."),
-                    "MinimumTemperature": {"AttributeID": V("Hall", "The temperature of the hall."),
+                    "MinimumTemperature": {"AttributeID": V("AMBIENT", "The temperature of the hall."),
                                            "Measure": V("5", "At least 5 °C.", unitCode="CEL"),
                                            "MeasureCode": V("MIN", "The lowest."),
                                            "Description": V("Kept frost-free.", "Why.")},
-                    "MaximumTemperature": {"AttributeID": V("Hall", "The temperature of the hall."),
+                    "MaximumTemperature": {"AttributeID": V("AMBIENT", "The temperature of the hall."),
                                            "Measure": V("35", "At most 35 °C.", unitCode="CEL")},
                     "Certificate": {"ID": V("XB-BOND-LIC-0388", "The bonded store's licence."),
                                     "CertificateTypeCode": V("BONDEDSTORE", "A licence of customs."),
@@ -5288,7 +5292,7 @@ def _(f, n, doc, out):
 @enrich("road", "TransportationStatus")
 def _(f, n, doc, out):
     st = out["TransportEvent"]["CurrentStatus"]
-    st["Condition"] = [st["Condition"], {"AttributeID": V("Trailer temperature", "Recorded by the trailer's "
+    st["Condition"] = [st["Condition"], {"AttributeID": V("TRANSPORT", "Recorded by the trailer's "
                                                                                  "sensor."),
                                          "Measure": V("14", "The temperature in the trailer.", unitCode="CEL"),
                                          "MinimumMeasure": V("4", "The lowest during the night.", unitCode="CEL"),
@@ -5469,7 +5473,7 @@ def _(f, n, doc, out):
                                               "SalinityMeasure": V("30", "Salinity.", unitCode="GL"),
                                               "TransactionDate": V(f.date(10), "At Lumeport."),
                                               "Location": kit.place("XBLMP", "The port."),
-                                              "BallastWaterTemperature": {"AttributeID": V("Water", "The water."),
+                                              "BallastWaterTemperature": {"AttributeID": V("WATER", "The water."),
                                                                           "Measure": V("16", "Its temperature.",
                                                                                        unitCode="CEL")}},
             "ExchangeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
@@ -5587,7 +5591,7 @@ def dg_temperature(attr, lo, hi, why):
 
 
 def mast_consignment(f, full):
-    lo, hi = dg_temperature("Battery", "5", "35", "Lithium-ion packs must not freeze nor overheat.")
+    lo, hi = dg_temperature("PRODUCT", "5", "35", "Lithium-ion packs must not freeze nor overheat.")
     bat = ITEM["battery-pack"]
     loaded = {"ID": V("SE-BAT-48100-DG", "The battery packs in the container."),
               "UNDGCode": V(bat["hazard"]["un"][2:], "The UN number of the battery packs."),
@@ -5605,9 +5609,9 @@ def mast_consignment(f, full):
               "LowerOrangeHazardPlacardID": V("3480", "The UN number on the orange plate."),
               "CategoryName": V("Miscellaneous dangerous goods", "Class 9 in words."),
               "ContactParty": party("27-xb", short=True),
-              "EmergencyTemperature": {"AttributeID": V("Emergency", "Above this, emergency procedures."),
+              "EmergencyTemperature": {"AttributeID": V("EMERGENCY", "Above this, emergency procedures."),
                                        "Measure": V("60", "Thermal runaway risk.", unitCode="CEL")},
-              "AdditionalTemperature": {"AttributeID": V("Storage", "Recommended storage."),
+              "AdditionalTemperature": {"AttributeID": V("STORAGE", "Recommended storage."),
                                         "Measure": V("20", "Around 20 °C.", unitCode="CEL")},
               "PositionOnBoardStowage": {"LocationID": V("MD-L2", "Main deck, position L2."),
                                          "Location": V("Main deck, accessible", "Where it flies.")},
@@ -5624,7 +5628,10 @@ def mast_consignment(f, full):
                                         "TransitDescription": V("Cargo aircraft only; state of charge below 30 %.",
                                                                 "The conditions."),
                                         "MaximumTemperature": hi, "MinimumTemperature": lo}}
-    equipment = {"ID": V("RKN-41207-KC", "The temperature-controlled air container."),
+    uld = f"RKN41207{PARTY['12-xl']['identity']['airline_designator']}"
+    equipment = {"ID": V(uld, "The temperature-controlled air container, numbered as unit load devices are: its type "
+                              "RKN, its serial number 41207 and the designator of its owner, the airline "
+                              f"{PARTY['12-xl']['identity']['name']} (world/parties.json)."),
                  "TransportEquipmentTypeCode": V("AM", "UN/EDIFACT 8053 code AM: refrigerated container.",
                                                  listID="UN/EDIFACT EDED 8053"),
                  "RefrigeratedIndicator": V("true", "A temperature-controlled unit."),
@@ -5639,7 +5646,7 @@ def mast_consignment(f, full):
                  "LoadedHazardousItem": loaded, "HazardousGoodsTransit": loaded["HazardousGoodsTransit"]}
     out = {"HazardousRiskIndicator": V("true", "The consignment holds dangerous goods."),
            "HazardousItemNotificationParty": party("27-xb", short=True),
-           "TransportHandlingUnit": {"ID": V("RKN-41207-KC", "The container as a handling unit."),
+           "TransportHandlingUnit": {"ID": V(uld, "The container as a handling unit."),
                                      "HazardousRiskIndicator": V("true", "Dangerous goods inside."),
                                      "HazardousGoodsTransit": loaded["HazardousGoodsTransit"],
                                      "MinimumTemperature": lo, "MaximumTemperature": hi,
@@ -5668,7 +5675,7 @@ def mast(n, doc):
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight."),
                              "GoodsItem": [{"ID": V(str(i), "A goods item."),
                                             "Description": V(ITEM[x["item"]]["name"], "The goods."),
-                                            "Temperature": {"AttributeID": V("Transport", "The temperature in "
+                                            "Temperature": {"AttributeID": V("TRANSPORT", "The temperature in "
                                                                                           "transport."),
                                                             "Measure": V("20", "Around 20 °C.", unitCode="CEL"),
                                                             "MeasureCode": V("TARGET", "The target."),

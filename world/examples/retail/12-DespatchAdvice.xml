@@ -29,7 +29,7 @@
         <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -53,10 +53,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -68,7 +68,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>20410274</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
         <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -122,7 +122,7 @@
         <cbc:Name>Brightmarket</cbc:Name>
       </cac:TradePartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -144,10 +144,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1231233</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -159,7 +159,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-        <cbc:CompanyID>20410411</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
         <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -244,7 +244,7 @@
           <cbc:Name>Bayforth Forwarding</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
           <cbc:Name>English</cbc:Name>
           <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
@@ -266,10 +266,10 @@
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
           <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
           <cac:TaxScheme>
-            <cbc:ID>STT</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
             <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -281,7 +281,7 @@
         </cac:PartyTaxScheme>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>20411644</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -339,15 +339,15 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:TransportMeans>
-        <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
         <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
         <cac:RoadTransport>
-          <cbc:LicensePlateID>BV LP 2203</cbc:LicensePlateID>
-          <cbc:TrailerLicensePlateID>BV TR 0817</cbc:TrailerLicensePlateID>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
         </cac:RoadTransport>
         <cac:MeasurementDimension>
-          <cbc:AttributeID>Loading length</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
         </cac:MeasurementDimension>
       </cac:TransportMeans>
@@ -487,7 +487,7 @@
         <cbc:ID>LD-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
-          <cbc:AttributeID>Colour</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
           <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
           <cbc:Description>Frame in Ferro grey</cbc:Description>
@@ -558,7 +558,7 @@
           <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
         <cac:StandardPropertyIdentification>
-          <cbc:ID>UR-SF-0450</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
           <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
@@ -589,21 +589,21 @@
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:Dimension>
-        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1800</cbc:Measure>
         <cbc:Description>Over the armrests</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Depth</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">620</cbc:Measure>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">780</cbc:Measure>
         <cbc:Description>Seat back at its highest point</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Seat height</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">450</cbc:Measure>
         <cbc:Description>Above the ground when anchored</cbc:Description>
         <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>

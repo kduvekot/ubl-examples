@@ -32,7 +32,7 @@
       <cbc:Name>Selanu Telecom</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qal</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -50,7 +50,7 @@
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>IC42407</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -100,7 +100,7 @@
       <cbc:Name>Velumi Trading</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qal</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -118,7 +118,7 @@
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>IC41859</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
@@ -281,7 +281,7 @@
               <cbc:Duty>Set-up</cbc:Duty>
               <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">SETUP</cbc:DutyCode>
               <cac:TaxCategory>
-                <cbc:ID>O</cbc:ID>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
                 <cbc:Percent>0</cbc:Percent>
                 <cac:TaxScheme>
                   <cbc:Name>No general sales tax</cbc:Name>
@@ -528,7 +528,7 @@
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
           <cac:TaxCategory>
-            <cbc:ID>O</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
             <cbc:Percent>0</cbc:Percent>
             <cac:TaxScheme>
               <cbc:Name>No general sales tax</cbc:Name>
@@ -579,7 +579,7 @@
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
           <cac:TaxCategory>
-            <cbc:ID>O</cbc:ID>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
             <cbc:Percent>0</cbc:Percent>
             <cac:TaxScheme>
               <cbc:Name>No general sales tax</cbc:Name>

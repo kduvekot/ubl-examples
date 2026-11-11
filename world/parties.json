@@ -127,7 +127,8 @@
     },
     "service_provider": {
      "party": "8-xu",
-     "type": "Warehousing and despatch"
+     "type": "Warehousing and despatch",
+     "contract": "VI-SP-2026-01"
     },
     "customs_id": "XU-TR-104274",
     "employee": {
@@ -353,14 +354,14 @@
      "type": "FREIGHTTRAIN",
      "train": "FRC 4417",
      "wagons": [
-      "XU-FRC 4521 0042",
-      "XU-FRC 4521 0043"
+      "31 46 4521 042-3",
+      "31 46 4521 043-1"
      ],
      "ore_wagons": [
-      "XU-FRC 6610 0101",
-      "XU-FRC 6610 0102",
-      "XU-FRC 6610 0103",
-      "XU-FRC 6610 0104"
+      "31 46 6610 101-4",
+      "31 46 6610 102-2",
+      "31 46 6610 103-0",
+      "31 46 6610 104-8"
      ],
      "ore_train": "FRC 2208"
     },
@@ -437,7 +438,7 @@
      "kind": "road",
      "name": "Tractor unit 07 with curtain-side trailer",
      "plate": "UR 4160 KT",
-     "trailer": "UR TR 3381",
+     "trailer": "UR 4160 TR",
      "type": "TRUCKTRAILER",
      "loading_m": "13.6",
      "pallets": 33,
@@ -510,8 +511,8 @@
      "name": "Fiumella IV",
      "type": "DRYBARGE",
      "vessel_id": "XU-IW-08042",
-     "call_sign": "XUBF4",
-     "mmsi": "999801042",
+     "call_sign": "QUBF4",
+     "mmsi": "297801042",
      "gross_t": "1210",
      "net_t": "860",
      "registry": "Ferrano",
@@ -1592,8 +1593,8 @@
      "name": "Tidewell Harbour",
      "type": "CONTAINERSHIP",
      "vessel_id": "XB-S-20117",
-     "call_sign": "XBTH7",
-     "mmsi": "999702117",
+     "call_sign": "QBTH7",
+     "mmsi": "298702117",
      "gross_t": "9940",
      "net_t": "5120",
      "registry": "Lumeport",
@@ -1825,7 +1826,8 @@
       "currency": "XLC",
       "year": 2025
      }
-    }
+    },
+    "airline_designator": "K0"
    },
    "fleet": [
     {
@@ -1833,7 +1835,7 @@
      "kind": "air",
      "name": "Freighter of Kelaro Air Cargo",
      "type": "CARGOAIRCRAFT",
-     "aircraft": "XL-KAC",
+     "aircraft": "QL-KAC",
      "flight": "KAC207"
     }
    ]

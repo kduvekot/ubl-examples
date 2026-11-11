@@ -1,5 +1,5 @@
 {
- "description": "The context/value associations of the UBL example world, made by tools/build_codelists.py from world/codelists/lists.json. Every code element is checked against the list its context names; where a context names several lists, the code's listID chooses one. They replace UBL's own associations for the world's documents.",
+ "description": "The context/value associations of the UBL example world, made by tools/build_codelists.py from world/codelists/lists.json. Every code element is checked against the list its context names; where a context names several lists, the code's listID chooses one. An identifier element that holds a code (TaxCategory/ID, Language/ID, AttributeID ...) is checked the same way, its schemeID naming the list. They replace UBL's own associations for the world's documents.",
  "contexts": [
   {
    "element": "AllowanceChargeReasonCode",
@@ -541,6 +541,122 @@
    "parents": [
     "WasteGenerated"
    ]
+  },
+  {
+   "element": "ID",
+   "address": "*[local-name()='TaxCategory']/cbc:ID | *[local-name()='ClassifiedTaxCategory']/cbc:ID | *[local-name()='ApplicableTaxCategory']/cbc:ID",
+   "lists": [
+    "UNCL5305"
+   ],
+   "parents": [
+    "TaxCategory",
+    "ClassifiedTaxCategory",
+    "ApplicableTaxCategory"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "address": "*[local-name()='TaxScheme']/cbc:ID",
+   "lists": [
+    "UNCL5153"
+   ],
+   "parents": [
+    "TaxScheme"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "address": "*[local-name()='Language']/cbc:ID | *[local-name()='AdditionalNoticeLanguage']/cbc:ID | *[local-name()='DefaultLanguage']/cbc:ID | *[local-name()='RequestedLanguage']/cbc:ID",
+   "lists": [
+    "Language"
+   ],
+   "parents": [
+    "Language",
+    "AdditionalNoticeLanguage",
+    "DefaultLanguage",
+    "RequestedLanguage"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "address": "*[local-name()='SecondaryHazard']/cbc:ID",
+   "lists": [
+    "UNModelRegsClass"
+   ],
+   "parents": [
+    "SecondaryHazard"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "ID",
+   "address": "*[local-name()='DeliveryTerms']/cbc:ID",
+   "lists": [
+    "Incoterms"
+   ],
+   "parents": [
+    "DeliveryTerms"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "address": "*[local-name()='Dimension']/cbc:AttributeID | *[local-name()='MeasurementDimension']/cbc:AttributeID | *[local-name()='RangeDimension']/cbc:AttributeID",
+   "lists": [
+    "DimensionAttribute"
+   ],
+   "parents": [
+    "Dimension",
+    "MeasurementDimension",
+    "RangeDimension"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "address": "*[local-name()='Temperature']/cbc:AttributeID | *[local-name()='AdditionalTemperature']/cbc:AttributeID | *[local-name()='BallastWaterTemperature']/cbc:AttributeID | *[local-name()='EmergencyTemperature']/cbc:AttributeID | *[local-name()='FlashpointTemperature']/cbc:AttributeID | *[local-name()='MaximumTemperature']/cbc:AttributeID | *[local-name()='MinimumTemperature']/cbc:AttributeID",
+   "lists": [
+    "TemperatureAttribute"
+   ],
+   "parents": [
+    "Temperature",
+    "AdditionalTemperature",
+    "BallastWaterTemperature",
+    "EmergencyTemperature",
+    "FlashpointTemperature",
+    "MaximumTemperature",
+    "MinimumTemperature"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "address": "*[local-name()='Condition']/cbc:AttributeID",
+   "lists": [
+    "OtherAttribute",
+    "TemperatureAttribute"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "AttributeID",
+   "address": "*[local-name()='FloorSpaceMeasurementDimension']/cbc:AttributeID | *[local-name()='PalletSpaceMeasurementDimension']/cbc:AttributeID | *[local-name()='TotalCapacityDimension']/cbc:AttributeID | *[local-name()='PhysicalAttribute']/cbc:AttributeID",
+   "lists": [
+    "OtherAttribute"
+   ],
+   "parents": [
+    "FloorSpaceMeasurementDimension",
+    "PalletSpaceMeasurementDimension",
+    "TotalCapacityDimension",
+    "PhysicalAttribute"
+   ],
+   "attribute": "schemeID"
   },
   {
    "element": "CurrencyCode",
@@ -2505,6 +2621,22 @@
    "lists": [
     "ValidationResult"
    ]
+  },
+  {
+   "element": "HazardClassID",
+   "address": "cbc:HazardClassID",
+   "lists": [
+    "UNModelRegsClass"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "RegistrationNationalityID",
+   "address": "cbc:RegistrationNationalityID",
+   "lists": [
+    "Country"
+   ],
+   "attribute": "schemeID"
   }
  ],
  "unlisted": [
@@ -8414,6 +8546,167 @@
     "VALID",
     "INVALID",
     "INDETERMINATE"
+   ]
+  },
+  "UNCL5305": {
+   "listID": "UN/EDIFACT EDED 5305",
+   "scope": "external",
+   "name": "UN/EDIFACT 5305 Duty or tax or fee category",
+   "location": "world/codelists/gc/UNCL5305Code.gc",
+   "codes": [
+    "A",
+    "AA",
+    "AB",
+    "AC",
+    "AD",
+    "AE",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "S",
+    "Z"
+   ]
+  },
+  "UNCL5153": {
+   "listID": "UN/EDIFACT EDED 5153",
+   "scope": "external",
+   "name": "UN/EDIFACT 5153 Duty or tax or fee type name",
+   "location": "world/codelists/gc/UNCL5153Code.gc",
+   "codes": [
+    "AAA",
+    "AAB",
+    "AAC",
+    "AAD",
+    "AAE",
+    "AAF",
+    "AAG",
+    "AAH",
+    "AAI",
+    "AAJ",
+    "AAK",
+    "AAL",
+    "AAM",
+    "AAO",
+    "AAP",
+    "ADD",
+    "BOL",
+    "CAP",
+    "CAR",
+    "COC",
+    "CST",
+    "CUD",
+    "CVD",
+    "ENV",
+    "EXC",
+    "EXP",
+    "FET",
+    "FRE",
+    "GCN",
+    "GST",
+    "ILL",
+    "IMP",
+    "IND",
+    "LAC",
+    "LCN",
+    "LDP",
+    "LOC",
+    "LST",
+    "MCA",
+    "MCD",
+    "OTH",
+    "PDB",
+    "PDC",
+    "PRF",
+    "SCN",
+    "SSS",
+    "STT",
+    "SUP",
+    "SUR",
+    "SWT",
+    "TAC",
+    "TOT",
+    "TOX",
+    "TTA",
+    "VAD",
+    "VAT"
+   ]
+  },
+  "Incoterms": {
+   "listID": "INCOTERMS",
+   "scope": "external",
+   "name": "Incoterms 2020",
+   "location": "world/codelists/gc/IncotermsCode.gc",
+   "codes": [
+    "EXW",
+    "FCA",
+    "CPT",
+    "CIP",
+    "DAP",
+    "DPU",
+    "DDP",
+    "FAS",
+    "FOB",
+    "CFR",
+    "CIF"
+   ]
+  },
+  "DimensionAttribute": {
+   "listID": "urn:ubl-examples:world:codelist:DimensionAttributeCode",
+   "scope": "regional",
+   "name": "Dimension attribute",
+   "location": "world/codelists/gc/DimensionAttributeCode.gc",
+   "codes": [
+    "LENGTH",
+    "WIDTH",
+    "HEIGHT",
+    "DEPTH",
+    "THICKNESS",
+    "DIAMETER",
+    "SEATHEIGHT",
+    "BENCHLENGTH",
+    "LOADINGLENGTH",
+    "SLOTLENGTH"
+   ]
+  },
+  "TemperatureAttribute": {
+   "listID": "urn:ubl-examples:world:codelist:TemperatureAttributeCode",
+   "scope": "regional",
+   "name": "Temperature attribute",
+   "location": "world/codelists/gc/TemperatureAttributeCode.gc",
+   "codes": [
+    "STORAGE",
+    "TRANSPORT",
+    "PRODUCT",
+    "AMBIENT",
+    "FLASHPOINT",
+    "EMERGENCY",
+    "CONTROL",
+    "WATER"
+   ]
+  },
+  "OtherAttribute": {
+   "listID": "urn:ubl-examples:world:codelist:OtherAttributeCode",
+   "scope": "regional",
+   "name": "Attribute",
+   "location": "world/codelists/gc/OtherAttributeCode.gc",
+   "codes": [
+    "COLOUR",
+    "FLOORSPACE",
+    "PALLETPLACES",
+    "TEU",
+    "SEAL",
+    "WEIGHT"
    ]
   }
  }

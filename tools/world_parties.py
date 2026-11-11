@@ -187,7 +187,38 @@ def check(world):
                 problems.append(f"{where}: account number {acc['number']} has wrong check digits")
             elif acc["number"][:2] != bank["c"] or acc["number"][4:8] != bank["identity"].get("bank_code"):
                 problems.append(f"{where}: account number does not belong to bank {acc['bank']}")
+        problems += identifier_problems(world, p)
     return problems
+
+
+FLEET_IDS = {"plate": "vehicle-register", "trailer": "vehicle-register", "aircraft": "aircraft-register",
+             "call_sign": "call-sign", "mmsi": "mmsi"}
+
+
+def identifier_problems(world, p):
+    """The party's identifiers, and those of its fleet, follow its country's schemes (world/countries.json,
+    identifiers; decisions ID-Q3 and ID-Q4), checked like the telephone numbers: the register number, the tax
+    number, the customs trader number, plates, aircraft registrations, UIC wagon numbers (with the check digit),
+    call signs, MMSIs and driving licences."""
+    import world_ids
+    out, where, ids = [], f"party {p['id']}", world["countries"][p["c"]].get("identifiers", {})
+    idn = p["identity"]
+    values = [("register", idn.get("registry_id")), ("tax", idn.get("tax_id")), ("customs-trader", idn.get("customs_id"))]
+    for f in p.get("fleet", []):
+        values += [(kind, f.get(k)) for k, kind in FLEET_IDS.items()]
+        values += [("rail-vehicle-register", w) for w in f.get("wagons", []) + f.get("ore_wagons", [])]
+        if f.get("driver"):
+            values.append(("driving-licence", f["driver"].get("id")))
+    for kind, value in values:
+        if not value or (kind == "tax" and p["c"] == "XL"):
+            continue
+        if kind not in ids:
+            out.append(f"{where}: {p['c']} has no {kind} scheme for {value} (world/countries.json, identifiers)")
+            continue
+        why = world_ids.problem(ids[kind], value)
+        if why:
+            out.append(f"{where}: {why}")
+    return out
 
 
 if __name__ == "__main__":

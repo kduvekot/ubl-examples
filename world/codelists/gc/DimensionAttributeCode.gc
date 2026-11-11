@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: dimension attribute. Which dimension of a thing a measure gives: for Dimension, MeasurementDimension and RangeDimension. Each code names the UN/EDIFACT 6313 measured attribute it corresponds to. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>DimensionAttributeCode</ShortName>
+      <LongName xml:lang="en">Dimension attribute (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:DimensionAttributeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:DimensionAttributeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:DimensionAttributeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/DimensionAttributeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LENGTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Length</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Marstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vopeme</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The longest horizontal dimension. UN/EDIFACT 6313: LN.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WIDTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Width</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gazdir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tonava</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The horizontal dimension across the length. UN/EDIFACT 6313: WD.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HEIGHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Height</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zakkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vaveto</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The vertical dimension. UN/EDIFACT 6313: HT.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DEPTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Depth</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nudan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kulapa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The dimension from front to back. UN/EDIFACT 6313: DP.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>THICKNESS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Thickness</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stelnir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Leluvole</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The smallest dimension of a sheet, board or film. UN/EDIFACT 6313: TH.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DIAMETER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Diameter</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drelstaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kalahu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The diameter of a round thing. UN/EDIFACT 6313: DI.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SEATHEIGHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Seat height</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kizrek zakkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vomoti vaveto</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The height of a seat above the floor. UN/EDIFACT 6313: HT.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BENCHLENGTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bench length</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nanskir marstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vusase vopeme</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The length of the seat of a bench. UN/EDIFACT 6313: LN.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOADINGLENGTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Loading length</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhevir marstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vanefe vopeme</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The length of the loading floor of a vehicle. UN/EDIFACT 6313: LN.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SLOTLENGTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Slot length</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skir marstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kimole vopeme</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The length of the slot a thing occupies on a carrier, such as a container on a wagon. UN/EDIFACT 6313: LN.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

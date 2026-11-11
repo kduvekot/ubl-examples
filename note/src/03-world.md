@@ -193,6 +193,44 @@ Some choices differ from common practice, on purpose:
   previous one, numbered differently from the EU's, so release for free
   circulation is `1000`.
 
+## Identifiers
+
+An identifier that comes from a scheme names it in `schemeID`; one that only
+its sender assigns, such as a document number or a line number, does not.
+The world's own schemes have lowercase URNs, as its first ones had
+(`urn:ubl-examples:world:XB:register`, `urn:ubl-examples:world:endpoint`),
+and a country's scheme carries its code (`urn:ubl-examples:world:XU:tax`,
+`urn:ubl-examples:world:XB:vehicle-register`). Real schemes keep the name
+their standard gives them, in the text style of UBL's `listID`s: `ISO 11649`
+for the creditor references, `ISO 6166` for the securities, `ISO6346` for the
+containers. Each scheme has its format in `world/countries.json`, with its
+check digit where it has one, and the build checks every identifier against
+it, as it checks the telephone numbers. A `schemeID` has no fixed format; the
+examples show two.
+
+A code held in an identifier element, such as the tax category in
+`TaxCategory/ID`, the language in `Language/ID`, the hazard class or the
+Incoterms rule in `DeliveryTerms/ID`, names its code list in `schemeID`, with
+the list's `listID` (`UN/EDIFACT EDED 5305`, `ISO 639`), and the world's code
+list validation checks it like any code. What a dimension or a temperature is
+(`AttributeID`) is a code too, from three lists of the Trade Accord: one for
+dimensions (`LENGTH`, `SEATHEIGHT` …), each mapped to the UN/EDIFACT 6313
+measured attribute in its description, one for temperatures (`STORAGE`,
+`PRODUCT`, `AMBIENT` …) and one for the rest (`COLOUR`, `PALLETPLACES`,
+`TEU` …).
+
+Vehicles are registered nationally: plates, aircraft and railway wagons each
+have a national scheme. A wagon number follows the UIC's twelve digits with
+its check digit. Driving licences and identity numbers carry no `schemeID`:
+the element already says what they are, and the person's country says whose.
+Values that would look like real ones are made visibly fictional in the right
+format: the call signs and aircraft nationality marks use the series `QU`,
+`QB` and `QL`, which the ITU has not allocated, the ships' MMSIs the
+unallocated maritime identification digits 297, 298 and 299, and the wagons
+the UIC country codes 46, 47 and 48, which no railway uses. A container
+owner code is one the container register of the Bureau International des
+Containers does not hold, looked up on its public site.
+
 ## Parties
 
 The parties are the organisations of the world, chosen so that every party

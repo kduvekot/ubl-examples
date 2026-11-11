@@ -25,7 +25,7 @@
         <cbc:Name>Saltmere Engineering</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
         <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
@@ -46,10 +46,10 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID>UL-1232055</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -61,7 +61,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID>20410685</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
@@ -105,7 +105,7 @@
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>qal</cbc:ID>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
@@ -123,7 +123,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>IC42407</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -195,7 +195,7 @@
           <cbc:Name>Kelaro Air Cargo</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -213,7 +213,7 @@
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Kelaro Air Cargo Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC41311</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -290,7 +290,7 @@
         <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
         <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
         <cbc:MarkingID>UN3480</cbc:MarkingID>
-        <cbc:HazardClassID>9</cbc:HazardClassID>
+        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
       </cac:HazardousItem>
     </cac:Item>
   </cac:DespatchLine>
@@ -331,7 +331,7 @@
         <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
         <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
         <cbc:MarkingID>UN2911</cbc:MarkingID>
-        <cbc:HazardClassID>7</cbc:HazardClassID>
+        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
         <cac:RadioactiveMaterial>
           <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
           <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
@@ -386,15 +386,15 @@
         <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
         <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
         <cbc:MarkingID>UN2920</cbc:MarkingID>
-        <cbc:HazardClassID>8</cbc:HazardClassID>
+        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
         <cac:SecondaryHazard>
-          <cbc:ID>3</cbc:ID>
+          <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
           <cbc:PlacardNotation>3</cbc:PlacardNotation>
           <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
           <cbc:Extension>Subsidiary risk 3</cbc:Extension>
         </cac:SecondaryHazard>
         <cac:FlashpointTemperature>
-          <cbc:AttributeID>Flashpoint</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">28</cbc:Measure>
         </cac:FlashpointTemperature>
       </cac:HazardousItem>

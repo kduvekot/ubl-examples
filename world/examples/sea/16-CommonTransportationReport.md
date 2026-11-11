@@ -51,8 +51,8 @@ Inside `ReporterParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Tidewell Ocean Lines**  
   The trading name; identity of Tidewell Ocean Lines (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -83,12 +83,12 @@ Inside `ReporterParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered for state sales tax; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1235754**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1235754** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -97,8 +97,8 @@ Inside `ReporterParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered, with its legal form; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411918**  
-  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1974-03-01**  
   The day the company was entered in the register; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -152,8 +152,8 @@ Inside `AuthorityParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Maritime Administration of Lisavu**  
   The trading name; identity of Maritime Administration of Lisavu (world/parties.json).
-- `Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -176,8 +176,8 @@ Inside `AuthorityParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Maritime Administration of Lisavu**  
   The name under which the party is registered, with its legal form; identity of Maritime Administration of Lisavu (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **IC42270**  
-  Number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **IC42270** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
@@ -250,8 +250,8 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Island companies register; identity of Port of Selanu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ShipmentStage/TerminalOperatorParty/PartyName/Name` = **Port of Selanu**  
   The trading name; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `ShipmentStage/TerminalOperatorParty/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `ShipmentStage/TerminalOperatorParty/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -294,8 +294,8 @@ Inside `Shipment`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationName` = **Port of Selanu Ltd**  
   The name under which the party is registered, with its legal form; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyID` = **IC41037**  
-  Number in the Island companies register; identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Port of Selanu (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -520,8 +520,8 @@ Inside `Shipment`:
   The port.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **Water**  
-  The water.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **WATER** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The water. The code is from the Trade Accord's temperature attribute list: WATER = Water temperature. An identifier that holds a code names the code's list in its schemeID.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
   Its temperature.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-3**  
@@ -725,8 +725,8 @@ Inside `TransportMeans`:
 
 - `JourneyID` = **TH-26-19E**  
   The voyage.
-- `RegistrationNationalityID` = **XB**  
-  The country the means of transport is registered in.
+- `RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
 - `RegistrationNationality` = **Bayvarra**  
   The same, in words.
 - `DirectionCode` = **EB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
@@ -737,10 +737,10 @@ Inside `TransportMeans`:
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `MaritimeTransport/VesselName` = **Tidewell Harbour**  
   The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
-- `MaritimeTransport/RadioCallSignID` = **XBTH7**  
-  The radio call sign, with the world's country code.
-- `MaritimeTransport/MMSIRegistrationID` = **999702117**  
-  The Maritime Mobile Service Identity, nine digits; 999 is no real country's maritime identification digits.
+- `MaritimeTransport/RadioCallSignID` = **QBTH7**  
+  The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
+- `MaritimeTransport/MMSIRegistrationID` = **298702117**  
+  The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
 - `MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
   What the ship needs in port.
 - `MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
@@ -817,7 +817,7 @@ Inside `Signature`:
       <cbc:Name>Tidewell Ocean Lines</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -839,10 +839,10 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1235754</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -854,7 +854,7 @@ Inside `Signature`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID>20411918</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -901,7 +901,7 @@ Inside `Signature`:
       <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>qal</cbc:ID>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
@@ -919,7 +919,7 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Maritime Administration of Lisavu</cbc:RegistrationName>
-      <cbc:CompanyID>IC42270</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
@@ -984,7 +984,7 @@ Inside `Signature`:
           <cbc:Name>Port of Selanu</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -1016,7 +1016,7 @@ Inside `Signature`:
         </cac:PhysicalLocation>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Port of Selanu Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC41037</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -1204,7 +1204,7 @@ Inside `Signature`:
             </cac:Address>
           </cac:Location>
           <cac:BallastWaterTemperature>
-            <cbc:AttributeID>Water</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">WATER</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">16</cbc:Measure>
           </cac:BallastWaterTemperature>
         </cac:UptakeBallastWaterTransaction>
@@ -1390,15 +1390,15 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:TransportMeans>
     <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
-    <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
+    <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
     <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
     <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
     <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
     <cac:MaritimeTransport>
       <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
       <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
-      <cbc:RadioCallSignID>XBTH7</cbc:RadioCallSignID>
-      <cbc:MMSIRegistrationID>999702117</cbc:MMSIRegistrationID>
+      <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
+      <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
       <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
       <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
       <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>

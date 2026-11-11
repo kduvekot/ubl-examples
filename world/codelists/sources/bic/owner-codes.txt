@@ -1,0 +1,11 @@
+# ISO 6346 owner codes of the UBL example world, looked up in the BIC register
+# Source: https://www.bic-code.org/bic-codes/<code>/ (Bureau International des Containers, the ISO 6346
+# registration authority), fetched 2026-11-11. The page of a registered code names its holder; the page of a
+# free code says "No code found".
+#
+# code  result on 2026-11-11            used by the world for
+TWLU    No code found                   Tidewell Ocean Lines (11-xb)
+FRXU    No code found                   Ferrano Rail Cargo (14-xu)
+#
+# Rejected: FRCU, registered to GCATAINER BV (Moerdijk, Netherlands), was the world's code for Ferrano Rail Cargo
+# until 2026-11-11; FRZU is registered too (FARES ...). Free on the same day: FRQU, FZRU, FQCU.

@@ -37,8 +37,8 @@ Inside `ConsignorParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Saltmere Engineering**  
   The trading name; identity of Saltmere Engineering (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -67,12 +67,12 @@ Inside `ConsignorParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Saltmere Engineering**  
   The name under which the party is registered for state sales tax; identity of Saltmere Engineering (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1232055**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Saltmere Engineering (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **UL-1232055** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -81,8 +81,8 @@ Inside `ConsignorParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Saltmere Engineering**  
   The name under which the party is registered, with its legal form; identity of Saltmere Engineering (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410685**  
-  Number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -126,8 +126,8 @@ Inside `FreightForwarderParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayforth Forwarding**  
   The trading name; identity of Bayforth Forwarding (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -158,12 +158,12 @@ Inside `FreightForwarderParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Bayforth Forwarding Ltd**  
   The name under which the party is registered for state sales tax; identity of Bayforth Forwarding (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1234932**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Bayforth Forwarding (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1234932** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -172,8 +172,8 @@ Inside `FreightForwarderParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Bayforth Forwarding Ltd**  
   The name under which the party is registered, with its legal form; identity of Bayforth Forwarding (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411644**  
-  Number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Bayforth Forwarding (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -233,8 +233,8 @@ Inside `Shipment`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Selanu Telecom**  
   The trading name; identity of Selanu Telecom (world/parties.json).
-- `Consignment/ConsigneeParty/Language/ID` = **qal**  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Consignment/ConsigneeParty/Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/ConsigneeParty/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -257,8 +257,8 @@ Inside `Shipment`:
   The country's name, for readers of the address.
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationName` = **Selanu Telecom Ltd**  
   The name under which the party is registered, with its legal form; identity of Selanu Telecom (world/parties.json).
-- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyID` = **IC42407**  
-  Number in the Island companies register; identity of Selanu Telecom (world/parties.json).
+- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Selanu Telecom (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Telecom (world/parties.json).
 - `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -301,12 +301,12 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/HazardousItemNotificationParty/PartyName/Name` = **Saltmere Engineering**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/ID` = **RKN-41207-KC**  
+- `Consignment/TransportHandlingUnit/ID` = **RKN41207K0**  
   The container as a handling unit.
 - `Consignment/TransportHandlingUnit/HazardousRiskIndicator` = **true**  
   Dangerous goods inside.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **RKN-41207-KC**  
-  The temperature-controlled air container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **RKN41207K0**  
+  The temperature-controlled air container, numbered as unit load devices are: its type RKN, its serial number 41207 and the designator of its owner, the airline Kelaro Air Cargo (world/parties.json).
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **AM** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code AM: refrigerated container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: AM = Refrigerated container.
 - `Consignment/TransportHandlingUnit/TransportEquipment/RefrigerationOnIndicator` = **true**  
@@ -325,12 +325,12 @@ Inside `Shipment`:
   A temperature-controlled unit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PowerIndicator` = **true**  
   Battery-powered cooling and heating.
-- `Consignment/TransportHandlingUnit/TransportEquipment/MinimumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/TransportEquipment/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   The lowest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/MaximumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/TransportEquipment/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   The highest allowed.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransportEmergencyCardCode` = **TEC9** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
@@ -345,12 +345,12 @@ Inside `Shipment`:
   Cargo aircraft only. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; state of charge below 30 %.**  
   The conditions.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   The highest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   The lowest allowed.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ID` = **SE-BAT-48100-DG**  
@@ -365,8 +365,8 @@ Inside `Shipment`:
   The hazard identification number for road transport.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/LowerOrangeHazardPlacardID` = **3480**  
   The UN number on the orange plate.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardClassID` = **9**  
-  Class 9.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
+  Class 9. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousTypeCode` = **ARTICLE** (listID `urn:ubl-examples:world:codelist:HazardousGoodsTypeCode`)  
   Batteries are articles, not substances. The code is from the Trade Accord's dangerous goods type list: ARTICLE = Article.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PackagingDangerLevelCode` = **4** (listID `UN/EDIFACT EDED 8339`)  
@@ -395,20 +395,20 @@ Inside `Shipment`:
   Cargo aircraft only. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; state of charge below 30 %.**  
   The conditions.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   The highest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   The lowest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/EmergencyTemperature/AttributeID` = **Emergency**  
-  Above this, emergency procedures.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/EmergencyTemperature/AttributeID` = **EMERGENCY** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Above this, emergency procedures. The code is from the Trade Accord's temperature attribute list: EMERGENCY = Emergency temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/EmergencyTemperature/Measure` = **60** (unitCode `CEL`)  
   Thermal runaway risk.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/AdditionalTemperature/AttributeID` = **Storage**  
-  Recommended storage.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/AdditionalTemperature/AttributeID` = **STORAGE** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Recommended storage. The code is from the Trade Accord's temperature attribute list: STORAGE = Storage temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/AdditionalTemperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PositionOnBoardStowage/LocationID` = **MD-L2**  
@@ -433,20 +433,20 @@ Inside `Shipment`:
   Cargo aircraft only. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; state of charge below 30 %.**  
   The conditions.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   The highest allowed.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   The lowest allowed.
-- `Consignment/TransportHandlingUnit/MinimumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   The lowest allowed.
-- `Consignment/TransportHandlingUnit/MaximumTemperature/AttributeID` = **Battery**  
-  Lithium-ion packs must not freeze nor overheat.
+- `Consignment/TransportHandlingUnit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
   The highest allowed.
 - `GoodsItem/ID` = **1**  
@@ -495,10 +495,10 @@ Inside `Shipment`:
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles.
 - `GoodsItem/Item/HazardousItem/MarkingID` = **UN3480**  
   The UN number marked on each package.
-- `GoodsItem/Item/HazardousItem/HazardClassID` = **9**  
-  The UN hazard class.
-- `GoodsItem/Temperature/AttributeID` = **Transport**  
-  The temperature in transport.
+- `GoodsItem/Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
+  The UN hazard class. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
 - `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
@@ -551,8 +551,8 @@ Inside `Shipment`:
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material.
 - `GoodsItem/Item/HazardousItem/MarkingID` = **UN2911**  
   The UN number marked on each package.
-- `GoodsItem/Item/HazardousItem/HazardClassID` = **7**  
-  The UN hazard class.
+- `GoodsItem/Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
+  The UN hazard class. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/Name` = **Americium-241 sources in smoke detectors**  
   The material.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Sealed source, not special form.**  
@@ -565,8 +565,8 @@ Inside `Shipment`:
   The isotope.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/ActivityLevelMeasure` = **37** (unitCode `2Q`)  
   Per detector.
-- `GoodsItem/Temperature/AttributeID` = **Transport**  
-  The temperature in transport.
+- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
 - `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
@@ -627,22 +627,22 @@ Inside `Shipment`:
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances.
 - `GoodsItem/Item/HazardousItem/MarkingID` = **UN2920**  
   The UN number marked on each package.
-- `GoodsItem/Item/HazardousItem/HazardClassID` = **8**  
-  The UN hazard class.
-- `GoodsItem/Item/HazardousItem/SecondaryHazard/ID` = **3**  
-  The subsidiary hazard: flammable.
+- `GoodsItem/Item/HazardousItem/HazardClassID` = **8** (schemeID `UN Model Regulations hazard class`)  
+  The UN hazard class. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/HazardousItem/SecondaryHazard/ID` = **3** (schemeID `UN Model Regulations hazard class`)  
+  The subsidiary hazard: flammable. The code is from the world's copy of UN Model Regulations hazard class and division: 3 = Flammable liquids. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/HazardousItem/SecondaryHazard/PlacardNotation` = **3**  
   Shown on a second label.
 - `GoodsItem/Item/HazardousItem/SecondaryHazard/PlacardEndorsement` = **3**  
   The flammable liquid label.
 - `GoodsItem/Item/HazardousItem/SecondaryHazard/Extension` = **Subsidiary risk 3**  
   In words.
-- `GoodsItem/Item/HazardousItem/FlashpointTemperature/AttributeID` = **Flashpoint**  
-  Closed cup.
+- `GoodsItem/Item/HazardousItem/FlashpointTemperature/AttributeID` = **FLASHPOINT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  Closed cup. The code is from the Trade Accord's temperature attribute list: FLASHPOINT = Flashpoint. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/HazardousItem/FlashpointTemperature/Measure` = **28** (unitCode `CEL`)  
   The flashpoint.
-- `GoodsItem/Temperature/AttributeID` = **Transport**  
-  The temperature in transport.
+- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
 - `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
@@ -676,7 +676,7 @@ Inside `Shipment`:
       <cbc:Name>Saltmere Engineering</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -697,10 +697,10 @@ Inside `Shipment`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1232055</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -712,7 +712,7 @@ Inside `Shipment`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-      <cbc:CompanyID>20410685</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
@@ -754,7 +754,7 @@ Inside `Shipment`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -776,10 +776,10 @@ Inside `Shipment`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1234932</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -791,7 +791,7 @@ Inside `Shipment`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20411644</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -843,7 +843,7 @@ Inside `Shipment`:
           <cbc:Name>Selanu Telecom</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>qal</cbc:ID>
+          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
@@ -861,7 +861,7 @@ Inside `Shipment`:
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-          <cbc:CompanyID>IC42407</cbc:CompanyID>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
           <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
@@ -906,10 +906,10 @@ Inside `Shipment`:
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
       <cac:TransportHandlingUnit>
-        <cbc:ID>RKN-41207-KC</cbc:ID>
+        <cbc:ID>RKN41207K0</cbc:ID>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:TransportEquipment>
-          <cbc:ID>RKN-41207-KC</cbc:ID>
+          <cbc:ID>RKN41207K0</cbc:ID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">AM</cbc:TransportEquipmentTypeCode>
           <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
           <cbc:AirFlowPercent>40</cbc:AirFlowPercent>
@@ -920,11 +920,11 @@ Inside `Shipment`:
           <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
           <cbc:PowerIndicator>true</cbc:PowerIndicator>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
           </cac:MinimumTemperature>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:HazardousGoodsTransit>
@@ -935,11 +935,11 @@ Inside `Shipment`:
             <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
             <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
             <cac:MaximumTemperature>
-              <cbc:AttributeID>Battery</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">35</cbc:Measure>
             </cac:MaximumTemperature>
             <cac:MinimumTemperature>
-              <cbc:AttributeID>Battery</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">5</cbc:Measure>
             </cac:MinimumTemperature>
           </cac:HazardousGoodsTransit>
@@ -950,7 +950,7 @@ Inside `Shipment`:
             <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
             <cbc:UpperOrangeHazardPlacardID>90</cbc:UpperOrangeHazardPlacardID>
             <cbc:LowerOrangeHazardPlacardID>3480</cbc:LowerOrangeHazardPlacardID>
-            <cbc:HazardClassID>9</cbc:HazardClassID>
+            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
             <cbc:HazardousTypeCode listID="urn:ubl-examples:world:codelist:HazardousGoodsTypeCode">ARTICLE</cbc:HazardousTypeCode>
             <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
             <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
@@ -973,20 +973,20 @@ Inside `Shipment`:
               <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
               <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
               <cac:MaximumTemperature>
-                <cbc:AttributeID>Battery</cbc:AttributeID>
+                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
                 <cbc:Measure unitCode="CEL">35</cbc:Measure>
               </cac:MaximumTemperature>
               <cac:MinimumTemperature>
-                <cbc:AttributeID>Battery</cbc:AttributeID>
+                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
                 <cbc:Measure unitCode="CEL">5</cbc:Measure>
               </cac:MinimumTemperature>
             </cac:HazardousGoodsTransit>
             <cac:EmergencyTemperature>
-              <cbc:AttributeID>Emergency</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">EMERGENCY</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">60</cbc:Measure>
             </cac:EmergencyTemperature>
             <cac:AdditionalTemperature>
-              <cbc:AttributeID>Storage</cbc:AttributeID>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">STORAGE</cbc:AttributeID>
               <cbc:Measure unitCode="CEL">20</cbc:Measure>
             </cac:AdditionalTemperature>
             <cac:PositionOnBoardStowage>
@@ -1008,20 +1008,20 @@ Inside `Shipment`:
           <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
           <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
           <cac:MaximumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">35</cbc:Measure>
           </cac:MaximumTemperature>
           <cac:MinimumTemperature>
-            <cbc:AttributeID>Battery</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
           </cac:MinimumTemperature>
         </cac:HazardousGoodsTransit>
         <cac:MinimumTemperature>
-          <cbc:AttributeID>Battery</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">5</cbc:Measure>
         </cac:MinimumTemperature>
         <cac:MaximumTemperature>
-          <cbc:AttributeID>Battery</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">35</cbc:Measure>
         </cac:MaximumTemperature>
       </cac:TransportHandlingUnit>
@@ -1060,11 +1060,11 @@ Inside `Shipment`:
           <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN3480</cbc:MarkingID>
-          <cbc:HazardClassID>9</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
         </cac:HazardousItem>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID>Transport</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
         <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
@@ -1108,7 +1108,7 @@ Inside `Shipment`:
           <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2911</cbc:MarkingID>
-          <cbc:HazardClassID>7</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
             <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
             <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
@@ -1122,7 +1122,7 @@ Inside `Shipment`:
         </cac:HazardousItem>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID>Transport</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
         <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
@@ -1170,21 +1170,21 @@ Inside `Shipment`:
           <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2920</cbc:MarkingID>
-          <cbc:HazardClassID>8</cbc:HazardClassID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
           <cac:SecondaryHazard>
-            <cbc:ID>3</cbc:ID>
+            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
             <cbc:PlacardNotation>3</cbc:PlacardNotation>
             <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
             <cbc:Extension>Subsidiary risk 3</cbc:Extension>
           </cac:SecondaryHazard>
           <cac:FlashpointTemperature>
-            <cbc:AttributeID>Flashpoint</cbc:AttributeID>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">28</cbc:Measure>
           </cac:FlashpointTemperature>
         </cac:HazardousItem>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID>Transport</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
         <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>

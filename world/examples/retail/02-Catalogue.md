@@ -109,8 +109,8 @@ Inside `ProviderParty`:
   A second identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -145,12 +145,12 @@ Inside `ProviderParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
@@ -159,8 +159,8 @@ Inside `ProviderParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410274**  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -220,8 +220,8 @@ Inside `ReceiverParty`:
   The trading name; identity of Brightmarket Stores (world/parties.json).
 - `TradePartyName/Name` = **Brightmarket**  
   The name the shops trade under, shorter than the company's name; identity of Brightmarket Stores (world/parties.json).
-- `Language/ID` = **en**  
-  English, the language the party does business in.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en** (listID `ISO 639`)  
@@ -252,12 +252,12 @@ Inside `ReceiverParty`:
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Brightmarket Stores Corp**  
   The name under which the party is registered for state sales tax; identity of Brightmarket Stores (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1231233**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brightmarket Stores (world/parties.json).
+- `PartyTaxScheme/CompanyID` = **CO-1231233** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
@@ -266,8 +266,8 @@ Inside `ReceiverParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Brightmarket Stores Corp**  
   The name under which the party is registered, with its legal form; identity of Brightmarket Stores (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410411**  
-  Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1979-02-14**  
   The day the company was entered in the register; identity of Brightmarket Stores (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
@@ -452,7 +452,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-07-19**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **6-XB-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The price list is in force. The code is from the Trade Accord's record status list: ACTIVE = Active.
@@ -460,16 +460,16 @@ Inside `CatalogueLine`:
   The benches are delivered per pallet of four.
 - `RequiredItemLocationQuantity/DeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `EA`)  
   One bench is one consumer unit.
-- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **E**  
-  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
   The name of code RESALE in Bayvarra's national sales tax exemption reason list.
-- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/Package/ID` = **PAL-4**  
   The pallet the price is for.
 - `RequiredItemLocationQuantity/Package/Quantity` = **4** (unitCode `EA`)  
@@ -516,8 +516,8 @@ Inside `CatalogueLine`:
   The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
-- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **Colour**  
-  The attribute the variant differs in.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
 - `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
   The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
 - `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
@@ -538,8 +538,8 @@ Inside `CatalogueLine`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Codana Identification Agency (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
   The trading name; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Language/ID` = **qau**  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
+- `Item/StandardItemIdentification/IssuerParty/Language/ID` = **qau** (schemeID `ISO 639`)  
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Item/StandardItemIdentification/IssuerParty/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -568,20 +568,20 @@ Inside `CatalogueLine`:
   The country's name, for readers of the address.
 - `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/RegistrationName` = **Codana Identification Agency SRU**  
   The name under which the party is registered for value added tax; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/CompanyID` = **XU007395206**  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/CompanyID` = **XU007395206** (schemeID `urn:ubl-examples:world:XU:tax`)  
+  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Codana Identification Agency (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
 - `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/ID` = **VAT**  
-  UN/EDIFACT 5153 code of Urvania's value added tax.
+- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationName` = **Codana Identification Agency SRU**  
   The name under which the party is registered, with its legal form; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyID` = **XU-R-105644**  
-  Number in the Commercial register of Urvania; identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
+  Number in the Commercial register of Urvania; identity of Codana Identification Agency (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
@@ -684,8 +684,8 @@ Inside `CatalogueLine`:
   The group's name.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
   How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
-- `Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450**  
-  The property's number in the property standard of the identification agency.
+- `Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450** (schemeID `urn:ubl-examples:world:XU:property`)  
+  The property's number in the property standard of the identification agency. The schemeID names the scheme it is from: the property standard of the Codana Identification Agency (UR-, two letters for the part of the standard (SF street furniture, WD wood), four digits).
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
   The part of the agency's standards it is taken from.
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -700,24 +700,24 @@ Inside `CatalogueLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Item/InformationContentProviderParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Item/Dimension/AttributeID` = **Length**  
-  Which dimension.
+- `Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
   Its size.
 - `Item/Dimension/Description` = **Over the armrests**  
   Where it is measured.
-- `Item/Dimension/AttributeID` = **Depth**  
-  Which dimension.
+- `Item/Dimension/AttributeID` = **DEPTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  Which dimension. The code is from the Trade Accord's dimension attribute list: DEPTH = Depth. An identifier that holds a code names the code's list in its schemeID.
 - `Item/Dimension/Measure` = **620** (unitCode `MMT`)  
   Its size.
-- `Item/Dimension/AttributeID` = **Height**  
-  Which dimension.
+- `Item/Dimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  Which dimension. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `Item/Dimension/Measure` = **780** (unitCode `MMT`)  
   Its size.
 - `Item/Dimension/Description` = **Seat back at its highest point**  
   Where it is measured.
-- `Item/Dimension/AttributeID` = **Seat height**  
-  Which dimension.
+- `Item/Dimension/AttributeID` = **SEATHEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  Which dimension. The code is from the Trade Accord's dimension attribute list: SEATHEIGHT = Seat height. An identifier that holds a code names the code's list in its schemeID.
 - `Item/Dimension/Measure` = **450** (unitCode `MMT`)  
   Its size.
 - `Item/Dimension/Description` = **Above the ground when anchored**  
@@ -856,20 +856,20 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-07-19**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **6-XB-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The price list is in force. The code is from the Trade Accord's record status list: ACTIVE = Active.
-- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **E**  
-  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
   The name of code RESALE in Bayvarra's national sales tax exemption reason list.
-- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/DependentPriceReference/Percent` = **12.31**  
   The spare frame costs this share of the bench's price, as the distributor's price rule sets it.
 - `RequiredItemLocationQuantity/DependentPriceReference/LocationAddress/CountrySubentity` = **Coastal State**  
@@ -984,7 +984,7 @@ Inside `CatalogueLine`:
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1008,10 +1008,10 @@ Inside `CatalogueLine`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>UL-1230822</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
@@ -1023,7 +1023,7 @@ Inside `CatalogueLine`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>20410274</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
@@ -1075,7 +1075,7 @@ Inside `CatalogueLine`:
       <cbc:Name>Brightmarket</cbc:Name>
     </cac:TradePartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
       <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
@@ -1097,10 +1097,10 @@ Inside `CatalogueLine`:
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1231233</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1231233</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID>STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1112,7 +1112,7 @@ Inside `CatalogueLine`:
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-      <cbc:CompanyID>20410411</cbc:CompanyID>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
       <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
@@ -1283,7 +1283,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-07-19</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>6-XB-PL-2026</cbc:ID>
+          <cbc:ID>LD-PL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
@@ -1292,12 +1292,12 @@ Inside `CatalogueLine`:
         <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
       </cac:DeliveryUnit>
       <cac:ApplicableTaxCategory>
-        <cbc:ID>E</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
       <cac:Package>
@@ -1335,7 +1335,7 @@ Inside `CatalogueLine`:
         <cbc:ID>LD-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
-          <cbc:AttributeID>Colour</cbc:AttributeID>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
           <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
           <cbc:Description>Frame in Ferro grey</cbc:Description>
@@ -1357,7 +1357,7 @@ Inside `CatalogueLine`:
             <cbc:Name>Codana Identification Agency</cbc:Name>
           </cac:PartyName>
           <cac:Language>
-            <cbc:ID>qau</cbc:ID>
+            <cbc:ID schemeID="ISO 639">qau</cbc:ID>
             <cbc:Name>Urvanian</cbc:Name>
           </cac:Language>
           <cac:PostalAddress>
@@ -1378,10 +1378,10 @@ Inside `CatalogueLine`:
           </cac:PostalAddress>
           <cac:PartyTaxScheme>
             <cbc:RegistrationName>Codana Identification Agency SRU</cbc:RegistrationName>
-            <cbc:CompanyID>XU007395206</cbc:CompanyID>
+            <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007395206</cbc:CompanyID>
             <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
             <cac:TaxScheme>
-              <cbc:ID>VAT</cbc:ID>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
               <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
               <cac:JurisdictionRegionAddress>
                 <cac:Country>
@@ -1392,7 +1392,7 @@ Inside `CatalogueLine`:
           </cac:PartyTaxScheme>
           <cac:PartyLegalEntity>
             <cbc:RegistrationName>Codana Identification Agency SRU</cbc:RegistrationName>
-            <cbc:CompanyID>XU-R-105644</cbc:CompanyID>
+            <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:CompanyID>
             <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
             <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
             <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
@@ -1489,7 +1489,7 @@ Inside `CatalogueLine`:
           <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
         <cac:StandardPropertyIdentification>
-          <cbc:ID>UR-SF-0450</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
           <cbc:IssuerScopeID>Codana street furniture properties</cbc:IssuerScopeID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
@@ -1518,21 +1518,21 @@ Inside `CatalogueLine`:
         </cac:PartyName>
       </cac:InformationContentProviderParty>
       <cac:Dimension>
-        <cbc:AttributeID>Length</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1800</cbc:Measure>
         <cbc:Description>Over the armrests</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Depth</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">620</cbc:Measure>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Height</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">780</cbc:Measure>
         <cbc:Description>Seat back at its highest point</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
-        <cbc:AttributeID>Seat height</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">450</cbc:Measure>
         <cbc:Description>Above the ground when anchored</cbc:Description>
         <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>
@@ -1667,17 +1667,17 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-07-19</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>6-XB-PL-2026</cbc:ID>
+          <cbc:ID>LD-PL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
-        <cbc:ID>E</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
-          <cbc:ID>STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
       <cac:DependentPriceReference>

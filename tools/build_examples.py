@@ -38,6 +38,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 import codelists  # noqa: E402
 import world_data  # noqa: E402
 import world_docs  # noqa: E402
+import world_ids  # noqa: E402
 import world_items  # noqa: E402
 
 NS_CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -203,7 +204,7 @@ def party(pid, short=False):
                                                "sent to it.")
     if idn.get("service_provider"):
         sp = idn["service_provider"]
-        out["ServiceProviderParty"] = {"ID": V(f"{pid}-SP-{sp['party']}", "The service contract between the two."),
+        out["ServiceProviderParty"] = {"ID": V(sp["contract"], f"The number of the service contract between the two; {src}."),
                                        "ServiceTypeCode": V("LOGISTICS", "The kind of service, as a code."),
                                        "ServiceType": V(sp["type"], f"What the service provider does for the party; "
                                                                     f"{src}."),
@@ -683,7 +684,7 @@ def hazardous_item(it):
                                   "PlacardNotation": V(hz["sub"], "Shown on a second label."),
                                   "PlacardEndorsement": V("3", "The flammable liquid label."),
                                   "Extension": V("Subsidiary risk 3", "In words.")}
-        out["FlashpointTemperature"] = {"AttributeID": V("Flashpoint", "Closed cup."),
+        out["FlashpointTemperature"] = {"AttributeID": V("FLASHPOINT", "Closed cup."),
                                         "Measure": V(hz["flash"], "The flashpoint.", unitCode="CEL")}
         out["MaritimePollutantCode"] = V("N", "Not a marine pollutant.")
     if hz.get("isotope"):
@@ -1027,6 +1028,7 @@ def fill(el, abie, content, path, reasons, seen):
     if abie == "AllowanceCharge" and "AllowanceChargeReasonCode" not in content:
         raise SystemExit(f"{path}: every allowance and charge carries its reason as a code (decision Q3)")
     content = with_code_lists(content, path, bbies)
+    content = with_schemes(content, path)
     for name in [b[0] for b in spec["bbies"]]:                    # basic properties first, in model order
         if name not in content:
             continue
@@ -1085,25 +1087,31 @@ def with_code_lists(content, path, bbies):
     siblings = {k: v.value for k, v in content.items() if isinstance(v, V)}
     out = dict(content)
     for name, val in content.items():
-        if not name.endswith("Code") or name not in bbies or unlisted(name, parent):
+        if name not in bbies or unlisted(name, parent):
+            continue
+        if not name.endswith("Code") and not codelists.id_bound(name):
             continue
         b = codelists.binding(name, parent, siblings)
         if b is None:
-            UNBOUND.setdefault((name, parent), f"{path}/{name}")
+            if name.endswith("Code"):
+                UNBOUND.setdefault((name, parent), f"{path}/{name}")
             continue
+        key = b.get("attribute", "listID")      # a code held in an identifier names its list in schemeID (ID-Q2)
         coded = []
         for v in val if isinstance(val, list) else [val]:
-            lst = codelists.choose(b, v.value, v.attrs.get("listID"))
+            lst = codelists.choose(b, v.value, v.attrs.get(key))
             if lst is None:
                 raise SystemExit(f"{path}/{name}: '{v.value}' is not a code of "
                                  f"{' or '.join(codelists.load()['lists'][k]['listID'] or k for k in b['lists'])} "
                                  "(world/codelists/lists.json)")
-            attrs = {"listID": lst["listID"], **{k: x for k, x in v.attrs.items() if k != "listID"}}
+            attrs = {key: lst["listID"], **{k: x for k, x in v.attrs.items() if k != key}}
             if not lst["listID"]:
                 raise SystemExit(f"{path}/{name}: the list {lst['key']} has no listID")
             meaning = lst["codes"][v.value]["name"]
+            held = (f" An identifier that holds a code names the code's list in its schemeID." if key == "schemeID"
+                    else "")
             coded.append(V(v.value, f"{v.why} The code is from {codelists.describe(lst)}: {v.value}"
-                                    + (f" = {meaning}." if meaning and meaning != v.value else "."), **attrs))
+                                    + (f" = {meaning}." if meaning and meaning != v.value else ".") + held, **attrs))
         out[name] = coded if isinstance(val, list) else coded[0]
         text = b.get("text")
         if text and text in content and not isinstance(val, list):
@@ -1119,6 +1127,74 @@ def with_code_lists(content, path, bbies):
             else:
                 out[text] = V(codelists.name_in(lst, val.value, "en"), why)
     return out
+
+
+# ---------------------------------------------------------------- identifier schemes (decisions ID-Q1 to ID-Q4)
+# identifiers that come from a scheme: (element, parent) -> the scheme, a schemeID of world/countries.json or a kind
+# of national scheme (the country whose format the value fits); a code held in an identifier is not here: its
+# schemeID is its code list's listID (with_code_lists)
+SCHEME_RULES = {
+    ("CompanyID", "PartyLegalEntity"): "register", ("BusinessIdentityEvidenceID", "MainQualifyingParty"): "register",
+    ("CompanyID", "PartyTaxScheme"): "tax",
+    ("ParticipantID", "DigitalDeliveryChannel"): "urn:ubl-examples:world:endpoint",
+    ("PaymentID", "PaymentMeans"): "ISO 11649",
+    ("ID", "SecurityListing"): "ISO 6166", ("SecurityID", "ImmobilizedSecurity"): "ISO 6166",
+    ("ID", "StandardPropertyIdentification"): "property",
+    ("LicensePlateID", "RoadTransport"): "vehicle-register", ("TrailerLicensePlateID", "RoadTransport"): "vehicle-register",
+    ("ID", "AttachedTransportEquipment"): "vehicle-register",
+    ("AircraftID", "AirTransport"): "aircraft-register",
+    ("RailCarID", "RailTransport"): "rail-vehicle-register", ("ID", "ContainedInTransportEquipment"): "rail-vehicle-register",
+}
+CONTAINERS = ("TransportEquipment", "ContainingTransportEquipment", "ReferencedTransportEquipment", "GoodsItemContainer")
+SCHEMES = world_ids.registry(WORLD)
+
+
+def scheme_for(element, parent, value):
+    """The schemeID an identifier takes, or None for a local identifier."""
+    rule = SCHEME_RULES.get((element, parent))
+    if element == "ID" and parent in CONTAINERS and re.fullmatch(SCHEMES["ISO6346"]["pattern"], value):
+        rule = "ISO6346"
+    if rule is None or rule in SCHEMES:
+        return rule
+    cc = world_ids.country_of(WORLD, rule, value)
+    if cc is None:
+        raise SystemExit(f"{parent}/{element}: '{value}' fits no country's {rule} format (world/countries.json)")
+    return world_ids.national_scheme(cc, rule)
+
+
+def with_schemes(content, path):
+    """Every identifier from a scheme names it in schemeID; its reason says which scheme it is."""
+    parent = path.split("/")[-1]
+    out = dict(content)
+    for name, val in content.items():
+        vals = val if isinstance(val, list) else [val]
+        if not all(isinstance(v, V) for v in vals) or not name.endswith("ID"):
+            continue
+        new = []
+        for v in vals:
+            sid = v.attrs.get("schemeID") or scheme_for(name, parent, str(v.value))
+            if sid and "schemeID" not in v.attrs and sid in SCHEMES:
+                v = V(v.value, f"{v.why} The schemeID names the scheme it is from: the {SCHEMES[sid]['name']} "
+                               f"({SCHEMES[sid].get('format', '')}).", **{**v.attrs, "schemeID": sid})
+            new.append(v)
+        out[name] = new if isinstance(val, list) else new[0]
+    return out
+
+
+def check_schemes(root, where):
+    """Every identifier with a schemeID fits its scheme (world/countries.json): its format and check digit. A
+    schemeID that is a code list's listID (a code in an identifier) is checked by the code list validation."""
+    list_ids = {l["listID"] for l in codelists.load()["lists"].values()}
+    for e in root.iter(f"{{{NS_CBC}}}*"):
+        sid = e.get("schemeID")
+        if sid is None or sid in list_ids:
+            continue
+        if sid not in SCHEMES:
+            raise SystemExit(f"{where}: {etree.QName(e).localname} = {e.text}: schemeID {sid} is not a scheme of the "
+                             "world (world/countries.json)")
+        why = world_ids.problem(SCHEMES[sid], e.text)
+        if why:
+            raise SystemExit(f"{where}: {root.getroottree().getpath(e)}: {why}")
 
 
 # ---------------------------------------------------------------- the reason pages
@@ -1294,6 +1370,7 @@ def main(flow_id, check=False):
         check_payment_means(root, f"{flow_id} {n} {doc['doc']}")
         check_dangerous_goods(root, f"{flow_id} {n} {doc['doc']}")
         check_formats(root, f"{flow_id} {n} {doc['doc']}")
+        check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
