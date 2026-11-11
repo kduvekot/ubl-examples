@@ -309,7 +309,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">600</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">600</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">8700.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>
@@ -348,7 +348,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">14.5</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

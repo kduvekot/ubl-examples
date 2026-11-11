@@ -28,11 +28,11 @@
   </cac:GuaranteeDocumentReference>
   <cac:ImmobilizedSecurity>
     <cbc:ImmobilizationCertificateID>BLUM-IMM-26-0044</cbc:ImmobilizationCertificateID>
-    <cbc:SecurityID>XU0001042505</cbc:SecurityID>
+    <cbc:SecurityID>XU0001042501</cbc:SecurityID>
     <cbc:IssueDate>2026-02-21</cbc:IssueDate>
     <cbc:FaceValueAmount currencyID="XBL">2500.00</cbc:FaceValueAmount>
     <cbc:MarketValueAmount currencyID="XBL">3100.00</cbc:MarketValueAmount>
-    <cbc:SharesNumberQuantity unitCode="C62">250</cbc:SharesNumberQuantity>
+    <cbc:SharesNumberQuantity unitCode="E21">250</cbc:SharesNumberQuantity>
     <cac:IssuerParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -199,7 +199,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>

@@ -30,7 +30,7 @@ The recovery facility reports each movement received to the competent authority.
   A movement of waste for recovery.
 - `SequenceNumberID` = **1**  
   The first movement under the notification.
-- `ConsignmentQuantity` = **12** (unitCode `C62`)  
+- `ConsignmentQuantity` = **12** (unitCode `EA`)  
   Of about twelve notified.
 
 ### Signature
@@ -326,7 +326,7 @@ Inside `NotifierParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -560,7 +560,7 @@ Inside `DocumentDistribution`:
   <cbc:IssueTime>12:34:00</cbc:IssueTime>
   <cbc:WasteMovementTypeCode>Recovery</cbc:WasteMovementTypeCode>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cbc:ConsignmentQuantity unitCode="EA">12</cbc:ConsignmentQuantity>
   <cac:Signature>
     <cbc:ID>RR-SIG-WM</cbc:ID>
     <cac:SignatoryParty>
@@ -819,7 +819,7 @@ Inside `DocumentDistribution`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>

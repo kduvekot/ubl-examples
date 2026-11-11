@@ -251,13 +251,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **6** (unitCode `H87`)  
+- `LineItem/Quantity` = **6** (unitCode `EA`)  
   Six packs: four hours of back-up power for the mast.
 - `LineItem/LineExtensionAmount` = **14400.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **2400** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.**  
   The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
@@ -624,11 +624,11 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">6</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>

@@ -291,7 +291,7 @@
       <cbc:CompanyLegalForm>Consortia must name a lead member.</cbc:CompanyLegalForm>
       <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">10</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
       <cac:RequiredBusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
@@ -304,7 +304,7 @@
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode>References</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Three similar supplies in five years.</cbc:Description>
-        <cbc:ThresholdQuantity unitCode="C62">3</cbc:ThresholdQuantity>
+        <cbc:ThresholdQuantity unitCode="EA">3</cbc:ThresholdQuantity>
         <cac:DurationPeriod>
           <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
         </cac:DurationPeriod>
@@ -562,7 +562,7 @@
     <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
     <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
     <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
-    <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+    <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
     <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
@@ -626,9 +626,9 @@
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
       <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
-      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
-      <cbc:MinimumQuantity unitCode="H87">120</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="H87">288</cbc:MaximumQuantity>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+      <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
       <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
       <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>

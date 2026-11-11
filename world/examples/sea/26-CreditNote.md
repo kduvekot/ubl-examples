@@ -390,7 +390,7 @@ Inside `CreditNoteLine`:
   The line number.
 - `Note` = **Box crushed at the port of Selanu.**  
   What happened.
-- `CreditedQuantity` = **1** (unitCode `H87`)  
+- `CreditedQuantity` = **1** (unitCode `EA`)  
   The frame that arrived cracked.
 - `LineExtensionAmount` = **64.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
@@ -432,7 +432,7 @@ Inside `CreditNoteLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
 ## The document
@@ -701,7 +701,7 @@ Inside `CreditNoteLine`:
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Box crushed at the port of Selanu.</cbc:Note>
-    <cbc:CreditedQuantity unitCode="H87">1</cbc:CreditedQuantity>
+    <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">64.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
@@ -745,7 +745,7 @@ Inside `CreditNoteLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>
 </CreditNote>

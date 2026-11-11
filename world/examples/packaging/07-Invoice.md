@@ -408,7 +408,7 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **600** (unitCode `H87`)  
+- `InvoicedQuantity` = **600** (unitCode `EA`)  
   The shirts delivered.
 - `LineExtensionAmount` = **8700.00** (currencyID `XBL`)  
   600 × 14.5, rounded to the minor unit of the currency.
@@ -448,7 +448,7 @@ Inside `InvoiceLine`:
   Its value; item shirt of Lumeport Textile Mill (world/items.json).
 - `Price/PriceAmount` = **14.5** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
 ## The document
@@ -765,7 +765,7 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">600</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">600</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">8700.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>
@@ -804,7 +804,7 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">14.5</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

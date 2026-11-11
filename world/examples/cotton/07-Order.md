@@ -297,7 +297,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.**  
   The seller's description; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `LineItem/Item/PackQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `LineItem/Item/PackSizeNumeric` = **227**  
   The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
@@ -583,7 +583,7 @@ Inside `OrderLine`:
       </cac:Price>
       <cac:Item>
         <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
-        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
         <cbc:Name languageID="en">Cotton lint, compressed bale</cbc:Name>

@@ -355,7 +355,7 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **6** (unitCode `H87`)  
+- `InvoicedQuantity` = **6** (unitCode `EA`)  
   The quantity delivered.
 - `LineExtensionAmount` = **14400.00** (currencyID `XBL`)  
   6 × 2400.0, rounded to the minor unit of the currency.
@@ -363,7 +363,7 @@ Inside `InvoiceLine`:
   The order line this invoice line bills.
 - `PricingReference/OriginalItemLocationQuantity/HazardousRiskIndicator` = **true**  
   The batteries are dangerous goods wherever they are delivered.
-- `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/BatchQuantity` = **1** (unitCode `C62`)  
+- `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/BatchQuantity` = **1** (unitCode `EA`)  
   Delivered in single crates.
 - `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/HazardousRiskIndicator` = **true**  
   Each crate is dangerous goods: lithium-ion batteries.
@@ -419,7 +419,7 @@ Inside `InvoiceLine`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Price/PriceAmount` = **2400** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **2**  
   The line number.
@@ -847,7 +847,7 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -856,7 +856,7 @@ Inside `InvoiceLine`:
       <cac:OriginalItemLocationQuantity>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:DeliveryUnit>
-          <cbc:BatchQuantity unitCode="C62">1</cbc:BatchQuantity>
+          <cbc:BatchQuantity unitCode="EA">1</cbc:BatchQuantity>
           <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         </cac:DeliveryUnit>
       </cac:OriginalItemLocationQuantity>
@@ -904,7 +904,7 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>

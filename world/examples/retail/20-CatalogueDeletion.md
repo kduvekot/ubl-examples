@@ -52,7 +52,7 @@ Inside `DeletedCatalogueReference`:
 
 - `ID` = **LD-CAT-26-0218**  
   The catalogue withdrawn.
-- `UUID` = **8fbee548-a66b-588f-b69b-2e8546501907**  
+- `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
@@ -361,7 +361,7 @@ Inside `ContractorCustomerParty`:
   </cac:ValidityPeriod>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
-    <cbc:UUID>8fbee548-a66b-588f-b69b-2e8546501907</cbc:UUID>
+    <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>

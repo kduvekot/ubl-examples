@@ -772,7 +772,7 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **96** (unitCode `H87`)  
+- `InvoicedQuantity` = **96** (unitCode `EA`)  
   The quantity delivered.
 - `LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   96 × 520.0, rounded to the minor unit of the currency.
@@ -788,10 +788,8 @@ Inside `InvoiceLine`:
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
@@ -861,13 +859,11 @@ Inside `InvoiceLine`:
 - `Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -938,7 +934,7 @@ Inside `InvoiceLine`:
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -1002,11 +998,11 @@ Inside `InvoiceLine`:
   The repair and maintenance manual.
 - `Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **2**  
   The line number.
-- `InvoicedQuantity` = **12** (unitCode `H87`)  
+- `InvoicedQuantity` = **12** (unitCode `EA`)  
   The quantity delivered.
 - `LineExtensionAmount` = **768.00** (currencyID `XBL`)  
   12 × 64.0, rounded to the minor unit of the currency.
@@ -1054,7 +1050,7 @@ Inside `InvoiceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
 ## The document
@@ -1677,7 +1673,7 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">96</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -1694,8 +1690,7 @@ Inside `InvoiceLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1762,7 +1757,6 @@ Inside `InvoiceLine`:
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -1828,7 +1822,7 @@ Inside `InvoiceLine`:
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1887,12 +1881,12 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">12</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -1947,7 +1941,7 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

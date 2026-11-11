@@ -440,8 +440,8 @@ Inside `Shipment`:
   Cigarettes.
 - `ShipmentStage/ShipStoreArticle/Name` = **Cigarettes**  
   What.
-- `ShipmentStage/ShipStoreArticle/Quantity` = **2000** (unitCode `H87`)  
-  Pieces.
+- `ShipmentStage/ShipStoreArticle/Quantity` = **2000** (unitCode `EA`)  
+  Pieces, counted each (EA).
 - `ShipmentStage/CrewPersonEffect/EffectDescription` = **One camera, one laptop.**  
   What the crew member declares.
 - `ShipmentStage/CrewPersonEffect/CrewPerson/FirstName` = **Rafe**  
@@ -486,13 +486,13 @@ Inside `Shipment`:
   And followed.
 - `ShipmentStage/BallastWaterSummary/IMOGuidelinesOnBoardIndicator` = **true**  
   The IMO guidelines are on board.
-- `ShipmentStage/BallastWaterSummary/TotalBallastTanksOnBoardQuantity` = **8** (unitCode `C62`)  
+- `ShipmentStage/BallastWaterSummary/TotalBallastTanksOnBoardQuantity` = **8** (unitCode `EA`)  
   Ballast tanks.
-- `ShipmentStage/BallastWaterSummary/TanksInBallastQuantity` = **4** (unitCode `C62`)  
+- `ShipmentStage/BallastWaterSummary/TanksInBallastQuantity` = **4** (unitCode `EA`)  
   Tanks with ballast now.
-- `ShipmentStage/BallastWaterSummary/TanksExchangedQuantity` = **4** (unitCode `C62`)  
+- `ShipmentStage/BallastWaterSummary/TanksExchangedQuantity` = **4** (unitCode `EA`)  
   Exchanged at sea.
-- `ShipmentStage/BallastWaterSummary/TanksNotExchangedQuantity` = **0** (unitCode `C62`)  
+- `ShipmentStage/BallastWaterSummary/TanksNotExchangedQuantity` = **0** (unitCode `EA`)  
   None left unexchanged.
 - `ShipmentStage/BallastWaterSummary/TotalBallastWaterOnBoardMeasure` = **1240** (unitCode `TNE`)  
   Ballast on board.
@@ -506,8 +506,8 @@ Inside `Shipment`:
   The tank.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **Wing**  
   A wing tank.
-- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `TNE`)  
-  Taken up at Lumeport.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit; the 310 were meant as tonnes of water, which is about the same number of cubic metres.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
   The depth of the intake.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SalinityMeasure` = **30** (unitCode `GL`)  
@@ -530,16 +530,16 @@ Inside `Shipment`:
   Emptied and refilled.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
   Of the volume.
-- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `TNE`)  
-  Exchanged.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Exchanged: the same 310 cubic metres (a volume, so in cubic metres; a tonne of water is about a cubic metre).
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-16**  
   At sea.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, 120 nautical miles west of Selanu**  
   Where.
 - `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TankID` = **BT-3**  
   The tank.
-- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/VolumeMeasure` = **120** (unitCode `TNE`)  
-  To be discharged at Selanu.
+- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/VolumeMeasure` = **120** (unitCode `MTQ`)  
+  To be discharged at Selanu: 120 cubic metres (a volume; a tonne of water is about a cubic metre, so the number stays).
 - `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TransactionDate` = **2026-05-18**  
   In port.
 - `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/FirstName` = **Elsbeth**  
@@ -630,10 +630,10 @@ Inside `Shipment`:
   The certificate is valid.
 - `ShipmentStage/MaritimeHealthDeclaration/ReinspectionRequiredIndicator` = **false**  
   No reinspection needed.
-- `ShipmentStage/MaritimeHealthDeclaration/TotalDeadPersonQuantity` = **0** (unitCode `C62`)  
-  None.
-- `ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity` = **1** (unitCode `C62`)  
-  One crew member with a sprained wrist.
+- `ShipmentStage/MaritimeHealthDeclaration/TotalDeadPersonQuantity` = **0** (unitCode `IE`)  
+  No persons.
+- `ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity` = **1** (unitCode `IE`)  
+  One person: a crew member with a sprained wrist.
 - `ShipmentStage/MaritimeHealthDeclaration/SickAnimalDescription` = **None on board.**  
   No animals.
 - `ShipmentStage/MaritimeHealthDeclaration/StowawayDescription` = **None found in the search before departure.**  
@@ -767,8 +767,8 @@ Inside `TransportMeans`:
   Course over ground, in degrees.
 - `MaritimeTransport/VesselDynamics/SpeedOverGroundMeasure` = **13.5** (unitCode `KNT`)  
   Speed over ground.
-- `MaritimeTransport/VesselDynamics/RateOfTurnMeasure` = **0** (unitCode `C62`)  
-  Not turning.
+- `MaritimeTransport/VesselDynamics/RateOfTurnMeasure` = **0** (unitCode `E96`)  
+  Not turning: 0 degrees per second.
 
 ### Document Reference
 
@@ -1140,7 +1140,7 @@ Inside `Signature`:
       <cac:ShipStoreArticle>
         <cbc:ID>ST-2</cbc:ID>
         <cbc:Name>Cigarettes</cbc:Name>
-        <cbc:Quantity unitCode="H87">2000</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">2000</cbc:Quantity>
       </cac:ShipStoreArticle>
       <cac:CrewPersonEffect>
         <cbc:EffectDescription>One camera, one laptop.</cbc:EffectDescription>
@@ -1179,10 +1179,10 @@ Inside `Signature`:
         <cbc:ManagementPlanOnBoardIndicator>true</cbc:ManagementPlanOnBoardIndicator>
         <cbc:ManagementPlanImplementedIndicator>true</cbc:ManagementPlanImplementedIndicator>
         <cbc:IMOGuidelinesOnBoardIndicator>true</cbc:IMOGuidelinesOnBoardIndicator>
-        <cbc:TotalBallastTanksOnBoardQuantity unitCode="C62">8</cbc:TotalBallastTanksOnBoardQuantity>
-        <cbc:TanksInBallastQuantity unitCode="C62">4</cbc:TanksInBallastQuantity>
-        <cbc:TanksExchangedQuantity unitCode="C62">4</cbc:TanksExchangedQuantity>
-        <cbc:TanksNotExchangedQuantity unitCode="C62">0</cbc:TanksNotExchangedQuantity>
+        <cbc:TotalBallastTanksOnBoardQuantity unitCode="EA">8</cbc:TotalBallastTanksOnBoardQuantity>
+        <cbc:TanksInBallastQuantity unitCode="EA">4</cbc:TanksInBallastQuantity>
+        <cbc:TanksExchangedQuantity unitCode="EA">4</cbc:TanksExchangedQuantity>
+        <cbc:TanksNotExchangedQuantity unitCode="EA">0</cbc:TanksNotExchangedQuantity>
         <cbc:TotalBallastWaterOnBoardMeasure unitCode="TNE">1240</cbc:TotalBallastWaterOnBoardMeasure>
         <cbc:TotalBallastWaterCapacityMeasure unitCode="TNE">2480</cbc:TotalBallastWaterCapacityMeasure>
         <cbc:OtherControlActions>None.</cbc:OtherControlActions>
@@ -1190,7 +1190,7 @@ Inside `Signature`:
         <cac:UptakeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:TankTypeCode>Wing</cbc:TankTypeCode>
-          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
           <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
           <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
           <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
@@ -1212,7 +1212,7 @@ Inside `Signature`:
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:ExchangeMethodCode>Sequential</cbc:ExchangeMethodCode>
           <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
-          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
           <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
           <cac:Location>
             <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
@@ -1220,7 +1220,7 @@ Inside `Signature`:
         </cac:ExchangeBallastWaterTransaction>
         <cac:DischargeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
-          <cbc:VolumeMeasure unitCode="TNE">120</cbc:VolumeMeasure>
+          <cbc:VolumeMeasure unitCode="MTQ">120</cbc:VolumeMeasure>
           <cbc:TransactionDate>2026-05-18</cbc:TransactionDate>
         </cac:DischargeBallastWaterTransaction>
         <cac:ResponsibleOfficerPerson>
@@ -1305,8 +1305,8 @@ Inside `Signature`:
         <cbc:SanitaryMeasuresAppliedIndicator>true</cbc:SanitaryMeasuresAppliedIndicator>
         <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
         <cbc:ReinspectionRequiredIndicator>false</cbc:ReinspectionRequiredIndicator>
-        <cbc:TotalDeadPersonQuantity unitCode="C62">0</cbc:TotalDeadPersonQuantity>
-        <cbc:TotalIllPersonQuantity unitCode="C62">1</cbc:TotalIllPersonQuantity>
+        <cbc:TotalDeadPersonQuantity unitCode="IE">0</cbc:TotalDeadPersonQuantity>
+        <cbc:TotalIllPersonQuantity unitCode="IE">1</cbc:TotalIllPersonQuantity>
         <cbc:SickAnimalDescription>None on board.</cbc:SickAnimalDescription>
         <cbc:StowawayDescription>None found in the search before departure.</cbc:StowawayDescription>
         <cbc:LastDrinkingWaterAnalysisDate>2026-04-02</cbc:LastDrinkingWaterAnalysisDate>
@@ -1417,7 +1417,7 @@ Inside `Signature`:
         <cbc:AtAnchorageIndicator>false</cbc:AtAnchorageIndicator>
         <cbc:CourseOverGroundDirection>088</cbc:CourseOverGroundDirection>
         <cbc:SpeedOverGroundMeasure unitCode="KNT">13.5</cbc:SpeedOverGroundMeasure>
-        <cbc:RateOfTurnMeasure unitCode="C62">0</cbc:RateOfTurnMeasure>
+        <cbc:RateOfTurnMeasure unitCode="E96">0</cbc:RateOfTurnMeasure>
       </cac:VesselDynamics>
     </cac:MaritimeTransport>
   </cac:TransportMeans>

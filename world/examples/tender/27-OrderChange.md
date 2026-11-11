@@ -285,7 +285,7 @@ Inside `SellerSupplierParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -473,7 +473,7 @@ Inside `OrderLine`:
   The bench line.
 - `LineItem/LineStatusCode` = **Revised**  
   Its colour changes.
-- `LineItem/Quantity` = **40** (unitCode `H87`)  
+- `LineItem/Quantity` = **40** (unitCode `EA`)  
   Unchanged: forty benches.
 - `LineItem/LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
   Unchanged.
@@ -700,7 +700,7 @@ Inside `OrderLine`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -831,7 +831,7 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
       <cac:Item>
         <cbc:Description>Park bench Serra 180, frame in moss green RAL 6005</cbc:Description>

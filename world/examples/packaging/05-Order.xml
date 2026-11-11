@@ -242,11 +242,11 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">600</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">600</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">8700.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">14.5</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>

@@ -213,7 +213,7 @@
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -344,7 +344,7 @@
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
       <cac:Item>
         <cbc:Description>Park bench Serra 180, frame in moss green RAL 6005</cbc:Description>

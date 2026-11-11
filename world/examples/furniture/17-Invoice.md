@@ -438,7 +438,7 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **6** (unitCode `H87`)  
+- `InvoicedQuantity` = **6** (unitCode `EA`)  
   The desks delivered.
 - `LineExtensionAmount` = **5280.00** (currencyID `XBL`)  
   6 × 880.0, rounded to the minor unit of the currency.
@@ -482,7 +482,7 @@ Inside `InvoiceLine`:
   Its size.
 - `Price/PriceAmount` = **880** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **2**  
   The line number.
@@ -854,7 +854,7 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">5280.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
@@ -897,7 +897,7 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">880</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>

@@ -262,11 +262,11 @@ Inside `CustomsDeclaration`:
   The value of the slats, in lume.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
   The gross weight of the goods of this item.
-- `Shipment/GoodsItem/Quantity` = **4800** (unitCode `H87`)  
+- `Shipment/GoodsItem/Quantity` = **4800** (unitCode `EA`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
   The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `Shipment/GoodsItem/Item/PackQuantity` = **1** (unitCode `H87`)  
+- `Shipment/GoodsItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `Shipment/GoodsItem/Item/PackSizeNumeric` = **50**  
   The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
@@ -460,7 +460,7 @@ Inside `CustomsDeclaration`:
   A register of businesses, not a register of charities or associations.
 - `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `ConsigneeParty/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `ConsigneeParty/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `ConsigneeParty/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -799,10 +799,10 @@ Inside `Signature`:
         <cbc:Description>Hardwood bench slat 1800</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XBL">34560.00</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-          <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+          <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
           <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
           <cbc:Name>Hardwood bench slat 1800</cbc:Name>
           <cac:SellersItemIdentification>
@@ -991,7 +991,7 @@ Inside `Signature`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>

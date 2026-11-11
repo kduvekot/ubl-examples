@@ -153,7 +153,7 @@ Inside `TendererParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -451,7 +451,7 @@ Inside `TenderedProject`:
   The benches.
 - `TenderLine/Note` = **Serra 180, as specified.**  
   What is offered.
-- `TenderLine/Quantity` = **240** (unitCode `H87`)  
+- `TenderLine/Quantity` = **240** (unitCode `EA`)  
   240 benches.
 - `TenderLine/LineExtensionAmount` = **119760.00** (currencyID `XBL`)  
   240 at the unit price.
@@ -461,13 +461,13 @@ Inside `TenderedProject`:
   None.
 - `TenderLine/OrderableUnit` = **Pallet of 4**  
   Called off in pallets.
-- `TenderLine/ContentUnitQuantity` = **4** (unitCode `H87`)  
+- `TenderLine/ContentUnitQuantity` = **4** (unitCode `EA`)  
   Four per pallet.
 - `TenderLine/OrderQuantityIncrementNumeric` = **4**  
   In steps of four.
-- `TenderLine/MinimumOrderQuantity` = **20** (unitCode `H87`)  
+- `TenderLine/MinimumOrderQuantity` = **20** (unitCode `EA`)  
   A release of at least 20.
-- `TenderLine/MaximumOrderQuantity` = **96** (unitCode `H87`)  
+- `TenderLine/MaximumOrderQuantity` = **96** (unitCode `EA`)  
   At most a full truck.
 - `TenderLine/WarrantyInformation` = **Five years on the frame.**  
   The warranty.
@@ -481,7 +481,7 @@ Inside `TenderedProject`:
   Seven days per release.
 - `TenderLine/ReplacementRelatedItem/ID` = **VI-C180-2026**  
   Spare frames available.
-- `TenderLine/ReplacementRelatedItem/Quantity` = **1** (unitCode `H87`)  
+- `TenderLine/ReplacementRelatedItem/Quantity` = **1** (unitCode `EA`)  
   One for one.
 - `TenderLine/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -501,7 +501,7 @@ Inside `TenderedProject`:
   The call for tenders.
 - `TenderLine/ID` = **2**  
   The installation.
-- `TenderLine/Quantity` = **240** (unitCode `H87`)  
+- `TenderLine/Quantity` = **240** (unitCode `EA`)  
   240 installations.
 - `TenderLine/LineExtensionAmount` = **4320.00** (currencyID `XBL`)  
   240 at the price.
@@ -637,7 +637,7 @@ Inside `TenderedProject`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -900,15 +900,15 @@ Inside `TenderedProject`:
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
       <cbc:Note>Serra 180, as specified.</cbc:Note>
-      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">119760.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">119760.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-      <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+      <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
       <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-      <cbc:MinimumOrderQuantity unitCode="H87">20</cbc:MinimumOrderQuantity>
-      <cbc:MaximumOrderQuantity unitCode="H87">96</cbc:MaximumOrderQuantity>
+      <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
       <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
       <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
       <cac:DocumentReference>
@@ -922,7 +922,7 @@ Inside `TenderedProject`:
       </cac:OfferedItemLocationQuantity>
       <cac:ReplacementRelatedItem>
         <cbc:ID>VI-C180-2026</cbc:ID>
-        <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       </cac:ReplacementRelatedItem>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -951,7 +951,7 @@ Inside `TenderedProject`:
     </cac:TenderLine>
     <cac:TenderLine>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">4320.00</cbc:LineExtensionAmount>
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>

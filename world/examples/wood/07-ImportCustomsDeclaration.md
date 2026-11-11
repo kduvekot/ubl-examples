@@ -146,7 +146,7 @@ Inside `ImporterParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -409,11 +409,11 @@ Inside `Shipment`:
   The customs value in ferra: the value in lume at the reference rate (1 lume = 100 ferra).
 - `GoodsItem/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
   The gross weight of the goods of this item.
-- `GoodsItem/Quantity` = **4800** (unitCode `H87`)  
+- `GoodsItem/Quantity` = **4800** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
   The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/PackQuantity` = **1** (unitCode `H87`)  
+- `GoodsItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `GoodsItem/Item/PackSizeNumeric` = **50**  
   The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
@@ -644,7 +644,7 @@ Inside `Signature`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -870,10 +870,10 @@ Inside `Signature`:
       <cbc:Description>Hardwood bench slat 1800</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XUF">3456000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
         <cac:SellersItemIdentification>

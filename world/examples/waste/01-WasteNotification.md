@@ -28,7 +28,7 @@ The manufacturer, as producer and notifier, notifies the planned movements to th
   The time the sender's system issued the document, in the sender's local time.
 - `WasteNotificationTypeCode` = **Recovery**  
   A notification of waste for recovery, not disposal.
-- `ConsignmentQuantity` = **12** (unitCode `C62`)  
+- `ConsignmentQuantity` = **12** (unitCode `EA`)  
   About twelve movements over the year.
 
 ### Signature
@@ -126,7 +126,7 @@ Inside `SenderParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -539,7 +539,7 @@ Inside `DocumentReference`:
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cbc:WasteNotificationTypeCode>Recovery</cbc:WasteNotificationTypeCode>
-  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cbc:ConsignmentQuantity unitCode="EA">12</cbc:ConsignmentQuantity>
   <cac:Signature>
     <cbc:ID>VI-SIG-WN</cbc:ID>
     <cac:SignatoryParty>
@@ -624,7 +624,7 @@ Inside `DocumentReference`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>

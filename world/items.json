@@ -34,7 +34,7 @@
    "seller": "5-xu",
    "name": "Park bench Serra 180",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 49900,
     "currency": "XUF"
@@ -100,7 +100,7 @@
       "Appearance",
       "Optional"
      ],
-     "why": "The colours the frame is offered in."
+     "why": "The colour of the frame, one of the colours it is offered in."
     },
     {
      "id": "LOAD",
@@ -199,7 +199,7 @@
     "unit": "KGM",
     "base": [
      "1",
-     "H87"
+     "EA"
     ],
     "standard": "Greenhouse Gas Protocol Product Standard",
     "stage": "Manufacturing",
@@ -229,7 +229,7 @@
    "seller": "5-xu",
    "name": "Bench side frame casting",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 5980,
     "currency": "XUF"
@@ -393,7 +393,7 @@
    "seller": "36-xb",
    "name": "Hardwood bench slat 1800",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 7.2,
     "currency": "XBL"
@@ -585,7 +585,7 @@
    "seller": "37-xb",
    "name": "Office desk",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 880.0,
     "currency": "XBL"
@@ -643,7 +643,7 @@
    "seller": "40-xb",
    "name": "Cotton shirt",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 14.5,
     "currency": "XBL"
@@ -723,7 +723,7 @@
    "seller": "41-xb",
    "name": "Garment bag",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 0.08,
     "currency": "XBL"
@@ -810,7 +810,7 @@
    "seller": "6-xb",
    "name": "Park bench Serra 180",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 520.0,
     "currency": "XBL"
@@ -833,7 +833,7 @@
    "seller": "6-xb",
    "name": "Bench side frame casting",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 64.0,
     "currency": "XBL"
@@ -848,7 +848,7 @@
    "seller": "26-xb",
    "name": "Cotton shirt",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 29.95,
     "currency": "XBL"
@@ -978,7 +978,7 @@
    "seller": "26-xb",
    "name": "Park bench Serra 180",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 749.0,
     "currency": "XBL"
@@ -1032,7 +1032,7 @@
    "seller": "5-xu",
    "name": "Installation of a park bench",
    "kind": "service",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 1800,
     "currency": "XUF"
@@ -1045,7 +1045,7 @@
    "seller": "27-xb",
    "name": "Lithium-ion battery pack 48 V 100 Ah",
    "kind": "goods",
-   "unit": "H87",
+   "unit": "EA",
    "price": {
     "amount": 2400.0,
     "currency": "XBL"

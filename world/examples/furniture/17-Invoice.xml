@@ -324,7 +324,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">5280.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
@@ -367,7 +367,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">880</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>

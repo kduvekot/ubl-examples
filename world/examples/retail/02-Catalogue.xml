@@ -274,10 +274,10 @@
     <cbc:Note>Pallets of four only.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-    <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+    <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
     <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-    <cbc:MinimumOrderQuantity unitCode="H87">4</cbc:MinimumOrderQuantity>
-    <cbc:MaximumOrderQuantity unitCode="H87">192</cbc:MaximumOrderQuantity>
+    <cbc:MinimumOrderQuantity unitCode="EA">4</cbc:MinimumOrderQuantity>
+    <cbc:MaximumOrderQuantity unitCode="EA">192</cbc:MaximumOrderQuantity>
     <cbc:WarrantyInformation>Five years on the frame, from the maker.</cbc:WarrantyInformation>
     <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
     <cac:ContractorCustomerParty>
@@ -317,16 +317,16 @@
     </cac:LineValidityPeriod>
     <cac:ItemComparison>
       <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     </cac:ItemComparison>
     <cac:ComponentRelatedItem>
       <cbc:ID>MS-SL-1800</cbc:ID>
-      <cbc:Quantity unitCode="H87">5</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">5</cbc:Quantity>
       <cbc:Description>Hardwood bench slat 1800</cbc:Description>
     </cac:ComponentRelatedItem>
     <cac:ComponentRelatedItem>
       <cbc:ID>VI-C180</cbc:ID>
-      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
       <cbc:Description>Bench side frame casting</cbc:Description>
     </cac:ComponentRelatedItem>
     <cac:AccessoryRelatedItem>
@@ -341,8 +341,8 @@
     </cac:ComplementaryRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="H87">4</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="H87">192</cbc:MaximumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="EA">192</cbc:MaximumQuantity>
       <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
@@ -351,7 +351,7 @@
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
@@ -364,8 +364,8 @@
         </cac:PriceList>
       </cac:Price>
       <cac:DeliveryUnit>
-        <cbc:BatchQuantity unitCode="H87">4</cbc:BatchQuantity>
-        <cbc:ConsumerUnitQuantity unitCode="H87">1</cbc:ConsumerUnitQuantity>
+        <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
+        <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
       </cac:DeliveryUnit>
       <cac:ApplicableTaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -378,7 +378,7 @@
       </cac:ApplicableTaxCategory>
       <cac:Package>
         <cbc:ID>PAL-4</cbc:ID>
-        <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">4</cbc:Quantity>
         <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
       </cac:Package>
       <cac:AllowanceCharge>
@@ -403,8 +403,7 @@
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -544,7 +543,6 @@
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -618,7 +616,7 @@
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -687,7 +685,7 @@
     <cbc:Note>Spare part for the Serra 180.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Box</cbc:OrderableUnit>
-    <cbc:MinimumOrderQuantity unitCode="H87">1</cbc:MinimumOrderQuantity>
+    <cbc:MinimumOrderQuantity unitCode="EA">1</cbc:MinimumOrderQuantity>
     <cac:ContractorCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -714,20 +712,20 @@
     </cac:LineValidityPeriod>
     <cac:RequiredRelatedItem>
       <cbc:ID>LD-10442</cbc:ID>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cbc:Description>Park bench Serra 180</cbc:Description>
     </cac:RequiredRelatedItem>
     <cac:ReplacementRelatedItem>
       <cbc:ID>VI-C180-2026</cbc:ID>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     </cac:ReplacementRelatedItem>
     <cac:ReplacedRelatedItem>
       <cbc:ID>VI-C180-2024</cbc:ID>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     </cac:ReplacedRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">2</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="H87">1</cbc:MinimumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -735,7 +733,7 @@
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>

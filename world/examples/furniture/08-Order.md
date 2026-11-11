@@ -372,7 +372,7 @@ Inside `OrderLine`:
   Its size.
 - `LineItem/SubLineItem/ID` = **1.1**  
   A part of the set.
-- `LineItem/SubLineItem/Quantity` = **20** (unitCode `H87`)  
+- `LineItem/SubLineItem/Quantity` = **20** (unitCode `EA`)  
   1 per set.
 - `LineItem/SubLineItem/LineExtensionAmount` = **7600.00** (currencyID `XBL`)  
   20 at 380.00 lume: the parts add up to the set's price.
@@ -384,7 +384,7 @@ Inside `OrderLine`:
   The maker's number for the part.
 - `LineItem/SubLineItem/ID` = **1.2**  
   A part of the set.
-- `LineItem/SubLineItem/Quantity` = **40** (unitCode `H87`)  
+- `LineItem/SubLineItem/Quantity` = **40** (unitCode `EA`)  
   2 per set.
 - `LineItem/SubLineItem/LineExtensionAmount` = **4600.00** (currencyID `XBL`)  
   40 at 115.00 lume: the parts add up to the set's price.
@@ -708,7 +708,7 @@ Inside `OrderLine`:
       </cac:Item>
       <cac:SubLineItem>
         <cbc:ID>1.1</cbc:ID>
-        <cbc:Quantity unitCode="H87">20</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">20</cbc:Quantity>
         <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
@@ -722,7 +722,7 @@ Inside `OrderLine`:
       </cac:SubLineItem>
       <cac:SubLineItem>
         <cbc:ID>1.2</cbc:ID>
-        <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">40</cbc:Quantity>
         <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>

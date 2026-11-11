@@ -519,7 +519,7 @@ Inside `Shipment`:
   The packs alone.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/NetVolumeMeasure` = **0.24** (unitCode `MTQ`)  
   Their volume.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity` = **6** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity` = **6** (unitCode `EA`)  
   Six packs.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -559,7 +559,7 @@ Inside `Shipment`:
   Where it flies.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/ID` = **SE-CR-1..6**  
   The six crates.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/Quantity` = **6** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/Quantity` = **6** (unitCode `EA`)  
   Six.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/PackagingTypeCode` = **CR**  
   UN/ECE Recommendation 21 code CR: crate.
@@ -1041,7 +1041,7 @@ Inside `Signature`:
             <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
             <cbc:NetWeightMeasure unitCode="KGM">312</cbc:NetWeightMeasure>
             <cbc:NetVolumeMeasure unitCode="MTQ">0.24</cbc:NetVolumeMeasure>
-            <cbc:Quantity unitCode="H87">6</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">6</cbc:Quantity>
             <cac:ContactParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
@@ -1080,7 +1080,7 @@ Inside `Signature`:
             </cac:PositionOnBoardStowage>
             <cac:Package>
               <cbc:ID>SE-CR-1..6</cbc:ID>
-              <cbc:Quantity unitCode="H87">6</cbc:Quantity>
+              <cbc:Quantity unitCode="EA">6</cbc:Quantity>
               <cbc:PackagingTypeCode>CR</cbc:PackagingTypeCode>
             </cac:Package>
           </cac:LoadedHazardousItem>

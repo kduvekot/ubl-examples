@@ -253,7 +253,7 @@
     </cac:UnsupportedCommodityClassification>
     <cac:TotalCapacityDimension>
       <cbc:AttributeID>TEU</cbc:AttributeID>
-      <cbc:Measure unitCode="C62">1000</cbc:Measure>
+      <cbc:Measure unitCode="20">1000</cbc:Measure>
     </cac:TotalCapacityDimension>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>

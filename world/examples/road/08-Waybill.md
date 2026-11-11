@@ -356,7 +356,7 @@ Inside `ConsignorParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -422,11 +422,11 @@ Inside `Shipment`:
   The goods alone, without any packaging.
 - `GrossVolumeMeasure` = **41.5** (unitCode `MTQ`)  
   The volume of the 25 loaded pallets.
-- `TotalGoodsItemQuantity` = **2** (unitCode `H87`)  
+- `TotalGoodsItemQuantity` = **2** (unitCode `EA`)  
   Two kinds of goods: benches and side frames.
 - `SplitConsignmentIndicator` = **false**  
   The whole consignment travels on this truck.
-- `ConsignmentQuantity` = **1** (unitCode `H87`)  
+- `ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment on the truck.
 - `Consignment/ID` = **LD-CS-26-0152**  
   The distributor's consignment number, from its booking.
@@ -452,13 +452,13 @@ Inside `Shipment`:
   The consignee, who booked the truck, pays the freight.
 - `Consignment/CustomsClearanceServiceInstructions` = **The export is declared by the 3PL in Ferrano; the import by the distributor at the border.**  
   Who clears the goods through customs.
-- `Consignment/TotalTransportHandlingUnitQuantity` = **25** (unitCode `H87`)  
+- `Consignment/TotalTransportHandlingUnitQuantity` = **25** (unitCode `EA`)  
   25 pallets.
 - `Consignment/DeliveryInstructions` = **Unload at dock 4; report to the gatehouse first.**  
   Where to go on arrival.
 - `Consignment/HaulageInstructions` = **Wait at the warehouse until customs has released the export declaration.**  
   What the driver must do before leaving.
-- `Consignment/TotalPackagesQuantity` = **108** (unitCode `H87`)  
+- `Consignment/TotalPackagesQuantity` = **108** (unitCode `EA`)  
   96 benches and 12 boxed frames.
 - `Consignment/CustomsDeclaration/ID` = **VI-CD-26-0156**  
   The export declaration the goods travel under.
@@ -580,9 +580,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 001 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -590,7 +590,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-001**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -615,10 +615,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-001-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -638,9 +638,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 002 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -648,7 +648,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-002**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -673,10 +673,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-002-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -696,9 +696,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 003 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -706,7 +706,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-003**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -731,10 +731,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-003-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -754,9 +754,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 004 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -764,7 +764,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-004**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -789,10 +789,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-004-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -812,9 +812,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 005 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -822,7 +822,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-005**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -847,10 +847,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-005-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -870,9 +870,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 006 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -880,7 +880,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-006**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -905,10 +905,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-006-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -928,9 +928,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 007 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -938,7 +938,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-007**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -963,10 +963,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-007-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -986,9 +986,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 008 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -996,7 +996,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-008**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1021,10 +1021,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-008-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1044,9 +1044,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 009 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1054,7 +1054,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-009**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1079,10 +1079,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-009-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1102,9 +1102,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 010 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1112,7 +1112,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-010**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1137,10 +1137,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-010-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1160,9 +1160,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 011 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1170,7 +1170,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-011**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1195,10 +1195,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-011-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1218,9 +1218,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 012 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1228,7 +1228,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-012**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1253,10 +1253,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-012-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1276,9 +1276,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 013 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1286,7 +1286,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-013**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1311,10 +1311,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-013-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1334,9 +1334,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 014 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1344,7 +1344,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-014**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1369,10 +1369,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-014-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1392,9 +1392,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 015 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1402,7 +1402,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-015**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1427,10 +1427,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-015-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1450,9 +1450,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 016 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1460,7 +1460,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-016**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1485,10 +1485,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-016-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1508,9 +1508,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 017 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1518,7 +1518,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-017**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1543,10 +1543,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-017-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1566,9 +1566,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 018 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1576,7 +1576,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-018**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1601,10 +1601,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-018-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1624,9 +1624,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 019 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1634,7 +1634,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-019**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1659,10 +1659,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-019-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1682,9 +1682,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 020 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1692,7 +1692,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-020**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1717,10 +1717,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-020-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1740,9 +1740,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 021 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1750,7 +1750,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-021**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1775,10 +1775,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-021-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1798,9 +1798,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 022 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1808,7 +1808,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-022**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1833,10 +1833,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-022-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1856,9 +1856,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 023 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1866,7 +1866,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-023**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1891,10 +1891,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-023-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1914,9 +1914,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **May be stacked two high, steel frames on steel frames.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 024 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1924,7 +1924,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-024**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -1949,10 +1949,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **0.5** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-024-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **4** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -1972,9 +1972,9 @@ Inside `Shipment`:
   The carrier's handling code: two high, or nothing on top.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **Load on top: nothing may be stacked on the boxes.**  
   The handling, in words.
-- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   12 boxed side frames on the pallet.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 025 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1982,7 +1982,7 @@ Inside `Shipment`:
   The pallet's barcode, scanned at each handover.
 - `Consignment/TransportHandlingUnit/ActualPackage/ID` = **CL-26-025**  
   The pallet itself, as packed.
-- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
 - `Consignment/TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
   The pallet is exchanged with the carrier and goes back.
@@ -2007,10 +2007,10 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/AttributeID` = **Pallet places**  
   The pallet places taken on the truck.
 - `Consignment/TransportHandlingUnit/PalletSpaceMeasurementDimension/Measure` = **1** (unitCode `C62`)  
-  Half a place when two pallets are stacked; the castings take a whole one.
+  Half a place when two pallets are stacked; the castings take a whole one. A number of places, not of articles, so unit C62 (one), which allows a half.
 - `Consignment/TransportHandlingUnit/Package/ID` = **CL-26-025-1**  
   The packages on the pallet.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **12** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **12** (unitCode `EA`)  
   The packages of this kind on the pallet.
 - `Consignment/TransportHandlingUnit/Package/ReturnableMaterialIndicator` = **false**  
   The packaging is not returned.
@@ -2412,7 +2412,7 @@ Inside `Signature`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -2466,9 +2466,9 @@ Inside `Signature`:
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:NetNetWeightMeasure unitCode="KGM">3762</cbc:NetNetWeightMeasure>
     <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
-    <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
     <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
-    <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
+    <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0152</cbc:ID>
       <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
@@ -2482,10 +2482,10 @@ Inside `Signature`:
       <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
       <cbc:ThirdPartyPayerIndicator>false</cbc:ThirdPartyPayerIndicator>
       <cbc:CustomsClearanceServiceInstructions>The export is declared by the 3PL in Ferrano; the import by the distributor at the border.</cbc:CustomsClearanceServiceInstructions>
-      <cbc:TotalTransportHandlingUnitQuantity unitCode="H87">25</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:DeliveryInstructions>Unload at dock 4; report to the gatehouse first.</cbc:DeliveryInstructions>
       <cbc:HaulageInstructions>Wait at the warehouse until customs has released the export declaration.</cbc:HaulageInstructions>
-      <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
+      <cbc:TotalPackagesQuantity unitCode="EA">108</cbc:TotalPackagesQuantity>
       <cac:CustomsDeclaration>
         <cbc:ID>VI-CD-26-0156</cbc:ID>
         <cac:IssuerParty>
@@ -2617,13 +2617,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 001 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-001</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-001</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2649,7 +2649,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-001-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2662,13 +2662,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 002 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-002</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-002</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2694,7 +2694,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-002-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2707,13 +2707,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 003 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-003</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-003</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2739,7 +2739,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-003-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2752,13 +2752,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 004 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-004</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-004</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2784,7 +2784,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-004-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2797,13 +2797,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 005 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-005</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-005</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2829,7 +2829,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-005-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2842,13 +2842,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 006 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-006</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-006</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2874,7 +2874,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-006-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2887,13 +2887,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 007 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-007</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-007</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2919,7 +2919,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-007-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2932,13 +2932,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 008 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-008</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-008</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -2964,7 +2964,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-008-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -2977,13 +2977,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 009 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-009</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-009</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3009,7 +3009,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-009-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3022,13 +3022,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 010 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-010</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-010</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3054,7 +3054,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-010-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3067,13 +3067,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 011 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-011</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-011</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3099,7 +3099,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-011-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3112,13 +3112,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 012 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-012</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-012</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3144,7 +3144,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-012-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3157,13 +3157,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 013 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-013</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-013</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3189,7 +3189,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-013-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3202,13 +3202,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 014 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-014</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-014</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3234,7 +3234,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-014-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3247,13 +3247,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 015 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-015</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-015</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3279,7 +3279,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-015-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3292,13 +3292,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 016 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-016</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-016</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3324,7 +3324,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-016-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3337,13 +3337,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 017 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-017</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-017</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3369,7 +3369,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-017-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3382,13 +3382,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 018 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-018</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-018</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3414,7 +3414,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-018-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3427,13 +3427,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 019 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-019</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-019</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3459,7 +3459,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-019-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3472,13 +3472,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 020 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-020</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-020</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3504,7 +3504,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-020-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3517,13 +3517,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 021 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-021</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-021</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3549,7 +3549,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-021-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3562,13 +3562,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 022 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-022</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-022</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3594,7 +3594,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-022-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3607,13 +3607,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 023 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-023</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-023</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3639,7 +3639,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-023-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3652,13 +3652,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>Stack2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 024 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-024</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-024</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3684,7 +3684,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-024-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
@@ -3697,13 +3697,13 @@ Inside `Signature`:
         <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode>NoStack</cbc:HandlingCode>
         <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
-        <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-        <cbc:TotalPackageQuantity unitCode="H87">12</cbc:TotalPackageQuantity>
+        <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+        <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 025 of 025</cbc:ShippingMarks>
         <cbc:TraceID>CL-26-025</cbc:TraceID>
         <cac:ActualPackage>
           <cbc:ID>CL-26-025</cbc:ID>
-          <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
@@ -3729,7 +3729,7 @@ Inside `Signature`:
         </cac:PalletSpaceMeasurementDimension>
         <cac:Package>
           <cbc:ID>CL-26-025-1</cbc:ID>
-          <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">12</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
           <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
           <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>

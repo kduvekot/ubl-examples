@@ -319,7 +319,7 @@ Inside `PurchaseReceiptLine`:
 
 - `ID` = **1**  
   The line number.
-- `Quantity` = **2** (unitCode `H87`)  
+- `Quantity` = **2** (unitCode `EA`)  
   Two shirts.
 - `LineExtensionAmount` = **54.90** (currencyID `XBL`)  
   Two shirts less the offer.
@@ -371,7 +371,7 @@ Inside `PurchaseReceiptLine`:
   The seller's price per unit (world/items.json).
 - `Price/TaxInclusivePriceAmount` = **31.9** (currencyID `XBL`)  
   The price the customer pays, with the 6.5 % sales tax.
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
 ## The document
@@ -601,7 +601,7 @@ Inside `PurchaseReceiptLine`:
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">54.90</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
@@ -656,7 +656,7 @@ Inside `PurchaseReceiptLine`:
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">29.95</cbc:PriceAmount>
       <cbc:TaxInclusivePriceAmount currencyID="XBL">31.9</cbc:TaxInclusivePriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>
 </PurchaseReceipt>

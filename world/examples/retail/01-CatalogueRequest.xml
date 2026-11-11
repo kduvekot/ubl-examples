@@ -293,7 +293,7 @@
       <cbc:EndDate>2026-07-19</cbc:EndDate>
     </cac:LineValidityPeriod>
     <cac:RequiredItemLocationQuantity>
-      <cbc:MinimumQuantity unitCode="H87">24</cbc:MinimumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">24</cbc:MinimumQuantity>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Name>Park bench Serra 180</cbc:Name>

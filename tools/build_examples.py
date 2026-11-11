@@ -542,7 +542,9 @@ def item_property(pr, src):
     if pr.get("importance"):
         out["ImportanceCode"] = V(pr["importance"], "How much the property matters in describing the item.")
     if pr.get("list"):
-        out["ListValue"] = [V(v, "One of the values the property can take.") for v in pr["list"]]
+        out["ListValue"] = V(pr["list"][0], "The property's value, taken from the maker's list of values ("
+                                            f"{', '.join(pr['list'])}; {src}). One ListValue only: UBL rule IND7 "
+                                            "allows a second one only in another language.")
     if pr.get("usable"):
         n_, unit, why = pr["usable"]
         out["UsabilityPeriod"] = {"DurationMeasure": V(n_, why, unitCode=unit)}
@@ -641,12 +643,14 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         maker = ITEM[maker["resale_of"]]
     msrc = f"item {maker['id']} of {PARTY[maker['seller']]['identity']['name']} (world/items.json)"
     if maker.get("pack"):
-        out["PackQuantity"] = V(maker["pack"]["quantity"], "One pack of this item.", unitCode="H87")
+        out["PackQuantity"] = V(maker["pack"]["quantity"], "One pack of this item.", unitCode="EA")
         out["PackSizeNumeric"] = V(maker["pack"]["size"], f"The units in one pack: {maker['pack']['size']} "
                                                           f"{'kg in a bale' if maker['unit'] == 'KGM' else 'in a bundle'}; "
                                                           f"{msrc}.")
     if maker.get("keywords"):
-        out["Keyword"] = [V(k, "A word buyers search the item by.") for k in maker["keywords"]]
+        out["Keyword"] = V(", ".join(maker["keywords"]), "The search string buyers find the item by, the maker's "
+                                                          f"keywords in one element; {msrc}. A second Keyword would "
+                                                          "have to be in another language (UBL rule IND7).")
     if maker.get("brand"):
         out["BrandName"] = V(maker["brand"], f"The brand the maker sells the item under; {msrc}.")
     if maker.get("model"):
@@ -1073,6 +1077,73 @@ def bilingual_notes(doc, content):
     content["Note"] = out
 
 
+TEXT_BBIES = set(MODEL["text_bbies"])     # cbc elements of a text type (Text or Name): they carry languageID
+
+
+def check_instance_rules(root, where):
+    """The UBL 2.5 instance rules of section 4 that a schema cannot check:
+    IND5  no element is devoid of content: an aggregate needs a child, a basic element text (whitespace alone is
+          empty);
+    IND7  no two sibling elements of a text type with the same name have the same languageID;
+    IND8  no two sibling elements of a text type with the same name both have no languageID;
+    IND9  no attribute is empty.
+    The text types are the basic properties whose data type in the UBL 2.5 model is Text or Name: their schema
+    types (udt:TextType, udt:NameType) are the ones that derive from the CCTS TextType and carry languageID
+    (world/ubl-model.json, text_bbies)."""
+    for el in root.iter():
+        if not isinstance(el.tag, str):
+            continue
+        path = root.getroottree().getpath(el)
+        if len(el) == 0 and not (el.text or "").strip():
+            raise SystemExit(f"{where}: {path}: empty element (UBL rule IND5)")
+        for k, v in el.attrib.items():
+            if not v.strip():
+                raise SystemExit(f"{where}: {path}/@{etree.QName(k).localname}: empty attribute (UBL rule IND9)")
+        seen = {}
+        for c in el:
+            if not isinstance(c.tag, str):
+                continue
+            q = etree.QName(c)
+            if q.namespace != NS_CBC or q.localname not in TEXT_BBIES:
+                continue
+            lang = c.get("languageID")
+            key = (q.localname, lang)
+            if key in seen:
+                rule = "IND8: both without languageID" if lang is None else f"IND7: both with languageID {lang}"
+                raise SystemExit(f"{where}: {path}: two {q.localname} elements (UBL rule {rule})")
+            seen[key] = c
+
+
+DOC_UUIDS = {}      # (flow, document ID) -> the UUID the document carries, for references to it
+
+
+def document_uuid(flow_id, n, doc_type):
+    """The UUID of document n of a flow: version 5, derived from its place in the world, so stable."""
+    return str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:{flow_id}:{n}:{doc_type}"))
+
+
+def referenced_uuid(flow_id, doc_id):
+    """The UUID of an earlier document of the flow, as that document states it: a reference quotes it."""
+    if (flow_id, doc_id) not in DOC_UUIDS:
+        raise SystemExit(f"{flow_id}: a reference quotes the UUID of {doc_id}, which is not an earlier document "
+                         "of the flow")
+    return DOC_UUIDS[(flow_id, doc_id)]
+
+
+def check_reference_uuids(flow_id, roots):
+    """Every reference (an element with an ID and a UUID) to a document of the same flow carries that document's
+    UUID."""
+    own = {}
+    for name, root in roots:
+        own.setdefault(root.findtext(f"{{{NS_CBC}}}ID"), set()).add(root.findtext(f"{{{NS_CBC}}}UUID"))
+    for name, root in roots:
+        for el in root.iter(f"{{{NS_CAC}}}*"):
+            rid, ruuid = el.findtext(f"{{{NS_CBC}}}ID"), el.findtext(f"{{{NS_CBC}}}UUID")
+            if rid in own and ruuid is not None and ruuid not in own[rid]:
+                raise SystemExit(f"world/examples/{flow_id}/{name}: {etree.QName(el).localname} refers to {rid} "
+                                 f"with UUID {ruuid}, but that document's UUID is {', '.join(sorted(own[rid] - {None}))}")
+
+
 def xmlname(n, doc):
     return f"{n:02d}-{doc['doc']}.xml"
 
@@ -1084,7 +1155,7 @@ def main(flow_id, check=False):
     scenario = examples_scenarios.SCENARIOS[flow_id]
     out = os.path.join(world_data.ROOT, "world", "examples", flow_id)
     os.makedirs(out, exist_ok=True)
-    stale = []
+    stale, roots = [], []
     for n, doc in enumerate(docs, 1):
         content = scenario(n, doc)
         content = place_parties(doc, content)
@@ -1111,12 +1182,15 @@ def main(flow_id, check=False):
             header["IssueTime"] = V(f"{minutes // 60:02d}:{minutes % 60:02d}:00", "The time the sender's system "
                                     "issued the document, in the sender's local time.")
         if "UUID" in own:
-            header["UUID"] = V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:{flow_id}:{n}:"
-                                                                  f"{doc['doc']}")),
+            header["UUID"] = V(document_uuid(flow_id, n, doc["doc"]),
                                "A universally unique identifier of the document, derived from its place in the world "
                                "(UUID version 5), so it stays the same on every build.")
         root, reasons = build(doc["doc"], merge(header, content))
+        if "UUID" in header and isinstance(content.get("ID"), V):
+            DOC_UUIDS[(flow_id, content["ID"].value)] = header["UUID"].value
+        roots.append((xmlname(n, doc), root))
         check_addresses(root, f"{flow_id} {n} {doc['doc']}")
+        check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():
@@ -1129,6 +1203,7 @@ def main(flow_id, check=False):
                     f.write(data)
         if not check:
             print(f"world/examples/{flow_id}/{xmlname(n, doc)}: {len(reasons)} values")
+    check_reference_uuids(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow

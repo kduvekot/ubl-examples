@@ -105,7 +105,7 @@ def sells(p):
         if i.get("components"):
             def qty(c):
                 u = ITEMS[c["item"]]["unit"]
-                return f"{c['qty']:g} ×" if u in ("H87", "C62") else f"{c['qty']:g} {units[u].split(' (')[0]} of"
+                return f"{c['qty']:g} ×" if u in ("EA", "C62") else f"{c['qty']:g} {units[u].split(' (')[0]} of"
             rows.append(("Made with", ", ".join(f"{qty(c)} {ITEMS[c['item']]['name']} ({link(ITEMS[c['item']]['seller'])})"
                                                 for c in i["components"])))
         out += [f"### {i['name']}", "", i.get("description", ""), "", "| | |", "|---|---|"]

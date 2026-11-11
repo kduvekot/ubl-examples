@@ -327,7 +327,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Eight side frames, needed before the ship arrives.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">8</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

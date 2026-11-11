@@ -225,7 +225,7 @@ Inside `DeliveryCustomerParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -405,13 +405,13 @@ Inside `DespatchLine`:
   The line as the order put it.
 - `LineStatusCode` = **NoStatus**  
   Despatched as ordered.
-- `DeliveredQuantity` = **4800** (unitCode `H87`)  
+- `DeliveredQuantity` = **4800** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
 - `Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
   The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `Item/PackQuantity` = **1** (unitCode `H87`)  
+- `Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `Item/PackSizeNumeric` = **50**  
   The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
@@ -707,7 +707,7 @@ Inside `DespatchLine`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -870,13 +870,13 @@ Inside `DespatchLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Slats for 960 benches: five per bench, 96 bundles of 50.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">4800</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">4800</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-      <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+      <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
       <cbc:Name>Hardwood bench slat 1800</cbc:Name>
       <cac:BuyersItemIdentification>

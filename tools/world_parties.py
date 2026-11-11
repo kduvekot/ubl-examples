@@ -20,7 +20,9 @@ something to put in it, and these checks keep it consistent:
   * e-mail addresses and websites use the reserved .example domain (RFC
     2606), and telephone numbers the country code +999 that the ITU keeps in
     reserve, so none can reach a real organisation;
-  * industry codes are ISIC Rev. 4 classes, and parties referred to exist.
+  * industry codes are ISIC Rev. 4 classes, and parties referred to exist;
+  * the ISIN of a listed security has the structure and check digit of
+    ISO 6166 (Luhn over the digits with each letter expanded to 10..35).
 
 Usage: python3 tools/world_parties.py      (prints the problems, exit 1 if any)
 """
@@ -49,6 +51,19 @@ def account_check(country, bank, number):
 def account_valid(acc):
     country, check, rest = acc[:2], acc[2:4], acc[4:]
     return account_check(country, rest[:4], rest[4:]) == check
+
+
+def isin_valid(isin):
+    """ISO 6166: two letters, nine alphanumerics and a check digit; the Luhn sum over the string with
+    each letter written as its number (A=10 .. Z=35) is a multiple of 10."""
+    if not re.fullmatch(r"[A-Z]{2}[0-9A-Z]{9}[0-9]", isin or ""):
+        return False
+    digits = "".join(str(int(ch, 36)) for ch in isin)
+    total = 0
+    for i, ch in enumerate(reversed(digits)):
+        n = int(ch) * (2 if i % 2 else 1)
+        total += n - 9 if n > 9 else n
+    return total % 10 == 0
 
 
 def tax_id_valid(country, tax_id, state_code=None):
@@ -145,6 +160,11 @@ def check(world):
         for rel, key in ((idn.get("service_provider"), "party"), (idn.get("legal", {}).get("shareholder"), "party")):
             if rel and rel[key] not in parties:
                 problems.append(f"{where}: refers to unknown party {rel[key]}")
+        listing = idn.get("legal", {}).get("listing")
+        if listing and not isin_valid(listing.get("id")):
+            problems.append(f"{where}: ISIN {listing.get('id')} fails ISO 6166 (structure or check digit)")
+        if listing and listing.get("id", "")[:2] != p["c"]:
+            problems.append(f"{where}: ISIN {listing.get('id')} must start with the issuer's country code {p['c']}")
         acc = idn.get("account")
         if acc:
             bank = parties.get(acc["bank"])

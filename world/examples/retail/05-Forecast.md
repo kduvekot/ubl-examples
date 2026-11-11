@@ -326,7 +326,7 @@ Inside `ForecastLine`:
   The six weeks.
 - `ForecastPeriod/EndDate` = **2026-06-15**  
   Their end.
-- `SalesItem/Quantity` = **40** (unitCode `H87`)  
+- `SalesItem/Quantity` = **40** (unitCode `EA`)  
   Forty benches over six weeks, promotion included.
 - `SalesItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
@@ -334,10 +334,8 @@ Inside `ForecastLine`:
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `SalesItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `SalesItem/Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `SalesItem/Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `SalesItem/Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `SalesItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `SalesItem/Item/ModelName` = **Serra 180**  
@@ -395,13 +393,11 @@ Inside `ForecastLine`:
 - `SalesItem/Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `SalesItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `SalesItem/Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `SalesItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `SalesItem/Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `SalesItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `SalesItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -472,7 +468,7 @@ Inside `ForecastLine`:
   The emission of one item.
 - `SalesItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `SalesItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `SalesItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `SalesItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -790,13 +786,12 @@ Inside `ForecastLine`:
       <cbc:EndDate>2026-06-15</cbc:EndDate>
     </cac:ForecastPeriod>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-        <cbc:Keyword>park bench</cbc:Keyword>
-        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:Keyword>park bench, street furniture</cbc:Keyword>
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -853,7 +848,6 @@ Inside `ForecastLine`:
           <cbc:Name>Frame colour</cbc:Name>
           <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
           <cbc:ListValue>Ferro grey</cbc:ListValue>
-          <cbc:ListValue>Moss green</cbc:ListValue>
           <cac:ItemPropertyGroup>
             <cbc:ID>APP</cbc:ID>
             <cbc:Name>Appearance</cbc:Name>
@@ -919,7 +913,7 @@ Inside `ForecastLine`:
           <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
           <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
           <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
           <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
           <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
           <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>

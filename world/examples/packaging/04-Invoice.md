@@ -422,7 +422,7 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **20000** (unitCode `H87`)  
+- `InvoicedQuantity` = **20000** (unitCode `EA`)  
   The bags delivered.
 - `LineExtensionAmount` = **1600.00** (currencyID `XBL`)  
   20000 × 0.08, rounded to the minor unit of the currency.
@@ -452,7 +452,7 @@ Inside `InvoiceLine`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Price/PriceAmount` = **0.08** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
 ## The document
@@ -788,7 +788,7 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">20000</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">20000</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">1600.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Garment bag of recycled polyethylene, 60 cm, boxes of 500.</cbc:Description>
@@ -818,7 +818,7 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">0.08</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

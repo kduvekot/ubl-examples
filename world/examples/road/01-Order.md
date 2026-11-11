@@ -230,7 +230,7 @@ Inside `SellerSupplierParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -277,11 +277,11 @@ Inside `Delivery`:
 
 - `ID` = **LD-DL-26-0412**  
   The distributor's number for this delivery.
-- `Quantity` = **108** (unitCode `H87`)  
+- `Quantity` = **108** (unitCode `EA`)  
   All 108 pieces in one delivery.
-- `MinimumQuantity` = **108** (unitCode `H87`)  
+- `MinimumQuantity` = **108** (unitCode `EA`)  
   No part deliveries: the truck is booked for all.
-- `MaximumQuantity` = **108** (unitCode `H87`)  
+- `MaximumQuantity` = **108** (unitCode `EA`)  
   And no more than ordered.
 - `DeliveryAddress/AddressTypeCode` = **Business**  
   The kind of address.
@@ -557,11 +557,11 @@ Inside `Delivery`:
   From one.
 - `Despatch/RequestedDespatchPeriod/EndTime` = **17:00:00**  
   Until five.
-- `MinimumDeliveryUnit/BatchQuantity` = **4** (unitCode `H87`)  
+- `MinimumDeliveryUnit/BatchQuantity` = **4** (unitCode `EA`)  
   Benches come in pallets of four.
-- `MinimumDeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `H87`)  
+- `MinimumDeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `EA`)  
   One bench.
-- `MaximumDeliveryUnit/BatchQuantity` = **100** (unitCode `H87`)  
+- `MaximumDeliveryUnit/BatchQuantity` = **100** (unitCode `EA`)  
   A truck takes at most 25 pallets of four.
 
 ### Delivery Terms
@@ -609,13 +609,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **96** (unitCode `H87`)  
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
   24 pallets of 4 benches: one full truck.
 - `LineItem/LineExtensionAmount` = **4790400** (currencyID `XUF`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **49900** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
@@ -625,10 +625,8 @@ Inside `OrderLine`:
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `LineItem/Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `LineItem/Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `LineItem/Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `LineItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/ModelName` = **Serra 180**  
@@ -678,13 +676,11 @@ Inside `OrderLine`:
 - `LineItem/Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `LineItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `LineItem/Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `LineItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `LineItem/Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -751,7 +747,7 @@ Inside `OrderLine`:
   The emission of one item.
 - `LineItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `LineItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `LineItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `LineItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -815,13 +811,13 @@ Inside `OrderLine`:
   The repair and maintenance manual.
 - `LineItem/ID` = **2**  
   The line number.
-- `LineItem/Quantity` = **12** (unitCode `H87`)  
+- `LineItem/Quantity` = **12** (unitCode `EA`)  
   Spare side frames, for the distributor's service stock.
 - `LineItem/LineExtensionAmount` = **71760** (currencyID `XUF`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **5980** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.**  
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
@@ -1030,7 +1026,7 @@ Inside `OrderLine`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -1072,9 +1068,9 @@ Inside `OrderLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cbc:ID>LD-DL-26-0412</cbc:ID>
-    <cbc:Quantity unitCode="H87">108</cbc:Quantity>
-    <cbc:MinimumQuantity unitCode="H87">108</cbc:MinimumQuantity>
-    <cbc:MaximumQuantity unitCode="H87">108</cbc:MaximumQuantity>
+    <cbc:Quantity unitCode="EA">108</cbc:Quantity>
+    <cbc:MinimumQuantity unitCode="EA">108</cbc:MinimumQuantity>
+    <cbc:MaximumQuantity unitCode="EA">108</cbc:MaximumQuantity>
     <cac:DeliveryAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
@@ -1323,11 +1319,11 @@ Inside `OrderLine`:
       </cac:RequestedDespatchPeriod>
     </cac:Despatch>
     <cac:MinimumDeliveryUnit>
-      <cbc:BatchQuantity unitCode="H87">4</cbc:BatchQuantity>
-      <cbc:ConsumerUnitQuantity unitCode="H87">1</cbc:ConsumerUnitQuantity>
+      <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
+      <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
     </cac:MinimumDeliveryUnit>
     <cac:MaximumDeliveryUnit>
-      <cbc:BatchQuantity unitCode="H87">100</cbc:BatchQuantity>
+      <cbc:BatchQuantity unitCode="EA">100</cbc:BatchQuantity>
     </cac:MaximumDeliveryUnit>
   </cac:Delivery>
   <cac:DeliveryTerms>
@@ -1359,19 +1355,18 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">4790400</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-        <cbc:Keyword>park bench</cbc:Keyword>
-        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:Keyword>park bench, street furniture</cbc:Keyword>
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1420,7 +1415,6 @@ Inside `OrderLine`:
           <cbc:Name>Frame colour</cbc:Name>
           <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
           <cbc:ListValue>Ferro grey</cbc:ListValue>
-          <cbc:ListValue>Moss green</cbc:ListValue>
           <cac:ItemPropertyGroup>
             <cbc:ID>APP</cbc:ID>
             <cbc:Name>Appearance</cbc:Name>
@@ -1478,7 +1472,7 @@ Inside `OrderLine`:
           <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
           <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
           <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
           <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
           <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
           <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1540,11 +1534,11 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">71760</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XUF">5980</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>

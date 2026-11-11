@@ -340,7 +340,7 @@
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
-      <cbc:CrewQuantity unitCode="C62">14</cbc:CrewQuantity>
+      <cbc:CrewQuantity unitCode="IE">14</cbc:CrewQuantity>
       <cac:TransportMeans>
         <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
         <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>

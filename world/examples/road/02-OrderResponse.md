@@ -124,7 +124,7 @@ Inside `SellerSupplierParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -311,7 +311,7 @@ Inside `OrderLine`:
   The benches.
 - `LineItem/LineStatusCode` = **NoStatus**  
   Accepted as ordered.
-- `LineItem/Quantity` = **96** (unitCode `H87`)  
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
   As ordered.
 - `LineItem/Item/Name` = **Park bench Serra 180**  
   Named only.
@@ -333,7 +333,7 @@ Inside `OrderLine`:
   The side frames, as ordered.
 - `LineItem/LineStatusCode` = **Revised**  
   Changed by the seller.
-- `LineItem/Quantity` = **12** (unitCode `H87`)  
+- `LineItem/Quantity` = **12** (unitCode `EA`)  
   As ordered.
 - `LineItem/Item/Name` = **Bench side frame casting**  
   The frame ordered.
@@ -341,7 +341,7 @@ Inside `OrderLine`:
   Its number.
 - `SellerProposedSubstituteLineItem/ID` = **2**  
   What the seller would also accept to ship, if the buyer prefers.
-- `SellerProposedSubstituteLineItem/Quantity` = **12** (unitCode `H87`)  
+- `SellerProposedSubstituteLineItem/Quantity` = **12** (unitCode `EA`)  
   The same quantity.
 - `SellerProposedSubstituteLineItem/Item/Name` = **Bench side frame casting, 2025, from stock**  
   Six left in stock; the rest would follow in May.
@@ -351,11 +351,11 @@ Inside `OrderLine`:
   The old version.
 - `SellerSubstitutedLineItem/ID` = **2**  
   The substitute for line 2.
-- `SellerSubstitutedLineItem/Quantity` = **12** (unitCode `H87`)  
+- `SellerSubstitutedLineItem/Quantity` = **12** (unitCode `EA`)  
   The same quantity.
 - `SellerSubstitutedLineItem/Price/PriceAmount` = **5980** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
-- `SellerSubstitutedLineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `SellerSubstitutedLineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `SellerSubstitutedLineItem/Item/Name` = **Bench side frame casting, 2026**  
   The substitute.
@@ -467,7 +467,7 @@ Inside `OrderLine`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -635,7 +635,7 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
@@ -658,7 +658,7 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
@@ -668,7 +668,7 @@ Inside `OrderLine`:
     </cac:LineItem>
     <cac:SellerProposedSubstituteLineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting, 2025, from stock</cbc:Name>
         <cac:SellersItemIdentification>
@@ -679,10 +679,10 @@ Inside `OrderLine`:
     </cac:SellerProposedSubstituteLineItem>
     <cac:SellerSubstitutedLineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Price>
         <cbc:PriceAmount currencyID="XUF">5980</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Name>Bench side frame casting, 2026</cbc:Name>

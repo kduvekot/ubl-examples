@@ -319,7 +319,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The store's spring order of shirts.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">600</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">600</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

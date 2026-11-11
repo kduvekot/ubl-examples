@@ -9,6 +9,7 @@ lines, amounts and taxes are worked out by tools/examples_kit.py.
 import uuid
 from decimal import Decimal
 
+import build_examples
 import examples_kit as kit
 from build_examples import ITEM, PARTY, WORLD, V, address, amount, coordinate, item, money, party, price, qty
 
@@ -164,9 +165,9 @@ def road_consignment(f, view):
         "CustomsClearanceServiceInstructions": V("The export is declared by the 3PL in Ferrano; the import by the "
                                                  "distributor at the border.", "Who clears the goods through customs."),
         "DeliveryInstructions": V("Unload at dock 4; report to the gatehouse first.", "Where to go on arrival."),
-        "TotalPackagesQuantity": qty(sum(int(Decimal(str(x["ordered"]))) for x in d), "H87",
+        "TotalPackagesQuantity": qty(sum(int(Decimal(str(x["ordered"]))) for x in d), "EA",
                                      "96 benches and 12 boxed frames."),
-        "TotalTransportHandlingUnitQuantity": qty(25, "H87", "25 pallets."),
+        "TotalTransportHandlingUnitQuantity": qty(25, "EA", "25 pallets."),
         "ActualPickupTransportEvent": kit.event(f, 7, "15:05:00", "When the carrier took over the goods.",
                                                 kit.place("XUFER", "The 3PL's warehouse.")),
         "DeliveryTerms": {"ID": V("FCA", "Incoterms 2020: free carrier at the seller's warehouse."),
@@ -196,16 +197,16 @@ def road(n, doc):
                          "Castrano Logistics warehouse, Ferrano",
                          {"Delivery": {
                              "ID": V("LD-DL-26-0412", "The distributor's number for this delivery."),
-                             "Quantity": qty(108, "H87", "All 108 pieces in one delivery."),
-                             "MinimumQuantity": qty(108, "H87", "No part deliveries: the truck is booked for all."),
-                             "MaximumQuantity": qty(108, "H87", "And no more than ordered."),
+                             "Quantity": qty(108, "EA", "All 108 pieces in one delivery."),
+                             "MinimumQuantity": qty(108, "EA", "No part deliveries: the truck is booked for all."),
+                             "MaximumQuantity": qty(108, "EA", "And no more than ordered."),
                              "DeliveryAddress": address("6-xb"),
                              "AlternativeDeliveryLocation": {"Description": V(
                                  "Gate B of the business park, if dock 4 is blocked.", "Where to go instead.")},
-                             "MinimumDeliveryUnit": {"BatchQuantity": qty(4, "H87", "Benches come in pallets of "
+                             "MinimumDeliveryUnit": {"BatchQuantity": qty(4, "EA", "Benches come in pallets of "
                                                                                     "four."),
-                                                     "ConsumerUnitQuantity": qty(1, "H87", "One bench.")},
-                             "MaximumDeliveryUnit": {"BatchQuantity": qty(100, "H87", "A truck takes at most 25 "
+                                                     "ConsumerUnitQuantity": qty(1, "EA", "One bench.")},
+                             "MaximumDeliveryUnit": {"BatchQuantity": qty(100, "EA", "A truck takes at most 25 "
                                                                                       "pallets of four.")},
                              "Despatch": {
                                  "RequestedDespatchDate": V(f.date(7), "The day the buyer's truck will collect."),
@@ -242,28 +243,28 @@ def road(n, doc):
                         "same price.", "The condition in words.")
         out["OrderLine"] = [
             {"LineItem": {"ID": V("1", "The benches."), "LineStatusCode": V("NoStatus", "Accepted as ordered."),
-                          "Quantity": qty(96, "H87", "As ordered."),
+                          "Quantity": qty(96, "EA", "As ordered."),
                           "Item": {"Name": V(bench["name"], "Named only."),
                                    "SellersItemIdentification": {"ID": V(bench["sellers_id"], "The seller's "
                                                                                               "number.")}}},
              "OrderLineReference": {"LineID": V("1", "The order line.")}},
             {"LineItem": {"ID": V("2", "The side frames, as ordered."),
                           "LineStatusCode": V("Revised", "Changed by the seller."),
-                          "Quantity": qty(12, "H87", "As ordered."),
+                          "Quantity": qty(12, "EA", "As ordered."),
                           "Item": {"Name": V(frame["name"], "The frame ordered."),
                                    "SellersItemIdentification": {"ID": V(frame["sellers_id"], "Its number.")}}},
              "SubstitutionStatusCode": V("Substitution", "The line is delivered with a substitute item."),
              "Note": V("Same fit and price; the old casting is no longer made.", "Why the substitute is offered."),
              "SellerSubstitutedLineItem": {
                  "ID": V("2", "The substitute for line 2."),
-                 "Quantity": qty(12, "H87", "The same quantity."),
+                 "Quantity": qty(12, "EA", "The same quantity."),
                  "Price": kit.price_block("bench-casting"),
                  "Item": {"Name": V("Bench side frame casting, 2026", "The substitute."),
                           "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The same item number."),
                                                         "ExtendedID": V("2026", "The new version.")}}},
              "SellerProposedSubstituteLineItem": {
                  "ID": V("2", "What the seller would also accept to ship, if the buyer prefers."),
-                 "Quantity": qty(12, "H87", "The same quantity."),
+                 "Quantity": qty(12, "EA", "The same quantity."),
                  "Item": {"Name": V("Bench side frame casting, 2025, from stock", "Six left in stock; the rest would "
                                                                                   "follow in May."),
                           "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The item number."),
@@ -343,9 +344,9 @@ def road(n, doc):
         kit.deep_merge(out["Shipment"], {
             "NetNetWeightMeasure": qty(net, "KGM", "The goods alone, without any packaging."),
             "GrossVolumeMeasure": V("41.5", "The volume of the 25 loaded pallets.", unitCode="MTQ"),
-            "TotalGoodsItemQuantity": qty(2, "H87", "Two kinds of goods: benches and side frames."),
+            "TotalGoodsItemQuantity": qty(2, "EA", "Two kinds of goods: benches and side frames."),
             "SplitConsignmentIndicator": V("false", "The whole consignment travels on this truck."),
-            "ConsignmentQuantity": qty(1, "H87", "One consignment on the truck."),
+            "ConsignmentQuantity": qty(1, "EA", "One consignment on the truck."),
             "HandlingCode": V("Upright", "The carrier's handling code: keep upright."),
             "Information": V("Steel street furniture for resale.", "What the goods are, for the driver."),
             "ExportCountry": {"IdentificationCode": V("XU", "The goods are exported from Urvania.")},
@@ -564,8 +565,8 @@ def rail_stage(f, actual):
            "Instructions": V("Shunt to the Lumeway siding on arrival in Marrowdale.", "What the railway must do."),
            "DemurrageInstructions": V("Free time five days at the siding, then demurrage per container day.",
                                       "What waiting costs."),
-           "CrewQuantity": qty(2, "C62", "A driver and a train manager."),
-           "PassengerQuantity": qty(0, "C62", "A freight train carries no passengers."),
+           "CrewQuantity": qty(2, "IE", "Two persons: a driver and a train manager."),
+           "PassengerQuantity": qty(0, "IE", "No persons: a freight train carries no passengers."),
            "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub."),
            "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival in Marrowdale."),
            "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning."),
@@ -623,7 +624,7 @@ def rail_consignment(f, view):
         "PerformingCarrierAssignedID": V("FRC-J-26-3318", "The rail carrier's job number."),
         "LoadingSequenceID": V("7", "The consignment's turn in the loading of the train."),
         "ContractedCarrierAssignedID": V("FRC-CON-2026-005/88", "The call-off under the framework contract."),
-        "TotalTransportHandlingUnitQuantity": qty(2, "C62", "Two containers."),
+        "TotalTransportHandlingUnitQuantity": qty(2, "EA", "Two containers."),
         "PerformingCarrierParty": party("14-xu", short=True),
         "EnvironmentalEmission": {
             "EnvironmentalEmissionTypeCode": V("CO2e", "Greenhouse gases of the carriage, as CO2 equivalent."),
@@ -755,12 +756,12 @@ def barge_goods(f, w):
             "GrossVolumeMeasure": V("204", "The 120 bags take 1.7 m³ each.", unitCode="MTQ"),
             "NetVolumeMeasure": V("130", "The granulate's own volume, at 0.92 tonne per m³.", unitCode="MTQ"),
             "ChargeableQuantity": qty(120, "TNE", "The tonnes charged."),
-            "ReturnableQuantity": qty(120, "H87", "The 120 jumbo bags go back to the recovery plant."),
+            "ReturnableQuantity": qty(120, "EA", "The 120 jumbo bags go back to the recovery plant."),
             "TraceID": V("RR-PE-LOT-26-0416", "The lot on the bags' labels."),
             "Quantity": qty(120, "TNE", "120 tonnes."),
             "OriginAddress": address("7-xu"),
             "ContainingPackage": {"ID": V("JB-001..120", "The bags, numbered 1 to 120."),
-                                  "Quantity": qty(120, "H87", "120 bags."),
+                                  "Quantity": qty(120, "EA", "120 bags."),
                                   "PackagingTypeCode": V("JB", "UN/ECE Recommendation 21 code JB: bag, jumbo."),
                                   "PackagingType": V("Jumbo bag of one tonne with four lifting loops", "In words."),
                                   "PackingMaterial": V("Woven polypropylene", "What the bags are made of."),
@@ -885,7 +886,7 @@ RETAIL = kit.Flow("retail", "2026-04-20", [
          "CatalogueLineReference": {"LineID": V("1", "The catalogue line ordered from.")},
          "BuyerProposedSubstituteLineItem": {
              "ID": V("1", "The store's fall-back if the Serra 180 is out of stock."),
-             "Quantity": qty(24, "H87", "The same quantity."),
+             "Quantity": qty(24, "EA", "The same quantity."),
              "Item": {"Name": V("Park bench Serra 180, moss green", "The other frame colour: the store would take "
                                                                      "it."),
                       "SellersItemIdentification": {"ID": V("LD-10442", "The distributor's number."),
@@ -937,7 +938,7 @@ def retail(n, doc):
                                    "EndDate": V(f.date(56), "The end of the forecast period.")},
                 "ForecastLine": {"ID": V("1", "The first and only line."),
                                  "ForecastTypeCode": V("Total", "The total expected sales of the item in the period."),
-                                 "SalesItem": {"Quantity": qty(40, "H87", "Forty benches over six weeks, promotion "
+                                 "SalesItem": {"Quantity": qty(40, "EA", "Forty benches over six weeks, promotion "
                                                                           "included."),
                                                "Item": item("bench-serra-b")}}}
     if doc["doc"] == "RetailEvent":
@@ -952,7 +953,7 @@ def retail(n, doc):
         return {"ID": V(f.number("inventory", doc["from"], "InventoryReport"), "The store's inventory report number."),
                 "IssueDate": V(f.date(3), "The weekly stock report."),
                 "InventoryReportLine": {"ID": V("1", "The first and only line."),
-                                        "Quantity": qty(3, "H87", "Three benches left in the garden department."),
+                                        "Quantity": qty(3, "EA", "Three benches left in the garden department."),
                                         "Item": item("bench-serra-b")}}
     if doc["doc"] == "Order":
         out = kit.order(f, n, doc, 4, "The store replenishes before the promotion.",
@@ -990,7 +991,7 @@ def retail(n, doc):
         for k, u in enumerate(units, 1):
             u["HandlingUnitDespatchLine"] = {
                 "ID": V(f"{k}", "The pallet's line: the benches on it."),
-                "DeliveredQuantity": qty(4, "H87", "Four benches on the pallet."),
+                "DeliveredQuantity": qty(4, "EA", "Four benches on the pallet."),
                 "OrderLineReference": {"LineID": V("1", "The order line the benches belong to.")},
                 "Item": {"Name": V(bench["name"], "The item, named only: it is described in full on despatch line "
                                                   "1."),
@@ -1029,8 +1030,8 @@ def retail(n, doc):
                                           "Description": V("Three benches accepted, one refused.", "What was done.")},
                                "ReceivedHandlingUnitReceiptLine": {
                                    "ID": V("1", "The receipt of the pallet."),
-                                   "ReceivedQuantity": qty(3, "H87", "Three benches accepted from this pallet."),
-                                   "RejectedQuantity": qty(1, "H87", "One refused."),
+                                   "ReceivedQuantity": qty(3, "EA", "Three benches accepted from this pallet."),
+                                   "RejectedQuantity": qty(1, "EA", "One refused."),
                                    "RejectReason": V("Damaged in transit.", "Why.")}}}
         return out
     if doc["doc"] == "Invoice":
@@ -1171,7 +1172,7 @@ def sea_equipment(f, detail):
             "GoodsItem": {"ID": V("1", "The goods in the container, as one item for the carrier."),
                           "Description": V("Park benches and spare side frames", "In words."),
                           "GoodsItemContainer": {"ID": V(CONTAINER, "The container the goods are in."),
-                                                 "Quantity": qty(25, "C62", "25 pallets in it.")},
+                                                 "Quantity": qty(25, "EA", "25 pallets in it.")},
                           "ContainedGoodsItem": [{"ID": V("1.1", "The benches."),
                                                   "Description": V("Park benches", "In words.")},
                                                  {"ID": V("1.2", "The side frames."),
@@ -1183,7 +1184,7 @@ def sea_equipment(f, detail):
                                                                                  "trailer.",
                                                                            listID="UN/EDIFACT EDED 8053")},
             "Package": {"ID": V("LD-26-025", "The pallet of boxed castings, packed last at the doors."),
-                        "Quantity": qty(12, "H87", "Twelve boxes."),
+                        "Quantity": qty(12, "EA", "Twelve boxes."),
                         "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
                         "ContainingTransportEquipment": {"ID": V(CONTAINER, "The container.", schemeID="ISO6346")}}})
     return out
@@ -1448,7 +1449,7 @@ def sea_order_response(f, n, doc):
         "DocumentCurrencyCode": kit.currency_line("XBL", "the distributor's currency, as in the order"),
         "CustomerReference": V("Harbour parks Selanu", "The buyer's project, as the buyer named it when ordering."),
         "LineCountNumeric": V(str(len(rows)), "The number of lines."),
-        "TotalPackagesQuantity": qty(108, "H87", "96 benches and 12 boxed frames."),
+        "TotalPackagesQuantity": qty(108, "EA", "96 benches and 12 boxed frames."),
         "GrossWeightMeasure": qty(w, "KGM", "The expected gross weight, for the booking."),
         "NetWeightMeasure": qty(net, "KGM", "The goods alone."),
         "GrossVolumeMeasure": V("41.5", "One 40-foot container's load.", unitCode="MTQ"),
@@ -1558,7 +1559,7 @@ def sea(n, doc):
                                                          Decimal(str(kit.maker(d["item"])["net_kg"])) for d in f.deal),
                                                      "KGM", "The goods without packaging."),
                              "NetVolumeMeasure": V("38.9", "The volume of the goods themselves.", unitCode="MTQ"),
-                             "TotalTransportHandlingUnitQuantity": qty(25, "C62", "25 pallets in the container."),
+                             "TotalTransportHandlingUnitQuantity": qty(25, "EA", "25 pallets in the container."),
                              "ShippingPriorityLevelCode": V("Standard", "No priority: the next sailing will do."),
                              "HandlingInstructions": V("Castings pallet at the doors.", "How the container is "
                                                                                        "stowed."),
@@ -1615,8 +1616,8 @@ def sea(n, doc):
                 "OtherInstruction": V("Three originals issued.", "How many originals there are."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the cargo."),
-                             "TotalGoodsItemQuantity": qty(2, "H87", "Benches and side frames."),
-                             "ConsignmentQuantity": qty(1, "H87", "One consignment."),
+                             "TotalGoodsItemQuantity": qty(2, "EA", "Benches and side frames."),
+                             "ConsignmentQuantity": qty(1, "EA", "One consignment."),
                              "Consignment": sea_consignment(f, "bl"),
                              "InsurancePolicy": {"InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                                               "The insured value, 110 % of the CIF "
@@ -1640,7 +1641,7 @@ def sea(n, doc):
                                                                                            "Transport"),
                                  "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage number.",
                                                              "Eastbound"),
-                                 "CrewQuantity": qty(14, "C62", "The crew on board."),
+                                 "CrewQuantity": qty(14, "IE", "The crew on board: 14 persons."),
                                  "MasterPerson": kit.person("Corin", "Halvard", "The master, who signs the manifest.",
                                                             role="Master"),
                                  "EstimatedArrivalTransportEvent": kit.event(f, 13, "22:00:00", "Expected off Selanu "
@@ -1728,7 +1729,7 @@ def sea(n, doc):
                                     "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                                  "As on the insurance certificate.")}
         first["InvoiceLine"] = {"ID": V("1", "The line of the seller's invoice for these goods."),
-                                "InvoicedQuantity": qty(96, "H87", "The benches invoiced."),
+                                "InvoicedQuantity": qty(96, "EA", "The benches invoiced."),
                                 "Item": {"Name": V(ITEM["bench-serra-b"]["name"], "Named only: described in full "
                                                                                   "above.")}}
         return out
@@ -1864,7 +1865,7 @@ def air_consignment(f, doc):
     cid = f.number("consignment", doc["from"], "Consignment")
     goods = Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]["amount"]))
     box = {"ID": V("LD-AIR-BOX", "The boxes, numbered 1 to 8 on their labels."),
-           "Quantity": qty(8, "H87", "Eight boxes."),
+           "Quantity": qty(8, "EA", "Eight boxes."),
            "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
            "TraceID": V("LD-AIR-0001..0008", "The barcodes on the boxes."),
            "MeasurementDimension": [{"AttributeID": V("Length", "Of one box."),
@@ -1874,11 +1875,11 @@ def air_consignment(f, doc):
                                     {"AttributeID": V("Height", "Of one box."),
                                      "Measure": V("300", "In millimetres.", unitCode="MMT")}],
            "ContainedPackage": {"ID": V("LD-AIR-BAG", "Inside each box, the frame in a plastic bag."),
-                                "Quantity": qty(8, "H87", "One bag per box."),
+                                "Quantity": qty(8, "EA", "One bag per box."),
                                 "PackagingTypeCode": V("BG", "UN/ECE Recommendation 21 code BG: bag.")},
            "GoodsItem": {"ID": V("1", "The side frames."),
                          "Description": V("Bench side frame castings", "In words.")},
-           "DeliveryUnit": {"BatchQuantity": qty(8, "H87", "All eight delivered together.")},
+           "DeliveryUnit": {"BatchQuantity": qty(8, "EA", "All eight delivered together.")},
            "Pickup": {"ID": V("BF-PU-26-0611", "The forwarder's pick-up order."),
                       "EarliestPickupDate": V(f.date(1), "Ready the day of the instructions."),
                       "PickupParty": party("10-xb", short=True)},
@@ -1888,7 +1889,7 @@ def air_consignment(f, doc):
            "Status": {"ConditionCode": V("Ready", "Packed and labelled."),
                       "Description": V("Waiting at the distributor's dispatch area.", "Where they are.")}}
     return {"ID": V(cid, "The distributor's consignment number."),
-            "TotalGoodsItemQuantity": qty(1, "C62", "One kind of goods."),
+            "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods."),
             "NetNetWeightMeasure": qty(Decimal(8) * Decimal(str(kit.maker("bench-casting-b")["net_kg"])), "KGM",
                                        "The castings alone."),
             "NetVolumeMeasure": V("0.42", "The frames' own volume.", unitCode="MTQ"),
@@ -1896,7 +1897,7 @@ def air_consignment(f, doc):
                                                                    "the value of the frames."),
             "DeclaredStatisticsValueAmount": amount(goods, "XBL", "The value for the export statistics."),
             "SplitConsignmentIndicator": V("false", "All eight boxes on one flight."),
-            "ConsignmentQuantity": qty(1, "C62", "One consignment."),
+            "ConsignmentQuantity": qty(1, "EA", "One consignment."),
             "FreightForwarderParty": party("10-xb", short=True),
             "TransportEvent": kit.event(f, 2, "19:00:00", "Latest acceptance at the cargo terminal for the morning "
                                                           "flight.", done=False),
@@ -1964,7 +1965,7 @@ def air(n, doc):
                           "SignatoryParty": party("6-xb", short=True)},
             "OrderLine": {"LineItem": {
                 "ID": V("1", "The added line."),
-                "Quantity": qty(8, "H87", "Confirmed."),
+                "Quantity": qty(8, "EA", "Confirmed."),
                 "DeliveryTerms": {"ID": V("CPT", "Carriage paid to the airport of Selanu, for this line.",
                                           schemeID="INCOTERMS")},
                 "Item": {"Name": V(ITEM["bench-casting-b"]["name"], "Named only."),
@@ -1997,7 +1998,7 @@ def air(n, doc):
                                                                                                      "asked for."),
             "ShippingPriorityLevelCode": V("Priority", "Flown on the first flight with room."),
             "SequenceID": V("1", "The first house consignment under the master air waybill."),
-            "ChildConsignmentQuantity": qty(1, "C62", "One house consignment in the forwarder's consolidation."),
+            "ChildConsignmentQuantity": qty(1, "EA", "One house consignment in the forwarder's consolidation."),
             "ChildConsignment": {"ID": V("BF-HAWB-26-0918", "The forwarder's house air waybill for the distributor's "
                                                            "boxes."),
                                  "ConsignorAssignedID": V(f.numbers["instructions"], "The distributor's "
@@ -3175,7 +3176,7 @@ def set_parts(sets, kind):
              "Price": {"PriceAmount": price(price_, "XBL", "The part's share of the set price.")},
              "Item": {"Name": V(name, "The part."), "SellersItemIdentification": {"ID": V(sid, "The maker's number "
                                                                                               "for the part.")}}}
-        x["Quantity" if kind == "order" else "InvoicedQuantity"] = qty(q, "H87", f"{per} per set.")
+        x["Quantity" if kind == "order" else "InvoicedQuantity"] = qty(q, "EA", f"{per} per set.")
         out.append(x)
     return out
 
@@ -3526,7 +3527,8 @@ def sea(n, doc):
             "UnsupportedCommodityClassification": {"CargoTypeCode": V("BULK", "No loose bulk on this service.")},
             "CommodityClassification": {"ItemClassificationCode": V("9401.79", "The benches.", listID="HS")},
             "TotalCapacityDimension": {"AttributeID": V("TEU", "The ship's capacity in twenty-foot units."),
-                                       "Measure": V("1000", "One thousand.", unitCode="C62")},
+                                       "Measure": V("1000", "One thousand twenty-foot units (unit 20: twenty foot container).",
+                                                    unitCode="20")},
             "ShipmentStage": {"ID": V("1", "Lumeport to Selanu."),
                               "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
                                                                                         "Codes for Modes of "
@@ -3579,7 +3581,7 @@ def retail(n, doc):
                                                "RequiredItemLocationQuantity": {"Price": {
                                                    "PriceAmount": price("58.00", "XBL", "The new price of the side "
                                                                                         "frame, down from 64.00."),
-                                                   "BaseQuantity": qty(1, "H87", "Per piece."),
+                                                   "BaseQuantity": qty(1, "EA", "Per piece (unit EA: each)."),
                                                    "PriceList": {
                                                        "ID": V("6-XB-PL-2026-2", "The new price list."),
                                                        "StatusCode": V("Active", "It is in force from today."),
@@ -3767,8 +3769,7 @@ def _with_enrichment(flow_id, fn):
 
 
 def catalogue_ref(f, why, key="catalogue", version="1.0"):
-    return {"ID": V(f.numbers[key], why), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:"
-                                                                                       f"{f.id}:{key}")),
+    return {"ID": V(f.numbers[key], why), "UUID": V(build_examples.referenced_uuid(f.id, f.numbers[key]),
                                                      "The catalogue's UUID, as stated in the catalogue."),
             "IssueDate": V(f.date(0), "Its issue date."), "IssueTime": V("09:00:00", "And time."),
             "RevisionDate": V(f.date(31), "Revised by the specification update."),
@@ -3799,16 +3800,16 @@ def _(f, n, doc, out):
     kit.deep_merge(bench, {**common,
                            "Note": V("Pallets of four only.", "How it is sold."),
                            "OrderableUnit": V("Pallet of 4", "The unit the store orders in."),
-                           "ContentUnitQuantity": qty(4, "H87", "Four benches in an orderable unit."),
+                           "ContentUnitQuantity": qty(4, "EA", "Four benches in an orderable unit."),
                            "OrderQuantityIncrementNumeric": V("4", "Orders go up in steps of four."),
-                           "MinimumOrderQuantity": qty(4, "H87", "One pallet."),
-                           "MaximumOrderQuantity": qty(192, "H87", "Two containers."),
+                           "MinimumOrderQuantity": qty(4, "EA", "One pallet."),
+                           "MaximumOrderQuantity": qty(192, "EA", "Two containers."),
                            "WarrantyInformation": V("Five years on the frame, from the maker.", "The warranty."),
                            "PackLevelCode": V("Pallet", "The pack level the line is for."),
                            "WarrantyParty": party("5-xu", short=True),
                            "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
                            "ItemComparison": {"PriceAmount": price("520.00", "XBL", "The price per bench."),
-                                              "Quantity": qty(1, "H87", "For comparing per bench.")},
+                                              "Quantity": qty(1, "EA", "For comparing per bench.")},
                            "ComponentRelatedItem": [related("slat-1800", 5, "Five slats per bench."),
                                                     related("bench-casting", 2, "Two side frames per bench.")],
                            "AccessoryRelatedItem": {"ID": V("VI-ANCHOR-4", "The ground anchor set."),
@@ -3822,13 +3823,13 @@ def _(f, n, doc, out):
     kit.deep_merge(frame, {**common,
                            "Note": V("Spare part for the Serra 180.", "What it is for."),
                            "OrderableUnit": V("Box", "One frame per box."),
-                           "MinimumOrderQuantity": qty(1, "H87", "Any quantity."),
+                           "MinimumOrderQuantity": qty(1, "EA", "Any quantity."),
                            "RequiredRelatedItem": related("bench-serra-b", 1, "Fits only the Serra 180."),
                            "ReplacementRelatedItem": {"ID": V("VI-C180-2026", "The 2026 casting replaces it from "
                                                                               "May."),
-                                                      "Quantity": qty(1, "H87", "One for one.")},
+                                                      "Quantity": qty(1, "EA", "One for one.")},
                            "ReplacedRelatedItem": {"ID": V("VI-C180-2024", "The casting this one replaced."),
-                                                   "Quantity": qty(1, "H87", "One for one.")}})
+                                                   "Quantity": qty(1, "EA", "One for one.")}})
     return {"ActionCode": V("Add", "A new catalogue."),
             "RevisionDate": V(f.date(0), "Not revised yet: the issue date."),
             "RevisionTime": V("09:00:00", "The issue time."),
@@ -3883,7 +3884,7 @@ def _(f, n, doc, out):
                 {"ID": V("1", "Benches."), "ContractSubdivision": V("Garden", "The part of the agreement."),
                  "Note": V("Pallet prices, please.", "What the store asks."),
                  "LineValidityPeriod": {"EndDate": V(f.date(90), "For the season.")},
-                 "RequiredItemLocationQuantity": {"MinimumQuantity": qty(24, "H87", "The store's first order.")},
+                 "RequiredItemLocationQuantity": {"MinimumQuantity": qty(24, "EA", "The store's first order.")},
                  "Item": {"Name": V("Park bench Serra 180", "The item asked for.")}},
                 {"ID": V("2", "Spare frames."),
                  "Item": {"Name": V("Bench side frame casting", "The item asked for.")}}]}
@@ -4419,7 +4420,7 @@ def _(f, n, doc, out):
 @enrich("tender", "DespatchAdvice")
 def _(f, n, doc, out):
     lines = out["DespatchLine"] if isinstance(out["DespatchLine"], list) else [out["DespatchLine"]]
-    lines[0].update({"OutstandingQuantity": qty(TENDER_QTY - 40, "H87", "Still to come under the contract."),
+    lines[0].update({"OutstandingQuantity": qty(TENDER_QTY - 40, "EA", "Still to come under the contract."),
                      "OutstandingReason": V("Later releases under the framework contract.", "Why."),
                      **kit.cost_centre("2-xb", "The department's programme."),
                      "DocumentReference": {"ID": V(FOLDER, "The contract.")}})
@@ -4625,7 +4626,7 @@ def _(f, n, doc, out):
         "ID": V(cid, why), "GoodsItemPassportID": V(out["ID"].value, "The carnet."),
         "Note": V("Stamped by customs.", "How it is used."),
         "CustomsOfficeLocation": {"Name": V(office, "The customs office that stamps it.")},
-        "GoodsItem": {"ID": V("1", "The two sample benches."), "Quantity": qty(2, "H87", "Two.")},
+        "GoodsItem": {"ID": V("1", "The two sample benches."), "Quantity": qty(2, "EA", "Two.")},
         ref: {"ID": V(f"{cid}-STAMP", ref_why)},
         "VoucherDocumentReference": {"ID": V(f"V-{cid}", "The voucher that customs keeps.")}}
     return {"StatusCode": V("Valid", "The carnet is valid."), "Status": V("Issued", "In words."),
@@ -4862,7 +4863,7 @@ def _(f, n, doc, out):
                                    "CapabilityTypeCode": V("Warehousing", "What it can do."),
                                    "Description": V("Stock of 2,000 benches in Marrowdale.", "In words."),
                                    "ValueAmount": amount(Decimal("1040000.00"), "XBL", "The stock's value."),
-                                   "ValueQuantity": qty(2000, "H87", "Benches in stock."),
+                                   "ValueQuantity": qty(2000, "EA", "Benches in stock."),
                                    "SuppliedEvidence": {"ID": V("LD-AUDIT-2025", "The evidence."),
                                                         "EvidenceTypeCode": V("Audit", "An audit report."),
                                                         "Name": V("Stock count 2025", "Its name."),
@@ -4938,12 +4939,16 @@ def _(f, n, doc, out):
 
 @enrich("retail", "DocumentStatus")
 def _(f, n, doc, out):
+    tep = next(d for d in WORLD["documents"] if d["flow"] == f.id and d["doc"] == "TransportExecutionPlanRequest")
+    booking = f.number("tep-request", tep["from"], tep["doc"])     # booked now, sent as the next document
     return {"Note": V("Accepted and booked.", "The answer."),
             "Signature": seal(doc["from"], "LD-SIG-26-DS"),
             "AdditionalDocumentResponse": {"Response": {"ResponseCode": V("AP", "The transport booking is "
                                                                                 "confirmed too.")},
-                                           "DocumentReference": {"ID": V(f.numbers.get("tep-request", ""),
-                                                                         "The transport booking.")}}}
+                                           "DocumentReference": {"ID": V(booking, "The transport booking: the "
+                                                                         "request that follows as the next document "
+                                                                         "of the flow, numbered when the truck was "
+                                                                         "booked.")}}}
 
 
 def contact(name, why, tel_of=None, email=None):
@@ -5087,7 +5092,7 @@ def _(f, n, doc, out):
     base = Decimal(out["QuotedMonetaryTotal"]["LineExtensionAmount"].value)
     line = out["QuotationLine"][0] if isinstance(out["QuotationLine"], list) else out["QuotationLine"]
     line.update({"ID": V("1", "The quotation line."), "Note": V("As drawn; ash or oak.", "What is quoted."),
-                 "Quantity": qty(4800, "H87", "The quantity quoted."),
+                 "Quantity": qty(4800, "EA", "The quantity quoted."),
                  "LineExtensionAmount": amount(base, "XBL", "The quoted amount."),
                  "TaxInclusiveLineExtensionAmount": amount(base, "XBL", "No tax on an export."),
                  "TotalTaxAmount": amount(0, "XBL", "No tax on an export."),
@@ -5095,12 +5100,12 @@ def _(f, n, doc, out):
                  "DocumentReference": {"ID": V("MS-SPEC-SL1800", "The sawmill's specification.")},
                  "RequestLineReference": {"LineID": V("1", "The request line answered.")},
                  "SellerProposedSubstituteLineItem": {"ID": V("1-S", "A substitute the sawmill proposes."),
-                                                      "Quantity": qty(4800, "H87", "The same quantity."),
+                                                      "Quantity": qty(4800, "EA", "The same quantity."),
                                                       "Item": {"Name": V("Hardwood bench slat 1800 × 95 × 35",
                                                                          "Three millimetres thinner: less waste, "
                                                                          "five per cent cheaper.")}},
                  "AlternativeLineItem": {"ID": V("1-A", "An alternative species."),
-                                         "Quantity": qty(4800, "H87", "The same quantity."),
+                                         "Quantity": qty(4800, "EA", "The same quantity."),
                                          "Item": {"Name": V("Oak bench slat 1800", "Oak instead of ash, at a higher "
                                                                                    "price.")}}})
     return {"Note": V("Valid for 30 days.", "The validity."),
@@ -5275,7 +5280,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     spec = out["PromotionalEvent"]["PromotionalSpecification"]
     spec["EventTactic"] = {"Comment": V("Benches at the entrance, with a price board.", "What the store does."),
-                           "Quantity": qty(12, "H87", "Twelve benches on display."),
+                           "Quantity": qty(12, "EA", "Twelve benches on display."),
                            "EventTacticEnumeration": {"ConsumerIncentiveTacticTypeCode": V("TPR", "A temporary price "
                                                                                                   "reduction."),
                                                       "DisplayTacticTypeCode": V("EndCap", "A display at the "
@@ -5401,7 +5406,7 @@ def _(f, n, doc, out):
                               "Stowage": {"LocationID": V("BOND-1", "The bonded locker."),
                                           "Location": V("Bonded locker, accommodation deck", "Where.")}},
                              {"ID": V("ST-2", "Cigarettes."), "Name": V("Cigarettes", "What."),
-                              "Quantity": qty(2000, "H87", "Pieces.")}],
+                              "Quantity": qty(2000, "EA", "Pieces, counted each (EA).")}],
         "CrewPersonEffect": {"EffectDescription": V("One camera, one laptop.", "What the crew member declares."),
                              "CrewPerson": crew[2]},
         "MaritimeWaste": [{"ID": V("W-1", "Oily waste."), "Description": V("Sludge from the fuel separators.",
@@ -5422,10 +5427,10 @@ def _(f, n, doc, out):
             "ManagementPlanOnBoardIndicator": V("true", "The plan is on board."),
             "ManagementPlanImplementedIndicator": V("true", "And followed."),
             "IMOGuidelinesOnBoardIndicator": V("true", "The IMO guidelines are on board."),
-            "TotalBallastTanksOnBoardQuantity": qty(8, "C62", "Ballast tanks."),
-            "TanksInBallastQuantity": qty(4, "C62", "Tanks with ballast now."),
-            "TanksExchangedQuantity": qty(4, "C62", "Exchanged at sea."),
-            "TanksNotExchangedQuantity": qty(0, "C62", "None left unexchanged."),
+            "TotalBallastTanksOnBoardQuantity": qty(8, "EA", "Ballast tanks."),
+            "TanksInBallastQuantity": qty(4, "EA", "Tanks with ballast now."),
+            "TanksExchangedQuantity": qty(4, "EA", "Exchanged at sea."),
+            "TanksNotExchangedQuantity": qty(0, "EA", "None left unexchanged."),
             "TotalBallastWaterOnBoardMeasure": V("1240", "Ballast on board.", unitCode="TNE"),
             "TotalBallastWaterCapacityMeasure": V("2480", "The capacity.", unitCode="TNE"),
             "OtherControlActions": V("None.", "No other measures."),
@@ -5434,7 +5439,10 @@ def _(f, n, doc, out):
                                                                                                   "needed."),
             "UptakeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."), "TankTypeCode": V("Wing",
                                                                                                 "A wing tank."),
-                                              "VolumeMeasure": V("310", "Taken up at Lumeport.", unitCode="TNE"),
+                                              "VolumeMeasure": V("310", "Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit; "
+                                                                 "the 310 were meant as tonnes of water, which is "
+                                                                 "about the same number of cubic metres.",
+                                                 unitCode="MTQ"),
                                               "SeaHeightMeasure": V("2", "The depth of the intake.", unitCode="MTR"),
                                               "SalinityMeasure": V("30", "Salinity.", unitCode="GL"),
                                               "TransactionDate": V(f.date(10), "At Lumeport."),
@@ -5445,12 +5453,15 @@ def _(f, n, doc, out):
             "ExchangeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
                                                 "ExchangeMethodCode": V("Sequential", "Emptied and refilled."),
                                                 "ExchangedPercent": V("95", "Of the volume."),
-                                                "VolumeMeasure": V("310", "Exchanged.", unitCode="TNE"),
+                                                "VolumeMeasure": V("310", "Exchanged: the same 310 cubic metres (a volume, so in cubic "
+                                                                   "metres; a tonne of water is about a cubic metre).",
+                                                   unitCode="MTQ"),
                                                 "TransactionDate": V(f.date(12), "At sea."),
                                                 "Location": sea_place},
             "DischargeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
-                                                 "VolumeMeasure": V("120", "To be discharged at Selanu.",
-                                                                    unitCode="TNE"),
+                                                 "VolumeMeasure": V("120", "To be discharged at Selanu: 120 cubic metres "
+                                                                    "(a volume; a tonne of water is about a cubic "
+                                                                    "metre, so the number stays).", unitCode="MTQ"),
                                                  "TransactionDate": V(f.date(14), "In port.")},
             "ResponsibleOfficerPerson": crew[1]},
         "MaritimeHealthDeclaration": {
@@ -5464,8 +5475,8 @@ def _(f, n, doc, out):
             "SanitaryMeasuresAppliedIndicator": V("true", "The galley was disinfected."),
             "ValidSanitationCertificateOnBoardIndicator": V("true", "The certificate is valid."),
             "ReinspectionRequiredIndicator": V("false", "No reinspection needed."),
-            "TotalDeadPersonQuantity": qty(0, "C62", "None."),
-            "TotalIllPersonQuantity": qty(1, "C62", "One crew member with a sprained wrist."),
+            "TotalDeadPersonQuantity": qty(0, "IE", "No persons."),
+            "TotalIllPersonQuantity": qty(1, "IE", "One person: a crew member with a sprained wrist."),
             "SickAnimalDescription": V("None on board.", "No animals."),
             "StowawayDescription": V("None found in the search before departure.", "The search."),
             "LastDrinkingWaterAnalysisDate": V("2026-04-02", "The last water test."),
@@ -5537,7 +5548,7 @@ def _(f, n, doc, out):
                                   "AtAnchorageIndicator": V("false", "Not at anchor."),
                                   "CourseOverGroundDirection": V("088", "Course over ground, in degrees."),
                                   "SpeedOverGroundMeasure": V("13.5", "Speed over ground.", unitCode="KNT"),
-                                  "RateOfTurnMeasure": V("0", "Not turning.", unitCode="C62")}})
+                                  "RateOfTurnMeasure": V("0", "Not turning: 0 degrees per second.", unitCode="E96")}})
     return {}
 
 
@@ -5563,7 +5574,7 @@ def mast_consignment(f, full):
               "GrossWeightMeasure": qty(Decimal(6) * Decimal(str(bat["gross_kg"])), "KGM", "Six packs, packed."),
               "NetWeightMeasure": qty(Decimal(6) * Decimal(str(bat["net_kg"])), "KGM", "The packs alone."),
               "NetVolumeMeasure": V("0.24", "Their volume.", unitCode="MTQ"),
-              "Quantity": qty(6, "H87", "Six packs."),
+              "Quantity": qty(6, "EA", "Six packs."),
               "HazardousTypeCode": V("Article", "Batteries are articles, not substances."),
               "PackagingDangerLevelCode": V("None", "Lithium batteries have no packing group."),
               "UpperOrangeHazardPlacardID": V("90", "The hazard identification number for road transport."),
@@ -5576,7 +5587,7 @@ def mast_consignment(f, full):
                                         "Measure": V("20", "Around 20 °C.", unitCode="CEL")},
               "PositionOnBoardStowage": {"LocationID": V("MD-L2", "Main deck, position L2."),
                                          "Location": V("Main deck, accessible", "Where it flies.")},
-              "Package": {"ID": V("SE-CR-1..6", "The six crates."), "Quantity": qty(6, "H87", "Six."),
+              "Package": {"ID": V("SE-CR-1..6", "The six crates."), "Quantity": qty(6, "EA", "Six."),
                           "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: crate.")},
               "HazardousGoodsTransit": {"TransportEmergencyCardCode": V("TEC-90-3480", "The emergency card on "
                                                                                      "board."),
@@ -5883,7 +5894,7 @@ def procurement_project(f, lot=None):
            "RequiredFeeAmount": amount(Decimal("50.00"), "XBL", "The fee for the tender documents on paper."),
            "FeeDescription": V("Electronic documents are free; paper copies cost 50 lume.", "The fee."),
            "RequestedDeliveryDate": V(f.date(80), "The first release."),
-           "EstimatedOverallContractQuantity": qty(TENDER_QTY, "H87", "240 benches over the contract."),
+           "EstimatedOverallContractQuantity": qty(TENDER_QTY, "EA", "240 benches over the contract."),
            "Note": V("Part of the parks renewal programme 2026.", "The programme."),
            "SMESuitableIndicator": V("true", "Small and medium firms can tender."),
            "ProcurementAdditionalType": {"ProcurementTypeCode": V("Green", "Green public procurement."),
@@ -5923,8 +5934,8 @@ def procurement_project(f, lot=None):
             "ID": V("1", "The benches."), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:{FOLDER}:rftl:1")),
                                                    "Its UUID."),
             "Note": V("Steel frame, five hardwood slats, ground anchors.", "The requirement."),
-            "Quantity": qty(TENDER_QTY, "H87", "Over the contract."),
-            "MinimumQuantity": qty(120, "H87", "At least."), "MaximumQuantity": qty(288, "H87", "At most."),
+            "Quantity": qty(TENDER_QTY, "EA", "Over the contract."),
+            "MinimumQuantity": qty(120, "EA", "At least."), "MaximumQuantity": qty(288, "EA", "At most."),
             "TaxIncludedIndicator": V("false", "Prices without tax."),
             "MinimumAmount": amount(Decimal("350"), "XBL", "A unit price below this would be abnormally low."),
             "MaximumAmount": amount(Decimal("600"), "XBL", "The most the budget allows per bench."),
@@ -6062,7 +6073,7 @@ def tendering_terms(f):
                 "CompanyLegalForm": V("Consortia must name a lead member.", "The rule."),
                 "PersonalSituation": V("No exclusion grounds.", "The tenderer's situation."),
                 "OperatingYearsQuantity": qty(3, "ANN", "At least three years in business."),
-                "EmployeeQuantity": qty(10, "C62", "At least ten employees."),
+                "EmployeeQuantity": qty(10, "IE", "At least ten employees (persons)."),
                 "Description": V("Economic and technical capacity.", "What is asked."),
                 "RequiredBusinessClassificationScheme": {"ID": V("ISIC4", "ISIC Rev. 4."),
                                                          "Name": V("ISIC Rev. 4", "The classification."),
@@ -6073,7 +6084,7 @@ def tendering_terms(f):
                                                                                                            "words.")}},
                 "TechnicalEvaluationCriterion": {"EvaluationCriterionTypeCode": V("References", "References."),
                                                  "Description": V("Three similar supplies in five years.", "What."),
-                                                 "ThresholdQuantity": qty(3, "C62", "Three."),
+                                                 "ThresholdQuantity": qty(3, "EA", "Three."),
                                                  "DurationPeriod": {"DurationMeasure": V("5", "Five years.",
                                                                                          unitCode="ANN")},
                                                  "SuggestedEvidence": {"ID": V("EV-REF", "Reference letters."),
@@ -6294,22 +6305,22 @@ def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
     i = Decimal(install_price) * TENDER_QTY
     return b, i, [
         {"ID": V("1", "The benches."), "Note": V(t["note"], "What is offered."),
-         "Quantity": qty(TENDER_QTY, "H87", "240 benches."),
+         "Quantity": qty(TENDER_QTY, "EA", "240 benches."),
          "LineExtensionAmount": amount(b, "XBL", "240 at the unit price."),
          "TaxInclusiveLineExtensionAmount": amount(b, "XBL", "No tax for a public body."),
          "TotalTaxAmount": amount(0, "XBL", "None."),
          "OrderableUnit": V("Pallet of 4", "Called off in pallets."),
-         "ContentUnitQuantity": qty(4, "H87", "Four per pallet."),
+         "ContentUnitQuantity": qty(4, "EA", "Four per pallet."),
          "OrderQuantityIncrementNumeric": V("4", "In steps of four."),
-         "MinimumOrderQuantity": qty(20, "H87", "A release of at least 20."),
-         "MaximumOrderQuantity": qty(96, "H87", "At most a full truck."),
+         "MinimumOrderQuantity": qty(20, "EA", "A release of at least 20."),
+         "MaximumOrderQuantity": qty(96, "EA", "At most a full truck."),
          "WarrantyInformation": V("Five years on the frame.", "The warranty."),
          "PackLevelCode": V("Pallet", "The pack level."),
          "DocumentReference": {"ID": V(t["sheet"], "The datasheet.")},
          "Item": {"Name": V(t["name"], "The item offered.")},
          "OfferedItemLocationQuantity": {"LeadTimeMeasure": V("7", "Seven days per release.", unitCode="DAY")},
          "ReplacementRelatedItem": {"ID": V(t["spare"], t["spare_why"]),
-                                    "Quantity": qty(1, "H87", "One for one.")},
+                                    "Quantity": qty(1, "EA", "One for one.")},
          "WarrantyParty": party(tenderer, short=True),
          "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
          "SubTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One set per bench."),
@@ -6317,7 +6328,7 @@ def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
          "CallForTendersLineReference": {"LineID": V("1", "The line of the call for tenders.")},
          "CallForTendersDocumentReference": {"ID": V(f.numbers.get("call-for-tenders", f"{FOLDER}-CFT"),
                                                      "The call for tenders.")}},
-        {"ID": V("2", "The installation."), "Quantity": qty(TENDER_QTY, "H87", "240 installations."),
+        {"ID": V("2", "The installation."), "Quantity": qty(TENDER_QTY, "EA", "240 installations."),
          "LineExtensionAmount": amount(i, "XBL", "240 at the price."),
          "Item": {"Name": V("Installation of a park bench", "The service.")}}]
 
@@ -6501,7 +6512,7 @@ def _(f, n, doc, out):
                     "ParticipationPercent": V("80", "The manufacturer's share."),
                     "PersonalSituation": V("No exclusion grounds apply.", "Declared."),
                     "OperatingYearsQuantity": qty(41, "ANN", "In business since 1985."),
-                    "EmployeeQuantity": qty(180, "C62", "Employees."),
+                    "EmployeeQuantity": qty(180, "IE", "Employees, in persons."),
                     "BusinessClassificationEvidenceID": V("ISIC-3100", "Its class."),
                     "BusinessIdentityEvidenceID": V(PARTY["5-xu"]["identity"]["registry_id"], "Its registration."),
                     "TendererRoleCode": V("Lead", "The lead tenderer."),
@@ -6509,7 +6520,7 @@ def _(f, n, doc, out):
                                                      "ClassificationCategory": {"CodeValue": V("3100", "Furniture.")}},
                     "TechnicalCapability": {"ID": V("TC-1", "Production."), "Description": V("4,000 benches a year.",
                                                                                             "Capacity."),
-                                            "ValueQuantity": qty(4000, "H87", "A year.")},
+                                            "ValueQuantity": qty(4000, "EA", "A year.")},
                     "FinancialCapability": {"ID": V("FC-1", "Turnover."),
                                             "ValueAmount": amount(Decimal("9200000"), "XBL", "Yearly turnover, in "
                                                                                              "lume.")},
@@ -6558,7 +6569,7 @@ def _(f, n, doc, out):
                                     "IssueDate": V(f.date(40), "Pledged."),
                                     "FaceValueAmount": amount(Decimal("2500.00"), "XBL", "Their face value."),
                                     "MarketValueAmount": amount(Decimal("3100.00"), "XBL", "Their market value."),
-                                    "SharesNumberQuantity": qty(250, "C62", "250 shares."),
+                                    "SharesNumberQuantity": qty(250, "E21", "250 shares (unit: shares)."),
                                     "IssuerParty": party("5-xu", short=True)},
             "Signature": seal("25-xb", "BLUM-SIG-GC")}
 
@@ -6604,13 +6615,13 @@ def tender_result(f, full=True):
         out.update({
             "AdvertisementAmount": amount(Decimal("320.00"), "XBL", "What the winner pays for publishing the notice, "
                                                                     "below the maximum of 500 lume."),
-            "ReceivedTenderQuantity": qty(2, "C62", "Two tenders: the furniture maker's first tender was withdrawn and "
+            "ReceivedTenderQuantity": qty(2, "EA", "Two tenders: the furniture maker's first tender was withdrawn and "
                                                     "replaced."),
             "LowerTenderAmount": amount(RUNNER_UP_TOTAL, "XBL", "The lowest tender, the furniture maker's."),
             "HigherTenderAmount": amount(WIN_TOTAL, "XBL", "The highest, the manufacturer's."),
             "StartDate": V(f.date(70), "The contract starts with the first call-off."),
-            "ReceivedElectronicTenderQuantity": qty(2, "C62", "Both through the platform."),
-            "ReceivedForeignTenderQuantity": qty(1, "C62", "The manufacturer is established in Urvania.")})
+            "ReceivedElectronicTenderQuantity": qty(2, "EA", "Both through the platform."),
+            "ReceivedForeignTenderQuantity": qty(1, "EA", "The manufacturer is established in Urvania.")})
     out.update({
         "Contract": {"ID": V(FOLDER, "The framework contract."), "ContractTypeCode": V("Framework", "A framework "
                                                                                                     "contract."),
@@ -6643,7 +6654,7 @@ def _(f, n, doc, out):
             "EconomicOperatorParty": {
                 "QualifyingParty": {"ParticipationPercent": V("60", "The sawmill's share in the planned consortium."),
                                     "OperatingYearsQuantity": qty(22, "ANN", "Years in business."),
-                                    "EmployeeQuantity": qty(85, "C62", "Its staff."),
+                                    "EmployeeQuantity": qty(85, "IE", "Its staff, in persons."),
                                     "TendererRoleCode": V("Lead", "It would lead the consortium."),
                                     "Party": party(SAWMILL, short=True)},
                 "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead of a consortium still to be formed."),
@@ -6729,7 +6740,7 @@ def _(f, n, doc, out):
                 "CapabilityTypeCode": V("Production", "Production capacity."),
                 "Description": V("Steel frame benches, cast, galvanised and coated in its own plant.", "What."),
                 "ValueAmount": amount(Decimal("4800000.00"), "XBL", "Yearly turnover, converted to lume."),
-                "ValueQuantity": qty(6000, "H87", "Benches a year."),
+                "ValueQuantity": qty(6000, "EA", "Benches a year."),
                 "SuppliedEvidence": {"ID": V("EV-ACC-2025", "The audited accounts of 2025."),
                                      "Name": V("Annual accounts", "What.")},
                 "ValidityPeriod": {"EndDate": V("2026-12-31", "Valid until the next accounts.")},
@@ -7030,7 +7041,7 @@ def _(f, n, doc, out):
     out["OrderLine"][0]["LineItem"]["OrderedShipment"] = {
         "Shipment": {"ID": V("VT-SH-PLAN-1", "The shipment the buyer plans for this line: one container."),
                      "ShippingPriorityLevelCode": V("Normal", "No urgency for the sea part.")},
-        "Package": {"ID": V("PAL", "Packed on pallets."), "Quantity": qty(24, "C62", "24 pallets of four "
+        "Package": {"ID": V("PAL", "Packed on pallets."), "Quantity": qty(24, "EA", "24 pallets of four "
                                                                                        "benches."),
                     "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}}
     return for_harbour()
@@ -7291,7 +7302,7 @@ def _(f, n, doc, out):
 @enrich("waste", "WasteNotification")
 def _(f, n, doc, out):
     return {"WasteNotificationTypeCode": V("Recovery", "A notification of waste for recovery, not disposal."),
-            "ConsignmentQuantity": qty(12, "C62", "About twelve movements over the year."),
+            "ConsignmentQuantity": qty(12, "EA", "About twelve movements over the year."),
             "DocumentReference": {"ID": V("VI-WASTE-CONTRACT-26", "The contract between producer and recovery "
                                                                   "facility, which the notification needs.")},
             "Signature": seal("5-xu", "VI-SIG-WN"),
@@ -7302,7 +7313,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"WasteMovementTypeCode": V("Recovery", "A movement of waste for recovery."),
             "SequenceNumberID": V("1", "The first movement under the notification."),
-            "ConsignmentQuantity": qty(12, "C62", "Of about twelve notified."),
+            "ConsignmentQuantity": qty(12, "EA", "Of about twelve notified."),
             "WasteNotificationDocumentReference": {"ID": V(f.numbers["notification"],
                                                            "The notification the movement is made under.")},
             "WeightStatementDocumentReference": {"ID": V("RR-WB-26-0412", "The weighbridge ticket of the "
@@ -7370,7 +7381,7 @@ def _(f, n, doc, out):
     for ln in lines_of(out, "InvoiceLine")[:1]:
         ln["PricingReference"] = {"OriginalItemLocationQuantity": {
             "HazardousRiskIndicator": V("true", "The batteries are dangerous goods wherever they are delivered."),
-            "DeliveryUnit": {"BatchQuantity": qty(1, "C62", "Delivered in single crates."),
+            "DeliveryUnit": {"BatchQuantity": qty(1, "EA", "Delivered in single crates."),
                              "HazardousRiskIndicator": V("true", "Each crate is dangerous goods: lithium-ion "
                                                                  "batteries.")}}}
     return {}
@@ -7405,8 +7416,8 @@ def _(f, n, doc, out):
                     "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
                     "Item": {"Name": V("Ground anchor set", "Included in the bench.")}},
                    {"ID": V("1.2", "The fixing bolts."),
-                    "DeliveredQuantity": qty(170, "H87", "Four per bench, and ten more."),
-                    "OversupplyQuantity": qty(10, "H87", "Ten bolts more than needed, as spares for the "
+                    "DeliveredQuantity": qty(170, "EA", "Four per bench, and ten more."),
+                    "OversupplyQuantity": qty(10, "EA", "Ten bolts more than needed, as spares for the "
                                                          "installers."),
                     "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
                     "Item": {"Name": V("Fixing bolt M12", "Included in the bench.")}}]})
@@ -7421,24 +7432,24 @@ def _(f, n, doc, out):
         no = f.number("receipt-2", doc["from"], "ReceiptAdvice")
         f.numbers["receipt"] = no
         b.update({"UUID": line_uuid(f, "receipt-2", 1), "Note": V("All 96 benches, after the recount.", "The line.")})
-        c.update({"ReceivedQuantity": qty(13, "H87", "One box more than despatched."),
-                  "OversupplyQuantity": qty(1, "H87", "The extra box, held for collection by the next truck."),
+        c.update({"ReceivedQuantity": qty(13, "EA", "One box more than despatched."),
+                  "OversupplyQuantity": qty(1, "EA", "The extra box, held for collection by the next truck."),
                   "Note": V("One box more than despatched: picked twice at the 3PL.", "What was found."),
                   "UUID": line_uuid(f, "receipt-2", 2)})
         return {"ID": V(no, "A new number: the first receipt advice was cancelled."),
                 "IssueDate": V(f.date(10), "The morning after the delivery, after the recount."),
                 "DocumentStatusCode": V("Revised", "UBL document status code Revised: it replaces the cancelled receipt advice."),
                 "Note": V("Recounted: all benches received; one box of side frames over.", "The result.")}
-    b.update({"ReceivedQuantity": qty(95, "H87", "One bench fewer than despatched."),
-              "ShortQuantity": qty(1, "H87", "One bench short."),
+    b.update({"ReceivedQuantity": qty(95, "EA", "One bench fewer than despatched."),
+              "ShortQuantity": qty(1, "EA", "One bench short."),
               "ShortageActionCode": V("Replace", "The distributor asks for the missing bench with the next truck."),
               "Note": V("One pallet held three benches and a box of side frames: mis-picked at the 3PL.", "What "
                                                                                                           "was "
                                                                                                           "found."),
               "UUID": line_uuid(f, "receipt", 1),
               "Shipment": {"ID": V(f.numbers["shipment"], "The shipment received.")}})
-    c.update({"ReceivedQuantity": qty(13, "H87", "One box more than despatched."),
-              "OversupplyQuantity": qty(1, "H87", "The extra box, held for collection by the next truck."),
+    c.update({"ReceivedQuantity": qty(13, "EA", "One box more than despatched."),
+              "OversupplyQuantity": qty(1, "EA", "The extra box, held for collection by the next truck."),
               "Note": V("The mis-picked box, in place of the missing bench.", "What was found."),
               "UUID": line_uuid(f, "receipt", 2)})
     return {"Note": V("Counted and checked at goods-in: one bench short, one box of side frames over.", "The "
@@ -7583,7 +7594,7 @@ def _(f, n, doc, out):
             "TelecommunicationsServiceCategory": V("Video on demand", "The kind of service."),
             "MovieTitle": V("Safe Lifting in the Warehouse", "A training film the trader's staff watched."),
             "PayPerView": V("true", "Paid per film."),
-            "Quantity": qty(1, "C62", "One film."),
+            "Quantity": qty(1, "EA", "One film."),
             "CallExtensionAmount": amount(0, "XLC", "Training films are included in the business bundle.")}]
     return {}
 
@@ -7678,7 +7689,7 @@ def tender_complete(n, doc):
                                                                                                  "colour.")},
                 "OrderLine": {"LineItem": {"ID": V("1", "The bench line."),
                                            "LineStatusCode": V("Revised", "Its colour changes."),
-                                           "Quantity": qty(40, "H87", "Unchanged: forty benches."),
+                                           "Quantity": qty(40, "EA", "Unchanged: forty benches."),
                                            "LineExtensionAmount": amount(bench, cur, "Unchanged."),
                                            "Item": {"Description": V("Park bench Serra 180, frame in moss green "
                                                                      "RAL 6005", "The changed item."),
@@ -7898,7 +7909,7 @@ def fund_levy_line(base, line_id, credit=False):
                  "Note": V("Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.", "Why the "
                                                                                                           "line is "
                                                                                                           "there."),
-                 kind: qty(1, "C62", f"The levy, {qn} once."),
+                 kind: qty(1, "EA", f"The levy, {qn} once."),
                  "LineExtensionAmount": amount(amt, "XLC", f"{pct} % of the value of the seed cotton."),
                  "BeneficiaryParty": party(XL_COTTON["fund"], short=True),
                  "Item": {"Name": V("Cotton fund levy", "What is collected.")}}
@@ -8078,7 +8089,7 @@ def _(f, n, doc, out):
         return {}
     lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
     lines.append({"ID": V(str(len(lines) + 1), "A line without charge."),
-                  "InvoicedQuantity": qty(20, "C62", "One care kit with each set."),
+                  "InvoicedQuantity": qty(20, "EA", "One care kit with each set."),
                   "LineExtensionAmount": amount(0, "XBL", "Free of charge."),
                   "FreeOfChargeIndicator": V("true", "The care kits are given with the sets."),
                   "Note": V("Wood oil and a cloth, for the store to hand to its customers.", "What they are."),
@@ -8312,13 +8323,13 @@ def packaging_complete(n, doc):
                                       "TaxExclusiveAmount": amount(base, "XLC", "Before tax."),
                                       "TaxInclusiveAmount": amount(total, "XLC", "With tax."),
                                       "PayableAmount": amount(total, "XLC", "Paid by card: no rounding.")},
-               "PurchaseReceiptLine": {"ID": V("1", "The line."), "Quantity": qty(qn, "H87", "Three shirts."),
+               "PurchaseReceiptLine": {"ID": V("1", "The line."), "Quantity": qty(qn, "EA", "Three shirts."),
                                        "LineExtensionAmount": amount(base, "XLC", "Three at the converted price."),
                                        "Item": item("shirt-r"),
                                        "Price": {"PriceAmount": price(str(unit_xlc), "XLC", "The shelf price of "
                                                                                             f"{shelf} lume, in "
                                                                                             "coral."),
-                                                 "BaseQuantity": qty(1, "H87", "Per shirt.")}},
+                                                 "BaseQuantity": qty(1, "EA", "Per shirt.")}},
                "PaymentMeans": {"PaymentMeansCode": V("54", "UN/EDIFACT 4461 code 54: credit card.",
                                                       listID="UN/EDIFACT EDED 4461"),
                                 "CardAccount": {"PrimaryAccountNumberID": V("************2286", "Masked."),

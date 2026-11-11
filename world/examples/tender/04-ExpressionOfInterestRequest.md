@@ -68,8 +68,8 @@ Inside `EconomicOperatorParty`:
   The sawmill's share in the planned consortium.
 - `QualifyingParty/OperatingYearsQuantity` = **22** (unitCode `ANN`)  
   Years in business.
-- `QualifyingParty/EmployeeQuantity` = **85** (unitCode `C62`)  
-  Its staff.
+- `QualifyingParty/EmployeeQuantity` = **85** (unitCode `IE`)  
+  Its staff, in persons.
 - `QualifyingParty/TendererRoleCode` = **Lead**  
   It would lead the consortium.
 - `QualifyingParty/Party/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -338,7 +338,7 @@ Inside `ProcurementProjectLotReference`:
     <cac:QualifyingParty>
       <cbc:ParticipationPercent>60</cbc:ParticipationPercent>
       <cbc:OperatingYearsQuantity unitCode="ANN">22</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">85</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">85</cbc:EmployeeQuantity>
       <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
       <cac:Party>
         <cac:PartyIdentification>

@@ -366,9 +366,9 @@ Inside `Shipment`:
   The shipment carried.
 - `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The gross weight of the cargo.
-- `TotalGoodsItemQuantity` = **2** (unitCode `H87`)  
+- `TotalGoodsItemQuantity` = **2** (unitCode `EA`)  
   Benches and side frames.
-- `ConsignmentQuantity` = **1** (unitCode `H87`)  
+- `ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The distributor's consignment number.
@@ -772,9 +772,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 001 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -784,9 +784,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 002 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -796,9 +796,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 003 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -808,9 +808,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 004 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -820,9 +820,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 005 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -832,9 +832,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 006 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -844,9 +844,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 007 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -856,9 +856,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 008 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -868,9 +868,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 009 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -880,9 +880,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 010 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -892,9 +892,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 011 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -904,9 +904,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 012 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -916,9 +916,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 013 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -928,9 +928,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 014 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -940,9 +940,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 015 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -952,9 +952,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 016 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -964,9 +964,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 017 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -976,9 +976,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 018 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -988,9 +988,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 019 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1000,9 +1000,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 020 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1012,9 +1012,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 021 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1024,9 +1024,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 022 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1036,9 +1036,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 023 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1048,9 +1048,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 024 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1060,9 +1060,9 @@ Inside `Shipment`:
   The number on the pallet label.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   12 boxed side frames on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 025 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
@@ -1074,7 +1074,7 @@ Inside `Shipment`:
   UN/EDIFACT 8053 code TE: trailer.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **LD-26-025**  
   The pallet of boxed castings, packed last at the doors.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `EA`)  
   Twelve boxes.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Package/PackagingTypeCode` = **BX**  
   UN/ECE Recommendation 21 code BX: box.
@@ -1086,7 +1086,7 @@ Inside `Shipment`:
   In words.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872**  
   The container the goods are in.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **25** (unitCode `C62`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **25** (unitCode `EA`)  
   25 pallets in it.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872**  
   The container itself, as equipment.
@@ -1597,8 +1597,8 @@ Inside `Signature`:
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
-    <cbc:TotalGoodsItemQuantity unitCode="H87">2</cbc:TotalGoodsItemQuantity>
-    <cbc:ConsignmentQuantity unitCode="H87">1</cbc:ConsignmentQuantity>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
+    <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
@@ -1990,200 +1990,200 @@ Inside `Signature`:
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-001</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-001</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-002</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-002</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-003</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-003</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-004</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-004</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-005</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-005</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-006</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-006</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-007</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-007</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-008</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-008</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-009</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-009</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-010</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-010</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-011</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-011</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-012</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-012</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-013</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-013</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-014</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-014</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-015</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-015</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-016</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-016</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-017</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-017</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-018</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-018</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-019</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-019</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-020</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-020</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-021</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-021</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-022</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-022</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-023</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-023</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-024</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">4</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-024</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
             <cbc:ID>LD-26-025</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-            <cbc:TotalGoodsItemQuantity unitCode="H87">1</cbc:TotalGoodsItemQuantity>
-            <cbc:TotalPackageQuantity unitCode="H87">12</cbc:TotalPackageQuantity>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
             <cbc:TraceID>LD-26-025</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
@@ -2193,7 +2193,7 @@ Inside `Signature`:
           </cac:AttachedTransportEquipment>
           <cac:Package>
             <cbc:ID>LD-26-025</cbc:ID>
-            <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">12</cbc:Quantity>
             <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
             <cac:ContainingTransportEquipment>
               <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
@@ -2204,7 +2204,7 @@ Inside `Signature`:
             <cbc:Description>Park benches and spare side frames</cbc:Description>
             <cac:GoodsItemContainer>
               <cbc:ID>TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="C62">25</cbc:Quantity>
+              <cbc:Quantity unitCode="EA">25</cbc:Quantity>
               <cac:TransportEquipment>
                 <cbc:ID>TWLU4120872</cbc:ID>
               </cac:TransportEquipment>

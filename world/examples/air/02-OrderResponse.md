@@ -281,7 +281,7 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The added line.
-- `LineItem/Quantity` = **8** (unitCode `H87`)  
+- `LineItem/Quantity` = **8** (unitCode `EA`)  
   Confirmed.
 - `LineItem/DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
   Carriage paid to the airport of Selanu, for this line.
@@ -504,7 +504,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cac:DeliveryTerms>
         <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
       </cac:DeliveryTerms>

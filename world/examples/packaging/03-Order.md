@@ -327,13 +327,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **20000** (unitCode `H87`)  
+- `LineItem/Quantity` = **20000** (unitCode `EA`)  
   Forty boxes of 500 bags.
 - `LineItem/LineExtensionAmount` = **1600.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **0.08** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Garment bag of recycled polyethylene, 60 cm, boxes of 500.**  
   The seller's description; item garment-bag of Rivermouth Packaging (world/items.json).
@@ -614,11 +614,11 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">20000</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">20000</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">1600.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">0.08</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Garment bag of recycled polyethylene, 60 cm, boxes of 500.</cbc:Description>

@@ -35,7 +35,7 @@
       <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">41</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">180</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">180</cbc:EmployeeQuantity>
       <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID>XU-R-104274</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
@@ -48,7 +48,7 @@
       <cac:TechnicalCapability>
         <cbc:ID>TC-1</cbc:ID>
         <cbc:Description>4,000 benches a year.</cbc:Description>
-        <cbc:ValueQuantity unitCode="H87">4000</cbc:ValueQuantity>
+        <cbc:ValueQuantity unitCode="EA">4000</cbc:ValueQuantity>
       </cac:TechnicalCapability>
       <cac:FinancialCapability>
         <cbc:ID>FC-1</cbc:ID>
@@ -156,7 +156,7 @@
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
           <cac:SecurityListing>
-            <cbc:ID>XU0001042505</cbc:ID>
+            <cbc:ID>XU0001042501</cbc:ID>
             <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
             <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
             <cbc:MarketCode>FSE</cbc:MarketCode>

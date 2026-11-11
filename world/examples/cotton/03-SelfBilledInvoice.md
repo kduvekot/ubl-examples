@@ -732,7 +732,7 @@ Inside `CollectionInvoiceLine`:
   The collection line.
 - `Note` = **Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.**  
   Why the line is there.
-- `InvoicedQuantity` = **1** (unitCode `C62`)  
+- `InvoicedQuantity` = **1** (unitCode `EA`)  
   The levy, invoiced once.
 - `LineExtensionAmount` = **40.680** (currencyID `XLC`)  
   1 % of the value of the seed cotton.
@@ -1290,7 +1290,7 @@ Inside `InvoiceLine`:
   <cac:CollectionInvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">40.680</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>

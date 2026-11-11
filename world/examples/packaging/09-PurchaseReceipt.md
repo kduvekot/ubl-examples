@@ -371,7 +371,7 @@ Inside `PurchaseReceiptLine`:
 
 - `ID` = **1**  
   The line.
-- `Quantity` = **3** (unitCode `H87`)  
+- `Quantity` = **3** (unitCode `EA`)  
   Three shirts.
 - `LineExtensionAmount` = **35.940** (currencyID `XLC`)  
   Three at the converted price.
@@ -405,7 +405,7 @@ Inside `PurchaseReceiptLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **11.98** (currencyID `XLC`)  
   The shelf price of 29.95 lume, in coral.
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   Per shirt.
 
 ## The document
@@ -674,7 +674,7 @@ Inside `PurchaseReceiptLine`:
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Quantity unitCode="H87">3</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">35.940</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
@@ -714,7 +714,7 @@ Inside `PurchaseReceiptLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">11.98</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>
 </PurchaseReceipt>

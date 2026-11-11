@@ -128,7 +128,7 @@ Inside `BuyerCustomerParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -335,19 +335,19 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **4800** (unitCode `H87`)  
+- `LineItem/Quantity` = **4800** (unitCode `EA`)  
   Slats for 960 benches: five per bench, 96 bundles of 50.
 - `LineItem/LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **7.2** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Price/OrderableUnitFactorRate` = **50**  
   The item is priced per piece and ordered in packs: one pack holds 50 pieces.
 - `LineItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
   The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/PackQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `LineItem/Item/PackSizeNumeric` = **50**  
   The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
@@ -549,7 +549,7 @@ Inside `OrderLine`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -721,16 +721,16 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">7.2</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:OrderableUnitFactorRate>50</cbc:OrderableUnitFactorRate>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-        <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
+        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
         <cac:BuyersItemIdentification>

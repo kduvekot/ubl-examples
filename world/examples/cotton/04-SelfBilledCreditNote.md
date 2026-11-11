@@ -574,7 +574,7 @@ Inside `CollectionCreditNoteLine`:
   The collection line.
 - `Note` = **Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.**  
   Why the line is there.
-- `CreditedQuantity` = **1** (unitCode `C62`)  
+- `CreditedQuantity` = **1** (unitCode `EA`)  
   The levy, credited once.
 - `LineExtensionAmount` = **0.750** (currencyID `XLC`)  
   1 % of the value of the seed cotton.
@@ -996,7 +996,7 @@ Inside `CreditNoteLine`:
   <cac:CollectionCreditNoteLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
-    <cbc:CreditedQuantity unitCode="C62">1</cbc:CreditedQuantity>
+    <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">0.750</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>

@@ -297,13 +297,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **6** (unitCode `H87`)  
+- `LineItem/Quantity` = **6** (unitCode `EA`)  
   Six desks for the new planning office.
 - `LineItem/LineExtensionAmount` = **5280.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **880** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Office desk in hardwood, 1600 × 800 mm.**  
   The seller's description; item office-desk of Brackenmere Furniture (world/items.json).
@@ -585,11 +585,11 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">6</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">5280.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">880</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>

@@ -11,6 +11,9 @@ schemas) and writes world/ubl-model.json:
     definition starts with "(Deprecated)", or, for a document type, it has no
     endorsed schema: the endorsed schemas leave out everything deprecated);
     the world uses none of them;
+  * which basic properties are of a text type (data type Text or Name, the
+    two whose schema types derive from udt:TextType and so carry languageID),
+    for the UBL instance rules IND7 and IND8 that the build checks;
   * per document type: its definition, its document-level party elements,
     and which of these elements sends the document and which receives it.
 
@@ -205,6 +208,8 @@ def main():
             rows.append({v.get("ColumnRef"): (v.findtext("{*}SimpleValue") or v.findtext("SimpleValue") or "")
                          for v in el})
     abies, by_den, docs, current = {}, {}, [], None
+    text_bbies = sorted({r["ComponentName"] for r in rows
+                         if r["ComponentType"] == "BBIE" and r["DataType"] in ("Text. Type", "Name. Type")})
     for r in rows:
         if r["ComponentType"] == "ABIE":
             current = r["ComponentName"]
@@ -306,7 +311,7 @@ def main():
             problems.append(f"{d}: not a UBL 2.5 document")
     if problems:
         raise SystemExit("\n".join(problems))
-    result = {"source": MODEL, "sha256": MODEL_SHA256, "roles": ROLES, "documents": out,
+    result = {"source": MODEL, "sha256": MODEL_SHA256, "roles": ROLES, "documents": out, "text_bbies": text_bbies,
               "abies": {k: {"deprecated": v["deprecated"], "bbies": v["bbies"], "asbies": v["asbies"],
                             **({"not_endorsed": v["not_endorsed"]} if v.get("not_endorsed") else {})}
                         for k, v in abies.items()}}

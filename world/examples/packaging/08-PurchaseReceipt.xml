@@ -222,7 +222,7 @@
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">54.90</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
@@ -277,7 +277,7 @@
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">29.95</cbc:PriceAmount>
       <cbc:TaxInclusivePriceAmount currencyID="XBL">31.9</cbc:TaxInclusivePriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>
 </PurchaseReceipt>

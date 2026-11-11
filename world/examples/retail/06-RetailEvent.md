@@ -361,7 +361,7 @@ Inside `PromotionalEvent`:
   The distributor's number.
 - `PromotionalSpecification/EventTactic/Comment` = **Benches at the entrance, with a price board.**  
   What the store does.
-- `PromotionalSpecification/EventTactic/Quantity` = **12** (unitCode `H87`)  
+- `PromotionalSpecification/EventTactic/Quantity` = **12** (unitCode `EA`)  
   Twelve benches on display.
 - `PromotionalSpecification/EventTactic/EventTacticEnumeration/ConsumerIncentiveTacticTypeCode` = **TPR**  
   A temporary price reduction.
@@ -674,7 +674,7 @@ Inside `MiscellaneousEvent`:
       </cac:PromotionalEventLineItem>
       <cac:EventTactic>
         <cbc:Comment>Benches at the entrance, with a price board.</cbc:Comment>
-        <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:EventTacticEnumeration>
           <cbc:ConsumerIncentiveTacticTypeCode>TPR</cbc:ConsumerIncentiveTacticTypeCode>
           <cbc:DisplayTacticTypeCode>EndCap</cbc:DisplayTacticTypeCode>

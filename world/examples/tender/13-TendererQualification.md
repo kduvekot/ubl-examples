@@ -62,8 +62,8 @@ Inside `TendererPartyQualification`:
   Declared.
 - `MainQualifyingParty/OperatingYearsQuantity` = **41** (unitCode `ANN`)  
   In business since 1985.
-- `MainQualifyingParty/EmployeeQuantity` = **180** (unitCode `C62`)  
-  Employees.
+- `MainQualifyingParty/EmployeeQuantity` = **180** (unitCode `IE`)  
+  Employees, in persons.
 - `MainQualifyingParty/BusinessClassificationEvidenceID` = **ISIC-3100**  
   Its class.
 - `MainQualifyingParty/BusinessIdentityEvidenceID` = **XU-R-104274**  
@@ -78,7 +78,7 @@ Inside `TendererPartyQualification`:
   Production.
 - `MainQualifyingParty/TechnicalCapability/Description` = **4,000 benches a year.**  
   Capacity.
-- `MainQualifyingParty/TechnicalCapability/ValueQuantity` = **4000** (unitCode `H87`)  
+- `MainQualifyingParty/TechnicalCapability/ValueQuantity` = **4000** (unitCode `EA`)  
   A year.
 - `MainQualifyingParty/FinancialCapability/ID` = **FC-1**  
   Turnover.
@@ -190,7 +190,7 @@ Inside `TendererPartyQualification`:
   A register of businesses, not a register of charities or associations.
 - `MainQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `MainQualifyingParty/Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `MainQualifyingParty/Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `MainQualifyingParty/Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -486,7 +486,7 @@ Inside `AdditionalDocumentReference`:
       <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">41</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">180</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">180</cbc:EmployeeQuantity>
       <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID>XU-R-104274</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode>Lead</cbc:TendererRoleCode>
@@ -499,7 +499,7 @@ Inside `AdditionalDocumentReference`:
       <cac:TechnicalCapability>
         <cbc:ID>TC-1</cbc:ID>
         <cbc:Description>4,000 benches a year.</cbc:Description>
-        <cbc:ValueQuantity unitCode="H87">4000</cbc:ValueQuantity>
+        <cbc:ValueQuantity unitCode="EA">4000</cbc:ValueQuantity>
       </cac:TechnicalCapability>
       <cac:FinancialCapability>
         <cbc:ID>FC-1</cbc:ID>
@@ -607,7 +607,7 @@ Inside `AdditionalDocumentReference`:
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
           <cac:SecurityListing>
-            <cbc:ID>XU0001042505</cbc:ID>
+            <cbc:ID>XU0001042501</cbc:ID>
             <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
             <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
             <cbc:MarketCode>FSE</cbc:MarketCode>

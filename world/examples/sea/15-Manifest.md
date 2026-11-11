@@ -445,8 +445,8 @@ Inside `Shipment`:
   The sea leg.
 - `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   Maritime transport.
-- `ShipmentStage/CrewQuantity` = **14** (unitCode `C62`)  
-  The crew on board.
+- `ShipmentStage/CrewQuantity` = **14** (unitCode `IE`)  
+  The crew on board: 14 persons.
 - `ShipmentStage/TransportMeans/JourneyID` = **TH-26-19E**  
   The voyage number.
 - `ShipmentStage/TransportMeans/RegistrationNationalityID` = **XB**  
@@ -898,7 +898,7 @@ Inside `Signature`:
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
-      <cbc:CrewQuantity unitCode="C62">14</cbc:CrewQuantity>
+      <cbc:CrewQuantity unitCode="IE">14</cbc:CrewQuantity>
       <cac:TransportMeans>
         <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
         <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>

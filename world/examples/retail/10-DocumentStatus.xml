@@ -223,7 +223,7 @@
       <cbc:ResponseCode>AP</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID></cbc:ID>
+      <cbc:ID>LD-TR-26-0227</cbc:ID>
     </cac:DocumentReference>
   </cac:AdditionalDocumentResponse>
 </DocumentStatus>

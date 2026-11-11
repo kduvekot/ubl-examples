@@ -305,7 +305,7 @@ Inside `InventoryReportLine`:
   The first and only line.
 - `Note` = **Below the minimum of 6 before the promotion.**  
   Why it matters.
-- `Quantity` = **3** (unitCode `H87`)  
+- `Quantity` = **3** (unitCode `EA`)  
   Three benches left in the garden department.
 - `InventoryValueAmount` = **1560.00** (currencyID `XBL`)  
   Three at the purchase price.
@@ -319,10 +319,8 @@ Inside `InventoryReportLine`:
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
@@ -380,13 +378,11 @@ Inside `InventoryReportLine`:
 - `Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -457,7 +453,7 @@ Inside `InventoryReportLine`:
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -760,7 +756,7 @@ Inside `InventoryReportLine`:
   <cac:InventoryReportLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Below the minimum of 6 before the promotion.</cbc:Note>
-    <cbc:Quantity unitCode="H87">3</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:InventoryValueAmount currencyID="XBL">1560.00</cbc:InventoryValueAmount>
     <cbc:AvailabilityDate>2026-04-23</cbc:AvailabilityDate>
     <cbc:AvailabilityStatusCode>Available</cbc:AvailabilityStatusCode>
@@ -768,8 +764,7 @@ Inside `InventoryReportLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -826,7 +821,6 @@ Inside `InventoryReportLine`:
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -892,7 +886,7 @@ Inside `InventoryReportLine`:
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>

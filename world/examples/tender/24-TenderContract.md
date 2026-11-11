@@ -261,7 +261,7 @@ Inside `EconomicOperatorParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -399,8 +399,8 @@ Inside `TenderingTerms`:
   The tenderer's situation.
 - `TendererQualificationRequest/OperatingYearsQuantity` = **3** (unitCode `ANN`)  
   At least three years in business.
-- `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `C62`)  
-  At least ten employees.
+- `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `IE`)  
+  At least ten employees (persons).
 - `TendererQualificationRequest/Description` = **Economic and technical capacity.**  
   What is asked.
 - `TendererQualificationRequest/RequiredBusinessClassificationScheme/ID` = **ISIC4**  
@@ -415,7 +415,7 @@ Inside `TenderingTerms`:
   References.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/Description` = **Three similar supplies in five years.**  
   What.
-- `TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity` = **3** (unitCode `C62`)  
+- `TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity` = **3** (unitCode `EA`)  
   Three.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -697,7 +697,7 @@ Inside `TenderResult`:
   The day of the award decision.
 - `AwardTime` = **09:30:00**  
   The time of the decision, before the tenderers are told.
-- `ReceivedTenderQuantity` = **2** (unitCode `C62`)  
+- `ReceivedTenderQuantity` = **2** (unitCode `EA`)  
   Two tenders: the furniture maker's first tender was withdrawn and replaced.
 - `LowerTenderAmount` = **119040.00** (currencyID `XBL`)  
   The lowest tender, the furniture maker's.
@@ -705,9 +705,9 @@ Inside `TenderResult`:
   The highest, the manufacturer's.
 - `StartDate` = **2026-03-23**  
   The contract starts with the first call-off.
-- `ReceivedElectronicTenderQuantity` = **2** (unitCode `C62`)  
+- `ReceivedElectronicTenderQuantity` = **2** (unitCode `EA`)  
   Both through the platform.
-- `ReceivedForeignTenderQuantity` = **1** (unitCode `C62`)  
+- `ReceivedForeignTenderQuantity` = **1** (unitCode `EA`)  
   The manufacturer is established in Urvania.
 - `Contract/ID` = **PWD-2026-PARKS**  
   The framework contract.
@@ -958,7 +958,7 @@ Inside `TenderResult`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -1072,7 +1072,7 @@ Inside `TenderResult`:
       <cbc:CompanyLegalForm>Consortia must name a lead member.</cbc:CompanyLegalForm>
       <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">10</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
       <cac:RequiredBusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
@@ -1085,7 +1085,7 @@ Inside `TenderResult`:
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode>References</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Three similar supplies in five years.</cbc:Description>
-        <cbc:ThresholdQuantity unitCode="C62">3</cbc:ThresholdQuantity>
+        <cbc:ThresholdQuantity unitCode="EA">3</cbc:ThresholdQuantity>
         <cac:DurationPeriod>
           <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
         </cac:DurationPeriod>
@@ -1350,12 +1350,12 @@ Inside `TenderResult`:
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
     <cbc:AwardTime>09:30:00</cbc:AwardTime>
-    <cbc:ReceivedTenderQuantity unitCode="C62">2</cbc:ReceivedTenderQuantity>
+    <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">119040.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:ReceivedElectronicTenderQuantity unitCode="C62">2</cbc:ReceivedElectronicTenderQuantity>
-    <cbc:ReceivedForeignTenderQuantity unitCode="C62">1</cbc:ReceivedForeignTenderQuantity>
+    <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
+    <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode>Framework</cbc:ContractTypeCode>

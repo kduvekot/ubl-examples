@@ -308,7 +308,7 @@ Inside `ReceiverParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -437,8 +437,8 @@ Inside `TenderingTerms`:
   The tenderer's situation.
 - `TendererQualificationRequest/OperatingYearsQuantity` = **3** (unitCode `ANN`)  
   At least three years in business.
-- `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `C62`)  
-  At least ten employees.
+- `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `IE`)  
+  At least ten employees (persons).
 - `TendererQualificationRequest/Description` = **Economic and technical capacity.**  
   What is asked.
 - `TendererQualificationRequest/RequiredBusinessClassificationScheme/ID` = **ISIC4**  
@@ -453,7 +453,7 @@ Inside `TenderingTerms`:
   References.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/Description` = **Three similar supplies in five years.**  
   What.
-- `TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity` = **3** (unitCode `C62`)  
+- `TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity` = **3** (unitCode `EA`)  
   Three.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -917,7 +917,7 @@ Inside `ProcurementProject`:
   The fee.
 - `RequestedDeliveryDate` = **2026-04-02**  
   The first release.
-- `EstimatedOverallContractQuantity` = **240** (unitCode `H87`)  
+- `EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
   240 benches over the contract.
 - `Note` = **Part of the parks renewal programme 2026.**  
   The programme.
@@ -987,11 +987,11 @@ Inside `ProcurementProject`:
   Its UUID.
 - `RequestForTenderLine/Note` = **Steel frame, five hardwood slats, ground anchors.**  
   The requirement.
-- `RequestForTenderLine/Quantity` = **240** (unitCode `H87`)  
+- `RequestForTenderLine/Quantity` = **240** (unitCode `EA`)  
   Over the contract.
-- `RequestForTenderLine/MinimumQuantity` = **120** (unitCode `H87`)  
+- `RequestForTenderLine/MinimumQuantity` = **120** (unitCode `EA`)  
   At least.
-- `RequestForTenderLine/MaximumQuantity` = **288** (unitCode `H87`)  
+- `RequestForTenderLine/MaximumQuantity` = **288** (unitCode `EA`)  
   At most.
 - `RequestForTenderLine/TaxIncludedIndicator` = **false**  
   Prices without tax.
@@ -1058,7 +1058,7 @@ Inside `ProcurementProjectLot`:
   The fee.
 - `ProcurementProject/RequestedDeliveryDate` = **2026-04-02**  
   The first release.
-- `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `H87`)  
+- `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
   240 benches over the contract.
 - `ProcurementProject/Note` = **Part of the parks renewal programme 2026.**  
   The programme.
@@ -1128,11 +1128,11 @@ Inside `ProcurementProjectLot`:
   Its UUID.
 - `ProcurementProject/RequestForTenderLine/Note` = **Steel frame, five hardwood slats, ground anchors.**  
   The requirement.
-- `ProcurementProject/RequestForTenderLine/Quantity` = **240** (unitCode `H87`)  
+- `ProcurementProject/RequestForTenderLine/Quantity` = **240** (unitCode `EA`)  
   Over the contract.
-- `ProcurementProject/RequestForTenderLine/MinimumQuantity` = **120** (unitCode `H87`)  
+- `ProcurementProject/RequestForTenderLine/MinimumQuantity` = **120** (unitCode `EA`)  
   At least.
-- `ProcurementProject/RequestForTenderLine/MaximumQuantity` = **288** (unitCode `H87`)  
+- `ProcurementProject/RequestForTenderLine/MaximumQuantity` = **288** (unitCode `EA`)  
   At most.
 - `ProcurementProject/RequestForTenderLine/TaxIncludedIndicator` = **false**  
   Prices without tax.
@@ -1194,7 +1194,7 @@ Inside `ProcurementProjectLot`:
   The fee.
 - `ProcurementProject/RequestedDeliveryDate` = **2026-04-02**  
   The first release.
-- `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `H87`)  
+- `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
   240 benches over the contract.
 - `ProcurementProject/Note` = **Part of the parks renewal programme 2026.**  
   The programme.
@@ -1503,7 +1503,7 @@ Inside `ProcurementProjectLot`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -1608,7 +1608,7 @@ Inside `ProcurementProjectLot`:
       <cbc:CompanyLegalForm>Consortia must name a lead member.</cbc:CompanyLegalForm>
       <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="C62">10</cbc:EmployeeQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
       <cac:RequiredBusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
@@ -1621,7 +1621,7 @@ Inside `ProcurementProjectLot`:
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode>References</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Three similar supplies in five years.</cbc:Description>
-        <cbc:ThresholdQuantity unitCode="C62">3</cbc:ThresholdQuantity>
+        <cbc:ThresholdQuantity unitCode="EA">3</cbc:ThresholdQuantity>
         <cac:DurationPeriod>
           <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
         </cac:DurationPeriod>
@@ -2048,7 +2048,7 @@ Inside `ProcurementProjectLot`:
     <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
     <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
     <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
-    <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+    <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
     <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
@@ -2112,9 +2112,9 @@ Inside `ProcurementProjectLot`:
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
       <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
-      <cbc:Quantity unitCode="H87">240</cbc:Quantity>
-      <cbc:MinimumQuantity unitCode="H87">120</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="H87">288</cbc:MaximumQuantity>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+      <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
       <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
       <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
@@ -2177,7 +2177,7 @@ Inside `ProcurementProjectLot`:
       <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
       <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
-      <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+      <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
       <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
@@ -2241,9 +2241,9 @@ Inside `ProcurementProjectLot`:
         <cbc:ID>1</cbc:ID>
         <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
         <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
-        <cbc:Quantity unitCode="H87">240</cbc:Quantity>
-        <cbc:MinimumQuantity unitCode="H87">120</cbc:MinimumQuantity>
-        <cbc:MaximumQuantity unitCode="H87">288</cbc:MaximumQuantity>
+        <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+        <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
+        <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
         <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
         <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
@@ -2307,7 +2307,7 @@ Inside `ProcurementProjectLot`:
       <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
       <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
-      <cbc:EstimatedOverallContractQuantity unitCode="H87">240</cbc:EstimatedOverallContractQuantity>
+      <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
       <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>

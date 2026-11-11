@@ -328,7 +328,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="H87">20000</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">20000</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">1600.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Garment bag of recycled polyethylene, 60 cm, boxes of 500.</cbc:Description>
@@ -358,7 +358,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">0.08</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

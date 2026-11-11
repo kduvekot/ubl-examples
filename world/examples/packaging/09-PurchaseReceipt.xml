@@ -261,7 +261,7 @@
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Quantity unitCode="H87">3</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">35.940</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
@@ -301,7 +301,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">11.98</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>
 </PurchaseReceipt>

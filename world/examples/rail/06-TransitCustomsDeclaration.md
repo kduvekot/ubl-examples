@@ -160,7 +160,7 @@ Inside `TransitExporterParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -590,7 +590,7 @@ Inside `Shipment`:
   The value of the goods, in ferra, for the transit guarantee.
 - `GoodsItem/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
   The gross weight of the goods of this item.
-- `GoodsItem/Quantity` = **192** (unitCode `H87`)  
+- `GoodsItem/Quantity` = **192** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
@@ -600,10 +600,8 @@ Inside `Shipment`:
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `GoodsItem/Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `GoodsItem/Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `GoodsItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/ModelName` = **Serra 180**  
@@ -655,13 +653,11 @@ Inside `Shipment`:
 - `GoodsItem/Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `GoodsItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `GoodsItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `GoodsItem/Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -728,7 +724,7 @@ Inside `Shipment`:
   The emission of one item.
 - `GoodsItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `GoodsItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `GoodsItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `GoodsItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -928,7 +924,7 @@ Inside `Signature`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -1303,14 +1299,13 @@ Inside `Signature`:
       <cbc:Description>Park bench Serra 180</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XUF">9580800</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="H87">192</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">192</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-        <cbc:Keyword>park bench</cbc:Keyword>
-        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:Keyword>park bench, street furniture</cbc:Keyword>
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1358,7 +1353,6 @@ Inside `Signature`:
           <cbc:Name>Frame colour</cbc:Name>
           <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
           <cbc:ListValue>Ferro grey</cbc:ListValue>
-          <cbc:ListValue>Moss green</cbc:ListValue>
           <cac:ItemPropertyGroup>
             <cbc:ID>APP</cbc:ID>
             <cbc:Name>Appearance</cbc:Name>
@@ -1416,7 +1410,7 @@ Inside `Signature`:
           <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
           <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
           <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
           <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
           <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
           <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>

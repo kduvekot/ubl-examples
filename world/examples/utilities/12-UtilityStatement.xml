@@ -340,7 +340,7 @@
             <cbc:TelecommunicationsServiceCategory>Video on demand</cbc:TelecommunicationsServiceCategory>
             <cbc:MovieTitle>Safe Lifting in the Warehouse</cbc:MovieTitle>
             <cbc:PayPerView>true</cbc:PayPerView>
-            <cbc:Quantity unitCode="C62">1</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">1</cbc:Quantity>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>

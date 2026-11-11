@@ -265,7 +265,7 @@ Inside `Shipment`:
   The castings alone.
 - `Consignment/NetVolumeMeasure` = **0.42** (unitCode `MTQ`)  
   The frames' own volume.
-- `Consignment/TotalGoodsItemQuantity` = **1** (unitCode `C62`)  
+- `Consignment/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods.
 - `Consignment/DeclaredForCarriageValueAmount` = **512.00** (currencyID `XBL`)  
   Declared to the airline so its liability covers the value of the frames.
@@ -273,7 +273,7 @@ Inside `Shipment`:
   The value for the export statistics.
 - `Consignment/SplitConsignmentIndicator` = **false**  
   All eight boxes on one flight.
-- `Consignment/ConsignmentQuantity` = **1** (unitCode `C62`)  
+- `Consignment/ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
@@ -367,7 +367,7 @@ Inside `Shipment`:
   The distributor's shipment on the skid.
 - `Consignment/TransportHandlingUnit/Package/ID` = **LD-AIR-BOX**  
   The boxes, numbered 1 to 8 on their labels.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **8** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **8** (unitCode `EA`)  
   Eight boxes.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX**  
   UN/ECE Recommendation 21 code BX: box.
@@ -375,7 +375,7 @@ Inside `Shipment`:
   The barcodes on the boxes.
 - `Consignment/TransportHandlingUnit/Package/ContainedPackage/ID` = **LD-AIR-BAG**  
   Inside each box, the frame in a plastic bag.
-- `Consignment/TransportHandlingUnit/Package/ContainedPackage/Quantity` = **8** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/ContainedPackage/Quantity` = **8** (unitCode `EA`)  
   One bag per box.
 - `Consignment/TransportHandlingUnit/Package/ContainedPackage/PackagingTypeCode` = **BG**  
   UN/ECE Recommendation 21 code BG: bag.
@@ -395,7 +395,7 @@ Inside `Shipment`:
   Of one box.
 - `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **300** (unitCode `MMT`)  
   In millimetres.
-- `Consignment/TransportHandlingUnit/Package/DeliveryUnit/BatchQuantity` = **8** (unitCode `H87`)  
+- `Consignment/TransportHandlingUnit/Package/DeliveryUnit/BatchQuantity` = **8** (unitCode `EA`)  
   All eight delivered together.
 - `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/StartDate` = **2026-05-14**  
   Wanted at the 3PL on day 3.
@@ -661,11 +661,11 @@ Inside `Signature`:
       <cbc:ID>LD-CS-26-0324</cbc:ID>
       <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
-      <cbc:TotalGoodsItemQuantity unitCode="C62">1</cbc:TotalGoodsItemQuantity>
+      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
-      <cbc:ConsignmentQuantity unitCode="C62">1</cbc:ConsignmentQuantity>
+      <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
@@ -754,12 +754,12 @@ Inside `Signature`:
         </cac:ReferencedShipment>
         <cac:Package>
           <cbc:ID>LD-AIR-BOX</cbc:ID>
-          <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">8</cbc:Quantity>
           <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
           <cbc:TraceID>LD-AIR-0001..0008</cbc:TraceID>
           <cac:ContainedPackage>
             <cbc:ID>LD-AIR-BAG</cbc:ID>
-            <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">8</cbc:Quantity>
             <cbc:PackagingTypeCode>BG</cbc:PackagingTypeCode>
           </cac:ContainedPackage>
           <cac:GoodsItem>
@@ -779,7 +779,7 @@ Inside `Signature`:
             <cbc:Measure unitCode="MMT">300</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:DeliveryUnit>
-            <cbc:BatchQuantity unitCode="H87">8</cbc:BatchQuantity>
+            <cbc:BatchQuantity unitCode="EA">8</cbc:BatchQuantity>
           </cac:DeliveryUnit>
           <cac:Delivery>
             <cac:RequestedDeliveryPeriod>

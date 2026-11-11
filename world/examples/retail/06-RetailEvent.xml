@@ -280,7 +280,7 @@
       </cac:PromotionalEventLineItem>
       <cac:EventTactic>
         <cbc:Comment>Benches at the entrance, with a price board.</cbc:Comment>
-        <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:EventTacticEnumeration>
           <cbc:ConsumerIncentiveTacticTypeCode>TPR</cbc:ConsumerIncentiveTacticTypeCode>
           <cbc:DisplayTacticTypeCode>EndCap</cbc:DisplayTacticTypeCode>

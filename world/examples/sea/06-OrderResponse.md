@@ -34,7 +34,7 @@ The distributor accepts and confirms the sailing it plans to use.
   The response in words.
 - `DocumentCurrencyCode` = **XBL**  
   The lume, the distributor's currency, as in the order; it has two decimals.
-- `TotalPackagesQuantity` = **108** (unitCode `H87`)  
+- `TotalPackagesQuantity` = **108** (unitCode `EA`)  
   96 benches and 12 boxed frames.
 - `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
   The expected gross weight, for the booking.
@@ -439,7 +439,7 @@ Inside `OrderLine`:
   The line's status in words.
 - `LineItem/LineStatusCode` = **NoStatus**  
   Unchanged against the order.
-- `LineItem/Quantity` = **96** (unitCode `H87`)  
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
   The quantity confirmed.
 - `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   As ordered.
@@ -459,7 +459,7 @@ Inside `OrderLine`:
   Arriving at Selanu.
 - `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Name` = **Park bench Serra 180**  
   Named only: described in full in the order.
@@ -481,7 +481,7 @@ Inside `OrderLine`:
   The line's status in words.
 - `LineItem/LineStatusCode` = **NoStatus**  
   Unchanged against the order.
-- `LineItem/Quantity` = **12** (unitCode `H87`)  
+- `LineItem/Quantity` = **12** (unitCode `EA`)  
   The quantity confirmed.
 - `LineItem/LineExtensionAmount` = **768.00** (currencyID `XBL`)  
   As ordered.
@@ -501,7 +501,7 @@ Inside `OrderLine`:
   Arriving at Selanu.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Name` = **Bench side frame casting**  
   Named only: described in full in the order.
@@ -533,7 +533,7 @@ Inside `OrderLine`:
   <cbc:OrderResponseCode>AP</cbc:OrderResponseCode>
   <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPackagesQuantity unitCode="H87">108</cbc:TotalPackagesQuantity>
+  <cbc:TotalPackagesQuantity unitCode="EA">108</cbc:TotalPackagesQuantity>
   <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
   <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
   <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
@@ -845,7 +845,7 @@ Inside `OrderLine`:
       <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">96</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
@@ -860,7 +860,7 @@ Inside `OrderLine`:
       </cac:Delivery>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -890,7 +890,7 @@ Inside `OrderLine`:
       <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-      <cbc:Quantity unitCode="H87">12</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">768.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
@@ -905,7 +905,7 @@ Inside `OrderLine`:
       </cac:Delivery>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>

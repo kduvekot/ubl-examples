@@ -447,7 +447,7 @@ Inside `PurchaseReceiptLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **Promotion price.**  
   As printed.
-- `Quantity` = **1** (unitCode `H87`)  
+- `Quantity` = **1** (unitCode `EA`)  
   One bench.
 - `LineExtensionAmount` = **674.10** (currencyID `XBL`)  
   Quantity times the price paid, before the sales tax.
@@ -469,10 +469,8 @@ Inside `PurchaseReceiptLine`:
   The item's short name; item bench-serra-r of Brightmarket Stores (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
@@ -530,13 +528,11 @@ Inside `PurchaseReceiptLine`:
 - `Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -607,7 +603,7 @@ Inside `PurchaseReceiptLine`:
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -673,7 +669,7 @@ Inside `PurchaseReceiptLine`:
   The shelf price of 749.0 less the promotion discount.
 - `Price/TaxInclusivePriceAmount` = **717.92** (currencyID `XBL`)  
   The price the customer pays, with the 6.5 % sales tax.
-- `Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `Price/PriceChangeReason` = **Spring garden promotion**  
   Why the price differs from the shelf price.
@@ -1006,7 +1002,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>ea701e0e-2453-5802-8bbd-0356ea20503d</cbc:UUID>
     <cbc:Note>Promotion price.</cbc:Note>
-    <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
     <cac:PurchaseLinePeriod>
@@ -1024,8 +1020,7 @@ Inside `PurchaseReceiptLine`:
       <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1082,7 +1077,6 @@ Inside `PurchaseReceiptLine`:
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -1148,7 +1142,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1208,7 +1202,7 @@ Inside `PurchaseReceiptLine`:
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">674.1</cbc:PriceAmount>
       <cbc:TaxInclusivePriceAmount currencyID="XBL">717.92</cbc:TaxInclusivePriceAmount>
-      <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       <cbc:PriceChangeReason>Spring garden promotion</cbc:PriceChangeReason>
       <cac:ValidityPeriod>
         <cbc:StartDate>2026-05-12</cbc:StartDate>

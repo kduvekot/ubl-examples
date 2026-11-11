@@ -475,7 +475,7 @@ Inside `DespatchLine`:
   The line as the order put it.
 - `LineStatusCode` = **NoStatus**  
   Despatched as ordered.
-- `DeliveredQuantity` = **96** (unitCode `H87`)  
+- `DeliveredQuantity` = **96** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
@@ -485,10 +485,8 @@ Inside `DespatchLine`:
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
@@ -546,13 +544,11 @@ Inside `DespatchLine`:
 - `Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -631,7 +627,7 @@ Inside `DespatchLine`:
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -699,7 +695,7 @@ Inside `DespatchLine`:
   The line as the order put it.
 - `LineStatusCode` = **NoStatus**  
   Despatched as ordered.
-- `DeliveredQuantity` = **12** (unitCode `H87`)  
+- `DeliveredQuantity` = **12** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
   The order line this line fulfils.
@@ -1283,7 +1279,7 @@ Inside `DespatchLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>One 40-foot container: 24 pallets of 4 benches.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">96</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -1291,8 +1287,7 @@ Inside `DespatchLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1349,7 +1344,6 @@ Inside `DespatchLine`:
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -1425,7 +1419,7 @@ Inside `DespatchLine`:
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1487,7 +1481,7 @@ Inside `DespatchLine`:
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Spare side frames for the buyer's own service stock.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">12</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>

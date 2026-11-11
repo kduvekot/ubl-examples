@@ -372,13 +372,13 @@ Inside `CatalogueLine`:
   It can be ordered.
 - `OrderableUnit` = **Pallet of 4**  
   The unit the store orders in.
-- `ContentUnitQuantity` = **4** (unitCode `H87`)  
+- `ContentUnitQuantity` = **4** (unitCode `EA`)  
   Four benches in an orderable unit.
 - `OrderQuantityIncrementNumeric` = **4**  
   Orders go up in steps of four.
-- `MinimumOrderQuantity` = **4** (unitCode `H87`)  
+- `MinimumOrderQuantity` = **4** (unitCode `EA`)  
   One pallet.
-- `MaximumOrderQuantity` = **192** (unitCode `H87`)  
+- `MaximumOrderQuantity` = **192** (unitCode `EA`)  
   Two containers.
 - `WarrantyInformation` = **Five years on the frame, from the maker.**  
   The warranty.
@@ -404,17 +404,17 @@ Inside `CatalogueLine`:
   With the catalogue.
 - `ItemComparison/PriceAmount` = **520** (currencyID `XBL`)  
   The price per bench.
-- `ItemComparison/Quantity` = **1** (unitCode `H87`)  
+- `ItemComparison/Quantity` = **1** (unitCode `EA`)  
   For comparing per bench.
 - `ComponentRelatedItem/ID` = **MS-SL-1800**  
   The related item: Hardwood bench slat 1800.
-- `ComponentRelatedItem/Quantity` = **5** (unitCode `H87`)  
+- `ComponentRelatedItem/Quantity` = **5** (unitCode `EA`)  
   Five slats per bench.
 - `ComponentRelatedItem/Description` = **Hardwood bench slat 1800**  
   In words.
 - `ComponentRelatedItem/ID` = **VI-C180**  
   The related item: Bench side frame casting.
-- `ComponentRelatedItem/Quantity` = **2** (unitCode `H87`)  
+- `ComponentRelatedItem/Quantity` = **2** (unitCode `EA`)  
   Two side frames per bench.
 - `ComponentRelatedItem/Description` = **Bench side frame casting**  
   In words.
@@ -432,9 +432,9 @@ Inside `CatalogueLine`:
   In words.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **3** (unitCode `DAY`)  
   The days between order and despatch.
-- `RequiredItemLocationQuantity/MinimumQuantity` = **4** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/MinimumQuantity` = **4** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
-- `RequiredItemLocationQuantity/MaximumQuantity` = **192** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/MaximumQuantity` = **192** (unitCode `EA`)  
   The most one order can take from stock: two containers.
 - `RequiredItemLocationQuantity/TradingRestrictions` = **Not sold to consumers.**  
   The bench is sold through retailers.
@@ -442,7 +442,7 @@ Inside `CatalogueLine`:
   The catalogue is offered for buyers in the seller's country.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD**  
   The seller's code for its trade price.
@@ -456,9 +456,9 @@ Inside `CatalogueLine`:
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **Active**  
   The price list is in force.
-- `RequiredItemLocationQuantity/DeliveryUnit/BatchQuantity` = **4** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/DeliveryUnit/BatchQuantity` = **4** (unitCode `EA`)  
   The benches are delivered per pallet of four.
-- `RequiredItemLocationQuantity/DeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/DeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `EA`)  
   One bench is one consumer unit.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **E**  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E).
@@ -472,7 +472,7 @@ Inside `CatalogueLine`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `RequiredItemLocationQuantity/Package/ID` = **PAL-4**  
   The pallet the price is for.
-- `RequiredItemLocationQuantity/Package/Quantity` = **4** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/Package/Quantity` = **4** (unitCode `EA`)  
   Four benches to a pallet.
 - `RequiredItemLocationQuantity/Package/PackagingTypeCode` = **PX**  
   UN/ECE Recommendation 21 code PX: pallet.
@@ -504,10 +504,8 @@ Inside `CatalogueLine`:
   A physical product, not a service.
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
@@ -655,13 +653,11 @@ Inside `CatalogueLine`:
 - `Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -736,7 +732,7 @@ Inside `CatalogueLine`:
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -814,7 +810,7 @@ Inside `CatalogueLine`:
   It can be ordered.
 - `OrderableUnit` = **Box**  
   One frame per box.
-- `MinimumOrderQuantity` = **1** (unitCode `H87`)  
+- `MinimumOrderQuantity` = **1** (unitCode `EA`)  
   Any quantity.
 - `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -830,27 +826,27 @@ Inside `CatalogueLine`:
   With the catalogue.
 - `RequiredRelatedItem/ID` = **LD-10442**  
   The related item: Park bench Serra 180.
-- `RequiredRelatedItem/Quantity` = **1** (unitCode `H87`)  
+- `RequiredRelatedItem/Quantity` = **1** (unitCode `EA`)  
   Fits only the Serra 180.
 - `RequiredRelatedItem/Description` = **Park bench Serra 180**  
   In words.
 - `ReplacementRelatedItem/ID` = **VI-C180-2026**  
   The 2026 casting replaces it from May.
-- `ReplacementRelatedItem/Quantity` = **1** (unitCode `H87`)  
+- `ReplacementRelatedItem/Quantity` = **1** (unitCode `EA`)  
   One for one.
 - `ReplacedRelatedItem/ID` = **VI-C180-2024**  
   The casting this one replaced.
-- `ReplacedRelatedItem/Quantity` = **1** (unitCode `H87`)  
+- `ReplacedRelatedItem/Quantity` = **1** (unitCode `EA`)  
   One for one.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **2** (unitCode `DAY`)  
   The days between order and despatch.
-- `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
 - `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB**  
   The catalogue is offered for buyers in the seller's country.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD**  
   The seller's code for its trade price.
@@ -1200,10 +1196,10 @@ Inside `CatalogueLine`:
     <cbc:Note>Pallets of four only.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-    <cbc:ContentUnitQuantity unitCode="H87">4</cbc:ContentUnitQuantity>
+    <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
     <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-    <cbc:MinimumOrderQuantity unitCode="H87">4</cbc:MinimumOrderQuantity>
-    <cbc:MaximumOrderQuantity unitCode="H87">192</cbc:MaximumOrderQuantity>
+    <cbc:MinimumOrderQuantity unitCode="EA">4</cbc:MinimumOrderQuantity>
+    <cbc:MaximumOrderQuantity unitCode="EA">192</cbc:MaximumOrderQuantity>
     <cbc:WarrantyInformation>Five years on the frame, from the maker.</cbc:WarrantyInformation>
     <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
     <cac:ContractorCustomerParty>
@@ -1243,16 +1239,16 @@ Inside `CatalogueLine`:
     </cac:LineValidityPeriod>
     <cac:ItemComparison>
       <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     </cac:ItemComparison>
     <cac:ComponentRelatedItem>
       <cbc:ID>MS-SL-1800</cbc:ID>
-      <cbc:Quantity unitCode="H87">5</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">5</cbc:Quantity>
       <cbc:Description>Hardwood bench slat 1800</cbc:Description>
     </cac:ComponentRelatedItem>
     <cac:ComponentRelatedItem>
       <cbc:ID>VI-C180</cbc:ID>
-      <cbc:Quantity unitCode="H87">2</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
       <cbc:Description>Bench side frame casting</cbc:Description>
     </cac:ComponentRelatedItem>
     <cac:AccessoryRelatedItem>
@@ -1267,8 +1263,8 @@ Inside `CatalogueLine`:
     </cac:ComplementaryRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="H87">4</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="H87">192</cbc:MaximumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
+      <cbc:MaximumQuantity unitCode="EA">192</cbc:MaximumQuantity>
       <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
@@ -1277,7 +1273,7 @@ Inside `CatalogueLine`:
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
@@ -1290,8 +1286,8 @@ Inside `CatalogueLine`:
         </cac:PriceList>
       </cac:Price>
       <cac:DeliveryUnit>
-        <cbc:BatchQuantity unitCode="H87">4</cbc:BatchQuantity>
-        <cbc:ConsumerUnitQuantity unitCode="H87">1</cbc:ConsumerUnitQuantity>
+        <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
+        <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
       </cac:DeliveryUnit>
       <cac:ApplicableTaxCategory>
         <cbc:ID>E</cbc:ID>
@@ -1304,7 +1300,7 @@ Inside `CatalogueLine`:
       </cac:ApplicableTaxCategory>
       <cac:Package>
         <cbc:ID>PAL-4</cbc:ID>
-        <cbc:Quantity unitCode="H87">4</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">4</cbc:Quantity>
         <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
       </cac:Package>
       <cac:AllowanceCharge>
@@ -1329,8 +1325,7 @@ Inside `CatalogueLine`:
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1470,7 +1465,6 @@ Inside `CatalogueLine`:
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -1544,7 +1538,7 @@ Inside `CatalogueLine`:
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1613,7 +1607,7 @@ Inside `CatalogueLine`:
     <cbc:Note>Spare part for the Serra 180.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Box</cbc:OrderableUnit>
-    <cbc:MinimumOrderQuantity unitCode="H87">1</cbc:MinimumOrderQuantity>
+    <cbc:MinimumOrderQuantity unitCode="EA">1</cbc:MinimumOrderQuantity>
     <cac:ContractorCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -1640,20 +1634,20 @@ Inside `CatalogueLine`:
     </cac:LineValidityPeriod>
     <cac:RequiredRelatedItem>
       <cbc:ID>LD-10442</cbc:ID>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cbc:Description>Park bench Serra 180</cbc:Description>
     </cac:RequiredRelatedItem>
     <cac:ReplacementRelatedItem>
       <cbc:ID>VI-C180-2026</cbc:ID>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     </cac:ReplacementRelatedItem>
     <cac:ReplacedRelatedItem>
       <cbc:ID>VI-C180-2024</cbc:ID>
-      <cbc:Quantity unitCode="H87">1</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     </cac:ReplacedRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">2</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="H87">1</cbc:MinimumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -1661,7 +1655,7 @@ Inside `CatalogueLine`:
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>

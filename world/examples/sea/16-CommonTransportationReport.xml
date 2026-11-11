@@ -347,7 +347,7 @@
       <cac:ShipStoreArticle>
         <cbc:ID>ST-2</cbc:ID>
         <cbc:Name>Cigarettes</cbc:Name>
-        <cbc:Quantity unitCode="H87">2000</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">2000</cbc:Quantity>
       </cac:ShipStoreArticle>
       <cac:CrewPersonEffect>
         <cbc:EffectDescription>One camera, one laptop.</cbc:EffectDescription>
@@ -386,10 +386,10 @@
         <cbc:ManagementPlanOnBoardIndicator>true</cbc:ManagementPlanOnBoardIndicator>
         <cbc:ManagementPlanImplementedIndicator>true</cbc:ManagementPlanImplementedIndicator>
         <cbc:IMOGuidelinesOnBoardIndicator>true</cbc:IMOGuidelinesOnBoardIndicator>
-        <cbc:TotalBallastTanksOnBoardQuantity unitCode="C62">8</cbc:TotalBallastTanksOnBoardQuantity>
-        <cbc:TanksInBallastQuantity unitCode="C62">4</cbc:TanksInBallastQuantity>
-        <cbc:TanksExchangedQuantity unitCode="C62">4</cbc:TanksExchangedQuantity>
-        <cbc:TanksNotExchangedQuantity unitCode="C62">0</cbc:TanksNotExchangedQuantity>
+        <cbc:TotalBallastTanksOnBoardQuantity unitCode="EA">8</cbc:TotalBallastTanksOnBoardQuantity>
+        <cbc:TanksInBallastQuantity unitCode="EA">4</cbc:TanksInBallastQuantity>
+        <cbc:TanksExchangedQuantity unitCode="EA">4</cbc:TanksExchangedQuantity>
+        <cbc:TanksNotExchangedQuantity unitCode="EA">0</cbc:TanksNotExchangedQuantity>
         <cbc:TotalBallastWaterOnBoardMeasure unitCode="TNE">1240</cbc:TotalBallastWaterOnBoardMeasure>
         <cbc:TotalBallastWaterCapacityMeasure unitCode="TNE">2480</cbc:TotalBallastWaterCapacityMeasure>
         <cbc:OtherControlActions>None.</cbc:OtherControlActions>
@@ -397,7 +397,7 @@
         <cac:UptakeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:TankTypeCode>Wing</cbc:TankTypeCode>
-          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
           <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
           <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
           <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
@@ -419,7 +419,7 @@
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:ExchangeMethodCode>Sequential</cbc:ExchangeMethodCode>
           <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
-          <cbc:VolumeMeasure unitCode="TNE">310</cbc:VolumeMeasure>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
           <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
           <cac:Location>
             <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
@@ -427,7 +427,7 @@
         </cac:ExchangeBallastWaterTransaction>
         <cac:DischargeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
-          <cbc:VolumeMeasure unitCode="TNE">120</cbc:VolumeMeasure>
+          <cbc:VolumeMeasure unitCode="MTQ">120</cbc:VolumeMeasure>
           <cbc:TransactionDate>2026-05-18</cbc:TransactionDate>
         </cac:DischargeBallastWaterTransaction>
         <cac:ResponsibleOfficerPerson>
@@ -512,8 +512,8 @@
         <cbc:SanitaryMeasuresAppliedIndicator>true</cbc:SanitaryMeasuresAppliedIndicator>
         <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
         <cbc:ReinspectionRequiredIndicator>false</cbc:ReinspectionRequiredIndicator>
-        <cbc:TotalDeadPersonQuantity unitCode="C62">0</cbc:TotalDeadPersonQuantity>
-        <cbc:TotalIllPersonQuantity unitCode="C62">1</cbc:TotalIllPersonQuantity>
+        <cbc:TotalDeadPersonQuantity unitCode="IE">0</cbc:TotalDeadPersonQuantity>
+        <cbc:TotalIllPersonQuantity unitCode="IE">1</cbc:TotalIllPersonQuantity>
         <cbc:SickAnimalDescription>None on board.</cbc:SickAnimalDescription>
         <cbc:StowawayDescription>None found in the search before departure.</cbc:StowawayDescription>
         <cbc:LastDrinkingWaterAnalysisDate>2026-04-02</cbc:LastDrinkingWaterAnalysisDate>
@@ -624,7 +624,7 @@
         <cbc:AtAnchorageIndicator>false</cbc:AtAnchorageIndicator>
         <cbc:CourseOverGroundDirection>088</cbc:CourseOverGroundDirection>
         <cbc:SpeedOverGroundMeasure unitCode="KNT">13.5</cbc:SpeedOverGroundMeasure>
-        <cbc:RateOfTurnMeasure unitCode="C62">0</cbc:RateOfTurnMeasure>
+        <cbc:RateOfTurnMeasure unitCode="E96">0</cbc:RateOfTurnMeasure>
       </cac:VesselDynamics>
     </cac:MaritimeTransport>
   </cac:TransportMeans>

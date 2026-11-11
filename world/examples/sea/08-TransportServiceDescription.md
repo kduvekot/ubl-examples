@@ -336,8 +336,8 @@ Inside `TransportationService`:
   No loose bulk on this service.
 - `TotalCapacityDimension/AttributeID` = **TEU**  
   The ship's capacity in twenty-foot units.
-- `TotalCapacityDimension/Measure` = **1000** (unitCode `C62`)  
-  One thousand.
+- `TotalCapacityDimension/Measure` = **1000** (unitCode `20`)  
+  One thousand twenty-foot units (unit 20: twenty foot container).
 - `ShipmentStage/ID` = **1**  
   Lumeport to Selanu.
 - `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -619,7 +619,7 @@ Inside `TransportationService`:
     </cac:UnsupportedCommodityClassification>
     <cac:TotalCapacityDimension>
       <cbc:AttributeID>TEU</cbc:AttributeID>
-      <cbc:Measure unitCode="C62">1000</cbc:Measure>
+      <cbc:Measure unitCode="20">1000</cbc:Measure>
     </cac:TotalCapacityDimension>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>

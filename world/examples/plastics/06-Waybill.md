@@ -516,7 +516,7 @@ Inside `Shipment`:
   120 tonnes.
 - `GoodsItem/ChargeableQuantity` = **120** (unitCode `TNE`)  
   The tonnes charged.
-- `GoodsItem/ReturnableQuantity` = **120** (unitCode `H87`)  
+- `GoodsItem/ReturnableQuantity` = **120** (unitCode `EA`)  
   The 120 jumbo bags go back to the recovery plant.
 - `GoodsItem/TraceID` = **RR-PE-LOT-26-0416**  
   The lot on the bags' labels.
@@ -568,7 +568,7 @@ Inside `Shipment`:
   In millimetres.
 - `GoodsItem/ContainingPackage/ID` = **JB-001..120**  
   The bags, numbered 1 to 120.
-- `GoodsItem/ContainingPackage/Quantity` = **120** (unitCode `H87`)  
+- `GoodsItem/ContainingPackage/Quantity` = **120** (unitCode `EA`)  
   120 bags.
 - `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
   The bags go back for reuse.
@@ -1055,7 +1055,7 @@ Inside `Signature`:
       <cbc:NetVolumeMeasure unitCode="MTQ">130</cbc:NetVolumeMeasure>
       <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
       <cbc:ChargeableQuantity unitCode="TNE">120</cbc:ChargeableQuantity>
-      <cbc:ReturnableQuantity unitCode="H87">120</cbc:ReturnableQuantity>
+      <cbc:ReturnableQuantity unitCode="EA">120</cbc:ReturnableQuantity>
       <cbc:TraceID>RR-PE-LOT-26-0416</cbc:TraceID>
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
@@ -1098,7 +1098,7 @@ Inside `Signature`:
       </cac:MeasurementDimension>
       <cac:ContainingPackage>
         <cbc:ID>JB-001..120</cbc:ID>
-        <cbc:Quantity unitCode="H87">120</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">120</cbc:Quantity>
         <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
         <cbc:PackagingTypeCode>JB</cbc:PackagingTypeCode>
         <cbc:PackagingType>Jumbo bag of one tonne with four lifting loops</cbc:PackagingType>

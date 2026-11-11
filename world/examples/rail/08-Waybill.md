@@ -237,7 +237,7 @@ Inside `ReceiverParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -314,7 +314,7 @@ Inside `Shipment`:
   The goods in a few words.
 - `Consignment/ContainerizedIndicator` = **true**  
   Two full containers.
-- `Consignment/TotalTransportHandlingUnitQuantity` = **2** (unitCode `C62`)  
+- `Consignment/TotalTransportHandlingUnitQuantity` = **2** (unitCode `EA`)  
   Two containers.
 - `Consignment/LoadingSequenceID` = **7**  
   The consignment's turn in the loading of the train.
@@ -446,10 +446,10 @@ Inside `Shipment`:
   What the railway must do.
 - `Consignment/MainCarriageShipmentStage/DemurrageInstructions` = **Free time five days at the siding, then demurrage per container day.**  
   What waiting costs.
-- `Consignment/MainCarriageShipmentStage/CrewQuantity` = **2** (unitCode `C62`)  
-  A driver and a train manager.
-- `Consignment/MainCarriageShipmentStage/PassengerQuantity` = **0** (unitCode `C62`)  
-  A freight train carries no passengers.
+- `Consignment/MainCarriageShipmentStage/CrewQuantity` = **2** (unitCode `IE`)  
+  Two persons: a driver and a train manager.
+- `Consignment/MainCarriageShipmentStage/PassengerQuantity` = **0** (unitCode `IE`)  
+  No persons: a freight train carries no passengers.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **CT 4471**  
   The number of the container train in the hub's timetable.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU**  
@@ -916,7 +916,7 @@ Inside `Signature`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -980,7 +980,7 @@ Inside `Signature`:
       <cbc:PerformingCarrierAssignedID>FRC-J-26-3318</cbc:PerformingCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
-      <cbc:TotalTransportHandlingUnitQuantity unitCode="C62">2</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1095,8 +1095,8 @@ Inside `Signature`:
         <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
         <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
         <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
-        <cbc:CrewQuantity unitCode="C62">2</cbc:CrewQuantity>
-        <cbc:PassengerQuantity unitCode="C62">0</cbc:PassengerQuantity>
+        <cbc:CrewQuantity unitCode="IE">2</cbc:CrewQuantity>
+        <cbc:PassengerQuantity unitCode="IE">0</cbc:PassengerQuantity>
         <cac:TransportMeans>
           <cbc:JourneyID>CT 4471</cbc:JourneyID>
           <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>

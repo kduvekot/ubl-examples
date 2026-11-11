@@ -271,7 +271,7 @@ Inside `BusinessCapability`:
   In words.
 - `ValueAmount` = **1040000.00** (currencyID `XBL`)  
   The stock's value.
-- `ValueQuantity` = **2000** (unitCode `H87`)  
+- `ValueQuantity` = **2000** (unitCode `EA`)  
   Benches in stock.
 - `SuppliedEvidence/ID` = **LD-AUDIT-2025**  
   The evidence.
@@ -519,7 +519,7 @@ Inside `BusinessCapability`:
     <cbc:CapabilityTypeCode>Warehousing</cbc:CapabilityTypeCode>
     <cbc:Description>Stock of 2,000 benches in Marrowdale.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">1040000.00</cbc:ValueAmount>
-    <cbc:ValueQuantity unitCode="H87">2000</cbc:ValueQuantity>
+    <cbc:ValueQuantity unitCode="EA">2000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
       <cbc:ID>LD-AUDIT-2025</cbc:ID>
       <cbc:EvidenceTypeCode>Audit</cbc:EvidenceTypeCode>

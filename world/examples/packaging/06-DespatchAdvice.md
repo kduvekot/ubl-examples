@@ -397,7 +397,7 @@ Inside `DespatchLine`:
   The line as the order put it.
 - `LineStatusCode` = **NoStatus**  
   Despatched as ordered.
-- `DeliveredQuantity` = **600** (unitCode `H87`)  
+- `DeliveredQuantity` = **600** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
@@ -750,7 +750,7 @@ Inside `DespatchLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The store's spring order of shirts.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">600</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">600</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

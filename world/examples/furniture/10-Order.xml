@@ -299,7 +299,7 @@
       </cac:Item>
       <cac:SubLineItem>
         <cbc:ID>1.1</cbc:ID>
-        <cbc:Quantity unitCode="H87">20</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">20</cbc:Quantity>
         <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
@@ -313,7 +313,7 @@
       </cac:SubLineItem>
       <cac:SubLineItem>
         <cbc:ID>1.2</cbc:ID>
-        <cbc:Quantity unitCode="H87">40</cbc:Quantity>
+        <cbc:Quantity unitCode="EA">40</cbc:Quantity>
         <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>

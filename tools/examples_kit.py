@@ -335,7 +335,7 @@ def price_block(iid, currency=None):
     out = {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"], "The seller's price per unit "
                                                                                 "(world/items.json)."),
            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
-    if it.get("pack") and it["unit"] == "H87":
+    if it.get("pack") and it["unit"] == "EA":
         out["OrderableUnitFactorRate"] = V(it["pack"]["size"], f"The item is priced per piece and ordered in packs: "
                                                                f"one pack holds {it['pack']['size']} pieces.")
     return out
@@ -1265,8 +1265,8 @@ def handling_units(flow, deal, prefix, marks, detail=False):
         pal = it["package"]["type"] == "PX"
         x = {"ID": V(f"{prefix}{k:03d}", "The number on the pallet label."),
              "TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
-             "TotalGoodsItemQuantity": qty(1, "H87", "One kind of goods on the pallet."),
-             "TotalPackageQuantity": qty(n_, "H87", f"{n_} benches on the pallet, each wrapped in film." if pal
+             "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods on the pallet."),
+             "TotalPackageQuantity": qty(n_, "EA", f"{n_} benches on the pallet, each wrapped in film." if pal
                                          else f"{n_} boxed side frames on the pallet."),
              "ShippingMarks": V(f"{marks} / {k:03d} of {len(units):03d}", "The marks on the pallet: the consignee's "
                                                                           "mark and the pallet's place in the count."),
@@ -1289,10 +1289,12 @@ def handling_units(flow, deal, prefix, marks, detail=False):
             x["PalletSpaceMeasurementDimension"] = {"AttributeID": V("Pallet places", "The pallet places taken on "
                                                                                       "the truck."),
                                                     "Measure": V("0.5" if pal else "1", "Half a place when two pallets "
-                                                                 "are stacked; the castings take a whole one.",
+                                                                 "are stacked; the castings take a whole one. A number "
+                                                                 "of places, not of articles, so unit C62 (one), "
+                                                                 "which allows a half.",
                                                                  unitCode="C62")}
             x["Package"] = {"ID": V(f"{prefix}{k:03d}-1", "The packages on the pallet."),
-                            "Quantity": qty(n_, "H87", "The packages of this kind on the pallet."),
+                            "Quantity": qty(n_, "EA", "The packages of this kind on the pallet."),
                             "PackagingTypeCode": V("SW" if pal else "BX", "UN/ECE Recommendation 21: "
                                                    + ("shrinkwrapped, each bench in film" if pal else "box") + "."),
                             "PackagingType": V("Bench in stretch film" if pal else "Cardboard box",
@@ -1302,7 +1304,7 @@ def handling_units(flow, deal, prefix, marks, detail=False):
                             "ReturnableMaterialIndicator": V("false", "The packaging is not returned."),
                             "PackageLevelCode": V("1", "The inner packaging, below the pallet.")}
             x["ActualPackage"] = {"ID": V(f"{prefix}{k:03d}", "The pallet itself, as packed."),
-                                  "Quantity": qty(1, "H87", "One pallet."),
+                                  "Quantity": qty(1, "EA", "One pallet."),
                                   "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
                                   "ReturnableMaterialIndicator": V("true", "The pallet is exchanged with the "
                                                                            "carrier and goes back.")}

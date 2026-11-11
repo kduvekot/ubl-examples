@@ -453,7 +453,7 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `SubInvoiceLine/ID` = **1.1**  
   A part of the set.
-- `SubInvoiceLine/InvoicedQuantity` = **20** (unitCode `H87`)  
+- `SubInvoiceLine/InvoicedQuantity` = **20** (unitCode `EA`)  
   1 per set.
 - `SubInvoiceLine/LineExtensionAmount` = **7600.00** (currencyID `XBL`)  
   20 at 380.00 lume: the parts add up to the set's price.
@@ -465,7 +465,7 @@ Inside `InvoiceLine`:
   The part's share of the set price.
 - `SubInvoiceLine/ID` = **1.2**  
   A part of the set.
-- `SubInvoiceLine/InvoicedQuantity` = **40** (unitCode `H87`)  
+- `SubInvoiceLine/InvoicedQuantity` = **40** (unitCode `EA`)  
   2 per set.
 - `SubInvoiceLine/LineExtensionAmount` = **4600.00** (currencyID `XBL`)  
   40 at 115.00 lume: the parts add up to the set's price.
@@ -479,7 +479,7 @@ Inside `InvoiceLine`:
   A line without charge.
 - `Note` = **Wood oil and a cloth, for the store to hand to its customers.**  
   What they are.
-- `InvoicedQuantity` = **20** (unitCode `C62`)  
+- `InvoicedQuantity` = **20** (unitCode `EA`)  
   One care kit with each set.
 - `LineExtensionAmount` = **0.00** (currencyID `XBL`)  
   Free of charge.
@@ -853,7 +853,7 @@ Inside `InvoiceLine`:
     </cac:Price>
     <cac:SubInvoiceLine>
       <cbc:ID>1.1</cbc:ID>
-      <cbc:InvoicedQuantity unitCode="H87">20</cbc:InvoicedQuantity>
+      <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
       <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
       <cac:Item>
         <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
@@ -867,7 +867,7 @@ Inside `InvoiceLine`:
     </cac:SubInvoiceLine>
     <cac:SubInvoiceLine>
       <cbc:ID>1.2</cbc:ID>
-      <cbc:InvoicedQuantity unitCode="H87">40</cbc:InvoicedQuantity>
+      <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
       <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
       <cac:Item>
         <cbc:Name>Garden chair Marrow</cbc:Name>
@@ -883,7 +883,7 @@ Inside `InvoiceLine`:
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Wood oil and a cloth, for the store to hand to its customers.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="C62">20</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
     <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
     <cac:Item>

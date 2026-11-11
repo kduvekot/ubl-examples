@@ -285,8 +285,8 @@ Inside `AdditionalDocumentResponse`:
 
 - `Response/ResponseCode` = **AP**  
   The transport booking is confirmed too.
-- `DocumentReference/ID` = ****  
-  The transport booking.
+- `DocumentReference/ID` = **LD-TR-26-0227**  
+  The transport booking: the request that follows as the next document of the flow, numbered when the truck was booked.
 
 ## The document
 
@@ -516,7 +516,7 @@ Inside `AdditionalDocumentResponse`:
       <cbc:ResponseCode>AP</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID></cbc:ID>
+      <cbc:ID>LD-TR-26-0227</cbc:ID>
     </cac:DocumentReference>
   </cac:AdditionalDocumentResponse>
 </DocumentStatus>

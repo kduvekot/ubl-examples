@@ -27,10 +27,20 @@ Freight Invoice is deprecated.
 Two rules of the UBL specification shape the data the world needs:
 
 - **No empty elements (IND5).** A UBL document never contains an element
-  without content. Every party element must therefore hold at least one of
-  its parts, even though none of them is mandatory in the schema. The
-  identity of every party makes sure there is always something to put in
-  it.
+  without content: an aggregate needs a child, a basic element a value, and
+  a value of only spaces counts as empty. Every party element must
+  therefore hold at least one of its parts, even though none of them is
+  mandatory in the schema. The identity of every party makes sure there is
+  always something to put in it.
+- **One text per language (IND7, IND8).** Two sibling text elements of the
+  same name never have the same `languageID`, and never both lack one. A
+  text element repeats only to give the same text in another language, as
+  the bilingual notes do; several keywords of an item therefore go in one
+  search string. The text elements are the basic properties whose data type
+  in the UBL 2.5 model is Text or Name: their schema types derive from the
+  CCTS text type, which carries `languageID`.
+- **No empty attributes (IND9).** Every attribute that is present has a
+  value.
 - **An absence carries no meaning (IND6).** Leaving an element out never
   says anything; the sender states every value that matters, and every sum
   (section 2.2.2, "Manifest Values"). An order without a carrier does not
@@ -45,7 +55,8 @@ organisation an identifier; tax numbers and account numbers carry valid
 check digits; the city in the address is the nearest town or locality of
 the party's own country and state; every account is held at a bank of the
 world in the same country; and a bank named in a document is the bank where
-that party keeps its account.
+that party keeps its account. The ISIN of a listed company has the
+structure and check digit of ISO 6166 and starts with its country's code.
 
 ## The items
 
@@ -66,7 +77,9 @@ lists are checked to hold exactly the codes of the countries layer.
 
 ## The example documents
 
-Every example document is validated in the two phases UBL prescribes:
+The build checks that a reference to another document of the same flow
+quotes that document's UUID wherever it gives one. Every example document is
+validated in the two phases UBL prescribes:
 
 - **Phase 1:** against the UBL 2.5 runtime schema of its document type,
   from the endorsed set.

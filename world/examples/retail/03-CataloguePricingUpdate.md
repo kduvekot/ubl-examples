@@ -56,7 +56,7 @@ Inside `RelatedCatalogueReference`:
 
 - `ID` = **LD-CAT-26-0218**  
   The catalogue updated.
-- `UUID` = **8fbee548-a66b-588f-b69b-2e8546501907**  
+- `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
@@ -373,8 +373,8 @@ Inside `CataloguePricingUpdateLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **58** (currencyID `XBL`)  
   The new price of the side frame, down from 64.00.
-- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `H87`)  
-  Per piece.
+- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  Per piece (unit EA: each).
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **6-XB-PL-2026-2**  
   The new price list.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **Active**  
@@ -414,7 +414,7 @@ Inside `CataloguePricingUpdateLine`:
   </cac:ValidityPeriod>
   <cac:RelatedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
-    <cbc:UUID>8fbee548-a66b-588f-b69b-2e8546501907</cbc:UUID>
+    <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
@@ -680,7 +680,7 @@ Inside `CataloguePricingUpdateLine`:
     <cac:RequiredItemLocationQuantity>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">58</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cac:PriceList>
           <cbc:ID>6-XB-PL-2026-2</cbc:ID>
           <cbc:StatusCode>Active</cbc:StatusCode>

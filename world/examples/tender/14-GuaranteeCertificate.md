@@ -72,7 +72,7 @@ Inside `ImmobilizedSecurity`:
 
 - `ImmobilizationCertificateID` = **BLUM-IMM-26-0044**  
   The certificate of the pledged securities.
-- `SecurityID` = **XU0001042505**  
+- `SecurityID` = **XU0001042501**  
   The manufacturer's own shares, pledged.
 - `IssueDate` = **2026-02-21**  
   Pledged.
@@ -80,8 +80,8 @@ Inside `ImmobilizedSecurity`:
   Their face value.
 - `MarketValueAmount` = **3100.00** (currencyID `XBL`)  
   Their market value.
-- `SharesNumberQuantity` = **250** (unitCode `C62`)  
-  250 shares.
+- `SharesNumberQuantity` = **250** (unitCode `E21`)  
+  250 shares (unit: shares).
 - `IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `IssuerParty/PartyName/Name` = **Valdara Industries**  
@@ -277,7 +277,7 @@ Inside `InterestedParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -460,11 +460,11 @@ Inside `BeneficiaryParty`:
   </cac:GuaranteeDocumentReference>
   <cac:ImmobilizedSecurity>
     <cbc:ImmobilizationCertificateID>BLUM-IMM-26-0044</cbc:ImmobilizationCertificateID>
-    <cbc:SecurityID>XU0001042505</cbc:SecurityID>
+    <cbc:SecurityID>XU0001042501</cbc:SecurityID>
     <cbc:IssueDate>2026-02-21</cbc:IssueDate>
     <cbc:FaceValueAmount currencyID="XBL">2500.00</cbc:FaceValueAmount>
     <cbc:MarketValueAmount currencyID="XBL">3100.00</cbc:MarketValueAmount>
-    <cbc:SharesNumberQuantity unitCode="C62">250</cbc:SharesNumberQuantity>
+    <cbc:SharesNumberQuantity unitCode="E21">250</cbc:SharesNumberQuantity>
     <cac:IssuerParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -631,7 +631,7 @@ Inside `BeneficiaryParty`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>

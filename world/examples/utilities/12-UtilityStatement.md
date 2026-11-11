@@ -467,7 +467,7 @@ Inside `SubscriberConsumption`:
   A training film the trader's staff watched.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/PayPerView` = **true**  
   Paid per film.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **1** (unitCode `C62`)  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **1** (unitCode `EA`)  
   One film.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Training films are included in the business bundle.
@@ -1117,7 +1117,7 @@ Inside `SubscriberConsumption`:
             <cbc:TelecommunicationsServiceCategory>Video on demand</cbc:TelecommunicationsServiceCategory>
             <cbc:MovieTitle>Safe Lifting in the Warehouse</cbc:MovieTitle>
             <cbc:PayPerView>true</cbc:PayPerView>
-            <cbc:Quantity unitCode="C62">1</cbc:Quantity>
+            <cbc:Quantity unitCode="EA">1</cbc:Quantity>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>

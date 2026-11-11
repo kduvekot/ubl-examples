@@ -424,13 +424,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **8** (unitCode `H87`)  
+- `LineItem/Quantity` = **8** (unitCode `EA`)  
   Eight side frames, needed before the ship arrives.
 - `LineItem/LineExtensionAmount` = **512.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
@@ -802,11 +802,11 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">8</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

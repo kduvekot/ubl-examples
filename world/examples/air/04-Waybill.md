@@ -387,7 +387,7 @@ Inside `Shipment`:
   The first house consignment under the master air waybill.
 - `Consignment/ShippingPriorityLevelCode` = **Priority**  
   Flown on the first flight with room.
-- `Consignment/ChildConsignmentQuantity` = **1** (unitCode `C62`)  
+- `Consignment/ChildConsignmentQuantity` = **1** (unitCode `EA`)  
   One house consignment in the forwarder's consolidation.
 - `Consignment/ConsolidatedShipment/ID` = **BF-CONS-26-0207**  
   The forwarder's consolidation for this flight, of which the boxes are part.
@@ -923,7 +923,7 @@ Inside `Signature`:
       <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
       <cbc:SequenceID>1</cbc:SequenceID>
       <cbc:ShippingPriorityLevelCode>Priority</cbc:ShippingPriorityLevelCode>
-      <cbc:ChildConsignmentQuantity unitCode="C62">1</cbc:ChildConsignmentQuantity>
+      <cbc:ChildConsignmentQuantity unitCode="EA">1</cbc:ChildConsignmentQuantity>
       <cac:ConsolidatedShipment>
         <cbc:ID>BF-CONS-26-0207</cbc:ID>
       </cac:ConsolidatedShipment>

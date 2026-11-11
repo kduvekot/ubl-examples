@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cbc:WasteNotificationTypeCode>Recovery</cbc:WasteNotificationTypeCode>
-  <cbc:ConsignmentQuantity unitCode="C62">12</cbc:ConsignmentQuantity>
+  <cbc:ConsignmentQuantity unitCode="EA">12</cbc:ConsignmentQuantity>
   <cac:Signature>
     <cbc:ID>VI-SIG-WN</cbc:ID>
     <cac:SignatoryParty>
@@ -94,7 +94,7 @@
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>

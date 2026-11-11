@@ -354,7 +354,7 @@ Inside `SellerSupplierParty`:
   A register of businesses, not a register of charities or associations.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -418,9 +418,9 @@ Inside `ReceiptLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **One pallet held three benches and a box of side frames: mis-picked at the 3PL.**  
   What was found.
-- `ReceivedQuantity` = **95** (unitCode `H87`)  
+- `ReceivedQuantity` = **95** (unitCode `EA`)  
   One bench fewer than despatched.
-- `ShortQuantity` = **1** (unitCode `H87`)  
+- `ShortQuantity` = **1** (unitCode `EA`)  
   One bench short.
 - `ShortageActionCode` = **Replace**  
   The distributor asks for the missing bench with the next truck.
@@ -440,10 +440,8 @@ Inside `ReceiptLine`:
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
@@ -493,13 +491,11 @@ Inside `ReceiptLine`:
 - `Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -566,7 +562,7 @@ Inside `ReceiptLine`:
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -636,9 +632,9 @@ Inside `ReceiptLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **The mis-picked box, in place of the missing bench.**  
   What was found.
-- `ReceivedQuantity` = **13** (unitCode `H87`)  
+- `ReceivedQuantity` = **13** (unitCode `EA`)  
   One box more than despatched.
-- `OversupplyQuantity` = **1** (unitCode `H87`)  
+- `OversupplyQuantity` = **1** (unitCode `EA`)  
   The extra box, held for collection by the next truck.
 - `ReceivedDate` = **2026-03-25**  
   Unloaded.
@@ -965,7 +961,7 @@ Inside `ReceiptLine`:
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
         <cac:SecurityListing>
-          <cbc:ID>XU0001042505</cbc:ID>
+          <cbc:ID>XU0001042501</cbc:ID>
           <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
           <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
           <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -1019,8 +1015,8 @@ Inside `ReceiptLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>01193af5-785e-5e35-84c8-25a8b365acea</cbc:UUID>
     <cbc:Note>One pallet held three benches and a box of side frames: mis-picked at the 3PL.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">95</cbc:ReceivedQuantity>
-    <cbc:ShortQuantity unitCode="H87">1</cbc:ShortQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">95</cbc:ReceivedQuantity>
+    <cbc:ShortQuantity unitCode="EA">1</cbc:ShortQuantity>
     <cbc:ShortageActionCode>Replace</cbc:ShortageActionCode>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
@@ -1037,8 +1033,7 @@ Inside `ReceiptLine`:
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench</cbc:Keyword>
-      <cbc:Keyword>street furniture</cbc:Keyword>
+      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1087,7 +1082,6 @@ Inside `ReceiptLine`:
         <cbc:Name>Frame colour</cbc:Name>
         <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cbc:ListValue>Moss green</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
@@ -1145,7 +1139,7 @@ Inside `ReceiptLine`:
         <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1210,8 +1204,8 @@ Inside `ReceiptLine`:
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>986c8783-e70e-596b-82d0-e70c728412de</cbc:UUID>
     <cbc:Note>The mis-picked box, in place of the missing bench.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="H87">13</cbc:ReceivedQuantity>
-    <cbc:OversupplyQuantity unitCode="H87">1</cbc:OversupplyQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">13</cbc:ReceivedQuantity>
+    <cbc:OversupplyQuantity unitCode="EA">1</cbc:OversupplyQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

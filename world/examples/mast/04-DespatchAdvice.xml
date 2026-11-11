@@ -255,7 +255,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Six packs: four hours of back-up power for the mast.</cbc:Note>
     <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
-    <cbc:DeliveredQuantity unitCode="H87">6</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

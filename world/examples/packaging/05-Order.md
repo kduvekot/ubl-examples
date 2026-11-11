@@ -313,13 +313,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **600** (unitCode `H87`)  
+- `LineItem/Quantity` = **600** (unitCode `EA`)  
   The store's spring order of shirts.
 - `LineItem/LineExtensionAmount` = **8700.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **14.5** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Men's shirt, woven cotton from Lisavu, in a garment bag.**  
   The seller's description; item shirt of Lumeport Textile Mill (world/items.json).
@@ -593,11 +593,11 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">600</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">600</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">8700.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">14.5</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>

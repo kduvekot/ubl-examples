@@ -406,7 +406,7 @@ Inside `CatalogueRequestLine`:
   What the store asks.
 - `LineValidityPeriod/EndDate` = **2026-07-19**  
   For the season.
-- `RequiredItemLocationQuantity/MinimumQuantity` = **24** (unitCode `H87`)  
+- `RequiredItemLocationQuantity/MinimumQuantity` = **24** (unitCode `EA`)  
   The store's first order.
 - `Item/Name` = **Park bench Serra 180**  
   The item asked for.
@@ -713,7 +713,7 @@ Inside `CatalogueRequestLine`:
       <cbc:EndDate>2026-07-19</cbc:EndDate>
     </cac:LineValidityPeriod>
     <cac:RequiredItemLocationQuantity>
-      <cbc:MinimumQuantity unitCode="H87">24</cbc:MinimumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">24</cbc:MinimumQuantity>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Name>Park bench Serra 180</cbc:Name>

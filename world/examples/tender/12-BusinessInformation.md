@@ -331,7 +331,7 @@ Inside `BusinessParty`:
   A register of businesses, not a register of charities or associations.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
   The register covers the whole country.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042505**  
+- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
@@ -398,7 +398,7 @@ Inside `BusinessCapability`:
   What.
 - `ValueAmount` = **4800000.00** (currencyID `XBL`)  
   Yearly turnover, converted to lume.
-- `ValueQuantity` = **6000** (unitCode `H87`)  
+- `ValueQuantity` = **6000** (unitCode `EA`)  
   Benches a year.
 - `SuppliedEvidence/ID` = **EV-ACC-2025**  
   The audited accounts of 2025.
@@ -714,7 +714,7 @@ Inside `NoticeSubType`:
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
       <cac:SecurityListing>
-        <cbc:ID>XU0001042505</cbc:ID>
+        <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
         <cbc:MarketCode>FSE</cbc:MarketCode>
@@ -764,7 +764,7 @@ Inside `NoticeSubType`:
     <cbc:CapabilityTypeCode>Production</cbc:CapabilityTypeCode>
     <cbc:Description>Steel frame benches, cast, galvanised and coated in its own plant.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">4800000.00</cbc:ValueAmount>
-    <cbc:ValueQuantity unitCode="H87">6000</cbc:ValueQuantity>
+    <cbc:ValueQuantity unitCode="EA">6000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-2025</cbc:ID>
       <cbc:Name>Annual accounts</cbc:Name>

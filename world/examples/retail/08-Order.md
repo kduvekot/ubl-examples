@@ -433,13 +433,13 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **24** (unitCode `H87`)  
+- `LineItem/Quantity` = **24** (unitCode `EA`)  
   Six pallets for the garden department's spring promotion.
 - `LineItem/LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `H87`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
@@ -447,10 +447,8 @@ Inside `OrderLine`:
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `LineItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `LineItem/Item/Keyword` = **park bench**  
-  A word buyers search the item by.
-- `LineItem/Item/Keyword` = **street furniture**  
-  A word buyers search the item by.
+- `LineItem/Item/Keyword` = **park bench, street furniture**  
+  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `LineItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/ModelName` = **Serra 180**  
@@ -512,13 +510,11 @@ Inside `OrderLine`:
 - `LineItem/Item/AdditionalItemProperty/ID` = **COL**  
   The maker's identifier for the property.
 - `LineItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colours the frame is offered in.
+  The colour of the frame, one of the colours it is offered in.
 - `LineItem/Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
   How much the property matters in describing the item.
 - `LineItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  One of the values the property can take.
-- `LineItem/Item/AdditionalItemProperty/ListValue` = **Moss green**  
-  One of the values the property can take.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -589,7 +585,7 @@ Inside `OrderLine`:
   The emission of one item.
 - `LineItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
   The share of the footprint the steel frame accounts for.
-- `LineItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `H87`)  
+- `LineItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
   The emission is per one bench.
 - `LineItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
@@ -653,7 +649,7 @@ Inside `OrderLine`:
   The repair and maintenance manual.
 - `BuyerProposedSubstituteLineItem/ID` = **1**  
   The store's fall-back if the Serra 180 is out of stock.
-- `BuyerProposedSubstituteLineItem/Quantity` = **24** (unitCode `H87`)  
+- `BuyerProposedSubstituteLineItem/Quantity` = **24** (unitCode `EA`)  
   The same quantity.
 - `BuyerProposedSubstituteLineItem/Item/Name` = **Park bench Serra 180, moss green**  
   The other frame colour: the store would take it.
@@ -987,18 +983,17 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">24</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-        <cbc:Keyword>park bench</cbc:Keyword>
-        <cbc:Keyword>street furniture</cbc:Keyword>
+        <cbc:Keyword>park bench, street furniture</cbc:Keyword>
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
         <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -1061,7 +1056,6 @@ Inside `OrderLine`:
           <cbc:Name>Frame colour</cbc:Name>
           <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
           <cbc:ListValue>Ferro grey</cbc:ListValue>
-          <cbc:ListValue>Moss green</cbc:ListValue>
           <cac:ItemPropertyGroup>
             <cbc:ID>APP</cbc:ID>
             <cbc:Name>Appearance</cbc:Name>
@@ -1127,7 +1121,7 @@ Inside `OrderLine`:
           <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
           <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
           <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-          <cbc:ValueBaseMeasure unitCode="H87">1</cbc:ValueBaseMeasure>
+          <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
           <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
           <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
           <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
@@ -1187,7 +1181,7 @@ Inside `OrderLine`:
     </cac:LineItem>
     <cac:BuyerProposedSubstituteLineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="H87">24</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180, moss green</cbc:Name>
         <cac:SellersItemIdentification>
