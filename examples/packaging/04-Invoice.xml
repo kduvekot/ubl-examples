@@ -113,6 +113,7 @@
             <cbc:ID>BLUM</cbc:ID>
             <cbc:Name>Bank of Lumeport</cbc:Name>
             <cac:Address>
+              <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
               <cbc:StreetName>Exchange Street</cbc:StreetName>
               <cbc:BuildingNumber>48</cbc:BuildingNumber>
               <cbc:CityName>Lumeport</cbc:CityName>
@@ -269,6 +270,7 @@
           <cbc:ID>BLUM</cbc:ID>
           <cbc:Name>Bank of Lumeport</cbc:Name>
           <cac:Address>
+            <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
             <cbc:StreetName>Exchange Street</cbc:StreetName>
             <cbc:BuildingNumber>48</cbc:BuildingNumber>
             <cbc:CityName>Lumeport</cbc:CityName>

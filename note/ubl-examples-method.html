@@ -434,6 +434,32 @@ a[href]:hover { background: #ffa }
       deliberately not used, and the invented words are checked against
       common words of real languages.
     </p><p>
+      Each country also has an address format
+      (<code class="literal">address</code> in
+      <code class="literal">world/countries.json</code>), which fixes the lines of
+      an address: first the optional lines (attention, department,
+      in-house mail, post box, building, floor and room), then the
+      street and number (street first in Urvania, number first in
+      Bayvarra and on the island), additional street, block and plot,
+      quarter, and last the town line (postal code before the town in
+      Urvania; the town, state and postal code in Bayvarra), with the
+      province in Urvania and the district and a description of the way
+      on the island. A field the address does not have is left out with
+      its line. A name in two languages is written on its line in both,
+      the national language first, then <code class="literal">/</code>, then
+      English, and the number once:
+      <code class="literal">&lt;Urvanian street&gt; / &lt;English street&gt; 12</code>
+      in Urvania,
+      <code class="literal">35 &lt;Lisavan street&gt; / &lt;English street&gt;</code>
+      on the island. Every address that has a street, a building number
+      or a post box carries the code of its country's format in
+      <code class="literal">AddressFormatCode</code>, and where a party writes its
+      address in <code class="literal">AddressLine</code> elements, one function
+      makes the lines from the structured fields, so they cannot
+      disagree. The build checks all three. A farm on the island has no
+      house number: its track is described instead ("at kilometre
+      4").
+    </p><p>
       Each country also has its own payment practice, which every
       invoice of a seller there follows. Urvania gives 2 % discount for
       payment within ten days and charges statutory interest on late

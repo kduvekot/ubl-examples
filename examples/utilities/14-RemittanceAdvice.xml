@@ -193,6 +193,7 @@
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
+            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
@@ -226,6 +227,7 @@
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
+            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>

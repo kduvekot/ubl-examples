@@ -106,8 +106,20 @@ The language's name in English; in the language itself: urvanese.</li>
 The kind of address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> =
 <strong>XU</strong><br />
-The address follows Urvania's address format (world/countries.json):
-StreetName BuildingNumber / PostalZone CityName.</li>
+The address follows Urvania's address format (world/countries.json), one
+line after the other, a line left out when the address has none of its
+fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
+Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A
+line is made of the fields named in it, in that order, separated by a
+space; a field the address does not have is left out, and a line without
+any field is left out. A field with two language versions (street and
+town names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Han
 Zugaz</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
@@ -303,8 +315,20 @@ The language's name in English; in the language itself: urvanese.</li>
 The kind of address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> =
 <strong>XU</strong><br />
-The address follows Urvania's address format (world/countries.json):
-StreetName BuildingNumber / PostalZone CityName.</li>
+The address follows Urvania's address format (world/countries.json), one
+line after the other, a line left out when the address has none of its
+fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
+Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A
+line is made of the fields named in it, in that order, separated by a
+space; a field the address does not have is left out, and a line without
+any field is left out. A field with two language versions (street and
+town names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Skikzek Han
 Nestan</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
@@ -527,8 +551,20 @@ Where the goods are taken over.</li>
 <strong>Business</strong><br />
 The kind of address.</li>
 <li><code>Address/AddressFormatCode</code> = <strong>XU</strong><br />
-The address follows Urvania's address format (world/countries.json):
-StreetName BuildingNumber / PostalZone CityName.</li>
+The address follows Urvania's address format (world/countries.json), one
+line after the other, a line left out when the address has none of its
+fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
+Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A
+line is made of the fields named in it, in that order, separated by a
+space; a field the address does not have is left out, and a line without
+any field is left out. A field with two language versions (street and
+town names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines.</li>
 <li><code>Address/StreetName</code> = <strong>Skikzek Han
 Nestan</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
@@ -576,8 +612,21 @@ Where the goods are handed over.</li>
 <strong>Business</strong><br />
 The kind of address.</li>
 <li><code>Address/AddressFormatCode</code> = <strong>XB</strong><br />
-The address follows Bayvarra's address format (world/countries.json):
-BuildingNumber StreetName / CityName CountrySubentity PostalZone.</li>
+The address follows Bayvarra's address format (world/countries.json),
+one line after the other, a line left out when the address has none of
+its fields: MarkAttention; Department; InhouseMail; Postbox;
+BuildingName; Floor Room; BuildingNumber StreetName;
+AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
+CityName CountrySubentity PostalZone. A line is made of the fields named
+in it, in that order, separated by a space; a field the address does not
+have is left out, and a line without any field is left out. A field with
+two language versions (street and town names in a bilingual country)
+gives both on the line, the national language first, then ' / ', then
+English: the building number is written once. Fields that are not on a
+line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines.</li>
 <li><code>Address/StreetName</code> = <strong>Estuary
 Road</strong><br />
 Street of the postal address. identity of Rivermouth Packaging
@@ -671,8 +720,21 @@ The language as a code of UBL's language code list (ISO 639).</li>
 The kind of address.</li>
 <li><code>ConsigneeParty/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong><br />
-The address follows Bayvarra's address format (world/countries.json):
-BuildingNumber StreetName / CityName CountrySubentity PostalZone.</li>
+The address follows Bayvarra's address format (world/countries.json),
+one line after the other, a line left out when the address has none of
+its fields: MarkAttention; Department; InhouseMail; Postbox;
+BuildingName; Floor Room; BuildingNumber StreetName;
+AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
+CityName CountrySubentity PostalZone. A line is made of the fields named
+in it, in that order, separated by a space; a field the address does not
+have is left out, and a line without any field is left out. A field with
+two language versions (street and town names in a bilingual country)
+gives both on the line, the national language first, then ' / ', then
+English: the building number is written once. Fields that are not on a
+line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines.</li>
 <li><code>ConsigneeParty/PostalAddress/StreetName</code> =
 <strong>Estuary Road</strong><br />
 Street of the postal address. identity of Rivermouth Packaging
@@ -843,6 +905,23 @@ identity of Bank of Lumeport (world/parties.json).</li>
 <li><code>ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name</code>
 = <strong>Bank of Lumeport</strong><br />
 The bank; identity of Bank of Lumeport (world/parties.json).</li>
+<li><code>ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode</code>
+= <strong>XB</strong><br />
+The address follows Bayvarra's address format (world/countries.json),
+one line after the other, a line left out when the address has none of
+its fields: MarkAttention; Department; InhouseMail; Postbox;
+BuildingName; Floor Room; BuildingNumber StreetName;
+AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
+CityName CountrySubentity PostalZone. A line is made of the fields named
+in it, in that order, separated by a space; a field the address does not
+have is left out, and a line without any field is left out. A field with
+two language versions (street and town names in a bilingual country)
+gives both on the line, the national language first, then ' / ', then
+English: the building number is written once. Fields that are not on a
+line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines.</li>
 <li><code>ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Exchange Street</strong><br />
 The bank's head office; identity of Bank of Lumeport
@@ -1260,42 +1339,43 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;BLUM&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Bank of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:StreetName</span>&gt;Exchange Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:BuildingNumber</span>&gt;48&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialAccount</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20412740&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rinova Recovery&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlanRequest</span>&gt;</span></code></pre></div>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:AddressFormatCode</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:StreetName</span>&gt;Exchange Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:BuildingNumber</span>&gt;48&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialAccount</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20412740&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rinova Recovery&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlanRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>0dd3e74</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>6b95b07</code></p></div></footer>
 </body>
 </html>
