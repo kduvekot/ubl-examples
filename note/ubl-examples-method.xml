@@ -362,11 +362,14 @@
       <literal>qtz</literal>: <literal>qau</literal> for Urvanian and
       <literal>qal</literal> for Lisavan. A sender from Urvania or the
       island gives its notes in its own language and in English, each
-      with its <literal>languageID</literal>; the texts are made word by
-      word from a fixed invented vocabulary, the English text being the
-      reference. Real Polynesian languages are deliberately not used,
-      and the invented words are checked against common words of real
-      languages.
+      with its <literal>languageID</literal>, and a seller there names
+      its items in both. The island names its streets in both official
+      languages, as Brussels and Canada do: UBL 2.5 lets an address
+      repeat its street, city and state names, one per language; the
+      texts are made word by word from a fixed invented vocabulary, the
+      English text being the reference. Real Polynesian languages are
+      deliberately not used, and the invented words are checked against
+      common words of real languages.
     </para>
     <para>
       Each country also has its own payment practice, which every

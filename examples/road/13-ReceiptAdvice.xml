@@ -128,7 +128,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via del Magazzino</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Bonfuar Punperai</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
         <cbc:BuildingNumber>24</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
@@ -233,7 +234,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -352,7 +354,8 @@
     </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+      <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
       <cbc:Keyword>street furniture</cbc:Keyword>
@@ -538,7 +541,8 @@
     </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
-      <cbc:Name>Bench side frame casting</cbc:Name>
+      <cbc:Name languageID="qau">Rirgroov cegae scilceor sesdaa</cbc:Name>
+      <cbc:Name languageID="en">Bench side frame casting</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:BuyersItemIdentification>

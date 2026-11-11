@@ -102,7 +102,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -167,7 +168,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-        <cbc:StreetName>Plantation Road</cbc:StreetName>
+        <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en">Plantation Road</cbc:StreetName>
         <cbc:BuildingNumber>35</cbc:BuildingNumber>
         <cbc:Description>Farm track off Plantation Road, past the cotton fields.</cbc:Description>
         <cbc:CityName>Selanu</cbc:CityName>
@@ -522,7 +524,8 @@
     </cac:Delivery>
     <cac:Item>
       <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
-      <cbc:Name>Seed cotton</cbc:Name>
+      <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
+      <cbc:Name languageID="en">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>

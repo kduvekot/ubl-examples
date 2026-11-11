@@ -135,7 +135,8 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
-      <cbc:StreetName>Gin Yard Road</cbc:StreetName>
+      <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -211,7 +212,8 @@
         <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
         <cbc:PackQuantity unitCode="H87">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
-        <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
+        <cbc:Name languageID="en">Cotton lint, compressed bale</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>

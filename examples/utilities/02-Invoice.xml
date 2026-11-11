@@ -52,7 +52,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Corso della Repubblica</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
@@ -138,7 +139,8 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName>Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
@@ -402,7 +404,8 @@
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
-      <cbc:Name>Electricity</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio</cbc:Name>
+      <cbc:Name languageID="en">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-KWH</cbc:ID>
       </cac:SellersItemIdentification>
@@ -452,7 +455,8 @@
     </cac:Delivery>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
-      <cbc:Name>Electricity</cbc:Name>
+      <cbc:Name languageID="qau">Drangrolstio</cbc:Name>
+      <cbc:Name languageID="en">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-KWH</cbc:ID>
       </cac:SellersItemIdentification>
@@ -488,7 +492,8 @@
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
-      <cbc:Name>Natural gas supply</cbc:Name>
+      <cbc:Name languageID="qau">Dilsuo gribrior trindaar</cbc:Name>
+      <cbc:Name languageID="en">Natural gas supply</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-GAS</cbc:ID>
       </cac:SellersItemIdentification>
