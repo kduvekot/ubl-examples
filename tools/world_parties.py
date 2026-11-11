@@ -13,8 +13,9 @@ something to put in it, and these checks keep it consistent:
   * every party has a name; every organisation an identifier;
   * tax numbers and account numbers carry valid check digits;
   * the city is the nearest town or locality in the party's own country
-    and state, and in a country with states the state follows the
-    country's rule;
+    and state, and in a country with states the state (name and code)
+    follows the country's rule, and so does the state code a sales tax
+    permit starts with;
   * every account is held at a bank of the world in the same country;
   * e-mail addresses and websites use the reserved .example domain (RFC
     2606), and telephone numbers the country code +999 that the ITU keeps in
@@ -50,12 +51,13 @@ def account_valid(acc):
     return account_check(country, rest[:4], rest[4:]) == check
 
 
-def tax_id_valid(country, tax_id):
+def tax_id_valid(country, tax_id, state_code=None):
+    """state_code: in Bayvarra, the code of the party's state or territory, which the sales tax permit starts with."""
     if country == "XU":
         return len(tax_id) == 11 and tax_id[:2] == "XU" and tax_id[2:].isdigit() and mod11(tax_id[2:10]) == tax_id[10]
     if country == "XB":
         st, _, num = tax_id.partition("-")
-        return st in ("UL", "CO") and len(num) == 7 and num.isdigit()
+        return st == state_code and len(num) == 7 and num.isdigit()
     return False
 
 
@@ -67,10 +69,20 @@ def nearest_town(world, p):
 
 
 def state_of(world, p):
+    """The state (or territory) a place is in, by its country's rule: in Bayvarra the Northern Territory north
+    of a map row, and south of it a state border along a map column."""
     rule = world["countries"][p["c"]].get("subdivision_rule")
     if not rule:
         return None
+    if "north_of_row" in rule and p["at"][1] < rule["north_of_row"]:
+        return rule["north"]
     return rule["west"] if p["at"][0] < rule["column"] else rule["east"]
+
+
+def state_code(world, p):
+    st = state_of(world, p)
+    subs = world["countries"][p["c"]]["address"].get("subdivisions") or {}
+    return next((k for k, v in subs.items() if v == st), None)
 
 
 def check(world):
@@ -91,8 +103,9 @@ def check(world):
         person = idn.get("person", False)
         if not person and not idn.get("registry_id"):
             problems.append(f"{where}: an organisation needs a registry identifier")
-        if idn.get("tax_id") and not tax_id_valid(p["c"], idn["tax_id"]):
-            problems.append(f"{where}: tax number {idn['tax_id']} is not valid for {p['c']}")
+        if idn.get("tax_id") and not tax_id_valid(p["c"], idn["tax_id"], state_code(world, p)):
+            problems.append(f"{where}: tax number {idn['tax_id']} is not valid for {p['c']}"
+                            + (f" (the permit of {state_of(world, p)} starts with {state_code(world, p)})" if state_of(world, p) else ""))
         a = idn.get("address", {})
         town = nearest_town(world, p)
         if a.get("CityName") != town:
@@ -100,6 +113,8 @@ def check(world):
         st = state_of(world, p)
         if st and a.get("CountrySubentity") != st:
             problems.append(f"{where}: state {a.get('CountrySubentity')} but its place is in {st}")
+        if st and a.get("CountrySubentityCode") != state_code(world, p):
+            problems.append(f"{where}: state code {a.get('CountrySubentityCode')} but {st} has the code {state_code(world, p)}")
         if not st and a.get("CountrySubentity"):
             problems.append(f"{where}: its country has no states")
         for k in ("StreetName", "BuildingNumber"):

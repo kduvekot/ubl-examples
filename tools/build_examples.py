@@ -152,12 +152,12 @@ def party(pid, short=False):
             if idn.get("tax_registration_office"):
                 tax["RegistrationAddress"] = {"CityName": V(idn["tax_registration_office"], "Where the party is "
                                                                                             "registered for the tax."),
-                                              "CountrySubentity": V(idn["address"]["CountrySubentity"], "Its state."),
+                                              "CountrySubentity": V(idn["address"]["CountrySubentity"], "Its state or territory."),
                                               "Country": {"IdentificationCode": V(p["c"], "Its country.")}}
         juris = {"Country": {"IdentificationCode": V(p["c"], "The country whose tax this is.")}}
         if scheme.get("levied_by") == "state":
-            juris = {"CountrySubentity": V(idn["address"]["CountrySubentity"], "The state whose sales tax the party is "
-                                           "registered for."), **juris}
+            juris = {"CountrySubentity": V(idn["address"]["CountrySubentity"], "The state or territory whose sales tax "
+                                           "the party is registered for."), **juris}
         tax["TaxScheme"] = {"ID": V(scheme["id"], f"UN/EDIFACT 5153 code of {c['name']}'s {scheme['name'].lower()}."),
                             "CurrencyCode": V(c["currency"]["code"], "The tax is accounted for in the country's "
                                                                      "currency."),
@@ -347,7 +347,7 @@ def address(pid):
            "MarkAttention": "For the attention of the head of procurement.",
            "PlotIdentification": "The plot of the distribution centre in the business park.",
            "CitySubdivisionName": "The quarter of Lumeport the party is in.",
-           "CountrySubentityCode": "The state as a code of Bayvarra's address scheme (world/countries.json).",
+           "CountrySubentityCode": "The state or territory as a code of Bayvarra's address scheme (world/countries.json).",
            "Region": "The province, part of an address in Urvania.",
            "District": "The district of the island, used to find a farm off the main roads.",
            "Description": "How to find the farm, which has no house number on a street."}
@@ -364,8 +364,8 @@ def address(pid):
             out[k] = V(a[k], {"StreetName": "Street of the postal address.", "BuildingNumber": "Building number of "
                               "the postal address.", "CityName": "The town or locality nearest to the party's place on "
                               "the map, in its own country and state.", "PostalZone": f"Postal code in {c['name']}'s "
-                              f"format ({c['address']['postal_zone']}).", "CountrySubentity": f"The state, part of an "
-                              f"address in federal {c['name']}."}.get(k, why.get(k, "")) + f" {src}.")
+                              f"format ({c['address']['postal_zone']}).", "CountrySubentity": f"The state or territory, "
+                              f"part of an address in federal {c['name']}."}.get(k, why.get(k, "")) + f" {src}.")
     code = c["languages"][0]
     if code != "en" and "en" in c["languages"] and isinstance(out.get("StreetName"), V):
         lang = WORLD["languages"][code]["name"]                 # a bilingual country names its streets twice

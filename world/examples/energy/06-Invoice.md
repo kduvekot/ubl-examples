@@ -86,10 +86,10 @@ Inside `AccountingSupplierParty`:
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelpstone Gas (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38540**  
   Postal code in Bayvarra's format (5 digits). identity of Kelpstone Gas (world/parties.json).
-- `Party/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Kelpstone Gas (world/parties.json).
-- `Party/PostalAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/CountrySubentity` = **Northern Territory**  
+  The state or territory, part of an address in federal Bayvarra. identity of Kelpstone Gas (world/parties.json).
+- `Party/PostalAddress/CountrySubentityCode` = **NT**  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Kelpstone Gas (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XB**  
@@ -116,16 +116,16 @@ Inside `AccountingSupplierParty`:
   West of the Greenwich meridian.
 - `Party/PartyTaxScheme/RegistrationName` = **Kelpstone Gas Ltd**  
   The name under which the party is registered for state sales tax; identity of Kelpstone Gas (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-1238631**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Kelpstone Gas (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **NT-1238631**  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Kelpstone Gas (world/parties.json).
 - `Party/PartyTaxScheme/TaxLevelCode` = **State**  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
 - `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
   The tax is accounted for in the country's currency.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state whose sales tax the party is registered for.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Northern Territory**  
+  The state or territory whose sales tax the party is registered for.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The country whose tax this is.
 - `Party/PartyLegalEntity/RegistrationName` = **Kelpstone Gas Ltd**  
@@ -165,7 +165,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Contact/Department` = **Commercial**  
   The department the desk belongs to; identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 38522 12877**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Kelpstone Gas (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/ElectronicMail` = **gas@kelpstone.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -532,8 +532,8 @@ Inside `InvoiceLine`:
         <cbc:BuildingNumber>2</cbc:BuildingNumber>
         <cbc:CityName>Gullhaven</cbc:CityName>
         <cbc:PostalZone>38540</cbc:PostalZone>
-        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>NT</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -555,13 +555,13 @@ Inside `InvoiceLine`:
       </cac:PhysicalLocation>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
-        <cbc:CompanyID>CO-1238631</cbc:CompanyID>
+        <cbc:CompanyID>NT-1238631</cbc:CompanyID>
         <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
           <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
             <cac:Country>
               <cbc:IdentificationCode>XB</cbc:IdentificationCode>
             </cac:Country>

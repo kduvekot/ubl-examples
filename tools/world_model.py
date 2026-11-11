@@ -17,6 +17,8 @@ For every tile the model records:
   tr  1 for a single tree on open ground
   yd  1 for the fenced yard around an industry
   az  1 in the approach zone of an airport runway
+  es  1 for river water at least ESTUARY wide (the estuary): drawn as open water, the
+      rest of the river as a narrower stream within its tiles
 
 Structural rules (the build stops when one is broken):
   * buildings do not share tiles and do not stand on roads, rails or water,
@@ -39,6 +41,8 @@ Structural rules (the build stops when one is broken):
     its approach zones;
   * an airport has an approach zone of 3 tiles beyond each runway end, low
     and flat at runway height, with nothing tall in it;
+  * in the south-west the river is the land border: all land south of it is
+    Urvania; elsewhere the border follows its line on the map;
   * a road across a land border passes a customs post on each side; a rail
     line across it passes a rail station; rail lines end at a party;
   * sea routes run over water from port to port, air routes from airport
@@ -61,6 +65,7 @@ W, H = 64, 48
 TALL = {"telecom", "power", "gasplant"}           # kinds with a mast, a cooling tower or a flare stack
 TALL_CLEARANCE = 4                                # tiles they keep from an airport and its approach zones
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
+ESTUARY = 1.5                                     # a river this wide (tiles) is open water: an estuary
 
 
 # ---------------------------------------------------------------- noise
@@ -117,7 +122,29 @@ def footprint(p):
 def build(world):
     problems = []
     T = [[None] * H for _ in range(W)]
-    border = lambda j: 21.5 + 1.6 * math.sin(j / 4.2)
+    line = lambda j: 21.5 + 1.6 * math.sin(j / 4.2)
+    # In the south-west the river is the border: all land south of the river is Urvania. The river's
+    # course runs eastwards (i increasing) wherever the land border could reach it; river_j gives
+    # its row there.
+    river = next((r for r in world["routes"] if r["mode"] == "river"), None)
+    west_end = math.floor(min(line(j) for j in range(H)))
+
+    def river_j(i):
+        pts = river["pts"]
+        for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+            if ax <= i <= bx and ax < bx:
+                return ay + (by - ay) * (i - ax) / (bx - ax)
+        return pts[-1][1] if i > pts[-1][0] else None
+
+    def south_of_river(i, j):
+        rj = river_j(i) if river and i >= west_end else None
+        return rj is not None and j > rj
+
+    border = lambda j, i=None: 99 if i is not None and south_of_river(i, j) else line(j)
+    if river:
+        course = [q[0] for q in river["pts"] if q[0] >= west_end]
+        if course != sorted(set(course)):
+            problems.append(f"river '{river['id']}' must run eastwards where it forms the border (from column {west_end})")
 
     # 1. land, countries, terrain, hills
     for i in range(W):
@@ -127,7 +154,7 @@ def build(world):
             isle = ((i - 52.5) / 8.2) ** 2 + ((j - 21.5) / 11.5) ** 2 < 1 - (n - .5) * .5
             t = {"k": "s", "c": None, "h": 0, "n": round(n, 3)}
             if main or isle:
-                t["c"] = "XL" if isle else ("XU" if i < border(j) else "XB")
+                t["c"] = "XL" if isle else ("XU" if i < border(j, i) else "XB")
                 t["k"] = "g"
                 if t["c"] == "XU" and j < 15 and i < 17 and n > .42:
                     t["k"], t["h"] = "r", 1 + (n > .58)
@@ -137,6 +164,12 @@ def build(world):
                     t["k"] = "d"
             T[i][j] = t
     tile = lambda i, j: T[i][j] if 0 <= i < W and 0 <= j < H else None
+    # forests around the given centres (besides the natural ones)
+    for f in world.get("forests", []):
+        for i in range(W):
+            for j in range(H):
+                if T[i][j]["k"] in ("g", "d") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + noise(i * 3, j * 3) - .3:
+                    T[i][j]["k"] = "f"
     # farmland: fields around the given centres
     for f in world.get("fields", []):
         for i in range(W):
@@ -151,22 +184,32 @@ def build(world):
                 t["k"] = "g"
             t["h"] = 0
 
-    # 2. the river: water tiles along its course, 1-2 tiles wide
+    # 2. the river: water tiles along its course, at least one tile wide (the tiles of its course, one
+    #    after the other), wider where its width says so; "widths" gives a width per point of the
+    #    course (an estuary widens towards the mouth), otherwise "width" holds throughout
     for r in world["routes"]:
         if r["mode"] != "river":
             continue
         pts = r["pts"]
-        width = r.get("width", 1.4)
+        widths = r.get("widths") or [r.get("width", 1.4)] * len(pts)
+        wet, wide = set(path_tiles(pts, "rail")), set()
         for i in range(W):
             for j in range(H):
-                for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+                for k, ((ax, ay), (bx, by)) in enumerate(zip(pts, pts[1:])):
                     dx, dy = bx - ax, by - ay
                     u = max(0, min(1, ((i - ax) * dx + (j - ay) * dy) / (dx * dx + dy * dy)))
-                    if math.hypot(i - ax - u * dx, j - ay - u * dy) <= width / 2:
-                        t = T[i][j]
-                        if t["k"] != "s":
-                            t["k"], t["h"] = "w", 0
+                    w = widths[k] + (widths[k + 1] - widths[k]) * u
+                    if math.hypot(i - ax - u * dx, j - ay - u * dy) <= w / 2:
+                        wet.add((i, j))
+                        if w >= ESTUARY:
+                            wide.add((i, j))
                         break
+        for (i, j) in wet:
+            t = tile(i, j)
+            if t and t["k"] != "s":
+                t["k"], t["h"] = "w", 0
+                if (i, j) in wide:
+                    t["es"] = 1
         r["water"] = True
 
     # 3. parties: footprints on flat ground; a port's quay side is open water
@@ -211,7 +254,7 @@ def build(world):
             if t["k"] == "w":
                 t["br"] = 1
             elif t["k"] == "s":
-                t["k"], t["c"] = "g", t["c"] or ("XL" if q[0] >= 42 else ("XU" if q[0] < border(q[1]) else "XB"))
+                t["k"], t["c"] = "g", t["c"] or ("XL" if q[0] >= 42 else ("XU" if q[0] < border(q[1], q[0]) else "XB"))
             road.add(q)
             if k:
                 link(path[k - 1], q)

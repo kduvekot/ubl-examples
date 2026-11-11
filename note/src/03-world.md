@@ -34,7 +34,12 @@ The tax schemes are identified with UN/EDIFACT 5153 codes: `VAT`, `STT`
 (state or provincial sales tax), `CUD` (customs duty) and `IMP` (import
 tax). Because 5153 has no code for a national sales tax, Bayvarra levies
 its sales tax at state level, which also gives the state in its addresses a
-purpose.
+purpose. Bayvarra has two states, Upland State inland and Coastal State
+around Lumeport, and a federal territory, the Northern Territory, on the
+thinly populated north coast, where the gas plant stands. The territory
+levies its own rate of the same sales tax: 4 %, against 5 % in Upland State
+and 6.5 % in Coastal State. Which state a place is in follows from its place
+on the map.
 
 XU, XB and XL are ISO 3166-1 user-assigned codes, which exist for exactly
 this purpose; each follows the initial of its country's name. ISO 4217 has
@@ -55,6 +60,12 @@ the currencies are in the UBL default code lists. UBL lets trading partners
 use their own code lists in the second phase of validation, so the world
 has its own: copies of the UBL 2.5 default lists, unchanged, with the
 world's codes added and their own identification.
+
+In the south-west the land border between Urvania and Bayvarra follows
+the river: all land south of it is Urvania. The river rises in the
+hills west of Ferrano and winds east to the sea, widening into an estuary at
+its mouth below Lumeport. The sawmill stands on its north bank in Upland
+State, by the water and its forests, as sawmills traditionally do.
 
 The countries also speak differently. Bayvarra speaks English, the working
 language between the three countries. Urvania was an Italian territory and

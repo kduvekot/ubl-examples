@@ -2199,7 +2199,7 @@
    "c": "XB",
    "at": [
     24,
-    36
+    33
    ],
    "size": [
     2,
@@ -2208,7 +2208,7 @@
    "h": 2,
    "kind": "sawmill",
    "proposed": true,
-   "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams; sells slats for the benches across the border and timber to the furniture maker.",
+   "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams at its mill on the north bank of the river; sells slats for the benches across the border and timber to the furniture maker.",
    "how": "Wood is sold by dimensions and volume, in lots. UBL carries the measurements and the lot of every item in quotations, orders and despatch advices, so a buyer that orders slats to size gets exactly what it ordered and can trace each lot.",
    "identity": {
     "name": "Marrowdale Sawmill",
@@ -2595,14 +2595,14 @@
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Gas sales manager"
     },
-    "tax_id": "CO-1238631",
+    "tax_id": "NT-1238631",
     "address": {
      "StreetName": "Shoreline Road",
      "BuildingNumber": "2",
      "CityName": "Gullhaven",
-     "CountrySubentity": "Coastal State",
+     "CountrySubentity": "Northern Territory",
      "PostalZone": "38540",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "NT"
     },
     "account": {
      "bank": "25-xb",

@@ -127,9 +127,9 @@ Inside `ContractingParty`:
 - `Party/PostalAddress/PostalZone` = **38517**  
   Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Lumeport Public Works Department (world/parties.json).
+  The state or territory, part of an address in federal Bayvarra. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json).
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XB**  
@@ -139,7 +139,7 @@ Inside `ContractingParty`:
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered for state sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/CompanyID` = **CO-0900002**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Lumeport Public Works Department (world/parties.json).
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/TaxLevelCode` = **State**  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **XB-PUBLIC**  
@@ -149,7 +149,7 @@ Inside `ContractingParty`:
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
-  Its state.
+  Its state or territory.
 - `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB**  
   Its country.
 - `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
@@ -157,7 +157,7 @@ Inside `ContractingParty`:
 - `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
   The tax is accounted for in the country's currency.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state whose sales tax the party is registered for.
+  The state or territory whose sales tax the party is registered for.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The country whose tax this is.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
@@ -185,7 +185,7 @@ Inside `ContractingParty`:
 - `Party/Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 38 2648 0548**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -244,9 +244,9 @@ Inside `ReceiverParty`:
 - `PostalAddress/PostalZone` = **38520**  
   Postal code in Bayvarra's format (5 digits). identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Bayvarra Information Service (world/parties.json).
+  The state or territory, part of an address in federal Bayvarra. identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Bayvarra Information Service (world/parties.json).
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB**  
@@ -278,7 +278,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2259 0959**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayvarra Information Service (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayvarra Information Service (world/parties.json).
 - `Contact/ElectronicMail` = **publications@info-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  

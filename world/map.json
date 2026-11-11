@@ -108,31 +108,88 @@
    "label": "River barge (XU → XB)",
    "pts": [
     [
-     5,
-     15
+     7,
+     18
+    ],
+    [
+     8,
+     20
     ],
     [
      7,
-     25
+     22
     ],
     [
-     16,
-     29
+     8,
+     24
+    ],
+    [
+     9,
+     26
+    ],
+    [
+     11,
+     27
+    ],
+    [
+     13,
+     27
+    ],
+    [
+     15,
+     28
+    ],
+    [
+     17,
+     30
+    ],
+    [
+     19,
+     30
+    ],
+    [
+     21,
+     32
+    ],
+    [
+     23,
+     34
     ],
     [
      26,
-     35
+     34
     ],
     [
-     34,
+     28,
+     36
+    ],
+    [
+     31,
      38
     ],
     [
-     40,
+     35,
      40
     ]
    ],
-   "width": 1.6
+   "widths": [
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    1.0,
+    1.8,
+    2.8,
+    3.6
+   ]
   },
   {
    "id": "sea",
@@ -377,6 +434,16 @@
    ],
    "party": "42-xb",
    "note": "The gas field's production platform, offshore: it has no name or address in the documents, only its place in the world's map grid and its WGS 84 coordinates."
+  }
+ ],
+ "forests": [
+  {
+   "c": [
+    27,
+    33
+   ],
+   "r": 1.6,
+   "note": "Managed forest of Upland State on the north bank of the river, by the sawmill."
   }
  ]
 }

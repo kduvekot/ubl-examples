@@ -357,9 +357,9 @@ Inside `ToLocation`:
 - `Address/PostalZone` = **38505**  
   Postal code in Bayvarra's format (5 digits). identity of Rivermouth Packaging (world/parties.json).
 - `Address/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Rivermouth Packaging (world/parties.json).
+  The state or territory, part of an address in federal Bayvarra. identity of Rivermouth Packaging (world/parties.json).
 - `Address/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json).
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json).
 - `Address/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Address/Country/IdentificationCode` = **XB**  
@@ -416,9 +416,9 @@ Inside `Consignment`:
 - `ConsigneeParty/PostalAddress/PostalZone` = **38505**  
   Postal code in Bayvarra's format (5 digits). identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Rivermouth Packaging (world/parties.json).
+  The state or territory, part of an address in federal Bayvarra. identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/PostalAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json).
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XB**  
@@ -428,7 +428,7 @@ Inside `Consignment`:
 - `ConsigneeParty/PartyTaxScheme/RegistrationName` = **Rivermouth Packaging Ltd**  
   The name under which the party is registered for state sales tax; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/PartyTaxScheme/CompanyID` = **CO-1238220**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Rivermouth Packaging (world/parties.json).
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/PartyTaxScheme/TaxLevelCode` = **State**  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
 - `ConsigneeParty/PartyTaxScheme/TaxScheme/ID` = **STT**  
@@ -436,7 +436,7 @@ Inside `Consignment`:
 - `ConsigneeParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
   The tax is accounted for in the country's currency.
 - `ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state whose sales tax the party is registered for.
+  The state or territory whose sales tax the party is registered for.
 - `ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The country whose tax this is.
 - `ConsigneeParty/PartyLegalEntity/RegistrationName` = **Rivermouth Packaging Ltd**  
@@ -472,7 +472,7 @@ Inside `Consignment`:
 - `ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Telephone` = **+999 2 38 2440 2740**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Rivermouth Packaging (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/ElectronicMail` = **order@rivermouth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  

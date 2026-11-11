@@ -154,6 +154,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.yd) t.yard = 1;
   if (m.br) t.bridge = 1;
   if (m.az) t.approach = 1;
+  if (m.es) t.estuary = 1;
   if (m.rd) t.links = { road: new Set(DIRS.filter((d, bit) => m.rd & (1 << bit)).map(d => d.join())) };
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
@@ -235,11 +236,30 @@ function groundTile(g, i, j, color) {
   const facing = (L[1] - Rt[1]) / HU, tilt = ((bot - top) - TH) / HU;   // >0: faces the light (left) / the viewer
   poly(g, c, Math.abs(facing) + Math.abs(tilt) < .01 ? color : shade(color, Math.max(-.35, Math.min(.3, facing * .14 + tilt * .05))));
   if (showGrid) { g.strokeStyle = "rgba(0,0,0,.12)"; g.lineWidth = 1; g.stroke(); } }
+// the river upstream of its estuary is a stream within its tiles: grass banks, and a band of water from
+// the tile centre to each neighbouring water tile, curved where the course bends
+const stream = t => t && t.water && !t.estuary;
+const RIVER_HW = .3;
+function curveBand(g, i, j, A, B, hw, fill) { const C = [0, 0], L = [], Rr = [];
+  for (let k = 0; k <= 8; k++) { const u = k / 8, a = (1 - u) * (1 - u), b = 2 * (1 - u) * u, c = u * u;
+    const p = [a * A[0] + b * C[0] + c * B[0], a * A[1] + b * C[1] + c * B[1]];
+    let dx = 2 * (1 - u) * (C[0] - A[0]) + 2 * u * (B[0] - C[0]), dy = 2 * (1 - u) * (C[1] - A[1]) + 2 * u * (B[1] - C[1]);
+    const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
+    L.push(tp(i, j, p[0] - dy * hw, p[1] + dx * hw)); Rr.unshift(tp(i, j, p[0] + dy * hw, p[1] - dx * hw)); }
+  poly(g, L.concat(Rr), fill); }
+function drawStream(g, i, j, t) {
+  groundTile(g, i, j, t.n > .5 ? COLORS.grass2 : COLORS.grass);
+  const wet = DIRS.filter(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; return nb && !nb.land; }).map(mid);
+  const water = t.n > .5 ? "#3d7fbf" : "#3a7ab8";
+  for (const [hw, col] of [[RIVER_HW + .08, "#7f8f52"], [RIVER_HW, water]]) {
+    if (wet.length === 2 && (wet[0][0] !== -wet[1][0] || wet[0][1] !== -wet[1][1])) curveBand(g, i, j, wet[0], wet[1], hw, col);
+    else { for (const d of wet) band(g, i, j, [0, 0], d, hw, col); disk(g, i, j, [0, 0], hw, col); } } }
 function drawWorld() {
   const g = world.getContext("2d"); g.clearRect(0, 0, WORLD_W, WORLD_H); g.imageSmoothingEnabled = false;
   OX = RH() * TW / 2 + 40;
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x, y] = tileWorld(i, j);
+    if (stream(t)) { drawStream(g, i, j, t); if (t.approach) approachLights(g, i, j); continue; }
     if (!t.land) { const shallow = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b]?.land);
       groundTile(g, i, j, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea));
       coastCorners(g, i, j, false);
@@ -249,7 +269,7 @@ function drawWorld() {
     groundTile(g, i, j, base);
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
     const cut = coastCorners(g, i, j, true);
-    DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || cut.has(di + "," + dj)) return; const pv = [-dj, di];
+    DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || stream(nb) || cut.has(di + "," + dj)) return; const pv = [-dj, di];
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
         tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : COLORS.sand); });
     // hedges around fields, fences around industry yards

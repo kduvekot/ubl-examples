@@ -127,7 +127,7 @@
     "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Two decimals, the most common case."
    },
    "tax": {
-    "summary": "A federal country: its states levy a retail sales tax, charged once, on the sale to the final consumer. Sales to businesses that resell, exports and sales to public bodies are exempt, and the invoice says so.",
+    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the sale to the final consumer. Sales to businesses that resell, exports and sales to public bodies are exempt, and the invoice says so.",
     "schemes": [
      {
       "id": "STT",
@@ -135,7 +135,8 @@
       "levied_by": "state",
       "rates_by_state": {
        "Coastal State": 6.5,
-       "Upland State": 5.0
+       "Upland State": 5.0,
+       "Northern Territory": 4.0
       },
       "exempt": [
        "sale for resale",
@@ -165,7 +166,7 @@
     "example": "20417733"
    },
    "tax_id": {
-    "format": "state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)"
+    "format": "state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)"
    },
    "address": {
     "lines": [
@@ -184,15 +185,18 @@
     "postal_zone": "5 digits",
     "subdivisions": {
      "UL": "Upland State",
-     "CO": "Coastal State"
+     "CO": "Coastal State",
+     "NT": "Northern Territory"
     },
     "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "subdivision_rule": {
+    "north_of_row": 15,
+    "north": "Northern Territory",
     "column": 29,
     "west": "Upland State",
     "east": "Coastal State",
-    "note": "The state border runs north-south at map column 29: the border region and the distributor are in Upland State, Lumeport and the coast in Coastal State."
+    "note": "Bayvarran land north of map row 15 (row < 15) is the Northern Territory, a federal territory on the thinly populated north coast with Gullhaven, the gas plant and, offshore, the gas field. South of it the state border runs north-south at map column 29: the border region and the distributor are in Upland State (column < 29), Lumeport and the coast in Coastal State."
    },
    "phone_prefix": "+999 2",
    "timezone": "-1",
@@ -221,7 +225,7 @@
    },
    "phone_plan": {
     "pattern": "^\\+999 2 (38 \\d{4} \\d{4}|\\d{4} \\d{3} \\d{3}|\\d{5} \\d{5}|7\\d{3} \\d{3} \\d{3})$",
-    "note": "British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7."
+    "note": "British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7."
    }
   },
   "XL": {

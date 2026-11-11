@@ -148,9 +148,9 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/PostalZone` = **38528**  
   Postal code in Bayvarra's format (5 digits). identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state, part of an address in federal Bayvarra. identity of Lumeport Airport Cargo Terminal (world/parties.json).
+  The state or territory, part of an address in federal Bayvarra. identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CountrySubentityCode` = **CO**  
-  The state as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Airport Cargo Terminal (world/parties.json).
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/Country/IdentificationCode` = **XB**  
@@ -182,7 +182,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/RegistrationName` = **Lumeport Airport Cargo Terminal Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/CompanyID` = **CO-1236165**  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State), hyphen, 7 digits (sales tax permit of the state)); identity of Lumeport Airport Cargo Terminal (world/parties.json).
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxLevelCode` = **State**  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/ID` = **STT**  
@@ -190,7 +190,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
   The tax is accounted for in the country's currency.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state whose sales tax the party is registered for.
+  The state or territory whose sales tax the party is registered for.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
   The country whose tax this is.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationName` = **Lumeport Airport Cargo Terminal Ltd**  
@@ -226,7 +226,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 2 38 2555 2055**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Airport Cargo Terminal (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/ElectronicMail` = **cargo@lumeport-cargo.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note` = **Weekdays 08:00–17:00**  
