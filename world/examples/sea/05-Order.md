@@ -11,11 +11,11 @@ Delivery terms CIF port of the island: the order names the buyer's 3PL as delive
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The documents of the world use UBL 2.5.
-- `CustomizationID` = **urn:ubl-examples:world**  
-  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ProfileID` = **urn:ubl-examples:world:process:sea**  
-  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages (world/specifications.json).
+- `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
 - `ID` = **VT-PO-26-0127**  
@@ -677,8 +677,8 @@ Inside `OrderLine`:
 <?xml version='1.0' encoding='UTF-8'?>
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-PO-26-0127</cbc:ID>
   <cbc:UUID>96cdcd1a-b60b-535b-b857-023213a9b16e</cbc:UUID>

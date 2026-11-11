@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Forecast xmlns="urn:oasis:names:specification:ubl:schema:xsd:Forecast-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:retail</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:forecast:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-FC-26-0221</cbc:ID>
   <cbc:UUID>60706c39-36eb-5254-aefe-265082af3657</cbc:UUID>

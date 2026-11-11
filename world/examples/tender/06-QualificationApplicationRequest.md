@@ -11,11 +11,11 @@ The authority sends the furniture maker the self-declaration it must fill in: ex
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The documents of the world use UBL 2.5.
-- `CustomizationID` = **urn:ubl-examples:world**  
-  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ProfileID` = **urn:ubl-examples:world:process:tender**  
-  The business process the document belongs to: the flow "A public tender (Bayvarra)".
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Qualification application"; the community specification "Public procurement community". Each has a public description on the world's pages (world/specifications.json).
+- `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
 - `ID` = **LPWD-DOC-26-0192**  
@@ -440,8 +440,8 @@ Inside `Signature`:
 <?xml version='1.0' encoding='UTF-8'?>
 <QualificationApplicationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:tender</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
   <cbc:UUID>3c06617e-8a80-509a-b64c-e7ad1ca81e2a</cbc:UUID>

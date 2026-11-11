@@ -13,6 +13,8 @@ before the next layer builds on it.
 | Items | `world/items.json` | what the parties sell: goods and services, with prices |
 | UBL model | `world/ubl-model.json` | extracted from the UBL 2.5 semantic model |
 | Code lists | `world/codelists/` | the world's code lists, and which code element uses which |
+| Specifications | `world/specifications.json` | the transactions, national and community specifications and process profiles the documents claim |
+| UBL versions | `world/ubl-versions.json` | the first UBL 2 version of each element, from the published models of UBL 2.0 to 2.5 |
 
 ## Countries
 

@@ -11,11 +11,11 @@ The power station invoices the electricity it fed in for the retail company in M
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The documents of the world use UBL 2.5.
-- `CustomizationID` = **urn:ubl-examples:world**  
-  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ProfileID` = **urn:ubl-examples:world:process:energy**  
-  The business process the document belongs to: the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)".
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Invoice/DefaultLanguageCode first appears in UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0**  
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the national specification "Invoice rules of Urvania"; the community specification "Urvania energy market". Each has a public description on the world's pages (world/specifications.json).
+- `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **ENERGY-2026-01**  
   This run of the process: the same in every document of the flow.
 - `ID` = **MP-INV-26-0151**  
@@ -433,8 +433,8 @@ Inside `InvoiceLine`:
 <?xml version='1.0' encoding='UTF-8'?>
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:energy</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MP-INV-26-0151</cbc:ID>
   <cbc:UUID>f2bffa54-247a-500b-9993-16f7d9a166d9</cbc:UUID>

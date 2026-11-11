@@ -11,11 +11,11 @@ The distributor asks its forwarder to book air freight for the urgent part.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The documents of the world use UBL 2.5.
-- `CustomizationID` = **urn:ubl-examples:world**  
-  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ProfileID` = **urn:ubl-examples:world:process:air**  
-  The business process the document belongs to: the flow "An urgent part of the order by air (Bayvarra → island Lisavu)".
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0**  
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages (world/specifications.json).
+- `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **AIR-2026-01**  
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-FI-26-0322**  
@@ -472,8 +472,8 @@ Inside `Signature`:
 <?xml version='1.0' encoding='UTF-8'?>
 <ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:air</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-FI-26-0322</cbc:ID>
   <cbc:UUID>8a0ceec7-aa03-5c38-8c5d-9f93d07709aa</cbc:UUID>

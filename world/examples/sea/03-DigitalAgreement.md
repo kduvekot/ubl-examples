@@ -11,11 +11,11 @@ Before trading, the two parties join the multilateral digital agreement that fix
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The documents of the world use UBL 2.5.
-- `CustomizationID` = **urn:ubl-examples:world**  
-  The example world is a customization of UBL: it uses its own code lists for countries and currencies.
-- `ProfileID` = **urn:ubl-examples:world:process:sea**  
-  The business process the document belongs to: the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)".
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+- `CustomizationID` = **urn:ubl-examples:world:trns:digital-agreement:1.0**  
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Digital agreement". Each has a public description on the world's pages (world/specifications.json).
+- `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
+  The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-DAG-26-0125**  
@@ -509,14 +509,14 @@ Inside `DigitalProcess`:
   A process the parties agree to exchange electronically.
 - `Description` = **Order, order response and order change.**  
   What the process covers.
-- `ProfileID` = **urn:ubl-examples:world:process:ordering**  
-  The process profile.
+- `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
+  The Trade Accord's process profile the agreement covers.
 - `DigitalCollaboration/ID` = **ordering-1**  
   The main exchange of the process.
 - `DigitalCollaboration/SendingDigitalService/ID` = **VT-Order-OUT**  
   The party's service for this document.
-- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
-  The customization the documents follow.
+- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID` = **Order**  
   The document type.
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
@@ -551,8 +551,8 @@ Inside `DigitalProcess`:
   The trade accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-Order-IN**  
   The party's service for this document.
-- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
-  The customization the documents follow.
+- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID` = **Order**  
   The document type.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
@@ -589,14 +589,14 @@ Inside `DigitalProcess`:
   A process the parties agree to exchange electronically.
 - `Description` = **Invoice, credit note, statement and remittance advice.**  
   What the process covers.
-- `ProfileID` = **urn:ubl-examples:world:process:billing**  
-  The process profile.
+- `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
+  The Trade Accord's process profile the agreement covers.
 - `DigitalCollaboration/ID` = **billing-1**  
   The main exchange of the process.
 - `DigitalCollaboration/SendingDigitalService/ID` = **LD-Invoice-OUT**  
   The party's service for this document.
-- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
-  The customization the documents follow.
+- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID` = **Invoice**  
   The document type.
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
@@ -631,8 +631,8 @@ Inside `DigitalProcess`:
   The trade accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-Invoice-IN**  
   The party's service for this document.
-- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world**  
-  The customization the documents follow.
+- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID` = **Invoice**  
   The document type.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
@@ -672,8 +672,8 @@ Inside `DigitalProcess`:
 <?xml version='1.0' encoding='UTF-8'?>
 <DigitalAgreement xmlns="urn:oasis:names:specification:ubl:schema:xsd:DigitalAgreement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
-  <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
-  <cbc:ProfileID>urn:ubl-examples:world:process:sea</cbc:ProfileID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-agreement:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DAG-26-0125</cbc:ID>
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
@@ -1064,12 +1064,12 @@ Inside `DigitalProcess`:
   <cac:DigitalProcess>
     <cbc:ID>ordering</cbc:ID>
     <cbc:Description>Order, order response and order change.</cbc:Description>
-    <cbc:ProfileID>urn:ubl-examples:world:process:ordering</cbc:ProfileID>
+    <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>ordering-1</cbc:ID>
       <cac:SendingDigitalService>
         <cbc:ID>VT-Order-OUT</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Order</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -1105,7 +1105,7 @@ Inside `DigitalProcess`:
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>LD-Order-IN</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Order</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -1144,12 +1144,12 @@ Inside `DigitalProcess`:
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
     <cbc:Description>Invoice, credit note, statement and remittance advice.</cbc:Description>
-    <cbc:ProfileID>urn:ubl-examples:world:process:billing</cbc:ProfileID>
+    <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>
       <cac:SendingDigitalService>
         <cbc:ID>LD-Invoice-OUT</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Invoice</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>
@@ -1185,7 +1185,7 @@ Inside `DigitalProcess`:
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
         <cbc:ID>VT-Invoice-IN</cbc:ID>
-        <cbc:CustomizationID>urn:ubl-examples:world</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Invoice</cbc:ID>
           <cbc:FormatID>UBL</cbc:FormatID>

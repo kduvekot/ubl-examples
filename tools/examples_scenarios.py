@@ -4782,10 +4782,20 @@ def full_reference(f, rid, why, day):
                                      "SignatoryParty": party("32-xb", short=True)}}
 
 
+def service_customization(pid, doc_type, sending):
+    """The CustomizationID of the documents a digital service sends or receives: that of the flow's document of that
+    type between the two parties (world_specs)."""
+    import world_specs
+    d = next(x for x in WORLD["documents"] if x["flow"] == "sea" and x["doc"] == doc_type
+             and x["from" if sending else "to"] == pid)
+    return world_specs.customization(d, WORLD)[0]
+
+
 def digital_service(pid, doc_type, sending):
     return {"ID": V(f"{kit.initials(pid)}-{doc_type}-{'OUT' if sending else 'IN'}", "The party's service for this "
                                                                                      "document."),
-            "CustomizationID": V("urn:ubl-examples:world", "The customization the documents follow."),
+            "CustomizationID": V(service_customization(pid, doc_type, sending), "The specification the documents of "
+                                 "this service follow: the CustomizationID those documents carry in this flow."),
             "DigitalDocumentMetadata": {"ID": V(doc_type, "The document type."),
                                         "FormatID": V("UBL", "The format."),
                                         "VersionID": V("2.5", "Its version."),
@@ -4818,7 +4828,8 @@ def digital_service(pid, doc_type, sending):
 def _(f, n, doc, out):
     procs = out["DigitalProcess"]
     for p, (doc_type, send, recv) in zip(procs, (("Order", "1-xl", "6-xb"), ("Invoice", "6-xb", "1-xl"))):
-        p["ProfileID"] = V(f"urn:ubl-examples:world:process:{p['ID'].value}", "The process profile.")
+        p["ProfileID"] = V(f"urn:ubl-examples:world:profile:{p['ID'].value}:1.0", "The Trade Accord's process "
+                           "profile the agreement covers.")
         p["DigitalCollaboration"] = {"ID": V(f"{p['ID'].value}-1", "The main exchange of the process."),
                                      "SendingDigitalService": digital_service(send, doc_type, True),
                                      "ReceivingDigitalService": digital_service(recv, doc_type, False)}

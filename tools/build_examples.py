@@ -40,11 +40,11 @@ import world_data  # noqa: E402
 import world_docs  # noqa: E402
 import world_ids  # noqa: E402
 import world_parties  # noqa: E402
+import world_specs  # noqa: E402
 import world_items  # noqa: E402
 
 NS_CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 NS_CBC = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-CUSTOMIZATION = "urn:ubl-examples:world"
 DEPRECATED = "(Deprecated)"
 
 WORLD = world_data.load()
@@ -1377,6 +1377,57 @@ def check_reference_uuids(flow_id, roots):
                                  f"with UUID {ruuid}, but that document's UUID is {', '.join(sorted(own[rid] - {None}))}")
 
 
+VERSIONS = json.load(open(os.path.join(world_data.ROOT, "world", "ubl-versions.json"), encoding="utf-8"))
+VERSION_ORDER = ["2.0", "2.1", "2.2", "2.3", "2.4", "2.5"]
+
+
+def ubl_version(root):
+    """The earliest UBL 2 version that defines every element of the document (UBLVersionID: "Identifies the earliest
+    version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in
+    the current instance"), from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json), and the element
+    that needs it."""
+    doc = etree.QName(root).localname
+    best, why = VERSIONS["documents"][doc], f"the document type {doc}"
+
+    def walk(el, abie, path):
+        nonlocal best, why
+        for c in el:
+            if not isinstance(c.tag, str):
+                continue
+            name = etree.QName(c).localname
+            v = VERSIONS["children"].get(abie, {}).get(name)
+            if v is None:
+                raise SystemExit(f"{path}/{name}: not in any published UBL 2 model (world/ubl-versions.json)")
+            if VERSION_ORDER.index(v) > VERSION_ORDER.index(best):
+                best, why = v, f"{abie}/{name}"
+            if etree.QName(c).namespace == NS_CAC:
+                walk(c, next(a[1] for a in MODEL["abies"][abie]["asbies"] if a[0] == name), f"{path}/{name}")
+    walk(root, doc, doc)
+    return best, why
+
+
+def set_ubl_version(root, reasons):
+    version, why = ubl_version(root)
+    el = root.find(f"{{{NS_CBC}}}UBLVersionID")
+    el.text = version
+    k = next(i for i, r in enumerate(reasons) if r[0].endswith("/UBLVersionID"))
+    reasons[k] = (reasons[k][0], version, reasons[k][2],
+                  f"The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: "
+                  f"computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); {why} first "
+                  f"appears in UBL {version}.")
+
+
+def check_specifications(root, where):
+    """Every CustomizationID and ProfileID the document uses, at every level of a #compliant# chain, is a
+    specification the world describes (world/specifications.json)."""
+    known = world_specs.described()
+    for e in root.iter(f"{{{NS_CBC}}}CustomizationID", f"{{{NS_CBC}}}ProfileID"):
+        for part in e.text.split(world_specs.COMPLIANT):
+            if part not in known:
+                raise SystemExit(f"{where}: {etree.QName(e).localname} {part} is not described in "
+                                 "world/specifications.json")
+
+
 UNIT_SCHEMES = ("GS1 SSCC", "ISO 15459")
 
 
@@ -1424,13 +1475,17 @@ def main(flow_id, check=False):
             got = node.get(path.split("/")[-1])
             if not isinstance(got, V) or got.value != value:
                 raise SystemExit(f"{flow_id} {n} {doc['doc']}: {path} must be {value} (world/documents.json)")
-        header = {"UBLVersionID": V("2.5", "The documents of the world use UBL 2.5."),
-                  "CustomizationID": V(CUSTOMIZATION, "The example world is a customization of UBL: it uses its own "
-                                                      "code lists for countries and currencies.")}
+        custom, levels = world_specs.customization(doc, WORLD)
+        header = {"UBLVersionID": V("2.5", "Computed below from the elements the document uses."),
+                  "CustomizationID": V(custom, "The specification the document follows, at each level it claims, "
+                                       "chained with #compliant#: " + "; ".join(levels) + ". Each has a public "
+                                       "description on the world's pages (world/specifications.json).")}
         own = {b[0] for b in MODEL["abies"][doc["doc"]]["bbies"]}
         if "ProfileID" in own:
-            header["ProfileID"] = V(f"urn:ubl-examples:world:process:{flow_id}", "The business process the document "
-                                    f"belongs to: the flow \"{flow['title']}\".")
+            prof = world_specs.profile(doc)
+            header["ProfileID"] = V(world_specs.urn("profile", prof), "The Trade Accord's process profile the document "
+                                    f"belongs to: {world_specs.load()['profiles'][prof]['name'].lower()}, a generic, "
+                                    "versioned profile, not the flow; the run of the process is the ProfileExecutionID.")
         if "ProfileExecutionID" in own:
             header["ProfileExecutionID"] = V(f"{flow_id.upper()}-2026-01", "This run of the process: the same in "
                                                                           "every document of the flow.")
@@ -1445,6 +1500,8 @@ def main(flow_id, check=False):
         global SENDER
         SENDER = doc["from"]
         root, reasons = build(doc["doc"], merge(header, content))
+        set_ubl_version(root, reasons)
+        check_specifications(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         if "UUID" in header and isinstance(content.get("ID"), V):
             DOC_UUIDS[(flow_id, content["ID"].value)] = header["UUID"].value
         roots.append((xmlname(n, doc), root))

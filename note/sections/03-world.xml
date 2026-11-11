@@ -103,6 +103,30 @@
             the world's code lists, and which code element uses which
           </entry>
         </row>
+        <row>
+          <entry>
+            Specifications
+          </entry>
+          <entry>
+            <literal>world/specifications.json</literal>
+          </entry>
+          <entry>
+            the transactions, national and community specifications and
+            process profiles the documents claim
+          </entry>
+        </row>
+        <row>
+          <entry>
+            UBL versions
+          </entry>
+          <entry>
+            <literal>world/ubl-versions.json</literal>
+          </entry>
+          <entry>
+            the first UBL 2 version of each element, from the published
+            models of UBL 2.0 to 2.5
+          </entry>
+        </row>
       </tbody>
     </tgroup>
   </informaltable>

@@ -1,0 +1,834 @@
+{
+ "description": "The specifications the world's documents claim (decisions on document identification): the transactions of the Lumeport Trade Accord, the national specifications built on them, the specifications of communities of trading partners, and the Accord's process profiles. tools/build_examples.py gives every document its CustomizationID and ProfileID from this file and checks that every one it uses is described here; tools/build_world.py makes a public page of each.",
+ "urns": {
+  "transaction": "urn:ubl-examples:world:trns:{id}:{version}",
+  "national": "urn:ubl-examples:world:{id}:{version}",
+  "community": "urn:ubl-examples:world:community:{id}:{version}",
+  "profile": "urn:ubl-examples:world:profile:{id}:{version}"
+ },
+ "version": "1.0",
+ "owner": {
+  "transaction": "Lumeport Trade Accord Council",
+  "community": "the members of the community",
+  "profile": "Lumeport Trade Accord Council"
+ },
+ "transactions": {
+  "billing": {
+   "name": "Billing",
+   "documents": [
+    "Invoice",
+    "CreditNote",
+    "DebitNote"
+   ],
+   "purpose": "The supplier bills the customer, corrects a bill with a credit note, and the customer claims a debit with a debit note."
+  },
+  "self-billing": {
+   "name": "Self-billing",
+   "documents": [
+    "SelfBilledInvoice",
+    "SelfBilledCreditNote"
+   ],
+   "purpose": "The customer bills itself on the supplier's behalf, under a self-billing agreement, and corrects that bill."
+  },
+  "order-status": {
+   "name": "Order status",
+   "documents": [
+    "DocumentStatusRequest",
+    "DocumentStatus"
+   ],
+   "purpose": "A party asks for the status of a document it sent, and the receiver answers."
+  },
+  "invoice-status": {
+   "name": "Invoice status",
+   "documents": [
+    "InvoiceStatusRequest",
+    "InvoiceStatusResponse"
+   ],
+   "purpose": "The supplier asks where its invoice stands, and the customer answers."
+  },
+  "catalogue": {
+   "name": "Catalogue",
+   "documents": [
+    "Catalogue",
+    "CataloguePricingUpdate",
+    "CatalogueItemSpecificationUpdate",
+    "CatalogueDeletion"
+   ],
+   "purpose": "The provider sends its catalogue, updates its prices and item specifications, and withdraws it."
+  },
+  "transport-progress-status": {
+   "name": "Transport progress status",
+   "documents": [
+    "TransportProgressStatusRequest",
+    "TransportProgressStatus"
+   ],
+   "purpose": "A party asks for the progress of a transport, and the carrier answers."
+  },
+  "transportation-status": {
+   "name": "Transportation status",
+   "documents": [
+    "TransportationStatusRequest",
+    "TransportationStatus"
+   ],
+   "purpose": "A party asks for, or the carrier reports, the status of a consignment."
+  },
+  "transport-service-description": {
+   "name": "Transport service description",
+   "documents": [
+    "TransportServiceDescriptionRequest",
+    "TransportServiceDescription"
+   ],
+   "purpose": "A party asks a carrier for its services, and the carrier describes them."
+  },
+  "proof-of-reexportation": {
+   "name": "Proof of re-exportation",
+   "documents": [
+    "ProofOfReexportationRequest",
+    "ProofOfReexportationReminder",
+    "ProofOfReexportation"
+   ],
+   "purpose": "The guarantor of a carnet asks, and reminds, for the proof that goods were re-exported, and the other guarantor sends it."
+  },
+  "expression-of-interest": {
+   "name": "Expression of interest",
+   "documents": [
+    "ExpressionOfInterestRequest",
+    "ExpressionOfInterestResponse"
+   ],
+   "purpose": "An economic operator expresses its interest in a procurement, and the contracting authority confirms it."
+  },
+  "qualification-application": {
+   "name": "Qualification application",
+   "documents": [
+    "QualificationApplicationRequest",
+    "QualificationApplicationResponse"
+   ],
+   "purpose": "The contracting authority asks for the qualification of a tenderer, and the tenderer answers."
+  },
+  "tenderer-qualification": {
+   "name": "Tenderer qualification",
+   "documents": [
+    "TendererQualification",
+    "TendererQualificationResponse"
+   ],
+   "purpose": "A tenderer submits its qualification, and the contracting authority answers."
+  },
+  "procurement-status": {
+   "name": "Procurement status",
+   "documents": [
+    "ProcurementStatusRequest",
+    "ProcurementStatus"
+   ],
+   "purpose": "An economic operator asks for the status of a procedure, and the contracting authority answers."
+  },
+  "unsubscribe-from-procedure": {
+   "name": "Unsubscribe from procedure",
+   "documents": [
+    "UnsubscribeFromProcedureRequest",
+    "UnsubscribeFromProcedureResponse"
+   ],
+   "purpose": "An economic operator leaves a procedure, and the contracting authority confirms it."
+  },
+  "award-notification": {
+   "name": "Award notification",
+   "documents": [
+    "AwardedNotification",
+    "UnawardedNotification"
+   ],
+   "purpose": "The contracting authority tells each tenderer whether it was awarded the contract."
+  },
+  "tender": {
+   "name": "Tender",
+   "documents": [
+    "Tender",
+    "TenderReceipt",
+    "TenderWithdrawal"
+   ],
+   "purpose": "A tenderer submits its tender, the contracting authority confirms its receipt, and the tenderer may withdraw it."
+  },
+  "forecast": {
+   "name": "Forecast",
+   "documents": [
+    "Forecast",
+    "ForecastRevision"
+   ],
+   "purpose": "A party forecasts demand and revises the forecast."
+  },
+  "exception": {
+   "name": "Exception",
+   "documents": [
+    "ExceptionCriteria",
+    "ExceptionNotification"
+   ],
+   "purpose": "Trading partners agree on the limits of exceptions and report an exception when one occurs."
+  },
+  "invoice-response": {
+   "name": "Invoice response",
+   "documents": [
+    "ApplicationResponse"
+   ],
+   "purpose": "The customer tells the supplier that it received, accepted or rejected an invoice, with an Application Response. (A message-level response, which says only whether a message could be processed, would be a transaction of its own.)"
+  },
+  "bill-of-lading": {
+   "name": "Bill of lading",
+   "documents": [
+    "BillOfLading"
+   ],
+   "purpose": "One document type carries the transaction, the Bill Of Lading, which UBL 2.5 defines as follows: “A document issued by the party who acts as an agent for a transportation carrier or other agents to the party who gives instructions for the transportation services (shipper, consignor, etc.) stating the details of the transportation, charges, and terms and conditions under which the transportation service is provided. The party issuing this document does not necessarily provide the physical transportation service. The information in the Bill of Lading corresponds to the information on the Forwarding Instructions. It is used for any mode of transport. A Bill of Lading can serve as a contractual document between the parties for the transportation service. The document evidences a contract of carriage by sea and the acceptance of responsibility for the goods by the carrier, by which the carrier undertakes to deliver the goods against surrender of the document. A provision in the document that the goods are to be delivered to the order of a named person, or to order, or to bearer, constitutes such an undertaking.”"
+  },
+  "business-card": {
+   "name": "Business card",
+   "documents": [
+    "BusinessCard"
+   ],
+   "purpose": "One document type carries the transaction, the Business Card, which UBL 2.5 defines as follows: “A document used to provide information about a business party and its business capabilities.”"
+  },
+  "business-information": {
+   "name": "Business information",
+   "documents": [
+    "BusinessInformation"
+   ],
+   "purpose": "One document type carries the transaction, the Business Information, which UBL 2.5 defines as follows: “A document used to provide information about a business.”"
+  },
+  "call-for-tenders": {
+   "name": "Call for tenders",
+   "documents": [
+    "CallForTenders"
+   ],
+   "purpose": "One document type carries the transaction, the Call For Tenders, which UBL 2.5 defines as follows: “A document used by a Contracting Party to define a procurement project to buy goods, services, or works during a specified period.”"
+  },
+  "catalogue-request": {
+   "name": "Catalogue request",
+   "documents": [
+    "CatalogueRequest"
+   ],
+   "purpose": "One document type carries the transaction, the Catalogue Request, which UBL 2.5 defines as follows: “A document used to request a Catalogue.”"
+  },
+  "certificate-of-origin": {
+   "name": "Certificate of origin",
+   "documents": [
+    "CertificateOfOrigin"
+   ],
+   "purpose": "One document type carries the transaction, the Certificate Of Origin, which UBL 2.5 defines as follows: “A document that describes the Certificate of Origin.”"
+  },
+  "common-transportation-report": {
+   "name": "Common transportation report",
+   "documents": [
+    "CommonTransportationReport"
+   ],
+   "purpose": "One document type carries the transaction, the Common Transportation Report, which UBL 2.5 defines as follows: “A common document used for reporting transport related issues to authorities or regulators.”"
+  },
+  "contract-award-notice": {
+   "name": "Contract award notice",
+   "documents": [
+    "ContractAwardNotice"
+   ],
+   "purpose": "One document type carries the transaction, the Contract Award Notice, which UBL 2.5 defines as follows: “A document published by a Contracting Party to announce the awarding of a procurement project.”"
+  },
+  "contract-notice": {
+   "name": "Contract notice",
+   "documents": [
+    "ContractNotice"
+   ],
+   "purpose": "One document type carries the transaction, the Contract Notice, which UBL 2.5 defines as follows: “A document used by a Contracting party to announce a project to buy goods, services, or works.”"
+  },
+  "delivery-note": {
+   "name": "Delivery note",
+   "documents": [
+    "DeliveryNote"
+   ],
+   "purpose": "One document type carries the transaction, the Delivery Note, which UBL 2.5 defines as follows: “A document confirming the actual delivery of goods or services, detailing delivered items, quantities, and shipment information.”"
+  },
+  "despatch-advice": {
+   "name": "Despatch advice",
+   "documents": [
+    "DespatchAdvice"
+   ],
+   "purpose": "One document type carries the transaction, the Despatch Advice, which UBL 2.5 defines as follows: “A document used to describe the despatch or delivery of goods and services.”"
+  },
+  "digital-agreement": {
+   "name": "Digital agreement",
+   "documents": [
+    "DigitalAgreement"
+   ],
+   "purpose": "One document type carries the transaction, the Digital Agreement, which UBL 2.5 defines as follows: “A document used to support business parties agreeing on a set of digital processes, terms and conditions to ensure interoperability.”"
+  },
+  "digital-capability": {
+   "name": "Digital capability",
+   "documents": [
+    "DigitalCapability"
+   ],
+   "purpose": "One document type carries the transaction, the Digital Capability, which UBL 2.5 defines as follows: “A document used to provide information about a business party and its digital trade capabilities.”"
+  },
+  "export-customs-declaration": {
+   "name": "Export customs declaration",
+   "documents": [
+    "ExportCustomsDeclaration"
+   ],
+   "purpose": "One document type carries the transaction, the Export Customs Declaration, which UBL 2.5 defines as follows: “A customs declaration document for exporting goods”"
+  },
+  "forwarding-instructions": {
+   "name": "Forwarding instructions",
+   "documents": [
+    "ForwardingInstructions"
+   ],
+   "purpose": "One document type carries the transaction, the Forwarding Instructions, which UBL 2.5 defines as follows: “A document issued to a forwarder, giving instructions regarding the action to be taken for the forwarding of goods described therein. Forwarding Instructions is used by any party who gives instructions for the transportation services required for a consignment of goods to any party who is contracted to provide the transportation services. The parties who issue this document are commonly referred to as the shipper or consignor, while the parties who receive this document are forwarders, carriers, shipping agents, etc. This document may also be issued by a forwarder or shipping agent in its capacity as a shipper. This document can be used to arrange for the transportation (1) of different types of goods or cargoes; (2) whether containerized or non-containerized; (3) through different modes of transport including multi-modal; and (4) from any origin to any destination.”"
+  },
+  "fulfilment-cancellation": {
+   "name": "Fulfilment cancellation",
+   "documents": [
+    "FulfilmentCancellation"
+   ],
+   "purpose": "One document type carries the transaction, the Fulfilment Cancellation, which UBL 2.5 defines as follows: “A document used to cancel an entire fulfilment document (Despatch Advice or Receipt Advice).”"
+  },
+  "goods-certificate": {
+   "name": "Goods certificate",
+   "documents": [
+    "GoodsCertificate"
+   ],
+   "purpose": "One document type carries the transaction, the Goods Certificate, which UBL 2.5 defines as follows: “A document that describes a certificate of goods for importation and exportation”"
+  },
+  "goods-item-itinerary": {
+   "name": "Goods item itinerary",
+   "documents": [
+    "GoodsItemItinerary"
+   ],
+   "purpose": "One document type carries the transaction, the Goods Item Itinerary, which UBL 2.5 defines as follows: “A document providing details relating to a transport service, such as transport movement, identification of equipment and goods, subcontracted service providers, etc.”"
+  },
+  "goods-item-passport": {
+   "name": "Goods item passport",
+   "documents": [
+    "GoodsItemPassport"
+   ],
+   "purpose": "One document type carries the transaction, the Goods Item Passport, which UBL 2.5 defines as follows: “A document providing a temporary export license, also knowned as an ATA Carnet”"
+  },
+  "guarantee-certificate": {
+   "name": "Guarantee certificate",
+   "documents": [
+    "GuaranteeCertificate"
+   ],
+   "purpose": "One document type carries the transaction, the Guarantee Certificate, which UBL 2.5 defines as follows: “A document to notify the deposit of a Guarantee, such as a bid bond.”"
+  },
+  "import-customs-declaration": {
+   "name": "Import customs declaration",
+   "documents": [
+    "ImportCustomsDeclaration"
+   ],
+   "purpose": "One document type carries the transaction, the Import Customs Declaration, which UBL 2.5 defines as follows: “A customs declaration document for importing goods.”"
+  },
+  "instruction-for-returns": {
+   "name": "Instruction for returns",
+   "documents": [
+    "InstructionForReturns"
+   ],
+   "purpose": "One document type carries the transaction, the Instruction For Returns, which UBL 2.5 defines as follows: “A document used to initiate a return of goods. The producer is requesting the return of products that are not selling well, either to use in other places or to free up rack or shelf space.”"
+  },
+  "inventory-report": {
+   "name": "Inventory report",
+   "documents": [
+    "InventoryReport"
+   ],
+   "purpose": "One document type carries the transaction, the Inventory Report, which UBL 2.5 defines as follows: “A report on the quantities of each item that are, or will be, in stock. This document is sent by a Buyer (for example a retailer) to a Seller (for example a producer).”"
+  },
+  "item-information-request": {
+   "name": "Item information request",
+   "documents": [
+    "ItemInformationRequest"
+   ],
+   "purpose": "One document type carries the transaction, the Item Information Request, which UBL 2.5 defines as follows: “A document used to request product activity, forecast, or performance data.”"
+  },
+  "manifest": {
+   "name": "Manifest",
+   "documents": [
+    "Manifest"
+   ],
+   "purpose": "One document type carries the transaction, the Manifest, which UBL 2.5 defines as follows: “A document listing the contents, cargo, passengers and crew of an airplane, a ship, a truck or a wagon.”"
+  },
+  "order": {
+   "name": "Order",
+   "documents": [
+    "Order"
+   ],
+   "purpose": "One document type carries the transaction, the Order, which UBL 2.5 defines as follows: “A document used to order goods and services.”"
+  },
+  "order-cancellation": {
+   "name": "Order cancellation",
+   "documents": [
+    "OrderCancellation"
+   ],
+   "purpose": "One document type carries the transaction, the Order Cancellation, which UBL 2.5 defines as follows: “A document used to cancel an entire Order.”"
+  },
+  "order-change": {
+   "name": "Order change",
+   "documents": [
+    "OrderChange"
+   ],
+   "purpose": "One document type carries the transaction, the Order Change, which UBL 2.5 defines as follows: “A document used to specify changes to an existing Order.”"
+  },
+  "order-response": {
+   "name": "Order response",
+   "documents": [
+    "OrderResponse"
+   ],
+   "purpose": "One document type carries the transaction, the Order Response, which UBL 2.5 defines as follows: “A document used to indicate detailed acceptance or rejection of an Order or to make a counter-offer.”"
+  },
+  "packing-list": {
+   "name": "Packing list",
+   "documents": [
+    "PackingList"
+   ],
+   "purpose": "One document type carries the transaction, the Packing List, which UBL 2.5 defines as follows: “A document describing how goods are packed.”"
+  },
+  "prior-information-notice": {
+   "name": "Prior information notice",
+   "documents": [
+    "PriorInformationNotice"
+   ],
+   "purpose": "One document type carries the transaction, the Prior Information Notice, which UBL 2.5 defines as follows: “A document used by a contracting party to declare the intention to buy goods, services, or works during a specified period.”"
+  },
+  "product-activity": {
+   "name": "Product activity",
+   "documents": [
+    "ProductActivity"
+   ],
+   "purpose": "One document type carries the transaction, the Product Activity, which UBL 2.5 defines as follows: “A document reporting the movement of goods at specified retail locations for inventory tracking purposes.”"
+  },
+  "purchase-receipt": {
+   "name": "Purchase receipt",
+   "documents": [
+    "PurchaseReceipt"
+   ],
+   "purpose": "One document type carries the transaction, the Purchase Receipt, which UBL 2.5 defines as follows: “A receipt for a purchase made with cash or cash equivalents.”"
+  },
+  "quotation": {
+   "name": "Quotation",
+   "documents": [
+    "Quotation"
+   ],
+   "purpose": "One document type carries the transaction, the Quotation, which UBL 2.5 defines as follows: “A document used to quote for the provision of goods and services.”"
+  },
+  "receipt-advice": {
+   "name": "Receipt advice",
+   "documents": [
+    "ReceiptAdvice"
+   ],
+   "purpose": "One document type carries the transaction, the Receipt Advice, which UBL 2.5 defines as follows: “A document used to describe the receipt of goods and services or as a reply to a despatch advice.”"
+  },
+  "reminder": {
+   "name": "Reminder",
+   "documents": [
+    "Reminder"
+   ],
+   "purpose": "One document type carries the transaction, the Reminder, which UBL 2.5 defines as follows: “A document used to remind a customer of payments past due.”"
+  },
+  "remittance-advice": {
+   "name": "Remittance advice",
+   "documents": [
+    "RemittanceAdvice"
+   ],
+   "purpose": "One document type carries the transaction, the Remittance Advice, which UBL 2.5 defines as follows: “A document that specifies details of an actual payment.”"
+  },
+  "request-for-quotation": {
+   "name": "Request for quotation",
+   "documents": [
+    "RequestForQuotation"
+   ],
+   "purpose": "One document type carries the transaction, the Request For Quotation, which UBL 2.5 defines as follows: “A document used to request a Quotation for goods and services from a Seller.”"
+  },
+  "retail-event": {
+   "name": "Retail event",
+   "documents": [
+    "RetailEvent"
+   ],
+   "purpose": "One document type carries the transaction, the Retail Event, which UBL 2.5 defines as follows: “A document used to specify basic information about retail events (such as promotions, product introductions, and community or environmental events) that affect supply or demand.”"
+  },
+  "statement": {
+   "name": "Statement",
+   "documents": [
+    "Statement"
+   ],
+   "purpose": "One document type carries the transaction, the Statement, which UBL 2.5 defines as follows: “A document used to report the status of orders, billing, and payment. This document is a statement of account, not a summary invoice.”"
+  },
+  "tender-contract": {
+   "name": "Tender contract",
+   "documents": [
+    "TenderContract"
+   ],
+   "purpose": "One document type carries the transaction, the Tender Contract, which UBL 2.5 defines as follows: “A document published by a Contracting Party to announce the awarding of a procurement project.”"
+  },
+  "trade-item-location-profile": {
+   "name": "Trade item location profile",
+   "documents": [
+    "TradeItemLocationProfile"
+   ],
+   "purpose": "One document type carries the transaction, the Trade Item Location Profile, which UBL 2.5 defines as follows: “A document specifying trade item attributes relating to replenishment policies.”"
+  },
+  "transit-customs-declaration": {
+   "name": "Transit customs declaration",
+   "documents": [
+    "TransitCustomsDeclaration"
+   ],
+   "purpose": "One document type carries the transaction, the Transit Customs Declaration, which UBL 2.5 defines as follows: “A document that describes an import customs declaration.”"
+  },
+  "transport-execution-plan": {
+   "name": "Transport execution plan",
+   "documents": [
+    "TransportExecutionPlan"
+   ],
+   "purpose": "One document type carries the transaction, the Transport Execution Plan, which UBL 2.5 defines as follows: “A document used in the negotiation of a transport service between a transport user and a transport service provider.”"
+  },
+  "transport-execution-plan-request": {
+   "name": "Transport execution plan request",
+   "documents": [
+    "TransportExecutionPlanRequest"
+   ],
+   "purpose": "One document type carries the transaction, the Transport Execution Plan Request, which UBL 2.5 defines as follows: “A document sent by a transport user to request a transport service from a transport service provider.”"
+  },
+  "utility-statement": {
+   "name": "Utility statement",
+   "documents": [
+    "UtilityStatement"
+   ],
+   "purpose": "One document type carries the transaction, the Utility Statement, which UBL 2.5 defines as follows: “A supplement to an Invoice or Credit Note, containing information on the consumption of services provided by utility suppliers to private and public customers, including electricity, gas, water, and telephone services.”"
+  },
+  "waste-movement": {
+   "name": "Waste movement",
+   "documents": [
+    "WasteMovement"
+   ],
+   "purpose": "One document type carries the transaction, the Waste Movement, which UBL 2.5 defines as follows: “A document used to report the transport of waste.”"
+  },
+  "waste-notification": {
+   "name": "Waste notification",
+   "documents": [
+    "WasteNotification"
+   ],
+   "purpose": "One document type carries the transaction, the Waste Notification, which UBL 2.5 defines as follows: “A document used to notify the competent authorities of planned movements of waste.”"
+  },
+  "waybill": {
+   "name": "Waybill",
+   "documents": [
+    "Waybill"
+   ],
+   "purpose": "One document type carries the transaction, the Waybill, which UBL 2.5 defines as follows: “A transport document describing a shipment It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided.”"
+  },
+  "weight-statement": {
+   "name": "Weight statement",
+   "documents": [
+    "WeightStatement"
+   ],
+   "purpose": "One document type carries the transaction, the Weight Statement, which UBL 2.5 defines as follows: “A document used to report weight or verified mass measurements in the transport chain.”"
+  },
+  "work-report": {
+   "name": "Work report",
+   "documents": [
+    "WorkReport"
+   ],
+   "purpose": "One document type carries the transaction, the Work Report, which UBL 2.5 defines as follows: “A document used to report work performed.”"
+  }
+ },
+ "national": {
+  "XB:public-billing": {
+   "name": "Billing rules for public bodies of Bayvarra",
+   "owner": "Government of Bayvarra (federal procurement and tax)",
+   "country": "XB",
+   "documents": [
+    "Invoice",
+    "CreditNote"
+   ],
+   "when": {
+    "buyer_public": "XB"
+   },
+   "purpose": "Bayvarra's rules for invoices to its public bodies: the exemption from the state sales tax, the withholding of 10 % of the price of a service by a business not established in Bayvarra, and the supplier's tax representative. A public body's own rules come first: an invoice to it follows them whatever the seller's country, as a national rule for public buyers does."
+  },
+  "XU:invoice": {
+   "name": "Invoice rules of Urvania",
+   "owner": "Government of Urvania (tax administration)",
+   "country": "XU",
+   "documents": [
+    "Invoice",
+    "CreditNote"
+   ],
+   "when": {
+    "seller_country": "XU"
+   },
+   "purpose": "Urvania's rules for the invoices of its value added tax, modelled on the EU VAT directive: the seller's VAT number, the tax category and rate per line, the 2 % cash discount for payment within ten days, statutory interest on late payment, and the bilingual notes of an Urvanian sender."
+  }
+ },
+ "communities": {
+  "retail": {
+   "name": "Retail community",
+   "members": [
+    "6-xb",
+    "26-xb"
+   ],
+   "when": "between_members",
+   "purpose": "The distributor and the department store exchange their documents the GS1 way: GTINs, GLNs and SSCCs, a catalogue the store orders from, and the replenishment documents."
+  },
+  "port-lumeport": {
+   "name": "Lumeport port community",
+   "members": [
+    "16-xb",
+    "19-xb",
+    "11-xb",
+    "10-xb"
+   ],
+   "flows": [
+    "sea",
+    "cotton"
+   ],
+   "documents": [
+    "ForwardingInstructions",
+    "PackingList",
+    "BillOfLading",
+    "Waybill",
+    "Manifest",
+    "CommonTransportationReport",
+    "TransportationStatus",
+    "TransportationStatusRequest",
+    "TransportServiceDescription",
+    "TransportServiceDescriptionRequest",
+    "WeightStatement",
+    "ExportCustomsDeclaration",
+    "ImportCustomsDeclaration"
+   ],
+   "when": "flow_and_documents",
+   "purpose": "The port, its customs, the shipping lines and the forwarders of Lumeport exchange the documents of sea transport and of customs through the port in one way: the port's code UN/LOCODE XBLMP, ISO 6346 container numbers, and the declarations the port's customs office needs before the ship arrives."
+  },
+  "energy-xu": {
+   "name": "Urvania energy market",
+   "members": [
+    "43-xu",
+    "44-xu",
+    "33-xu"
+   ],
+   "when": "between_members",
+   "purpose": "Urvania's unbundled energy market: the power station, the grid operator and the retail company exchange meter readings, consumption statements and invoices for energy and network use in the same structure."
+  },
+  "procurement": {
+   "name": "Public procurement community",
+   "members": [
+    "2-xb",
+    "28-xb"
+   ],
+   "flows": [
+    "tender"
+   ],
+   "documents": [
+    "PriorInformationNotice",
+    "ContractNotice",
+    "CallForTenders",
+    "ExpressionOfInterestRequest",
+    "ExpressionOfInterestResponse",
+    "QualificationApplicationRequest",
+    "QualificationApplicationResponse",
+    "ProcurementStatusRequest",
+    "ProcurementStatus",
+    "UnsubscribeFromProcedureRequest",
+    "UnsubscribeFromProcedureResponse",
+    "BusinessInformation",
+    "TendererQualification",
+    "TendererQualificationResponse",
+    "GuaranteeCertificate",
+    "Tender",
+    "TenderReceipt",
+    "TenderWithdrawal",
+    "ContractAwardNotice",
+    "AwardedNotification",
+    "UnawardedNotification",
+    "TenderContract"
+   ],
+   "when": "flow_and_documents",
+   "purpose": "The contracting authorities of Bayvarra and the economic operators that take part in their procedures exchange the documents of a procurement procedure under the Accord's procurement rules, which are modelled on the EU's: the procedure's folder number, lots, criteria and the code lists modelled on eForms and the ESPD."
+  }
+ },
+ "profiles": {
+  "utility-billing": {
+   "name": "Utility billing",
+   "documents": [
+    "UtilityStatement",
+    "Invoice",
+    "CreditNote",
+    "Reminder",
+    "RemittanceAdvice"
+   ],
+   "flows": [
+    "utilities"
+   ],
+   "communities": [
+    "energy-xu"
+   ],
+   "purpose": "A utility or an energy market party states the consumption at a point of supply, bills it, reminds and is paid."
+  },
+  "ordering": {
+   "name": "Ordering",
+   "documents": [
+    "Order",
+    "OrderResponse",
+    "OrderChange",
+    "OrderCancellation",
+    "DocumentStatusRequest",
+    "DocumentStatus"
+   ],
+   "purpose": "A buyer orders, the seller responds, the buyer changes or cancels the order and asks for its status."
+  },
+  "billing": {
+   "name": "Billing",
+   "documents": [
+    "Invoice",
+    "CreditNote",
+    "DebitNote",
+    "SelfBilledInvoice",
+    "SelfBilledCreditNote",
+    "ApplicationResponse",
+    "InvoiceStatusRequest",
+    "InvoiceStatusResponse",
+    "Reminder",
+    "Statement",
+    "RemittanceAdvice"
+   ],
+   "purpose": "The supplier bills, the customer responds, the supplier reminds and states the account, and the customer says what it paid."
+  },
+  "despatch-receipt": {
+   "name": "Despatch and receipt",
+   "documents": [
+    "DespatchAdvice",
+    "ReceiptAdvice",
+    "DeliveryNote",
+    "FulfilmentCancellation",
+    "InstructionForReturns",
+    "WorkReport"
+   ],
+   "purpose": "The supplier announces what it despatches or did, the customer reports what it received, and a despatch is cancelled or goods are returned."
+  },
+  "transport": {
+   "name": "Transport",
+   "documents": [
+    "TransportExecutionPlanRequest",
+    "TransportExecutionPlan",
+    "ForwardingInstructions",
+    "Waybill",
+    "BillOfLading",
+    "PackingList",
+    "WeightStatement",
+    "Manifest",
+    "CommonTransportationReport",
+    "TransportationStatusRequest",
+    "TransportationStatus",
+    "TransportProgressStatusRequest",
+    "TransportProgressStatus",
+    "GoodsItemItinerary",
+    "TransportServiceDescriptionRequest",
+    "TransportServiceDescription"
+   ],
+   "purpose": "A shipper books transport, instructs the forwarder and carrier, and the carrier documents and reports the carriage."
+  },
+  "customs": {
+   "name": "Customs",
+   "documents": [
+    "ExportCustomsDeclaration",
+    "ImportCustomsDeclaration",
+    "TransitCustomsDeclaration",
+    "CertificateOfOrigin",
+    "GoodsCertificate"
+   ],
+   "purpose": "Goods are declared to customs for export, transit and import under the Accord's customs data model, with the certificates customs asks for."
+  },
+  "temporary-admission": {
+   "name": "Temporary admission",
+   "documents": [
+    "GoodsItemPassport",
+    "ProofOfReexportationRequest",
+    "ProofOfReexportationReminder",
+    "ProofOfReexportation"
+   ],
+   "purpose": "Goods travel abroad and back on an ATA carnet, and the guarantors settle the proof of re-exportation."
+  },
+  "waste-shipment": {
+   "name": "Waste shipment",
+   "documents": [
+    "WasteNotification",
+    "WasteMovement"
+   ],
+   "purpose": "A planned movement of waste is notified to the authorities, and the movement is reported."
+  },
+  "tendering": {
+   "name": "Tendering",
+   "documents": [
+    "PriorInformationNotice",
+    "ContractNotice",
+    "CallForTenders",
+    "ExpressionOfInterestRequest",
+    "ExpressionOfInterestResponse",
+    "QualificationApplicationRequest",
+    "QualificationApplicationResponse",
+    "ProcurementStatusRequest",
+    "ProcurementStatus",
+    "UnsubscribeFromProcedureRequest",
+    "UnsubscribeFromProcedureResponse",
+    "BusinessInformation",
+    "TendererQualification",
+    "TendererQualificationResponse",
+    "GuaranteeCertificate",
+    "Tender",
+    "TenderReceipt",
+    "TenderWithdrawal",
+    "ContractAwardNotice",
+    "AwardedNotification",
+    "UnawardedNotification",
+    "TenderContract"
+   ],
+   "purpose": "A contracting authority runs a procurement procedure from the prior information notice to the contract."
+  },
+  "catalogue": {
+   "name": "Catalogue",
+   "documents": [
+    "CatalogueRequest",
+    "Catalogue",
+    "CataloguePricingUpdate",
+    "CatalogueItemSpecificationUpdate",
+    "CatalogueDeletion",
+    "ItemInformationRequest"
+   ],
+   "purpose": "A buyer asks for a catalogue or for information about an item, and the seller provides and maintains its catalogue."
+  },
+  "sourcing": {
+   "name": "Sourcing",
+   "documents": [
+    "RequestForQuotation",
+    "Quotation"
+   ],
+   "purpose": "A buyer asks for a quotation, and the seller quotes."
+  },
+  "collaboration": {
+   "name": "Collaborative planning",
+   "documents": [
+    "Forecast",
+    "ForecastRevision",
+    "RetailEvent",
+    "InventoryReport",
+    "TradeItemLocationProfile",
+    "ExceptionCriteria",
+    "ExceptionNotification",
+    "ProductActivity"
+   ],
+   "purpose": "A retailer and its supplier plan together: forecasts, promotions, stock, replenishment rules and exceptions."
+  },
+  "retail-sale": {
+   "name": "Retail sale",
+   "documents": [
+    "PurchaseReceipt"
+   ],
+   "purpose": "A shop sells to a consumer at the till and gives a receipt."
+  },
+  "onboarding": {
+   "name": "Onboarding",
+   "documents": [
+    "BusinessCard",
+    "DigitalAgreement",
+    "DigitalCapability"
+   ],
+   "purpose": "Trading partners introduce themselves and agree how they exchange documents: which processes, services and addresses."
+  }
+ }
+}

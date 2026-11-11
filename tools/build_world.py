@@ -244,7 +244,9 @@ ex_lines = ["# Example documents", "",
             "reason why it is that value. The documents are generated from the world's layers, so the parties, items, "
             "currencies and taxes in them agree with the rest of the world.", "",
             "These examples are kept apart from the examples of the OASIS UBL Technical Committee, whose history is "
-            "in this repository's `xml/` folder.", ""]
+            "in this repository's `xml/` folder.", "",
+            "Each document names the specifications it follows in `CustomizationID` and `ProfileID`: see "
+            "[the world's specifications](world-specifications.html).", ""]
 for f in world["flows"]:
     same = [x for x in world["documents"] if x["flow"] == f["id"]]
     rows = [(n, x) for n, x in enumerate(same, 1) if example_of(x)]
@@ -255,4 +257,62 @@ for f in world["flows"]:
         ex_lines.append(f"| {n} | [{world_docs.words(x['doc'])}]({example_of(x)}) | {link(x['from'])} | {link(x['to'])} |")
     ex_lines.append("")
 open(os.path.join(mddir, "examples.md"), "w", encoding="utf-8").write("\n".join(ex_lines))
+
+# The specifications the documents claim (world/specifications.json): an index and a short page for each
+import glob  # noqa: E402
+import world_specs  # noqa: E402
+from lxml import etree  # noqa: E402
+LEVELS = {"transaction": "Transactions of the Trade Accord", "national": "National specifications",
+          "community": "Community specifications", "profile": "Process profiles"}
+used = {}
+for path in sorted(glob.glob(os.path.join(root, "world", "examples", "*", "*.xml"))):
+    flow, name = path.split(os.sep)[-2], os.path.basename(path)[:-4]
+    for e in etree.parse(path).getroot().iter("{*}CustomizationID", "{*}ProfileID"):
+        for part in e.text.split(world_specs.COMPLIANT):
+            used.setdefault(part, []).append((flow, name))
+
+
+def spec_page(level, key):
+    return f"world-spec-{level}-{key.replace(':', '-')}"
+
+
+specs = world_specs.described()
+idx = ["# Specifications", "",
+       "Every document of the world says which specifications it follows. `CustomizationID` names the transaction "
+       "specification at up to three levels, chained with `#compliant#`, as EN 16931, Peppol and XRechnung do: the "
+       "Trade Accord's transaction, a national specification built on it, and a community's specification. "
+       "`ProfileID` names the Accord's process profile the document belongs to. These are the specifications of the "
+       "world; the world claims no compliance with real ones such as EN 16931.", ""]
+for level, title in LEVELS.items():
+    idx += [f"## {title}", "", "| Specification | Identifier | Document types |", "|---|---|---|"]
+    for u, (lv, key, spec) in specs.items():
+        if lv != level:
+            continue
+        kinds = ", ".join(spec.get("documents", [])) or "every document type the members exchange"
+        idx.append(f"| [{spec['name']}]({spec_page(lv, key)}.html) | `{u}` | {kinds} |")
+        single = {"transaction": "Transaction of the Trade Accord", "national": "National specification",
+                  "community": "Community specification", "profile": "Process profile of the Trade Accord"}[level]
+        lines = [f"# {spec['name']}", "", f"*{single} in the UBL example world · "
+                 "[all specifications](world-specifications.html)*", "",
+                 f"Identifier: `{u}`", "", spec["purpose"], ""]
+        if level == "national":
+            lines += [f"Owner: {spec['owner']}. It applies to {', '.join(spec['documents'])} "
+                      + ("from a seller in " + world['countries'][spec['country']]['name'] if spec['when'].get('seller_country')
+                         else "to a public body of " + world['countries'][spec['country']]['name'])
+                      + ", on top of the Trade Accord's transaction, and is chained after it.", ""]
+        elif level == "community":
+            lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + ". It applies "
+                      + ("to the documents the members exchange among themselves" if spec["when"] == "between_members"
+                         else f"to the documents of these types in the flows {', '.join(spec['flows'])}")
+                      + ", chained after the transaction and any national specification.", ""]
+        else:
+            owner = world_specs.load()["owner"][level]
+            lines += [f"Owner: {owner}. Version {world_specs.load()['version']}.", ""]
+        lines += [f"Document types: {kinds}.", ""]
+        ex = used.get(u, [])
+        if ex:
+            lines += ["Examples that claim it:", ""] + [f"- [{f} {n}](example-{f}-{n}.html)" for f, n in ex] + [""]
+        open(os.path.join(mddir, spec_page(lv, key) + ".md"), "w", encoding="utf-8").write("\n".join(lines))
+    idx.append("")
+open(os.path.join(mddir, "world-specifications.md"), "w", encoding="utf-8").write("\n".join(idx))
 print(f"world: map, {len(world['parties'])} party pages, {len(world['documents'])} documents")
