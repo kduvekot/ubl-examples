@@ -311,10 +311,10 @@ Inside `BusinessCapability`:
   Where.
 - `WebSite/WebSiteAccess/URI` = **https://www.lumeway.example/login**  
   The login page.
-- `WebSite/WebSiteAccess/Password` = ************  
-  Never shown.
+- `WebSite/WebSiteAccess/Password` = **Tq7-mR4w-Lz9**  
+  The one-time password for the first login, which the extranet asks to be changed at once and accepts only until 2026-05-18: a new customer cannot choose a password before it has an account. It is no secret once used.
 - `WebSite/WebSiteAccess/Login` = **velumi**  
-  The buyer's login.
+  The login the distributor set up for the new customer.
 
 ## The document
 
@@ -561,7 +561,7 @@ Inside `BusinessCapability`:
       <cbc:URI>https://www.lumeway.example/stock</cbc:URI>
       <cac:WebSiteAccess>
         <cbc:URI>https://www.lumeway.example/login</cbc:URI>
-        <cbc:Password>********</cbc:Password>
+        <cbc:Password>Tq7-mR4w-Lz9</cbc:Password>
         <cbc:Login>velumi</cbc:Login>
       </cac:WebSiteAccess>
     </cac:WebSite>

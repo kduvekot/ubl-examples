@@ -3030,6 +3030,19 @@
   },
   {
    "flow": "cotton",
+   "doc": "CommonTransportationReport",
+   "from": "11-xb",
+   "to": "16-xb",
+   "why": "Before entering Lumeport the carrier reports its second feeder to the port. The ship came under Bayvarra's flag in January, so it sails with an interim security certificate, and it carries a sanitation control exemption certificate, as the inspection at Lumeport in January found no control measures needed.",
+   "parties": {
+    "SenderParty": "11-xb",
+    "ReceiverParty": "16-xb",
+    "ReporterParty": "11-xb",
+    "AuthorityParty": "16-xb"
+   }
+  },
+  {
+   "flow": "cotton",
    "doc": "ImportCustomsDeclaration",
    "from": "40-xb",
    "to": "19-xb",

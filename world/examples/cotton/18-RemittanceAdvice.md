@@ -1,10 +1,10 @@
 # Remittance Advice: Lumeport Textile Mill to Selanu Cotton Ginnery
 
-*Example 17 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
+*Example 18 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
 
 The mill pays the island's ginnery: money flows to the island for once.
 
-[The XML file](17-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](18-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The mill pays the island's ginnery: money flows to the island for once.
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **COTTON-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LTM-RM-26-0210**  
+- `ID` = **LTM-RM-26-0212**  
   The payer's remittance number.
-- `UUID` = **ed9864f5-406d-5a5b-96c9-2a83cb412ed1**  
+- `UUID` = **4dead5a1-d2ba-5e05-a95b-17805f866743**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-29**  
   The mill pays the ginnery: money flows to the island.
-- `IssueTime` = **10:40:00**  
+- `IssueTime` = **15:45:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `Note` = **Payment of the invoice below.**  
   What the advice is for.
@@ -40,7 +40,7 @@ The mill pays the island's ginnery: money flows to the island for once.
   The payment order the payer gave its bank.
 - `PayerReference` = **LTM-0191**  
   The payer's own reference for this payment run.
-- `InvoicingPartyReference` = **RF03SCGINV260208**  
+- `InvoicingPartyReference` = **RF46SCGINV260210**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -237,7 +237,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `InstructionID` = **LTM-PAY-26-0191**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF03SCGINV260208** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF46SCGINV260210** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XB35BLUM38020504608076** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -320,7 +320,7 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
-- `InvoicingPartyReference` = **RF03SCGINV260208**  
+- `InvoicingPartyReference` = **RF46SCGINV260210**  
   The reference the invoicing party asked to quote.
 - `AccountingSupplierParty/Party/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -330,11 +330,11 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyName/Name` = **Lumeport Textile Mill**  
   A party referred to from another party's details: its identifier and name are enough.
-- `BillingReference/InvoiceDocumentReference/ID` = **SCG-INV-26-0208**  
+- `BillingReference/InvoiceDocumentReference/ID` = **SCG-INV-26-0210**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-02**  
   Its issue date, so the reference is unambiguous.
-- `DocumentReference/ID` = **SCG-INV-26-0208**  
+- `DocumentReference/ID` = **SCG-INV-26-0210**  
   The invoice paid, as a document reference.
 - `DocumentReference/IssueDate` = **2026-03-02**  
   Its issue date.
@@ -350,10 +350,10 @@ Inside `RemittanceAdviceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-RM-26-0210</cbc:ID>
-  <cbc:UUID>ed9864f5-406d-5a5b-96c9-2a83cb412ed1</cbc:UUID>
+  <cbc:ID>LTM-RM-26-0212</cbc:ID>
+  <cbc:UUID>4dead5a1-d2ba-5e05-a95b-17805f866743</cbc:UUID>
   <cbc:IssueDate>2026-03-29</cbc:IssueDate>
-  <cbc:IssueTime>10:40:00</cbc:IssueTime>
+  <cbc:IssueTime>15:45:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XLC">6055.452</cbc:TotalDebitAmount>
@@ -361,7 +361,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalPaymentAmount currencyID="XLC">6055.452</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>LTM-PAY-26-0191</cbc:PaymentOrderReference>
   <cbc:PayerReference>LTM-0191</cbc:PayerReference>
-  <cbc:InvoicingPartyReference>RF03SCGINV260208</cbc:InvoicingPartyReference>
+  <cbc:InvoicingPartyReference>RF46SCGINV260210</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -525,7 +525,7 @@ Inside `RemittanceAdviceLine`:
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>LTM-PAY-26-0191</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF03SCGINV260208</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF46SCGINV260210</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB35BLUM38020504608076</cbc:ID>
       <cbc:Name>Lumeport Textile Mill Ltd</cbc:Name>
@@ -598,7 +598,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XLC">6055.452</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF03SCGINV260208</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF46SCGINV260210</cbc:InvoicingPartyReference>
     <cac:AccountingSupplierParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -621,12 +621,12 @@ Inside `RemittanceAdviceLine`:
     </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>SCG-INV-26-0208</cbc:ID>
+        <cbc:ID>SCG-INV-26-0210</cbc:ID>
         <cbc:IssueDate>2026-03-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>SCG-INV-26-0208</cbc:ID>
+      <cbc:ID>SCG-INV-26-0210</cbc:ID>
       <cbc:IssueDate>2026-03-02</cbc:IssueDate>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>

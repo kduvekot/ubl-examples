@@ -307,12 +307,12 @@ Inside `SubscriberConsumption`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `UtilityConsumptionPoint/WebSiteAccess/URI` = **https://www.coastalwater.example/meter**  
-  Where the customer sees the readings.
-- `UtilityConsumptionPoint/WebSiteAccess/Password` = ************  
-  Never printed: the customer chose it online.
+- `UtilityConsumptionPoint/WebSiteAccess/URI` = **https://www.coastalwater.example/reading**  
+  Where the household enters its next meter reading, as it entered this one.
+- `UtilityConsumptionPoint/WebSiteAccess/Password` = **RD-4K7-918**  
+  The one-time reading code for the next reading, printed on each statement: it opens the reading page only, from 28 April to 5 May 2026, so a household needs no account to send its reading.
 - `UtilityConsumptionPoint/WebSiteAccess/Login` = **CSW-CP-38516-57**  
-  The customer logs in with the point's number.
+  The household logs in with the number of its connection.
 - `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **CSW-W-71844**  
   The meter.
 - `UtilityConsumptionPoint/UtilityMeter/MeterName` = **Water meter, flat**  
@@ -782,8 +782,8 @@ Inside `SubscriberConsumption`:
         </cac:Country>
       </cac:Address>
       <cac:WebSiteAccess>
-        <cbc:URI>https://www.coastalwater.example/meter</cbc:URI>
-        <cbc:Password>********</cbc:Password>
+        <cbc:URI>https://www.coastalwater.example/reading</cbc:URI>
+        <cbc:Password>RD-4K7-918</cbc:Password>
         <cbc:Login>CSW-CP-38516-57</cbc:Login>
       </cac:WebSiteAccess>
       <cac:UtilityMeter>

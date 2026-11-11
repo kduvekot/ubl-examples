@@ -426,6 +426,14 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
+- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122217** (schemeID `GS1 GRAI`)  
+  The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
+- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
+  The pallet itself.
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/TransportMeans/RegistrationNationality` = **Bayvarra**  
@@ -466,6 +474,14 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
+- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122234** (schemeID `GS1 GRAI`)  
+  The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
+- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
+  The pallet itself.
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/ID` = **095206102170000038** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -488,6 +504,14 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
+- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122251** (schemeID `GS1 GRAI`)  
+  The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
+- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
+  The pallet itself.
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/ID` = **095206102170000045** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -510,6 +534,14 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
+- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122268** (schemeID `GS1 GRAI`)  
+  The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
+- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
+  The pallet itself.
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/ID` = **095206102170000052** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -532,6 +564,14 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
+- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122285** (schemeID `GS1 GRAI`)  
+  The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
+- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
+  The pallet itself.
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/ID` = **095206102170000069** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -554,6 +594,14 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
+- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122302** (schemeID `GS1 GRAI`)  
+  The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
+- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
+  The pallet itself.
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 
 ### Despatch Line
 
@@ -1132,6 +1180,12 @@ Inside `DespatchLine`:
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122217</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
       <cac:TransportMeans>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
@@ -1172,6 +1226,12 @@ Inside `DespatchLine`:
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122234</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
@@ -1193,6 +1253,12 @@ Inside `DespatchLine`:
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122251</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000045</cbc:ID>
@@ -1214,6 +1280,12 @@ Inside `DespatchLine`:
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122268</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000052</cbc:ID>
@@ -1235,6 +1307,12 @@ Inside `DespatchLine`:
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122285</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000069</cbc:ID>
@@ -1256,6 +1334,12 @@ Inside `DespatchLine`:
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122302</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>

@@ -103,7 +103,13 @@ def mod10_iso15459(v):
     return gs1(v)
 
 
-CHECKS = {"iso13616": iso13616, "iso11649": iso11649, "iso6166": iso6166, "iso6346": iso6346, "gs1": gs1,
+def gs1_grai(v):
+    """A GRAI: the filler digit 0, company prefix and asset type (12 digits), the check digit over them, and the
+    asset's serial number."""
+    return gs1_digit(v[:13]) == v[13]
+
+
+CHECKS = {"gs1-grai": gs1_grai, "iso13616": iso13616, "iso11649": iso11649, "iso6166": iso6166, "iso6346": iso6346, "gs1": gs1,
           "uic": uic, "mod11-xu": mod11_xu, "luhn": lambda v: luhn(re.sub(r"\D", "", v)), "iso15459": mod10_iso15459}
 
 

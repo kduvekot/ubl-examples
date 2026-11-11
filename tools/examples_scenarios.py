@@ -12,6 +12,7 @@ from decimal import Decimal
 
 import build_examples
 import examples_kit as kit
+import world_ids
 from build_examples import ITEM, PARTY, WORLD, V, Detail, address, amount, coordinate, item, money, party, price, qty
 
 
@@ -934,6 +935,18 @@ def with_allowance(out, total_key, base, why):
     return base - a
 
 
+def returnable_pallet(k):
+    """The GRAI of one of Lumeway's returnable pallets: GS1 identifies a returnable asset by its Global Returnable
+    Asset Identifier, the filler digit 0, the company prefix, the asset type, a check digit and the asset's serial
+    number (decision ID-Q7)."""
+    prefix = PARTY["6-xb"]["identity"]["identification"]["company_prefix"]
+    body = "0" + prefix + "00001"
+    return V(body + world_ids.gs1_digit(body) + f"{2200 + 17 * k}", "The pallet's Global Returnable Asset Identifier "
+             "(GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each "
+             "carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its "
+             "returnable pallet, the check digit and the pallet's serial number.", schemeID="GS1 GRAI")
+
+
 def retail(n, doc):
     f = RETAIL
     w = kit.gross_weight(f, "ordered")
@@ -1001,6 +1014,11 @@ def retail(n, doc):
         bench = ITEM["bench-serra-b"]
         units = kit.handling_units(f, f.deal, "6-xb", "BRIGHTMARKET LUMEPORT")
         for k, u in enumerate(units, 1):
+            u["ActualPackage"] = {"ID": returnable_pallet(k), "Quantity": qty(1, "EA", "The pallet itself."),
+                                  "ReturnableMaterialIndicator": V("true", "The pallet goes back: the truck takes the "
+                                                                           "store's empty pallets back to the "
+                                                                           "distribution centre."),
+                                  "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}
             u["HandlingUnitDespatchLine"] = {
                 "ID": V(f"{k}", "The pallet's line: the benches on it."),
                 "DeliveredQuantity": qty(4, "EA", "Four benches on the pallet."),
@@ -2806,10 +2824,14 @@ def utility_statement(f, n, doc, key, invoice_no):
                    "SubscriberTypeCode": V(pt["type"][1], "As a code."),
                    "TotalDeliveredQuantity": qty(consumed, unit, "Delivered in March."),
                    "Address": address(subscriber),
-                   "WebSiteAccess": {"URI": V(PARTY[sup]["identity"].get("website", "https://www.example") +
-                                              "/meter", "Where the customer sees the readings."),
-                                     "Login": V(pt["id"], "The customer logs in with the point's number."),
-                                     "Password": V("********", "Never printed: the customer chose it online.")},
+                   **({"WebSiteAccess": {
+                       "URI": V(PARTY[sup]["identity"].get("website", "https://www.example") + "/reading",
+                                "Where the household enters its next meter reading, as it entered this one."),
+                       "Login": V(pt["id"], "The household logs in with the number of its connection."),
+                       "Password": V("RD-4K7-918", "The one-time reading code for the next reading, printed on each "
+                                                   "statement: it opens the reading page only, from 28 April to 5 May "
+                                                   "2026, so a household needs no account to send its reading.")}}
+                      if pt["prev"][3] == "CUSTOMER" else {}),
                    "UtilityMeter": {"MeterNumber": V(pt["meter"][0], "The meter."),
                                     "MeterName": V(pt["meter"][1], "Its name."),
                                     "MeterConstant": V(pt["meter"][2], "The register is multiplied by this."),
@@ -4971,8 +4993,14 @@ def _(f, n, doc, out):
                                                "URI": V("https://www.lumeway.example/stock", "Where."),
                                                "WebSiteAccess": {"URI": V("https://www.lumeway.example/login",
                                                                           "The login page."),
-                                                                 "Login": V("velumi", "The buyer's login."),
-                                                                 "Password": V("********", "Never shown.")}}}}
+                                                                 "Login": V("velumi", "The login the distributor set "
+                                                                                      "up for the new customer."),
+                                                                 "Password": V("Tq7-mR4w-Lz9", "The one-time "
+                                                                     "password for the first login, which the "
+                                                                     "extranet asks to be changed at once and "
+                                                                     "accepts only until " + f.date(14) + ": a new "
+                                                                     "customer cannot choose a password before it "
+                                                                     "has an account. It is no secret once used.")}}}}
 
 
 @enrich("sea", "InvoiceStatusRequest")
@@ -5603,8 +5631,15 @@ def _(f, n, doc, out):
                                                          "(decision ID-Q10)."),
                                    "CertificateType": V("Medicine chest", "Its kind."),
                                    "IssuerParty": party("16-xb", short=True)},
-            "ShipSanitationControlCertificate": {"ID": V("SSCC-XB-2025-0911", "The sanitation control "
-                                                                              "certificate, unique only with its "
+            "ShipSanitationControlCertificate": {"ID": V("SSCC-XB-2026-0318", "The ship sanitation control "
+                                                                              "certificate (International Health "
+                                                                              "Regulations, Annex 3), issued at "
+                                                                              "Lumeport on 18 March 2026: the "
+                                                                              "inspection found traces of cockroaches "
+                                                                              "in the galley stores, which were "
+                                                                              "treated. It replaced the exemption "
+                                                                              "certificate the ship had carried "
+                                                                              "until then. Unique only with its "
                                                                               "issuer (decision ID-Q10)."),
                                                  "CertificateType": V("Ship sanitation control", "Its kind."),
                                                  "IssuerParty": party("16-xb", short=True)}},
@@ -5621,21 +5656,28 @@ def _(f, n, doc, out):
                                                                         unitCode="TNE")},
                             "FuelProviderParty": party("16-xb", short=True)}})
     stage["ISPSRequirements"].update({
-        "ISSCAbsenceReason": V("Not applicable: the certificate is on board.", "Stated, not left out."),
         "SSPOnBoardIndicator": V("true", "The security plan is on board."),
         "SSPSecurityMeasuresAppliedIndicator": V("true", "Its measures were applied."),
-        "AdditionalMattersDescription": V("None.", "Nothing else to report."),
         "ReportLocation": sea_place,
         "ISSCIssuerParty": party("ma-xb", short=True),
         "SecurityOfficerPerson": crew[1],
-        "ShipToShipActivityRecord": {"ID": V("STS-0", "Ship-to-ship activity."),
-                                     "Description": V("None during the last ten port calls.", "The record."),
-                                     "Period": {"StartDate": V("2026-01-01", "Since."), "EndDate": V(f.date(13),
-                                                                                                     "Until now.")},
-                                     "Location": sea_place,
-                                     "AppliedSecurityMeasure": {"ID": V("SM-0", "No measure needed."),
-                                                                "Description": V("None: no ship-to-ship "
-                                                                                 "activity.", "Stated.")}},
+        "ShipToShipActivityRecord": {
+            "ID": V("STS-1", "The ship's one ship-to-ship activity in its last ten calls at port facilities, which "
+                             "the security information before arrival lists (SOLAS XI-2, regulation 9)."),
+            "Description": V("Bunkering: 120 tonnes of marine gas oil from the Port of Lumeport's bunker barge, "
+                             "alongside at the Lumeport anchorage, before the ship berthed.", "What the activity "
+                                                                                              "was."),
+            "Period": {"StartDate": V(f.date(9), "The day of the bunkering."),
+                       "StartTime": V("05:40:00", "The barge made fast."),
+                       "EndDate": V(f.date(9), "The same morning."),
+                       "EndTime": V("08:15:00", "The barge cast off.")},
+            "Location": {"Name": V("Lumeport anchorage", "Where the barge came alongside."),
+                         "LocationCoordinate": coordinate(PARTY["16-xb"]["at"])},
+            "AppliedSecurityMeasure": {"ID": V("SM-STS-1", "The ship's measure for the transfer, from its security "
+                                                           "plan."),
+                                       "Description": V("The barge's crew list checked against the bunker order; "
+                                                        "access limited to the bunker station, with a deck watch "
+                                                        "for the whole transfer.", "What the ship did.")}},
         "AdditionalSecurityMeasure": {"ID": V("SM-1", "An extra measure."),
                                       "Description": V("Gangway watch at Selanu.", "What the ship adds.")},
         "PortCallRecord": {"ID": V("PCR-1", "The last port call."),
@@ -9253,3 +9295,72 @@ def cotton_with_advance(n, doc):
 
 
 SCENARIOS["cotton"] = _with_enrichment("cotton", cotton_with_advance)
+
+
+# ---------------------------------------------------------------- cotton: the feeder's report before Lumeport
+def cotton_ctr(n, doc):
+    """The pre-arrival report of Tidewell's second feeder, which carries the cotton container to Lumeport: an interim
+    security certificate since its change of flag, and a ship sanitation control exemption certificate."""
+    f = COTTON
+    master = kit.person("Hester", "Calloway", "The master.", role="MASTER")
+    return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
+            "IssueDate": V(f.date(29), "Sent the day before the ship enters Lumeport."),
+            "ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
+            "ReportType": V("Pre-arrival report", "In words."),
+            "TransportMeans": kit.means("11-xb", "TR", "TR-26-09W", "The voyage from Selanu back to Lumeport.", "WB"),
+            "Shipment": {"ID": V(f.number("ctr-shipment", doc["from"], "Shipment"), "The carrier's shipment number "
+                                                                                    "for the voyage's cargo."),
+                         "ShipmentStage": {
+                             "ID": V("1", "The sea leg from Selanu to Lumeport."),
+                             "ReportingPerson": master,
+                             "ISPSRequirements": {
+                                 "ID": V("IISSC-XB-2026-0115", "The number of the ship's interim International Ship "
+                                                               "Security Certificate."),
+                                 "ValidISSCIndicator": V("false", "The ship has no full certificate yet."),
+                                 "ISSCAbsenceReason": V("The ship came under Bayvarra's flag on 15 January 2026 and "
+                                                        "sails with an interim certificate (ISPS Code A/19.4), valid "
+                                                        "for six months; the flag state's verification for the full "
+                                                        "certificate is set for April.", "Why the ship has no full "
+                                                                                         "certificate, which the "
+                                                                                         "port needs to know."),
+                                 "ISSCExpiryDate": V("2026-07-14", "The interim certificate's last day: six months, "
+                                                                   "the most the ISPS Code allows."),
+                                 "CurrentOperatingSecurityLevelCode": V("1", "Security level 1, the normal level."),
+                                 "SSPOnBoardIndicator": V("true", "The ship security plan is on board."),
+                                 "AdditionalMattersDescription": V("The ship was searched for stowaways before it "
+                                                                   "left Selanu, because the port facility had "
+                                                                   "reported a gap in its perimeter fence on 1 March. "
+                                                                   "Nothing was found.", "A security matter the port "
+                                                                                         "should know about."),
+                                 "ISSCIssuerParty": party("ma-xb", short=True)},
+                             "MaritimeHealthDeclaration": {
+                                 "ID": V("MDH-26-0303", "The maritime declaration of health."),
+                                 "InfectiousDiseaseCaseOnBoardIndicator": V("false", "No infectious disease."),
+                                 "SanitaryMeasuresAppliedIndicator": V("false", "No sanitary measures on this "
+                                                                                "voyage."),
+                                 "ValidSanitationCertificateOnBoardIndicator": V("true", "The exemption certificate "
+                                                                                         "is valid until July."),
+                                 "TotalIllPersonQuantity": qty(0, "IE", "No one ill."),
+                                 "ShipSanitationControlExemptionDocumentReference": {
+                                     "ID": V("SSCEC-XB-2026-0114", "The ship sanitation control exemption "
+                                                                   "certificate: the ship carries it instead of a "
+                                                                   "control certificate. Unique only with its issuer "
+                                                                   "(decision ID-Q10)."),
+                                     "IssueDate": V("2026-01-14", "Issued after the inspection at Lumeport, before "
+                                                                  "the ship's first voyage for the line; valid six "
+                                                                  "months."),
+                                     "DocumentDescription": V("Ship Sanitation Control Exemption Certificate "
+                                                              "(International Health Regulations 2005, Annex 3): "
+                                                              "the inspection found no evidence of infection or "
+                                                              "contamination, so no control measures were needed.",
+                                                              "What the document is."),
+                                     "IssuerParty": party("16-xb", short=True)}}}}}
+
+
+def cotton_complete(n, doc):
+    if doc["doc"] == "CommonTransportationReport":
+        return cotton_ctr(n, doc)
+    return cotton_with_advance(n, doc)
+
+
+SCENARIOS["cotton"] = _with_enrichment("cotton", cotton_complete)

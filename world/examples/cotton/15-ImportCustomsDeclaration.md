@@ -1,10 +1,10 @@
 # Import Customs Declaration: Lumeport Textile Mill to Customs and Border Service of Bayvarra
 
-*Example 14 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 15 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
 The mill declares the bales in Bayvarra.
 
-[The XML file](14-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](15-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The mill declares the bales in Bayvarra.
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **COTTON-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LTM-IM-26-0207**  
+- `ID` = **LTM-IM-26-0209**  
   The importer's declaration number.
-- `UUID` = **05608999-cebf-586d-b579-9e192f9575f3**  
+- `UUID` = **e09b21a0-357c-579c-b883-6abdf4d32750**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-06**  
   The mill declares the bales in Bayvarra.
-- `IssueTime` = **11:22:00**  
+- `IssueTime` = **15:32:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   An import declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
@@ -446,10 +446,10 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-IM-26-0207</cbc:ID>
-  <cbc:UUID>05608999-cebf-586d-b579-9e192f9575f3</cbc:UUID>
+  <cbc:ID>LTM-IM-26-0209</cbc:ID>
+  <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
-  <cbc:IssueTime>11:22:00</cbc:IssueTime>
+  <cbc:IssueTime>15:32:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>

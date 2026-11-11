@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-IM-26-0207</cbc:ID>
-  <cbc:UUID>05608999-cebf-586d-b579-9e192f9575f3</cbc:UUID>
+  <cbc:ID>LTM-IM-26-0209</cbc:ID>
+  <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
-  <cbc:IssueTime>11:22:00</cbc:IssueTime>
+  <cbc:IssueTime>15:32:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>

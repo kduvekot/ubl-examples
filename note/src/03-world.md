@@ -342,7 +342,8 @@ Each party identifies what it makes, ships and runs in one convention, as
 real companies do. The distributor, the department store and the furniture
 maker work the GS1 way: a GTIN for their items, a GLN for themselves and their
 places (the distribution centre's rail siding, the store's goods-in), an SSCC
-for every pallet or skid they make up. Their company prefixes start with
+for every pallet or skid they make up, and a GRAI for the distributor's own
+returnable pallets, which go back to it after each delivery to the store. Their company prefixes start with
 952, which GS1 reserves for demonstrations and examples. The bench maker,
 its warehouse, the packaging maker, the power station and the grid operator
 work the ISO way, through the Codana Identification Agency, which is
@@ -436,6 +437,16 @@ stowed next to a package with a class 3 label. A subsidiary hazard has no
 emergency schedule of its own in the IMDG Code, which gives one per UN entry;
 the road rules give the crew's actions per hazard label, so the subsidiary
 hazard names the Accord's emergency card of its class.
+
+A ship reports to the port before it arrives, with its security and health
+certificates. The ocean carrier's second feeder came under Bayvarra's flag in
+January: it sails with an interim security certificate and says why, and it
+carries a sanitation control exemption certificate, which the port health
+office issues when an inspection finds no control measures needed; the first
+feeder carries a sanitation control certificate, as its inspection found pests
+in the galley stores. The security report lists the ship-to-ship activities of
+the last ten port calls, here a bunkering from the port's barge, with the
+measure the ship took.
 
 The vehicles on the map are these legs: one truck, train, barge, ship or
 aircraft per leg, travelling the way the build found for it, from the

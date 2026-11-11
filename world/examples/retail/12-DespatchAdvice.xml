@@ -347,6 +347,12 @@
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122217</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
       <cac:TransportMeans>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
@@ -387,6 +393,12 @@
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122234</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
@@ -408,6 +420,12 @@
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122251</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000045</cbc:ID>
@@ -429,6 +447,12 @@
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122268</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000052</cbc:ID>
@@ -450,6 +474,12 @@
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122285</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000069</cbc:ID>
@@ -471,6 +501,12 @@
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
+      <cac:ActualPackage>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122302</cbc:ID>
+        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:ActualPackage>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>

@@ -347,12 +347,6 @@ Inside `SubscriberConsumption`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `UtilityConsumptionPoint/WebSiteAccess/URI` = **https://www.coastalwater.example/meter**  
-  Where the customer sees the readings.
-- `UtilityConsumptionPoint/WebSiteAccess/Password` = ************  
-  Never printed: the customer chose it online.
-- `UtilityConsumptionPoint/WebSiteAccess/Login` = **CSW-CP-38510-411**  
-  The customer logs in with the point's number.
 - `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **CSW-W-55102**  
   The meter.
 - `UtilityConsumptionPoint/UtilityMeter/MeterName` = **Water meter, shop**  
@@ -814,11 +808,6 @@ Inside `SubscriberConsumption`:
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:Address>
-      <cac:WebSiteAccess>
-        <cbc:URI>https://www.coastalwater.example/meter</cbc:URI>
-        <cbc:Password>********</cbc:Password>
-        <cbc:Login>CSW-CP-38510-411</cbc:Login>
-      </cac:WebSiteAccess>
       <cac:UtilityMeter>
         <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
         <cbc:MeterName>Water meter, shop</cbc:MeterName>

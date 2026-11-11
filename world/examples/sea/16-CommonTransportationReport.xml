@@ -442,12 +442,10 @@
       <cac:ISPSRequirements>
         <cbc:ID>ISSC-XB-2023-0117</cbc:ID>
         <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
-        <cbc:ISSCAbsenceReason>Not applicable: the certificate is on board.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
         <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
         <cbc:SSPSecurityMeasuresAppliedIndicator>true</cbc:SSPSecurityMeasuresAppliedIndicator>
         <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
-        <cbc:AdditionalMattersDescription>None.</cbc:AdditionalMattersDescription>
         <cac:AdditionalSecurityMeasure>
           <cbc:ID>SM-1</cbc:ID>
           <cbc:Description>Gangway watch at Selanu.</cbc:Description>
@@ -473,18 +471,29 @@
           </cac:Period>
         </cac:PortCallRecord>
         <cac:ShipToShipActivityRecord>
-          <cbc:ID>STS-0</cbc:ID>
-          <cbc:Description>None during the last ten port calls.</cbc:Description>
+          <cbc:ID>STS-1</cbc:ID>
+          <cbc:Description>Bunkering: 120 tonnes of marine gas oil from the Port of Lumeport's bunker barge, alongside at the Lumeport anchorage, before the ship berthed.</cbc:Description>
           <cac:AppliedSecurityMeasure>
-            <cbc:ID>SM-0</cbc:ID>
-            <cbc:Description>None: no ship-to-ship activity.</cbc:Description>
+            <cbc:ID>SM-STS-1</cbc:ID>
+            <cbc:Description>The barge's crew list checked against the bunker order; access limited to the bunker station, with a deck watch for the whole transfer.</cbc:Description>
           </cac:AppliedSecurityMeasure>
           <cac:Period>
-            <cbc:StartDate>2026-01-01</cbc:StartDate>
-            <cbc:EndDate>2026-05-17</cbc:EndDate>
+            <cbc:StartDate>2026-05-13</cbc:StartDate>
+            <cbc:StartTime>05:40:00</cbc:StartTime>
+            <cbc:EndDate>2026-05-13</cbc:EndDate>
+            <cbc:EndTime>08:15:00</cbc:EndTime>
           </cac:Period>
           <cac:Location>
-            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+            <cbc:Name>Lumeport anchorage</cbc:Name>
+            <cac:LocationCoordinate>
+              <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+              <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
+              <cbc:LatitudeMinutesMeasure unitCode="D61">1.20</cbc:LatitudeMinutesMeasure>
+              <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+              <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+              <cbc:LongitudeMinutesMeasure unitCode="D61">12.60</cbc:LongitudeMinutesMeasure>
+              <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+            </cac:LocationCoordinate>
           </cac:Location>
         </cac:ShipToShipActivityRecord>
         <cac:ReportLocation>
@@ -571,7 +580,7 @@
           </cac:IssuerParty>
         </cac:MedicalCertificate>
         <cac:ShipSanitationControlCertificate>
-          <cbc:ID>SSCC-XB-2025-0911</cbc:ID>
+          <cbc:ID>SSCC-XB-2026-0318</cbc:ID>
           <cbc:CertificateType>Ship sanitation control</cbc:CertificateType>
           <cac:IssuerParty>
             <cac:PartyIdentification>

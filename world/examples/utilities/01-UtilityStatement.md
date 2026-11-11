@@ -357,12 +357,6 @@ Inside `SubscriberConsumption`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `UtilityConsumptionPoint/WebSiteAccess/URI` = **https://www.ferranoenergy.example/meter**  
-  Where the customer sees the readings.
-- `UtilityConsumptionPoint/WebSiteAccess/Password` = ************  
-  Never printed: the customer chose it online.
-- `UtilityConsumptionPoint/WebSiteAccess/Login` = **FE-CP-4120-01**  
-  The customer logs in with the point's number.
 - `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **FE-M-881204**  
   The meter.
 - `UtilityConsumptionPoint/UtilityMeter/MeterName` = **Main meter, factory**  
@@ -847,11 +841,6 @@ Inside `SubscriberConsumption`:
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:Address>
-      <cac:WebSiteAccess>
-        <cbc:URI>https://www.ferranoenergy.example/meter</cbc:URI>
-        <cbc:Password>********</cbc:Password>
-        <cbc:Login>FE-CP-4120-01</cbc:Login>
-      </cac:WebSiteAccess>
       <cac:UtilityMeter>
         <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>

@@ -2798,6 +2798,12 @@
    "check": "gs1",
    "format": "extension digit 0, the company prefix (952 and four digits), a nine-digit serial reference and the check digit"
   },
+  "GS1 GRAI": {
+   "name": "GS1 Global Returnable Asset Identifier",
+   "pattern": "^0952\\d{10}\\d{1,16}$",
+   "check": "gs1-grai",
+   "format": "the filler digit 0, the company prefix (952 and four digits), a five-digit asset type, the check digit and the asset's serial number (up to 16 characters; the world uses digits)"
+  },
   "ISO 6523": {
    "name": "ISO/IEC 6523 organisation identifier",
    "pattern": "^0990:\\d{5}$",

@@ -650,26 +650,27 @@
       store and the furniture maker work the GS1 way: a GTIN for their
       items, a GLN for themselves and their places (the distribution
       centre's rail siding, the store's goods-in), an SSCC for every
-      pallet or skid they make up. Their company prefixes start with
-      952, which GS1 reserves for demonstrations and examples. The bench
-      maker, its warehouse, the packaging maker, the power station and
-      the grid operator work the ISO way, through the Codana
-      Identification Agency, which is Urvania's public numbering body: a
-      Codana item number, an organisation identifier in the structure of
-      ISO/IEC 6523 with the code designator 0990, which no real scheme
-      has, and licence plates for their transport units in the structure
-      of ISO/IEC 15459, under the issuing agency code
-      <literal>KXU</literal> (<literal>K</literal> is the range for
-      national public administrations, and XU is a user-assigned country
-      code, so no real agency can hold it). The engineering company, the
-      sawmill, the island's cotton farm and ginnery and the utilities
-      use only their own numbers. A reseller shows its own item number
-      and the maker's; where the maker has no GTIN, the GS1 distributor
-      gives the item one of its own, as GS1 allows a wholesaler or
-      importer to do, and the maker's Codana number travels with it.
-      Inner packages have local numbers without a scheme. A logistic
-      unit has the same identifier in every document of its flow, which
-      the build checks.
+      pallet or skid they make up, and a GRAI for the distributor's own
+      returnable pallets, which go back to it after each delivery to the
+      store. Their company prefixes start with 952, which GS1 reserves
+      for demonstrations and examples. The bench maker, its warehouse,
+      the packaging maker, the power station and the grid operator work
+      the ISO way, through the Codana Identification Agency, which is
+      Urvania's public numbering body: a Codana item number, an
+      organisation identifier in the structure of ISO/IEC 6523 with the
+      code designator 0990, which no real scheme has, and licence plates
+      for their transport units in the structure of ISO/IEC 15459, under
+      the issuing agency code <literal>KXU</literal>
+      (<literal>K</literal> is the range for national public
+      administrations, and XU is a user-assigned country code, so no
+      real agency can hold it). The engineering company, the sawmill,
+      the island's cotton farm and ginnery and the utilities use only
+      their own numbers. A reseller shows its own item number and the
+      maker's; where the maker has no GTIN, the GS1 distributor gives
+      the item one of its own, as GS1 allows a wholesaler or importer to
+      do, and the maker's Codana number travels with it. Inner packages
+      have local numbers without a scheme. A logistic unit has the same
+      identifier in every document of its flow, which the build checks.
     </para>
     <para>
       Items connect the chains. The park bench is made with slats from
@@ -779,6 +780,18 @@
       one per UN entry; the road rules give the crew's actions per
       hazard label, so the subsidiary hazard names the Accord's
       emergency card of its class.
+    </para>
+    <para>
+      A ship reports to the port before it arrives, with its security
+      and health certificates. The ocean carrier's second feeder came
+      under Bayvarra's flag in January: it sails with an interim
+      security certificate and says why, and it carries a sanitation
+      control exemption certificate, which the port health office issues
+      when an inspection finds no control measures needed; the first
+      feeder carries a sanitation control certificate, as its inspection
+      found pests in the galley stores. The security report lists the
+      ship-to-ship activities of the last ten port calls, here a
+      bunkering from the port's barge, with the measure the ship took.
     </para>
     <para>
       The vehicles on the map are these legs: one truck, train, barge,

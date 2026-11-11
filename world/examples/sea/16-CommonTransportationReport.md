@@ -558,8 +558,6 @@ Inside `Shipment`:
   The number of the ship's International Ship Security Certificate, issued by its flag state, Bayvarra.
 - `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **true**  
   The ship holds a valid security certificate.
-- `ShipmentStage/ISPSRequirements/ISSCAbsenceReason` = **Not applicable: the certificate is on board.**  
-  Stated, not left out.
 - `ShipmentStage/ISPSRequirements/ISSCExpiryDate` = **2028-09-30**  
   The certificate is valid for five years from its issue.
 - `ShipmentStage/ISPSRequirements/SSPOnBoardIndicator` = **true**  
@@ -568,8 +566,6 @@ Inside `Shipment`:
   Its measures were applied.
 - `ShipmentStage/ISPSRequirements/CurrentOperatingSecurityLevelCode` = **1** (listID `IMO ISPS security level`)  
   Security level 1, the normal level. The code is from the world's copy of IMO ISPS Code security level: 1 = Security level 1.
-- `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **None.**  
-  Nothing else to report.
 - `ShipmentStage/ISPSRequirements/AdditionalSecurityMeasure/ID` = **SM-1**  
   An extra measure.
 - `ShipmentStage/ISPSRequirements/AdditionalSecurityMeasure/Description` = **Gangway watch at Selanu.**  
@@ -590,20 +586,38 @@ Inside `Shipment`:
   Arrived.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/Period/EndDate` = **2026-05-14**  
   Sailed.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/ID` = **STS-0**  
-  Ship-to-ship activity.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Description` = **None during the last ten port calls.**  
-  The record.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/ID` = **SM-0**  
-  No measure needed.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/Description` = **None: no ship-to-ship activity.**  
-  Stated.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartDate` = **2026-01-01**  
-  Since.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndDate` = **2026-05-17**  
-  Until now.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/Name` = **At sea, 120 nautical miles west of Selanu**  
-  Where.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/ID` = **STS-1**  
+  The ship's one ship-to-ship activity in its last ten calls at port facilities, which the security information before arrival lists (SOLAS XI-2, regulation 9).
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Description` = **Bunkering: 120 tonnes of marine gas oil from the Port of Lumeport's bunker barge, alongside at the Lumeport anchorage, before the ship berthed.**  
+  What the activity was.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/ID` = **SM-STS-1**  
+  The ship's measure for the transfer, from its security plan.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/Description` = **The barge's crew list checked against the bunker order; access limited to the bunker station, with a deck watch for the whole transfer.**  
+  What the ship did.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartDate` = **2026-05-13**  
+  The day of the bunkering.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartTime` = **05:40:00**  
+  The barge made fast.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndDate` = **2026-05-13**  
+  The same morning.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndTime` = **08:15:00**  
+  The barge cast off.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/Name` = **Lumeport anchorage**  
+  Where the barge came alongside.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
+  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDegreesMeasure` = **40** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeMinutesMeasure` = **1.20** (unitCode `D61`)  
+  The minutes of the latitude.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
+  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeMinutesMeasure` = **12.60** (unitCode `D61`)  
+  The minutes of the longitude.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
+  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `ShipmentStage/ISPSRequirements/ReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
   Where.
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **20413014** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -698,8 +712,8 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyName/Name` = **Port of Lumeport**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/ID` = **SSCC-XB-2025-0911**  
-  The sanitation control certificate, unique only with its issuer (decision ID-Q10).
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/ID` = **SSCC-XB-2026-0318**  
+  The ship sanitation control certificate (International Health Regulations, Annex 3), issued at Lumeport on 18 March 2026: the inspection found traces of cockroaches in the galley stores, which were treated. It replaced the exemption certificate the ship had carried until then. Unique only with its issuer (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/CertificateType` = **Ship sanitation control**  
   Its kind.
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -1247,12 +1261,10 @@ Inside `Signature`:
       <cac:ISPSRequirements>
         <cbc:ID>ISSC-XB-2023-0117</cbc:ID>
         <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
-        <cbc:ISSCAbsenceReason>Not applicable: the certificate is on board.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
         <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
         <cbc:SSPSecurityMeasuresAppliedIndicator>true</cbc:SSPSecurityMeasuresAppliedIndicator>
         <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
-        <cbc:AdditionalMattersDescription>None.</cbc:AdditionalMattersDescription>
         <cac:AdditionalSecurityMeasure>
           <cbc:ID>SM-1</cbc:ID>
           <cbc:Description>Gangway watch at Selanu.</cbc:Description>
@@ -1278,18 +1290,29 @@ Inside `Signature`:
           </cac:Period>
         </cac:PortCallRecord>
         <cac:ShipToShipActivityRecord>
-          <cbc:ID>STS-0</cbc:ID>
-          <cbc:Description>None during the last ten port calls.</cbc:Description>
+          <cbc:ID>STS-1</cbc:ID>
+          <cbc:Description>Bunkering: 120 tonnes of marine gas oil from the Port of Lumeport's bunker barge, alongside at the Lumeport anchorage, before the ship berthed.</cbc:Description>
           <cac:AppliedSecurityMeasure>
-            <cbc:ID>SM-0</cbc:ID>
-            <cbc:Description>None: no ship-to-ship activity.</cbc:Description>
+            <cbc:ID>SM-STS-1</cbc:ID>
+            <cbc:Description>The barge's crew list checked against the bunker order; access limited to the bunker station, with a deck watch for the whole transfer.</cbc:Description>
           </cac:AppliedSecurityMeasure>
           <cac:Period>
-            <cbc:StartDate>2026-01-01</cbc:StartDate>
-            <cbc:EndDate>2026-05-17</cbc:EndDate>
+            <cbc:StartDate>2026-05-13</cbc:StartDate>
+            <cbc:StartTime>05:40:00</cbc:StartTime>
+            <cbc:EndDate>2026-05-13</cbc:EndDate>
+            <cbc:EndTime>08:15:00</cbc:EndTime>
           </cac:Period>
           <cac:Location>
-            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+            <cbc:Name>Lumeport anchorage</cbc:Name>
+            <cac:LocationCoordinate>
+              <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+              <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
+              <cbc:LatitudeMinutesMeasure unitCode="D61">1.20</cbc:LatitudeMinutesMeasure>
+              <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+              <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+              <cbc:LongitudeMinutesMeasure unitCode="D61">12.60</cbc:LongitudeMinutesMeasure>
+              <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+            </cac:LocationCoordinate>
           </cac:Location>
         </cac:ShipToShipActivityRecord>
         <cac:ReportLocation>
@@ -1376,7 +1399,7 @@ Inside `Signature`:
           </cac:IssuerParty>
         </cac:MedicalCertificate>
         <cac:ShipSanitationControlCertificate>
-          <cbc:ID>SSCC-XB-2025-0911</cbc:ID>
+          <cbc:ID>SSCC-XB-2026-0318</cbc:ID>
           <cbc:CertificateType>Ship sanitation control</cbc:CertificateType>
           <cac:IssuerParty>
             <cac:PartyIdentification>

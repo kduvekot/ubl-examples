@@ -1749,6 +1749,28 @@
      "crew": 14,
      "config": "FEEDER",
      "capacity_teu": 1000
+    },
+    {
+     "id": "TR",
+     "kind": "sea",
+     "name": "Tidewell Reef",
+     "type": "1511",
+     "vessel_id": "XB-S-20231",
+     "call_sign": "QBTR4",
+     "mmsi": "298702231",
+     "gross_t": "7480",
+     "net_t": "3910",
+     "registry": "Lumeport",
+     "ballast": "1900",
+     "voyage": "TR-26-09W",
+     "master": {
+      "first": "Hester",
+      "family": "Calloway"
+     },
+     "crew": 12,
+     "config": "FEEDER",
+     "capacity_teu": 700,
+     "description": "The line's second feeder, bought second-hand in December 2025 and moved to Bayvarra's flag on 15 January 2026. Until the flag state verifies its security system, it sails with an interim International Ship Security Certificate (ISPS Code A/19.4)."
     }
    ]
   },
