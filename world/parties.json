@@ -34,11 +34,13 @@
      "BuildingNumber": "10",
      "CityName": "Serravona",
      "PostalZone": "4110",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4170202741471003"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU56CREV0000104729"
+     "number": "XU420351041700000000104729",
+     "branch": "03510-41700"
     },
     "industry": "0710",
     "website": "https://www.serravona.example",
@@ -99,11 +101,13 @@
      "BuildingNumber": "17",
      "CityName": "Ferrano",
      "PostalZone": "4120",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160200467394686"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU20CREV0000209458"
+     "number": "XU790351041600000000209458",
+     "branch": "03510-41600"
     },
     "industry": "3100",
     "website": "https://www.valdara.example",
@@ -189,11 +193,13 @@
      "BuildingNumber": "24",
      "CityName": "Ferrano",
      "PostalZone": "4130",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160203920705699"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU81CREV0000314187"
+     "number": "XU430351041600000000314187",
+     "branch": "03510-41600"
     },
     "industry": "5210",
     "website": "https://www.castrano.example",
@@ -269,11 +275,13 @@
      "BuildingNumber": "31",
      "CityName": "Ferrano",
      "PostalZone": "4140",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160202983340277"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU45CREV0000418916"
+     "number": "XU700351041620000000418916",
+     "branch": "03510-41620"
     },
     "industry": "3830",
     "website": "https://www.rinova.example",
@@ -334,11 +342,13 @@
      "BuildingNumber": "38",
      "CityName": "Serravona",
      "PostalZone": "4150",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4170201115930918"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU09CREV0000523645"
+     "number": "XU920351041700000000523645",
+     "branch": "03510-41700"
     },
     "industry": "4912",
     "website": "https://www.ferranorail.example",
@@ -415,11 +425,13 @@
      "BuildingNumber": "45",
      "CityName": "Ferrano",
      "PostalZone": "4160",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160203746888095"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU70CREV0000628374"
+     "number": "XU320351041600000000628374",
+     "branch": "03510-41600"
     },
     "industry": "4923",
     "website": "https://www.trasvia.example",
@@ -492,11 +504,13 @@
      "BuildingNumber": "52",
      "CityName": "Ferrano",
      "PostalZone": "4170",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160204198475331"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU34CREV0000733103"
+     "number": "XU590351041620000000733103",
+     "branch": "03510-41620"
     },
     "industry": "5022",
     "website": "https://www.fiumella.example",
@@ -566,7 +580,8 @@
      "BuildingNumber": "59",
      "CityName": "Ferrano",
      "PostalZone": "4180",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160200139820702"
     },
     "industry": "5221",
     "website": "https://www.ferranohub.example",
@@ -619,7 +634,8 @@
      "BuildingName": "Palazzo Crevalto",
      "Floor": "3",
      "Room": "301",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160202566161231"
     },
     "bank_code": "CREV",
     "industry": "6419",
@@ -641,10 +657,25 @@
       "id": "XU0001042337"
      }
     },
-    "branch": {
-     "id": "CREV-001",
-     "name": "Main branch"
-    }
+    "bic": "CREVXUFR",
+    "abi": "03510",
+    "branches": [
+     {
+      "id": "03510-41600",
+      "name": "Ferrano main branch",
+      "city": "Ferrano"
+     },
+     {
+      "id": "03510-41620",
+      "name": "Ferrano Porta Nord",
+      "city": "Ferrano"
+     },
+     {
+      "id": "03510-41700",
+      "name": "Serravona branch",
+      "city": "Serravona"
+     }
+    ]
    }
   },
   {
@@ -680,7 +711,8 @@
      "BuildingNumber": "15",
      "CityName": "Ferrano",
      "PostalZone": "4110",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160202319527073"
     },
     "industry": "9411",
     "language": "en"
@@ -722,7 +754,8 @@
      "CityName": "Ferrano",
      "PostalZone": "4120",
      "Postbox": "PB 18",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160202968066555"
     },
     "industry": "8411",
     "language": "en"
@@ -762,7 +795,8 @@
      "BuildingNumber": "29",
      "CityName": "Ferrano",
      "PostalZone": "4130",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160200261972596"
     },
     "industry": "8299",
     "language": "en",
@@ -812,7 +846,8 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71213",
-     "CountrySubentityCode": "XB-UL"
+     "CountrySubentityCode": "XB-UL",
+     "ID": "UL-ADR-479100"
     },
     "industry": "8411",
     "language": "en"
@@ -859,12 +894,14 @@
      "BlockName": "Marrowdale Business Park",
      "PlotIdentification": "Plot 14",
      "AdditionalStreetName": "Gate 3",
-     "CountrySubentityCode": "XB-UL"
+     "CountrySubentityCode": "XB-UL",
+     "ID": "UL-ADR-693911"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB18BLUM0001466206",
-     "alias": "Lumeway receivables"
+     "number": "XB19BLUM38712001466206",
+     "alias": "Lumeway receivables",
+     "branch": "387120"
     },
     "industry": "4649",
     "website": "https://www.lumeway.example",
@@ -938,11 +975,13 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38515",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-579130"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB79BLUM0001570935"
+     "number": "XB48BLUM38010001570935",
+     "branch": "380100"
     },
     "industry": "4719",
     "website": "https://www.brightmarket.example",
@@ -1022,7 +1061,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38516",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-934215"
     },
     "person_name": {
      "first": "Robin",
@@ -1030,7 +1070,8 @@
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB95BLUM0007251840"
+     "number": "XB64BLUM38010007251840",
+     "branch": "380100"
     },
     "mandate": {
      "id": "CSW-DD-2024-08812",
@@ -1081,7 +1122,8 @@
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB07BLUM0001780393"
+     "number": "XB73BLUM38010001780393",
+     "branch": "380100"
     },
     "industry": "8411",
     "language": "en",
@@ -1131,11 +1173,13 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71218",
-     "CountrySubentityCode": "XB-UL"
+     "CountrySubentityCode": "XB-UL",
+     "ID": "UL-ADR-587295"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB68BLUM0001885122"
+     "number": "XB69BLUM38712001885122",
+     "branch": "387120"
     },
     "industry": "4290",
     "language": "en",
@@ -1179,7 +1223,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38519",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-075593"
     },
     "industry": "8423",
     "language": "en"
@@ -1219,7 +1264,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38520",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-634627"
     },
     "industry": "8411",
     "language": "en"
@@ -1260,7 +1306,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38521",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-268189"
     },
     "industry": "9411",
     "language": "en"
@@ -1301,11 +1348,13 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38522",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-891505"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB21BLUM0002304038"
+     "number": "XB51BLUM38020502304038",
+     "branch": "380205"
     },
     "industry": "6499",
     "website": "https://www.harbourline.example",
@@ -1359,7 +1408,8 @@
      "Floor": "3",
      "Room": "301",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-190996"
     },
     "bank_code": "BLUM",
     "industry": "6419",
@@ -1376,10 +1426,29 @@
      },
      "capital": 75000000
     },
-    "branch": {
-     "id": "BLUM-001",
-     "name": "Main branch"
-    }
+    "bic": "BLUMXBLX",
+    "branches": [
+     {
+      "id": "380100",
+      "name": "Main branch, Exchange Street",
+      "city": "Lumeport"
+     },
+     {
+      "id": "380205",
+      "name": "Harbour branch",
+      "city": "Lumeport"
+     },
+     {
+      "id": "387120",
+      "name": "Marrowdale branch",
+      "city": "Marrowdale"
+     },
+     {
+      "id": "385220",
+      "name": "Gullhaven branch",
+      "city": "Gullhaven"
+     }
+    ]
    }
   },
   {
@@ -1418,7 +1487,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38524",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-308716"
     },
     "industry": "6512",
     "website": "https://www.wavesure.example",
@@ -1470,11 +1540,13 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38525",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-953846"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB10BLUM0002618225"
+     "number": "XB40BLUM38020502618225",
+     "branch": "380205"
     },
     "industry": "5229",
     "website": "https://www.bayforth.example",
@@ -1553,7 +1625,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38526",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-030762"
     },
     "industry": "5222",
     "website": "https://www.port-lumeport.example",
@@ -1610,7 +1683,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38527",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-547539"
     },
     "industry": "5012",
     "website": "https://www.tidewell.example",
@@ -1690,7 +1764,8 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38528",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-060495"
     },
     "industry": "5223",
     "website": "https://www.lumeport-cargo.example",
@@ -1750,7 +1825,8 @@
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "32",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "63597165"
     },
     "industry": "5222",
     "website": "https://www.port-selanu.example",
@@ -1805,7 +1881,8 @@
     "address": {
      "StreetName": "Airfield Road",
      "BuildingNumber": "39",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "78560776"
     },
     "industry": "5223",
     "website": "https://www.selanu-cargo.example",
@@ -1853,7 +1930,8 @@
     "address": {
      "StreetName": "Airfield Road",
      "BuildingNumber": "46",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "58930746"
     },
     "industry": "5120",
     "website": "https://www.kelaro.example",
@@ -1912,7 +1990,8 @@
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "53",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "65334843"
     },
     "industry": "8411",
     "language": "en"
@@ -1948,11 +2027,13 @@
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "60",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "24307810"
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL85BSEL0003456057"
+     "number": "XL15BSEL0010003456057",
+     "branch": "001"
     },
     "industry": "5229",
     "website": "https://www.tevaro.example",
@@ -2003,11 +2084,13 @@
     "address": {
      "StreetName": "Lagoon Road",
      "BuildingNumber": "9",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "95940358"
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL49BSEL0003560786"
+     "number": "XL76BSEL0010003560786",
+     "branch": "001"
     },
     "industry": "5210",
     "website": "https://www.nalevi.example",
@@ -2063,11 +2146,13 @@
     "address": {
      "StreetName": "Reef Street",
      "BuildingNumber": "16",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "40351721"
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL13BSEL0003665515"
+     "number": "XL40BSEL0010003665515",
+     "branch": "001"
     },
     "industry": "4649",
     "website": "https://www.velumi.example",
@@ -2122,7 +2207,8 @@
      "CityName": "Selanu",
      "BuildingName": "Reef House",
      "Floor": "3",
-     "Room": "301"
+     "Room": "301",
+     "ID": "43164138"
     },
     "bank_code": "BSEL",
     "industry": "6419",
@@ -2139,10 +2225,19 @@
      },
      "capital": 9000000
     },
-    "branch": {
-     "id": "BSEL-001",
-     "name": "Main branch"
-    }
+    "bic": "BSELXLSL",
+    "branches": [
+     {
+      "id": "001",
+      "name": "Main branch",
+      "city": "Selanu"
+     },
+     {
+      "id": "002",
+      "name": "Market branch",
+      "city": "Selanu"
+     }
+    ]
    }
   },
   {
@@ -2175,7 +2270,8 @@
     "address": {
      "StreetName": "Reef Street",
      "BuildingNumber": "30",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "95763809"
     },
     "industry": "9411",
     "language": "en"
@@ -2212,7 +2308,8 @@
     "address": {
      "StreetName": "Wharf Road",
      "BuildingNumber": "37",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "44886737"
     },
     "industry": "8413",
     "language": "en"
@@ -2252,11 +2349,13 @@
      "BuildingNumber": "9",
      "CityName": "Ferrano",
      "PostalZone": "4150",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160202777983743"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU46CREV0004084431"
+     "number": "XU080351041600000004084431",
+     "branch": "03510-41600"
     },
     "industry": "3510",
     "website": "https://www.ferranoenergy.example",
@@ -2313,11 +2412,13 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38500",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-782593"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB52BLUM0004189160"
+     "number": "XB21BLUM38010004189160",
+     "branch": "380100"
     },
     "industry": "3600",
     "website": "https://www.coastalwater.example",
@@ -2368,12 +2469,14 @@
     "address": {
      "StreetName": "Mast Hill Road",
      "BuildingNumber": "58",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "34928611"
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL88BSEL0004293889",
-     "ledger": "CORAL-NET-L1"
+     "number": "XL18BSEL0010004293889",
+     "ledger": "CORAL-NET-L1",
+     "branch": "001"
     },
     "industry": "6110",
     "website": "https://www.selanutelecom.example",
@@ -2432,11 +2535,13 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71202",
-     "CountrySubentityCode": "XB-UL"
+     "CountrySubentityCode": "XB-UL",
+     "ID": "UL-ADR-296778"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB77BLUM0004398618"
+     "number": "XB78BLUM38712004398618",
+     "branch": "387120"
     },
     "industry": "1610",
     "website": "https://www.marrowdalesawmill.example",
@@ -2501,11 +2606,13 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71203",
-     "CountrySubentityCode": "XB-UL"
+     "CountrySubentityCode": "XB-UL",
+     "ID": "UL-ADR-821551"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB41BLUM0004503347"
+     "number": "XB42BLUM38712004503347",
+     "branch": "387120"
     },
     "industry": "3100",
     "website": "https://www.brackenmere.example",
@@ -2586,11 +2693,13 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38504",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-933254"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB05BLUM0004608076"
+     "number": "XB35BLUM38020504608076",
+     "branch": "380205"
     },
     "industry": "1312",
     "website": "https://www.lumeporttextile.example",
@@ -2648,11 +2757,13 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38505",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "XB-CO"
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-411619"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB66BLUM0004712805"
+     "number": "XB96BLUM38020504712805",
+     "branch": "380205"
     },
     "industry": "2220",
     "website": "https://www.rivermouth.example",
@@ -2711,11 +2822,13 @@
      "StreetName": "Plantation Road",
      "CityName": "Selanu",
      "District": "North coast",
-     "Description": "Farm track off Plantation Road at kilometre 4, past the cotton fields."
+     "Description": "Farm track off Plantation Road at kilometre 4, past the cotton fields.",
+     "ID": "85779006"
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL05BSEL0004817534"
+     "number": "XL67BSEL0020004817534",
+     "branch": "002"
     },
     "industry": "0116",
     "website": "https://www.lisavufarm.example",
@@ -2782,11 +2895,13 @@
     "address": {
      "StreetName": "Gin Yard Road",
      "BuildingNumber": "42",
-     "CityName": "Selanu"
+     "CityName": "Selanu",
+     "ID": "23618907"
     },
     "account": {
      "bank": "22-xl",
-     "number": "XL66BSEL0004922263"
+     "number": "XL31BSEL0020004922263",
+     "branch": "002"
     },
     "industry": "0163",
     "website": "https://www.selanuginnery.example",
@@ -2859,11 +2974,13 @@
      "CityName": "Gullhaven",
      "CountrySubentity": "Northern Territory",
      "PostalZone": "38540",
-     "CountrySubentityCode": "XB-NT"
+     "CountrySubentityCode": "XB-NT",
+     "ID": "NT-ADR-587853"
     },
     "account": {
      "bank": "25-xb",
-     "number": "XB30BLUM0004817534"
+     "number": "XB45BLUM38522004817534",
+     "branch": "385220"
     },
     "industry": "0620",
     "website": "https://www.kelpstone.example",
@@ -2923,11 +3040,13 @@
      "BuildingNumber": "44",
      "CityName": "Serravona",
      "PostalZone": "4130",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4170200397702895"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU86CREV0005021992"
+     "number": "XU720351041700000005021992",
+     "branch": "03510-41700"
     },
     "industry": "3510",
     "website": "https://www.montebrio.example",
@@ -2984,11 +3103,13 @@
      "BuildingNumber": "3",
      "CityName": "Ferrano",
      "PostalZone": "4140",
-     "Region": "Province of Ferrano"
+     "Region": "Province of Ferrano",
+     "ID": "4160202321763926"
     },
     "account": {
      "bank": "23-xu",
-     "number": "XU50CREV0005126721"
+     "number": "XU750351041620000005126721",
+     "branch": "03510-41620"
     },
     "industry": "3510",
     "website": "https://www.ferranogrid.example",

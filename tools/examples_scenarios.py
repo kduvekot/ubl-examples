@@ -201,7 +201,7 @@ def road(n, doc):
                              "Quantity": qty(108, "EA", "All 108 pieces in one delivery."),
                              "MinimumQuantity": qty(108, "EA", "No part deliveries: the truck is booked for all."),
                              "MaximumQuantity": qty(108, "EA", "And no more than ordered."),
-                             "DeliveryAddress": address("6-xb"),
+                             "DeliveryAddress": address("6-xb", register=True),
                              "AlternativeDeliveryLocation": {"Description": V(
                                  "Gate B of the business park, if dock 4 is blocked.", "Where to go instead.")},
                              "MinimumDeliveryUnit": {"BatchQuantity": qty(4, "EA", "Benches come in pallets of "
@@ -1110,7 +1110,7 @@ def retail(n, doc):
         till(out, f, 25, "11:42:00", "G2", "Mira")
         card_payment(out, f, 25, "11:42:00")
         out["Note"] = V("Home delivery booked for Saturday.", "Printed on the receipt.")
-        out["Delivery"] = {"DeliveryAddress": address("c-xb"),
+        out["Delivery"] = {"DeliveryAddress": address("c-xb", register=True),
                            "RequestedDeliveryPeriod": {"StartDate": V(f.date(27), "Saturday."),
                                                        "StartTime": V("09:00:00", "Morning."),
                                                        "EndTime": V("12:00:00", "Until noon.")},
@@ -5662,6 +5662,10 @@ def mast_consignment(f, full):
                                                           "numbers each crate of dangerous goods it packs, so that "
                                                           "each can be traced; its own number, without a scheme."),
                                                   "Quantity": qty(1, "EA", "One battery pack in the crate."),
+                                                  "TraceID": V(f"SE-DL-26-{k:04d}", "The serial number of the data "
+                                                               "logger fixed to the crate, which records its "
+                                                               "temperature and shocks on the way, for tracing a "
+                                                               "battery that is damaged."),
                                                   "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: "
                                                                                "crate.")} for k in range(1, 7)]}}
     if full:

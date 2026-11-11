@@ -39,6 +39,7 @@ import codelists  # noqa: E402
 import world_data  # noqa: E402
 import world_docs  # noqa: E402
 import world_ids  # noqa: E402
+import world_parties  # noqa: E402
 import world_items  # noqa: E402
 
 NS_CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -138,7 +139,7 @@ def party(pid, short=False):
                                              "languages are invented (world/countries.json)."),
                                "Name": V(lang["name"], f"The language's name in English; in the language itself: "
                                                        f"{lang['own_name']}.")}
-    out["PostalAddress"] = address(pid)
+    out["PostalAddress"] = address(pid, register=True)
     if idn.get("site"):
         out["PhysicalLocation"] = location(pid)
     if idn.get("endpoint"):
@@ -347,6 +348,12 @@ def check_addresses(root, where):
             raise SystemExit(f"{name} has no AddressFormatCode")
         if kids["AddressFormatCode"][0].text != country:
             raise SystemExit(f"{name}: AddressFormatCode {kids['AddressFormatCode'][0].text} is not its country {country}")
+        if "ID" in kids and kids["ID"][0].get("schemeID", "").endswith(("address-register", "delivery-point")):
+            fields = {n: v[-1].text for n, v in kids.items() if not len(v[-1])}
+            kind, spec = world_parties.address_register(WORLD, country, fields)
+            if not kind or kids["ID"][0].get("schemeID") != world_ids.national_scheme(country, kind):
+                raise SystemExit(f"{name}: address number from {kids['ID'][0].get('schemeID')}, but the address is "
+                                 f"in the area of {kind and world_ids.national_scheme(country, kind)}")
         if "AddressLine" in kids:
             fields = {n: [k.text for k in v] for n, v in kids.items() if n not in world_data.NOT_ON_A_LINE}
             want = world_data.address_lines(WORLD["countries"][country]["address"], fields)
@@ -398,7 +405,10 @@ def check_tax_exemption_lists(root, where, doc):
                              f"{', '.join(sorted(sellers))}")
 
 
-def address(pid):
+def address(pid, register=False):
+    """A party's address. register: the address's number in its address register goes with it, as it does on a
+    party's postal address and a delivery address (decision ID-Q8), not where the address only says where something
+    is."""
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
     src = f"identity of {idn['name']} (world/parties.json)"
@@ -419,8 +429,10 @@ def address(pid):
            "District": "The district of the island, used to find a farm off the main roads.",
            "Description": "How to find the farm, which has no house number on a street."}
     out = {}
-    if a.get("ID"):
-        out["ID"] = V(a["ID"], f"The address's number in the city's address register; {src}.")
+    if a.get("ID") and register:
+        kind, spec = world_parties.address_register(WORLD, p["c"], a)
+        out["ID"] = V(a["ID"], f"The address's number in the {spec['name']} ({spec['format']}); {src}.",
+                      schemeID=world_ids.national_scheme(p["c"], kind))
     out["AddressTypeCode"] = V("POSTAL" if a.get("Postbox") else "RESIDENTIAL" if idn.get("person") else "BUSINESS",
                                "The kind of address.")
     for k in ("Postbox", "Floor", "Room", "StreetName", "AdditionalStreetName", "BlockName", "BuildingName",
@@ -531,7 +543,10 @@ def institution(pid):
     src = f"identity of {idn['name']} (world/parties.json)"
     a = idn["address"]
     return {"_bank": pid,
-            "ID": V(idn["bank_code"], f"The bank code, the part of every account number that names the bank; {src}."),
+            "ID": V(idn["bic"], "The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 "
+                                f"(a BIC) with the world's country codes: the bank code {idn['bank_code']}, the country "
+                                f"{p['c']} and the location {idn['bic'][6:8]}; {src}.",
+                    schemeID="urn:ubl-examples:world:bank-identifier"),
             "Name": V(idn["name"], f"The bank; {src}."),
             "Address": {"StreetName": V(a["StreetName"], f"The bank's head office; {src}."),
                         "BuildingNumber": V(a["BuildingNumber"], f"Its building number; {src}."),
@@ -541,8 +556,9 @@ def institution(pid):
 
 
 def institution_again(pid, first):
-    return {"ID": V(PARTY[pid]["identity"]["bank_code"], f"The same bank as at {first}, where its name is given; "
-                                                          "only its code is repeated.")}
+    return {"ID": V(PARTY[pid]["identity"]["bic"], f"The same bank as at {first}, where its name is given; only its "
+                                                    "identifier is repeated.",
+                    schemeID="urn:ubl-examples:world:bank-identifier")}
 
 
 def account(pid, why, note=None):
@@ -550,8 +566,9 @@ def account(pid, why, note=None):
     acc = PARTY[pid]["identity"]["account"]
     bank = PARTY[acc["bank"]]
     out = {"ID": V(acc["number"], f"{why} The number follows the structure of ISO 13616 with its check digits, with the "
-                                  "world's country code; it is not called an IBAN, because the world's countries are "
-                                  "not registered IBAN countries.", schemeID="urn:ubl-examples:world:account"),
+                                  "world's country code, and holds the codes of the bank and the branch that keep it; "
+                                  "it is not called an IBAN, because the world's countries are not registered IBAN "
+                                  "countries.", schemeID="urn:ubl-examples:world:account"),
            "Name": V(legal_name(pid), "The account holder, as the bank knows it."),
            **({"AliasName": V(acc["alias"], "The short name the holder gave the account, shown in its bank's "
                                              "app.")} if acc.get("alias") else {}),
@@ -564,16 +581,16 @@ def account(pid, why, note=None):
                                                                                "the bank's country.")}
     if note:
         out["PaymentNote"] = V(note, "What the payer is asked to quote with the transfer, so the payment is matched.")
-    branch = bank["identity"].get("branch")
-    out["FinancialInstitutionBranch"] = {"FinancialInstitution": institution(acc["bank"])}
-    if branch:
-        out["FinancialInstitutionBranch"] = {"ID": V(branch["id"], "The branch that keeps the account."),
-                                             "Name": V(branch["name"], "The branch's name."),
-                                             "FinancialInstitution": institution(acc["bank"]),
-                                             "Address": {"CityName": V(bank["identity"]["address"]["CityName"],
-                                                                       "The branch is at the bank's head office."),
-                                                         "Country": {"IdentificationCode": V(bank["c"], "Its "
-                                                                                                       "country.")}}}
+    branch = next(b for b in bank["identity"]["branches"] if b["id"] == acc["branch"])
+    spec = WORLD["countries"][bank["c"]]["identifiers"]["bank-branch"]
+    out["FinancialInstitutionBranch"] = {"ID": V(branch["id"], f"The branch that keeps the account, by its national "
+                                                               f"code: the {spec['name']} ({spec['format']}). The "
+                                                               "account number holds it.",
+                                                 schemeID=world_ids.national_scheme(bank["c"], "bank-branch")),
+                                         "Name": V(branch["name"], "The branch's name."),
+                                         "FinancialInstitution": institution(acc["bank"]),
+                                         "Address": {"CityName": V(branch["city"], "The town the branch is in."),
+                                                     "Country": {"IdentificationCode": V(bank["c"], "Its country.")}}}
     out["Country"] = {"IdentificationCode": V(bank["c"], "The country where the account is kept.")}
     return out
 

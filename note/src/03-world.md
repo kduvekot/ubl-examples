@@ -255,7 +255,23 @@ times, with area codes of different lengths (9 or 10 digits); Bayvarra has a
 British-style plan of always 10 digits; the island has short 7-digit numbers. Account numbers follow the structure of ISO 13616
 with its check digits, using the world's country codes, but they are not
 called IBANs, because the world's countries are not registered IBAN
-countries.
+countries. Each country writes the bank and the branch into the account
+number in its own way: Bayvarra the bank code and a British-style six-digit
+sort code, Urvania the Italian-style ABI and CAB codes, the island the bank
+code and a three-digit branch number. A bank is identified across the
+countries by a code in the structure of ISO 9362, the BIC, with the world's
+country codes (`BLUMXBLX`), which the Trade Accord's payment link gives out,
+and its branch by the national code; the build checks that every account
+number holds the codes of its bank and branch.
+
+An address has a number in its country's address register where it is a
+party's postal address or a delivery address: in Urvania one national
+register, like the Dutch one, sixteen digits starting with the code of the
+municipality; in Bayvarra a register per state, except in Lumeport, which
+keeps the city's own register (`LUM-ADR-000417`); on the island the post
+office's numbers of its delivery points, as the island has no postal codes.
+The build checks that the register is the one of the address's state or
+city.
 
 ## Items
 

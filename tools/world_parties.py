@@ -48,6 +48,19 @@ def account_check(country, bank, number):
     return f"{98 - n % 97:02d}"
 
 
+def account_of_branch(bank, acc):
+    """The national account number holds the bank and branch codes, in its country's way (decision ID-Q9): in
+    Bayvarra the bank code and the sort code, in Urvania the ABI and CAB codes, on the island the bank code and the
+    branch number. The branch is one of the bank's."""
+    idn, n = bank["identity"], acc["number"]
+    branch = next((b for b in idn.get("branches", []) if b["id"] == acc.get("branch")), None)
+    if not branch or n[:2] != bank["c"]:
+        return False
+    if bank["c"] == "XU":
+        return n[4:14] == branch["id"].replace("-", "") and branch["id"].startswith(idn["abi"])
+    return n[4:8] == idn["bank_code"] and n[8:8 + len(branch["id"])] == branch["id"]
+
+
 def account_valid(acc):
     country, check, rest = acc[:2], acc[2:4], acc[4:]
     return account_check(country, rest[:4], rest[4:]) == check
@@ -185,8 +198,9 @@ def check(world):
                 problems.append(f"{where}: account at a bank in another country")
             if not account_valid(acc["number"]):
                 problems.append(f"{where}: account number {acc['number']} has wrong check digits")
-            elif acc["number"][:2] != bank["c"] or acc["number"][4:8] != bank["identity"].get("bank_code"):
-                problems.append(f"{where}: account number does not belong to bank {acc['bank']}")
+            elif bank and not account_of_branch(bank, acc):
+                problems.append(f"{where}: account number {acc['number']} does not hold the codes of bank "
+                                f"{acc['bank']} and its branch {acc.get('branch')} (decision ID-Q9)")
         problems += identifier_problems(world, p)
     return problems
 
@@ -209,6 +223,17 @@ def identifier_problems(world, p):
         values += [("rail-vehicle-register", w) for w in f.get("wagons", []) + f.get("ore_wagons", [])]
         if f.get("driver"):
             values.append(("driving-licence", f["driver"].get("id")))
+    for b in idn.get("branches", []):
+        values.append(("bank-branch", b["id"]))
+    if idn.get("bic"):
+        bic = world["identifier_schemes"]["urn:ubl-examples:world:bank-identifier"]
+        why = world_ids.problem(bic, idn["bic"])
+        if why or idn["bic"][:4] != idn.get("bank_code") or idn["bic"][4:6] != p["c"]:
+            out.append(f"{where}: bank identifier {idn['bic']} is not the bank's code, its country and a location "
+                       f"(ISO 9362 structure){': ' + why if why else ''}")
+    a = idn.get("address", {})
+    if a.get("ID"):
+        out += address_register_problems(world, p, a)
     for kind, value in values:
         if not value or (kind == "tax" and p["c"] == "XL"):
             continue
@@ -219,6 +244,39 @@ def identifier_problems(world, p):
         if why:
             out.append(f"{where}: {why}")
     return out
+
+
+def address_register(world, country, a):
+    """The kind of the address register an address belongs to (decision ID-Q8): Urvania's national register, the
+    City of Lumeport's register for an address in the city, a Bayvarran state's register elsewhere, the island
+    post office's delivery points."""
+    ids = world["countries"][country].get("identifiers", {})
+    for kind, spec in ids.items():
+        if not kind.endswith("address-register") and kind != "delivery-point":
+            continue
+        if spec.get("city") and a.get("CityName") != spec["city"]:
+            continue
+        if spec.get("subdivision") and (a.get("CountrySubentityCode") != spec["subdivision"]
+                                        or a.get("CityName") in spec.get("outside", [])):
+            continue
+        return kind, spec
+    return None, None
+
+
+def address_register_problems(world, p, a):
+    """The address's number is in the register of its country, state or city, in that register's format, and in
+    Urvania it starts with the code of the address's municipality."""
+    import world_ids
+    where = f"party {p['id']}"
+    kind, spec = address_register(world, p["c"], a)
+    if not spec:
+        return [f"{where}: no address register for {a.get('CityName')} (world/countries.json)"]
+    why = world_ids.problem(spec, a["ID"])
+    if why:
+        return [f"{where}: address {why}"]
+    if spec.get("municipalities") and a["ID"][:4] != spec["municipalities"].get(a.get("CityName")):
+        return [f"{where}: address number {a['ID']} is not from the municipality of {a.get('CityName')}"]
+    return []
 
 
 if __name__ == "__main__":

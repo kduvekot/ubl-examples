@@ -135,8 +135,9 @@ def identity(p):
     if idn.get("account"):
         acc = idn["account"]
         rows.append(("Account", f"`{acc['number']}` at {link(acc['bank'])}"))
-    if idn.get("bank_code"):
-        rows.append(("Bank code", f"`{idn['bank_code']}`"))
+    if idn.get("bic"):
+        rows.append(("Bank identifier", f"`{idn['bic']}` (ISO 9362 structure); branches: "
+                                        + ", ".join(f"`{b['id']}` {b['name']}" for b in idn["branches"])))
     held = [q for q in world["parties"] if q.get("identity", {}).get("account", {}).get("bank") == p["id"]]
     if held:
         rows.append(("Holds the accounts of", ", ".join(link(q["id"]) for q in held)))
