@@ -50,6 +50,7 @@ The decisions taken in the review of `codelist-classification.md`, in order.
 
 | ID-Q | Decision |
 |---|---|
+| 11 | The exceptions to EA are accepted: tonnage and the half pallet place stay C62, persons IE, shares E21, TEU capacity 20, rate of turn E96. Ballast water VolumeMeasure TNE becomes MTQ. All of these are in UBL's UnitOfMeasure-2.4. |
 | 10b | **Payment cards.**
 - **Masking (PCI DSS):** at most the BIN plus the last 4, varying per merchant within that maximum. Brightmarket shows the last 4; the island shop the first 6 + last 4; first 8 + last 4 is allowed for 8-digit BINs (verify).
 - **What goes where:** receipts carry no CV2 and no expiry date. CV2ID, ExpiryDate and ValidityStartDate move to a new pre-authorisation scenario (e.g. a webshop order paid by card), with a full world test PAN.
