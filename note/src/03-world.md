@@ -408,7 +408,12 @@ cabotage, which only happens where a document says so.
 The vehicles on the map are these legs: one truck, train, barge, ship or
 aircraft per leg, travelling the way the build found for it, from the
 from-party to the to-party, and a leg flown the same way by the same carrier
-in several flows is one aircraft. A pipeline has no vehicle: the gas is shown
+in several flows is one aircraft. Each makes a round trip: it waits at the
+from-party, travels out, waits at the to-party and travels back, and a leg and
+its return leg by the same carrier are one vehicle. An aircraft takes off and
+lands along the runway: it rolls along it, climbs out straight ahead over the
+approach zone, and joins the final approach in line with the runway of the
+airport it goes to. A pipeline has no vehicle: the gas is shown
 flowing from the field to the consumers. Pipelines follow the rules of real
 ones. They are buried, so they cross roads, rail lines and the river
 underneath, at right angles and in a straight line, never along them; they

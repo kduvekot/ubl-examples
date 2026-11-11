@@ -576,13 +576,40 @@ const tp = (i, j, u, v) => tileWorld(i + u, j + v);
 // or river leg along the track or the river's course between them, a sea or air leg along its route. Legs
 // that are the same journey by the same carrier (the same flight in three flows) share one vehicle. Pipeline
 // legs have no vehicle: the gas flows (see the pipelines below).
+// A vehicle makes a round trip: out along its leg and back again, as a truck, train, barge, ship or plane does;
+// a leg and its return leg by the same carrier (A to B and B to A) are one vehicle, loaded both ways.
 const VEHICLES = (() => { const out = new Map();
   for (const lg of WORLD.model.legs) { if (lg.mode === "pipeline") continue;
-    const key = [lg.mode, lg.from, lg.to, lg.carrier].join(" ");
+    const key = [lg.mode, lg.from, lg.to, lg.carrier].join(" "), back = [lg.mode, lg.to, lg.from, lg.carrier].join(" ");
     if (out.has(key)) { out.get(key).flows.push(lg.flow); continue; }
+    if (out.has(back)) { out.get(back).flows.push(lg.flow); out.get(back).loadedBack = true; continue; }
     out.set(key, { key, id: key, mode: lg.mode, from: lg.from, to: lg.to, carrier: lg.carrier, flows: [lg.flow], path: lg.path,
       layer: LAYER_OF[(byId[lg.carrier] || {}).cat] || "transport" }); }
   return [...out.values()]; })();
+// A flight takes off and lands along the runway, as aircraft do: it rolls along the runway of the airport it
+// leaves, in the direction it is going, climbs out straight ahead over the approach zone (3 tiles beyond the
+// runway end), flies the air route, joins the final approach 3 tiles before the runway of the airport it goes
+// to, in line with that runway, touches down at its threshold and rolls out to the far end. alts: the height
+// at each point of the way (0 on the ground, CRUISE at the route's turning points).
+const CRUISE = 30;
+function runway(p) { const [a, b] = p.size || [1, 1], [i0, j0] = p.at, long = a >= b;
+  return long ? { axis: [1, 0], ends: [[i0 - .4, j0 + (b - 1) / 2 + .15], [i0 + a - .6, j0 + (b - 1) / 2 + .15]] }
+              : { axis: [0, 1], ends: [[i0 + (a - 1) / 2 + .15, j0 - .4], [i0 + (a - 1) / 2 + .15, j0 + b - .6]] }; }
+function flight(v) { const A = byId[v.from], B = byId[v.to]; if (!A || !B || A.kind !== "airport" || B.kind !== "airport") return null;
+  const mid = v.path.slice(1, -1), ra = runway(A), rb = runway(B);
+  const toward = (r, q) => { const c = [(r.ends[0][0] + r.ends[1][0]) / 2, (r.ends[0][1] + r.ends[1][1]) / 2];
+    return ((q[0] - c[0]) * r.axis[0] + (q[1] - c[1]) * r.axis[1]) >= 0 ? 1 : -1; };   // +1: towards ends[1]
+  const da = toward(ra, mid[0] || B.at), [s0, s1] = da > 0 ? ra.ends : [ra.ends[1], ra.ends[0]];
+  const db = -toward(rb, mid[mid.length - 1] || A.at), [t0, t1] = db > 0 ? rb.ends : [rb.ends[1], rb.ends[0]];
+  const out = [s1[0] + ra.axis[0] * da * 3, s1[1] + ra.axis[1] * da * 3], fin = [t0[0] - rb.axis[0] * db * 3, t0[1] - rb.axis[1] * db * 3];
+  const pts = [s0, s1, out, ...mid, fin, t0, t1], alts = [0, 0, CRUISE * .45, ...mid.map(() => CRUISE), CRUISE * .45, 0, 0];
+  return { pts, alts }; }
+for (const v of VEHICLES) if (v.mode === "air") { const f = flight(v); if (f) { v.path = f.pts; v.alts = f.alts; } }
+for (const r of ROUTES) if (r.mode === "air") { const v = VEHICLES.find(v => v.mode === "air" && v.alts); if (v) { r.pts = v.path; r.alts = v.alts; } }
+// the height of an air vehicle at fraction f of its way, from the heights at its points
+function altAt(v, f) { if (!v.alts) return Math.sin(f * Math.PI) * CRUISE; let d = f * v.L, k = 0;
+  for (const [a, b, l] of v.seg) { if (d <= l) return v.alts[k] + (v.alts[k + 1] - v.alts[k]) * (d / l); d -= l; k++; }
+  return v.alts[v.alts.length - 1]; }
 const half = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 // world points of a way through tiles: from the centre of the first to the centre of the last, through the
 // middle of each tile edge it crosses (rail and river), or through every tile centre (roads and pipelines, which
@@ -659,21 +686,25 @@ function rotate(step) { rot = (rot + step + 4) % 4; drawWorld(); computeLand(); 
   document.getElementById("compass").textContent = ["N", "E", "S", "W"][rot]; }
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
 function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0])]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0])]; }
-// how far along its way a vehicle is at time t (0..1): it waits at its from-party (loading), travels at a steady
-// speed, waits at its to-party (unloading), and sets out again; the vehicles keep their own timetables
+// where a vehicle is at time t: f, how far along its way (0 at its from-party, 1 at its to-party), and whether it
+// is on the way back. It waits at its from-party (loading), travels out at a steady speed, waits at its to-party
+// (unloading), travels back the same way, and sets out again; the vehicles keep their own timetables
 const DWELL = 1500;
 VEHICLES.forEach((v, k) => { v.phase = hash(k * 7 + 1, k * 3 + 2); });
-function progress(v, t) { const travel = v.L * (v.mode === "air" ? 45 : 22.5), cycle = travel + 2 * DWELL, c = (t + v.phase * cycle) % cycle;
-  return c < DWELL ? 0 : c > DWELL + travel ? 1 : (c - DWELL) / travel; }
+function progress(v, t) { const travel = Math.max(1500, v.L * (v.mode === "air" ? 45 : 22.5)), cycle = 2 * travel + 2 * DWELL, c = (t + v.phase * cycle) % cycle;
+  if (c < DWELL) return [0, false];
+  if (c < DWELL + travel) return [(c - DWELL) / travel, false];
+  if (c < 2 * DWELL + travel) return [1, false];
+  return [1 - (c - 2 * DWELL - travel) / travel, true]; }
 
 function drawVehicle(g, r, t) {
   if (!r.seg.length) return;
-  const f = progress(r, t), [x, y, ang] = along(r, f);
+  const [f, back] = progress(r, t), [x, y, a0] = along(r, f), ang = back ? a0 + Math.PI : a0;
   const [sx, sy] = toScreen(x, y), s = Math.max(.7, view.s);
   g.save(); g.translate(sx, sy); g.scale(s, s);
   const body = (x0, x1, w, color, dy = 0) => { g.fillStyle = shade(color, -.35); g.fillRect(x0, -w / 2 + dy + 1, x1 - x0, w);
     g.fillStyle = color; g.fillRect(x0, -w / 2 + dy - 1, x1 - x0, w); };
-  if (r.mode === "air") { const lift = Math.sin(f * Math.PI) * 30; g.fillStyle = "rgba(0,0,0,.22)"; g.beginPath(); g.ellipse(0, 0, 7, 2.5, 0, 0, 7); g.fill();
+  if (r.mode === "air") { const lift = altAt(r, f); g.fillStyle = "rgba(0,0,0,.22)"; g.beginPath(); g.ellipse(0, 0, 7, 2.5, 0, 0, 7); g.fill();
     g.translate(0, -lift); g.rotate(ang); g.fillStyle = "#f2f2f2"; g.fillRect(-8, -1.5, 16, 3); g.fillRect(-2, -8, 4, 16); g.fillRect(-8, -4, 2, 8);
     g.fillStyle = "#2e86c1"; g.fillRect(5, -1.5, 3, 3); g.restore(); return; }
   g.rotate(ang);
@@ -700,7 +731,7 @@ function frame(t) {
   // routes overlay for sea and air, highlighted when a layer is on
   for (const ro of ROUTES) { if (!layers[ro.layer]) continue;
     if (ro.mode === "sea" || ro.mode === "air") { ctx.strokeStyle = ro.mode === "sea" ? "rgba(255,255,255,.65)" : "rgba(255,255,255,.5)"; ctx.lineWidth = 2; ctx.setLineDash(ro.mode === "air" ? [2, 6] : [8, 6]);
-      ctx.beginPath(); ro.pts.forEach((p, k) => { const [x, y] = toScreen(...tileWorld(...p)); k ? ctx.lineTo(x, y - (ro.mode === "air" ? 16 : 0)) : ctx.moveTo(x, y); }); ctx.stroke(); ctx.setLineDash([]); }
+      ctx.beginPath(); ro.pts.forEach((p, k) => { const [x, y] = toScreen(...tileWorld(...p)); const lift = ro.mode === "air" ? (ro.alts ? ro.alts[k] * view.s : 16) : 0; k ? ctx.lineTo(x, y - lift) : ctx.moveTo(x, y - lift); }); ctx.stroke(); ctx.setLineDash([]); }
     if (ro.mode === "pipeline") {                       // buried pipeline: a yellow dashed line, the gas flowing along it
       // drawn in world units, like the map under it: line width, dash pattern and flow speed scale with the
       // zoom, so the pipeline looks the same at every zoom level; the dashes move from the field towards the
