@@ -13,7 +13,8 @@
 <h1 id="velumi-trading">Velumi Trading</h1>
 <p><em>#1 Commercial Buyer · Lisavu (XL) · Commerce</em></p>
 <p>Needs the goods: orders from the distributor overseas and pays the
-invoice.</p>
+invoice. Sells garden and park furniture to island customers from its
+shop in Selanu.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -51,12 +52,39 @@ sales carry no tax, and the invoice says so.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="what-it-sells">What it sells</h2>
+<p>Its items, as they appear on its quotations, catalogues and invoices.
+Units of measure and packaging types are UN/ECE Recommendation 20 and 21
+codes from the UBL code lists; customs tariff codes are Harmonized
+System subheadings.</p>
+<h3 id="park-bench-serra-180">Park bench Serra 180</h3>
+<p>The Serra park bench from Velumi Trading's stock, imported from
+Bayvarra, for island customers.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>VT-PB-180</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>289.000 XLC per <code>EA</code> (each)</td>
+</tr>
+<tr>
+<td>Resale of</td>
+<td>Park bench Serra 180 made by <a href="world-5-xu.html">Valdara
+Industries</a>, bought from <a href="world-6-xb.html">Lumeway
+Distribution</a>: Codana item number <code>771020000027</code>, maker's
+ID <code>VI-B180</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The commercial buyer orders overseas and pays across borders. UBL
 lets it order from the distributor's catalogue, follow the goods through
 despatch and transport, match the invoice to the order and the receipt,
 and send a remittance advice with its payment.</p>
-<p>In this world it sends 6 and receives 14 documents, and is named in
+<p>In this world it sends 7 and receives 14 documents, and is named in
 15 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
@@ -106,6 +134,16 @@ container; the buyer debits the distributor in coral for the inspection
 and storage, a packaging fault on the seller's side. <a
 href="example-sea-28-DebitNote.html">See the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
+Receipt</strong></a> to <a href="world-38-xl.html">Lisavu Cotton
+Farm</a>: Velumi Trading sells two of the imported benches in its shop
+in Selanu to the cotton farm, for the pickers' rest place; the farm pays
+with its Coralcard, and the till prints the card number with the first
+six and the last four digits. <a
+href="example-sea-29-PurchaseReceipt.html">See the example
+document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -474,7 +512,8 @@ document</a>.</p>
 <p><code>ReceiverParty</code> <code>ParticipantParty</code>
 <code>BuyerCustomerParty</code> <code>AccountingCustomerParty</code>
 <code>ConsigneeParty</code> <code>ImporterParty</code>
-<code>SenderParty</code> <code>SubscriberParty</code></p>
+<code>SenderParty</code> <code>SubscriberParty</code>
+<code>AccountingSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -485,6 +524,7 @@ Bayvarra</li>
 <li><a href="world-24-xb.html">Harbourline Factoring</a>, Bayvarra</li>
 <li><a href="world-35-xl.html">Selanu Telecom</a>, Lisavu</li>
 <li><a href="world-26-xb.html">Brightmarket Stores</a>, Bayvarra</li>
+<li><a href="world-38-xl.html">Lisavu Cotton Farm</a>, Lisavu</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#1-xl">See Commercial Buyer on the map</a> ·
@@ -497,6 +537,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>LTM-RM-26-0212</cbc:ID>
+  <cbc:UUID>4dead5a1-d2ba-5e05-a95b-17805f866743</cbc:UUID>
+  <cbc:IssueDate>2026-03-29</cbc:IssueDate>
+  <cbc:IssueTime>15:45:00</cbc:IssueTime>
+  <cbc:Note>Payment of the invoice below.</cbc:Note>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XLC">6055.452</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">6055.452</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>LTM-PAY-26-0191</cbc:PaymentOrderReference>
+  <cbc:PayerReference>LTM-0191</cbc:PayerReference>
+  <cbc:InvoicingPartyReference>RF46SCGINV260210</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412603</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Textile Mill</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-933254</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Mill Street</cbc:StreetName>
+        <cbc:BuildingNumber>21</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38504</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1237809</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
+        <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-042681</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">23618907</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XB">Gin Yard Road</cbc:StreetName>
+        <cbc:BuildingNumber>42</cbc:BuildingNumber>
+        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
+        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XL:ICR</cbc:ID>
+          <cbc:Name>Island companies register</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Cotton sales</cbc:Name>
+        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+        <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>LTM-PAY-26-0191</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF46SCGINV260210</cbc:PaymentID>
+    <cac:PayerFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB35BLUM38020504608076</cbc:ID>
+      <cbc:Name>Lumeport Textile Mill Ltd</cbc:Name>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
+        <cbc:Name>Harbour branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayerFinancialAccount>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XL31BSEL0020004922263</cbc:ID>
+      <cbc:Name>Selanu Cotton Ginnery Ltd</cbc:Name>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
+        <cbc:Name>Market branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BSELXLSL</cbc:ID>
+          <cbc:Name>Bank of Selanu</cbc:Name>
+          <cac:Address>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+            <cbc:StreetName>Reef Street</cbc:StreetName>
+            <cbc:BuildingNumber>23</cbc:BuildingNumber>
+            <cbc:CityName>Selanu</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Selanu</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XLC">6055.452</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF46SCGINV260210</cbc:InvoicingPartyReference>
+    <cac:AccountingSupplierParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Textile Mill</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>SCG-INV-26-0210</cbc:ID>
+        <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>SCG-INV-26-0210</cbc:ID>
+      <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+  </cac:RemittanceAdviceLine>
+</RemittanceAdvice>

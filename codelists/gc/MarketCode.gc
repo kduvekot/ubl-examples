@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: market identifier. The regulated markets of the world, coded in the shape of ISO 10383 market identifier codes (four characters). Each code is checked against the ISO 10383 list, so that none is a real MIC. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: market identifier. The regulated markets of the world, coded in the shape of ISO 10383 market identifier codes (four characters). Each code is checked against the ISO 10383 list, so that none is a real MIC. A market's currency segment, where it has one, sets the daily reference fixings of the world's currencies, which contracts name as the source of their exchange rates. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>MarketCode</ShortName>
@@ -71,7 +71,7 @@
             <SimpleValue>Lumeport Exchange</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The regulated market of Bayvarra, in Lumeport.</SimpleValue>
+            <SimpleValue>The regulated market of Bayvarra, in Lumeport. Its currency segment sets the daily fixing of the ferra and the coral against the lume at noon.</SimpleValue>
          </Value>
       </Row>
       <Row>

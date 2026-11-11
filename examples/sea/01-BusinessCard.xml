@@ -240,7 +240,7 @@
       <cbc:URI>https://www.lumeway.example/stock</cbc:URI>
       <cac:WebSiteAccess>
         <cbc:URI>https://www.lumeway.example/login</cbc:URI>
-        <cbc:Password>********</cbc:Password>
+        <cbc:Password>Tq7-mR4w-Lz9</cbc:Password>
         <cbc:Login>velumi</cbc:Login>
       </cac:WebSiteAccess>
     </cac:WebSite>

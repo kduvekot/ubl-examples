@@ -623,7 +623,9 @@ a[href]:hover { background: #ffa }
           the root element, but their definitions are exact ("An
           invoice the invoicee is producing instead of the
           seller"), while 380 is a document "claiming
-          payment".
+          payment". The gin's advance to a farm before the harvest
+          is a self-billed prepayment invoice, type 386, which the final
+          self-billed invoice deducts as its prepaid amount.
         </p></li><li class="listitem"><p>
           <span class="strong"><strong>Procurement.</strong></span> The Accord's
           procurement rules are modelled on the EU's, without being EU
@@ -713,7 +715,14 @@ a[href]:hover { background: #ffa }
       names were checked against the real card networks. A till receipt
       shows the card number as the merchant's till prints it, never more
       than the first six and the last four digits, and never the card's
-      security code or its dates.
+      security code or its dates. The department store's tills print
+      only the last four digits; the trading company's shop on the
+      island prints the first six and the last four. A webshop order is
+      different: the card is not at hand, so the order carries the full
+      number, the card's dates and its security code, and the store has
+      the payment authorised before it reserves the goods. PCI DSS
+      allows a merchant to hold the security code until the
+      authorisation, never after.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-parties"></a>3.4 Parties</h3></div></div></div><p>
       The parties are the organisations of the world, chosen so that
       every party role in every UBL document type can be filled (see the
@@ -786,26 +795,27 @@ a[href]:hover { background: #ffa }
       store and the furniture maker work the GS1 way: a GTIN for their
       items, a GLN for themselves and their places (the distribution
       centre's rail siding, the store's goods-in), an SSCC for every
-      pallet or skid they make up. Their company prefixes start with
-      952, which GS1 reserves for demonstrations and examples. The bench
-      maker, its warehouse, the packaging maker, the power station and
-      the grid operator work the ISO way, through the Codana
-      Identification Agency, which is Urvania's public numbering body: a
-      Codana item number, an organisation identifier in the structure of
-      ISO/IEC 6523 with the code designator 0990, which no real scheme
-      has, and licence plates for their transport units in the structure
-      of ISO/IEC 15459, under the issuing agency code
-      <code class="literal">KXU</code> (<code class="literal">K</code> is the range for
-      national public administrations, and XU is a user-assigned country
-      code, so no real agency can hold it). The engineering company, the
-      sawmill, the island's cotton farm and ginnery and the utilities
-      use only their own numbers. A reseller shows its own item number
-      and the maker's; where the maker has no GTIN, the GS1 distributor
-      gives the item one of its own, as GS1 allows a wholesaler or
-      importer to do, and the maker's Codana number travels with it.
-      Inner packages have local numbers without a scheme. A logistic
-      unit has the same identifier in every document of its flow, which
-      the build checks.
+      pallet or skid they make up, and a GRAI for the distributor's own
+      returnable pallets, which go back to it after each delivery to the
+      store. Their company prefixes start with 952, which GS1 reserves
+      for demonstrations and examples. The bench maker, its warehouse,
+      the packaging maker, the power station and the grid operator work
+      the ISO way, through the Codana Identification Agency, which is
+      Urvania's public numbering body: a Codana item number, an
+      organisation identifier in the structure of ISO/IEC 6523 with the
+      code designator 0990, which no real scheme has, and licence plates
+      for their transport units in the structure of ISO/IEC 15459, under
+      the issuing agency code <code class="literal">KXU</code>
+      (<code class="literal">K</code> is the range for national public
+      administrations, and XU is a user-assigned country code, so no
+      real agency can hold it). The engineering company, the sawmill,
+      the island's cotton farm and ginnery and the utilities use only
+      their own numbers. A reseller shows its own item number and the
+      maker's; where the maker has no GTIN, the GS1 distributor gives
+      the item one of its own, as GS1 allows a wholesaler or importer to
+      do, and the maker's Codana number travels with it. Inner packages
+      have local numbers without a scheme. A logistic unit has the same
+      identifier in every document of its flow, which the build checks.
     </p><p>
       Items connect the chains. The park bench is made with slats from
       the sawmill and film from the packaging maker; the distributor
@@ -832,15 +842,28 @@ a[href]:hover { background: #ffa }
       and retails; the island Lisavu grows and gins cotton, its export.
       Goods cross the land border by road, rail and river barge and go
       overseas by sea and air in both directions; there is a public
-      tender, a temporary export with an ATA carnet, a utility in each
-      country, and gas by pipeline from Bayvarra's offshore field to
-      Urvania's power station and grid. Each flow starts from the
-      business: who buys from whom, on which delivery terms, and
-      therefore who arranges and pays the transport. A distributor that
-      buys free carrier (FCA) books the truck itself and names the
-      carrier in its order; a retailer that buys delivered duty paid
-      (DDP) leaves the transport to its supplier, who then needs an
-      outgoing waybill.
+      tender and a design contest, a temporary export with an ATA
+      carnet, a utility in each country, and gas by pipeline from
+      Bayvarra's offshore field to Urvania's power station and grid.
+      Each flow starts from the business: who buys from whom, on which
+      delivery terms, and therefore who arranges and pays the transport.
+      A distributor that buys free carrier (FCA) books the truck itself
+      and names the carrier in its order; a retailer that buys delivered
+      duty paid (DDP) leaves the transport to its supplier, who then
+      needs an outgoing waybill.
+    </p><p>
+      A document that is revised keeps its number and says which version
+      it supersedes, with <code class="literal">VersionID</code> 2 and
+      <code class="literal">PreviousVersionID</code> 1, and its reasons say what
+      changed. The design contest shows this: the city of Lumeport
+      relaunches a contest for its harbour promenade bench, cancelled
+      the year before because no design met the brief (the new notice
+      gives the reason), offers three prizes and asks a group of
+      designers to form a limited company before the follow-up contract.
+      The council raises the prize fund, a corrigendum corrects the site
+      plan and widens a selection criterion, the design team updates its
+      declarations, the registry reissues its extract when new accounts
+      are filed, and the results notice corrects a prize amount.
     </p><p>
       Every document in a flow records:
     </p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>
@@ -865,21 +888,55 @@ a[href]:hover { background: #ffa }
       country: a truck of one country driving within another would be
       cabotage, which only happens where a document says so.
     </p><p>
+      An air leg also says how the goods are loaded, and the build
+      checks that the load fits the island airline's ATR 72-600F, as
+      ATR's fact sheet gives it: at most 9,200 kg, 75 m³ and seven LD3
+      containers, each within its own maximum weight, and loose pieces
+      that pass the 2.94 × 1.80 m cargo door into the aft bulk
+      compartment. The sample benches, at 1.8 m, fly loose. Dangerous
+      goods are stowed as the IATA Dangerous Goods Regulations ask: the
+      smoke detectors (class 7, an excepted package) may share a
+      container with the corrosive coating stripper, because class 7
+      needs no segregation, but the stripper's flammable subsidiary
+      label keeps it away from the lithium batteries, which must not be
+      stowed next to a package with a class 3 label. A subsidiary hazard
+      has no emergency schedule of its own in the IMDG Code, which gives
+      one per UN entry; the road rules give the crew's actions per
+      hazard label, so the subsidiary hazard names the Accord's
+      emergency card of its class.
+    </p><p>
+      A ship reports to the port before it arrives, with its security
+      and health certificates. The ocean carrier's second feeder came
+      under Bayvarra's flag in January: it sails with an interim
+      security certificate and says why, and it carries a sanitation
+      control exemption certificate, which the port health office issues
+      when an inspection finds no control measures needed; the first
+      feeder carries a sanitation control certificate, as its inspection
+      found pests in the galley stores. The security report lists the
+      ship-to-ship activities of the last ten port calls, here a
+      bunkering from the port's barge, with the measure the ship took.
+    </p><p>
       The vehicles on the map are these legs: one truck, train, barge,
       ship or aircraft per leg, travelling the way the build found for
       it, from the from-party to the to-party, and a leg flown the same
-      way by the same carrier in several flows is one aircraft. A
-      pipeline has no vehicle: the gas is shown flowing from the field
-      to the consumers. Pipelines follow the rules of real ones. They
-      are buried, so they cross roads, rail lines and the river
-      underneath, at right angles and in a straight line, never along
-      them; they keep out of towns, and nothing is built or planted on
-      their right of way. They start at the producer, at its offshore
-      platform or as a branch of another pipeline, end at a customer,
-      and carry exactly the pipeline legs of the flows, in the direction
-      the gas flows. Where the pipeline crosses the land border, a
-      border metering station measures the gas, as at the
-      interconnection points between real gas networks.
+      way by the same carrier in several flows is one aircraft. Each
+      makes a round trip: it waits at the from-party, travels out, waits
+      at the to-party and travels back, and a leg and its return leg by
+      the same carrier are one vehicle. An aircraft takes off and lands
+      along the runway: it rolls along it, climbs out straight ahead
+      over the approach zone, and joins the final approach in line with
+      the runway of the airport it goes to. A pipeline has no vehicle:
+      the gas is shown flowing from the field to the consumers.
+      Pipelines follow the rules of real ones. They are buried, so they
+      cross roads, rail lines and the river underneath, at right angles
+      and in a straight line, never along them; they keep out of towns,
+      and nothing is built or planted on their right of way. They start
+      at the producer, at its offshore platform or as a branch of
+      another pipeline, end at a customer, and carry exactly the
+      pipeline legs of the flows, in the direction the gas flows. Where
+      the pipeline crosses the land border, a border metering station
+      measures the gas, as at the interconnection points between real
+      gas networks.
     </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-03-world-specifications"></a>3.7 Specifications</h3></div></div></div><p>
       Every document says which specification it follows.
       <code class="literal">CustomizationID</code> names a

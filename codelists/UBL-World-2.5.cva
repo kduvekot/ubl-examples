@@ -340,6 +340,8 @@
       <Context address="*[local-name()='TransportEquipment']/cbc:FullnessIndicationCode" values="LoadType" metadata="code" />
       <Context address="*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode" values="ShipPersonRole" metadata="code" />
       <Context address="*[local-name()='MaritimeWaste']/cbc:WasteTypeCode" values="ShipWasteType" metadata="code" />
+      <Context address="*[local-name()='SecondaryHazard']/cbc:EmergencyProceduresCode" values="TransportEmergencyCard" metadata="code" />
+      <Context address="*[local-name()='HazardousItem']/cbc:EmergencyProceduresCode" values="IMDGEmS" metadata="code" />
       <Context address="*[local-name()='ProofOfReexportationReminder']/cbc:ProcedureCode" values="CustomsProcedure" metadata="code" />
       <Context address="*[local-name()='ImportCustomsDeclaration']/cbc:TypeCode | *[local-name()='TransitCustomsDeclaration']/cbc:TypeCode | *[local-name()='ExportCustomsDeclaration']/cbc:TypeCode" values="CustomsDeclarationType" metadata="code" />
       <Context address="*[local-name()='PreviousCustomsDeclaration']/cbc:FunctionCode" values="CustomsDeclarationType" metadata="code" />
@@ -431,6 +433,7 @@
       <Context address="cbc:ReminderTypeCode" values="ReminderType" metadata="code" />
       <Context address="cbc:StatementTypeCode" values="StatementType" metadata="code" />
       <Context address="cbc:MarketCode" values="Market" metadata="code" />
+      <Context address="cbc:ExchangeMarketID" values="Market" metadata="scheme" />
       <Context address="cbc:ProfileStatusCode" values="ProfileStatus" metadata="code" />
       <Context address="cbc:InvoiceTypeCode" values="UNCL1001" metadata="code" />
       <Context address="cbc:CreditNoteTypeCode" values="UNCL1001" metadata="code" />
@@ -485,7 +488,6 @@
       <Context address="cbc:UNPackingGroupCode" values="UNPackingGroup" metadata="code" />
       <Context address="cbc:PackagingDangerLevelCode" values="UNCL8339" metadata="code" />
       <Context address="cbc:HazardousRegulationCode" values="UNCL8273" metadata="code" />
-      <Context address="cbc:EmergencyProceduresCode" values="IMDGEmS" metadata="code" />
       <Context address="cbc:MedicalFirstAidGuideCode" values="ERG2024" metadata="code" />
       <Context address="cbc:TunnelRestrictionCode" values="ADRTunnel" metadata="code" />
       <Context address="cbc:MaritimePollutantCode" values="MarinePollutant" metadata="code" />

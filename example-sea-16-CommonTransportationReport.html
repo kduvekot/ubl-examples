@@ -1142,9 +1142,6 @@ by its flag state, Bayvarra.</li>
 <li><code>ShipmentStage/ISPSRequirements/ValidISSCIndicator</code> =
 <strong>true</strong><br />
 The ship holds a valid security certificate.</li>
-<li><code>ShipmentStage/ISPSRequirements/ISSCAbsenceReason</code> =
-<strong>Not applicable: the certificate is on board.</strong><br />
-Stated, not left out.</li>
 <li><code>ShipmentStage/ISPSRequirements/ISSCExpiryDate</code> =
 <strong>2028-09-30</strong><br />
 The certificate is valid for five years from its issue.</li>
@@ -1158,9 +1155,6 @@ Its measures were applied.</li>
 = <strong>1</strong> (listID <code>IMO ISPS security level</code>)<br />
 Security level 1, the normal level. The code is from the world's copy of
 IMO ISPS Code security level: 1 = Security level 1.</li>
-<li><code>ShipmentStage/ISPSRequirements/AdditionalMattersDescription</code>
-= <strong>None.</strong><br />
-Nothing else to report.</li>
 <li><code>ShipmentStage/ISPSRequirements/AdditionalSecurityMeasure/ID</code>
 = <strong>SM-1</strong><br />
 An extra measure.</li>
@@ -1195,26 +1189,69 @@ Arrived.</li>
 = <strong>2026-05-14</strong><br />
 Sailed.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/ID</code>
-= <strong>STS-0</strong><br />
-Ship-to-ship activity.</li>
+= <strong>STS-1</strong><br />
+The ship's one ship-to-ship activity in its last ten calls at port
+facilities, which the security information before arrival lists (SOLAS
+XI-2, regulation 9).</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Description</code>
-= <strong>None during the last ten port calls.</strong><br />
-The record.</li>
+= <strong>Bunkering: 120 tonnes of marine gas oil from the Port of
+Lumeport's bunker barge, alongside at the Lumeport anchorage, before the
+ship berthed.</strong><br />
+What the activity was.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/ID</code>
-= <strong>SM-0</strong><br />
-No measure needed.</li>
+= <strong>SM-STS-1</strong><br />
+The ship's measure for the transfer, from its security plan.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/AppliedSecurityMeasure/Description</code>
-= <strong>None: no ship-to-ship activity.</strong><br />
-Stated.</li>
+= <strong>The barge's crew list checked against the bunker order; access
+limited to the bunker station, with a deck watch for the whole
+transfer.</strong><br />
+What the ship did.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartDate</code>
-= <strong>2026-01-01</strong><br />
-Since.</li>
+= <strong>2026-05-13</strong><br />
+The day of the bunkering.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartTime</code>
+= <strong>05:40:00</strong><br />
+The barge made fast.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndDate</code>
-= <strong>2026-05-17</strong><br />
-Until now.</li>
+= <strong>2026-05-13</strong><br />
+The same morning.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndTime</code>
+= <strong>08:15:00</strong><br />
+The barge cast off.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/Name</code>
-= <strong>At sea, 120 nautical miles west of Selanu</strong><br />
-Where.</li>
+= <strong>Lumeport anchorage</strong><br />
+Where the barge came alongside.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/CoordinateSystemCode</code>
+= <strong>4326</strong> (listID <code>EPSG</code>)<br />
+The World Geodetic System 1984, as used by satellite navigation. The
+code is from the world's copy of EPSG Geodetic Parameter Dataset
+(coordinate reference systems): 4326 = WGS 84.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDegreesMeasure</code>
+= <strong>40</strong> (unitCode <code>DD</code>)<br />
+Computed from the place on the map; the world lies in an empty part of
+the South Atlantic, so the point is open sea on a real map
+(world/countries.json).</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeMinutesMeasure</code>
+= <strong>1.20</strong> (unitCode <code>D61</code>)<br />
+The minutes of the latitude.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDirectionCode</code>
+= <strong>South</strong> (listID
+<code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code>)<br />
+South of the equator. The code is from the world's copy of UBL's
+Latitude direction list, with a listID: South.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDegreesMeasure</code>
+= <strong>15</strong> (unitCode <code>DD</code>)<br />
+Computed from the place on the map; the world lies in an empty part of
+the South Atlantic, so the point is open sea on a real map
+(world/countries.json).</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeMinutesMeasure</code>
+= <strong>12.60</strong> (unitCode <code>D61</code>)<br />
+The minutes of the longitude.</li>
+<li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDirectionCode</code>
+= <strong>West</strong> (listID
+<code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code>)<br />
+West of the Greenwich meridian. The code is from the world's copy of
+UBL's Longitude direction list, with a listID: West.</li>
 <li><code>ShipmentStage/ISPSRequirements/ReportLocation/Name</code> =
 <strong>At sea, 120 nautical miles west of Selanu</strong><br />
 Where.</li>
@@ -1379,9 +1416,12 @@ name are enough.</li>
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/ID</code>
-= <strong>SSCC-XB-2025-0911</strong><br />
-The sanitation control certificate, unique only with its issuer
-(decision ID-Q10).</li>
+= <strong>SSCC-XB-2026-0318</strong><br />
+The ship sanitation control certificate (International Health
+Regulations, Annex 3), issued at Lumeport on 18 March 2026: the
+inspection found traces of cockroaches in the galley stores, which were
+treated. It replaced the exemption certificate the ship had carried
+until then. Unique only with its issuer (decision ID-Q10).</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/CertificateType</code>
 = <strong>Ship sanitation control</strong><br />
 Its kind.</li>
@@ -1997,225 +2037,234 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ISPSRequirements</span>&gt;</span>
 <span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ISSC-XB-2023-0117&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValidISSCIndicator</span>&gt;true&lt;/<span class="kw">cbc:ValidISSCIndicator</span>&gt;</span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ISSCAbsenceReason</span>&gt;Not applicable: the certificate is on board.&lt;/<span class="kw">cbc:ISSCAbsenceReason</span>&gt;</span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ISSCExpiryDate</span>&gt;2028-09-30&lt;/<span class="kw">cbc:ISSCExpiryDate</span>&gt;</span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SSPOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:SSPOnBoardIndicator</span>&gt;</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SSPSecurityMeasuresAppliedIndicator</span>&gt;true&lt;/<span class="kw">cbc:SSPSecurityMeasuresAppliedIndicator</span>&gt;</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrentOperatingSecurityLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO ISPS security level&quot;</span>&gt;1&lt;/<span class="kw">cbc:CurrentOperatingSecurityLevelCode</span>&gt;</span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalMattersDescription</span>&gt;None.&lt;/<span class="kw">cbc:AdditionalMattersDescription</span>&gt;</span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalSecurityMeasure</span>&gt;</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SM-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Gangway watch at Selanu.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalSecurityMeasure</span>&gt;</span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PortCallRecord</span>&gt;</span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;PCR-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SecurityLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO ISPS security level&quot;</span>&gt;1&lt;/<span class="kw">cbc:SecurityLevelCode</span>&gt;</span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SecurityMeasure</span>&gt;</span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;Normal access control.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecurityMeasure</span>&gt;</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PortFacilityLocation</span>&gt;</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBLMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PortFacilityLocation</span>&gt;</span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PortCallRecord</span>&gt;</span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ShipToShipActivityRecord</span>&gt;</span>
-<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STS-0&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;None during the last ten port calls.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AppliedSecurityMeasure</span>&gt;</span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;SM-0&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;None: no ship-to-ship activity.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AppliedSecurityMeasure</span>&gt;</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ISSCExpiryDate</span>&gt;2028-09-30&lt;/<span class="kw">cbc:ISSCExpiryDate</span>&gt;</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SSPOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:SSPOnBoardIndicator</span>&gt;</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SSPSecurityMeasuresAppliedIndicator</span>&gt;true&lt;/<span class="kw">cbc:SSPSecurityMeasuresAppliedIndicator</span>&gt;</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrentOperatingSecurityLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO ISPS security level&quot;</span>&gt;1&lt;/<span class="kw">cbc:CurrentOperatingSecurityLevelCode</span>&gt;</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalSecurityMeasure</span>&gt;</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SM-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Gangway watch at Selanu.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalSecurityMeasure</span>&gt;</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PortCallRecord</span>&gt;</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;PCR-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SecurityLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO ISPS security level&quot;</span>&gt;1&lt;/<span class="kw">cbc:SecurityLevelCode</span>&gt;</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SecurityMeasure</span>&gt;</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;Normal access control.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecurityMeasure</span>&gt;</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PortFacilityLocation</span>&gt;</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBLMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PortFacilityLocation</span>&gt;</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PortCallRecord</span>&gt;</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ShipToShipActivityRecord</span>&gt;</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STS-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Bunkering: 120 tonnes of marine gas oil from the Port of Lumeport&#39;s bunker barge, alongside at the Lumeport anchorage, before the ship berthed.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AppliedSecurityMeasure</span>&gt;</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;SM-STS-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;The barge&#39;s crew list checked against the bunker order; access limited to the bunker station, with a deck watch for the whole transfer.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AppliedSecurityMeasure</span>&gt;</span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartTime</span>&gt;05:40:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndTime</span>&gt;08:15:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;At sea, 120 nautical miles west of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ShipToShipActivityRecord</span>&gt;</span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ReportLocation</span>&gt;</span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;At sea, 120 nautical miles west of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ReportLocation</span>&gt;</span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ISSCIssuerParty</span>&gt;</span>
-<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20413014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Maritime Administration of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ISSCIssuerParty</span>&gt;</span>
-<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecurityOfficerPerson</span>&gt;</span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FirstName</span>&gt;Elsbeth&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FamilyName</span>&gt;Marrin&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
-<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipPersonRoleCode&quot;</span>&gt;CHIEFOFFICER&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SecurityOfficerPerson</span>&gt;</span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ISPSRequirements</span>&gt;</span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;MDH-26-0517&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InfectiousDiseaseCaseOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:InfectiousDiseaseCaseOnBoardIndicator</span>&gt;</span>
-<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MoreIllThanExpectedIndicator</span>&gt;false&lt;/<span class="kw">cbc:MoreIllThanExpectedIndicator</span>&gt;</span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalPractitionerConsultedIndicator</span>&gt;true&lt;/<span class="kw">cbc:MedicalPractitionerConsultedIndicator</span>&gt;</span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StowawaysFoundOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:StowawaysFoundOnBoardIndicator</span>&gt;</span>
-<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:SickAnimalOnBoardIndicator</span>&gt;</span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FumigatedCargoTransportIndicator</span>&gt;false&lt;/<span class="kw">cbc:FumigatedCargoTransportIndicator</span>&gt;</span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;true&lt;/<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;</span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;</span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReinspectionRequiredIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReinspectionRequiredIndicator</span>&gt;</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalDeadPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalDeadPersonQuantity</span>&gt;</span>
-<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalIllPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalIllPersonQuantity</span>&gt;</span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalDescription</span>&gt;None on board.&lt;/<span class="kw">cbc:SickAnimalDescription</span>&gt;</span>
-<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StowawayDescription</span>&gt;None found in the search before departure.&lt;/<span class="kw">cbc:StowawayDescription</span>&gt;</span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LastDrinkingWaterAnalysisDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:LastDrinkingWaterAnalysisDate</span>&gt;</span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:WHOAffectedAreaVisit</span>&gt;</span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VisitDate</span>&gt;2026-03-28&lt;/<span class="kw">cbc:VisitDate</span>&gt;</span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:WHOAffectedAreaPortLocation</span>&gt;</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBLMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:WHOAffectedAreaPortLocation</span>&gt;</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:WHOAffectedAreaVisit</span>&gt;</span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PersonnelHealthIncident</span>&gt;</span>
-<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;HI-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JoinedShipDate</span>&gt;2025-11-01&lt;/<span class="kw">cbc:JoinedShipDate</span>&gt;</span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureOfIllnessDescription</span>&gt;Sprained wrist.&lt;/<span class="kw">cbc:NatureOfIllnessDescription</span>&gt;</span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OnsetDate</span>&gt;2026-05-16&lt;/<span class="kw">cbc:OnsetDate</span>&gt;</span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReportedToMedicalOfficerIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReportedToMedicalOfficerIndicator</span>&gt;</span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GivenTreatmentDescription</span>&gt;Bandage and rest.&lt;/<span class="kw">cbc:GivenTreatmentDescription</span>&gt;</span>
-<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StillIllIndicator</span>&gt;true&lt;/<span class="kw">cbc:StillIllIndicator</span>&gt;</span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DiedIndicator</span>&gt;false&lt;/<span class="kw">cbc:DiedIndicator</span>&gt;</span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StillOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:StillOnBoardIndicator</span>&gt;</span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EvacuatedIndicator</span>&gt;false&lt;/<span class="kw">cbc:EvacuatedIndicator</span>&gt;</span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuriedAtSeaIndicator</span>&gt;false&lt;/<span class="kw">cbc:BuriedAtSeaIndicator</span>&gt;</span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Fit for light duty.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Person</span>&gt;</span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FirstName</span>&gt;Rafe&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FamilyName</span>&gt;Dunmore&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipPersonRoleCode&quot;</span>&gt;CHIEFENG&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Person</span>&gt;</span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PersonnelHealthIncident</span>&gt;</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SanitaryMeasure</span>&gt;</span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SanitaryMeasureTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SanitaryMeasureCode&quot;</span>&gt;DISINFECT&lt;/<span class="kw">cbc:SanitaryMeasureTypeCode</span>&gt;</span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ApplicationDate</span>&gt;2026-05-15&lt;/<span class="kw">cbc:ApplicationDate</span>&gt;</span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SanitaryMeasure</span>&gt;</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PlaceOfReportLocation</span>&gt;</span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;At sea, 120 nautical miles west of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PlaceOfReportLocation</span>&gt;</span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MedicalCertificate</span>&gt;</span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MC-TH-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CertificateType</span>&gt;Medicine chest&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MedicalCertificate</span>&gt;</span>
-<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ShipSanitationControlCertificate</span>&gt;</span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SSCC-XB-2025-0911&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CertificateType</span>&gt;Ship sanitation control&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ShipSanitationControlCertificate</span>&gt;</span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FuelConsumption</span>&gt;</span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;FC-26-19E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FuelTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FuelTypeCode&quot;</span>&gt;MGO&lt;/<span class="kw">cbc:FuelTypeCode</span>&gt;</span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FuelType</span>&gt;Marine gas oil, 0.1 % sulphur&lt;/<span class="kw">cbc:FuelType</span>&gt;</span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FuelConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;38&lt;/<span class="kw">cbc:FuelConsumptionMeasure</span>&gt;</span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalFuelProperty</span>&gt;</span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeID</span>&gt;Sulphur&lt;/<span class="kw">cbc:TypeID</span>&gt;</span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;0.1 %&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalFuelProperty</span>&gt;</span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FuelMetering</span>&gt;</span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeID</span>&gt;FlowMeter&lt;/<span class="kw">cbc:TypeID</span>&gt;</span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;38.2 t&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FuelMetering</span>&gt;</span>
-<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EmissionTypeCode&quot;</span>&gt;CO2E&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;122&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FuelProviderParty</span>&gt;</span>
-<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FuelProviderParty</span>&gt;</span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FuelConsumption</span>&gt;</span>
-<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:JourneyID</span>&gt;TH-26-19E&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
-<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
-<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Bayvarra&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
-<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;EB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
-<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;1511&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
-<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MaritimeTransport</span>&gt;</span>
-<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:vessel&quot;</span>&gt;XB-S-20117&lt;/<span class="kw">cbc:VesselID</span>&gt;</span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselName</span>&gt;Tidewell Harbour&lt;/<span class="kw">cbc:VesselName</span>&gt;</span>
-<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RadioCallSignID</span>&gt;QBTH7&lt;/<span class="kw">cbc:RadioCallSignID</span>&gt;</span>
-<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MMSIRegistrationID</span>&gt;298702117&lt;/<span class="kw">cbc:MMSIRegistrationID</span>&gt;</span>
-<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipsRequirements</span>&gt;Shore power at the container quay.&lt;/<span class="kw">cbc:ShipsRequirements</span>&gt;</span>
-<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;9940&lt;/<span class="kw">cbc:GrossTonnageMeasure</span>&gt;</span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;5120&lt;/<span class="kw">cbc:NetTonnageMeasure</span>&gt;</span>
-<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SegregatedBallastMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;2480&lt;/<span class="kw">cbc:SegregatedBallastMeasure</span>&gt;</span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipConfigurationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipConfigurationCode&quot;</span>&gt;FEEDER&lt;/<span class="kw">cbc:ShipConfigurationCode</span>&gt;</span>
-<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:INFShipClassCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO INF Code&quot;</span>&gt;INF1&lt;/<span class="kw">cbc:INFShipClassCode</span>&gt;</span>
-<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AntennaLocus</span>&gt;Mast, 28 m above the waterline&lt;/<span class="kw">cbc:AntennaLocus</span>&gt;</span>
-<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
-<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;REG-XB-S-20117&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
-<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
-<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
-<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:VesselDynamics</span>&gt;</span>
-<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:NavigationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;ITU-R M.1371 Navigational status&quot;</span>&gt;0&lt;/<span class="kw">cbc:NavigationStatusCode</span>&gt;</span>
-<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AtAnchorageIndicator</span>&gt;false&lt;/<span class="kw">cbc:AtAnchorageIndicator</span>&gt;</span>
-<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CourseOverGroundDirection</span>&gt;088&lt;/<span class="kw">cbc:CourseOverGroundDirection</span>&gt;</span>
-<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SpeedOverGroundMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KNT&quot;</span>&gt;13.5&lt;/<span class="kw">cbc:SpeedOverGroundMeasure</span>&gt;</span>
-<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RateOfTurnMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;E96&quot;</span>&gt;0&lt;/<span class="kw">cbc:RateOfTurnMeasure</span>&gt;</span>
-<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:VesselDynamics</span>&gt;</span>
-<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MaritimeTransport</span>&gt;</span>
-<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-MF-26-0140&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TWL-SIG-CTR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411918&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Tidewell Ocean Lines&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CommonTransportationReport</span>&gt;</span></code></pre></div>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Lumeport anchorage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:LocationCoordinate</span>&gt;</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:CoordinateSystemCode</span> <span class="ot">listID=</span><span class="st">&quot;EPSG&quot;</span>&gt;4326&lt;/<span class="kw">cbc:CoordinateSystemCode</span>&gt;</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:LatitudeDegreesMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DD&quot;</span>&gt;40&lt;/<span class="kw">cbc:LatitudeDegreesMeasure</span>&gt;</span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:LatitudeMinutesMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;D61&quot;</span>&gt;1.20&lt;/<span class="kw">cbc:LatitudeMinutesMeasure</span>&gt;</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:LatitudeDirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode&quot;</span>&gt;South&lt;/<span class="kw">cbc:LatitudeDirectionCode</span>&gt;</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:LongitudeDegreesMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DD&quot;</span>&gt;15&lt;/<span class="kw">cbc:LongitudeDegreesMeasure</span>&gt;</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:LongitudeMinutesMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;D61&quot;</span>&gt;12.60&lt;/<span class="kw">cbc:LongitudeMinutesMeasure</span>&gt;</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:LongitudeDirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode&quot;</span>&gt;West&lt;/<span class="kw">cbc:LongitudeDirectionCode</span>&gt;</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:LocationCoordinate</span>&gt;</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ShipToShipActivityRecord</span>&gt;</span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ReportLocation</span>&gt;</span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;At sea, 120 nautical miles west of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ReportLocation</span>&gt;</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ISSCIssuerParty</span>&gt;</span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20413014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Maritime Administration of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ISSCIssuerParty</span>&gt;</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecurityOfficerPerson</span>&gt;</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FirstName</span>&gt;Elsbeth&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FamilyName</span>&gt;Marrin&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipPersonRoleCode&quot;</span>&gt;CHIEFOFFICER&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SecurityOfficerPerson</span>&gt;</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ISPSRequirements</span>&gt;</span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;MDH-26-0517&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InfectiousDiseaseCaseOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:InfectiousDiseaseCaseOnBoardIndicator</span>&gt;</span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MoreIllThanExpectedIndicator</span>&gt;false&lt;/<span class="kw">cbc:MoreIllThanExpectedIndicator</span>&gt;</span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalPractitionerConsultedIndicator</span>&gt;true&lt;/<span class="kw">cbc:MedicalPractitionerConsultedIndicator</span>&gt;</span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StowawaysFoundOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:StowawaysFoundOnBoardIndicator</span>&gt;</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:SickAnimalOnBoardIndicator</span>&gt;</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FumigatedCargoTransportIndicator</span>&gt;false&lt;/<span class="kw">cbc:FumigatedCargoTransportIndicator</span>&gt;</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;true&lt;/<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReinspectionRequiredIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReinspectionRequiredIndicator</span>&gt;</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalDeadPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalDeadPersonQuantity</span>&gt;</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalIllPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalIllPersonQuantity</span>&gt;</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalDescription</span>&gt;None on board.&lt;/<span class="kw">cbc:SickAnimalDescription</span>&gt;</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StowawayDescription</span>&gt;None found in the search before departure.&lt;/<span class="kw">cbc:StowawayDescription</span>&gt;</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LastDrinkingWaterAnalysisDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:LastDrinkingWaterAnalysisDate</span>&gt;</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:WHOAffectedAreaVisit</span>&gt;</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VisitDate</span>&gt;2026-03-28&lt;/<span class="kw">cbc:VisitDate</span>&gt;</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:WHOAffectedAreaPortLocation</span>&gt;</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBLMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:WHOAffectedAreaPortLocation</span>&gt;</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:WHOAffectedAreaVisit</span>&gt;</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PersonnelHealthIncident</span>&gt;</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;HI-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JoinedShipDate</span>&gt;2025-11-01&lt;/<span class="kw">cbc:JoinedShipDate</span>&gt;</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureOfIllnessDescription</span>&gt;Sprained wrist.&lt;/<span class="kw">cbc:NatureOfIllnessDescription</span>&gt;</span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OnsetDate</span>&gt;2026-05-16&lt;/<span class="kw">cbc:OnsetDate</span>&gt;</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReportedToMedicalOfficerIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReportedToMedicalOfficerIndicator</span>&gt;</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GivenTreatmentDescription</span>&gt;Bandage and rest.&lt;/<span class="kw">cbc:GivenTreatmentDescription</span>&gt;</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StillIllIndicator</span>&gt;true&lt;/<span class="kw">cbc:StillIllIndicator</span>&gt;</span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DiedIndicator</span>&gt;false&lt;/<span class="kw">cbc:DiedIndicator</span>&gt;</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StillOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:StillOnBoardIndicator</span>&gt;</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EvacuatedIndicator</span>&gt;false&lt;/<span class="kw">cbc:EvacuatedIndicator</span>&gt;</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuriedAtSeaIndicator</span>&gt;false&lt;/<span class="kw">cbc:BuriedAtSeaIndicator</span>&gt;</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Fit for light duty.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Person</span>&gt;</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FirstName</span>&gt;Rafe&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FamilyName</span>&gt;Dunmore&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipPersonRoleCode&quot;</span>&gt;CHIEFENG&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Person</span>&gt;</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PersonnelHealthIncident</span>&gt;</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SanitaryMeasure</span>&gt;</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SanitaryMeasureTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SanitaryMeasureCode&quot;</span>&gt;DISINFECT&lt;/<span class="kw">cbc:SanitaryMeasureTypeCode</span>&gt;</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ApplicationDate</span>&gt;2026-05-15&lt;/<span class="kw">cbc:ApplicationDate</span>&gt;</span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SanitaryMeasure</span>&gt;</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PlaceOfReportLocation</span>&gt;</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;At sea, 120 nautical miles west of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PlaceOfReportLocation</span>&gt;</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MedicalCertificate</span>&gt;</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MC-TH-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CertificateType</span>&gt;Medicine chest&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MedicalCertificate</span>&gt;</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ShipSanitationControlCertificate</span>&gt;</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SSCC-XB-2026-0318&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CertificateType</span>&gt;Ship sanitation control&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ShipSanitationControlCertificate</span>&gt;</span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FuelConsumption</span>&gt;</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;FC-26-19E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FuelTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FuelTypeCode&quot;</span>&gt;MGO&lt;/<span class="kw">cbc:FuelTypeCode</span>&gt;</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FuelType</span>&gt;Marine gas oil, 0.1 % sulphur&lt;/<span class="kw">cbc:FuelType</span>&gt;</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FuelConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;38&lt;/<span class="kw">cbc:FuelConsumptionMeasure</span>&gt;</span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalFuelProperty</span>&gt;</span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeID</span>&gt;Sulphur&lt;/<span class="kw">cbc:TypeID</span>&gt;</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;0.1 %&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalFuelProperty</span>&gt;</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FuelMetering</span>&gt;</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeID</span>&gt;FlowMeter&lt;/<span class="kw">cbc:TypeID</span>&gt;</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;38.2 t&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FuelMetering</span>&gt;</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EmissionTypeCode&quot;</span>&gt;CO2E&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;122&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FuelProviderParty</span>&gt;</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FuelProviderParty</span>&gt;</span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FuelConsumption</span>&gt;</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:JourneyID</span>&gt;TH-26-19E&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Bayvarra&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;EB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;1511&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MaritimeTransport</span>&gt;</span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:vessel&quot;</span>&gt;XB-S-20117&lt;/<span class="kw">cbc:VesselID</span>&gt;</span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselName</span>&gt;Tidewell Harbour&lt;/<span class="kw">cbc:VesselName</span>&gt;</span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RadioCallSignID</span>&gt;QBTH7&lt;/<span class="kw">cbc:RadioCallSignID</span>&gt;</span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MMSIRegistrationID</span>&gt;298702117&lt;/<span class="kw">cbc:MMSIRegistrationID</span>&gt;</span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipsRequirements</span>&gt;Shore power at the container quay.&lt;/<span class="kw">cbc:ShipsRequirements</span>&gt;</span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;9940&lt;/<span class="kw">cbc:GrossTonnageMeasure</span>&gt;</span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;5120&lt;/<span class="kw">cbc:NetTonnageMeasure</span>&gt;</span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SegregatedBallastMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;2480&lt;/<span class="kw">cbc:SegregatedBallastMeasure</span>&gt;</span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipConfigurationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipConfigurationCode&quot;</span>&gt;FEEDER&lt;/<span class="kw">cbc:ShipConfigurationCode</span>&gt;</span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:INFShipClassCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO INF Code&quot;</span>&gt;INF1&lt;/<span class="kw">cbc:INFShipClassCode</span>&gt;</span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AntennaLocus</span>&gt;Mast, 28 m above the waterline&lt;/<span class="kw">cbc:AntennaLocus</span>&gt;</span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
+<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;REG-XB-S-20117&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:VesselDynamics</span>&gt;</span>
+<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:NavigationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;ITU-R M.1371 Navigational status&quot;</span>&gt;0&lt;/<span class="kw">cbc:NavigationStatusCode</span>&gt;</span>
+<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AtAnchorageIndicator</span>&gt;false&lt;/<span class="kw">cbc:AtAnchorageIndicator</span>&gt;</span>
+<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CourseOverGroundDirection</span>&gt;088&lt;/<span class="kw">cbc:CourseOverGroundDirection</span>&gt;</span>
+<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SpeedOverGroundMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KNT&quot;</span>&gt;13.5&lt;/<span class="kw">cbc:SpeedOverGroundMeasure</span>&gt;</span>
+<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RateOfTurnMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;E96&quot;</span>&gt;0&lt;/<span class="kw">cbc:RateOfTurnMeasure</span>&gt;</span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:VesselDynamics</span>&gt;</span>
+<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MaritimeTransport</span>&gt;</span>
+<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-MF-26-0140&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TWL-SIG-CTR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411918&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Tidewell Ocean Lines&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CommonTransportationReport</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

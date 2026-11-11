@@ -93,8 +93,29 @@ System subheadings.</p>
 cotton and bills itself on the farm's behalf. UBL's self-billed invoice
 and credit note are made for exactly this, and the farm receives a
 structured statement of what it was paid for.</p>
-<p>In this world it sends 1 and receives 3 documents, and is named in 0
+<p>In this world it sends 1 and receives 5 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
+<h2
+id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
+by container ship, cost insurance and freight (Bayvarra → island
+Lisavu)</h2>
+<p>The commercial buyer on the island buys cost, insurance and freight
+(CIF) to the port of discharge. The distributor therefore pays the sea
+freight and the cargo insurance; it hands both to its freight forwarder.
+The buyer takes over at the port of discharge: its customs broker clears
+the goods and its 3PL receives them.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
+Receipt</strong></a> from <a href="world-1-xl.html">Velumi Trading</a>:
+Velumi Trading sells two of the imported benches in its shop in Selanu
+to the cotton farm, for the pickers' rest place; the farm pays with its
+Coralcard, and the till prints the card number with the first six and
+the last four digits. <a href="example-sea-29-PurchaseReceipt.html">See
+the example document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p></li>
+</ul>
 <h2
 id="cotton-from-the-islands-farms-to-the-textile-mill-lisavu--bayvarra">Cotton:
 from the island's farms to the textile mill (Lisavu → Bayvarra)</h2>
@@ -111,7 +132,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DELIVERY-NOTE-SC
 Note</strong></a> to <a href="world-39-xl.html">Selanu Cotton
 Ginnery</a>: The farm delivers a trailer of seed cotton at the gin and
 confirms what it delivered. <a
-href="example-cotton-02-DeliveryNote.html">See the example
+href="example-cotton-03-DeliveryNote.html">See the example
 document</a>.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
@@ -121,10 +142,21 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-SELF-BILLED-INVOICE-SCHEMA"><strong>Self
 Billed Invoice</strong></a> from <a href="world-39-xl.html">Selanu
+Cotton Ginnery</a>: Before the harvest the ginnery advances the farm a
+quarter of the value of its expected delivery. Under the self-billing
+agreement it writes the prepayment invoice itself (type 386); the
+advance is deducted in the final self-billed invoice. <a
+href="example-cotton-01-SelfBilledInvoice.html">See the example
+document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-SELF-BILLED-INVOICE-SCHEMA"><strong>Self
+Billed Invoice</strong></a> from <a href="world-39-xl.html">Selanu
 Cotton Ginnery</a>: Under the self-billing agreement the ginnery writes
 the farm's invoice from the weight and grade it measured. No tax on the
 island, stated as such. <a
-href="example-cotton-03-SelfBilledInvoice.html">See the example
+href="example-cotton-04-SelfBilledInvoice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
@@ -133,7 +165,7 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-SELF-BILLED-CRED
 Billed Credit Note</strong></a> from <a href="world-39-xl.html">Selanu
 Cotton Ginnery</a>: Classing after ginning puts part of the delivery a
 grade lower; the ginnery credits the difference on the farm's behalf. <a
-href="example-cotton-04-SelfBilledCreditNote.html">See the example
+href="example-cotton-05-SelfBilledCreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
@@ -141,7 +173,7 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> from <a href="world-39-xl.html">Selanu Cotton
 Ginnery</a>: The ginnery pays the farm the net amount. <a
-href="example-cotton-05-RemittanceAdvice.html">See the example
+href="example-cotton-06-RemittanceAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-22-xl.html">Bank of Selanu</a> as
@@ -151,13 +183,15 @@ document</a>.</p>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<p><code>DespatchSupplierParty</code> <code>SellerSupplierParty</code>
-<code>AccountingSupplierParty</code></p>
+<p><code>AccountingSupplierParty</code> <code>SellerSupplierParty</code>
+<code>DespatchSupplierParty</code>
+<code>AccountingCustomerParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
 <ul>
 <li><a href="world-39-xl.html">Selanu Cotton Ginnery</a>, Lisavu</li>
+<li><a href="world-1-xl.html">Velumi Trading</a>, Lisavu</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#38-xl">See Cotton Farm on the map</a> · Lisavu:
@@ -170,6 +204,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

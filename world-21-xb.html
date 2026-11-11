@@ -54,7 +54,7 @@ invoice says so.</td>
 keeps the business registry. UBL notices reach it in one structured
 format, and business information documents let it share registry data
 that tenderers can reuse as evidence.</p>
-<p>In this world it sends 1 and receives 3 documents, and is named in 0
+<p>In this world it sends 3 and receives 9 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
 <p>The contracting authority buys park benches and street furniture for
@@ -111,6 +111,106 @@ the example document</a>.</p>
 href="world-28-xb.html">Procurement Review Board of Bayvarra</a> as
 <code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 </ul>
+<h2 id="a-design-contest-for-the-promenade-bench-bayvarra">A design
+contest for the promenade bench (Bayvarra)</h2>
+<p>The contracting authority relaunches a design contest for the bench
+of Lumeport's harbour promenade, after cancelling the first one because
+no design met the brief. Several documents are revised and say which
+version they supersede: the prior information notice after the council
+raised the prize fund, the contest notice and its documents in a
+corrigendum, the design team's declarations, the registry's extract once
+new accounts are filed, and the results notice, which corrects a prize
+amount. No goods move.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BUSINESS-INFORMATION-SCHEMA"><strong>Business
+Information</strong></a> to <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The authority checks the lead member's
+registration before the jury selects the participants. <a
+href="example-contest-13-BusinessInformation.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p>
+<p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
+as <code>BusinessParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BUSINESS-INFORMATION-SCHEMA"><strong>Business
+Information</strong></a> to <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: Version 2 of the registry's extract, after the
+furniture maker filed its accounts for 2025. <a
+href="example-contest-14-BusinessInformation.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p>
+<p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
+as <code>BusinessParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRIOR-INFORMATION-NOTICE-SCHEMA"><strong>Prior
+Information Notice</strong></a> from <a href="world-2-xb.html">Lumeport
+Public Works Department</a>: The authority announces the relaunched
+design contest for the promenade bench, with its planned prizes. <a
+href="example-contest-01-PriorInformationNotice.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRIOR-INFORMATION-NOTICE-SCHEMA"><strong>Prior
+Information Notice</strong></a> from <a href="world-2-xb.html">Lumeport
+Public Works Department</a>: Version 2 of the prior information notice:
+the city council raised the prize fund, and the contest notice moves by
+two weeks. <a href="example-contest-02-PriorInformationNotice.html">See
+the example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-NOTICE-SCHEMA"><strong>Contract
+Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public Works
+Department</a>: The contest notice: a restricted design contest with
+three prizes, relaunched after the earlier contest was cancelled; a
+group must form a limited company before the follow-up contract. <a
+href="example-contest-03-ContractNotice.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p>
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Bayvarra</a> as
+<code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-NOTICE-SCHEMA"><strong>Contract
+Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public Works
+Department</a>: A corrigendum, version 2 of the contest notice: the site
+plan was wrong, the deadline for requests is extended and the
+qualification widened. <a
+href="example-contest-08-ContractNotice.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p>
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Bayvarra</a> as
+<code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-AWARD-NOTICE-SCHEMA"><strong>Contract
+Award Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The results of the contest are published: first
+prize to the furniture maker's team, second to the manufacturer. <a
+href="example-contest-15-ContractAwardNotice.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p>
+<p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
+as <code>TenderResult/WinningParty</code>; <a
+href="world-5-xu.html">Valdara Industries</a> as
+<code>TenderResult/WinningParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-AWARD-NOTICE-SCHEMA"><strong>Contract
+Award Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: Version 2 of the results notice corrects the
+amount of the first prize. <a
+href="example-contest-16-ContractAwardNotice.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p>
+<p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
+as <code>TenderResult/WinningParty</code>; <a
+href="world-5-xu.html">Valdara Industries</a> as
+<code>TenderResult/WinningParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>SenderParty</code></p>
@@ -133,6 +233,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

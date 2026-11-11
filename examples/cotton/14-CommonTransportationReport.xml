@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CommonTransportationReport xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonTransportationReport-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:common-transportation-report:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>TOL-CTR-26-0207</cbc:ID>
+  <cbc:UUID>149f7421-1d43-5c08-9504-00a7ea0b615b</cbc:UUID>
+  <cbc:IssueDate>2026-03-03</cbc:IssueDate>
+  <cbc:IssueTime>11:22:00</cbc:IssueTime>
+  <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
+  <cbc:ReportType>Pre-arrival report</cbc:ReportType>
+  <cac:ReporterParty>
+    <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-547539</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Harbour Road</cbc:StreetName>
+      <cbc:BuildingNumber>18</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38527</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
+      <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+      <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
+      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XB:FBR</cbc:ID>
+        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
+      <cbc:Department>Operations</cbc:Department>
+      <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
+      <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReporterParty>
+  <cac:AuthorityParty>
+    <cbc:WebsiteURI>https://www.port-lumeport.example</cbc:WebsiteURI>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5222</cbc:IndustryClassificationCode>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Lumeport</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-030762</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Harbour Road</cbc:StreetName>
+      <cbc:BuildingNumber>11</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38526</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PhysicalLocation>
+      <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+      <cbc:Description>Port of Lumeport</cbc:Description>
+      <cbc:InformationURI>https://www.port-lumeport.example</cbc:InformationURI>
+      <cac:SubsidiaryLocation>
+        <cbc:Name>Container quay</cbc:Name>
+      </cac:SubsidiaryLocation>
+      <cac:LocationCoordinate>
+        <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+        <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
+        <cbc:LatitudeMinutesMeasure unitCode="D61">1.20</cbc:LatitudeMinutesMeasure>
+        <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+        <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+        <cbc:LongitudeMinutesMeasure unitCode="D61">12.60</cbc:LongitudeMinutesMeasure>
+        <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+      </cac:LocationCoordinate>
+    </cac:PhysicalLocation>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Port of Lumeport Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:CompanyID>
+      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XB:FBR</cbc:ID>
+        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Port control</cbc:Name>
+      <cbc:JobTitle>Operations planner</cbc:JobTitle>
+      <cbc:Department>Operations</cbc:Department>
+      <cbc:Telephone>+999 2 38 2281 1781</cbc:Telephone>
+      <cbc:ElectronicMail>port@port-lumeport.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411781</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:AuthorityParty>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Port of Lumeport</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:Shipment>
+    <cbc:ID>TOL-SH-26-0208</cbc:ID>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cac:ReportingPerson>
+        <cbc:FirstName>Hester</cbc:FirstName>
+        <cbc:FamilyName>Calloway</cbc:FamilyName>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
+      </cac:ReportingPerson>
+      <cac:ISPSRequirements>
+        <cbc:ID>IISSC-XB-2026-0115</cbc:ID>
+        <cbc:ValidISSCIndicator>false</cbc:ValidISSCIndicator>
+        <cbc:ISSCAbsenceReason>The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for April.</cbc:ISSCAbsenceReason>
+        <cbc:ISSCExpiryDate>2026-07-14</cbc:ISSCExpiryDate>
+        <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
+        <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
+        <cbc:AdditionalMattersDescription>The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 1 March. Nothing was found.</cbc:AdditionalMattersDescription>
+        <cac:ISSCIssuerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413014</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Maritime Administration of Bayvarra</cbc:Name>
+          </cac:PartyName>
+        </cac:ISSCIssuerParty>
+      </cac:ISPSRequirements>
+      <cac:MaritimeHealthDeclaration>
+        <cbc:ID>MDH-26-0303</cbc:ID>
+        <cbc:InfectiousDiseaseCaseOnBoardIndicator>false</cbc:InfectiousDiseaseCaseOnBoardIndicator>
+        <cbc:SanitaryMeasuresAppliedIndicator>false</cbc:SanitaryMeasuresAppliedIndicator>
+        <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
+        <cbc:TotalIllPersonQuantity unitCode="IE">0</cbc:TotalIllPersonQuantity>
+        <cac:ShipSanitationControlExemptionDocumentReference>
+          <cbc:ID>SSCEC-XB-2026-0114</cbc:ID>
+          <cbc:IssueDate>2026-01-14</cbc:IssueDate>
+          <cbc:DocumentDescription>Ship Sanitation Control Exemption Certificate (International Health Regulations 2005, Annex 3): the inspection found no evidence of infection or contamination, so no control measures were needed.</cbc:DocumentDescription>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Port of Lumeport</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
+        </cac:ShipSanitationControlExemptionDocumentReference>
+      </cac:MaritimeHealthDeclaration>
+    </cac:ShipmentStage>
+  </cac:Shipment>
+  <cac:TransportMeans>
+    <cbc:JourneyID>TR-26-09W</cbc:JourneyID>
+    <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+    <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+    <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+    <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+    <cac:MaritimeTransport>
+      <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20231</cbc:VesselID>
+      <cbc:VesselName>Tidewell Reef</cbc:VesselName>
+      <cbc:RadioCallSignID>QBTR4</cbc:RadioCallSignID>
+      <cbc:MMSIRegistrationID>298702231</cbc:MMSIRegistrationID>
+      <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+      <cbc:GrossTonnageMeasure unitCode="C62">7480</cbc:GrossTonnageMeasure>
+      <cbc:NetTonnageMeasure unitCode="C62">3910</cbc:NetTonnageMeasure>
+      <cbc:SegregatedBallastMeasure unitCode="TNE">1900</cbc:SegregatedBallastMeasure>
+      <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+      <cac:RegistryCertificateDocumentReference>
+        <cbc:ID>REG-XB-S-20231</cbc:ID>
+      </cac:RegistryCertificateDocumentReference>
+      <cac:RegistryPortLocation>
+        <cbc:Name>Lumeport</cbc:Name>
+      </cac:RegistryPortLocation>
+    </cac:MaritimeTransport>
+  </cac:TransportMeans>
+</CommonTransportationReport>

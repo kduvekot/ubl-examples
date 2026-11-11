@@ -270,11 +270,6 @@
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:Address>
-      <cac:WebSiteAccess>
-        <cbc:URI>https://www.ferranoenergy.example/meter</cbc:URI>
-        <cbc:Password>********</cbc:Password>
-        <cbc:Login>FE-CP-4120-01</cbc:Login>
-      </cac:WebSiteAccess>
       <cac:UtilityMeter>
         <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>

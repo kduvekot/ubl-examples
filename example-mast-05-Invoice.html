@@ -1184,6 +1184,16 @@ Shown on a second label.</li>
 <li><code>Item/HazardousItem/SecondaryHazard/PlacardEndorsement</code> =
 <strong>3</strong><br />
 The flammable liquid label.</li>
+<li><code>Item/HazardousItem/SecondaryHazard/EmergencyProceduresCode</code>
+= <strong>TEC3</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code>)<br />
+The emergency procedures for the subsidiary hazard: the Trade Accord's
+emergency card for class 3. The IMDG Code gives one pair of emergency
+schedules for the whole UN entry (on the item above), not one per
+hazard; the instructions in writing of road transport (ADR 5.4.3), which
+the Accord's cards follow, give the actions per danger label, the
+subsidiary hazard's label included. The code is from the Trade Accord's
+transport emergency card list: TEC3 = Emergency card for class 3.</li>
 <li><code>Item/HazardousItem/SecondaryHazard/Extension</code> =
 <strong>Subsidiary risk 3</strong><br />
 In words.</li>
@@ -1668,32 +1678,33 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
 <span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export outside Bayvarra&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;9.5&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;LTR&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC3&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export outside Bayvarra&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;9.5&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;LTR&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

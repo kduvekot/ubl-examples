@@ -386,6 +386,7 @@
   <cac:PricingExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
+    <cbc:ExchangeMarketID schemeID="urn:ubl-examples:world:codelist:MarketCode">XLMX</cbc:ExchangeMarketID>
     <cbc:CalculationRate>0.01</cbc:CalculationRate>
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-01-02</cbc:Date>

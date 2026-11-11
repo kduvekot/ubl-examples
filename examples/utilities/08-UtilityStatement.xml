@@ -221,8 +221,8 @@
         </cac:Country>
       </cac:Address>
       <cac:WebSiteAccess>
-        <cbc:URI>https://www.coastalwater.example/meter</cbc:URI>
-        <cbc:Password>********</cbc:Password>
+        <cbc:URI>https://www.coastalwater.example/reading</cbc:URI>
+        <cbc:Password>RD-4K7-918</cbc:Password>
         <cbc:Login>CSW-CP-38516-57</cbc:Login>
       </cac:WebSiteAccess>
       <cac:UtilityMeter>

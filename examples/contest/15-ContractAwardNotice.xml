@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:contract-award-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>LPWD-DOC-26-0640</cbc:ID>
+  <cbc:UUID>c61705b1-9bf8-569a-ab88-3def7dd13ffb</cbc:UUID>
+  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:IssueDate>2026-07-02</cbc:IssueDate>
+  <cbc:IssueTime>11:31:00</cbc:IssueTime>
+  <cbc:Note>Results of the design contest for the harbour promenade bench.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
+  <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
+  <cac:PreviousDocumentReference>
+    <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+  </cac:PreviousDocumentReference>
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listID="urn:ubl-examples:world:codelist:ContractingPartyTypeCode">LOCAL</cbc:PartyTypeCode>
+      <cbc:PartyType>Local authority: a department of the city of Lumeport</cbc:PartyType>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listID="urn:ubl-examples:world:codelist:AuthorityActivityCode">COMMUNITY</cbc:ActivityTypeCode>
+      <cbc:ActivityType>Housing and community amenities: public works and parks</cbc:ActivityType>
+    </cac:ContractingActivity>
+    <cac:ContractingRepresentationType>
+      <cbc:RepresentationTypeCode listID="urn:ubl-examples:world:codelist:RepresentationTypeCode">OWN</cbc:RepresentationTypeCode>
+      <cbc:RepresentationType>On its own behalf</cbc:RepresentationType>
+    </cac:ContractingRepresentationType>
+    <cac:Party>
+      <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410548</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Civic Square</cbc:StreetName>
+        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+        <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
+        <cbc:Department>Procurement office</cbc:Department>
+        <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
+        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38517</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
+        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:CompanyID>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Procurement office</cbc:Name>
+        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
+        <cbc:Department>Procurement</cbc:Department>
+        <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+        <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410548</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:ReceiverParty>
+    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410959</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayvarra Information Service</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-634627</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Civic Square</cbc:StreetName>
+      <cbc:BuildingNumber>27</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38520</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Bayvarra Information Service</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410959</cbc:CompanyID>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+      <cac:RegistrationAddress>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XB:FBR</cbc:ID>
+        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Publications and register</cbc:Name>
+      <cbc:JobTitle>Public service officer</cbc:JobTitle>
+      <cbc:Department>Public services</cbc:Department>
+      <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
+      <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410959</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:TenderingTerms>
+    <cac:AwardingTerms>
+      <cac:Prize>
+        <cbc:RankCode listID="urn:ubl-examples:world:codelist:PrizeRankCode">FIRST</cbc:RankCode>
+        <cbc:ValueAmount currencyID="XBL">6000.00</cbc:ValueAmount>
+        <cbc:Description>For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.</cbc:Description>
+      </cac:Prize>
+      <cac:Prize>
+        <cbc:RankCode listID="urn:ubl-examples:world:codelist:PrizeRankCode">SECOND</cbc:RankCode>
+        <cbc:ValueAmount currencyID="XBL">4000.00</cbc:ValueAmount>
+        <cbc:Description>For the design the jury ranks second.</cbc:Description>
+      </cac:Prize>
+    </cac:AwardingTerms>
+  </cac:TenderingTerms>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:Name>Design of the harbour promenade bench</cbc:Name>
+    <cbc:Description>A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.</cbc:Description>
+    <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="XBL">54000.00</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">83912</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Name>Harbour promenade, Lumeport</cbc:Name>
+      <cac:Address>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:TenderResult>
+    <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
+    <cbc:Description>First prize to the Brackenmere and Saltmere design team, second to Valdara Industries. The jury withheld the third prize: no other design reached prize standard.</cbc:Description>
+    <cbc:AwardDate>2026-06-28</cbc:AwardDate>
+    <cbc:ReceivedTenderQuantity unitCode="EA">4</cbc:ReceivedTenderQuantity>
+    <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
+    <cac:WinningParty>
+      <cbc:Rank>1</cbc:Rank>
+      <cac:Party>
+        <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
+        <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="GS1 GLN">9523710900008</cbc:ID>
+        </cac:AdditionalPartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+        <cac:Language>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+        </cac:Language>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-821551</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+          <cbc:StreetName>Joiners Row</cbc:StreetName>
+          <cbc:BuildingNumber>14</cbc:BuildingNumber>
+          <cbc:CityName>Marrowdale</cbc:CityName>
+          <cbc:PostalZone>71203</cbc:PostalZone>
+          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            <cbc:Name>Bayvarra</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:PartyTaxScheme>
+          <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1237398</cbc:CompanyID>
+          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+            <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+            <cac:JurisdictionRegionAddress>
+              <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:JurisdictionRegionAddress>
+          </cac:TaxScheme>
+        </cac:PartyTaxScheme>
+        <cac:PartyLegalEntity>
+          <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
+          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+          <cac:RegistrationAddress>
+            <cbc:CityName>Marrowdale</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:RegistrationAddress>
+          <cac:CorporateRegistrationScheme>
+            <cbc:ID>XB:FBR</cbc:ID>
+            <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+            <cac:JurisdictionRegionAddress>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:JurisdictionRegionAddress>
+          </cac:CorporateRegistrationScheme>
+        </cac:PartyLegalEntity>
+        <cac:Contact>
+          <cbc:Name>Trade sales</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Department>Sales</cbc:Department>
+          <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
+          <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
+      </cac:Party>
+    </cac:WinningParty>
+    <cac:WinningParty>
+      <cbc:Rank>2</cbc:Rank>
+      <cac:Party>
+        <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
+        <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+        </cac:AdditionalPartyIdentification>
+        <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
+        </cac:AdditionalPartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+        <cac:Language>
+          <cbc:ID schemeID="ISO 639">qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
+        </cac:Language>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+          <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
+          <cbc:StreetName languageID="en-XB">Via delle Officine</cbc:StreetName>
+          <cbc:BuildingNumber>17</cbc:BuildingNumber>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
+          <cbc:PostalZone>4120</cbc:PostalZone>
+          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            <cbc:Name>Urvania</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:PartyTaxScheme>
+          <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
+          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+            <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
+            <cac:JurisdictionRegionAddress>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:JurisdictionRegionAddress>
+          </cac:TaxScheme>
+        </cac:PartyTaxScheme>
+        <cac:PartyLegalEntity>
+          <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
+          <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
+          <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+          <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
+          <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+          <cac:RegistrationAddress>
+            <cbc:CityName>Ferrano</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:RegistrationAddress>
+          <cac:CorporateRegistrationScheme>
+            <cbc:ID>XU:CR</cbc:ID>
+            <cbc:Name>Commercial register of Urvania</cbc:Name>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+            <cac:JurisdictionRegionAddress>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:JurisdictionRegionAddress>
+          </cac:CorporateRegistrationScheme>
+          <cac:SecurityListing>
+            <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
+            <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
+            <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
+            <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
+          </cac:SecurityListing>
+        </cac:PartyLegalEntity>
+        <cac:Contact>
+          <cbc:Name>Order desk</cbc:Name>
+          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Department>Sales</cbc:Department>
+          <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+          <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cac:OtherCommunication>
+            <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
+            <cbc:Value>+999 1 344 474 4274</cbc:Value>
+          </cac:OtherCommunication>
+        </cac:Contact>
+        <cac:ServiceProviderParty>
+          <cbc:ID>VI-SP-2026-01</cbc:ID>
+          <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
+          <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
+          <cac:Party>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Castrano Logistics</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+          <cac:SellerContact>
+            <cbc:Name>Key account desk</cbc:Name>
+          </cac:SellerContact>
+        </cac:ServiceProviderParty>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
+      </cac:Party>
+    </cac:WinningParty>
+  </cac:TenderResult>
+</ContractAwardNotice>

@@ -957,6 +957,16 @@ Shown on a second label.</li>
 <li><code>LineItem/Item/HazardousItem/SecondaryHazard/PlacardEndorsement</code>
 = <strong>3</strong><br />
 The flammable liquid label.</li>
+<li><code>LineItem/Item/HazardousItem/SecondaryHazard/EmergencyProceduresCode</code>
+= <strong>TEC3</strong> (listID
+<code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code>)<br />
+The emergency procedures for the subsidiary hazard: the Trade Accord's
+emergency card for class 3. The IMDG Code gives one pair of emergency
+schedules for the whole UN entry (on the item above), not one per
+hazard; the instructions in writing of road transport (ADR 5.4.3), which
+the Accord's cards follow, give the actions per danger label, the
+subsidiary hazard's label included. The code is from the Trade Accord's
+transport emergency card list: TEC3 = Emergency card for class 3.</li>
 <li><code>LineItem/Item/HazardousItem/SecondaryHazard/Extension</code> =
 <strong>Subsidiary risk 3</strong><br />
 In words.</li>
@@ -1308,19 +1318,20 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
 <span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC3&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

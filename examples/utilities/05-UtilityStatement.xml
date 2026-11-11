@@ -255,11 +255,6 @@
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:Address>
-      <cac:WebSiteAccess>
-        <cbc:URI>https://www.coastalwater.example/meter</cbc:URI>
-        <cbc:Password>********</cbc:Password>
-        <cbc:Login>CSW-CP-38510-411</cbc:Login>
-      </cac:WebSiteAccess>
       <cac:UtilityMeter>
         <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
         <cbc:MeterName>Water meter, shop</cbc:MeterName>

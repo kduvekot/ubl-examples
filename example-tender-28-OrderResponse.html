@@ -732,6 +732,14 @@ of UBL's Currency (ISO 4217) list: XUF = Ferra.</li>
 <code>ISO 4217 Alpha</code>)<br />
 The currency of the order and the invoice. The code is from the world's
 copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
+<li><code>ExchangeMarketID</code> = <strong>XLMX</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:MarketCode</code>)<br />
+The market the rate comes from: the contract fixes the rate at the
+Lumeport Exchange's noon fixing of the ferra on the first working day of
+the year, and the bank struck the department's forward purchase at it.
+The code is from the Trade Accord's market identifier list: XLMX =
+Lumeport Exchange. An identifier that holds a code names the code's list
+in its schemeID.</li>
 <li><code>CalculationRate</code> = <strong>0.01</strong><br />
 The world's reference rate fixed in the contract.</li>
 <li><code>MathematicOperatorCode</code> = <strong>Multiply</strong>
@@ -1050,31 +1058,32 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PricingExchangeRate</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;0.01&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:OperatorCode&quot;</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-01-02&lt;/<span class="kw">cbc:Date</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ForeignExchangeContract</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;BL-FX-26-0091&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FXContractTypeCode&quot;</span>&gt;FORWARD&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractType</span>&gt;Forward purchase of ferra&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ForeignExchangeContract</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PricingExchangeRate</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentExchangeRate</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;100&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:OperatorCode&quot;</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-03-25&lt;/<span class="kw">cbc:Date</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentExchangeRate</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;19960.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeTotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;200.00&lt;/<span class="kw">cbc:ChargeTotalAmount</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20160.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderResponse</span>&gt;</span></code></pre></div>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ExchangeMarketID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MarketCode&quot;</span>&gt;XLMX&lt;/<span class="kw">cbc:ExchangeMarketID</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;0.01&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:OperatorCode&quot;</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-01-02&lt;/<span class="kw">cbc:Date</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ForeignExchangeContract</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;BL-FX-26-0091&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FXContractTypeCode&quot;</span>&gt;FORWARD&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractType</span>&gt;Forward purchase of ferra&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ForeignExchangeContract</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PricingExchangeRate</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentExchangeRate</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TargetCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CalculationRate</span>&gt;100&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MathematicOperatorCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:OperatorCode&quot;</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Date</span>&gt;2026-03-25&lt;/<span class="kw">cbc:Date</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentExchangeRate</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;19960.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeTotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;200.00&lt;/<span class="kw">cbc:ChargeTotalAmount</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20160.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>

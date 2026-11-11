@@ -658,14 +658,17 @@ Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>UtilityConsumptionPoint/WebSiteAccess/URI</code> = <strong><a
-href="https://www.coastalwater.example/meter">https://www.coastalwater.example/meter</a></strong><br />
-Where the customer sees the readings.</li>
+href="https://www.coastalwater.example/reading">https://www.coastalwater.example/reading</a></strong><br />
+Where the household enters its next meter reading, as it entered this
+one.</li>
 <li><code>UtilityConsumptionPoint/WebSiteAccess/Password</code> =
-************<br />
-Never printed: the customer chose it online.</li>
+<strong>RD-4K7-918</strong><br />
+The one-time reading code for the next reading, printed on each
+statement: it opens the reading page only, from 28 April to 5 May 2026,
+so a household needs no account to send its reading.</li>
 <li><code>UtilityConsumptionPoint/WebSiteAccess/Login</code> =
 <strong>CSW-CP-38516-57</strong><br />
-The customer logs in with the point's number.</li>
+The household logs in with the number of its connection.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterNumber</code> =
 <strong>CSW-W-71844</strong><br />
 The meter.</li>
@@ -1319,8 +1322,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:WebSiteAccess</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:URI</span>&gt;https://www.coastalwater.example/meter&lt;/<span class="kw">cbc:URI</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Password</span>&gt;********&lt;/<span class="kw">cbc:Password</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:URI</span>&gt;https://www.coastalwater.example/reading&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Password</span>&gt;RD-4K7-918&lt;/<span class="kw">cbc:Password</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Login</span>&gt;CSW-CP-38516-57&lt;/<span class="kw">cbc:Login</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:WebSiteAccess</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilityMeter</span>&gt;</span>
@@ -1537,6 +1540,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>453ee99</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>c364f0c</code></p></div></footer>
 </body>
 </html>
