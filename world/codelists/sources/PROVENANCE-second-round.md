@@ -222,3 +222,18 @@ ITU tables re-read 2026-11-11: https://www.itu.int/gladapp/Allocation/CallSigns 
 | WCO HS legal texts | HS Nomenclature 2022 (WCO; chapter PDFs at https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2022-edition/hs-nomenclature-2022-edition.aspx, © WCO) | Comtrade H6.json; WCO TOC | the exact English wording of the 15 subheading names |
 
 Note: of the ISO 20022 external code sets only the unzipped JSON (`2Q2026_externalcodesets_v3.json`) is kept in the repository; the XLSX and the two zips listed above were read but not stored, to keep the repository small (same content).
+
+---
+
+## Differences applied (2026-11-11)
+
+What `world/codelists/lists.json` says now for each difference found above:
+
+- **ISO6346**: G1 is "General purpose container with passive vents at upper part of cargo space" (22G1, 42G1; 45G1 "High cube …"); R1 is "Mechanically refrigerated and heated container" and the names say "thermal, refrigerated and heated" (22R1, 45R1). The reasons in the examples ("dry container", "reefer") agree.
+- **BaselAnnexIV**: R1 "Use as a fuel (other than in direct incineration) or other means to generate energy" and D1 "Deposit into or onto land, (e.g., landfill, etc.)", as in the Convention text 2025.
+- **ISO 20022** (ServiceLevel, CashAccountType, Purpose): names and definitions as in the 2Q2026 release: NURG "NonurgentPayment", "… which is typically identified as an ACH or low value transaction."; URGP with its second clause; CARD "Account used for credit card payments."; SLRY "Accounts used for salary payments.". `tools/build_codelists.py` now checks every definition of a world copy of an ISO 20022 external code set word for word against `iso20022/2Q2026_externalcodesets_v3.json`.
+- **IMOINF**: the reference is the INF Code 1.1.2; the names are "Class INF 1 ship" … "Class INF 3 ship", the definitions the Code's, INF2 with the plutonium limit; the note says that the code leaves out the space of "Class INF 1".
+- **ITUAISNavStatus**: cites ITU-R M.1371-6 (02/2026), Annex 7, A7-3.1, Table 46, with its wording: 0 "Under way", 7 "Engaged fishing", 8 "Under way under sailing only", 15 "Undefined (default)" (the others unchanged; "manoeuvrability" as -6 spells it). Re-read from the -6 PDF (SHA-256 as above).
+- **UNModelRegsUN / UNModelRegsClass**: cite the **23rd revised edition**, the edition the codes were confirmed against (BAM DGG-Info, "Detailinfo UN Rec. 23rd rev. ed."); the 24th could not be read. The UN number list's listID is now `UN Model Regulations Dangerous Goods List` (decision P2), and it records the class and subsidiary hazard of each entry, which the build checks against every dangerous goods item.
+- **ERG2024**: no guide added: UN 3090 (guide 138) and UN 1950 (guide 126) carry no guide number in any example.
+- BAM's IMDG detail page for UN 3480 is now …/detailinfo/imdg/2jk48rcn (the old URL redirects); …/imdg/cgxnlqz9 (UN 2920) still resolves. `analysis/source-verification.md` is updated, as is its pointer to the ERG guides (`erg2024/`, not `noaa-cameo-erg/`).

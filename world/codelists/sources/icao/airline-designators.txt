@@ -1,0 +1,28 @@
+# Airline designators of the UBL example world, looked up in public lists of real ones
+# Checked 2026-11-11. ICAO's own list (Doc 8585, Designators for Aircraft Operating Agencies) and IATA's airline
+# coding directory are not public, so four public lists were searched; a code found in none of them is taken as free.
+#
+#   FAA   FAA Order JO 7340.2P, Contractions, Chapter 3 "ICAO Aircraft Company Three-Letter Identifier and/or
+#         Telephony Designator Assignments", https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_1.html
+#         (6,247 three-letter designators; SHA-256 of the page read: ac8c24ffbce4210d10532236cf8346582b81d41772511292ad03419eabfb540f)
+#   WIKI  Wikipedia, "List of airline codes" and its 27 sub-pages (0-9, A ... Z), wikitext read through the MediaWiki
+#         API and action=raw: 6,360 rows, 5,892 distinct ICAO designators, current and historical
+#   OPTD  OpenTravelData optd_airlines.csv, https://raw.githubusercontent.com/opentraveldata/opentraveldata/master/opentraveldata/optd_airlines.csv
+#         (1,394 ICAO designators, with the IATA designator and the 3-digit accounting/AWB prefix "num_code";
+#         SHA-256 2714987c6818481b0dc433cb2bc8c31eb04900c4c88c5eeb8322ab113f7615b3)
+#   OF    OpenFlights airlines.dat, https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat
+#         (5,774 ICAO designators; SHA-256 39be1a432e8b04ebc12860c29281c974a9cb52169c82b2456a835d66ab1548a1)
+#
+# code  kind                        FAA    WIKI   OPTD   OF     used by the world for
+KXL     ICAO-style designator       -      -      -      -      Kelaro Air Cargo (12-xl): flight numbers KXL207, KXL209
+                                                                and the prefix of its document numbers
+K0      IATA-style designator       n/a    -      -      -      Kelaro Air Cargo (12-xl): owner code of its ULDs (RKN41207K0)
+#
+# Rejected: KAC, the world's designator until 2026-11-11, is Kuwait Airways' ICAO designator (FAA: "KUWAIT AIRWAYS
+# CORPORATION | KUWAIT | KUWAITI | KAC"; OPTD: KAC, KU, 229, Kuwait Airways; OF: "Kuwait Airways","KU","KAC").
+# KEL, the obvious choice, is free in the four lists too, but KXL (K for Kelaro, XL for Lisavu, a user-assigned
+# ISO 3166 code) reads as fictional at once.
+#
+# Air waybill prefix: the world uses no 3-digit IATA airline prefix. The carrier's own number for the air waybill is
+# KXL-AWB-26-nnnn, not the IATA form (3-digit prefix and 8-digit serial), so no real airline's prefix (Kuwait
+# Airways' is 229) appears in the examples.
