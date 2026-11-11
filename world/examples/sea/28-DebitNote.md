@@ -30,22 +30,22 @@ One pallet's heat-treatment mark was illegible, so customs inspected the contain
   Thirty days.
 - `Note` = **Lapetato vivuse mafute sopule nalahiki tilala mitavema.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): Why the seller pays.
-- `Note` = **The illegible mark is the packer's responsibility under the agreement.** (languageID `en`)  
+- `Note` = **The illegible mark is the packer's responsibility under the agreement.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: Why the seller pays.
-- `DebitNoteTypeCode` = **383**  
-  UN/EDIFACT 1001 code 383: debit note.
+- `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
+  UN/EDIFACT 1001 code 383: debit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 383 = Debit note.
 - `TaxPointDate` = **2026-05-20**  
   The day the fee was charged.
-- `DocumentCurrencyCode` = **XLC**  
-  The coral, the buyer's currency, in which customs charged; it has three decimals.
-- `TaxCurrencyCode` = **XLC**  
-  No tax, but stated in the island's currency.
-- `PricingCurrencyCode` = **XLC**  
-  The fee is priced in coral.
-- `PaymentCurrencyCode` = **XBL**  
-  The distributor pays in lume.
-- `PaymentAlternativeCurrencyCode` = **XLC**  
-  The amount in coral, for comparison.
+- `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The coral, the buyer's currency, in which customs charged; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TaxCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  No tax, but stated in the island's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `PricingCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The fee is priced in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `PaymentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The distributor pays in lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `PaymentAlternativeCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The amount in coral, for comparison. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -66,8 +66,8 @@ Inside `InvoicePeriod`:
 
 Inside `DiscrepancyResponse`:
 
-- `ResponseCode` = **Packaging**  
-  A packaging fault.
+- `ResponseCode` = **2** (listID `UN/EDIFACT EDED 4465`)  
+  A packaging fault. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 2 = Below specification goods.
 - `Description` = **Heat-treatment mark illegible on pallet LD-26-007.**  
   The fault.
 
@@ -139,8 +139,8 @@ Inside `ProjectReference`:
   Started with the order.
 - `WorkPhaseReference/ID` = **PH-1**  
   Benches for the harbour park.
-- `WorkPhaseReference/WorkPhaseCode` = **Supply**  
-  The supply phase.
+- `WorkPhaseReference/WorkPhaseCode` = **SUPPLY** (listID `urn:ubl-examples:world:codelist:WorkPhaseCode`)  
+  The supply phase. The code is from the Trade Accord's work phase list: SUPPLY = Supply.
 
 ### Buyer Assigned Reference
 
@@ -181,7 +181,7 @@ Inside `AccountingSupplierParty`:
 - `Party/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
@@ -192,12 +192,12 @@ Inside `AccountingSupplierParty`:
   English, the language the party does business in.
 - `Party/Language/Name` = **English**  
   The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Distribution Drive**  
   Street of the postal address. identity of Lumeway Distribution (world/parties.json).
 - `Party/PostalAddress/AdditionalStreetName` = **Gate 3**  
@@ -213,59 +213,59 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/PostalZone` = **71214**  
   Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Upland State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Lumeway Distribution (world/parties.json).
-- `Party/PostalAddress/CountrySubentityCode` = **UL**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json).
+  The name of code XB-UL in Bayvarra's national state or territory list.
+- `Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyTaxScheme/CompanyID` = **UL-1230822**  
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyTaxScheme/TaxLevelCode` = **State**  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
-  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
   The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The country whose tax this is.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410274**  
   Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
-  The legal form, as abbreviated in Bayvarra (world/countries.json).
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The legal form, in words.
-- `Party/PartyLegalEntity/EntitySizeCode` = **Medium**  
-  The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+  The name of code LTD in Bayvarra's national company legal form list.
+- `Party/PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -290,7 +290,7 @@ Inside `AccountingCustomerParty`:
 - `Party/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Velumi Trading (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Velumi Trading (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **XL-TR-041859** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
@@ -301,13 +301,13 @@ Inside `AccountingCustomerParty`:
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Party/PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
-- `Party/PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
+- `Party/PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
@@ -315,8 +315,8 @@ Inside `AccountingCustomerParty`:
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XL**  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
@@ -325,26 +325,28 @@ Inside `AccountingCustomerParty`:
   Number in the Island companies register; identity of Velumi Trading (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
-  The legal form, as abbreviated in Lisavu (world/countries.json).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The legal form, in words.
-- `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
-  The size class of the company (micro, small, medium or large); identity of Velumi Trading (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Tivufo kilika humaki** (languageID `qal`)  
+  The name of code LTD in Lisavu's national company legal form list. In Lisavan, the sender's language.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
+  The name of code LTD in Lisavu's national company legal form list. In English.
+- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 34 persons and its turnover of 1940000.000 XLC in 2025, by the Trade Accord's limits; identity of Velumi Trading (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Purchasing**  
   The desk that handles this document; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -410,31 +412,31 @@ Inside `PaymentMeans`:
 - `ID` = **1**  
   The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
 - `PaymentDueDate` = **2026-06-21**  
   When the transfer must be credited.
-- `PaymentChannelCode` = **IBAN**  
-  Paid to an account identified in the format of ISO 13616.
+- `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
+  How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
 - `InstructionNote` = **Quote RF75VTDOC260153**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF75VTDOC260153**  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits.
-- `ChargeBearerCode` = **SHAR**  
-  ISO 20022 SHAR: each side pays its own bank's charges.
+- `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
+  ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
 - `PayeeFinancialAccount/ID` = **XL13BSEL0003665515** (schemeID `urn:ubl-examples:world:account`)  
   The buyer's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Velumi Trading Ltd**  
   The account holder, as the bank knows it.
-- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
-  A current account, for payments in and out.
-- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
-  The account number has the structure of ISO 13616.
-- `PayeeFinancialAccount/CurrencyCode` = **XLC**  
-  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
+  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
+  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `PayeeFinancialAccount/PaymentNote` = **Invoice VT-DOC-26-0153**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BSEL-001**  
@@ -445,22 +447,22 @@ Inside `PaymentMeans`:
   The bank code, the part of every account number that names the bank; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Selanu**  
   The bank; identity of Bank of Selanu (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street**  
   The bank's head office; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **23**  
   Its building number; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu**  
   Its town; identity of Bank of Selanu (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL**  
-  The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The bank's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu**  
   The branch is at the bank's head office.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL**  
-  Its country.
-- `PayeeFinancialAccount/Country/IdentificationCode` = **XL**  
-  The country where the account is kept.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Payment Terms
 
@@ -473,14 +475,14 @@ Inside `PaymentTerms`:
 
 Inside `TaxExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The debit note's currency.
-- `TargetCurrencyCode` = **XLC**  
-  No conversion: the tax currency is coral.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  No conversion: the tax currency is coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `CalculationRate` = **1**  
   The same currency.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate gives lume.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-05-22**  
   The rate of the issue date.
 
@@ -488,14 +490,14 @@ Inside `TaxExchangeRate`:
 
 Inside `PricingExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The debit note's currency.
-- `TargetCurrencyCode` = **XLC**  
-  Priced in coral.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  Priced in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `CalculationRate` = **1**  
   The same currency.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate gives lume.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-05-22**  
   The rate of the issue date.
 
@@ -503,14 +505,14 @@ Inside `PricingExchangeRate`:
 
 Inside `PaymentExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The debit note's currency.
-- `TargetCurrencyCode` = **XBL**  
-  The distributor's currency.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The distributor's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `CalculationRate` = **2.5**  
   1 coral = 2.5 lume, the reference rate.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate gives lume.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-05-22**  
   The rate of the issue date.
 
@@ -518,14 +520,14 @@ Inside `PaymentExchangeRate`:
 
 Inside `PaymentAlternativeExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The debit note's currency.
-- `TargetCurrencyCode` = **XLC**  
-  The coral equivalent.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The coral equivalent. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `CalculationRate` = **1**  
   The same.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate gives lume.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-05-22**  
   The rate of the issue date.
 
@@ -600,8 +602,8 @@ Inside `DebitNoteLine`:
   The buyer's cost centre that paid customs.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-- `PaymentPurposeCode` = **GOVT**  
-  ISO 20022 purpose code GOVT: a payment to the government, recharged.
+- `PaymentPurposeCode` = **SCVE** (listID `ISO 20022 ExternalPurpose1Code`)  
+  What the payment is for, as an ISO 20022 purpose: services, the inspection and storage recharged to the seller. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SCVE = PurchaseSaleOfServices.
 - `FreeOfChargeIndicator` = **false**  
   Charged.
 - `InvoicePeriod/StartDate` = **2026-05-18**  
@@ -646,6 +648,8 @@ Inside `DebitNoteLine`:
   No tax.
 - `AllowanceCharge/ChargeIndicator` = **true**  
   The storage, a charge on the line.
+- `AllowanceCharge/AllowanceChargeReasonCode` = **WH** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: WH = Warehousing.
 - `AllowanceCharge/AllowanceChargeReason` = **Storage while held**  
   In words.
 - `AllowanceCharge/Amount` = **12.750** (currencyID `XLC`)  
@@ -688,14 +692,14 @@ Inside `DebitNoteLine`:
   <cbc:IssueTime>10:30:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-21</cbc:DueDate>
   <cbc:Note languageID="qal">Lapetato vivuse mafute sopule nalahiki tilala mitavema.</cbc:Note>
-  <cbc:Note languageID="en">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
-  <cbc:DebitNoteTypeCode>383</cbc:DebitNoteTypeCode>
+  <cbc:Note languageID="en-XL">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
+  <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
-  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode>XLC</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode>XBL</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode>XLC</cbc:PaymentAlternativeCurrencyCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TaxCurrencyCode>
+  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -704,7 +708,7 @@ Inside `DebitNoteLine`:
     <cbc:EndDate>2026-05-19</cbc:EndDate>
   </cac:InvoicePeriod>
   <cac:DiscrepancyResponse>
-    <cbc:ResponseCode>Packaging</cbc:ResponseCode>
+    <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">2</cbc:ResponseCode>
     <cbc:Description>Heat-treatment mark illegible on pallet LD-26-007.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
@@ -737,7 +741,7 @@ Inside `DebitNoteLine`:
     <cbc:IssueDate>2026-05-07</cbc:IssueDate>
     <cac:WorkPhaseReference>
       <cbc:ID>PH-1</cbc:ID>
-      <cbc:WorkPhaseCode>Supply</cbc:WorkPhaseCode>
+      <cbc:WorkPhaseCode listID="urn:ubl-examples:world:codelist:WorkPhaseCode">SUPPLY</cbc:WorkPhaseCode>
     </cac:WorkPhaseReference>
   </cac:ProjectReference>
   <cac:BuyerAssignedReference>
@@ -776,11 +780,11 @@ Inside `DebitNoteLine`:
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
         <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
         <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -789,24 +793,24 @@ Inside `DebitNoteLine`:
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -815,25 +819,25 @@ Inside `DebitNoteLine`:
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID>20410274</cbc:CompanyID>
         <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -870,15 +874,15 @@ Inside `DebitNoteLine`:
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -886,23 +890,24 @@ Inside `DebitNoteLine`:
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
         <cbc:CompanyID>IC41859</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XL:ICR</cbc:ID>
           <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -960,17 +965,17 @@ Inside `DebitNoteLine`:
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentDueDate>2026-06-21</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF75VTDOC260153</cbc:InstructionNote>
     <cbc:PaymentID>RF75VTDOC260153</cbc:PaymentID>
-    <cbc:ChargeBearerCode>SHAR</cbc:ChargeBearerCode>
+    <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL13BSEL0003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:PaymentNote>Invoice VT-DOC-26-0153</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
@@ -979,24 +984,24 @@ Inside `DebitNoteLine`:
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -1004,31 +1009,31 @@ Inside `DebitNoteLine`:
     <cbc:Note>30 days net.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:TaxExchangeRate>
   <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>2.5</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
@@ -1078,7 +1083,7 @@ Inside `DebitNoteLine`:
     <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
     <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
     <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode>GOVT</cbc:PaymentPurposeCode>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SCVE</cbc:PaymentPurposeCode>
     <cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-05-18</cbc:StartDate>
@@ -1150,6 +1155,7 @@ Inside `DebitNoteLine`:
     </cac:TaxTotal>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">WH</cbc:AllowanceChargeReasonCode>
       <cbc:AllowanceChargeReason>Storage while held</cbc:AllowanceChargeReason>
       <cbc:Amount currencyID="XLC">12.750</cbc:Amount>
       <cbc:BaseAmount currencyID="XLC">38.500</cbc:BaseAmount>

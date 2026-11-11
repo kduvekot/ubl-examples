@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: endorser role. The role in which a party endorses a certificate or a carnet. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>EndorserRoleCode</ShortName>
+      <LongName xml:lang="en">Endorser role (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:EndorserRoleCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:EndorserRoleCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:EndorserRoleCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/EndorserRoleCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ISSUER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Issuing body</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Telskan kredek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nifele luote</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The body that issues the document.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CHAMBER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Chamber of commerce</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dinzek skul razskul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lifaka mutaki fekea</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A chamber of commerce endorses the document.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GUARANTOR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Guaranteeing association</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drelskan sakskaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vetutusa sealiso</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The association that guarantees the duties of an ATA carnet.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INSURER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Insurer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bazskan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tenana</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The insurer endorses the document.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LEGALISATION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Legalising authority</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zuktir kenhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vikuvehi hatiulo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An authority legalises the document.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CUSTOMS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Customs</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Garsul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Viope</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Customs endorses the document.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

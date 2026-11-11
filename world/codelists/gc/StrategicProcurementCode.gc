@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: strategic procurement. An aim of public procurement beyond the purchase itself (eForms strategic-procurement). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>StrategicProcurementCode</ShortName>
+      <LongName xml:lang="en">Strategic procurement (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:StrategicProcurementCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:StrategicProcurementCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:StrategicProcurementCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/StrategicProcurementCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GREEN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Environmental impact</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trennul hizsaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kahilika nitivu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The procurement reduces the environmental impact of the purchase (eForms env-imp).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SOCIAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Social objective</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trekman nestaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vasape vakekato</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The procurement pursues a social objective (eForms soc-obj).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>INNOVATIVE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Innovative purchase</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dralnek sevaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napataa kiose</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The procurement buys an innovative solution (eForms inn-pur).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -16,6 +16,7 @@ import datetime
 import zlib
 from decimal import Decimal
 
+import codelists
 from build_examples import ITEM, PARTY, WORLD, V, account, amount, item, money, price, qty
 
 CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "Invoice": "INV", "CreditNote": "CN",
@@ -112,14 +113,15 @@ def tax_category(rule, kind=None):
     out = {"ID": V(code, why), "Percent": V(str(percent), "The rate for this category." if percent else
                                             "No tax is charged in this category.")}
     if exemption:
-        codes = next((c["tax"].get("exemption_codes", {}) for c in WORLD["countries"].values()
-                      if exemption in c["tax"].get("exemption_codes", {})), {})
-        if exemption in codes:
-            out["TaxExemptionReasonCode"] = V(codes[exemption], "The world's code for the exemption reason "
-                                                                "(world/countries.json).")
+        cc = next((k for k, c in WORLD["countries"].items() if exemption in c["tax"].get("exemption_codes", {})), None)
+        if cc:
+            out["TaxExemptionReasonCode"] = V(WORLD["countries"][cc]["tax"]["exemption_codes"][exemption],
+                                              f"The exemption reason as a code of {WORLD['countries'][cc]['name']}'s "
+                                              "national list, the list of the seller's country.",
+                                              listID=codelists.NATIONAL.format(cc, "TaxExemptionReason"))
         out["TaxExemptionReason"] = V(exemption, "Why no tax is charged, stated rather than left out (UBL rule IND6).")
     if kind:
-        out["SupplyTypeCode"] = V("Goods" if kind == "goods" else "Services", "Whether the category applies to goods "
+        out["SupplyTypeCode"] = V("GOODS" if kind == "goods" else "SERVICES", "Whether the category applies to goods "
                                                                                "or services.")
     if scheme:
         out["TaxScheme"] = {"ID": V(scheme["id"], f"UN/EDIFACT 5153 code of the seller's tax: {scheme['name'].lower()}.")}
@@ -167,11 +169,17 @@ def payment_terms(flow, seller, buyer, day, due_days, total, cur, number):
         pi = pay["penalty_interest"]
         out["PenaltyInterestRate"] = {"InterestRatePercent": V(pi["percent"], "The interest on late payment."),
                                       "TimeBasisCode": V(pi["basis"], "A yearly rate."),
-                                      "CalculationMethodCode": V("Simple", "Simple interest, per day late.")}
+                                      "CalculationMethodCode": V("SIMPLE", "Simple interest, per day late.")}
     if PARTY[seller]["identity"].get("website"):
         out["PaymentTermsDetailsURI"] = V(PARTY[seller]["identity"]["website"] + "/terms", "The seller's general "
                                                                                            "terms of payment.")
     return out
+
+
+def clearing_channel(border, seller):
+    """The clearing channel of the payment system a transfer runs over: the first the system has (countries.json)."""
+    system = WORLD["payment_cross_border"] if border else WORLD["countries"][PARTY[seller]["c"]]["payment"]["system"]
+    return system["clearing_channels"][0]
 
 
 def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account, code="30"):
@@ -185,7 +193,8 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
                                  listID="UN/EDIFACT EDED 4461"),
            "PaymentMeansDescription": V("Credit transfer", "In words."),
            "PaymentDueDate": V(flow.date(day + due_days), "When the transfer must be credited."),
-           "PaymentChannelCode": V("IBAN", "Paid to an account identified in the format of ISO 13616."),
+           "PaymentChannelCode": V(clearing_channel(border, seller), "How the payment system clears and settles the "
+                                   "transfer, as an ISO 20022 clearing channel (world/countries.json)."),
            "PaymentRailID": V(system, "The payment system the transfer runs over: "
                               + ("the trade accord's link between the countries." if border else
                                  "the domestic clearing.")),
@@ -394,7 +403,7 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
         "ID": V(flow.number(f"despatch-{key}", doc["from"], "DespatchAdvice"), "The despatching party's number."),
         "IssueDate": V(flow.date(day), why),
         "DocumentStatusCode": V("NoStatus", "A new despatch advice, not a correction."),
-        "DespatchAdviceTypeCode": V("Delivery", "Advice of goods despatched for delivery."),
+        "DespatchAdviceTypeCode": V("DELIVERY", "Advice of goods despatched for delivery."),
         "Note": V("Please check the goods on arrival and report any damage on the consignment note.", "What the "
                                                                                                       "receiver "
                                                                                                       "should do."),
@@ -424,7 +433,7 @@ def receipt_advice(flow, n, doc, day, why):
             "IssueDate": V(flow.date(day), why),
             "DocumentStatusCode": V("NoStatus", "A first receipt advice."),
             "ReceiptAdviceTypeCode": V("Actual", "UBL's receipt advice type code: the goods actually received."),
-            "DeliveryAcceptanceCode": V("Partial" if short else "Accepted", "Part of the goods refused." if short
+            "DeliveryAcceptanceCode": V("PARTIAL" if short else "ACCEPTED", "Part of the goods refused." if short
                                         else "All goods accepted."),
             "Note": V("Counted and checked at goods-in.", "How the goods were received."),
             "LineCountNumeric": V(str(len(flow.deal)), "The number of lines."),
@@ -445,13 +454,13 @@ def receipt_advice(flow, n, doc, day, why):
         if "received" in d:
             refused = Decimal(str(d[which])) - Decimal(str(d["received"]))
             line.update({"RejectedQuantity": qty(refused, ITEM[d["item"]]["unit"], "Refused at goods-in."),
-                         "RejectReasonCode": V("Damaged", "Why refused."),
+                         "RejectReasonCode": V("DAMAGED", "Why refused."),
                          "RejectReason": V(d["received_why"], "In words."),
-                         "RejectActionCode": V("Credit", "The receiver asks for a credit, not a replacement."),
-                         "QuantityDiscrepancyCode": V("Damaged", "Why the quantity differs from the despatch.")})
-            out.update({"RejectReasonCode": V("Damaged", "The reason for the part refused."),
+                         "RejectActionCode": V("CREDIT", "The receiver asks for a credit, not a replacement."),
+                         "QuantityDiscrepancyCode": V("DAMAGED", "Why the quantity differs from the despatch.")})
+            out.update({"RejectReasonCode": V("DAMAGED", "The reason for the part refused."),
                         "RejectReason": V("Damaged in transit.", "In words."),
-                        "RejectActionCode": V("Credit", "A credit is asked for the refused goods.")})
+                        "RejectActionCode": V("CREDIT", "A credit is asked for the refused goods.")})
     return out
 
 
@@ -479,7 +488,10 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         "ID": V(flow.number(key, seller, "Invoice"), "The seller's invoice number."),
         "IssueDate": V(flow.date(day), why_date),
         "DueDate": V(flow.date(day + due_days), f"{due_days} days after the issue date, the agreed payment term."),
-        "InvoiceTypeCode": V("380", "UN/EDIFACT 1001 code 380: commercial invoice."),
+        "InvoiceTypeCode": V("393", "The invoice is assigned to the factor, who collects it: a factored invoice, a "
+                                    "subtype UN/EDIFACT 1001 has its own code for.")
+        if PARTY.get(doc["parties"].get("PayeeParty"), {}).get("name") == "Factor" else
+        V("380", "A commercial invoice, as UN/EDIFACT 1001 codes it."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency" if cur == currency_of(seller)
                                               else "the buyer's currency, agreed in the contract"),
         **cost_centre(buyer, "The buyer's cost centre, quoted in its order, so the invoice is booked without "
@@ -519,6 +531,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         out["TaxPointDate"] = V(flow.date(day), "Urvania's value added tax becomes due on the invoice date.")
     if charges:
         out["AllowanceCharge"] = [{"ChargeIndicator": V("true", "A charge, not an allowance: it adds to the amount."),
+                                   "AllowanceChargeReasonCode": V(c["code"], c["code_why"]),
                                    "AllowanceChargeReason": V(c["reason"], c["why"]),
                                    "Amount": amount(c["amount"], cur, c["amount_why"]),
                                    "TaxCategory": tax_category(r[3])} for c, r in zip(charges, charge_rows)]
@@ -571,7 +584,7 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
             "AccountingSupplierParty": {"Party": party_short(payee)},
             "AccountingCustomerParty": {"Party": party_short(payer)},
             "DocumentReference": {"ID": V(flow.numbers[key], "The invoice paid, as a document reference."),
-                                  "DocumentTypeCode": V("380", "UN/EDIFACT 1001 code 380: commercial invoice."),
+                                  "DocumentTypeCode": V("Invoice", "UN/EDIFACT 1001 code 380: commercial invoice."),
                                   "IssueDate": V(flow.numbers[f"{key}-date"], "Its issue date.")},
             "DebitLineAmount": amount(total, cur, "The amount of the invoice this payment settles: the whole payable "
                                                   "amount. Paid invoices are debits on a remittance advice, as in the "
@@ -601,6 +614,7 @@ def flow_leg(flow, carrier):
     return next(leg for leg in f["legs"] if leg["carrier"] == carrier)
 
 
+MODE_SERVICE_CODE = {"road": "FTL", "rail": "RAILCONT", "river": "RIVERBARGE", "sea": "OCEANCONT", "air": "AIRCARGO"}
 MODE_SERVICE = {"road": "Full truck load", "rail": "Container train", "river": "River barge", "sea": "Liner service",
                 "air": "Air cargo"}
 
@@ -633,7 +647,7 @@ def tep_terms(flow, user, provider, days):
             "CommissionPaymentTerms": {"Note": V("No commission: booked directly with the carrier.", "Why none.")},
             "ServiceChargePaymentTerms": {"Note": V("Waiting time 40 per hour beyond two hours.", "The service "
                                                                                                   "charge.")},
-            "NotificationRequirement": {"NotificationTypeCode": V("PreArrival", "Notice before arrival."),
+            "NotificationRequirement": {"NotificationTypeCode": V("PREARRIVAL", "Notice before arrival."),
                                         "PreEventNotificationDurationMeasure": V("2", "Two hours before.",
                                                                                  unitCode="HUR"),
                                         "PostEventNotificationDurationMeasure": V("1", "And an hour after delivery "
@@ -660,7 +674,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
             "TransportServiceProviderResponseDeadlinePeriod": {"EndDate": V(flow.date(day + 1), "An answer is "
                                                                                                  "needed by the "
                                                                                                  "next day.")},
-            "MainTransportationService": {"TransportServiceCode": V(mode.upper(), f"The main service: {mode}."),
+            "MainTransportationService": {"TransportServiceCode": V(MODE_SERVICE_CODE[mode], f"The main service: {mode}."),
                                           "Name": V(MODE_SERVICE[mode], "In words.")},
             "ServiceStartTimePeriod": {"StartDate": V(flow.date(start_day), "The day the goods should be collected.")},
             "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
@@ -678,7 +692,7 @@ def tep(flow, n, doc, day, why, start_day, weight):
             "IssueDate": V(flow.date(day), why),
             "DocumentStatusCode": V("Confirmed", "The carrier confirms the plan as requested. A value of UBL's document "
                                                  "status code list (2.1: Document has been confirmed)."),
-            "DocumentStatusReasonCode": V("AsRequested", "Confirmed without changes."),
+            "DocumentStatusReasonCode": V("ASREQUESTED", "Confirmed without changes."),
             "DocumentStatusReasonDescription": V("Capacity available on the requested day.", "Why it is confirmed."),
             "Note": V(leg["why"], "The transport agreed."),
             "TransportUserRemarks": V("Please confirm by return.", "The user's remark from the request."),
@@ -696,7 +710,7 @@ def tep(flow, n, doc, day, why, start_day, weight):
                                                                                             "the same day.")},
             "ValidityPeriod": {"StartDate": V(flow.date(day), "From the confirmation."),
                                "EndDate": V(flow.date(start_day + 3), "Until the carriage is done.")},
-            "MainTransportationService": {"TransportServiceCode": V(mode.upper(), f"The main service: {mode}."),
+            "MainTransportationService": {"TransportServiceCode": V(MODE_SERVICE_CODE[mode], f"The main service: {mode}."),
                                           "Name": V(MODE_SERVICE[mode], "In words.")},
             "AdditionalTransportationService": {"TransportServiceCode": V("NOTIFY", "Pre-arrival notice."),
                                                 "Name": V("Notice two hours before arrival", "In words.")},
@@ -726,7 +740,7 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "
                                                                                     "the carriage."),
            "VersionID": V("1", "The original, not a corrected version."),
-           "StatusCode": V("Issued", "The note is issued and in force."),
+           "StatusCode": V("ISSUED", "The note is issued and in force."),
            "IssueDate": V(flow.date(day), why),
            "Name": V(kind_name, "The kind of transport document."),
            "ShippingOrderID": V(flow.numbers.get("consignment", number), "The shipper's booking the carriage "
@@ -741,12 +755,12 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "IssueLocation": {"Name": V(PARTY[leg["from"]]["identity"]["name"], "Where the carrier took over the "
                                                                              "goods and issued the note.")},
            "DocumentDistribution": [
-               {"ID": V("1", "The first original."), "DocumentTypeCode": V("Original", "An original."),
-                "DistributionTypeCode": V("Paper", "Handed over on paper."),
+               {"ID": V("1", "The first original."), "DocumentTypeCode": V("ORIGINAL", "An original."),
+                "DistributionTypeCode": V("PAPER", "Handed over on paper."),
                 "DistributionType": V("With the goods", "It travels with the goods."),
                 "Party": party_short(leg["to"])},
-               {"ID": V("2", "The electronic copy."), "DocumentTypeCode": V("Copy", "A copy."),
-                "DistributionTypeCode": V("Electronic", "Sent as this UBL document."),
+               {"ID": V("2", "The electronic copy."), "DocumentTypeCode": V("COPY", "A copy."),
+                "DistributionTypeCode": V("ELECTRONIC", "Sent as this UBL document."),
                 "Party": party_short(doc["to"])}],
            "Signature": {"ID": V(f"{initials(carrier)}-SIG-{number}", "The carrier's signature on taking over the "
                                                                       "goods."),
@@ -795,7 +809,7 @@ HS_SECTION = {"26": "V", "27": "V", "39": "VII", "44": "IX", "52": "XI", "62": "
 def customs_item(iid):
     """The item as goods declared or carried: its classification also says the nature and the kind of cargo."""
     out = item(iid)
-    cc = out.get("CommodityClassification")
+    cc = (out.get("CommodityClassification") or [None])[0]
     maker = ITEM[iid]
     while maker.get("resale_of"):
         maker = ITEM[maker["resale_of"]]
@@ -804,8 +818,7 @@ def customs_item(iid):
         cc["NatureCode"] = V(HS_SECTION[hs[:2]], "The section of the Harmonized System the goods fall in, the "
                                                  "highest level of the World Customs Organization's classification.")
         cc["CargoTypeCode"] = V("BULK" if (ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26") or hs[:4] == "2711"
-                                else "GEN", "The kind of cargo as the parties code it: bulk, or general cargo in "
-                                            "packages.")
+                                else "GEN", "The kind of cargo: bulk, or general cargo in packages.")
     return out
 
 
@@ -976,7 +989,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
                            "EndDate": V(flow.date(day + validity_days), "And until the catalogue ends.")}
     p["PriceList"] = {"ID": V(f"{seller['identity'].get('short', doc['from']).upper()}-PL-{flow.date(day)[:4]}",
                               "The seller's price list this price is taken from."),
-                      "StatusCode": V("Active", "The price list is in force.")}
+                      "StatusCode": V("ACTIVE", "The price list is in force.")}
     out = {"LeadTimeMeasure": V(it.get("lead_days", 5), "The days between order and despatch.", unitCode="DAY"),
            "MinimumQuantity": qty(it.get("min_order", 1), it["unit"], "The smallest quantity the seller accepts on an "
                                                                        "order."),
@@ -984,8 +997,10 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
                                                                               "is offered for buyers in the seller's "
                                                                               "country.")}},
            "Price": p}
-    p["PriceTypeCode"] = V("TRD", "The seller's code for its trade price.")
-    p["PriceType"] = V("Trade price", "A price for resellers, before sales tax.")
+    contract = flow.id == "tender"
+    p["PriceTypeCode"] = V("CON" if contract else "TRD", "The kind of price, which buyer and seller both understand: "
+                           + ("the price agreed in the framework contract." if contract else "a trade price."))
+    p["PriceType"] = V("Contract price" if contract else "Trade price", "The kind of price in words.")
     if alternative:
         p["AlternativeCurrencyPrice"] = {
             "PriceAmount": price(unit_price(iid, alternative), alternative, "The same price in the buyer's currency, "
@@ -1002,7 +1017,9 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
                           "Quantity": qty(4, it["unit"], "Four benches to a pallet."),
                           "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}
         out["AllowanceCharge"] = {"ChargeIndicator": V("false", "A discount."),
-                                  "AllowanceChargeReasonCode": V("78", "UN/EDIFACT 5189 code 78: volume discount.",
+                                  "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT "
+                                                                       "5189, as EN 16931 uses it: a discount for the "
+                                                                       "full container.",
                                                                  listID="UN/EDIFACT EDED 5189"),
                                   "AllowanceChargeReason": V("Full container", "The discount for a full container."),
                                   "MultiplierFactorNumeric": V("0.03", "Three percent off."),
@@ -1046,7 +1063,8 @@ def purchase_receipt(flow, n, doc, day, why, rows_spec, cash, promotion=None):
         p["PriceChangeReason"] = V(promotion["name"], "Why the price differs from the shelf price.")
         p["AllowanceCharge"] = {
             "ChargeIndicator": V("false", "A discount, not a charge."),
-            "AllowanceChargeReasonCode": V("75", "UN/EDIFACT 5189 code 75: promotion discount.",
+            "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, "
+                                                 "as EN 16931 uses it: the promotion is a discount on the price.",
                                            listID="UN/EDIFACT EDED 5189"),
             "AllowanceChargeReason": V(promotion["name"], "The promotion, as the till prints it."),
             "MultiplierFactorNumeric": V(str(Decimal(str(promotion["percent"])) / 100), "The discount rate."),
@@ -1163,9 +1181,8 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
     out["RegistrationNationalityID"] = V(c, "The country the means of transport is registered in.")
     out["RegistrationNationality"] = V(WORLD["countries"][c]["name"], "The same, in words.")
     if direction:
-        out["DirectionCode"] = V(direction, "The direction of the journey, as the carrier codes its services.")
-    out["TransportMeansTypeCode"] = V(f.get("type", f["kind"].upper()), f"The carrier's code for the kind of means: "
-                                                                          f"{f['name'].lower()}; {src}.")
+        out["DirectionCode"] = V(direction, "The direction of the journey, as carriers name their services.")
+    out["TransportMeansTypeCode"] = V(f["type"], f"The kind of means of transport: {f['name'].lower()}; {src}.")
     if f["kind"] == "road":
         out["RoadTransport"] = {"LicensePlateID": V(f["plate"], f"The registration plate of the truck; {src}.")}
         if f.get("trailer"):
@@ -1185,7 +1202,8 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
                                                 "country's maritime identification digits."),
              "GrossTonnageMeasure": V(f["gross_t"], "The gross tonnage of the vessel, a number without a unit.", unitCode="C62"),
              "NetTonnageMeasure": V(f["net_t"], "Its net tonnage, also without a unit.", unitCode="C62"),
-             "ShipConfigurationCode": V(f["config"], "The kind of vessel."),
+             "ShipConfigurationCode": V(f["config"], "The kind of vessel"
+                                        + (f", for about {f['capacity_teu']:,} TEU." if f.get("capacity_teu") else ".")),
              "RegistryPortLocation": {"Name": V(f["registry"], "The port the vessel is registered in.")}}
         if f.get("ballast"):
             m["SegregatedBallastMeasure"] = V(f["ballast"], "The capacity of the tanks for ballast water only.",
@@ -1272,7 +1290,7 @@ def handling_units(flow, deal, prefix, marks, detail=False):
                                                                           "mark and the pallet's place in the count."),
              "TraceID": V(f"{prefix}{k:03d}", "The pallet's barcode, scanned at each handover.")}
         if detail:
-            x["HandlingCode"] = V("Stack2" if pal else "NoStack", "The carrier's handling code: two high, or "
+            x["HandlingCode"] = V("STACK2" if pal else "NOSTACK", "The carrier's handling code: two high, or "
                                                                   "nothing on top.")
             x["HandlingInstructions"] = V("May be stacked two high, steel frames on steel frames." if pal else
                                           "Load on top: nothing may be stacked on the boxes.", "The handling, in words.")

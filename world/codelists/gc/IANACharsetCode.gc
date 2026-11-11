@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of IANA Character Sets: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (IANA Character Sets registry (the preferred MIME names)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>IANACharsetCode</ShortName>
+      <LongName xml:lang="en">IANA Character Sets (UBL example world)</LongName>
+      <LongName Identifier="listID">IANA Character Sets</LongName>
+      <Version>as published by IANA</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:IANACharsetCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:IANACharsetCode:as published by IANA</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/IANACharsetCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Internet Assigned Numbers Authority</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UTF-8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>UTF-8</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>RFC 3629.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UTF-16</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>UTF-16</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>RFC 2781.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>US-ASCII</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>US-ASCII</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ISO-8859-1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ISO-8859-1</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: waste operation category. Whether waste goes to recovery or to disposal, the distinction of the Basel Convention (Annex IV, B and A). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>WasteOperationCategoryCode</ShortName>
+      <LongName xml:lang="en">Waste operation category (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:WasteOperationCategoryCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:WasteOperationCategoryCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:WasteOperationCategoryCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/WasteOperationCategoryCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RECOVERY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Recovery</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Balman</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tetafu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Recovery operations (Basel Convention Annex IV B, R1 to R13).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DISPOSAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Disposal</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nulsan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vepeki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Disposal operations (Basel Convention Annex IV A, D1 to D15).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

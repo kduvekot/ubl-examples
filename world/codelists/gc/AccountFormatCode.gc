@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: account number format. The structure of an account number. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>AccountFormatCode</ShortName>
+      <LongName xml:lang="en">Account number format (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:AccountFormatCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:AccountFormatCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:AccountFormatCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/AccountFormatCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ISO13616</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Structure of ISO 13616</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sangek skul ISO 13616</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Famifapa mutaki ISO 13616</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Country code, two check digits and the national account number, as ISO 13616 defines for the IBAN. The world's countries are not registered IBAN countries, so the numbers are not called IBANs.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BBAN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>National account number</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hurtek gakkaz hezhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sunofa haime lamaa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The national account number alone, without country code and check digits.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LEDGER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ledger address</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tengir skizkan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vepoka hikuhe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An address on a distributed ledger, without a bank account number.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

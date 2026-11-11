@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of International Standard Industrial Classification of All Economic Activities, Revision 4: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISIC Rev.4, United Nations Statistical Papers Series M No. 4/Rev.4 (2008)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ISICRev4Code</ShortName>
+      <LongName xml:lang="en">International Standard Industrial Classification of All Economic Activities, Revision 4 (UBL example world)</LongName>
+      <LongName Identifier="listID">ISIC Rev.4</LongName>
+      <Version>ISIC Rev.4</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:ISICRev4Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISICRev4Code:ISIC Rev.4</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ISICRev4Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Statistics Division</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>0116</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Growing of fibre crops</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>0163</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Post-harvest crop activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>0620</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Extraction of natural gas</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>0710</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mining of iron ores</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1312</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Weaving of textiles</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1610</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sawmilling and planing of wood</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1410</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacture of wearing apparel, except fur apparel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2220</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacture of plastics products</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2410</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacture of basic iron and steel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacture of furniture</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3510</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Electric power generation, transmission and distribution</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3520</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manufacture of gas; distribution of gaseous fuels through mains</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3600</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Water collection, treatment and supply</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3830</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Materials recovery</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4290</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Construction of other civil engineering projects</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4649</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wholesale of other household goods</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4719</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other retail sale in non-specialized stores</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4912</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight rail transport</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4923</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight transport by road</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4930</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport via pipeline</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5012</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sea and coastal freight water transport</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5022</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Inland freight water transport</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5120</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight air transport</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5210</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Warehousing and storage</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5221</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Service activities incidental to land transportation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5222</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Service activities incidental to water transportation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5223</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Service activities incidental to air transportation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5229</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other transportation support activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6110</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wired telecommunications activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6120</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wireless telecommunications activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6419</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other monetary intermediation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6499</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other financial service activities, except insurance and pension funding activities, n.e.c.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>6512</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Non-life insurance</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8299</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other business support service activities n.e.c.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8411</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General public administration activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8413</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Regulation of and contribution to more efficient operation of businesses</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8423</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Public order and safety activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>9411</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Activities of business and employers membership organizations</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

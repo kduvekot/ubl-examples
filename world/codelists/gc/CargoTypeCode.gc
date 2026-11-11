@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: cargo type. The kind of cargo by the way it is carried. The descriptions give the matching UN/EDIFACT 7085 code where it has one. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CargoTypeCode</ShortName>
+      <LongName xml:lang="en">Cargo type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CargoTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CargoTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CargoTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CargoTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GEN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General cargo</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kamir nirrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tuliki faleka</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods in packages, on pallets or in containers (UN/EDIFACT 7085: 12 General cargo).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BULK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Dry bulk</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zaz vir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mapeto mehosa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Loose dry goods such as ore or grain, poured into the hold (UN/EDIFACT 7085 has no bulk code).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LIQUID</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Liquid bulk</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Driknaz vir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Putilo mehosa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Liquids in tanks (UN/EDIFACT 7085: 13 Liquid cargo).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BREAKBULK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Break-bulk</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krinvek-vir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kanike-mehosa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Large single pieces loaded one by one (UN/EDIFACT 7085: 10 Breakbulk).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

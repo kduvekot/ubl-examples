@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: contracting system. The system under which a contract is used (eForms framework-agreement and dps-usage). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ContractingSystemCode</ShortName>
+      <LongName xml:lang="en">Contracting system (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ContractingSystemCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ContractingSystemCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ContractingSystemCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ContractingSystemCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FRAMEWORK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Framework agreement</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Razvir zhurtrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Telekeke mitavema</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A framework agreement without reopening of competition (eForms fa-wo-rc).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FRAMEWORKRC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Framework agreement with reopening of competition</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Razvir zhurtrir vek sannan skul stuzek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Telekeke mitavema tofuta vakavafa mutaki lasasosi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>eForms fa-w-rc.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DPS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Dynamic purchasing system</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hukhan staltul kaztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Voliso kikuteni kalale</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>eForms dps-list.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NONE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>None</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Migaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kokati</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Neither a framework agreement nor a dynamic purchasing system (eForms none).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

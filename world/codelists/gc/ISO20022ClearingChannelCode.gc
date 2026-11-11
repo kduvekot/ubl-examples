@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of ISO 20022 ClearingChannel2Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 data dictionary, ClearingChannel2Code (iso20022.org, blocked for automated access)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ISO20022ClearingChannelCode</ShortName>
+      <LongName xml:lang="en">ISO 20022 ClearingChannel2Code (UBL example world)</LongName>
+      <LongName Identifier="listID">ISO 20022 ClearingChannel2Code</LongName>
+      <Version>ISO 20022 message definitions (pacs, pain)</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:ISO20022ClearingChannelCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISO20022ClearingChannelCode:ISO 20022 message definitions (pacs, pain)</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ISO20022ClearingChannelCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">ISO 20022 Registration Authority (SWIFT)</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RTGS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>RealTimeGrossSettlementSystem</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Clearing channel is a real-time gross settlement system.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RTNS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>RealTimeNetSettlementSystem</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Clearing channel is a real-time net settlement system.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MPNS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MassPaymentNetSystem</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Clearing channel is a mass payment net settlement system.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BOOK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>BookTransfer</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Payment through internal book transfer.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

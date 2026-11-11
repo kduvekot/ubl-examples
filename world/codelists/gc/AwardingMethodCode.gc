@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: awarding method. How the winning tender is chosen. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>AwardingMethodCode</ShortName>
+      <LongName xml:lang="en">Awarding method (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:AwardingMethodCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:AwardingMethodCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:AwardingMethodCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/AwardingMethodCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BESTVALUE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Best price-quality ratio</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhiztan mustek-hukrir skilkir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Fiviho lanasu-mulune nikiki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The tender with the best ratio of price and quality wins.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOWESTPRICE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lowest price</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sazskek mustek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lakie lanasu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The cheapest tender that meets the requirements wins.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOWESTCOST</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lowest cost</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sazskek gaskan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lakie tulasi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The tender with the lowest life-cycle cost wins.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

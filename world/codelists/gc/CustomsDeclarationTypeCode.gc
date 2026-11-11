@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: customs declaration type. The kind of a customs declaration in the Trade Accord's customs data model. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CustomsDeclarationTypeCode</ShortName>
+      <LongName xml:lang="en">Customs declaration type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CustomsDeclarationTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IMPORT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Import declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Balstir ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Musaka kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods entering the territory.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXPORT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Export declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zikman ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hafaso kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods leaving the territory.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REEXPORT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Re-export declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Huznir-zikman ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kefila-hafaso kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods under a special procedure leaving the territory.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TRANSIT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transit declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skarsir ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nonato kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods carried across the territory under customs control.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEMPADMISSION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Temporary admission declaration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stenkan skirgan ziztrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vohehafi nihikope kaukelu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods brought in for a limited time.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

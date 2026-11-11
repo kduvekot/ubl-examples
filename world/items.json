@@ -13,7 +13,8 @@
    },
    "sellers_id": "SM-ORE-L",
    "standard_id": "771010000013",
-   "hs": "2601.11",
+   "hs": "260111",
+   "cpc": "14100",
    "origin": "XU",
    "description": "Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.",
    "package": {
@@ -41,7 +42,8 @@
    },
    "sellers_id": "VI-B180",
    "standard_id": "771020000027",
-   "hs": "9401.79",
+   "hs": "940179",
+   "cpc": "38111",
    "origin": "XU",
    "description": "Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.",
    "dimensions_mm": [
@@ -73,7 +75,7 @@
    ],
    "warranty": "Five years on the frame against corrosion.",
    "spec_doc": "VI-DS-B180",
-   "national_tariff": "9401.79.10",
+   "national_tariff": "94017910",
    "properties": [
     [
      "Frame material",
@@ -94,11 +96,11 @@
       "Ferro grey",
       "Moss green"
      ],
-     "importance": "Optional",
+     "importance": "OPTIONAL",
      "group": [
       "APP",
       "Appearance",
-      "Optional"
+      "OPTIONAL"
      ],
      "why": "The colour of the frame, one of the colours it is offered in."
     },
@@ -114,11 +116,11 @@
      "qualifier": [
       "Distributed over the seat"
      ],
-     "importance": "Mandatory",
+     "importance": "MANDATORY",
      "group": [
       "SAF",
       "Safety",
-      "Mandatory"
+      "MANDATORY"
      ],
      "standard": [
       "UR-SF-0450",
@@ -158,18 +160,18 @@
    "lot_prefix": "VI-LOT-26",
    "circularity": {
     "repairability": "8",
-    "repairability_system": "Repairability index, 0–10",
-    "maintenance": "Yearly",
+    "repairability_system": "REPAIR10",
+    "maintenance": "YEARLY",
     "maintenance_description": "Tighten the slat bolts and touch up the coating once a year.",
     "resources": [
      [
-      "Steel",
+      "STEEL",
       "34",
       "KGM",
       "Steel made from Serravona ore in Urvania"
      ],
      [
-      "Hardwood",
+      "HARDWOOD",
       "22.5",
       "KGM",
       "Slats from Upland State, Bayvarra"
@@ -177,7 +179,7 @@
     ],
     "product_doc": "VI-RM-B180",
     "waste": [
-     "Packaging",
+     "PACKAGING",
      "Stretch film and pallet straps, per bench",
      "0.4",
      "KGM"
@@ -194,7 +196,7 @@
    },
    "barcode": "Code128",
    "emission": {
-    "type": "CO2e",
+    "type": "CO2E",
     "value": "96",
     "unit": "KGM",
     "base": [
@@ -202,11 +204,11 @@
      "EA"
     ],
     "standard": "Greenhouse Gas Protocol Product Standard",
-    "stage": "Manufacturing",
+    "stage": "MANUFACTURING",
     "stage_desc": "From the ore at the mine to the bench leaving the factory gate.",
     "method": {
-     "code": "Calculated",
-     "fullness": "Cradle to gate",
+     "code": "CALCULATED",
+     "fullness": "CRADLETOGATE",
      "source": "The steelworks' and sawmill's measured energy use of 2025",
      "doc": "VI-LCA-2025"
     },
@@ -236,7 +238,8 @@
    },
    "sellers_id": "VI-C180",
    "standard_id": "771020000034",
-   "hs": "7325.99",
+   "hs": "732599",
+   "cpc": "42999",
    "origin": "XU",
    "description": "Replacement side frame for the Serra bench, cast steel, galvanised.",
    "net_kg": 9.5,
@@ -247,7 +250,7 @@
    },
    "brand": "Valdara",
    "model": "Serra 180 side frame",
-   "national_tariff": "7325.99.90",
+   "national_tariff": "73259990",
    "serials": "VI-SF-",
    "trace": "VI-TR-",
    "registration": "VI-QR-",
@@ -271,7 +274,8 @@
    },
    "sellers_id": "RR-PE-R1",
    "standard_id": "771030000048",
-   "hs": "3901.10",
+   "hs": "390110",
+   "cpc": "34710",
    "origin": "XU",
    "description": "Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.",
    "net_kg": 1000,
@@ -294,6 +298,7 @@
    ],
    "env_certificate": {
     "id": "XU-RC-2026-007",
+    "code": "RECYCLED",
     "type": "Recycled content",
     "remarks": "Made entirely from sorted production waste recovered in Urvania."
    },
@@ -319,7 +324,7 @@
    "sellers_id": "RR-SVC-01",
    "description": "Collection at the factory and recovery of sorted production waste, per tonne collected.",
    "lifecycle": [
-    "End-of-life",
+    "ENDOFLIFE",
     "The service handles the production waste at the end of its life, before it is recycled."
    ]
   },
@@ -400,7 +405,8 @@
    },
    "sellers_id": "MS-SL-1800",
    "standard_id": "772010000058",
-   "hs": "4407.99",
+   "hs": "440799",
+   "cpc": "31102",
    "origin": "XB",
    "description": "Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.",
    "dimensions_mm": [
@@ -421,6 +427,7 @@
    },
    "certificate": {
     "id": "XB-FOR-2025-118",
+    "code": "SUSTFOREST",
     "type": "Sustainable forestry",
     "remarks": "The timber comes from forests in Upland State managed for regrowth.",
     "valid_until": "2027-12-31",
@@ -466,11 +473,11 @@
       "10",
       "14"
      ],
-     "importance": "Mandatory",
+     "importance": "MANDATORY",
      "group": [
       "QUA",
       "Wood quality",
-      "Mandatory"
+      "MANDATORY"
      ],
      "standard": [
       "UR-WD-0012",
@@ -539,7 +546,8 @@
    },
    "sellers_id": "MS-TB",
    "standard_id": "772010000065",
-   "hs": "4407.99",
+   "hs": "440799",
+   "cpc": "31102",
    "origin": "XB",
    "description": "Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.",
    "net_kg": 700,
@@ -561,7 +569,8 @@
    },
    "sellers_id": "BF-GS-01",
    "standard_id": "772020000079",
-   "hs": "9401.69",
+   "hs": "940169",
+   "cpc": "38112",
    "origin": "XB",
    "description": "Garden bench and two chairs in hardwood, made for the department store's own line.",
    "net_kg": 42.0,
@@ -592,7 +601,8 @@
    },
    "sellers_id": "BF-DK-16",
    "standard_id": "772020000086",
-   "hs": "9403.30",
+   "hs": "940330",
+   "cpc": "38122",
    "origin": "XB",
    "description": "Office desk in hardwood, 1600 × 800 mm.",
    "dimensions_mm": [
@@ -650,7 +660,8 @@
    },
    "sellers_id": "LT-SH-01",
    "standard_id": "772030000090",
-   "hs": "6205.20",
+   "hs": "620520",
+   "cpc": "28232",
    "origin": "XB",
    "description": "Men's shirt, woven cotton from Lisavu, in a garment bag.",
    "net_kg": 0.25,
@@ -689,7 +700,8 @@
    },
    "sellers_id": "RP-SF-23",
    "standard_id": "772040000103",
-   "hs": "3920.10",
+   "hs": "392010",
+   "cpc": "36330",
    "origin": "XB",
    "description": "Stretch film of recycled polyethylene for pallet wrapping, on rolls of 16 kg.",
    "net_kg": 1,
@@ -706,13 +718,14 @@
     ]
    ],
    "circularity": {
-    "type": "Recycled",
+    "type": "RECYCLED",
     "recycled": "100",
     "recyclable": "100",
-    "end_of_life": "Mechanical recycling",
+    "end_of_life": "MECHRECYCLE",
     "end_of_life_detail": {
-     "processing": "Mechanical",
-     "impact": "Low: the film becomes granulate again",
+     "processing": "MECHANICAL",
+     "impact": "LOW",
+     "impact_note": "the film becomes granulate again",
      "where": "Rinova Recovery's plant, Ferrano",
      "country": "XU"
     }
@@ -730,7 +743,8 @@
    },
    "sellers_id": "RP-GB-60",
    "standard_id": "772040000110",
-   "hs": "3923.21",
+   "hs": "392321",
+   "cpc": "36410",
    "origin": "XB",
    "description": "Garment bag of recycled polyethylene, 60 cm, boxes of 500.",
    "net_kg": 0.012,
@@ -820,7 +834,6 @@
    "description": "The manufacturer's Serra bench, from the distributor's stock.",
    "conditions": {
     "id": "LD-TC-01",
-    "action": "Trade",
     "description": "Sold to trade customers only, per pallet of four benches.",
     "doc": "LD-GTC-2026"
    },
@@ -883,7 +896,8 @@
    },
    "sellers_id": "LCF-SC",
    "standard_id": "773010000123",
-   "hs": "5201.00",
+   "hs": "520100",
+   "cpc": "01921",
    "origin": "XL",
    "description": "Cotton as harvested, not ginned, delivered loose by trailer.",
    "net_kg": 1,
@@ -904,7 +918,8 @@
    },
    "sellers_id": "SCG-LINT",
    "standard_id": "773020000137",
-   "hs": "5201.00",
+   "hs": "520100",
+   "cpc": "01921",
    "origin": "XL",
    "description": "Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.",
    "net_kg": 1,
@@ -920,6 +935,7 @@
    "origin_region": "North coast",
    "certificate": {
     "id": "XL-CLS-2026-0042",
+    "code": "COTTONCLASS",
     "type": "Cotton classing",
     "remarks": "Grade Middling, staple 1-1/8 inch, micronaire 4.2.",
     "issuer": "20-xl",
@@ -1052,7 +1068,8 @@
    },
    "sellers_id": "SE-BAT-48100",
    "standard_id": "772050000117",
-   "hs": "8507.60",
+   "hs": "850760",
+   "cpc": "46420",
    "origin": "XB",
    "description": "Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.",
    "net_kg": 52,
@@ -1067,7 +1084,7 @@
     "name": "Lithium ion batteries",
     "label": "9A",
     "pi": "965",
-    "ems": "F-A, S-I",
+    "ems": "F-A,S-I",
     "erg": "147",
     "tunnel": "E",
     "note": "State of charge below 30 %, as the air rules require."
@@ -1085,7 +1102,8 @@
    },
    "sellers_id": "SE-SMK-10",
    "standard_id": "772050000124",
-   "hs": "8531.10",
+   "hs": "853110",
+   "cpc": "46921",
    "origin": "XB",
    "description": "Ten ionisation smoke detectors for the mast's equipment room, each with a small americium-241 source.",
    "net_kg": 2,
@@ -1099,6 +1117,7 @@
     "class": "7",
     "name": "Radioactive material, excepted package - instruments or articles",
     "label": "",
+    "ems": "F-I,S-S",
     "erg": "161",
     "isotope": [
      "Americium-241",
@@ -1120,7 +1139,8 @@
    },
    "sellers_id": "SE-CS-05",
    "standard_id": "772050000131",
-   "hs": "3814.00",
+   "hs": "381400",
+   "cpc": "35110",
    "origin": "XB",
    "description": "Remover for the protective coating of circuit boards, in 5-litre cans.",
    "net_kg": 1.1,
@@ -1138,7 +1158,7 @@
     "technical": "ethanolamine, propanol",
     "label": "8",
     "flash": "28",
-    "ems": "F-E, S-C",
+    "ems": "F-E,S-C",
     "erg": "132",
     "tunnel": "D/E"
    }
@@ -1155,7 +1175,8 @@
    },
    "sellers_id": "KG-NG",
    "standard_id": "772060000015",
-   "hs": "2711.21",
+   "hs": "271121",
+   "cpc": "12020",
    "origin": "XB",
    "description": "Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.",
    "net_kg": 75,

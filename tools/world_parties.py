@@ -118,9 +118,10 @@ def check(world):
         person = idn.get("person", False)
         if not person and not idn.get("registry_id"):
             problems.append(f"{where}: an organisation needs a registry identifier")
-        if idn.get("tax_id") and not tax_id_valid(p["c"], idn["tax_id"], state_code(world, p)):
+        state = (state_code(world, p) or "").split("-")[-1] or None     # XB-CO: the permit starts with CO
+        if idn.get("tax_id") and not tax_id_valid(p["c"], idn["tax_id"], state):
             problems.append(f"{where}: tax number {idn['tax_id']} is not valid for {p['c']}"
-                            + (f" (the permit of {state_of(world, p)} starts with {state_code(world, p)})" if state_of(world, p) else ""))
+                            + (f" (the permit of {state_of(world, p)} starts with {state})" if state_of(world, p) else ""))
         a = idn.get("address", {})
         town = nearest_town(world, p)
         if a.get("CityName") != town:
@@ -130,6 +131,16 @@ def check(world):
             problems.append(f"{where}: state {a.get('CountrySubentity')} but its place is in {st}")
         if st and a.get("CountrySubentityCode") != state_code(world, p):
             problems.append(f"{where}: state code {a.get('CountrySubentityCode')} but {st} has the code {state_code(world, p)}")
+        le = idn.get("legal", {})
+        if le and not person and not le.get("sole_proprietor") and p["c"] and \
+                (not isinstance(le.get("headcount"), int) or not le.get("turnover")):
+            problems.append(f"{where}: a company needs its headcount and turnover, from which its size class follows")
+        if le.get("turnover"):
+            t = le["turnover"]
+            cur = world["countries"][p["c"]]["currency"]
+            if t["currency"] != cur["code"] or len(t["amount"].partition(".")[2]) != cur["minor_units"]:
+                problems.append(f"{where}: turnover {t['amount']} {t['currency']} is not in {cur['code']} with its "
+                                f"{cur['minor_units']} decimals")
         if not st and a.get("CountrySubentity"):
             problems.append(f"{where}: its country has no states")
         for k in ("StreetName", "BuildingNumber"):

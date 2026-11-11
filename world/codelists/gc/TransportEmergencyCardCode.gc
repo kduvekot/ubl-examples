@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: transport emergency card. The Trade Accord's instructions in writing for the crew, one card per hazard class, following the class-based instructions in writing of ADR (5.4.3). The build checks that the card matches the class of the goods. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TransportEmergencyCardCode</ShortName>
+      <LongName xml:lang="en">Transport emergency card (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TransportEmergencyCardCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TransportEmergencyCardCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TransportEmergencyCardCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 1</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Explosives.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 2</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Gases.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 3</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Flammable liquids.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 4</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Flammable solids and substances liable to spontaneous combustion or emitting flammable gases with water.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 5</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Oxidizing substances and organic peroxides.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 6</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Toxic and infectious substances.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 7</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Radioactive material.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 8</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Corrosive substances.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TEC9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Emergency card for class 9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Maldran krul gan krukdran 9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sotalele lasumu kifupa pofele 9</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Miscellaneous dangerous substances and articles, including lithium batteries.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TECGEN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General emergency card</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kamir maldran krul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tuliki sotalele lasumu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The general instructions for all classes, carried with the class card.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

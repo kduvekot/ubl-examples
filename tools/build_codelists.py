@@ -4,21 +4,30 @@
 The world's countries (XU, XB, XL) are ISO 3166-1 user-assigned codes and its
 currencies are invented, so they are not in the UBL 2.5 default code lists.
 UBL's two-phase validation lets trading partners use their own code lists
-(UBL 2.5 Appendix F). This script makes them by copying the UBL 2.5 default
-lists unchanged and adding the world's codes from world/countries.json:
+(UBL 2.5 Appendix F). This script makes them:
 
-  world/codelists/CountryIdentificationCode-2.4-world.gc
-  world/codelists/CurrencyCode-2.4-world.gc
+  world/codelists/CountryIdentificationCode-2.4-world.gc   UBL's country and currency lists, unchanged, with
+  world/codelists/CurrencyCode-2.4-world.gc                the world's codes added (from world/countries.json)
   world/codelists/ubl-default-codes.json   the UBL 2.5 context/value associations (CVA)
                                            with the codes of every value list they name,
                                            for code list validation without network
+  world/codelists/gc/*.gc                  every other list of the world, from world/codelists/lists.json
+                                           (tools/codelists.py): the Trade Accord's regional lists, the national
+                                           lists, world copies of external lists (built from the copies in
+                                           world/codelists/sources) and of UBL lists that lack a listID
+  world/codelists/world-codes.json         the world's context/value associations, resolved: which list every
+                                           code element and code attribute uses, with the codes; phase 2 of
+                                           tools/validate_examples.py reads only this
+  world/codelists/UBL-World-2.5.cva        the same associations as an OASIS CVA file
 
 Each copy gets its own identification (version and URIs, under
 urn:ubl-examples:world), so a validator can tell it from the original; the
 LocationUri points to the copy published with the site. The world currency codes are checked against the
-current ISO 4217 list, so that no invented code is a real one.
+ISO 4217 list and the world's market identifier codes against the ISO 10383 list, so that no invented code is a
+real one; both lists are kept in world/codelists/sources.
 
-Usage: python3 tools/build_codelists.py            (downloads the originals, writes the lists)
+Usage: python3 tools/build_codelists.py            (writes the world's lists; downloads UBL's originals)
+       python3 tools/build_codelists.py --offline  (writes the world's lists only)
        python3 tools/build_codelists.py --check    (no network: are the lists up to date?)
 """
 import hashlib
@@ -30,6 +39,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.dirname(__file__))
+import codelists  # noqa: E402
 import world_data  # noqa: E402
 
 BASE = "https://docs.oasis-open.org/ubl/os-UBL-2.5/cl/gc/default/"
@@ -134,9 +144,207 @@ def world_rows(countries):
     }
 
 
-def check():
-    """Without network: the committed lists hold exactly the world codes of world/countries.json."""
+# ---------------------------------------------------------------- the world's own lists (world/codelists/lists.json)
+AGENCY = {"regional": "Lumeport Trade Accord"}
+LANG_NAME = {"en": "English", "qau": "Urvanian", "qal": "Lisavan"}
+
+
+def gc_file(key):
+    return key.replace(":", "-") + "Code.gc"
+
+
+def gc_list(key, lst):
+    """A genericode 1.0 file of one list: code, name (in English, and in the languages of the list's countries
+    for the world's own lists), description."""
+    ET.register_namespace("gc", GC)
+    root = ET.Element(f"{{{GC}}}CodeList")
+    scope = lst["scope"]
+    ident = ET.SubElement(root, "Identification")
+    ET.SubElement(ident, "ShortName").text = codelists.short_name(key)
+    ET.SubElement(ident, "LongName", {"xml:lang": "en"}).text = f"{lst['name']} (UBL example world)"
+    ET.SubElement(ident, "LongName", Identifier="listID").text = lst["listID"]
+    version = lst.get("version", "1.0")
+    ET.SubElement(ident, "Version").text = version
+    canonical = lst["listID"] if lst["listID"].startswith("urn:") else \
+        f"urn:ubl-examples:world:codelist:copy:{codelists.short_name(key)}"
+    ET.SubElement(ident, "CanonicalUri").text = canonical
+    ET.SubElement(ident, "CanonicalVersionUri").text = f"{canonical}:{version}"
+    ET.SubElement(ident, "LocationUri").text = PAGES + "gc/" + gc_file(key)
+    agency = ET.SubElement(ident, "Agency")
+    countries = world_data.load()["countries"]
+    ET.SubElement(agency, "LongName", {"xml:lang": "en"}).text = \
+        AGENCY.get(scope) or (f"Government of {countries[scope]['name']}" if scope in countries else lst.get("agency") or "OASIS Universal Business Language (UBL) TC")
+    langs = ["en"] + codelists.LANGS.get(scope, []) if scope in codelists.LANGS else ["en"]
+    cols = ET.SubElement(root, "ColumnSet")
+    columns = [("code", "Code", "normalizedString", None, "required")]
+    columns += [("name" if l == "en" else f"name-{l}", "Name", "string", l, "required") for l in langs]
+    columns += [("description", "Description", "string", "en", "optional")]
+    if any(c.get("mime") for c in lst["codes"].values()):
+        columns.append(("mime", "MimeType", "string", None, "optional"))
+    for cid, short, typ, lang, use in columns:
+        col = ET.SubElement(cols, "Column", Id=cid, Use=use)
+        ET.SubElement(col, "ShortName").text = short
+        ET.SubElement(col, "Data", {"Type": typ, **({"Lang": lang} if lang else {})})
+    k = ET.SubElement(cols, "Key", Id="codeKey")
+    ET.SubElement(k, "ShortName").text = "CodeKey"
+    ET.SubElement(k, "ColumnRef", Ref="code")
+    rows = ET.SubElement(root, "SimpleCodeList")
+    for code, c in lst["codes"].items():
+        vals = [("code", code)] + [("name" if l == "en" else f"name-{l}", codelists.name_in(lst, code, l))
+                                   for l in langs]
+        if c.get("description"):
+            vals.append(("description", c["description"]))
+        if c.get("mime"):
+            vals.append(("mime", c["mime"]))
+        rows.append(row(vals))
+    ET.indent(root, space="   ")
+    if scope == "external" and lst.get("source"):
+        src = lst["source"]
+        note = (f"A world copy of {lst['name']}: the codes the world uses, and others of the same list. Built from "
+                f"world/codelists/sources/{src.get('file') or ', '.join(src['files'])} ({src.get('version', version)}).")
+        if any(c.get("added") for c in lst["codes"].values()):
+            note += f" Added for the world: {', '.join(k for k, c in lst['codes'].items() if c.get('added'))}."
+    elif scope == "external":
+        note = (f"A world copy of {lst['name']}: the codes the world uses, and others of the same list. No "
+                f"machine-readable copy of the source could be kept ({lst.get('reference', '')}); the codes and names "
+                "are as the standard publishes them.")
+    elif scope == "ubl-copy":
+        note = (f"A world copy of UBL's default list {lst['ubl']} ({lst['uri']}), with the same codes, given a listID: "
+                "UBL's own list has none, or one that an instance cannot quote.")
+    else:
+        note = f"A code list of the UBL example world: {lst['name'].lower()}. {lst.get('description', '')}".strip()
+    head = (f'<?xml version="1.0" encoding="UTF-8"?>\n<!-- {note} Made by tools/build_codelists.py from '
+            f'world/codelists/lists.json. -->\n')
+    return head.encode() + ET.tostring(root, encoding="utf-8") + b"\n"
+
+
+def address(b):
+    """The CVA address of a binding: the element, under its parents, with the binding's condition."""
+    cond = "".join(f"[cbc:{k}='{v}']" for k, v in (b.get("when") or {}).items())
+    if b.get("parents"):
+        return " | ".join(f"*[local-name()='{p}']{cond}/cbc:{b['element']}" for p in b["parents"])
+    if cond:
+        raise SystemExit(f"world/codelists/lists.json: a condition needs parents ({b['element']})")
+    return f"cbc:{b['element']}"
+
+
+def regions():
+    """The region subtags of BCP 47 (IANA language subtag registry): two letters, and the private-use XA..XZ."""
+    text = open(os.path.join(OUT, "sources", "iana", "language-subtag-registry.txt"), encoding="utf-8").read()
+    out = set()
+    for rec in text.split("%%"):
+        f = dict(re.findall(r"^([A-Za-z-]+): (.*)$", rec, re.M))
+        if f.get("Type") == "region" and re.fullmatch(r"[A-Z]{2}(\.\.[A-Z]{2})?", f.get("Subtag", "")):
+            a, _, b = f["Subtag"].partition("..")
+            out |= {a} if not b else {a[0] + chr(c) for c in range(ord(a[1]), ord(b[1]) + 1)}
+    return sorted(out)
+
+
+def world_lists():
+    """Every file this script makes from world/codelists/lists.json: {path relative to the repository: bytes}."""
+    model = codelists.load()
+    files = {}
+    for key, lst in model["lists"].items():
+        if lst["scope"] in ("ubl", "world-ubl"):
+            continue
+        files[f"world/codelists/gc/{gc_file(key)}"] = gc_list(key, lst)
+    ubl = codelists.ubl_lists()
+    ubl_cva = json.load(open(os.path.join(OUT, "ubl-default-codes.json"), encoding="utf-8"))
+    lists = {}
+    for key, lst in model["lists"].items():
+        entry = {"listID": lst["listID"], "scope": lst["scope"], "name": lst["name"]}
+        if lst["scope"] == "ubl":
+            entry["ubl"] = lst["ubl"]
+            entry["location"] = ubl[lst["ubl"]]["uri"]
+        else:
+            entry["location"] = lst.get("file") and f"world/codelists/{lst['file']}" or \
+                f"world/codelists/gc/{gc_file(key)}"
+            entry["codes"] = list(lst["codes"])
+        lists[key] = entry
+    contexts = [{"element": b["element"], "address": address(b), "lists": b["lists"],
+                 **({"parents": b["parents"]} if b.get("parents") else {}),
+                 **({"when": b["when"]} if b.get("when") else {})} for b in model["bindings"]]
+    attrs = []
+    for name, key in model["attributes"].items():
+        if key == "ubl":                   # the attribute contexts of UBL's CVA, as they are
+            for c in ubl_cva["contexts"]:
+                if c["address"].endswith(f"@{name}"):
+                    lst = next(k for k, l in model["lists"].items() if l.get("ubl") == c["values"][-1])
+                    attrs.append({"attribute": name, "address": c["address"], "lists": [lst]})
+        else:
+            a = {"attribute": name, "address": f"@{name}", "lists": [key]}
+            if name == "languageID":
+                a["rule"] = "BCP 47 (RFC 5646): a language subtag of the list, optionally a region subtag"
+                a["regions"] = regions()
+            attrs.append(a)
+    cva = {"description": "The context/value associations of the UBL example world, made by tools/build_codelists.py "
+                          "from world/codelists/lists.json. Every code element is checked against the list its "
+                          "context names; where a context names several lists, the code's listID chooses one. "
+                          "They replace UBL's own associations for the world's documents.",
+           "contexts": contexts, "unlisted": model["unlisted"], "attributes": attrs, "lists": lists}
+    if model.get("pending"):
+        cva["pending"] = model["pending"]
+    files["world/codelists/world-codes.json"] = (json.dumps(cva, ensure_ascii=False, indent=1) + "\n").encode()
+    files["world/codelists/UBL-World-2.5.cva"] = cva_xml(cva)
+    return files
+
+
+def cva_xml(cva):
+    ns = "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+    ET.register_namespace("cva", ns)
+    root = ET.Element(f"{{{ns}}}ContextValueAssociation", {"name": "UBL-World-2.5", "id": "urn:ubl-examples:world:cva"})
+    ET.SubElement(ET.SubElement(root, "Annotation"), "Description").text = cva["description"]
+    ET.SubElement(root, "Title").text = "Code lists of the UBL example world"
+    vls = ET.SubElement(root, "ValueLists")
+    for key, lst in cva["lists"].items():
+        uri = lst["location"] if lst["scope"] == "ubl" else os.path.relpath(lst["location"], "world/codelists")
+        ET.SubElement(vls, "ValueList", {"xml:id": key.replace(":", "-"), "uri": uri})
+    ims = ET.SubElement(ET.SubElement(root, "InstanceMetadataSets"), "InstanceMetadataSet", {"xml:id": "code"})
+    ET.SubElement(ims, "InstanceMetadata", address="@listID", identification="LongName[@Identifier='listID']")
+    ctxs = ET.SubElement(root, "Contexts")
+    for c in cva["contexts"]:
+        ET.SubElement(ctxs, "Context", address=c["address"], values=" ".join(k.replace(":", "-") for k in c["lists"]),
+                      metadata="code")
+    for a in cva["attributes"]:
+        ET.SubElement(ctxs, "Context", address=a["address"], values=" ".join(k.replace(":", "-") for k in a["lists"]))
+    ET.indent(root, space="   ")
+    return b'<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(root, encoding="utf-8") + b"\n"
+
+
+def real_code_problems():
+    """The world's invented codes must not be real ones: currencies against ISO 4217, market identifier codes
+    against ISO 10383 (both kept in world/codelists/sources)."""
     problems = []
+    iso = open(os.path.join(OUT, "sources", "iso4217", "list-one.xml"), encoding="utf-8").read()
+    taken, numbers = set(re.findall(r"<Ccy>([A-Z]{3})</Ccy>", iso)), set(re.findall(r"<CcyNbr>(\d{3})</CcyNbr>", iso))
+    for code, c in world_data.load()["countries"].items():
+        cur = c["currency"]
+        if cur["code"] in taken or cur["numeric"] in numbers:
+            problems.append(f"{code}: currency {cur['code']} / {cur['numeric']} is a real ISO 4217 code")
+    mic = codelists.READERS["mic"](os.path.join(OUT, "sources", "iso10383", "ISO10383_MIC.csv"))
+    for key, lst in codelists.load()["lists"].items():
+        for code in lst["codes"] if lst.get("checked_against") == "ISO 10383" else ():
+            if code in mic:
+                problems.append(f"{key}: {code} is a real ISO 10383 market identifier code ({mic[code]['name']})")
+            if not re.fullmatch(r"[A-Z0-9]{4}", code):
+                problems.append(f"{key}: {code} is not shaped like an ISO 10383 MIC (four letters or digits)")
+    return problems
+
+
+def check():
+    """Without network: the committed lists hold exactly the world codes of world/countries.json, and the world's
+    own lists are what world/codelists/lists.json makes."""
+    problems = real_code_problems()
+    for rel, data in world_lists().items():
+        path = os.path.join(world_data.ROOT, rel)
+        if not os.path.exists(path) or open(path, "rb").read() != data:
+            problems.append(f"{rel}: out of date with world/codelists/lists.json; run tools/build_codelists.py --offline")
+    stale = sorted(set(os.listdir(os.path.join(OUT, "gc"))) - {os.path.basename(r) for r in world_lists()}) \
+        if os.path.isdir(os.path.join(OUT, "gc")) else []
+    problems += [f"world/codelists/gc/{s}: no longer a list of the world" for s in stale]
+    if world_data.MISSING_WORDS:
+        problems.append("words missing from the vocabularies of the world's languages (world/countries.json): "
+                        + json.dumps(sorted(world_data.MISSING_WORDS)))
     for name, rows in world_rows(world_data.load()["countries"]).items():
         path = os.path.join(OUT, name.replace(".gc", "-world.gc"))
         if not os.path.exists(path):
@@ -155,6 +363,24 @@ def main():
         problems = check()
         print("\n".join(problems) or "world code lists: up to date")
         sys.exit(1 if problems else 0)
+    problems = real_code_problems()
+    if problems:
+        raise SystemExit("\n".join(problems))
+    files = world_lists()
+    if world_data.MISSING_WORDS:
+        raise SystemExit("words missing from the vocabularies of the world's languages (world/countries.json): "
+                         + json.dumps(sorted(world_data.MISSING_WORDS)))
+    os.makedirs(os.path.join(OUT, "gc"), exist_ok=True)
+    for name in os.listdir(os.path.join(OUT, "gc")):
+        if f"world/codelists/gc/{name}" not in files:
+            os.remove(os.path.join(OUT, "gc", name))
+    for rel, data in files.items():
+        with open(os.path.join(world_data.ROOT, rel), "wb") as f:
+            f.write(data)
+    print(f"world/codelists: {sum(r.startswith('world/codelists/gc/') for r in files)} lists, world-codes.json, "
+          "UBL-World-2.5.cva")
+    if "--offline" in sys.argv:
+        return
     countries = world_data.load()["countries"]
     try:
         iso = fetch(ISO4217).decode("utf-8")

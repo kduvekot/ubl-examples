@@ -30,7 +30,7 @@ The chamber endorses the certificate and makes it available to the importer, who
   What the certificate is for.
 - `Note` = **Drakhan dranan karul drek rizir denskek.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What the certificate is for.
-- `Note` = **Preferential origin under the trade accord.** (languageID `en`)  
+- `Note` = **Preferential origin under the trade accord.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What the certificate is for.
 - `VersionID` = **1**  
   The first version.
@@ -53,7 +53,7 @@ Inside `ExporterParty`:
 - `WebsiteURI` = **https://www.valdara.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
 - `IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
@@ -64,19 +64,19 @@ Inside `ExporterParty`:
   Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
-- `PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
-- `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+- `PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
   The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+- `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
   The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
@@ -84,60 +84,62 @@ Inside `ExporterParty`:
   The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XU**  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered for value added tax; identity of Valdara Industries (world/parties.json).
 - `PartyTaxScheme/CompanyID` = **XU007299291**  
   Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json).
-- `PartyTaxScheme/TaxLevelCode` = **National**  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country.
+- `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
 - `PartyTaxScheme/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of Urvania's value added tax.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF**  
-  The tax is accounted for in the country's currency.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The country whose tax this is.
+- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered, with its legal form; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **XU-R-104274**  
   Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/RegistrationDate` = **1962-04-12**  
   The day the company was entered in the register; identity of Valdara Industries (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **SUA**  
-  The legal form, as abbreviated in Urvania (world/countries.json).
-- `PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)**  
-  The legal form, in words.
-- `PartyLegalEntity/EntitySizeCode` = **Large**  
-  The size class of the company (micro, small, medium or large); identity of Valdara Industries (world/parties.json).
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SUA = Società urvaniana per azioni (public limited company).
+- `PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)** (languageID `qau`)  
+  The name of code SUA in Urvania's national company legal form list. In Urvanian, the sender's language.
+- `PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)** (languageID `en-XU`)  
+  The name of code SUA in Urvania's national company legal form list. In English.
+- `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 3083 persons and its turnover of 23600000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
-  The country of registration.
+- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
   The identifier of the register in the world (world/countries.json).
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
   The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The register covers the whole country.
+- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
 - `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
-  The regulated market where the shares are listed.
-- `PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
-  The market's code.
+  The name of code XFER in the Trade Accord's market identifier list.
+- `PartyLegalEntity/SecurityListing/MarketCode` = **XFER** (listID `urn:ubl-examples:world:codelist:MarketCode`)  
+  The market's code. The code is from the Trade Accord's market identifier list: XFER = Ferrano Stock Exchange.
 - `Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
 - `Contact/JobTitle` = **Customer service officer**  
@@ -150,14 +152,14 @@ Inside `ExporterParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
-- `Contact/OtherCommunication/ChannelCode` = **AL**  
-  UN/EDIFACT 3155 code AL: cellular phone.
+- `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
+  UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
   The sales desk's mobile number, also under the reserved +999.
 - `ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
   The service contract between the two.
-- `ServiceProviderParty/ServiceTypeCode` = **Logistics**  
-  The kind of service, as a code.
+- `ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
+  The kind of service, as a code. The code is from the Trade Accord's service type list: LOGISTICS = Logistics service.
 - `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -178,7 +180,7 @@ Inside `ImporterParty`:
 - `WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
@@ -189,12 +191,12 @@ Inside `ImporterParty`:
   English, the language the party does business in.
 - `Language/Name` = **English**  
   The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
-- `PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Distribution Drive**  
   Street of the postal address. identity of Lumeway Distribution (world/parties.json).
 - `PostalAddress/AdditionalStreetName` = **Gate 3**  
@@ -210,59 +212,59 @@ Inside `ImporterParty`:
 - `PostalAddress/PostalZone` = **71214**  
   Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Upland State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Lumeway Distribution (world/parties.json).
-- `PostalAddress/CountrySubentityCode` = **UL**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json).
+  The name of code XB-UL in Bayvarra's national state or territory list.
+- `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
 - `PartyTaxScheme/CompanyID` = **UL-1230822**  
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/TaxLevelCode` = **State**  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
-  The tax is accounted for in the country's currency.
+- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
   The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The country whose tax this is.
+- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410274**  
   Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
   The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
-  The legal form, as abbreviated in Bayvarra (world/countries.json).
+- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The legal form, in words.
-- `PartyLegalEntity/EntitySizeCode` = **Medium**  
-  The size class of the company (micro, small, medium or large); identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+  The name of code LTD in Bayvarra's national company legal form list.
+- `PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
   The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Customer service**  
   The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
 - `Contact/JobTitle` = **Customer service officer**  
@@ -284,12 +286,12 @@ Inside `ImporterParty`:
 
 Inside `EndorserParty`:
 
-- `RoleCode` = **Chamber**  
-  The endorser is the chamber of commerce of the exporting country.
+- `RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
+  The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `SequenceNumeric` = **1**  
   The first and only endorsement.
 - `Party/IndustryClassificationCode` = **9411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Ferrano Chamber of Commerce (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Ferrano Chamber of Commerce (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 9411 = Activities of business and employers membership organizations.
 - `Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
@@ -298,19 +300,19 @@ Inside `EndorserParty`:
   Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `Party/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `Party/PostalAddress/StreetName` = **Trazhek Han Zhatrir** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en`)  
+- `Party/PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **15**  
   Building number of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
   The town's Urvanian name, which its people have always used; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
   The town's English name, inherited from the Italian; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4110**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Chamber of Commerce (world/parties.json).
@@ -318,40 +320,40 @@ Inside `EndorserParty`:
   The province, part of an address in Urvania. identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XU**  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Ferrano Chamber of Commerce**  
   The name under which the party is registered for value added tax; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PartyTaxScheme/CompanyID` = **XU007376017**  
   Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/PartyTaxScheme/TaxLevelCode` = **National**  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country.
+- `Party/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
 - `Party/PartyTaxScheme/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of Urvania's value added tax.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF**  
-  The tax is accounted for in the country's currency.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The country whose tax this is.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/RegistrationName` = **Ferrano Chamber of Commerce**  
   The name under which the party is registered, with its legal form; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **XU-R-105370**  
   Number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/Contact/Name` = **Certificates office**  
   The desk that handles this document; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/Contact/JobTitle` = **Public service officer**  
@@ -379,8 +381,8 @@ Inside `CertificateOfOriginApplication`:
   The exporter's reference for its application.
 - `CertificateType` = **Preferential**  
   The goods qualify for the preferential duty rate in Bayvarra; the importer needs this certificate to claim it.
-- `ApplicationStatusCode` = **Approved**  
-  The chamber has approved the application.
+- `ApplicationStatusCode` = **APPROVED** (listID `urn:ubl-examples:world:codelist:ApplicationStatusCode`)  
+  The chamber has approved the application. The code is from the Trade Accord's application status list: APPROVED = Approved.
 - `OriginalJobID` = **LD-PO-26-0149**  
   The order the goods are for.
 - `PreviousJobID` = **VI-CO-25-0412**  
@@ -403,7 +405,7 @@ Inside `CertificateOfOriginApplication`:
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Name` = **Park bench Serra 180** (languageID `en`)  
+- `Shipment/GoodsItem/Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item; item bench-serra of Valdara Industries (world/items.json).
@@ -421,10 +423,10 @@ Inside `CertificateOfOriginApplication`:
   The variant of the item: the frame colour, added to the item number.
 - `Shipment/GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **Colour**  
   The attribute the variant differs in.
-- `Shipment/GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM**  
-  The part of the item the attribute is on: the frame.
-- `Shipment/GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY**  
-  The variant's code for it.
+- `Shipment/GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `Shipment/GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
 - `Shipment/GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
   The variant in words.
 - `Shipment/GoodsItem/Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
@@ -435,12 +437,14 @@ Inside `CertificateOfOriginApplication`:
   The range of item numbers the agency gives out in the maker's country.
 - `Shipment/GoodsItem/Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
-- `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU**  
-  Where the item was produced; item bench-serra of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **9401.79.10**  
-  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
-- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item bench-serra of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Where the item was produced; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
+  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -457,36 +461,36 @@ Inside `CertificateOfOriginApplication`:
   The maker's identifier for the property.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
   The colour of the frame, one of the colours it is offered in.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
-  How much the property matters in describing the item.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
   The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
   The group's name.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Optional**  
-  How much the group matters.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the group matters. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ID` = **LOAD**  
   The maker's identifier for the property.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Load capacity**  
-  A property buyers ask about.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/NameCode` = **LOAD**  
-  The property's name as a code, as the property standard lists it.
+  The name of code LOAD in the Trade Accord's item property name list.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/NameCode` = **LOAD** (listID `urn:ubl-examples:world:codelist:ItemPropertyNameCode`)  
+  The property's name as a code. The code is from the Trade Accord's item property name list: LOAD = Load capacity.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/TestMethod` = **Static load on the seat for one hour, three seats loaded evenly, no lasting deformation**  
   How the value is tested.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **450** (unitCode `KGM`)  
   Its measured value; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQualifier` = **Distributed over the seat**  
   What the value stands for.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **Mandatory**  
-  How much the property matters in describing the item.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **SAF**  
   The group of properties this one belongs to.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Safety**  
   The group's name.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Mandatory**  
-  How much the group matters.
+- `Shipment/GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450**  
   The property's number in the property standard of the identification agency.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
@@ -521,8 +525,8 @@ Inside `CertificateOfOriginApplication`:
   The lowest it can be set to.
 - `Shipment/GoodsItem/Item/Dimension/MaximumMeasure` = **460** (unitCode `MMT`)  
   The highest it can be set to.
-- `Shipment/GoodsItem/Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2e**  
-  The emission reported: greenhouse gases as CO2 equivalent.
+- `Shipment/GoodsItem/Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
+  The emission reported: greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/ValueMeasure` = **96** (unitCode `KGM`)  
   The emission of one item.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
@@ -531,16 +535,16 @@ Inside `CertificateOfOriginApplication`:
   The emission is per one bench.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
-- `Shipment/GoodsItem/Item/EnvironmentalEmission/LifecycleStageCode` = **Manufacturing**  
-  The part of the bench's life the figure covers.
+- `Shipment/GoodsItem/Item/EnvironmentalEmission/LifecycleStageCode` = **MANUFACTURING** (listID `urn:ubl-examples:world:codelist:LifecycleStageCode`)  
+  The part of the bench's life the figure covers. The code is from the Trade Accord's life cycle stage list: MANUFACTURING = Manufacturing.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/LifecycleStageDescription` = **From the ore at the mine to the bench leaving the factory gate.**  
   That part in words.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/Description` = **Mining, steel making, casting, galvanising, sawing and the transport between them.**  
   What the figure includes.
-- `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **Calculated**  
-  Calculated, not measured.
-- `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **Cradle to gate**  
-  How much of the chain is included.
+- `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **CALCULATED** (listID `urn:ubl-examples:world:codelist:EmissionCalculationMethodCode`)  
+  Calculated, not measured. The code is from the Trade Accord's emission calculation method list: CALCULATED = Calculated.
+- `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **CRADLETOGATE** (listID `urn:ubl-examples:world:codelist:EmissionBoundaryCode`)  
+  How much of the chain is included. The code is from the Trade Accord's emission boundary list: CRADLETOGATE = Cradle to gate.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource` = **The steelworks' and sawmill's measured energy use of 2025**  
   Where the factors come from.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID` = **VI-LCA-2025**  
@@ -549,12 +553,12 @@ Inside `CertificateOfOriginApplication`:
   The year the figures are from.
 - `Shipment/GoodsItem/Item/EnvironmentalEmission/MeasurementPeriod/EndDate` = **2025-12-31**  
   Its last day.
-- `Shipment/GoodsItem/Item/CircularityProfile/MaintenanceFrequencyCode` = **Yearly**  
-  How often the item needs maintenance.
+- `Shipment/GoodsItem/Item/CircularityProfile/MaintenanceFrequencyCode` = **YEARLY** (listID `urn:ubl-examples:world:codelist:MaintenanceFrequencyCode`)  
+  How often the item needs maintenance. The code is from the Trade Accord's maintenance frequency list: YEARLY = Once a year.
 - `Shipment/GoodsItem/Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
   What the maintenance is.
-- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Steel**  
-  A material the item is made of.
+- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **STEEL** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
+  A material the item is made of. The code is from the Trade Accord's material resource list: STEEL = Steel.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **34** (unitCode `KGM`)  
   How much of it one item uses.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
@@ -563,8 +567,8 @@ Inside `CertificateOfOriginApplication`:
   Measured over the production of 2025.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
   Its last day.
-- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
-  A material the item is made of.
+- `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **HARDWOOD** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
+  A material the item is made of. The code is from the Trade Accord's material resource list: HARDWOOD = Hardwood.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
   How much of it one item uses.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
@@ -573,8 +577,8 @@ Inside `CertificateOfOriginApplication`:
   Measured over the production of 2025.
 - `Shipment/GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
   Its last day.
-- `Shipment/GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
-  The kind of waste the item leaves.
+- `Shipment/GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **PACKAGING** (listID `urn:ubl-examples:world:codelist:WasteTypeCode`)  
+  The kind of waste the item leaves. The code is from the Trade Accord's waste type list: PACKAGING = Packaging.
 - `Shipment/GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
   The waste in words.
 - `Shipment/GoodsItem/Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
@@ -585,8 +589,8 @@ Inside `CertificateOfOriginApplication`:
   Its last day.
 - `Shipment/GoodsItem/Item/CircularityProfile/RepairabilityScore/ScoreNumeric` = **8**  
   Side frames and slats can be replaced one by one, which is why the spare side frame exists.
-- `Shipment/GoodsItem/Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **Repairability index, 0–10**  
-  The scale of the score.
+- `Shipment/GoodsItem/Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **REPAIR10** (listID `urn:ubl-examples:world:codelist:ScoringSystemCode`)  
+  The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
 - `Shipment/GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 - `Shipment/GoodsItem/ID` = **2**  
@@ -603,7 +607,7 @@ Inside `CertificateOfOriginApplication`:
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Nanskir drir manskan telstir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Name` = **Bench side frame casting** (languageID `en`)  
+- `Shipment/GoodsItem/Item/Name` = **Bench side frame casting** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
@@ -613,14 +617,16 @@ Inside `CertificateOfOriginApplication`:
   The seller's own item number; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/StandardItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
   The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item bench-casting of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU**  
-  Where the item was produced; item bench-casting of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **7325.99.90**  
-  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
-- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **7325.99** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item bench-casting of Valdara Industries (world/items.json).
-- `EndorserParty/RoleCode` = **Chamber**  
-  The endorser is the chamber of commerce of the exporting country.
+- `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Where the item was produced; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
+- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **42999** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **73259990** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
+  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-casting of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 73259990 = Other cast articles of iron or steel.
+- `EndorserParty/RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
+  The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
   The first and only endorsement.
 - `EndorserParty/Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -645,12 +651,12 @@ Inside `CertificateOfOriginApplication`:
   A party referred to from another party's details: its identifier and name are enough.
 - `ImporterParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `IssuingCountry/IdentificationCode` = **XU**  
-  The goods were made in Urvania, and the certificate is issued there.
+- `IssuingCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The goods were made in Urvania, and the certificate is issued there. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `DocumentDistribution/ID` = **1**  
   The importer's copy.
-- `DocumentDistribution/DistributionTypeCode` = **Electronic**  
-  As this document.
+- `DocumentDistribution/DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  As this document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
 - `DocumentDistribution/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `DocumentDistribution/Party/PartyName/Name` = **Lumeway Distribution**  
@@ -674,8 +680,8 @@ Inside `IssuerEndorsement`:
   The chamber has endorsed the certificate.
 - `Remarks` = **Origin verified against the exporter's production records.**  
   What the chamber checked.
-- `EndorserParty/RoleCode` = **Chamber**  
-  The endorser is the chamber of commerce of the exporting country.
+- `EndorserParty/RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
+  The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
   The first and only endorsement.
 - `EndorserParty/Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -701,8 +707,8 @@ Inside `EmbassyEndorsement`:
   The trade accord council confirms the chamber's signature.
 - `Remarks` = **Signature of the Ferrano chamber confirmed.**  
   What was checked.
-- `EndorserParty/RoleCode` = **Legalisation**  
-  The council legalises.
+- `EndorserParty/RoleCode` = **LEGALISATION** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
+  The council legalises. The code is from the Trade Accord's endorser role list: LEGALISATION = Legalising authority.
 - `EndorserParty/SequenceNumeric` = **2**  
   After the chamber.
 - `EndorserParty/Party/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -728,8 +734,8 @@ Inside `InsuranceEndorsement`:
   The insurer confirms the cover.
 - `Remarks` = **The goods described in this certificate are insured door to door.**  
   What it confirms.
-- `EndorserParty/RoleCode` = **Insurer**  
-  It endorses as insurer.
+- `EndorserParty/RoleCode` = **INSURER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
+  It endorses as insurer. The code is from the Trade Accord's endorser role list: INSURER = Insurer.
 - `EndorserParty/SequenceNumeric` = **2**  
   After the chamber; the embassy legalises separately.
 - `EndorserParty/Party/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -760,7 +766,7 @@ Inside `InsuranceEndorsement`:
   <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
   <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
-  <cbc:Note languageID="en">Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note languageID="en-XU">Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>
@@ -790,31 +796,31 @@ Inside `InsuranceEndorsement`:
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU007299291</cbc:CompanyID>
-      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
-        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -823,25 +829,26 @@ Inside `InsuranceEndorsement`:
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XU:CR</cbc:ID>
         <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -849,7 +856,7 @@ Inside `InsuranceEndorsement`:
         <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-        <cbc:MarketCode>FSE</cbc:MarketCode>
+        <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
       </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
@@ -860,13 +867,13 @@ Inside `InsuranceEndorsement`:
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       <cac:OtherCommunication>
-        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
         <cbc:Value>+999 1 344 474 4274</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ID>5-xu-SP-8-xu</cbc:ID>
-      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
+      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -900,11 +907,11 @@ Inside `InsuranceEndorsement`:
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
       <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -913,24 +920,24 @@ Inside `InsuranceEndorsement`:
       <cbc:CityName>Marrowdale</cbc:CityName>
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -939,25 +946,25 @@ Inside `InsuranceEndorsement`:
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -976,7 +983,7 @@ Inside `InsuranceEndorsement`:
     </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:EndorserParty>
-    <cbc:RoleCode>Chamber</cbc:RoleCode>
+    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">CHAMBER</cbc:RoleCode>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
@@ -991,31 +998,31 @@ Inside `InsuranceEndorsement`:
         <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
-        <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Piazza del Mercato</cbc:StreetName>
         <cbc:BuildingNumber>15</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
         <cbc:CompanyID>XU007376017</cbc:CompanyID>
-        <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
-          <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -1023,20 +1030,20 @@ Inside `InsuranceEndorsement`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
         <cbc:CompanyID>XU-R-105370</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Ferrano</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XU:CR</cbc:ID>
           <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -1061,7 +1068,7 @@ Inside `InsuranceEndorsement`:
   <cac:CertificateOfOriginApplication>
     <cbc:ReferenceID>VI-AP-26-0158</cbc:ReferenceID>
     <cbc:CertificateType>Preferential</cbc:CertificateType>
-    <cbc:ApplicationStatusCode>Approved</cbc:ApplicationStatusCode>
+    <cbc:ApplicationStatusCode listID="urn:ubl-examples:world:codelist:ApplicationStatusCode">APPROVED</cbc:ApplicationStatusCode>
     <cbc:OriginalJobID>LD-PO-26-0149</cbc:OriginalJobID>
     <cbc:PreviousJobID>VI-CO-25-0412</cbc:PreviousJobID>
     <cbc:Remarks>Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.</cbc:Remarks>
@@ -1076,7 +1083,7 @@ Inside `InsuranceEndorsement`:
         <cac:Item>
           <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
           <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
-          <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
+          <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
           <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
           <cbc:Keyword>park bench, street furniture</cbc:Keyword>
           <cbc:BrandName>Valdara</cbc:BrandName>
@@ -1087,8 +1094,8 @@ Inside `InsuranceEndorsement`:
             <cbc:ExtendedID>GRY</cbc:ExtendedID>
             <cac:PhysicalAttribute>
               <cbc:AttributeID>Colour</cbc:AttributeID>
-              <cbc:PositionCode>FRM</cbc:PositionCode>
-              <cbc:DescriptionCode>GRY</cbc:DescriptionCode>
+              <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+              <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
               <cbc:Description>Frame in Ferro grey</cbc:Description>
             </cac:PhysicalAttribute>
           </cac:SellersItemIdentification>
@@ -1101,11 +1108,14 @@ Inside `InsuranceEndorsement`:
             <cbc:ID>VI-DS-B180</cbc:ID>
           </cac:ItemSpecificationDocumentReference>
           <cac:OriginCountry>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
-            <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
-            <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+            <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
           </cac:CommodityClassification>
           <cac:AdditionalItemProperty>
             <cbc:Name>Frame material</cbc:Name>
@@ -1122,26 +1132,26 @@ Inside `InsuranceEndorsement`:
           <cac:AdditionalItemProperty>
             <cbc:ID>COL</cbc:ID>
             <cbc:Name>Frame colour</cbc:Name>
-            <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+            <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
             <cbc:ListValue>Ferro grey</cbc:ListValue>
             <cac:ItemPropertyGroup>
               <cbc:ID>APP</cbc:ID>
               <cbc:Name>Appearance</cbc:Name>
-              <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+              <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
             </cac:ItemPropertyGroup>
           </cac:AdditionalItemProperty>
           <cac:AdditionalItemProperty>
             <cbc:ID>LOAD</cbc:ID>
             <cbc:Name>Load capacity</cbc:Name>
-            <cbc:NameCode>LOAD</cbc:NameCode>
+            <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">LOAD</cbc:NameCode>
             <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
             <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
             <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
-            <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+            <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
             <cac:ItemPropertyGroup>
               <cbc:ID>SAF</cbc:ID>
               <cbc:Name>Safety</cbc:Name>
-              <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+              <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
             </cac:ItemPropertyGroup>
             <cac:StandardPropertyIdentification>
               <cbc:ID>UR-SF-0450</cbc:ID>
@@ -1178,17 +1188,17 @@ Inside `InsuranceEndorsement`:
             <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
           </cac:Dimension>
           <cac:EnvironmentalEmission>
-            <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+            <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
             <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
             <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
             <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
             <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
-            <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
+            <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">MANUFACTURING</cbc:LifecycleStageCode>
             <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
             <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
             <cac:EmissionCalculationMethod>
-              <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
-              <cbc:FullnessIndicationCode>Cradle to gate</cbc:FullnessIndicationCode>
+              <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
+              <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:EmissionBoundaryCode">CRADLETOGATE</cbc:FullnessIndicationCode>
               <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
               <cac:EmissionFactorDocumentReference>
                 <cbc:ID>VI-LCA-2025</cbc:ID>
@@ -1200,10 +1210,10 @@ Inside `InsuranceEndorsement`:
             </cac:MeasurementPeriod>
           </cac:EnvironmentalEmission>
           <cac:CircularityProfile>
-            <cbc:MaintenanceFrequencyCode>Yearly</cbc:MaintenanceFrequencyCode>
+            <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
             <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
             <cac:ResourceConsumption>
-              <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
+              <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
               <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
               <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
               <cac:MeasurementPeriod>
@@ -1212,7 +1222,7 @@ Inside `InsuranceEndorsement`:
               </cac:MeasurementPeriod>
             </cac:ResourceConsumption>
             <cac:ResourceConsumption>
-              <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
+              <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">HARDWOOD</cbc:ResourceTypeCode>
               <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
               <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
               <cac:MeasurementPeriod>
@@ -1221,7 +1231,7 @@ Inside `InsuranceEndorsement`:
               </cac:MeasurementPeriod>
             </cac:ResourceConsumption>
             <cac:WasteGenerated>
-              <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
+              <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
               <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
               <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
               <cac:MeasurementPeriod>
@@ -1231,7 +1241,7 @@ Inside `InsuranceEndorsement`:
             </cac:WasteGenerated>
             <cac:RepairabilityScore>
               <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
-              <cbc:ScoringSystemCode>Repairability index, 0–10</cbc:ScoringSystemCode>
+              <cbc:ScoringSystemCode listID="urn:ubl-examples:world:codelist:ScoringSystemCode">REPAIR10</cbc:ScoringSystemCode>
             </cac:RepairabilityScore>
             <cac:ProductDocumentationDocumentReference>
               <cbc:ID>VI-RM-B180</cbc:ID>
@@ -1248,7 +1258,7 @@ Inside `InsuranceEndorsement`:
         <cac:Item>
           <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
           <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
-          <cbc:Name languageID="en">Bench side frame casting</cbc:Name>
+          <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
           <cbc:BrandName>Valdara</cbc:BrandName>
           <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
           <cac:SellersItemIdentification>
@@ -1258,17 +1268,20 @@ Inside `InsuranceEndorsement`:
             <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
           </cac:StandardItemIdentification>
           <cac:OriginCountry>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
-            <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
-            <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
+            <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
           </cac:CommodityClassification>
         </cac:Item>
       </cac:GoodsItem>
     </cac:Shipment>
     <cac:EndorserParty>
-      <cbc:RoleCode>Chamber</cbc:RoleCode>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">CHAMBER</cbc:RoleCode>
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
@@ -1315,11 +1328,11 @@ Inside `InsuranceEndorsement`:
       </cac:PartyName>
     </cac:ImporterParty>
     <cac:IssuingCountry>
-      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
     </cac:IssuingCountry>
     <cac:DocumentDistribution>
       <cbc:ID>1</cbc:ID>
-      <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+      <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
       <cac:Party>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -1349,7 +1362,7 @@ Inside `InsuranceEndorsement`:
     <cbc:ApprovalStatus>Approved</cbc:ApprovalStatus>
     <cbc:Remarks>Origin verified against the exporter's production records.</cbc:Remarks>
     <cac:EndorserParty>
-      <cbc:RoleCode>Chamber</cbc:RoleCode>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">CHAMBER</cbc:RoleCode>
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
@@ -1380,7 +1393,7 @@ Inside `InsuranceEndorsement`:
     <cbc:ApprovalStatus>Legalised</cbc:ApprovalStatus>
     <cbc:Remarks>Signature of the Ferrano chamber confirmed.</cbc:Remarks>
     <cac:EndorserParty>
-      <cbc:RoleCode>Legalisation</cbc:RoleCode>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">LEGALISATION</cbc:RoleCode>
       <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
@@ -1411,7 +1424,7 @@ Inside `InsuranceEndorsement`:
     <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
     <cbc:Remarks>The goods described in this certificate are insured door to door.</cbc:Remarks>
     <cac:EndorserParty>
-      <cbc:RoleCode>Insurer</cbc:RoleCode>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">INSURER</cbc:RoleCode>
       <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>

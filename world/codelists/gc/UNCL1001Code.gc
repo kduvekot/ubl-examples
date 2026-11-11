@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/EDIFACT 1001 Document name: the codes the world uses, and others of the same list. Built from world/codelists/sources/uncefact/documentcodelist.json (D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNCL1001Code</ShortName>
+      <LongName xml:lang="en">UN/EDIFACT 1001 Document name (UBL example world)</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 1001</LongName>
+      <Version>D22A</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL1001Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL1001Code:D22A</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL1001Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Price/sales catalogue</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>220</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Order</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>227</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Consignment order</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>230</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Purchase order change request</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>261</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Self billed credit note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>325</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Proforma invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>326</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Partial invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>380</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Commercial invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>381</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Credit note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>383</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Debit note</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>384</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Corrected invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>386</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Prepayment invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>389</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Self-billed invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>393</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Factored invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>774</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General terms and conditions</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>856</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Inspection certificate</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>861</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Certificate of origin</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

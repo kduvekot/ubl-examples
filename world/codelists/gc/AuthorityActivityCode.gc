@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: authority activity. The main activity of a contracting authority (eForms main-activity). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>AuthorityActivityCode</ShortName>
+      <LongName xml:lang="en">Authority activity (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:AuthorityActivityCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:AuthorityActivityCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:AuthorityActivityCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/AuthorityActivityCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GENPUB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General public services</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kamir hakdrul mebaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tuliki paveli kafeni</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>eForms gen-pub.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COMMUNITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Housing and community amenities</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Murgek stan deznan kriktrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tehite tofami lehokova lapasata</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Including public works and parks (eForms hc-am).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ENV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Environmental protection</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trennul hiksan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kahilika talikiti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>eForms env-pro.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EDUCATION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Education</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nanzaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Palumona</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>eForms educ.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HEALTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Health</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Virdir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hulake</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>eForms health.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

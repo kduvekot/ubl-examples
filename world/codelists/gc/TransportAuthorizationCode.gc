@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: transport authorization. A restriction on the means of transport dangerous goods may travel by. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TransportAuthorizationCode</ShortName>
+      <LongName xml:lang="en">Transport authorization (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TransportAuthorizationCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TransportAuthorizationCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TransportAuthorizationCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TransportAuthorizationCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CAO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cargo aircraft only</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nirrir gardran hanvek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Faleka hefale kasata</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods may be carried on cargo aircraft only.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PCA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Passenger and cargo aircraft</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sturzhul stan nirrir gardran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pafehene tofami faleka hefale</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods may also be carried on passenger aircraft.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ROADONLY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Road only</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kraz hanvek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Natii kasata</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods may be carried by road only.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

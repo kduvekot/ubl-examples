@@ -5,12 +5,21 @@ Phase 1  XSD: every document against the UBL 2.5 runtime schema of its type, fro
          the endorsed set (no deprecated document types or elements).
 Phase 2  code values, twice:
   (a)    UBL's own phase 2: val/UBL-DefaultDTQ-2.5.xsl, run with Saxon exactly as
-         UBL's validate.sh does, with the UBL default code lists. The world's
-         countries and currencies are not in those lists, so this phase must fail
-         on exactly those codes and on nothing else.
-  (b)    the same context/value associations (the UBL 2.5 CVA), with the world's
-         code lists for countries and currencies in place of the defaults. Every
-         value, and the list identifier where a document gives one, must pass.
+         UBL's validate.sh does, with the UBL default code lists. The world replaces
+         some of those lists (its countries and currencies are not in them, its
+         languages are written in lower case, it uses UN/EDIFACT 5189 and 7161 for
+         allowances and charges, and it gives a listID to the lists UBL leaves without
+         one), so this phase may object only to values in the contexts of lists the
+         world replaces, and to nothing else.
+  (b)    the world's own context/value associations (world/codelists/world-codes.json,
+         made by tools/build_codelists.py from world/codelists/lists.json), which
+         replace UBL's: every code element must carry the listID of its list and a
+         code of that list, compared exactly; an element with several possible lists
+         (by parent element, by ChargeIndicator, or by listID) must use one of them; a
+         code element no association covers is an error, unless the world lists it as
+         a code a party defines for itself. Code attributes: @currencyID (the world's
+         currency list), @unitCode and @mimeCode (UBL's lists), @languageID (BCP 47: a
+         language of the world's ISO 639 list and an optional region subtag).
 
 Usage: python3 tools/validate_examples.py world/examples/<flow>/*.xml
 Needs .ubl/ (sh tools/fetch_ubl_validation.sh <DocumentType>...) and Java for (a).
@@ -31,7 +40,6 @@ ROOT = world_data.ROOT
 UBL = os.path.join(ROOT, ".ubl")
 NS = {"cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
       "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"}
-WORLD_LISTS = {"CountryIdentificationCode", "CurrencyCode"}     # replaced by the world's lists in phase 2b
 
 
 def doc_type(path):
@@ -45,81 +53,108 @@ def phase1(path):
     return [] if ok else [f"phase 1: line {e.line}: {e.message}" for e in schema.error_log]
 
 
-def world_codes():
-    """The codes of the world's country and currency lists (world/codelists)."""
-    out = {}
-    for short in WORLD_LISTS:
-        gc = etree.parse(os.path.join(ROOT, "world", "codelists", f"{short}-2.4-world.gc"))
-        ident = gc.find("Identification")
-        list_id = next((ln.text for ln in ident.findall("LongName") if ln.get("Identifier") == "listID"), None)
-        out[short] = {"codes": {r.findtext("Value[@ColumnRef='code']/SimpleValue") for r in gc.find("SimpleCodeList")},
-                      "listID": list_id}
-    return out
+def world_cva():
+    cva = json.load(open(os.path.join(ROOT, "world", "codelists", "world-codes.json"), encoding="utf-8"))
+    ubl = json.load(open(os.path.join(ROOT, "world", "codelists", "ubl-default-codes.json"), encoding="utf-8"))["lists"]
+    for lst in cva["lists"].values():
+        lst["codes"] = set(lst["codes"]) if "codes" in lst else set(ubl[lst["ubl"]]["codes"])
+    # the UBL lists the world replaces: their contexts in UBL's own phase 2 may object
+    kept = {lst["ubl"].split("-")[0] for lst in cva["lists"].values() if lst["scope"] == "ubl"}
+    cva["replaced"] = {l["short"][:-4] for l in ubl.values()} - kept
+    return cva
 
 
-def phase2a(path, world_only):
-    """UBL's own phase 2. Returns problems other than the expected failures on world codes."""
+def phase2a(path, replaced):
+    """UBL's own phase 2. Returns the problems in contexts of lists the world does not replace, and the number of
+    objections to values in lists it replaces, per list."""
     with tempfile.TemporaryDirectory() as tmp:
         svrl = os.path.join(tmp, "svrl.xml")
         subprocess.run(["java", "-jar", os.path.join(UBL, "val", "saxon9he.jar"), f"-s:{path}",
                         f"-xsl:{os.path.join(UBL, 'val', 'UBL-DefaultDTQ-2.5.xsl')}", f"-o:{svrl}"],
                        check=True, capture_output=True)
         text = open(svrl, encoding="utf-8").read()
-    problems, expected = [], 0
+    problems, expected = [], {}
     for m in re.finditer(r"<svrl:failed-assert.*?<svrl:text>(.*?)</svrl:text>", text, re.S):
         msg = " ".join(m.group(1).split())
         v = re.search(r"Value supplied '([^']*)' is unacceptable for constraints identified by '([^']*)'", msg)
-        if v and v.group(1) in world_only and v.group(2).split()[0].split("-")[0] in ("Currency", "CountryIdentification"):
-            expected += 1
+        short = v and v.group(2).split()[0].rsplit("-", 1)[0]
+        if short in replaced:
+            expected[short] = expected.get(short, 0) + 1
         else:
             problems.append(f"phase 2a (UBL default code lists): {msg}")
     return problems, expected
 
 
-def phase2b(path, cva, world):
-    """The UBL 2.5 CVA with the world's lists for countries and currencies."""
+def bcp47(tag, languages, regions):
+    m = re.fullmatch(r"([a-z]{2,3})(?:-([A-Z]{2}))?", tag)
+    if not m:
+        return "not a language subtag in lower case with an optional region subtag in upper case"
+    if m.group(1) not in languages:
+        return f"the language subtag {m.group(1)} is not in the world's ISO 639 list"
+    if m.group(2) and m.group(2) not in regions:
+        return f"the region subtag {m.group(2)} is not a BCP 47 region"
+    return None
+
+
+def phase2b(path, cva):
+    """The world's context/value associations. Each code element is checked by the first context that addresses
+    it, as in a Schematron pattern."""
     tree = etree.parse(path)
-    problems = []
+    problems, done = [], set()
+    lists = cva["lists"]
     for ctx in cva["contexts"]:
-        lists = [cva["lists"][v] for v in ctx["values"] if v in cva["lists"]]
-        if not lists:
+        cand = [lists[k] for k in ctx["lists"]]
+        for node in tree.xpath(ctx["address"] if ctx["address"].startswith("/") else "//" + " | //".join(
+                p.strip() for p in ctx["address"].split("|")), namespaces=NS):
+            if node in done:
+                continue
+            done.add(node)
+            where, value, given = tree.getpath(node), node.text, node.get("listID")
+            names = " or ".join(l["listID"] for l in cand)
+            if given is None:
+                problems.append(f"phase 2b: {where}: no listID (the world's list: {names})")
+                continue
+            lst = next((l for l in cand if l["listID"] == given), None)
+            if lst is None:
+                problems.append(f"phase 2b: {where}: listID '{given}' is not the list for this context ({names})")
+            elif value not in lst["codes"]:
+                problems.append(f"phase 2b: {where}: '{value}' is not a code of {given}")
+    for node in tree.xpath("//cbc:*[substring(local-name(), string-length(local-name()) - 3) = 'Code']",
+                           namespaces=NS):
+        if node in done:
             continue
-        short = lists[0]["short"]
-        if short in WORLD_LISTS:
-            allowed, ids = world[short]["codes"], {world[short]["listID"]}
-        else:
-            allowed = set().union(*(set(lst["codes"]) for lst in lists))
-            ids = {lst["listID"] for lst in lists}
-        for part in ctx["address"].split("|"):
-            part = part.strip()
-            # CVA addresses are Schematron rule contexts: a relative one matches anywhere, an absolute one as
-            # written (UBL switches a context off with "/*[parent::*]", which matches nothing)
-            xp = part if part.startswith("/") else "//" + part
-            for node in tree.xpath(xp, namespaces=NS):
-                value = node if isinstance(node, str) else node.text
-                owner = node.getparent() if isinstance(node, str) else node
-                where = tree.getpath(owner)
-                if value not in allowed:
-                    problems.append(f"phase 2b: {where}: '{value}' is not in {short}")
-                list_id = None if isinstance(node, str) else node.get("listID")
-                if list_id and list_id not in ids:
-                    problems.append(f"phase 2b: {where}: listID '{list_id}' does not identify {short} "
-                                    f"({', '.join(sorted(i for i in ids if i))})")
+        name, parent = etree.QName(node).localname, etree.QName(node.getparent()).localname
+        if f"{name}@{parent}" in cva.get("pending", ()):     # while the world's lists are being made: not yet checked
+            continue
+        if not any(u["element"] == name and (not u.get("parents") or parent in u["parents"]) for u in cva["unlisted"]):
+            problems.append(f"phase 2b: {tree.getpath(node)}: no code list of the world covers {name} in {parent}")
+    for a in cva["attributes"]:
+        lst = lists[a["lists"][0]]
+        xp = " | ".join("//" + p.strip() for p in a["address"].split("|"))
+        for value in tree.xpath(xp, namespaces=NS):
+            where = tree.getpath(value.getparent()) + "/@" + a["attribute"]
+            if a["attribute"] == "languageID":
+                why = bcp47(value, lst["codes"], set(a["regions"]))
+                if why:
+                    problems.append(f"phase 2b: {where}: '{value}' is not a BCP 47 language tag of the world: {why}")
+            elif value not in lst["codes"]:
+                problems.append(f"phase 2b: {where}: '{value}' is not a code of {lst['listID'] or lst['name']}")
     return problems
 
 
 def main(paths):
-    cva = json.load(open(os.path.join(ROOT, "world", "codelists", "ubl-default-codes.json"), encoding="utf-8"))
-    world = world_codes()
-    world_only = (world["CountryIdentificationCode"]["codes"] | world["CurrencyCode"]["codes"]) - \
-        {c for lst in cva["lists"].values() if lst["short"] in WORLD_LISTS for c in lst["codes"]}
+    cva = world_cva()
     failed = 0
+    print(f"Phase 2b uses the world's {len(cva['contexts'])} code element contexts and {len(cva['attributes'])} "
+          f"attribute contexts (world/codelists/world-codes.json), in place of UBL's; UBL's own phase 2 may object "
+          f"only in the contexts of the lists the world replaces: {', '.join(sorted(cva['replaced']))}."
+          + (f" Not yet bound to a list of the world: {len(cva['pending'])} code elements." if cva.get("pending") else ""))
     for path in paths:
         problems = phase1(path)
-        expected = 0
+        expected = {}
         if not problems:
-            p2a, expected = phase2a(path, world_only)
-            problems = p2a + phase2b(path, cva, world)
+            p2a, expected = phase2a(path, cva["replaced"])
+            problems = p2a + phase2b(path, cva)
         name = os.path.relpath(path, ROOT)
         if problems:
             failed += 1
@@ -127,8 +162,9 @@ def main(paths):
             for p in problems:
                 print(f"  {p}")
         else:
+            objections = ", ".join(f"{n} in {k}" for k, n in sorted(expected.items())) or "none"
             print(f"{name}: valid (phase 1; phase 2 with the world's code lists; UBL's own phase 2 objects only "
-                  f"to the world's {expected} country and currency codes)")
+                  f"in lists the world replaces: {objections})")
     sys.exit(1 if failed else 0)
 
 

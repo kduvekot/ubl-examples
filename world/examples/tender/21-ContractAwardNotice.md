@@ -38,12 +38,12 @@ The award is published; the review body is named for appeals.
   When to publish.
 - `RegulatoryDomain` = **Bayvarra public procurement**  
   The rules the notice follows.
-- `NoticeTypeCode` = **ContractAwardNotice**  
-  The kind of notice.
+- `NoticeTypeCode` = **CAN** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
+  The kind of notice. The code is from the Trade Accord's notice type list: CAN = Contract award notice.
 - `PublishAwardIndicator` = **true**  
   The award is published.
-- `NoticeLanguageCode` = **EN**  
-  In English, as an ISO 639 code.
+- `NoticeLanguageCode` = **en** (listID `ISO 639`)  
+  In English, as an ISO 639 code. The code is from the world's copy of ISO 639 Language: en = English.
 
 ### Additional Notice Language
 
@@ -84,7 +84,7 @@ Inside `Signature`:
 Inside `ContractingParty`:
 
 - `Party/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Public Works Department (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Public Works Department (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **XB-TR-410548** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
@@ -95,14 +95,14 @@ Inside `ContractingParty`:
   English, the language the party does business in.
 - `Party/Language/Name` = **English**  
   The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
+- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `Party/PostalAddress/ID` = **LUM-ADR-000417**  
   The address's number in the city's address register; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Civic Square**  
   Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **6**  
@@ -120,57 +120,57 @@ Inside `ContractingParty`:
 - `Party/PostalAddress/PostalZone` = **38517**  
   Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PostalAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered for state sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/CompanyID` = **CO-0900002**  
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyTaxScheme/TaxLevelCode` = **State**  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
-- `Party/PartyTaxScheme/ExemptionReasonCode` = **XB-PUBLIC**  
-  The exemption as a code of the world's exemption list (world/countries.json): sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Public bodies are exempt from the state sales tax**  
-  Why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
+- `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
+- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
 - `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
   Its state or territory.
-- `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  Its country.
+- `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
-  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
   The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The country whose tax this is.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
   The name under which the party is registered, with its legal form; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410548**  
   Number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Procurement office**  
   The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/JobTitle` = **Procurement officer**  
@@ -211,7 +211,7 @@ Inside `BeneficiaryParty`:
 Inside `ReceiverParty`:
 
 - `IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Bayvarra Information Service (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Bayvarra Information Service (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `PartyIdentification/ID` = **20410959** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayvarra Information Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayvarra Information Service**  
@@ -220,12 +220,12 @@ Inside `ReceiverParty`:
   English, the language the party does business in.
 - `Language/Name` = **English**  
   The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
-- `PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Civic Square**  
   Street of the postal address. identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/BuildingNumber` = **27**  
@@ -237,33 +237,33 @@ Inside `ReceiverParty`:
 - `PostalAddress/PostalZone` = **38520**  
   Postal code in Bayvarra's format (5 digits). identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Bayvarra Information Service (world/parties.json).
-- `PostalAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bayvarra Information Service (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bayvarra Information Service (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Bayvarra Information Service**  
   The name under which the party is registered, with its legal form; identity of Bayvarra Information Service (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410959**  
   Number in the Federal business register of Bayvarra; identity of Bayvarra Information Service (world/parties.json).
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Publications and register**  
   The desk that handles this document; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/JobTitle` = **Public service officer**  
@@ -286,7 +286,7 @@ Inside `ReceiverParty`:
 Inside `TenderingTerms`:
 
 - `AppealTerms/AppealReceiverParty/IndustryClassificationCode` = **8423** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Procurement Review Board of Bayvarra (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8423 = Public order and safety activities.
 - `AppealTerms/AppealReceiverParty/PartyIdentification/ID` = **20410822** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AppealTerms/AppealReceiverParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
@@ -295,12 +295,12 @@ Inside `TenderingTerms`:
   English, the language the party does business in.
 - `AppealTerms/AppealReceiverParty/Language/Name` = **English**  
   The language's name.
-- `AppealTerms/AppealReceiverParty/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
-- `AppealTerms/AppealReceiverParty/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `AppealTerms/AppealReceiverParty/PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `AppealTerms/AppealReceiverParty/Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `AppealTerms/AppealReceiverParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `AppealTerms/AppealReceiverParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `AppealTerms/AppealReceiverParty/PostalAddress/StreetName` = **Justice Row**  
   Street of the postal address. identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/PostalAddress/BuildingNumber` = **20**  
@@ -312,33 +312,33 @@ Inside `TenderingTerms`:
 - `AppealTerms/AppealReceiverParty/PostalAddress/PostalZone` = **38519**  
   Postal code in Bayvarra's format (5 digits). identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Procurement Review Board of Bayvarra (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `AppealTerms/AppealReceiverParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `AppealTerms/AppealReceiverParty/PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `AppealTerms/AppealReceiverParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AppealTerms/AppealReceiverParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationName` = **Procurement Review Board of Bayvarra**  
   The name under which the party is registered, with its legal form; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyID` = **20410822**  
   Number in the Federal business register of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
-- `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `AppealTerms/AppealReceiverParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AppealTerms/AppealReceiverParty/Contact/Name` = **Registry**  
   The desk that handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Procurement officer**  
@@ -368,18 +368,18 @@ Inside `TenderingProcess`:
   The procedure.
 - `NegotiationDescription` = **No negotiation: the award is on the tenders as submitted.**  
   Why none.
-- `ProcedureCode` = **Open**  
-  An open procedure.
-- `UrgencyCode` = **Normal**  
-  No urgency.
-- `ExpenseCode` = **Investment**  
-  Paid from the investment budget.
-- `PartPresentationCode` = **OneOrMore**  
-  Tenders for one or both lots.
-- `ContractingSystemCode` = **Framework**  
-  A framework agreement.
-- `SubmissionMethodCode` = **Electronic**  
-  Tenders are submitted electronically.
+- `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
+  An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
+- `UrgencyCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:UrgencyCode`)  
+  No urgency. The code is from the Trade Accord's urgency list: NORMAL = Normal.
+- `ExpenseCode` = **INVESTMENT** (listID `urn:ubl-examples:world:codelist:ExpenseTypeCode`)  
+  Paid from the investment budget. The code is from the Trade Accord's expense type list: INVESTMENT = Investment budget.
+- `PartPresentationCode` = **ONEORMORE** (listID `urn:ubl-examples:world:codelist:LotSubmissionCode`)  
+  Tenders for one or both lots. The code is from the Trade Accord's lot submission list: ONEORMORE = One or more lots.
+- `ContractingSystemCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractingSystemCode`)  
+  A framework agreement. The code is from the Trade Accord's contracting system list: FRAMEWORK = Framework agreement.
+- `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
+  Tenders are submitted electronically. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
 - `CandidateReductionConstraintIndicator` = **false**  
   No reduction of candidates.
 - `GovernmentAgreementConstraintIndicator` = **true**  
@@ -412,10 +412,8 @@ Inside `TenderingProcess`:
   The prior information notice.
 - `AdditionalDocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The specification.
-- `ProcessJustification/PreviousCancellationReasonCode` = **None**  
-  No earlier procedure was cancelled.
-- `ProcessJustification/ProcessReasonCode` = **Standard**  
-  The open procedure is the rule.
+- `ProcessJustification/ProcessReasonCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ProcessReasonCode`)  
+  The open procedure is the rule. The code is from the Trade Accord's process reason list: STANDARD = Standard.
 - `ProcessJustification/ProcessReason` = **Value above the threshold for open procedures.**  
   Why.
 - `ProcessJustification/Description` = **No exception applies.**  
@@ -438,14 +436,14 @@ Inside `TenderingProcess`:
   The deadline day.
 - `OpenTenderEvent/OccurrenceTime` = **14:00:00**  
   Two hours after the deadline.
-- `OpenTenderEvent/TypeCode` = **Opening**  
-  A tender opening.
+- `OpenTenderEvent/TypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:TenderEventTypeCode`)  
+  A tender opening. The code is from the Trade Accord's tender event type list: OPENING = Opening of tenders.
 - `OpenTenderEvent/Description` = **Electronic opening; tenderers may follow it online.**  
   How.
 - `OpenTenderEvent/CompletionIndicator` = **false**  
   To come.
-- `OpenTenderEvent/CurrentStatus/ConditionCode` = **Scheduled**  
-  Planned.
+- `OpenTenderEvent/CurrentStatus/ConditionCode` = **SCHEDULED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
+  Planned. The code is from the Trade Accord's status condition list: SCHEDULED = Scheduled.
 - `OpenTenderEvent/Contact/Name` = **Procurement office**  
   Whom to ask.
 - `OpenTenderEvent/OccurrenceLocation/Name` = **Lumeport Public Works Department, Civic Square**  
@@ -484,8 +482,8 @@ Inside `TenderingProcess`:
   How.
 - `ContractingSystem/ID` = **FW-1**  
   The framework.
-- `ContractingSystem/ContractingSystemTypeCode` = **Framework**  
-  A framework agreement.
+- `ContractingSystem/ContractingSystemTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractingSystemTypeCode`)  
+  A framework agreement. The code is from the Trade Accord's contracting system type list: FRAMEWORK = Framework agreement.
 - `ContractingSystem/Description` = **Framework with one supplier.**  
   In words.
 
@@ -499,12 +497,12 @@ Inside `ProcurementProject`:
   The project's name.
 - `Description` = **240 steel park benches with hardwood slats over two years, delivered and anchored.**  
   What is bought.
-- `ProcurementTypeCode` = **Supplies**  
-  Supplies or services.
-- `ProcurementSubTypeCode` = **Purchase**  
-  The kind within it.
-- `QualityControlCode` = **Inspection**  
-  Each release is inspected on delivery.
+- `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
+  Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+- `ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
+  The kind within it. The code is from the Trade Accord's procurement subtype list: PURCHASE = Purchase.
+- `QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
+  Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
 - `RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
   The fee for the tender documents on paper.
 - `FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
@@ -517,10 +515,10 @@ Inside `ProcurementProject`:
   The programme.
 - `SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementAdditionalType/ProcurementTypeCode` = **Green**  
-  Green public procurement.
-- `ProcurementAdditionalType/ProcurementType` = **Recycled steel and certified timber are asked.**  
-  In words.
+- `ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
+  Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
+- `ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
+  The name of code GREEN in the Trade Accord's strategic procurement list.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **124080.00** (currencyID `XBL`)  
   The estimated value.
 - `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124080.00** (currencyID `XBL`)  
@@ -541,22 +539,22 @@ Inside `ProcurementProject`:
   A sale to a public body is exempt from the state sales tax (category E).
 - `RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
-  The world's code for the exemption reason (world/countries.json).
+- `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
 - `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
-- `MainCommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
-  The goods' HS subheading.
-- `AdditionalCommodityClassification/CommodityCode` = **PARKS-FURN**  
-  The department's own category: park furniture.
+- `MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
+  What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+- `AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
+  The wider category of the procurement, as a group of the UN CPC: furniture. The code is from the world's copy of UN Central Product Classification, Version 2.1: 381 = Furniture.
 - `RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `RealizedLocation/Address/CityName` = **Lumeport**  
   The city.
-- `RealizedLocation/Address/Country/IdentificationCode` = **XB**  
-  Bayvarra.
+- `RealizedLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PlannedPeriod/StartDate` = **2026-03-23**  
   From the first release.
 - `PlannedPeriod/EndDate` = **2028-03-22**  
@@ -640,12 +638,12 @@ Inside `ProcurementProjectLot`:
   The project's name.
 - `ProcurementProject/Description` = **240 steel park benches with hardwood slats over two years, delivered and anchored.**  
   What is bought.
-- `ProcurementProject/ProcurementTypeCode` = **Supplies**  
-  Supplies or services.
-- `ProcurementProject/ProcurementSubTypeCode` = **Purchase**  
-  The kind within it.
-- `ProcurementProject/QualityControlCode` = **Inspection**  
-  Each release is inspected on delivery.
+- `ProcurementProject/ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
+  Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+- `ProcurementProject/ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
+  The kind within it. The code is from the Trade Accord's procurement subtype list: PURCHASE = Purchase.
+- `ProcurementProject/QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
+  Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
 - `ProcurementProject/RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
   The fee for the tender documents on paper.
 - `ProcurementProject/FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
@@ -658,10 +656,10 @@ Inside `ProcurementProjectLot`:
   The programme.
 - `ProcurementProject/SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **Green**  
-  Green public procurement.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Recycled steel and certified timber are asked.**  
-  In words.
+- `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
+  Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
+- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
+  The name of code GREEN in the Trade Accord's strategic procurement list.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **119760.00** (currencyID `XBL`)  
   The estimated value.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **119760.00** (currencyID `XBL`)  
@@ -682,22 +680,22 @@ Inside `ProcurementProjectLot`:
   A sale to a public body is exempt from the state sales tax (category E).
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
-  The world's code for the exemption reason (world/countries.json).
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
-- `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
-  The goods' HS subheading.
-- `ProcurementProject/AdditionalCommodityClassification/CommodityCode` = **PARKS-FURN**  
-  The department's own category: park furniture.
+- `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
+  What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+- `ProcurementProject/AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
+  The wider category of the procurement, as a group of the UN CPC: furniture. The code is from the world's copy of UN Central Product Classification, Version 2.1: 381 = Furniture.
 - `ProcurementProject/RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `ProcurementProject/RealizedLocation/Address/CityName` = **Lumeport**  
   The city.
-- `ProcurementProject/RealizedLocation/Address/Country/IdentificationCode` = **XB**  
-  Bayvarra.
+- `ProcurementProject/RealizedLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ProcurementProject/PlannedPeriod/StartDate` = **2026-03-23**  
   From the first release.
 - `ProcurementProject/PlannedPeriod/EndDate` = **2028-03-22**  
@@ -776,12 +774,12 @@ Inside `ProcurementProjectLot`:
   The project's name.
 - `ProcurementProject/Description` = **240 steel park benches with hardwood slats over two years, delivered and anchored.**  
   What is bought.
-- `ProcurementProject/ProcurementTypeCode` = **Services**  
-  Supplies or services.
-- `ProcurementProject/ProcurementSubTypeCode` = **Installation**  
-  The kind within it.
-- `ProcurementProject/QualityControlCode` = **Inspection**  
-  Each release is inspected on delivery.
+- `ProcurementProject/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
+  Supplies or services. The code is from the Trade Accord's contract nature list: SERVICES = Services.
+- `ProcurementProject/ProcurementSubTypeCode` = **INSTALL** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
+  The kind within it. The code is from the Trade Accord's procurement subtype list: INSTALL = Installation.
+- `ProcurementProject/QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
+  Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
 - `ProcurementProject/RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
   The fee for the tender documents on paper.
 - `ProcurementProject/FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
@@ -794,10 +792,10 @@ Inside `ProcurementProjectLot`:
   The programme.
 - `ProcurementProject/SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **Green**  
-  Green public procurement.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Recycled steel and certified timber are asked.**  
-  In words.
+- `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
+  Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
+- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact**  
+  The name of code GREEN in the Trade Accord's strategic procurement list.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **4320.00** (currencyID `XBL`)  
   The estimated value.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **4320.00** (currencyID `XBL`)  
@@ -818,22 +816,22 @@ Inside `ProcurementProjectLot`:
   A sale to a public body is exempt from the state sales tax (category E).
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **XB-PUBLIC**  
-  The world's code for the exemption reason (world/countries.json).
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
-- `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **9988.00** (listID `HS`)  
-  A service: no HS subheading.
-- `ProcurementProject/AdditionalCommodityClassification/CommodityCode` = **PARKS-FURN**  
-  The department's own category: park furniture.
+- `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **87390** (listID `UN CPC Ver.2.1`)  
+  What is bought, as a subclass of the UN Central Product Classification, which classifies services as well: installation services of other goods. The code is from the world's copy of UN Central Product Classification, Version 2.1: 87390 = Installation services of other goods n.e.c..
+- `ProcurementProject/AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
+  The wider category of the procurement, as a group of the UN CPC: furniture. The code is from the world's copy of UN Central Product Classification, Version 2.1: 381 = Furniture.
 - `ProcurementProject/RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `ProcurementProject/RealizedLocation/Address/CityName` = **Lumeport**  
   The city.
-- `ProcurementProject/RealizedLocation/Address/Country/IdentificationCode` = **XB**  
-  Bayvarra.
+- `ProcurementProject/RealizedLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ProcurementProject/PlannedPeriod/StartDate` = **2026-03-23**  
   From the first release.
 - `ProcurementProject/PlannedPeriod/EndDate` = **2028-03-22**  
@@ -859,8 +857,8 @@ Inside `TenderResult`:
 
 - `AwardID` = **PWD-2026-PARKS-AWARD-1**  
   The award decision.
-- `TenderResultCode` = **Awarded**  
-  The contract is awarded.
+- `TenderResultCode` = **AWARDED** (listID `urn:ubl-examples:world:codelist:TenderResultCode`)  
+  The contract is awarded. The code is from the Trade Accord's tender result list: AWARDED = Awarded.
 - `Description` = **Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.**  
   Why it won.
 - `AdvertisementAmount` = **320.00** (currencyID `XBL`)  
@@ -883,8 +881,8 @@ Inside `TenderResult`:
   The manufacturer is established in Urvania.
 - `Contract/ID` = **PWD-2026-PARKS**  
   The framework contract.
-- `Contract/ContractTypeCode` = **Framework**  
-  A framework contract.
+- `Contract/ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
+  A framework contract. The code is from the Trade Accord's contract type list: FRAMEWORK = Framework agreement.
 - `Contract/ValidityPeriod/StartDate` = **2026-03-23**  
   From the first call-off.
 - `Contract/ValidityPeriod/DurationMeasure` = **24** (unitCode `MON`)  
@@ -912,7 +910,7 @@ Inside `TenderResult`:
 - `WinningParty/Party/WebsiteURI` = **https://www.valdara.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `WinningParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `WinningParty/Party/AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
@@ -923,19 +921,19 @@ Inside `TenderResult`:
   Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `WinningParty/Party/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
-- `WinningParty/Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `WinningParty/Party/PostalAddress/AddressFormatCode` = **XU**  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `WinningParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `WinningParty/Party/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `WinningParty/Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
+- `WinningParty/Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XB`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
   The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+- `WinningParty/Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
   The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
@@ -943,60 +941,60 @@ Inside `TenderResult`:
   The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `WinningParty/Party/PostalAddress/Country/IdentificationCode` = **XU**  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `WinningParty/Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `WinningParty/Party/PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered for value added tax; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyTaxScheme/CompanyID` = **XU007299291**  
   Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/PartyTaxScheme/TaxLevelCode` = **National**  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country.
+- `WinningParty/Party/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
 - `WinningParty/Party/PartyTaxScheme/TaxScheme/ID` = **VAT**  
   UN/EDIFACT 5153 code of Urvania's value added tax.
-- `WinningParty/Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF**  
-  The tax is accounted for in the country's currency.
-- `WinningParty/Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The country whose tax this is.
+- `WinningParty/Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+- `WinningParty/Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered, with its legal form; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyLegalEntity/CompanyID` = **XU-R-104274**  
   Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyLegalEntity/RegistrationDate` = **1962-04-12**  
   The day the company was entered in the register; identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/PartyLegalEntity/CompanyLegalFormCode` = **SUA**  
-  The legal form, as abbreviated in Urvania (world/countries.json).
+- `WinningParty/Party/PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SUA = Società urvaniana per azioni (public limited company).
 - `WinningParty/Party/PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)**  
-  The legal form, in words.
-- `WinningParty/Party/PartyLegalEntity/EntitySizeCode` = **Large**  
-  The size class of the company (micro, small, medium or large); identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+  The name of code SUA in Urvania's national company legal form list.
+- `WinningParty/Party/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 3083 persons and its turnover of 23600000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
+- `WinningParty/Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `WinningParty/Party/PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
 - `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
   The registered office, as entered in the register.
-- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU**  
-  The country of registration.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
   The identifier of the register in the world (world/countries.json).
 - `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
   The register the company is entered in.
-- `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU**  
-  The register covers the whole country.
+- `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PartyLegalEntity/SecurityListing/ID` = **XU0001042501**  
   The identifier of the listed shares, in the form of an ISIN with the world's country code.
 - `WinningParty/Party/PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
   What is listed.
 - `WinningParty/Party/PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
-  The regulated market where the shares are listed.
-- `WinningParty/Party/PartyLegalEntity/SecurityListing/MarketCode` = **FSE**  
-  The market's code.
+  The name of code XFER in the Trade Accord's market identifier list.
+- `WinningParty/Party/PartyLegalEntity/SecurityListing/MarketCode` = **XFER** (listID `urn:ubl-examples:world:codelist:MarketCode`)  
+  The market's code. The code is from the Trade Accord's market identifier list: XFER = Ferrano Stock Exchange.
 - `WinningParty/Party/Contact/Name` = **Order desk**  
   The desk that handles this document; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/JobTitle` = **Customer service officer**  
@@ -1009,14 +1007,14 @@ Inside `TenderResult`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/Contact/OtherCommunication/ChannelCode` = **AL**  
-  UN/EDIFACT 3155 code AL: cellular phone.
+- `WinningParty/Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
+  UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `WinningParty/Party/Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
   The sales desk's mobile number, also under the reserved +999.
 - `WinningParty/Party/ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
   The service contract between the two.
-- `WinningParty/Party/ServiceProviderParty/ServiceTypeCode` = **Logistics**  
-  The kind of service, as a code.
+- `WinningParty/Party/ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
+  The kind of service, as a code. The code is from the Trade Accord's service type list: LOGISTICS = Logistics service.
 - `WinningParty/Party/ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
   What the service provider does for the party; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -1049,9 +1047,9 @@ Inside `TenderResult`:
   <cbc:PreviousVersionID>0</cbc:PreviousVersionID>
   <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
-  <cbc:NoticeTypeCode>ContractAwardNotice</cbc:NoticeTypeCode>
+  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
   <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
-  <cbc:NoticeLanguageCode>EN</cbc:NoticeLanguageCode>
+  <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
   <cac:AdditionalNoticeLanguage>
     <cbc:ID>qau</cbc:ID>
     <cbc:Name>Urvanian</cbc:Name>
@@ -1088,12 +1086,12 @@ Inside `TenderResult`:
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID>LUM-ADR-000417</cbc:ID>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Civic Square</cbc:StreetName>
         <cbc:BuildingNumber>6</cbc:BuildingNumber>
         <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
@@ -1103,33 +1101,33 @@ Inside `TenderResult`:
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38517</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>CO-0900002</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
-        <cbc:ExemptionReasonCode>XB-PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
+        <cbc:ExemptionReason>Sale to a public body</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -1137,20 +1135,20 @@ Inside `TenderResult`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID>20410548</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -1198,41 +1196,41 @@ Inside `TenderResult`:
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Civic Square</cbc:StreetName>
       <cbc:BuildingNumber>27</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38520</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Bayvarra Information Service</cbc:RegistrationName>
       <cbc:CompanyID>20410959</cbc:CompanyID>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -1263,41 +1261,41 @@ Inside `TenderResult`:
         <cac:Language>
           <cbc:ID>en</cbc:ID>
           <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Justice Row</cbc:StreetName>
           <cbc:BuildingNumber>20</cbc:BuildingNumber>
           <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38519</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             <cbc:Name>Bayvarra</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Procurement Review Board of Bayvarra</cbc:RegistrationName>
           <cbc:CompanyID>20410822</cbc:CompanyID>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XB:FBR</cbc:ID>
             <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -1322,12 +1320,12 @@ Inside `TenderResult`:
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
     <cbc:NegotiationDescription>No negotiation: the award is on the tenders as submitted.</cbc:NegotiationDescription>
-    <cbc:ProcedureCode>Open</cbc:ProcedureCode>
-    <cbc:UrgencyCode>Normal</cbc:UrgencyCode>
-    <cbc:ExpenseCode>Investment</cbc:ExpenseCode>
-    <cbc:PartPresentationCode>OneOrMore</cbc:PartPresentationCode>
-    <cbc:ContractingSystemCode>Framework</cbc:ContractingSystemCode>
-    <cbc:SubmissionMethodCode>Electronic</cbc:SubmissionMethodCode>
+    <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
+    <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
+    <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
+    <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ONEORMORE</cbc:PartPresentationCode>
+    <cbc:ContractingSystemCode listID="urn:ubl-examples:world:codelist:ContractingSystemCode">FRAMEWORK</cbc:ContractingSystemCode>
+    <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
     <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
@@ -1361,8 +1359,7 @@ Inside `TenderResult`:
       <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
     </cac:AdditionalDocumentReference>
     <cac:ProcessJustification>
-      <cbc:PreviousCancellationReasonCode>None</cbc:PreviousCancellationReasonCode>
-      <cbc:ProcessReasonCode>Standard</cbc:ProcessReasonCode>
+      <cbc:ProcessReasonCode listID="urn:ubl-examples:world:codelist:ProcessReasonCode">STANDARD</cbc:ProcessReasonCode>
       <cbc:ProcessReason>Value above the threshold for open procedures.</cbc:ProcessReason>
       <cbc:Description>No exception applies.</cbc:Description>
     </cac:ProcessJustification>
@@ -1384,11 +1381,11 @@ Inside `TenderResult`:
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
-      <cbc:TypeCode>Opening</cbc:TypeCode>
+      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
       <cac:CurrentStatus>
-        <cbc:ConditionCode>Scheduled</cbc:ConditionCode>
+        <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">SCHEDULED</cbc:ConditionCode>
       </cac:CurrentStatus>
       <cac:Contact>
         <cbc:Name>Procurement office</cbc:Name>
@@ -1423,7 +1420,7 @@ Inside `TenderResult`:
     </cac:FrameworkAgreement>
     <cac:ContractingSystem>
       <cbc:ID>FW-1</cbc:ID>
-      <cbc:ContractingSystemTypeCode>Framework</cbc:ContractingSystemTypeCode>
+      <cbc:ContractingSystemTypeCode listID="urn:ubl-examples:world:codelist:ContractingSystemTypeCode">FRAMEWORK</cbc:ContractingSystemTypeCode>
       <cbc:Description>Framework with one supplier.</cbc:Description>
     </cac:ContractingSystem>
   </cac:TenderingProcess>
@@ -1431,9 +1428,9 @@ Inside `TenderResult`:
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
     <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
-    <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
-    <cbc:ProcurementSubTypeCode>Purchase</cbc:ProcurementSubTypeCode>
-    <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+    <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
+    <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
+    <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
     <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
     <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
     <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
@@ -1441,8 +1438,8 @@ Inside `TenderResult`:
     <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
-      <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
-      <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
+      <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
@@ -1456,7 +1453,7 @@ Inside `TenderResult`:
       <cac:ApplicableTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -1464,17 +1461,17 @@ Inside `TenderResult`:
       </cac:ApplicableTaxCategory>
     </cac:RequestedTenderTotal>
     <cac:MainCommodityClassification>
-      <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:MainCommodityClassification>
     <cac:AdditionalCommodityClassification>
-      <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
     </cac:AdditionalCommodityClassification>
     <cac:RealizedLocation>
       <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
       <cac:Address>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:Address>
     </cac:RealizedLocation>
@@ -1560,9 +1557,9 @@ Inside `TenderResult`:
       <cbc:ID>LOT-1</cbc:ID>
       <cbc:Name>Park benches</cbc:Name>
       <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
-      <cbc:ProcurementTypeCode>Supplies</cbc:ProcurementTypeCode>
-      <cbc:ProcurementSubTypeCode>Purchase</cbc:ProcurementSubTypeCode>
-      <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
+      <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
+      <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
       <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
       <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
@@ -1570,8 +1567,8 @@ Inside `TenderResult`:
       <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
-        <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+        <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
+        <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
       </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">119760.00</cbc:EstimatedOverallContractAmount>
@@ -1585,7 +1582,7 @@ Inside `TenderResult`:
         <cac:ApplicableTaxCategory>
           <cbc:ID>E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
-          <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
           <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
             <cbc:ID>STT</cbc:ID>
@@ -1593,17 +1590,17 @@ Inside `TenderResult`:
         </cac:ApplicableTaxCategory>
       </cac:RequestedTenderTotal>
       <cac:MainCommodityClassification>
-        <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:MainCommodityClassification>
       <cac:AdditionalCommodityClassification>
-        <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
       </cac:AdditionalCommodityClassification>
       <cac:RealizedLocation>
         <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
         <cac:Address>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:RealizedLocation>
@@ -1690,9 +1687,9 @@ Inside `TenderResult`:
       <cbc:ID>LOT-2</cbc:ID>
       <cbc:Name>Installation of the benches</cbc:Name>
       <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
-      <cbc:ProcurementTypeCode>Services</cbc:ProcurementTypeCode>
-      <cbc:ProcurementSubTypeCode>Installation</cbc:ProcurementSubTypeCode>
-      <cbc:QualityControlCode>Inspection</cbc:QualityControlCode>
+      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
+      <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">INSTALL</cbc:ProcurementSubTypeCode>
+      <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
       <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
       <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
@@ -1700,8 +1697,8 @@ Inside `TenderResult`:
       <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:ProcurementAdditionalType>
-        <cbc:ProcurementTypeCode>Green</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Recycled steel and certified timber are asked.</cbc:ProcurementType>
+        <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
+        <cbc:ProcurementType>Environmental impact</cbc:ProcurementType>
       </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">4320.00</cbc:EstimatedOverallContractAmount>
@@ -1715,7 +1712,7 @@ Inside `TenderResult`:
         <cac:ApplicableTaxCategory>
           <cbc:ID>E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
-          <cbc:TaxExemptionReasonCode>XB-PUBLIC</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
           <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
             <cbc:ID>STT</cbc:ID>
@@ -1723,17 +1720,17 @@ Inside `TenderResult`:
         </cac:ApplicableTaxCategory>
       </cac:RequestedTenderTotal>
       <cac:MainCommodityClassification>
-        <cbc:ItemClassificationCode listID="HS">9988.00</cbc:ItemClassificationCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">87390</cbc:ItemClassificationCode>
       </cac:MainCommodityClassification>
       <cac:AdditionalCommodityClassification>
-        <cbc:CommodityCode>PARKS-FURN</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
       </cac:AdditionalCommodityClassification>
       <cac:RealizedLocation>
         <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
         <cac:Address>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:RealizedLocation>
@@ -1760,7 +1757,7 @@ Inside `TenderResult`:
   </cac:ProcurementProjectLot>
   <cac:TenderResult>
     <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>
-    <cbc:TenderResultCode>Awarded</cbc:TenderResultCode>
+    <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
     <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
@@ -1773,7 +1770,7 @@ Inside `TenderResult`:
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
-      <cbc:ContractTypeCode>Framework</cbc:ContractTypeCode>
+      <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
         <cbc:StartDate>2026-03-23</cbc:StartDate>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
@@ -1819,31 +1816,31 @@ Inside `TenderResult`:
           <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
           <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-          <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
+          <cbc:StreetName languageID="en-XB">Via delle Officine</cbc:StreetName>
           <cbc:BuildingNumber>17</cbc:BuildingNumber>
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cbc:PostalZone>4120</cbc:PostalZone>
           <cbc:Region>Province of Ferrano</cbc:Region>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             <cbc:Name>Urvania</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyTaxScheme>
           <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
           <cbc:CompanyID>XU007299291</cbc:CompanyID>
-          <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
           <cac:TaxScheme>
             <cbc:ID>VAT</cbc:ID>
-            <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+            <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:TaxScheme>
@@ -1852,25 +1849,25 @@ Inside `TenderResult`:
           <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
           <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
           <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
           <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
           <cac:RegistrationAddress>
             <cbc:CityName>Ferrano</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XU:CR</cbc:ID>
             <cbc:Name>Commercial register of Urvania</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -1878,7 +1875,7 @@ Inside `TenderResult`:
             <cbc:ID>XU0001042501</cbc:ID>
             <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
             <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-            <cbc:MarketCode>FSE</cbc:MarketCode>
+            <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
           </cac:SecurityListing>
         </cac:PartyLegalEntity>
         <cac:Contact>
@@ -1889,13 +1886,13 @@ Inside `TenderResult`:
           <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           <cac:OtherCommunication>
-            <cbc:ChannelCode>AL</cbc:ChannelCode>
+            <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
             <cbc:Value>+999 1 344 474 4274</cbc:Value>
           </cac:OtherCommunication>
         </cac:Contact>
         <cac:ServiceProviderParty>
           <cbc:ID>5-xu-SP-8-xu</cbc:ID>
-          <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
+          <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
           <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
           <cac:Party>
             <cac:PartyIdentification>

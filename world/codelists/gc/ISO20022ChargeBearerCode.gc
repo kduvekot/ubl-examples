@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of ISO 20022 ChargeBearerType1Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 data dictionary, ChargeBearerType1Code (iso20022.org, blocked for automated access)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ISO20022ChargeBearerCode</ShortName>
+      <LongName xml:lang="en">ISO 20022 ChargeBearerType1Code (UBL example world)</LongName>
+      <LongName Identifier="listID">ISO 20022 ChargeBearerType1Code</LongName>
+      <Version>ISO 20022 message definitions (pacs, pain)</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:ISO20022ChargeBearerCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISO20022ChargeBearerCode:ISO 20022 message definitions (pacs, pain)</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ISO20022ChargeBearerCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">ISO 20022 Registration Authority (SWIFT)</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DEBT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>BorneByDebtor</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>All transaction charges are to be borne by the debtor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CRED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>BorneByCreditor</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>All transaction charges are to be borne by the creditor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SHAR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Shared</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Transaction charges on the sender side are to be borne by the debtor, on the receiver side by the creditor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SLEV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>FollowingServiceLevel</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Charges are to be applied following the rules agreed in the service level.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -30,30 +30,30 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The supplier's usual term, which the customer applies to itself.
 - `TaxPointDate` = **2026-02-07**  
   The day the withholding becomes due.
-- `InvoiceTypeCode` = **389**  
-  UN/EDIFACT 1001 code 389: self-billed invoice.
+- `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
+  UN/EDIFACT 1001 code 389: self-billed invoice. The code is from the world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed invoice.
 - `Note` = **Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): The statement the self-billing agreement requires on every invoice.
-- `Note` = **Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.** (languageID `en`)  
+- `Note` = **Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: The statement the self-billing agreement requires on every invoice.
-- `DocumentCurrencyCode` = **XLC**  
-  The coral, the supplier's currency; it has three decimals.
-- `TaxCurrencyCode` = **XLC**  
-  The presumptive tax is paid to the island's tax office in coral.
-- `PricingCurrencyCode` = **XBL**  
-  Seed cotton is priced from the trade accord's lint reference price, published in lume.
-- `PaymentCurrencyCode` = **XLC**  
-  The farm is paid in coral.
-- `PaymentAlternativeCurrencyCode` = **XBL**  
-  The farm may ask to be paid in lume, to its account in Bayvarra, where it buys its machinery.
+- `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The coral, the supplier's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TaxCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The presumptive tax is paid to the island's tax office in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  Seed cotton is priced from the trade accord's lint reference price, published in lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `PaymentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The farm is paid in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `PaymentAlternativeCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The farm may ask to be paid in lume, to its account in Bayvarra, where it buys its machinery. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **200**  
   The customer's own cost centre: it books what it billed itself.
 - `AccountingCost` = **Seed cotton purchases**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The seed cotton and the collection line of the levy.
-- `DefaultLanguageCode` = **en**  
-  The language of the texts.
+- `DefaultLanguageCode` = **en** (listID `ISO 639`)  
+  The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
 
 ### Invoice Period
 
@@ -182,7 +182,7 @@ Inside `AccountingCustomerParty`:
 - `Party/WebsiteURI` = **https://www.selanuginnery.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/IndustryClassificationCode` = **0163** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Selanu Cotton Ginnery (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Selanu Cotton Ginnery (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 0163 = Post-harvest crop activities.
 - `Party/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **XL-TR-042681** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
@@ -193,13 +193,13 @@ Inside `AccountingCustomerParty`:
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
+- `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
@@ -207,8 +207,8 @@ Inside `AccountingCustomerParty`:
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XL**  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
@@ -217,26 +217,28 @@ Inside `AccountingCustomerParty`:
   Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
-  The legal form, as abbreviated in Lisavu (world/countries.json).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The legal form, in words.
-- `Party/PartyLegalEntity/EntitySizeCode` = **Small**  
-  The size class of the company (micro, small, medium or large); identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Tivufo kilika humaki** (languageID `qal`)  
+  The name of code LTD in Lisavu's national company legal form list. In Lisavan, the sender's language.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
+  The name of code LTD in Lisavu's national company legal form list. In English.
+- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 22 persons and its turnover of 3660000.000 XLC in 2025, by the Trade Accord's limits; identity of Selanu Cotton Ginnery (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Cotton sales**  
   The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -261,7 +263,7 @@ Inside `AccountingSupplierParty`:
 - `Party/WebsiteURI` = **https://www.lisavufarm.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/IndustryClassificationCode` = **0116** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lisavu Cotton Farm (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lisavu Cotton Farm (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 0116 = Growing of fibre crops.
 - `Party/PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
@@ -270,13 +272,13 @@ Inside `AccountingSupplierParty`:
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Party/PostalAddress/StreetName` = **Sifatofu Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en`)  
+- `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
   How to find the farm, which has no house number on a street. identity of Lisavu Cotton Farm (world/parties.json).
@@ -294,42 +296,42 @@ Inside `AccountingSupplierParty`:
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/AddressLine/Line` = **Selanu**  
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
-- `Party/PostalAddress/Country/IdentificationCode` = **XL**  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `Party/PostalAddress/LocationCoordinate/CoordinateSystemCode` = **WGS84**  
-  The World Geodetic System 1984, as used by satellite navigation.
+- `Party/PostalAddress/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
+  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PostalAddress/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
 - `Party/PostalAddress/LocationCoordinate/LatitudeMinutesMeasure` = **58.80** (unitCode `D61`)  
   The minutes of the latitude.
-- `Party/PostalAddress/LocationCoordinate/LatitudeDirectionCode` = **South**  
-  South of the equator.
+- `Party/PostalAddress/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
+  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Party/PostalAddress/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
 - `Party/PostalAddress/LocationCoordinate/LongitudeMinutesMeasure` = **7.80** (unitCode `D61`)  
   The minutes of the longitude.
-- `Party/PostalAddress/LocationCoordinate/LongitudeDirectionCode` = **West**  
-  West of the Greenwich meridian.
+- `Party/PostalAddress/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
+  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PhysicalLocation/Description` = **The cotton fields**  
   Where the party actually operates, apart from its postal address.
 - `Party/PhysicalLocation/InformationURI` = **https://www.lisavufarm.example**  
   Where to find more about the place.
-- `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **WGS84**  
-  The World Geodetic System 1984, as used by satellite navigation.
+- `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
+  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **58.80** (unitCode `D61`)  
   The minutes of the latitude.
-- `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South**  
-  South of the equator.
+- `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
+  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **7.80** (unitCode `D61`)  
   The minutes of the longitude.
-- `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West**  
-  West of the Greenwich meridian.
+- `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
+  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **IC42544**  
@@ -338,28 +340,30 @@ Inside `AccountingSupplierParty`:
   The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
   The island renews a farm's registration every year: it runs until this date.
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SP**  
-  The legal form, as abbreviated in Lisavu (world/countries.json).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Sole proprietorship**  
-  The legal form, in words.
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SP** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: SP = Sole proprietorship.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Fomofa nisakihi** (languageID `qal`)  
+  The name of code SP in Lisavu's national company legal form list. In Lisavan, the sender's language.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Sole proprietorship** (languageID `en-XL`)  
+  The name of code SP in Lisavu's national company legal form list. In English.
 - `Party/PartyLegalEntity/SoleProprietorshipIndicator` = **true**  
   The farm belongs to one farmer, who runs it in their own name; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/EntitySizeCode` = **Micro**  
-  The size class of the company (micro, small, medium or large); identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `Party/PartyLegalEntity/EntitySizeCode` = **MICRO** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 5 persons and its turnover of 146000.000 XLC in 2025, by the Trade Accord's limits; identity of Lisavu Cotton Farm (world/parties.json). The code is from the Trade Accord's entity size list: MICRO = Micro enterprise.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Farm office**  
   The desk that handles this document; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
@@ -454,13 +458,13 @@ Inside `PaymentMeans`:
 - `ID` = **1**  
   The first, and only, way to pay.
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks.
+  UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
 - `PaymentDueDate` = **2026-03-24**  
   When the transfer must be credited.
-- `PaymentChannelCode` = **IBAN**  
-  Paid to an account identified in the format of ISO 13616.
+- `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
+  How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **CORAL-NET**  
   The payment system the transfer runs over: the domestic clearing.
 - `InstructionNote` = **Quote RF07SCGSBI260193**  
@@ -471,12 +475,12 @@ Inside `PaymentMeans`:
   The supplier's account, where the customer pays what it billed itself. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Lisavu Cotton Farm**  
   The account holder, as the bank knows it.
-- `PayeeFinancialAccount/AccountTypeCode` = **Current**  
-  A current account, for payments in and out.
-- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616**  
-  The account number has the structure of ISO 13616.
-- `PayeeFinancialAccount/CurrencyCode` = **XLC**  
-  The account is kept in the currency of the bank's country.
+- `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
+  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
+- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
+  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
+- `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `PayeeFinancialAccount/PaymentNote` = **Invoice SCG-SBI-26-0193**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **BSEL-001**  
@@ -487,22 +491,22 @@ Inside `PaymentMeans`:
   The bank code, the part of every account number that names the bank; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Selanu**  
   The bank; identity of Bank of Selanu (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street**  
   The bank's head office; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **23**  
   Its building number; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu**  
   Its town; identity of Bank of Selanu (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL**  
-  The bank's country.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The bank's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu**  
   The branch is at the bank's head office.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL**  
-  Its country.
-- `PayeeFinancialAccount/Country/IdentificationCode` = **XL**  
-  The country where the account is kept.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Payment Terms
 
@@ -520,10 +524,10 @@ Inside `PaymentTerms`:
   The day the amount is due.
 - `PenaltyInterestRate/InterestRatePercent` = **6**  
   The interest on late payment.
-- `PenaltyInterestRate/TimeBasisCode` = **Year**  
-  A yearly rate.
-- `PenaltyInterestRate/CalculationMethodCode` = **Simple**  
-  Simple interest, per day late.
+- `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
+- `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
+  Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
 ### Prepaid Payment
 
@@ -544,6 +548,8 @@ Inside `AllowanceCharge`:
   The only charge.
 - `ChargeIndicator` = **true**  
   A charge in the farm's favour: it adds to what the gin pays.
+- `AllowanceChargeReasonCode` = **CAB** (listID `UN/EDIFACT EDED 7161`)  
+  The gin pays the farm for carting the cotton: a charge in the farm's favour, so a code of UN/EDIFACT 7161. The code is from the world's copy of UN/EDIFACT 7161 Special service description: CAB = Cartage.
 - `AllowanceChargeReason` = **Haulage allowance**  
   The gin pays the farm for bringing the cotton.
 - `PrepaidIndicator` = **false**  
@@ -571,20 +577,20 @@ Inside `AllowanceCharge`:
 - `TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   No tax on the haulage on the island.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  Credit transfer, with the invoice.
+  Credit transfer, with the invoice. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 
 ### Tax Exchange Rate
 
 Inside `TaxExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The document currency.
-- `TargetCurrencyCode` = **XLC**  
-  The tax currency, coral.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The tax currency, coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `CalculationRate` = **1**  
   The same currency: no conversion.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-02-07**  
   Of the document's date.
 
@@ -592,14 +598,14 @@ Inside `TaxExchangeRate`:
 
 Inside `PricingExchangeRate`:
 
-- `SourceCurrencyCode` = **XBL**  
-  The reference price's currency.
-- `TargetCurrencyCode` = **XLC**  
-  The document's.
+- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The reference price's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The document's. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `CalculationRate` = **0.4**  
   The reference rate.
-- `MathematicOperatorCode` = **Multiply**  
-  Lume times the rate gives coral.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Lume times the rate gives coral. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-02-07**  
   Of the document's date.
 
@@ -607,14 +613,14 @@ Inside `PricingExchangeRate`:
 
 Inside `PaymentExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The document currency.
-- `TargetCurrencyCode` = **XLC**  
-  The payment currency, coral.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The payment currency, coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `CalculationRate` = **1**  
   The same currency: no conversion.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-02-07**  
   Of the document's date.
 
@@ -622,14 +628,14 @@ Inside `PaymentExchangeRate`:
 
 Inside `PaymentAlternativeExchangeRate`:
 
-- `SourceCurrencyCode` = **XLC**  
-  The document currency.
-- `TargetCurrencyCode` = **XBL**  
-  Lume, the alternative.
+- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
+  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
+- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  Lume, the alternative. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `CalculationRate` = **2.5**  
   The reference rate.
-- `MathematicOperatorCode` = **Multiply**  
-  Coral times the rate.
+- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
+  Coral times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-02-07**  
   Of the document's date.
 
@@ -757,30 +763,32 @@ Inside `InvoiceLine`:
   The line of the delivery note the invoice line bills.
 - `Delivery/DeliveryNoteLineReference/UUID` = **6d32dd14-dac3-5c83-91e2-8c40cef6875b**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Delivery/DeliveryNoteLineReference/LineStatusCode` = **NoStatus**  
-  The delivered line, unchanged.
+- `Delivery/DeliveryNoteLineReference/LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
+  The delivered line, unchanged. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `Delivery/DeliveryNoteLineReference/DocumentReference/ID` = **LCF-DN-26-0192**  
   The farm's delivery note.
 - `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.**  
   The seller's description; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Name` = **Votike tekapa** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Item/Name` = **Seed cotton** (languageID `en`)  
+- `Item/Name` = **Seed cotton** (languageID `en-XL`)  
   The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/StandardItemIdentification/ID` = **773010000123** (schemeID `urn:ubl-examples:world:item`)  
   The world item number issued by the identifier issuing agency, twelve digits with a check digit; a scheme of the world, not a GTIN; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XL**  
-  Where the item was produced; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Item/CommodityClassification/ItemClassificationCode` = **5201.00** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/OriginCountry/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Where the item was produced; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `Item/CommodityClassification/CommodityCode` = **520100** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
+- `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
 - `Item/ClassifiedTaxCategory/ID` = **O**  
   Lisavu has no sales tax or value added tax: no tax applies (category O).
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
-  Whether the category applies to goods or services.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **0.226** (currencyID `XLC`)  
@@ -803,18 +811,18 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>14:29:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:TaxPointDate>2026-02-07</cbc:TaxPointDate>
-  <cbc:InvoiceTypeCode>389</cbc:InvoiceTypeCode>
+  <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">389</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
-  <cbc:Note languageID="en">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode>XLC</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode>XBL</cbc:PaymentAlternativeCurrencyCode>
+  <cbc:Note languageID="en-XL">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TaxCurrencyCode>
+  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
+  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentCurrencyCode>
+  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
-  <cbc:DefaultLanguageCode>en</cbc:DefaultLanguageCode>
+  <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-02-03</cbc:StartDate>
     <cbc:EndDate>2026-02-05</cbc:EndDate>
@@ -893,15 +901,15 @@ Inside `InvoiceLine`:
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
-        <cbc:StreetName languageID="en">Gin Yard Road</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -909,23 +917,24 @@ Inside `InvoiceLine`:
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
         <cbc:CompanyID>IC42681</cbc:CompanyID>
         <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XL:ICR</cbc:ID>
           <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -959,10 +968,10 @@ Inside `InvoiceLine`:
         <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
-        <cbc:StreetName languageID="en">Plantation Road</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Plantation Road</cbc:StreetName>
         <cbc:Description>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Description>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:District>North coast</cbc:District>
@@ -980,30 +989,30 @@ Inside `InvoiceLine`:
           <cbc:Line>Selanu</cbc:Line>
         </cac:AddressLine>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
         <cac:LocationCoordinate>
-          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
           <cbc:LatitudeMinutesMeasure unitCode="D61">58.80</cbc:LatitudeMinutesMeasure>
-          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
           <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
           <cbc:LongitudeMinutesMeasure unitCode="D61">7.80</cbc:LongitudeMinutesMeasure>
-          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+          <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:PostalAddress>
       <cac:PhysicalLocation>
         <cbc:Description>The cotton fields</cbc:Description>
         <cbc:InformationURI>https://www.lisavufarm.example</cbc:InformationURI>
         <cac:LocationCoordinate>
-          <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+          <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
           <cbc:LatitudeMinutesMeasure unitCode="D61">58.80</cbc:LatitudeMinutesMeasure>
-          <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+          <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
           <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
           <cbc:LongitudeMinutesMeasure unitCode="D61">7.80</cbc:LongitudeMinutesMeasure>
-          <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+          <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
@@ -1011,24 +1020,25 @@ Inside `InvoiceLine`:
         <cbc:CompanyID>IC42544</cbc:CompanyID>
         <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
-        <cbc:CompanyLegalFormCode>SP</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Sole proprietorship</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qal">Fomofa nisakihi</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XL">Sole proprietorship</cbc:CompanyLegalForm>
         <cbc:SoleProprietorshipIndicator>true</cbc:SoleProprietorshipIndicator>
-        <cbc:EntitySizeCode>Micro</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MICRO</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XL:ICR</cbc:ID>
           <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -1115,16 +1125,16 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF07SCGSBI260193</cbc:InstructionNote>
     <cbc:PaymentID>RF07SCGSBI260193</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL05BSEL0004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
-      <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode>XLC</cbc:CurrencyCode>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:PaymentNote>Invoice SCG-SBI-26-0193</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID>BSEL-001</cbc:ID>
@@ -1133,24 +1143,24 @@ Inside `InvoiceLine`:
           <cbc:ID>BSEL</cbc:ID>
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
             <cbc:StreetName>Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName>Selanu</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -1162,8 +1172,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
-      <cbc:TimeBasisCode>Year</cbc:TimeBasisCode>
-      <cbc:CalculationMethodCode>Simple</cbc:CalculationMethodCode>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
@@ -1174,6 +1184,7 @@ Inside `InvoiceLine`:
   <cac:AllowanceCharge>
     <cbc:ID>1</cbc:ID>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAB</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Haulage allowance</cbc:AllowanceChargeReason>
     <cbc:PrepaidIndicator>false</cbc:PrepaidIndicator>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
@@ -1198,31 +1209,31 @@ Inside `InvoiceLine`:
     </cac:PaymentMeans>
   </cac:AllowanceCharge>
   <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-02-07</cbc:Date>
   </cac:TaxExchangeRate>
   <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-02-07</cbc:Date>
   </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-02-07</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode>XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode>XBL</cbc:TargetCurrencyCode>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>2.5</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-02-07</cbc:Date>
   </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
@@ -1312,7 +1323,7 @@ Inside `InvoiceLine`:
       <cac:DeliveryNoteLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cbc:UUID>6d32dd14-dac3-5c83-91e2-8c40cef6875b</cbc:UUID>
-        <cbc:LineStatusCode>NoStatus</cbc:LineStatusCode>
+        <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
         <cac:DocumentReference>
           <cbc:ID>LCF-DN-26-0192</cbc:ID>
         </cac:DocumentReference>
@@ -1321,7 +1332,7 @@ Inside `InvoiceLine`:
     <cac:Item>
       <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
-      <cbc:Name languageID="en">Seed cotton</cbc:Name>
+      <cbc:Name languageID="en-XL">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>
@@ -1329,15 +1340,16 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="urn:ubl-examples:world:item">773010000123</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:OriginCountry>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
-        <cbc:ItemClassificationCode listID="HS">5201.00</cbc:ItemClassificationCode>
+        <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>O</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>

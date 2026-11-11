@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: nature of transaction. The kind of transaction behind a movement of goods, for customs and trade statistics. The descriptions name the matching code of the nature-of-transaction list of the UN International Merchandise Trade Statistics and the EU. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>NatureOfTransactionCode</ShortName>
+      <LongName xml:lang="en">Nature of transaction (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:NatureOfTransactionCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:NatureOfTransactionCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:NatureOfTransactionCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/NatureOfTransactionCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PURCHASE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Outright purchase or sale</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skatek sevaz van zhermek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lehito kiose vapene vaheli</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods bought and sold (UN/EU nature of transaction 1).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RETURN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Return of goods</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trikrul skul valnir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiseta mutaki liape</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods returned to the seller (UN/EU 2).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FREE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transfer without payment</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Silhan zentul rikrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Miato vekafa mamohe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods given without payment (UN/EU 3).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PROCESSING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>For or after processing</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gan van skuskan matir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kifupa vapene lelova manasei</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods sent for or returned after processing under contract (UN/EU 4 and 5).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LEASE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Financial lease</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skakraz gizrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Salelefo velepe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods leased under a financial lease (UN/EU 9).</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

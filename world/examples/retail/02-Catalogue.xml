@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-CAT-26-0218</cbc:ID>
   <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
-  <cbc:ActionCode>Add</cbc:ActionCode>
+  <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueActionCode">NEW</cbc:ActionCode>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:28:00</cbc:IssueTime>
@@ -33,7 +33,7 @@
   </cac:DocumentReference>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
-      <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+      <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
     </cac:Country>
   </cac:ApplicableTerritoryAddress>
   <cac:Signature>
@@ -62,11 +62,11 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
       <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -75,24 +75,24 @@
       <cbc:CityName>Marrowdale</cbc:CityName>
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -101,25 +101,25 @@
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -153,35 +153,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Market Street</cbc:StreetName>
       <cbc:BuildingNumber>50</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38515</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
       <cbc:CompanyID>CO-1231233</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -190,25 +190,25 @@
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
       <cbc:CompanyID>20410411</cbc:CompanyID>
       <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -229,7 +229,7 @@
     <cac:SocialMediaProfile>
       <cbc:ID>10442197</cbc:ID>
       <cbc:Name>brightmarket</cbc:Name>
-      <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
+      <cbc:SocialMediaTypeCode listID="urn:ubl-examples:world:codelist:SocialMediaTypeCode">PHOTO</cbc:SocialMediaTypeCode>
       <cbc:URI>https://social.example/brightmarket</cbc:URI>
     </cac:SocialMediaProfile>
     <cac:ElectronicAddress>
@@ -262,14 +262,14 @@
     <cbc:Reference>LD-GTC-2026</cbc:Reference>
     <cac:ApplicableAddress>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:ApplicableAddress>
   </cac:TradingTerms>
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:ActionCode>Add</cbc:ActionCode>
-    <cbc:LifeCycleStatusCode>Active</cbc:LifeCycleStatusCode>
+    <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueLineActionCode">ADD</cbc:ActionCode>
+    <cbc:LifeCycleStatusCode listID="urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode">ACTIVE</cbc:LifeCycleStatusCode>
     <cbc:ContractSubdivision>Garden</cbc:ContractSubdivision>
     <cbc:Note>Pallets of four only.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
@@ -279,7 +279,7 @@
     <cbc:MinimumOrderQuantity unitCode="EA">4</cbc:MinimumOrderQuantity>
     <cbc:MaximumOrderQuantity unitCode="EA">192</cbc:MaximumOrderQuantity>
     <cbc:WarrantyInformation>Five years on the frame, from the maker.</cbc:WarrantyInformation>
-    <cbc:PackLevelCode>Pallet</cbc:PackLevelCode>
+    <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
     <cac:ContractorCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -346,13 +346,13 @@
       <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-        <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
+        <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
           <cbc:StartDate>2026-04-20</cbc:StartDate>
@@ -360,7 +360,7 @@
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>6-XB-PL-2026</cbc:ID>
-          <cbc:StatusCode>Active</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:DeliveryUnit>
@@ -370,7 +370,7 @@
       <cac:ApplicableTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -379,11 +379,11 @@
       <cac:Package>
         <cbc:ID>PAL-4</cbc:ID>
         <cbc:Quantity unitCode="EA">4</cbc:Quantity>
-        <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
       </cac:Package>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">78</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Full container</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
         <cbc:Amount currencyID="XBL">15.60</cbc:Amount>
@@ -401,7 +401,7 @@
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Park bench Serra 180</cbc:Name>
-      <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
+      <cbc:ItemTypeCode listID="urn:ubl-examples:world:codelist:ItemTypeCode">PRODUCT</cbc:ItemTypeCode>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
@@ -412,8 +412,8 @@
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID>Colour</cbc:AttributeID>
-          <cbc:PositionCode>FRM</cbc:PositionCode>
-          <cbc:DescriptionCode>GRY</cbc:DescriptionCode>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
           <cbc:Description>Frame in Ferro grey</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
@@ -437,31 +437,31 @@
             <cbc:Name>Urvanian</cbc:Name>
           </cac:Language>
           <cac:PostalAddress>
-            <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-            <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
             <cbc:StreetName languageID="qau">Bek Ban Drinraz</cbc:StreetName>
-            <cbc:StreetName languageID="en">Via dei Codici</cbc:StreetName>
+            <cbc:StreetName languageID="en-XB">Via dei Codici</cbc:StreetName>
             <cbc:BuildingNumber>29</cbc:BuildingNumber>
             <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
             <cbc:PostalZone>4130</cbc:PostalZone>
             <cbc:Region>Province of Ferrano</cbc:Region>
             <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               <cbc:Name>Urvania</cbc:Name>
             </cac:Country>
           </cac:PostalAddress>
           <cac:PartyTaxScheme>
             <cbc:RegistrationName>Codana Identification Agency SRU</cbc:RegistrationName>
             <cbc:CompanyID>XU007395206</cbc:CompanyID>
-            <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+            <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
             <cac:TaxScheme>
               <cbc:ID>VAT</cbc:ID>
-              <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+              <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
               <cac:JurisdictionRegionAddress>
                 <cac:Country>
-                  <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
                 </cac:Country>
               </cac:JurisdictionRegionAddress>
             </cac:TaxScheme>
@@ -470,23 +470,23 @@
             <cbc:RegistrationName>Codana Identification Agency SRU</cbc:RegistrationName>
             <cbc:CompanyID>XU-R-105644</cbc:CompanyID>
             <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-            <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
             <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-            <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-            <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+            <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+            <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
             <cac:RegistrationAddress>
               <cbc:CityName>Ferrano</cbc:CityName>
               <cac:Country>
-                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               </cac:Country>
             </cac:RegistrationAddress>
             <cac:CorporateRegistrationScheme>
               <cbc:ID>XU:CR</cbc:ID>
               <cbc:Name>Commercial register of Urvania</cbc:Name>
-              <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+              <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
               <cac:JurisdictionRegionAddress>
                 <cac:Country>
-                  <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
                 </cac:Country>
               </cac:JurisdictionRegionAddress>
             </cac:CorporateRegistrationScheme>
@@ -512,15 +512,17 @@
         <cbc:ID>VI-DS-B180</cbc:ID>
       </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
-        <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+        <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:CommodityClassification>
+        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
       </cac:CommodityClassification>
       <cac:TransactionConditions>
         <cbc:ID>LD-TC-01</cbc:ID>
-        <cbc:ActionCode>Trade</cbc:ActionCode>
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
@@ -541,26 +543,26 @@
       <cac:AdditionalItemProperty>
         <cbc:ID>COL</cbc:ID>
         <cbc:Name>Frame colour</cbc:Name>
-        <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+        <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
-          <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:ID>LOAD</cbc:ID>
         <cbc:Name>Load capacity</cbc:Name>
-        <cbc:NameCode>LOAD</cbc:NameCode>
+        <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">LOAD</cbc:NameCode>
         <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
         <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
         <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
-        <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+        <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         <cac:ItemPropertyGroup>
           <cbc:ID>SAF</cbc:ID>
           <cbc:Name>Safety</cbc:Name>
-          <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
         <cac:StandardPropertyIdentification>
           <cbc:ID>UR-SF-0450</cbc:ID>
@@ -613,17 +615,17 @@
         <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
       </cac:Dimension>
       <cac:EnvironmentalEmission>
-        <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+        <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
         <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
-        <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
+        <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">MANUFACTURING</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
         <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
         <cac:EmissionCalculationMethod>
-          <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
-          <cbc:FullnessIndicationCode>Cradle to gate</cbc:FullnessIndicationCode>
+          <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
+          <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:EmissionBoundaryCode">CRADLETOGATE</cbc:FullnessIndicationCode>
           <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
           <cac:EmissionFactorDocumentReference>
             <cbc:ID>VI-LCA-2025</cbc:ID>
@@ -635,10 +637,10 @@
         </cac:MeasurementPeriod>
       </cac:EnvironmentalEmission>
       <cac:CircularityProfile>
-        <cbc:MaintenanceFrequencyCode>Yearly</cbc:MaintenanceFrequencyCode>
+        <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
         <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
         <cac:ResourceConsumption>
-          <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
+          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
           <cac:MeasurementPeriod>
@@ -647,7 +649,7 @@
           </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:ResourceConsumption>
-          <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
+          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">HARDWOOD</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
           <cac:MeasurementPeriod>
@@ -656,7 +658,7 @@
           </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
-          <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
+          <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
           <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
           <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
           <cac:MeasurementPeriod>
@@ -666,7 +668,7 @@
         </cac:WasteGenerated>
         <cac:RepairabilityScore>
           <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
-          <cbc:ScoringSystemCode>Repairability index, 0–10</cbc:ScoringSystemCode>
+          <cbc:ScoringSystemCode listID="urn:ubl-examples:world:codelist:ScoringSystemCode">REPAIR10</cbc:ScoringSystemCode>
         </cac:RepairabilityScore>
         <cac:ProductDocumentationDocumentReference>
           <cbc:ID>VI-RM-B180</cbc:ID>
@@ -680,8 +682,8 @@
   </cac:CatalogueLine>
   <cac:CatalogueLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:ActionCode>Add</cbc:ActionCode>
-    <cbc:LifeCycleStatusCode>Active</cbc:LifeCycleStatusCode>
+    <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueLineActionCode">ADD</cbc:ActionCode>
+    <cbc:LifeCycleStatusCode listID="urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode">ACTIVE</cbc:LifeCycleStatusCode>
     <cbc:Note>Spare part for the Serra 180.</cbc:Note>
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Box</cbc:OrderableUnit>
@@ -728,13 +730,13 @@
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-        <cbc:PriceTypeCode>TRD</cbc:PriceTypeCode>
+        <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
           <cbc:StartDate>2026-04-20</cbc:StartDate>
@@ -742,13 +744,13 @@
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>6-XB-PL-2026</cbc:ID>
-          <cbc:StatusCode>Active</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
         <cbc:ID>E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>XB-RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
@@ -759,7 +761,7 @@
         <cac:LocationAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:LocationAddress>
         <cac:DependentLineReference>
@@ -771,7 +773,7 @@
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Bench side frame casting</cbc:Name>
-      <cbc:ItemTypeCode>Product</cbc:ItemTypeCode>
+      <cbc:ItemTypeCode listID="urn:ubl-examples:world:codelist:ItemTypeCode">PRODUCT</cbc:ItemTypeCode>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
@@ -795,11 +797,14 @@
         <cbc:ID>LD-CAT-26-0218-2</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:OriginCountry>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
-        <cbc:CommodityCode>7325.99.90</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="HS">7325.99</cbc:ItemClassificationCode>
+        <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:CommodityClassification>
+        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
       </cac:CommodityClassification>
       <cac:ManufacturerParty>
         <cac:PartyIdentification>

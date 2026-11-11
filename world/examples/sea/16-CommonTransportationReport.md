@@ -26,12 +26,12 @@ The ship flies the island's flag; before entering port the carrier reports to th
   Sent before the ship enters the port of Selanu.
 - `IssueTime` = **15:38:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus**  
-  A first report.
-- `ReportTypeCode` = **PreArrival**  
-  The report before entering the port.
+- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
+  A first report. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
+- `ReportTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportReportTypeCode`)  
+  The report before entering the port. The code is from the Trade Accord's transport report type list: PREARRIVAL = Pre-arrival report.
 - `ReportType` = **Pre-arrival report**  
-  In words.
+  The name of code PREARRIVAL in the Trade Accord's transport report type list.
 - `Description` = **The ship's report before arrival at Selanu.**  
   What it is.
 - `Note` = **No incidents on board.**  
@@ -46,7 +46,7 @@ Inside `ReporterParty`:
 - `WebsiteURI` = **https://www.tidewell.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Tidewell Ocean Lines (world/parties.json).
 - `IndustryClassificationCode` = **5012** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Tidewell Ocean Lines (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Tidewell Ocean Lines (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5012 = Sea and coastal freight water transport.
 - `PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Tidewell Ocean Lines**  
@@ -55,12 +55,12 @@ Inside `ReporterParty`:
   English, the language the party does business in.
 - `Language/Name` = **English**  
   The language's name.
-- `Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
-- `PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Harbour Road**  
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/BuildingNumber` = **18**  
@@ -72,59 +72,59 @@ Inside `ReporterParty`:
 - `PostalAddress/PostalZone` = **38527**  
   Postal code in Bayvarra's format (5 digits). identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Tidewell Ocean Lines (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Tidewell Ocean Lines (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PartyTaxScheme/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered for state sales tax; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyTaxScheme/CompanyID` = **CO-1235754**  
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyTaxScheme/TaxLevelCode` = **State**  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
-  The tax is accounted for in the country's currency.
+- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
   The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The country whose tax this is.
+- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Tidewell Ocean Lines Corp**  
   The name under which the party is registered, with its legal form; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20411918**  
   Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/RegistrationDate` = **1974-03-01**  
   The day the company was entered in the register; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **Corp**  
-  The legal form, as abbreviated in Bayvarra (world/countries.json).
+- `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
 - `PartyLegalEntity/CompanyLegalForm` = **Corporation (public)**  
-  The legal form, in words.
-- `PartyLegalEntity/EntitySizeCode` = **Large**  
-  The size class of the company (micro, small, medium or large); identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+  The name of code CORP in Bayvarra's national company legal form list.
+- `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 776 persons and its turnover of 865000000.00 XBL in 2025, by the Trade Accord's limits; identity of Tidewell Ocean Lines (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/CorporateStockAmount` = **40000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Tidewell Ocean Lines (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Bookings**  
   The desk that handles this document; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/JobTitle` = **Operations planner**  
@@ -147,7 +147,7 @@ Inside `ReporterParty`:
 Inside `AuthorityParty`:
 
 - `IndustryClassificationCode` = **8413** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Maritime Administration of Lisavu (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Maritime Administration of Lisavu (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8413 = Regulation of and contribution to more efficient operation of businesses.
 - `PartyIdentification/ID` = **IC42270** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Maritime Administration of Lisavu**  
@@ -156,13 +156,13 @@ Inside `AuthorityParty`:
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
-- `PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Maritime Administration of Lisavu (world/parties.json).
-- `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+- `PostalAddress/StreetName` = **Wharf Road** (languageID `en-XB`)  
   The street's name in English, the country's other official language; identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/BuildingNumber` = **37**  
   Building number of the postal address. identity of Maritime Administration of Lisavu (world/parties.json).
@@ -170,28 +170,28 @@ Inside `AuthorityParty`:
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XL**  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Maritime Administration of Lisavu**  
   The name under which the party is registered, with its legal form; identity of Maritime Administration of Lisavu (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **IC42270**  
   Number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json).
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
-  The country of registration.
+- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
   The identifier of the register in the world (world/countries.json).
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
-  The register covers the whole country.
+- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Contact/Name` = **Ship registry**  
   The desk that handles this document; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/JobTitle` = **Public service officer**  
@@ -245,7 +245,7 @@ Inside `Shipment`:
 - `ShipmentStage/TerminalOperatorParty/WebsiteURI` = **https://www.port-selanu.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/IndustryClassificationCode` = **5222** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Port of Selanu (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Port of Selanu (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5222 = Service activities incidental to water transportation.
 - `ShipmentStage/TerminalOperatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Port of Selanu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ShipmentStage/TerminalOperatorParty/PartyName/Name` = **Port of Selanu**  
@@ -254,13 +254,13 @@ Inside `Shipment`:
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json).
 - `ShipmentStage/TerminalOperatorParty/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
-- `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL**  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Wharf Road** (languageID `en-XB`)  
   The street's name in English, the country's other official language; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **32**  
   Building number of the postal address. identity of Port of Selanu (world/parties.json).
@@ -268,8 +268,8 @@ Inside `Shipment`:
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `ShipmentStage/TerminalOperatorParty/PostalAddress/Country/IdentificationCode` = **XL**  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `ShipmentStage/TerminalOperatorParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `ShipmentStage/TerminalOperatorParty/PhysicalLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
@@ -278,46 +278,46 @@ Inside `Shipment`:
   Where the party actually operates, apart from its postal address.
 - `ShipmentStage/TerminalOperatorParty/PhysicalLocation/InformationURI` = **https://www.port-selanu.example**  
   Where to find more about the place.
-- `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **WGS84**  
-  The World Geodetic System 1984, as used by satellite navigation.
+- `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
+  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **40** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
 - `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **1.20** (unitCode `D61`)  
   The minutes of the latitude.
-- `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South**  
-  South of the equator.
+- `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
+  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
 - `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **8.40** (unitCode `D61`)  
   The minutes of the longitude.
-- `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West**  
-  West of the Greenwich meridian.
+- `ShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
+  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationName` = **Port of Selanu Ltd**  
   The name under which the party is registered, with its legal form; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyID` = **IC41037**  
   Number in the Island companies register; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
   The day the company was entered in the register; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLegalFormCode` = **Ltd**  
-  The legal form, as abbreviated in Lisavu (world/countries.json).
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The legal form, in words.
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/EntitySizeCode` = **Small**  
-  The size class of the company (micro, small, medium or large); identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+  The name of code LTD in Lisavu's national company legal form list.
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 28 persons and its turnover of 3490000.000 XLC in 2025, by the Trade Accord's limits; identity of Port of Selanu (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
   The registered office, as entered in the register.
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL**  
-  The country of registration.
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
   The identifier of the register in the world (world/countries.json).
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL**  
-  The register covers the whole country.
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/TerminalOperatorParty/Contact/Name` = **Port control**  
   The desk that handles this document; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
@@ -338,44 +338,44 @@ Inside `Shipment`:
   The one passenger, a supercargo.
 - `ShipmentStage/PassengerPerson/FamilyName` = **Tavari**  
   The family name.
-- `ShipmentStage/PassengerPerson/RoleCode` = **Passenger**  
-  The person's role on board.
+- `ShipmentStage/PassengerPerson/RoleCode` = **PASSENGER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: PASSENGER = Passenger.
 - `ShipmentStage/ReportingPerson/FirstName` = **Corin**  
   The master reports.
 - `ShipmentStage/ReportingPerson/FamilyName` = **Halvard**  
   The family name.
-- `ShipmentStage/ReportingPerson/RoleCode` = **Master**  
-  The person's role on board.
+- `ShipmentStage/ReportingPerson/RoleCode` = **MASTER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: MASTER = Master.
 - `ShipmentStage/CrewMemberPerson/FirstName` = **Corin**  
   The master.
 - `ShipmentStage/CrewMemberPerson/FamilyName` = **Halvard**  
   The family name.
-- `ShipmentStage/CrewMemberPerson/RoleCode` = **Master**  
-  The person's role on board.
+- `ShipmentStage/CrewMemberPerson/RoleCode` = **MASTER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: MASTER = Master.
 - `ShipmentStage/CrewMemberPerson/FirstName` = **Elsbeth**  
   The chief officer, also the ship's medical officer.
 - `ShipmentStage/CrewMemberPerson/FamilyName` = **Marrin**  
   The family name.
-- `ShipmentStage/CrewMemberPerson/RoleCode` = **ChiefOfficer**  
-  The person's role on board.
+- `ShipmentStage/CrewMemberPerson/RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
 - `ShipmentStage/CrewMemberPerson/FirstName` = **Rafe**  
   The chief engineer.
 - `ShipmentStage/CrewMemberPerson/FamilyName` = **Dunmore**  
   The family name.
-- `ShipmentStage/CrewMemberPerson/RoleCode` = **ChiefEngineer**  
-  The person's role on board.
+- `ShipmentStage/CrewMemberPerson/RoleCode` = **CHIEFENG** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFENG = Chief engineer.
 - `ShipmentStage/SecurityOfficerPerson/FirstName` = **Elsbeth**  
   The ship security officer.
 - `ShipmentStage/SecurityOfficerPerson/FamilyName` = **Marrin**  
   The family name.
-- `ShipmentStage/SecurityOfficerPerson/RoleCode` = **SSO**  
-  The person's role on board.
+- `ShipmentStage/SecurityOfficerPerson/RoleCode` = **SSO** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: SSO = Ship security officer.
 - `ShipmentStage/ShipsSurgeonPerson/FirstName` = **Elsbeth**  
   No surgeon on a feeder: the chief officer is the medical officer.
 - `ShipmentStage/ShipsSurgeonPerson/FamilyName` = **Marrin**  
   The family name.
-- `ShipmentStage/ShipsSurgeonPerson/RoleCode` = **MedicalOfficer**  
-  The person's role on board.
+- `ShipmentStage/ShipsSurgeonPerson/RoleCode` = **MEDICAL** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: MEDICAL = Medical officer.
 - `ShipmentStage/DestinationPortCall/ID` = **XLSEL-26-0517**  
   The port call at Selanu.
 - `ShipmentStage/DestinationPortCall/PlannedOperationsDescription` = **Discharge one container, load six.**  
@@ -394,30 +394,30 @@ Inside `Shipment`:
   A need of the ship.
 - `ShipmentStage/DestinationPortCall/ShipRequirement/Description` = **Fresh water, 40 tonnes.**  
   What it needs.
-- `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/PurposeTypeCode` = **Cargo**  
-  Cargo operations.
+- `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/PurposeTypeCode` = **CARGO** (listID `urn:ubl-examples:world:codelist:PortCallPurposeCode`)  
+  Cargo operations. The code is from the Trade Accord's port call purpose list: CARGO = Cargo operations.
 - `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/PurposeType` = **Cargo operations**  
-  In words.
+  The name of code CARGO in the Trade Accord's port call purpose list.
 - `ShipmentStage/DestinationPortCall/PrimaryPortCallPurpose/Description` = **Discharge and load containers.**  
   The purpose.
-- `ShipmentStage/DestinationPortCall/AdditionalPortCallPurpose/PurposeTypeCode` = **Water**  
-  Taking on water.
-- `ShipmentStage/DestinationPortCall/AdditionalPortCallPurpose/PurposeType` = **Bunkering of fresh water**  
-  In words.
+- `ShipmentStage/DestinationPortCall/AdditionalPortCallPurpose/PurposeTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:PortCallPurposeCode`)  
+  Taking on water. The code is from the Trade Accord's port call purpose list: WATER = Fresh water bunkering.
+- `ShipmentStage/DestinationPortCall/AdditionalPortCallPurpose/PurposeType` = **Fresh water bunkering**  
+  The name of code WATER in the Trade Accord's port call purpose list.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/IdentificationID` = **ARR-XLSEL-0517**  
   The requested arrival.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceDate` = **2026-05-18**  
   The day.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceTime` = **06:00:00**  
   At first light.
-- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/TypeCode` = **Arrival**  
-  An arrival.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/TypeCode` = **ARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  An arrival. The code is from the Trade Accord's transport event type list: ARRIVAL = Arrival.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Description` = **Pilot on board at the fairway buoy.**  
   What is asked.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/CompletionIndicator` = **false**  
   Not yet.
-- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/CurrentStatus/ConditionCode` = **OnTime**  
-  Expected on time.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/CurrentStatus/ConditionCode` = **ONTIME** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
+  Expected on time. The code is from the Trade Accord's status condition list: ONTIME = On time.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Name` = **Bridge**  
   Whom to call.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone` = **+999 3 790 2117**  
@@ -448,14 +448,14 @@ Inside `Shipment`:
   The chief engineer.
 - `ShipmentStage/CrewPersonEffect/CrewPerson/FamilyName` = **Dunmore**  
   The family name.
-- `ShipmentStage/CrewPersonEffect/CrewPerson/RoleCode` = **ChiefEngineer**  
-  The person's role on board.
+- `ShipmentStage/CrewPersonEffect/CrewPerson/RoleCode` = **CHIEFENG** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFENG = Chief engineer.
 - `ShipmentStage/MaritimeWaste/ID` = **W-1**  
   Oily waste.
 - `ShipmentStage/MaritimeWaste/Description` = **Sludge from the fuel separators.**  
   What.
-- `ShipmentStage/MaritimeWaste/WasteTypeCode` = **Oil**  
-  MARPOL Annex I waste.
+- `ShipmentStage/MaritimeWaste/WasteTypeCode` = **OIL** (listID `urn:ubl-examples:world:codelist:ShipWasteTypeCode`)  
+  MARPOL Annex I waste. The code is from the Trade Accord's ship waste type list: OIL = Oily waste.
 - `ShipmentStage/MaritimeWaste/ToBeDeliveredMeasure` = **2.4** (unitCode `MTQ`)  
   To be delivered at Selanu.
 - `ShipmentStage/MaritimeWaste/RetainedOnBoardMeasure` = **0.6** (unitCode `MTQ`)  
@@ -468,14 +468,14 @@ Inside `Shipment`:
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ShipmentStage/MaritimeWaste/RemainingWasteDeliveryPortLocation/Name` = **Port of Lumeport**  
   The rest goes ashore at Lumeport.
-- `ShipmentStage/MaritimeWaste/RemainingWasteDeliveryPortLocation/Address/Country/IdentificationCode` = **XB**  
-  The country the place is in.
+- `ShipmentStage/MaritimeWaste/RemainingWasteDeliveryPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/MaritimeWaste/ID` = **W-2**  
   Garbage.
 - `ShipmentStage/MaritimeWaste/Description` = **Food and packaging waste.**  
   What.
-- `ShipmentStage/MaritimeWaste/WasteTypeCode` = **Garbage**  
-  MARPOL Annex V waste.
+- `ShipmentStage/MaritimeWaste/WasteTypeCode` = **GARBAGE** (listID `urn:ubl-examples:world:codelist:ShipWasteTypeCode`)  
+  MARPOL Annex V waste. The code is from the Trade Accord's ship waste type list: GARBAGE = Garbage.
 - `ShipmentStage/MaritimeWaste/ToBeDeliveredMeasure` = **1.5** (unitCode `MTQ`)  
   To be delivered.
 - `ShipmentStage/BallastWaterSummary/ID` = **BW-26-0517**  
@@ -504,8 +504,8 @@ Inside `Shipment`:
   Why no treatment was needed.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-3**  
   The tank.
-- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **Wing**  
-  A wing tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **WING** (listID `urn:ubl-examples:world:codelist:BallastTankTypeCode`)  
+  A wing tank. The code is from the Trade Accord's ballast tank type list: WING = Wing tank.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
   Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit; the 310 were meant as tonnes of water, which is about the same number of cubic metres.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
@@ -518,16 +518,16 @@ Inside `Shipment`:
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Name` = **Port of Lumeport**  
   The port.
-- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB**  
-  The country the place is in.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **Water**  
   The water.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
   Its temperature.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-3**  
   The tank.
-- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **Sequential**  
-  Emptied and refilled.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **SEQ** (listID `urn:ubl-examples:world:codelist:BallastExchangeMethodCode`)  
+  Emptied and refilled. The code is from the Trade Accord's ballast water exchange method list: SEQ = Sequential.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
   Of the volume.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
@@ -546,8 +546,8 @@ Inside `Shipment`:
   The chief officer, also the ship's medical officer.
 - `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/FamilyName` = **Marrin**  
   The family name.
-- `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/RoleCode` = **ChiefOfficer**  
-  The person's role on board.
+- `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
 - `ShipmentStage/ISPSRequirements/ID` = **ISSC-XL-2026-0117**  
   The number of the ship's International Ship Security Certificate.
 - `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **true**  
@@ -560,8 +560,8 @@ Inside `Shipment`:
   The security plan is on board.
 - `ShipmentStage/ISPSRequirements/SSPSecurityMeasuresAppliedIndicator` = **true**  
   Its measures were applied.
-- `ShipmentStage/ISPSRequirements/CurrentOperatingSecurityLevelCode` = **1**  
-  Security level 1, the normal level.
+- `ShipmentStage/ISPSRequirements/CurrentOperatingSecurityLevelCode` = **1** (listID `IMO ISPS security level`)  
+  Security level 1, the normal level. The code is from the world's copy of IMO ISPS Code security level: 1 = Security level 1.
 - `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **None.**  
   Nothing else to report.
 - `ShipmentStage/ISPSRequirements/AdditionalSecurityMeasure/ID` = **SM-1**  
@@ -570,16 +570,16 @@ Inside `Shipment`:
   What the ship adds.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/ID` = **PCR-1**  
   The last port call.
-- `ShipmentStage/ISPSRequirements/PortCallRecord/SecurityLevelCode` = **1**  
-  Security level 1 at Lumeport.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/SecurityLevelCode` = **1** (listID `IMO ISPS security level`)  
+  Security level 1 at Lumeport. The code is from the world's copy of IMO ISPS Code security level: 1 = Security level 1.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/SecurityMeasure/Description` = **Normal access control.**  
   The measures.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/Name` = **Port of Lumeport**  
   The port facility.
-- `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/Address/Country/IdentificationCode` = **XB**  
-  The country the place is in.
+- `ShipmentStage/ISPSRequirements/PortCallRecord/PortFacilityLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/Period/StartDate` = **2026-05-13**  
   Arrived.
 - `ShipmentStage/ISPSRequirements/PortCallRecord/Period/EndDate` = **2026-05-14**  
@@ -608,8 +608,8 @@ Inside `Shipment`:
   The chief officer, also the ship's medical officer.
 - `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/FamilyName` = **Marrin**  
   The family name.
-- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/RoleCode` = **ChiefOfficer**  
-  The person's role on board.
+- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
 - `ShipmentStage/MaritimeHealthDeclaration/ID` = **MDH-26-0517**  
   The maritime declaration of health.
 - `ShipmentStage/MaritimeHealthDeclaration/InfectiousDiseaseCaseOnBoardIndicator` = **false**  
@@ -646,8 +646,8 @@ Inside `Shipment`:
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Name` = **Port of Lumeport**  
   Not an affected area.
-- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Address/Country/IdentificationCode` = **XB**  
-  The country the place is in.
+- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/ID` = **HI-1**  
   The one incident.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/JoinedShipDate` = **2025-11-01**  
@@ -676,10 +676,10 @@ Inside `Shipment`:
   The chief engineer.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Person/FamilyName` = **Dunmore**  
   The family name.
-- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Person/RoleCode` = **ChiefEngineer**  
-  The person's role on board.
-- `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasure/SanitaryMeasureTypeCode` = **Disinfection**  
-  The galley was disinfected.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/Person/RoleCode` = **CHIEFENG** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFENG = Chief engineer.
+- `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasure/SanitaryMeasureTypeCode` = **DISINFECT** (listID `urn:ubl-examples:world:codelist:SanitaryMeasureCode`)  
+  The galley was disinfected. The code is from the Trade Accord's sanitary measure list: DISINFECT = Disinfection.
 - `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasure/ApplicationDate` = **2026-05-15**  
   When.
 - `ShipmentStage/MaritimeHealthDeclaration/PlaceOfReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
@@ -696,8 +696,8 @@ Inside `Shipment`:
   No exemption: the ship holds the control certificate.
 - `ShipmentStage/FuelConsumption/ID` = **FC-26-19E**  
   The fuel of the voyage.
-- `ShipmentStage/FuelConsumption/FuelTypeCode` = **MGO**  
-  Marine gas oil.
+- `ShipmentStage/FuelConsumption/FuelTypeCode` = **MGO** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
+  Marine gas oil. The code is from the Trade Accord's fuel type list: MGO = Marine gas oil.
 - `ShipmentStage/FuelConsumption/FuelType` = **Marine gas oil, 0.1 % sulphur**  
   In words.
 - `ShipmentStage/FuelConsumption/FuelConsumptionMeasure` = **38** (unitCode `TNE`)  
@@ -710,8 +710,8 @@ Inside `Shipment`:
   Measured by the flow meter.
 - `ShipmentStage/FuelConsumption/FuelMetering/Value` = **38.2 t**  
   The reading.
-- `ShipmentStage/FuelConsumption/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2**  
-  Carbon dioxide.
+- `ShipmentStage/FuelConsumption/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
+  Carbon dioxide. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `ShipmentStage/FuelConsumption/EnvironmentalEmission/ValueMeasure` = **122** (unitCode `TNE`)  
   From 38 t of gas oil.
 - `ShipmentStage/FuelConsumption/FuelProviderParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -729,10 +729,10 @@ Inside `TransportMeans`:
   The country the means of transport is registered in.
 - `RegistrationNationality` = **Bayvarra**  
   The same, in words.
-- `DirectionCode` = **Eastbound**  
-  The direction of the journey, as the carrier codes its services.
-- `TransportMeansTypeCode` = **SEA**  
-  The carrier's code for the kind of means: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `DirectionCode` = **EB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
+  The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: EB = Eastbound.
+- `TransportMeansTypeCode` = **CONTAINERSHIP** (listID `urn:ubl-examples:world:codelist:TransportMeansTypeCode`)  
+  The kind of means of transport: tidewell harbour; the fleet of Tidewell Ocean Lines (world/parties.json). The code is from the Trade Accord's transport means type list: CONTAINERSHIP = Container ship.
 - `MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
   The vessel's number in its country's register of ships; a number of the world, not an IMO number.
 - `MaritimeTransport/VesselName` = **Tidewell Harbour**  
@@ -749,18 +749,18 @@ Inside `TransportMeans`:
   Its net tonnage, also without a unit.
 - `MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
   The capacity of the tanks for ballast water only.
-- `MaritimeTransport/ShipConfigurationCode` = **Feeder container ship, 1,000 TEU**  
-  The kind of vessel.
-- `MaritimeTransport/INFShipClassCode` = **INF1**  
-  IMO INF class 1: may not carry irradiated fuel in quantity.
+- `MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
+  The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
+- `MaritimeTransport/INFShipClassCode` = **INF1** (listID `IMO INF Code`)  
+  IMO INF class 1: may not carry irradiated fuel in quantity. The code is from the world's copy of IMO INF Code ship class: INF1 = INF.1 ship.
 - `MaritimeTransport/AntennaLocus` = **Mast, 28 m above the waterline**  
   Where the AIS antenna is.
 - `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
   The ship's certificate of registry.
 - `MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
-- `MaritimeTransport/VesselDynamics/NavigationStatusCode` = **0**  
-  AIS status 0: under way using engine.
+- `MaritimeTransport/VesselDynamics/NavigationStatusCode` = **0** (listID `ITU-R M.1371 Navigational status`)  
+  AIS status 0: under way using engine. The code is from the world's copy of ITU-R M.1371 AIS navigational status: 0 = Under way using engine.
 - `MaritimeTransport/VesselDynamics/AtAnchorageIndicator` = **false**  
   Not at anchor.
 - `MaritimeTransport/VesselDynamics/CourseOverGroundDirection` = **088**  
@@ -801,8 +801,8 @@ Inside `Signature`:
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
   <cbc:IssueTime>15:38:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
-  <cbc:ReportTypeCode>PreArrival</cbc:ReportTypeCode>
+  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
+  <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
   <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
   <cbc:Note>No incidents on board.</cbc:Note>
@@ -819,35 +819,35 @@ Inside `Signature`:
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
       <cbc:CompanyID>CO-1235754</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -856,25 +856,25 @@ Inside `Signature`:
       <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
       <cbc:CompanyID>20411918</cbc:CompanyID>
       <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -905,35 +905,35 @@ Inside `Signature`:
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
-      <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
+      <cbc:StreetName languageID="en-XB">Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>37</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Maritime Administration of Lisavu</cbc:RegistrationName>
       <cbc:CompanyID>IC42270</cbc:CompanyID>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XL:ICR</cbc:ID>
         <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -988,15 +988,15 @@ Inside `Signature`:
           <cbc:Name>Lisavan</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
-          <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
           <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
-          <cbc:StreetName languageID="en">Wharf Road</cbc:StreetName>
+          <cbc:StreetName languageID="en-XB">Wharf Road</cbc:StreetName>
           <cbc:BuildingNumber>32</cbc:BuildingNumber>
           <cbc:CityName>Selanu</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
@@ -1005,36 +1005,36 @@ Inside `Signature`:
           <cbc:Description>Port of Selanu</cbc:Description>
           <cbc:InformationURI>https://www.port-selanu.example</cbc:InformationURI>
           <cac:LocationCoordinate>
-            <cbc:CoordinateSystemCode>WGS84</cbc:CoordinateSystemCode>
+            <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
             <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
             <cbc:LatitudeMinutesMeasure unitCode="D61">1.20</cbc:LatitudeMinutesMeasure>
-            <cbc:LatitudeDirectionCode>South</cbc:LatitudeDirectionCode>
+            <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
             <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
             <cbc:LongitudeMinutesMeasure unitCode="D61">8.40</cbc:LongitudeMinutesMeasure>
-            <cbc:LongitudeDirectionCode>West</cbc:LongitudeDirectionCode>
+            <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
           </cac:LocationCoordinate>
         </cac:PhysicalLocation>
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Port of Selanu Ltd</cbc:RegistrationName>
           <cbc:CompanyID>IC41037</cbc:CompanyID>
           <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
           <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Selanu</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
           </cac:RegistrationAddress>
           <cac:CorporateRegistrationScheme>
             <cbc:ID>XL:ICR</cbc:ID>
             <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
             <cac:JurisdictionRegionAddress>
               <cac:Country>
-                <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
@@ -1055,37 +1055,37 @@ Inside `Signature`:
       <cac:PassengerPerson>
         <cbc:FirstName>Ines</cbc:FirstName>
         <cbc:FamilyName>Tavari</cbc:FamilyName>
-        <cbc:RoleCode>Passenger</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
       </cac:PassengerPerson>
       <cac:ReportingPerson>
         <cbc:FirstName>Corin</cbc:FirstName>
         <cbc:FamilyName>Halvard</cbc:FamilyName>
-        <cbc:RoleCode>Master</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
       </cac:ReportingPerson>
       <cac:CrewMemberPerson>
         <cbc:FirstName>Corin</cbc:FirstName>
         <cbc:FamilyName>Halvard</cbc:FamilyName>
-        <cbc:RoleCode>Master</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
       </cac:CrewMemberPerson>
       <cac:CrewMemberPerson>
         <cbc:FirstName>Elsbeth</cbc:FirstName>
         <cbc:FamilyName>Marrin</cbc:FamilyName>
-        <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
       </cac:CrewMemberPerson>
       <cac:CrewMemberPerson>
         <cbc:FirstName>Rafe</cbc:FirstName>
         <cbc:FamilyName>Dunmore</cbc:FamilyName>
-        <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFENG</cbc:RoleCode>
       </cac:CrewMemberPerson>
       <cac:SecurityOfficerPerson>
         <cbc:FirstName>Elsbeth</cbc:FirstName>
         <cbc:FamilyName>Marrin</cbc:FamilyName>
-        <cbc:RoleCode>SSO</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">SSO</cbc:RoleCode>
       </cac:SecurityOfficerPerson>
       <cac:ShipsSurgeonPerson>
         <cbc:FirstName>Elsbeth</cbc:FirstName>
         <cbc:FamilyName>Marrin</cbc:FamilyName>
-        <cbc:RoleCode>MedicalOfficer</cbc:RoleCode>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MEDICAL</cbc:RoleCode>
       </cac:ShipsSurgeonPerson>
       <cac:DestinationPortCall>
         <cbc:ID>XLSEL-26-0517</cbc:ID>
@@ -1100,23 +1100,23 @@ Inside `Signature`:
           <cbc:Description>Fresh water, 40 tonnes.</cbc:Description>
         </cac:ShipRequirement>
         <cac:PrimaryPortCallPurpose>
-          <cbc:PurposeTypeCode>Cargo</cbc:PurposeTypeCode>
+          <cbc:PurposeTypeCode listID="urn:ubl-examples:world:codelist:PortCallPurposeCode">CARGO</cbc:PurposeTypeCode>
           <cbc:PurposeType>Cargo operations</cbc:PurposeType>
           <cbc:Description>Discharge and load containers.</cbc:Description>
         </cac:PrimaryPortCallPurpose>
         <cac:AdditionalPortCallPurpose>
-          <cbc:PurposeTypeCode>Water</cbc:PurposeTypeCode>
-          <cbc:PurposeType>Bunkering of fresh water</cbc:PurposeType>
+          <cbc:PurposeTypeCode listID="urn:ubl-examples:world:codelist:PortCallPurposeCode">WATER</cbc:PurposeTypeCode>
+          <cbc:PurposeType>Fresh water bunkering</cbc:PurposeType>
         </cac:AdditionalPortCallPurpose>
         <cac:RequestedArrivalEvent>
           <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
           <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
-          <cbc:TypeCode>Arrival</cbc:TypeCode>
+          <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TypeCode>
           <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:CurrentStatus>
-            <cbc:ConditionCode>OnTime</cbc:ConditionCode>
+            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">ONTIME</cbc:ConditionCode>
           </cac:CurrentStatus>
           <cac:Contact>
             <cbc:Name>Bridge</cbc:Name>
@@ -1147,13 +1147,13 @@ Inside `Signature`:
         <cac:CrewPerson>
           <cbc:FirstName>Rafe</cbc:FirstName>
           <cbc:FamilyName>Dunmore</cbc:FamilyName>
-          <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+          <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFENG</cbc:RoleCode>
         </cac:CrewPerson>
       </cac:CrewPersonEffect>
       <cac:MaritimeWaste>
         <cbc:ID>W-1</cbc:ID>
         <cbc:Description>Sludge from the fuel separators.</cbc:Description>
-        <cbc:WasteTypeCode>Oil</cbc:WasteTypeCode>
+        <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:ShipWasteTypeCode">OIL</cbc:WasteTypeCode>
         <cbc:ToBeDeliveredMeasure unitCode="MTQ">2.4</cbc:ToBeDeliveredMeasure>
         <cbc:RetainedOnBoardMeasure unitCode="MTQ">0.6</cbc:RetainedOnBoardMeasure>
         <cbc:MaxDedicatedStorageCapacityMeasure unitCode="MTQ">8</cbc:MaxDedicatedStorageCapacityMeasure>
@@ -1163,7 +1163,7 @@ Inside `Signature`:
           <cbc:Name>Port of Lumeport</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:RemainingWasteDeliveryPortLocation>
@@ -1171,7 +1171,7 @@ Inside `Signature`:
       <cac:MaritimeWaste>
         <cbc:ID>W-2</cbc:ID>
         <cbc:Description>Food and packaging waste.</cbc:Description>
-        <cbc:WasteTypeCode>Garbage</cbc:WasteTypeCode>
+        <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:ShipWasteTypeCode">GARBAGE</cbc:WasteTypeCode>
         <cbc:ToBeDeliveredMeasure unitCode="MTQ">1.5</cbc:ToBeDeliveredMeasure>
       </cac:MaritimeWaste>
       <cac:BallastWaterSummary>
@@ -1189,7 +1189,7 @@ Inside `Signature`:
         <cbc:NoControlActionsReason>Exchange done at more than 200 nautical miles from land.</cbc:NoControlActionsReason>
         <cac:UptakeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
-          <cbc:TankTypeCode>Wing</cbc:TankTypeCode>
+          <cbc:TankTypeCode listID="urn:ubl-examples:world:codelist:BallastTankTypeCode">WING</cbc:TankTypeCode>
           <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
           <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
           <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
@@ -1199,7 +1199,7 @@ Inside `Signature`:
             <cbc:Name>Port of Lumeport</cbc:Name>
             <cac:Address>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:Location>
@@ -1210,7 +1210,7 @@ Inside `Signature`:
         </cac:UptakeBallastWaterTransaction>
         <cac:ExchangeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
-          <cbc:ExchangeMethodCode>Sequential</cbc:ExchangeMethodCode>
+          <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
           <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
           <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
           <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
@@ -1226,7 +1226,7 @@ Inside `Signature`:
         <cac:ResponsibleOfficerPerson>
           <cbc:FirstName>Elsbeth</cbc:FirstName>
           <cbc:FamilyName>Marrin</cbc:FamilyName>
-          <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+          <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
         </cac:ResponsibleOfficerPerson>
       </cac:BallastWaterSummary>
       <cac:ISPSRequirements>
@@ -1236,7 +1236,7 @@ Inside `Signature`:
         <cbc:ISSCExpiryDate>2028-09-30</cbc:ISSCExpiryDate>
         <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
         <cbc:SSPSecurityMeasuresAppliedIndicator>true</cbc:SSPSecurityMeasuresAppliedIndicator>
-        <cbc:CurrentOperatingSecurityLevelCode>1</cbc:CurrentOperatingSecurityLevelCode>
+        <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
         <cbc:AdditionalMattersDescription>None.</cbc:AdditionalMattersDescription>
         <cac:AdditionalSecurityMeasure>
           <cbc:ID>SM-1</cbc:ID>
@@ -1244,7 +1244,7 @@ Inside `Signature`:
         </cac:AdditionalSecurityMeasure>
         <cac:PortCallRecord>
           <cbc:ID>PCR-1</cbc:ID>
-          <cbc:SecurityLevelCode>1</cbc:SecurityLevelCode>
+          <cbc:SecurityLevelCode listID="IMO ISPS security level">1</cbc:SecurityLevelCode>
           <cac:SecurityMeasure>
             <cbc:Description>Normal access control.</cbc:Description>
           </cac:SecurityMeasure>
@@ -1253,7 +1253,7 @@ Inside `Signature`:
             <cbc:Name>Port of Lumeport</cbc:Name>
             <cac:Address>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:PortFacilityLocation>
@@ -1291,7 +1291,7 @@ Inside `Signature`:
         <cac:SecurityOfficerPerson>
           <cbc:FirstName>Elsbeth</cbc:FirstName>
           <cbc:FamilyName>Marrin</cbc:FamilyName>
-          <cbc:RoleCode>ChiefOfficer</cbc:RoleCode>
+          <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
         </cac:SecurityOfficerPerson>
       </cac:ISPSRequirements>
       <cac:MaritimeHealthDeclaration>
@@ -1317,7 +1317,7 @@ Inside `Signature`:
             <cbc:Name>Port of Lumeport</cbc:Name>
             <cac:Address>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:WHOAffectedAreaPortLocation>
@@ -1338,11 +1338,11 @@ Inside `Signature`:
           <cac:Person>
             <cbc:FirstName>Rafe</cbc:FirstName>
             <cbc:FamilyName>Dunmore</cbc:FamilyName>
-            <cbc:RoleCode>ChiefEngineer</cbc:RoleCode>
+            <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFENG</cbc:RoleCode>
           </cac:Person>
         </cac:PersonnelHealthIncident>
         <cac:SanitaryMeasure>
-          <cbc:SanitaryMeasureTypeCode>Disinfection</cbc:SanitaryMeasureTypeCode>
+          <cbc:SanitaryMeasureTypeCode listID="urn:ubl-examples:world:codelist:SanitaryMeasureCode">DISINFECT</cbc:SanitaryMeasureTypeCode>
           <cbc:ApplicationDate>2026-05-15</cbc:ApplicationDate>
         </cac:SanitaryMeasure>
         <cac:PlaceOfReportLocation>
@@ -1362,7 +1362,7 @@ Inside `Signature`:
       </cac:MaritimeHealthDeclaration>
       <cac:FuelConsumption>
         <cbc:ID>FC-26-19E</cbc:ID>
-        <cbc:FuelTypeCode>MGO</cbc:FuelTypeCode>
+        <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">MGO</cbc:FuelTypeCode>
         <cbc:FuelType>Marine gas oil, 0.1 % sulphur</cbc:FuelType>
         <cbc:FuelConsumptionMeasure unitCode="TNE">38</cbc:FuelConsumptionMeasure>
         <cac:AdditionalFuelProperty>
@@ -1374,7 +1374,7 @@ Inside `Signature`:
           <cbc:Value>38.2 t</cbc:Value>
         </cac:FuelMetering>
         <cac:EnvironmentalEmission>
-          <cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+          <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
           <cbc:ValueMeasure unitCode="TNE">122</cbc:ValueMeasure>
         </cac:EnvironmentalEmission>
         <cac:FuelProviderParty>
@@ -1392,8 +1392,8 @@ Inside `Signature`:
     <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
     <cbc:RegistrationNationalityID>XB</cbc:RegistrationNationalityID>
     <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
-    <cbc:DirectionCode>Eastbound</cbc:DirectionCode>
-    <cbc:TransportMeansTypeCode>SEA</cbc:TransportMeansTypeCode>
+    <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
+    <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">CONTAINERSHIP</cbc:TransportMeansTypeCode>
     <cac:MaritimeTransport>
       <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
       <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
@@ -1403,8 +1403,8 @@ Inside `Signature`:
       <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
       <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
       <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
-      <cbc:ShipConfigurationCode>Feeder container ship, 1,000 TEU</cbc:ShipConfigurationCode>
-      <cbc:INFShipClassCode>INF1</cbc:INFShipClassCode>
+      <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+      <cbc:INFShipClassCode listID="IMO INF Code">INF1</cbc:INFShipClassCode>
       <cbc:AntennaLocus>Mast, 28 m above the waterline</cbc:AntennaLocus>
       <cac:RegistryCertificateDocumentReference>
         <cbc:ID>REG-XB-S-20117</cbc:ID>
@@ -1413,7 +1413,7 @@ Inside `Signature`:
         <cbc:Name>Lumeport</cbc:Name>
       </cac:RegistryPortLocation>
       <cac:VesselDynamics>
-        <cbc:NavigationStatusCode>0</cbc:NavigationStatusCode>
+        <cbc:NavigationStatusCode listID="ITU-R M.1371 Navigational status">0</cbc:NavigationStatusCode>
         <cbc:AtAnchorageIndicator>false</cbc:AtAnchorageIndicator>
         <cbc:CourseOverGroundDirection>088</cbc:CourseOverGroundDirection>
         <cbc:SpeedOverGroundMeasure unitCode="KNT">13.5</cbc:SpeedOverGroundMeasure>

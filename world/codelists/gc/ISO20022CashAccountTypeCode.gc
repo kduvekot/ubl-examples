@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of ISO 20022 ExternalCashAccountType1Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 external code sets, iso20022.org (blocked for automated access, 403)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ISO20022CashAccountTypeCode</ShortName>
+      <LongName xml:lang="en">ISO 20022 ExternalCashAccountType1Code (UBL example world)</LongName>
+      <LongName Identifier="listID">ISO 20022 ExternalCashAccountType1Code</LongName>
+      <Version>as published by the ISO 20022 RA</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:ISO20022CashAccountTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ISO20022CashAccountTypeCode:as published by the ISO 20022 RA</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ISO20022CashAccountTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">ISO 20022 Registration Authority (SWIFT)</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CACC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Current</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Account used to post debits and credits when no specific account has been nominated.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SVGS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Savings</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Account used for savings.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOAN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Loan</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Account used for loans.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CARD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CardAccount</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Account used for card payments only.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SLRY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Salary</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Account used for the payment of salaries.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

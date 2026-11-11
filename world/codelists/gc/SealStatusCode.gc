@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: seal status. The condition of a seal. The descriptions map to UN/EDIFACT 4517 (seal condition). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>SealStatusCode</ShortName>
+      <LongName xml:lang="en">Seal status (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:SealStatusCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:SealStatusCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:SealStatusCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/SealStatusCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>APPLIED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Applied</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trinvir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kalefe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The seal is in place and intact (UN/EDIFACT 4517: 1 In right condition).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DAMAGED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Damaged</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stakdir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mekilo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The seal is damaged (UN/EDIFACT 4517: 2 Damaged).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MISSING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Missing</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sulhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Titale</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The seal is missing (UN/EDIFACT 4517: 3 Missing).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BROKEN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Broken</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zerstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Ketahe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The seal is broken (UN/EDIFACT 4517: 4 Broken).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REPLACED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Replaced</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trustir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pikemo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A new seal replaced the original one.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

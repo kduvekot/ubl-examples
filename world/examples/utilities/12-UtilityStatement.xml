@@ -8,10 +8,10 @@
   <cbc:UUID>7b60d4fc-8fd7-5124-9e01-cfc520caed86</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:37:00</cbc:IssueTime>
-  <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
+  <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qal">Mikake votetaka hanano mofilufo kisala vepili vafosu.</cbc:Note>
-  <cbc:Note languageID="en">This statement explains the consumption behind your bill.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
+  <cbc:Note languageID="en-XL">This statement explains the consumption behind your bill.</cbc:Note>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cac:ParentDocumentReference>
@@ -19,7 +19,7 @@
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>ST-TARIFF-2026</cbc:ID>
-    <cbc:DocumentTypeCode>Tariff</cbc:DocumentTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">TARIFF</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
   <cac:SenderParty>
@@ -36,15 +36,15 @@
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
-      <cbc:StreetName languageID="en">Mast Hill Road</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
       <cbc:BuildingNumber>58</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
@@ -52,23 +52,24 @@
       <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
       <cbc:CompanyID>IC42407</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XL:ICR</cbc:ID>
         <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -103,15 +104,15 @@
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-      <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
       <cbc:CityName>Selanu</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
@@ -119,23 +120,24 @@
       <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
       <cbc:CompanyID>IC41859</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Selanu</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XL:ICR</cbc:ID>
         <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -173,45 +175,45 @@
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
     <cbc:ConsumptionID>ST-1077-2603</cbc:ConsumptionID>
-    <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
+    <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:TotalMeteredQuantity unitCode="E34">35</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
       <cbc:ID>ST-CP-1077</cbc:ID>
       <cbc:Description>Office of Velumi Trading, Selanu</cbc:Description>
       <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
       <cbc:SubscriberType>Business</cbc:SubscriberType>
-      <cbc:SubscriberTypeCode>BUS</cbc:SubscriberTypeCode>
+      <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">BUS</cbc:SubscriberTypeCode>
       <cac:Address>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XL</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-        <cbc:StreetName languageID="en">Reef Street</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName>Selanu</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XL</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:Address>
     </cac:UtilityConsumptionPoint>
     <cac:Consumption>
-      <cbc:UtilityStatementTypeCode>Telephone</cbc:UtilityStatementTypeCode>
+      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:UtilityStatementTypeCode>
       <cac:MainPeriod>
         <cbc:StartDate>2026-03-01</cbc:StartDate>
         <cbc:EndDate>2026-03-31</cbc:EndDate>
       </cac:MainPeriod>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
         <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
       </cac:AllowanceCharge>
       <cac:TelecommunicationsSupply>
         <cbc:TelecommunicationsSupplyType>Business lines and data</cbc:TelecommunicationsSupplyType>
-        <cbc:TelecommunicationsSupplyTypeCode>BUS</cbc:TelecommunicationsSupplyTypeCode>
-        <cbc:PrivacyCode>Masked</cbc:PrivacyCode>
+        <cbc:TelecommunicationsSupplyTypeCode listID="urn:ubl-examples:world:codelist:TelecomSupplyTypeCode">BUS</cbc:TelecommunicationsSupplyTypeCode>
+        <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">MASKED</cbc:PrivacyCode>
         <cbc:Description>Six business lines and a mobile data pool.</cbc:Description>
         <cbc:TotalAmount currencyID="XLC">141.920</cbc:TotalAmount>
         <cac:TelecommunicationsSupplyLine>
@@ -221,15 +223,15 @@
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:ExchangeRate>
-            <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
-            <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+            <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+            <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
             <cbc:CalculationRate>0.4</cbc:CalculationRate>
-            <cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+            <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
             <cbc:Date>2026-03-31</cbc:Date>
           </cac:ExchangeRate>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
@@ -251,21 +253,22 @@
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>+999 2 7121 474 274</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>International call</cbc:TelecommunicationsServiceCategory>
-            <cbc:TelecommunicationsServiceCategoryCode>INT</cbc:TelecommunicationsServiceCategoryCode>
+            <cbc:TelecommunicationsServiceCategory>International</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>
             <cbc:TelecommunicationsServiceCall>Outgoing</cbc:TelecommunicationsServiceCall>
-            <cbc:TelecommunicationsServiceCallCode>OUT</cbc:TelecommunicationsServiceCallCode>
+            <cbc:TelecommunicationsServiceCallCode listID="urn:ubl-examples:world:codelist:TelecomCallTypeCode">OUT</cbc:TelecommunicationsServiceCallCode>
             <cbc:CallBaseAmount currencyID="XLC">0.000</cbc:CallBaseAmount>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
             <cac:Price>
               <cbc:PriceAmount currencyID="XLC">0</cbc:PriceAmount>
             </cac:Price>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
             <cac:AllowanceCharge>
               <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+              <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
               <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
               <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
               <cbc:BaseAmount currencyID="XLC">2.400</cbc:BaseAmount>
@@ -276,7 +279,7 @@
             <cac:CallDuty>
               <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
               <cbc:Duty>Set-up</cbc:Duty>
-              <cbc:DutyCode>SETUP</cbc:DutyCode>
+              <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">SETUP</cbc:DutyCode>
               <cac:TaxCategory>
                 <cbc:ID>O</cbc:ID>
                 <cbc:Percent>0</cbc:Percent>
@@ -288,7 +291,7 @@
             <cac:TimeDuty>
               <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
               <cbc:Duty>Per minute</cbc:Duty>
-              <cbc:DutyCode>MIN</cbc:DutyCode>
+              <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">MIN</cbc:DutyCode>
             </cac:TimeDuty>
           </cac:TelecommunicationsService>
           <cac:TelecommunicationsService>
@@ -296,13 +299,13 @@
             <cbc:CallDate>2026-03-18</cbc:CallDate>
             <cbc:CallTime>08:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>Data roaming</cbc:TelecommunicationsServiceCategory>
-            <cbc:TelecommunicationsServiceCategoryCode>ROAM</cbc:TelecommunicationsServiceCategoryCode>
+            <cbc:TelecommunicationsServiceCategory>Roaming</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
             <cbc:Quantity unitCode="E34">35</cbc:Quantity>
             <cac:ExchangeRate>
-              <cbc:SourceCurrencyCode>XBL</cbc:SourceCurrencyCode>
-              <cbc:TargetCurrencyCode>XLC</cbc:TargetCurrencyCode>
+              <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+              <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
               <cbc:CalculationRate>0.4</cbc:CalculationRate>
             </cac:ExchangeRate>
           </cac:TelecommunicationsService>
@@ -315,7 +318,7 @@
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
@@ -352,7 +355,7 @@
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
@@ -378,7 +381,7 @@
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
@@ -404,7 +407,7 @@
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
@@ -430,7 +433,7 @@
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
@@ -506,7 +509,7 @@
         </cac:Period>
         <cac:AllowanceCharge>
           <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
           <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
           <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
           <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
@@ -518,12 +521,12 @@
           <cbc:ID>ST-BL</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
           <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
           <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode>SUB</cbc:ConsumptionTypeCode>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID>O</cbc:ID>
             <cbc:Percent>0</cbc:Percent>
@@ -567,14 +570,14 @@
           <cbc:ID>ST-GB</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode>TELE</cbc:SubscriberTypeCode>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
           <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
           <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
           <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID>O</cbc:ID>
             <cbc:Percent>0</cbc:Percent>

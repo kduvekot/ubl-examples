@@ -94,6 +94,7 @@ def sells(p):
             rows.append(("World item number", f"`{i['standard_id']}` (issued by {link(world_items.ISSUER)})"))
         if i.get("hs"):
             rows.append(("Customs tariff (HS)", f"`{i['hs']}`; origin {world['countries'][i['origin']]['name']}"))
+            rows.append(("Product classification (UN CPC Ver.2.1)", f"`{i['cpc']}`"))
         if i.get("dimensions_mm"):
             rows.append(("Dimensions", " × ".join(str(d) for d in i["dimensions_mm"]) + " mm"))
         if i.get("net_kg") and i["kind"] == "goods":

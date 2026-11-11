@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN/EDIFACT 1225 Message function: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (UNTDID D.22A, data element 1225, as the WCO Data Model uses it (unece.org, blocked for automated access)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNCL1225Code</ShortName>
+      <LongName xml:lang="en">UN/EDIFACT 1225 Message function (UBL example world)</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 1225</LongName>
+      <Version>D22A</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL1225Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL1225Code:D22A</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL1225Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">UN/CEFACT</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cancellation</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Message cancelling a previous transmission for a given transaction.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Change</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Message containing items to be changed.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Replace</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Message replacing a previous message.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Duplicate</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The message is a duplicate of a previously generated message.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Original</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Initial transmission related to a given transaction.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Copy</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Indicates that the message is a copy of an original message that has been sent.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

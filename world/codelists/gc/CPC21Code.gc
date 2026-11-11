@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of UN Central Product Classification, Version 2.1: the codes the world uses, and others of the same list. Built from world/codelists/sources/cpc/CPC_Ver_2_1_english_structure.txt (CPC Ver.2.1 structure of the UN Statistics Division (Ver.3.0 was published in June 2025)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CPC21Code</ShortName>
+      <LongName xml:lang="en">UN Central Product Classification, Version 2.1 (UBL example world)</LongName>
+      <LongName Identifier="listID">UN CPC Ver.2.1</LongName>
+      <Version>CPC Ver.2.1</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:CPC21Code</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:CPC21Code:CPC Ver.2.1</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CPC21Code.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Statistics Division</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01921</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cotton, whether or not ginned</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12020</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Natural gas, liquefied or in the gaseous state</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>14100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Iron ores and concentrates, other than roasted iron pyrites</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>28232</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Men's or boys' shirts, singlets, underpants, pyjamas, dressing gowns and similar articles, of textile fabric, not knitted or crocheted</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>31102</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>34710</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Polymers of ethylene, in primary forms</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>35110</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Paints and varnishes and related products</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>36330</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Plates, sheets, film, foil and strip, of plastics, not self-adhesive, non-cellular and not reinforced, laminated, supported or similarly combined with other materials</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>36410</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sacks and bags, of plastics</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>381</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Furniture</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3811</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Seats</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>38111</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Seats, primarily with metal frames</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>38112</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Seats, primarily with wooden frames</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>38122</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other wooden furniture, of a kind used in offices</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>38140</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other furniture n.e.c.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>42999</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Metal goods n.e.c.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>46420</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Electric accumulators</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>46921</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Burglar or fire alarms and similar apparatus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>87390</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Installation services of other goods n.e.c.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>87310</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Installation services of fabricated metal products, except machinery and equipment</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

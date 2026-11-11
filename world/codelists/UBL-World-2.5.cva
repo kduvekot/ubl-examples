@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cva:ContextValueAssociation xmlns:cva="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/" name="UBL-World-2.5" id="urn:ubl-examples:world:cva">
+   <Annotation>
+      <Description>The context/value associations of the UBL example world, made by tools/build_codelists.py from world/codelists/lists.json. Every code element is checked against the list its context names; where a context names several lists, the code's listID chooses one. They replace UBL's own associations for the world's documents.</Description>
+   </Annotation>
+   <Title>Code lists of the UBL example world</Title>
+   <ValueLists>
+      <ValueList xml:id="Country" uri="CountryIdentificationCode-2.4-world.gc" />
+      <ValueList xml:id="Currency" uri="CurrencyCode-2.4-world.gc" />
+      <ValueList xml:id="PaymentMeans" uri="https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/PaymentMeansCode-2.4.gc" />
+      <ValueList xml:id="Channel" uri="https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/ChannelCode-2.4.gc" />
+      <ValueList xml:id="TransportMode" uri="https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/TransportModeCode-2.4.gc" />
+      <ValueList xml:id="TransportEquipmentType" uri="https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/TransportEquipmentTypeCode-2.4.gc" />
+      <ValueList xml:id="UnitOfMeasure" uri="https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/UnitOfMeasureCode-2.4.gc" />
+      <ValueList xml:id="BinaryObjectMime" uri="https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/BinaryObjectMimeCode-2.4.gc" />
+      <ValueList xml:id="WeighingMethod" uri="https://docs.oasis-open.org/ubl/os-UBL-2.2/cl/gc/default/WeighingMethodCode-2.2.gc" />
+      <ValueList xml:id="Chip" uri="gc/ChipCode.gc" />
+      <ValueList xml:id="DocumentStatus" uri="gc/DocumentStatusCode.gc" />
+      <ValueList xml:id="LineStatus" uri="gc/LineStatusCode.gc" />
+      <ValueList xml:id="LatitudeDirection" uri="gc/LatitudeDirectionCode.gc" />
+      <ValueList xml:id="LongitudeDirection" uri="gc/LongitudeDirectionCode.gc" />
+      <ValueList xml:id="Operator" uri="gc/OperatorCode.gc" />
+      <ValueList xml:id="SubstitutionStatus" uri="gc/SubstitutionStatusCode.gc" />
+      <ValueList xml:id="WeekDay" uri="gc/WeekDayCode.gc" />
+      <ValueList xml:id="ReceiptAdviceType" uri="gc/ReceiptAdviceTypeCode.gc" />
+      <ValueList xml:id="PackagingType" uri="gc/PackagingTypeCode.gc" />
+      <ValueList xml:id="Language" uri="gc/LanguageCode.gc" />
+      <ValueList xml:id="UNCL5189" uri="gc/UNCL5189Code.gc" />
+      <ValueList xml:id="UNCL7161" uri="gc/UNCL7161Code.gc" />
+      <ValueList xml:id="XB-TaxExemptionReason" uri="gc/XB-TaxExemptionReasonCode.gc" />
+      <ValueList xml:id="XU-TaxExemptionReason" uri="gc/XU-TaxExemptionReasonCode.gc" />
+      <ValueList xml:id="TaxLevel" uri="gc/TaxLevelCode.gc" />
+      <ValueList xml:id="TaxType" uri="gc/TaxTypeCode.gc" />
+      <ValueList xml:id="SupplyType" uri="gc/SupplyTypeCode.gc" />
+      <ValueList xml:id="AccountFormat" uri="gc/AccountFormatCode.gc" />
+      <ValueList xml:id="ISO20022CashAccountType" uri="gc/ISO20022CashAccountTypeCode.gc" />
+      <ValueList xml:id="ISO20022ClearingChannel" uri="gc/ISO20022ClearingChannelCode.gc" />
+      <ValueList xml:id="ISO20022ChargeBearer" uri="gc/ISO20022ChargeBearerCode.gc" />
+      <ValueList xml:id="ISO20022ServiceLevel" uri="gc/ISO20022ServiceLevelCode.gc" />
+      <ValueList xml:id="ISO20022Purpose" uri="gc/ISO20022PurposeCode.gc" />
+      <ValueList xml:id="ISO20022SequenceType" uri="gc/ISO20022SequenceTypeCode.gc" />
+      <ValueList xml:id="CardType" uri="gc/CardTypeCode.gc" />
+      <ValueList xml:id="InterestCalculation" uri="gc/InterestCalculationCode.gc" />
+      <ValueList xml:id="UNCL2475" uri="gc/UNCL2475Code.gc" />
+      <ValueList xml:id="FinancingInstrument" uri="gc/FinancingInstrumentCode.gc" />
+      <ValueList xml:id="FXContractType" uri="gc/FXContractTypeCode.gc" />
+      <ValueList xml:id="ReminderType" uri="gc/ReminderTypeCode.gc" />
+      <ValueList xml:id="StatementType" uri="gc/StatementTypeCode.gc" />
+      <ValueList xml:id="PaymentStatus" uri="gc/PaymentStatusCode.gc" />
+      <ValueList xml:id="PeriodDescription" uri="gc/PeriodDescriptionCode.gc" />
+      <ValueList xml:id="Market" uri="gc/MarketCode.gc" />
+      <ValueList xml:id="Colour" uri="gc/ColourCode.gc" />
+      <ValueList xml:id="EmissionCalculationMethod" uri="gc/EmissionCalculationMethodCode.gc" />
+      <ValueList xml:id="ContractType" uri="gc/ContractTypeCode.gc" />
+      <ValueList xml:id="RecordStatus" uri="gc/RecordStatusCode.gc" />
+      <ValueList xml:id="ProfileStatus" uri="gc/ProfileStatusCode.gc" />
+      <ValueList xml:id="UNCL1001" uri="gc/UNCL1001Code.gc" />
+      <ValueList xml:id="TransportMeansType" uri="gc/TransportMeansTypeCode.gc" />
+      <ValueList xml:id="ShipConfiguration" uri="gc/ShipConfigurationCode.gc" />
+      <ValueList xml:id="TransportService" uri="gc/TransportServiceCode.gc" />
+      <ValueList xml:id="TravelDirection" uri="gc/TravelDirectionCode.gc" />
+      <ValueList xml:id="TransportEventType" uri="gc/TransportEventTypeCode.gc" />
+      <ValueList xml:id="TransportExecutionStatus" uri="gc/TransportExecutionStatusCode.gc" />
+      <ValueList xml:id="TransportationStatusType" uri="gc/TransportationStatusTypeCode.gc" />
+      <ValueList xml:id="StatusCondition" uri="gc/StatusConditionCode.gc" />
+      <ValueList xml:id="StatusReason" uri="gc/StatusReasonCode.gc" />
+      <ValueList xml:id="HandlingInstruction" uri="gc/HandlingInstructionCode.gc" />
+      <ValueList xml:id="ShippingPriority" uri="gc/ShippingPriorityCode.gc" />
+      <ValueList xml:id="TransportNotificationType" uri="gc/TransportNotificationTypeCode.gc" />
+      <ValueList xml:id="TransportReportType" uri="gc/TransportReportTypeCode.gc" />
+      <ValueList xml:id="PortCallPurpose" uri="gc/PortCallPurposeCode.gc" />
+      <ValueList xml:id="ServiceInformationPreference" uri="gc/ServiceInformationPreferenceCode.gc" />
+      <ValueList xml:id="ServiceOfferResponse" uri="gc/ServiceOfferResponseCode.gc" />
+      <ValueList xml:id="DocumentStatusReason" uri="gc/DocumentStatusReasonCode.gc" />
+      <ValueList xml:id="FreightRateClass" uri="gc/FreightRateClassCode.gc" />
+      <ValueList xml:id="TariffClass" uri="gc/TariffClassCode.gc" />
+      <ValueList xml:id="ManifestType" uri="gc/ManifestTypeCode.gc" />
+      <ValueList xml:id="WaybillType" uri="gc/WaybillTypeCode.gc" />
+      <ValueList xml:id="WeightStatementType" uri="gc/WeightStatementTypeCode.gc" />
+      <ValueList xml:id="TemperatureQualifier" uri="gc/TemperatureQualifierCode.gc" />
+      <ValueList xml:id="CargoType" uri="gc/CargoTypeCode.gc" />
+      <ValueList xml:id="EquipmentDisposition" uri="gc/EquipmentDispositionCode.gc" />
+      <ValueList xml:id="EquipmentOwnerType" uri="gc/EquipmentOwnerTypeCode.gc" />
+      <ValueList xml:id="EquipmentProviderType" uri="gc/EquipmentProviderTypeCode.gc" />
+      <ValueList xml:id="SealIssuerType" uri="gc/SealIssuerTypeCode.gc" />
+      <ValueList xml:id="SealStatus" uri="gc/SealStatusCode.gc" />
+      <ValueList xml:id="LoadType" uri="gc/LoadTypeCode.gc" />
+      <ValueList xml:id="TrackingDevice" uri="gc/TrackingDeviceCode.gc" />
+      <ValueList xml:id="ISO6346" uri="gc/ISO6346Code.gc" />
+      <ValueList xml:id="UNCL8051" uri="gc/UNCL8051Code.gc" />
+      <ValueList xml:id="UNCL7075" uri="gc/UNCL7075Code.gc" />
+      <ValueList xml:id="IMOISPS" uri="gc/IMOISPSCode.gc" />
+      <ValueList xml:id="IMOINF" uri="gc/IMOINFCode.gc" />
+      <ValueList xml:id="ITUAISNavStatus" uri="gc/ITUAISNavStatusCode.gc" />
+      <ValueList xml:id="ISO5218" uri="gc/ISO5218Code.gc" />
+      <ValueList xml:id="ShipPersonRole" uri="gc/ShipPersonRoleCode.gc" />
+      <ValueList xml:id="ShipWasteType" uri="gc/ShipWasteTypeCode.gc" />
+      <ValueList xml:id="BallastExchangeMethod" uri="gc/BallastExchangeMethodCode.gc" />
+      <ValueList xml:id="BallastTankType" uri="gc/BallastTankTypeCode.gc" />
+      <ValueList xml:id="SanitaryMeasure" uri="gc/SanitaryMeasureCode.gc" />
+      <ValueList xml:id="EnergySource" uri="gc/EnergySourceCode.gc" />
+      <ValueList xml:id="FuelType" uri="gc/FuelTypeCode.gc" />
+      <ValueList xml:id="TransitDirection" uri="gc/TransitDirectionCode.gc" />
+      <ValueList xml:id="RiskResponsibleParty" uri="gc/RiskResponsiblePartyCode.gc" />
+      <ValueList xml:id="UNModelRegsUN" uri="gc/UNModelRegsUNCode.gc" />
+      <ValueList xml:id="UNModelRegsClass" uri="gc/UNModelRegsClassCode.gc" />
+      <ValueList xml:id="UNPackingGroup" uri="gc/UNPackingGroupCode.gc" />
+      <ValueList xml:id="UNCL8339" uri="gc/UNCL8339Code.gc" />
+      <ValueList xml:id="UNCL8273" uri="gc/UNCL8273Code.gc" />
+      <ValueList xml:id="IMDGEmS" uri="gc/IMDGEmSCode.gc" />
+      <ValueList xml:id="ERG2024" uri="gc/ERG2024Code.gc" />
+      <ValueList xml:id="ADRTunnel" uri="gc/ADRTunnelCode.gc" />
+      <ValueList xml:id="MarinePollutant" uri="gc/MarinePollutantCode.gc" />
+      <ValueList xml:id="HazardousGoodsType" uri="gc/HazardousGoodsTypeCode.gc" />
+      <ValueList xml:id="TransportEmergencyCard" uri="gc/TransportEmergencyCardCode.gc" />
+      <ValueList xml:id="TransportAuthorization" uri="gc/TransportAuthorizationCode.gc" />
+      <ValueList xml:id="PackingInstruction" uri="gc/PackingInstructionCode.gc" />
+      <ValueList xml:id="InhalationToxicityZone" uri="gc/InhalationToxicityZoneCode.gc" />
+      <ValueList xml:id="CustomsProcedure" uri="gc/CustomsProcedureCode.gc" />
+      <ValueList xml:id="CustomsStatus" uri="gc/CustomsStatusCode.gc" />
+      <ValueList xml:id="CustomsDeclarationType" uri="gc/CustomsDeclarationTypeCode.gc" />
+      <ValueList xml:id="CustomsDeclarationSubType" uri="gc/CustomsDeclarationSubTypeCode.gc" />
+      <ValueList xml:id="UNCL1225" uri="gc/UNCL1225Code.gc" />
+      <ValueList xml:id="ExportReason" uri="gc/ExportReasonCode.gc" />
+      <ValueList xml:id="ExportType" uri="gc/ExportTypeCode.gc" />
+      <ValueList xml:id="NatureOfTransaction" uri="gc/NatureOfTransactionCode.gc" />
+      <ValueList xml:id="CustomsLocationType" uri="gc/CustomsLocationTypeCode.gc" />
+      <ValueList xml:id="PreferenceCriterion" uri="gc/PreferenceCriterionCode.gc" />
+      <ValueList xml:id="ApplicationStatus" uri="gc/ApplicationStatusCode.gc" />
+      <ValueList xml:id="CertificateType" uri="gc/CertificateTypeCode.gc" />
+      <ValueList xml:id="GoodsCertificateType" uri="gc/GoodsCertificateTypeCode.gc" />
+      <ValueList xml:id="AttestationType" uri="gc/AttestationTypeCode.gc" />
+      <ValueList xml:id="GoodsProcessingType" uri="gc/GoodsProcessingTypeCode.gc" />
+      <ValueList xml:id="EndorserRole" uri="gc/EndorserRoleCode.gc" />
+      <ValueList xml:id="CardAccountRole" uri="gc/CardAccountRoleCode.gc" />
+      <ValueList xml:id="BaselAnnexIV" uri="gc/BaselAnnexIVCode.gc" />
+      <ValueList xml:id="WasteOperationCategory" uri="gc/WasteOperationCategoryCode.gc" />
+      <ValueList xml:id="WasteNotificationType" uri="gc/WasteNotificationTypeCode.gc" />
+      <ValueList xml:id="ProcurementProcedure" uri="gc/ProcurementProcedureCode.gc" />
+      <ValueList xml:id="ContractNature" uri="gc/ContractNatureCode.gc" />
+      <ValueList xml:id="StrategicProcurement" uri="gc/StrategicProcurementCode.gc" />
+      <ValueList xml:id="ProcurementSubType" uri="gc/ProcurementSubTypeCode.gc" />
+      <ValueList xml:id="WorkType" uri="gc/WorkTypeCode.gc" />
+      <ValueList xml:id="QualityControl" uri="gc/QualityControlCode.gc" />
+      <ValueList xml:id="ContractingSystem" uri="gc/ContractingSystemCode.gc" />
+      <ValueList xml:id="ContractingSystemType" uri="gc/ContractingSystemTypeCode.gc" />
+      <ValueList xml:id="LotSubmission" uri="gc/LotSubmissionCode.gc" />
+      <ValueList xml:id="SubmissionMethod" uri="gc/SubmissionMethodCode.gc" />
+      <ValueList xml:id="Urgency" uri="gc/UrgencyCode.gc" />
+      <ValueList xml:id="ExpenseType" uri="gc/ExpenseTypeCode.gc" />
+      <ValueList xml:id="ProcessReason" uri="gc/ProcessReasonCode.gc" />
+      <ValueList xml:id="CancellationReason" uri="gc/CancellationReasonCode.gc" />
+      <ValueList xml:id="AwardCriterionType" uri="gc/AwardCriterionTypeCode.gc" />
+      <ValueList xml:id="AwardingMethod" uri="gc/AwardingMethodCode.gc" />
+      <ValueList xml:id="CalculationExpression" uri="gc/CalculationExpressionCode.gc" />
+      <ValueList xml:id="WeightingAlgorithm" uri="gc/WeightingAlgorithmCode.gc" />
+      <ValueList xml:id="EvaluationCriterionType" uri="gc/EvaluationCriterionTypeCode.gc" />
+      <ValueList xml:id="Expression" uri="gc/ExpressionCode.gc" />
+      <ValueList xml:id="TenderEnvelope" uri="gc/TenderEnvelopeCode.gc" />
+      <ValueList xml:id="TenderType" uri="gc/TenderTypeCode.gc" />
+      <ValueList xml:id="TenderResult" uri="gc/TenderResultCode.gc" />
+      <ValueList xml:id="GuaranteeType" uri="gc/GuaranteeTypeCode.gc" />
+      <ValueList xml:id="GuaranteeConstitution" uri="gc/GuaranteeConstitutionCode.gc" />
+      <ValueList xml:id="FeeType" uri="gc/FeeTypeCode.gc" />
+      <ValueList xml:id="NoticeType" uri="gc/NoticeTypeCode.gc" />
+      <ValueList xml:id="NoticeSubType" uri="gc/NoticeSubTypeCode.gc" />
+      <ValueList xml:id="MultipleTenders" uri="gc/MultipleTendersCode.gc" />
+      <ValueList xml:id="VariantConstraint" uri="gc/VariantConstraintCode.gc" />
+      <ValueList xml:id="SubcontractingConditions" uri="gc/SubcontractingConditionsCode.gc" />
+      <ValueList xml:id="CriterionResponse" uri="gc/CriterionResponseCode.gc" />
+      <ValueList xml:id="CriterionPropertyType" uri="gc/CriterionPropertyTypeCode.gc" />
+      <ValueList xml:id="TenderEventType" uri="gc/TenderEventTypeCode.gc" />
+      <ValueList xml:id="ResponseDataType" uri="gc/ResponseDataTypeCode.gc" />
+      <ValueList xml:id="PropertyGroupType" uri="gc/PropertyGroupTypeCode.gc" />
+      <ValueList xml:id="FulfilmentIndicator" uri="gc/FulfilmentIndicatorCode.gc" />
+      <ValueList xml:id="CriterionType" uri="gc/CriterionTypeCode.gc" />
+      <ValueList xml:id="EvaluationMethod" uri="gc/EvaluationMethodCode.gc" />
+      <ValueList xml:id="EvidenceType" uri="gc/EvidenceTypeCode.gc" />
+      <ValueList xml:id="ConfidentialityLevel" uri="gc/ConfidentialityLevelCode.gc" />
+      <ValueList xml:id="CopyQuality" uri="gc/CopyQualityCode.gc" />
+      <ValueList xml:id="ExpectedResponse" uri="gc/ExpectedResponseCode.gc" />
+      <ValueList xml:id="TranslationType" uri="gc/TranslationTypeCode.gc" />
+      <ValueList xml:id="WeightingType" uri="gc/WeightingTypeCode.gc" />
+      <ValueList xml:id="QualificationApplicationType" uri="gc/QualificationApplicationTypeCode.gc" />
+      <ValueList xml:id="QualificationAdmission" uri="gc/QualificationAdmissionCode.gc" />
+      <ValueList xml:id="DeclarationType" uri="gc/DeclarationTypeCode.gc" />
+      <ValueList xml:id="ContractingPartyType" uri="gc/ContractingPartyTypeCode.gc" />
+      <ValueList xml:id="AuthorityActivity" uri="gc/AuthorityActivityCode.gc" />
+      <ValueList xml:id="RepresentationType" uri="gc/RepresentationTypeCode.gc" />
+      <ValueList xml:id="Curricula" uri="gc/CurriculaCode.gc" />
+      <ValueList xml:id="PriceEvaluation" uri="gc/PriceEvaluationCode.gc" />
+      <ValueList xml:id="PaymentFrequency" uri="gc/PaymentFrequencyCode.gc" />
+      <ValueList xml:id="AnnotationSubject" uri="gc/AnnotationSubjectCode.gc" />
+      <ValueList xml:id="ExecutionRequirement" uri="gc/ExecutionRequirementCode.gc" />
+      <ValueList xml:id="TendererRequirementType" uri="gc/TendererRequirementTypeCode.gc" />
+      <ValueList xml:id="BusinessPartyGroupType" uri="gc/BusinessPartyGroupTypeCode.gc" />
+      <ValueList xml:id="BusinessCapabilityType" uri="gc/BusinessCapabilityTypeCode.gc" />
+      <ValueList xml:id="EconomicOperatorRole" uri="gc/EconomicOperatorRoleCode.gc" />
+      <ValueList xml:id="TendererRole" uri="gc/TendererRoleCode.gc" />
+      <ValueList xml:id="SecurityClearance" uri="gc/SecurityClearanceCode.gc" />
+      <ValueList xml:id="OperationType" uri="gc/OperationTypeCode.gc" />
+      <ValueList xml:id="WorkPhase" uri="gc/WorkPhaseCode.gc" />
+      <ValueList xml:id="PrizeRank" uri="gc/PrizeRankCode.gc" />
+      <ValueList xml:id="CatalogueAction" uri="gc/CatalogueActionCode.gc" />
+      <ValueList xml:id="CatalogueLineAction" uri="gc/CatalogueLineActionCode.gc" />
+      <ValueList xml:id="ConditionsAction" uri="gc/ConditionsActionCode.gc" />
+      <ValueList xml:id="ItemLifeCycleStatus" uri="gc/ItemLifeCycleStatusCode.gc" />
+      <ValueList xml:id="ItemType" uri="gc/ItemTypeCode.gc" />
+      <ValueList xml:id="ItemPartPosition" uri="gc/ItemPartPositionCode.gc" />
+      <ValueList xml:id="ItemPropertyName" uri="gc/ItemPropertyNameCode.gc" />
+      <ValueList xml:id="PropertyImportance" uri="gc/PropertyImportanceCode.gc" />
+      <ValueList xml:id="PriceType" uri="gc/PriceTypeCode.gc" />
+      <ValueList xml:id="PackLevel" uri="gc/PackLevelCode.gc" />
+      <ValueList xml:id="ConsumerIncentiveTactic" uri="gc/ConsumerIncentiveTacticCode.gc" />
+      <ValueList xml:id="DisplayTactic" uri="gc/DisplayTacticCode.gc" />
+      <ValueList xml:id="FeatureTactic" uri="gc/FeatureTacticCode.gc" />
+      <ValueList xml:id="MiscellaneousEventType" uri="gc/MiscellaneousEventTypeCode.gc" />
+      <ValueList xml:id="PromotionalEventType" uri="gc/PromotionalEventTypeCode.gc" />
+      <ValueList xml:id="PackingLabelingType" uri="gc/PackingLabelingTypeCode.gc" />
+      <ValueList xml:id="RetailEventStatus" uri="gc/RetailEventStatusCode.gc" />
+      <ValueList xml:id="ForecastPurpose" uri="gc/ForecastPurposeCode.gc" />
+      <ValueList xml:id="ForecastType" uri="gc/ForecastTypeCode.gc" />
+      <ValueList xml:id="ComparisonData" uri="gc/ComparisonDataCode.gc" />
+      <ValueList xml:id="DataSource" uri="gc/DataSourceCode.gc" />
+      <ValueList xml:id="PerformanceMetric" uri="gc/PerformanceMetricCode.gc" />
+      <ValueList xml:id="SupplyChainActivity" uri="gc/SupplyChainActivityCode.gc" />
+      <ValueList xml:id="TimeFrequency" uri="gc/TimeFrequencyCode.gc" />
+      <ValueList xml:id="ExceptionResolution" uri="gc/ExceptionResolutionCode.gc" />
+      <ValueList xml:id="Resolution" uri="gc/ResolutionCode.gc" />
+      <ValueList xml:id="ExceptionStatus" uri="gc/ExceptionStatusCode.gc" />
+      <ValueList xml:id="CollaborationPriority" uri="gc/CollaborationPriorityCode.gc" />
+      <ValueList xml:id="ThresholdValueComparison" uri="gc/ThresholdValueComparisonCode.gc" />
+      <ValueList xml:id="ForecastAdjustmentReason" uri="gc/ForecastAdjustmentReasonCode.gc" />
+      <ValueList xml:id="RevisionStatus" uri="gc/RevisionStatusCode.gc" />
+      <ValueList xml:id="AvailabilityStatus" uri="gc/AvailabilityStatusCode.gc" />
+      <ValueList xml:id="InspectionMethod" uri="gc/InspectionMethodCode.gc" />
+      <ValueList xml:id="DeliveryAcceptance" uri="gc/DeliveryAcceptanceCode.gc" />
+      <ValueList xml:id="RejectAction" uri="gc/RejectActionCode.gc" />
+      <ValueList xml:id="ShortageAction" uri="gc/ShortageActionCode.gc" />
+      <ValueList xml:id="QuantityDiscrepancy" uri="gc/QuantityDiscrepancyCode.gc" />
+      <ValueList xml:id="RejectReason" uri="gc/RejectReasonCode.gc" />
+      <ValueList xml:id="TimingComplaint" uri="gc/TimingComplaintCode.gc" />
+      <ValueList xml:id="DespatchAdviceType" uri="gc/DespatchAdviceTypeCode.gc" />
+      <ValueList xml:id="DistributionType" uri="gc/DistributionTypeCode.gc" />
+      <ValueList xml:id="DocumentCopyType" uri="gc/DocumentCopyTypeCode.gc" />
+      <ValueList xml:id="DocumentType" uri="gc/DocumentTypeCode.gc" />
+      <ValueList xml:id="UBLDocumentType" uri="gc/UBLDocumentTypeCode.gc" />
+      <ValueList xml:id="IANACharset" uri="gc/IANACharsetCode.gc" />
+      <ValueList xml:id="RFC2045" uri="gc/RFC2045Code.gc" />
+      <ValueList xml:id="PRONOM" uri="gc/PRONOMCode.gc" />
+      <ValueList xml:id="EnvelopeType" uri="gc/EnvelopeTypeCode.gc" />
+      <ValueList xml:id="AgreementType" uri="gc/AgreementTypeCode.gc" />
+      <ValueList xml:id="ResponseMessageLevel" uri="gc/ResponseMessageLevelCode.gc" />
+      <ValueList xml:id="WebSiteType" uri="gc/WebSiteTypeCode.gc" />
+      <ValueList xml:id="SocialMediaType" uri="gc/SocialMediaTypeCode.gc" />
+      <ValueList xml:id="ServiceType" uri="gc/ServiceTypeCode.gc" />
+      <ValueList xml:id="SignatureReason" uri="gc/SignatureReasonCode.gc" />
+      <ValueList xml:id="UNCL4343" uri="gc/UNCL4343Code.gc" />
+      <ValueList xml:id="UNCL4465" uri="gc/UNCL4465Code.gc" />
+      <ValueList xml:id="ISICRev4" uri="gc/ISICRev4Code.gc" />
+      <ValueList xml:id="UtilityType" uri="gc/UtilityTypeCode.gc" />
+      <ValueList xml:id="SubscriberType" uri="gc/SubscriberTypeCode.gc" />
+      <ValueList xml:id="ConsumptionType" uri="gc/ConsumptionTypeCode.gc" />
+      <ValueList xml:id="ChargeType" uri="gc/ChargeTypeCode.gc" />
+      <ValueList xml:id="OneTimeChargeType" uri="gc/OneTimeChargeTypeCode.gc" />
+      <ValueList xml:id="MeterReadingType" uri="gc/MeterReadingTypeCode.gc" />
+      <ValueList xml:id="MeterReadingMethod" uri="gc/MeterReadingMethodCode.gc" />
+      <ValueList xml:id="MeterConstantType" uri="gc/MeterConstantTypeCode.gc" />
+      <ValueList xml:id="ConsumptionCorrectionType" uri="gc/ConsumptionCorrectionTypeCode.gc" />
+      <ValueList xml:id="ConsumersEnergyLevel" uri="gc/ConsumersEnergyLevelCode.gc" />
+      <ValueList xml:id="ConsumptionLevel" uri="gc/ConsumptionLevelCode.gc" />
+      <ValueList xml:id="HeatingType" uri="gc/HeatingTypeCode.gc" />
+      <ValueList xml:id="ResidenceType" uri="gc/ResidenceTypeCode.gc" />
+      <ValueList xml:id="SpecificationType" uri="gc/SpecificationTypeCode.gc" />
+      <ValueList xml:id="TelecomCallType" uri="gc/TelecomCallTypeCode.gc" />
+      <ValueList xml:id="TelecomServiceCategory" uri="gc/TelecomServiceCategoryCode.gc" />
+      <ValueList xml:id="TelecomSupplyType" uri="gc/TelecomSupplyTypeCode.gc" />
+      <ValueList xml:id="TelecomDuty" uri="gc/TelecomDutyCode.gc" />
+      <ValueList xml:id="Privacy" uri="gc/PrivacyCode.gc" />
+      <ValueList xml:id="SecurityClassification" uri="gc/SecurityClassificationCode.gc" />
+      <ValueList xml:id="EmissionType" uri="gc/EmissionTypeCode.gc" />
+      <ValueList xml:id="LifecycleStage" uri="gc/LifecycleStageCode.gc" />
+      <ValueList xml:id="EmissionBoundary" uri="gc/EmissionBoundaryCode.gc" />
+      <ValueList xml:id="CircularityType" uri="gc/CircularityTypeCode.gc" />
+      <ValueList xml:id="MaintenanceFrequency" uri="gc/MaintenanceFrequencyCode.gc" />
+      <ValueList xml:id="MaterialResource" uri="gc/MaterialResourceCode.gc" />
+      <ValueList xml:id="ScoringSystem" uri="gc/ScoringSystemCode.gc" />
+      <ValueList xml:id="WasteType" uri="gc/WasteTypeCode.gc" />
+      <ValueList xml:id="TreatmentPathway" uri="gc/TreatmentPathwayCode.gc" />
+      <ValueList xml:id="EndOfLifeProcessing" uri="gc/EndOfLifeProcessingCode.gc" />
+      <ValueList xml:id="EnvironmentalImpactLevel" uri="gc/EnvironmentalImpactLevelCode.gc" />
+      <ValueList xml:id="Category" uri="gc/CategoryCode.gc" />
+      <ValueList xml:id="AddressType" uri="gc/AddressTypeCode.gc" />
+      <ValueList xml:id="CompanyLiquidationStatus" uri="gc/CompanyLiquidationStatusCode.gc" />
+      <ValueList xml:id="CorporateRegistrationType" uri="gc/CorporateRegistrationTypeCode.gc" />
+      <ValueList xml:id="AddressFormat" uri="gc/AddressFormatCode.gc" />
+      <ValueList xml:id="XB-CountrySubentity" uri="gc/XB-CountrySubentityCode.gc" />
+      <ValueList xml:id="XU-CompanyLegalForm" uri="gc/XU-CompanyLegalFormCode.gc" />
+      <ValueList xml:id="XB-CompanyLegalForm" uri="gc/XB-CompanyLegalFormCode.gc" />
+      <ValueList xml:id="XL-CompanyLegalForm" uri="gc/XL-CompanyLegalFormCode.gc" />
+      <ValueList xml:id="EntitySize" uri="gc/EntitySizeCode.gc" />
+      <ValueList xml:id="CPC21" uri="gc/CPC21Code.gc" />
+      <ValueList xml:id="WCOHS2022" uri="gc/WCOHS2022Code.gc" />
+      <ValueList xml:id="XU-CustomsTariff" uri="gc/XU-CustomsTariffCode.gc" />
+      <ValueList xml:id="HSSections" uri="gc/HSSectionsCode.gc" />
+      <ValueList xml:id="EPSG" uri="gc/EPSGCode.gc" />
+      <ValueList xml:id="InsuranceCover" uri="gc/InsuranceCoverCode.gc" />
+      <ValueList xml:id="ContractModificationReason" uri="gc/ContractModificationReasonCode.gc" />
+      <ValueList xml:id="ValidationResult" uri="gc/ValidationResultCode.gc" />
+   </ValueLists>
+   <InstanceMetadataSets>
+      <InstanceMetadataSet xml:id="code">
+         <InstanceMetadata address="@listID" identification="LongName[@Identifier='listID']" />
+      </InstanceMetadataSet>
+   </InstanceMetadataSets>
+   <Contexts>
+      <Context address="*[local-name()='AllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode | *[local-name()='ExtraAllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode | *[local-name()='FreightAllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode | *[local-name()='ServiceAllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode" values="UNCL5189" metadata="code" />
+      <Context address="*[local-name()='AllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode | *[local-name()='ExtraAllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode | *[local-name()='FreightAllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode | *[local-name()='ServiceAllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode" values="UNCL7161 UNCL5189" metadata="code" />
+      <Context address="*[local-name()='PartyTaxScheme']/cbc:ExemptionReasonCode" values="XB-TaxExemptionReason XU-TaxExemptionReason" metadata="code" />
+      <Context address="*[local-name()='PenaltyInterestRate']/cbc:CalculationMethodCode" values="InterestCalculation" metadata="code" />
+      <Context address="*[local-name()='ForeignExchangeContract']/cbc:ContractTypeCode" values="FXContractType" metadata="code" />
+      <Context address="*[local-name()='Payment']/cbc:StatusCode" values="PaymentStatus" metadata="code" />
+      <Context address="*[local-name()='InvoicePeriod']/cbc:DescriptionCode" values="PeriodDescription" metadata="code" />
+      <Context address="*[local-name()='PhysicalAttribute']/cbc:DescriptionCode" values="Colour" metadata="code" />
+      <Context address="*[local-name()='EmissionCalculationMethod']/cbc:CalculationMethodCode" values="EmissionCalculationMethod" metadata="code" />
+      <Context address="*[local-name()='Contract']/cbc:ContractTypeCode | *[local-name()='TransportContract']/cbc:ContractTypeCode" values="ContractType" metadata="code" />
+      <Context address="*[local-name()='GoodsItemPassport']/cbc:StatusCode | *[local-name()='PreviousPriceList']/cbc:StatusCode | *[local-name()='PriceList']/cbc:StatusCode | *[local-name()='Waybill']/cbc:StatusCode" values="RecordStatus" metadata="code" />
+      <Context address="*[local-name()='RequestedArrivalEvent']/cbc:TypeCode" values="TransportEventType" metadata="code" />
+      <Context address="*[local-name()='TransportServiceDescription']/cbc:ResponseCode" values="ServiceOfferResponse" metadata="code" />
+      <Context address="*[local-name()='TransportEquipment']/cbc:FullnessIndicationCode" values="LoadType" metadata="code" />
+      <Context address="*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode" values="ShipPersonRole" metadata="code" />
+      <Context address="*[local-name()='MaritimeWaste']/cbc:WasteTypeCode" values="ShipWasteType" metadata="code" />
+      <Context address="*[local-name()='ProofOfReexportationReminder']/cbc:ProcedureCode" values="CustomsProcedure" metadata="code" />
+      <Context address="*[local-name()='ImportCustomsDeclaration']/cbc:TypeCode | *[local-name()='TransitCustomsDeclaration']/cbc:TypeCode | *[local-name()='ExportCustomsDeclaration']/cbc:TypeCode" values="CustomsDeclarationType" metadata="code" />
+      <Context address="*[local-name()='PreviousCustomsDeclaration']/cbc:FunctionCode" values="CustomsDeclarationType" metadata="code" />
+      <Context address="*[local-name()='ImportCustomsDeclaration']/cbc:SubTypeCode | *[local-name()='TransitCustomsDeclaration']/cbc:SubTypeCode | *[local-name()='ExportCustomsDeclaration']/cbc:SubTypeCode" values="CustomsDeclarationSubType" metadata="code" />
+      <Context address="*[local-name()='CustomsDeclaration']/cbc:FunctionCode" values="UNCL1225" metadata="code" />
+      <Context address="*[local-name()='GoodsCertificate']/cbc:TypeCode" values="GoodsCertificateType" metadata="code" />
+      <Context address="*[local-name()='AttestationLine']/cbc:TypeCode" values="AttestationType" metadata="code" />
+      <Context address="*[local-name()='GoodsProcessing']/cbc:TypeCode | *[local-name()='SubGoodsProcessing']/cbc:TypeCode | *[local-name()='CriterionItem']/cbc:TypeCode" values="GoodsProcessingType" metadata="code" />
+      <Context address="*[local-name()='EndorserParty']/cbc:RoleCode" values="EndorserRole" metadata="code" />
+      <Context address="*[local-name()='CardAccount']/cbc:RoleCode" values="CardAccountRole" metadata="code" />
+      <Context address="*[local-name()='PartyAuthorization']/cbc:PurposeCode" values="BaselAnnexIV" metadata="code" />
+      <Context address="*[local-name()='TenderingProcess']/cbc:ProcedureCode | *[local-name()='QualificationApplicationRequest']/cbc:ProcedureCode | *[local-name()='QualificationApplicationResponse']/cbc:ProcedureCode | *[local-name()='ProcurementStatus']/cbc:ProcedureCode" values="ProcurementProcedure" metadata="code" />
+      <Context address="*[local-name()='ProcurementProject']/cbc:ProcurementTypeCode" values="ContractNature" metadata="code" />
+      <Context address="*[local-name()='ProcurementAdditionalType']/cbc:ProcurementTypeCode" values="StrategicProcurement" metadata="code" />
+      <Context address="*[local-name()='NoticeSubType']/cbc:SubTypeCode" values="NoticeSubType" metadata="code" />
+      <Context address="*[local-name()='ResponseValue']/cbc:ResponseCode" values="CriterionResponse" metadata="code" />
+      <Context address="*[local-name()='TenderingCriterionProperty']/cbc:TypeCode" values="CriterionPropertyType" metadata="code" />
+      <Context address="*[local-name()='OpenTenderEvent']/cbc:TypeCode" values="TenderEventType" metadata="code" />
+      <Context address="*[local-name()='EconomicOperatorRole']/cbc:RoleCode" values="EconomicOperatorRole" metadata="code" />
+      <Context address="*[local-name()='SecurityClearanceTerm']/cbc:Code" values="SecurityClearance" metadata="code" />
+      <Context address="*[local-name()='OperationType']/cbc:Code" values="OperationType" metadata="code" />
+      <Context address="*[local-name()='Catalogue']/cbc:ActionCode" values="CatalogueAction" metadata="code" />
+      <Context address="*[local-name()='CatalogueLine']/cbc:ActionCode" values="CatalogueLineAction" metadata="code" />
+      <Context address="*[local-name()='TransactionConditions']/cbc:ActionCode" values="ConditionsAction" metadata="code" />
+      <Context address="*[local-name()='ForecastRevision']/cbc:PurposeCode" values="ForecastPurpose" metadata="code" />
+      <Context address="*[local-name()='DocumentDistribution']/cbc:DocumentTypeCode" values="DocumentCopyType" metadata="code" />
+      <Context address="*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode" values="UBLDocumentType UNCL1001 DocumentType" metadata="code" />
+      <Context address="*[local-name()='Signature']/cbc:ReasonCode" values="SignatureReason" metadata="code" />
+      <Context address="*[local-name()='Response']/cbc:ResponseCode" values="UNCL4343" metadata="code" />
+      <Context address="*[local-name()='DiscrepancyResponse']/cbc:ResponseCode" values="UNCL4465" metadata="code" />
+      <Context address="*[local-name()='UtilityItem']/cbc:SubscriberTypeCode" values="UtilityType" metadata="code" />
+      <Context address="*[local-name()='UtilityConsumptionPoint']/cbc:SubscriberTypeCode" values="SubscriberType" metadata="code" />
+      <Context address="*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode" values="EmissionBoundary" metadata="code" />
+      <Context address="*[local-name()='WasteGenerated']/cbc:WasteTypeCode" values="WasteType" metadata="code" />
+      <Context address="cbc:CurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:DocumentCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:PaymentAlternativeCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:PaymentCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:PricingCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:RequestedInvoiceCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:SourceCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:TargetCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:TaxCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:ValueCurrencyCode" values="Currency" metadata="code" />
+      <Context address="cbc:IdentificationCode" values="Country" metadata="code" />
+      <Context address="cbc:NationalityCode" values="Country" metadata="code" />
+      <Context address="cbc:PaymentMeansCode" values="PaymentMeans" metadata="code" />
+      <Context address="cbc:ChannelCode" values="Channel" metadata="code" />
+      <Context address="cbc:TransportModeCode" values="TransportMode" metadata="code" />
+      <Context address="cbc:TransportEquipmentTypeCode" values="TransportEquipmentType" metadata="code" />
+      <Context address="cbc:WeighingMethodCode" values="WeighingMethod" metadata="code" />
+      <Context address="cbc:ValueUnitCode" values="UnitOfMeasure" metadata="code" />
+      <Context address="cbc:TimeBasisCode" values="UnitOfMeasure" metadata="code" />
+      <Context address="cbc:MimeCode" values="BinaryObjectMime" metadata="code" />
+      <Context address="cbc:CardChipCode" values="Chip" metadata="code" />
+      <Context address="cbc:DocumentStatusCode" values="DocumentStatus" metadata="code" />
+      <Context address="cbc:LineStatusCode" values="LineStatus" metadata="code" />
+      <Context address="cbc:LatitudeDirectionCode" values="LatitudeDirection" metadata="code" />
+      <Context address="cbc:LongitudeDirectionCode" values="LongitudeDirection" metadata="code" />
+      <Context address="cbc:MathematicOperatorCode" values="Operator" metadata="code" />
+      <Context address="cbc:SubstitutionStatusCode" values="SubstitutionStatus" metadata="code" />
+      <Context address="cbc:WeekDayCode" values="WeekDay" metadata="code" />
+      <Context address="cbc:ReceiptAdviceTypeCode" values="ReceiptAdviceType" metadata="code" />
+      <Context address="cbc:PackagingTypeCode" values="PackagingType" metadata="code" />
+      <Context address="cbc:TransportHandlingUnitTypeCode" values="PackagingType" metadata="code" />
+      <Context address="cbc:TaxExemptionReasonCode" values="XB-TaxExemptionReason XU-TaxExemptionReason" metadata="code" />
+      <Context address="cbc:TaxLevelCode" values="TaxLevel" metadata="code" />
+      <Context address="cbc:TaxTypeCode" values="TaxType" metadata="code" />
+      <Context address="cbc:SupplyTypeCode" values="SupplyType" metadata="code" />
+      <Context address="cbc:AccountFormatCode" values="AccountFormat" metadata="code" />
+      <Context address="cbc:AccountTypeCode" values="ISO20022CashAccountType" metadata="code" />
+      <Context address="cbc:PaymentChannelCode" values="ISO20022ClearingChannel" metadata="code" />
+      <Context address="cbc:ChargeBearerCode" values="ISO20022ChargeBearer" metadata="code" />
+      <Context address="cbc:ServiceLevelCode" values="ISO20022ServiceLevel" metadata="code" />
+      <Context address="cbc:PaymentPurposeCode" values="ISO20022Purpose" metadata="code" />
+      <Context address="cbc:MandateTypeCode" values="ISO20022SequenceType" metadata="code" />
+      <Context address="cbc:CardTypeCode" values="CardType" metadata="code" />
+      <Context address="cbc:ReferenceEventCode" values="UNCL2475" metadata="code" />
+      <Context address="cbc:FinancingInstrumentCode" values="FinancingInstrument" metadata="code" />
+      <Context address="cbc:ReminderTypeCode" values="ReminderType" metadata="code" />
+      <Context address="cbc:StatementTypeCode" values="StatementType" metadata="code" />
+      <Context address="cbc:MarketCode" values="Market" metadata="code" />
+      <Context address="cbc:ProfileStatusCode" values="ProfileStatus" metadata="code" />
+      <Context address="cbc:InvoiceTypeCode" values="UNCL1001" metadata="code" />
+      <Context address="cbc:CreditNoteTypeCode" values="UNCL1001" metadata="code" />
+      <Context address="cbc:DebitNoteTypeCode" values="UNCL1001" metadata="code" />
+      <Context address="cbc:OrderTypeCode" values="UNCL1001" metadata="code" />
+      <Context address="cbc:TransportMeansTypeCode" values="TransportMeansType" metadata="code" />
+      <Context address="cbc:ShipConfigurationCode" values="ShipConfiguration" metadata="code" />
+      <Context address="cbc:TransportServiceCode" values="TransportService" metadata="code" />
+      <Context address="cbc:DirectionCode" values="TravelDirection" metadata="code" />
+      <Context address="cbc:TransportEventTypeCode" values="TransportEventType" metadata="code" />
+      <Context address="cbc:TransportExecutionStatusCode" values="TransportExecutionStatus" metadata="code" />
+      <Context address="cbc:TransportationStatusTypeCode" values="TransportationStatusType" metadata="code" />
+      <Context address="cbc:ConditionCode" values="StatusCondition" metadata="code" />
+      <Context address="cbc:StatusReasonCode" values="StatusReason" metadata="code" />
+      <Context address="cbc:HandlingCode" values="HandlingInstruction" metadata="code" />
+      <Context address="cbc:ShippingPriorityLevelCode" values="ShippingPriority" metadata="code" />
+      <Context address="cbc:NotificationTypeCode" values="TransportNotificationType" metadata="code" />
+      <Context address="cbc:ReportTypeCode" values="TransportReportType" metadata="code" />
+      <Context address="cbc:PurposeTypeCode" values="PortCallPurpose" metadata="code" />
+      <Context address="cbc:ServiceInformationPreferenceCode" values="ServiceInformationPreference" metadata="code" />
+      <Context address="cbc:DocumentStatusReasonCode" values="DocumentStatusReason" metadata="code" />
+      <Context address="cbc:FreightRateClassCode" values="FreightRateClass" metadata="code" />
+      <Context address="cbc:TariffClassCode" values="TariffClass" metadata="code" />
+      <Context address="cbc:ManifestTypeCode" values="ManifestType" metadata="code" />
+      <Context address="cbc:WaybillTypeCode" values="WaybillType" metadata="code" />
+      <Context address="cbc:WeightStatementTypeCode" values="WeightStatementType" metadata="code" />
+      <Context address="cbc:MeasureCode" values="TemperatureQualifier" metadata="code" />
+      <Context address="cbc:CargoTypeCode" values="CargoType" metadata="code" />
+      <Context address="cbc:DispositionCode" values="EquipmentDisposition" metadata="code" />
+      <Context address="cbc:OwnerTypeCode" values="EquipmentOwnerType" metadata="code" />
+      <Context address="cbc:ProviderTypeCode" values="EquipmentProviderType" metadata="code" />
+      <Context address="cbc:SealIssuerTypeCode" values="SealIssuerType" metadata="code" />
+      <Context address="cbc:SealStatusCode" values="SealStatus" metadata="code" />
+      <Context address="cbc:TrackingDeviceCode" values="TrackingDevice" metadata="code" />
+      <Context address="cbc:SizeTypeCode" values="ISO6346" metadata="code" />
+      <Context address="cbc:ShipmentStageTypeCode" values="UNCL8051" metadata="code" />
+      <Context address="cbc:PackageLevelCode" values="UNCL7075" metadata="code" />
+      <Context address="cbc:SecurityLevelCode" values="IMOISPS" metadata="code" />
+      <Context address="cbc:CurrentOperatingSecurityLevelCode" values="IMOISPS" metadata="code" />
+      <Context address="cbc:INFShipClassCode" values="IMOINF" metadata="code" />
+      <Context address="cbc:NavigationStatusCode" values="ITUAISNavStatus" metadata="code" />
+      <Context address="cbc:GenderCode" values="ISO5218" metadata="code" />
+      <Context address="cbc:ExchangeMethodCode" values="BallastExchangeMethod" metadata="code" />
+      <Context address="cbc:TankTypeCode" values="BallastTankType" metadata="code" />
+      <Context address="cbc:SanitaryMeasureTypeCode" values="SanitaryMeasure" metadata="code" />
+      <Context address="cbc:EnergySourceTypeCode" values="EnergySource" metadata="code" />
+      <Context address="cbc:FuelTypeCode" values="FuelType" metadata="code" />
+      <Context address="cbc:TransitDirectionCode" values="TransitDirection" metadata="code" />
+      <Context address="cbc:LossRiskResponsibilityCode" values="RiskResponsibleParty" metadata="code" />
+      <Context address="cbc:UNDGCode" values="UNModelRegsUN" metadata="code" />
+      <Context address="cbc:HazardousCategoryCode" values="UNModelRegsClass" metadata="code" />
+      <Context address="cbc:UNPackingGroupCode" values="UNPackingGroup" metadata="code" />
+      <Context address="cbc:PackagingDangerLevelCode" values="UNCL8339" metadata="code" />
+      <Context address="cbc:HazardousRegulationCode" values="UNCL8273" metadata="code" />
+      <Context address="cbc:EmergencyProceduresCode" values="IMDGEmS" metadata="code" />
+      <Context address="cbc:MedicalFirstAidGuideCode" values="ERG2024" metadata="code" />
+      <Context address="cbc:TunnelRestrictionCode" values="ADRTunnel" metadata="code" />
+      <Context address="cbc:MaritimePollutantCode" values="MarinePollutant" metadata="code" />
+      <Context address="cbc:HazardousTypeCode" values="HazardousGoodsType" metadata="code" />
+      <Context address="cbc:TransportEmergencyCardCode" values="TransportEmergencyCard" metadata="code" />
+      <Context address="cbc:TransportAuthorizationCode" values="TransportAuthorization" metadata="code" />
+      <Context address="cbc:PackingCriteriaCode" values="PackingInstruction" metadata="code" />
+      <Context address="cbc:InhalationToxicityZoneCode" values="InhalationToxicityZone" metadata="code" />
+      <Context address="cbc:CustomsProcedureCode" values="CustomsProcedure" metadata="code" />
+      <Context address="cbc:CustomsStatusCode" values="CustomsStatus" metadata="code" />
+      <Context address="cbc:ExportReasonCode" values="ExportReason" metadata="code" />
+      <Context address="cbc:ExportTypeCode" values="ExportType" metadata="code" />
+      <Context address="cbc:NatureOfTransactionCode" values="NatureOfTransaction" metadata="code" />
+      <Context address="cbc:LocationTypeCode" values="CustomsLocationType" metadata="code" />
+      <Context address="cbc:PreferenceCriterionCode" values="PreferenceCriterion" metadata="code" />
+      <Context address="cbc:ApplicationStatusCode" values="ApplicationStatus" metadata="code" />
+      <Context address="cbc:CertificateTypeCode" values="CertificateType" metadata="code" />
+      <Context address="cbc:WasteMovementTypeCode" values="WasteOperationCategory" metadata="code" />
+      <Context address="cbc:WasteNotificationTypeCode" values="WasteNotificationType" metadata="code" />
+      <Context address="cbc:ProcurementSubTypeCode" values="ProcurementSubType" metadata="code" />
+      <Context address="cbc:WorkTypeCode" values="WorkType" metadata="code" />
+      <Context address="cbc:QualityControlCode" values="QualityControl" metadata="code" />
+      <Context address="cbc:ContractingSystemCode" values="ContractingSystem" metadata="code" />
+      <Context address="cbc:ContractingSystemTypeCode" values="ContractingSystemType" metadata="code" />
+      <Context address="cbc:PartPresentationCode" values="LotSubmission" metadata="code" />
+      <Context address="cbc:SubmissionMethodCode" values="SubmissionMethod" metadata="code" />
+      <Context address="cbc:UrgencyCode" values="Urgency" metadata="code" />
+      <Context address="cbc:ExpenseCode" values="ExpenseType" metadata="code" />
+      <Context address="cbc:ProcessReasonCode" values="ProcessReason" metadata="code" />
+      <Context address="cbc:AwardingCriterionTypeCode" values="AwardCriterionType" metadata="code" />
+      <Context address="cbc:AwardingMethodTypeCode" values="AwardingMethod" metadata="code" />
+      <Context address="cbc:CalculationExpressionCode" values="CalculationExpression" metadata="code" />
+      <Context address="cbc:WeightingAlgorithmCode" values="WeightingAlgorithm" metadata="code" />
+      <Context address="cbc:EvaluationCriterionTypeCode" values="EvaluationCriterionType" metadata="code" />
+      <Context address="cbc:ExpressionCode" values="Expression" metadata="code" />
+      <Context address="cbc:TenderEnvelopeTypeCode" values="TenderEnvelope" metadata="code" />
+      <Context address="cbc:TenderTypeCode" values="TenderType" metadata="code" />
+      <Context address="cbc:TenderResultCode" values="TenderResult" metadata="code" />
+      <Context address="cbc:GuaranteeTypeCode" values="GuaranteeType" metadata="code" />
+      <Context address="cbc:ConstitutionCode" values="GuaranteeConstitution" metadata="code" />
+      <Context address="cbc:FeeTypeCode" values="FeeType" metadata="code" />
+      <Context address="cbc:NoticeTypeCode" values="NoticeType" metadata="code" />
+      <Context address="cbc:MultipleTendersCode" values="MultipleTenders" metadata="code" />
+      <Context address="cbc:VariantConstraintCode" values="VariantConstraint" metadata="code" />
+      <Context address="cbc:SubcontractingConditionsCode" values="SubcontractingConditions" metadata="code" />
+      <Context address="cbc:ValueDataTypeCode" values="ResponseDataType" metadata="code" />
+      <Context address="cbc:PropertyGroupTypeCode" values="PropertyGroupType" metadata="code" />
+      <Context address="cbc:FulfilmentIndicatorTypeCode" values="FulfilmentIndicator" metadata="code" />
+      <Context address="cbc:CriterionTypeCode" values="CriterionType" metadata="code" />
+      <Context address="cbc:EvaluationMethodTypeCode" values="EvaluationMethod" metadata="code" />
+      <Context address="cbc:EvidenceTypeCode" values="EvidenceType" metadata="code" />
+      <Context address="cbc:ConfidentialityLevelCode" values="ConfidentialityLevel" metadata="code" />
+      <Context address="cbc:CopyQualityTypeCode" values="CopyQuality" metadata="code" />
+      <Context address="cbc:ExpectedCode" values="ExpectedResponse" metadata="code" />
+      <Context address="cbc:TranslationTypeCode" values="TranslationType" metadata="code" />
+      <Context address="cbc:WeightingTypeCode" values="WeightingType" metadata="code" />
+      <Context address="cbc:QualificationApplicationTypeCode" values="QualificationApplicationType" metadata="code" />
+      <Context address="cbc:AdmissionCode" values="QualificationAdmission" metadata="code" />
+      <Context address="cbc:DeclarationTypeCode" values="DeclarationType" metadata="code" />
+      <Context address="cbc:PartyTypeCode" values="ContractingPartyType" metadata="code" />
+      <Context address="cbc:ActivityTypeCode" values="AuthorityActivity" metadata="code" />
+      <Context address="cbc:RepresentationTypeCode" values="RepresentationType" metadata="code" />
+      <Context address="cbc:RequiredCurriculaCode" values="Curricula" metadata="code" />
+      <Context address="cbc:PriceEvaluationCode" values="PriceEvaluation" metadata="code" />
+      <Context address="cbc:PaymentFrequencyCode" values="PaymentFrequency" metadata="code" />
+      <Context address="cbc:SubjectCode" values="AnnotationSubject" metadata="code" />
+      <Context address="cbc:ExecutionRequirementCode" values="ExecutionRequirement" metadata="code" />
+      <Context address="cbc:TendererRequirementTypeCode" values="TendererRequirementType" metadata="code" />
+      <Context address="cbc:GroupTypeCode" values="BusinessPartyGroupType" metadata="code" />
+      <Context address="cbc:CapabilityTypeCode" values="BusinessCapabilityType" metadata="code" />
+      <Context address="cbc:TendererRoleCode" values="TendererRole" metadata="code" />
+      <Context address="cbc:WorkPhaseCode" values="WorkPhase" metadata="code" />
+      <Context address="cbc:CancellationReasonCode" values="CancellationReason" metadata="code" />
+      <Context address="cbc:PreviousCancellationReasonCode" values="CancellationReason" metadata="code" />
+      <Context address="cbc:RankCode" values="PrizeRank" metadata="code" />
+      <Context address="cbc:LifeCycleStatusCode" values="ItemLifeCycleStatus" metadata="code" />
+      <Context address="cbc:ItemTypeCode" values="ItemType" metadata="code" />
+      <Context address="cbc:PositionCode" values="ItemPartPosition" metadata="code" />
+      <Context address="cbc:NameCode" values="ItemPropertyName" metadata="code" />
+      <Context address="cbc:ImportanceCode" values="PropertyImportance" metadata="code" />
+      <Context address="cbc:PriceTypeCode" values="PriceType" metadata="code" />
+      <Context address="cbc:PackLevelCode" values="PackLevel" metadata="code" />
+      <Context address="cbc:ConsumerIncentiveTacticTypeCode" values="ConsumerIncentiveTactic" metadata="code" />
+      <Context address="cbc:DisplayTacticTypeCode" values="DisplayTactic" metadata="code" />
+      <Context address="cbc:FeatureTacticTypeCode" values="FeatureTactic" metadata="code" />
+      <Context address="cbc:MiscellaneousEventTypeCode" values="MiscellaneousEventType" metadata="code" />
+      <Context address="cbc:PromotionalEventTypeCode" values="PromotionalEventType" metadata="code" />
+      <Context address="cbc:TradeItemPackingLabelingTypeCode" values="PackingLabelingType" metadata="code" />
+      <Context address="cbc:RetailEventStatusCode" values="RetailEventStatus" metadata="code" />
+      <Context address="cbc:ForecastPurposeCode" values="ForecastPurpose" metadata="code" />
+      <Context address="cbc:ForecastTypeCode" values="ForecastType" metadata="code" />
+      <Context address="cbc:ComparisonDataCode" values="ComparisonData" metadata="code" />
+      <Context address="cbc:DataSourceCode" values="DataSource" metadata="code" />
+      <Context address="cbc:ComparisonDataSourceCode" values="DataSource" metadata="code" />
+      <Context address="cbc:PerformanceMetricTypeCode" values="PerformanceMetric" metadata="code" />
+      <Context address="cbc:SupplyChainActivityTypeCode" values="SupplyChainActivity" metadata="code" />
+      <Context address="cbc:TimeFrequencyCode" values="TimeFrequency" metadata="code" />
+      <Context address="cbc:ExceptionResolutionCode" values="ExceptionResolution" metadata="code" />
+      <Context address="cbc:ResolutionCode" values="Resolution" metadata="code" />
+      <Context address="cbc:ExceptionStatusCode" values="ExceptionStatus" metadata="code" />
+      <Context address="cbc:CollaborationPriorityCode" values="CollaborationPriority" metadata="code" />
+      <Context address="cbc:ThresholdValueComparisonCode" values="ThresholdValueComparison" metadata="code" />
+      <Context address="cbc:AdjustmentReasonCode" values="ForecastAdjustmentReason" metadata="code" />
+      <Context address="cbc:RevisionStatusCode" values="RevisionStatus" metadata="code" />
+      <Context address="cbc:AvailabilityStatusCode" values="AvailabilityStatus" metadata="code" />
+      <Context address="cbc:InspectionMethodCode" values="InspectionMethod" metadata="code" />
+      <Context address="cbc:DeliveryAcceptanceCode" values="DeliveryAcceptance" metadata="code" />
+      <Context address="cbc:RejectActionCode" values="RejectAction" metadata="code" />
+      <Context address="cbc:ShortageActionCode" values="ShortageAction" metadata="code" />
+      <Context address="cbc:QuantityDiscrepancyCode" values="QuantityDiscrepancy" metadata="code" />
+      <Context address="cbc:RejectReasonCode" values="RejectReason" metadata="code" />
+      <Context address="cbc:TimingComplaintCode" values="TimingComplaint" metadata="code" />
+      <Context address="cbc:DespatchAdviceTypeCode" values="DespatchAdviceType" metadata="code" />
+      <Context address="cbc:DistributionTypeCode" values="DistributionType" metadata="code" />
+      <Context address="cbc:CharacterSetCode" values="IANACharset" metadata="code" />
+      <Context address="cbc:EncodingCode" values="RFC2045" metadata="code" />
+      <Context address="cbc:FormatCode" values="PRONOM" metadata="code" />
+      <Context address="cbc:EnvelopeTypeCode" values="EnvelopeType" metadata="code" />
+      <Context address="cbc:AgreementTypeCode" values="AgreementType" metadata="code" />
+      <Context address="cbc:RequiredResponseMessageLevelCode" values="ResponseMessageLevel" metadata="code" />
+      <Context address="cbc:ResponseMessageLevelCode" values="ResponseMessageLevel" metadata="code" />
+      <Context address="cbc:WebSiteTypeCode" values="WebSiteType" metadata="code" />
+      <Context address="cbc:SocialMediaTypeCode" values="SocialMediaType" metadata="code" />
+      <Context address="cbc:ServiceTypeCode" values="ServiceType" metadata="code" />
+      <Context address="cbc:OrderResponseCode" values="UNCL4343" metadata="code" />
+      <Context address="cbc:IndustryClassificationCode" values="ISICRev4" metadata="code" />
+      <Context address="cbc:UtilityStatementTypeCode" values="UtilityType" metadata="code" />
+      <Context address="cbc:ConsumptionTypeCode" values="ConsumptionType" metadata="code" />
+      <Context address="cbc:CurrentChargeTypeCode" values="ChargeType" metadata="code" />
+      <Context address="cbc:ChargeTypeCode" values="ChargeType" metadata="code" />
+      <Context address="cbc:OneTimeChargeTypeCode" values="OneTimeChargeType" metadata="code" />
+      <Context address="cbc:MeterReadingTypeCode" values="MeterReadingType" metadata="code" />
+      <Context address="cbc:LatestMeterReadingMethodCode" values="MeterReadingMethod" metadata="code" />
+      <Context address="cbc:PreviousMeterReadingMethodCode" values="MeterReadingMethod" metadata="code" />
+      <Context address="cbc:MeterConstantCode" values="MeterConstantType" metadata="code" />
+      <Context address="cbc:CorrectionTypeCode" values="ConsumptionCorrectionType" metadata="code" />
+      <Context address="cbc:ConsumersEnergyLevelCode" values="ConsumersEnergyLevel" metadata="code" />
+      <Context address="cbc:ConsumptionLevelCode" values="ConsumptionLevel" metadata="code" />
+      <Context address="cbc:HeatingTypeCode" values="HeatingType" metadata="code" />
+      <Context address="cbc:ResidenceTypeCode" values="ResidenceType" metadata="code" />
+      <Context address="cbc:SpecificationTypeCode" values="SpecificationType" metadata="code" />
+      <Context address="cbc:TelecommunicationsServiceCallCode" values="TelecomCallType" metadata="code" />
+      <Context address="cbc:TelecommunicationsServiceCategoryCode" values="TelecomServiceCategory" metadata="code" />
+      <Context address="cbc:TelecommunicationsSupplyTypeCode" values="TelecomSupplyType" metadata="code" />
+      <Context address="cbc:DutyCode" values="TelecomDuty" metadata="code" />
+      <Context address="cbc:PrivacyCode" values="Privacy" metadata="code" />
+      <Context address="cbc:SecurityClassificationCode" values="SecurityClassification" metadata="code" />
+      <Context address="cbc:EnvironmentalEmissionTypeCode" values="EmissionType" metadata="code" />
+      <Context address="cbc:LifecycleStageCode" values="LifecycleStage" metadata="code" />
+      <Context address="cbc:CircularityTypeCode" values="CircularityType" metadata="code" />
+      <Context address="cbc:MaintenanceFrequencyCode" values="MaintenanceFrequency" metadata="code" />
+      <Context address="cbc:ResourceTypeCode" values="MaterialResource" metadata="code" />
+      <Context address="cbc:ScoringSystemCode" values="ScoringSystem" metadata="code" />
+      <Context address="cbc:TreatmentPathwayCode" values="TreatmentPathway" metadata="code" />
+      <Context address="cbc:ProcessingTypeCode" values="EndOfLifeProcessing" metadata="code" />
+      <Context address="cbc:ImpactCode" values="EnvironmentalImpactLevel" metadata="code" />
+      <Context address="cbc:ApplicableCategoryCode" values="Category" metadata="code" />
+      <Context address="cbc:CategoryCode" values="Category" metadata="code" />
+      <Context address="cbc:AddressTypeCode" values="AddressType" metadata="code" />
+      <Context address="cbc:CompanyLiquidationStatusCode" values="CompanyLiquidationStatus" metadata="code" />
+      <Context address="cbc:CorporateRegistrationTypeCode" values="CorporateRegistrationType" metadata="code" />
+      <Context address="cbc:LocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:NoticeLanguageCode" values="Language" metadata="code" />
+      <Context address="cbc:PreferredLanguageLocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:TenderLanguageLocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:DefaultLanguageCode" values="Language" metadata="code" />
+      <Context address="cbc:AddressFormatCode" values="AddressFormat" metadata="code" />
+      <Context address="cbc:CountrySubentityCode" values="XB-CountrySubentity" metadata="code" />
+      <Context address="cbc:CompanyLegalFormCode" values="XU-CompanyLegalForm XB-CompanyLegalForm XL-CompanyLegalForm" metadata="code" />
+      <Context address="cbc:EntitySizeCode" values="EntitySize" metadata="code" />
+      <Context address="cbc:ItemClassificationCode" values="CPC21" metadata="code" />
+      <Context address="cbc:CommodityCode" values="WCOHS2022 XU-CustomsTariff" metadata="code" />
+      <Context address="cbc:NatureCode" values="HSSections" metadata="code" />
+      <Context address="cbc:CoordinateSystemCode" values="EPSG" metadata="code" />
+      <Context address="cbc:InsuranceTypeCode" values="InsuranceCover" metadata="code" />
+      <Context address="cbc:ModificationReasonCode" values="ContractModificationReason" metadata="code" />
+      <Context address="cbc:ValidationResultCode" values="ValidationResult" metadata="code" />
+      <Context address="@currencyID" values="Currency" />
+      <Context address="cbc:ActivityLevelMeasure/@unitCode | cbc:AllocatedEnergyMeasure/@unitCode | cbc:AltitudeMeasure/@unitCode | cbc:BaseUnitMeasure/@unitCode | cbc:ChargeableWeightMeasure/@unitCode | cbc:ComparedValueMeasure/@unitCode | cbc:ConsumptionMeasure/@unitCode | cbc:DurationMeasure/@unitCode | cbc:EstimatedGeneratedUntilNextPortMeasure/@unitCode | cbc:FuelConsumptionMeasure/@unitCode | cbc:GrossMassMeasure/@unitCode | cbc:GrossTonnageMeasure/@unitCode | cbc:GrossVolumeMeasure/@unitCode | cbc:GrossWeightMeasure/@unitCode | cbc:LatitudeDegreesMeasure/@unitCode | cbc:LatitudeMinutesMeasure/@unitCode | cbc:LeadTimeMeasure/@unitCode | cbc:LoadingLengthMeasure/@unitCode | cbc:LongitudeDegreesMeasure/@unitCode | cbc:LongitudeMinutesMeasure/@unitCode | cbc:MaxDedicatedStorageCapacityMeasure/@unitCode | cbc:MaximumDataLossDurationMeasure/@unitCode | cbc:MaximumIncidentNotificationDurationMeasure/@unitCode | cbc:MaximumMeasure/@unitCode | cbc:MeanTimeToRecoverDurationMeasure/@unitCode | cbc:Measure/@unitCode | cbc:MinimumDownTimeScheduleDurationMeasure/@unitCode | cbc:MinimumMeasure/@unitCode | cbc:MinimumResponseTimeDurationMeasure/@unitCode | cbc:NetNetWeightMeasure/@unitCode | cbc:NetTonnageMeasure/@unitCode | cbc:NetVolumeMeasure/@unitCode | cbc:NetWeightMeasure/@unitCode | cbc:PostEventNotificationDurationMeasure/@unitCode | cbc:PreEventNotificationDurationMeasure/@unitCode | cbc:RateOfTurnMeasure/@unitCode | cbc:ResponseMeasure/@unitCode | cbc:RetainedOnBoardMeasure/@unitCode | cbc:SalinityMeasure/@unitCode | cbc:SeaHeightMeasure/@unitCode | cbc:SegregatedBallastMeasure/@unitCode | cbc:SourceValueMeasure/@unitCode | cbc:SpeedOverGroundMeasure/@unitCode | cbc:TareWeightMeasure/@unitCode | cbc:ToBeDeliveredMeasure/@unitCode | cbc:TotalBallastWaterCapacityMeasure/@unitCode | cbc:TotalBallastWaterOnBoardMeasure/@unitCode | cbc:ValueBaseMeasure/@unitCode | cbc:ValueMeasure/@unitCode | cbc:VolumeMeasure/@unitCode | cbc:WasteMeasure/@unitCode" values="UnitOfMeasure" />
+      <Context address="cbc:ActualTemperatureReductionQuantity/@unitCode | cbc:BackorderQuantity/@unitCode | cbc:BaseQuantity/@unitCode | cbc:BasicConsumedQuantity/@unitCode | cbc:BatchQuantity/@unitCode | cbc:ChargeableQuantity/@unitCode | cbc:ChildConsignmentQuantity/@unitCode | cbc:ConsignmentQuantity/@unitCode | cbc:ConsumerUnitQuantity/@unitCode | cbc:ConsumptionEnergyQuantity/@unitCode | cbc:ConsumptionWaterQuantity/@unitCode | cbc:ContentUnitQuantity/@unitCode | cbc:CreditedQuantity/@unitCode | cbc:CrewQuantity/@unitCode | cbc:CustomsTariffQuantity/@unitCode | cbc:DebitedQuantity/@unitCode | cbc:DeliveredQuantity/@unitCode | cbc:DifferenceTemperatureReductionQuantity/@unitCode | cbc:EmployeeQuantity/@unitCode | cbc:EstimatedConsumedQuantity/@unitCode | cbc:EstimatedOverallContractQuantity/@unitCode | cbc:ExpectedOperatorQuantity/@unitCode | cbc:ExpectedQuantity/@unitCode | cbc:GasPressureQuantity/@unitCode | cbc:InvoicedQuantity/@unitCode | cbc:LatestMeterQuantity/@unitCode | cbc:MaximumBackorderQuantity/@unitCode | cbc:MaximumOperatorQuantity/@unitCode | cbc:MaximumOrderQuantity/@unitCode | cbc:MaximumQuantity/@unitCode | cbc:MaximumVariantQuantity/@unitCode | cbc:MinimumBackorderQuantity/@unitCode | cbc:MinimumInventoryQuantity/@unitCode | cbc:MinimumOrderQuantity/@unitCode | cbc:MinimumQuantity/@unitCode | cbc:MultipleOrderQuantity/@unitCode | cbc:NormalTemperatureReductionQuantity/@unitCode | cbc:OperatingYearsQuantity/@unitCode | cbc:OutstandingQuantity/@unitCode | cbc:OversupplyQuantity/@unitCode | cbc:PackQuantity/@unitCode | cbc:PassengerQuantity/@unitCode | cbc:PerformanceValueQuantity/@unitCode | cbc:PreviousMeterQuantity/@unitCode | cbc:Quantity/@unitCode | cbc:ReceivedElectronicTenderQuantity/@unitCode | cbc:ReceivedForeignTenderQuantity/@unitCode | cbc:ReceivedQuantity/@unitCode | cbc:ReceivedTenderQuantity/@unitCode | cbc:RejectedQuantity/@unitCode | cbc:ResponseQuantity/@unitCode | cbc:ReturnableQuantity/@unitCode | cbc:SharesNumberQuantity/@unitCode | cbc:ShortQuantity/@unitCode | cbc:TanksExchangedQuantity/@unitCode | cbc:TanksInBallastQuantity/@unitCode | cbc:TanksNotExchangedQuantity/@unitCode | cbc:TargetInventoryQuantity/@unitCode | cbc:ThresholdQuantity/@unitCode | cbc:TimeDeltaDaysQuantity/@unitCode | cbc:TotalBallastTanksOnBoardQuantity/@unitCode | cbc:TotalConsumedQuantity/@unitCode | cbc:TotalDeadPersonQuantity/@unitCode | cbc:TotalDeliveredQuantity/@unitCode | cbc:TotalGoodsItemQuantity/@unitCode | cbc:TotalIllPersonQuantity/@unitCode | cbc:TotalMeteredQuantity/@unitCode | cbc:TotalPackageQuantity/@unitCode | cbc:TotalPackagesQuantity/@unitCode | cbc:TotalTransportHandlingUnitQuantity/@unitCode | cbc:ValueQuantity/@unitCode | cbc:VarianceQuantity/@unitCode" values="UnitOfMeasure" />
+      <Context address="@mimeCode" values="BinaryObjectMime" />
+      <Context address="@languageID" values="Language" />
+   </Contexts>
+</cva:ContextValueAssociation>

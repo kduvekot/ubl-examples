@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: port call purpose. Why a ship calls at a port. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>PortCallPurposeCode</ShortName>
+      <LongName xml:lang="en">Port call purpose (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:PortCallPurposeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:PortCallPurposeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:PortCallPurposeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/PortCallPurposeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CARGO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cargo operations</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nirrir dralnaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Faleka hikefake</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Loading or discharging cargo.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WATER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fresh water bunkering</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trinnir tazstan skirvan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hafefo potie kipivama</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Taking on fresh water.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BUNKERS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bunkering</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skirvan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kipivama</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Taking on fuel.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CREW</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Crew change</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vaz vazsir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Filemo kahiu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Changing crew.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REPAIR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Repair</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Balzhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tameti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Repairs or maintenance.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

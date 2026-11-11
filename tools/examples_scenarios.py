@@ -24,7 +24,8 @@ ORE = kit.Flow("ore", "2026-03-02", [
     {"item": "ore-lump", "ordered": 1800, "delivered": "1788.4",
      "why": "One train: 30 wagons of about 60 tonnes.",
      "invoice_why": "The weighed quantity from the despatch advice, not the ordered quantity.",
-     "line_allowance": {"percent": "1.5", "code": "95", "code_why": "UN/EDIFACT 5189 code 95: discount.",
+     "line_allowance": {"percent": "1.5", "code": "64", "code_why": "The reason for the allowance as a code of "
+                        "UN/EDIFACT 5189: the moisture deduction is agreed in the contract.",
                         "reason": "Moisture deduction",
                         "why": "The sample at loading showed 7.5 % moisture, above the 6 % of the contract: the "
                                "contract deducts 1.5 % of the value."},
@@ -107,14 +108,14 @@ def road_stage(f, actual):
     stage = {"ID": V("1", "The only stage: one truck from the warehouse to the distribution centre."),
              "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road transport.",
                                     listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
-             "TransportMeansTypeCode": V("TE", "The truck pulls a trailer."),
-             "TransitDirectionCode": V("Export", "The goods leave Urvania by this stage."),
+             "TransportMeansTypeCode": V("TRUCKTRAILER", "The truck pulls a trailer."),
+             "TransitDirectionCode": V("EXPORT", "The goods leave Urvania by this stage."),
              "CabotageIndicator": V("false", "A carriage between two countries, not within a foreign one."),
              "TransitPeriod": {"StartDate": V(f.date(7), "Collected in the afternoon."),
                                "EndDate": V(f.date(9), "Delivered in the morning, after the night rest of the "
                                                        "driver and the border.")},
              "TransportMeans": kit.means("13-xu", "T-07", ROAD_JOB, "The carrier's job number, the same on every "
-                                                                   "document of this truck.", "Westbound"),
+                                                                   "document of this truck.", "WB"),
              "DriverPerson": kit.person("Ilario", "Bencetti", "The driver of the truck.", "XU-DL-0417722"),
              "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Ferrano."),
              "UnloadingPortLocation": kit.place("XBMRW", "Unloaded at the distributor's distribution centre."),
@@ -171,7 +172,7 @@ def road_consignment(f, view):
         "ActualPickupTransportEvent": kit.event(f, 7, "15:05:00", "When the carrier took over the goods.",
                                                 kit.place("XUFER", "The 3PL's warehouse.")),
         "DeliveryTerms": {"ID": V("FCA", "Incoterms 2020: free carrier at the seller's warehouse."),
-                          "LossRiskResponsibilityCode": V("Buyer", "The risk passed to the buyer when the goods were "
+                          "LossRiskResponsibilityCode": V("BUYER", "The risk passed to the buyer when the goods were "
                                                                    "loaded on the truck."),
                           "LossRisk": V("The risk passes on loading at the 3PL's warehouse.", "In words."),
                           "SpecialTerms": V("The buyer's carrier presents the truck; the seller loads it.",
@@ -303,7 +304,7 @@ def road(n, doc):
     if doc["doc"] == "CertificateOfOrigin":
         chamber, exporter = "20-xu", "5-xu"
         endorsed = doc["from"] == chamber
-        signer = {"RoleCode": V("Chamber", "The endorser is the chamber of commerce of the exporting country."),
+        signer = {"RoleCode": V("CHAMBER", "The endorser is the chamber of commerce of the exporting country."),
                   "SequenceNumeric": V("1", "The first and only endorsement."),
                   "Party": party(chamber),
                   "SignatoryContact": {"Name": V("Certificates office", "The office of the chamber that signs "
@@ -321,7 +322,7 @@ def road(n, doc):
                                  "The exporter's reference for its application."),
                 "CertificateType": V("Preferential", "The goods qualify for the preferential duty rate in Bayvarra; "
                                                      "the importer needs this certificate to claim it."),
-                "ApplicationStatusCode": V("Approved" if endorsed else "Submitted",
+                "ApplicationStatusCode": V("APPROVED" if endorsed else "SUBMITTED",
                                            "The chamber has approved the application." if endorsed
                                            else "The exporter submits the application."),
                 "OriginalJobID": V(f.numbers["order"], "The order the goods are for."),
@@ -347,7 +348,7 @@ def road(n, doc):
             "TotalGoodsItemQuantity": qty(2, "EA", "Two kinds of goods: benches and side frames."),
             "SplitConsignmentIndicator": V("false", "The whole consignment travels on this truck."),
             "ConsignmentQuantity": qty(1, "EA", "One consignment on the truck."),
-            "HandlingCode": V("Upright", "The carrier's handling code: keep upright."),
+            "HandlingCode": V("UPRIGHT", "The carrier's handling code: keep upright."),
             "Information": V("Steel street furniture for resale.", "What the goods are, for the driver."),
             "ExportCountry": {"IdentificationCode": V("XU", "The goods are exported from Urvania.")},
             "OriginAddress": address("8-xu"),
@@ -366,10 +367,10 @@ def road(n, doc):
         return {"ID": V(f.number("status", doc["from"], "TransportationStatus"), "The carrier's status report number."),
                 "IssueDate": V(f.date(8), "The morning after collection, when the truck has crossed the border."),
                 "IssueTime": V("09:10:00", "Sent as soon as the truck was through."),
-                "TransportationStatusTypeCode": V("Progress", "A report on the progress of the carriage."),
+                "TransportationStatusTypeCode": V("PROGRESS", "A report on the progress of the carriage."),
                 "TransportEvent": kit.event(
                     f, 8, "08:55:00", "The day and time the truck crossed the land border.", border,
-                    type_code="BorderCrossing", ident=f"{ROAD_JOB}-E03",
+                    type_code="BORDERCROSS", ident=f"{ROAD_JOB}-E03",
                     description="Border crossing passed; customs cleared on both sides.", done=True,
                     Period={"StartTime": V("07:30:00", "The truck joined the queue at the border."),
                             "EndTime": V("08:55:00", "And left the customs post.")},
@@ -383,12 +384,12 @@ def road(n, doc):
                              "Telephone": V(PARTY["13-xu"]["identity"]["contact"]["telephone"], "The planners' "
                                                                                                    "number.")},
                     CurrentStatus={
-                        "ConditionCode": V("OnTime", "The carriage runs to plan."),
+                        "ConditionCode": V("ONTIME", "The carriage runs to plan."),
                         "ReferenceDate": V(f.date(9), "The delivery the status is measured against."),
                         "ReferenceTime": V("10:00:00", "The start of the goods-in slot."),
                         "Description": V("In transit in Bayvarra, expected at the distribution centre on time.",
                                          "The status in words."),
-                        "StatusReasonCode": V("Cleared", "Why: the border is behind it."),
+                        "StatusReasonCode": V("CLEARED", "Why: the border is behind it."),
                         "StatusReason": V("Customs released the goods at the border.", "In words."),
                         "SequenceID": V("3", "The third report on this truck: collection, departure, border."),
                         "Text": V("Driver resting in Marrowdale tonight under the driving-time rules.",
@@ -402,12 +403,12 @@ def road(n, doc):
                             "URI": V("https://www.trasvia.example/tracking/TH-26-04471/seal.jpg", "A photograph of "
                                                                                                   "the seal."),
                             "MimeCode": V("image/jpeg", "A photograph.")}},
-                        "SubStatus": {"ConditionCode": V("Released", "The customs part of the status."),
+                        "SubStatus": {"ConditionCode": V("RELEASED", "The customs part of the status."),
                                       "Description": V("Import declaration accepted by Bayvarra's customs.",
                                                        "In words.")}}),
                 "Consignment": {"ID": V(f.numbers["consignment"], "The consignment the report is about."),
                                 "CarrierAssignedID": V(ROAD_JOB, "The carrier's job number."),
-                                "Status": {"ConditionCode": V("InTransit", "The consignment is on its way."),
+                                "Status": {"ConditionCode": V("INTRANSIT", "The consignment is on its way."),
                                            "Description": V("All 25 pallets on board.", "Nothing left behind.")}}}
     if doc["doc"] == "ImportCustomsDeclaration":
         return {"ID": V(f.number("import", doc["from"], "ImportCustomsDeclaration"), "The importer's declaration "
@@ -491,17 +492,17 @@ def rail_container(f, k, full):
            "GrossWeightMeasure": qty(kit.gross_weight(f, "ordered") / 2 + 3900, "KGM", "Half the benches and the "
                                      "container's own 3,900 kg."),
            "TransportEquipmentSeal": {"ID": V(seal, "The number of the bolt seal on the doors."),
-                                      "SealIssuerTypeCode": V("Shipper", "The seal was issued by the shipper."),
+                                      "SealIssuerTypeCode": V("SHIPPER", "The seal was issued by the shipper."),
                                       "SealingPartyType": V("Shipper", "And put on by the shipper when it packed "
                                                                        "the container."),
                                       "Condition": V("Intact", "As found at the hub."),
-                                      "SealStatusCode": V("Applied", "The seal is in place.")}}
+                                      "SealStatusCode": V("APPLIED", "The seal is in place.")}}
     if not full:
         return out
     out.update({
-        "ProviderTypeCode": V("Carrier", "The rail carrier provides the container."),
-        "OwnerTypeCode": V("Carrier", "And owns it."),
-        "DispositionCode": V("Loaded", "Loaded with cargo."),
+        "ProviderTypeCode": V("CARRIER", "The rail carrier provides the container."),
+        "OwnerTypeCode": V("CARRIER", "And owns it."),
+        "DispositionCode": V("LOADED", "Loaded with cargo."),
         "Information": V("Return empty to the Ferrano hub within five days.", "What happens to the box afterwards."),
         "ReturnabilityIndicator": V("true", "The container goes back to its owner."),
         "LegalStatusIndicator": V("false", "Not under a customs container convention; the goods travel under transit."),
@@ -531,6 +532,7 @@ def rail_container(f, k, full):
         "LoadingTransportEvent": kit.event(f, 8, "05:40:00", "Lifted onto the wagon."),
         "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned arrival at the siding.", done=False),
         "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight for this box."),
+                                   "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                    "AllowanceChargeReason": V("Rail freight per container", "In words."),
                                    "Amount": amount(ITEM["rail-container"]["price"]["amount"],
                                                     ITEM["rail-container"]["price"]["currency"],
@@ -559,7 +561,7 @@ def rail_stage(f, actual):
            "TransportModeCode": V("2", "UN/ECE Recommendation 19 code 2: rail transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
            "TransportMeans": kit.means("14-xu", "FRC-4417", "CT 4471", "The number of the container train in the "
-                                                                       "hub's timetable.", "Westbound"),
+                                                                       "hub's timetable.", "WB"),
            "LoadingSequenceID": V("7", "The order the boxes go on the train: these two are the seventh lift."),
            "SuccessiveSequenceID": V("1", "The first and only rail stage."),
            "Instructions": V("Shunt to the Lumeway siding on arrival in Marrowdale.", "What the railway must do."),
@@ -627,10 +629,10 @@ def rail_consignment(f, view):
         "TotalTransportHandlingUnitQuantity": qty(2, "EA", "Two containers."),
         "PerformingCarrierParty": party("14-xu", short=True),
         "EnvironmentalEmission": {
-            "EnvironmentalEmissionTypeCode": V("CO2e", "Greenhouse gases of the carriage, as CO2 equivalent."),
+            "EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases of the carriage, as CO2 equivalent."),
             "ValueMeasure": V("410", "For the two containers over the route.", unitCode="KGM"),
             "EmissionCalculationMethod": {
-                "CalculationMethodCode": V("Calculated", "From the electric train's energy use."),
+                "CalculationMethodCode": V("CALCULATED", "From the electric train's energy use."),
                 "MeasurementFromLocation": {"Name": V("Ferrano Intermodal Hub", "From.")},
                 "MeasurementToLocation": {"Name": V("Marrowdale", "To.")},
                 "EmissionCalculationLocation": {"Name": V("Ferrano Rail Cargo, energy office", "Where the figure was "
@@ -641,7 +643,7 @@ def rail_consignment(f, view):
                                                                                        "the box travels under."),
                                                           "IssuerParty": party("19-xu", short=True)},
                                    "EnergyConsumptionAllocation": {
-                                       "EnergySourceTypeCode": V("Electricity", "The train runs on electricity."),
+                                       "EnergySourceTypeCode": V("ELECTRICITY", "The train runs on electricity."),
                                        "AllocatedEnergyMeasure": V("610", "This box's share of the train's energy, "
                                                                           "by weight.", unitCode="KWH")}}
                                   for k in range(2)]})
@@ -725,7 +727,7 @@ def barge_stage(f, actual):
            "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
            "TransportMeans": kit.means("15-xu", "FB-4", BARGE_VOYAGE, "The barge operator's voyage number.",
-                                       "Downstream"),
+                                       "DS"),
            "MasterPerson": kit.person("Tomaso", "Riverra", "The skipper of the barge.", job="Skipper"),
            "LoadingPortLocation": {"Name": V("Quay of Rinova Recovery, Ferrano", "Where the bags are loaded.")},
            "UnloadingPortLocation": {"Name": V("River quay, Lumeport", "The place named in the CPT terms.")},
@@ -783,7 +785,7 @@ def barge_goods(f, w):
                                                                     "The despatch advice.")}}
             if f.numbers.get("despatch") else None,
             "ShipmentDocumentReference": {"ID": V(f.numbers["tep"], "The transport plan of the sailing.")},
-            "EnergyConsumptionAllocation": {"EnergySourceTypeCode": V("Diesel", "The barge's engine fuel."),
+            "EnergyConsumptionAllocation": {"EnergySourceTypeCode": V("DIESEL", "The barge's engine fuel."),
                                             "AllocatedEnergyMeasure": V("5400", "The goods' share of the voyage's "
                                                                                 "energy, as fuel energy.",
                                                                         unitCode="KWH")}}
@@ -805,6 +807,7 @@ def barge_consignment(f, view):
                                                              "the voyage."),
                 "MainCarriageShipmentStage": barge_stage(f, True),
                 "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight, a charge."),
+                                           "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                            "AllowanceChargeReason": V("River freight", "What it is for."),
                                            "Amount": amount(Decimal("179400"), "XUF", "120 tonnes at 1,495 ferra."),
                                            "BaseAmount": amount(Decimal("1495"), "XUF", "The rate per tonne.")}})
@@ -858,9 +861,9 @@ def plastics(n, doc):
             "PreferenceCriterionCode": V("P", "The goods are wholly obtained in Urvania: preference criterion P of "
                                               "the trade accord."),
             "RequiredCustomsID": V("3901.10.00", "The tariff code Bayvarra's customs requires on the declaration."),
-            "CustomsStatusCode": V("Foreign", "Bayvarra's customs status: goods from abroad, not yet released for "
+            "CustomsStatusCode": V("FOREIGN", "Bayvarra's customs status: goods from abroad, not yet released for "
                                               "free circulation."),
-            "CustomsProcedureCode": V("4000", "Release for free circulation, with no previous procedure."),
+            "CustomsProcedureCode": V("1000", "Release for free circulation, with no previous procedure."),
             "CustomsTariffQuantity": qty(120000, "KGM", "The quantity in the tariff's unit: net kilograms."),
             "CustomsImportClassifiedIndicator": V("true", "Classified by the importer before arrival."),
             "BondedWarehouseLocation": {"Name": V("Bonded store at the river quay, Lumeport", "Where the bags wait "
@@ -898,7 +901,9 @@ PROMO = Decimal("0.05")          # the distributor's promotion support on the st
 
 def promo_allowance(base, why):
     return {"ChargeIndicator": V("false", "An allowance the distributor granted."),
-            "AllowanceChargeReasonCode": V("72", "UN/EDIFACT 5189 code 72: temporary special promotion.",
+            "AllowanceChargeReasonCode": V("100", "The reason for the allowance as a code of UN/EDIFACT 5189: the "
+                                                  "distributor's support for the store's promotion is a rebate outside "
+                                                  "the ordinary price terms.",
                                            listID="UN/EDIFACT EDED 5189"),
             "AllowanceChargeReason": V("Promotion support", "In words."),
             "MultiplierFactorNumeric": V(str(PROMO), "Five percent."),
@@ -932,12 +937,12 @@ def retail(n, doc):
     if doc["doc"] == "Forecast":
         return {"ID": V(f.number("forecast", doc["from"], "Forecast"), "The store's forecast number."),
                 "IssueDate": V(f.date(2), "Sent after the catalogue arrived."),
-                "ForecastPurposeCode": V("Sales", "A forecast of the store's sales, so the distributor can plan its "
+                "ForecastPurposeCode": V("SALES", "A forecast of the store's sales, so the distributor can plan its "
                                                   "stock."),
                 "ForecastPeriod": {"StartDate": V(f.date(14), "The forecast covers the next six weeks."),
                                    "EndDate": V(f.date(56), "The end of the forecast period.")},
                 "ForecastLine": {"ID": V("1", "The first and only line."),
-                                 "ForecastTypeCode": V("Total", "The total expected sales of the item in the period."),
+                                 "ForecastTypeCode": V("TOTAL", "The total expected sales of the item in the period."),
                                  "SalesItem": {"Quantity": qty(40, "EA", "Forty benches over six weeks, promotion "
                                                                           "included."),
                                                "Item": item("bench-serra-b")}}}
@@ -945,7 +950,7 @@ def retail(n, doc):
         return {"ID": V(f.number("event", doc["from"], "RetailEvent"), "The store's event number."),
                 "IssueDate": V(f.date(2), "Announced with the forecast."),
                 "RetailEventName": V("Spring garden promotion", "The name of the promotion."),
-                "RetailEventStatusCode": V("Confirmed", "The promotion is decided, not only planned."),
+                "RetailEventStatusCode": V("CONFIRMED", "The promotion is decided, not only planned."),
                 "Description": V("Ten per cent off garden furniture for two weeks.", "What the promotion is."),
                 "Period": {"StartDate": V(f.date(21), "The promotion starts in three weeks."),
                            "EndDate": V(f.date(34), "It lasts two weeks.")}}
@@ -974,7 +979,7 @@ def retail(n, doc):
                                                      "store orders on.")},
 
                           "TransactionConditions": {"ID": V("LD-TC-01", "The distributor's conditions of sale."),
-                                                    "ActionCode": V("Accepted", "The store accepts them.")},
+                                                    "ActionCode": V("ACCEPTED", "The store accepts them.")},
                           "Signature": {"ID": V("BM-SIG-26-0424", "The store's electronic seal on the order."),
                                         "SignatoryParty": party("26-xb", short=True)}})
         with_allowance(out, "AnticipatedMonetaryTotal", Decimal("12480.00"), "5 % of the goods, agreed for the "
@@ -1026,7 +1031,7 @@ def retail(n, doc):
                                             "The photograph taken at goods-in."),
                                    "MimeCode": V("image/jpeg", "A photograph."),
                                    "FileName": V("pallet-3.jpg", "The file name.")}},
-                               "Status": {"ConditionCode": V("Damaged", "The pallet's condition on arrival."),
+                               "Status": {"ConditionCode": V("DAMAGED", "The pallet's condition on arrival."),
                                           "Description": V("Three benches accepted, one refused.", "What was done.")},
                                "ReceivedHandlingUnitReceiptLine": {
                                    "ID": V("1", "The receipt of the pallet."),
@@ -1050,9 +1055,10 @@ def retail(n, doc):
     if doc["doc"] == "CreditNote":
         out = kit.credit_note(f, n, doc, 12, "Issued after the receipt advice reported the refused bench.",
                                [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery.",
-                                 "line_allowance": {"percent": "5", "code": "72",
-                                                    "code_why": "UN/EDIFACT 5189 code 72: temporary special "
-                                                                "promotion.",
+                                 "line_allowance": {"percent": "5", "code": "100",
+                                                    "code_why": "The reason for the allowance as a code of "
+                                                                "UN/EDIFACT 5189: support for the store's promotion, "
+                                                                "a rebate outside the ordinary price terms.",
                                                     "reason": "Promotion support",
                                                     "why": "The invoice gave 5 % on all benches, so the credit "
                                                            "is 5 % less too."},
@@ -1075,7 +1081,7 @@ def retail(n, doc):
                                 "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice that "
                                                                                            "reported the damage.")},
                                 "DiscrepancyResponse": {"ReferenceID": V("1", "The invoice line that was wrong."),
-                                                        "ResponseCode": V("CN", "The distributor's answer: a "
+                                                        "ResponseCode": V("17", "The distributor's answer: a "
                                                                                 "credit for the refused bench."),
                                                         "Description": V("One bench refused at goods-in, damaged in "
                                                                          "transit.", "In words.")},
@@ -1085,7 +1091,7 @@ def retail(n, doc):
         line = out["CreditNoteLine"][0]
         line.update({"Note": V("Bench refused: armrest bent, carton torn.", "Why the line is credited."),
                      "DiscrepancyResponse": {"ReferenceID": V("1", "The invoice line."),
-                                             "ResponseCode": V("Damaged", "Credited because damaged.")},
+                                             "ResponseCode": V("17", "Credited because damaged.")},
                      "OrderLineReference": {"LineID": V("1", "The order line.")},
                      "ReceiptLineReference": {"LineID": V("1", "The receipt line that reported it."),
                                               "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt "
@@ -1148,7 +1154,7 @@ def sea_equipment(f, detail):
                                      "the container's own weight of 3,750 kg."),
            "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as marked on its door."),
            "TransportEquipmentSeal": {"ID": V(SEA_SEAL, "The carrier's seal, put on when the container was packed."),
-                                      "SealIssuerTypeCode": V("Carrier", "Issued by the ocean carrier."),
+                                      "SealIssuerTypeCode": V("CARRIER", "Issued by the ocean carrier."),
                                       "SealingPartyType": V("Shipper", "Put on by the shipper.")}}
     if detail:
         out.update({
@@ -1204,11 +1210,11 @@ def sea_consignment(f, view):
             "ImporterParty": party("1-xl", short=True),
             "InsuranceParty": party("29-xb", short=True),
             "OriginalDespatchTransportationService": {
-                "TransportServiceCode": V("MerchantHaulage", "The forwarder, not the shipping line, brings the "
+                "TransportServiceCode": V("MERCHHAUL", "The forwarder, not the shipping line, brings the "
                                                               "container to the port."),
                 "Name": V("Truck from Marrowdale to the port of Lumeport", "In words.")},
             "FinalDeliveryTransportationService": {
-                "TransportServiceCode": V("MerchantHaulage", "The buyer's 3PL collects at the port of Selanu."),
+                "TransportServiceCode": V("MERCHHAUL", "The buyer's 3PL collects at the port of Selanu."),
                 "Name": V("Truck from the port of Selanu to the 3PL", "In words.")}})
         return out
     out.update({
@@ -1222,10 +1228,11 @@ def sea_consignment(f, view):
         "FreeOnBoardValueAmount": amount(goods, "XBL", "The value on board in Lumeport: the goods alone."),
         "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "110 % of the CIF value."),
         "InsurancePremiumAmount": amount(INSURANCE, "XBL", "The premium the seller paid under CIF."),
-        "TariffCode": V("9401.79", "The tariff of the carrier for this cargo: furniture."),
+        "TariffCode": V("TWL-T-0940", "The item of the carrier's own freight tariff for this cargo: furniture. A "
+                                     "code the carrier defines, so it has no code list."),
         "TariffDescription": V("Furniture, packed, not hazardous", "The carrier's commodity tariff, in words."),
-        "ShippingPriorityLevelCode": V("Standard", "The normal sailing, no priority loading."),
-        "HandlingCode": V("Deck", "The carrier may stow the container on deck."),
+        "ShippingPriorityLevelCode": V("STANDARD", "The normal sailing, no priority loading."),
+        "HandlingCode": V("DECK", "The carrier may stow the container on deck."),
         "HandlingInstructions": V("Keep dry.", "The handling, in words."),
         "Information": V("Shipped on board in apparent good order and condition.", "The carrier's clause."),
         "OriginalDespatchParty": party("6-xb", short=True),
@@ -1237,11 +1244,12 @@ def sea_consignment(f, view):
         "FirstArrivalPortLocation": kit.place("XLSEL", "The first port of call after Lumeport."),
         "LastExitPortLocation": kit.place("XBLMP", "The last port in Bayvarra."),
         "DeliveryTerms": {"ID": V("CIF", "Incoterms 2020: cost, insurance and freight to the port of Selanu."),
-                          "LossRiskResponsibilityCode": V("Buyer", "The risk is the buyer's from on board in Lumeport."),
+                          "LossRiskResponsibilityCode": V("BUYER", "The risk is the buyer's from on board in Lumeport."),
                           "LossRisk": V("Risk passes when the goods are on board the vessel in Lumeport.", "In words."),
                           "Amount": amount(cif_value(f), "XBL", "The CIF value the terms are based on."),
                           "DeliveryLocation": kit.place("XLSEL", "The named port of destination."),
                           "AllowanceCharge": {"ChargeIndicator": V("true", "A cost under the terms."),
+                                              "AllowanceChargeReasonCode": V("HD", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                               "AllowanceChargeReason": V("Terminal handling at Selanu, for the buyer",
                                                                          "Under CIF the buyer pays the unloading."),
                                               "Amount": amount(Decimal("185.00"), "XBL", "The carrier's tariff.")}},
@@ -1254,17 +1262,20 @@ def sea_consignment(f, view):
         "DisbursementPaymentTerms": {"Note": V("Island customs fees advanced by the broker and recharged to the "
                                                "consignee.", "Paid out for someone else.")},
         "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The basic ocean freight."),
+                                   "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                    "AllowanceChargeReason": V("Ocean freight, 40-foot container", "In words."),
                                    "Amount": amount(Decimal("2700.00"), "XBL", "The carrier's rate.")},
         "ExtraAllowanceCharge": {"ChargeIndicator": V("true", "A surcharge."),
+                                 "AllowanceChargeReasonCode": V("FC", "The bunker surcharge is part of the freight: UN/EDIFACT 7161 has no code of its own for it, so it carries the freight code."),
                                  "AllowanceChargeReason": V("Bunker surcharge", "For the fuel price."),
                                  "Amount": amount(Decimal("250.00"), "XBL", "Together with the freight: the 2,950 "
                                                                             "lume the forwarder invoices.")},
         "PreCarriageShipmentStage": {
             "ID": V("1", "By truck from Marrowdale to the port."),
-            "ShipmentStageTypeCode": V("PreCarriage", "The kind of stage."),
+            "ShipmentStageTypeCode": V("10", "The kind of stage."),
             "ShipmentStageType": V("Carriage before the main carriage", "In words."),
             "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The truck to the port."),
+                                       "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                        "AllowanceChargeReason": V("Pre-carriage by road", "In words."),
                                        "Amount": amount(Decimal("310.00"), "XBL", "The forwarder's own truck; part "
                                                                                   "of its price to the shipper.")},
@@ -1279,7 +1290,7 @@ def sea_consignment(f, view):
             "ID": V("2", "By sea from Lumeport to Selanu."),
             "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
                                                                       "Transport"),
-            "TransportMeans": {**kit.means("11-xb", "TH", "TH-26-19E", "The voyage number.", "Eastbound"),
+            "TransportMeans": {**kit.means("11-xb", "TH", "TH-26-19E", "The voyage number.", "EB"),
                                "TradeServiceCode": V("TWL-ISL", "The carrier's code for its island service."),
                                "Stowage": {"LocationID": V("140282", "Bay 14, row 02, tier 82."),
                                            "Location": V("On deck, aft of the bridge", "In words."),
@@ -1303,7 +1314,7 @@ def sea_consignment(f, view):
             "ReceiptTransportEvent": kit.event(f, 15, None, "Planned receipt at the 3PL.", done=False),
             "WarehousingTransportEvent": kit.event(f, 15, None, "Stored at the 3PL until called off.", done=False)},
         "InsurancePolicy": {"ID": V("WS-CP-26-4471", "The cargo policy of the insurer."),
-                            "InsuranceTypeCode": V("AllRisks", "Cover against all risks."),
+                            "InsuranceTypeCode": V("ALLRISKS", "Cover against all risks."),
                             "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "110 % of the CIF "
                                                                                                "value."),
                             "DeductibleAmount": amount(Decimal("250.00"), "XBL", "The part of a claim the insured "
@@ -1349,12 +1360,12 @@ def sea_invoice_terms(f, out):
          "PrepaidPaymentReferenceID": V("VT-DEP-26-0412", "The deposit payment, already received."),
          "PaymentPercent": V(str(round(DEPOSIT * 100 / total, 2)), "Its share of the invoice total."),
          "Amount": amount(DEPOSIT, "XBL", "The deposit."),
-         "ReferenceEventCode": V("OrderAccepted", "Due when the order is accepted."),
+         "ReferenceEventCode": V("8", "Due when the order is accepted."),
          "InstallmentDueDate": V(f.date(5), "It was due on acceptance; paid.")},
         {**terms, "ID": V("BALANCE", "The balance, the second instalment."),
          "PaymentPercent": V(str(round(balance * 100 / total, 2)), "Its share of the invoice total."),
          "Amount": amount(balance, "XBL", "The balance."),
-         "ReferenceEventCode": V("Shipment", "Counted from the shipment on board."),
+         "ReferenceEventCode": V("81", "Counted from the shipment on board."),
          "InstallmentDueDate": V(f.date(55), "45 days after the goods were shipped."),
          "PenaltyAmount": amount(balance * Decimal("1.5") / 100, "XBL", "The surcharge for the first month late, on "
                                                                          "the balance."),
@@ -1395,7 +1406,7 @@ def card_payment(out, f, day, time):
         "CardAccount": {"PrimaryAccountNumberID": V("************4417", "The card number, masked: a receipt shows only "
                                                                         "the last four digits."),
                         "NetworkID": V("LUMECARD", "The card scheme of the world: Lumeport's interbank card."),
-                        "CardTypeCode": V("Debit", "A debit card."),
+                        "CardTypeCode": V("DEBIT", "A debit card."),
                         "ValidityStartDate": V("2025-06-01", "The card is valid from."),
                         "ExpiryDate": V("2029-05-31", "And until."),
                         "IssuerID": V("BLUM", "Issued by the Bank of Lumeport."),
@@ -1403,7 +1414,7 @@ def card_payment(out, f, day, time):
                         "ChipApplicationID": V("A0000099990001", "The chip application used; an identifier of the world, "
                                                                  "not a registered one."),
                         "HolderName": V("R ASHDALE", "The name on the card."),
-                        "RoleCode": V("Holder", "Paid by the card holder.")}}
+                        "RoleCode": V("HOLDER", "Paid by the card holder.")}}
     out["Payment"] = {"ID": V("BM-G2-26-0518-0047", "The till's number for the payment."),
                       "PaidAmount": total, "PaidDate": V(f.date(day), "Paid at the till."),
                       "PaidTime": V(time, "At the time of the sale."),
@@ -1411,7 +1422,7 @@ def card_payment(out, f, day, time):
                       "AuthorizationID": V("A71520", "The approval code of the card issuer."),
                       "TransactionID": V("TX-26-0518-773104", "The card transaction."),
                       "PaymentTerminalID": V("PT-G2", "The card terminal at the till."),
-                      "StatusCode": V("Approved", "The payment was approved.")}
+                      "StatusCode": V("APPROVED", "The payment was approved.")}
     return out
 
 
@@ -1560,7 +1571,7 @@ def sea(n, doc):
                                                      "KGM", "The goods without packaging."),
                              "NetVolumeMeasure": V("38.9", "The volume of the goods themselves.", unitCode="MTQ"),
                              "TotalTransportHandlingUnitQuantity": qty(25, "EA", "25 pallets in the container."),
-                             "ShippingPriorityLevelCode": V("Standard", "No priority: the next sailing will do."),
+                             "ShippingPriorityLevelCode": V("STANDARD", "No priority: the next sailing will do."),
                              "HandlingInstructions": V("Castings pallet at the doors.", "How the container is "
                                                                                        "stowed."),
                              "SpecialInstructions": V("Photograph the load before closing the doors.", "For any "
@@ -1580,6 +1591,7 @@ def sea(n, doc):
             "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "The cargo insurance the seller "
                                                                                  "took out under CIF."),
             "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The sea freight, paid by the seller."),
+                                       "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                        "AllowanceChargeReason": V("Ocean freight to Selanu", "Stated because it is "
                                                                   "part of the CIF price, not of the export value."),
                                        "Amount": amount(SEA_FREIGHT, "XBL", "Freight and bunker surcharge.")},
@@ -1626,10 +1638,10 @@ def sea(n, doc):
     if doc["doc"] == "Manifest":
         return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
                 "IssueDate": V(f.date(11), "Sent to the island's customs before arrival."),
-                "ManifestTypeCode": V("Cargo", "A cargo manifest, of what the ship carries for Selanu."),
+                "ManifestTypeCode": V("CARGO", "A cargo manifest, of what the ship carries for Selanu."),
                 "AdValoremIndicator": V("false", "No value declared for the carriage."),
-                "CrewPerson": [kit.person("Corin", "Halvard", "The master of the ship.", role="Master"),
-                               kit.person("Elsbeth", "Marrin", "The chief officer.", role="ChiefOfficer")],
+                "CrewPerson": [kit.person("Corin", "Halvard", "The master of the ship.", role="MASTER"),
+                               kit.person("Elsbeth", "Marrin", "The chief officer.", role="CHIEFOFFICER")],
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment on the manifest."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of this shipment."),
                              "FirstArrivalPortLocation": kit.place("XLSEL", "The ship's first port on the island."),
@@ -1640,10 +1652,10 @@ def sea(n, doc):
                                                                                            "Codes for Modes of "
                                                                                            "Transport"),
                                  "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage number.",
-                                                             "Eastbound"),
+                                                             "EB"),
                                  "CrewQuantity": qty(14, "IE", "The crew on board: 14 persons."),
                                  "MasterPerson": kit.person("Corin", "Halvard", "The master, who signs the manifest.",
-                                                            role="Master"),
+                                                            role="MASTER"),
                                  "EstimatedArrivalTransportEvent": kit.event(f, 13, "22:00:00", "Expected off Selanu "
                                                                                                 "in the evening."),
                                  "EstimatedDepartureTransportEvent": kit.event(f, 11, "06:00:00", "The planned "
@@ -1686,6 +1698,7 @@ def sea(n, doc):
                                                      "pallets heat-treated.", done=True),
                                                  "ServiceAllowanceCharge": {
                                                      "ChargeIndicator": V("true", "A service charge."),
+                                                     "AllowanceChargeReasonCode": V("HD", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                                      "AllowanceChargeReason": V("Terminal handling at Selanu",
                                                                                 "For unloading the box."),
                                                      "Amount": amount(Decimal("185.00"), "XBL", "As in the carrier's "
@@ -1720,6 +1733,7 @@ def sea(n, doc):
         first = out["Shipment"]["GoodsItem"][0]
         first["FreightAllowanceCharge"] = {"ChargeIndicator": V("true", "The share of the sea freight in the customs "
                                                                         "value."),
+                                           "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                            "AllowanceChargeReason": V("Ocean freight, share of the benches",
                                                                       "Part of the CIF value."),
                                            "Amount": amount(SEA_FREIGHT * 49920 / 50688 * Decimal("0.4"), "XLC",
@@ -1741,10 +1755,11 @@ def sea(n, doc):
     if doc["doc"] == "Invoice":
         out = kit.invoice(f, n, doc, 10, 45, "Issued when the goods are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
-                           charges=[{"like": "bench-serra-b", "reason": "Sea freight", "amount": SEA_FREIGHT,
+                           charges=[{"like": "bench-serra-b", "reason": "Sea freight", "amount": SEA_FREIGHT, "code": "FC", "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
                                      "why": "Under CIF the seller pays the sea freight and charges it on the invoice.",
                                      "amount_why": "The freight the forwarder charged for the container."},
-                                    {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE,
+                                    {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE, "code": "96",
+                                     "code_why": "UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID.",
                                      "why": "Under CIF the seller insures the cargo and charges the insurance.",
                                      "amount_why": "The premium of the cargo insurance."}])
         return sea_invoice_terms(f, out)
@@ -1753,7 +1768,7 @@ def sea(n, doc):
         out = {"ID": V(f.number("statement", doc["from"], "Statement"), "The factor's statement number."),
                 "IssueDate": V(f.date(40), "The monthly statement of account."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
-                "StatementTypeCode": V("Account", "A statement of the account."),
+                "StatementTypeCode": V("ACCOUNT", "A statement of the account."),
                 "Note": V("Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring "
                           "holds.", "Who the statement is for."),
                 "TotalDebitAmount": amount(total + DEPOSIT, cur, "The invoice in full."),
@@ -1823,7 +1838,7 @@ def sea(n, doc):
                                "Note": V("Under CIF the risk was the buyer's on board; the distributor credits the "
                                          "frame as a goodwill gesture and claims from the insurer.", "Why a credit "
                                                                                                     "under CIF."),
-                               "DiscrepancyResponse": {"ResponseCode": V("Damaged", "The goods arrived damaged."),
+                               "DiscrepancyResponse": {"ResponseCode": V("17", "The goods arrived damaged."),
                                                        "Description": V("One side frame cracked.", "In words.")},
                                "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                                "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The 3PL's receipt "
@@ -1886,7 +1901,7 @@ def air_consignment(f, doc):
            "Despatch": {"RequestedDespatchDate": V(f.date(2), "To make the next morning's flight.")},
            "Delivery": {"RequestedDeliveryPeriod": {"StartDate": V(f.date(3), "Wanted at the 3PL on day 3."),
                                                     "EndDate": V(f.date(3), "The same day.")}},
-           "Status": {"ConditionCode": V("Ready", "Packed and labelled."),
+           "Status": {"ConditionCode": V("READY", "Packed and labelled."),
                       "Description": V("Waiting at the distributor's dispatch area.", "Where they are.")}}
     return {"ID": V(cid, "The distributor's consignment number."),
             "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods."),
@@ -1996,7 +2011,7 @@ def air(n, doc):
                                                   "may fly without further checks."),
             "SpecialServiceInstructions": V("Priority handling at Selanu: the customer is waiting.", "The service "
                                                                                                      "asked for."),
-            "ShippingPriorityLevelCode": V("Priority", "Flown on the first flight with room."),
+            "ShippingPriorityLevelCode": V("PRIORITY", "Flown on the first flight with room."),
             "SequenceID": V("1", "The first house consignment under the master air waybill."),
             "ChildConsignmentQuantity": qty(1, "EA", "One house consignment in the forwarder's consolidation."),
             "ChildConsignment": {"ID": V("BF-HAWB-26-0918", "The forwarder's house air waybill for the distributor's "
@@ -2057,11 +2072,11 @@ def cotton(n, doc):
                 "IssueDate": V(f.date(0), "Sent at the start of the ginning season."),
                 "IssueTime": V("09:00:00", "The time is stated, because a revision refers to the forecast by its issue "
                                            "date and time."),
-                "ForecastPurposeCode": V("Order", "A forecast of what the mill will order, so the ginnery can plan."),
+                "ForecastPurposeCode": V("ORDER", "A forecast of what the mill will order, so the ginnery can plan."),
                 "ForecastPeriod": {"StartDate": V(f.date(14), "The season's shipping period."),
                                    "EndDate": V(f.date(120), "Its end.")},
                 "ForecastLine": {"ID": V("1", "The only line."),
-                                 "ForecastTypeCode": V("Total", "The total expected purchase in the period."),
+                                 "ForecastTypeCode": V("TOTAL", "The total expected purchase in the period."),
                                  "SalesItem": {"Quantity": qty(24000, "KGM", "About four containers of lint."),
                                                "Item": item("cotton-bale")}}}
     if doc["doc"] == "DeliveryNote":
@@ -2101,6 +2116,7 @@ def cotton(n, doc):
         out["AllowanceCharge"] = {"ID": V("1", "The only charge."),
                                   "ChargeIndicator": V("true", "A charge in the farm's favour: it adds to what the gin "
                                                                "pays."),
+                                  "AllowanceChargeReasonCode": V("CAB", "The gin pays the farm for carting the cotton: a charge in the farm's favour, so a code of UN/EDIFACT 7161."),
                                   "AllowanceChargeReason": V("Haulage allowance", "The gin pays the farm for bringing "
                                                                                   "the cotton."),
                                   "SequenceNumeric": V("1", "Applied after the lines."),
@@ -2140,7 +2156,7 @@ def cotton(n, doc):
                                                                                                  "document."),
                                 "DiscrepancyResponse": {"ReferenceID": V("1", "The line of the self-billed "
                                                                               "invoice."),
-                                                        "ResponseCode": V("Grade", "The classing found a lower "
+                                                        "ResponseCode": V("2", "The classing found a lower "
                                                                                    "grade."),
                                                         "Description": V("2,500 kg classed Strict Low Middling "
                                                                          "instead of Middling.", "In words.")},
@@ -2408,7 +2424,7 @@ def tender(n, doc):
                                                                                     "manufacturer's installers, as "
                                                                                     "the contract provides."}],
                           currency="XBL",
-                          charges=[{"like": "bench-serra", "amount": COLOUR_CHARGE, "reason": "Special colour",
+                          charges=[{"like": "bench-serra", "amount": COLOUR_CHARGE, "reason": "Special colour", "code": "CAT", "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
                                     "why": "The benches in moss green, RAL 6005, as the order change asked.",
                                     "amount_why": "The charge the manufacturer quoted and confirmed: 5 lume a "
                                                   "bench."}])
@@ -2431,7 +2447,7 @@ def tender(n, doc):
                             "TaxAmount": amount(0, "XUF", "No tax: an export."),
                             "TransactionCurrencyTaxAmount": amount(0, "XBL", "The tax in the invoice currency."),
                             "TaxCategory": out["TaxTotal"]["TaxSubtotal"][0]["TaxCategory"]}}]
-        out["Annotation"] = {"SubjectCode": V("Contract", "The annotation is about the contract."),
+        out["Annotation"] = {"SubjectCode": V("CONTRACT", "The annotation is about the contract."),
                              "Subject": V("Releases under the framework contract", "Its subject."),
                              "AnnotationContent": V("First release: 40 benches; 200 remain.", "A remark for the "
                                                                                               "department's "
@@ -2498,7 +2514,7 @@ def waste(n, doc):
 UTILITIES = kit.Flow("utilities", "2026-04-01")
 MARCH = {"InvoicePeriod": {"StartDate": V("2026-03-01", "The month billed: March."),
                            "EndDate": V("2026-03-31", "Its last day."),
-                           "DescriptionCode": V("Month", "A monthly bill."),
+                           "DescriptionCode": V("MONTH", "A monthly bill."),
                            "Description": V("March 2026", "The period in words.")}}
 
 
@@ -2531,6 +2547,7 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
          "35-xl": [{"item": "telecom-line", "qty": 6, "invoice_why": "Six business lines for the month."},
                    {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
+UTILITY = {"Electricity": "ELEC", "Water": "WATER", "Telephone": "TEL", "Gas": "GAS"}   # UtilityType list
 METERS = {"33-xu": ["FE-C-0047120", ("FE-M-881204", "Factory, main connection"),
                     ("FE-M-881377", "Warehouse of Castrano Logistics"), ("FG-G-20417", "Factory, gas of the coating "
                                                                                        "line")],
@@ -2639,7 +2656,7 @@ def consumption_line(f, sup, key, k, d, why):
             "UtilityItem": {"ID": V(it["sellers_id"], "The utility's tariff item."),
                             "SubscriberID": V(METERS[key][0], "The customer's contract."),
                             "SubscriberType": V(KIND[sup], "The kind of supply."),
-                            "SubscriberTypeCode": V(KIND[sup][:4].upper(), "As a code."),
+                            "SubscriberTypeCode": V(UTILITY[KIND[sup]], "The supply the item is for, as a code."),
                             "Contract": {"ID": V(METERS[key][0], "The supply contract the tariff belongs to.")},
                             "Description": V(it["description"], "The tariff in words."),
                             "ConsumptionType": V("Metered" if it["kind"] == "goods" or d["item"] != "telecom-line"
@@ -2673,7 +2690,7 @@ def utility_statement(f, n, doc, key, invoice_no):
            **kit.cost_centre(customer, "The customer's cost centre, as on the bill."),
            "AdditionalDocumentReference": {"ID": V(f"{kit.initials(sup)}-TARIFF-2026", "The utility's tariff sheet "
                                                                                    "for 2026."),
-                                           "DocumentTypeCode": V("Tariff", "What the document is."),
+                                           "DocumentTypeCode": V("TARIFF", "What the document is."),
                                            "DocumentDescription": V("Prices per unit and the terms of supply.",
                                                                     "What it holds.")},
            "CustomerParty": {"Party": party(customer, short=True)}}
@@ -2721,7 +2738,7 @@ def utility_statement(f, n, doc, key, invoice_no):
                                           "Amount": amount(Decimal(q_) * Decimal(str(ITEM[d["item"]]["price"]
                                                                                     ["amount"])), cur,
                                                            "What it cost at the tariff."),
-                                          "ConsumptionLevelCode": V("Normal", "Within the usual range."),
+                                          "ConsumptionLevelCode": V("NORMAL", "Within the usual range."),
                                           "ConsumptionLevel": V("Normal", "In words."),
                                           "Description": V("Earlier month.", "For comparison."),
                                           "Period": {"StartDate": V(a, "The month."), "EndDate": V(b, "Its end.")}}
@@ -2733,7 +2750,7 @@ def utility_statement(f, n, doc, key, invoice_no):
                            "ResidenceTypeCode": V(h["residence"][1], "As a code."),
                            "HeatingType": V(h["heating"][0], "How the home is heated: not with this water."),
                            "HeatingTypeCode": V(h["heating"][1], "As a code."),
-                           "ConsumersEnergyLevelCode": V("Low", "Below the average for two occupants."),
+                           "ConsumersEnergyLevelCode": V("LOW", "Below the average for two occupants."),
                            "ConsumersEnergyLevel": V("Low consumer", "In words."),
                            "GuidanceDocumentReference": {"ID": V("CSW-SAVE-WATER", "The company's leaflet on saving "
                                                                                    "water.")},
@@ -2762,7 +2779,7 @@ def utility_statement(f, n, doc, key, invoice_no):
                 "CorrectionUnitAmount": amount(p_, cur, "The tariff per kWh."),
                 "ConsumptionEnergyQuantity": qty(dq, unit, "The correction of February's quantity."),
                 "CorrectionAmount": amount(p_ * dq, cur, "Credited on the April bill.")}
-        consumption = {"UtilityStatementTypeCode": V(KIND[sup], "The kind of supply."),
+        consumption = {"UtilityStatementTypeCode": V(UTILITY[KIND[sup]], "The kind of supply."),
                        "MainPeriod": {"StartDate": V("2026-03-01", "March."),
                                       "EndDate": V("2026-03-31", "Its last day.")},
                        "TaxTotal": {"TaxAmount": amount(tax, cur, "The tax of this point's consumption.")},
@@ -2770,7 +2787,7 @@ def utility_statement(f, n, doc, key, invoice_no):
                        "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, cur, "The consumption."),
                                               "PayableAmount": amount(amt + tax, cur, "With its tax.")}}
         sub = {"ConsumptionID": V(f"{pt['id']}-2603", "The consumption of the point in March."),
-               "SpecificationTypeCode": V("Detailed", "A detailed specification."),
+               "SpecificationTypeCode": V("DETAILED", "A detailed specification."),
                "Note": V(pt["desc"], "The point."),
                "TotalMeteredQuantity": qty(consumed, unit, "Metered in March."),
                "UtilityConsumptionPoint": {
@@ -2788,7 +2805,8 @@ def utility_statement(f, n, doc, key, invoice_no):
                    "UtilityMeter": {"MeterNumber": V(pt["meter"][0], "The meter."),
                                     "MeterName": V(pt["meter"][1], "Its name."),
                                     "MeterConstant": V(pt["meter"][2], "The register is multiplied by this."),
-                                    "MeterConstantCode": V(pt["meter"][3], "Why: " + pt["meter"][3].lower() + "."),
+                                    "MeterConstantCode": V({"Direct": "DIRECT", "Transformer ratio": "CTRATIO"}[pt["meter"][3]],
+                                                           "Why: " + pt["meter"][3].lower() + "."),
                                     "TotalDeliveredQuantity": qty(consumed, unit, "Delivered in March."),
                                     "MeterReading": reading,
                                     "MeterProperty": [{"Name": V("Accuracy class", "A property of the meter."),
@@ -2806,7 +2824,7 @@ def utility_statement(f, n, doc, key, invoice_no):
                    "Description": V("The supply under the customer's contract.", "What follows."),
                    "UtilitySupplierParty": party(sup, short=True),
                    "UtilityCustomerParty": party(customer, short=True),
-                   "Consumption": {"UtilityStatementTypeCode": V(KIND[sup], "The supply under the contract."),
+                   "Consumption": {"UtilityStatementTypeCode": V(UTILITY[KIND[sup]], "The supply under the contract."),
                                    "MainPeriod": {"StartDate": V("2026-03-01", "March."),
                                                   "EndDate": V("2026-03-31", "Its last day.")},
                                    "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, cur, "The line."),
@@ -2907,7 +2925,7 @@ def telecom_consumption(f, sup, key, customer):
     total = Decimal(6) * Decimal(str(line_item["price"]["amount"])) + data_amt
     clines = [consumption_line(f, sup, key, k, d, d["invoice_why"])[0] for k, d in enumerate(BILLS[key])]
     return {"ConsumptionID": V("ST-1077-2603", "The telecom consumption of March."),
-            "SpecificationTypeCode": V("Detailed", "With the calls."),
+            "SpecificationTypeCode": V("DETAILED", "With the calls."),
             "TotalMeteredQuantity": qty(35, "E34", "The data beyond the subscriptions."),
             "UtilityConsumptionPoint": {"ID": V("ST-CP-1077", "The company's connection."),
                                         "Description": V("Office of Velumi Trading, Selanu", "Where."),
@@ -2921,13 +2939,13 @@ def telecom_consumption(f, sup, key, customer):
                                         "LineExtensionAmount": amount(total, cur, "The supply."),
                                         "PayableAmount": amount(total, cur, "No tax on the island.")}},
                                     "ConsumptionLine": clines},
-            "Consumption": {"UtilityStatementTypeCode": V("Telephone", "The kind of supply."),
+            "Consumption": {"UtilityStatementTypeCode": V("TEL", "The kind of supply."),
                             "MainPeriod": {"StartDate": V("2026-03-01", "March."),
                                            "EndDate": V("2026-03-31", "Its last day.")},
                             "TelecommunicationsSupply": {
                                 "TelecommunicationsSupplyType": V("Business lines and data", "The supply."),
                                 "TelecommunicationsSupplyTypeCode": V("BUS", "As a code."),
-                                "PrivacyCode": V("Masked", "Numbers called inside the island are not listed; "
+                                "PrivacyCode": V("MASKED", "Numbers called inside the island are not listed; "
                                                            "calls abroad are."),
                                 "Description": V("Six business lines and a mobile data pool.", "In words."),
                                 "TotalAmount": amount(total, cur, "The telecom supply of March."),
@@ -2952,7 +2970,7 @@ def utilities(n, doc):
         invoice_no = f.number(f"invoice-{key}", sup, "Invoice")
         return {"ID": V(f.number(f"statement-{n}", sup, "UtilityStatement"), "The utility's statement number."),
                 "IssueDate": V(f.date(1), "Issued with the bill for March."),
-                "UtilityStatementTypeCode": V(KIND[sup], "The kind of utility the statement is about."),
+                "UtilityStatementTypeCode": V(UTILITY[KIND[sup]], "The kind of utility the statement is about."),
                 "DocumentCurrencyCode": kit.currency_line(kit.currency_of(sup), "the utility's currency"),
                 "ParentDocumentReference": {"ID": V(invoice_no, "The invoice this statement supplements: a utility "
                                                                 "statement adds the consumption behind the bill.")},
@@ -2961,13 +2979,16 @@ def utilities(n, doc):
         key = bill_key(doc)
         out = kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
                           BILLS[key], key=f"invoice-{key}", extra=MARCH)
-        purpose = {"33-xu": ("ELEC", "electricity bill"), "35-xl": ("PHON", "telephone bill")}.get(
-            key, ("WTER", "water bill"))
+        purpose = {"33-xu": ("ELEC", "an electricity bill"), "35-xl": ("PHON", "a telephone bill")}.get(
+            key, ("WTER", "a water bill"))
         meters = METERS[key]
         out["PurchaseReference"] = {"ID": V(meters[0], "The customer's contract number with the utility."),
                                     "Description": V("Supply contract", "What the number is.")}
-        for line, meter in zip(out["InvoiceLine"], meters[1:]):
-            line["PaymentPurposeCode"] = V(purpose[0], f"ISO 20022 purpose code {purpose[0]}: {purpose[1]}.")
+        for line, meter, bill in zip(out["InvoiceLine"], meters[1:], BILLS[key]):
+            code, what = ("GASB", "a gas bill") if ITEM[bill["item"]].get("utility") == "gas" or "gas" in bill["item"] \
+                else purpose
+            line["PaymentPurposeCode"] = V(code, f"What the payment of this line is for, as an ISO 20022 purpose: "
+                                                 f"{what}.")
             if meter:
                 line["PurchaseReference"] = {"ID": V(meter[0], "The meter or subscription the line is for."),
                                              "Description": V(meter[1], "Where it is.")}
@@ -2989,7 +3010,7 @@ def utilities(n, doc):
                                                                               "statement."),
                 "PaymentMandate": {
                     "ID": V(m["id"], "The mandate the household signed for the water company."),
-                    "MandateTypeCode": V("Recurrent", "A mandate for repeated collections."),
+                    "MandateTypeCode": V("RCUR", "A mandate for repeated collections."),
                     "MaximumPaidAmount": amount(m["max"], "XBL", "The most the company may collect at a time."),
                     "SignatureID": V(f"SIG-{m['id']}", "The reference of the signature on the mandate."),
                     "PayerParty": party("c-xb", short=True),
@@ -3015,7 +3036,7 @@ def utilities(n, doc):
         due = f.numbers[f"invoice-{key}-amount"]
         return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
                 "IssueDate": V(f.date(30), "Sent a week after the due date passed without payment."),
-                "ReminderTypeCode": V("Payment", "A reminder of a payment overdue."),
+                "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
                 "Note": V("The direct debit was returned by your bank: insufficient funds.", "Why the bill is "
                                                                                               "unpaid."),
@@ -3027,7 +3048,7 @@ def utilities(n, doc):
                 "LineCountNumeric": V("2", "The bill and the fee."),
                 "AdditionalDocumentReference": {"ID": V("BLUM-RTN-26-04-0193", "The bank's notice that the direct "
                                                                                "debit was returned."),
-                                                "DocumentTypeCode": V("ReturnNotice", "What the document is."),
+                                                "DocumentTypeCode": V("RETURNNOTICE", "What the document is."),
                                                 "IssueDate": V(f.date(23), "The day after the failed collection."),
                                                 "DocumentDescription": V("Direct debit returned: insufficient "
                                                                          "funds.", "What it says."),
@@ -3076,7 +3097,8 @@ def utilities(n, doc):
 
 
 # ---------------------------------------------------------------- the wood flow (Bayvarra -> Urvania, and at home)
-PALLETS_CHARGE = {"like": "slat-1800", "amount": "240.00", "reason": "Heat-treated export pallets",
+PALLETS_CHARGE = {"like": "slat-1800", "amount": "240.00", "reason": "Heat-treated export pallets", "code": "ACH",
+                  "code_why": "The reason for the charge as a code of UN/EDIFACT 7161: the pallets are heat-treated.",
                   "why": "96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.",
                   "amount_why": "96 pallets at 2.50 lume."}
 SLATS = [{"item": "slat-1800", "ordered": 4800, "why": "Slats for 960 benches: five per bench, 96 bundles of 50."}]
@@ -3189,7 +3211,7 @@ SETS = [{"item": "garden-set", "ordered": 20, "why": "The first delivery of the 
              "BackOrderAllowedIndicator": V("true", "What cannot be delivered now may follow."),
              "MinimumBackorderQuantity": qty(5, "SET", "But only in lots of at least five."),
              "MaximumBackorderQuantity": qty(10, "SET", "And at most ten on back order."),
-             "InspectionMethodCode": V("Visual", "The goods-in checks each set by eye."),
+             "InspectionMethodCode": V("VISUAL", "The goods-in checks each set by eye."),
              "AccountingCostCode": V("6120", "The garden department's cost centre."),
              "AccountingCost": V("Garden department", "In words."),
              "WarrantyValidityPeriod": {"DurationMeasure": V("2", "Two years on the joints.", unitCode="ANN")},
@@ -3234,7 +3256,7 @@ def furniture(n, doc):
                 "ValidityPeriod": period(f, 14, 180, "Valid for the season.", "Its end."),
                 "ExceptionCriteriaLine": {
                     "ID": V("1", "The only criterion."),
-                    "ThresholdValueComparisonCode": V("LessThan", "An exception is raised when actual sales fall "
+                    "ThresholdValueComparisonCode": V("LT", "An exception is raised when actual sales fall "
                                                                   "below the threshold."),
                     "ThresholdQuantity": qty(5, "SET", "Fewer than five sets sold in four weeks is worth a message."),
                     "SupplyItem": sets}}
@@ -3243,7 +3265,7 @@ def furniture(n, doc):
                 "ActivityPeriod": period(f, 21, 49, "The four weeks reported.", "Their end."),
                 "SupplyChainActivityDataLine": {
                     "ID": V("1", "The only line."),
-                    "SupplyChainActivityTypeCode": V("Sales", "The activity reported: sales to consumers."),
+                    "SupplyChainActivityTypeCode": V("SALES", "The activity reported: sales to consumers."),
                     "ActivityOriginLocation": {"Name": V("Brightmarket Stores, garden department, Lumeport",
                                                          "Where the sales took place.")},
                     "SalesItem": {"Quantity": qty(3, "SET", "Three sets sold in four weeks."), "Item": sets}}}
@@ -3279,7 +3301,7 @@ def furniture(n, doc):
         out = kit.credit_note(f, n, doc, 62, "Issued when the returned sets arrived back.",
                               [{"item": "garden-set", "qty": 6, "why": "The sets returned.",
                                 "line_allowance": {"percent": "5", "code": "64",
-                                                   "code_why": "UN/EDIFACT 5189 code 64: special agreement.",
+                                                   "code_why": "The reason for the allowance as a code of UN/EDIFACT 5189: the deduction is agreed in the instruction for returns.",
                                                    "reason": "Restocking deduction",
                                                    "why": "The instruction for returns lets the furniture maker "
                                                           "keep 5 % for restocking the sets."}}],
@@ -3319,7 +3341,7 @@ def furniture(n, doc):
                                                              "DocumentReference": {"ID": V(f.numbers["work-report"],
                                                                                            "The work report.")}}}}],
                            key="invoice-desks",
-                           charges=[{"like": "installation", "amount": "24.00", "reason": "Packaging disposal",
+                           charges=[{"like": "installation", "amount": "24.00", "reason": "Packaging disposal", "code": "AEO", "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
                                      "why": "The installers took the desks' packaging away, as the work report "
                                             "records.", "amount_why": "The flat charge for disposal."}],
                            extra={"WorkReportDocumentReference": {"ID": V(f.numbers["work-report"], "The approved "
@@ -3450,7 +3472,7 @@ def tender(n, doc):
                 "TenderDocumentReference": {"ID": V(f.numbers["tender-37-1"], "The tender withdrawn.")}}
     if d == "TendererQualificationResponse":
         return {**head(f, "qualification-response", doc, 50, "After the check of the qualifications."), **folder,
-                "QualificationResolution": {"AdmissionCode": V("Admitted", "The tenderer meets the selection criteria "
+                "QualificationResolution": {"AdmissionCode": V("ADMITTED", "The tenderer meets the selection criteria "
                                                                            "and its tender is evaluated."),
                                             "ResolutionDate": V(f.date(50), "The day of the decision.")}}
     if d == "UnawardedNotification":
@@ -3485,22 +3507,22 @@ def rail(n, doc):
                                       "TransportModeCode": V("2", "Rail transport.", listID="UNECE Recommendation 19 - "
                                                                                             "Codes for Modes of "
                                                                                             "Transport")},
-                    "TransportationService": {"TransportServiceCode": V("RailContainer", "The rail carrier's own code "
-                                                                                         "for its container train "
-                                                                                         "service.")}}}
+                    "TransportationService": {"TransportServiceCode": V("RAILCONT", "The container train service, "
+                                                                                         "as a code of the Trade "
+                                                                                         "Accord's transport services.")}}}
     return _rail(n, doc)
 
 
 def sea(n, doc):
     f, d = SEA, doc["doc"]
-    service = {"TransportServiceCode": V("OceanContainer", "The carrier's code for its container liner service."),
+    service = {"TransportServiceCode": V("OCEANCONT", "The service, as a code of the Trade Accord's transport services."),
                "Name": V("Weekly service Lumeport–Selanu", "The name of the service.")}
     if d == "BusinessCard":
         return head(f, "business-card", doc, 0, "Sent before the first offer to the new customer.")
     if d == "TransportServiceDescriptionRequest":
         return {**head(f, "tsd-request", doc, 4, "Asked once the order is accepted."),
                 "IssueTime": V("14:00:00", "The time of the request."),
-                "TransportationService": {"TransportServiceCode": V("OceanContainer", "The service asked about: a "
+                "TransportationService": {"TransportServiceCode": V("OCEANCONT", "The service asked about: a "
                                                                                       "container liner service.")}}
     if d == "TransportServiceDescription":
         return {**head(f, "tsd", doc, 5, "The carrier answers the next day."), "TransportationService": {
@@ -3525,7 +3547,7 @@ def sea(n, doc):
                                    "SizeTypeCode": V("42G1", "A 40-foot dry container.")},
             "SupportedCommodityClassification": {"CargoTypeCode": V("GEN", "General cargo in containers.")},
             "UnsupportedCommodityClassification": {"CargoTypeCode": V("BULK", "No loose bulk on this service.")},
-            "CommodityClassification": {"ItemClassificationCode": V("9401.79", "The benches.", listID="HS")},
+            "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a subclass of the UN Central Product Classification: seats with metal frames.")},
             "TotalCapacityDimension": {"AttributeID": V("TEU", "The ship's capacity in twenty-foot units."),
                                        "Measure": V("1000", "One thousand twenty-foot units (unit 20: twenty foot container).",
                                                     unitCode="20")},
@@ -3535,7 +3557,7 @@ def sea(n, doc):
                                                                                         "Transport")},
             "TransportEvent": kit.event(f, 10, "18:00:00", "The next departure from Lumeport.", done=False),
             "ResponsibleTransportServiceProviderParty": party("11-xb", short=True),
-            "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2e", "Greenhouse gases."),
+            "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases."),
                                       "ValueMeasure": V("380", "Per 40-foot container on the crossing.",
                                                         unitCode="KGM")},
             "EstimatedDurationPeriod": {"DurationMeasure": V("2", "Two days at sea.", unitCode="DAY")},
@@ -3584,7 +3606,7 @@ def retail(n, doc):
                                                    "BaseQuantity": qty(1, "EA", "Per piece (unit EA: each)."),
                                                    "PriceList": {
                                                        "ID": V("6-XB-PL-2026-2", "The new price list."),
-                                                       "StatusCode": V("Active", "It is in force from today."),
+                                                       "StatusCode": V("ACTIVE", "It is in force from today."),
                                                        "ValidityPeriod": {"StartDate": V(f.date(30), "From the "
                                                                                          "update."),
                                                                           "EndDate": V(f.date(90), "Until the "
@@ -3592,7 +3614,7 @@ def retail(n, doc):
                                                        "PreviousPriceList": {
                                                            "ID": V("6-XB-PL-2026", "The price list of the spring "
                                                                                    "catalogue it replaces."),
-                                                           "StatusCode": V("Replaced", "No longer in force.")}}}}}}
+                                                           "StatusCode": V("REPLACED", "No longer in force.")}}}}}}
     if d == "CatalogueItemSpecificationUpdate":
         it = item("bench-serra-b")
         it["Description"] = V("Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried "
@@ -3653,7 +3675,7 @@ def furniture(n, doc):
                 **kit.cost_centre("26-xb", "The store books the income on its garden department."),
                 "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for returns that "
                                                                               "asked for the sets.")},
-                "DiscrepancyResponse": {"ResponseCode": V("ReturnCost", "Why the store debits: the cost of a return "
+                "DiscrepancyResponse": {"ResponseCode": V("35", "Why the store debits: the cost of a return "
                                                                         "the furniture maker asked for."),
                                         "Description": V("Return transport of six unsold garden sets.", "In "
                                                                                                        "words.")},
@@ -3677,9 +3699,9 @@ def furniture(n, doc):
                                   "DebitedQuantity": qty(1, "E48", "One return delivery."),
                                   "LineExtensionAmount": amount(amt, "XBL", "The store's charge for one return delivery."),
                                   "Note": V("Collected with the store's van.", "How the sets went back."),
-                                  "DiscrepancyResponse": {"ResponseCode": V("ReturnCost", "The return transport.")},
+                                  "DiscrepancyResponse": {"ResponseCode": V("35", "The return transport.")},
                                   **kit.cost_centre("26-xb", "The store's cost centre the income is booked on."),
-                                  "PaymentPurposeCode": V("TRPT", "ISO 20022 purpose code TRPT: transport."),
+                                  "PaymentPurposeCode": V("SCVE", "What the payment is for, as an ISO 20022 purpose: a service, the transport back."),
                                   "TaxInclusiveLineExtensionAmount": amount(amt + tax, "XBL", "The line with its "
                                                                                               "tax."),
                                   "TaxTotal": {"TaxAmount": amount(tax, "XBL", "The tax of the line.")},
@@ -3725,7 +3747,7 @@ def carnet(n, doc):
                 **passport}
     if d == "ProofOfReexportationReminder":
         return {**head(f, "por-reminder", doc, 90, "No answer after a month."),
-                "ProcedureCode": V("TemporaryAdmission", "The procedure the samples were under on the island."),
+                "ProcedureCode": V("2000", "The procedure the samples were under on the island."),
                 **passport,
                 "ProofOfReexportationRequestDocumentReference": {"ID": V(f.numbers["por-request"], "The request "
                                                                                                    "unanswered.")},
@@ -3790,8 +3812,8 @@ def related(iid, q, why):
 def _(f, n, doc, out):
     lines = out["CatalogueLine"]
     bench, frame = lines[0], lines[1]
-    common = {"ActionCode": V("Add", "The line is new in this catalogue."),
-              "LifeCycleStatusCode": V("Active", "The item is sold now."),
+    common = {"ActionCode": V("ADD", "The line is new in this catalogue."),
+              "LifeCycleStatusCode": V("ACTIVE", "The item is sold now."),
               "OrderableIndicator": V("true", "It can be ordered."),
               "SellerSupplierParty": {"Party": party("6-xb", short=True)},
               "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
@@ -3805,7 +3827,7 @@ def _(f, n, doc, out):
                            "MinimumOrderQuantity": qty(4, "EA", "One pallet."),
                            "MaximumOrderQuantity": qty(192, "EA", "Two containers."),
                            "WarrantyInformation": V("Five years on the frame, from the maker.", "The warranty."),
-                           "PackLevelCode": V("Pallet", "The pack level the line is for."),
+                           "PackLevelCode": V("PALLET", "The pack level the line is for."),
                            "WarrantyParty": party("5-xu", short=True),
                            "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
                            "ItemComparison": {"PriceAmount": price("520.00", "XBL", "The price per bench."),
@@ -3830,7 +3852,7 @@ def _(f, n, doc, out):
                                                       "Quantity": qty(1, "EA", "One for one.")},
                            "ReplacedRelatedItem": {"ID": V("VI-C180-2024", "The casting this one replaced."),
                                                    "Quantity": qty(1, "EA", "One for one.")}})
-    return {"ActionCode": V("Add", "A new catalogue."),
+    return {"ActionCode": V("NEW", "A new catalogue."),
             "RevisionDate": V(f.date(0), "Not revised yet: the issue date."),
             "RevisionTime": V("09:00:00", "The issue time."),
             "Note": V("Prices for trade customers, before sales tax.", "What the prices are."),
@@ -3869,7 +3891,7 @@ def _(f, n, doc, out):
             "DocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan.")},
             "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XB", "For the store in Bayvarra.")}},
             "RequestedLanguage": {"ID": V("en", "English."), "Name": V("English", "In words."),
-                                  "LocaleCode": V("EN", "The locale, as an ISO 639 code of UBL's language code list.")},
+                                  "LocaleCode": V("en", "The locale, as a lower-case ISO 639 code of the world's language list.")},
             "RequestedClassificationScheme": {"ID": V("HS", "Items classified by the Harmonized System."),
                                               "Name": V("Harmonized System", "In words."),
                                               "AgencyID": V("WCO", "The World Customs Organization."),
@@ -3982,12 +4004,12 @@ def _(f, n, doc, out):
                                                                                                            "shop.")},
                             "RetailPlannedImpact": {"Amount": amount(Decimal("17976.00"), "XBL", "24 benches more "
                                                                      "at 749.00."),
-                                                    "ForecastPurposeCode": V("Sales", "Planned extra sales."),
-                                                    "ForecastTypeCode": V("Total", "In total."),
+                                                    "ForecastPurposeCode": V("SALES", "Planned extra sales."),
+                                                    "ForecastTypeCode": V("TOTAL", "In total."),
                                                     "Period": {"StartDate": V(f.date(21), "The promotion."),
                                                                "EndDate": V(f.date(34), "Its end.")}},
                             "SupplyItem": bench}}}},
-            "MiscellaneousEvent": {"MiscellaneousEventTypeCode": V("StoreOpening", "Late opening on the first "
+            "MiscellaneousEvent": {"MiscellaneousEventTypeCode": V("STOREOPEN", "Late opening on the first "
                                                                                    "Saturday."),
                                    "EventLineItem": {"LineNumberNumeric": V("1", "The line."),
                                                      "SupplyItem": bench}}}
@@ -4006,7 +4028,7 @@ def _(f, n, doc, out):
                                     "InventoryValueAmount": amount(Decimal("1560.00"), "XBL", "Three at the "
                                                                                               "purchase price."),
                                     "AvailabilityDate": V(f.date(3), "Available now."),
-                                    "AvailabilityStatusCode": V("Available", "On the shelf."),
+                                    "AvailabilityStatusCode": V("AVAILABLE", "On the shelf."),
                                     "InventoryLocation": {"Name": V("Garden department, ground floor",
                                                                     "Where they stand.")}}}
 
@@ -4030,16 +4052,16 @@ def _(f, n, doc, out):
     return {"Note": V("Weekly figures, please, for the whole season.", "What the maker asks."),
             "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation of the line.")},
             "Signature": seal(doc["from"], "BF-SIG-26-0312"),
-            "ItemInformationRequestLine": {"TimeFrequencyCode": V("Weekly", "Figures per week."),
-                                           "SupplyChainActivityTypeCode": V("Sales", "Sales to consumers."),
-                                           "ForecastTypeCode": V("Total", "Total quantities."),
-                                           "PerformanceMetricTypeCode": V("SalesUnits", "Measured in sets sold.")}}
+            "ItemInformationRequestLine": {"TimeFrequencyCode": V("WEEKLY", "Figures per week."),
+                                           "SupplyChainActivityTypeCode": V("SALES", "Sales to consumers."),
+                                           "ForecastTypeCode": V("TOTAL", "Total quantities."),
+                                           "PerformanceMetricTypeCode": V("SALESUNITS", "Measured in sets sold.")}}
 
 
 @enrich("furniture", "TradeItemLocationProfile")
 def _(f, n, doc, out):
     return {"Note": V("The store holds stock; the maker replenishes.", "Who does what."),
-            "ProfileStatusCode": V("Active", "In force."),
+            "ProfileStatusCode": V("ACTIVE", "In force."),
             "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation the line is bought under.")},
             "Signature": seal(doc["from"], "BM-SIG-26-0314"),
             "ItemManagementProfile": {
@@ -4064,23 +4086,23 @@ def _(f, n, doc, out):
             "ExceptionCriteriaLine": [
                 {**out["ExceptionCriteriaLine"],
                  "Note": V("Slow sales.", "What the criterion catches."),
-                 "ExceptionStatusCode": V("Active", "In force."),
-                 "CollaborationPriorityCode": V("High", "Answered within two days."),
-                 "ExceptionResolutionCode": V("Review", "The partners review the line together."),
-                 "SupplyChainActivityTypeCode": V("Sales", "Measured on sales."),
-                 "PerformanceMetricTypeCode": V("SalesUnits", "In sets."),
+                 "ExceptionStatusCode": V("ACTIVE", "In force."),
+                 "CollaborationPriorityCode": V("HIGH", "Answered within two days."),
+                 "ExceptionResolutionCode": V("REVIEW", "The partners review the line together."),
+                 "SupplyChainActivityTypeCode": V("SALES", "Measured on sales."),
+                 "PerformanceMetricTypeCode": V("SALESUNITS", "In sets."),
                  "EffectivePeriod": {"StartDate": V(f.date(21), "From the first four weeks on the shelf."),
                                      "EndDate": V(f.date(180), "To the end of the season.")}},
                 {"ID": V("2", "The forecast criterion."),
                  "Note": V("Forecast far from the store's own plan.", "What it catches."),
-                 "ThresholdValueComparisonCode": V("GreaterThan", "When the difference is larger."),
+                 "ThresholdValueComparisonCode": V("GT", "When the difference is larger."),
                  "ThresholdQuantity": qty(30, "P1", "More than 30 % difference."),
                  "SupplyItem": SETS_ITEM,
-                 "ForecastExceptionCriterionLine": {"ForecastPurposeCode": V("Sales", "A sales forecast."),
-                                                    "ForecastTypeCode": V("Total", "In total."),
-                                                    "ComparisonDataSourceCode": V("Buyer", "Compared with the "
+                 "ForecastExceptionCriterionLine": {"ForecastPurposeCode": V("SALES", "A sales forecast."),
+                                                    "ForecastTypeCode": V("TOTAL", "In total."),
+                                                    "ComparisonDataSourceCode": V("BUYER", "Compared with the "
                                                                                            "store's plan."),
-                                                    "DataSourceCode": V("Seller", "The maker's forecast."),
+                                                    "DataSourceCode": V("SELLER", "The maker's forecast."),
                                                     "TimeDeltaDaysQuantity": qty(28, "DAY", "Over four weeks.")}}]}
 
 
@@ -4113,19 +4135,19 @@ def _(f, n, doc, out):
             "ExceptionNotificationLine": {
                 "Note": V("Three sets sold against five expected.", "The exception."),
                 "Description": V("Sales below the agreed threshold.", "In words."),
-                "ExceptionStatusCode": V("Open", "Not yet resolved."),
-                "CollaborationPriorityCode": V("High", "As agreed."),
-                "ResolutionCode": V("Review", "A review of the line."),
+                "ExceptionStatusCode": V("OPEN", "Not yet resolved."),
+                "CollaborationPriorityCode": V("HIGH", "As agreed."),
+                "ResolutionCode": V("REVIEW", "A review of the line."),
                 "VarianceQuantity": qty(-2, "SET", "Two sets fewer than the threshold."),
-                "SupplyChainActivityTypeCode": V("Sales", "Measured on sales."),
-                "PerformanceMetricTypeCode": V("SalesUnits", "In sets."),
+                "SupplyChainActivityTypeCode": V("SALES", "Measured on sales."),
+                "PerformanceMetricTypeCode": V("SALESUNITS", "In sets."),
                 "DocumentReference": {"ID": V(f.numbers["activity"], "The product activity reported.")},
-                "ForecastException": {"ForecastPurposeCode": V("Sales", "The sales forecast compared."),
-                                      "ForecastTypeCode": V("Total", "In total."),
+                "ForecastException": {"ForecastPurposeCode": V("SALES", "The sales forecast compared."),
+                                      "ForecastTypeCode": V("TOTAL", "In total."),
                                       "IssueDate": V(f.date(14), "The forecast of the first delivery."),
                                       "IssueTime": V("10:00:00", "Its time."),
-                                      "DataSourceCode": V("Seller", "The maker's forecast."),
-                                      "ComparisonDataCode": V("Actual", "Compared with actual sales."),
+                                      "DataSourceCode": V("SELLER", "The maker's forecast."),
+                                      "ComparisonDataCode": V("ACTUAL", "Compared with actual sales."),
                                       "ComparisonForecastIssueDate": V(f.date(49), "The figures of day 49."),
                                       "ComparisonForecastIssueTime": V("18:00:00", "Their time.")}}}
 
@@ -4142,13 +4164,13 @@ def _(f, n, doc, out):
 @enrich("cotton", "ForecastRevision")
 def _(f, n, doc, out):
     return {"Note": V("Demand for clothing has risen.", "Why the forecast is revised."),
-            "RevisionStatusCode": V("Revised", "A revised forecast."),
-            "PurposeCode": V("Order", "Of what the mill will order."),
+            "RevisionStatusCode": V("REVISED", "A revised forecast."),
+            "PurposeCode": V("ORDER", "Of what the mill will order."),
             "OriginalDocumentReference": {"ID": V(f.numbers["forecast"], "The forecast revised.")},
             "Signature": seal(doc["from"], "LT-SIG-26-0222"),
             "ForecastRevisionLine": {"Note": V("Twenty per cent more.", "The change."),
                                      "Description": V("More bales from the second half of the season.", "In words."),
-                                     "AdjustmentReasonCode": V("Demand", "Higher demand."),
+                                     "AdjustmentReasonCode": V("DEMAND", "Higher demand."),
                                      "ForecastPeriod": {"StartDate": V(f.date(60), "From mid-season."),
                                                         "EndDate": V(f.date(120), "To the end.")}}}
 
@@ -4190,7 +4212,7 @@ def status_extras(f, n, doc, out):
          "Note": V("Automatic report from the sender's tracking system.", "How it was made."),
          "ShippingOrderID": V(f.numbers.get("consignment", ""), "The shipper's booking it reports on."),
          "OtherInstruction": V("Reply only if the delivery slot must change.", "What the receiver should do."),
-         "TransportExecutionStatusCode": V("InProgress", "The carriage is under way."),
+         "TransportExecutionStatusCode": V("INPROGRESS", "The carriage is under way."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
          "StatusLocation": {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the status was recorded.")},
          "StatusPeriod": {"StartDate": V(out["IssueDate"].value, "The status holds from the report."),
@@ -4220,7 +4242,7 @@ def _(f, n, doc, out):
             "Note": V("The promotion starts soon.", "Why the store asks."),
             "ShippingOrderID": V(f.numbers["consignment"], "The booking asked about."),
             "OtherInstruction": V("Answer with the expected delivery time.", "What the answer should hold."),
-            "TransportationStatusTypeCode": V("Delivery", "The status of the delivery is asked."),
+            "TransportationStatusTypeCode": V("DELIVERY", "The status of the delivery is asked."),
             "DocumentReference": {"ID": V(f.numbers["order"], "The store's order.")},
             "Signature": seal(doc["from"], "LD-SIG-26-TSR"),
             "RequestedStatusLocation": {"Name": V("Brightmarket Stores, goods-in", "Status at the store.")},
@@ -4274,7 +4296,7 @@ def _(f, n, doc, out):
 @enrich("sea", "TransportServiceDescriptionRequest")
 def _(f, n, doc, out):
     return {"Note": V("Weekly sailings to Selanu, please.", "What the distributor asks."),
-            "ServiceInformationPreferenceCode": V("Schedule", "It wants the schedule first."),
+            "ServiceInformationPreferenceCode": V("SCHEDULE", "It wants the schedule first."),
             "Signature": seal(doc["from"], "LD-SIG-TSDR"),
             "TransportServiceProviderParty": party("11-xb", short=True)}
 
@@ -4283,7 +4305,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"Note": V("Our island service.", "What follows."), "ServiceName": V("Island feeder", "The service's "
                                                                                                 "name."),
-            "ResponseCode": V("Offered", "The service is offered."),
+            "ResponseCode": V("OFFERED", "The service is offered."),
             "Signature": seal(doc["from"], "TWL-SIG-TSD"),
             "TransportServiceDescriptionRequestDocumentReference": {"ID": V(f.numbers["tsd-request"], "The request "
                                                                                                       "answered.")},
@@ -4310,8 +4332,8 @@ def fi_extras(f, n, doc, out):
          "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
                           "TargetCurrencyCode": V("XLC", "The island's currency."),
                           "CalculationRate": V("0.4", "The reference rate.")},
-         "DocumentDistribution": {"ID": V("1", "A copy."), "DocumentTypeCode": V("Copy", "A copy."),
-                                  "DistributionTypeCode": V("Electronic", "As this UBL document."),
+         "DocumentDistribution": {"ID": V("1", "A copy."), "DocumentTypeCode": V("COPY", "A copy."),
+                                  "DistributionTypeCode": V("ELECTRONIC", "As this UBL document."),
                                   "Party": party(doc["to"], short=True)},
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-FI-{n:02d}")}
     if carrier_booking:
@@ -4334,8 +4356,8 @@ def bl_extras(f, n, doc, out):
             "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
                              "TargetCurrencyCode": V("XLC", "The island's currency."),
                              "CalculationRate": V("0.4", "The reference rate.")},
-            "DocumentDistribution": {"ID": V("1", "Three originals."), "DocumentTypeCode": V("Original", "Originals."),
-                                     "DistributionTypeCode": V("Paper", "On paper, by courier."),
+            "DocumentDistribution": {"ID": V("1", "Three originals."), "DocumentTypeCode": V("ORIGINAL", "Originals."),
+                                     "DistributionTypeCode": V("PAPER", "On paper, by courier."),
                                      "Party": party(doc["to"], short=True)},
             "Signature": seal(doc["from"], f"TWL-SIG-BL-{f.id}", "The master's signature, by the carrier's agent.")}
 
@@ -4351,9 +4373,9 @@ def _(f, n, doc, out):
             "Note": V("One container for Selanu.", "The cargo."), "VersionID": V("1", "The first version."),
             "DeclaredCarriageValueAmount": amount(0, "XBL", "No value declared."),
             "PassengerPerson": kit.person("Ines", "Tavari", "The one passenger: a supercargo travelling with the "
-                                                            "cargo.", role="Passenger"),
+                                                            "cargo.", role="PASSENGER"),
             "DocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading of the container.")},
-            "DocumentDistribution": {"ID": V("1", "To customs."), "DistributionTypeCode": V("Electronic", "By "
+            "DocumentDistribution": {"ID": V("1", "To customs."), "DistributionTypeCode": V("ELECTRONIC", "By "
                                                                                                           "message."),
                                      "Party": party("19-xl", short=True)},
             "Signature": seal(doc["from"], "TWL-SIG-MF", "The master's signature.")}
@@ -4366,7 +4388,7 @@ def _(f, n, doc, out):
             "OtherInstruction": V("Keep with the container's documents.", "Where it goes."),
             "CarrierParty": party("11-xb", short=True),
             "DocumentReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
-            "DocumentDistribution": {"ID": V("1", "To the forwarder."), "DistributionTypeCode": V("Electronic",
+            "DocumentDistribution": {"ID": V("1", "To the forwarder."), "DistributionTypeCode": V("ELECTRONIC",
                                                                                                   "By message."),
                                      "Party": party("10-xb", short=True)},
             "Signature": seal(doc["from"], "LD-SIG-PL")}
@@ -4375,12 +4397,12 @@ def _(f, n, doc, out):
 @enrich("sea", "CommonTransportationReport")
 def _(f, n, doc, out):
     return {"DocumentStatusCode": V("NoStatus", "A first report."),
-            "ReportTypeCode": V("PreArrival", "The report before entering the port."),
+            "ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
             "ReportType": V("Pre-arrival report", "In words."),
             "Description": V("The ship's report before arrival at Selanu.", "What it is."),
             "Note": V("No incidents on board.", "The master's note."), "VersionID": V("1", "The first version."),
             "ReportingLocation": {"Name": V("At sea, 40 nautical miles off Selanu", "Where the report was made.")},
-            "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "Eastbound"),
+            "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "EB"),
             "DocumentReference": {"ID": V(f.numbers["manifest"], "The cargo manifest.")},
             "Signature": seal(doc["from"], "TWL-SIG-CTR", "The master's signature.")}
 
@@ -4396,7 +4418,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     lines = out["ReceiptLine"] if isinstance(out["ReceiptLine"], list) else [out["ReceiptLine"]]
     lines[0].update({"ReceivedTime": V("10:40:00", "Forty minutes after the slot began."),
-                     "TimingComplaintCode": V("Late", "The truck was late for its slot."),
+                     "TimingComplaintCode": V("LATE", "The truck was late for its slot."),
                      "TimingComplaint": V("Arrived 40 minutes into the slot; unloading delayed the next truck.",
                                           "The complaint.")})
     return {"AdditionalDocumentReference": {"ID": V("BM-GI-PHOTO-26-0510", "The goods-in photographs.")},
@@ -4463,13 +4485,13 @@ def export_extras(f, n, doc, out):
     exporter = doc["parties"]["ExporterParty"]
     c = PARTY[exporter]["c"]
     f.numbers.setdefault("export-declaration", out["CustomsDeclaration"]["ID"].value)
-    x = {"ExportTypeCode": V("Permanent", "A permanent export: the goods are sold abroad."),
-         "ExportReasonCode": V("Sale", "The reason: a sale to a buyer abroad."),
+    x = {"ExportTypeCode": V("PERMANENT", "A permanent export: the goods are sold abroad."),
+         "ExportReasonCode": V("SALE", "The reason: a sale to a buyer abroad."),
          "Note": V("Declared electronically before the goods leave.", "How it was declared."),
          "VersionID": V("1", "The first version."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-EX-{f.id}"),
          "CustomsDeclaration": {
-             "FunctionCode": V("Original", "An original declaration, not an amendment."),
+             "FunctionCode": V("9", "An original declaration, not an amendment."),
              "ValidityPeriod": {"StartDate": V(out["IssueDate"].value, "From the declaration."),
                                 "DurationMeasure": V("90", "The goods must leave within 90 days.", unitCode="DAY")},
              "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V(c, "The customs territory the "
@@ -4486,9 +4508,9 @@ def import_extras(f, n, doc, out):
     importer = doc["parties"]["ImporterParty"]
     c = PARTY[importer]["c"]
     origin = PARTY[doc["parties"]["ConsignorParty"]]["c"]
-    x = {"TypeCode": V("Import", "An import declaration."),
-         "SubTypeCode": V("FreeCirculation", "For release into free circulation."),
-         "NatureOfTransactionCode": V("Purchase", "The goods were bought."),
+    x = {"TypeCode": V("IMPORT", "An import declaration."),
+         "SubTypeCode": V("FREECIRC", "For release into free circulation."),
+         "NatureOfTransactionCode": V("PURCHASE", "The goods were bought."),
          "Note": V("Duties paid by the importer's account at customs.", "How duties are settled."),
          "VersionID": V("1", "The first version."),
          "ValidityPeriod": {"StartDate": V(out["IssueDate"].value, "From the declaration."),
@@ -4510,9 +4532,9 @@ for _fid in ("road", "sea", "tender", "plastics", "wood", "cotton"):
 
 @enrich("rail", "TransitCustomsDeclaration")
 def _(f, n, doc, out):
-    return {"TypeCode": V("Transit", "A transit declaration."),
-            "SubTypeCode": V("External", "Goods not yet released, carried across the border under customs control."),
-            "NatureOfTransactionCode": V("Purchase", "The goods were bought."),
+    return {"TypeCode": V("TRANSIT", "A transit declaration."),
+            "SubTypeCode": V("EXTTRANSIT", "Goods not yet released, carried across the border under customs control."),
+            "NatureOfTransactionCode": V("PURCHASE", "The goods were bought."),
             "Note": V("Seals XU-VI-30411 and XU-VI-30412 to remain intact.", "The transit condition."),
             "VersionID": V("1", "The first version."),
             "ValidityPeriod": {"StartDate": V(f.date(8), "From departure."),
@@ -4543,7 +4565,7 @@ def _(f, n, doc, out):
              "ExporterParty": party("5-xu", short=True),
              "ImporterParty": party("6-xb", short=True),
              "DocumentDistribution": {"ID": V("1", "The importer's copy."),
-                                      "DistributionTypeCode": V("Electronic", "As this document."),
+                                      "DistributionTypeCode": V("ELECTRONIC", "As this document."),
                                       "Party": party("6-xb", short=True)},
              "SupportingDocumentReference": {"ID": V(f.numbers["invoice"] if "invoice" in f.numbers else
                                                      f.numbers["order"], "The commercial document behind the "
@@ -4554,7 +4576,7 @@ def _(f, n, doc, out):
                                    "ApprovalStatus": V("Legalised", "The trade accord council confirms the "
                                                                     "chamber's signature."),
                                    "Remarks": V("Signature of the Ferrano chamber confirmed.", "What was checked."),
-                                   "EndorserParty": {"RoleCode": V("Legalisation", "The council legalises."),
+                                   "EndorserParty": {"RoleCode": V("LEGALISATION", "The council legalises."),
                                                      "SequenceNumeric": V("2", "After the chamber."),
                                                      "Party": party("32-xb", short=True),
                                                      "SignatoryContact": {"Name": V("Legalisation desk", "The "
@@ -4568,7 +4590,7 @@ def _(f, n, doc, out):
 
 @enrich("cotton", "GoodsCertificate")
 def _(f, n, doc, out):
-    return {"TypeCode": V("Phytosanitary", "A plant health certificate for the cotton."),
+    return {"TypeCode": V("PHYTO", "A plant health certificate for the cotton."),
             "Description": V("The ginned cotton is free of the pests named by Bayvarra's plant health rules.",
                              "What it certifies."),
             "Note": V("Inspected at the ginnery's warehouse.", "Where."), "VersionID": V("1", "The first version."),
@@ -4587,7 +4609,7 @@ def _(f, n, doc, out):
                             "AcceptanceIndicator": V("true", "Accepted."),
                             "ValidityPeriod": {"EndDate": V(f.date(40), "As the certificate.")},
                             "IssuerParty": party("20-xl", short=True),
-                            "AttestationLine": {"ID": V("1", "The pest checked."), "TypeCode": V("Pest", "A pest "
+                            "AttestationLine": {"ID": V("1", "The pest checked."), "TypeCode": V("PEST", "A pest "
                                                                                                         "check."),
                                                 "Description": V("Boll weevil: none found.", "The finding."),
                                                 "CriterionItem": {"ID": V("XB-PH-07", "Bayvarra's rule."),
@@ -4603,7 +4625,7 @@ def _(f, n, doc, out):
                                                                        "Description": V("Pink bollworm: none found.",
                                                                                         "The finding.")}}},
             "GoodsProcessing": {"ID": V("SCG-PROC-26", "The processing on the island."),
-                                "TypeCode": V("Ginning", "The cotton was ginned."),
+                                "TypeCode": V("GINNING", "The cotton was ginned."),
                                 "Description": V("Ginned, cleaned and pressed into bales.", "In words."),
                                 "Note": V("At the Selanu cotton ginnery.", "Where."),
                                 "Period": {"StartDate": V(f.date(5), "The ginning."), "EndDate": V(f.date(20), "Its "
@@ -4612,7 +4634,7 @@ def _(f, n, doc, out):
                                 "CriterionItem": {"CriterionDescription": V("Seed removed; lint only.", "What "
                                                                             "processing the rule requires."),
                                                   "DeclaredPropertyItem": {"Name": V("Cotton lint", "The goods.")}},
-                                "SubGoodsProcessing": {"TypeCode": V("Pressing", "Pressed into bales."),
+                                "SubGoodsProcessing": {"TypeCode": V("PRESSING", "Pressed into bales."),
                                                        "Description": V("Bales of about 227 kg.", "In words.")}},
             "OriginalDocumentReference": {"ID": V("XL-CLS-2026-0042", "The classing certificate of the cotton.")},
             "PreviousDocumentReference": {"ID": V("SCC-PH-25-0198", "Last season's certificate.")},
@@ -4629,20 +4651,20 @@ def _(f, n, doc, out):
         "GoodsItem": {"ID": V("1", "The two sample benches."), "Quantity": qty(2, "EA", "Two.")},
         ref: {"ID": V(f"{cid}-STAMP", ref_why)},
         "VoucherDocumentReference": {"ID": V(f"V-{cid}", "The voucher that customs keeps.")}}
-    return {"StatusCode": V("Valid", "The carnet is valid."), "Status": V("Issued", "In words."),
+    return {"StatusCode": V("VALID", "The carnet is valid."), "Status": V("Issued", "In words."),
             "Note": V("Samples for the Selanu trade fair; to come back within six months.", "What it is for."),
             "VersionID": V("1", "The first version."),
-            "ExportReasonCode": V("Exhibition", "Temporary export for a fair."),
+            "ExportReasonCode": V("EXHIBITION", "Temporary export for a fair."),
             "ExportReason": V("Exhibition at the Selanu trade fair", "In words."),
             "IssuerEndorsement": {"DocumentID": V(out["ID"].value, "The carnet."),
                                   "ApprovalStatus": V("Issued", "The chamber issued it."),
-                                  "EndorserParty": {"RoleCode": V("Issuer", "The issuing chamber."),
+                                  "EndorserParty": {"RoleCode": V("ISSUER", "The issuing chamber."),
                                                     "SequenceNumeric": V("1", "The first endorsement."),
                                                     "Party": party("20-xu", short=True),
                                                     "SignatoryContact": {"Name": V("Carnet desk", "The chamber's "
                                                                                                  "desk.")}}},
             "AdditionalDocumentReference": {"ID": V("SCC-FAIR-26-INV", "The fair's invitation to exhibit.")},
-            "DocumentDistribution": {"ID": V("1", "The holder's carnet."), "DistributionTypeCode": V("Paper",
+            "DocumentDistribution": {"ID": V("1", "The holder's carnet."), "DistributionTypeCode": V("PAPER",
                                                                                                     "On paper."),
                                      "Party": party("5-xu", short=True)},
             "Signature": seal("20-xu", "FCC-SIG-26-ATA"),
@@ -4677,7 +4699,7 @@ def _(f, n, doc, out):
             "VersionID": V("1", "The first reminder."),
             "IssuerEndorsement": {"DocumentID": V(f.numbers["por-request"], "The request repeated."),
                                   "ApprovalStatus": V("Open", "Still unanswered."),
-                                  "EndorserParty": {"RoleCode": V("Guarantor", "The importing guarantor."),
+                                  "EndorserParty": {"RoleCode": V("GUARANTOR", "The importing guarantor."),
                                                     "SequenceNumeric": V("1", "The only one."),
                                                     "Party": party("20-xl", short=True),
                                                     "SignatoryContact": {"Name": V("Carnet desk", "The chamber's "
@@ -4709,7 +4731,7 @@ import base64 as _b64  # noqa: E402
 def full_signature(pid, no, f, day, why):
     """A signature with everything UBL can say about it: method, validation and the signature value itself."""
     blob = _b64.b64encode(f"Signature value of {no}, shortened for the example world.".encode()).decode()
-    return {"ID": V(no, why), "ReasonCode": V("Approval", "The signer approves the document."),
+    return {"ID": V(no, why), "ReasonCode": V("APPROVAL", "The signer approves the document."),
             "Note": V("Signed with the company's seal certificate.", "How."),
             "ValidationDate": V(f.date(day), "Checked on receipt."), "ValidationTime": V("09:05:00", "At that time."),
             "ValidatorID": V("LTAC-VALIDATOR", "The trade accord council's validation service."),
@@ -4728,13 +4750,13 @@ def full_reference(f, rid, why, day):
     return {"ID": V(rid, why),
             "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:doc:{rid}")), "Its UUID."),
             "IssueDate": V(f.date(day), "Its issue date."), "IssueTime": V("12:00:00", "And time."),
-            "DocumentTypeCode": V("Terms", "The kind of document."),
+            "DocumentTypeCode": V("774", "The kind of document."),
             "DocumentDescription": V("The terms of the digital trade agreement.", "What it is."),
             "XPath": V("/DigitalAgreement/DigitalAgreementTerms", "The part of this document the reference "
                                                                   "explains."),
             "ReferencedDocumentInternalAddress": V("section-2", "The section of the referenced document meant."),
             "LanguageID": V("en", "In English."),
-            "LocaleCode": V("EN", "The locale, as an ISO 639 code of UBL's language code list."),
+            "LocaleCode": V("en", "The locale, as a lower-case ISO 639 code of the world's language list."),
             "VersionID": V("1.0", "The version referred to."),
             "DocumentStatusCode": V("Confirmed", "The version both sides confirmed."),
             "Attachment": {"EmbeddedDocumentBinaryObject": V(text, "A short text, Base64-encoded.",
@@ -4748,15 +4770,15 @@ def full_reference(f, rid, why, day):
                                "ExpiryDate": V(f.date(365), "The link works for a year."),
                                "ExpiryTime": V("23:59:00", "Until the end of that day."),
                                "MimeCode": V("application/pdf", "A PDF."),
-                               "FormatCode": V("PDF/A-3", "An archivable PDF."),
-                               "EncodingCode": V("Binary", "Not encoded."),
+                               "FormatCode": V("fmt/480", "An archivable PDF."),
+                               "EncodingCode": V("binary", "Not encoded."),
                                "CharacterSetCode": V("UTF-8", "The character set of its text."),
                                "FileName": V("terms-1.0.pdf", "The file's name."),
                                "Description": V("The full terms.", "What it holds.")}},
             "ValidityPeriod": {"StartDate": V(f.date(day), "In force from signing."),
                                "EndDate": V(f.date(day + 365), "For a year.")},
             "ResultOfVerification": {"ValidatorID": V("LTAC-VALIDATOR", "The council's validation service."),
-                                     "ValidationResultCode": V("Valid", "The document's signature is valid."),
+                                     "ValidationResultCode": V("VALID", "The document's signature is valid."),
                                      "ValidationDate": V(f.date(day), "Checked."),
                                      "ValidationTime": V("12:05:00", "At that time."),
                                      "ValidateProcess": V("Signature and hash check", "What was checked."),
@@ -4801,9 +4823,9 @@ def _(f, n, doc, out):
         p["CertificationDocumentReference"] = {"ID": V(f"ACCORD-CERT-PROC-{p['ID'].value}", "The council's "
                                                                                              "certification of "
                                                                                              "the process.")}
-    return {"AgreementTypeCode": V("Bilateral", "An agreement between two parties."),
+    return {"AgreementTypeCode": V("BILATERAL", "An agreement between two parties."),
             "PreviousVersionID": V("0.9", "The draft both sides commented on."),
-            "RequiredResponseMessageLevelCode": V("Business", "A business response is required for every "
+            "RequiredResponseMessageLevelCode": V("BUSINESS", "A business response is required for every "
                                                               "document."),
             "Signature": full_signature("6-xb", "LD-SIG-26-DA-1", f, 1, "The distributor's signature as "
                                                                         "governor."),
@@ -4818,7 +4840,7 @@ def _(f, n, doc, out):
                                                                                                 "within two "
                                                                                                 "weeks.")},
                 "ServiceLevelAgreement": {
-                    "ID": V("LD-SLA-1", "The service level."), "ServiceTypeCode": V("Messaging", "For the "
+                    "ID": V("LD-SLA-1", "The service level."), "ServiceTypeCode": V("MESSAGING", "For the "
                                                                                                   "exchange."),
                     "ServiceType": V("Document exchange", "In words."),
                     "AvailabilityTimePercent": V("99.5", "The access point is available 99.5 % of the time."),
@@ -4860,24 +4882,24 @@ def _(f, n, doc, out):
                                               "MimeCode": V("application/pdf", "A PDF.")}}},
             "AdditionalDocumentReference": {"ID": V("LD-REG-XB", "The distributor's registration extract.")},
             "BusinessCapability": {"ID": V("CAP-STOCK", "A capability."),
-                                   "CapabilityTypeCode": V("Warehousing", "What it can do."),
+                                   "CapabilityTypeCode": V("WAREHOUSING", "What it can do."),
                                    "Description": V("Stock of 2,000 benches in Marrowdale.", "In words."),
                                    "ValueAmount": amount(Decimal("1040000.00"), "XBL", "The stock's value."),
                                    "ValueQuantity": qty(2000, "EA", "Benches in stock."),
                                    "SuppliedEvidence": {"ID": V("LD-AUDIT-2025", "The evidence."),
-                                                        "EvidenceTypeCode": V("Audit", "An audit report."),
+                                                        "EvidenceTypeCode": V("AUDIT", "An audit report."),
                                                         "Name": V("Stock count 2025", "Its name."),
                                                         "Description": V("Year-end count by the auditor.", "What "
                                                                                                            "it is."),
                                                         "CandidateStatement": V("The stock is counted every year.",
                                                                                 "The company's statement."),
-                                                        "ConfidentialityLevelCode": V("Public", "May be shared."),
+                                                        "ConfidentialityLevelCode": V("PUBLIC", "May be shared."),
                                                         "EvidenceIssuingParty": party("6-xb", short=True),
                                                         "Language": {"ID": V("en", "English.")}},
                                    "ValidityPeriod": {"EndDate": V(f.date(240), "Until the next count.")},
                                    "WebSite": {"ID": V("WEB-1", "The stock page."), "Name": V("Stock", "Its name."),
                                                "Description": V("Live stock levels.", "What it shows."),
-                                               "WebSiteTypeCode": V("Extranet", "For trade customers."),
+                                               "WebSiteTypeCode": V("EXTRANET", "For trade customers."),
                                                "URI": V("https://www.lumeway.example/stock", "Where."),
                                                "WebSiteAccess": {"URI": V("https://www.lumeway.example/login",
                                                                           "The login page."),
@@ -4919,13 +4941,13 @@ def _(f, n, doc, out):
             "DocumentResponse": {
                 "Response": {"EffectiveDate": V(f.date(9), "Effective at once."),
                              "EffectiveTime": V("06:12:00", "When processed."),
-                             "Status": {"ConditionCode": V("Matched", "The invoice matched order and receipt."),
+                             "Status": {"ConditionCode": V("MATCHED", "The invoice matched order and receipt."),
                                         "Description": V("Three-way match passed.", "In words.")}},
                 "IssuerParty": party(doc["from"], short=True),
                 "RecipientParty": party(doc["to"], short=True),
                 "LineResponse": {"LineReference": {"LineID": V("2", "The invoice line of the side frames.")},
                                  "Response": {"ReferenceID": V("2", "The line."),
-                                              "ResponseCode": V("AP", "Accepted.", listID="UNCL4343"),
+                                              "ResponseCode": V("AP", "Accepted."),
                                               "Description": V("Matched to the substituted 2026 casting.",
                                                                "Why it needed a look.")}}}}
 
@@ -4997,7 +5019,7 @@ def _(f, n, doc, out):
         "ServiceLevelCode": V("NURG", "ISO 20022 service level NURG: a normal, not urgent, payment."),
         "TradeFinancing": {"ID": V("HF-FA-2026-007/18", "The financing of this receivable under the factoring "
                                                         "agreement."),
-                           "FinancingInstrumentCode": V("Factoring", "The receivable was sold to the factor."),
+                           "FinancingInstrumentCode": V("FACTORING", "The receivable was sold to the factor."),
                            "ContractDocumentReference": {"ID": V("HF-FA-2026-007", "The factoring agreement.")},
                            "DocumentReference": {"ID": V("HF-ASSIGN-26-0091", "The notice of assignment.")},
                            "FinancingParty": party("24-xb", short=True),
@@ -5007,7 +5029,7 @@ def _(f, n, doc, out):
                                                    "What it says.")}},
         "RemittanceDocumentDistribution": {"ID": V("1", "Where the remittance advice goes."),
                                            "DocumentTypeCode": V("RemittanceAdvice", "The document."),
-                                           "DistributionTypeCode": V("Electronic", "By message."),
+                                           "DistributionTypeCode": V("ELECTRONIC", "By message."),
                                            "Communication": {"ChannelCode": V("EM", "UN/EDIFACT 3155 code EM: "
                                                                                     "electronic mail.",
                                                                               listID="UN/EDIFACT EDED 3155"),
@@ -5028,10 +5050,10 @@ def _(f, n, doc, out):
     return {"TransportContract": {"IssueTime": V("10:00:00", "Signed in the morning."),
                                   "NominationDate": V(f.date(2), "The slots of this train were nominated today."),
                                   "NominationTime": V("09:00:00", "At that time."),
-                                  "ContractTypeCode": V("Framework", "A framework contract."),
+                                  "ContractTypeCode": V("FRAMEWORK", "A framework contract."),
                                   "Note": V("Call-off 88 of the year.", "Which call-off."),
                                   "VersionID": V("2", "The contract as amended in March."),
-                                  "ModificationReasonCode": V("Volume", "Amended for higher volumes."),
+                                  "ModificationReasonCode": V("VOLUME", "Amended for higher volumes."),
                                   "ModificationReasonDescription": V("Ten more slots a month from April.", "The "
                                                                                                           "change."),
                                   "Description": V("Container slots between the Ferrano hub and Marrowdale.", "What "
@@ -5082,8 +5104,8 @@ def _(f, n, doc, out):
                                                                                    "rfq:1")), "The line's UUID."),
                                         "Note": V("Kiln-dried hardwood, planed on four sides.", "The requirement."),
                                         "OptionalLineItemIndicator": V("false", "A required line."),
-                                        "PrivacyCode": V("Confidential", "The drawing is the manufacturer's own."),
-                                        "SecurityClassificationCode": V("Internal", "Not for publication."),
+                                        "PrivacyCode": V("CONFIDENTIAL", "The drawing is the manufacturer's own."),
+                                        "SecurityClassificationCode": V("INTERNAL", "Not for publication."),
                                         "DocumentReference": {"ID": V("VI-DS-SL1800", "The drawing.")}}]}
 
 
@@ -5139,8 +5161,8 @@ def _(f, n, doc, out):
             "RequestForQuotationLine": [{**out["RequestForQuotationLine"][0],
                                          "Note": V("Optional: seat cushions to match.", "An option."),
                                         "OptionalLineItemIndicator": V("false", "The set itself is required."),
-                                        "PrivacyCode": V("Confidential", "The store's own design."),
-                                        "SecurityClassificationCode": V("Internal", "Not for publication.")}]}
+                                        "PrivacyCode": V("CONFIDENTIAL", "The store's own design."),
+                                        "SecurityClassificationCode": V("INTERNAL", "Not for publication.")}]}
 
 
 @enrich("furniture", "Quotation")
@@ -5166,7 +5188,7 @@ def _(f, n, doc, out):
             **kit.cost_centre("2-xb", "The department's programme."),
             "Signature": seal("2-xb", "PWD-SIG-26-WR", "The department's approval signature."),
             "WorkQuantityTotal": {"Quantity": qty(14, "HUR", "Fourteen hours."),
-                                  "WorkTypeCode": V("Installation", "The kind of work."),
+                                  "WorkTypeCode": V("INSTALL", "The kind of work."),
                                   "WorkTypeDescription": V("Installing office furniture.", "In words.")},
             "ReportedPeriod": {"StartDate": V(f.date(37), "The first day."), "EndDate": V(f.date(38), "The last.")},
             "OrderReference": {"ID": V(f.numbers["order-desks"], "The department's order.")},
@@ -5185,7 +5207,7 @@ def _(f, n, doc, out):
                                "Period": {"StartDate": V(f.date(37), "From."), "EndDate": V(f.date(38), "To.")},
                                "PerformingParty": party("37-xb", short=True),
                                "WorkPhaseReference": {"ID": V("PH-2", "The second phase of the move."),
-                                                      "WorkPhaseCode": V("Furnish", "Furnishing."),
+                                                      "WorkPhaseCode": V("FURNISH", "Furnishing."),
                                                       "WorkPhase": V("Furnishing the office", "In words."),
                                                       "ProgressPercent": V("100", "Done."),
                                                       "StartDate": V(f.date(37), "Started."),
@@ -5231,8 +5253,8 @@ def _(f, n, doc, out):
     return {"Shipment": {"GoodsItem": [{**out["Shipment"]["GoodsItem"][0], "BondedWarehouseLocation": {
         **out["Shipment"]["GoodsItem"][0]["BondedWarehouseLocation"],
         "CountrySubentity": V("Coastal State", "The state the store is in."),
-        "CountrySubentityCode": V("CO", "As a code of Bayvarra's address scheme."),
-        "LocationTypeCode": V("BondedStore", "A customs bonded store."),
+        "CountrySubentityCode": V("XB-CO", "The state as a code of Bayvarra's national list."),
+        "LocationTypeCode": V("BONDEDSTORE", "A customs bonded store."),
         "ValidityPeriod": {"StartDate": V("2025-01-01", "The store's licence runs"),
                            "EndDate": V("2027-12-31", "until the end of 2027.")},
         "Storage": {"ID": V("RQ-BOND-03", "Hall 3 of the bonded store."), "Name": V("Hall 3", "Its name."),
@@ -5246,12 +5268,12 @@ def _(f, n, doc, out):
                     "PowerIndicator": V("true", "Power for the forklifts and lighting."),
                     "MinimumTemperature": {"AttributeID": V("Hall", "The temperature of the hall."),
                                            "Measure": V("5", "At least 5 °C.", unitCode="CEL"),
-                                           "MeasureCode": V("Min", "The lowest."),
+                                           "MeasureCode": V("MIN", "The lowest."),
                                            "Description": V("Kept frost-free.", "Why.")},
                     "MaximumTemperature": {"AttributeID": V("Hall", "The temperature of the hall."),
                                            "Measure": V("35", "At most 35 °C.", unitCode="CEL")},
                     "Certificate": {"ID": V("XB-BOND-LIC-0388", "The bonded store's licence."),
-                                    "CertificateTypeCode": V("BondedStore", "A licence of customs."),
+                                    "CertificateTypeCode": V("BONDEDSTORE", "A licence of customs."),
                                     "CertificateType": V("Bonded store licence", "In words.")}}}}] +
         out["Shipment"]["GoodsItem"][1:]}}
 
@@ -5283,10 +5305,10 @@ def _(f, n, doc, out):
                            "Quantity": qty(12, "EA", "Twelve benches on display."),
                            "EventTacticEnumeration": {"ConsumerIncentiveTacticTypeCode": V("TPR", "A temporary price "
                                                                                                   "reduction."),
-                                                      "DisplayTacticTypeCode": V("EndCap", "A display at the "
+                                                      "DisplayTacticTypeCode": V("ENDCAP", "A display at the "
                                                                                            "entrance."),
-                                                      "FeatureTacticTypeCode": V("Flyer", "In the store's flyer."),
-                                                      "TradeItemPackingLabelingTypeCode": V("Sticker", "A price "
+                                                      "FeatureTacticTypeCode": V("FLYER", "In the store's flyer."),
+                                                      "TradeItemPackingLabelingTypeCode": V("STICKER", "A price "
                                                                                                        "sticker on "
                                                                                                        "each bench.")},
                            "Period": {"StartDate": V(f.date(21), "During the promotion."),
@@ -5360,18 +5382,18 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     """The ship's report to the island's maritime administration before arrival: crew, port call, stores, waste,
     ballast water, health and fuel."""
-    crew = [kit.person("Corin", "Halvard", "The master.", role="Master"),
-            kit.person("Elsbeth", "Marrin", "The chief officer, also the ship's medical officer.", role="ChiefOfficer"),
-            kit.person("Rafe", "Dunmore", "The chief engineer.", role="ChiefEngineer")]
+    crew = [kit.person("Corin", "Halvard", "The master.", role="MASTER"),
+            kit.person("Elsbeth", "Marrin", "The chief officer, also the ship's medical officer.", role="CHIEFOFFICER"),
+            kit.person("Rafe", "Dunmore", "The chief engineer.", role="CHIEFENG")]
     sea_place = {"Name": V("At sea, 120 nautical miles west of Selanu", "Where.")}
     stage = out["Shipment"]["ShipmentStage"]
     stage.update({
-        "PassengerPerson": kit.person("Ines", "Tavari", "The one passenger, a supercargo.", role="Passenger"),
-        "ReportingPerson": kit.person("Corin", "Halvard", "The master reports.", role="Master"),
+        "PassengerPerson": kit.person("Ines", "Tavari", "The one passenger, a supercargo.", role="PASSENGER"),
+        "ReportingPerson": kit.person("Corin", "Halvard", "The master reports.", role="MASTER"),
         "CrewMemberPerson": crew,
         "SecurityOfficerPerson": kit.person("Elsbeth", "Marrin", "The ship security officer.", role="SSO"),
         "ShipsSurgeonPerson": kit.person("Elsbeth", "Marrin", "No surgeon on a feeder: the chief officer is the "
-                                                              "medical officer.", role="MedicalOfficer"),
+                                                              "medical officer.", role="MEDICAL"),
         "DestinationPortCall": {
             "ID": V("XLSEL-26-0517", "The port call at Selanu."),
             "PlannedOperationsDescription": V("Discharge one container, load six.", "What the ship will do."),
@@ -5383,18 +5405,18 @@ def _(f, n, doc, out):
                                                                                                    "condition."),
             "ShipRequirement": {"ID": V("SR-1", "A need of the ship."),
                                 "Description": V("Fresh water, 40 tonnes.", "What it needs.")},
-            "PrimaryPortCallPurpose": {"PurposeTypeCode": V("Cargo", "Cargo operations."),
+            "PrimaryPortCallPurpose": {"PurposeTypeCode": V("CARGO", "Cargo operations."),
                                        "PurposeType": V("Cargo operations", "In words."),
                                        "Description": V("Discharge and load containers.", "The purpose.")},
-            "AdditionalPortCallPurpose": {"PurposeTypeCode": V("Water", "Taking on water."),
+            "AdditionalPortCallPurpose": {"PurposeTypeCode": V("WATER", "Taking on water."),
                                           "PurposeType": V("Bunkering of fresh water", "In words.")},
             "RequestedArrivalEvent": {"IdentificationID": V("ARR-XLSEL-0517", "The requested arrival."),
                                       "OccurrenceDate": V(f.date(14), "The day."),
                                       "OccurrenceTime": V("06:00:00", "At first light."),
-                                      "TypeCode": V("Arrival", "An arrival."),
+                                      "TypeCode": V("ARRIVAL", "An arrival."),
                                       "Description": V("Pilot on board at the fairway buoy.", "What is asked."),
                                       "CompletionIndicator": V("false", "Not yet."),
-                                      "CurrentStatus": {"ConditionCode": V("OnTime", "Expected on time.")},
+                                      "CurrentStatus": {"ConditionCode": V("ONTIME", "Expected on time.")},
                                       "Contact": {"Name": V("Bridge", "Whom to call."),
                                                   "Telephone": V("+999 3 790 2117", "The ship's phone, in the island's maritime range (79), as the "
                                                                     "ship flies the island's flag.")},
@@ -5411,7 +5433,7 @@ def _(f, n, doc, out):
                              "CrewPerson": crew[2]},
         "MaritimeWaste": [{"ID": V("W-1", "Oily waste."), "Description": V("Sludge from the fuel separators.",
                                                                            "What."),
-                           "WasteTypeCode": V("Oil", "MARPOL Annex I waste."),
+                           "WasteTypeCode": V("OIL", "MARPOL Annex I waste."),
                            "ToBeDeliveredMeasure": V("2.4", "To be delivered at Selanu.", unitCode="MTQ"),
                            "RetainedOnBoardMeasure": V("0.6", "Kept on board.", unitCode="MTQ"),
                            "MaxDedicatedStorageCapacityMeasure": V("8", "The tank's capacity.", unitCode="MTQ"),
@@ -5420,7 +5442,7 @@ def _(f, n, doc, out):
                            "RemainingWasteDeliveryPortLocation": kit.place("XBLMP", "The rest goes ashore at "
                                                                                     "Lumeport.")},
                           {"ID": V("W-2", "Garbage."), "Description": V("Food and packaging waste.", "What."),
-                           "WasteTypeCode": V("Garbage", "MARPOL Annex V waste."),
+                           "WasteTypeCode": V("GARBAGE", "MARPOL Annex V waste."),
                            "ToBeDeliveredMeasure": V("1.5", "To be delivered.", unitCode="MTQ")}],
         "BallastWaterSummary": {
             "ID": V("BW-26-0517", "The ballast water report."),
@@ -5437,7 +5459,7 @@ def _(f, n, doc, out):
             "NoControlActionsReason": V("Exchange done at more than 200 nautical miles from land.", "Why no "
                                                                                                   "treatment was "
                                                                                                   "needed."),
-            "UptakeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."), "TankTypeCode": V("Wing",
+            "UptakeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."), "TankTypeCode": V("WING",
                                                                                                 "A wing tank."),
                                               "VolumeMeasure": V("310", "Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit; "
                                                                  "the 310 were meant as tonnes of water, which is "
@@ -5451,7 +5473,7 @@ def _(f, n, doc, out):
                                                                           "Measure": V("16", "Its temperature.",
                                                                                        unitCode="CEL")}},
             "ExchangeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
-                                                "ExchangeMethodCode": V("Sequential", "Emptied and refilled."),
+                                                "ExchangeMethodCode": V("SEQ", "Emptied and refilled."),
                                                 "ExchangedPercent": V("95", "Of the volume."),
                                                 "VolumeMeasure": V("310", "Exchanged: the same 310 cubic metres (a volume, so in cubic "
                                                                    "metres; a tonne of water is about a cubic metre).",
@@ -5496,7 +5518,7 @@ def _(f, n, doc, out):
                                         "BuriedAtSeaIndicator": V("false", "No."),
                                         "Note": V("Fit for light duty.", "The status."),
                                         "Person": crew[2]},
-            "SanitaryMeasure": {"SanitaryMeasureTypeCode": V("Disinfection", "The galley was disinfected."),
+            "SanitaryMeasure": {"SanitaryMeasureTypeCode": V("DISINFECT", "The galley was disinfected."),
                                 "ApplicationDate": V(f.date(11), "When.")},
             "PlaceOfReportLocation": sea_place,
             "MedicalCertificate": {"ID": V("MC-TH-2026", "The ship's medicine chest certificate."),
@@ -5514,7 +5536,7 @@ def _(f, n, doc, out):
                                                        "Value": V("0.1 %", "Its value.")},
                             "FuelMetering": {"TypeID": V("FlowMeter", "Measured by the flow meter."),
                                              "Value": V("38.2 t", "The reading.")},
-                            "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2", "Carbon dioxide."),
+                            "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2E", "Carbon dioxide."),
                                                       "ValueMeasure": V("122", "From 38 t of gas oil.",
                                                                         unitCode="TNE")},
                             "FuelProviderParty": party("16-xb", short=True)}})
@@ -5568,15 +5590,17 @@ def mast_consignment(f, full):
     lo, hi = dg_temperature("Battery", "5", "35", "Lithium-ion packs must not freeze nor overheat.")
     bat = ITEM["battery-pack"]
     loaded = {"ID": V("SE-BAT-48100-DG", "The battery packs in the container."),
-              "UNDGCode": V("3480", "UN 3480.", listID="UNCL8273"),
+              "UNDGCode": V(bat["hazard"]["un"][2:], "The UN number of the battery packs."),
               "ProperShippingName": V("Lithium ion batteries", "As on the declaration."),
               "HazardClassID": V("9", "Class 9."),
               "GrossWeightMeasure": qty(Decimal(6) * Decimal(str(bat["gross_kg"])), "KGM", "Six packs, packed."),
               "NetWeightMeasure": qty(Decimal(6) * Decimal(str(bat["net_kg"])), "KGM", "The packs alone."),
               "NetVolumeMeasure": V("0.24", "Their volume.", unitCode="MTQ"),
               "Quantity": qty(6, "EA", "Six packs."),
-              "HazardousTypeCode": V("Article", "Batteries are articles, not substances."),
-              "PackagingDangerLevelCode": V("None", "Lithium batteries have no packing group."),
+              "HazardousTypeCode": V("ARTICLE", "Batteries are articles, not substances."),
+              "PackagingDangerLevelCode": V(build_examples.PACKAGING_DANGER_LEVEL[bat["hazard"].get("pg", "NA")],
+                                            "The packaging danger level of UN/EDIFACT 8339 that matches the packing "
+                                            "group: lithium batteries have none, which 8339 codes as not assigned."),
               "UpperOrangeHazardPlacardID": V("90", "The hazard identification number for road transport."),
               "LowerOrangeHazardPlacardID": V("3480", "The UN number on the orange plate."),
               "CategoryName": V("Miscellaneous dangerous goods", "Class 9 in words."),
@@ -5589,13 +5613,13 @@ def mast_consignment(f, full):
                                          "Location": V("Main deck, accessible", "Where it flies.")},
               "Package": {"ID": V("SE-CR-1..6", "The six crates."), "Quantity": qty(6, "EA", "Six."),
                           "PackagingTypeCode": V("CR", "UN/ECE Recommendation 21 code CR: crate.")},
-              "HazardousGoodsTransit": {"TransportEmergencyCardCode": V("TEC-90-3480", "The emergency card on "
+              "HazardousGoodsTransit": {"TransportEmergencyCardCode": V("TEC9", "The emergency card on "
                                                                                      "board."),
-                                        "PackingCriteriaCode": V("PI965-IA", "IATA packing instruction 965, "
+                                        "PackingCriteriaCode": V("PI965IA", "IATA packing instruction 965, "
                                                                              "section IA."),
-                                        "HazardousRegulationCode": V("IATA", "Air: the IATA Dangerous Goods "
+                                        "HazardousRegulationCode": V("ICA", "Air: the IATA Dangerous Goods "
                                                                              "Regulations."),
-                                        "InhalationToxicityZoneCode": V("None", "Not toxic by inhalation."),
+                                        "InhalationToxicityZoneCode": V("NOTTOXIC", "Not toxic by inhalation."),
                                         "TransportAuthorizationCode": V("CAO", "Cargo aircraft only."),
                                         "TransitDescription": V("Cargo aircraft only; state of charge below 30 %.",
                                                                 "The conditions."),
@@ -5647,7 +5671,7 @@ def mast(n, doc):
                                             "Temperature": {"AttributeID": V("Transport", "The temperature in "
                                                                                           "transport."),
                                                             "Measure": V("20", "Around 20 °C.", unitCode="CEL"),
-                                                            "MeasureCode": V("Target", "The target."),
+                                                            "MeasureCode": V("TARGET", "The target."),
                                                             "Description": V("Keep away from heat.", "Why.")},
                                             "MinimumTemperature": {"Measure": V("5", "At least.", unitCode="CEL")},
                                             "MaximumTemperature": {"Measure": V("35", "At most.", unitCode="CEL")},
@@ -5689,7 +5713,7 @@ def sea_with_debit(n, doc):
             "TaxInclusiveLineExtensionAmount": amount(total, "XLC", "No tax on the island."),
             "TaxPointDate": V(f.date(16), "The day customs charged the fee."),
             **kit.cost_centre("1-xl", "The buyer's cost centre that paid customs."),
-            "PaymentPurposeCode": V("GOVT", "ISO 20022 purpose code GOVT: a payment to the government, recharged."),
+            "PaymentPurposeCode": V("SCVE", "What the payment is for, as an ISO 20022 purpose: services, the inspection and storage recharged to the seller."),
             "FreeOfChargeIndicator": V("false", "Charged."),
             "InvoicePeriod": {"StartDate": V(f.date(14), "The container was held"), "EndDate": V(f.date(15),
                                                                                                 "for a day.")},
@@ -5710,6 +5734,7 @@ def sea_with_debit(n, doc):
             "PaymentTerms": {"Note": V("Pay within 30 days.", "When.")},
             "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax.")},
             "AllowanceCharge": {"ChargeIndicator": V("true", "The storage, a charge on the line."),
+                                "AllowanceChargeReasonCode": V("WH", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                 "AllowanceChargeReason": V("Storage while held", "In words."),
                                 "Amount": amount(storage, "XLC", "One day's storage."),
                                 "BaseAmount": amount(fee, "XLC", "The inspection fee.")},
@@ -5744,7 +5769,7 @@ def sea_with_debit(n, doc):
            "LineCountNumeric": V("1", "One line."),
            "InvoicePeriod": {"StartDate": V(f.date(14), "Held from discharge"), "EndDate": V(f.date(15), "to "
                                                                                                        "release.")},
-           "DiscrepancyResponse": {"ResponseCode": V("Packaging", "A packaging fault."),
+           "DiscrepancyResponse": {"ResponseCode": V("2", "A packaging fault."),
                                    "Description": V("Heat-treatment mark illegible on pallet LD-26-007.", "The "
                                                                                                           "fault.")},
            "OrderReference": {"ID": V(f.numbers["order"], "The order.")},
@@ -5762,7 +5787,7 @@ def sea_with_debit(n, doc):
                                                                                                            "UUID."),
                                 "IssueDate": V(f.date(3), "Started with the order."),
                                 "WorkPhaseReference": {"ID": V("PH-1", "Benches for the harbour park."),
-                                                       "WorkPhaseCode": V("Supply", "The supply phase.")}},
+                                                       "WorkPhaseCode": V("SUPPLY", "The supply phase.")}},
            "BuyerAssignedReference": {"BuyerReferenceCode": V("LD-AP-CLAIMS", "The distributor's claims desk.")},
            "PurchaseReference": {"ID": V(CONTAINER, "The container the charge is about.")},
            "Annotation": {"AnnotationContent": V("The distributor may claim it from the packer.", "A remark.")},
@@ -5848,6 +5873,7 @@ def tender_with_credit(n, doc):
                 "PricingExchangeRate": PRICING_RATE,
                 "PaymentExchangeRate": TO_FERRA(f.date(82)),
                 "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance."),
+                                    "AllowanceChargeReasonCode": V("100", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                                     "AllowanceChargeReason": V("Goodwill", "For the inconvenience."),
                                     "Amount": amount(0, "XBL", "None in money: the bench is replaced.")},
                 "WithholdingTaxTotal": {"TaxAmount": amount(Decimal("1.80"), "XBL", "The withholding on the "
@@ -5888,16 +5914,16 @@ def procurement_project(f, lot=None):
                      "The project's name."),
            "Description": V("240 steel park benches with hardwood slats over two years, delivered and anchored.",
                             "What is bought."),
-           "ProcurementTypeCode": V("Supplies" if goods else "Services", "Supplies or services."),
-           "ProcurementSubTypeCode": V("Purchase" if goods else "Installation", "The kind within it."),
-           "QualityControlCode": V("Inspection", "Each release is inspected on delivery."),
+           "ProcurementTypeCode": V("SUPPLIES" if goods else "SERVICES", "Supplies or services."),
+           "ProcurementSubTypeCode": V("PURCHASE" if goods else "INSTALL", "The kind within it."),
+           "QualityControlCode": V("INSPECTION", "Each release is inspected on delivery."),
            "RequiredFeeAmount": amount(Decimal("50.00"), "XBL", "The fee for the tender documents on paper."),
            "FeeDescription": V("Electronic documents are free; paper copies cost 50 lume.", "The fee."),
            "RequestedDeliveryDate": V(f.date(80), "The first release."),
            "EstimatedOverallContractQuantity": qty(TENDER_QTY, "EA", "240 benches over the contract."),
            "Note": V("Part of the parks renewal programme 2026.", "The programme."),
            "SMESuitableIndicator": V("true", "Small and medium firms can tender."),
-           "ProcurementAdditionalType": {"ProcurementTypeCode": V("Green", "Green public procurement."),
+           "ProcurementAdditionalType": {"ProcurementTypeCode": V("GREEN", "Green public procurement."),
                                          "ProcurementType": V("Recycled steel and certified timber are asked.",
                                                               "In words.")},
            "RequestedTenderTotal": {
@@ -5910,11 +5936,17 @@ def procurement_project(f, lot=None):
                "MonetaryScope": V("Two years of releases.", "What the amount covers."),
                "AverageSubsequentContractAmount": amount(est / 6, "XBL", "Six releases on average."),
                "ApplicableTaxCategory": kit.tax_category(kit.tax_rule("6-xb", PWD, "bench-serra-b"))},
-           "MainCommodityClassification": {"ItemClassificationCode": V("9401.79" if goods else "9988.00",
-                                                                       "The goods' HS subheading." if goods else
-                                                                       "A service: no HS subheading.", listID="HS")},
-           "AdditionalCommodityClassification": {"CommodityCode": V("PARKS-FURN", "The department's own category: "
-                                                                                  "park furniture.")},
+           "MainCommodityClassification": {"ItemClassificationCode": V("38111" if goods else "87390",
+                                                                       "What is bought, as a subclass of the UN Central "
+                                                                       "Product Classification, which classifies goods "
+                                                                       "and services alike: seats with metal frames."
+                                                                       if goods else "What is bought, as a subclass of "
+                                                                       "the UN Central Product Classification, which "
+                                                                       "classifies services as well: installation "
+                                                                       "services of other goods.")},
+           "AdditionalCommodityClassification": {"ItemClassificationCode": V("381", "The wider category of the "
+                                                                             "procurement, as a group of the UN CPC: "
+                                                                             "furniture.")},
            "RealizedLocation": {"Name": V("Harbour park and town parks, Lumeport", "Where the benches go."),
                                 "Address": {"CityName": V("Lumeport", "The city."),
                                             "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
@@ -5958,11 +5990,11 @@ def tendering_process(f):
                                                                                        "follows."),
             "Description": V("Open procedure with two lots.", "The procedure."),
             "NegotiationDescription": V("No negotiation: the award is on the tenders as submitted.", "Why none."),
-            "ProcedureCode": V("Open", "An open procedure."), "UrgencyCode": V("Normal", "No urgency."),
-            "ExpenseCode": V("Investment", "Paid from the investment budget."),
-            "PartPresentationCode": V("OneOrMore", "Tenders for one or both lots."),
-            "ContractingSystemCode": V("Framework", "A framework agreement."),
-            "SubmissionMethodCode": V("Electronic", "Tenders are submitted electronically."),
+            "ProcedureCode": V("OPEN", "An open procedure."), "UrgencyCode": V("NORMAL", "No urgency."),
+            "ExpenseCode": V("INVESTMENT", "Paid from the investment budget."),
+            "PartPresentationCode": V("ONEORMORE", "Tenders for one or both lots."),
+            "ContractingSystemCode": V("FRAMEWORK", "A framework agreement."),
+            "SubmissionMethodCode": V("ELECTRONIC", "Tenders are submitted electronically."),
             "CandidateReductionConstraintIndicator": V("false", "No reduction of candidates."),
             "GovernmentAgreementConstraintIndicator": V("true", "Covered by the trade accord's procurement chapter."),
             "AccessToolsURI": V("https://tenders.lumeport.example/PWD-2026-PARKS", "Where the documents are."),
@@ -5980,9 +6012,7 @@ def tendering_process(f):
             "NoticeDocumentReference": {"ID": V(f.numbers.get("pin", f"{FOLDER}-PIN"), "The prior information "
                                                                                        "notice.")},
             "AdditionalDocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The specification.")},
-            "ProcessJustification": {"PreviousCancellationReasonCode": V("None", "No earlier procedure was "
-                                                                                "cancelled."),
-                                     "ProcessReasonCode": V("Standard", "The open procedure is the rule."),
+            "ProcessJustification": {"ProcessReasonCode": V("STANDARD", "The open procedure is the rule."),
                                      "ProcessReason": V("Value above the threshold for open procedures.", "Why."),
                                      "Description": V("No exception applies.", "In words.")},
             "EconomicOperatorShortList": {"LimitationDescription": V("No short list in an open procedure.", "Why."),
@@ -5992,10 +6022,10 @@ def tendering_process(f):
             "OpenTenderEvent": {"IdentificationID": V("OPEN-1", "The opening of the tenders."),
                                 "OccurrenceDate": V(f.date(45), "The deadline day."),
                                 "OccurrenceTime": V("14:00:00", "Two hours after the deadline."),
-                                "TypeCode": V("Opening", "A tender opening."),
+                                "TypeCode": V("OPENING", "A tender opening."),
                                 "Description": V("Electronic opening; tenderers may follow it online.", "How."),
                                 "CompletionIndicator": V("false", "To come."),
-                                "CurrentStatus": {"ConditionCode": V("Scheduled", "Planned.")},
+                                "CurrentStatus": {"ConditionCode": V("SCHEDULED", "Planned.")},
                                 "Contact": {"Name": V("Procurement office", "Whom to ask.")},
                                 "OccurrenceLocation": {"Name": V("Lumeport Public Works Department, Civic Square",
                                                                  "Where.")}},
@@ -6021,28 +6051,28 @@ def tendering_process(f):
                                                                           "Description": V("No new competition.",
                                                                                            "How.")}},
             "ContractingSystem": {"ID": V("FW-1", "The framework."),
-                                  "ContractingSystemTypeCode": V("Framework", "A framework agreement."),
+                                  "ContractingSystemTypeCode": V("FRAMEWORK", "A framework agreement."),
                                   "Description": V("Framework with one supplier.", "In words.")}}
 
 
 def tendering_terms(f):
-    return {"AwardingMethodTypeCode": V("BestValue", "The best price-quality ratio."),
-            "PriceEvaluationCode": V("UnitPrice", "Evaluated on the unit prices."),
+    return {"AwardingMethodTypeCode": V("BESTVALUE", "The best price-quality ratio."),
+            "PriceEvaluationCode": V("UNITPRICE", "Evaluated on the unit prices."),
             "MaximumVariantQuantity": V("1", "One variant allowed."),
             "VariantConstraintIndicator": V("true", "Variants are allowed."),
             "AcceptedVariantsDescription": V("A bench of recycled plastic slats.", "The variant allowed."),
-            "VariantConstraintCode": V("Allowed", "As a code."),
+            "VariantConstraintCode": V("ALLOWED", "As a code."),
             "PriceRevisionFormulaDescription": V("Steel index each January.", "How prices change."),
             "FundingProgramCode": V("PARKS-26", "The programme."),
             "FundingProgram": V("Parks renewal programme 2026", "In words."),
             "MaximumAdvertisementAmount": amount(Decimal("500.00"), "XBL", "The most the winner pays for "
                                                                            "publication."),
             "Note": V("Questions through the platform only.", "How to ask."),
-            "PaymentFrequencyCode": V("PerRelease", "Payment after each release."),
+            "PaymentFrequencyCode": V("PERRELEASE", "Payment after each release."),
             "EconomicOperatorRegistryURI": V("https://register.bayvarra.example", "Where tenderers are "
                                                                                   "registered."),
             "RequiredCurriculaIndicator": V("true", "The installers' qualifications are asked."),
-            "RequiredCurriculaCode": V("Installers", "For lot 2."),
+            "RequiredCurriculaCode": V("INSTALLERS", "For lot 2."),
             "OtherConditionsIndicator": V("true", "There are other conditions."),
             "RecurringProcurementIndicator": V("true", "The parks are renewed every few years."),
             "RecurringProcurementDescription": V("A next procedure in about four years.", "When."),
@@ -6051,10 +6081,10 @@ def tendering_terms(f):
             "LatestSecurityClearanceDate": V(f.date(40), "No clearance is needed; the date is the latest for "
                                                          "site access passes."),
             "DocumentationFeeAmount": amount(Decimal("50.00"), "XBL", "For paper documents."),
-            "MultipleTendersCode": V("NotAllowed", "One tender per tenderer."),
+            "MultipleTendersCode": V("NOTALLOWED", "One tender per tenderer."),
             "PenaltyClause": {"ID": V("PEN-1", "Late delivery."), "Content": V("0.5 % per day late, at most 10 %.",
                                                                               "The penalty.")},
-            "RequiredFinancialGuarantee": {"GuaranteeTypeCode": V("TenderGuarantee", "A tender guarantee."),
+            "RequiredFinancialGuarantee": {"GuaranteeTypeCode": V("TENDER", "A tender guarantee."),
                                            "Description": V("A bank guarantee for the tender.", "What."),
                                            "LiabilityAmount": amount(Decimal("2400.00"), "XBL", "Its amount."),
                                            "AmountRate": V("2", "2 % of the estimated value of 120,000 lume."),
@@ -6069,8 +6099,8 @@ def tendering_terms(f):
             "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
             "PaymentTerms": {"Note": V("30 days after each accepted release.", "The terms.")},
             "TendererQualificationRequest": {
-                "CompanyLegalFormCode": V("Any", "Any legal form."),
-                "CompanyLegalForm": V("Consortia must name a lead member.", "The rule."),
+                "CompanyLegalForm": V("Any legal form; consortia must name a lead member.", "The rule on the legal "
+                                      "form, in words: any form is accepted, so there is no code to give."),
                 "PersonalSituation": V("No exclusion grounds.", "The tenderer's situation."),
                 "OperatingYearsQuantity": qty(3, "ANN", "At least three years in business."),
                 "EmployeeQuantity": qty(10, "IE", "At least ten employees (persons)."),
@@ -6082,35 +6112,35 @@ def tendering_terms(f):
                                                                                     "Name": V("Manufacture of "
                                                                                               "furniture", "In "
                                                                                                            "words.")}},
-                "TechnicalEvaluationCriterion": {"EvaluationCriterionTypeCode": V("References", "References."),
+                "TechnicalEvaluationCriterion": {"EvaluationCriterionTypeCode": V("REFERENCES", "References."),
                                                  "Description": V("Three similar supplies in five years.", "What."),
                                                  "ThresholdQuantity": qty(3, "EA", "Three."),
                                                  "DurationPeriod": {"DurationMeasure": V("5", "Five years.",
                                                                                          unitCode="ANN")},
                                                  "SuggestedEvidence": {"ID": V("EV-REF", "Reference letters."),
                                                                        "Name": V("References", "What.")}},
-                "FinancialEvaluationCriterion": {"EvaluationCriterionTypeCode": V("Turnover", "Turnover."),
+                "FinancialEvaluationCriterion": {"EvaluationCriterionTypeCode": V("TURNOVER", "Turnover."),
                                                  "Description": V("Yearly turnover of at least twice the "
                                                                   "estimate.", "What."),
                                                  "ThresholdAmount": amount(Decimal("250000"), "XBL", "The minimum."),
-                                                 "ExpressionCode": V("GreaterThan", "As a rule."),
+                                                 "ExpressionCode": V("GT", "As a rule."),
                                                  "Expression": V("Turnover > 2 × estimate", "The formula.")},
                 "SpecificTendererRequirement": {"Name": V("Certified timber", "The requirement."),
-                                                "TendererRequirementTypeCode": V("Environmental", "Its kind."),
+                                                "TendererRequirementTypeCode": V("ENVIRONMENTAL", "Its kind."),
                                                 "Description": V("Slats from forests managed for regrowth.", "What."),
                                                 "LegalReference": V("XB-ENV-2021 art. 12", "The rule."),
                                                 "SuggestedEvidence": {"ID": V("EV-FOR", "A forestry certificate."),
                                                                       "Name": V("Forestry certificate", "What.")}},
-                "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead tenderer."),
+                "EconomicOperatorRole": {"RoleCode": V("LEAD", "The lead tenderer."),
                                          "RoleDescription": V("Leads a consortium.", "In words.")}},
             "AllowedSubcontractTerms": {"Rate": V("30", "Up to 30 % subcontracted."),
                                         "UnknownPriceIndicator": V("false", "The subcontracting share is known."),
                                         "Description": V("Installation may be subcontracted.", "What."),
                                         "Amount": amount(EST_INSTALL, "XBL", "Lot 2's value."),
-                                        "SubcontractingConditionsCode": V("Allowed", "As a code."),
+                                        "SubcontractingConditionsCode": V("ALLOWED", "As a code."),
                                         "MaximumPercent": V("30", "At most."), "MinimumPercent": V("0", "At least.")},
             "TenderPreparation": {"TenderEnvelopeID": V("ENV-1", "One envelope."),
-                                  "TenderEnvelopeTypeCode": V("Combined", "Technical and price together."),
+                                  "TenderEnvelopeTypeCode": V("COMBINED", "Technical and price together."),
                                   "Description": V("One encrypted envelope per tender.", "How."),
                                   "OpenTenderID": V("OPEN-1", "Opened at the opening."),
                                   "ProcurementProjectLot": {"ID": V("LOT-1", "For lot 1 and lot 2 alike.")},
@@ -6130,11 +6160,11 @@ def tendering_terms(f):
                                                                        "OID": V("2.16.840.1.101.3.4.1.46", "Its "
                                                                                                            "OID.")}}},
             "ContractExecutionRequirement": {"Name": V("Recycled steel", "A condition of execution."),
-                                             "ExecutionRequirementCode": V("Environmental", "Its kind."),
+                                             "ExecutionRequirementCode": V("ENVIRONMENTAL", "Its kind."),
                                              "Description": V("At least 30 % recycled steel in the frames.",
                                                               "What.")},
             "AwardingTerms": {
-                "WeightingAlgorithmCode": V("WeightedSum", "A weighted sum."),
+                "WeightingAlgorithmCode": V("WSUM", "A weighted sum."),
                 "Description": V("Price 60 %, quality 40 %.", "The award."),
                 "TechnicalCommitteeDescription": V("Three officers of the department.", "Who evaluates."),
                 "LowTendersDescription": V("Prices 30 % below the average are examined.", "Abnormally low."),
@@ -6145,15 +6175,15 @@ def tendering_terms(f):
                 "BindingOnBuyerIndicator": V("true", "The evaluation binds the buyer."),
                 "NoFurtherNegotiationIndicator": V("true", "No negotiation after the award."),
                 "AwardingCriterion": [
-                    {"ID": V("AC-1", "Price."), "AwardingCriterionTypeCode": V("Price", "Its kind."),
+                    {"ID": V("AC-1", "Price."), "AwardingCriterionTypeCode": V("PRICE", "Its kind."),
                      "Name": V("Price", "Name."), "Description": V("The lowest total of unit prices.", "How."),
                      "WeightNumeric": V("60", "Weight."), "Weight": V("60 %", "In words."),
                      "CalculationExpression": V("60 × lowest / tendered", "The formula."),
-                     "CalculationExpressionCode": V("Inverse", "As a code."),
+                     "CalculationExpressionCode": V("INVERSE", "As a code."),
                      "MinimumAmount": amount(Decimal("350"), "XBL", "Unit price at least."),
                      "MaximumAmount": amount(Decimal("600"), "XBL", "At most."),
                      "MinimumImprovementBid": V("Not applicable: no auction.", "Stated.")},
-                    {"ID": V("AC-2", "Quality."), "AwardingCriterionTypeCode": V("Quality", "Its kind."),
+                    {"ID": V("AC-2", "Quality."), "AwardingCriterionTypeCode": V("QUALITY", "Its kind."),
                      "Name": V("Quality", "Name."), "WeightNumeric": V("40", "Weight."),
                      "MinimumQuantity": qty(5, "ANN", "Warranty of at least five years."),
                      "MaximumQuantity": qty(10, "ANN", "Up to ten years counts."),
@@ -6162,9 +6192,7 @@ def tendering_terms(f):
                                                       "WeightNumeric": V("20", "Half of quality.")}}],
                 "TechnicalCommitteePerson": kit.person("Mara", "Delling", "The head of parks on the committee.",
                                                        job="Head of parks"),
-                "Prize": {"RankCode": V("None", "No prizes in a tender."),
-                          "ValueAmount": amount(0, "XBL", "No prize money."), "Description": V("Not a contest.",
-                                                                                           "Why.")}},
+},
             "AdditionalInformationParty": party(PWD, short=True),
             "DocumentProviderParty": party(PWD, short=True),
             "TenderRecipientParty": party(PWD, short=True),
@@ -6177,7 +6205,7 @@ def tendering_terms(f):
                             "PresentationPeriod": {"DurationMeasure": V("10", "Ten days.", unitCode="DAY")},
                             "AppealInformationParty": party(BOARD, short=True)},
             "Language": {"ID": V("en", "English."), "Name": V("English", "In words."),
-                         "LocaleCode": V("EN", "As an ISO 639 code.")},
+                         "LocaleCode": V("en", "As an ISO 639 code.")},
             "BudgetAccountLine": {"ID": V("BL-PARKS-26", "The budget line."),
                                   "TotalAmount": amount(EST_BENCHES + EST_INSTALL, "XBL", "Its amount."),
                                   "BudgetAccount": {"ID": V("4.2.110", "The city's budget account."),
@@ -6201,7 +6229,7 @@ def tendering_terms(f):
                                  "ElectronicOrderUsageIndicator": V("true", "Call-offs as UBL orders."),
                                  "ElectronicPaymentUsageIndicator": V("true", "Paid by transfer.")},
             "EconomicOperatorShortList": {"LimitationDescription": V("No short list.", "An open procedure.")},
-            "SecurityClearanceTerm": {"Code": V("None", "No security clearance."),
+            "SecurityClearanceTerm": {"Code": V("NOTREQUIRED", "No security clearance."),
                                       "Description": V("Parks are public places.", "Why.")}}
 
 
@@ -6224,7 +6252,7 @@ def notice_head(f, kind, code):
             "RequestedPublicationDate": V(out_day(f, kind), "When to publish."),
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules the notice follows."),
             "NoticeTypeCode": V(code, "The kind of notice."),
-            "NoticeLanguageCode": V("EN", "In English, as an ISO 639 code."),
+            "NoticeLanguageCode": V("en", "In English, as an ISO 639 code."),
             "AdditionalNoticeLanguage": {"ID": V("qau", "Also published in Urvanian, for tenderers from Urvania "
                                                 "(a code from ISO 639's local-use range: the world's languages are "
                                                 "invented)."),
@@ -6240,11 +6268,11 @@ def out_day(f, kind):
 
 def contracting_party_details():
     return {"BuyerProfileURI": V("https://tenders.lumeport.example/buyers/pwd", "The buyer's profile."),
-            "ContractingPartyType": {"PartyTypeCode": V("Local", "A local authority."),
+            "ContractingPartyType": {"PartyTypeCode": V("LOCAL", "A local authority."),
                                      "PartyType": V("Department of a city", "In words.")},
-            "ContractingActivity": {"ActivityTypeCode": V("Public works", "Its activity."),
+            "ContractingActivity": {"ActivityTypeCode": V("COMMUNITY", "Its activity."),
                                     "ActivityType": V("Public works and parks", "In words.")},
-            "ContractingRepresentationType": {"RepresentationTypeCode": V("Own", "On its own behalf."),
+            "ContractingRepresentationType": {"RepresentationTypeCode": V("OWN", "On its own behalf."),
                                               "RepresentationType": V("Buys for itself", "In words.")}}
 
 
@@ -6256,7 +6284,7 @@ def _(f, n, doc, out):
             "DocumentReference": {"ID": V("PWD-PARKS-PLAN-26", "The parks plan.")},
             "ContractingParty": contracting_party_details(),
             "TenderingTerms": tendering_terms(f),
-            "TenderingProcess": {"ProcedureCode": V("Open", "An open procedure is planned."),
+            "TenderingProcess": {"ProcedureCode": V("OPEN", "An open procedure is planned."),
                                  "Description": V("Planned as an open procedure in two lots.", "What is planned.")},
             "ProcurementProject": procurement_project(f),
             "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1, planned."), "ProcurementProject": project_brief("LOT-1")},
@@ -6266,7 +6294,7 @@ def _(f, n, doc, out):
 
 @enrich("tender", "ContractNotice")
 def _(f, n, doc, out):
-    return {**notice_head(f, "CN", "ContractNotice"), "Note": V("Open procedure in two lots.", "What."),
+    return {**notice_head(f, "CN", "CN"), "Note": V("Open procedure in two lots.", "What."),
             "FrequencyPeriod": {"DurationMeasure": V("4", "Notices like this about every four years.",
                                                      unitCode="ANN")},
             "ContractingParty": contracting_party_details(),
@@ -6315,7 +6343,7 @@ def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
          "MinimumOrderQuantity": qty(20, "EA", "A release of at least 20."),
          "MaximumOrderQuantity": qty(96, "EA", "At most a full truck."),
          "WarrantyInformation": V("Five years on the frame.", "The warranty."),
-         "PackLevelCode": V("Pallet", "The pack level."),
+         "PackLevelCode": V("PALLET", "The pack level."),
          "DocumentReference": {"ID": V(t["sheet"], "The datasheet.")},
          "Item": {"Name": V(t["name"], "The item offered.")},
          "OfferedItemLocationQuantity": {"LeadTimeMeasure": V("7", "Seven days per release.", unitCode="DAY")},
@@ -6339,7 +6367,7 @@ def _(f, n, doc, out):
     k = nth("tender", n, doc)
     bench = "499.00" if winner else ("470.00" if k == 1 else "480.00")
     b, i, lines = tender_lines(f, bench, "18.00" if winner else "16.00", doc["from"])
-    return {"TenderTypeCode": V("Combined", "Technical and financial in one."),
+    return {"TenderTypeCode": V("COMBINED", "Technical and financial in one."),
             "ContractName": V("Park benches for the parks renewal programme", "The contract tendered for."),
             "Note": V("Tender for both lots." if winner else "Tender for both lots, with a bench of the furniture "
                                                              "maker's own make." + (" It corrects the price per "
@@ -6358,8 +6386,8 @@ def _(f, n, doc, out):
                 "FeeAmount": amount(Decimal("50.00"), "XBL", "The documentation fee paid."),
                 "FeeDescription": V("Paper copy of the documents.", "What the fee was for."),
                 "TenderEnvelopeID": V("ENV-1", "The envelope."),
-                "TenderEnvelopeTypeCode": V("Combined", "Technical and price together."),
-                "AdditionalFee": {"FeeTypeCode": V("Courier", "A courier fee."),
+                "TenderEnvelopeTypeCode": V("COMBINED", "Technical and price together."),
+                "AdditionalFee": {"FeeTypeCode": V("COURIER", "A courier fee."),
                                   "FeeAmount": amount(Decimal("12.00"), "XBL", "For the signed originals."),
                                   "FeeDescription": V("Courier of the guarantee's original.", "What.")},
                 "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")}, {"ID": V("LOT-2", "Lot 2.")}],
@@ -6391,25 +6419,25 @@ def _(f, n, doc, out):
                                          "TypeCode": V(kind, "Question or requirement."), **x}
     return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
             "VersionID": V("1", "The first version."), "PreviousVersionID": V("0", "None."),
-            "ProcedureCode": V("Open", "An open procedure."),
-            "QualificationApplicationTypeCode": V("Regulated", "The regulated form of self-declaration."),
+            "ProcedureCode": V("OPEN", "An open procedure."),
+            "QualificationApplicationTypeCode": V("REGULATED", "The regulated form of self-declaration."),
             "WeightScoringMethodologyNote": V("Pass or fail; no weighting.", "How answers count."),
-            "WeightingTypeCode": V("None", "No weighting."),
+            "WeightingTypeCode": V("NONE", "No weighting."),
             "Note": V("Answer every criterion.", "What to do."),
             "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
             "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
             "AdditionalDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
             "Signature": seal(PWD, "PWD-SIG-QAR"),
             "TenderingCriterion": {
-                "ID": V("CR-TURNOVER", "The turnover criterion."), "CriterionTypeCode": V("Economic", "Its kind."),
+                "ID": V("CR-TURNOVER", "The turnover criterion."), "CriterionTypeCode": V("ECONOMIC", "Its kind."),
                 "Name": V("General yearly turnover", "The criterion."),
                 "Description": V("Turnover of the last three years.", "What."),
                 "WeightNumeric": V("0", "Pass or fail."), "FulfilmentIndicator": V("true", "Must be met."),
-                "FulfilmentIndicatorTypeCode": V("All", "All its properties."),
-                "EvaluationMethodTypeCode": V("PassFail", "Pass or fail."),
+                "FulfilmentIndicatorTypeCode": V("ALL", "All its properties."),
+                "EvaluationMethodTypeCode": V("PASSFAIL", "Pass or fail."),
                 "WeightingConsiderationDescription": V("Not weighted.", "Why."),
                 "ProcurementProjectLotReference": lot_ref("LOT-1"),
-                "CommodityClassification": {"ItemClassificationCode": V("9401.79", "The benches.", listID="HS")},
+                "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a subclass of the UN Central Product Classification: seats with metal frames.")},
                 "SubTenderingCriterion": {"ID": V("CR-TURNOVER-A", "The average."), "Name": V("Average turnover",
                                                                                              "Name.")},
                 "Legislation": {"ID": V("XB-PPA-2019", "The act."), "Title": V("Public Procurement Act", "Title."),
@@ -6422,11 +6450,11 @@ def _(f, n, doc, out):
                 "TenderingCriterionPropertyGroup": {
                     "ID": V("PG-1", "The group."), "Name": V("Turnover", "Name."), "Description": V("The figures.",
                                                                                                   "What."),
-                    "PropertyGroupTypeCode": V("OnTrue", "Answered when the criterion applies."),
+                    "PropertyGroupTypeCode": V("ONTRUE", "Answered when the criterion applies."),
                     "FulfilmentIndicator": V("true", "Must be met."),
-                    "FulfilmentIndicatorTypeCode": V("All", "All properties."),
+                    "FulfilmentIndicatorTypeCode": V("ALL", "All properties."),
                     "TenderingCriterionProperty": [
-                        prop("P-1", "Yearly turnover", "Requirement", ValueDataTypeCode=V("Amount", "An amount."),
+                        prop("P-1", "Yearly turnover", "REQUIREMENT", ValueDataTypeCode=V("AMOUNT", "An amount."),
                              ValueCurrencyCode=V("XBL", "In lume."),
                              ExpectedAmount=amount(Decimal("250000"), "XBL", "At least."),
                              MinimumAmount=amount(Decimal("250000"), "XBL", "The minimum."),
@@ -6435,23 +6463,23 @@ def _(f, n, doc, out):
                                                "EndDate": V("2025-12-31", "before the tender.")},
                              TemplateEvidence={"ID": V("EV-ACC", "Annual accounts."), "Name": V("Accounts",
                                                                                                "Evidence.")}),
-                        prop("P-2", "Years in business", "Question", ValueDataTypeCode=V("Quantity", "A number."),
+                        prop("P-2", "Years in business", "QUESTION", ValueDataTypeCode=V("QUANTITY", "A number."),
                              ValueUnitCode=V("ANN", "Years."), MinimumQuantity=qty(3, "ANN", "At least three."),
                              MaximumQuantity=qty(200, "ANN", "No real maximum."),
                              ExpectedValueNumeric=V("3", "At least."), MinimumValueNumeric=V("3", "Minimum."),
                              MaximumValueNumeric=V("200", "Maximum.")),
-                        prop("P-3", "Registered in a business register", "Question",
-                             ValueDataTypeCode=V("Indicator", "Yes or no."), ExpectedIndicator=V("true", "Yes."),
-                             ExpectedID=V("REG", "The register."), ExpectedCode=V("Registered", "The status."),
+                        prop("P-3", "Registered in a business register", "QUESTION",
+                             ValueDataTypeCode=V("INDICATOR", "Yes or no."), ExpectedIndicator=V("true", "Yes."),
+                             ExpectedID=V("REG", "The register."), ExpectedCode=V("REGISTERED", "The status."),
                              ExpectedDescription=V("Entered in a national register.", "Expected."),
                              ExpectedURI=V("https://register.bayvarra.example", "A register."),
-                             TranslationTypeCode=V("None", "No translation needed."),
+                             TranslationTypeCode=V("NONE", "No translation needed."),
                              CertificationLevelDescription=V("A plain extract will do.", "The level."),
-                             CopyQualityTypeCode=V("Copy", "A copy is enough."))],
+                             CopyQualityTypeCode=V("COPY", "A copy is enough."))],
                     "SubsidiaryTenderingCriterionPropertyGroup": {
                         "ID": V("PG-1.1", "If a consortium."), "Name": V("Consortium", "Name."),
-                        "TenderingCriterionProperty": prop("P-4", "Share in the consortium", "Question",
-                                                           ValueDataTypeCode=V("Percent", "A percentage."))}}}}
+                        "TenderingCriterionProperty": prop("P-4", "Share in the consortium", "QUESTION",
+                                                           ValueDataTypeCode=V("PERCENT", "A percentage."))}}}}
 
 
 @enrich("tender", "QualificationApplicationResponse")
@@ -6462,7 +6490,7 @@ def _(f, n, doc, out):
           "ResponseBinaryObject": V(_b64.b64encode(b"Annual accounts 2025, extract.").decode(), "The extract, "
                                                                                                 "embedded.",
                                     mimeCode="text/plain"),
-          "ResponseCode": V("Met", "The criterion is met."), "ResponseDate": V("2025-12-31", "The year's end."),
+          "ResponseCode": V("MET", "The criterion is met."), "ResponseDate": V("2025-12-31", "The year's end."),
           "ResponseID": V("BF-ACC-2025", "The accounts."), "ResponseIndicator": V("true", "Yes."),
           "ResponseMeasure": V("12", "Months covered.", unitCode="MON"), "ResponseNumeric": V("26", "Years in "
                                                                                                 "business."),
@@ -6471,30 +6499,29 @@ def _(f, n, doc, out):
     return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
             "EconomicOperatorGroupName": V("Brackenmere Furniture", "Tendering alone."),
             "VersionID": V("1", "The first version."), "PreviousVersionID": V("0", "None."),
-            "ProcedureCode": V("Open", "The procedure."),
-            "QualificationApplicationTypeCode": V("Regulated", "The regulated form."),
+            "ProcedureCode": V("OPEN", "The procedure."),
+            "QualificationApplicationTypeCode": V("REGULATED", "The regulated form."),
             "WeightScoringMethodologyNote": V("Pass or fail.", "As asked."),
-            "WeightingTypeCode": V("None", "No weighting."), "Note": V("All criteria answered.", "The answer."),
+            "WeightingTypeCode": V("NONE", "No weighting."), "Note": V("All criteria answered.", "The answer."),
             "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
             "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
             "TenderingCriterion": {"ID": V("CR-TURNOVER", "The criterion answered.")},
             "TenderingCriterionResponse": {"ID": V("CRR-1", "The response."), "Name": V("Turnover", "Name."),
                                            "Description": V("Yearly turnover of 410,000 lume.", "What."),
                                            "ValidatedCriterionPropertyID": V("P-1", "The property answered."),
-                                           "ConfidentialityLevelCode": V("Confidential", "Not to be published."),
+                                           "ConfidentialityLevelCode": V("CONFIDENTIAL", "Not to be published."),
                                            "ResponseValue": rv,
                                            "ApplicablePeriod": {"StartDate": V("2025-01-01", "The year."),
                                                                 "EndDate": V("2025-12-31", "Its end.")},
                                            "SuppliedEvidence": {"ID": V("EV-ACC-BF", "The accounts.")},
                                            "ProcurementProjectLotReference": lot_ref("LOT-1"),
-                                           "CommodityClassification": {"ItemClassificationCode": V("9401.79", "The "
-                                                                                                   "benches.",
-                                                                                                   listID="HS")}},
+                                           "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a "
+                                                                                                   "UN CPC subclass.")}},
             "AdditionalDocumentReference": {"ID": V("BF-ESPD-26", "The self-declaration.")},
-            "Evidence": {"ID": V("EV-ACC-BF", "The annual accounts."), "EvidenceTypeCode": V("Accounts", "Kind."),
+            "Evidence": {"ID": V("EV-ACC-BF", "The annual accounts."), "EvidenceTypeCode": V("ACCOUNTS", "Kind."),
                          "Name": V("Annual accounts 2025", "Name."), "Description": V("Audited.", "What."),
                          "CandidateStatement": V("True and complete.", "The statement."),
-                         "ConfidentialityLevelCode": V("Confidential", "Not published."),
+                         "ConfidentialityLevelCode": V("CONFIDENTIAL", "Not published."),
                          "EvidenceIssuingParty": party("37-xb", short=True),
                          "DocumentReference": {"ID": V("BF-ACC-2025", "The accounts.")},
                          "Language": {"ID": V("en", "English.")}},
@@ -6515,7 +6542,7 @@ def _(f, n, doc, out):
                     "EmployeeQuantity": qty(180, "IE", "Employees, in persons."),
                     "BusinessClassificationEvidenceID": V("ISIC-3100", "Its class."),
                     "BusinessIdentityEvidenceID": V(PARTY["5-xu"]["identity"]["registry_id"], "Its registration."),
-                    "TendererRoleCode": V("Lead", "The lead tenderer."),
+                    "TendererRoleCode": V("LEAD", "The lead tenderer."),
                     "BusinessClassificationScheme": {"ID": V("ISIC4", "ISIC Rev. 4."),
                                                      "ClassificationCategory": {"CodeValue": V("3100", "Furniture.")}},
                     "TechnicalCapability": {"ID": V("TC-1", "Production."), "Description": V("4,000 benches a year.",
@@ -6537,22 +6564,22 @@ def _(f, n, doc, out):
                                                                                                    "The customer.")}}}},
                     "Declaration": {"ID": V("DEC-1", "A declaration."), "Name": V("No conflict of interest",
                                                                                  "Name."),
-                                    "DeclarationTypeCode": V("Integrity", "Its kind."),
+                                    "DeclarationTypeCode": V("INTEGRITY", "Its kind."),
                                     "Description": V("No ties with the department's officers.", "What."),
                                     "SuppliedEvidence": {"ID": V("EV-DEC-1", "The signed declaration.")}},
-                    "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead."), "RoleDescription": V("Leads.",
+                    "EconomicOperatorRole": {"RoleCode": V("LEAD", "The lead."), "RoleDescription": V("Leads.",
                                                                                                     "Role.")}},
                 "AdditionalQualifyingParty": {"ParticipationPercent": V("20", "Saltmere's share."),
-                                              "TendererRoleCode": V("Subcontractor", "For the installation.")}},
+                                              "TendererRoleCode": V("SUBCONTRACTOR", "For the installation.")}},
             "Evidence": {"ID": V("EV-FER-PARKS", "The reference."), "Name": V("Ferrano reference", "Name.")},
             "AdditionalDocumentReference": {"ID": V("VI-ESPD-26", "The self-declaration.")}}
 
 
 @enrich("tender", "GuaranteeCertificate")
 def _(f, n, doc, out):
-    return {"GuaranteeTypeCode": V("TenderGuarantee", "A tender guarantee."),
+    return {"GuaranteeTypeCode": V("TENDER", "A tender guarantee."),
             "Purpose": V("Guarantee of the tender for the bench procedure.", "Its purpose."),
-            "ConstitutionCode": V("BankGuarantee", "A bank guarantee."),
+            "ConstitutionCode": V("BANKGUAR", "A bank guarantee."),
             "Note": V("Released at the award.", "When it ends."),
             "ApplicablePeriod": {"StartDate": V(f.date(40), "From."), "EndDate": V(f.date(135), "Until 90 days "
                                                                                                 "after the "
@@ -6591,7 +6618,7 @@ def project_brief(lot=None):
     name = {"LOT-1": "Park benches", "LOT-2": "Installation of the park benches"}.get(lot, "Park benches for the "
                                                                                           "city parks")
     return {"Name": V(name, "The project, or the lot, the document is about."),
-            "ProcurementTypeCode": V("Works" if lot == "LOT-2" else "Supplies", "The kind of procurement.")}
+            "ProcurementTypeCode": V("WORKS" if lot == "LOT-2" else "SUPPLIES", "The kind of procurement.")}
 
 
 def appeal_terms():
@@ -6607,7 +6634,7 @@ def appeal_terms():
 def tender_result(f, full=True):
     """The result of the procedure: both lots awarded to the manufacturer, on the best price-quality ratio."""
     out = {"AwardID": V(f"{FOLDER}-AWARD-1", "The award decision."),
-           "TenderResultCode": V("Awarded", "The contract is awarded."),
+           "TenderResultCode": V("AWARDED", "The contract is awarded."),
            "Description": V("Both lots to Valdara Industries: the best price-quality ratio, with ten years of "
                             "warranty on the coating.", "Why it won."),
            "AwardTime": V("09:30:00", "The time of the decision, before the tenderers are told.")}
@@ -6623,7 +6650,7 @@ def tender_result(f, full=True):
             "ReceivedElectronicTenderQuantity": qty(2, "EA", "Both through the platform."),
             "ReceivedForeignTenderQuantity": qty(1, "EA", "The manufacturer is established in Urvania.")})
     out.update({
-        "Contract": {"ID": V(FOLDER, "The framework contract."), "ContractTypeCode": V("Framework", "A framework "
+        "Contract": {"ID": V(FOLDER, "The framework contract."), "ContractTypeCode": V("FRAMEWORK", "A framework "
                                                                                                     "contract."),
                      "ValidityPeriod": {"StartDate": V(f.date(70), "From the first call-off."),
                                         "DurationMeasure": V("24", "Two years.", unitCode="MON")}},
@@ -6643,7 +6670,7 @@ def tender_result(f, full=True):
 
 @enrich("tender", "ExpressionOfInterestRequest")
 def _(f, n, doc, out):
-    return {"ContractName": contract_name(), "PreferredLanguageLocaleCode": V("EN", "The sawmill wants the "
+    return {"ContractName": contract_name(), "PreferredLanguageLocaleCode": V("en", "The sawmill wants the "
                                                                                     "documents in English."),
             "Note": V("The sawmill considers a tender for lot 1 with a bench maker and asks to follow the "
                       "procedure.", "Why it registers."),
@@ -6655,9 +6682,9 @@ def _(f, n, doc, out):
                 "QualifyingParty": {"ParticipationPercent": V("60", "The sawmill's share in the planned consortium."),
                                     "OperatingYearsQuantity": qty(22, "ANN", "Years in business."),
                                     "EmployeeQuantity": qty(85, "IE", "Its staff, in persons."),
-                                    "TendererRoleCode": V("Lead", "It would lead the consortium."),
+                                    "TendererRoleCode": V("LEAD", "It would lead the consortium."),
                                     "Party": party(SAWMILL, short=True)},
-                "EconomicOperatorRole": {"RoleCode": V("Lead", "The lead of a consortium still to be formed."),
+                "EconomicOperatorRole": {"RoleCode": V("LEAD", "The lead of a consortium still to be formed."),
                                          "RoleDescription": V("Supplies the slats; a bench maker would build "
                                                               "the benches.", "In words.")}},
             "ProcurementProject": project_brief("LOT-1"), "ProcurementProjectLotReference": lot_ref("LOT-1")}
@@ -6665,7 +6692,7 @@ def _(f, n, doc, out):
 
 @enrich("tender", "ExpressionOfInterestResponse")
 def _(f, n, doc, out):
-    return {"ContractName": contract_name(), "TenderLanguageLocaleCode": V("EN", "Tenders are written in English."),
+    return {"ContractName": contract_name(), "TenderLanguageLocaleCode": V("en", "Tenders are written in English."),
             "Note": V("Registered: the sawmill receives every change to the documents.", "The answer."),
             "ExpressionOfInterestDocumentReference": {"ID": V(f.numbers["eoi"], "The expression of interest "
                                                                                 "answered.")},
@@ -6687,7 +6714,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"ContractName": contract_name(), "Note": V("The deadline stands; the answers did not change the "
                                                        "documents.", "The status."),
-            "ProcedureCode": V("Open", "Still an open procedure."),
+            "ProcedureCode": V("OPEN", "Still an open procedure."),
             "InvitationSubmissionPeriod": {"StartDate": V(f.date(14), "From."), "EndDate": V(f.date(20), "To.")},
             "ParticipationRequestReceptionPeriod": {"EndDate": V(f.date(30), "Closed: requests to participate "
                                                                              "were due then.")},
@@ -6727,8 +6754,8 @@ def _(f, n, doc, out):
             "BriefDescription": V("Valdara Industries: registered, no exclusion grounds recorded.", "In short."),
             "RequestedPublicationDate": V(f.date(46), "Published on the register on the day of the extract."),
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules of the register."),
-            "NoticeTypeCode": V("BusinessRegistration", "A notice of registration information."),
-            "NoticeLanguageCode": V("EN", "In English."),
+            "NoticeTypeCode": V("BUSREG", "A notice of registration information."),
+            "NoticeLanguageCode": V("en", "In English."),
             "AdditionalNoticeLanguage": {"ID": V("qau", "Also in Urvanian, for operators from Urvania."),
                                          "Name": V("Urvanian", "The language's name.")},
             "Signature": seal(INFO, "BIS-SIG-BI"),
@@ -6737,24 +6764,24 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V("VI-ISO9001-CERT", "Its quality certificate.")},
             "BusinessCapability": {
                 "ID": V("CAP-1", "A capability on record."),
-                "CapabilityTypeCode": V("Production", "Production capacity."),
+                "CapabilityTypeCode": V("PRODUCTION", "Production capacity."),
                 "Description": V("Steel frame benches, cast, galvanised and coated in its own plant.", "What."),
                 "ValueAmount": amount(Decimal("4800000.00"), "XBL", "Yearly turnover, converted to lume."),
                 "ValueQuantity": qty(6000, "EA", "Benches a year."),
                 "SuppliedEvidence": {"ID": V("EV-ACC-2025", "The audited accounts of 2025."),
                                      "Name": V("Annual accounts", "What.")},
                 "ValidityPeriod": {"EndDate": V("2026-12-31", "Valid until the next accounts.")},
-                "WebSite": {"Name": V("Valdara Industries", "Its site."), "WebSiteTypeCode": V("Company", "A company "
+                "WebSite": {"Name": V("Valdara Industries", "Its site."), "WebSiteTypeCode": V("COMPANY", "A company "
                                                                                                          "site."),
                             "URI": V("https://www.valdara.example", "The address.")}},
-            "BusinessPartyGroup": {"GroupTypeCode": V("SameActivity", "Operators with the same registered "
+            "BusinessPartyGroup": {"GroupTypeCode": V("SAMEACTIVITY", "Operators with the same registered "
                                                                        "activity."),
                                    "GroupType": V("Tenderers in this procedure registered for ISIC 3100", "The "
                                                                                                          "group."),
                                    "Party": [party(WINNER, short=True), party(RUNNER_UP, short=True)]},
-            "OperationType": {"Code": V("Manufacture", "Its operation."),
+            "OperationType": {"Code": V("MANUFACTURE", "Its operation."),
                               "Description": V("Manufacture of furniture for public spaces.", "In words.")},
-            "NoticeSubType": {"SubTypeCode": V("Extract", "An extract on request."),
+            "NoticeSubType": {"SubTypeCode": V("EXTRACT", "An extract on request."),
                               "SubTypeDescription": V("Extract asked for by a contracting authority.", "In words.")}}
 
 
@@ -6796,7 +6823,7 @@ def _(f, n, doc, out):
 
 @enrich("tender", "ContractAwardNotice")
 def _(f, n, doc, out):
-    return {**notice_head(f, "CAN", "ContractAwardNotice"),
+    return {**notice_head(f, "CAN", "CAN"),
             "Note": V("Award of the framework contract for park benches.", "What."),
             "PublishAwardIndicator": V("true", "The award is published."),
             "PreviousDocumentReference": {"ID": V(f.numbers.get("notice", f"{FOLDER}-CN"), "The contract notice.")},
@@ -6812,7 +6839,7 @@ def _(f, n, doc, out):
                                                        "the standstill period.", "The message."),
             "MinutesDocumentReference": {"ID": V("PWD-MIN-AWARD-26", "The minutes of the evaluation.")},
             "AdditionalDocumentReference": {"ID": V("PWD-EVAL-REPORT-26", "The evaluation report.")},
-            "FinalFinancialGuarantee": {"GuaranteeTypeCode": V("PerformanceGuarantee", "A performance guarantee."),
+            "FinalFinancialGuarantee": {"GuaranteeTypeCode": V("PERFORMANCE", "A performance guarantee."),
                                         "Description": V("A bank guarantee for the execution of the contract.",
                                                          "What the winner must provide."),
                                         "LiabilityAmount": amount(WIN_TOTAL * Decimal("0.05"), "XBL", "5 % of the "
@@ -6846,7 +6873,7 @@ def _(f, n, doc, out):
                           seal(WINNER, "VI-SIG-CONTRACT", "The manufacturer's seal.")],
             "ReceiverParty": party(WINNER, short=True),
             "TenderingTerms": tendering_terms(f),
-            "TenderingProcess": {"ID": V(f"{FOLDER}-P", "The procedure."), "ProcedureCode": V("Open", "Open.")},
+            "TenderingProcess": {"ID": V(f"{FOLDER}-P", "The procedure."), "ProcedureCode": V("OPEN", "Open.")},
             "ProcurementProject": project_brief(), "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
                                                                             {"ID": V("LOT-2", "Lot 2.")}],
             "TenderResult": {**out["TenderResult"], **tender_result(f)}}
@@ -6889,7 +6916,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     for tt in lines_of(out, "TaxTotal"):
         for st in lines_of(tt, "TaxSubtotal"):
-            st["TaxCategory"]["TaxScheme"]["TaxTypeCode"] = V("Consumption", "The import consumption tax is a tax "
+            st["TaxCategory"]["TaxScheme"]["TaxTypeCode"] = V("CONSUMPTION", "The import consumption tax is a tax "
                                                                              "on consumption.")
     return {}
 
@@ -6898,7 +6925,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     gp = out.get("GoodsProcessing")
     if isinstance(gp, dict) and isinstance(gp.get("CriterionItem"), dict):
-        gp["CriterionItem"]["TypeCode"] = V("Processing", "A criterion on how the goods were processed.")
+        gp["CriterionItem"]["TypeCode"] = V("PROCESSING", "A criterion on how the goods were processed.")
     return {}
 
 
@@ -6907,7 +6934,7 @@ def _(f, n, doc, out):
     return {"PreviousCustomsDeclaration": {
         "ID": V("VI-CD-26-0330E", "The export declaration lodged in Urvania at the office of departure (not shown in "
                                   "this flow), which the transit continues."),
-        "FunctionCode": V("Export", "The kind of the previous declaration.")}}
+        "FunctionCode": V("EXPORT", "The kind of the previous declaration.")}}
 
 
 @enrich("sea", "ExportCustomsDeclaration")
@@ -6918,7 +6945,7 @@ def _(f, n, doc, out):
             "ID": V(FLOWS["road"].numbers.get("import", "LD-IM-26-0161"), "The import declaration under which the "
                                                                           "benches entered Bayvarra from Urvania "
                                                                           "(flow road): the goods now leave again."),
-            "FunctionCode": V("Import", "The kind of the previous declaration.")}
+            "FunctionCode": V("IMPORT", "The kind of the previous declaration.")}
     return {}
 
 
@@ -6942,7 +6969,7 @@ def _(f, n, doc, out):
         "DocumentID": V("WS-CP-26-4471-E1", "The insurer's endorsement of the cargo policy for this consignment."),
         "ApprovalStatus": V("Endorsed", "The insurer confirms the cover."),
         "Remarks": V("The goods described in this certificate are insured door to door.", "What it confirms."),
-        "EndorserParty": {"RoleCode": V("Insurer", "It endorses as insurer."),
+        "EndorserParty": {"RoleCode": V("INSURER", "It endorses as insurer."),
                           "SequenceNumeric": V("2", "After the chamber; the embassy legalises separately."),
                           "Party": party("29-xb", short=True),
                           "SignatoryContact": {"Name": V("Cargo claims desk", "Who signs for the insurer.")}},
@@ -6964,7 +6991,7 @@ def _(f, n, doc, out):
         "ID": V("BL-FX-26-0091", "The department's forward contract with the Bank of Lumeport, which fixes the rate "
                                  "for the year."),
         "IssueDate": V("2026-01-02", "Concluded on the rate date."),
-        "ContractTypeCode": V("Forward", "A currency forward."),
+        "ContractTypeCode": V("FORWARD", "A currency forward."),
         "ContractType": V("Forward purchase of ferra", "In words.")}}}
 
 
@@ -7040,7 +7067,7 @@ def _(f, n, doc, out):
         li["BeneficiaryParty"] = party(HARBOUR, short=True)
     out["OrderLine"][0]["LineItem"]["OrderedShipment"] = {
         "Shipment": {"ID": V("VT-SH-PLAN-1", "The shipment the buyer plans for this line: one container."),
-                     "ShippingPriorityLevelCode": V("Normal", "No urgency for the sea part.")},
+                     "ShippingPriorityLevelCode": V("STANDARD", "No urgency for the sea part.")},
         "Package": {"ID": V("PAL", "Packed on pallets."), "Quantity": qty(24, "EA", "24 pallets of four "
                                                                                        "benches."),
                     "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}}
@@ -7212,7 +7239,7 @@ def _(f, n, doc, out):
     for cl in lines_of(out, "CatalogueLine"):
         it = cl.get("Item")
         if isinstance(it, dict):
-            it["ItemTypeCode"] = V("Product", "A physical product, not a service.")
+            it["ItemTypeCode"] = V("PRODUCT", "A physical product, not a service.")
     return {}
 
 
@@ -7230,7 +7257,7 @@ def _(f, n, doc, out):
 
 @enrich("ore", "TransportExecutionPlanRequest")
 def _(f, n, doc, out):
-    return {"DocumentStatusReasonCode": V("Update", "The request updates the season's standing plan."),
+    return {"DocumentStatusReasonCode": V("UPDATE", "The request updates the season's standing plan."),
             "DocumentStatusReasonDescription": V("This week's quantity of ore differs from the standing plan.",
                                                  "Why it is sent."),
             "TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan for the ore "
@@ -7242,7 +7269,7 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V("SM-ASSAY-26-11", "The assay of the ore lot.")},
             "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TEPR"),
             "AtLocation": {"Name": V("Serravona mine siding", "Where the wagons are loaded.")},
-            "AdditionalTransportationService": {"TransportServiceCode": V("Weighing", "The wagons are weighed at "
+            "AdditionalTransportationService": {"TransportServiceCode": V("WEIGH", "The wagons are weighed at "
                                                                                      "the siding."),
                                                 "TariffClassCode": V("B", "The carrier's tariff class.")},
             "TransportExecutionTerms": {"TransportUserSpecialTerms": V("Wagons sheeted against dust.", "A term "
@@ -7263,7 +7290,7 @@ def _(f, n, doc, out):
             "TransportExecutionTerms": {
                 "DeliveryTerms": {"ID": V("FCA", "The buyer's terms with the mine, for the carrier's information.",
                                           schemeID="INCOTERMS")},
-                "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2", "Greenhouse gases as CO2 "
+                "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases as CO2 "
                                                                                     "equivalent."),
                                           "ValueMeasure": V("1.9", "Estimated for the trip, electric traction.",
                                                             unitCode="TNE")}}}
@@ -7301,7 +7328,7 @@ def _(f, n, doc, out):
 
 @enrich("waste", "WasteNotification")
 def _(f, n, doc, out):
-    return {"WasteNotificationTypeCode": V("Recovery", "A notification of waste for recovery, not disposal."),
+    return {"WasteNotificationTypeCode": V("RECOVERY", "A notification of waste for recovery, not disposal."),
             "ConsignmentQuantity": qty(12, "EA", "About twelve movements over the year."),
             "DocumentReference": {"ID": V("VI-WASTE-CONTRACT-26", "The contract between producer and recovery "
                                                                   "facility, which the notification needs.")},
@@ -7311,7 +7338,7 @@ def _(f, n, doc, out):
 
 @enrich("waste", "WasteMovement")
 def _(f, n, doc, out):
-    return {"WasteMovementTypeCode": V("Recovery", "A movement of waste for recovery."),
+    return {"WasteMovementTypeCode": V("RECOVERY", "A movement of waste for recovery."),
             "SequenceNumberID": V("1", "The first movement under the notification."),
             "ConsignmentQuantity": qty(12, "EA", "Of about twelve notified."),
             "WasteNotificationDocumentReference": {"ID": V(f.numbers["notification"],
@@ -7319,7 +7346,7 @@ def _(f, n, doc, out):
             "WeightStatementDocumentReference": {"ID": V("RR-WB-26-0412", "The weighbridge ticket of the "
                                                                           "recovery plant (not shown).")},
             "DocumentReference": {"ID": V("RR-REC-26-0412", "The certificate of recovery to follow.")},
-            "DocumentDistribution": {"DistributionTypeCode": V("Electronic", "Sent electronically."),
+            "DocumentDistribution": {"DistributionTypeCode": V("ELECTRONIC", "Sent electronically."),
                                      "DistributionType": V("A copy for the producer, who must keep it with the "
                                                            "notification.", "Why."),
                                      "Party": party("5-xu", short=True)},
@@ -7331,7 +7358,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     for d in find_dicts(out, "EnergyConsumptionAllocation"):
         for e in lines_of(d, "EnergyConsumptionAllocation"):
-            e["EnvironmentalEmission"] = {"EnvironmentalEmissionTypeCode": V("CO2", "Greenhouse gases as CO2 "
+            e["EnvironmentalEmission"] = {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases as CO2 "
                                                                                     "equivalent."),
                                           "ValueMeasure": V("14.3", "2.65 kg per litre of the diesel allocated.",
                                                             unitCode="KGM")}
@@ -7369,7 +7396,7 @@ def _(f, n, doc, out):
     for d in find_dicts(out, "Delivery"):
         for dl in lines_of(d, "Delivery"):
             dl["FuelConsumption"] = {"ID": V("TH-FC-26-0159", "The fuel of this delivery."),
-                                     "FuelTypeCode": V("Diesel", "The truck runs on diesel."),
+                                     "FuelTypeCode": V("DIESEL", "The truck runs on diesel."),
                                      "FuelConsumptionMeasure": V("61", f"About 33 litres per 100 km over "
                                                                        f"{DISTANCE_KM} km.", unitCode="LTR")}
         break
@@ -7442,7 +7469,7 @@ def _(f, n, doc, out):
                 "Note": V("Recounted: all benches received; one box of side frames over.", "The result.")}
     b.update({"ReceivedQuantity": qty(95, "EA", "One bench fewer than despatched."),
               "ShortQuantity": qty(1, "EA", "One bench short."),
-              "ShortageActionCode": V("Replace", "The distributor asks for the missing bench with the next truck."),
+              "ShortageActionCode": V("REPLACE", "The distributor asks for the missing bench with the next truck."),
               "Note": V("One pallet held three benches and a box of side frames: mis-picked at the 3PL.", "What "
                                                                                                           "was "
                                                                                                           "found."),
@@ -7469,7 +7496,7 @@ def bundle_discount():
 
 def bundle_allowance(amt, why):
     return {"ChargeIndicator": V("false", "An allowance: it lowers the amount."),
-            "AllowanceChargeReasonCode": V("95", "UN/EDIFACT 5189 code 95: discount."),
+            "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
             "AllowanceChargeReason": V("Business bundle discount", "The reason in words."),
             "MultiplierFactorNumeric": V(str(BUNDLE_PERCENT / 100), "5 %."),
             "Amount": amount(amt, "XLC", why)}
@@ -7582,6 +7609,7 @@ def _(f, n, doc, out):
         services = first["TelecommunicationsService"]
         call = services[1]
         call["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance."),
+                                   "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                                    "AllowanceChargeReason": V("Calls to the trade accord countries are included in "
                                                               "the subscription", "Why the call costs nothing."),
                                    "BaseAmount": amount(Decimal("2.400"), "XLC", "Twelve minutes at the 0.200 "
@@ -7681,6 +7709,7 @@ def tender_complete(n, doc):
                 "TransactionConditions": {"Description": V("The framework contract's conditions apply.", "Which "
                                                                                                          "conditions.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                    "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                     "AllowanceChargeReason": V("Special colour", "Moss green, RAL 6005."),
                                     "Amount": amount(COLOUR_CHARGE, cur, "5 lume a bench, as quoted.")},
                 "AnticipatedMonetaryTotal": {"LineExtensionAmount": amount(bench, cur, "The forty benches."),
@@ -7706,6 +7735,7 @@ def tender_complete(n, doc):
                                                                          "announced: it will be in moss green too "
                                                                          "(not shown).")},
                     "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                        "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                         "AllowanceChargeReason": V("Special colour", "As changed."),
                                         "Amount": amount(COLOUR_CHARGE, cur, "As quoted.")},
                     "LegalMonetaryTotal": {"LineExtensionAmount": amount(bench, cur, "The benches."),
@@ -7730,6 +7760,7 @@ def tender_complete(n, doc):
                 "ContractDocumentReference": {"ID": V(FOLDER, "The contract with the penalty clause.")},
                 "TaxRepresentativeParty": party("10-xb", short=True),
                 "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance on the penalty."),
+                                    "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                                     "AllowanceChargeReason": V("One day waived", "The first day was lost to a "
                                                                                  "storm, as both agree."),
                                     "Amount": amount(waived, cur, "One day of the penalty.")},
@@ -7764,7 +7795,7 @@ def tender_complete(n, doc):
         f.numbers["reminder-amount"] = balance + interest
         return {"ID": V(no, "The manufacturer's reminder number."),
                 "IssueDate": V(f.date(113), "Five days after the due date."),
-                "ReminderTypeCode": V("Payment", "A reminder of a payment overdue."),
+                "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
                 "Note": V("The balance of the first release is overdue; Urvania's statutory interest applies.",
                           "What it says."),
@@ -7794,6 +7825,7 @@ def tender_complete(n, doc):
                                                                        "credit and the penalty."),
                                    "PaidDate": V(f.date(110), "Paid to the state.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                    "AllowanceChargeReasonCode": V("48", "UN/EDIFACT 7161 has no code for interest, so the code is from UN/EDIFACT 5189, with that list's listID."),
                                     "AllowanceChargeReason": V("Statutory interest", "Urvania's interest on late "
                                                                                      "payment."),
                                     "MultiplierFactorNumeric": V("0.08", "8 % a year."),
@@ -8017,6 +8049,7 @@ def _(f, n, doc, out):
             "WorkReportDocumentReference": {"ID": V("SCC-CLS-26-0311", "The chamber's classing report.")},
             "WithholdingTaxTotal": {"TaxAmount": amount(wh, "XLC", "The withholding reversed on the credit.")},
             "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance: it lowers the credit."),
+                                "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                                 "AllowanceChargeReason": V("Classing fee", "The farm bears the classing of its "
                                                                            "cotton, as the agreement says."),
                                 "Amount": amount(fee, "XLC", "The chamber's fee for the lot.")}}
@@ -8038,7 +8071,7 @@ def _(f, n, doc, out):
     gross = Decimal(li["LineExtensionAmount"].value)
     disc = money(gross * Decimal("0.03"), "XBL")
     li["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
-                             "AllowanceChargeReasonCode": V("95", "UN/EDIFACT 5189 code 95: discount."),
+                             "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                              "AllowanceChargeReason": V("Repeat order", "The quotation gives 3 % on a repeat "
                                                                         "order of the line."),
                              "MultiplierFactorNumeric": V("0.03", "3 %."),
@@ -8062,6 +8095,7 @@ def _(f, n, doc, out):
     smt["PayableAmount"] = amount(amt + Decimal("24.00"), "XBL", "What the invoice will charge: the hours and the "
                                                                  "disposal.")
     return {"AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                "AllowanceChargeReasonCode": V("AEO", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                 "AllowanceChargeReason": V("Packaging disposal", "The installers took the "
                                                                                  "packaging away."),
                                 "Amount": amount(Decimal("24.00"), "XBL", "A flat charge.")},
@@ -8078,6 +8112,7 @@ def _(f, n, doc, out):
     ded = money(gross * Decimal("0.05"), "XBL")
     br["Amount"] = amount(gross - ded, "XBL", "The amount of the credit note line the transport belongs to.")
     br["AllowanceCharge"] = {"ChargeIndicator": V("false", "The allowance on that line."),
+                             "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                              "AllowanceChargeReason": V("Restocking deduction", "As on the credit note."),
                              "Amount": amount(ded, "XBL", "5 % of the sets returned.")}
     return {}
@@ -8113,12 +8148,14 @@ def _(f, n, doc, out):
     first = out["StatementLine"][0]
     first["AllowanceCharge"] = [
         {"ChargeIndicator": V("true", "A charge in the invoice of the line."),
+         "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
          "AllowanceChargeReason": V("Sea freight", "As on the invoice: CIF."),
          "Amount": amount(SEA_FREIGHT, "XBL", "The freight.")},
-        {"ChargeIndicator": V("true", "A charge."), "AllowanceChargeReason": V("Cargo insurance", "As on the "
+        {"ChargeIndicator": V("true", "A charge."), "AllowanceChargeReasonCode": V("96", "UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID."), "AllowanceChargeReason": V("Cargo insurance", "As on the "
                                                                                                 "invoice."),
          "Amount": amount(INSURANCE, "XBL", "The premium.")}]
     return {"AllowanceCharge": {"ChargeIndicator": V("true", "The charges in the account, summed."),
+                                "AllowanceChargeReasonCode": V("FC", "The sum is mostly freight; one code covers the charge (UN/EDIFACT 7161)."),
                                 "AllowanceChargeReason": V("Freight and insurance of the CIF invoice", "Why."),
                                 "Amount": amount(SEA_FREIGHT + INSURANCE, "XBL", "Included in the balance.")}}
 
@@ -8132,7 +8169,7 @@ def retail_complete(n, doc):
             {"CarrierAssignedID": V("BF-ROAD-26-0231", "The carrier's own number for the job."),
              "TransportationStatusRequestDocumentReference": {"ID": V(f.numbers["ts-request"], "The request "
                                                                                                "answered.")},
-             "TransportationStatusTypeCode": V("Current", "The current status."),
+             "TransportationStatusTypeCode": V("CURRENT", "The current status."),
              "UpdatedDeliveryTransportEvent": {"OccurrenceDate": V(f.date(9), "Today."),
                                                "OccurrenceTime": V("14:00:00", "The expected arrival."),
                                                "Description": V("Expected arrival at the store.", "In words.")}})
@@ -8144,6 +8181,7 @@ SCENARIOS["retail"] = _with_enrichment("retail", retail_complete)
 
 def pallets_charge(cur="XBL"):
     return {"ChargeIndicator": V("true", "A charge."),
+            "AllowanceChargeReasonCode": V(PALLETS_CHARGE["code"], PALLETS_CHARGE["code_why"]),
             "AllowanceChargeReason": V(PALLETS_CHARGE["reason"], PALLETS_CHARGE["why"]),
             "Amount": amount(Decimal(PALLETS_CHARGE["amount"]), cur, PALLETS_CHARGE["amount_why"])}
 
@@ -8196,6 +8234,7 @@ def _(f, n, doc, out):
     for ln in lines_of(out, "PurchaseReceiptLine"):
         ln["UUID"] = line_uuid(f, "receipt-pos", ln["ID"].value)
     return {"AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
+                                "AllowanceChargeReasonCode": V("DL", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                 "AllowanceChargeReason": V("Home delivery", "Delivered on Saturday, as booked."),
                                 "Amount": amount(delivery, "XBL", "The store's flat delivery charge."),
                                 "TaxCategory": st["TaxCategory"]}}
@@ -8214,6 +8253,7 @@ def _(f, n, doc, out):
     total = net + tax
     paid = (total / Decimal("0.05")).quantize(Decimal(1), rounding="ROUND_HALF_UP") * Decimal("0.05")
     ln["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
+                             "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
                              "AllowanceChargeReason": V("Two shirts: 5.00 off the pair", "The store's offer."),
                              "Amount": amount(off, "XBL", "Off the pair."),
                              "BaseAmount": amount(gross, "XBL", "Two shirts at the shelf price.")}
@@ -8397,7 +8437,7 @@ def pipeline_stage(why):
     return {"ID": V("1", "The only stage."),
             "TransportModeCode": V("7", "UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline.",
                                    listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
-            "TransportMeans": {"TransportMeansTypeCode": V("Pipeline", why),
+            "TransportMeans": {"TransportMeansTypeCode": V("PIPELINE", why),
                                "JourneyID": V("KG-P1-2603", "The month's flow through the pipeline.")}}
 
 
@@ -8408,7 +8448,7 @@ def energy(n, doc):
         vn = (g["m3"] * g["factor"]).quantize(Decimal(1))
         return {"ID": V(f.number("metering", doc["from"], "UtilityStatement"), "The grid operator's metering report."),
                 "IssueDate": V(f.date(1), "Sent on the first working day after the month."),
-                "UtilityStatementTypeCode": V("Gas", "The kind of supply."),
+                "UtilityStatementTypeCode": V("GAS", "The kind of supply."),
                 "ParentDocumentReference": {"ID": V(f.number("network-invoice", "44-xu", "Invoice"), "The network "
                                                     "invoice this statement supplements: the metering behind the "
                                                     "network charge for gas.")},
@@ -8417,7 +8457,7 @@ def energy(n, doc):
                 "DocumentCurrencyCode": kit.currency_line("XUF", "Urvania's currency"),
                 "SubscriberConsumption": {
                     "ConsumptionID": V("FG-CP-4120-G1-2603", "The consumption of the factory's gas point in March."),
-                    "SpecificationTypeCode": V("Detailed", "With the volume conversion."),
+                    "SpecificationTypeCode": V("DETAILED", "With the volume conversion."),
                     "Note": V("Gas for the coating ovens of the factory.", "The point."),
                     "TotalMeteredQuantity": qty(g["m3"], "MTQ", "Cubic metres through the meter at line pressure."),
                     "UtilityConsumptionPoint": {
@@ -8431,7 +8471,7 @@ def energy(n, doc):
                         "UtilityMeter": {"MeterNumber": V(g["meter"], "The gas meter."),
                                          "MeterName": V("Rotary gas meter, coating line", "Its name."),
                                          "MeterConstant": V("1", "Read directly."),
-                                         "MeterConstantCode": V("Direct", "No multiplier."),
+                                         "MeterConstantCode": V("DIRECT", "No multiplier."),
                                          "TotalDeliveredQuantity": qty(g["m3"], "MTQ", "Through the meter."),
                                          "MeterReading": {
                                              "ID": V(f"{g['meter']}-2603", "The reading of March."),
@@ -8443,7 +8483,7 @@ def energy(n, doc):
                                              "LatestMeterReadingMethodCode": V("REMOTE", "As a code."),
                                              "DeliveredQuantity": qty(g["m3"], "MTQ", "The difference.")}}},
                     "Consumption": {
-                        "UtilityStatementTypeCode": V("Gas", "The kind of supply."),
+                        "UtilityStatementTypeCode": V("GAS", "The kind of supply."),
                         "MainPeriod": {"StartDate": V("2026-03-01", "March."), "EndDate": V("2026-03-31", "Its end.")},
                         "EnergyWaterSupply": {
                             "ConsumptionReport": {"ID": V("FG-CP-4120-G1-2603", "The report."),
@@ -8519,7 +8559,7 @@ def energy(n, doc):
         f.numbers["surcharge"] = sur
         return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
                 "IssueDate": V(f.date(63), "A month after the due date."),
-                "ReminderTypeCode": V("Payment", "A reminder of a payment overdue."),
+                "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
                 "Note": V("The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month "
                           "applies.", "What it says."),

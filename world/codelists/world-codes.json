@@ -1,0 +1,8420 @@
+{
+ "description": "The context/value associations of the UBL example world, made by tools/build_codelists.py from world/codelists/lists.json. Every code element is checked against the list its context names; where a context names several lists, the code's listID chooses one. They replace UBL's own associations for the world's documents.",
+ "contexts": [
+  {
+   "element": "AllowanceChargeReasonCode",
+   "address": "*[local-name()='AllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode | *[local-name()='ExtraAllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode | *[local-name()='FreightAllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode | *[local-name()='ServiceAllowanceCharge'][cbc:ChargeIndicator='false']/cbc:AllowanceChargeReasonCode",
+   "lists": [
+    "UNCL5189"
+   ],
+   "parents": [
+    "AllowanceCharge",
+    "ExtraAllowanceCharge",
+    "FreightAllowanceCharge",
+    "ServiceAllowanceCharge"
+   ],
+   "when": {
+    "ChargeIndicator": "false"
+   }
+  },
+  {
+   "element": "AllowanceChargeReasonCode",
+   "address": "*[local-name()='AllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode | *[local-name()='ExtraAllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode | *[local-name()='FreightAllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode | *[local-name()='ServiceAllowanceCharge'][cbc:ChargeIndicator='true']/cbc:AllowanceChargeReasonCode",
+   "lists": [
+    "UNCL7161",
+    "UNCL5189"
+   ],
+   "parents": [
+    "AllowanceCharge",
+    "ExtraAllowanceCharge",
+    "FreightAllowanceCharge",
+    "ServiceAllowanceCharge"
+   ],
+   "when": {
+    "ChargeIndicator": "true"
+   }
+  },
+  {
+   "element": "ExemptionReasonCode",
+   "address": "*[local-name()='PartyTaxScheme']/cbc:ExemptionReasonCode",
+   "lists": [
+    "XB:TaxExemptionReason",
+    "XU:TaxExemptionReason"
+   ],
+   "parents": [
+    "PartyTaxScheme"
+   ]
+  },
+  {
+   "element": "CalculationMethodCode",
+   "address": "*[local-name()='PenaltyInterestRate']/cbc:CalculationMethodCode",
+   "lists": [
+    "InterestCalculation"
+   ],
+   "parents": [
+    "PenaltyInterestRate"
+   ]
+  },
+  {
+   "element": "ContractTypeCode",
+   "address": "*[local-name()='ForeignExchangeContract']/cbc:ContractTypeCode",
+   "lists": [
+    "FXContractType"
+   ],
+   "parents": [
+    "ForeignExchangeContract"
+   ]
+  },
+  {
+   "element": "StatusCode",
+   "address": "*[local-name()='Payment']/cbc:StatusCode",
+   "lists": [
+    "PaymentStatus"
+   ],
+   "parents": [
+    "Payment"
+   ]
+  },
+  {
+   "element": "DescriptionCode",
+   "address": "*[local-name()='InvoicePeriod']/cbc:DescriptionCode",
+   "lists": [
+    "PeriodDescription"
+   ],
+   "parents": [
+    "InvoicePeriod"
+   ]
+  },
+  {
+   "element": "DescriptionCode",
+   "address": "*[local-name()='PhysicalAttribute']/cbc:DescriptionCode",
+   "lists": [
+    "Colour"
+   ],
+   "parents": [
+    "PhysicalAttribute"
+   ]
+  },
+  {
+   "element": "CalculationMethodCode",
+   "address": "*[local-name()='EmissionCalculationMethod']/cbc:CalculationMethodCode",
+   "lists": [
+    "EmissionCalculationMethod"
+   ],
+   "parents": [
+    "EmissionCalculationMethod"
+   ]
+  },
+  {
+   "element": "ContractTypeCode",
+   "address": "*[local-name()='Contract']/cbc:ContractTypeCode | *[local-name()='TransportContract']/cbc:ContractTypeCode",
+   "lists": [
+    "ContractType"
+   ],
+   "parents": [
+    "Contract",
+    "TransportContract"
+   ]
+  },
+  {
+   "element": "StatusCode",
+   "address": "*[local-name()='GoodsItemPassport']/cbc:StatusCode | *[local-name()='PreviousPriceList']/cbc:StatusCode | *[local-name()='PriceList']/cbc:StatusCode | *[local-name()='Waybill']/cbc:StatusCode",
+   "lists": [
+    "RecordStatus"
+   ],
+   "parents": [
+    "GoodsItemPassport",
+    "PreviousPriceList",
+    "PriceList",
+    "Waybill"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='RequestedArrivalEvent']/cbc:TypeCode",
+   "lists": [
+    "TransportEventType"
+   ],
+   "parents": [
+    "RequestedArrivalEvent"
+   ]
+  },
+  {
+   "element": "ResponseCode",
+   "address": "*[local-name()='TransportServiceDescription']/cbc:ResponseCode",
+   "lists": [
+    "ServiceOfferResponse"
+   ],
+   "parents": [
+    "TransportServiceDescription"
+   ]
+  },
+  {
+   "element": "FullnessIndicationCode",
+   "address": "*[local-name()='TransportEquipment']/cbc:FullnessIndicationCode",
+   "lists": [
+    "LoadType"
+   ],
+   "parents": [
+    "TransportEquipment"
+   ]
+  },
+  {
+   "element": "RoleCode",
+   "address": "*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode",
+   "lists": [
+    "ShipPersonRole"
+   ],
+   "parents": [
+    "CrewMemberPerson",
+    "CrewPerson",
+    "MasterPerson",
+    "PassengerPerson",
+    "Person",
+    "ReportingPerson",
+    "ResponsibleOfficerPerson",
+    "SecurityOfficerPerson",
+    "ShipsSurgeonPerson"
+   ]
+  },
+  {
+   "element": "WasteTypeCode",
+   "address": "*[local-name()='MaritimeWaste']/cbc:WasteTypeCode",
+   "lists": [
+    "ShipWasteType"
+   ],
+   "parents": [
+    "MaritimeWaste"
+   ]
+  },
+  {
+   "element": "ProcedureCode",
+   "address": "*[local-name()='ProofOfReexportationReminder']/cbc:ProcedureCode",
+   "lists": [
+    "CustomsProcedure"
+   ],
+   "parents": [
+    "ProofOfReexportationReminder"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='ImportCustomsDeclaration']/cbc:TypeCode | *[local-name()='TransitCustomsDeclaration']/cbc:TypeCode | *[local-name()='ExportCustomsDeclaration']/cbc:TypeCode",
+   "lists": [
+    "CustomsDeclarationType"
+   ],
+   "parents": [
+    "ImportCustomsDeclaration",
+    "TransitCustomsDeclaration",
+    "ExportCustomsDeclaration"
+   ]
+  },
+  {
+   "element": "FunctionCode",
+   "address": "*[local-name()='PreviousCustomsDeclaration']/cbc:FunctionCode",
+   "lists": [
+    "CustomsDeclarationType"
+   ],
+   "parents": [
+    "PreviousCustomsDeclaration"
+   ]
+  },
+  {
+   "element": "SubTypeCode",
+   "address": "*[local-name()='ImportCustomsDeclaration']/cbc:SubTypeCode | *[local-name()='TransitCustomsDeclaration']/cbc:SubTypeCode | *[local-name()='ExportCustomsDeclaration']/cbc:SubTypeCode",
+   "lists": [
+    "CustomsDeclarationSubType"
+   ],
+   "parents": [
+    "ImportCustomsDeclaration",
+    "TransitCustomsDeclaration",
+    "ExportCustomsDeclaration"
+   ]
+  },
+  {
+   "element": "FunctionCode",
+   "address": "*[local-name()='CustomsDeclaration']/cbc:FunctionCode",
+   "lists": [
+    "UNCL1225"
+   ],
+   "parents": [
+    "CustomsDeclaration"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='GoodsCertificate']/cbc:TypeCode",
+   "lists": [
+    "GoodsCertificateType"
+   ],
+   "parents": [
+    "GoodsCertificate"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='AttestationLine']/cbc:TypeCode",
+   "lists": [
+    "AttestationType"
+   ],
+   "parents": [
+    "AttestationLine"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='GoodsProcessing']/cbc:TypeCode | *[local-name()='SubGoodsProcessing']/cbc:TypeCode | *[local-name()='CriterionItem']/cbc:TypeCode",
+   "lists": [
+    "GoodsProcessingType"
+   ],
+   "parents": [
+    "GoodsProcessing",
+    "SubGoodsProcessing",
+    "CriterionItem"
+   ]
+  },
+  {
+   "element": "RoleCode",
+   "address": "*[local-name()='EndorserParty']/cbc:RoleCode",
+   "lists": [
+    "EndorserRole"
+   ],
+   "parents": [
+    "EndorserParty"
+   ]
+  },
+  {
+   "element": "RoleCode",
+   "address": "*[local-name()='CardAccount']/cbc:RoleCode",
+   "lists": [
+    "CardAccountRole"
+   ],
+   "parents": [
+    "CardAccount"
+   ]
+  },
+  {
+   "element": "PurposeCode",
+   "address": "*[local-name()='PartyAuthorization']/cbc:PurposeCode",
+   "lists": [
+    "BaselAnnexIV"
+   ],
+   "parents": [
+    "PartyAuthorization"
+   ]
+  },
+  {
+   "element": "ProcedureCode",
+   "address": "*[local-name()='TenderingProcess']/cbc:ProcedureCode | *[local-name()='QualificationApplicationRequest']/cbc:ProcedureCode | *[local-name()='QualificationApplicationResponse']/cbc:ProcedureCode | *[local-name()='ProcurementStatus']/cbc:ProcedureCode",
+   "lists": [
+    "ProcurementProcedure"
+   ],
+   "parents": [
+    "TenderingProcess",
+    "QualificationApplicationRequest",
+    "QualificationApplicationResponse",
+    "ProcurementStatus"
+   ]
+  },
+  {
+   "element": "ProcurementTypeCode",
+   "address": "*[local-name()='ProcurementProject']/cbc:ProcurementTypeCode",
+   "lists": [
+    "ContractNature"
+   ],
+   "parents": [
+    "ProcurementProject"
+   ]
+  },
+  {
+   "element": "ProcurementTypeCode",
+   "address": "*[local-name()='ProcurementAdditionalType']/cbc:ProcurementTypeCode",
+   "lists": [
+    "StrategicProcurement"
+   ],
+   "parents": [
+    "ProcurementAdditionalType"
+   ]
+  },
+  {
+   "element": "SubTypeCode",
+   "address": "*[local-name()='NoticeSubType']/cbc:SubTypeCode",
+   "lists": [
+    "NoticeSubType"
+   ],
+   "parents": [
+    "NoticeSubType"
+   ]
+  },
+  {
+   "element": "ResponseCode",
+   "address": "*[local-name()='ResponseValue']/cbc:ResponseCode",
+   "lists": [
+    "CriterionResponse"
+   ],
+   "parents": [
+    "ResponseValue"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='TenderingCriterionProperty']/cbc:TypeCode",
+   "lists": [
+    "CriterionPropertyType"
+   ],
+   "parents": [
+    "TenderingCriterionProperty"
+   ]
+  },
+  {
+   "element": "TypeCode",
+   "address": "*[local-name()='OpenTenderEvent']/cbc:TypeCode",
+   "lists": [
+    "TenderEventType"
+   ],
+   "parents": [
+    "OpenTenderEvent"
+   ]
+  },
+  {
+   "element": "RoleCode",
+   "address": "*[local-name()='EconomicOperatorRole']/cbc:RoleCode",
+   "lists": [
+    "EconomicOperatorRole"
+   ],
+   "parents": [
+    "EconomicOperatorRole"
+   ]
+  },
+  {
+   "element": "Code",
+   "address": "*[local-name()='SecurityClearanceTerm']/cbc:Code",
+   "lists": [
+    "SecurityClearance"
+   ],
+   "parents": [
+    "SecurityClearanceTerm"
+   ]
+  },
+  {
+   "element": "Code",
+   "address": "*[local-name()='OperationType']/cbc:Code",
+   "lists": [
+    "OperationType"
+   ],
+   "parents": [
+    "OperationType"
+   ]
+  },
+  {
+   "element": "ActionCode",
+   "address": "*[local-name()='Catalogue']/cbc:ActionCode",
+   "lists": [
+    "CatalogueAction"
+   ],
+   "parents": [
+    "Catalogue"
+   ]
+  },
+  {
+   "element": "ActionCode",
+   "address": "*[local-name()='CatalogueLine']/cbc:ActionCode",
+   "lists": [
+    "CatalogueLineAction"
+   ],
+   "parents": [
+    "CatalogueLine"
+   ]
+  },
+  {
+   "element": "ActionCode",
+   "address": "*[local-name()='TransactionConditions']/cbc:ActionCode",
+   "lists": [
+    "ConditionsAction"
+   ],
+   "parents": [
+    "TransactionConditions"
+   ]
+  },
+  {
+   "element": "PurposeCode",
+   "address": "*[local-name()='ForecastRevision']/cbc:PurposeCode",
+   "lists": [
+    "ForecastPurpose"
+   ],
+   "parents": [
+    "ForecastRevision"
+   ]
+  },
+  {
+   "element": "DocumentTypeCode",
+   "address": "*[local-name()='DocumentDistribution']/cbc:DocumentTypeCode",
+   "lists": [
+    "DocumentCopyType"
+   ],
+   "parents": [
+    "DocumentDistribution"
+   ]
+  },
+  {
+   "element": "DocumentTypeCode",
+   "address": "*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode",
+   "lists": [
+    "UBLDocumentType",
+    "UNCL1001",
+    "DocumentType"
+   ],
+   "parents": [
+    "DocumentReference",
+    "AdditionalDocumentReference",
+    "DigitalDocumentMetadata",
+    "RemittanceDocumentDistribution",
+    "RequiredCertificationDocumentReference"
+   ]
+  },
+  {
+   "element": "ReasonCode",
+   "address": "*[local-name()='Signature']/cbc:ReasonCode",
+   "lists": [
+    "SignatureReason"
+   ],
+   "parents": [
+    "Signature"
+   ]
+  },
+  {
+   "element": "ResponseCode",
+   "address": "*[local-name()='Response']/cbc:ResponseCode",
+   "lists": [
+    "UNCL4343"
+   ],
+   "parents": [
+    "Response"
+   ]
+  },
+  {
+   "element": "ResponseCode",
+   "address": "*[local-name()='DiscrepancyResponse']/cbc:ResponseCode",
+   "lists": [
+    "UNCL4465"
+   ],
+   "parents": [
+    "DiscrepancyResponse"
+   ]
+  },
+  {
+   "element": "SubscriberTypeCode",
+   "address": "*[local-name()='UtilityItem']/cbc:SubscriberTypeCode",
+   "lists": [
+    "UtilityType"
+   ],
+   "parents": [
+    "UtilityItem"
+   ]
+  },
+  {
+   "element": "SubscriberTypeCode",
+   "address": "*[local-name()='UtilityConsumptionPoint']/cbc:SubscriberTypeCode",
+   "lists": [
+    "SubscriberType"
+   ],
+   "parents": [
+    "UtilityConsumptionPoint"
+   ]
+  },
+  {
+   "element": "FullnessIndicationCode",
+   "address": "*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode",
+   "lists": [
+    "EmissionBoundary"
+   ],
+   "parents": [
+    "EmissionCalculationMethod"
+   ]
+  },
+  {
+   "element": "WasteTypeCode",
+   "address": "*[local-name()='WasteGenerated']/cbc:WasteTypeCode",
+   "lists": [
+    "WasteType"
+   ],
+   "parents": [
+    "WasteGenerated"
+   ]
+  },
+  {
+   "element": "CurrencyCode",
+   "address": "cbc:CurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "DocumentCurrencyCode",
+   "address": "cbc:DocumentCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "PaymentAlternativeCurrencyCode",
+   "address": "cbc:PaymentAlternativeCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "PaymentCurrencyCode",
+   "address": "cbc:PaymentCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "PricingCurrencyCode",
+   "address": "cbc:PricingCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "RequestedInvoiceCurrencyCode",
+   "address": "cbc:RequestedInvoiceCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "SourceCurrencyCode",
+   "address": "cbc:SourceCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "TargetCurrencyCode",
+   "address": "cbc:TargetCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "TaxCurrencyCode",
+   "address": "cbc:TaxCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "ValueCurrencyCode",
+   "address": "cbc:ValueCurrencyCode",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "element": "IdentificationCode",
+   "address": "cbc:IdentificationCode",
+   "lists": [
+    "Country"
+   ]
+  },
+  {
+   "element": "NationalityCode",
+   "address": "cbc:NationalityCode",
+   "lists": [
+    "Country"
+   ]
+  },
+  {
+   "element": "PaymentMeansCode",
+   "address": "cbc:PaymentMeansCode",
+   "lists": [
+    "PaymentMeans"
+   ]
+  },
+  {
+   "element": "ChannelCode",
+   "address": "cbc:ChannelCode",
+   "lists": [
+    "Channel"
+   ]
+  },
+  {
+   "element": "TransportModeCode",
+   "address": "cbc:TransportModeCode",
+   "lists": [
+    "TransportMode"
+   ]
+  },
+  {
+   "element": "TransportEquipmentTypeCode",
+   "address": "cbc:TransportEquipmentTypeCode",
+   "lists": [
+    "TransportEquipmentType"
+   ]
+  },
+  {
+   "element": "WeighingMethodCode",
+   "address": "cbc:WeighingMethodCode",
+   "lists": [
+    "WeighingMethod"
+   ]
+  },
+  {
+   "element": "ValueUnitCode",
+   "address": "cbc:ValueUnitCode",
+   "lists": [
+    "UnitOfMeasure"
+   ]
+  },
+  {
+   "element": "TimeBasisCode",
+   "address": "cbc:TimeBasisCode",
+   "lists": [
+    "UnitOfMeasure"
+   ]
+  },
+  {
+   "element": "MimeCode",
+   "address": "cbc:MimeCode",
+   "lists": [
+    "BinaryObjectMime"
+   ]
+  },
+  {
+   "element": "CardChipCode",
+   "address": "cbc:CardChipCode",
+   "lists": [
+    "Chip"
+   ]
+  },
+  {
+   "element": "DocumentStatusCode",
+   "address": "cbc:DocumentStatusCode",
+   "lists": [
+    "DocumentStatus"
+   ]
+  },
+  {
+   "element": "LineStatusCode",
+   "address": "cbc:LineStatusCode",
+   "lists": [
+    "LineStatus"
+   ]
+  },
+  {
+   "element": "LatitudeDirectionCode",
+   "address": "cbc:LatitudeDirectionCode",
+   "lists": [
+    "LatitudeDirection"
+   ]
+  },
+  {
+   "element": "LongitudeDirectionCode",
+   "address": "cbc:LongitudeDirectionCode",
+   "lists": [
+    "LongitudeDirection"
+   ]
+  },
+  {
+   "element": "MathematicOperatorCode",
+   "address": "cbc:MathematicOperatorCode",
+   "lists": [
+    "Operator"
+   ]
+  },
+  {
+   "element": "SubstitutionStatusCode",
+   "address": "cbc:SubstitutionStatusCode",
+   "lists": [
+    "SubstitutionStatus"
+   ]
+  },
+  {
+   "element": "WeekDayCode",
+   "address": "cbc:WeekDayCode",
+   "lists": [
+    "WeekDay"
+   ]
+  },
+  {
+   "element": "ReceiptAdviceTypeCode",
+   "address": "cbc:ReceiptAdviceTypeCode",
+   "lists": [
+    "ReceiptAdviceType"
+   ]
+  },
+  {
+   "element": "PackagingTypeCode",
+   "address": "cbc:PackagingTypeCode",
+   "lists": [
+    "PackagingType"
+   ]
+  },
+  {
+   "element": "TransportHandlingUnitTypeCode",
+   "address": "cbc:TransportHandlingUnitTypeCode",
+   "lists": [
+    "PackagingType"
+   ]
+  },
+  {
+   "element": "TaxExemptionReasonCode",
+   "address": "cbc:TaxExemptionReasonCode",
+   "lists": [
+    "XB:TaxExemptionReason",
+    "XU:TaxExemptionReason"
+   ]
+  },
+  {
+   "element": "TaxLevelCode",
+   "address": "cbc:TaxLevelCode",
+   "lists": [
+    "TaxLevel"
+   ]
+  },
+  {
+   "element": "TaxTypeCode",
+   "address": "cbc:TaxTypeCode",
+   "lists": [
+    "TaxType"
+   ]
+  },
+  {
+   "element": "SupplyTypeCode",
+   "address": "cbc:SupplyTypeCode",
+   "lists": [
+    "SupplyType"
+   ]
+  },
+  {
+   "element": "AccountFormatCode",
+   "address": "cbc:AccountFormatCode",
+   "lists": [
+    "AccountFormat"
+   ]
+  },
+  {
+   "element": "AccountTypeCode",
+   "address": "cbc:AccountTypeCode",
+   "lists": [
+    "ISO20022CashAccountType"
+   ]
+  },
+  {
+   "element": "PaymentChannelCode",
+   "address": "cbc:PaymentChannelCode",
+   "lists": [
+    "ISO20022ClearingChannel"
+   ]
+  },
+  {
+   "element": "ChargeBearerCode",
+   "address": "cbc:ChargeBearerCode",
+   "lists": [
+    "ISO20022ChargeBearer"
+   ]
+  },
+  {
+   "element": "ServiceLevelCode",
+   "address": "cbc:ServiceLevelCode",
+   "lists": [
+    "ISO20022ServiceLevel"
+   ]
+  },
+  {
+   "element": "PaymentPurposeCode",
+   "address": "cbc:PaymentPurposeCode",
+   "lists": [
+    "ISO20022Purpose"
+   ]
+  },
+  {
+   "element": "MandateTypeCode",
+   "address": "cbc:MandateTypeCode",
+   "lists": [
+    "ISO20022SequenceType"
+   ]
+  },
+  {
+   "element": "CardTypeCode",
+   "address": "cbc:CardTypeCode",
+   "lists": [
+    "CardType"
+   ]
+  },
+  {
+   "element": "ReferenceEventCode",
+   "address": "cbc:ReferenceEventCode",
+   "lists": [
+    "UNCL2475"
+   ]
+  },
+  {
+   "element": "FinancingInstrumentCode",
+   "address": "cbc:FinancingInstrumentCode",
+   "lists": [
+    "FinancingInstrument"
+   ]
+  },
+  {
+   "element": "ReminderTypeCode",
+   "address": "cbc:ReminderTypeCode",
+   "lists": [
+    "ReminderType"
+   ]
+  },
+  {
+   "element": "StatementTypeCode",
+   "address": "cbc:StatementTypeCode",
+   "lists": [
+    "StatementType"
+   ]
+  },
+  {
+   "element": "MarketCode",
+   "address": "cbc:MarketCode",
+   "lists": [
+    "Market"
+   ]
+  },
+  {
+   "element": "ProfileStatusCode",
+   "address": "cbc:ProfileStatusCode",
+   "lists": [
+    "ProfileStatus"
+   ]
+  },
+  {
+   "element": "InvoiceTypeCode",
+   "address": "cbc:InvoiceTypeCode",
+   "lists": [
+    "UNCL1001"
+   ]
+  },
+  {
+   "element": "CreditNoteTypeCode",
+   "address": "cbc:CreditNoteTypeCode",
+   "lists": [
+    "UNCL1001"
+   ]
+  },
+  {
+   "element": "DebitNoteTypeCode",
+   "address": "cbc:DebitNoteTypeCode",
+   "lists": [
+    "UNCL1001"
+   ]
+  },
+  {
+   "element": "OrderTypeCode",
+   "address": "cbc:OrderTypeCode",
+   "lists": [
+    "UNCL1001"
+   ]
+  },
+  {
+   "element": "TransportMeansTypeCode",
+   "address": "cbc:TransportMeansTypeCode",
+   "lists": [
+    "TransportMeansType"
+   ]
+  },
+  {
+   "element": "ShipConfigurationCode",
+   "address": "cbc:ShipConfigurationCode",
+   "lists": [
+    "ShipConfiguration"
+   ]
+  },
+  {
+   "element": "TransportServiceCode",
+   "address": "cbc:TransportServiceCode",
+   "lists": [
+    "TransportService"
+   ]
+  },
+  {
+   "element": "DirectionCode",
+   "address": "cbc:DirectionCode",
+   "lists": [
+    "TravelDirection"
+   ]
+  },
+  {
+   "element": "TransportEventTypeCode",
+   "address": "cbc:TransportEventTypeCode",
+   "lists": [
+    "TransportEventType"
+   ]
+  },
+  {
+   "element": "TransportExecutionStatusCode",
+   "address": "cbc:TransportExecutionStatusCode",
+   "lists": [
+    "TransportExecutionStatus"
+   ]
+  },
+  {
+   "element": "TransportationStatusTypeCode",
+   "address": "cbc:TransportationStatusTypeCode",
+   "lists": [
+    "TransportationStatusType"
+   ]
+  },
+  {
+   "element": "ConditionCode",
+   "address": "cbc:ConditionCode",
+   "lists": [
+    "StatusCondition"
+   ]
+  },
+  {
+   "element": "StatusReasonCode",
+   "address": "cbc:StatusReasonCode",
+   "lists": [
+    "StatusReason"
+   ]
+  },
+  {
+   "element": "HandlingCode",
+   "address": "cbc:HandlingCode",
+   "lists": [
+    "HandlingInstruction"
+   ]
+  },
+  {
+   "element": "ShippingPriorityLevelCode",
+   "address": "cbc:ShippingPriorityLevelCode",
+   "lists": [
+    "ShippingPriority"
+   ]
+  },
+  {
+   "element": "NotificationTypeCode",
+   "address": "cbc:NotificationTypeCode",
+   "lists": [
+    "TransportNotificationType"
+   ]
+  },
+  {
+   "element": "ReportTypeCode",
+   "address": "cbc:ReportTypeCode",
+   "lists": [
+    "TransportReportType"
+   ]
+  },
+  {
+   "element": "PurposeTypeCode",
+   "address": "cbc:PurposeTypeCode",
+   "lists": [
+    "PortCallPurpose"
+   ]
+  },
+  {
+   "element": "ServiceInformationPreferenceCode",
+   "address": "cbc:ServiceInformationPreferenceCode",
+   "lists": [
+    "ServiceInformationPreference"
+   ]
+  },
+  {
+   "element": "DocumentStatusReasonCode",
+   "address": "cbc:DocumentStatusReasonCode",
+   "lists": [
+    "DocumentStatusReason"
+   ]
+  },
+  {
+   "element": "FreightRateClassCode",
+   "address": "cbc:FreightRateClassCode",
+   "lists": [
+    "FreightRateClass"
+   ]
+  },
+  {
+   "element": "TariffClassCode",
+   "address": "cbc:TariffClassCode",
+   "lists": [
+    "TariffClass"
+   ]
+  },
+  {
+   "element": "ManifestTypeCode",
+   "address": "cbc:ManifestTypeCode",
+   "lists": [
+    "ManifestType"
+   ]
+  },
+  {
+   "element": "WaybillTypeCode",
+   "address": "cbc:WaybillTypeCode",
+   "lists": [
+    "WaybillType"
+   ]
+  },
+  {
+   "element": "WeightStatementTypeCode",
+   "address": "cbc:WeightStatementTypeCode",
+   "lists": [
+    "WeightStatementType"
+   ]
+  },
+  {
+   "element": "MeasureCode",
+   "address": "cbc:MeasureCode",
+   "lists": [
+    "TemperatureQualifier"
+   ]
+  },
+  {
+   "element": "CargoTypeCode",
+   "address": "cbc:CargoTypeCode",
+   "lists": [
+    "CargoType"
+   ]
+  },
+  {
+   "element": "DispositionCode",
+   "address": "cbc:DispositionCode",
+   "lists": [
+    "EquipmentDisposition"
+   ]
+  },
+  {
+   "element": "OwnerTypeCode",
+   "address": "cbc:OwnerTypeCode",
+   "lists": [
+    "EquipmentOwnerType"
+   ]
+  },
+  {
+   "element": "ProviderTypeCode",
+   "address": "cbc:ProviderTypeCode",
+   "lists": [
+    "EquipmentProviderType"
+   ]
+  },
+  {
+   "element": "SealIssuerTypeCode",
+   "address": "cbc:SealIssuerTypeCode",
+   "lists": [
+    "SealIssuerType"
+   ]
+  },
+  {
+   "element": "SealStatusCode",
+   "address": "cbc:SealStatusCode",
+   "lists": [
+    "SealStatus"
+   ]
+  },
+  {
+   "element": "TrackingDeviceCode",
+   "address": "cbc:TrackingDeviceCode",
+   "lists": [
+    "TrackingDevice"
+   ]
+  },
+  {
+   "element": "SizeTypeCode",
+   "address": "cbc:SizeTypeCode",
+   "lists": [
+    "ISO6346"
+   ]
+  },
+  {
+   "element": "ShipmentStageTypeCode",
+   "address": "cbc:ShipmentStageTypeCode",
+   "lists": [
+    "UNCL8051"
+   ]
+  },
+  {
+   "element": "PackageLevelCode",
+   "address": "cbc:PackageLevelCode",
+   "lists": [
+    "UNCL7075"
+   ]
+  },
+  {
+   "element": "SecurityLevelCode",
+   "address": "cbc:SecurityLevelCode",
+   "lists": [
+    "IMOISPS"
+   ]
+  },
+  {
+   "element": "CurrentOperatingSecurityLevelCode",
+   "address": "cbc:CurrentOperatingSecurityLevelCode",
+   "lists": [
+    "IMOISPS"
+   ]
+  },
+  {
+   "element": "INFShipClassCode",
+   "address": "cbc:INFShipClassCode",
+   "lists": [
+    "IMOINF"
+   ]
+  },
+  {
+   "element": "NavigationStatusCode",
+   "address": "cbc:NavigationStatusCode",
+   "lists": [
+    "ITUAISNavStatus"
+   ]
+  },
+  {
+   "element": "GenderCode",
+   "address": "cbc:GenderCode",
+   "lists": [
+    "ISO5218"
+   ]
+  },
+  {
+   "element": "ExchangeMethodCode",
+   "address": "cbc:ExchangeMethodCode",
+   "lists": [
+    "BallastExchangeMethod"
+   ]
+  },
+  {
+   "element": "TankTypeCode",
+   "address": "cbc:TankTypeCode",
+   "lists": [
+    "BallastTankType"
+   ]
+  },
+  {
+   "element": "SanitaryMeasureTypeCode",
+   "address": "cbc:SanitaryMeasureTypeCode",
+   "lists": [
+    "SanitaryMeasure"
+   ]
+  },
+  {
+   "element": "EnergySourceTypeCode",
+   "address": "cbc:EnergySourceTypeCode",
+   "lists": [
+    "EnergySource"
+   ]
+  },
+  {
+   "element": "FuelTypeCode",
+   "address": "cbc:FuelTypeCode",
+   "lists": [
+    "FuelType"
+   ]
+  },
+  {
+   "element": "TransitDirectionCode",
+   "address": "cbc:TransitDirectionCode",
+   "lists": [
+    "TransitDirection"
+   ]
+  },
+  {
+   "element": "LossRiskResponsibilityCode",
+   "address": "cbc:LossRiskResponsibilityCode",
+   "lists": [
+    "RiskResponsibleParty"
+   ]
+  },
+  {
+   "element": "UNDGCode",
+   "address": "cbc:UNDGCode",
+   "lists": [
+    "UNModelRegsUN"
+   ]
+  },
+  {
+   "element": "HazardousCategoryCode",
+   "address": "cbc:HazardousCategoryCode",
+   "lists": [
+    "UNModelRegsClass"
+   ]
+  },
+  {
+   "element": "UNPackingGroupCode",
+   "address": "cbc:UNPackingGroupCode",
+   "lists": [
+    "UNPackingGroup"
+   ]
+  },
+  {
+   "element": "PackagingDangerLevelCode",
+   "address": "cbc:PackagingDangerLevelCode",
+   "lists": [
+    "UNCL8339"
+   ]
+  },
+  {
+   "element": "HazardousRegulationCode",
+   "address": "cbc:HazardousRegulationCode",
+   "lists": [
+    "UNCL8273"
+   ]
+  },
+  {
+   "element": "EmergencyProceduresCode",
+   "address": "cbc:EmergencyProceduresCode",
+   "lists": [
+    "IMDGEmS"
+   ]
+  },
+  {
+   "element": "MedicalFirstAidGuideCode",
+   "address": "cbc:MedicalFirstAidGuideCode",
+   "lists": [
+    "ERG2024"
+   ]
+  },
+  {
+   "element": "TunnelRestrictionCode",
+   "address": "cbc:TunnelRestrictionCode",
+   "lists": [
+    "ADRTunnel"
+   ]
+  },
+  {
+   "element": "MaritimePollutantCode",
+   "address": "cbc:MaritimePollutantCode",
+   "lists": [
+    "MarinePollutant"
+   ]
+  },
+  {
+   "element": "HazardousTypeCode",
+   "address": "cbc:HazardousTypeCode",
+   "lists": [
+    "HazardousGoodsType"
+   ]
+  },
+  {
+   "element": "TransportEmergencyCardCode",
+   "address": "cbc:TransportEmergencyCardCode",
+   "lists": [
+    "TransportEmergencyCard"
+   ]
+  },
+  {
+   "element": "TransportAuthorizationCode",
+   "address": "cbc:TransportAuthorizationCode",
+   "lists": [
+    "TransportAuthorization"
+   ]
+  },
+  {
+   "element": "PackingCriteriaCode",
+   "address": "cbc:PackingCriteriaCode",
+   "lists": [
+    "PackingInstruction"
+   ]
+  },
+  {
+   "element": "InhalationToxicityZoneCode",
+   "address": "cbc:InhalationToxicityZoneCode",
+   "lists": [
+    "InhalationToxicityZone"
+   ]
+  },
+  {
+   "element": "CustomsProcedureCode",
+   "address": "cbc:CustomsProcedureCode",
+   "lists": [
+    "CustomsProcedure"
+   ]
+  },
+  {
+   "element": "CustomsStatusCode",
+   "address": "cbc:CustomsStatusCode",
+   "lists": [
+    "CustomsStatus"
+   ]
+  },
+  {
+   "element": "ExportReasonCode",
+   "address": "cbc:ExportReasonCode",
+   "lists": [
+    "ExportReason"
+   ]
+  },
+  {
+   "element": "ExportTypeCode",
+   "address": "cbc:ExportTypeCode",
+   "lists": [
+    "ExportType"
+   ]
+  },
+  {
+   "element": "NatureOfTransactionCode",
+   "address": "cbc:NatureOfTransactionCode",
+   "lists": [
+    "NatureOfTransaction"
+   ]
+  },
+  {
+   "element": "LocationTypeCode",
+   "address": "cbc:LocationTypeCode",
+   "lists": [
+    "CustomsLocationType"
+   ]
+  },
+  {
+   "element": "PreferenceCriterionCode",
+   "address": "cbc:PreferenceCriterionCode",
+   "lists": [
+    "PreferenceCriterion"
+   ]
+  },
+  {
+   "element": "ApplicationStatusCode",
+   "address": "cbc:ApplicationStatusCode",
+   "lists": [
+    "ApplicationStatus"
+   ]
+  },
+  {
+   "element": "CertificateTypeCode",
+   "address": "cbc:CertificateTypeCode",
+   "lists": [
+    "CertificateType"
+   ]
+  },
+  {
+   "element": "WasteMovementTypeCode",
+   "address": "cbc:WasteMovementTypeCode",
+   "lists": [
+    "WasteOperationCategory"
+   ]
+  },
+  {
+   "element": "WasteNotificationTypeCode",
+   "address": "cbc:WasteNotificationTypeCode",
+   "lists": [
+    "WasteNotificationType"
+   ]
+  },
+  {
+   "element": "ProcurementSubTypeCode",
+   "address": "cbc:ProcurementSubTypeCode",
+   "lists": [
+    "ProcurementSubType"
+   ]
+  },
+  {
+   "element": "WorkTypeCode",
+   "address": "cbc:WorkTypeCode",
+   "lists": [
+    "WorkType"
+   ]
+  },
+  {
+   "element": "QualityControlCode",
+   "address": "cbc:QualityControlCode",
+   "lists": [
+    "QualityControl"
+   ]
+  },
+  {
+   "element": "ContractingSystemCode",
+   "address": "cbc:ContractingSystemCode",
+   "lists": [
+    "ContractingSystem"
+   ]
+  },
+  {
+   "element": "ContractingSystemTypeCode",
+   "address": "cbc:ContractingSystemTypeCode",
+   "lists": [
+    "ContractingSystemType"
+   ]
+  },
+  {
+   "element": "PartPresentationCode",
+   "address": "cbc:PartPresentationCode",
+   "lists": [
+    "LotSubmission"
+   ]
+  },
+  {
+   "element": "SubmissionMethodCode",
+   "address": "cbc:SubmissionMethodCode",
+   "lists": [
+    "SubmissionMethod"
+   ]
+  },
+  {
+   "element": "UrgencyCode",
+   "address": "cbc:UrgencyCode",
+   "lists": [
+    "Urgency"
+   ]
+  },
+  {
+   "element": "ExpenseCode",
+   "address": "cbc:ExpenseCode",
+   "lists": [
+    "ExpenseType"
+   ]
+  },
+  {
+   "element": "ProcessReasonCode",
+   "address": "cbc:ProcessReasonCode",
+   "lists": [
+    "ProcessReason"
+   ]
+  },
+  {
+   "element": "AwardingCriterionTypeCode",
+   "address": "cbc:AwardingCriterionTypeCode",
+   "lists": [
+    "AwardCriterionType"
+   ]
+  },
+  {
+   "element": "AwardingMethodTypeCode",
+   "address": "cbc:AwardingMethodTypeCode",
+   "lists": [
+    "AwardingMethod"
+   ]
+  },
+  {
+   "element": "CalculationExpressionCode",
+   "address": "cbc:CalculationExpressionCode",
+   "lists": [
+    "CalculationExpression"
+   ]
+  },
+  {
+   "element": "WeightingAlgorithmCode",
+   "address": "cbc:WeightingAlgorithmCode",
+   "lists": [
+    "WeightingAlgorithm"
+   ]
+  },
+  {
+   "element": "EvaluationCriterionTypeCode",
+   "address": "cbc:EvaluationCriterionTypeCode",
+   "lists": [
+    "EvaluationCriterionType"
+   ]
+  },
+  {
+   "element": "ExpressionCode",
+   "address": "cbc:ExpressionCode",
+   "lists": [
+    "Expression"
+   ]
+  },
+  {
+   "element": "TenderEnvelopeTypeCode",
+   "address": "cbc:TenderEnvelopeTypeCode",
+   "lists": [
+    "TenderEnvelope"
+   ]
+  },
+  {
+   "element": "TenderTypeCode",
+   "address": "cbc:TenderTypeCode",
+   "lists": [
+    "TenderType"
+   ]
+  },
+  {
+   "element": "TenderResultCode",
+   "address": "cbc:TenderResultCode",
+   "lists": [
+    "TenderResult"
+   ]
+  },
+  {
+   "element": "GuaranteeTypeCode",
+   "address": "cbc:GuaranteeTypeCode",
+   "lists": [
+    "GuaranteeType"
+   ]
+  },
+  {
+   "element": "ConstitutionCode",
+   "address": "cbc:ConstitutionCode",
+   "lists": [
+    "GuaranteeConstitution"
+   ]
+  },
+  {
+   "element": "FeeTypeCode",
+   "address": "cbc:FeeTypeCode",
+   "lists": [
+    "FeeType"
+   ]
+  },
+  {
+   "element": "NoticeTypeCode",
+   "address": "cbc:NoticeTypeCode",
+   "lists": [
+    "NoticeType"
+   ]
+  },
+  {
+   "element": "MultipleTendersCode",
+   "address": "cbc:MultipleTendersCode",
+   "lists": [
+    "MultipleTenders"
+   ]
+  },
+  {
+   "element": "VariantConstraintCode",
+   "address": "cbc:VariantConstraintCode",
+   "lists": [
+    "VariantConstraint"
+   ]
+  },
+  {
+   "element": "SubcontractingConditionsCode",
+   "address": "cbc:SubcontractingConditionsCode",
+   "lists": [
+    "SubcontractingConditions"
+   ]
+  },
+  {
+   "element": "ValueDataTypeCode",
+   "address": "cbc:ValueDataTypeCode",
+   "lists": [
+    "ResponseDataType"
+   ]
+  },
+  {
+   "element": "PropertyGroupTypeCode",
+   "address": "cbc:PropertyGroupTypeCode",
+   "lists": [
+    "PropertyGroupType"
+   ]
+  },
+  {
+   "element": "FulfilmentIndicatorTypeCode",
+   "address": "cbc:FulfilmentIndicatorTypeCode",
+   "lists": [
+    "FulfilmentIndicator"
+   ]
+  },
+  {
+   "element": "CriterionTypeCode",
+   "address": "cbc:CriterionTypeCode",
+   "lists": [
+    "CriterionType"
+   ]
+  },
+  {
+   "element": "EvaluationMethodTypeCode",
+   "address": "cbc:EvaluationMethodTypeCode",
+   "lists": [
+    "EvaluationMethod"
+   ]
+  },
+  {
+   "element": "EvidenceTypeCode",
+   "address": "cbc:EvidenceTypeCode",
+   "lists": [
+    "EvidenceType"
+   ]
+  },
+  {
+   "element": "ConfidentialityLevelCode",
+   "address": "cbc:ConfidentialityLevelCode",
+   "lists": [
+    "ConfidentialityLevel"
+   ]
+  },
+  {
+   "element": "CopyQualityTypeCode",
+   "address": "cbc:CopyQualityTypeCode",
+   "lists": [
+    "CopyQuality"
+   ]
+  },
+  {
+   "element": "ExpectedCode",
+   "address": "cbc:ExpectedCode",
+   "lists": [
+    "ExpectedResponse"
+   ]
+  },
+  {
+   "element": "TranslationTypeCode",
+   "address": "cbc:TranslationTypeCode",
+   "lists": [
+    "TranslationType"
+   ]
+  },
+  {
+   "element": "WeightingTypeCode",
+   "address": "cbc:WeightingTypeCode",
+   "lists": [
+    "WeightingType"
+   ]
+  },
+  {
+   "element": "QualificationApplicationTypeCode",
+   "address": "cbc:QualificationApplicationTypeCode",
+   "lists": [
+    "QualificationApplicationType"
+   ]
+  },
+  {
+   "element": "AdmissionCode",
+   "address": "cbc:AdmissionCode",
+   "lists": [
+    "QualificationAdmission"
+   ]
+  },
+  {
+   "element": "DeclarationTypeCode",
+   "address": "cbc:DeclarationTypeCode",
+   "lists": [
+    "DeclarationType"
+   ]
+  },
+  {
+   "element": "PartyTypeCode",
+   "address": "cbc:PartyTypeCode",
+   "lists": [
+    "ContractingPartyType"
+   ]
+  },
+  {
+   "element": "ActivityTypeCode",
+   "address": "cbc:ActivityTypeCode",
+   "lists": [
+    "AuthorityActivity"
+   ]
+  },
+  {
+   "element": "RepresentationTypeCode",
+   "address": "cbc:RepresentationTypeCode",
+   "lists": [
+    "RepresentationType"
+   ]
+  },
+  {
+   "element": "RequiredCurriculaCode",
+   "address": "cbc:RequiredCurriculaCode",
+   "lists": [
+    "Curricula"
+   ]
+  },
+  {
+   "element": "PriceEvaluationCode",
+   "address": "cbc:PriceEvaluationCode",
+   "lists": [
+    "PriceEvaluation"
+   ]
+  },
+  {
+   "element": "PaymentFrequencyCode",
+   "address": "cbc:PaymentFrequencyCode",
+   "lists": [
+    "PaymentFrequency"
+   ]
+  },
+  {
+   "element": "SubjectCode",
+   "address": "cbc:SubjectCode",
+   "lists": [
+    "AnnotationSubject"
+   ]
+  },
+  {
+   "element": "ExecutionRequirementCode",
+   "address": "cbc:ExecutionRequirementCode",
+   "lists": [
+    "ExecutionRequirement"
+   ]
+  },
+  {
+   "element": "TendererRequirementTypeCode",
+   "address": "cbc:TendererRequirementTypeCode",
+   "lists": [
+    "TendererRequirementType"
+   ]
+  },
+  {
+   "element": "GroupTypeCode",
+   "address": "cbc:GroupTypeCode",
+   "lists": [
+    "BusinessPartyGroupType"
+   ]
+  },
+  {
+   "element": "CapabilityTypeCode",
+   "address": "cbc:CapabilityTypeCode",
+   "lists": [
+    "BusinessCapabilityType"
+   ]
+  },
+  {
+   "element": "TendererRoleCode",
+   "address": "cbc:TendererRoleCode",
+   "lists": [
+    "TendererRole"
+   ]
+  },
+  {
+   "element": "WorkPhaseCode",
+   "address": "cbc:WorkPhaseCode",
+   "lists": [
+    "WorkPhase"
+   ]
+  },
+  {
+   "element": "CancellationReasonCode",
+   "address": "cbc:CancellationReasonCode",
+   "lists": [
+    "CancellationReason"
+   ]
+  },
+  {
+   "element": "PreviousCancellationReasonCode",
+   "address": "cbc:PreviousCancellationReasonCode",
+   "lists": [
+    "CancellationReason"
+   ]
+  },
+  {
+   "element": "RankCode",
+   "address": "cbc:RankCode",
+   "lists": [
+    "PrizeRank"
+   ]
+  },
+  {
+   "element": "LifeCycleStatusCode",
+   "address": "cbc:LifeCycleStatusCode",
+   "lists": [
+    "ItemLifeCycleStatus"
+   ]
+  },
+  {
+   "element": "ItemTypeCode",
+   "address": "cbc:ItemTypeCode",
+   "lists": [
+    "ItemType"
+   ]
+  },
+  {
+   "element": "PositionCode",
+   "address": "cbc:PositionCode",
+   "lists": [
+    "ItemPartPosition"
+   ]
+  },
+  {
+   "element": "NameCode",
+   "address": "cbc:NameCode",
+   "lists": [
+    "ItemPropertyName"
+   ]
+  },
+  {
+   "element": "ImportanceCode",
+   "address": "cbc:ImportanceCode",
+   "lists": [
+    "PropertyImportance"
+   ]
+  },
+  {
+   "element": "PriceTypeCode",
+   "address": "cbc:PriceTypeCode",
+   "lists": [
+    "PriceType"
+   ]
+  },
+  {
+   "element": "PackLevelCode",
+   "address": "cbc:PackLevelCode",
+   "lists": [
+    "PackLevel"
+   ]
+  },
+  {
+   "element": "ConsumerIncentiveTacticTypeCode",
+   "address": "cbc:ConsumerIncentiveTacticTypeCode",
+   "lists": [
+    "ConsumerIncentiveTactic"
+   ]
+  },
+  {
+   "element": "DisplayTacticTypeCode",
+   "address": "cbc:DisplayTacticTypeCode",
+   "lists": [
+    "DisplayTactic"
+   ]
+  },
+  {
+   "element": "FeatureTacticTypeCode",
+   "address": "cbc:FeatureTacticTypeCode",
+   "lists": [
+    "FeatureTactic"
+   ]
+  },
+  {
+   "element": "MiscellaneousEventTypeCode",
+   "address": "cbc:MiscellaneousEventTypeCode",
+   "lists": [
+    "MiscellaneousEventType"
+   ]
+  },
+  {
+   "element": "PromotionalEventTypeCode",
+   "address": "cbc:PromotionalEventTypeCode",
+   "lists": [
+    "PromotionalEventType"
+   ]
+  },
+  {
+   "element": "TradeItemPackingLabelingTypeCode",
+   "address": "cbc:TradeItemPackingLabelingTypeCode",
+   "lists": [
+    "PackingLabelingType"
+   ]
+  },
+  {
+   "element": "RetailEventStatusCode",
+   "address": "cbc:RetailEventStatusCode",
+   "lists": [
+    "RetailEventStatus"
+   ]
+  },
+  {
+   "element": "ForecastPurposeCode",
+   "address": "cbc:ForecastPurposeCode",
+   "lists": [
+    "ForecastPurpose"
+   ]
+  },
+  {
+   "element": "ForecastTypeCode",
+   "address": "cbc:ForecastTypeCode",
+   "lists": [
+    "ForecastType"
+   ]
+  },
+  {
+   "element": "ComparisonDataCode",
+   "address": "cbc:ComparisonDataCode",
+   "lists": [
+    "ComparisonData"
+   ]
+  },
+  {
+   "element": "DataSourceCode",
+   "address": "cbc:DataSourceCode",
+   "lists": [
+    "DataSource"
+   ]
+  },
+  {
+   "element": "ComparisonDataSourceCode",
+   "address": "cbc:ComparisonDataSourceCode",
+   "lists": [
+    "DataSource"
+   ]
+  },
+  {
+   "element": "PerformanceMetricTypeCode",
+   "address": "cbc:PerformanceMetricTypeCode",
+   "lists": [
+    "PerformanceMetric"
+   ]
+  },
+  {
+   "element": "SupplyChainActivityTypeCode",
+   "address": "cbc:SupplyChainActivityTypeCode",
+   "lists": [
+    "SupplyChainActivity"
+   ]
+  },
+  {
+   "element": "TimeFrequencyCode",
+   "address": "cbc:TimeFrequencyCode",
+   "lists": [
+    "TimeFrequency"
+   ]
+  },
+  {
+   "element": "ExceptionResolutionCode",
+   "address": "cbc:ExceptionResolutionCode",
+   "lists": [
+    "ExceptionResolution"
+   ]
+  },
+  {
+   "element": "ResolutionCode",
+   "address": "cbc:ResolutionCode",
+   "lists": [
+    "Resolution"
+   ]
+  },
+  {
+   "element": "ExceptionStatusCode",
+   "address": "cbc:ExceptionStatusCode",
+   "lists": [
+    "ExceptionStatus"
+   ]
+  },
+  {
+   "element": "CollaborationPriorityCode",
+   "address": "cbc:CollaborationPriorityCode",
+   "lists": [
+    "CollaborationPriority"
+   ]
+  },
+  {
+   "element": "ThresholdValueComparisonCode",
+   "address": "cbc:ThresholdValueComparisonCode",
+   "lists": [
+    "ThresholdValueComparison"
+   ]
+  },
+  {
+   "element": "AdjustmentReasonCode",
+   "address": "cbc:AdjustmentReasonCode",
+   "lists": [
+    "ForecastAdjustmentReason"
+   ]
+  },
+  {
+   "element": "RevisionStatusCode",
+   "address": "cbc:RevisionStatusCode",
+   "lists": [
+    "RevisionStatus"
+   ]
+  },
+  {
+   "element": "AvailabilityStatusCode",
+   "address": "cbc:AvailabilityStatusCode",
+   "lists": [
+    "AvailabilityStatus"
+   ]
+  },
+  {
+   "element": "InspectionMethodCode",
+   "address": "cbc:InspectionMethodCode",
+   "lists": [
+    "InspectionMethod"
+   ]
+  },
+  {
+   "element": "DeliveryAcceptanceCode",
+   "address": "cbc:DeliveryAcceptanceCode",
+   "lists": [
+    "DeliveryAcceptance"
+   ]
+  },
+  {
+   "element": "RejectActionCode",
+   "address": "cbc:RejectActionCode",
+   "lists": [
+    "RejectAction"
+   ]
+  },
+  {
+   "element": "ShortageActionCode",
+   "address": "cbc:ShortageActionCode",
+   "lists": [
+    "ShortageAction"
+   ]
+  },
+  {
+   "element": "QuantityDiscrepancyCode",
+   "address": "cbc:QuantityDiscrepancyCode",
+   "lists": [
+    "QuantityDiscrepancy"
+   ]
+  },
+  {
+   "element": "RejectReasonCode",
+   "address": "cbc:RejectReasonCode",
+   "lists": [
+    "RejectReason"
+   ]
+  },
+  {
+   "element": "TimingComplaintCode",
+   "address": "cbc:TimingComplaintCode",
+   "lists": [
+    "TimingComplaint"
+   ]
+  },
+  {
+   "element": "DespatchAdviceTypeCode",
+   "address": "cbc:DespatchAdviceTypeCode",
+   "lists": [
+    "DespatchAdviceType"
+   ]
+  },
+  {
+   "element": "DistributionTypeCode",
+   "address": "cbc:DistributionTypeCode",
+   "lists": [
+    "DistributionType"
+   ]
+  },
+  {
+   "element": "CharacterSetCode",
+   "address": "cbc:CharacterSetCode",
+   "lists": [
+    "IANACharset"
+   ]
+  },
+  {
+   "element": "EncodingCode",
+   "address": "cbc:EncodingCode",
+   "lists": [
+    "RFC2045"
+   ]
+  },
+  {
+   "element": "FormatCode",
+   "address": "cbc:FormatCode",
+   "lists": [
+    "PRONOM"
+   ]
+  },
+  {
+   "element": "EnvelopeTypeCode",
+   "address": "cbc:EnvelopeTypeCode",
+   "lists": [
+    "EnvelopeType"
+   ]
+  },
+  {
+   "element": "AgreementTypeCode",
+   "address": "cbc:AgreementTypeCode",
+   "lists": [
+    "AgreementType"
+   ]
+  },
+  {
+   "element": "RequiredResponseMessageLevelCode",
+   "address": "cbc:RequiredResponseMessageLevelCode",
+   "lists": [
+    "ResponseMessageLevel"
+   ]
+  },
+  {
+   "element": "ResponseMessageLevelCode",
+   "address": "cbc:ResponseMessageLevelCode",
+   "lists": [
+    "ResponseMessageLevel"
+   ]
+  },
+  {
+   "element": "WebSiteTypeCode",
+   "address": "cbc:WebSiteTypeCode",
+   "lists": [
+    "WebSiteType"
+   ]
+  },
+  {
+   "element": "SocialMediaTypeCode",
+   "address": "cbc:SocialMediaTypeCode",
+   "lists": [
+    "SocialMediaType"
+   ]
+  },
+  {
+   "element": "ServiceTypeCode",
+   "address": "cbc:ServiceTypeCode",
+   "lists": [
+    "ServiceType"
+   ]
+  },
+  {
+   "element": "OrderResponseCode",
+   "address": "cbc:OrderResponseCode",
+   "lists": [
+    "UNCL4343"
+   ]
+  },
+  {
+   "element": "IndustryClassificationCode",
+   "address": "cbc:IndustryClassificationCode",
+   "lists": [
+    "ISICRev4"
+   ]
+  },
+  {
+   "element": "UtilityStatementTypeCode",
+   "address": "cbc:UtilityStatementTypeCode",
+   "lists": [
+    "UtilityType"
+   ]
+  },
+  {
+   "element": "ConsumptionTypeCode",
+   "address": "cbc:ConsumptionTypeCode",
+   "lists": [
+    "ConsumptionType"
+   ]
+  },
+  {
+   "element": "CurrentChargeTypeCode",
+   "address": "cbc:CurrentChargeTypeCode",
+   "lists": [
+    "ChargeType"
+   ]
+  },
+  {
+   "element": "ChargeTypeCode",
+   "address": "cbc:ChargeTypeCode",
+   "lists": [
+    "ChargeType"
+   ]
+  },
+  {
+   "element": "OneTimeChargeTypeCode",
+   "address": "cbc:OneTimeChargeTypeCode",
+   "lists": [
+    "OneTimeChargeType"
+   ]
+  },
+  {
+   "element": "MeterReadingTypeCode",
+   "address": "cbc:MeterReadingTypeCode",
+   "lists": [
+    "MeterReadingType"
+   ]
+  },
+  {
+   "element": "LatestMeterReadingMethodCode",
+   "address": "cbc:LatestMeterReadingMethodCode",
+   "lists": [
+    "MeterReadingMethod"
+   ]
+  },
+  {
+   "element": "PreviousMeterReadingMethodCode",
+   "address": "cbc:PreviousMeterReadingMethodCode",
+   "lists": [
+    "MeterReadingMethod"
+   ]
+  },
+  {
+   "element": "MeterConstantCode",
+   "address": "cbc:MeterConstantCode",
+   "lists": [
+    "MeterConstantType"
+   ]
+  },
+  {
+   "element": "CorrectionTypeCode",
+   "address": "cbc:CorrectionTypeCode",
+   "lists": [
+    "ConsumptionCorrectionType"
+   ]
+  },
+  {
+   "element": "ConsumersEnergyLevelCode",
+   "address": "cbc:ConsumersEnergyLevelCode",
+   "lists": [
+    "ConsumersEnergyLevel"
+   ]
+  },
+  {
+   "element": "ConsumptionLevelCode",
+   "address": "cbc:ConsumptionLevelCode",
+   "lists": [
+    "ConsumptionLevel"
+   ]
+  },
+  {
+   "element": "HeatingTypeCode",
+   "address": "cbc:HeatingTypeCode",
+   "lists": [
+    "HeatingType"
+   ]
+  },
+  {
+   "element": "ResidenceTypeCode",
+   "address": "cbc:ResidenceTypeCode",
+   "lists": [
+    "ResidenceType"
+   ]
+  },
+  {
+   "element": "SpecificationTypeCode",
+   "address": "cbc:SpecificationTypeCode",
+   "lists": [
+    "SpecificationType"
+   ]
+  },
+  {
+   "element": "TelecommunicationsServiceCallCode",
+   "address": "cbc:TelecommunicationsServiceCallCode",
+   "lists": [
+    "TelecomCallType"
+   ]
+  },
+  {
+   "element": "TelecommunicationsServiceCategoryCode",
+   "address": "cbc:TelecommunicationsServiceCategoryCode",
+   "lists": [
+    "TelecomServiceCategory"
+   ]
+  },
+  {
+   "element": "TelecommunicationsSupplyTypeCode",
+   "address": "cbc:TelecommunicationsSupplyTypeCode",
+   "lists": [
+    "TelecomSupplyType"
+   ]
+  },
+  {
+   "element": "DutyCode",
+   "address": "cbc:DutyCode",
+   "lists": [
+    "TelecomDuty"
+   ]
+  },
+  {
+   "element": "PrivacyCode",
+   "address": "cbc:PrivacyCode",
+   "lists": [
+    "Privacy"
+   ]
+  },
+  {
+   "element": "SecurityClassificationCode",
+   "address": "cbc:SecurityClassificationCode",
+   "lists": [
+    "SecurityClassification"
+   ]
+  },
+  {
+   "element": "EnvironmentalEmissionTypeCode",
+   "address": "cbc:EnvironmentalEmissionTypeCode",
+   "lists": [
+    "EmissionType"
+   ]
+  },
+  {
+   "element": "LifecycleStageCode",
+   "address": "cbc:LifecycleStageCode",
+   "lists": [
+    "LifecycleStage"
+   ]
+  },
+  {
+   "element": "CircularityTypeCode",
+   "address": "cbc:CircularityTypeCode",
+   "lists": [
+    "CircularityType"
+   ]
+  },
+  {
+   "element": "MaintenanceFrequencyCode",
+   "address": "cbc:MaintenanceFrequencyCode",
+   "lists": [
+    "MaintenanceFrequency"
+   ]
+  },
+  {
+   "element": "ResourceTypeCode",
+   "address": "cbc:ResourceTypeCode",
+   "lists": [
+    "MaterialResource"
+   ]
+  },
+  {
+   "element": "ScoringSystemCode",
+   "address": "cbc:ScoringSystemCode",
+   "lists": [
+    "ScoringSystem"
+   ]
+  },
+  {
+   "element": "TreatmentPathwayCode",
+   "address": "cbc:TreatmentPathwayCode",
+   "lists": [
+    "TreatmentPathway"
+   ]
+  },
+  {
+   "element": "ProcessingTypeCode",
+   "address": "cbc:ProcessingTypeCode",
+   "lists": [
+    "EndOfLifeProcessing"
+   ]
+  },
+  {
+   "element": "ImpactCode",
+   "address": "cbc:ImpactCode",
+   "lists": [
+    "EnvironmentalImpactLevel"
+   ]
+  },
+  {
+   "element": "ApplicableCategoryCode",
+   "address": "cbc:ApplicableCategoryCode",
+   "lists": [
+    "Category"
+   ]
+  },
+  {
+   "element": "CategoryCode",
+   "address": "cbc:CategoryCode",
+   "lists": [
+    "Category"
+   ]
+  },
+  {
+   "element": "AddressTypeCode",
+   "address": "cbc:AddressTypeCode",
+   "lists": [
+    "AddressType"
+   ]
+  },
+  {
+   "element": "CompanyLiquidationStatusCode",
+   "address": "cbc:CompanyLiquidationStatusCode",
+   "lists": [
+    "CompanyLiquidationStatus"
+   ]
+  },
+  {
+   "element": "CorporateRegistrationTypeCode",
+   "address": "cbc:CorporateRegistrationTypeCode",
+   "lists": [
+    "CorporateRegistrationType"
+   ]
+  },
+  {
+   "element": "LocaleCode",
+   "address": "cbc:LocaleCode",
+   "lists": [
+    "Language"
+   ]
+  },
+  {
+   "element": "NoticeLanguageCode",
+   "address": "cbc:NoticeLanguageCode",
+   "lists": [
+    "Language"
+   ]
+  },
+  {
+   "element": "PreferredLanguageLocaleCode",
+   "address": "cbc:PreferredLanguageLocaleCode",
+   "lists": [
+    "Language"
+   ]
+  },
+  {
+   "element": "TenderLanguageLocaleCode",
+   "address": "cbc:TenderLanguageLocaleCode",
+   "lists": [
+    "Language"
+   ]
+  },
+  {
+   "element": "DefaultLanguageCode",
+   "address": "cbc:DefaultLanguageCode",
+   "lists": [
+    "Language"
+   ]
+  },
+  {
+   "element": "AddressFormatCode",
+   "address": "cbc:AddressFormatCode",
+   "lists": [
+    "AddressFormat"
+   ]
+  },
+  {
+   "element": "CountrySubentityCode",
+   "address": "cbc:CountrySubentityCode",
+   "lists": [
+    "XB:CountrySubentity"
+   ]
+  },
+  {
+   "element": "CompanyLegalFormCode",
+   "address": "cbc:CompanyLegalFormCode",
+   "lists": [
+    "XU:CompanyLegalForm",
+    "XB:CompanyLegalForm",
+    "XL:CompanyLegalForm"
+   ]
+  },
+  {
+   "element": "EntitySizeCode",
+   "address": "cbc:EntitySizeCode",
+   "lists": [
+    "EntitySize"
+   ]
+  },
+  {
+   "element": "ItemClassificationCode",
+   "address": "cbc:ItemClassificationCode",
+   "lists": [
+    "CPC21"
+   ]
+  },
+  {
+   "element": "CommodityCode",
+   "address": "cbc:CommodityCode",
+   "lists": [
+    "WCOHS2022",
+    "XU:CustomsTariff"
+   ]
+  },
+  {
+   "element": "NatureCode",
+   "address": "cbc:NatureCode",
+   "lists": [
+    "HSSections"
+   ]
+  },
+  {
+   "element": "CoordinateSystemCode",
+   "address": "cbc:CoordinateSystemCode",
+   "lists": [
+    "EPSG"
+   ]
+  },
+  {
+   "element": "InsuranceTypeCode",
+   "address": "cbc:InsuranceTypeCode",
+   "lists": [
+    "InsuranceCover"
+   ]
+  },
+  {
+   "element": "ModificationReasonCode",
+   "address": "cbc:ModificationReasonCode",
+   "lists": [
+    "ContractModificationReason"
+   ]
+  },
+  {
+   "element": "ValidationResultCode",
+   "address": "cbc:ValidationResultCode",
+   "lists": [
+    "ValidationResult"
+   ]
+  }
+ ],
+ "unlisted": [
+  {
+   "element": "AccountingCostCode",
+   "reason": "The buyer's own cost centre, defined in its accounts (Q1)."
+  },
+  {
+   "element": "BuyerReferenceCode",
+   "reason": "The buyer's own routing code for invoices (Q1)."
+  },
+  {
+   "element": "FundingProgramCode",
+   "reason": "The contracting authority's own funding programme (Q1)."
+  },
+  {
+   "element": "TradeServiceCode",
+   "reason": "The carrier's own identifier of its liner service (Q1)."
+  },
+  {
+   "element": "TariffCode",
+   "parents": [
+    "Consignment"
+   ],
+   "reason": "The carrier's own freight tariff item (Q1, Q10)."
+  }
+ ],
+ "attributes": [
+  {
+   "attribute": "currencyID",
+   "address": "@currencyID",
+   "lists": [
+    "Currency"
+   ]
+  },
+  {
+   "attribute": "unitCode",
+   "address": "cbc:ActivityLevelMeasure/@unitCode | cbc:AllocatedEnergyMeasure/@unitCode | cbc:AltitudeMeasure/@unitCode | cbc:BaseUnitMeasure/@unitCode | cbc:ChargeableWeightMeasure/@unitCode | cbc:ComparedValueMeasure/@unitCode | cbc:ConsumptionMeasure/@unitCode | cbc:DurationMeasure/@unitCode | cbc:EstimatedGeneratedUntilNextPortMeasure/@unitCode | cbc:FuelConsumptionMeasure/@unitCode | cbc:GrossMassMeasure/@unitCode | cbc:GrossTonnageMeasure/@unitCode | cbc:GrossVolumeMeasure/@unitCode | cbc:GrossWeightMeasure/@unitCode | cbc:LatitudeDegreesMeasure/@unitCode | cbc:LatitudeMinutesMeasure/@unitCode | cbc:LeadTimeMeasure/@unitCode | cbc:LoadingLengthMeasure/@unitCode | cbc:LongitudeDegreesMeasure/@unitCode | cbc:LongitudeMinutesMeasure/@unitCode | cbc:MaxDedicatedStorageCapacityMeasure/@unitCode | cbc:MaximumDataLossDurationMeasure/@unitCode | cbc:MaximumIncidentNotificationDurationMeasure/@unitCode | cbc:MaximumMeasure/@unitCode | cbc:MeanTimeToRecoverDurationMeasure/@unitCode | cbc:Measure/@unitCode | cbc:MinimumDownTimeScheduleDurationMeasure/@unitCode | cbc:MinimumMeasure/@unitCode | cbc:MinimumResponseTimeDurationMeasure/@unitCode | cbc:NetNetWeightMeasure/@unitCode | cbc:NetTonnageMeasure/@unitCode | cbc:NetVolumeMeasure/@unitCode | cbc:NetWeightMeasure/@unitCode | cbc:PostEventNotificationDurationMeasure/@unitCode | cbc:PreEventNotificationDurationMeasure/@unitCode | cbc:RateOfTurnMeasure/@unitCode | cbc:ResponseMeasure/@unitCode | cbc:RetainedOnBoardMeasure/@unitCode | cbc:SalinityMeasure/@unitCode | cbc:SeaHeightMeasure/@unitCode | cbc:SegregatedBallastMeasure/@unitCode | cbc:SourceValueMeasure/@unitCode | cbc:SpeedOverGroundMeasure/@unitCode | cbc:TareWeightMeasure/@unitCode | cbc:ToBeDeliveredMeasure/@unitCode | cbc:TotalBallastWaterCapacityMeasure/@unitCode | cbc:TotalBallastWaterOnBoardMeasure/@unitCode | cbc:ValueBaseMeasure/@unitCode | cbc:ValueMeasure/@unitCode | cbc:VolumeMeasure/@unitCode | cbc:WasteMeasure/@unitCode",
+   "lists": [
+    "UnitOfMeasure"
+   ]
+  },
+  {
+   "attribute": "unitCode",
+   "address": "cbc:ActualTemperatureReductionQuantity/@unitCode | cbc:BackorderQuantity/@unitCode | cbc:BaseQuantity/@unitCode | cbc:BasicConsumedQuantity/@unitCode | cbc:BatchQuantity/@unitCode | cbc:ChargeableQuantity/@unitCode | cbc:ChildConsignmentQuantity/@unitCode | cbc:ConsignmentQuantity/@unitCode | cbc:ConsumerUnitQuantity/@unitCode | cbc:ConsumptionEnergyQuantity/@unitCode | cbc:ConsumptionWaterQuantity/@unitCode | cbc:ContentUnitQuantity/@unitCode | cbc:CreditedQuantity/@unitCode | cbc:CrewQuantity/@unitCode | cbc:CustomsTariffQuantity/@unitCode | cbc:DebitedQuantity/@unitCode | cbc:DeliveredQuantity/@unitCode | cbc:DifferenceTemperatureReductionQuantity/@unitCode | cbc:EmployeeQuantity/@unitCode | cbc:EstimatedConsumedQuantity/@unitCode | cbc:EstimatedOverallContractQuantity/@unitCode | cbc:ExpectedOperatorQuantity/@unitCode | cbc:ExpectedQuantity/@unitCode | cbc:GasPressureQuantity/@unitCode | cbc:InvoicedQuantity/@unitCode | cbc:LatestMeterQuantity/@unitCode | cbc:MaximumBackorderQuantity/@unitCode | cbc:MaximumOperatorQuantity/@unitCode | cbc:MaximumOrderQuantity/@unitCode | cbc:MaximumQuantity/@unitCode | cbc:MaximumVariantQuantity/@unitCode | cbc:MinimumBackorderQuantity/@unitCode | cbc:MinimumInventoryQuantity/@unitCode | cbc:MinimumOrderQuantity/@unitCode | cbc:MinimumQuantity/@unitCode | cbc:MultipleOrderQuantity/@unitCode | cbc:NormalTemperatureReductionQuantity/@unitCode | cbc:OperatingYearsQuantity/@unitCode | cbc:OutstandingQuantity/@unitCode | cbc:OversupplyQuantity/@unitCode | cbc:PackQuantity/@unitCode | cbc:PassengerQuantity/@unitCode | cbc:PerformanceValueQuantity/@unitCode | cbc:PreviousMeterQuantity/@unitCode | cbc:Quantity/@unitCode | cbc:ReceivedElectronicTenderQuantity/@unitCode | cbc:ReceivedForeignTenderQuantity/@unitCode | cbc:ReceivedQuantity/@unitCode | cbc:ReceivedTenderQuantity/@unitCode | cbc:RejectedQuantity/@unitCode | cbc:ResponseQuantity/@unitCode | cbc:ReturnableQuantity/@unitCode | cbc:SharesNumberQuantity/@unitCode | cbc:ShortQuantity/@unitCode | cbc:TanksExchangedQuantity/@unitCode | cbc:TanksInBallastQuantity/@unitCode | cbc:TanksNotExchangedQuantity/@unitCode | cbc:TargetInventoryQuantity/@unitCode | cbc:ThresholdQuantity/@unitCode | cbc:TimeDeltaDaysQuantity/@unitCode | cbc:TotalBallastTanksOnBoardQuantity/@unitCode | cbc:TotalConsumedQuantity/@unitCode | cbc:TotalDeadPersonQuantity/@unitCode | cbc:TotalDeliveredQuantity/@unitCode | cbc:TotalGoodsItemQuantity/@unitCode | cbc:TotalIllPersonQuantity/@unitCode | cbc:TotalMeteredQuantity/@unitCode | cbc:TotalPackageQuantity/@unitCode | cbc:TotalPackagesQuantity/@unitCode | cbc:TotalTransportHandlingUnitQuantity/@unitCode | cbc:ValueQuantity/@unitCode | cbc:VarianceQuantity/@unitCode",
+   "lists": [
+    "UnitOfMeasure"
+   ]
+  },
+  {
+   "attribute": "mimeCode",
+   "address": "@mimeCode",
+   "lists": [
+    "BinaryObjectMime"
+   ]
+  },
+  {
+   "attribute": "languageID",
+   "address": "@languageID",
+   "lists": [
+    "Language"
+   ],
+   "rule": "BCP 47 (RFC 5646): a language subtag of the list, optionally a region subtag",
+   "regions": [
+    "AA",
+    "AC",
+    "AD",
+    "AE",
+    "AF",
+    "AG",
+    "AI",
+    "AL",
+    "AM",
+    "AN",
+    "AO",
+    "AQ",
+    "AR",
+    "AS",
+    "AT",
+    "AU",
+    "AW",
+    "AX",
+    "AZ",
+    "BA",
+    "BB",
+    "BD",
+    "BE",
+    "BF",
+    "BG",
+    "BH",
+    "BI",
+    "BJ",
+    "BL",
+    "BM",
+    "BN",
+    "BO",
+    "BQ",
+    "BR",
+    "BS",
+    "BT",
+    "BU",
+    "BV",
+    "BW",
+    "BY",
+    "BZ",
+    "CA",
+    "CC",
+    "CD",
+    "CF",
+    "CG",
+    "CH",
+    "CI",
+    "CK",
+    "CL",
+    "CM",
+    "CN",
+    "CO",
+    "CP",
+    "CQ",
+    "CR",
+    "CS",
+    "CU",
+    "CV",
+    "CW",
+    "CX",
+    "CY",
+    "CZ",
+    "DD",
+    "DE",
+    "DG",
+    "DJ",
+    "DK",
+    "DM",
+    "DO",
+    "DZ",
+    "EA",
+    "EC",
+    "EE",
+    "EG",
+    "EH",
+    "ER",
+    "ES",
+    "ET",
+    "EU",
+    "EZ",
+    "FI",
+    "FJ",
+    "FK",
+    "FM",
+    "FO",
+    "FR",
+    "FX",
+    "GA",
+    "GB",
+    "GD",
+    "GE",
+    "GF",
+    "GG",
+    "GH",
+    "GI",
+    "GL",
+    "GM",
+    "GN",
+    "GP",
+    "GQ",
+    "GR",
+    "GS",
+    "GT",
+    "GU",
+    "GW",
+    "GY",
+    "HK",
+    "HM",
+    "HN",
+    "HR",
+    "HT",
+    "HU",
+    "IC",
+    "ID",
+    "IE",
+    "IL",
+    "IM",
+    "IN",
+    "IO",
+    "IQ",
+    "IR",
+    "IS",
+    "IT",
+    "JE",
+    "JM",
+    "JO",
+    "JP",
+    "KE",
+    "KG",
+    "KH",
+    "KI",
+    "KM",
+    "KN",
+    "KP",
+    "KR",
+    "KW",
+    "KY",
+    "KZ",
+    "LA",
+    "LB",
+    "LC",
+    "LI",
+    "LK",
+    "LR",
+    "LS",
+    "LT",
+    "LU",
+    "LV",
+    "LY",
+    "MA",
+    "MC",
+    "MD",
+    "ME",
+    "MF",
+    "MG",
+    "MH",
+    "MK",
+    "ML",
+    "MM",
+    "MN",
+    "MO",
+    "MP",
+    "MQ",
+    "MR",
+    "MS",
+    "MT",
+    "MU",
+    "MV",
+    "MW",
+    "MX",
+    "MY",
+    "MZ",
+    "NA",
+    "NC",
+    "NE",
+    "NF",
+    "NG",
+    "NI",
+    "NL",
+    "NO",
+    "NP",
+    "NR",
+    "NT",
+    "NU",
+    "NZ",
+    "OM",
+    "PA",
+    "PE",
+    "PF",
+    "PG",
+    "PH",
+    "PK",
+    "PL",
+    "PM",
+    "PN",
+    "PR",
+    "PS",
+    "PT",
+    "PW",
+    "PY",
+    "QA",
+    "QM",
+    "QN",
+    "QO",
+    "QP",
+    "QQ",
+    "QR",
+    "QS",
+    "QT",
+    "QU",
+    "QV",
+    "QW",
+    "QX",
+    "QY",
+    "QZ",
+    "RE",
+    "RO",
+    "RS",
+    "RU",
+    "RW",
+    "SA",
+    "SB",
+    "SC",
+    "SD",
+    "SE",
+    "SG",
+    "SH",
+    "SI",
+    "SJ",
+    "SK",
+    "SL",
+    "SM",
+    "SN",
+    "SO",
+    "SR",
+    "SS",
+    "ST",
+    "SU",
+    "SV",
+    "SX",
+    "SY",
+    "SZ",
+    "TA",
+    "TC",
+    "TD",
+    "TF",
+    "TG",
+    "TH",
+    "TJ",
+    "TK",
+    "TL",
+    "TM",
+    "TN",
+    "TO",
+    "TP",
+    "TR",
+    "TT",
+    "TV",
+    "TW",
+    "TZ",
+    "UA",
+    "UG",
+    "UM",
+    "UN",
+    "US",
+    "UY",
+    "UZ",
+    "VA",
+    "VC",
+    "VE",
+    "VG",
+    "VI",
+    "VN",
+    "VU",
+    "WF",
+    "WS",
+    "XA",
+    "XB",
+    "XC",
+    "XD",
+    "XE",
+    "XF",
+    "XG",
+    "XH",
+    "XI",
+    "XJ",
+    "XK",
+    "XL",
+    "XM",
+    "XN",
+    "XO",
+    "XP",
+    "XQ",
+    "XR",
+    "XS",
+    "XT",
+    "XU",
+    "XV",
+    "XW",
+    "XX",
+    "XY",
+    "XZ",
+    "YD",
+    "YE",
+    "YT",
+    "YU",
+    "ZA",
+    "ZM",
+    "ZR",
+    "ZW",
+    "ZZ"
+   ]
+  }
+ ],
+ "lists": {
+  "Country": {
+   "listID": "ISO 3166",
+   "scope": "world-ubl",
+   "name": "Country identification (ISO 3166)",
+   "location": "world/codelists/CountryIdentificationCode-2.4-world.gc",
+   "codes": [
+    "AF",
+    "AL",
+    "DZ",
+    "AS",
+    "AD",
+    "AO",
+    "AI",
+    "AQ",
+    "AG",
+    "AR",
+    "AM",
+    "AW",
+    "AU",
+    "AT",
+    "AZ",
+    "BS",
+    "BH",
+    "BD",
+    "BB",
+    "BY",
+    "BE",
+    "BZ",
+    "BJ",
+    "BM",
+    "BT",
+    "BO",
+    "BQ",
+    "BA",
+    "BW",
+    "BV",
+    "BR",
+    "IO",
+    "BN",
+    "BG",
+    "BF",
+    "BI",
+    "CV",
+    "KH",
+    "CM",
+    "CA",
+    "KY",
+    "CF",
+    "TD",
+    "CL",
+    "CN",
+    "CX",
+    "CC",
+    "CO",
+    "KM",
+    "CD",
+    "CG",
+    "CK",
+    "CR",
+    "HR",
+    "CU",
+    "CW",
+    "CY",
+    "CZ",
+    "CI",
+    "DK",
+    "DJ",
+    "DM",
+    "DO",
+    "EC",
+    "EG",
+    "SV",
+    "GQ",
+    "ER",
+    "EE",
+    "SZ",
+    "ET",
+    "FK",
+    "FO",
+    "FJ",
+    "FI",
+    "FR",
+    "GF",
+    "PF",
+    "TF",
+    "GA",
+    "GM",
+    "GE",
+    "DE",
+    "GH",
+    "GI",
+    "GR",
+    "GL",
+    "GD",
+    "GP",
+    "GU",
+    "GT",
+    "GG",
+    "GN",
+    "GW",
+    "GY",
+    "HT",
+    "HM",
+    "VA",
+    "HN",
+    "HK",
+    "HU",
+    "IS",
+    "IN",
+    "ID",
+    "IR",
+    "IQ",
+    "IE",
+    "IM",
+    "IL",
+    "IT",
+    "JM",
+    "JP",
+    "JE",
+    "JO",
+    "KZ",
+    "KE",
+    "KI",
+    "KP",
+    "KR",
+    "KW",
+    "KG",
+    "LA",
+    "LV",
+    "LB",
+    "LS",
+    "LR",
+    "LY",
+    "LI",
+    "LT",
+    "LU",
+    "MO",
+    "MG",
+    "MW",
+    "MY",
+    "MV",
+    "ML",
+    "MT",
+    "MH",
+    "MQ",
+    "MR",
+    "MU",
+    "YT",
+    "MX",
+    "FM",
+    "MD",
+    "MC",
+    "MN",
+    "ME",
+    "MS",
+    "MA",
+    "MZ",
+    "MM",
+    "NA",
+    "NR",
+    "NP",
+    "NL",
+    "NC",
+    "NZ",
+    "NI",
+    "NE",
+    "NG",
+    "NU",
+    "NF",
+    "MK",
+    "MP",
+    "NO",
+    "OM",
+    "PK",
+    "PW",
+    "PS",
+    "PA",
+    "PG",
+    "PY",
+    "PE",
+    "PH",
+    "PN",
+    "PL",
+    "PT",
+    "PR",
+    "QA",
+    "RO",
+    "RU",
+    "RW",
+    "RE",
+    "BL",
+    "SH",
+    "KN",
+    "LC",
+    "MF",
+    "PM",
+    "VC",
+    "WS",
+    "SM",
+    "ST",
+    "SA",
+    "SN",
+    "RS",
+    "SC",
+    "SL",
+    "SG",
+    "SX",
+    "SK",
+    "SI",
+    "SB",
+    "SO",
+    "ZA",
+    "GS",
+    "SS",
+    "ES",
+    "LK",
+    "SD",
+    "SR",
+    "SJ",
+    "SE",
+    "CH",
+    "SY",
+    "TW",
+    "TJ",
+    "TZ",
+    "TH",
+    "TL",
+    "TG",
+    "TK",
+    "TO",
+    "TT",
+    "TN",
+    "TR",
+    "TM",
+    "TC",
+    "TV",
+    "UG",
+    "UA",
+    "AE",
+    "GB",
+    "UM",
+    "US",
+    "UY",
+    "UZ",
+    "VU",
+    "VE",
+    "VN",
+    "VG",
+    "VI",
+    "WF",
+    "EH",
+    "YE",
+    "ZM",
+    "ZW",
+    "AX",
+    "AFG",
+    "ALB",
+    "DZA",
+    "ASM",
+    "AND",
+    "AGO",
+    "AIA",
+    "ATA",
+    "ATG",
+    "ARG",
+    "ARM",
+    "ABW",
+    "AUS",
+    "AUT",
+    "AZE",
+    "BHS",
+    "BHR",
+    "BGD",
+    "BRB",
+    "BLR",
+    "BEL",
+    "BLZ",
+    "BEN",
+    "BMU",
+    "BTN",
+    "BOL",
+    "BES",
+    "BIH",
+    "BWA",
+    "BVT",
+    "BRA",
+    "IOT",
+    "BRN",
+    "BGR",
+    "BFA",
+    "BDI",
+    "CPV",
+    "KHM",
+    "CMR",
+    "CAN",
+    "CYM",
+    "CAF",
+    "TCD",
+    "CHL",
+    "CHN",
+    "CXR",
+    "CCK",
+    "COL",
+    "COM",
+    "COD",
+    "COG",
+    "COK",
+    "CRI",
+    "HRV",
+    "CUB",
+    "CUW",
+    "CYP",
+    "CZE",
+    "CIV",
+    "DNK",
+    "DJI",
+    "DMA",
+    "DOM",
+    "ECU",
+    "EGY",
+    "SLV",
+    "GNQ",
+    "ERI",
+    "EST",
+    "SWZ",
+    "ETH",
+    "FLK",
+    "FRO",
+    "FJI",
+    "FIN",
+    "FRA",
+    "GUF",
+    "PYF",
+    "ATF",
+    "GAB",
+    "GMB",
+    "GEO",
+    "DEU",
+    "GHA",
+    "GIB",
+    "GRC",
+    "GRL",
+    "GRD",
+    "GLP",
+    "GUM",
+    "GTM",
+    "GGY",
+    "GIN",
+    "GNB",
+    "GUY",
+    "HTI",
+    "HMD",
+    "VAT",
+    "HND",
+    "HKG",
+    "HUN",
+    "ISL",
+    "IND",
+    "IDN",
+    "IRN",
+    "IRQ",
+    "IRL",
+    "IMN",
+    "ISR",
+    "ITA",
+    "JAM",
+    "JPN",
+    "JEY",
+    "JOR",
+    "KAZ",
+    "KEN",
+    "KIR",
+    "PRK",
+    "KOR",
+    "KWT",
+    "KGZ",
+    "LAO",
+    "LVA",
+    "LBN",
+    "LSO",
+    "LBR",
+    "LBY",
+    "LIE",
+    "LTU",
+    "LUX",
+    "MAC",
+    "MDG",
+    "MWI",
+    "MYS",
+    "MDV",
+    "MLI",
+    "MLT",
+    "MHL",
+    "MTQ",
+    "MRT",
+    "MUS",
+    "MYT",
+    "MEX",
+    "FSM",
+    "MDA",
+    "MCO",
+    "MNG",
+    "MNE",
+    "MSR",
+    "MAR",
+    "MOZ",
+    "MMR",
+    "NAM",
+    "NRU",
+    "NPL",
+    "NLD",
+    "NCL",
+    "NZL",
+    "NIC",
+    "NER",
+    "NGA",
+    "NIU",
+    "NFK",
+    "MKD",
+    "MNP",
+    "NOR",
+    "OMN",
+    "PAK",
+    "PLW",
+    "PSE",
+    "PAN",
+    "PNG",
+    "PRY",
+    "PER",
+    "PHL",
+    "PCN",
+    "POL",
+    "PRT",
+    "PRI",
+    "QAT",
+    "ROU",
+    "RUS",
+    "RWA",
+    "REU",
+    "BLM",
+    "SHN",
+    "KNA",
+    "LCA",
+    "MAF",
+    "SPM",
+    "VCT",
+    "WSM",
+    "SMR",
+    "STP",
+    "SAU",
+    "SEN",
+    "SRB",
+    "SYC",
+    "SLE",
+    "SGP",
+    "SXM",
+    "SVK",
+    "SVN",
+    "SLB",
+    "SOM",
+    "ZAF",
+    "SGS",
+    "SSD",
+    "ESP",
+    "LKA",
+    "SDN",
+    "SUR",
+    "SJM",
+    "SWE",
+    "CHE",
+    "SYR",
+    "TWN",
+    "TJK",
+    "TZA",
+    "THA",
+    "TLS",
+    "TGO",
+    "TKL",
+    "TON",
+    "TTO",
+    "TUN",
+    "TUR",
+    "TKM",
+    "TCA",
+    "TUV",
+    "UGA",
+    "UKR",
+    "ARE",
+    "GBR",
+    "UMI",
+    "USA",
+    "URY",
+    "UZB",
+    "VUT",
+    "VEN",
+    "VNM",
+    "VGB",
+    "VIR",
+    "WLF",
+    "ESH",
+    "YEM",
+    "ZMB",
+    "ZWE",
+    "ALA",
+    "XU",
+    "XB",
+    "XL"
+   ]
+  },
+  "Currency": {
+   "listID": "ISO 4217 Alpha",
+   "scope": "world-ubl",
+   "name": "Currency (ISO 4217)",
+   "location": "world/codelists/CurrencyCode-2.4-world.gc",
+   "codes": [
+    "AED",
+    "AFN",
+    "ALL",
+    "AMD",
+    "ANG",
+    "AOA",
+    "ARS",
+    "AUD",
+    "AWG",
+    "AZN",
+    "BAM",
+    "BBD",
+    "BDT",
+    "BGN",
+    "BHD",
+    "BIF",
+    "BMD",
+    "BND",
+    "BOB",
+    "BOV",
+    "BRL",
+    "BSD",
+    "BTN",
+    "BWP",
+    "BYN",
+    "BZD",
+    "CAD",
+    "CDF",
+    "CHE",
+    "CHF",
+    "CHW",
+    "CLF",
+    "CLP",
+    "CNY",
+    "COP",
+    "COU",
+    "CRC",
+    "CUC",
+    "CUP",
+    "CVE",
+    "CZK",
+    "DJF",
+    "DKK",
+    "DOP",
+    "DZD",
+    "EGP",
+    "ERN",
+    "ETB",
+    "EUR",
+    "FJD",
+    "FKP",
+    "GBP",
+    "GEL",
+    "GHS",
+    "GIP",
+    "GMD",
+    "GNF",
+    "GTQ",
+    "GYD",
+    "HKD",
+    "HNL",
+    "HRK",
+    "HTG",
+    "HUF",
+    "IDR",
+    "ILS",
+    "INR",
+    "IQD",
+    "IRR",
+    "ISK",
+    "JMD",
+    "JOD",
+    "JPY",
+    "KES",
+    "KGS",
+    "KHR",
+    "KMF",
+    "KPW",
+    "KRW",
+    "KWD",
+    "KYD",
+    "KZT",
+    "LAK",
+    "LBP",
+    "LKR",
+    "LRD",
+    "LSL",
+    "LYD",
+    "MAD",
+    "MDL",
+    "MGA",
+    "MKD",
+    "MMK",
+    "MNT",
+    "MOP",
+    "MRU",
+    "MUR",
+    "MVR",
+    "MWK",
+    "MXN",
+    "MXV",
+    "MYR",
+    "MZN",
+    "NAD",
+    "NGN",
+    "NIO",
+    "NOK",
+    "NPR",
+    "NZD",
+    "OMR",
+    "PAB",
+    "PEN",
+    "PGK",
+    "PHP",
+    "PKR",
+    "PLN",
+    "PYG",
+    "QAR",
+    "RON",
+    "RSD",
+    "RUB",
+    "RWF",
+    "SAR",
+    "SBD",
+    "SCR",
+    "SDG",
+    "SEK",
+    "SGD",
+    "SHP",
+    "SLL",
+    "SOS",
+    "SRD",
+    "SSP",
+    "STN",
+    "SVC",
+    "SYP",
+    "SZL",
+    "THB",
+    "TJS",
+    "TMT",
+    "TND",
+    "TOP",
+    "TRY",
+    "TTD",
+    "TWD",
+    "TZS",
+    "UAH",
+    "UGX",
+    "USD",
+    "USN",
+    "UYI",
+    "UYU",
+    "UYW",
+    "UZS",
+    "VES",
+    "VND",
+    "VUV",
+    "WST",
+    "XAF",
+    "XAG",
+    "XAU",
+    "XBA",
+    "XBB",
+    "XBC",
+    "XBD",
+    "XCD",
+    "XDR",
+    "XOF",
+    "XPD",
+    "XPF",
+    "XPT",
+    "XSU",
+    "XTS",
+    "XUA",
+    "XXX",
+    "YER",
+    "ZAR",
+    "ZMW",
+    "ZWL",
+    "XUF",
+    "XBL",
+    "XLC"
+   ]
+  },
+  "PaymentMeans": {
+   "listID": "UN/EDIFACT EDED 4461",
+   "scope": "ubl",
+   "name": "Payment means (UN/EDIFACT 4461)",
+   "ubl": "PaymentMeans-2.4",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/PaymentMeansCode-2.4.gc"
+  },
+  "Channel": {
+   "listID": "UN/EDIFACT EDED 3155",
+   "scope": "ubl",
+   "name": "Communication channel (UN/EDIFACT 3155)",
+   "ubl": "Channel-2.4",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/ChannelCode-2.4.gc"
+  },
+  "TransportMode": {
+   "listID": "UNECE Recommendation 19 - Codes for Modes of Transport",
+   "scope": "ubl",
+   "name": "Transport mode (UNECE Recommendation 19)",
+   "ubl": "TransportMode-2.4",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/TransportModeCode-2.4.gc"
+  },
+  "TransportEquipmentType": {
+   "listID": "UN/EDIFACT EDED 8053",
+   "scope": "ubl",
+   "name": "Transport equipment type (UN/EDIFACT 8053)",
+   "ubl": "TransportEquipmentType-2.4",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/TransportEquipmentTypeCode-2.4.gc"
+  },
+  "UnitOfMeasure": {
+   "listID": "UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade",
+   "scope": "ubl",
+   "name": "Unit of measure (UNECE Recommendation 20)",
+   "ubl": "UnitOfMeasure-2.4",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/UnitOfMeasureCode-2.4.gc"
+  },
+  "BinaryObjectMime": {
+   "listID": "IANA Media Types",
+   "scope": "ubl",
+   "name": "Media type (IANA)",
+   "ubl": "BinaryObjectMime-2.4",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.4/cl/gc/default/BinaryObjectMimeCode-2.4.gc"
+  },
+  "WeighingMethod": {
+   "listID": "IMO SOLAS",
+   "scope": "ubl",
+   "name": "Weighing method (IMO SOLAS)",
+   "ubl": "WeighingMethod-2.2",
+   "location": "https://docs.oasis-open.org/ubl/os-UBL-2.2/cl/gc/default/WeighingMethodCode-2.2.gc"
+  },
+  "Chip": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:ChipCode",
+   "scope": "ubl-copy",
+   "name": "Chip",
+   "location": "world/codelists/gc/ChipCode.gc",
+   "codes": [
+    "Chip",
+    "MagneticStripe"
+   ]
+  },
+  "DocumentStatus": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode",
+   "scope": "ubl-copy",
+   "name": "Document status",
+   "location": "world/codelists/gc/DocumentStatusCode.gc",
+   "codes": [
+    "Cancelled",
+    "Completed",
+    "Confirmed",
+    "Disputed",
+    "NoStatus",
+    "NotConfirmed",
+    "Rejected",
+    "Revised"
+   ]
+  },
+  "LineStatus": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode",
+   "scope": "ubl-copy",
+   "name": "Line status",
+   "location": "world/codelists/gc/LineStatusCode.gc",
+   "codes": [
+    "Added",
+    "Cancelled",
+    "Disputed",
+    "NoStatus",
+    "Revised"
+   ]
+  },
+  "LatitudeDirection": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode",
+   "scope": "ubl-copy",
+   "name": "Latitude direction",
+   "location": "world/codelists/gc/LatitudeDirectionCode.gc",
+   "codes": [
+    "North",
+    "South"
+   ]
+  },
+  "LongitudeDirection": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode",
+   "scope": "ubl-copy",
+   "name": "Longitude direction",
+   "location": "world/codelists/gc/LongitudeDirectionCode.gc",
+   "codes": [
+    "East",
+    "West"
+   ]
+  },
+  "Operator": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:OperatorCode",
+   "scope": "ubl-copy",
+   "name": "Operator",
+   "location": "world/codelists/gc/OperatorCode.gc",
+   "codes": [
+    "Divide",
+    "Multiply"
+   ]
+  },
+  "SubstitutionStatus": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:SubstitutionStatusCode",
+   "scope": "ubl-copy",
+   "name": "Substitution status",
+   "location": "world/codelists/gc/SubstitutionStatusCode.gc",
+   "codes": [
+    "Original",
+    "Substitution"
+   ]
+  },
+  "WeekDay": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode",
+   "scope": "ubl-copy",
+   "name": "Week day",
+   "location": "world/codelists/gc/WeekDayCode.gc",
+   "codes": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+   ]
+  },
+  "ReceiptAdviceType": {
+   "listID": "urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode",
+   "scope": "ubl-copy",
+   "name": "Receipt advice type",
+   "location": "world/codelists/gc/ReceiptAdviceTypeCode.gc",
+   "codes": [
+    "Actual",
+    "Preliminary",
+    "Return"
+   ]
+  },
+  "PackagingType": {
+   "listID": "UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)",
+   "scope": "ubl-copy",
+   "name": "Packaging type (UNECE Recommendation 21)",
+   "location": "world/codelists/gc/PackagingTypeCode.gc",
+   "codes": [
+    "1A",
+    "1B",
+    "1D",
+    "1F",
+    "1G",
+    "1W",
+    "2C",
+    "3A",
+    "3H",
+    "43",
+    "44",
+    "4A",
+    "4B",
+    "4C",
+    "4D",
+    "4F",
+    "4G",
+    "4H",
+    "5H",
+    "5L",
+    "5M",
+    "6H",
+    "6P",
+    "7A",
+    "7B",
+    "8A",
+    "8B",
+    "8C",
+    "AA",
+    "AB",
+    "AC",
+    "AD",
+    "AE",
+    "AF",
+    "AG",
+    "AH",
+    "AI",
+    "AJ",
+    "AL",
+    "AM",
+    "AP",
+    "AT",
+    "AV",
+    "B4",
+    "BA",
+    "BB",
+    "BC",
+    "BD",
+    "BE",
+    "BF",
+    "BG",
+    "BH",
+    "BI",
+    "BJ",
+    "BK",
+    "BL",
+    "BM",
+    "BN",
+    "BO",
+    "BP",
+    "BQ",
+    "BR",
+    "BS",
+    "BT",
+    "BU",
+    "BV",
+    "BW",
+    "BX",
+    "BY",
+    "BZ",
+    "CA",
+    "CB",
+    "CC",
+    "CD",
+    "CE",
+    "CF",
+    "CG",
+    "CH",
+    "CI",
+    "CJ",
+    "CK",
+    "CL",
+    "CM",
+    "CN",
+    "CO",
+    "CP",
+    "CQ",
+    "CR",
+    "CS",
+    "CT",
+    "CU",
+    "CV",
+    "CW",
+    "CX",
+    "CY",
+    "CZ",
+    "DA",
+    "DB",
+    "DC",
+    "DG",
+    "DH",
+    "DI",
+    "DJ",
+    "DK",
+    "DL",
+    "DM",
+    "DN",
+    "DP",
+    "DR",
+    "DS",
+    "DT",
+    "DU",
+    "DV",
+    "DW",
+    "DX",
+    "DY",
+    "EC",
+    "ED",
+    "EE",
+    "EF",
+    "EG",
+    "EH",
+    "EI",
+    "EN",
+    "FB",
+    "FC",
+    "FD",
+    "FE",
+    "FI",
+    "FL",
+    "FO",
+    "FP",
+    "FR",
+    "FT",
+    "FW",
+    "FX",
+    "GB",
+    "GI",
+    "GL",
+    "GR",
+    "GU",
+    "GY",
+    "GZ",
+    "HA",
+    "HB",
+    "HC",
+    "HG",
+    "HN",
+    "HR",
+    "IA",
+    "IB",
+    "IC",
+    "ID",
+    "IE",
+    "IF",
+    "IG",
+    "IH",
+    "IK",
+    "IL",
+    "IN",
+    "IZ",
+    "JB",
+    "JC",
+    "JG",
+    "JR",
+    "JT",
+    "JY",
+    "KG",
+    "KI",
+    "LE",
+    "LG",
+    "LT",
+    "LU",
+    "LV",
+    "LZ",
+    "MA",
+    "MB",
+    "MC",
+    "ME",
+    "MR",
+    "MS",
+    "MT",
+    "MW",
+    "MX",
+    "NA",
+    "NE",
+    "NF",
+    "NG",
+    "NS",
+    "NT",
+    "NU",
+    "NV",
+    "OA",
+    "OB",
+    "OC",
+    "OD",
+    "OE",
+    "OF",
+    "OK",
+    "OT",
+    "OU",
+    "P2",
+    "PA",
+    "PB",
+    "PC",
+    "PD",
+    "PE",
+    "PF",
+    "PG",
+    "PH",
+    "PI",
+    "PJ",
+    "PK",
+    "PL",
+    "PN",
+    "PO",
+    "PP",
+    "PR",
+    "PT",
+    "PU",
+    "PV",
+    "PX",
+    "PY",
+    "PZ",
+    "QA",
+    "QB",
+    "QC",
+    "QD",
+    "QF",
+    "QG",
+    "QH",
+    "QJ",
+    "QK",
+    "QL",
+    "QM",
+    "QN",
+    "QP",
+    "QQ",
+    "QR",
+    "QS",
+    "RD",
+    "RG",
+    "RJ",
+    "RK",
+    "RL",
+    "RO",
+    "RT",
+    "RZ",
+    "SA",
+    "SB",
+    "SC",
+    "SD",
+    "SE",
+    "SH",
+    "SI",
+    "SK",
+    "SL",
+    "SM",
+    "SO",
+    "SP",
+    "SS",
+    "ST",
+    "SU",
+    "SV",
+    "SW",
+    "SY",
+    "SZ",
+    "T1",
+    "TB",
+    "TC",
+    "TD",
+    "TE",
+    "TG",
+    "TI",
+    "TK",
+    "TL",
+    "TN",
+    "TO",
+    "TR",
+    "TS",
+    "TT",
+    "TU",
+    "TV",
+    "TW",
+    "TY",
+    "TZ",
+    "UC",
+    "UN",
+    "VA",
+    "VG",
+    "VI",
+    "VK",
+    "VL",
+    "VN",
+    "VO",
+    "VP",
+    "VQ",
+    "VR",
+    "VS",
+    "VY",
+    "WA",
+    "WB",
+    "WC",
+    "WD",
+    "WF",
+    "WG",
+    "WH",
+    "WJ",
+    "WK",
+    "WL",
+    "WM",
+    "WN",
+    "WP",
+    "WQ",
+    "WR",
+    "WS",
+    "WT",
+    "WU",
+    "WV",
+    "WW",
+    "WX",
+    "WY",
+    "WZ",
+    "XA",
+    "XB",
+    "XC",
+    "XD",
+    "XF",
+    "XG",
+    "XH",
+    "XJ",
+    "XK",
+    "YA",
+    "YB",
+    "YC",
+    "YD",
+    "YF",
+    "YG",
+    "YH",
+    "YJ",
+    "YK",
+    "YL",
+    "YM",
+    "YN",
+    "YP",
+    "YQ",
+    "YR",
+    "YS",
+    "YT",
+    "YV",
+    "YW",
+    "YX",
+    "YY",
+    "YZ",
+    "ZA",
+    "ZB",
+    "ZC",
+    "ZD",
+    "ZF",
+    "ZG",
+    "ZH",
+    "ZJ",
+    "ZK",
+    "ZL",
+    "ZM",
+    "ZN",
+    "ZP",
+    "ZQ",
+    "ZR",
+    "ZS",
+    "ZT",
+    "ZU",
+    "ZV",
+    "ZW",
+    "ZX",
+    "ZY",
+    "ZZ"
+   ]
+  },
+  "Language": {
+   "listID": "ISO 639",
+   "scope": "external",
+   "name": "ISO 639 Language",
+   "location": "world/codelists/gc/LanguageCode.gc",
+   "codes": [
+    "aar",
+    "aa",
+    "abk",
+    "ab",
+    "ace",
+    "ach",
+    "ada",
+    "ady",
+    "afa",
+    "afh",
+    "afr",
+    "af",
+    "ain",
+    "aka",
+    "ak",
+    "akk",
+    "alb",
+    "sqi",
+    "sq",
+    "ale",
+    "alg",
+    "alt",
+    "amh",
+    "am",
+    "ang",
+    "anp",
+    "apa",
+    "ara",
+    "ar",
+    "arc",
+    "arg",
+    "an",
+    "arm",
+    "hye",
+    "hy",
+    "arn",
+    "arp",
+    "art",
+    "arw",
+    "asm",
+    "as",
+    "ast",
+    "ath",
+    "aus",
+    "ava",
+    "av",
+    "ave",
+    "ae",
+    "awa",
+    "aym",
+    "ay",
+    "aze",
+    "az",
+    "bad",
+    "bai",
+    "bak",
+    "ba",
+    "bal",
+    "bam",
+    "bm",
+    "ban",
+    "baq",
+    "eus",
+    "eu",
+    "bas",
+    "bat",
+    "bej",
+    "bel",
+    "be",
+    "bem",
+    "ben",
+    "bn",
+    "ber",
+    "bho",
+    "bih",
+    "bik",
+    "bin",
+    "bis",
+    "bi",
+    "bla",
+    "bnt",
+    "bos",
+    "bs",
+    "bra",
+    "bre",
+    "br",
+    "btk",
+    "bua",
+    "bug",
+    "bul",
+    "bg",
+    "bur",
+    "mya",
+    "my",
+    "byn",
+    "cad",
+    "cai",
+    "car",
+    "cat",
+    "ca",
+    "cau",
+    "ceb",
+    "cel",
+    "cha",
+    "ch",
+    "chb",
+    "che",
+    "ce",
+    "chg",
+    "chi",
+    "zho",
+    "zh",
+    "chk",
+    "chm",
+    "chn",
+    "cho",
+    "chp",
+    "chr",
+    "chu",
+    "cu",
+    "chv",
+    "cv",
+    "chy",
+    "cmc",
+    "cnr",
+    "cop",
+    "cor",
+    "kw",
+    "cos",
+    "co",
+    "cpe",
+    "cpf",
+    "cpp",
+    "cre",
+    "cr",
+    "crh",
+    "crp",
+    "csb",
+    "cus",
+    "cze",
+    "ces",
+    "cs",
+    "dak",
+    "dan",
+    "da",
+    "dar",
+    "day",
+    "del",
+    "den",
+    "dgr",
+    "din",
+    "div",
+    "dv",
+    "doi",
+    "dra",
+    "dsb",
+    "dua",
+    "dum",
+    "dut",
+    "nld",
+    "nl",
+    "dyu",
+    "dzo",
+    "dz",
+    "efi",
+    "egy",
+    "eka",
+    "elx",
+    "eng",
+    "en",
+    "enm",
+    "epo",
+    "eo",
+    "est",
+    "et",
+    "ewe",
+    "ee",
+    "ewo",
+    "fan",
+    "fao",
+    "fo",
+    "fat",
+    "fij",
+    "fj",
+    "fil",
+    "fin",
+    "fi",
+    "fiu",
+    "fon",
+    "fre",
+    "fra",
+    "fr",
+    "frm",
+    "fro",
+    "frr",
+    "frs",
+    "fry",
+    "fy",
+    "ful",
+    "ff",
+    "fur",
+    "gaa",
+    "gay",
+    "gba",
+    "gem",
+    "geo",
+    "kat",
+    "ka",
+    "ger",
+    "deu",
+    "de",
+    "gez",
+    "gil",
+    "gla",
+    "gd",
+    "gle",
+    "ga",
+    "glg",
+    "gl",
+    "glv",
+    "gv",
+    "gmh",
+    "goh",
+    "gon",
+    "gor",
+    "got",
+    "grb",
+    "grc",
+    "gre",
+    "ell",
+    "el",
+    "grn",
+    "gn",
+    "gsw",
+    "guj",
+    "gu",
+    "gwi",
+    "hai",
+    "hat",
+    "ht",
+    "hau",
+    "ha",
+    "haw",
+    "heb",
+    "he",
+    "her",
+    "hz",
+    "hil",
+    "him",
+    "hin",
+    "hi",
+    "hit",
+    "hmn",
+    "hmo",
+    "ho",
+    "hrv",
+    "hr",
+    "hsb",
+    "hun",
+    "hu",
+    "hup",
+    "iba",
+    "ibo",
+    "ig",
+    "ice",
+    "isl",
+    "is",
+    "ido",
+    "io",
+    "iii",
+    "ii",
+    "ijo",
+    "iku",
+    "iu",
+    "ile",
+    "ie",
+    "ilo",
+    "ina",
+    "ia",
+    "inc",
+    "ind",
+    "id",
+    "ine",
+    "inh",
+    "ipk",
+    "ik",
+    "ira",
+    "iro",
+    "ita",
+    "it",
+    "jav",
+    "jv",
+    "jbo",
+    "jpn",
+    "ja",
+    "jpr",
+    "jrb",
+    "kaa",
+    "kab",
+    "kac",
+    "kal",
+    "kl",
+    "kam",
+    "kan",
+    "kn",
+    "kar",
+    "kas",
+    "ks",
+    "kau",
+    "kr",
+    "kaw",
+    "kaz",
+    "kk",
+    "kbd",
+    "kha",
+    "khi",
+    "khm",
+    "km",
+    "kho",
+    "kik",
+    "ki",
+    "kin",
+    "rw",
+    "kir",
+    "ky",
+    "kmb",
+    "kok",
+    "kom",
+    "kv",
+    "kon",
+    "kg",
+    "kor",
+    "ko",
+    "kos",
+    "kpe",
+    "krc",
+    "krl",
+    "kro",
+    "kru",
+    "kua",
+    "kj",
+    "kum",
+    "kur",
+    "ku",
+    "kut",
+    "lad",
+    "lah",
+    "lam",
+    "lao",
+    "lo",
+    "lat",
+    "la",
+    "lav",
+    "lv",
+    "lez",
+    "lim",
+    "li",
+    "lin",
+    "ln",
+    "lit",
+    "lt",
+    "lol",
+    "loz",
+    "ltz",
+    "lb",
+    "lua",
+    "lub",
+    "lu",
+    "lug",
+    "lg",
+    "lui",
+    "lun",
+    "luo",
+    "lus",
+    "mac",
+    "mkd",
+    "mk",
+    "mad",
+    "mag",
+    "mah",
+    "mh",
+    "mai",
+    "mak",
+    "mal",
+    "ml",
+    "man",
+    "mao",
+    "mri",
+    "mi",
+    "map",
+    "mar",
+    "mr",
+    "mas",
+    "may",
+    "msa",
+    "ms",
+    "mdf",
+    "mdr",
+    "men",
+    "mga",
+    "mic",
+    "min",
+    "mis",
+    "mkh",
+    "mlg",
+    "mg",
+    "mlt",
+    "mt",
+    "mnc",
+    "mni",
+    "mno",
+    "moh",
+    "mon",
+    "mn",
+    "mos",
+    "mul",
+    "mun",
+    "mus",
+    "mwl",
+    "mwr",
+    "myn",
+    "myv",
+    "nah",
+    "nai",
+    "nap",
+    "nau",
+    "na",
+    "nav",
+    "nv",
+    "nbl",
+    "nr",
+    "nde",
+    "nd",
+    "ndo",
+    "ng",
+    "nds",
+    "nep",
+    "ne",
+    "new",
+    "nia",
+    "nic",
+    "niu",
+    "nno",
+    "nn",
+    "nob",
+    "nb",
+    "nog",
+    "non",
+    "nor",
+    "no",
+    "nqo",
+    "nso",
+    "nub",
+    "nwc",
+    "nya",
+    "ny",
+    "nym",
+    "nyn",
+    "nyo",
+    "nzi",
+    "oci",
+    "oc",
+    "oji",
+    "oj",
+    "ori",
+    "or",
+    "orm",
+    "om",
+    "osa",
+    "oss",
+    "os",
+    "ota",
+    "oto",
+    "paa",
+    "pag",
+    "pal",
+    "pam",
+    "pan",
+    "pa",
+    "pap",
+    "pau",
+    "peo",
+    "per",
+    "fas",
+    "fa",
+    "phi",
+    "phn",
+    "pli",
+    "pi",
+    "pol",
+    "pl",
+    "pon",
+    "por",
+    "pt",
+    "pra",
+    "pro",
+    "pus",
+    "ps",
+    "que",
+    "qu",
+    "raj",
+    "rap",
+    "rar",
+    "roa",
+    "roh",
+    "rm",
+    "rom",
+    "rum",
+    "ron",
+    "ro",
+    "run",
+    "rn",
+    "rup",
+    "rus",
+    "ru",
+    "sad",
+    "sag",
+    "sg",
+    "sah",
+    "sai",
+    "sal",
+    "sam",
+    "san",
+    "sa",
+    "sas",
+    "sat",
+    "scn",
+    "sco",
+    "sel",
+    "sem",
+    "sga",
+    "sgn",
+    "shn",
+    "sid",
+    "sin",
+    "si",
+    "sio",
+    "sit",
+    "sla",
+    "slo",
+    "slk",
+    "sk",
+    "slv",
+    "sl",
+    "sma",
+    "sme",
+    "se",
+    "smi",
+    "smj",
+    "smn",
+    "smo",
+    "sm",
+    "sms",
+    "sna",
+    "sn",
+    "snd",
+    "sd",
+    "snk",
+    "sog",
+    "som",
+    "so",
+    "son",
+    "sot",
+    "st",
+    "spa",
+    "es",
+    "srd",
+    "sc",
+    "srn",
+    "srp",
+    "sr",
+    "srr",
+    "ssa",
+    "ssw",
+    "ss",
+    "suk",
+    "sun",
+    "su",
+    "sus",
+    "sux",
+    "swa",
+    "sw",
+    "swe",
+    "sv",
+    "syc",
+    "syr",
+    "tah",
+    "ty",
+    "tai",
+    "tam",
+    "ta",
+    "tat",
+    "tt",
+    "tel",
+    "te",
+    "tem",
+    "ter",
+    "tet",
+    "tgk",
+    "tg",
+    "tgl",
+    "tl",
+    "tha",
+    "th",
+    "tib",
+    "bod",
+    "bo",
+    "tig",
+    "tir",
+    "ti",
+    "tiv",
+    "tkl",
+    "tlh",
+    "tli",
+    "tmh",
+    "tog",
+    "ton",
+    "to",
+    "tpi",
+    "tsi",
+    "tsn",
+    "tn",
+    "tso",
+    "ts",
+    "tuk",
+    "tk",
+    "tum",
+    "tup",
+    "tur",
+    "tr",
+    "tut",
+    "tvl",
+    "twi",
+    "tw",
+    "tyv",
+    "udm",
+    "uga",
+    "uig",
+    "ug",
+    "ukr",
+    "uk",
+    "umb",
+    "und",
+    "urd",
+    "ur",
+    "uzb",
+    "uz",
+    "vai",
+    "ven",
+    "ve",
+    "vie",
+    "vi",
+    "vol",
+    "vo",
+    "vot",
+    "wak",
+    "wal",
+    "war",
+    "was",
+    "wel",
+    "cym",
+    "cy",
+    "wen",
+    "wln",
+    "wa",
+    "wol",
+    "wo",
+    "xal",
+    "xho",
+    "xh",
+    "yao",
+    "yap",
+    "yid",
+    "yi",
+    "yor",
+    "yo",
+    "ypk",
+    "zap",
+    "zbl",
+    "zen",
+    "zgh",
+    "zha",
+    "za",
+    "znd",
+    "zul",
+    "zu",
+    "zun",
+    "zxx",
+    "zza",
+    "qau",
+    "qal"
+   ]
+  },
+  "UNCL5189": {
+   "listID": "UN/EDIFACT EDED 5189",
+   "scope": "external",
+   "name": "UN/EDIFACT 5189 Allowance or charge identification",
+   "location": "world/codelists/gc/UNCL5189Code.gc",
+   "codes": [
+    "41",
+    "42",
+    "48",
+    "49",
+    "60",
+    "62",
+    "63",
+    "64",
+    "65",
+    "66",
+    "67",
+    "68",
+    "70",
+    "71",
+    "88",
+    "95",
+    "96",
+    "100",
+    "102",
+    "103",
+    "104",
+    "105"
+   ]
+  },
+  "UNCL7161": {
+   "listID": "UN/EDIFACT EDED 7161",
+   "scope": "external",
+   "name": "UN/EDIFACT 7161 Special service description",
+   "location": "world/codelists/gc/UNCL7161Code.gc",
+   "codes": [
+    "AA",
+    "ABK",
+    "ACH",
+    "AEO",
+    "CAB",
+    "CAT",
+    "DL",
+    "FC",
+    "HD",
+    "PC",
+    "PL",
+    "RAF",
+    "SAA",
+    "WH",
+    "ZZZ"
+   ]
+  },
+  "XB:TaxExemptionReason": {
+   "listID": "urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode",
+   "scope": "XB",
+   "name": "Sales tax exemption reason",
+   "location": "world/codelists/gc/XB-TaxExemptionReasonCode.gc",
+   "codes": [
+    "EXP",
+    "WATER",
+    "PUBLIC",
+    "SVCB2B",
+    "RESALE",
+    "LEVY",
+    "FOOD",
+    "MEDICAL",
+    "CHARITY"
+   ]
+  },
+  "XU:TaxExemptionReason": {
+   "listID": "urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode",
+   "scope": "XU",
+   "name": "Value added tax exemption reason",
+   "location": "world/codelists/gc/XU-TaxExemptionReasonCode.gc",
+   "codes": [
+    "EXP",
+    "SVCABROAD",
+    "HEALTH",
+    "EDUCATION",
+    "FINANCE",
+    "RENT"
+   ]
+  },
+  "TaxLevel": {
+   "listID": "urn:ubl-examples:world:codelist:TaxLevelCode",
+   "scope": "regional",
+   "name": "Tax level",
+   "location": "world/codelists/gc/TaxLevelCode.gc",
+   "codes": [
+    "NATIONAL",
+    "STATE",
+    "LOCAL",
+    "ACCORD"
+   ]
+  },
+  "TaxType": {
+   "listID": "urn:ubl-examples:world:codelist:TaxTypeCode",
+   "scope": "regional",
+   "name": "Tax type",
+   "location": "world/codelists/gc/TaxTypeCode.gc",
+   "codes": [
+    "CONSUMPTION",
+    "INCOME",
+    "PROPERTY",
+    "TRADE"
+   ]
+  },
+  "SupplyType": {
+   "listID": "urn:ubl-examples:world:codelist:SupplyTypeCode",
+   "scope": "regional",
+   "name": "Supply type",
+   "location": "world/codelists/gc/SupplyTypeCode.gc",
+   "codes": [
+    "GOODS",
+    "SERVICES",
+    "WORKS"
+   ]
+  },
+  "AccountFormat": {
+   "listID": "urn:ubl-examples:world:codelist:AccountFormatCode",
+   "scope": "regional",
+   "name": "Account number format",
+   "location": "world/codelists/gc/AccountFormatCode.gc",
+   "codes": [
+    "ISO13616",
+    "BBAN",
+    "LEDGER"
+   ]
+  },
+  "ISO20022CashAccountType": {
+   "listID": "ISO 20022 ExternalCashAccountType1Code",
+   "scope": "external",
+   "name": "ISO 20022 ExternalCashAccountType1Code",
+   "location": "world/codelists/gc/ISO20022CashAccountTypeCode.gc",
+   "codes": [
+    "CACC",
+    "SVGS",
+    "LOAN",
+    "CARD",
+    "SLRY"
+   ]
+  },
+  "ISO20022ClearingChannel": {
+   "listID": "ISO 20022 ClearingChannel2Code",
+   "scope": "external",
+   "name": "ISO 20022 ClearingChannel2Code",
+   "location": "world/codelists/gc/ISO20022ClearingChannelCode.gc",
+   "codes": [
+    "RTGS",
+    "RTNS",
+    "MPNS",
+    "BOOK"
+   ]
+  },
+  "ISO20022ChargeBearer": {
+   "listID": "ISO 20022 ChargeBearerType1Code",
+   "scope": "external",
+   "name": "ISO 20022 ChargeBearerType1Code",
+   "location": "world/codelists/gc/ISO20022ChargeBearerCode.gc",
+   "codes": [
+    "DEBT",
+    "CRED",
+    "SHAR",
+    "SLEV"
+   ]
+  },
+  "ISO20022ServiceLevel": {
+   "listID": "ISO 20022 ExternalServiceLevel1Code",
+   "scope": "external",
+   "name": "ISO 20022 ExternalServiceLevel1Code",
+   "location": "world/codelists/gc/ISO20022ServiceLevelCode.gc",
+   "codes": [
+    "NURG",
+    "URGP",
+    "SDVA"
+   ]
+  },
+  "ISO20022Purpose": {
+   "listID": "ISO 20022 ExternalPurpose1Code",
+   "scope": "external",
+   "name": "ISO 20022 ExternalPurpose1Code",
+   "location": "world/codelists/gc/ISO20022PurposeCode.gc",
+   "codes": [
+    "SUPP",
+    "GDDS",
+    "SCVE",
+    "ELEC",
+    "GASB",
+    "WTER",
+    "PHON",
+    "TAXS"
+   ]
+  },
+  "ISO20022SequenceType": {
+   "listID": "ISO 20022 SequenceType3Code",
+   "scope": "external",
+   "name": "ISO 20022 SequenceType3Code",
+   "location": "world/codelists/gc/ISO20022SequenceTypeCode.gc",
+   "codes": [
+    "FRST",
+    "RCUR",
+    "FNAL",
+    "OOFF",
+    "RPRE"
+   ]
+  },
+  "CardType": {
+   "listID": "urn:ubl-examples:world:codelist:CardTypeCode",
+   "scope": "regional",
+   "name": "Payment card type",
+   "location": "world/codelists/gc/CardTypeCode.gc",
+   "codes": [
+    "DEBIT",
+    "CREDIT",
+    "PREPAID"
+   ]
+  },
+  "InterestCalculation": {
+   "listID": "urn:ubl-examples:world:codelist:InterestCalculationCode",
+   "scope": "regional",
+   "name": "Interest calculation method",
+   "location": "world/codelists/gc/InterestCalculationCode.gc",
+   "codes": [
+    "SIMPLE",
+    "COMPOUND"
+   ]
+  },
+  "UNCL2475": {
+   "listID": "UN/EDIFACT EDED 2475",
+   "scope": "external",
+   "name": "UN/EDIFACT 2475 Event time reference",
+   "location": "world/codelists/gc/UNCL2475Code.gc",
+   "codes": [
+    "1",
+    "2",
+    "5",
+    "8",
+    "25",
+    "81"
+   ]
+  },
+  "FinancingInstrument": {
+   "listID": "urn:ubl-examples:world:codelist:FinancingInstrumentCode",
+   "scope": "regional",
+   "name": "Trade financing instrument",
+   "location": "world/codelists/gc/FinancingInstrumentCode.gc",
+   "codes": [
+    "FACTORING",
+    "INVOICEDISC",
+    "SCF",
+    "DOCCREDIT",
+    "FORFAITING"
+   ]
+  },
+  "FXContractType": {
+   "listID": "urn:ubl-examples:world:codelist:FXContractTypeCode",
+   "scope": "regional",
+   "name": "Foreign exchange contract type",
+   "location": "world/codelists/gc/FXContractTypeCode.gc",
+   "codes": [
+    "SPOT",
+    "FORWARD",
+    "SWAP",
+    "OPTION"
+   ]
+  },
+  "ReminderType": {
+   "listID": "urn:ubl-examples:world:codelist:ReminderTypeCode",
+   "scope": "regional",
+   "name": "Reminder type",
+   "location": "world/codelists/gc/ReminderTypeCode.gc",
+   "codes": [
+    "PAYMENT",
+    "FINAL",
+    "DOCUMENT"
+   ]
+  },
+  "StatementType": {
+   "listID": "urn:ubl-examples:world:codelist:StatementTypeCode",
+   "scope": "regional",
+   "name": "Statement type",
+   "location": "world/codelists/gc/StatementTypeCode.gc",
+   "codes": [
+    "ACCOUNT",
+    "BALANCE",
+    "COMMISSION"
+   ]
+  },
+  "PaymentStatus": {
+   "listID": "urn:ubl-examples:world:codelist:PaymentStatusCode",
+   "scope": "regional",
+   "name": "Payment status",
+   "location": "world/codelists/gc/PaymentStatusCode.gc",
+   "codes": [
+    "APPROVED",
+    "PENDING",
+    "PAID",
+    "REJECTED"
+   ]
+  },
+  "PeriodDescription": {
+   "listID": "urn:ubl-examples:world:codelist:PeriodDescriptionCode",
+   "scope": "regional",
+   "name": "Period description",
+   "location": "world/codelists/gc/PeriodDescriptionCode.gc",
+   "codes": [
+    "WEEK",
+    "MONTH",
+    "QUARTER",
+    "HALFYEAR",
+    "YEAR",
+    "SEASON"
+   ]
+  },
+  "Market": {
+   "listID": "urn:ubl-examples:world:codelist:MarketCode",
+   "scope": "regional",
+   "name": "Market identifier",
+   "location": "world/codelists/gc/MarketCode.gc",
+   "codes": [
+    "XFER",
+    "XLMX",
+    "XSLN"
+   ]
+  },
+  "Colour": {
+   "listID": "urn:ubl-examples:world:codelist:ColourCode",
+   "scope": "regional",
+   "name": "Colour",
+   "location": "world/codelists/gc/ColourCode.gc",
+   "codes": [
+    "GRY",
+    "GRN",
+    "BLK",
+    "WHT",
+    "BRN",
+    "RED",
+    "BLU"
+   ]
+  },
+  "EmissionCalculationMethod": {
+   "listID": "urn:ubl-examples:world:codelist:EmissionCalculationMethodCode",
+   "scope": "regional",
+   "name": "Emission calculation method",
+   "location": "world/codelists/gc/EmissionCalculationMethodCode.gc",
+   "codes": [
+    "CALCULATED",
+    "MEASURED",
+    "ESTIMATED"
+   ]
+  },
+  "ContractType": {
+   "listID": "urn:ubl-examples:world:codelist:ContractTypeCode",
+   "scope": "regional",
+   "name": "Contract type",
+   "location": "world/codelists/gc/ContractTypeCode.gc",
+   "codes": [
+    "FRAMEWORK",
+    "SINGLE",
+    "SUPPLY",
+    "CONCESSION"
+   ]
+  },
+  "RecordStatus": {
+   "listID": "urn:ubl-examples:world:codelist:RecordStatusCode",
+   "scope": "regional",
+   "name": "Record status",
+   "location": "world/codelists/gc/RecordStatusCode.gc",
+   "codes": [
+    "ISSUED",
+    "VALID",
+    "ACTIVE",
+    "REPLACED",
+    "SUSPENDED",
+    "WITHDRAWN"
+   ]
+  },
+  "ProfileStatus": {
+   "listID": "urn:ubl-examples:world:codelist:ProfileStatusCode",
+   "scope": "regional",
+   "name": "Profile status",
+   "location": "world/codelists/gc/ProfileStatusCode.gc",
+   "codes": [
+    "ACTIVE",
+    "SUSPENDED",
+    "ENDED"
+   ]
+  },
+  "UNCL1001": {
+   "listID": "UN/EDIFACT EDED 1001",
+   "scope": "external",
+   "name": "UN/EDIFACT 1001 Document name",
+   "location": "world/codelists/gc/UNCL1001Code.gc",
+   "codes": [
+    "9",
+    "220",
+    "227",
+    "230",
+    "261",
+    "325",
+    "326",
+    "380",
+    "381",
+    "383",
+    "384",
+    "386",
+    "389",
+    "393",
+    "774",
+    "856",
+    "861"
+   ]
+  },
+  "TransportMeansType": {
+   "listID": "urn:ubl-examples:world:codelist:TransportMeansTypeCode",
+   "scope": "regional",
+   "name": "Transport means type",
+   "location": "world/codelists/gc/TransportMeansTypeCode.gc",
+   "codes": [
+    "BOXTRUCK",
+    "TRUCKTRAILER",
+    "CRANETRUCK",
+    "VAN",
+    "FARMTRACTOR",
+    "FREIGHTTRAIN",
+    "DRYBARGE",
+    "CONTAINERSHIP",
+    "CARGOAIRCRAFT",
+    "PIPELINE"
+   ]
+  },
+  "ShipConfiguration": {
+   "listID": "urn:ubl-examples:world:codelist:ShipConfigurationCode",
+   "scope": "regional",
+   "name": "Ship configuration",
+   "location": "world/codelists/gc/ShipConfigurationCode.gc",
+   "codes": [
+    "FEEDER",
+    "CONTAINERSHIP",
+    "DRYBARGE",
+    "GENERALCARGO",
+    "BULKCARRIER",
+    "TANKER"
+   ]
+  },
+  "TransportService": {
+   "listID": "urn:ubl-examples:world:codelist:TransportServiceCode",
+   "scope": "regional",
+   "name": "Transport service",
+   "location": "world/codelists/gc/TransportServiceCode.gc",
+   "codes": [
+    "FTL",
+    "LTL",
+    "RAILCONT",
+    "RAILWAGON",
+    "RIVERBARGE",
+    "OCEANCONT",
+    "AIRCARGO",
+    "MERCHHAUL",
+    "CARRHAUL",
+    "NOTIFY",
+    "WEIGH"
+   ]
+  },
+  "TravelDirection": {
+   "listID": "urn:ubl-examples:world:codelist:TravelDirectionCode",
+   "scope": "regional",
+   "name": "Travel direction",
+   "location": "world/codelists/gc/TravelDirectionCode.gc",
+   "codes": [
+    "EB",
+    "WB",
+    "NB",
+    "SB",
+    "DS",
+    "US"
+   ]
+  },
+  "TransportEventType": {
+   "listID": "urn:ubl-examples:world:codelist:TransportEventTypeCode",
+   "scope": "regional",
+   "name": "Transport event type",
+   "location": "world/codelists/gc/TransportEventTypeCode.gc",
+   "codes": [
+    "PICKUP",
+    "DEPARTURE",
+    "ARRIVAL",
+    "BORDERCROSS",
+    "CUSTOMSRELEASE",
+    "DELIVERY"
+   ]
+  },
+  "TransportExecutionStatus": {
+   "listID": "urn:ubl-examples:world:codelist:TransportExecutionStatusCode",
+   "scope": "regional",
+   "name": "Transport execution status",
+   "location": "world/codelists/gc/TransportExecutionStatusCode.gc",
+   "codes": [
+    "PLANNED",
+    "INPROGRESS",
+    "COMPLETED",
+    "CANCELLED"
+   ]
+  },
+  "TransportationStatusType": {
+   "listID": "urn:ubl-examples:world:codelist:TransportationStatusTypeCode",
+   "scope": "regional",
+   "name": "Transportation status type",
+   "location": "world/codelists/gc/TransportationStatusTypeCode.gc",
+   "codes": [
+    "CURRENT",
+    "PROGRESS",
+    "DELIVERY"
+   ]
+  },
+  "StatusCondition": {
+   "listID": "urn:ubl-examples:world:codelist:StatusConditionCode",
+   "scope": "regional",
+   "name": "Status condition",
+   "location": "world/codelists/gc/StatusConditionCode.gc",
+   "codes": [
+    "SCHEDULED",
+    "ONTIME",
+    "DELAYED",
+    "READY",
+    "INTRANSIT",
+    "RELEASED",
+    "DAMAGED",
+    "MATCHED",
+    "MISMATCHED"
+   ]
+  },
+  "StatusReason": {
+   "listID": "urn:ubl-examples:world:codelist:StatusReasonCode",
+   "scope": "regional",
+   "name": "Status reason",
+   "location": "world/codelists/gc/StatusReasonCode.gc",
+   "codes": [
+    "CLEARED",
+    "INSPECTION",
+    "WEATHER",
+    "CONGESTION"
+   ]
+  },
+  "HandlingInstruction": {
+   "listID": "urn:ubl-examples:world:codelist:HandlingInstructionCode",
+   "scope": "regional",
+   "name": "Handling instruction",
+   "location": "world/codelists/gc/HandlingInstructionCode.gc",
+   "codes": [
+    "STACK2",
+    "NOSTACK",
+    "UPRIGHT",
+    "FRAGILE",
+    "KEEPDRY",
+    "DECK",
+    "UNDERDECK"
+   ]
+  },
+  "ShippingPriority": {
+   "listID": "urn:ubl-examples:world:codelist:ShippingPriorityCode",
+   "scope": "regional",
+   "name": "Shipping priority",
+   "location": "world/codelists/gc/ShippingPriorityCode.gc",
+   "codes": [
+    "STANDARD",
+    "PRIORITY",
+    "EXPRESS"
+   ]
+  },
+  "TransportNotificationType": {
+   "listID": "urn:ubl-examples:world:codelist:TransportNotificationTypeCode",
+   "scope": "regional",
+   "name": "Transport notification type",
+   "location": "world/codelists/gc/TransportNotificationTypeCode.gc",
+   "codes": [
+    "PREARRIVAL",
+    "PREDEPARTURE",
+    "DELAY"
+   ]
+  },
+  "TransportReportType": {
+   "listID": "urn:ubl-examples:world:codelist:TransportReportTypeCode",
+   "scope": "regional",
+   "name": "Transport report type",
+   "location": "world/codelists/gc/TransportReportTypeCode.gc",
+   "codes": [
+    "PREARRIVAL",
+    "DEPARTURE",
+    "NOON"
+   ]
+  },
+  "PortCallPurpose": {
+   "listID": "urn:ubl-examples:world:codelist:PortCallPurposeCode",
+   "scope": "regional",
+   "name": "Port call purpose",
+   "location": "world/codelists/gc/PortCallPurposeCode.gc",
+   "codes": [
+    "CARGO",
+    "WATER",
+    "BUNKERS",
+    "CREW",
+    "REPAIR"
+   ]
+  },
+  "ServiceInformationPreference": {
+   "listID": "urn:ubl-examples:world:codelist:ServiceInformationPreferenceCode",
+   "scope": "regional",
+   "name": "Service information preference",
+   "location": "world/codelists/gc/ServiceInformationPreferenceCode.gc",
+   "codes": [
+    "SCHEDULE",
+    "PRICE"
+   ]
+  },
+  "ServiceOfferResponse": {
+   "listID": "urn:ubl-examples:world:codelist:ServiceOfferResponseCode",
+   "scope": "regional",
+   "name": "Service offer response",
+   "location": "world/codelists/gc/ServiceOfferResponseCode.gc",
+   "codes": [
+    "OFFERED",
+    "NOTOFFERED",
+    "ALTERNATIVE"
+   ]
+  },
+  "DocumentStatusReason": {
+   "listID": "urn:ubl-examples:world:codelist:DocumentStatusReasonCode",
+   "scope": "regional",
+   "name": "Document status reason",
+   "location": "world/codelists/gc/DocumentStatusReasonCode.gc",
+   "codes": [
+    "ASREQUESTED",
+    "UPDATE",
+    "CHANGED",
+    "NOCAPACITY"
+   ]
+  },
+  "FreightRateClass": {
+   "listID": "urn:ubl-examples:world:codelist:FreightRateClassCode",
+   "scope": "regional",
+   "name": "Freight rate class",
+   "location": "world/codelists/gc/FreightRateClassCode.gc",
+   "codes": [
+    "FAK",
+    "BOX",
+    "B",
+    "WM"
+   ]
+  },
+  "TariffClass": {
+   "listID": "urn:ubl-examples:world:codelist:TariffClassCode",
+   "scope": "regional",
+   "name": "Tariff class",
+   "location": "world/codelists/gc/TariffClassCode.gc",
+   "codes": [
+    "FAK",
+    "B",
+    "SPECIAL"
+   ]
+  },
+  "ManifestType": {
+   "listID": "urn:ubl-examples:world:codelist:ManifestTypeCode",
+   "scope": "regional",
+   "name": "Manifest type",
+   "location": "world/codelists/gc/ManifestTypeCode.gc",
+   "codes": [
+    "CARGO",
+    "CREW",
+    "PASSENGER",
+    "DANGEROUS"
+   ]
+  },
+  "WaybillType": {
+   "listID": "urn:ubl-examples:world:codelist:WaybillTypeCode",
+   "scope": "regional",
+   "name": "Waybill type",
+   "location": "world/codelists/gc/WaybillTypeCode.gc",
+   "codes": [
+    "CMR",
+    "CIM",
+    "AWB",
+    "CMNI",
+    "SEA"
+   ]
+  },
+  "WeightStatementType": {
+   "listID": "urn:ubl-examples:world:codelist:WeightStatementTypeCode",
+   "scope": "regional",
+   "name": "Weight statement type",
+   "location": "world/codelists/gc/WeightStatementTypeCode.gc",
+   "codes": [
+    "VGM",
+    "WEIGHBRIDGE"
+   ]
+  },
+  "TemperatureQualifier": {
+   "listID": "urn:ubl-examples:world:codelist:TemperatureQualifierCode",
+   "scope": "regional",
+   "name": "Temperature qualifier",
+   "location": "world/codelists/gc/TemperatureQualifierCode.gc",
+   "codes": [
+    "TARGET",
+    "MIN",
+    "MAX"
+   ]
+  },
+  "CargoType": {
+   "listID": "urn:ubl-examples:world:codelist:CargoTypeCode",
+   "scope": "regional",
+   "name": "Cargo type",
+   "location": "world/codelists/gc/CargoTypeCode.gc",
+   "codes": [
+    "GEN",
+    "BULK",
+    "LIQUID",
+    "BREAKBULK"
+   ]
+  },
+  "EquipmentDisposition": {
+   "listID": "urn:ubl-examples:world:codelist:EquipmentDispositionCode",
+   "scope": "regional",
+   "name": "Equipment disposition",
+   "location": "world/codelists/gc/EquipmentDispositionCode.gc",
+   "codes": [
+    "LOADED",
+    "EMPTY",
+    "PARTLOADED"
+   ]
+  },
+  "EquipmentOwnerType": {
+   "listID": "urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode",
+   "scope": "regional",
+   "name": "Equipment owner type",
+   "location": "world/codelists/gc/EquipmentOwnerTypeCode.gc",
+   "codes": [
+    "CARRIER",
+    "SHIPPER",
+    "LESSOR"
+   ]
+  },
+  "EquipmentProviderType": {
+   "listID": "urn:ubl-examples:world:codelist:EquipmentProviderTypeCode",
+   "scope": "regional",
+   "name": "Equipment provider type",
+   "location": "world/codelists/gc/EquipmentProviderTypeCode.gc",
+   "codes": [
+    "CARRIER",
+    "SHIPPER",
+    "FORWARDER"
+   ]
+  },
+  "SealIssuerType": {
+   "listID": "urn:ubl-examples:world:codelist:SealIssuerTypeCode",
+   "scope": "regional",
+   "name": "Seal issuer type",
+   "location": "world/codelists/gc/SealIssuerTypeCode.gc",
+   "codes": [
+    "SHIPPER",
+    "CARRIER",
+    "CUSTOMS",
+    "VETERINARY",
+    "PHYTOSANITARY"
+   ]
+  },
+  "SealStatus": {
+   "listID": "urn:ubl-examples:world:codelist:SealStatusCode",
+   "scope": "regional",
+   "name": "Seal status",
+   "location": "world/codelists/gc/SealStatusCode.gc",
+   "codes": [
+    "APPLIED",
+    "DAMAGED",
+    "MISSING",
+    "BROKEN",
+    "REPLACED"
+   ]
+  },
+  "LoadType": {
+   "listID": "urn:ubl-examples:world:codelist:LoadTypeCode",
+   "scope": "regional",
+   "name": "Load type",
+   "location": "world/codelists/gc/LoadTypeCode.gc",
+   "codes": [
+    "FCL",
+    "LCL"
+   ]
+  },
+  "TrackingDevice": {
+   "listID": "urn:ubl-examples:world:codelist:TrackingDeviceCode",
+   "scope": "regional",
+   "name": "Tracking device",
+   "location": "world/codelists/gc/TrackingDeviceCode.gc",
+   "codes": [
+    "GPS",
+    "RFID",
+    "BLE"
+   ]
+  },
+  "ISO6346": {
+   "listID": "ISO 6346",
+   "scope": "external",
+   "name": "ISO 6346 container size and type code",
+   "location": "world/codelists/gc/ISO6346Code.gc",
+   "codes": [
+    "22G1",
+    "22R1",
+    "22U1",
+    "42G1",
+    "45G1",
+    "45R1"
+   ]
+  },
+  "UNCL8051": {
+   "listID": "UN/EDIFACT EDED 8051",
+   "scope": "external",
+   "name": "UN/EDIFACT 8051 Transport stage code qualifier",
+   "location": "world/codelists/gc/UNCL8051Code.gc",
+   "codes": [
+    "10",
+    "20",
+    "30"
+   ]
+  },
+  "UNCL7075": {
+   "listID": "UN/EDIFACT EDED 7075",
+   "scope": "external",
+   "name": "UN/EDIFACT 7075 Packaging level",
+   "location": "world/codelists/gc/UNCL7075Code.gc",
+   "codes": [
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  "IMOISPS": {
+   "listID": "IMO ISPS security level",
+   "scope": "external",
+   "name": "IMO ISPS Code security level",
+   "location": "world/codelists/gc/IMOISPSCode.gc",
+   "codes": [
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  "IMOINF": {
+   "listID": "IMO INF Code",
+   "scope": "external",
+   "name": "IMO INF Code ship class",
+   "location": "world/codelists/gc/IMOINFCode.gc",
+   "codes": [
+    "INF1",
+    "INF2",
+    "INF3"
+   ]
+  },
+  "ITUAISNavStatus": {
+   "listID": "ITU-R M.1371 Navigational status",
+   "scope": "external",
+   "name": "ITU-R M.1371 AIS navigational status",
+   "location": "world/codelists/gc/ITUAISNavStatusCode.gc",
+   "codes": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "15"
+   ]
+  },
+  "ISO5218": {
+   "listID": "ISO 5218",
+   "scope": "external",
+   "name": "ISO/IEC 5218 Representation of human sexes",
+   "location": "world/codelists/gc/ISO5218Code.gc",
+   "codes": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ]
+  },
+  "ShipPersonRole": {
+   "listID": "urn:ubl-examples:world:codelist:ShipPersonRoleCode",
+   "scope": "regional",
+   "name": "Role on board",
+   "location": "world/codelists/gc/ShipPersonRoleCode.gc",
+   "codes": [
+    "MASTER",
+    "CHIEFOFFICER",
+    "CHIEFENG",
+    "SSO",
+    "MEDICAL",
+    "CREW",
+    "PASSENGER"
+   ]
+  },
+  "ShipWasteType": {
+   "listID": "urn:ubl-examples:world:codelist:ShipWasteTypeCode",
+   "scope": "regional",
+   "name": "Ship waste type",
+   "location": "world/codelists/gc/ShipWasteTypeCode.gc",
+   "codes": [
+    "OIL",
+    "NOXIOUS",
+    "SEWAGE",
+    "GARBAGE",
+    "SCRUBBER"
+   ]
+  },
+  "BallastExchangeMethod": {
+   "listID": "urn:ubl-examples:world:codelist:BallastExchangeMethodCode",
+   "scope": "regional",
+   "name": "Ballast water exchange method",
+   "location": "world/codelists/gc/BallastExchangeMethodCode.gc",
+   "codes": [
+    "SEQ",
+    "FLOW",
+    "DIL"
+   ]
+  },
+  "BallastTankType": {
+   "listID": "urn:ubl-examples:world:codelist:BallastTankTypeCode",
+   "scope": "regional",
+   "name": "Ballast tank type",
+   "location": "world/codelists/gc/BallastTankTypeCode.gc",
+   "codes": [
+    "WING",
+    "DOUBLEBOTTOM",
+    "PEAK",
+    "TOPSIDE"
+   ]
+  },
+  "SanitaryMeasure": {
+   "listID": "urn:ubl-examples:world:codelist:SanitaryMeasureCode",
+   "scope": "regional",
+   "name": "Sanitary measure",
+   "location": "world/codelists/gc/SanitaryMeasureCode.gc",
+   "codes": [
+    "DISINFECT",
+    "DERAT",
+    "DISINSECT",
+    "DECONTAM"
+   ]
+  },
+  "EnergySource": {
+   "listID": "urn:ubl-examples:world:codelist:EnergySourceCode",
+   "scope": "regional",
+   "name": "Energy source",
+   "location": "world/codelists/gc/EnergySourceCode.gc",
+   "codes": [
+    "DIESEL",
+    "ELECTRICITY",
+    "MGO",
+    "HFO",
+    "LNG",
+    "NATGAS",
+    "JETA1"
+   ]
+  },
+  "FuelType": {
+   "listID": "urn:ubl-examples:world:codelist:FuelTypeCode",
+   "scope": "regional",
+   "name": "Fuel type",
+   "location": "world/codelists/gc/FuelTypeCode.gc",
+   "codes": [
+    "DIESEL",
+    "MGO",
+    "HFO",
+    "LNG",
+    "JETA1"
+   ]
+  },
+  "TransitDirection": {
+   "listID": "urn:ubl-examples:world:codelist:TransitDirectionCode",
+   "scope": "regional",
+   "name": "Transit direction",
+   "location": "world/codelists/gc/TransitDirectionCode.gc",
+   "codes": [
+    "EXPORT",
+    "IMPORT",
+    "TRANSIT"
+   ]
+  },
+  "RiskResponsibleParty": {
+   "listID": "urn:ubl-examples:world:codelist:RiskResponsiblePartyCode",
+   "scope": "regional",
+   "name": "Party bearing the risk",
+   "location": "world/codelists/gc/RiskResponsiblePartyCode.gc",
+   "codes": [
+    "BUYER",
+    "SELLER",
+    "CARRIER"
+   ]
+  },
+  "UNModelRegsUN": {
+   "listID": "UN Model Regulations UN number",
+   "scope": "external",
+   "name": "UN Model Regulations dangerous goods list (UN numbers)",
+   "location": "world/codelists/gc/UNModelRegsUNCode.gc",
+   "codes": [
+    "3480",
+    "3481",
+    "3090",
+    "2911",
+    "2920",
+    "1202",
+    "1203",
+    "1950"
+   ]
+  },
+  "UNModelRegsClass": {
+   "listID": "UN Model Regulations hazard class",
+   "scope": "external",
+   "name": "UN Model Regulations hazard class and division",
+   "location": "world/codelists/gc/UNModelRegsClassCode.gc",
+   "codes": [
+    "1",
+    "2",
+    "2.1",
+    "2.2",
+    "2.3",
+    "3",
+    "4.1",
+    "4.2",
+    "4.3",
+    "5.1",
+    "5.2",
+    "6.1",
+    "6.2",
+    "7",
+    "8",
+    "9"
+   ]
+  },
+  "UNPackingGroup": {
+   "listID": "urn:ubl-examples:world:codelist:UNPackingGroupCode",
+   "scope": "regional",
+   "name": "Packing group",
+   "location": "world/codelists/gc/UNPackingGroupCode.gc",
+   "codes": [
+    "I",
+    "II",
+    "III",
+    "NA"
+   ]
+  },
+  "UNCL8339": {
+   "listID": "UN/EDIFACT EDED 8339",
+   "scope": "external",
+   "name": "UN/EDIFACT 8339 Packaging danger level",
+   "location": "world/codelists/gc/UNCL8339Code.gc",
+   "codes": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  "UNCL8273": {
+   "listID": "UN/EDIFACT EDED 8273",
+   "scope": "external",
+   "name": "UN/EDIFACT 8273 Dangerous goods regulations",
+   "location": "world/codelists/gc/UNCL8273Code.gc",
+   "codes": [
+    "ADR",
+    "ADS",
+    "ADT",
+    "ADU",
+    "ADV",
+    "ADW",
+    "ADX",
+    "ADY",
+    "ADZ",
+    "AEA",
+    "AEB",
+    "AGS",
+    "ANR",
+    "ARD",
+    "CFR",
+    "COM",
+    "GVE",
+    "GVS",
+    "ICA",
+    "IMD",
+    "RGE",
+    "RID",
+    "UI",
+    "ZZZ"
+   ]
+  },
+  "IMDGEmS": {
+   "listID": "IMO IMDG EmS",
+   "scope": "external",
+   "name": "IMO IMDG Code emergency schedules (EmS)",
+   "location": "world/codelists/gc/IMDGEmSCode.gc",
+   "codes": [
+    "F-A,S-I",
+    "F-E,S-C",
+    "F-I,S-S",
+    "F-A,S-A",
+    "F-E,S-E"
+   ]
+  },
+  "ERG2024": {
+   "listID": "ERG 2024",
+   "scope": "external",
+   "name": "Emergency Response Guidebook 2024, guide numbers",
+   "location": "world/codelists/gc/ERG2024Code.gc",
+   "codes": [
+    "128",
+    "132",
+    "147",
+    "153",
+    "161",
+    "171"
+   ]
+  },
+  "ADRTunnel": {
+   "listID": "UNECE ADR tunnel restriction code",
+   "scope": "external",
+   "name": "ADR tunnel restriction code",
+   "location": "world/codelists/gc/ADRTunnelCode.gc",
+   "codes": [
+    "B",
+    "B1000C",
+    "B/D",
+    "B/E",
+    "C",
+    "C/D",
+    "C/E",
+    "D",
+    "D/E",
+    "E"
+   ]
+  },
+  "MarinePollutant": {
+   "listID": "urn:ubl-examples:world:codelist:MarinePollutantCode",
+   "scope": "regional",
+   "name": "Marine pollutant",
+   "location": "world/codelists/gc/MarinePollutantCode.gc",
+   "codes": [
+    "P",
+    "N"
+   ]
+  },
+  "HazardousGoodsType": {
+   "listID": "urn:ubl-examples:world:codelist:HazardousGoodsTypeCode",
+   "scope": "regional",
+   "name": "Dangerous goods type",
+   "location": "world/codelists/gc/HazardousGoodsTypeCode.gc",
+   "codes": [
+    "ARTICLE",
+    "SUBSTANCE"
+   ]
+  },
+  "TransportEmergencyCard": {
+   "listID": "urn:ubl-examples:world:codelist:TransportEmergencyCardCode",
+   "scope": "regional",
+   "name": "Transport emergency card",
+   "location": "world/codelists/gc/TransportEmergencyCardCode.gc",
+   "codes": [
+    "TEC1",
+    "TEC2",
+    "TEC3",
+    "TEC4",
+    "TEC5",
+    "TEC6",
+    "TEC7",
+    "TEC8",
+    "TEC9",
+    "TECGEN"
+   ]
+  },
+  "TransportAuthorization": {
+   "listID": "urn:ubl-examples:world:codelist:TransportAuthorizationCode",
+   "scope": "regional",
+   "name": "Transport authorization",
+   "location": "world/codelists/gc/TransportAuthorizationCode.gc",
+   "codes": [
+    "CAO",
+    "PCA",
+    "ROADONLY"
+   ]
+  },
+  "PackingInstruction": {
+   "listID": "urn:ubl-examples:world:codelist:PackingInstructionCode",
+   "scope": "regional",
+   "name": "Air packing instruction",
+   "location": "world/codelists/gc/PackingInstructionCode.gc",
+   "codes": [
+    "PI965IA",
+    "PI965IB",
+    "PI966",
+    "PI967"
+   ]
+  },
+  "InhalationToxicityZone": {
+   "listID": "urn:ubl-examples:world:codelist:InhalationToxicityZoneCode",
+   "scope": "regional",
+   "name": "Inhalation toxicity zone",
+   "location": "world/codelists/gc/InhalationToxicityZoneCode.gc",
+   "codes": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "NOTTOXIC"
+   ]
+  },
+  "CustomsProcedure": {
+   "listID": "urn:ubl-examples:world:codelist:CustomsProcedureCode",
+   "scope": "regional",
+   "name": "Customs procedure",
+   "location": "world/codelists/gc/CustomsProcedureCode.gc",
+   "codes": [
+    "1000",
+    "1020",
+    "1040",
+    "1050",
+    "2000",
+    "3000",
+    "3520",
+    "3550",
+    "4000",
+    "5000"
+   ]
+  },
+  "CustomsStatus": {
+   "listID": "urn:ubl-examples:world:codelist:CustomsStatusCode",
+   "scope": "regional",
+   "name": "Customs status",
+   "location": "world/codelists/gc/CustomsStatusCode.gc",
+   "codes": [
+    "FOREIGN",
+    "FREE"
+   ]
+  },
+  "CustomsDeclarationType": {
+   "listID": "urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode",
+   "scope": "regional",
+   "name": "Customs declaration type",
+   "location": "world/codelists/gc/CustomsDeclarationTypeCode.gc",
+   "codes": [
+    "IMPORT",
+    "EXPORT",
+    "REEXPORT",
+    "TRANSIT",
+    "TEMPADMISSION"
+   ]
+  },
+  "CustomsDeclarationSubType": {
+   "listID": "urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode",
+   "scope": "regional",
+   "name": "Customs declaration subtype",
+   "location": "world/codelists/gc/CustomsDeclarationSubTypeCode.gc",
+   "codes": [
+    "FREECIRC",
+    "EXTTRANSIT",
+    "INTTRANSIT",
+    "SIMPLIFIED",
+    "SUPPLEMENTARY"
+   ]
+  },
+  "UNCL1225": {
+   "listID": "UN/EDIFACT EDED 1225",
+   "scope": "external",
+   "name": "UN/EDIFACT 1225 Message function",
+   "location": "world/codelists/gc/UNCL1225Code.gc",
+   "codes": [
+    "1",
+    "4",
+    "5",
+    "7",
+    "9",
+    "31"
+   ]
+  },
+  "ExportReason": {
+   "listID": "urn:ubl-examples:world:codelist:ExportReasonCode",
+   "scope": "regional",
+   "name": "Export reason",
+   "location": "world/codelists/gc/ExportReasonCode.gc",
+   "codes": [
+    "SALE",
+    "EXHIBITION",
+    "REPAIR",
+    "RETURN",
+    "GIFT"
+   ]
+  },
+  "ExportType": {
+   "listID": "urn:ubl-examples:world:codelist:ExportTypeCode",
+   "scope": "regional",
+   "name": "Export type",
+   "location": "world/codelists/gc/ExportTypeCode.gc",
+   "codes": [
+    "PERMANENT",
+    "TEMPORARY"
+   ]
+  },
+  "NatureOfTransaction": {
+   "listID": "urn:ubl-examples:world:codelist:NatureOfTransactionCode",
+   "scope": "regional",
+   "name": "Nature of transaction",
+   "location": "world/codelists/gc/NatureOfTransactionCode.gc",
+   "codes": [
+    "PURCHASE",
+    "RETURN",
+    "FREE",
+    "PROCESSING",
+    "LEASE"
+   ]
+  },
+  "CustomsLocationType": {
+   "listID": "urn:ubl-examples:world:codelist:CustomsLocationTypeCode",
+   "scope": "regional",
+   "name": "Customs location type",
+   "location": "world/codelists/gc/CustomsLocationTypeCode.gc",
+   "codes": [
+    "BONDEDSTORE",
+    "CUSTOMSOFFICE",
+    "BORDERPOST",
+    "FREEZONE"
+   ]
+  },
+  "PreferenceCriterion": {
+   "listID": "urn:ubl-examples:world:codelist:PreferenceCriterionCode",
+   "scope": "regional",
+   "name": "Preference criterion",
+   "location": "world/codelists/gc/PreferenceCriterionCode.gc",
+   "codes": [
+    "P",
+    "S",
+    "V"
+   ]
+  },
+  "ApplicationStatus": {
+   "listID": "urn:ubl-examples:world:codelist:ApplicationStatusCode",
+   "scope": "regional",
+   "name": "Application status",
+   "location": "world/codelists/gc/ApplicationStatusCode.gc",
+   "codes": [
+    "SUBMITTED",
+    "APPROVED",
+    "REJECTED",
+    "WITHDRAWN"
+   ]
+  },
+  "CertificateType": {
+   "listID": "urn:ubl-examples:world:codelist:CertificateTypeCode",
+   "scope": "regional",
+   "name": "Certificate type",
+   "location": "world/codelists/gc/CertificateTypeCode.gc",
+   "codes": [
+    "PERMIT",
+    "BONDEDSTORE",
+    "COTTONCLASS",
+    "SUSTFOREST",
+    "RECYCLED",
+    "ORIGIN",
+    "TEST"
+   ]
+  },
+  "GoodsCertificateType": {
+   "listID": "urn:ubl-examples:world:codelist:GoodsCertificateTypeCode",
+   "scope": "regional",
+   "name": "Goods certificate type",
+   "location": "world/codelists/gc/GoodsCertificateTypeCode.gc",
+   "codes": [
+    "PHYTO",
+    "VETERINARY",
+    "FUMIGATION",
+    "QUALITY"
+   ]
+  },
+  "AttestationType": {
+   "listID": "urn:ubl-examples:world:codelist:AttestationTypeCode",
+   "scope": "regional",
+   "name": "Attestation type",
+   "location": "world/codelists/gc/AttestationTypeCode.gc",
+   "codes": [
+    "PEST",
+    "TREATMENT",
+    "ORIGIN"
+   ]
+  },
+  "GoodsProcessingType": {
+   "listID": "urn:ubl-examples:world:codelist:GoodsProcessingTypeCode",
+   "scope": "regional",
+   "name": "Goods processing type",
+   "location": "world/codelists/gc/GoodsProcessingTypeCode.gc",
+   "codes": [
+    "GINNING",
+    "PRESSING",
+    "PROCESSING",
+    "SAWING",
+    "GALVANISING"
+   ]
+  },
+  "EndorserRole": {
+   "listID": "urn:ubl-examples:world:codelist:EndorserRoleCode",
+   "scope": "regional",
+   "name": "Endorser role",
+   "location": "world/codelists/gc/EndorserRoleCode.gc",
+   "codes": [
+    "ISSUER",
+    "CHAMBER",
+    "GUARANTOR",
+    "INSURER",
+    "LEGALISATION",
+    "CUSTOMS"
+   ]
+  },
+  "CardAccountRole": {
+   "listID": "urn:ubl-examples:world:codelist:CardAccountRoleCode",
+   "scope": "regional",
+   "name": "Card account role",
+   "location": "world/codelists/gc/CardAccountRoleCode.gc",
+   "codes": [
+    "HOLDER",
+    "ADDITIONAL",
+    "ACCOUNTHOLDER"
+   ]
+  },
+  "BaselAnnexIV": {
+   "listID": "Basel Convention Annex IV",
+   "scope": "external",
+   "name": "Basel Convention, Annex IV: disposal and recovery operations",
+   "location": "world/codelists/gc/BaselAnnexIVCode.gc",
+   "codes": [
+    "D1",
+    "D10",
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  "WasteOperationCategory": {
+   "listID": "urn:ubl-examples:world:codelist:WasteOperationCategoryCode",
+   "scope": "regional",
+   "name": "Waste operation category",
+   "location": "world/codelists/gc/WasteOperationCategoryCode.gc",
+   "codes": [
+    "RECOVERY",
+    "DISPOSAL"
+   ]
+  },
+  "WasteNotificationType": {
+   "listID": "urn:ubl-examples:world:codelist:WasteNotificationTypeCode",
+   "scope": "regional",
+   "name": "Waste notification type",
+   "location": "world/codelists/gc/WasteNotificationTypeCode.gc",
+   "codes": [
+    "RECOVERY",
+    "DISPOSAL",
+    "GENERAL"
+   ]
+  },
+  "ProcurementProcedure": {
+   "listID": "urn:ubl-examples:world:codelist:ProcurementProcedureCode",
+   "scope": "regional",
+   "name": "Procurement procedure",
+   "location": "world/codelists/gc/ProcurementProcedureCode.gc",
+   "codes": [
+    "OPEN",
+    "RESTRICTED",
+    "NEGOTIATED",
+    "NEGNOCALL",
+    "COMPDIALOGUE",
+    "INNOVATION",
+    "DESIGNCONTEST"
+   ]
+  },
+  "ContractNature": {
+   "listID": "urn:ubl-examples:world:codelist:ContractNatureCode",
+   "scope": "regional",
+   "name": "Contract nature",
+   "location": "world/codelists/gc/ContractNatureCode.gc",
+   "codes": [
+    "SUPPLIES",
+    "SERVICES",
+    "WORKS",
+    "COMBINED"
+   ]
+  },
+  "StrategicProcurement": {
+   "listID": "urn:ubl-examples:world:codelist:StrategicProcurementCode",
+   "scope": "regional",
+   "name": "Strategic procurement",
+   "location": "world/codelists/gc/StrategicProcurementCode.gc",
+   "codes": [
+    "GREEN",
+    "SOCIAL",
+    "INNOVATIVE"
+   ]
+  },
+  "ProcurementSubType": {
+   "listID": "urn:ubl-examples:world:codelist:ProcurementSubTypeCode",
+   "scope": "regional",
+   "name": "Procurement subtype",
+   "location": "world/codelists/gc/ProcurementSubTypeCode.gc",
+   "codes": [
+    "PURCHASE",
+    "LEASE",
+    "RENT",
+    "HIREPURCHASE",
+    "INSTALL"
+   ]
+  },
+  "WorkType": {
+   "listID": "urn:ubl-examples:world:codelist:WorkTypeCode",
+   "scope": "regional",
+   "name": "Work type",
+   "location": "world/codelists/gc/WorkTypeCode.gc",
+   "codes": [
+    "INSTALL",
+    "DELIVERY",
+    "REPAIR",
+    "MAINTENANCE"
+   ]
+  },
+  "QualityControl": {
+   "listID": "urn:ubl-examples:world:codelist:QualityControlCode",
+   "scope": "regional",
+   "name": "Quality control",
+   "location": "world/codelists/gc/QualityControlCode.gc",
+   "codes": [
+    "INSPECTION",
+    "SAMPLING",
+    "CERTIFICATE"
+   ]
+  },
+  "ContractingSystem": {
+   "listID": "urn:ubl-examples:world:codelist:ContractingSystemCode",
+   "scope": "regional",
+   "name": "Contracting system",
+   "location": "world/codelists/gc/ContractingSystemCode.gc",
+   "codes": [
+    "FRAMEWORK",
+    "FRAMEWORKRC",
+    "DPS",
+    "NONE"
+   ]
+  },
+  "ContractingSystemType": {
+   "listID": "urn:ubl-examples:world:codelist:ContractingSystemTypeCode",
+   "scope": "regional",
+   "name": "Contracting system type",
+   "location": "world/codelists/gc/ContractingSystemTypeCode.gc",
+   "codes": [
+    "FRAMEWORK",
+    "FRAMEWORKRC",
+    "DPS"
+   ]
+  },
+  "LotSubmission": {
+   "listID": "urn:ubl-examples:world:codelist:LotSubmissionCode",
+   "scope": "regional",
+   "name": "Lot submission",
+   "location": "world/codelists/gc/LotSubmissionCode.gc",
+   "codes": [
+    "ALL",
+    "ONEORMORE",
+    "ONE"
+   ]
+  },
+  "SubmissionMethod": {
+   "listID": "urn:ubl-examples:world:codelist:SubmissionMethodCode",
+   "scope": "regional",
+   "name": "Submission method",
+   "location": "world/codelists/gc/SubmissionMethodCode.gc",
+   "codes": [
+    "ELECTRONIC",
+    "PAPER"
+   ]
+  },
+  "Urgency": {
+   "listID": "urn:ubl-examples:world:codelist:UrgencyCode",
+   "scope": "regional",
+   "name": "Urgency",
+   "location": "world/codelists/gc/UrgencyCode.gc",
+   "codes": [
+    "NORMAL",
+    "ACCELERATED"
+   ]
+  },
+  "ExpenseType": {
+   "listID": "urn:ubl-examples:world:codelist:ExpenseTypeCode",
+   "scope": "regional",
+   "name": "Expense type",
+   "location": "world/codelists/gc/ExpenseTypeCode.gc",
+   "codes": [
+    "INVESTMENT",
+    "OPERATING"
+   ]
+  },
+  "ProcessReason": {
+   "listID": "urn:ubl-examples:world:codelist:ProcessReasonCode",
+   "scope": "regional",
+   "name": "Process reason",
+   "location": "world/codelists/gc/ProcessReasonCode.gc",
+   "codes": [
+    "STANDARD",
+    "BELOWTHRESHOLD",
+    "URGENCY"
+   ]
+  },
+  "CancellationReason": {
+   "listID": "urn:ubl-examples:world:codelist:CancellationReasonCode",
+   "scope": "regional",
+   "name": "Cancellation reason",
+   "location": "world/codelists/gc/CancellationReasonCode.gc",
+   "codes": [
+    "NOTENDERS",
+    "UNSUITABLE",
+    "BUDGET",
+    "CHANGEDNEEDS"
+   ]
+  },
+  "AwardCriterionType": {
+   "listID": "urn:ubl-examples:world:codelist:AwardCriterionTypeCode",
+   "scope": "regional",
+   "name": "Award criterion type",
+   "location": "world/codelists/gc/AwardCriterionTypeCode.gc",
+   "codes": [
+    "PRICE",
+    "COST",
+    "QUALITY"
+   ]
+  },
+  "AwardingMethod": {
+   "listID": "urn:ubl-examples:world:codelist:AwardingMethodCode",
+   "scope": "regional",
+   "name": "Awarding method",
+   "location": "world/codelists/gc/AwardingMethodCode.gc",
+   "codes": [
+    "BESTVALUE",
+    "LOWESTPRICE",
+    "LOWESTCOST"
+   ]
+  },
+  "CalculationExpression": {
+   "listID": "urn:ubl-examples:world:codelist:CalculationExpressionCode",
+   "scope": "regional",
+   "name": "Calculation expression",
+   "location": "world/codelists/gc/CalculationExpressionCode.gc",
+   "codes": [
+    "INVERSE",
+    "PROPORTIONAL",
+    "SCALE"
+   ]
+  },
+  "WeightingAlgorithm": {
+   "listID": "urn:ubl-examples:world:codelist:WeightingAlgorithmCode",
+   "scope": "regional",
+   "name": "Weighting algorithm",
+   "location": "world/codelists/gc/WeightingAlgorithmCode.gc",
+   "codes": [
+    "WSUM",
+    "ORDER"
+   ]
+  },
+  "EvaluationCriterionType": {
+   "listID": "urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode",
+   "scope": "regional",
+   "name": "Evaluation criterion type",
+   "location": "world/codelists/gc/EvaluationCriterionTypeCode.gc",
+   "codes": [
+    "TURNOVER",
+    "REFERENCES",
+    "STAFF",
+    "CERTIFICATION"
+   ]
+  },
+  "Expression": {
+   "listID": "urn:ubl-examples:world:codelist:ExpressionCode",
+   "scope": "regional",
+   "name": "Expression",
+   "location": "world/codelists/gc/ExpressionCode.gc",
+   "codes": [
+    "GT",
+    "GE",
+    "LT",
+    "LE",
+    "EQ"
+   ]
+  },
+  "TenderEnvelope": {
+   "listID": "urn:ubl-examples:world:codelist:TenderEnvelopeCode",
+   "scope": "regional",
+   "name": "Tender envelope",
+   "location": "world/codelists/gc/TenderEnvelopeCode.gc",
+   "codes": [
+    "COMBINED",
+    "TECHNICAL",
+    "FINANCIAL"
+   ]
+  },
+  "TenderType": {
+   "listID": "urn:ubl-examples:world:codelist:TenderTypeCode",
+   "scope": "regional",
+   "name": "Tender type",
+   "location": "world/codelists/gc/TenderTypeCode.gc",
+   "codes": [
+    "COMBINED",
+    "TECHNICAL",
+    "FINANCIAL",
+    "VARIANT"
+   ]
+  },
+  "TenderResult": {
+   "listID": "urn:ubl-examples:world:codelist:TenderResultCode",
+   "scope": "regional",
+   "name": "Tender result",
+   "location": "world/codelists/gc/TenderResultCode.gc",
+   "codes": [
+    "AWARDED",
+    "NOTAWARDED",
+    "OPEN"
+   ]
+  },
+  "GuaranteeType": {
+   "listID": "urn:ubl-examples:world:codelist:GuaranteeTypeCode",
+   "scope": "regional",
+   "name": "Financial guarantee type",
+   "location": "world/codelists/gc/GuaranteeTypeCode.gc",
+   "codes": [
+    "TENDER",
+    "PERFORMANCE",
+    "ADVANCE",
+    "WARRANTY"
+   ]
+  },
+  "GuaranteeConstitution": {
+   "listID": "urn:ubl-examples:world:codelist:GuaranteeConstitutionCode",
+   "scope": "regional",
+   "name": "Guarantee constitution",
+   "location": "world/codelists/gc/GuaranteeConstitutionCode.gc",
+   "codes": [
+    "BANKGUAR",
+    "CASH",
+    "SURETY"
+   ]
+  },
+  "FeeType": {
+   "listID": "urn:ubl-examples:world:codelist:FeeTypeCode",
+   "scope": "regional",
+   "name": "Fee type",
+   "location": "world/codelists/gc/FeeTypeCode.gc",
+   "codes": [
+    "COURIER",
+    "DOCUMENTS",
+    "PARTICIPATION"
+   ]
+  },
+  "NoticeType": {
+   "listID": "urn:ubl-examples:world:codelist:NoticeTypeCode",
+   "scope": "regional",
+   "name": "Notice type",
+   "location": "world/codelists/gc/NoticeTypeCode.gc",
+   "codes": [
+    "PIN",
+    "CN",
+    "CAN",
+    "BUSREG"
+   ]
+  },
+  "NoticeSubType": {
+   "listID": "urn:ubl-examples:world:codelist:NoticeSubTypeCode",
+   "scope": "regional",
+   "name": "Notice subtype",
+   "location": "world/codelists/gc/NoticeSubTypeCode.gc",
+   "codes": [
+    "EXTRACT",
+    "FULL",
+    "CORRECTION"
+   ]
+  },
+  "MultipleTenders": {
+   "listID": "urn:ubl-examples:world:codelist:MultipleTendersCode",
+   "scope": "regional",
+   "name": "Multiple tenders",
+   "location": "world/codelists/gc/MultipleTendersCode.gc",
+   "codes": [
+    "ALLOWED",
+    "NOTALLOWED"
+   ]
+  },
+  "VariantConstraint": {
+   "listID": "urn:ubl-examples:world:codelist:VariantConstraintCode",
+   "scope": "regional",
+   "name": "Variant constraint",
+   "location": "world/codelists/gc/VariantConstraintCode.gc",
+   "codes": [
+    "ALLOWED",
+    "NOTALLOWED",
+    "REQUIRED"
+   ]
+  },
+  "SubcontractingConditions": {
+   "listID": "urn:ubl-examples:world:codelist:SubcontractingConditionsCode",
+   "scope": "regional",
+   "name": "Subcontracting conditions",
+   "location": "world/codelists/gc/SubcontractingConditionsCode.gc",
+   "codes": [
+    "ALLOWED",
+    "NOTALLOWED",
+    "LIMITED"
+   ]
+  },
+  "CriterionResponse": {
+   "listID": "urn:ubl-examples:world:codelist:CriterionResponseCode",
+   "scope": "regional",
+   "name": "Criterion response",
+   "location": "world/codelists/gc/CriterionResponseCode.gc",
+   "codes": [
+    "MET",
+    "NOTMET",
+    "NOTAPPLICABLE"
+   ]
+  },
+  "CriterionPropertyType": {
+   "listID": "urn:ubl-examples:world:codelist:CriterionPropertyTypeCode",
+   "scope": "regional",
+   "name": "Criterion property type",
+   "location": "world/codelists/gc/CriterionPropertyTypeCode.gc",
+   "codes": [
+    "QUESTION",
+    "REQUIREMENT",
+    "CAPTION"
+   ]
+  },
+  "TenderEventType": {
+   "listID": "urn:ubl-examples:world:codelist:TenderEventTypeCode",
+   "scope": "regional",
+   "name": "Tender event type",
+   "location": "world/codelists/gc/TenderEventTypeCode.gc",
+   "codes": [
+    "OPENING",
+    "SITEVISIT",
+    "BRIEFING"
+   ]
+  },
+  "ResponseDataType": {
+   "listID": "urn:ubl-examples:world:codelist:ResponseDataTypeCode",
+   "scope": "regional",
+   "name": "Response data type",
+   "location": "world/codelists/gc/ResponseDataTypeCode.gc",
+   "codes": [
+    "AMOUNT",
+    "QUANTITY",
+    "INDICATOR",
+    "PERCENT",
+    "DATE",
+    "DESCRIPTION",
+    "CODE"
+   ]
+  },
+  "PropertyGroupType": {
+   "listID": "urn:ubl-examples:world:codelist:PropertyGroupTypeCode",
+   "scope": "regional",
+   "name": "Property group type",
+   "location": "world/codelists/gc/PropertyGroupTypeCode.gc",
+   "codes": [
+    "ON",
+    "ONTRUE",
+    "ONFALSE"
+   ]
+  },
+  "FulfilmentIndicator": {
+   "listID": "urn:ubl-examples:world:codelist:FulfilmentIndicatorCode",
+   "scope": "regional",
+   "name": "Fulfilment indicator",
+   "location": "world/codelists/gc/FulfilmentIndicatorCode.gc",
+   "codes": [
+    "ALL",
+    "ANY"
+   ]
+  },
+  "CriterionType": {
+   "listID": "urn:ubl-examples:world:codelist:CriterionTypeCode",
+   "scope": "regional",
+   "name": "Criterion type",
+   "location": "world/codelists/gc/CriterionTypeCode.gc",
+   "codes": [
+    "EXCLUSION",
+    "ECONOMIC",
+    "TECHNICAL",
+    "SUITABILITY"
+   ]
+  },
+  "EvaluationMethod": {
+   "listID": "urn:ubl-examples:world:codelist:EvaluationMethodCode",
+   "scope": "regional",
+   "name": "Evaluation method",
+   "location": "world/codelists/gc/EvaluationMethodCode.gc",
+   "codes": [
+    "PASSFAIL",
+    "WEIGHTED"
+   ]
+  },
+  "EvidenceType": {
+   "listID": "urn:ubl-examples:world:codelist:EvidenceTypeCode",
+   "scope": "regional",
+   "name": "Evidence type",
+   "location": "world/codelists/gc/EvidenceTypeCode.gc",
+   "codes": [
+    "AUDIT",
+    "ACCOUNTS",
+    "REFERENCE",
+    "CERTIFICATE"
+   ]
+  },
+  "ConfidentialityLevel": {
+   "listID": "urn:ubl-examples:world:codelist:ConfidentialityLevelCode",
+   "scope": "regional",
+   "name": "Confidentiality level",
+   "location": "world/codelists/gc/ConfidentialityLevelCode.gc",
+   "codes": [
+    "PUBLIC",
+    "CONFIDENTIAL",
+    "RESTRICTED"
+   ]
+  },
+  "CopyQuality": {
+   "listID": "urn:ubl-examples:world:codelist:CopyQualityCode",
+   "scope": "regional",
+   "name": "Copy quality",
+   "location": "world/codelists/gc/CopyQualityCode.gc",
+   "codes": [
+    "COPY",
+    "ORIGINAL",
+    "CERTIFIED"
+   ]
+  },
+  "ExpectedResponse": {
+   "listID": "urn:ubl-examples:world:codelist:ExpectedResponseCode",
+   "scope": "regional",
+   "name": "Expected response",
+   "location": "world/codelists/gc/ExpectedResponseCode.gc",
+   "codes": [
+    "REGISTERED",
+    "CERTIFIED"
+   ]
+  },
+  "TranslationType": {
+   "listID": "urn:ubl-examples:world:codelist:TranslationTypeCode",
+   "scope": "regional",
+   "name": "Translation type",
+   "location": "world/codelists/gc/TranslationTypeCode.gc",
+   "codes": [
+    "NONE",
+    "SIMPLE",
+    "CERTIFIED"
+   ]
+  },
+  "WeightingType": {
+   "listID": "urn:ubl-examples:world:codelist:WeightingTypeCode",
+   "scope": "regional",
+   "name": "Weighting type",
+   "location": "world/codelists/gc/WeightingTypeCode.gc",
+   "codes": [
+    "NONE",
+    "WEIGHTED"
+   ]
+  },
+  "QualificationApplicationType": {
+   "listID": "urn:ubl-examples:world:codelist:QualificationApplicationTypeCode",
+   "scope": "regional",
+   "name": "Qualification application type",
+   "location": "world/codelists/gc/QualificationApplicationTypeCode.gc",
+   "codes": [
+    "REGULATED",
+    "SELFCONTAINED"
+   ]
+  },
+  "QualificationAdmission": {
+   "listID": "urn:ubl-examples:world:codelist:QualificationAdmissionCode",
+   "scope": "regional",
+   "name": "Qualification admission",
+   "location": "world/codelists/gc/QualificationAdmissionCode.gc",
+   "codes": [
+    "ADMITTED",
+    "REJECTED"
+   ]
+  },
+  "DeclarationType": {
+   "listID": "urn:ubl-examples:world:codelist:DeclarationTypeCode",
+   "scope": "regional",
+   "name": "Declaration type",
+   "location": "world/codelists/gc/DeclarationTypeCode.gc",
+   "codes": [
+    "INTEGRITY",
+    "CONFLICT"
+   ]
+  },
+  "ContractingPartyType": {
+   "listID": "urn:ubl-examples:world:codelist:ContractingPartyTypeCode",
+   "scope": "regional",
+   "name": "Contracting party type",
+   "location": "world/codelists/gc/ContractingPartyTypeCode.gc",
+   "codes": [
+    "NATIONAL",
+    "REGIONAL",
+    "LOCAL",
+    "PUBLICBODY"
+   ]
+  },
+  "AuthorityActivity": {
+   "listID": "urn:ubl-examples:world:codelist:AuthorityActivityCode",
+   "scope": "regional",
+   "name": "Authority activity",
+   "location": "world/codelists/gc/AuthorityActivityCode.gc",
+   "codes": [
+    "GENPUB",
+    "COMMUNITY",
+    "ENV",
+    "EDUCATION",
+    "HEALTH"
+   ]
+  },
+  "RepresentationType": {
+   "listID": "urn:ubl-examples:world:codelist:RepresentationTypeCode",
+   "scope": "regional",
+   "name": "Representation type",
+   "location": "world/codelists/gc/RepresentationTypeCode.gc",
+   "codes": [
+    "OWN",
+    "BEHALF"
+   ]
+  },
+  "Curricula": {
+   "listID": "urn:ubl-examples:world:codelist:CurriculaCode",
+   "scope": "regional",
+   "name": "Curricula",
+   "location": "world/codelists/gc/CurriculaCode.gc",
+   "codes": [
+    "INSTALLERS",
+    "ENGINEERS",
+    "SAFETY"
+   ]
+  },
+  "PriceEvaluation": {
+   "listID": "urn:ubl-examples:world:codelist:PriceEvaluationCode",
+   "scope": "regional",
+   "name": "Price evaluation",
+   "location": "world/codelists/gc/PriceEvaluationCode.gc",
+   "codes": [
+    "UNITPRICE",
+    "TOTALPRICE"
+   ]
+  },
+  "PaymentFrequency": {
+   "listID": "urn:ubl-examples:world:codelist:PaymentFrequencyCode",
+   "scope": "regional",
+   "name": "Payment frequency",
+   "location": "world/codelists/gc/PaymentFrequencyCode.gc",
+   "codes": [
+    "PERRELEASE",
+    "MONTHLY",
+    "ONCOMPLETION"
+   ]
+  },
+  "AnnotationSubject": {
+   "listID": "urn:ubl-examples:world:codelist:AnnotationSubjectCode",
+   "scope": "regional",
+   "name": "Annotation subject",
+   "location": "world/codelists/gc/AnnotationSubjectCode.gc",
+   "codes": [
+    "CONTRACT",
+    "LOT",
+    "PROCEDURE"
+   ]
+  },
+  "ExecutionRequirement": {
+   "listID": "urn:ubl-examples:world:codelist:ExecutionRequirementCode",
+   "scope": "regional",
+   "name": "Execution requirement",
+   "location": "world/codelists/gc/ExecutionRequirementCode.gc",
+   "codes": [
+    "ENVIRONMENTAL",
+    "SOCIAL",
+    "INNOVATION"
+   ]
+  },
+  "TendererRequirementType": {
+   "listID": "urn:ubl-examples:world:codelist:TendererRequirementTypeCode",
+   "scope": "regional",
+   "name": "Tenderer requirement type",
+   "location": "world/codelists/gc/TendererRequirementTypeCode.gc",
+   "codes": [
+    "ENVIRONMENTAL",
+    "SOCIAL",
+    "SHELTERED"
+   ]
+  },
+  "BusinessPartyGroupType": {
+   "listID": "urn:ubl-examples:world:codelist:BusinessPartyGroupTypeCode",
+   "scope": "regional",
+   "name": "Business party group type",
+   "location": "world/codelists/gc/BusinessPartyGroupTypeCode.gc",
+   "codes": [
+    "SAMEACTIVITY",
+    "SAMEGROUP"
+   ]
+  },
+  "BusinessCapabilityType": {
+   "listID": "urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode",
+   "scope": "regional",
+   "name": "Business capability type",
+   "location": "world/codelists/gc/BusinessCapabilityTypeCode.gc",
+   "codes": [
+    "PRODUCTION",
+    "WAREHOUSING",
+    "INSTALLATION",
+    "TRANSPORT"
+   ]
+  },
+  "EconomicOperatorRole": {
+   "listID": "urn:ubl-examples:world:codelist:EconomicOperatorRoleCode",
+   "scope": "regional",
+   "name": "Economic operator role",
+   "location": "world/codelists/gc/EconomicOperatorRoleCode.gc",
+   "codes": [
+    "LEAD",
+    "MEMBER",
+    "SOLE",
+    "SUBCONTRACTOR"
+   ]
+  },
+  "TendererRole": {
+   "listID": "urn:ubl-examples:world:codelist:TendererRoleCode",
+   "scope": "regional",
+   "name": "Tenderer role",
+   "location": "world/codelists/gc/TendererRoleCode.gc",
+   "codes": [
+    "LEAD",
+    "MEMBER",
+    "SOLE",
+    "SUBCONTRACTOR"
+   ]
+  },
+  "SecurityClearance": {
+   "listID": "urn:ubl-examples:world:codelist:SecurityClearanceCode",
+   "scope": "regional",
+   "name": "Security clearance",
+   "location": "world/codelists/gc/SecurityClearanceCode.gc",
+   "codes": [
+    "NOTREQUIRED",
+    "BASIC",
+    "SECRET"
+   ]
+  },
+  "OperationType": {
+   "listID": "urn:ubl-examples:world:codelist:OperationTypeCode",
+   "scope": "regional",
+   "name": "Operation type",
+   "location": "world/codelists/gc/OperationTypeCode.gc",
+   "codes": [
+    "MANUFACTURE",
+    "ASSEMBLY",
+    "TRADE",
+    "INSTALLATION"
+   ]
+  },
+  "WorkPhase": {
+   "listID": "urn:ubl-examples:world:codelist:WorkPhaseCode",
+   "scope": "regional",
+   "name": "Work phase",
+   "location": "world/codelists/gc/WorkPhaseCode.gc",
+   "codes": [
+    "SUPPLY",
+    "FURNISH",
+    "INSTALL"
+   ]
+  },
+  "PrizeRank": {
+   "listID": "urn:ubl-examples:world:codelist:PrizeRankCode",
+   "scope": "regional",
+   "name": "Prize rank",
+   "location": "world/codelists/gc/PrizeRankCode.gc",
+   "codes": [
+    "FIRST",
+    "SECOND",
+    "THIRD",
+    "MENTION"
+   ]
+  },
+  "CatalogueAction": {
+   "listID": "urn:ubl-examples:world:codelist:CatalogueActionCode",
+   "scope": "regional",
+   "name": "Catalogue action",
+   "location": "world/codelists/gc/CatalogueActionCode.gc",
+   "codes": [
+    "NEW",
+    "REPLACE",
+    "UPDATE"
+   ]
+  },
+  "CatalogueLineAction": {
+   "listID": "urn:ubl-examples:world:codelist:CatalogueLineActionCode",
+   "scope": "regional",
+   "name": "Catalogue line action",
+   "location": "world/codelists/gc/CatalogueLineActionCode.gc",
+   "codes": [
+    "ADD",
+    "UPDATE",
+    "DELETE"
+   ]
+  },
+  "ConditionsAction": {
+   "listID": "urn:ubl-examples:world:codelist:ConditionsActionCode",
+   "scope": "regional",
+   "name": "Conditions action",
+   "location": "world/codelists/gc/ConditionsActionCode.gc",
+   "codes": [
+    "PROPOSED",
+    "ACCEPTED",
+    "AMENDED",
+    "REJECTED"
+   ]
+  },
+  "ItemLifeCycleStatus": {
+   "listID": "urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode",
+   "scope": "regional",
+   "name": "Item life cycle status",
+   "location": "world/codelists/gc/ItemLifeCycleStatusCode.gc",
+   "codes": [
+    "NEW",
+    "ACTIVE",
+    "PHASEOUT",
+    "DISCONTINUED"
+   ]
+  },
+  "ItemType": {
+   "listID": "urn:ubl-examples:world:codelist:ItemTypeCode",
+   "scope": "regional",
+   "name": "Item type",
+   "location": "world/codelists/gc/ItemTypeCode.gc",
+   "codes": [
+    "PRODUCT",
+    "SERVICE",
+    "KIT"
+   ]
+  },
+  "ItemPartPosition": {
+   "listID": "urn:ubl-examples:world:codelist:ItemPartPositionCode",
+   "scope": "regional",
+   "name": "Item part position",
+   "location": "world/codelists/gc/ItemPartPositionCode.gc",
+   "codes": [
+    "FRM",
+    "SEAT",
+    "BACK",
+    "SLAT"
+   ]
+  },
+  "ItemPropertyName": {
+   "listID": "urn:ubl-examples:world:codelist:ItemPropertyNameCode",
+   "scope": "regional",
+   "name": "Item property name",
+   "location": "world/codelists/gc/ItemPropertyNameCode.gc",
+   "codes": [
+    "LOAD",
+    "MC",
+    "ACC",
+    "DIM",
+    "FIN"
+   ]
+  },
+  "PropertyImportance": {
+   "listID": "urn:ubl-examples:world:codelist:PropertyImportanceCode",
+   "scope": "regional",
+   "name": "Property importance",
+   "location": "world/codelists/gc/PropertyImportanceCode.gc",
+   "codes": [
+    "MANDATORY",
+    "OPTIONAL"
+   ]
+  },
+  "PriceType": {
+   "listID": "urn:ubl-examples:world:codelist:PriceTypeCode",
+   "scope": "regional",
+   "name": "Price type",
+   "location": "world/codelists/gc/PriceTypeCode.gc",
+   "codes": [
+    "TRD",
+    "RRP",
+    "CAT",
+    "CON",
+    "PRO"
+   ]
+  },
+  "PackLevel": {
+   "listID": "urn:ubl-examples:world:codelist:PackLevelCode",
+   "scope": "regional",
+   "name": "Pack level",
+   "location": "world/codelists/gc/PackLevelCode.gc",
+   "codes": [
+    "UNIT",
+    "CASE",
+    "PALLET"
+   ]
+  },
+  "ConsumerIncentiveTactic": {
+   "listID": "urn:ubl-examples:world:codelist:ConsumerIncentiveTacticCode",
+   "scope": "regional",
+   "name": "Consumer incentive tactic",
+   "location": "world/codelists/gc/ConsumerIncentiveTacticCode.gc",
+   "codes": [
+    "TPR",
+    "COUPON",
+    "MULTIBUY"
+   ]
+  },
+  "DisplayTactic": {
+   "listID": "urn:ubl-examples:world:codelist:DisplayTacticCode",
+   "scope": "regional",
+   "name": "Display tactic",
+   "location": "world/codelists/gc/DisplayTacticCode.gc",
+   "codes": [
+    "ENDCAP",
+    "FLOORSTAND",
+    "WINDOW"
+   ]
+  },
+  "FeatureTactic": {
+   "listID": "urn:ubl-examples:world:codelist:FeatureTacticCode",
+   "scope": "regional",
+   "name": "Feature tactic",
+   "location": "world/codelists/gc/FeatureTacticCode.gc",
+   "codes": [
+    "FLYER",
+    "NEWSPAPER",
+    "ONLINE"
+   ]
+  },
+  "MiscellaneousEventType": {
+   "listID": "urn:ubl-examples:world:codelist:MiscellaneousEventTypeCode",
+   "scope": "regional",
+   "name": "Miscellaneous retail event",
+   "location": "world/codelists/gc/MiscellaneousEventTypeCode.gc",
+   "codes": [
+    "STOREOPEN",
+    "REFIT",
+    "CLOSURE"
+   ]
+  },
+  "PromotionalEventType": {
+   "listID": "urn:ubl-examples:world:codelist:PromotionalEventTypeCode",
+   "scope": "regional",
+   "name": "Promotional event type",
+   "location": "world/codelists/gc/PromotionalEventTypeCode.gc",
+   "codes": [
+    "TPR",
+    "SEASONAL",
+    "LAUNCH"
+   ]
+  },
+  "PackingLabelingType": {
+   "listID": "urn:ubl-examples:world:codelist:PackingLabelingTypeCode",
+   "scope": "regional",
+   "name": "Packing and labelling type",
+   "location": "world/codelists/gc/PackingLabelingTypeCode.gc",
+   "codes": [
+    "STICKER",
+    "BUNDLE",
+    "DISPLAY"
+   ]
+  },
+  "RetailEventStatus": {
+   "listID": "urn:ubl-examples:world:codelist:RetailEventStatusCode",
+   "scope": "regional",
+   "name": "Retail event status",
+   "location": "world/codelists/gc/RetailEventStatusCode.gc",
+   "codes": [
+    "PLANNED",
+    "CONFIRMED",
+    "CANCELLED"
+   ]
+  },
+  "ForecastPurpose": {
+   "listID": "urn:ubl-examples:world:codelist:ForecastPurposeCode",
+   "scope": "regional",
+   "name": "Forecast purpose",
+   "location": "world/codelists/gc/ForecastPurposeCode.gc",
+   "codes": [
+    "SALES",
+    "ORDER"
+   ]
+  },
+  "ForecastType": {
+   "listID": "urn:ubl-examples:world:codelist:ForecastTypeCode",
+   "scope": "regional",
+   "name": "Forecast type",
+   "location": "world/codelists/gc/ForecastTypeCode.gc",
+   "codes": [
+    "TOTAL",
+    "BASE",
+    "PROMOTIONAL"
+   ]
+  },
+  "ComparisonData": {
+   "listID": "urn:ubl-examples:world:codelist:ComparisonDataCode",
+   "scope": "regional",
+   "name": "Comparison data",
+   "location": "world/codelists/gc/ComparisonDataCode.gc",
+   "codes": [
+    "ACTUAL",
+    "FORECAST"
+   ]
+  },
+  "DataSource": {
+   "listID": "urn:ubl-examples:world:codelist:DataSourceCode",
+   "scope": "regional",
+   "name": "Data source",
+   "location": "world/codelists/gc/DataSourceCode.gc",
+   "codes": [
+    "BUYER",
+    "SELLER"
+   ]
+  },
+  "PerformanceMetric": {
+   "listID": "urn:ubl-examples:world:codelist:PerformanceMetricCode",
+   "scope": "regional",
+   "name": "Performance metric",
+   "location": "world/codelists/gc/PerformanceMetricCode.gc",
+   "codes": [
+    "SALESUNITS",
+    "SALESVALUE",
+    "SERVICELEVEL"
+   ]
+  },
+  "SupplyChainActivity": {
+   "listID": "urn:ubl-examples:world:codelist:SupplyChainActivityCode",
+   "scope": "regional",
+   "name": "Supply chain activity",
+   "location": "world/codelists/gc/SupplyChainActivityCode.gc",
+   "codes": [
+    "SALES",
+    "ORDERS",
+    "SHIPMENTS",
+    "RECEIPTS",
+    "INVENTORY"
+   ]
+  },
+  "TimeFrequency": {
+   "listID": "urn:ubl-examples:world:codelist:TimeFrequencyCode",
+   "scope": "regional",
+   "name": "Time frequency",
+   "location": "world/codelists/gc/TimeFrequencyCode.gc",
+   "codes": [
+    "DAILY",
+    "WEEKLY",
+    "MONTHLY"
+   ]
+  },
+  "ExceptionResolution": {
+   "listID": "urn:ubl-examples:world:codelist:ExceptionResolutionCode",
+   "scope": "regional",
+   "name": "Exception resolution",
+   "location": "world/codelists/gc/ExceptionResolutionCode.gc",
+   "codes": [
+    "REVIEW",
+    "ADJUST"
+   ]
+  },
+  "Resolution": {
+   "listID": "urn:ubl-examples:world:codelist:ResolutionCode",
+   "scope": "regional",
+   "name": "Resolution",
+   "location": "world/codelists/gc/ResolutionCode.gc",
+   "codes": [
+    "REVIEW",
+    "ADJUST",
+    "ACCEPT"
+   ]
+  },
+  "ExceptionStatus": {
+   "listID": "urn:ubl-examples:world:codelist:ExceptionStatusCode",
+   "scope": "regional",
+   "name": "Exception status",
+   "location": "world/codelists/gc/ExceptionStatusCode.gc",
+   "codes": [
+    "ACTIVE",
+    "OPEN",
+    "CLOSED"
+   ]
+  },
+  "CollaborationPriority": {
+   "listID": "urn:ubl-examples:world:codelist:CollaborationPriorityCode",
+   "scope": "regional",
+   "name": "Collaboration priority",
+   "location": "world/codelists/gc/CollaborationPriorityCode.gc",
+   "codes": [
+    "HIGH",
+    "MEDIUM",
+    "LOW"
+   ]
+  },
+  "ThresholdValueComparison": {
+   "listID": "urn:ubl-examples:world:codelist:ThresholdValueComparisonCode",
+   "scope": "regional",
+   "name": "Threshold value comparison",
+   "location": "world/codelists/gc/ThresholdValueComparisonCode.gc",
+   "codes": [
+    "GT",
+    "LT",
+    "GE",
+    "LE"
+   ]
+  },
+  "ForecastAdjustmentReason": {
+   "listID": "urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode",
+   "scope": "regional",
+   "name": "Forecast adjustment reason",
+   "location": "world/codelists/gc/ForecastAdjustmentReasonCode.gc",
+   "codes": [
+    "DEMAND",
+    "PROMOTION",
+    "SUPPLY"
+   ]
+  },
+  "RevisionStatus": {
+   "listID": "urn:ubl-examples:world:codelist:RevisionStatusCode",
+   "scope": "regional",
+   "name": "Revision status",
+   "location": "world/codelists/gc/RevisionStatusCode.gc",
+   "codes": [
+    "ORIGINAL",
+    "REVISED"
+   ]
+  },
+  "AvailabilityStatus": {
+   "listID": "urn:ubl-examples:world:codelist:AvailabilityStatusCode",
+   "scope": "regional",
+   "name": "Availability status",
+   "location": "world/codelists/gc/AvailabilityStatusCode.gc",
+   "codes": [
+    "AVAILABLE",
+    "RESERVED",
+    "BLOCKED"
+   ]
+  },
+  "InspectionMethod": {
+   "listID": "urn:ubl-examples:world:codelist:InspectionMethodCode",
+   "scope": "regional",
+   "name": "Inspection method",
+   "location": "world/codelists/gc/InspectionMethodCode.gc",
+   "codes": [
+    "VISUAL",
+    "COUNT",
+    "SAMPLE"
+   ]
+  },
+  "DeliveryAcceptance": {
+   "listID": "urn:ubl-examples:world:codelist:DeliveryAcceptanceCode",
+   "scope": "regional",
+   "name": "Delivery acceptance",
+   "location": "world/codelists/gc/DeliveryAcceptanceCode.gc",
+   "codes": [
+    "ACCEPTED",
+    "PARTIAL",
+    "REFUSED"
+   ]
+  },
+  "RejectAction": {
+   "listID": "urn:ubl-examples:world:codelist:RejectActionCode",
+   "scope": "regional",
+   "name": "Reject action",
+   "location": "world/codelists/gc/RejectActionCode.gc",
+   "codes": [
+    "CREDIT",
+    "REPLACE",
+    "RETURN"
+   ]
+  },
+  "ShortageAction": {
+   "listID": "urn:ubl-examples:world:codelist:ShortageActionCode",
+   "scope": "regional",
+   "name": "Shortage action",
+   "location": "world/codelists/gc/ShortageActionCode.gc",
+   "codes": [
+    "REPLACE",
+    "CREDIT",
+    "CANCEL"
+   ]
+  },
+  "QuantityDiscrepancy": {
+   "listID": "urn:ubl-examples:world:codelist:QuantityDiscrepancyCode",
+   "scope": "regional",
+   "name": "Quantity discrepancy",
+   "location": "world/codelists/gc/QuantityDiscrepancyCode.gc",
+   "codes": [
+    "DAMAGED",
+    "SHORT",
+    "OVER",
+    "WRONG"
+   ]
+  },
+  "RejectReason": {
+   "listID": "urn:ubl-examples:world:codelist:RejectReasonCode",
+   "scope": "regional",
+   "name": "Reject reason",
+   "location": "world/codelists/gc/RejectReasonCode.gc",
+   "codes": [
+    "DAMAGED",
+    "WRONG",
+    "QUALITY",
+    "LATE"
+   ]
+  },
+  "TimingComplaint": {
+   "listID": "urn:ubl-examples:world:codelist:TimingComplaintCode",
+   "scope": "regional",
+   "name": "Timing complaint",
+   "location": "world/codelists/gc/TimingComplaintCode.gc",
+   "codes": [
+    "LATE",
+    "EARLY"
+   ]
+  },
+  "DespatchAdviceType": {
+   "listID": "urn:ubl-examples:world:codelist:DespatchAdviceTypeCode",
+   "scope": "regional",
+   "name": "Despatch advice type",
+   "location": "world/codelists/gc/DespatchAdviceTypeCode.gc",
+   "codes": [
+    "DELIVERY",
+    "PARTIAL",
+    "COMPLETE",
+    "RETURN",
+    "CROSSDOCK"
+   ]
+  },
+  "DistributionType": {
+   "listID": "urn:ubl-examples:world:codelist:DistributionTypeCode",
+   "scope": "regional",
+   "name": "Distribution type",
+   "location": "world/codelists/gc/DistributionTypeCode.gc",
+   "codes": [
+    "ELECTRONIC",
+    "PAPER",
+    "PORTAL"
+   ]
+  },
+  "DocumentCopyType": {
+   "listID": "urn:ubl-examples:world:codelist:DocumentCopyTypeCode",
+   "scope": "regional",
+   "name": "Document copy type",
+   "location": "world/codelists/gc/DocumentCopyTypeCode.gc",
+   "codes": [
+    "ORIGINAL",
+    "COPY",
+    "DUPLICATE"
+   ]
+  },
+  "DocumentType": {
+   "listID": "urn:ubl-examples:world:codelist:DocumentTypeCode",
+   "scope": "regional",
+   "name": "Document type",
+   "location": "world/codelists/gc/DocumentTypeCode.gc",
+   "codes": [
+    "TARIFF",
+    "RETURNNOTICE",
+    "PRICELIST",
+    "DAMAGEREPORT"
+   ]
+  },
+  "UBLDocumentType": {
+   "listID": "urn:ubl-examples:world:codelist:UBLDocumentTypeCode",
+   "scope": "regional",
+   "name": "UBL document type",
+   "location": "world/codelists/gc/UBLDocumentTypeCode.gc",
+   "codes": [
+    "ApplicationResponse",
+    "AttachedDocument",
+    "AwardedNotification",
+    "BillOfLading",
+    "BusinessCard",
+    "BusinessInformation",
+    "CallForTenders",
+    "Catalogue",
+    "CatalogueDeletion",
+    "CatalogueItemSpecificationUpdate",
+    "CataloguePricingUpdate",
+    "CatalogueRequest",
+    "CertificateOfOrigin",
+    "CommonTransportationReport",
+    "ContractAwardNotice",
+    "ContractNotice",
+    "CreditNote",
+    "DebitNote",
+    "DeliveryNote",
+    "DespatchAdvice",
+    "DigitalAgreement",
+    "DigitalCapability",
+    "DocumentStatus",
+    "DocumentStatusRequest",
+    "Enquiry",
+    "EnquiryResponse",
+    "ExceptionCriteria",
+    "ExceptionNotification",
+    "ExportCustomsDeclaration",
+    "ExpressionOfInterestRequest",
+    "ExpressionOfInterestResponse",
+    "Forecast",
+    "ForecastRevision",
+    "ForwardingInstructions",
+    "FreightInvoice",
+    "FulfilmentCancellation",
+    "GoodsCertificate",
+    "GoodsItemItinerary",
+    "GoodsItemPassport",
+    "GuaranteeCertificate",
+    "ImportCustomsDeclaration",
+    "InstructionForReturns",
+    "InventoryReport",
+    "Invoice",
+    "InvoiceStatusRequest",
+    "InvoiceStatusResponse",
+    "ItemInformationRequest",
+    "Manifest",
+    "Order",
+    "OrderCancellation",
+    "OrderChange",
+    "OrderResponse",
+    "OrderResponseSimple",
+    "PackingList",
+    "PriorInformationNotice",
+    "ProcurementStatus",
+    "ProcurementStatusRequest",
+    "ProductActivity",
+    "ProofOfReexportation",
+    "ProofOfReexportationReminder",
+    "ProofOfReexportationRequest",
+    "PurchaseReceipt",
+    "QualificationApplicationRequest",
+    "QualificationApplicationResponse",
+    "Quotation",
+    "ReceiptAdvice",
+    "Reminder",
+    "RemittanceAdvice",
+    "RequestForQuotation",
+    "RetailEvent",
+    "SelfBilledCreditNote",
+    "SelfBilledInvoice",
+    "Statement",
+    "StockAvailabilityReport",
+    "Tender",
+    "TenderContract",
+    "TenderReceipt",
+    "TenderStatus",
+    "TenderStatusRequest",
+    "TenderWithdrawal",
+    "TendererQualification",
+    "TendererQualificationResponse",
+    "TradeItemLocationProfile",
+    "TransitCustomsDeclaration",
+    "TransportExecutionPlan",
+    "TransportExecutionPlanRequest",
+    "TransportProgressStatus",
+    "TransportProgressStatusRequest",
+    "TransportServiceDescription",
+    "TransportServiceDescriptionRequest",
+    "TransportationStatus",
+    "TransportationStatusRequest",
+    "UnawardedNotification",
+    "UnsubscribeFromProcedureRequest",
+    "UnsubscribeFromProcedureResponse",
+    "UtilityStatement",
+    "WasteMovement",
+    "WasteNotification",
+    "Waybill",
+    "WeightStatement",
+    "WorkReport"
+   ]
+  },
+  "IANACharset": {
+   "listID": "IANA Character Sets",
+   "scope": "external",
+   "name": "IANA Character Sets",
+   "location": "world/codelists/gc/IANACharsetCode.gc",
+   "codes": [
+    "UTF-8",
+    "UTF-16",
+    "US-ASCII",
+    "ISO-8859-1"
+   ]
+  },
+  "RFC2045": {
+   "listID": "RFC 2045 Content-Transfer-Encoding",
+   "scope": "external",
+   "name": "RFC 2045 Content-Transfer-Encoding",
+   "location": "world/codelists/gc/RFC2045Code.gc",
+   "codes": [
+    "7bit",
+    "8bit",
+    "binary",
+    "quoted-printable",
+    "base64"
+   ]
+  },
+  "PRONOM": {
+   "listID": "PRONOM",
+   "scope": "external",
+   "name": "PRONOM file format registry (PUIDs)",
+   "location": "world/codelists/gc/PRONOMCode.gc",
+   "codes": [
+    "fmt/479",
+    "fmt/480",
+    "fmt/481"
+   ]
+  },
+  "EnvelopeType": {
+   "listID": "urn:ubl-examples:world:codelist:EnvelopeTypeCode",
+   "scope": "regional",
+   "name": "Envelope type",
+   "location": "world/codelists/gc/EnvelopeTypeCode.gc",
+   "codes": [
+    "SBDH",
+    "AS4"
+   ]
+  },
+  "AgreementType": {
+   "listID": "urn:ubl-examples:world:codelist:AgreementTypeCode",
+   "scope": "regional",
+   "name": "Agreement type",
+   "location": "world/codelists/gc/AgreementTypeCode.gc",
+   "codes": [
+    "BILATERAL",
+    "MULTILATERAL",
+    "COMMUNITY"
+   ]
+  },
+  "ResponseMessageLevel": {
+   "listID": "urn:ubl-examples:world:codelist:ResponseMessageLevelCode",
+   "scope": "regional",
+   "name": "Response message level",
+   "location": "world/codelists/gc/ResponseMessageLevelCode.gc",
+   "codes": [
+    "TRANSPORT",
+    "MESSAGE",
+    "BUSINESS"
+   ]
+  },
+  "WebSiteType": {
+   "listID": "urn:ubl-examples:world:codelist:WebSiteTypeCode",
+   "scope": "regional",
+   "name": "Web site type",
+   "location": "world/codelists/gc/WebSiteTypeCode.gc",
+   "codes": [
+    "COMPANY",
+    "EXTRANET",
+    "SHOP"
+   ]
+  },
+  "SocialMediaType": {
+   "listID": "urn:ubl-examples:world:codelist:SocialMediaTypeCode",
+   "scope": "regional",
+   "name": "Social media type",
+   "location": "world/codelists/gc/SocialMediaTypeCode.gc",
+   "codes": [
+    "PHOTO",
+    "VIDEO",
+    "MICROBLOG",
+    "PROFESSIONAL"
+   ]
+  },
+  "ServiceType": {
+   "listID": "urn:ubl-examples:world:codelist:ServiceTypeCode",
+   "scope": "regional",
+   "name": "Service type",
+   "location": "world/codelists/gc/ServiceTypeCode.gc",
+   "codes": [
+    "LOGISTICS",
+    "MESSAGING",
+    "ACCOUNTING",
+    "PAYROLL"
+   ]
+  },
+  "SignatureReason": {
+   "listID": "urn:ubl-examples:world:codelist:SignatureReasonCode",
+   "scope": "regional",
+   "name": "Signature reason",
+   "location": "world/codelists/gc/SignatureReasonCode.gc",
+   "codes": [
+    "APPROVAL",
+    "AUTHORSHIP",
+    "RECEIPT",
+    "WITNESS"
+   ]
+  },
+  "UNCL4343": {
+   "listID": "UN/EDIFACT EDED 4343",
+   "scope": "external",
+   "name": "UN/EDIFACT 4343 Response type",
+   "location": "world/codelists/gc/UNCL4343Code.gc",
+   "codes": [
+    "AP",
+    "CA",
+    "RE",
+    "AB"
+   ]
+  },
+  "UNCL4465": {
+   "listID": "UN/EDIFACT EDED 4465",
+   "scope": "external",
+   "name": "UN/EDIFACT 4465 Adjustment reason description",
+   "location": "world/codelists/gc/UNCL4465Code.gc",
+   "codes": [
+    "2",
+    "3",
+    "4",
+    "14",
+    "17",
+    "33",
+    "35"
+   ]
+  },
+  "ISICRev4": {
+   "listID": "ISIC Rev.4",
+   "scope": "external",
+   "name": "International Standard Industrial Classification of All Economic Activities, Revision 4",
+   "location": "world/codelists/gc/ISICRev4Code.gc",
+   "codes": [
+    "0116",
+    "0163",
+    "0620",
+    "0710",
+    "1312",
+    "1610",
+    "1410",
+    "2220",
+    "2410",
+    "3100",
+    "3510",
+    "3520",
+    "3600",
+    "3830",
+    "4290",
+    "4649",
+    "4719",
+    "4912",
+    "4923",
+    "4930",
+    "5012",
+    "5022",
+    "5120",
+    "5210",
+    "5221",
+    "5222",
+    "5223",
+    "5229",
+    "6110",
+    "6120",
+    "6419",
+    "6499",
+    "6512",
+    "8299",
+    "8411",
+    "8413",
+    "8423",
+    "9411"
+   ]
+  },
+  "UtilityType": {
+   "listID": "urn:ubl-examples:world:codelist:UtilityTypeCode",
+   "scope": "regional",
+   "name": "Utility type",
+   "location": "world/codelists/gc/UtilityTypeCode.gc",
+   "codes": [
+    "ELEC",
+    "GAS",
+    "WATER",
+    "HEAT",
+    "TEL"
+   ]
+  },
+  "SubscriberType": {
+   "listID": "urn:ubl-examples:world:codelist:SubscriberTypeCode",
+   "scope": "regional",
+   "name": "Subscriber type",
+   "location": "world/codelists/gc/SubscriberTypeCode.gc",
+   "codes": [
+    "HH",
+    "COM",
+    "IND",
+    "BUS",
+    "PUB"
+   ]
+  },
+  "ConsumptionType": {
+   "listID": "urn:ubl-examples:world:codelist:ConsumptionTypeCode",
+   "scope": "regional",
+   "name": "Consumption type",
+   "location": "world/codelists/gc/ConsumptionTypeCode.gc",
+   "codes": [
+    "MON",
+    "MET",
+    "SUB",
+    "EST"
+   ]
+  },
+  "ChargeType": {
+   "listID": "urn:ubl-examples:world:codelist:ChargeTypeCode",
+   "scope": "regional",
+   "name": "Utility charge type",
+   "location": "world/codelists/gc/ChargeTypeCode.gc",
+   "codes": [
+    "M",
+    "Q",
+    "Y"
+   ]
+  },
+  "OneTimeChargeType": {
+   "listID": "urn:ubl-examples:world:codelist:OneTimeChargeTypeCode",
+   "scope": "regional",
+   "name": "One-time charge type",
+   "location": "world/codelists/gc/OneTimeChargeTypeCode.gc",
+   "codes": [
+    "CONN",
+    "DISC",
+    "RECONN",
+    "METER"
+   ]
+  },
+  "MeterReadingType": {
+   "listID": "urn:ubl-examples:world:codelist:MeterReadingTypeCode",
+   "scope": "regional",
+   "name": "Meter reading type",
+   "location": "world/codelists/gc/MeterReadingTypeCode.gc",
+   "codes": [
+    "M",
+    "Q",
+    "Y",
+    "F",
+    "S"
+   ]
+  },
+  "MeterReadingMethod": {
+   "listID": "urn:ubl-examples:world:codelist:MeterReadingMethodCode",
+   "scope": "regional",
+   "name": "Meter reading method",
+   "location": "world/codelists/gc/MeterReadingMethodCode.gc",
+   "codes": [
+    "REMOTE",
+    "SMART",
+    "MANUAL",
+    "CUSTOMER",
+    "ESTIMATE",
+    "PROFILE"
+   ]
+  },
+  "MeterConstantType": {
+   "listID": "urn:ubl-examples:world:codelist:MeterConstantTypeCode",
+   "scope": "regional",
+   "name": "Meter constant type",
+   "location": "world/codelists/gc/MeterConstantTypeCode.gc",
+   "codes": [
+    "DIRECT",
+    "CTRATIO"
+   ]
+  },
+  "ConsumptionCorrectionType": {
+   "listID": "urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode",
+   "scope": "regional",
+   "name": "Consumption correction type",
+   "location": "world/codelists/gc/ConsumptionCorrectionTypeCode.gc",
+   "codes": [
+    "CONV",
+    "EST",
+    "COOL",
+    "METERFAULT"
+   ]
+  },
+  "ConsumersEnergyLevel": {
+   "listID": "urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode",
+   "scope": "regional",
+   "name": "Consumer's energy level",
+   "location": "world/codelists/gc/ConsumersEnergyLevelCode.gc",
+   "codes": [
+    "LOW",
+    "AVERAGE",
+    "HIGH"
+   ]
+  },
+  "ConsumptionLevel": {
+   "listID": "urn:ubl-examples:world:codelist:ConsumptionLevelCode",
+   "scope": "regional",
+   "name": "Consumption level",
+   "location": "world/codelists/gc/ConsumptionLevelCode.gc",
+   "codes": [
+    "LOW",
+    "NORMAL",
+    "HIGH"
+   ]
+  },
+  "HeatingType": {
+   "listID": "urn:ubl-examples:world:codelist:HeatingTypeCode",
+   "scope": "regional",
+   "name": "Heating type",
+   "location": "world/codelists/gc/HeatingTypeCode.gc",
+   "codes": [
+    "DH",
+    "GAS",
+    "ELEC",
+    "HEATPUMP"
+   ]
+  },
+  "ResidenceType": {
+   "listID": "urn:ubl-examples:world:codelist:ResidenceTypeCode",
+   "scope": "regional",
+   "name": "Residence type",
+   "location": "world/codelists/gc/ResidenceTypeCode.gc",
+   "codes": [
+    "APT",
+    "HOUSE",
+    "TERRACE"
+   ]
+  },
+  "SpecificationType": {
+   "listID": "urn:ubl-examples:world:codelist:SpecificationTypeCode",
+   "scope": "regional",
+   "name": "Specification type",
+   "location": "world/codelists/gc/SpecificationTypeCode.gc",
+   "codes": [
+    "DETAILED",
+    "SUMMARY"
+   ]
+  },
+  "TelecomCallType": {
+   "listID": "urn:ubl-examples:world:codelist:TelecomCallTypeCode",
+   "scope": "regional",
+   "name": "Telecommunications call type",
+   "location": "world/codelists/gc/TelecomCallTypeCode.gc",
+   "codes": [
+    "OUT",
+    "IN",
+    "FWD"
+   ]
+  },
+  "TelecomServiceCategory": {
+   "listID": "urn:ubl-examples:world:codelist:TelecomServiceCategoryCode",
+   "scope": "regional",
+   "name": "Telecommunications service category",
+   "location": "world/codelists/gc/TelecomServiceCategoryCode.gc",
+   "codes": [
+    "NAT",
+    "INT",
+    "ROAM",
+    "DATA",
+    "SMS"
+   ]
+  },
+  "TelecomSupplyType": {
+   "listID": "urn:ubl-examples:world:codelist:TelecomSupplyTypeCode",
+   "scope": "regional",
+   "name": "Telecommunications supply type",
+   "location": "world/codelists/gc/TelecomSupplyTypeCode.gc",
+   "codes": [
+    "BUS",
+    "RES",
+    "MOBILE"
+   ]
+  },
+  "TelecomDuty": {
+   "listID": "urn:ubl-examples:world:codelist:TelecomDutyCode",
+   "scope": "regional",
+   "name": "Telecommunications duty",
+   "location": "world/codelists/gc/TelecomDutyCode.gc",
+   "codes": [
+    "SETUP",
+    "MIN",
+    "MB"
+   ]
+  },
+  "Privacy": {
+   "listID": "urn:ubl-examples:world:codelist:PrivacyCode",
+   "scope": "regional",
+   "name": "Privacy",
+   "location": "world/codelists/gc/PrivacyCode.gc",
+   "codes": [
+    "PUBLIC",
+    "CONFIDENTIAL",
+    "MASKED"
+   ]
+  },
+  "SecurityClassification": {
+   "listID": "urn:ubl-examples:world:codelist:SecurityClassificationCode",
+   "scope": "regional",
+   "name": "Security classification",
+   "location": "world/codelists/gc/SecurityClassificationCode.gc",
+   "codes": [
+    "PUBLIC",
+    "INTERNAL",
+    "CONFIDENTIAL"
+   ]
+  },
+  "EmissionType": {
+   "listID": "urn:ubl-examples:world:codelist:EmissionTypeCode",
+   "scope": "regional",
+   "name": "Emission type",
+   "location": "world/codelists/gc/EmissionTypeCode.gc",
+   "codes": [
+    "CO2E",
+    "CO2",
+    "CH4",
+    "NOX",
+    "PM"
+   ]
+  },
+  "LifecycleStage": {
+   "listID": "urn:ubl-examples:world:codelist:LifecycleStageCode",
+   "scope": "regional",
+   "name": "Life cycle stage",
+   "location": "world/codelists/gc/LifecycleStageCode.gc",
+   "codes": [
+    "SOURCING",
+    "MANUFACTURING",
+    "DISTRIBUTION",
+    "USAGE",
+    "ENDOFLIFE",
+    "RECOVERY"
+   ]
+  },
+  "EmissionBoundary": {
+   "listID": "urn:ubl-examples:world:codelist:EmissionBoundaryCode",
+   "scope": "regional",
+   "name": "Emission boundary",
+   "location": "world/codelists/gc/EmissionBoundaryCode.gc",
+   "codes": [
+    "CRADLETOGATE",
+    "CRADLETOGRAVE",
+    "CRADLETOCRADLE",
+    "GATETOGATE"
+   ]
+  },
+  "CircularityType": {
+   "listID": "urn:ubl-examples:world:codelist:CircularityTypeCode",
+   "scope": "regional",
+   "name": "Circularity type",
+   "location": "world/codelists/gc/CircularityTypeCode.gc",
+   "codes": [
+    "RECYCLED",
+    "REUSED",
+    "REMANUFACTURED",
+    "REPAIRABLE"
+   ]
+  },
+  "MaintenanceFrequency": {
+   "listID": "urn:ubl-examples:world:codelist:MaintenanceFrequencyCode",
+   "scope": "regional",
+   "name": "Maintenance frequency",
+   "location": "world/codelists/gc/MaintenanceFrequencyCode.gc",
+   "codes": [
+    "MONTHLY",
+    "QUARTERLY",
+    "YEARLY",
+    "NONE"
+   ]
+  },
+  "MaterialResource": {
+   "listID": "urn:ubl-examples:world:codelist:MaterialResourceCode",
+   "scope": "regional",
+   "name": "Material resource",
+   "location": "world/codelists/gc/MaterialResourceCode.gc",
+   "codes": [
+    "STEEL",
+    "HARDWOOD",
+    "SOFTWOOD",
+    "PE",
+    "COTTON",
+    "ALUMINIUM"
+   ]
+  },
+  "ScoringSystem": {
+   "listID": "urn:ubl-examples:world:codelist:ScoringSystemCode",
+   "scope": "regional",
+   "name": "Scoring system",
+   "location": "world/codelists/gc/ScoringSystemCode.gc",
+   "codes": [
+    "REPAIR10"
+   ]
+  },
+  "WasteType": {
+   "listID": "urn:ubl-examples:world:codelist:WasteTypeCode",
+   "scope": "regional",
+   "name": "Waste type",
+   "location": "world/codelists/gc/WasteTypeCode.gc",
+   "codes": [
+    "PACKAGING",
+    "PLASTIC",
+    "METAL",
+    "WOOD",
+    "MIXED"
+   ]
+  },
+  "TreatmentPathway": {
+   "listID": "urn:ubl-examples:world:codelist:TreatmentPathwayCode",
+   "scope": "regional",
+   "name": "Treatment pathway",
+   "location": "world/codelists/gc/TreatmentPathwayCode.gc",
+   "codes": [
+    "MECHRECYCLE",
+    "CHEMRECYCLE",
+    "REUSE",
+    "ENERGY",
+    "LANDFILL"
+   ]
+  },
+  "EndOfLifeProcessing": {
+   "listID": "urn:ubl-examples:world:codelist:EndOfLifeProcessingCode",
+   "scope": "regional",
+   "name": "End-of-life processing",
+   "location": "world/codelists/gc/EndOfLifeProcessingCode.gc",
+   "codes": [
+    "MECHANICAL",
+    "CHEMICAL",
+    "THERMAL"
+   ]
+  },
+  "EnvironmentalImpactLevel": {
+   "listID": "urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode",
+   "scope": "regional",
+   "name": "Environmental impact level",
+   "location": "world/codelists/gc/EnvironmentalImpactLevelCode.gc",
+   "codes": [
+    "LOW",
+    "MEDIUM",
+    "HIGH"
+   ]
+  },
+  "Category": {
+   "listID": "urn:ubl-examples:world:codelist:CategoryCode",
+   "scope": "regional",
+   "name": "Certified product category",
+   "location": "world/codelists/gc/CategoryCode.gc",
+   "codes": [
+    "HW",
+    "SW",
+    "FURN",
+    "PAPER"
+   ]
+  },
+  "AddressType": {
+   "listID": "urn:ubl-examples:world:codelist:AddressTypeCode",
+   "scope": "regional",
+   "name": "Address type",
+   "location": "world/codelists/gc/AddressTypeCode.gc",
+   "codes": [
+    "BUSINESS",
+    "POSTAL",
+    "RESIDENTIAL",
+    "DELIVERY",
+    "BILLING"
+   ]
+  },
+  "CompanyLiquidationStatus": {
+   "listID": "urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode",
+   "scope": "regional",
+   "name": "Company liquidation status",
+   "location": "world/codelists/gc/CompanyLiquidationStatusCode.gc",
+   "codes": [
+    "ACTIVE",
+    "LIQUIDATION",
+    "DISSOLVED"
+   ]
+  },
+  "CorporateRegistrationType": {
+   "listID": "urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode",
+   "scope": "regional",
+   "name": "Corporate registration type",
+   "location": "world/codelists/gc/CorporateRegistrationTypeCode.gc",
+   "codes": [
+    "COMMERCIAL",
+    "CHARITY",
+    "ASSOCIATION",
+    "FARM"
+   ]
+  },
+  "AddressFormat": {
+   "listID": "urn:ubl-examples:world:codelist:AddressFormatCode",
+   "scope": "regional",
+   "name": "Address format",
+   "location": "world/codelists/gc/AddressFormatCode.gc",
+   "codes": [
+    "XU",
+    "XB",
+    "XL"
+   ]
+  },
+  "XB:CountrySubentity": {
+   "listID": "urn:ubl-examples:world:XB:codelist:CountrySubentityCode",
+   "scope": "XB",
+   "name": "State or territory",
+   "location": "world/codelists/gc/XB-CountrySubentityCode.gc",
+   "codes": [
+    "XB-UL",
+    "XB-CO",
+    "XB-NT"
+   ]
+  },
+  "XU:CompanyLegalForm": {
+   "listID": "urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode",
+   "scope": "XU",
+   "name": "Company legal form",
+   "location": "world/codelists/gc/XU-CompanyLegalFormCode.gc",
+   "codes": [
+    "SUA",
+    "SRU",
+    "SNU"
+   ]
+  },
+  "XB:CompanyLegalForm": {
+   "listID": "urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode",
+   "scope": "XB",
+   "name": "Company legal form",
+   "location": "world/codelists/gc/XB-CompanyLegalFormCode.gc",
+   "codes": [
+    "CORP",
+    "LTD",
+    "LLP"
+   ]
+  },
+  "XL:CompanyLegalForm": {
+   "listID": "urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode",
+   "scope": "XL",
+   "name": "Company legal form",
+   "location": "world/codelists/gc/XL-CompanyLegalFormCode.gc",
+   "codes": [
+    "LTD",
+    "SP",
+    "COOP"
+   ]
+  },
+  "EntitySize": {
+   "listID": "urn:ubl-examples:world:codelist:EntitySizeCode",
+   "scope": "regional",
+   "name": "Entity size",
+   "location": "world/codelists/gc/EntitySizeCode.gc",
+   "codes": [
+    "MICRO",
+    "SMALL",
+    "MEDIUM",
+    "LARGE"
+   ]
+  },
+  "CPC21": {
+   "listID": "UN CPC Ver.2.1",
+   "scope": "external",
+   "name": "UN Central Product Classification, Version 2.1",
+   "location": "world/codelists/gc/CPC21Code.gc",
+   "codes": [
+    "01921",
+    "12020",
+    "14100",
+    "28232",
+    "31102",
+    "34710",
+    "35110",
+    "36330",
+    "36410",
+    "381",
+    "3811",
+    "38111",
+    "38112",
+    "38122",
+    "38140",
+    "42999",
+    "46420",
+    "46921",
+    "87390",
+    "87310"
+   ]
+  },
+  "WCOHS2022": {
+   "listID": "WCO HS 2022",
+   "scope": "external",
+   "name": "Harmonized Commodity Description and Coding System, 2022 edition (subheadings)",
+   "location": "world/codelists/gc/WCOHS2022Code.gc",
+   "codes": [
+    "260111",
+    "271121",
+    "381400",
+    "390110",
+    "392010",
+    "392321",
+    "440799",
+    "520100",
+    "620520",
+    "732599",
+    "850760",
+    "853110",
+    "940169",
+    "940179",
+    "940330"
+   ]
+  },
+  "XU:CustomsTariff": {
+   "listID": "urn:ubl-examples:world:XU:codelist:CustomsTariffCode",
+   "scope": "XU",
+   "name": "Customs tariff",
+   "location": "world/codelists/gc/XU-CustomsTariffCode.gc",
+   "codes": [
+    "94017910",
+    "94017990",
+    "73259910",
+    "73259990",
+    "26011100",
+    "39011000"
+   ]
+  },
+  "HSSections": {
+   "listID": "WCO HS 2022 Sections",
+   "scope": "external",
+   "name": "Harmonized System 2022, sections",
+   "location": "world/codelists/gc/HSSectionsCode.gc",
+   "codes": [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "XI",
+    "XII",
+    "XIII",
+    "XIV",
+    "XV",
+    "XVI",
+    "XVII",
+    "XVIII",
+    "XIX",
+    "XX",
+    "XXI"
+   ]
+  },
+  "EPSG": {
+   "listID": "EPSG",
+   "scope": "external",
+   "name": "EPSG Geodetic Parameter Dataset (coordinate reference systems)",
+   "location": "world/codelists/gc/EPSGCode.gc",
+   "codes": [
+    "4326"
+   ]
+  },
+  "InsuranceCover": {
+   "listID": "urn:ubl-examples:world:codelist:InsuranceCoverCode",
+   "scope": "regional",
+   "name": "Insurance cover",
+   "location": "world/codelists/gc/InsuranceCoverCode.gc",
+   "codes": [
+    "ALLRISKS",
+    "NAMEDPERILS",
+    "MINIMUM"
+   ]
+  },
+  "ContractModificationReason": {
+   "listID": "urn:ubl-examples:world:codelist:ContractModificationReasonCode",
+   "scope": "regional",
+   "name": "Contract modification reason",
+   "location": "world/codelists/gc/ContractModificationReasonCode.gc",
+   "codes": [
+    "VOLUME",
+    "PRICE",
+    "DURATION",
+    "SCOPE"
+   ]
+  },
+  "ValidationResult": {
+   "listID": "urn:ubl-examples:world:codelist:ValidationResultCode",
+   "scope": "regional",
+   "name": "Validation result",
+   "location": "world/codelists/gc/ValidationResultCode.gc",
+   "codes": [
+    "VALID",
+    "INVALID",
+    "INDETERMINATE"
+   ]
+  }
+ }
+}

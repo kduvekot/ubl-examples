@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: customs tariff. Urvania's national customs tariff: the HS subheading with two national digits. The Trade Accord is a free trade area, so each country keeps its own tariff. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CustomsTariffCode</ShortName>
+      <LongName xml:lang="en">Customs tariff (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:XU:codelist:CustomsTariffCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:XU:codelist:CustomsTariffCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:XU:codelist:CustomsTariffCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/XU-CustomsTariffCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Government of Urvania</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>94017910</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Benches for parks and gardens, with metal frames</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Guknaz gan zatir stan galskan, vek drezskir dratrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Under HS 9401.79.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>94017990</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other seats with metal frames</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skuznan drinskul vek drezskir dratrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Under HS 9401.79.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>73259910</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Castings of iron or steel for furniture</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sesek skul gek van nibir gan kruzsir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Under HS 7325.99.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>73259990</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other cast articles of iron or steel</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skuznan stezir zharnek skul gek van nibir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Under HS 7325.99.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>26011100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Iron ores and concentrates, non-agglomerated</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Gek drarraz stan stiskek, krahek-kutir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Under HS 2601.11.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>39011000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Polyethylene of a specific gravity below 0.94</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhaldrek skul sir natran skelgek krirstul 0.94</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Under HS 3901.10.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

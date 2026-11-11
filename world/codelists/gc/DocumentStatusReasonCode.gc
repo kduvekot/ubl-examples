@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: document status reason. Why a transport plan or request has the status it has. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>DocumentStatusReasonCode</ShortName>
+      <LongName xml:lang="en">Document status reason (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:DocumentStatusReasonCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:DocumentStatusReasonCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:DocumentStatusReasonCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/DocumentStatusReasonCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ASREQUESTED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>As requested</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dek nezhul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tanema tanetame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Confirmed as the request asked.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UPDATE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Update of a standing plan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krugir skul sir bilbaz zhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lefeva mutaki pipila penove</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The request or plan changes a plan already agreed.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CHANGED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Confirmed with changes</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rulban vek drankraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Luvilife tofuta petiti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Confirmed, but not as requested.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOCAPACITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No capacity</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sarhek gustan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lelaha hetipa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Refused for lack of capacity.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

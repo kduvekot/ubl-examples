@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): the codes the world uses, and others of the same list. Built from world/codelists/sources/epsg/crs-4326.json (EPSG record 4326, revision 2022-11-29). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>EPSGCode</ShortName>
+      <LongName xml:lang="en">EPSG Geodetic Parameter Dataset (coordinate reference systems) (UBL example world)</LongName>
+      <LongName Identifier="listID">EPSG</LongName>
+      <Version>as published 2026-11-11</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:EPSGCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:EPSGCode:as published 2026-11-11</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/EPSGCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">IOGP Geomatics Committee</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4326</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>WGS 84</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>geographic 2D coordinate reference system</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

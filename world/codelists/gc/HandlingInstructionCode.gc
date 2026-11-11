@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: handling instruction. How goods or transport handling units are to be handled and stowed. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>HandlingInstructionCode</ShortName>
+      <LongName xml:lang="en">Handling instruction (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:HandlingInstructionCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:HandlingInstructionCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:HandlingInstructionCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/HandlingInstructionCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>STACK2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Stack at most two high</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vunkrir hir tingan kan zhukran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sohuva momai vitatu tuloke vesue</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Not more than two units on top of each other.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOSTACK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Do not stack</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tir drurkraz vunkrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Piani hivile sohuva</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Nothing may be stacked on the unit.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UPRIGHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Keep upright</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kazhek kurzhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Voifo lehiti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Keep the unit the right way up.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FRAGILE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fragile</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Traktrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Namefa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Handle with care.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>KEEPDRY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Keep dry</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kazhek zaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Voifo mapeto</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Protect from rain and moisture.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DECK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>On-deck stowage allowed</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rek-saz drazhaz skersir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lelala-tukaa vufisi kekasi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carrier may stow the container on deck.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UNDERDECK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Under-deck stowage</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Karul-saz drazhaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tilala-tukaa vufisi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Stow below deck only.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

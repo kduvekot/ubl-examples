@@ -42,11 +42,16 @@
     },
     "industry": "0710",
     "website": "https://www.serravona.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SUA",
      "founded": "1958-06-30",
-     "size": "Large",
+     "headcount": 987,
+     "turnover": {
+      "amount": "48000000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "capital": 120000000
     },
     "site": {
@@ -102,15 +107,20 @@
     },
     "industry": "3100",
     "website": "https://www.valdara.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SUA",
      "founded": "1962-04-12",
-     "size": "Large",
+     "headcount": 3083,
+     "turnover": {
+      "amount": "23600000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "capital": 250000000,
      "listing": {
       "market": "Ferrano Stock Exchange",
-      "code": "FSE",
+      "code": "XFER",
       "id": "XU0001042501",
       "description": "Ordinary shares of Valdara Industries"
      }
@@ -182,11 +192,16 @@
     },
     "industry": "5210",
     "website": "https://www.castrano.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small",
+     "headcount": 29,
+     "turnover": {
+      "amount": "880000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "shareholder": {
       "party": "5-xu",
       "percent": 100
@@ -203,7 +218,7 @@
      "kind": "road",
      "name": "Box truck 12",
      "plate": "UR 4160 CL",
-     "type": "AE",
+     "type": "BOXTRUCK",
      "driver": {
       "first": "Nadia",
       "family": "Orsello",
@@ -253,11 +268,16 @@
     },
     "industry": "3830",
     "website": "https://www.rinova.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 47,
+     "turnover": {
+      "amount": "722000000",
+      "currency": "XUF",
+      "year": 2025
+     }
     },
     "authorization": {
      "purpose": "Recovery of non-hazardous plastic waste",
@@ -313,11 +333,16 @@
     },
     "industry": "4912",
     "website": "https://www.ferranorail.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 14,
+     "turnover": {
+      "amount": "851000000",
+      "currency": "XUF",
+      "year": 2025
+     }
     }
    },
    "fleet": [
@@ -325,6 +350,7 @@
      "id": "FRC-4417",
      "kind": "rail",
      "name": "Container train Ferrano–Marrowdale",
+     "type": "FREIGHTTRAIN",
      "train": "FRC 4417",
      "wagons": [
       "XU-FRC 4521 0042",
@@ -343,7 +369,7 @@
      "kind": "road",
      "name": "Container tractor for carrier haulage",
      "plate": "UR 4160 RC",
-     "type": "TE"
+     "type": "TRUCKTRAILER"
     }
    ]
   },
@@ -388,11 +414,16 @@
     },
     "industry": "4923",
     "website": "https://www.trasvia.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 27,
+     "turnover": {
+      "amount": "386000000",
+      "currency": "XUF",
+      "year": 2025
+     }
     },
     "authorization": {
      "purpose": "International road haulage",
@@ -407,7 +438,7 @@
      "name": "Tractor unit 07 with curtain-side trailer",
      "plate": "UR 4160 KT",
      "trailer": "UR TR 3381",
-     "type": "TE",
+     "type": "TRUCKTRAILER",
      "loading_m": "13.6",
      "pallets": 33,
      "driver": {
@@ -460,11 +491,16 @@
     },
     "industry": "5022",
     "website": "https://www.fiumella.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 30,
+     "turnover": {
+      "amount": "540000000",
+      "currency": "XUF",
+      "year": 2025
+     }
     }
    },
    "fleet": [
@@ -472,13 +508,14 @@
      "id": "FB-4",
      "kind": "inland",
      "name": "Fiumella IV",
+     "type": "DRYBARGE",
      "vessel_id": "XU-IW-08042",
      "call_sign": "XUBF4",
      "mmsi": "999801042",
      "gross_t": "1210",
      "net_t": "860",
      "registry": "Ferrano",
-     "config": "Dry cargo barge"
+     "config": "DRYBARGE"
     }
    ]
   },
@@ -524,11 +561,16 @@
     },
     "industry": "5221",
     "website": "https://www.ferranohub.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 14,
+     "turnover": {
+      "amount": "549000000",
+      "currency": "XUF",
+      "year": 2025
+     }
     }
    }
   },
@@ -573,15 +615,20 @@
     "bank_code": "CREV",
     "industry": "6419",
     "website": "https://www.crevalto.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SUA",
      "founded": "1921-09-01",
-     "size": "Large",
+     "headcount": 1121,
+     "turnover": {
+      "amount": "8860000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "capital": 900000000,
      "listing": {
       "market": "Ferrano Stock Exchange",
-      "code": "FSE",
+      "code": "XFER",
       "id": "XU0001042337"
      }
     },
@@ -627,7 +674,7 @@
      "Region": "Province of Ferrano"
     },
     "industry": "9411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -669,7 +716,7 @@
      "Region": "Province of Ferrano"
     },
     "industry": "8411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -709,11 +756,16 @@
      "Region": "Province of Ferrano"
     },
     "industry": "8299",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SRU",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 13,
+     "turnover": {
+      "amount": "391000000",
+      "currency": "XUF",
+      "year": 2025
+     }
     }
    }
   },
@@ -751,10 +803,10 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71213",
-     "CountrySubentityCode": "UL"
+     "CountrySubentityCode": "XB-UL"
     },
     "industry": "8411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -798,7 +850,7 @@
      "BlockName": "Marrowdale Business Park",
      "PlotIdentification": "Plot 14",
      "AdditionalStreetName": "Gate 3",
-     "CountrySubentityCode": "UL"
+     "CountrySubentityCode": "XB-UL"
     },
     "account": {
      "bank": "25-xb",
@@ -807,11 +859,16 @@
     },
     "industry": "4649",
     "website": "https://www.lumeway.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1988-10-03",
-     "size": "Medium",
+     "headcount": 183,
+     "turnover": {
+      "amount": "33900000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
      "capital": 2500000
     },
     "customs_id": "XB-TR-410274",
@@ -857,7 +914,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38515",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "account": {
      "bank": "25-xb",
@@ -865,18 +922,23 @@
     },
     "industry": "4719",
     "website": "https://www.brightmarket.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Corp",
+     "form": "CORP",
      "founded": "1979-02-14",
-     "size": "Large",
+     "headcount": 2900,
+     "turnover": {
+      "amount": "671000000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
      "capital": 12000000
     },
     "trade_name": "Brightmarket",
     "logo": "BM-LOGO-2024",
     "shop_website": "https://shop.brightmarket.example",
     "social": {
-     "type": "Photo sharing",
+     "type": "PHOTO",
      "name": "brightmarket",
      "uri": "https://social.example/brightmarket",
      "id": "10442197"
@@ -921,7 +983,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38516",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "person_name": {
      "first": "Robin",
@@ -975,7 +1037,7 @@
      "MarkAttention": "Head of procurement",
      "InhouseMail": "Room 2.14",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO",
+     "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-000417"
     },
     "account": {
@@ -983,7 +1045,7 @@
      "number": "XB07BLUM0001780393"
     },
     "industry": "8411",
-    "language": "EN",
+    "language": "en",
     "tax_exemption": "Public bodies are exempt from the state sales tax",
     "tax_id": "CO-0900002",
     "customs_id": "XB-TR-410548",
@@ -1030,14 +1092,14 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71218",
-     "CountrySubentityCode": "UL"
+     "CountrySubentityCode": "XB-UL"
     },
     "account": {
      "bank": "25-xb",
      "number": "XB68BLUM0001885122"
     },
     "industry": "4290",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -1075,10 +1137,10 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38519",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "8423",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -1115,10 +1177,10 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38520",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "8411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -1156,10 +1218,10 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38521",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "9411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -1197,7 +1259,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38522",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "account": {
      "bank": "25-xb",
@@ -1205,11 +1267,16 @@
     },
     "industry": "6499",
     "website": "https://www.harbourline.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 21,
+     "turnover": {
+      "amount": "6340000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     }
    }
   },
@@ -1250,16 +1317,21 @@
      "Floor": "3",
      "Room": "301",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "bank_code": "BLUM",
     "industry": "6419",
     "website": "https://www.bankoflumeport.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Corp",
+     "form": "CORP",
      "founded": "1903-05-20",
-     "size": "Large",
+     "headcount": 2313,
+     "turnover": {
+      "amount": "840000000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
      "capital": 75000000
     },
     "branch": {
@@ -1304,15 +1376,20 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38524",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "6512",
     "website": "https://www.wavesure.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 46,
+     "turnover": {
+      "amount": "7880000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     }
    }
   },
@@ -1351,7 +1428,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38525",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "account": {
      "bank": "25-xb",
@@ -1359,11 +1436,16 @@
     },
     "industry": "5229",
     "website": "https://www.bayforth.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 40,
+     "turnover": {
+      "amount": "6660000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     }
    },
    "fleet": [
@@ -1373,7 +1455,7 @@
      "name": "Truck with curtain-side trailer",
      "plate": "BV LP 2203",
      "trailer": "BV TR 0817",
-     "type": "TE",
+     "type": "TRUCKTRAILER",
      "loading_m": "13.6",
      "pallets": 33
     },
@@ -1383,7 +1465,7 @@
      "name": "Container chassis truck",
      "plate": "BV LP 2205",
      "trailer": "BV CH 0412",
-     "type": "TE"
+     "type": "TRUCKTRAILER"
     }
    ]
   },
@@ -1429,15 +1511,20 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38526",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "5222",
     "website": "https://www.port-lumeport.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 31,
+     "turnover": {
+      "amount": "9210000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     },
     "site": {
      "locode": "XBLMP",
@@ -1481,15 +1568,20 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38527",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "5012",
     "website": "https://www.tidewell.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Corp",
+     "form": "CORP",
      "founded": "1974-03-01",
-     "size": "Large",
+     "headcount": 776,
+     "turnover": {
+      "amount": "865000000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
      "capital": 40000000
     }
    },
@@ -1498,6 +1590,7 @@
      "id": "TH",
      "kind": "sea",
      "name": "Tidewell Harbour",
+     "type": "CONTAINERSHIP",
      "vessel_id": "XB-S-20117",
      "call_sign": "XBTH7",
      "mmsi": "999702117",
@@ -1511,7 +1604,8 @@
       "family": "Halvard"
      },
      "crew": 14,
-     "config": "Feeder container ship, 1,000 TEU"
+     "config": "FEEDER",
+     "capacity_teu": 1000
     }
    ]
   },
@@ -1554,15 +1648,20 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38528",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "industry": "5223",
     "website": "https://www.lumeport-cargo.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 29,
+     "turnover": {
+      "amount": "3410000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     },
     "site": {
      "locode": "XBLMA",
@@ -1613,11 +1712,16 @@
     },
     "industry": "5222",
     "website": "https://www.port-selanu.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 28,
+     "turnover": {
+      "amount": "3490000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     },
     "site": {
      "locode": "XLSEL",
@@ -1663,11 +1767,16 @@
     },
     "industry": "5223",
     "website": "https://www.selanu-cargo.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small",
+     "headcount": 15,
+     "turnover": {
+      "amount": "1220000.000",
+      "currency": "XLC",
+      "year": 2025
+     },
      "head_office": "16-xl"
     }
    }
@@ -1706,11 +1815,16 @@
     },
     "industry": "5120",
     "website": "https://www.kelaro.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 13,
+     "turnover": {
+      "amount": "2590000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     }
    },
    "fleet": [
@@ -1718,6 +1832,7 @@
      "id": "KAC",
      "kind": "air",
      "name": "Freighter of Kelaro Air Cargo",
+     "type": "CARGOAIRCRAFT",
      "aircraft": "XL-KAC",
      "flight": "KAC207"
     }
@@ -1757,7 +1872,7 @@
      "CityName": "Selanu"
     },
     "industry": "8411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -1798,11 +1913,16 @@
     },
     "industry": "5229",
     "website": "https://www.tevaro.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 13,
+     "turnover": {
+      "amount": "2830000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     }
    }
   },
@@ -1848,11 +1968,16 @@
     },
     "industry": "5210",
     "website": "https://www.nalevi.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 17,
+     "turnover": {
+      "amount": "2500000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     }
    },
    "fleet": [
@@ -1861,7 +1986,7 @@
      "kind": "road",
      "name": "Container truck of Nalevi Warehousing",
      "plate": "LV SL 101",
-     "type": "TE"
+     "type": "TRUCKTRAILER"
     }
    ]
   },
@@ -1903,11 +2028,16 @@
     },
     "industry": "4649",
     "website": "https://www.velumi.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 34,
+     "turnover": {
+      "amount": "1940000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     },
     "customs_id": "XL-TR-041859",
     "cost_centre": {
@@ -1954,11 +2084,16 @@
     "bank_code": "BSEL",
     "industry": "6419",
     "website": "https://www.bankofselanu.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1965-07-01",
-     "size": "Large",
+     "headcount": 534,
+     "turnover": {
+      "amount": "163000000.000",
+      "currency": "XLC",
+      "year": 2025
+     },
      "capital": 9000000
     },
     "branch": {
@@ -2000,7 +2135,7 @@
      "CityName": "Selanu"
     },
     "industry": "9411",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -2037,7 +2172,7 @@
      "CityName": "Selanu"
     },
     "industry": "8413",
-    "language": "EN"
+    "language": "en"
    }
   },
   {
@@ -2082,11 +2217,16 @@
     },
     "industry": "3510",
     "website": "https://www.ferranoenergy.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SUA",
      "founded": "1949-01-15",
-     "size": "Large",
+     "headcount": 3188,
+     "turnover": {
+      "amount": "72700000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "capital": 600000000
     }
    }
@@ -2127,7 +2267,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38500",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "account": {
      "bank": "25-xb",
@@ -2135,11 +2275,16 @@
     },
     "industry": "3600",
     "website": "https://www.coastalwater.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 17,
+     "turnover": {
+      "amount": "9470000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     }
    }
   },
@@ -2183,11 +2328,16 @@
     },
     "industry": "6110",
     "website": "https://www.selanutelecom.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 20,
+     "turnover": {
+      "amount": "3230000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     }
    }
   },
@@ -2230,7 +2380,7 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71202",
-     "CountrySubentityCode": "UL"
+     "CountrySubentityCode": "XB-UL"
     },
     "account": {
      "bank": "25-xb",
@@ -2238,11 +2388,16 @@
     },
     "industry": "1610",
     "website": "https://www.marrowdalesawmill.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 26,
+     "turnover": {
+      "amount": "6300000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     },
     "customs_id": "XB-TR-412329"
    },
@@ -2252,7 +2407,7 @@
      "kind": "road",
      "name": "Timber truck with crane",
      "plate": "BV MD 3610",
-     "type": "TRUCK"
+     "type": "CRANETRUCK"
     }
    ]
   },
@@ -2291,7 +2446,7 @@
      "CityName": "Marrowdale",
      "CountrySubentity": "Upland State",
      "PostalZone": "71203",
-     "CountrySubentityCode": "UL"
+     "CountrySubentityCode": "XB-UL"
     },
     "account": {
      "bank": "25-xb",
@@ -2299,11 +2454,16 @@
     },
     "industry": "3100",
     "website": "https://www.brackenmere.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 19,
+     "turnover": {
+      "amount": "6830000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     },
     "cost_centre": {
      "code": "1100",
@@ -2360,7 +2520,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38504",
      "CitySubdivisionName": "Harbour quarter",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "account": {
      "bank": "25-xb",
@@ -2368,11 +2528,16 @@
     },
     "industry": "1312",
     "website": "https://www.lumeporttextile.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 42,
+     "turnover": {
+      "amount": "4140000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     },
     "customs_id": "XB-TR-412603",
     "cost_centre": {
@@ -2417,7 +2582,7 @@
      "CountrySubentity": "Coastal State",
      "PostalZone": "38505",
      "CitySubdivisionName": "Old town",
-     "CountrySubentityCode": "CO"
+     "CountrySubentityCode": "XB-CO"
     },
     "account": {
      "bank": "25-xb",
@@ -2425,11 +2590,16 @@
     },
     "industry": "2220",
     "website": "https://www.rivermouth.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 23,
+     "turnover": {
+      "amount": "6800000.00",
+      "currency": "XBL",
+      "year": 2025
+     }
     },
     "customs_id": "XB-TR-412740",
     "cost_centre": {
@@ -2479,11 +2649,16 @@
     },
     "industry": "0116",
     "website": "https://www.lisavufarm.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SP",
      "founded": "2009-08-17",
-     "size": "Micro",
+     "headcount": 5,
+     "turnover": {
+      "amount": "146000.000",
+      "currency": "XLC",
+      "year": 2025
+     },
      "sole_proprietor": true,
      "registration_expires": "2026-12-31"
     },
@@ -2499,7 +2674,7 @@
      "kind": "road",
      "name": "Tractor with two cotton trailers",
      "plate": "LV FARM 7",
-     "type": "TRACTOR"
+     "type": "FARMTRACTOR"
     }
    ]
   },
@@ -2542,11 +2717,16 @@
     },
     "industry": "0163",
     "website": "https://www.selanuginnery.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "1996-01-01",
-     "size": "Small"
+     "headcount": 22,
+     "turnover": {
+      "amount": "3660000.000",
+      "currency": "XLC",
+      "year": 2025
+     }
     },
     "customs_id": "XL-TR-042681",
     "cost_centre": {
@@ -2579,6 +2759,7 @@
      "id": "KG-P1",
      "kind": "pipeline",
      "name": "Kelpstone–Ferrano gas pipeline",
+     "type": "PIPELINE",
      "config": "Buried steel pipeline, 400 mm, 70 bar"
     }
    ],
@@ -2602,7 +2783,7 @@
      "CityName": "Gullhaven",
      "CountrySubentity": "Northern Territory",
      "PostalZone": "38540",
-     "CountrySubentityCode": "NT"
+     "CountrySubentityCode": "XB-NT"
     },
     "account": {
      "bank": "25-xb",
@@ -2610,11 +2791,16 @@
     },
     "industry": "0620",
     "website": "https://www.kelpstone.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
-     "form": "Ltd",
+     "form": "LTD",
      "founded": "2011-04-01",
-     "size": "Large",
+     "headcount": 1315,
+     "turnover": {
+      "amount": "833000000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
      "capital": 120000000
     },
     "customs_id": "XB-TR-412877",
@@ -2669,11 +2855,16 @@
     },
     "industry": "3510",
     "website": "https://www.montebrio.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SUA",
      "founded": "1974-06-01",
-     "size": "Large",
+     "headcount": 2935,
+     "turnover": {
+      "amount": "35700000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "capital": 400000000
     },
     "customs_id": "XU-TR-105918"
@@ -2719,13 +2910,18 @@
      "bank": "23-xu",
      "number": "XU50CREV0005126721"
     },
-    "industry": "3513",
+    "industry": "3510",
     "website": "https://www.ferranogrid.example",
-    "language": "EN",
+    "language": "en",
     "legal": {
      "form": "SUA",
      "founded": "2007-01-01",
-     "size": "Medium",
+     "headcount": 91,
+     "turnover": {
+      "amount": "4350000000",
+      "currency": "XUF",
+      "year": 2025
+     },
      "capital": 80000000
     }
    }

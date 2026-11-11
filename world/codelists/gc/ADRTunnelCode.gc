@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A world copy of ADR tunnel restriction code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ADR 8.6.4 and the tunnel restriction codes of column 15 of Table A, 3.2.1 (the slash is ADR's own notation)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ADRTunnelCode</ShortName>
+      <LongName xml:lang="en">ADR tunnel restriction code (UBL example world)</LongName>
+      <LongName Identifier="listID">UNECE ADR tunnel restriction code</LongName>
+      <Version>ADR 2025</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:copy:ADRTunnelCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:ADRTunnelCode:ADR 2025</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ADRTunnelCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>B</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>B</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Passage forbidden through tunnels of category B, C, D and E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>B1000C</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>B1000C</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Above 1,000 kg net explosive mass: passage forbidden through B, C, D and E; below: through C, D and E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>B/D</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>B/D</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Tank carriage: forbidden through B, C, D and E; other carriage: through D and E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>B/E</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>B/E</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Tank carriage: forbidden through B, C, D and E; other carriage: through E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>C</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>C</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Passage forbidden through tunnels of category C, D and E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>C/D</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>C/D</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Tank carriage: forbidden through C, D and E; other carriage: through D and E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>C/E</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>C/E</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Tank carriage: forbidden through C, D and E; other carriage: through E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>D</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>D</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Passage forbidden through tunnels of category D and E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>D/E</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>D/E</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Bulk or tank carriage: forbidden through D and E; other carriage: through E.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>E</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>E</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Passage forbidden through tunnels of category E.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

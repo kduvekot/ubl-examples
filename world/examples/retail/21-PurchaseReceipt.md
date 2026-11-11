@@ -36,8 +36,8 @@ A consumer buys in the shop and gets a receipt.
   And when.
 - `Note` = **Home delivery booked for Saturday.**  
   Printed on the receipt.
-- `DocumentCurrencyCode` = **XBL**  
-  The lume, the currency of the shop; it has two decimals.
+- `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The lume, the currency of the shop; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 
 ### Purchase Reference
 
@@ -82,7 +82,7 @@ Inside `AccountingSupplierParty`:
 - `Party/LogoReferenceID` = **BM-LOGO-2024**  
   The reference of the logo the store prints on its documents; identity of Brightmarket Stores (world/parties.json).
 - `Party/IndustryClassificationCode` = **4719** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json).
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4719 = Other retail sale in non-specialized stores.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Brightmarket Stores**  
@@ -93,12 +93,12 @@ Inside `AccountingSupplierParty`:
   English, the language the party does business in.
 - `Party/Language/Name` = **English**  
   The language's name.
-- `Party/Language/LocaleCode` = **EN**  
-  The language as a code of UBL's language code list (ISO 639).
-- `Party/PostalAddress/AddressTypeCode` = **Business**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
+  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Market Street**  
   Street of the postal address. identity of Brightmarket Stores (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **50**  
@@ -110,59 +110,59 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/PostalZone` = **38515**  
   Postal code in Bayvarra's format (5 digits). identity of Brightmarket Stores (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Brightmarket Stores (world/parties.json).
-- `Party/PostalAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Brightmarket Stores Corp**  
   The name under which the party is registered for state sales tax; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyTaxScheme/CompanyID` = **CO-1231233**  
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brightmarket Stores (world/parties.json).
-- `Party/PartyTaxScheme/TaxLevelCode` = **State**  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states.
+- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of Bayvarra's state sales tax.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL**  
-  The tax is accounted for in the country's currency.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
   The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The country whose tax this is.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Brightmarket Stores Corp**  
   The name under which the party is registered, with its legal form; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410411**  
   Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationDate` = **1979-02-14**  
   The day the company was entered in the register; identity of Brightmarket Stores (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **Corp**  
-  The legal form, as abbreviated in Bayvarra (world/countries.json).
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Corporation (public)**  
-  The legal form, in words.
-- `Party/PartyLegalEntity/EntitySizeCode` = **Large**  
-  The size class of the company (micro, small, medium or large); identity of Brightmarket Stores (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **Active**  
-  The register shows the company as active, not in liquidation.
+  The name of code CORP in Bayvarra's national company legal form list.
+- `Party/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 2900 persons and its turnover of 671000000.00 XBL in 2025, by the Trade Accord's limits; identity of Brightmarket Stores (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
+- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
+  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
   The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB**  
-  The country of registration.
+- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **Commercial**  
-  A register of businesses, not a register of charities or associations.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB**  
-  The register covers the whole country.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/ID` = **BM-CT-01**  
   The desk's number in the party's own contact list.
 - `Party/Contact/Name` = **Buying office**  
@@ -185,8 +185,8 @@ Inside `AccountingSupplierParty`:
   The profile's number on the medium.
 - `Party/SocialMediaProfile/Name` = **brightmarket**  
   The store's profile name.
-- `Party/SocialMediaProfile/SocialMediaTypeCode` = **Photo sharing**  
-  The kind of social medium.
+- `Party/SocialMediaProfile/SocialMediaTypeCode` = **PHOTO** (listID `urn:ubl-examples:world:codelist:SocialMediaTypeCode`)  
+  The kind of social medium. The code is from the Trade Accord's social media type list: PHOTO = Photo sharing.
 - `Party/SocialMediaProfile/URI` = **https://social.example/brightmarket**  
   The profile's address, under the reserved .example domain.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -200,10 +200,10 @@ Inside `AccountingCustomerParty`:
 
 - `Party/PartyName/Name` = **Robin Ashdale**  
   The trading name; identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/AddressTypeCode` = **Residential**  
-  The kind of address.
-- `Party/PostalAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/PostalAddress/AddressTypeCode` = **RESIDENTIAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: RESIDENTIAL = Residential address.
+- `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Gull Lane**  
   Street of the postal address. identity of Robin Ashdale (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **57**  
@@ -215,13 +215,13 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/PostalZone` = **38516**  
   Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Person/FirstName` = **Robin**  
@@ -232,12 +232,12 @@ Inside `AccountingCustomerParty`:
   The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `Party/Person/FinancialAccount/Name` = **Robin Ashdale**  
   The account holder, as the bank knows it.
-- `Party/Person/FinancialAccount/AccountTypeCode` = **Current**  
-  A current account, for payments in and out.
-- `Party/Person/FinancialAccount/AccountFormatCode` = **ISO13616**  
-  The account number has the structure of ISO 13616.
-- `Party/Person/FinancialAccount/CurrencyCode` = **XBL**  
-  The account is kept in the currency of the bank's country.
+- `Party/Person/FinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
+  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
+- `Party/Person/FinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
+  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
+- `Party/Person/FinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/ID` = **BLUM-001**  
   The branch that keeps the account.
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch**  
@@ -246,22 +246,22 @@ Inside `AccountingCustomerParty`:
   The bank code, the part of every account number that names the bank; identity of Bank of Lumeport (world/parties.json).
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
   The bank; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
   The bank's head office; identity of Bank of Lumeport (world/parties.json).
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
   Its building number; identity of Bank of Lumeport (world/parties.json).
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
   Its town; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB**  
-  The bank's country.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The bank's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
   The branch is at the bank's head office.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB**  
-  Its country.
-- `Party/Person/FinancialAccount/Country/IdentificationCode` = **XB**  
-  The country where the account is kept.
+- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Party/Person/FinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Cashier Contact
 
@@ -299,10 +299,10 @@ Inside `PointOfSaleContact`:
 
 Inside `Delivery`:
 
-- `DeliveryAddress/AddressTypeCode` = **Residential**  
-  The kind of address.
-- `DeliveryAddress/AddressFormatCode` = **XB**  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.
+- `DeliveryAddress/AddressTypeCode` = **RESIDENTIAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: RESIDENTIAL = Residential address.
+- `DeliveryAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `DeliveryAddress/StreetName` = **Gull Lane**  
   Street of the postal address. identity of Robin Ashdale (world/parties.json).
 - `DeliveryAddress/BuildingNumber` = **57**  
@@ -314,13 +314,13 @@ Inside `Delivery`:
 - `DeliveryAddress/PostalZone` = **38516**  
   Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
 - `DeliveryAddress/CountrySubentity` = **Coastal State**  
-  The state or territory, part of an address in federal Bayvarra. identity of Robin Ashdale (world/parties.json).
-- `DeliveryAddress/CountrySubentityCode` = **CO**  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json).
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `DeliveryAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `DeliveryAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `DeliveryAddress/Country/IdentificationCode` = **XB**  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists).
+- `DeliveryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `DeliveryAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `RequestedDeliveryPeriod/StartDate` = **2026-05-17**  
@@ -354,21 +354,21 @@ Inside `Payment`:
   The card transaction.
 - `PaymentTerminalID` = **PT-G2**  
   The card terminal at the till.
-- `StatusCode` = **Approved**  
-  The payment was approved.
+- `StatusCode` = **APPROVED** (listID `urn:ubl-examples:world:codelist:PaymentStatusCode`)  
+  The payment was approved. The code is from the Trade Accord's payment status list: APPROVED = Payment approved.
 
 ### Payment Means
 
 Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **55** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 55: debit card.
+  UN/EDIFACT 4461 code 55: debit card. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 55 = Debit card.
 - `CardAccount/PrimaryAccountNumberID` = **************4417**  
   The card number, masked: a receipt shows only the last four digits.
 - `CardAccount/NetworkID` = **LUMECARD**  
   The card scheme of the world: Lumeport's interbank card.
-- `CardAccount/CardTypeCode` = **Debit**  
-  A debit card.
+- `CardAccount/CardTypeCode` = **DEBIT** (listID `urn:ubl-examples:world:codelist:CardTypeCode`)  
+  A debit card. The code is from the Trade Accord's payment card type list: DEBIT = Debit card.
 - `CardAccount/ValidityStartDate` = **2025-06-01**  
   The card is valid from.
 - `CardAccount/ExpiryDate` = **2029-05-31**  
@@ -379,14 +379,14 @@ Inside `PaymentMeans`:
   The card's issue number: the first card of this account.
 - `CardAccount/CV2ID` = *******  
   Masked: card rules forbid printing or storing the card's security code.
-- `CardAccount/CardChipCode` = **Chip**  
-  Read from the chip.
+- `CardAccount/CardChipCode` = **Chip** (listID `urn:oasis:names:specification:ubl:codelist:gc:ChipCode`)  
+  Read from the chip. The code is from the world's copy of UBL's Chip list, with a listID: Chip.
 - `CardAccount/ChipApplicationID` = **A0000099990001**  
   The chip application used; an identifier of the world, not a registered one.
 - `CardAccount/HolderName` = **R ASHDALE**  
   The name on the card.
-- `CardAccount/RoleCode` = **Holder**  
-  Paid by the card holder.
+- `CardAccount/RoleCode` = **HOLDER** (listID `urn:ubl-examples:world:codelist:CardAccountRoleCode`)  
+  Paid by the card holder. The code is from the Trade Accord's card account role list: HOLDER = Card holder.
 
 ### Allowance Charge
 
@@ -394,6 +394,8 @@ Inside `AllowanceCharge`:
 
 - `ChargeIndicator` = **true**  
   A charge.
+- `AllowanceChargeReasonCode` = **DL** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: DL = Delivery.
 - `AllowanceChargeReason` = **Home delivery**  
   Delivered on Saturday, as booked.
 - `Amount` = **25.00** (currencyID `XBL`)  
@@ -483,10 +485,10 @@ Inside `PurchaseReceiptLine`:
   The variant of the item: the frame colour, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **Colour**  
   The attribute the variant differs in.
-- `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM**  
-  The part of the item the attribute is on: the frame.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY**  
-  The variant's code for it.
+- `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
   The variant in words.
 - `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
@@ -499,18 +501,20 @@ Inside `PurchaseReceiptLine`:
   The range of item numbers the agency gives out in the maker's country.
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
-- `Item/OriginCountry/IdentificationCode` = **XU**  
-  Where the item was produced; item bench-serra of Valdara Industries (world/items.json).
-- `Item/CommodityClassification/CommodityCode` = **9401.79.10**  
-  The national tariff code below the HS subheading, as the customs of the maker's country uses it.
-- `Item/CommodityClassification/ItemClassificationCode` = **9401.79** (listID `HS`)  
-  Harmonized System subheading of the World Customs Organization; item bench-serra of Valdara Industries (world/items.json).
+- `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Where the item was produced; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+- `Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
+  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `Item/ClassifiedTaxCategory/ID` = **S**  
   A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S).
 - `Item/ClassifiedTaxCategory/Percent` = **6.5**  
   The rate for this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **Goods**  
-  Whether the category applies to goods or services.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT**  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
@@ -529,36 +533,36 @@ Inside `PurchaseReceiptLine`:
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Frame colour**  
   The colour of the frame, one of the colours it is offered in.
-- `Item/AdditionalItemProperty/ImportanceCode` = **Optional**  
-  How much the property matters in describing the item.
+- `Item/AdditionalItemProperty/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
   The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
   The group's name.
-- `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Optional**  
-  How much the group matters.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the group matters. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
 - `Item/AdditionalItemProperty/ID` = **LOAD**  
   The maker's identifier for the property.
 - `Item/AdditionalItemProperty/Name` = **Load capacity**  
-  A property buyers ask about.
-- `Item/AdditionalItemProperty/NameCode` = **LOAD**  
-  The property's name as a code, as the property standard lists it.
+  The name of code LOAD in the Trade Accord's item property name list.
+- `Item/AdditionalItemProperty/NameCode` = **LOAD** (listID `urn:ubl-examples:world:codelist:ItemPropertyNameCode`)  
+  The property's name as a code. The code is from the Trade Accord's item property name list: LOAD = Load capacity.
 - `Item/AdditionalItemProperty/TestMethod` = **Static load on the seat for one hour, three seats loaded evenly, no lasting deformation**  
   How the value is tested.
 - `Item/AdditionalItemProperty/ValueQuantity` = **450** (unitCode `KGM`)  
   Its measured value; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalItemProperty/ValueQualifier` = **Distributed over the seat**  
   What the value stands for.
-- `Item/AdditionalItemProperty/ImportanceCode` = **Mandatory**  
-  How much the property matters in describing the item.
+- `Item/AdditionalItemProperty/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **SAF**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Safety**  
   The group's name.
-- `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **Mandatory**  
-  How much the group matters.
+- `Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
+  How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450**  
   The property's number in the property standard of the identification agency.
 - `Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **Codana street furniture properties**  
@@ -597,8 +601,8 @@ Inside `PurchaseReceiptLine`:
   The lowest it can be set to.
 - `Item/Dimension/MaximumMeasure` = **460** (unitCode `MMT`)  
   The highest it can be set to.
-- `Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2e**  
-  The emission reported: greenhouse gases as CO2 equivalent.
+- `Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
+  The emission reported: greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `Item/EnvironmentalEmission/ValueMeasure` = **96** (unitCode `KGM`)  
   The emission of one item.
 - `Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
@@ -607,16 +611,16 @@ Inside `PurchaseReceiptLine`:
   The emission is per one bench.
 - `Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
   The standard the footprint is calculated by.
-- `Item/EnvironmentalEmission/LifecycleStageCode` = **Manufacturing**  
-  The part of the bench's life the figure covers.
+- `Item/EnvironmentalEmission/LifecycleStageCode` = **MANUFACTURING** (listID `urn:ubl-examples:world:codelist:LifecycleStageCode`)  
+  The part of the bench's life the figure covers. The code is from the Trade Accord's life cycle stage list: MANUFACTURING = Manufacturing.
 - `Item/EnvironmentalEmission/LifecycleStageDescription` = **From the ore at the mine to the bench leaving the factory gate.**  
   That part in words.
 - `Item/EnvironmentalEmission/Description` = **Mining, steel making, casting, galvanising, sawing and the transport between them.**  
   What the figure includes.
-- `Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **Calculated**  
-  Calculated, not measured.
-- `Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **Cradle to gate**  
-  How much of the chain is included.
+- `Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **CALCULATED** (listID `urn:ubl-examples:world:codelist:EmissionCalculationMethodCode`)  
+  Calculated, not measured. The code is from the Trade Accord's emission calculation method list: CALCULATED = Calculated.
+- `Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **CRADLETOGATE** (listID `urn:ubl-examples:world:codelist:EmissionBoundaryCode`)  
+  How much of the chain is included. The code is from the Trade Accord's emission boundary list: CRADLETOGATE = Cradle to gate.
 - `Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource` = **The steelworks' and sawmill's measured energy use of 2025**  
   Where the factors come from.
 - `Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID` = **VI-LCA-2025**  
@@ -625,12 +629,12 @@ Inside `PurchaseReceiptLine`:
   The year the figures are from.
 - `Item/EnvironmentalEmission/MeasurementPeriod/EndDate` = **2025-12-31**  
   Its last day.
-- `Item/CircularityProfile/MaintenanceFrequencyCode` = **Yearly**  
-  How often the item needs maintenance.
+- `Item/CircularityProfile/MaintenanceFrequencyCode` = **YEARLY** (listID `urn:ubl-examples:world:codelist:MaintenanceFrequencyCode`)  
+  How often the item needs maintenance. The code is from the Trade Accord's maintenance frequency list: YEARLY = Once a year.
 - `Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
   What the maintenance is.
-- `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Steel**  
-  A material the item is made of.
+- `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **STEEL** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
+  A material the item is made of. The code is from the Trade Accord's material resource list: STEEL = Steel.
 - `Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **34** (unitCode `KGM`)  
   How much of it one item uses.
 - `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
@@ -639,8 +643,8 @@ Inside `PurchaseReceiptLine`:
   Measured over the production of 2025.
 - `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
   Its last day.
-- `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **Hardwood**  
-  A material the item is made of.
+- `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **HARDWOOD** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
+  A material the item is made of. The code is from the Trade Accord's material resource list: HARDWOOD = Hardwood.
 - `Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
   How much of it one item uses.
 - `Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
@@ -649,8 +653,8 @@ Inside `PurchaseReceiptLine`:
   Measured over the production of 2025.
 - `Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
   Its last day.
-- `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **Packaging**  
-  The kind of waste the item leaves.
+- `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **PACKAGING** (listID `urn:ubl-examples:world:codelist:WasteTypeCode`)  
+  The kind of waste the item leaves. The code is from the Trade Accord's waste type list: PACKAGING = Packaging.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
   The waste in words.
 - `Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
@@ -661,8 +665,8 @@ Inside `PurchaseReceiptLine`:
   Its last day.
 - `Item/CircularityProfile/RepairabilityScore/ScoreNumeric` = **8**  
   Side frames and slats can be replaced one by one, which is why the spare side frame exists.
-- `Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **Repairability index, 0–10**  
-  The scale of the score.
+- `Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **REPAIR10** (listID `urn:ubl-examples:world:codelist:ScoringSystemCode`)  
+  The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 - `Price/PriceAmount` = **674.1** (currencyID `XBL`)  
@@ -679,8 +683,8 @@ Inside `PurchaseReceiptLine`:
   The last day of the promotion.
 - `Price/AllowanceCharge/ChargeIndicator` = **false**  
   A discount, not a charge.
-- `Price/AllowanceCharge/AllowanceChargeReasonCode` = **75** (listID `UN/EDIFACT EDED 5189`)  
-  UN/EDIFACT 5189 code 75: promotion discount.
+- `Price/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
+  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it: the promotion is a discount on the price. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
 - `Price/AllowanceCharge/AllowanceChargeReason` = **Spring garden promotion**  
   The promotion, as the till prints it.
 - `Price/AllowanceCharge/MultiplierFactorNumeric` = **0.1**  
@@ -708,7 +712,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
   <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
   <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:PurchaseReference>
     <cbc:ID>BM-LOYAL-0088127</cbc:ID>
     <cbc:Description>Loyalty card</cbc:Description>
@@ -747,35 +751,35 @@ Inside `PurchaseReceiptLine`:
       <cac:Language>
         <cbc:ID>en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
         <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38515</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
         <cbc:CompanyID>CO-1231233</cbc:CompanyID>
-        <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
             <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -784,25 +788,25 @@ Inside `PurchaseReceiptLine`:
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
         <cbc:CompanyID>20410411</cbc:CompanyID>
         <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode>Corp</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>XB:FBR</cbc:ID>
           <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:CorporateRegistrationScheme>
@@ -823,7 +827,7 @@ Inside `PurchaseReceiptLine`:
       <cac:SocialMediaProfile>
         <cbc:ID>10442197</cbc:ID>
         <cbc:Name>brightmarket</cbc:Name>
-        <cbc:SocialMediaTypeCode>Photo sharing</cbc:SocialMediaTypeCode>
+        <cbc:SocialMediaTypeCode listID="urn:ubl-examples:world:codelist:SocialMediaTypeCode">PHOTO</cbc:SocialMediaTypeCode>
         <cbc:URI>https://social.example/brightmarket</cbc:URI>
       </cac:SocialMediaProfile>
       <cac:ElectronicAddress>
@@ -838,18 +842,18 @@ Inside `PurchaseReceiptLine`:
         <cbc:Name>Robin Ashdale</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
         <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38516</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
@@ -859,9 +863,9 @@ Inside `PurchaseReceiptLine`:
         <cac:FinancialAccount>
           <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
           <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
           <cac:FinancialInstitutionBranch>
             <cbc:ID>BLUM-001</cbc:ID>
             <cbc:Name>Main branch</cbc:Name>
@@ -869,24 +873,24 @@ Inside `PurchaseReceiptLine`:
               <cbc:ID>BLUM</cbc:ID>
               <cbc:Name>Bank of Lumeport</cbc:Name>
               <cac:Address>
-                <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
                 <cbc:StreetName>Exchange Street</cbc:StreetName>
                 <cbc:BuildingNumber>48</cbc:BuildingNumber>
                 <cbc:CityName>Lumeport</cbc:CityName>
                 <cac:Country>
-                  <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
                 </cac:Country>
               </cac:Address>
             </cac:FinancialInstitution>
             <cac:Address>
               <cbc:CityName>Lumeport</cbc:CityName>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitutionBranch>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:FinancialAccount>
       </cac:Person>
@@ -908,18 +912,18 @@ Inside `PurchaseReceiptLine`:
   </cac:PointOfSaleContact>
   <cac:Delivery>
     <cac:DeliveryAddress>
-      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
       <cbc:BuildingNumber>57</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38516</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:DeliveryAddress>
@@ -946,27 +950,28 @@ Inside `PurchaseReceiptLine`:
     <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
     <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
     <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
-    <cbc:StatusCode>Approved</cbc:StatusCode>
+    <cbc:StatusCode listID="urn:ubl-examples:world:codelist:PaymentStatusCode">APPROVED</cbc:StatusCode>
   </cac:Payment>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
     <cac:CardAccount>
       <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
       <cbc:NetworkID>LUMECARD</cbc:NetworkID>
-      <cbc:CardTypeCode>Debit</cbc:CardTypeCode>
+      <cbc:CardTypeCode listID="urn:ubl-examples:world:codelist:CardTypeCode">DEBIT</cbc:CardTypeCode>
       <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
       <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
       <cbc:IssuerID>BLUM</cbc:IssuerID>
       <cbc:IssueNumberID>01</cbc:IssueNumberID>
       <cbc:CV2ID>***</cbc:CV2ID>
-      <cbc:CardChipCode>Chip</cbc:CardChipCode>
+      <cbc:CardChipCode listID="urn:oasis:names:specification:ubl:codelist:gc:ChipCode">Chip</cbc:CardChipCode>
       <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
       <cbc:HolderName>R ASHDALE</cbc:HolderName>
-      <cbc:RoleCode>Holder</cbc:RoleCode>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:CardAccountRoleCode">HOLDER</cbc:RoleCode>
     </cac:CardAccount>
   </cac:PaymentMeans>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">DL</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Home delivery</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">25.00</cbc:Amount>
     <cac:TaxCategory>
@@ -1029,8 +1034,8 @@ Inside `PurchaseReceiptLine`:
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID>Colour</cbc:AttributeID>
-          <cbc:PositionCode>FRM</cbc:PositionCode>
-          <cbc:DescriptionCode>GRY</cbc:DescriptionCode>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
           <cbc:Description>Frame in Ferro grey</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
@@ -1046,16 +1051,19 @@ Inside `PurchaseReceiptLine`:
         <cbc:ID>VI-DS-B180</cbc:ID>
       </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
       </cac:OriginCountry>
       <cac:CommodityClassification>
-        <cbc:CommodityCode>9401.79.10</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="HS">9401.79</cbc:ItemClassificationCode>
+        <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:CommodityClassification>
+        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
       </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
-        <cbc:SupplyTypeCode>Goods</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID>STT</cbc:ID>
         </cac:TaxScheme>
@@ -1075,26 +1083,26 @@ Inside `PurchaseReceiptLine`:
       <cac:AdditionalItemProperty>
         <cbc:ID>COL</cbc:ID>
         <cbc:Name>Frame colour</cbc:Name>
-        <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+        <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
         <cbc:ListValue>Ferro grey</cbc:ListValue>
         <cac:ItemPropertyGroup>
           <cbc:ID>APP</cbc:ID>
           <cbc:Name>Appearance</cbc:Name>
-          <cbc:ImportanceCode>Optional</cbc:ImportanceCode>
+          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:ID>LOAD</cbc:ID>
         <cbc:Name>Load capacity</cbc:Name>
-        <cbc:NameCode>LOAD</cbc:NameCode>
+        <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">LOAD</cbc:NameCode>
         <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
         <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
         <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
-        <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+        <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         <cac:ItemPropertyGroup>
           <cbc:ID>SAF</cbc:ID>
           <cbc:Name>Safety</cbc:Name>
-          <cbc:ImportanceCode>Mandatory</cbc:ImportanceCode>
+          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
         </cac:ItemPropertyGroup>
         <cac:StandardPropertyIdentification>
           <cbc:ID>UR-SF-0450</cbc:ID>
@@ -1139,17 +1147,17 @@ Inside `PurchaseReceiptLine`:
         <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
       </cac:Dimension>
       <cac:EnvironmentalEmission>
-        <cbc:EnvironmentalEmissionTypeCode>CO2e</cbc:EnvironmentalEmissionTypeCode>
+        <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
         <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
         <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
         <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
-        <cbc:LifecycleStageCode>Manufacturing</cbc:LifecycleStageCode>
+        <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">MANUFACTURING</cbc:LifecycleStageCode>
         <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
         <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
         <cac:EmissionCalculationMethod>
-          <cbc:CalculationMethodCode>Calculated</cbc:CalculationMethodCode>
-          <cbc:FullnessIndicationCode>Cradle to gate</cbc:FullnessIndicationCode>
+          <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
+          <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:EmissionBoundaryCode">CRADLETOGATE</cbc:FullnessIndicationCode>
           <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
           <cac:EmissionFactorDocumentReference>
             <cbc:ID>VI-LCA-2025</cbc:ID>
@@ -1161,10 +1169,10 @@ Inside `PurchaseReceiptLine`:
         </cac:MeasurementPeriod>
       </cac:EnvironmentalEmission>
       <cac:CircularityProfile>
-        <cbc:MaintenanceFrequencyCode>Yearly</cbc:MaintenanceFrequencyCode>
+        <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
         <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
         <cac:ResourceConsumption>
-          <cbc:ResourceTypeCode>Steel</cbc:ResourceTypeCode>
+          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
           <cac:MeasurementPeriod>
@@ -1173,7 +1181,7 @@ Inside `PurchaseReceiptLine`:
           </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:ResourceConsumption>
-          <cbc:ResourceTypeCode>Hardwood</cbc:ResourceTypeCode>
+          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">HARDWOOD</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
           <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
           <cac:MeasurementPeriod>
@@ -1182,7 +1190,7 @@ Inside `PurchaseReceiptLine`:
           </cac:MeasurementPeriod>
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
-          <cbc:WasteTypeCode>Packaging</cbc:WasteTypeCode>
+          <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
           <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
           <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
           <cac:MeasurementPeriod>
@@ -1192,7 +1200,7 @@ Inside `PurchaseReceiptLine`:
         </cac:WasteGenerated>
         <cac:RepairabilityScore>
           <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
-          <cbc:ScoringSystemCode>Repairability index, 0–10</cbc:ScoringSystemCode>
+          <cbc:ScoringSystemCode listID="urn:ubl-examples:world:codelist:ScoringSystemCode">REPAIR10</cbc:ScoringSystemCode>
         </cac:RepairabilityScore>
         <cac:ProductDocumentationDocumentReference>
           <cbc:ID>VI-RM-B180</cbc:ID>
@@ -1210,7 +1218,7 @@ Inside `PurchaseReceiptLine`:
       </cac:ValidityPeriod>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">75</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Spring garden promotion</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
         <cbc:Amount currencyID="XBL">74.90</cbc:Amount>

@@ -85,7 +85,8 @@ page analysis/element-coverage.md coverage.html "Element coverage" 2
 page analysis/element-coverage-details.md coverage-details.html "Element coverage: details" 3
 
 cp site/site.css "$OUT/site.css"
-mkdir -p "$OUT/codelists" && cp world/codelists/*.gc "$OUT/codelists/"   # the world code lists, at their LocationUri
+mkdir -p "$OUT/codelists/gc" && cp world/codelists/*.gc "$OUT/codelists/"   # the world code lists, at their LocationUri
+cp world/codelists/gc/*.gc "$OUT/codelists/gc/" && cp world/codelists/UBL-World-2.5.cva "$OUT/codelists/"
 # The world: the map with its data, and a page per party
 python3 tools/build_world.py "$OUT" "$OUT/.world-md"
 for md in "$OUT"/.world-md/*.md; do

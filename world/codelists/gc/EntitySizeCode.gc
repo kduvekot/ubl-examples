@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: entity size. The Trade Accord's size classes of enterprises, in the style of the EU definition of SMEs: an enterprise is in the smallest class whose limits it keeps, both for its headcount (annual work units) and its yearly turnover. The turnover limits are given in all three currencies, in their minor units, at the world's reference rates (1 lume = 100 ferra = 0.4 coral). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>EntitySizeCode</ShortName>
+      <LongName xml:lang="en">Entity size (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:EntitySizeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:EntitySizeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:EntitySizeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/EntitySizeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MICRO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Micro enterprise</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dudran razkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Likihu nehileti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Fewer than 10 persons and a turnover of at most 2,000,000.00 XBL, 200,000,000 XUF or 800,000.000 XLC.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SMALL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Small enterprise</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hinir razkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tamala nehileti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Fewer than 50 persons and a turnover of at most 10,000,000.00 XBL, 1,000,000,000 XUF or 4,000,000.000 XLC.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MEDIUM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medium-sized enterprise</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kraltek-skimir razkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Filupa-hatavi nehileti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Fewer than 250 persons and a turnover of at most 50,000,000.00 XBL, 5,000,000,000 XUF or 20,000,000.000 XLC.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LARGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Large enterprise</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bindrek razkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Talovu nehileti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>250 persons or more, or a turnover above the limits of a medium-sized enterprise.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

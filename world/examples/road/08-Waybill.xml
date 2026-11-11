@@ -8,15 +8,15 @@
   <cbc:CarrierAssignedID>TH-CMR-26-0149</cbc:CarrierAssignedID>
   <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:StatusCode>Issued</cbc:StatusCode>
+  <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>08:16:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: dadrek, miran, sundraz.</cbc:Note>
-  <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
+  <cbc:Note languageID="en-XU">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
-  <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
+  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CMR</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
@@ -37,31 +37,31 @@
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via dei Trasporti</cbc:StreetName>
       <cbc:BuildingNumber>45</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4160</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
       <cbc:CompanyID>XU007337656</cbc:CompanyID>
-      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
-        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -70,23 +70,24 @@
       <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-104822</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>SRU</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XU:CR</cbc:ID>
         <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -106,8 +107,9 @@
       </cac:ValidityPeriod>
       <cac:Certificate>
         <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
-        <cbc:CertificateTypeCode>Permit</cbc:CertificateTypeCode>
-        <cbc:CertificateType>Operating permit</cbc:CertificateType>
+        <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
+        <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
+        <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
       </cac:Certificate>
     </cac:PartyAuthorization>
     <cac:ElectronicAddress>
@@ -130,11 +132,11 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
       <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
       <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
@@ -143,24 +145,24 @@
       <cbc:CityName>Marrowdale</cbc:CityName>
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>UL</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -169,25 +171,25 @@
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20410274</cbc:CompanyID>
       <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Medium</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -222,31 +224,31 @@
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU007299291</cbc:CompanyID>
-      <cbc:TaxLevelCode>National</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>VAT</cbc:ID>
-        <cbc:CurrencyCode>XUF</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -255,25 +257,26 @@
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID>XU-R-104274</cbc:CompanyID>
       <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Large</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Ferrano</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XU:CR</cbc:ID>
         <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -281,7 +284,7 @@
         <cbc:ID>XU0001042501</cbc:ID>
         <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
         <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-        <cbc:MarketCode>FSE</cbc:MarketCode>
+        <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
       </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
@@ -292,13 +295,13 @@
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       <cac:OtherCommunication>
-        <cbc:ChannelCode>AL</cbc:ChannelCode>
+        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
         <cbc:Value>+999 1 344 474 4274</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>
       <cbc:ID>5-xu-SP-8-xu</cbc:ID>
-      <cbc:ServiceTypeCode>Logistics</cbc:ServiceTypeCode>
+      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
       <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
       <cac:Party>
         <cac:PartyIdentification>
@@ -327,7 +330,7 @@
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0154</cbc:ID>
-    <cbc:HandlingCode>Upright</cbc:HandlingCode>
+    <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">UPRIGHT</cbc:HandlingCode>
     <cbc:Information>Steel street furniture for resale.</cbc:Information>
     <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:NetNetWeightMeasure unitCode="KGM">3762</cbc:NetNetWeightMeasure>
@@ -371,7 +374,7 @@
           <cbc:Name>Ferrano</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:Location>
@@ -385,15 +388,15 @@
         </cac:PartyName>
       </cac:ConsigneeParty>
       <cac:OriginalDepartureCountry>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
       </cac:OriginalDepartureCountry>
       <cac:FinalDestinationCountry>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:FinalDestinationCountry>
       <cac:DeliveryTerms>
         <cbc:ID>FCA</cbc:ID>
         <cbc:SpecialTerms>The buyer's carrier presents the truck; the seller loads it.</cbc:SpecialTerms>
-        <cbc:LossRiskResponsibilityCode>Buyer</cbc:LossRiskResponsibilityCode>
+        <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>The risk passes on loading at the 3PL's warehouse.</cbc:LossRisk>
       </cac:DeliveryTerms>
       <cac:CollectPaymentTerms>
@@ -402,8 +405,8 @@
       <cac:MainCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
-        <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
-        <cbc:TransitDirectionCode>Export</cbc:TransitDirectionCode>
+        <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
+        <cbc:TransitDirectionCode listID="urn:ubl-examples:world:codelist:TransitDirectionCode">EXPORT</cbc:TransitDirectionCode>
         <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
         <cbc:EstimatedDeliveryDate>2026-03-25</cbc:EstimatedDeliveryDate>
         <cbc:EstimatedDeliveryTime>09:00:00</cbc:EstimatedDeliveryTime>
@@ -417,8 +420,8 @@
           <cbc:JourneyID>TH-26-04471</cbc:JourneyID>
           <cbc:RegistrationNationalityID>XU</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
-          <cbc:DirectionCode>Westbound</cbc:DirectionCode>
-          <cbc:TransportMeansTypeCode>TE</cbc:TransportMeansTypeCode>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="urn:ubl-examples:world:codelist:TransportMeansTypeCode">TRUCKTRAILER</cbc:TransportMeansTypeCode>
           <cac:RoadTransport>
             <cbc:LicensePlateID>UR 4160 KT</cbc:LicensePlateID>
             <cbc:TrailerLicensePlateID>UR TR 3381</cbc:TrailerLicensePlateID>
@@ -441,7 +444,7 @@
           <cbc:Name>Ferrano</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:LoadingPortLocation>
@@ -450,7 +453,7 @@
           <cbc:Name>Marrowdale</cbc:Name>
           <cac:Address>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
@@ -467,7 +470,7 @@
             <cbc:Name>Ferrano</cbc:Name>
             <cac:Address>
               <cac:Country>
-                <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:Location>
@@ -480,8 +483,8 @@
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-001</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -491,7 +494,7 @@
           <cbc:ID>CL-26-001</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -517,16 +520,16 @@
           <cbc:ID>CL-26-001-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-002</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -536,7 +539,7 @@
           <cbc:ID>CL-26-002</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -562,16 +565,16 @@
           <cbc:ID>CL-26-002-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-003</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -581,7 +584,7 @@
           <cbc:ID>CL-26-003</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -607,16 +610,16 @@
           <cbc:ID>CL-26-003-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-004</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -626,7 +629,7 @@
           <cbc:ID>CL-26-004</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -652,16 +655,16 @@
           <cbc:ID>CL-26-004-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-005</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -671,7 +674,7 @@
           <cbc:ID>CL-26-005</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -697,16 +700,16 @@
           <cbc:ID>CL-26-005-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-006</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -716,7 +719,7 @@
           <cbc:ID>CL-26-006</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -742,16 +745,16 @@
           <cbc:ID>CL-26-006-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-007</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -761,7 +764,7 @@
           <cbc:ID>CL-26-007</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -787,16 +790,16 @@
           <cbc:ID>CL-26-007-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-008</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -806,7 +809,7 @@
           <cbc:ID>CL-26-008</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -832,16 +835,16 @@
           <cbc:ID>CL-26-008-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-009</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -851,7 +854,7 @@
           <cbc:ID>CL-26-009</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -877,16 +880,16 @@
           <cbc:ID>CL-26-009-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-010</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -896,7 +899,7 @@
           <cbc:ID>CL-26-010</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -922,16 +925,16 @@
           <cbc:ID>CL-26-010-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-011</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -941,7 +944,7 @@
           <cbc:ID>CL-26-011</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -967,16 +970,16 @@
           <cbc:ID>CL-26-011-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-012</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -986,7 +989,7 @@
           <cbc:ID>CL-26-012</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1012,16 +1015,16 @@
           <cbc:ID>CL-26-012-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-013</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1031,7 +1034,7 @@
           <cbc:ID>CL-26-013</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1057,16 +1060,16 @@
           <cbc:ID>CL-26-013-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-014</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1076,7 +1079,7 @@
           <cbc:ID>CL-26-014</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1102,16 +1105,16 @@
           <cbc:ID>CL-26-014-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-015</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1121,7 +1124,7 @@
           <cbc:ID>CL-26-015</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1147,16 +1150,16 @@
           <cbc:ID>CL-26-015-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-016</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1166,7 +1169,7 @@
           <cbc:ID>CL-26-016</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1192,16 +1195,16 @@
           <cbc:ID>CL-26-016-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-017</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1211,7 +1214,7 @@
           <cbc:ID>CL-26-017</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1237,16 +1240,16 @@
           <cbc:ID>CL-26-017-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-018</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1256,7 +1259,7 @@
           <cbc:ID>CL-26-018</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1282,16 +1285,16 @@
           <cbc:ID>CL-26-018-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-019</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1301,7 +1304,7 @@
           <cbc:ID>CL-26-019</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1327,16 +1330,16 @@
           <cbc:ID>CL-26-019-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-020</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1346,7 +1349,7 @@
           <cbc:ID>CL-26-020</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1372,16 +1375,16 @@
           <cbc:ID>CL-26-020-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-021</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1391,7 +1394,7 @@
           <cbc:ID>CL-26-021</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1417,16 +1420,16 @@
           <cbc:ID>CL-26-021-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-022</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1436,7 +1439,7 @@
           <cbc:ID>CL-26-022</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1462,16 +1465,16 @@
           <cbc:ID>CL-26-022-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-023</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1481,7 +1484,7 @@
           <cbc:ID>CL-26-023</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1507,16 +1510,16 @@
           <cbc:ID>CL-26-023-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-024</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>Stack2</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
@@ -1526,7 +1529,7 @@
           <cbc:ID>CL-26-024</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1552,16 +1555,16 @@
           <cbc:ID>CL-26-024-1</cbc:ID>
           <cbc:Quantity unitCode="EA">4</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>SW</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SW</cbc:PackagingTypeCode>
           <cbc:PackagingType>Bench in stretch film</cbc:PackagingType>
           <cbc:PackingMaterial>Recycled PE stretch film</cbc:PackingMaterial>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
         <cbc:ID>CL-26-025</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode>PX</cbc:TransportHandlingUnitTypeCode>
-        <cbc:HandlingCode>NoStack</cbc:HandlingCode>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">NOSTACK</cbc:HandlingCode>
         <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
@@ -1571,7 +1574,7 @@
           <cbc:ID>CL-26-025</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-          <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
         </cac:ActualPackage>
         <cac:MeasurementDimension>
           <cbc:AttributeID>Length</cbc:AttributeID>
@@ -1597,8 +1600,8 @@
           <cbc:ID>CL-26-025-1</cbc:ID>
           <cbc:Quantity unitCode="EA">12</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
-          <cbc:PackageLevelCode>1</cbc:PackageLevelCode>
-          <cbc:PackagingTypeCode>BX</cbc:PackagingTypeCode>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
           <cbc:PackagingType>Cardboard box</cbc:PackagingType>
           <cbc:PackingMaterial>Corrugated cardboard</cbc:PackingMaterial>
         </cac:Package>
@@ -1615,50 +1618,50 @@
       </cac:EstimatedDeliveryPeriod>
       <cac:FuelConsumption>
         <cbc:ID>TH-FC-26-0159</cbc:ID>
-        <cbc:FuelTypeCode>Diesel</cbc:FuelTypeCode>
+        <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
         <cbc:FuelConsumptionMeasure unitCode="LTR">61</cbc:FuelConsumptionMeasure>
       </cac:FuelConsumption>
     </cac:Delivery>
     <cac:ReturnAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4130</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:ReturnAddress>
     <cac:OriginAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
-      <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4130</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:OriginAddress>
     <cac:ExportCountry>
-      <cbc:IdentificationCode>XU</cbc:IdentificationCode>
+      <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
     </cac:ExportCountry>
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode>Original</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode>Paper</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">ORIGINAL</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">PAPER</cbc:DistributionTypeCode>
     <cbc:DistributionType>With the goods</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
@@ -1671,8 +1674,8 @@
   </cac:DocumentDistribution>
   <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
-    <cbc:DocumentTypeCode>Copy</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode>Electronic</cbc:DistributionTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentCopyTypeCode">COPY</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

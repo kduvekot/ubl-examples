@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: cancellation reason. Why a procedure was cancelled (eForms non-award-justification), also for the cancellation of a previous procedure. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CancellationReasonCode</ShortName>
+      <LongName xml:lang="en">Cancellation reason (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:CancellationReasonCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:CancellationReasonCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:CancellationReasonCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/CancellationReasonCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NOTENDERS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No tenders</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sarhek binkek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lelaha leina</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>No tenders, or only unsuitable ones, were received (eForms no-rece).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UNSUITABLE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No suitable tender</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sarhek zakstir stezdraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lelaha pulola niane</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>All tenders were irregular or unacceptable (eForms all-rej).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BUDGET</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Insufficient budget</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skermek skurbek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vuvalete litefe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The tenders exceeded the budget (eForms budget).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CHANGEDNEEDS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Changed needs</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Burgir tivir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vulaho lenape</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The authority no longer needs what it asked for.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

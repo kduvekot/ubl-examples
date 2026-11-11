@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: packing group. The packing group of dangerous goods, following the UN Model Regulations (2.0.1.3), with a code for goods to which no packing group is assigned. The build checks that it agrees with the UN/EDIFACT 8339 packaging danger level: I with 1, II with 2, III with 3, NA with 4. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>UNPackingGroupCode</ShortName>
+      <LongName xml:lang="en">Packing group (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:UNPackingGroupCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:UNPackingGroupCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:UNPackingGroupCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNPackingGroupCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>I</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Great danger</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hazstul zhurbaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Toleve vuhote</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Packing group I.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>II</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medium danger</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kraltek zhurbaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Filupa vuhote</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Packing group II.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>III</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Minor danger</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dirmek zhurbaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Milive vuhote</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Packing group III.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>No packing group assigned</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sarhek neldrek staktir skerstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lelaha palavo molasu maloli</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The UN entry has no packing group, such as lithium batteries (UN 3480) or radioactive material.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

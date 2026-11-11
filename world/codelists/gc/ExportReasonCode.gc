@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: export reason. Why goods are exported. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ExportReasonCode</ShortName>
+      <LongName xml:lang="en">Export reason (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ExportReasonCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ExportReasonCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ExportReasonCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ExportReasonCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SALE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sale</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhermek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vaheli</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are sold to a buyer abroad.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXHIBITION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exhibition or fair</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Miban van tran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tenaoka vapene matifu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are shown at an exhibition or fair and come back.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REPAIR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Repair</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Balzhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tameti</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are sent for repair and come back.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RETURN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Return</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trikrul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tiseta</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are returned to their supplier.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GIFT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gift</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Minul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nalehe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are given free of charge.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

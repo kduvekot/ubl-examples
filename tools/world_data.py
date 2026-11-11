@@ -13,6 +13,7 @@ fields, flows, documents); every tool reads the world through it.
 """
 import json
 import os
+import re
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 LAYERS = ("countries", "parties", "map", "documents", "items")
@@ -57,3 +58,72 @@ def save(layer, data):
     with open(path(layer), "w", encoding="utf-8") as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
         f.write("\n")
+
+
+# ---------------------------------------------------------------- the world's invented languages
+_WORLD = None
+
+
+def _world():
+    global _WORLD
+    if _WORLD is None:
+        _WORLD = load()
+    return _WORLD
+
+
+MISSING_WORDS = set()
+
+
+def translate(text, code, street=False):
+    """A text in Urvanian (qau) or Lisavan (qal): the world's invented languages, word by word from their fixed
+    vocabularies (world/countries.json). Names, numbers and codes stay as they are; Lisavan has no articles."""
+    lex = _world()["languages"][code].get("lexicon", {})
+    out, start = [], True
+    for tok in re.findall(r"[A-Za-z][A-Za-z'’]*|\S|\s+", text):
+        if not tok[0].isalpha():
+            out.append(tok)
+            if tok in ".:;!?":
+                start = True
+            continue
+        low = tok.lower()
+        proper = (tok[0].isupper() and not start and not street) or tok in proper_names()
+        start = False
+        if proper:
+            out.append(tok)
+            continue
+        if code == "qal" and low in ("the", "a", "an"):
+            if out and out[-1].isspace():
+                out.pop()
+            if not out:
+                start = True
+            continue
+        if low not in lex:
+            MISSING_WORDS.add(low)
+            out.append(tok)
+            continue
+        w = lex[low]
+        out.append(w[0].upper() + w[1:] if tok[0].isupper() or street else w)
+    t = "".join(out).strip()
+    return t[0].upper() + t[1:] if t else t
+
+
+def proper_names():
+    """Words of names, which a translation keeps: parties, places, countries, currencies, languages."""
+    global PROPER
+    if PROPER is None:
+        world = _world()
+        names = [p["identity"]["name"] for p in world["parties"]] + [t["name"] for t in world["towns"]] + \
+                [t["name"] for t in world.get("localities", [])] + \
+                [c["name"] for c in world["countries"].values()] + \
+                [c["currency"]["name"] for c in world["countries"].values()] + \
+                [x["name"] for x in world["languages"].values()]
+        PROPER = {w for n in names for w in re.findall(r"[A-Z][A-Za-z'’]*", n)} - COMMON_NAME_WORDS
+    return PROPER
+
+
+PROPER = None
+COMMON_NAME_WORDS = set("""Accord Administration Agency Air Airport Bank Barges Board Border Brokers Cargo Chamber Coastal
+Commerce Company Cotton Council Customs Department Distribution Energy Engineering Factoring Farm Forwarding Furniture
+Gas Ginnery Grid Haulage Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
+Mill Mining Ocean Packaging Port Power Procurement Public Rail Recovery Review Sawmill Service State Stores Telecom
+Terminal Textile Trade Trading Warehousing Water Works Coral Lume Ferra English""".split())   # ordinary words in names

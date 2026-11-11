@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: period description. What kind of period an invoice period is, following the UBL definition of Period/DescriptionCode (a description of the period). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>PeriodDescriptionCode</ShortName>
+      <LongName xml:lang="en">Period description (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:PeriodDescriptionCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:PeriodDescriptionCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:PeriodDescriptionCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/PeriodDescriptionCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WEEK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Week</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Valava</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A calendar week, Monday to Sunday.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MONTH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Calendar month</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nulzhan vakbaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hitiu lovofe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A calendar month, from its first day to its last.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>QUARTER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Calendar quarter</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nulzhan skahaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hitiu lamate</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Three calendar months, starting in January, April, July or October.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HALFYEAR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Half year</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tek dul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vukike fenati</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Six calendar months, starting in January or July.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>YEAR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Calendar year</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nulzhan dul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hitiu fenati</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A calendar year, from January to December.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SEASON</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Season</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tazran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kimii</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A season of a crop or a trade, as the contract defines it.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

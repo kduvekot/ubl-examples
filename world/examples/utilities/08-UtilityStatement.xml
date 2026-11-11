@@ -8,15 +8,15 @@
   <cbc:UUID>8ee8ec8d-3357-524c-81b1-479a651b524c</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>15:10:00</cbc:IssueTime>
-  <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
+  <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
   <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
-  <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0319</cbc:ID>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>CSWC-TARIFF-2026</cbc:ID>
-    <cbc:DocumentTypeCode>Tariff</cbc:DocumentTypeCode>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">TARIFF</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
@@ -42,35 +42,35 @@
     <cac:Language>
       <cbc:ID>en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Reservoir Road</cbc:StreetName>
       <cbc:BuildingNumber>51</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38500</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
       <cbc:CompanyID>CO-1236576</cbc:CompanyID>
-      <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
@@ -79,23 +79,23 @@
       <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
       <cbc:CompanyID>20412192</cbc:CompanyID>
       <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode>Ltd</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode>Small</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode>Active</cbc:CompanyLiquidationStatusCode>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
+      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
       <cac:CorporateRegistrationScheme>
         <cbc:ID>XB:FBR</cbc:ID>
         <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode>Commercial</cbc:CorporateRegistrationTypeCode>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
-            <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:JurisdictionRegionAddress>
       </cac:CorporateRegistrationScheme>
@@ -118,18 +118,18 @@
       <cbc:Name>Robin Ashdale</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Gull Lane</cbc:StreetName>
       <cbc:BuildingNumber>57</cbc:BuildingNumber>
       <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38516</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
-        <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
@@ -139,9 +139,9 @@
       <cac:FinancialAccount>
         <cbc:ID schemeID="urn:ubl-examples:world:account">XB95BLUM0007251840</cbc:ID>
         <cbc:Name>Robin Ashdale</cbc:Name>
-        <cbc:AccountTypeCode>Current</cbc:AccountTypeCode>
-        <cbc:AccountFormatCode>ISO13616</cbc:AccountFormatCode>
-        <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
+        <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+        <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
         <cac:FinancialInstitutionBranch>
           <cbc:ID>BLUM-001</cbc:ID>
           <cbc:Name>Main branch</cbc:Name>
@@ -149,24 +149,24 @@
             <cbc:ID>BLUM</cbc:ID>
             <cbc:Name>Bank of Lumeport</cbc:Name>
             <cac:Address>
-              <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+              <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
               <cbc:StreetName>Exchange Street</cbc:StreetName>
               <cbc:BuildingNumber>48</cbc:BuildingNumber>
               <cbc:CityName>Lumeport</cbc:CityName>
               <cac:Country>
-                <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
           <cac:Address>
             <cbc:CityName>Lumeport</cbc:CityName>
             <cac:Country>
-              <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitutionBranch>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:FinancialAccount>
     </cac:Person>
@@ -192,7 +192,7 @@
   </cac:MainOnAccountPayment>
   <cac:SubscriberConsumption>
     <cbc:ConsumptionID>CSW-CP-38516-57-2603</cbc:ConsumptionID>
-    <cbc:SpecificationTypeCode>Detailed</cbc:SpecificationTypeCode>
+    <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Gull Lane 57, Lumeport</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="MTQ">14</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
@@ -200,21 +200,21 @@
       <cbc:Description>Gull Lane 57, Lumeport</cbc:Description>
       <cbc:SubscriberID>CSW-C-311790</cbc:SubscriberID>
       <cbc:SubscriberType>Household</cbc:SubscriberType>
-      <cbc:SubscriberTypeCode>HH</cbc:SubscriberTypeCode>
+      <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">HH</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="MTQ">14</cbc:TotalDeliveredQuantity>
       <cac:Address>
-        <cbc:AddressTypeCode>Residential</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode>XB</cbc:AddressFormatCode>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
         <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38516</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode>XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:Address>
@@ -227,25 +227,25 @@
         <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
         <cbc:MeterName>Water meter, flat</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
-        <cbc:MeterConstantCode>Direct</cbc:MeterConstantCode>
+        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="MTQ">14</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
           <cbc:ID>CSW-W-71844-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
-          <cbc:MeterReadingTypeCode>M</cbc:MeterReadingTypeCode>
+          <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
           <cbc:PreviousMeterQuantity unitCode="MTQ">1830</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
           <cbc:LatestMeterQuantity unitCode="MTQ">1844</cbc:LatestMeterQuantity>
-          <cbc:PreviousMeterReadingMethod>Read by the household</cbc:PreviousMeterReadingMethod>
-          <cbc:PreviousMeterReadingMethodCode>CUSTOMER</cbc:PreviousMeterReadingMethodCode>
-          <cbc:LatestMeterReadingMethod>Read by the household</cbc:LatestMeterReadingMethod>
-          <cbc:LatestMeterReadingMethodCode>CUSTOMER</cbc:LatestMeterReadingMethodCode>
+          <cbc:PreviousMeterReadingMethod>Read by the customer</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">CUSTOMER</cbc:PreviousMeterReadingMethodCode>
+          <cbc:LatestMeterReadingMethod>Read by the customer</cbc:LatestMeterReadingMethod>
+          <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">CUSTOMER</cbc:LatestMeterReadingMethodCode>
           <cbc:DeliveredQuantity unitCode="MTQ">14</cbc:DeliveredQuantity>
         </cac:MeterReading>
         <cac:MeterProperty>
           <cbc:Name>Accuracy class</cbc:Name>
-          <cbc:NameCode>ACC</cbc:NameCode>
+          <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">ACC</cbc:NameCode>
           <cbc:Value>1</cbc:Value>
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
@@ -263,7 +263,7 @@
       </cac:PaymentTerms>
     </cac:OnAccountPayment>
     <cac:Consumption>
-      <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
+      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
       <cac:MainPeriod>
         <cbc:StartDate>2026-03-01</cbc:StartDate>
         <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -275,17 +275,17 @@
         <cac:ConsumptionReport>
           <cbc:ID>CSW-CP-38516-57-2603</cbc:ID>
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
           <cbc:Description>March consumption of Gull Lane 57, Lumeport.</cbc:Description>
           <cbc:TotalConsumedQuantity unitCode="MTQ">14</cbc:TotalConsumedQuantity>
           <cbc:BasicConsumedQuantity unitCode="MTQ">14</cbc:BasicConsumedQuantity>
           <cbc:ResidentOccupantsNumeric>2</cbc:ResidentOccupantsNumeric>
-          <cbc:ConsumersEnergyLevelCode>Low</cbc:ConsumersEnergyLevelCode>
+          <cbc:ConsumersEnergyLevelCode listID="urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode">LOW</cbc:ConsumersEnergyLevelCode>
           <cbc:ConsumersEnergyLevel>Low consumer</cbc:ConsumersEnergyLevel>
           <cbc:ResidenceType>Apartment</cbc:ResidenceType>
-          <cbc:ResidenceTypeCode>APT</cbc:ResidenceTypeCode>
+          <cbc:ResidenceTypeCode listID="urn:ubl-examples:world:codelist:ResidenceTypeCode">APT</cbc:ResidenceTypeCode>
           <cbc:HeatingType>District heating</cbc:HeatingType>
-          <cbc:HeatingTypeCode>DH</cbc:HeatingTypeCode>
+          <cbc:HeatingTypeCode listID="urn:ubl-examples:world:codelist:HeatingTypeCode">DH</cbc:HeatingTypeCode>
           <cac:Period>
             <cbc:StartDate>2026-03-01</cbc:StartDate>
             <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -299,7 +299,7 @@
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38516-57-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-            <cbc:ConsumptionTypeCode>MON</cbc:ConsumptionTypeCode>
+            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="MTQ">13</cbc:TotalConsumedQuantity>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
@@ -310,7 +310,7 @@
             <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">15</cbc:Quantity>
             <cbc:Amount currencyID="XBL">35.25</cbc:Amount>
-            <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
+            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
             <cac:Period>
@@ -322,7 +322,7 @@
             <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
             <cbc:Quantity unitCode="MTQ">13</cbc:Quantity>
             <cbc:Amount currencyID="XBL">30.55</cbc:Amount>
-            <cbc:ConsumptionLevelCode>Normal</cbc:ConsumptionLevelCode>
+            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
             <cbc:Description>Earlier month.</cbc:Description>
             <cac:Period>
@@ -337,7 +337,7 @@
         </cac:ConsumptionAverage>
         <cac:EnergyWaterConsumptionCorrection>
           <cbc:CorrectionType>District heating cooling correction</cbc:CorrectionType>
-          <cbc:CorrectionTypeCode>COOL</cbc:CorrectionTypeCode>
+          <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">COOL</cbc:CorrectionTypeCode>
           <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
           <cbc:ActualTemperatureReductionQuantity unitCode="CEL">31</cbc:ActualTemperatureReductionQuantity>
           <cbc:NormalTemperatureReductionQuantity unitCode="CEL">35</cbc:NormalTemperatureReductionQuantity>
@@ -369,7 +369,7 @@
         </cac:PartyName>
       </cac:UtilityCustomerParty>
       <cac:Consumption>
-        <cbc:UtilityStatementTypeCode>Water</cbc:UtilityStatementTypeCode>
+        <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
         <cac:MainPeriod>
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -408,16 +408,16 @@
           <cbc:ID>CW-M3</cbc:ID>
           <cbc:SubscriberID>CSW-C-311790</cbc:SubscriberID>
           <cbc:SubscriberType>Water</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode>WATE</cbc:SubscriberTypeCode>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode>MET</cbc:ConsumptionTypeCode>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode>M</cbc:CurrentChargeTypeCode>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID>E</cbc:ID>
             <cbc:Percent>0</cbc:Percent>
-            <cbc:TaxExemptionReasonCode>XB-WATER</cbc:TaxExemptionReasonCode>
+            <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
             <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
             <cac:TaxScheme>
               <cbc:ID>STT</cbc:ID>

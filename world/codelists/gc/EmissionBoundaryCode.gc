@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: emission boundary. How much of a product's life an emission figure includes. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>EmissionBoundaryCode</ShortName>
+      <LongName xml:lang="en">Emission boundary (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:EmissionBoundaryCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:EmissionBoundaryCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:EmissionBoundaryCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/EmissionBoundaryCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CRADLETOGATE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cradle to gate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Narskir krir kritan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakova vevisi totapa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>From the raw materials to the product leaving the factory (EN 15804 A1 to A3).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CRADLETOGRAVE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cradle to grave</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Narskir krir stanskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakova vevisi venaha</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The whole life, to disposal (EN 15804 A to C).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CRADLETOCRADLE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cradle to cradle</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Narskir krir narskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakova vevisi vakova</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The whole life, with recovery (EN 15804 A to D).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GATETOGATE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gate to gate</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kritan krir kritan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Totapa vevisi totapa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>One process only.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

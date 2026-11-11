@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: transport means type. The kind of vehicle, vessel, aircraft or installation that carries goods. The descriptions name the nearest code of UNECE Recommendation 28 where its published list has one; the world's own list is used because the codes of Recommendation 28 for barges, trucks with trailers and pipelines could not be checked against a published copy. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TransportMeansTypeCode</ShortName>
+      <LongName xml:lang="en">Transport means type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TransportMeansTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TransportMeansTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TransportMeansTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TransportMeansTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BOXTRUCK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Box truck</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stul stindrul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kutipo vivaha</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A rigid truck with a closed box body.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TRUCKTRAILER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Truck with trailer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stindrul vek vazran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vivaha tofuta vaputa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A truck or tractor unit pulling a trailer or container chassis (UNECE Recommendation 28, 3100 series).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CRANETRUCK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Truck with crane</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stindrul vek trekzhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vivaha tofuta vehohe</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A truck with its own crane for loading (UNECE Recommendation 28, 3131 Truck, with crane for lifting goods, without trailer).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VAN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Van</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Druzdran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pulenu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A light delivery van.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FARMTRACTOR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Farm tractor with trailers</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dizdrek kazdrek vek huhir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nipive pelapi tofuta ketavo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A farm tractor pulling trailers, for goods off the public road network.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FREIGHTTRAIN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freight train</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Musaz sezhul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Miipa nalasa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A train of freight wagons (UNECE Recommendation 28, 2302 Train, container; 2301 Blocktrain).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DRYBARGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Dry cargo barge</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zaz nirrir bikrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Mapeto faleka pusuka</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An inland waterway vessel for dry cargo.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CONTAINERSHIP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Container ship</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Titran krengaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Napiali tulatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A sea-going ship for containers (UNECE Recommendation 28, 1511 Full container ship/cellular vessel).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CARGOAIRCRAFT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cargo aircraft</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nirrir gardran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Faleka hefale</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An aircraft that carries cargo only (UNECE Recommendation 28, 4000 Aircraft, type unknown).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PIPELINE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pipeline</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sinnek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hahoka</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A fixed pipeline for gas or liquids.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

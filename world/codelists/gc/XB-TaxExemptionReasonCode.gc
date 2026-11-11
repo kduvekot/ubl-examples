@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: sales tax exemption reason. Why a sale carries no state sales tax in Bayvarra; also used by the Northern Territory. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>TaxExemptionReasonCode</ShortName>
+      <LongName xml:lang="en">Sales tax exemption reason (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/XB-TaxExemptionReasonCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Government of Bayvarra</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Export outside Bayvarra</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Goods or services sent to a buyer outside Bayvarra.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WATER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Drinking water</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Drinking water supplied through the mains is exempt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PUBLIC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sale to a public body</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A body of the federation, a state or a city buys free of sales tax.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SVCB2B</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Service to a business</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A service supplied to a business is not a retail sale.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RESALE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sale for resale or manufacture</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The buyer resells the goods or uses them in its products and charges the tax on its own retail sale.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LEVY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Levy collected for a public body</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>An amount the seller collects on behalf of a public body, such as the city's sewage levy.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FOOD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Basic food</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Unprepared food for human consumption.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MEDICAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medicine and medical devices</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Medicine on prescription and medical aids.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CHARITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sale to a registered charity</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A charity registered in Bayvarra buys for its charitable purpose.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

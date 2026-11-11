@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: role on board. The role of a person on board a ship. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>ShipPersonRoleCode</ShortName>
+      <LongName xml:lang="en">Role on board (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:ShipPersonRoleCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:ShipPersonRoleCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:ShipPersonRoleCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/ShipPersonRoleCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MASTER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Master</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Traskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Supepu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The ship's master, in command.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CHIEFOFFICER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Chief officer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stazir satrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pahiki teosi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The first deck officer.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CHIEFENG</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Chief engineer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Stazir standrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pahiki sumuve</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The head of the engine department.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SSO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ship security officer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krengaz zalgan satrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Tulatu takeke teosi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Responsible for the security of the ship (ISPS Code).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MEDICAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medical officer</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dusek satrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lahaki teosi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The person in charge of medical care on board.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CREW</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Crew member</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vaz zhurdan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Filemo vonali</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Another member of the crew.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PASSENGER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Passenger</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sturzhul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pafehene</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A person on board who is not crew.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

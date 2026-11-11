@@ -100,8 +100,13 @@ def check(world):
             else:
                 seen[n] = it["id"]
             hs = it.get("hs", "")
-            if not re.fullmatch(r"\d{4}\.\d{2}", hs):
-                problems.append(f"{where}: customs tariff code {hs!r} is not an HS subheading (nnnn.nn)")
+            if not re.fullmatch(r"\d{6}", hs):
+                problems.append(f"{where}: customs tariff code {hs!r} is not an HS subheading (six digits)")
+            if not re.fullmatch(r"\d{5}", it.get("cpc", "")):
+                problems.append(f"{where}: goods need a UN CPC Ver.2.1 subclass (five digits)")
+            nat = it.get("national_tariff")
+            if nat and not (re.fullmatch(r"\d{8}", nat) and nat.startswith(hs)):
+                problems.append(f"{where}: national tariff code {nat!r} does not extend the HS subheading {hs}")
             if it.get("origin") not in world["countries"]:
                 problems.append(f"{where}: country of origin {it.get('origin')} is not a country of the world")
             if it.get("gross_kg", 0) < it.get("net_kg", 0):

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: seal issuer type. Who issued a seal on transport equipment. The descriptions map to the DCSA eBL 3.0.3 seal source and to UN/EDIFACT 9303 (sealing party). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>SealIssuerTypeCode</ShortName>
+      <LongName xml:lang="en">Seal issuer type (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:SealIssuerTypeCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:SealIssuerTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:SealIssuerTypeCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/SealIssuerTypeCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SHIPPER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Shipper</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhenan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Haneve</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>DCSA SHI; UN/EDIFACT 9303 SH Shipper.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CARRIER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Carrier</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sundraz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Topatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>DCSA CAR; UN/EDIFACT 9303 CA Carrier.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CUSTOMS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Customs</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Garsul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Viope</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>DCSA CUS; UN/EDIFACT 9303 CU Customs.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VETERINARY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Veterinary authority</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zizskan kenhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Pamataka hatiulo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>DCSA VET; UN/EDIFACT 9303 AC Quarantine agency.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PHYTOSANITARY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Plant health authority</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Halkan virdir kenhan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hihefe hulake hatiulo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>No DCSA equivalent in eBL 3.0; UN/EDIFACT 9303 AC Quarantine agency.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>
