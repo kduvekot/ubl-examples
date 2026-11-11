@@ -105,6 +105,22 @@ All prefixes are fictional: GS1 from an unallocated prefix range, Codana's IAC a
 - **ProfileID:** generic Accord process profiles, versioned (`…:profile:ordering:1.0`, billing, despatch-receipt, transport, tendering, customs, catalogue, utility-billing …). It no longer names a flow.
 - **ProfileExecutionID:** stays one per flow instance.
 
+## Fictional values (verified as free, 2026-11-11)
+
+| What | Value | Evidence |
+|---|---|---|
+| GS1 prefix (GTIN, GLN, SSCC of the GS1-convention parties) | 952 | GS1 General Specifications reserve it "for demonstrations and examples" |
+| ITU call sign series and aircraft nationality marks | QU (XU), QB (XB), QL (XL) | no Q series is allocated (ITU table) |
+| MMSI MIDs | 297 (XU), 298 (XB), 299 (XL) | unallocated in the ITU MID table |
+| UIC wagon country codes | 46, 47, 48 | not in OTIF's table |
+| ISO 6523 ICD (Codana organisation identifier) | 0990 | Peppol's ICD list ends at 0248 |
+| ISO 15459 issuing agency code (Codana) | KXU | K is reserved for national public administrations + ISO 3166 alpha-2; XU is user-assigned, so no real agency can hold it. **Codana becomes Urvania's public numbering body.** |
+| World MIC | 4-character code checked against the saved ISO 10383 list (649 real MICs start with X; XCOR and XBRM are real) | ISO10383_MIC.csv |
+| Card numbers / chip RID | MII 9 + 901/902/903; RID D9xx | secondary sources (the ISO texts are paywalled) |
+| Currencies | XUF, XBL, XLC free; avoid XUA, XCG, XAD (real) | SIX list-one.xml |
+
+The evidence files are in the verification sources (to be committed with the code lists in stage 3).
+
 ## Separate work items found along the way
 
 - IND5: `retail/10-DocumentStatus.xml` has an empty `cbc:ID` in AdditionalDocumentResponse/DocumentReference. The build's IND5 check covers only aggregates, so it should also check basic elements. Add IND7/IND8/IND9 checks as well.
