@@ -196,6 +196,16 @@
      "name": "ABI and CAB code of an Urvanian bank branch",
      "pattern": "^\\d{5}-\\d{5}$",
      "format": "the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style"
+    },
+    "haulage-licence": {
+     "name": "register of road haulage licences of Urvania",
+     "pattern": "^XU-HAUL-\\d{4}-\\d{4}$",
+     "format": "XU-HAUL-, the year of issue and a four-digit number"
+    },
+    "waste-permit": {
+     "name": "register of waste treatment permits of Urvania",
+     "pattern": "^XU-ENV-\\d{4}-\\d{4}$",
+     "format": "XU-ENV-, the year of issue and a four-digit number"
     }
    }
   },
@@ -408,6 +418,16 @@
      "name": "sort code of a Bayvarran bank branch",
      "pattern": "^\\d{6}$",
      "format": "six digits, British style; the first two name the bank"
+    },
+    "forestry-register": {
+     "name": "forestry register of Bayvarra",
+     "pattern": "^XB-FOR-(\\d{4}|REG)-\\d{4}$",
+     "format": "XB-FOR-REG- and the four-digit number of a registered forest owner or sawmill; XB-FOR-, the year and the same number for a certificate issued under that registration"
+    },
+    "bonded-warehouse": {
+     "name": "register of bonded warehouse licences of Bayvarra's customs",
+     "pattern": "^XB-BOND-LIC-\\d{4}$",
+     "format": "XB-BOND-LIC- and a four-digit number"
     }
    }
   },
@@ -2781,5 +2801,23 @@
    "format": "in the structure of ISO 9362 with the world's country codes: four letters for the bank, the country code, two characters for the location and an optional branch code"
   }
  },
- "identifier_schemes_note": "Identifiers from a scheme name it in schemeID (decisions ID-Q1 to ID-Q4). The Trade Accord's schemes and the real external ones are in identifier_schemes, by schemeID; each country's own are in its identifiers, by kind, with the schemeID urn:ubl-examples:world:<CC>:<kind>; a kind marked scheme false (call signs, MMSIs, driving licences, national ID numbers) has a format the world checks but no schemeID. The ITU call sign series and aircraft nationality marks QU, QB and QL, the MMSI maritime identification digits 297, 298 and 299 and the UIC country codes 46, 47 and 48 are not allocated to any real country (analysis/codelist-decisions.md, Fictional values). tools/world_ids.py checks them."
+ "identifier_schemes_note": "Identifiers from a scheme name it in schemeID (decisions ID-Q1 to ID-Q4). The Trade Accord's schemes and the real external ones are in identifier_schemes, by schemeID; each country's own are in its identifiers, by kind, with the schemeID urn:ubl-examples:world:<CC>:<kind>; a kind marked scheme false (call signs, MMSIs, driving licences, national ID numbers) has a format the world checks but no schemeID. The ITU call sign series and aircraft nationality marks QU, QB and QL, the MMSI maritime identification digits 297, 298 and 299 and the UIC country codes 46, 47 and 48 are not allocated to any real country (analysis/codelist-decisions.md, Fictional values). tools/world_ids.py checks them.",
+ "card_schemes": {
+  "LUMECARD": {
+   "country": "XB",
+   "rid": "D902000001",
+   "name": "Lumecard"
+  },
+  "CORALCARD": {
+   "country": "XL",
+   "rid": "D903000001",
+   "name": "Coralcard"
+  },
+  "TRESSACARD": {
+   "country": "XB",
+   "rid": "D902000002",
+   "name": "Tressa"
+  }
+ },
+ "card_schemes_note": "Card numbers follow ISO/IEC 7812: the major industry identifier 9 (national assignment) and the ISO 3166 numeric code of the issuer's country (901 Urvania, 902 Bayvarra, 903 Lisavu), then the issuer's two digits, the account and a Luhn check digit. A chip application identifier (ISO/IEC 7816-5) starts with the registered application provider identifier (RID) of the card scheme, from the national registration category D followed by the country code. A receipt shows the card number masked as the merchant's till does, at most the first six and the last four digits (PCI DSS), and never the security code or the card's dates."
 }

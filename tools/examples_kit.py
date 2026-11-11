@@ -1279,6 +1279,33 @@ def pallets(flow, deal):
     return units
 
 
+def card_account(holder, merchant):
+    """The cac:CardAccount of a card payment at a merchant's till (decision ID-Q10b): the card number masked as the
+    merchant's till prints it, the card scheme, the issuer's bank identifier, the chip application; no security code
+    and no dates of the card, which a receipt never shows."""
+    card = PARTY[holder]["identity"]["card"]
+    mask = PARTY[merchant]["identity"]["card_mask"]
+    pan = card["pan"]
+    shown = pan[:mask["first"]] + "*" * (len(pan) - mask["first"] - mask["last"]) + pan[len(pan) - mask["last"]:]
+    issuer = PARTY[card["issuer"]]["identity"]
+    out = {"PrimaryAccountNumberID": V(shown, f"The card number, masked as the till prints it: {mask['note'][:-1].lower()} "
+                                              "(PCI DSS allows at most the first six and the last four). The number "
+                                              "itself starts with 9 and the numeric code of the issuer's country, as "
+                                              "ISO/IEC 7812 provides for national use, so it is no real card's."),
+           "NetworkID": V(card["scheme"], "The card scheme the card runs on."),
+           "CardTypeCode": V(card["type"], f"A {card['type'].lower()} card."),
+           "IssuerID": V(issuer["bic"], f"The card's issuer, {issuer['name']}, by its bank identifier.",
+                         schemeID="urn:ubl-examples:world:bank-identifier")}
+    if card.get("aid"):
+        out["CardChipCode"] = V("Chip", "Read from the chip.")
+        out["ChipApplicationID"] = V(card["aid"], "The chip application used: the card scheme's registered application "
+                                                  f"provider identifier {card['aid'][:10]}, from the national category "
+                                                  "D of ISO/IEC 7816-5 with the country code of the scheme, and the "
+                                                  "application's own code.")
+    out["HolderName"] = V(card["holder"], "The name on the card.")
+    return out
+
+
 def gln_location(pid, key):
     """The identifier of a place of a GS1 party: its Global Location Number (decision ID-Q7)."""
     loc = PARTY[pid]["identity"]["identification"]["locations"][key]

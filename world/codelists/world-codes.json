@@ -659,6 +659,17 @@
    "attribute": "schemeID"
   },
   {
+   "element": "NetworkID",
+   "address": "*[local-name()='CardAccount']/cbc:NetworkID",
+   "lists": [
+    "CardScheme"
+   ],
+   "parents": [
+    "CardAccount"
+   ],
+   "attribute": "schemeID"
+  },
+  {
    "element": "CurrencyCode",
    "address": "cbc:CurrencyCode",
    "lists": [
@@ -8707,6 +8718,17 @@
     "TEU",
     "SEAL",
     "WEIGHT"
+   ]
+  },
+  "CardScheme": {
+   "listID": "urn:ubl-examples:world:codelist:CardSchemeCode",
+   "scope": "regional",
+   "name": "Payment card scheme",
+   "location": "world/codelists/gc/CardSchemeCode.gc",
+   "codes": [
+    "LUMECARD",
+    "CORALCARD",
+    "TRESSACARD"
    ]
   }
  }

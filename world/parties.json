@@ -300,7 +300,8 @@
      "purpose": "Recovery of non-hazardous plastic waste",
      "valid_until": "2029-12-31",
      "certificate": "XU-ENV-2024-0311",
-     "purpose_code": "R3"
+     "purpose_code": "R3",
+     "register": "waste-permit"
     },
     "customs_id": "XU-TR-104548",
     "cost_centre": {
@@ -449,7 +450,8 @@
     "authorization": {
      "purpose": "International road haulage",
      "valid_until": "2030-06-30",
-     "certificate": "XU-HAUL-2020-0877"
+     "certificate": "XU-HAUL-2020-0877",
+     "register": "haulage-licence"
     }
    },
    "fleet": [
@@ -1024,6 +1026,11 @@
        "name": "Garden department of the Lumeport store"
       }
      }
+    },
+    "card_mask": {
+     "first": 0,
+     "last": 4,
+     "note": "The store's tills print only the last four digits of a card number."
     }
    },
    "fleet": [
@@ -1077,6 +1084,15 @@
      "id": "CSW-DD-2024-08812",
      "signed": "2024-09-02",
      "max": "150.00"
+    },
+    "card": {
+     "pan": "9902381000034417",
+     "scheme": "LUMECARD",
+     "type": "DEBIT",
+     "issuer": "25-xb",
+     "aid": "D9020000011010",
+     "holder": "R ASHDALE",
+     "issue": "01"
     }
    }
   },
@@ -1448,7 +1464,8 @@
       "name": "Gullhaven branch",
       "city": "Gullhaven"
      }
-    ]
+    ],
+    "card_issuer_digits": "38"
    }
   },
   {
@@ -2171,6 +2188,13 @@
     "cost_centre": {
      "code": "500",
      "name": "Stock for municipal projects"
+    },
+    "card": {
+     "pan": "9903511000062286",
+     "scheme": "CORALCARD",
+     "type": "CREDIT",
+     "issuer": "22-xl",
+     "holder": "VELUMI TRADING"
     }
    }
   },
@@ -2237,7 +2261,8 @@
       "name": "Market branch",
       "city": "Selanu"
      }
-    ]
+    ],
+    "card_issuer_digits": "51"
    }
   },
   {

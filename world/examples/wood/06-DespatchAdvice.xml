@@ -329,7 +329,7 @@
             <cbc:EndDate>2030-06-30</cbc:EndDate>
           </cac:ValidityPeriod>
           <cac:Certificate>
-            <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
             <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
             <cbc:CertificateType>Operating permit</cbc:CertificateType>
           </cac:Certificate>
@@ -432,19 +432,19 @@
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:Certificate>
-        <cbc:ID>XB-FOR-2025-118</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">SUSTFOREST</cbc:CertificateTypeCode>
         <cbc:CertificateType>Sustainable forestry</cbc:CertificateType>
-        <cbc:CertificateReferenceID>XB-FOR-REG-0118</cbc:CertificateReferenceID>
+        <cbc:CertificateReferenceID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-REG-0118</cbc:CertificateReferenceID>
         <cbc:ApplicableCategoryCode listID="urn:ubl-examples:world:codelist:CategoryCode">HW</cbc:ApplicableCategoryCode>
         <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
-        <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-118</cbc:CertificateURI>
+        <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-0118</cbc:CertificateURI>
         <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
         <cac:CertificateValidityPeriod>
           <cbc:EndDate>2027-12-31</cbc:EndDate>
         </cac:CertificateValidityPeriod>
         <cac:DocumentReference>
-          <cbc:ID>XB-FOR-AUD-2025-118</cbc:ID>
+          <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
         </cac:DocumentReference>
       </cac:Certificate>
       <cac:Dimension>

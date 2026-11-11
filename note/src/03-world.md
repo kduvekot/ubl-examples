@@ -231,6 +231,28 @@ the UIC country codes 46, 47 and 48, which no railway uses. A container
 owner code is one the container register of the Bureau International des
 Containers does not hold, looked up on its public site.
 
+Certificates and licences name their issuer in one of two ways. A number
+from a national register, such as Urvania's haulage licences and waste
+permits, Bayvarra's forestry register or its customs' register of bonded
+warehouses, names the register in `schemeID`, and with it the authority that
+keeps it, so no issuer party is needed. A certificate whose number is unique
+only with its issuer, such as an environmental, medical or sanitation
+certificate or the X.509 certificate of an access point, has no `schemeID`
+and names its issuer in `IssuerParty`.
+
+Payment cards follow ISO/IEC 7812 in a range real cards cannot use: the
+major industry identifier 9, which is for national use, followed by the
+numeric code of the issuer's country (901, 902 and 903 are user-assigned in
+ISO 3166), the issuer's digits and a Luhn check digit. A chip application
+starts with its card scheme's application provider identifier from the
+national category `D` of ISO/IEC 7816-5 with the same country code. The
+Accord has three card schemes: Lumecard, the Bayvarran banks' domestic debit
+card, Coralcard on the island, and Tressa, an international credit card of
+the banks of all three countries; the names were checked against the real
+card networks. A till receipt shows the card number as the merchant's till
+prints it, never more than the first six and the last four digits, and never
+the card's security code or its dates.
+
 ## Parties
 
 The parties are the organisations of the world, chosen so that every party
@@ -359,6 +381,34 @@ fleet, and every carrier a document of the
 flow names must carry one of its legs. Domestic jobs go to a carrier of
 that country: a truck of one country driving within another would be
 cabotage, which only happens where a document says so.
+
+## Specifications
+
+Every document says which specification it follows. `CustomizationID` names
+a *transaction*: one kind of business message between two roles, with a
+purpose, a content and rules, as in CEN BII and Peppol. One or more
+document types carry a transaction (billing is the invoice, the credit note
+and the debit note), and one document type can carry several (an
+application response that answers an invoice is not one that answers a
+message). The specification has up to three levels, chained with
+`#compliant#` as EN 16931, Peppol and XRechnung chain theirs: the Trade
+Accord's transaction (`urn:ubl-examples:world:trns:billing:1.0`), a national
+specification built on it, such as Urvania's invoice rules for its value
+added tax or Bayvarra's rules for bills to its public bodies, and the
+specification of a community that exchanges among itself: the retail
+community of the distributor and the store, the port community of
+Lumeport, Urvania's energy market and public procurement. `ProfileID` names
+one of the Accord's generic process profiles (ordering, billing, transport,
+customs …), versioned, and no longer the flow; `ProfileExecutionID` still
+names the run of the process. Each specification has a short public page,
+and the build checks that every identifier a document uses has one. The
+world claims no compliance with real specifications such as EN 16931.
+
+`UBLVersionID` gives the earliest UBL 2 version that defines every element
+the document uses, as its definition asks. The build computes it from the
+published models of UBL 2.0 to 2.5. For now every example needs 2.5: nearly
+all use elements that UBL 2.5 added, such as the electronic address and the
+further party identification.
 
 ## Who sends and who receives
 

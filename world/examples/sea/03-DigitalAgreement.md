@@ -534,9 +534,13 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
-  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
@@ -566,9 +570,13 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
-  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
@@ -606,9 +614,13 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
-  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
@@ -638,9 +650,13 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
-  The serial number of the access point's certificate, which the Trade Accord Council issues to every access point.
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
   The transport protocol.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
@@ -1068,6 +1084,14 @@ Inside `DigitalProcess`:
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
@@ -1096,6 +1120,14 @@ Inside `DigitalProcess`:
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
@@ -1132,6 +1164,14 @@ Inside `DigitalProcess`:
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
@@ -1160,6 +1200,14 @@ Inside `DigitalProcess`:
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>

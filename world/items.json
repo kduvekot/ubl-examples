@@ -300,7 +300,8 @@
     "id": "XU-RC-2026-007",
     "code": "RECYCLED",
     "type": "Recycled content",
-    "remarks": "Made entirely from sorted production waste recovered in Urvania."
+    "remarks": "Made entirely from sorted production waste recovered in Urvania.",
+    "issuer": "20-xu"
    },
    "lot_prefix": "RR-PE-",
    "best_before_months": 12,
@@ -425,7 +426,7 @@
     "size": "50"
    },
    "certificate": {
-    "id": "XB-FOR-2025-118",
+    "id": "XB-FOR-2025-0118",
     "code": "SUSTFOREST",
     "type": "Sustainable forestry",
     "remarks": "The timber comes from forests in Upland State managed for regrowth.",
@@ -435,8 +436,9 @@
      "HW",
      "Hardwood sawn timber"
     ],
-    "uri": "https://forestry.xb.example/certificates/XB-FOR-2025-118",
-    "document": "XB-FOR-AUD-2025-118"
+    "uri": "https://forestry.xb.example/certificates/XB-FOR-2025-0118",
+    "document": "XB-FOR-AUD-2025-0118",
+    "register": "forestry-register"
    },
    "dimensions": [
     [

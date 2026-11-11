@@ -413,6 +413,14 @@
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
@@ -441,6 +449,14 @@
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
@@ -477,6 +493,14 @@
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-20410274</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
@@ -505,6 +529,14 @@
           <cac:DigitalCertificate>
             <cbc:ID>LTAC-AP-41859</cbc:ID>
             <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:DigitalCertificate>
           <cac:DigitalMessageDelivery>
             <cbc:ProtocolID>AS4</cbc:ProtocolID>

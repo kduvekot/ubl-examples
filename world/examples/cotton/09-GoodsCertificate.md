@@ -413,7 +413,7 @@ Inside `Shipment`:
 - `GoodsItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
-  The number of the certificate.
+  The number of the certificate, unique only with its issuer, who is named below (decision ID-Q10).
 - `GoodsItem/Item/Certificate/CertificateTypeCode` = **COTTONCLASS** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: COTTONCLASS = Cotton classing.
 - `GoodsItem/Item/Certificate/CertificateType` = **Tekapa vekona** (languageID `qal`)  

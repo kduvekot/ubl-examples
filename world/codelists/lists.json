@@ -7444,6 +7444,25 @@
      "The weight of a thing."
     ]
    }
+  },
+  "CardScheme": {
+   "scope": "regional",
+   "name": "Payment card scheme",
+   "description": "The card schemes of the Lumeport Trade Accord: the network a payment card runs on. A card may carry two schemes (co-badged). Names checked against the real card networks on 2026-11-11.",
+   "codes": {
+    "LUMECARD": [
+     "Lumecard",
+     "The domestic debit card scheme of Bayvarra's banks, like Interac or Girocard; chip application provider D902000001."
+    ],
+    "CORALCARD": [
+     "Coralcard",
+     "The island's card scheme, settled on the coral ledger of the Bank of Selanu; chip application provider D903000001."
+    ],
+    "TRESSACARD": [
+     "Tressa",
+     "The international credit card scheme of the banks of all three countries of the Trade Accord; chip application provider D902000002."
+    ]
+   }
   }
  },
  "bindings": [
@@ -9107,6 +9126,14 @@
     "PalletSpaceMeasurementDimension",
     "TotalCapacityDimension",
     "PhysicalAttribute"
+   ],
+   "attribute": "schemeID"
+  },
+  {
+   "element": "NetworkID",
+   "list": "CardScheme",
+   "parents": [
+    "CardAccount"
    ],
    "attribute": "schemeID"
   }

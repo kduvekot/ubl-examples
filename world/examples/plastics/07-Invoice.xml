@@ -193,7 +193,7 @@
           <cbc:EndDate>2029-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:Certificate>
-          <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
           <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
           <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
           <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>

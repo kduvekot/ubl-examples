@@ -231,6 +231,21 @@ def identifier_problems(world, p):
         if why or idn["bic"][:4] != idn.get("bank_code") or idn["bic"][4:6] != p["c"]:
             out.append(f"{where}: bank identifier {idn['bic']} is not the bank's code, its country and a location "
                        f"(ISO 9362 structure){': ' + why if why else ''}")
+    card = idn.get("card")
+    if card:
+        issuer = world_parties_party(world, card["issuer"])
+        scheme = world["card_schemes"].get(card["scheme"])
+        numeric = world["countries"][issuer["c"]]["numeric"]
+        if not (re.fullmatch(r"\d{16}", card["pan"]) and card["pan"][:6] == "9" + numeric
+                + issuer["identity"]["card_issuer_digits"] and world_ids.luhn(card["pan"])):
+            out.append(f"{where}: card number {card['pan']} is not 9, the issuer's country {numeric}, its issuer digits "
+                       "and a Luhn check digit (ISO/IEC 7812)")
+        if not scheme:
+            out.append(f"{where}: card scheme {card['scheme']} is not a card scheme of the world")
+        elif card.get("aid") and not card["aid"].startswith(scheme["rid"]):
+            out.append(f"{where}: chip application {card['aid']} does not start with the scheme's RID {scheme['rid']}")
+        elif scheme["rid"][:4] != "D" + world["countries"][scheme["country"]]["numeric"]:
+            out.append(f"{where}: the RID {scheme['rid']} is not in the national category D of {scheme['country']}")
     a = idn.get("address", {})
     if a.get("ID"):
         out += address_register_problems(world, p, a)
@@ -244,6 +259,10 @@ def identifier_problems(world, p):
         if why:
             out.append(f"{where}: {why}")
     return out
+
+
+def world_parties_party(world, pid):
+    return next(x for x in world["parties"] if x["id"] == pid)
 
 
 def address_register(world, country, a):

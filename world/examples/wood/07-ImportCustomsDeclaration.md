@@ -497,27 +497,27 @@ Inside `Shipment`:
   Its value; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `GoodsItem/Item/AdditionalItemProperty/UsabilityPeriod/DurationMeasure` = **12** (unitCode `MON`)  
   Oiled within twelve months of planing, before the surface greys
-- `GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-118**  
-  The number of the certificate.
+- `GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
+  The number of the certificate, in the forestry register of Bayvarra, which keeps the certificates issued under each registration; the schemeID names the register and its authority, so no issuer party is needed (decision ID-Q10).
 - `GoodsItem/Item/Certificate/CertificateTypeCode` = **SUSTFOREST** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: SUSTFOREST = Sustainable forestry.
 - `GoodsItem/Item/Certificate/CertificateType` = **Zhazdran zakrek** (languageID `qau`)  
   The name of code SUSTFOREST in the Trade Accord's certificate type list. In Urvanian, the sender's language.
 - `GoodsItem/Item/Certificate/CertificateType` = **Sustainable forestry** (languageID `en-XU`)  
   The name of code SUSTFOREST in the Trade Accord's certificate type list. In English.
-- `GoodsItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118**  
-  The certificate's number in the issuer's public register.
+- `GoodsItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
+  The registration the certificate is issued under: the sawmill's own number in the same register, which the certificate's number repeats after its year.
 - `GoodsItem/Item/Certificate/ApplicableCategoryCode` = **HW** (listID `urn:ubl-examples:world:codelist:CategoryCode`)  
   The category of goods the certificate covers. The code is from the Trade Accord's certified product category list: HW = Hardwood sawn timber.
 - `GoodsItem/Item/Certificate/ApplicableCategory` = **Hardwood sawn timber**  
   The name of code HW in the Trade Accord's certified product category list.
-- `GoodsItem/Item/Certificate/CertificateURI` = **https://forestry.xb.example/certificates/XB-FOR-2025-118**  
+- `GoodsItem/Item/Certificate/CertificateURI` = **https://forestry.xb.example/certificates/XB-FOR-2025-0118**  
   Where the certificate can be checked.
 - `GoodsItem/Item/Certificate/Remarks` = **The timber comes from forests in Upland State managed for regrowth.**  
   What the certificate states about the goods.
 - `GoodsItem/Item/Certificate/CertificateValidityPeriod/EndDate` = **2027-12-31**  
   The certificate is valid until then.
-- `GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-118**  
+- `GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
   The audit report the certificate is based on.
 - `GoodsItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
@@ -960,20 +960,20 @@ Inside `Signature`:
           </cac:UsabilityPeriod>
         </cac:AdditionalItemProperty>
         <cac:Certificate>
-          <cbc:ID>XB-FOR-2025-118</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>
           <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">SUSTFOREST</cbc:CertificateTypeCode>
           <cbc:CertificateType languageID="qau">Zhazdran zakrek</cbc:CertificateType>
           <cbc:CertificateType languageID="en-XU">Sustainable forestry</cbc:CertificateType>
-          <cbc:CertificateReferenceID>XB-FOR-REG-0118</cbc:CertificateReferenceID>
+          <cbc:CertificateReferenceID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-REG-0118</cbc:CertificateReferenceID>
           <cbc:ApplicableCategoryCode listID="urn:ubl-examples:world:codelist:CategoryCode">HW</cbc:ApplicableCategoryCode>
           <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
-          <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-118</cbc:CertificateURI>
+          <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-0118</cbc:CertificateURI>
           <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
           <cac:CertificateValidityPeriod>
             <cbc:EndDate>2027-12-31</cbc:EndDate>
           </cac:CertificateValidityPeriod>
           <cac:DocumentReference>
-            <cbc:ID>XB-FOR-AUD-2025-118</cbc:ID>
+            <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>

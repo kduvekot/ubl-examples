@@ -251,8 +251,8 @@ Inside `AccountingCustomerParty`:
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
   The authorization expires on this date.
-- `Party/PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311**  
-  The number of the permit.
+- `Party/PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
+  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
 - `Party/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `Party/PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
@@ -627,7 +627,7 @@ Inside `InvoiceLine`:
           <cbc:EndDate>2029-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:Certificate>
-          <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
           <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
           <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
           <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>

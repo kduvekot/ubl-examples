@@ -293,11 +293,15 @@ Inside `PaymentMeans`:
 - `PaymentMeansCode` = **54** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 54: credit card. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 54 = Credit card.
 - `CardAccount/PrimaryAccountNumberID` = **************2286**  
-  Masked.
-- `CardAccount/NetworkID` = **CORALCARD**  
-  The island's card scheme.
+  The card number, masked as the till prints it: the store's tills print only the last four digits of a card number (PCI DSS allows at most the first six and the last four). The number itself starts with 9 and the numeric code of the issuer's country, as ISO/IEC 7812 provides for national use, so it is no real card's.
+- `CardAccount/NetworkID` = **CORALCARD** (schemeID `urn:ubl-examples:world:codelist:CardSchemeCode`)  
+  The card scheme the card runs on. The code is from the Trade Accord's payment card scheme list: CORALCARD = Coralcard. An identifier that holds a code names the code's list in its schemeID.
+- `CardAccount/CardTypeCode` = **CREDIT** (listID `urn:ubl-examples:world:codelist:CardTypeCode`)  
+  A credit card. The code is from the Trade Accord's payment card type list: CREDIT = Credit card.
+- `CardAccount/IssuerID` = **BSELXLSL** (schemeID `urn:ubl-examples:world:bank-identifier`)  
+  The card's issuer, Bank of Selanu, by its bank identifier.
 - `CardAccount/HolderName` = **VELUMI TRADING**  
-  A company card.
+  The name on the card.
 
 ### Tax Exchange Rate
 
@@ -635,7 +639,9 @@ Inside `PurchaseReceiptLine`:
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">54</cbc:PaymentMeansCode>
     <cac:CardAccount>
       <cbc:PrimaryAccountNumberID>************2286</cbc:PrimaryAccountNumberID>
-      <cbc:NetworkID>CORALCARD</cbc:NetworkID>
+      <cbc:NetworkID schemeID="urn:ubl-examples:world:codelist:CardSchemeCode">CORALCARD</cbc:NetworkID>
+      <cbc:CardTypeCode listID="urn:ubl-examples:world:codelist:CardTypeCode">CREDIT</cbc:CardTypeCode>
+      <cbc:IssuerID schemeID="urn:ubl-examples:world:bank-identifier">BSELXLSL</cbc:IssuerID>
       <cbc:HolderName>VELUMI TRADING</cbc:HolderName>
     </cac:CardAccount>
   </cac:PaymentMeans>

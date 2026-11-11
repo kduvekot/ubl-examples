@@ -691,13 +691,21 @@ Inside `Shipment`:
 - `ShipmentStage/MaritimeHealthDeclaration/PlaceOfReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
   Where.
 - `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/ID` = **MC-TH-2026**  
-  The ship's medicine chest certificate.
+  The ship's medicine chest certificate, unique only with its issuer, the port health office of its home port (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/CertificateType` = **Medicine chest**  
   Its kind.
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyName/Name` = **Port of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/ID` = **SSCC-XB-2025-0911**  
-  The sanitation control certificate.
+  The sanitation control certificate, unique only with its issuer (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/CertificateType` = **Ship sanitation control**  
   Its kind.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyName/Name` = **Port of Lumeport**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/ID` = **none**  
   No exemption: the ship holds the control certificate.
 - `ShipmentStage/FuelConsumption/ID` = **FC-26-19E**  
@@ -1360,10 +1368,26 @@ Inside `Signature`:
         <cac:MedicalCertificate>
           <cbc:ID>MC-TH-2026</cbc:ID>
           <cbc:CertificateType>Medicine chest</cbc:CertificateType>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Port of Lumeport</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
         </cac:MedicalCertificate>
         <cac:ShipSanitationControlCertificate>
           <cbc:ID>SSCC-XB-2025-0911</cbc:ID>
           <cbc:CertificateType>Ship sanitation control</cbc:CertificateType>
+          <cac:IssuerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Port of Lumeport</cbc:Name>
+            </cac:PartyName>
+          </cac:IssuerParty>
         </cac:ShipSanitationControlCertificate>
         <cac:ShipSanitationControlExemptionDocumentReference>
           <cbc:ID>none</cbc:ID>

@@ -263,15 +263,12 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
     <cac:CardAccount>
       <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
-      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
+      <cbc:NetworkID schemeID="urn:ubl-examples:world:codelist:CardSchemeCode">LUMECARD</cbc:NetworkID>
       <cbc:CardTypeCode listID="urn:ubl-examples:world:codelist:CardTypeCode">DEBIT</cbc:CardTypeCode>
-      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
-      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
-      <cbc:IssuerID>BLUM</cbc:IssuerID>
+      <cbc:IssuerID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:IssuerID>
       <cbc:IssueNumberID>01</cbc:IssueNumberID>
-      <cbc:CV2ID>***</cbc:CV2ID>
       <cbc:CardChipCode listID="urn:oasis:names:specification:ubl:codelist:gc:ChipCode">Chip</cbc:CardChipCode>
-      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
+      <cbc:ChipApplicationID>D9020000011010</cbc:ChipApplicationID>
       <cbc:HolderName>R ASHDALE</cbc:HolderName>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:CardAccountRoleCode">HOLDER</cbc:RoleCode>
     </cac:CardAccount>

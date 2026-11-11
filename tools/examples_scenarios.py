@@ -1406,17 +1406,7 @@ def card_payment(out, f, day, time):
     total = out["LegalMonetaryTotal"]["PayableAmount"]
     out["PaymentMeans"] = {
         "PaymentMeansCode": V("55", "UN/EDIFACT 4461 code 55: debit card.", listID="UN/EDIFACT EDED 4461"),
-        "CardAccount": {"PrimaryAccountNumberID": V("************4417", "The card number, masked: a receipt shows only "
-                                                                        "the last four digits."),
-                        "NetworkID": V("LUMECARD", "The card scheme of the world: Lumeport's interbank card."),
-                        "CardTypeCode": V("DEBIT", "A debit card."),
-                        "ValidityStartDate": V("2025-06-01", "The card is valid from."),
-                        "ExpiryDate": V("2029-05-31", "And until."),
-                        "IssuerID": V("BLUM", "Issued by the Bank of Lumeport."),
-                        "CardChipCode": V("Chip", "Read from the chip."),
-                        "ChipApplicationID": V("A0000099990001", "The chip application used; an identifier of the world, "
-                                                                 "not a registered one."),
-                        "HolderName": V("R ASHDALE", "The name on the card."),
+        "CardAccount": {**kit.card_account("c-xb", "26-xb"),
                         "RoleCode": V("HOLDER", "Paid by the card holder.")}}
     out["Payment"] = {"ID": V("BM-G2-26-0518-0047", "The till's number for the payment."),
                       "PaidAmount": total, "PaidDate": V(f.date(day), "Paid at the till."),
@@ -4816,9 +4806,12 @@ def digital_service(pid, doc_type, sending):
                                                                                    "the party's own domain.")},
                                        "DigitalCertificate": {"ID": V("LTAC-AP-" + PARTY[pid]["identity"]["registry_id"]
                                                                       .replace("IC", ""), "The serial number of the "
-                                                                      "access point's certificate, which the Trade "
-                                                                      "Accord Council issues to every access point."),
-                                                              "CertificateType": V("Access point", "Its kind.")}}}
+                                                                      "access point's X.509 certificate, unique only "
+                                                                      "with its issuer: the Trade Accord Council, the "
+                                                                      "certification authority of the network "
+                                                                      "(decision ID-Q10)."),
+                                                              "CertificateType": V("Access point", "Its kind."),
+                                                              "IssuerParty": party("32-xb", short=True)}}}
 
 
 @enrich("sea", "DigitalAgreement")
@@ -5282,7 +5275,10 @@ def _(f, n, doc, out):
                                            "Description": V("Kept frost-free.", "Why.")},
                     "MaximumTemperature": {"AttributeID": V("AMBIENT", "The temperature of the hall."),
                                            "Measure": V("35", "At most 35 °C.", unitCode="CEL")},
-                    "Certificate": {"ID": V("XB-BOND-LIC-0388", "The bonded store's licence."),
+                    "Certificate": {"ID": V("XB-BOND-LIC-0388", "The bonded store's licence, by its number in the "
+                                                                "register of customs; the schemeID names the register "
+                                                                "and its authority (decision ID-Q10).",
+                                            schemeID="urn:ubl-examples:world:XB:bonded-warehouse"),
                                     "CertificateTypeCode": V("BONDEDSTORE", "A licence of customs."),
                                     "CertificateType": V("Bonded store licence", "In words.")}}}}] +
         out["Shipment"]["GoodsItem"][1:]}}
@@ -5531,11 +5527,16 @@ def _(f, n, doc, out):
             "SanitaryMeasure": {"SanitaryMeasureTypeCode": V("DISINFECT", "The galley was disinfected."),
                                 "ApplicationDate": V(f.date(11), "When.")},
             "PlaceOfReportLocation": sea_place,
-            "MedicalCertificate": {"ID": V("MC-TH-2026", "The ship's medicine chest certificate."),
-                                   "CertificateType": V("Medicine chest", "Its kind.")},
+            "MedicalCertificate": {"ID": V("MC-TH-2026", "The ship's medicine chest certificate, unique only with "
+                                                         "its issuer, the port health office of its home port "
+                                                         "(decision ID-Q10)."),
+                                   "CertificateType": V("Medicine chest", "Its kind."),
+                                   "IssuerParty": party("16-xb", short=True)},
             "ShipSanitationControlCertificate": {"ID": V("SSCC-XB-2025-0911", "The sanitation control "
-                                                                              "certificate."),
-                                                 "CertificateType": V("Ship sanitation control", "Its kind.")},
+                                                                              "certificate, unique only with its "
+                                                                              "issuer (decision ID-Q10)."),
+                                                 "CertificateType": V("Ship sanitation control", "Its kind."),
+                                                 "IssuerParty": party("16-xb", short=True)},
             "ShipSanitationControlExemptionDocumentReference": {"ID": V("none", "No exemption: the ship holds the "
                                                                                 "control certificate.")}},
         "FuelConsumption": {"ID": V("FC-26-19E", "The fuel of the voyage."),
@@ -8254,7 +8255,6 @@ def _(f, n, doc, out):
                 "PayableAmount": amount(total, "XBL", "Paid by card: no cash rounding.")})
     out["Payment"]["PaidAmount"] = amount(total, "XBL", "Paid by card.")
     ca = out["PaymentMeans"]["CardAccount"]
-    ca["CV2ID"] = V("***", "Masked: card rules forbid printing or storing the card's security code.")
     ca["IssueNumberID"] = V("01", "The card's issue number: the first card of this account.")
     for ln in lines_of(out, "PurchaseReceiptLine"):
         ln["UUID"] = line_uuid(f, "receipt-pos", ln["ID"].value)
@@ -8397,9 +8397,7 @@ def packaging_complete(n, doc):
                                                  "BaseQuantity": qty(1, "EA", "Per shirt.")}},
                "PaymentMeans": {"PaymentMeansCode": V("54", "UN/EDIFACT 4461 code 54: credit card.",
                                                       listID="UN/EDIFACT EDED 4461"),
-                                "CardAccount": {"PrimaryAccountNumberID": V("************2286", "Masked."),
-                                                "NetworkID": V("CORALCARD", "The island's card scheme."),
-                                                "HolderName": V("VELUMI TRADING", "A company card.")}},
+                                "CardAccount": kit.card_account("1-xl", "26-xb")},
                "Payment": {"PaidAmount": amount(total, "XLC", "Charged to the card in coral."),
                            "PaidDate": V(f.date(26), "At the till.")}}
         till(out, f, 26, "12:20:00", "C1", "Joss")

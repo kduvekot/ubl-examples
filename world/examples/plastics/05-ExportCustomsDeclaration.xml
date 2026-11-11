@@ -101,7 +101,7 @@
         <cbc:EndDate>2029-12-31</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:Certificate>
-        <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
         <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
         <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
@@ -252,6 +252,14 @@
             <cbc:CertificateType languageID="qau">Ranstan nelsek</cbc:CertificateType>
             <cbc:CertificateType languageID="en-XU">Recycled content</cbc:CertificateType>
             <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:EnvironmentalCertificate>
         </cac:Item>
       </cac:GoodsItem>

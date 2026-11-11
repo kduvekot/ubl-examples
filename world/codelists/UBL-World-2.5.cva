@@ -313,6 +313,7 @@
       <ValueList xml:id="DimensionAttribute" uri="gc/DimensionAttributeCode.gc" />
       <ValueList xml:id="TemperatureAttribute" uri="gc/TemperatureAttributeCode.gc" />
       <ValueList xml:id="OtherAttribute" uri="gc/OtherAttributeCode.gc" />
+      <ValueList xml:id="CardScheme" uri="gc/CardSchemeCode.gc" />
    </ValueLists>
    <InstanceMetadataSets>
       <InstanceMetadataSet xml:id="code">
@@ -382,6 +383,7 @@
       <Context address="*[local-name()='Temperature']/cbc:AttributeID | *[local-name()='AdditionalTemperature']/cbc:AttributeID | *[local-name()='BallastWaterTemperature']/cbc:AttributeID | *[local-name()='EmergencyTemperature']/cbc:AttributeID | *[local-name()='FlashpointTemperature']/cbc:AttributeID | *[local-name()='MaximumTemperature']/cbc:AttributeID | *[local-name()='MinimumTemperature']/cbc:AttributeID" values="TemperatureAttribute" metadata="scheme" />
       <Context address="*[local-name()='Condition']/cbc:AttributeID" values="OtherAttribute TemperatureAttribute" metadata="scheme" />
       <Context address="*[local-name()='FloorSpaceMeasurementDimension']/cbc:AttributeID | *[local-name()='PalletSpaceMeasurementDimension']/cbc:AttributeID | *[local-name()='TotalCapacityDimension']/cbc:AttributeID | *[local-name()='PhysicalAttribute']/cbc:AttributeID" values="OtherAttribute" metadata="scheme" />
+      <Context address="*[local-name()='CardAccount']/cbc:NetworkID" values="CardScheme" metadata="scheme" />
       <Context address="cbc:CurrencyCode" values="Currency" metadata="code" />
       <Context address="cbc:DocumentCurrencyCode" values="Currency" metadata="code" />
       <Context address="cbc:PaymentAlternativeCurrencyCode" values="Currency" metadata="code" />

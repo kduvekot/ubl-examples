@@ -146,8 +146,8 @@ Inside `SenderParty`:
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
   The authorization expires on this date.
-- `PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311**  
-  The number of the permit.
+- `PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
+  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
 - `PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
@@ -512,8 +512,8 @@ Inside `Shipment`:
   What the authority has authorized the party to do; identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/PartyAuthorization/ValidityPeriod/EndDate` = **2030-06-30**  
   The authorization expires on this date.
-- `Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877**  
-  The number of the permit.
+- `Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877** (schemeID `urn:ubl-examples:world:XU:haulage-licence`)  
+  The number of the permit in the register of road haulage licences of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
 - `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
@@ -680,7 +680,7 @@ Inside `DocumentDistribution`:
         <cbc:EndDate>2029-12-31</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:Certificate>
-        <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
         <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
         <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
@@ -1000,7 +1000,7 @@ Inside `DocumentDistribution`:
             <cbc:EndDate>2030-06-30</cbc:EndDate>
           </cac:ValidityPeriod>
           <cac:Certificate>
-            <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
             <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
             <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
             <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>

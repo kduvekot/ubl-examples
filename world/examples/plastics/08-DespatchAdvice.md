@@ -146,8 +146,8 @@ Inside `DespatchSupplierParty`:
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
   The authorization expires on this date.
-- `Party/PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311**  
-  The number of the permit.
+- `Party/PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
+  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
 - `Party/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `Party/PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
@@ -472,7 +472,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **0.9 g/10 min**  
   Its value for this lot.
 - `Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
-  The number of the environmental certificate.
+  The number of the environmental certificate, unique only with its issuer, who is named with it (decision ID-Q10).
 - `Item/EnvironmentalCertificate/CertificateTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of claim, as a code. The code is from the Trade Accord's certificate type list: RECYCLED = Recycled content.
 - `Item/EnvironmentalCertificate/CertificateType` = **Ranstan nelsek** (languageID `qau`)  
@@ -481,6 +481,10 @@ Inside `DespatchLine`:
   The name of code RECYCLED in the Trade Accord's certificate type list. In English.
 - `Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
   What the certificate states.
+- `Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -592,7 +596,7 @@ Inside `DespatchLine`:
           <cbc:EndDate>2029-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:Certificate>
-          <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
           <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
           <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
           <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
@@ -890,6 +894,14 @@ Inside `DespatchLine`:
         <cbc:CertificateType languageID="qau">Ranstan nelsek</cbc:CertificateType>
         <cbc:CertificateType languageID="en-XU">Recycled content</cbc:CertificateType>
         <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+        <cac:IssuerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+          </cac:PartyName>
+        </cac:IssuerParty>
       </cac:EnvironmentalCertificate>
     </cac:Item>
   </cac:DespatchLine>

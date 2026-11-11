@@ -212,7 +212,9 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">54</cbc:PaymentMeansCode>
     <cac:CardAccount>
       <cbc:PrimaryAccountNumberID>************2286</cbc:PrimaryAccountNumberID>
-      <cbc:NetworkID>CORALCARD</cbc:NetworkID>
+      <cbc:NetworkID schemeID="urn:ubl-examples:world:codelist:CardSchemeCode">CORALCARD</cbc:NetworkID>
+      <cbc:CardTypeCode listID="urn:ubl-examples:world:codelist:CardTypeCode">CREDIT</cbc:CardTypeCode>
+      <cbc:IssuerID schemeID="urn:ubl-examples:world:bank-identifier">BSELXLSL</cbc:IssuerID>
       <cbc:HolderName>VELUMI TRADING</cbc:HolderName>
     </cac:CardAccount>
   </cac:PaymentMeans>

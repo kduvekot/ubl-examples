@@ -372,25 +372,19 @@ Inside `PaymentMeans`:
 - `PaymentMeansCode` = **55** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 55: debit card. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 55 = Debit card.
 - `CardAccount/PrimaryAccountNumberID` = **************4417**  
-  The card number, masked: a receipt shows only the last four digits.
-- `CardAccount/NetworkID` = **LUMECARD**  
-  The card scheme of the world: Lumeport's interbank card.
+  The card number, masked as the till prints it: the store's tills print only the last four digits of a card number (PCI DSS allows at most the first six and the last four). The number itself starts with 9 and the numeric code of the issuer's country, as ISO/IEC 7812 provides for national use, so it is no real card's.
+- `CardAccount/NetworkID` = **LUMECARD** (schemeID `urn:ubl-examples:world:codelist:CardSchemeCode`)  
+  The card scheme the card runs on. The code is from the Trade Accord's payment card scheme list: LUMECARD = Lumecard. An identifier that holds a code names the code's list in its schemeID.
 - `CardAccount/CardTypeCode` = **DEBIT** (listID `urn:ubl-examples:world:codelist:CardTypeCode`)  
   A debit card. The code is from the Trade Accord's payment card type list: DEBIT = Debit card.
-- `CardAccount/ValidityStartDate` = **2025-06-01**  
-  The card is valid from.
-- `CardAccount/ExpiryDate` = **2029-05-31**  
-  And until.
-- `CardAccount/IssuerID` = **BLUM**  
-  Issued by the Bank of Lumeport.
+- `CardAccount/IssuerID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
+  The card's issuer, Bank of Lumeport, by its bank identifier.
 - `CardAccount/IssueNumberID` = **01**  
   The card's issue number: the first card of this account.
-- `CardAccount/CV2ID` = *******  
-  Masked: card rules forbid printing or storing the card's security code.
 - `CardAccount/CardChipCode` = **Chip** (listID `urn:oasis:names:specification:ubl:codelist:gc:ChipCode`)  
   Read from the chip. The code is from the world's copy of UBL's Chip list, with a listID: Chip.
-- `CardAccount/ChipApplicationID` = **A0000099990001**  
-  The chip application used; an identifier of the world, not a registered one.
+- `CardAccount/ChipApplicationID` = **D9020000011010**  
+  The chip application used: the card scheme's registered application provider identifier D902000001, from the national category D of ISO/IEC 7816-5 with the country code of the scheme, and the application's own code.
 - `CardAccount/HolderName` = **R ASHDALE**  
   The name on the card.
 - `CardAccount/RoleCode` = **HOLDER** (listID `urn:ubl-examples:world:codelist:CardAccountRoleCode`)  
@@ -968,15 +962,12 @@ Inside `PurchaseReceiptLine`:
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">55</cbc:PaymentMeansCode>
     <cac:CardAccount>
       <cbc:PrimaryAccountNumberID>************4417</cbc:PrimaryAccountNumberID>
-      <cbc:NetworkID>LUMECARD</cbc:NetworkID>
+      <cbc:NetworkID schemeID="urn:ubl-examples:world:codelist:CardSchemeCode">LUMECARD</cbc:NetworkID>
       <cbc:CardTypeCode listID="urn:ubl-examples:world:codelist:CardTypeCode">DEBIT</cbc:CardTypeCode>
-      <cbc:ValidityStartDate>2025-06-01</cbc:ValidityStartDate>
-      <cbc:ExpiryDate>2029-05-31</cbc:ExpiryDate>
-      <cbc:IssuerID>BLUM</cbc:IssuerID>
+      <cbc:IssuerID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:IssuerID>
       <cbc:IssueNumberID>01</cbc:IssueNumberID>
-      <cbc:CV2ID>***</cbc:CV2ID>
       <cbc:CardChipCode listID="urn:oasis:names:specification:ubl:codelist:gc:ChipCode">Chip</cbc:CardChipCode>
-      <cbc:ChipApplicationID>A0000099990001</cbc:ChipApplicationID>
+      <cbc:ChipApplicationID>D9020000011010</cbc:ChipApplicationID>
       <cbc:HolderName>R ASHDALE</cbc:HolderName>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:CardAccountRoleCode">HOLDER</cbc:RoleCode>
     </cac:CardAccount>

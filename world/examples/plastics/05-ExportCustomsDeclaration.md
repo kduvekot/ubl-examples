@@ -139,8 +139,8 @@ Inside `ExporterParty`:
   What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
 - `PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
   The authorization expires on this date.
-- `PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311**  
-  The number of the permit.
+- `PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
+  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
 - `PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
@@ -305,7 +305,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
   Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
 - `Shipment/GoodsItem/Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
-  The number of the environmental certificate.
+  The number of the environmental certificate, unique only with its issuer, who is named with it (decision ID-Q10).
 - `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of claim, as a code. The code is from the Trade Accord's certificate type list: RECYCLED = Recycled content.
 - `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateType` = **Ranstan nelsek** (languageID `qau`)  
@@ -314,6 +314,10 @@ Inside `CustomsDeclaration`:
   The name of code RECYCLED in the Trade Accord's certificate type list. In English.
 - `Shipment/GoodsItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
   What the certificate states.
+- `Shipment/GoodsItem/Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Shipment/GoodsItem/Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the river border**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -660,7 +664,7 @@ Inside `Signature`:
         <cbc:EndDate>2029-12-31</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:Certificate>
-        <cbc:ID>XU-ENV-2024-0311</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
         <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
         <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
@@ -811,6 +815,14 @@ Inside `Signature`:
             <cbc:CertificateType languageID="qau">Ranstan nelsek</cbc:CertificateType>
             <cbc:CertificateType languageID="en-XU">Recycled content</cbc:CertificateType>
             <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
           </cac:EnvironmentalCertificate>
         </cac:Item>
       </cac:GoodsItem>

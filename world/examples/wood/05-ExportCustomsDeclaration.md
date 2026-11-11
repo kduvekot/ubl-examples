@@ -248,8 +248,8 @@ Inside `CustomsDeclaration`:
   What the authority has authorized the party to do; identity of Trasvia Haulage (world/parties.json).
 - `Shipment/Consignment/CarrierParty/PartyAuthorization/ValidityPeriod/EndDate` = **2030-06-30**  
   The authorization expires on this date.
-- `Shipment/Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877**  
-  The number of the permit.
+- `Shipment/Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877** (schemeID `urn:ubl-examples:world:XU:haulage-licence`)  
+  The number of the permit in the register of road haulage licences of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
 - `Shipment/Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `Shipment/Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Operating permit**  
@@ -344,25 +344,25 @@ Inside `CustomsDeclaration`:
   Its value; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/UsabilityPeriod/DurationMeasure` = **12** (unitCode `MON`)  
   Oiled within twelve months of planing, before the surface greys
-- `Shipment/GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-118**  
-  The number of the certificate.
+- `Shipment/GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
+  The number of the certificate, in the forestry register of Bayvarra, which keeps the certificates issued under each registration; the schemeID names the register and its authority, so no issuer party is needed (decision ID-Q10).
 - `Shipment/GoodsItem/Item/Certificate/CertificateTypeCode` = **SUSTFOREST** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: SUSTFOREST = Sustainable forestry.
 - `Shipment/GoodsItem/Item/Certificate/CertificateType` = **Sustainable forestry**  
   The name of code SUSTFOREST in the Trade Accord's certificate type list.
-- `Shipment/GoodsItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118**  
-  The certificate's number in the issuer's public register.
+- `Shipment/GoodsItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
+  The registration the certificate is issued under: the sawmill's own number in the same register, which the certificate's number repeats after its year.
 - `Shipment/GoodsItem/Item/Certificate/ApplicableCategoryCode` = **HW** (listID `urn:ubl-examples:world:codelist:CategoryCode`)  
   The category of goods the certificate covers. The code is from the Trade Accord's certified product category list: HW = Hardwood sawn timber.
 - `Shipment/GoodsItem/Item/Certificate/ApplicableCategory` = **Hardwood sawn timber**  
   The name of code HW in the Trade Accord's certified product category list.
-- `Shipment/GoodsItem/Item/Certificate/CertificateURI` = **https://forestry.xb.example/certificates/XB-FOR-2025-118**  
+- `Shipment/GoodsItem/Item/Certificate/CertificateURI` = **https://forestry.xb.example/certificates/XB-FOR-2025-0118**  
   Where the certificate can be checked.
 - `Shipment/GoodsItem/Item/Certificate/Remarks` = **The timber comes from forests in Upland State managed for regrowth.**  
   What the certificate states about the goods.
 - `Shipment/GoodsItem/Item/Certificate/CertificateValidityPeriod/EndDate` = **2027-12-31**  
   The certificate is valid until then.
-- `Shipment/GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-118**  
+- `Shipment/GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
   The audit report the certificate is based on.
 - `Shipment/GoodsItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
@@ -793,7 +793,7 @@ Inside `Signature`:
               <cbc:EndDate>2030-06-30</cbc:EndDate>
             </cac:ValidityPeriod>
             <cac:Certificate>
-              <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
               <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
               <cbc:CertificateType>Operating permit</cbc:CertificateType>
             </cac:Certificate>
@@ -882,19 +882,19 @@ Inside `Signature`:
             </cac:UsabilityPeriod>
           </cac:AdditionalItemProperty>
           <cac:Certificate>
-            <cbc:ID>XB-FOR-2025-118</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>
             <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">SUSTFOREST</cbc:CertificateTypeCode>
             <cbc:CertificateType>Sustainable forestry</cbc:CertificateType>
-            <cbc:CertificateReferenceID>XB-FOR-REG-0118</cbc:CertificateReferenceID>
+            <cbc:CertificateReferenceID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-REG-0118</cbc:CertificateReferenceID>
             <cbc:ApplicableCategoryCode listID="urn:ubl-examples:world:codelist:CategoryCode">HW</cbc:ApplicableCategoryCode>
             <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
-            <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-118</cbc:CertificateURI>
+            <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-0118</cbc:CertificateURI>
             <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
             <cac:CertificateValidityPeriod>
               <cbc:EndDate>2027-12-31</cbc:EndDate>
             </cac:CertificateValidityPeriod>
             <cac:DocumentReference>
-              <cbc:ID>XB-FOR-AUD-2025-118</cbc:ID>
+              <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
             </cac:DocumentReference>
           </cac:Certificate>
           <cac:Dimension>

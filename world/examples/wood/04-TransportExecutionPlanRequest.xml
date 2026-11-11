@@ -181,7 +181,7 @@
         <cbc:EndDate>2030-06-30</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:Certificate>
-        <cbc:ID>XU-HAUL-2020-0877</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
         <cbc:CertificateType>Operating permit</cbc:CertificateType>
       </cac:Certificate>

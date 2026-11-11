@@ -108,7 +108,7 @@ def translate(text, code, street=False):
 
 
 def proper_names():
-    """Words of names, which a translation keeps: parties, places, countries, currencies, languages."""
+    """Words of names, which a translation keeps: parties, places, countries, currencies, languages, card schemes."""
     global PROPER
     if PROPER is None:
         world = _world()
@@ -116,7 +116,8 @@ def proper_names():
                 [t["name"] for t in world.get("localities", [])] + \
                 [c["name"] for c in world["countries"].values()] + \
                 [c["currency"]["name"] for c in world["countries"].values()] + \
-                [x["name"] for x in world["languages"].values()]
+                [x["name"] for x in world["languages"].values()] + \
+                [x["name"] for x in world.get("card_schemes", {}).values()]
         PROPER = {w for n in names for w in re.findall(r"[A-Z][A-Za-z'’]*", n)} - COMMON_NAME_WORDS
     return PROPER
 

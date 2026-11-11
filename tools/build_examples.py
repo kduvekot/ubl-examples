@@ -234,7 +234,11 @@ def party(pid, short=False):
                                                                  f"{src}."),
                                      "ValidityPeriod": {"EndDate": V(au["valid_until"], "The authorization expires on "
                                                                                         "this date.")},
-                                     "Certificate": {"ID": V(au["certificate"], "The number of the permit."),
+                                     "Certificate": {"ID": V(au["certificate"], "The number of the permit in the "
+                                                             f"{c['identifiers'][au['register']]['name']}; the schemeID "
+                                                             "names the register, and with it the authority that keeps "
+                                                             "it, so no issuer party is needed (decision ID-Q10).",
+                                                             schemeID=world_ids.national_scheme(p["c"], au["register"])),
                                                      "CertificateTypeCode": V("PERMIT", "A permit issued by an authority "
                                                                                         "of the party's country."),
                                                      "CertificateType": V("Operating permit", "The kind of certificate, "
@@ -878,7 +882,12 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         out["ItemInstance"] = instance
     if maker.get("certificate"):
         ce = maker["certificate"]
-        cert = {"ID": V(ce["id"], "The number of the certificate."),
+        reg = ce.get("register") and world_ids.national_scheme(maker["origin"], ce["register"])
+        cert = {"ID": V(ce["id"], "The number of the certificate" + (
+                    f", in the {SCHEMES[reg]['name']}, which keeps the certificates issued under each registration; "
+                    "the schemeID names the register and its authority, so no issuer party is needed (decision "
+                    "ID-Q10)." if reg else ", unique only with its issuer, who is named below (decision ID-Q10)."),
+                    **({"schemeID": reg} if reg else {})),
                 "CertificateTypeCode": V(ce["code"], "The kind of certificate, as a code."),
                 "CertificateType": V(ce["type"], "The kind of certificate, in words."),
                 "Remarks": V(ce["remarks"], "What the certificate states about the goods.")}
@@ -887,8 +896,10 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         if ce.get("valid_until"):
             cert["CertificateValidityPeriod"] = {"EndDate": V(ce["valid_until"], "The certificate is valid until then.")}
         if ce.get("reference_id"):
-            cert["CertificateReferenceID"] = V(ce["reference_id"], "The certificate's number in the issuer's public "
-                                                                   "register.")
+            cert["CertificateReferenceID"] = V(ce["reference_id"], "The registration the certificate is issued under: "
+                                                                   "the sawmill's own number in the same register, "
+                                                                   "which the certificate's number repeats after its "
+                                                                   "year.", **({"schemeID": reg} if reg else {}))
         if ce.get("category"):
             cert["ApplicableCategoryCode"] = V(ce["category"][0], "The category of goods the certificate covers.")
             cert["ApplicableCategory"] = V(ce["category"][1], "The category in words.")
@@ -905,11 +916,14 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         out["Certificate"] = cert
     if maker.get("env_certificate"):
         ce = maker["env_certificate"]
-        out["EnvironmentalCertificate"] = {"ID": V(ce["id"], "The number of the environmental certificate."),
+        out["EnvironmentalCertificate"] = {"ID": V(ce["id"], "The number of the environmental certificate, unique "
+                                                             "only with its issuer, who is named with it (decision "
+                                                             "ID-Q10)."),
                                            "CertificateTypeCode": V(ce["code"], "The kind of claim, as "
                                                                                                  "a code."),
                                            "CertificateType": V(ce["type"], "The environmental claim certified."),
-                                           "Remarks": V(ce["remarks"], "What the certificate states.")}
+                                           "Remarks": V(ce["remarks"], "What the certificate states."),
+                                           "IssuerParty": party(ce["issuer"], short=True)}
     if maker.get("dimensions"):
         dims = []
         for dm in maker["dimensions"]:
