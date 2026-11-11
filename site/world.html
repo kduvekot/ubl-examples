@@ -136,7 +136,7 @@ const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov",
 // Parties: number from the 26+C set (27-32 proposed), tile position, country.
 const P = WORLD.parties;
 
-// Routes in tile coordinates. Each has a mode, a layer and a vehicle.
+// Routes in tile coordinates, each with a mode and a layer. The vehicles come from the transport legs (below).
 const ROUTES = WORLD.routes;
 
 // ---------------------------------------------------------------- the world model
@@ -155,6 +155,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.br) t.bridge = 1;
   if (m.az) t.approach = 1;
   if (m.es) t.estuary = 1;
+  if (m.ms) t.station = 1;
   if (m.rd) t.links = { road: new Set(DIRS.filter((d, bit) => m.rd & (1 << bit)).map(d => d.join())) };
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
@@ -286,6 +287,7 @@ function drawWorld() {
     if (t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
     if (t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     if (t.house) house(g, x, y, t.house[0], hash(i, j * 7));
+    if (t.station) meteringStation(g, i, j);
     if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
       if (fr[0] === ri && fr[1] === rj) drawBuilding(g, x, y, t.building); }
   }
@@ -355,6 +357,16 @@ function tree(g, x, y, n) { g.fillStyle = "#5a3d24"; g.fillRect(x - 1, y - 2, 2,
     g.fillStyle = shade(c, .18); g.beginPath(); g.moveTo(x - 4.5, y - 1); g.lineTo(x, y - 12); g.lineTo(x - .5, y - 1); g.fill(); return; }
   const c = n > .9 ? "#c0702a" : n > .82 ? "#b59a2e" : "#4c8a38"; g.fillStyle = c; g.beginPath(); g.arc(x, y - 7, 4.5, 0, 7); g.fill();
   g.fillStyle = shade(c, .2); g.beginPath(); g.arc(x - 1.5, y - 8.5, 2.2, 0, 7); g.fill(); }
+// a pipeline's border metering station: a fenced pad, the pipe coming up through the meter run with its
+// valves, and a small control hut
+function meteringStation(g, i, j) {
+  poly(g, [tp(i, j, -.42, -.42), tp(i, j, .42, -.42), tp(i, j, .42, .42), tp(i, j, -.42, .42)], "#a9a596");
+  for (const [a, b] of [[[-.42, -.42], [.42, -.42]], [[.42, -.42], [.42, .42]], [[.42, .42], [-.42, .42]], [[-.42, .42], [-.42, -.42]]]) tline(g, i, j, [a, b], "#e8e4da", 1, [2, 2]);
+  const [ax, ay] = tp(i, j, -.36, -.12), [bx, by] = tp(i, j, .36, -.12);
+  g.strokeStyle = "#f0c419"; g.lineCap = "round"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(ax, ay); g.lineTo(ax, ay - 4); g.moveTo(bx, by); g.lineTo(bx, by - 4); g.stroke();
+  g.lineWidth = 2.5; g.beginPath(); g.moveTo(ax, ay - 4); g.lineTo(bx, by - 4); g.stroke(); g.lineCap = "butt";
+  for (const u of [.3, .7]) { const vx = ax + (bx - ax) * u, vy = ay + (by - ay) * u - 4; g.fillStyle = "#c0392b"; g.fillRect(vx - 1.5, vy - 3.5, 3, 3); }
+  const [hx, hy] = tp(i, j, .05, .25), G = geo(hx, hy, .28, .2, 6); walls(g, G, "#d8d3c6"); flatRoof(g, G, "#7d8a91"); }
 function rockMound(g, x, y, n) { const top = [x - 1, y - 4 - n * 9]; const sz = 9 + n * 5;
   g.fillStyle = "#9b968a"; g.beginPath(); g.moveTo(x - sz, y + 1); g.lineTo(top[0], top[1]); g.lineTo(x, y + 5); g.closePath(); g.fill();
   g.fillStyle = "#6f6a5f"; g.beginPath(); g.moveTo(x, y + 5); g.lineTo(top[0], top[1]); g.lineTo(x + sz, y + 1); g.closePath(); g.fill();
@@ -559,14 +571,53 @@ const tileWorld = (i, j) => { const [x, y] = iso(...R(i, j)); return [x + OX, y 
 // world position of a point inside tile (i, j): u, v in tile units from its centre
 const tp = (i, j, u, v) => tileWorld(i + u, j + v);
 // vehicles follow the pieces: roads from tile centre to tile centre, rail and river from edge to edge
-const measureRoutes = () => { for (const r of ROUTES) {
-  if (r.mode === "sea" || r.mode === "air" || r.mode === "pipeline") r.world = r.pts.map(p => tileWorld(...p));
-  else if (r.mode === "road") r.world = r.path.map(p => tileWorld(...p));
-  else { const P2 = r.path; r.world = [tileWorld(...P2[0])];
-    for (let k = 0; k < P2.length - 1; k++) r.world.push(tileWorld((P2[k][0] + P2[k + 1][0]) / 2, (P2[k][1] + P2[k + 1][1]) / 2));
-    r.world.push(tileWorld(...P2[P2.length - 1])); }
-  let L = 0; r.seg = []; for (let k = 0; k < r.world.length - 1; k++) { const [a, b] = [r.world[k], r.world[k + 1]]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); if (l) { r.seg.push([a, b, l]); L += l; } }
-  r.L = L; } };
+// The vehicles: one per transport leg of the flows (world/documents.json), on the way the world model found
+// for it ("legs" in the model): a road leg from the building of its from-party to that of its to-party, a rail
+// or river leg along the track or the river's course between them, a sea or air leg along its route. Legs
+// that are the same journey by the same carrier (the same flight in three flows) share one vehicle. Pipeline
+// legs have no vehicle: the gas flows (see the pipelines below).
+const VEHICLES = (() => { const out = new Map();
+  for (const lg of WORLD.model.legs) { if (lg.mode === "pipeline") continue;
+    const key = [lg.mode, lg.from, lg.to, lg.carrier].join(" ");
+    if (out.has(key)) { out.get(key).flows.push(lg.flow); continue; }
+    out.set(key, { key, id: key, mode: lg.mode, from: lg.from, to: lg.to, carrier: lg.carrier, flows: [lg.flow], path: lg.path,
+      layer: LAYER_OF[(byId[lg.carrier] || {}).cat] || "transport" }); }
+  return [...out.values()]; })();
+const half = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+// world points of a way through tiles: from the centre of the first to the centre of the last, through the
+// middle of each tile edge it crosses (rail and river), or through every tile centre (roads and pipelines, which
+// bend at right angles); a road leg starts and ends at the edge of its buildings (its first and last tiles)
+function wayPoints(mode, path) {
+  if (mode === "sea" || mode === "air" || mode === "pipeline") return path.map(p => tileWorld(...p));
+  if (mode === "road") { const pts = path.map(p => p.slice()); if (pts.length > 1) { pts[0] = half(path[0], path[1]); pts[pts.length - 1] = half(path[path.length - 1], path[path.length - 2]); }
+    return pts.map(p => tileWorld(...p)); }
+  const out = [tileWorld(...path[0])];
+  for (let k = 0; k < path.length - 1; k++) out.push(tileWorld(...half(path[k], path[k + 1])));
+  if (path.length > 1) out.push(tileWorld(...path[path.length - 1]));
+  return out; }
+function measure(r, pts) { r.world = pts; let L = 0; r.seg = [];
+  for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [pts[k], pts[k + 1]]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); if (l) { r.seg.push([a, b, l]); L += l; } }
+  r.L = L; }
+// a pipeline is drawn along its tiles, from where the gas enters to where it leaves: its ends reach to the
+// edge of the building it serves; a branch starts on the pipeline it leaves, and its dashes continue those
+// of that pipeline (d0: the distance along the pipelines from the start of the first)
+const STATIONS = []; for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].station) STATIONS.push([i, j]);
+const PIPES = ROUTES.filter(r => r.mode === "pipeline"), PIPE_DASH = 10;     // dash + gap, in world pixels
+function measurePipes() {
+  for (const r of PIPES) { const path = r.path.map(p => p.slice());
+    for (const k of [0, r.path.length - 1]) { const q = r.path[k], d = DIRS.find(([a, b]) => tiles[q[0] + a]?.[q[1] + b]?.building);
+      if (d) k ? path.push([q[0] + d[0] / 2, q[1] + d[1] / 2]) : path.unshift([q[0] + d[0] / 2, q[1] + d[1] / 2]); }
+    measure(r, wayPoints("pipeline", path)); r.d0 = null; }
+  const dist = (r, q) => { let d = 0, best = 1e9, at = 0; const [x, y] = tileWorld(...q);    // to the nearest point of r
+    for (const [a, b, l] of r.seg) { const u = Math.max(0, Math.min(1, ((x - a[0]) * (b[0] - a[0]) + (y - a[1]) * (b[1] - a[1])) / (l * l)));
+      const e = Math.hypot(a[0] + (b[0] - a[0]) * u - x, a[1] + (b[1] - a[1]) * u - y); if (e < best) { best = e; at = d + u * l; } d += l; }
+    return at; };
+  for (let pass = 0; pass < PIPES.length; pass++) for (const r of PIPES) { if (r.d0 != null) continue;
+    const parent = PIPES.find(o => o !== r && o.path.some(q => q[0] === r.path[0][0] && q[1] === r.path[0][1]));
+    if (!parent) r.d0 = 0; else if (parent.d0 != null) r.d0 = parent.d0 + (dist(parent, r.path[0]) || 0); } }
+const measureRoutes = () => { for (const r of ROUTES) if (r.mode === "sea" || r.mode === "air") measure(r, wayPoints(r.mode, r.pts));
+  measurePipes();
+  for (const v of VEHICLES) measure(v, wayPoints(v.mode, v.path)); };
 // a band in tile space from point a to point b (tile units), half-width hw, as a world polygon
 function band(g, i, j, a, b, hw, fill) { const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l * hw, ny = dx / l * hw;
   poly(g, [tp(i, j, a[0] + nx, a[1] + ny), tp(i, j, b[0] + nx, b[1] + ny), tp(i, j, b[0] - nx, b[1] - ny), tp(i, j, a[0] - nx, a[1] - ny)], fill); }
@@ -607,12 +658,17 @@ function drawRoutes(g) {
 function rotate(step) { rot = (rot + step + 4) % 4; drawWorld(); computeLand(); measureRoutes(); fit(); redraw();
   document.getElementById("compass").textContent = ["N", "E", "S", "W"][rot]; }
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
-function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0])]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], 0]; }
+function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0])]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0])]; }
+// how far along its way a vehicle is at time t (0..1): it waits at its from-party (loading), travels at a steady
+// speed, waits at its to-party (unloading), and sets out again; the vehicles keep their own timetables
+const DWELL = 1500;
+VEHICLES.forEach((v, k) => { v.phase = hash(k * 7 + 1, k * 3 + 2); });
+function progress(v, t) { const travel = v.L * (v.mode === "air" ? 45 : 22.5), cycle = travel + 2 * DWELL, c = (t + v.phase * cycle) % cycle;
+  return c < DWELL ? 0 : c > DWELL + travel ? 1 : (c - DWELL) / travel; }
 
 function drawVehicle(g, r, t) {
-  if (r.mode === "pipeline") return;                    // a pipeline has no vehicles: the gas flows
-  const f = ((t / (r.L * 45)) + (r.id.length * .13)) % 1, back = r.mode !== "air" && f >= .5;
-  const u = r.mode === "air" ? f : (back ? 2 - f * 2 : f * 2), [x, y, ang0] = along(r, u), ang = ang0 + (back ? Math.PI : 0);
+  if (!r.seg.length) return;
+  const f = progress(r, t), [x, y, ang] = along(r, f);
   const [sx, sy] = toScreen(x, y), s = Math.max(.7, view.s);
   g.save(); g.translate(sx, sy); g.scale(s, s);
   const body = (x0, x1, w, color, dy = 0) => { g.fillStyle = shade(color, -.35); g.fillRect(x0, -w / 2 + dy + 1, x1 - x0, w);
@@ -646,11 +702,19 @@ function frame(t) {
     if (ro.mode === "sea" || ro.mode === "air") { ctx.strokeStyle = ro.mode === "sea" ? "rgba(255,255,255,.65)" : "rgba(255,255,255,.5)"; ctx.lineWidth = 2; ctx.setLineDash(ro.mode === "air" ? [2, 6] : [8, 6]);
       ctx.beginPath(); ro.pts.forEach((p, k) => { const [x, y] = toScreen(...tileWorld(...p)); k ? ctx.lineTo(x, y - (ro.mode === "air" ? 16 : 0)) : ctx.moveTo(x, y); }); ctx.stroke(); ctx.setLineDash([]); }
     if (ro.mode === "pipeline") {                       // buried pipeline: a yellow dashed line, the gas flowing along it
-      const pts = ro.pts.map(p => toScreen(...tileWorld(...p)));
-      ctx.strokeStyle = "rgba(40,30,10,.55)"; ctx.lineWidth = 4; ctx.setLineDash([]); ctx.beginPath(); pts.forEach(([x, y], k) => k ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.stroke();
-      ctx.strokeStyle = "#f0c419"; ctx.lineWidth = 2; ctx.setLineDash([6, 4]); ctx.lineDashOffset = reduced ? 0 : -(t / 60) % 10;
-      ctx.beginPath(); pts.forEach(([x, y], k) => k ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0; } }
-  if (!reduced) for (const ro of ROUTES) if (layers[ro.layer]) drawVehicle(ctx, ro, t);
+      // drawn in world units, like the map under it: line width, dash pattern and flow speed scale with the
+      // zoom, so the pipeline looks the same at every zoom level; the dashes move from the field towards the
+      // consumers and continue from a pipeline into its branches
+      const pts = ro.world.map(p => toScreen(...p)), s = view.s, flow = reduced ? 0 : (t / 60) % PIPE_DASH;
+      const path = () => { ctx.beginPath(); pts.forEach(([x, y], k) => k ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); };
+      ctx.save(); ctx.beginPath(); ctx.rect(0, 0, r.width, r.height);      // at a metering station the pipe comes up: the station shows it
+      for (const [i, j] of STATIONS) [[-.5, -.5], [.5, -.5], [.5, .5], [-.5, .5]].forEach(([u, v], k) => { const [x, y] = toScreen(...tp(i, j, u, v)); k ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+      ctx.clip("evenodd");
+      ctx.lineJoin = "round"; ctx.lineCap = "butt";
+      ctx.strokeStyle = "rgba(40,30,10,.55)"; ctx.lineWidth = 4 * s; ctx.setLineDash([]); path(); ctx.stroke();
+      ctx.strokeStyle = "#f0c419"; ctx.lineWidth = 2 * s; ctx.setLineDash([6 * s, 4 * s]); ctx.lineDashOffset = (((ro.d0 || 0) - flow) % PIPE_DASH) * s;
+      path(); ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0; ctx.lineJoin = "miter"; ctx.restore(); } }
+  if (!reduced) for (const v of VEHICLES) if (layers[v.layer]) drawVehicle(ctx, v, t);
   // town and country names
   ctx.textAlign = "center";
   if (view.s > .55) for (const tw of TOWNS) { const [x, y] = toScreen(...tileWorld(...tw.label));

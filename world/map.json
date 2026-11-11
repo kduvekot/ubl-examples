@@ -1,5 +1,5 @@
 {
- "description": "The map of the UBL example world: routes, towns and fields. tools/world_model.py builds the tile model from it and from the parties. Localities are small places without houses on the map; they give the parties outside the towns a place in their address.",
+ "description": "The map of the UBL example world: routes, towns and fields. tools/world_model.py builds the tile model from it and from the parties. Stations are the pipelines' border metering stations. Localities are small places without houses on the map; they give the parties outside the towns a place in their address.",
  "routes": [
   {
    "id": "ore",
@@ -287,23 +287,23 @@
    "id": "gas",
    "mode": "pipeline",
    "layer": "chain",
-   "label": "Gas pipeline, offshore field to the power station (XB → XU)",
+   "label": "Gas pipeline from the gas plant across the border to the power station (XB → XU)",
    "pts": [
     [
-     30,
-     7
+     29,
+     8
     ],
     [
-     30,
+     29,
      11
     ],
     [
-     21,
+     19,
      11
     ],
     [
-     20,
-     13
+     19,
+     12
     ]
    ]
   },
@@ -311,14 +311,10 @@
    "id": "gas-grid",
    "mode": "pipeline",
    "layer": "chain",
-   "label": "Gas pipeline to the grid operator's city gate (XB → XU)",
+   "label": "Branch of the gas pipeline to the grid operator's city gate (XU)",
    "pts": [
     [
-     30,
-     7
-    ],
-    [
-     30,
+     19,
      11
     ],
     [
@@ -335,18 +331,18 @@
    "id": "gas-field",
    "mode": "pipeline",
    "layer": "chain",
-   "label": "Subsea pipeline from the offshore platform",
+   "label": "Subsea pipeline from the offshore platform to the gas plant",
    "pts": [
     [
      33,
      3
     ],
     [
-     31,
-     6
+     33,
+     7
     ],
     [
-     30,
+     31,
      7
     ]
    ]
@@ -434,6 +430,18 @@
    ],
    "party": "42-xb",
    "note": "The gas field's production platform, offshore: it has no name or address in the documents, only its place in the world's map grid and its WGS 84 coordinates."
+  }
+ ],
+ "stations": [
+  {
+   "at": [
+    23,
+    11
+   ],
+   "kind": "metering",
+   "pipeline": "gas",
+   "country": "XB",
+   "note": "The border metering station of the gas pipeline, on Bayvarra's side of the border: it measures the gas that crosses into Urvania."
   }
  ],
  "forests": [

@@ -19,6 +19,7 @@ For every tile the model records:
   az  1 in the approach zone of an airport runway
   es  1 for river water at least ESTUARY wide (the estuary): drawn as open water, the
       rest of the river as a narrower stream within its tiles
+  ms  1 for a pipeline's border metering station (map "stations")
 
 Structural rules (the build stops when one is broken):
   * buildings do not share tiles and do not stand on roads, rails or water,
@@ -47,10 +48,22 @@ Structural rules (the build stops when one is broken):
     line across it passes a rail station; rail lines end at a party;
   * sea routes run over water from port to port, air routes from airport
     to airport;
+  * pipelines are buried: they run in straight lines along the tile grid,
+    cross a road, a rail line or the river underneath, at right angles and
+    in a straight line, never along them, and keep out of towns; nothing is
+    built or planted on them (the right of way is kept clear); a pipeline
+    leaves the sea only once, at its landfall, from an offshore platform;
+  * a pipeline starts at a party, at its offshore platform or on another
+    pipeline (a branch), and ends at a party; across a land border it
+    passes a border metering station within 3 tiles of the crossing;
   * every transport leg of a flow (world/documents.json) is possible: road,
-    rail or river connects its two parties, or a sea or air route their port
-    or airport; its carrier has a means of that mode; and every carrier a
-    document of the flow names carries one of its legs.
+    rail or river connects its two parties, a sea or air route their port
+    or airport, or the pipelines, in the direction of the flow, the gas
+    producer and its customer; its carrier has a means of that mode; every
+    carrier a document of the flow names carries one of its legs; and every
+    pipeline carries a pipeline leg (or feeds the producer from its platform).
+    The model records each leg's way on the map ("legs"): the map's vehicles
+    travel exactly these.
 
 Usage: python3 tools/world_model.py [out.json]   (default: print a summary)
 """
@@ -232,6 +245,34 @@ def build(world):
                     if t and "b" not in t:
                         t["k"], t["c"], t["h"] = "s", None, 0
 
+    # 3a. pipelines and their stations. A pipeline is buried: its tiles keep their terrain, but its right
+    #     of way is kept clear (no house, yard, tree or forest on it). A border metering station stands
+    #     on the pipeline, on flat land.
+    pipes = {}
+    for r in world["routes"]:
+        if r["mode"] == "pipeline":
+            pts = r["pts"]
+            for (ai, aj), (bi, bj) in zip(pts, pts[1:]):
+                if ai != bi and aj != bj:
+                    problems.append(f"pipeline '{r['id']}' is not straight along the tile grid from {(ai, aj)} to {(bi, bj)}")
+            r["path"] = pipes[r["id"]] = path_tiles(pts, "road")
+    corridor = {q for path in pipes.values() for q in path}
+    stations = {}
+    for st in world.get("stations", []):
+        q = tuple(st["at"])
+        stations[q] = st
+        t = tile(*q)
+        if not t or t["k"] in ("s", "w") or q in owner:
+            problems.append(f"{st['kind']} station at {q} must stand on free land")
+            continue
+        t["k"], t["ms"] = "g", 1
+        if q not in corridor:
+            problems.append(f"{st['kind']} station at {q} is not on a pipeline")
+    for q in corridor:
+        t = tile(*q)
+        if t and t["k"] == "f":
+            t["k"] = "g"
+
     # 3b. a sea route is a shipping lane: land on it becomes water, unless something is built there
     for r in world["routes"]:
         if r["mode"] == "sea":
@@ -306,7 +347,7 @@ def build(world):
 
     def free(q, water_ok=False):
         t = tile(*q)
-        return bool(t) and q not in owner and q not in rails and (t["k"] not in ("s", "w") or (water_ok and t["k"] == "w"))
+        return bool(t) and q not in owner and q not in rails and q not in stations and (t["k"] not in ("s", "w") or (water_ok and t["k"] == "w"))
 
     # 5. towns: streets as lines (a main cross, side streets every third tile); only the part
     #    connected to the town centre stays
@@ -507,7 +548,7 @@ def build(world):
             for j in range(cj - rad - 1, cj + rad + 2):
                 t = tile(i, j)
                 d = math.hypot(i - ci, j - cj)
-                if not t or d > rad + .6 or not free((i, j)) or (i, j) in road or (i, j) in rails or "hs" in t or (i, j) in approach:
+                if not t or d > rad + .6 or not free((i, j)) or (i, j) in road or (i, j) in rails or "hs" in t or (i, j) in approach or (i, j) in corridor:
                     continue
                 face = next((b2 for b2, (di, dj) in enumerate(DIRS) if (i + di, j + dj) in road), None)
                 if face is None or hsh(i * 13, j * 7) > .9:        # a few gardens stay open
@@ -529,7 +570,8 @@ def build(world):
             if degree(q) <= 1 and not leads_somewhere(q):
                 spot = next(((q[0] + di, q[1] + dj) for di, dj in DIRS
                              if free((q[0] + di, q[1] + dj)) and (q[0] + di, q[1] + dj) not in road
-                             and (q[0] + di, q[1] + dj) not in rails and (q[0] + di, q[1] + dj) not in approach), None)
+                             and (q[0] + di, q[1] + dj) not in rails and (q[0] + di, q[1] + dj) not in approach
+                             and (q[0] + di, q[1] + dj) not in corridor), None)
                 if spot and T[q[0]][q[1]]["k"] != "w":
                     face = DIRS.index((q[0] - spot[0], q[1] - spot[1]))
                     T[spot[0]][spot[1]]["k"], T[spot[0]][spot[1]]["hs"] = "g", [1, face]
@@ -552,13 +594,14 @@ def build(world):
         if p["kind"] in ("mine", "factory", "warehouse", "waste"):
             for q in neighbours(set(footprint(p))):
                 t = tile(*q)
-                if t and free(q) and q not in road and q not in rails and "hs" not in t and q not in approach and hsh(q[0] * 3, q[1] * 11) < .55:
+                if t and free(q) and q not in road and q not in rails and "hs" not in t and q not in approach and q not in corridor and hsh(q[0] * 3, q[1] * 11) < .55:
                     t["k"], t["yd"] = "g", 1
     for i in range(W):
         for j in range(H):
             t = T[i][j]
             if t["k"] == "g" and (i, j) not in road and (i, j) not in rails and \
-                    "b" not in t and "hs" not in t and "yd" not in t and (i, j) not in approach and hsh(i * 5, j * 17) < .05:
+                    "b" not in t and "hs" not in t and "yd" not in t and (i, j) not in approach and (i, j) not in corridor \
+                    and hsh(i * 5, j * 17) < .05:
                 t["tr"] = 1
 
     # 9. height: a height per tile corner (vertex), at most one level between neighbouring
@@ -575,13 +618,12 @@ def build(world):
                 V[vi][vj] = max(0, min(5, round((hill - .3) * 10)))
                 if any(t["k"] == "r" for t in ts):
                     V[vi][vj] = min(6, V[vi][vj] + 2)
-    built = lambda t, q: q in road or q in rails or "b" in t or "hs" in t or "yd" in t
     STRAIGHT_I, STRAIGHT_J = 1 | 4, 2 | 8          # road masks of a straight road along i / along j
 
     def ground_rule(q):
         """'flat', 'ramp-i', 'ramp-j' or None (free terrain) for the tile at q."""
         t = T[q[0]][q[1]]
-        if t["k"] in ("s", "w") or "b" in t or "hs" in t or "yd" in t or (q in approach and t["k"] != "s"):
+        if t["k"] in ("s", "w") or "b" in t or "hs" in t or "yd" in t or "ms" in t or (q in approach and t["k"] != "s"):
             return "flat"
         if q in road and q in rails:
             return "flat"                                   # level crossing
@@ -724,12 +766,60 @@ def build(world):
                 if owner.get(end, {}).get("kind") != "airport":
                     problems.append(f"air route '{r['id']}' does not start or end at an airport ({end})")
 
-    problems += check_legs(world, T, adj, owner, neighbours)
+    # pipelines: buried, crossing roads, rails and the river underneath at right angles, out of towns,
+    # from a party, its platform or another pipeline to a party, metered at a land border
+    platform_at = {tuple(pf["at"]): pf for pf in world.get("platforms", [])}
+    for r in world["routes"]:
+        if r["mode"] != "pipeline":
+            continue
+        path, name = r["path"], f"pipeline '{r['id']}'"
+        wet = [T[i][j]["k"] == "s" for (i, j) in path]
+        if any(wet) and (path[0] not in platform_at or wet != sorted(wet, reverse=True)):
+            problems.append(f"{name} runs on the sea other than from an offshore platform to its landfall")
+        for k, q in enumerate(path):
+            t = T[q[0]][q[1]]
+            if q in owner:
+                problems.append(f"{name} runs through #{owner[q]['n']} {owner[q]['name']} at {q}")
+            if "hs" in t or "yd" in t or "tr" in t or t["k"] == "f":
+                problems.append(f"{name}: its right of way at {q} is built on or planted")
+            for tw in world.get("towns", []):
+                if math.hypot(q[0] - tw["c"][0], q[1] - tw["c"][1]) <= tw["r"] + 1:
+                    problems.append(f"{name} runs through the town of {tw['name']} at {q}")
+            crossed = [what for what, there in (("road", "rd" in t), ("rail line", "rl" in t), ("river", t["k"] == "w")) if there]
+            if not crossed:
+                continue
+            if k in (0, len(path) - 1):
+                problems.append(f"{name} ends on a {crossed[0]} at {q}")
+                continue
+            a, b = path[k - 1], path[k + 1]
+            along_i = a[1] == b[1]
+            if not (a[0] == b[0] or along_i):
+                problems.append(f"{name} bends under a {crossed[0]} at {q}; it crosses in a straight line")
+                continue
+            pcs = t.get("rl", [])
+            if ("rd" in t and t["rd"] != (STRAIGHT_J if along_i else STRAIGHT_I)) or \
+                    (pcs and not (len(pcs) == 1 and all(pcs[0]) and pcs[0][0][0] == -pcs[0][1][0] and pcs[0][0][1] == -pcs[0][1][1]
+                                  and (pcs[0][0][0] == 0) == along_i)):
+                problems.append(f"{name} crosses a {crossed[0]} at {q} other than at right angles under a straight piece")
+        for k in range(len(path) - 1):
+            ca, cb = T[path[k][0]][path[k][1]]["c"], T[path[k + 1][0]][path[k + 1][1]]["c"]
+            if ca and cb and ca != cb and T[path[k][0]][path[k][1]]["k"] != "s":
+                if not any(q in stations for q in path[max(0, k - 2):k + 4]):
+                    problems.append(f"{name} crosses the {ca}/{cb} border at {path[k]} without a metering station within 3 tiles")
+        others = {q for o in world["routes"] if o["mode"] == "pipeline" and o is not r for q in o["path"]}
+        touches = lambda q: {owner[y]["id"] for y in neighbours({q}) | {q} if y in owner}
+        if not (touches(path[0]) or path[0] in platform_at or path[0] in others):
+            problems.append(f"{name} starts at {path[0]} at no party, platform or other pipeline")
+        if not touches(path[-1]):
+            problems.append(f"{name} ends at {path[-1]} at no party")
+
+    leg_problems, legs = check_legs(world, T, adj, owner, neighbours)
+    problems += leg_problems
 
     for tw in world.get("towns", []):
         tw.pop("streets", None)
 
-    model = {"W": W, "H": H, "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V}
+    model = {"W": W, "H": H, "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs}
     return model, problems
 
 
@@ -740,51 +830,73 @@ CARRIER_ROLES = ("CarrierParty", "SubstituteCarrierParty", "PerformingCarrierPar
 def check_legs(world, T, adj, owner, neighbours):
     """Every transport leg of a flow (world/documents.json, "legs") must be possible in the world: a road
     from party to party on the road network, a rail line or the river connecting them, a sea or air route
-    between their port or airport; the carrier must have a means of that mode in its fleet; and every
-    carrier a document of the flow names must carry one of its legs."""
-    problems = []
+    between their port or airport, the pipelines from the producer to its customer, in the direction the
+    gas flows; the carrier must have a means of that mode in its fleet; and every carrier a document of the
+    flow names must carry one of its legs. Returns the problems and the legs with their way on the map
+    ("path", tiles from the from-party to the to-party; a road leg's first and last tiles are its two buildings):
+    the map's vehicles travel exactly these."""
+    problems, legs = [], []
     party = {p["id"]: p for p in world["parties"]}
-    W_, H_ = len(T), len(T[0])
 
     def near(pid):
         fp = set(footprint(party[pid]))
         return fp | neighbours(fp)
 
-    def reach(starts, goals, step):
-        seen, todo = set(starts), deque(starts)
+    def way(starts, goals, step):
+        """The shortest way from a start tile to a goal tile (a list of tiles), or None."""
+        prev, todo = {q: None for q in starts}, deque(sorted(starts, key=str))
         while todo:
             q = todo.popleft()
             if q in goals:
-                return True
-            for y in step(q):
-                if y not in seen:
-                    seen.add(y)
+                out = []
+                while q is not None:
+                    out.append(q)
+                    q = prev[q]
+                return out[::-1]
+            for y in sorted(step(q), key=str):
+                if y not in prev:
+                    prev[y] = q
                     todo.append(y)
-        return False
+        return None
 
-    rail = {}
+    def graph(mode, directed=False):
+        g = {}
+        for r in world["routes"]:
+            if r["mode"] == mode:
+                path = [tuple(q) for q in r["path"]]
+                for a, b in zip(path, path[1:]):
+                    g.setdefault(a, set()).add(b)
+                    if not directed:
+                        g.setdefault(b, set()).add(a)
+        return g
+
+    rail = graph("rail")
+    course = graph("river")              # barges follow the river's course, not any water tile
+    # pipelines: the gas flows from the first point of each to the last; a pipeline that ends at a party
+    # feeds it, one that starts at a party (or at its platform) is fed by it
+    pipe = graph("pipeline", directed=True)
+    platform_of = {tuple(pf["at"]): pf["party"] for pf in world.get("platforms", [])}
+    at_party = lambda q: {owner[y]["id"] for y in neighbours({q}) if y in owner}
     for r in world["routes"]:
-        if r["mode"] == "rail":
+        if r["mode"] == "pipeline":
             path = [tuple(q) for q in r["path"]]
-            for a, b in zip(path, path[1:]):
-                rail.setdefault(a, set()).add(b)
-                rail.setdefault(b, set()).add(a)
-    water = {(i, j) for i in range(W_) for j in range(H_) if T[i][j]["k"] == "w"}
-
-    def water_step(q):
-        return [(q[0] + di, q[1] + dj) for di, dj in DIRS if (q[0] + di, q[1] + dj) in water]
+            for pid in at_party(path[0]) | ({platform_of[path[0]]} if path[0] in platform_of else set()):
+                pipe.setdefault(("party", pid), set()).add(path[0])
+            for pid in at_party(path[-1]):
+                pipe.setdefault(path[-1], set()).add(("party", pid))
 
     def route_between(mode, a, b):
+        """The points of a sea or air route from a's port or airport to b's."""
         for r in world["routes"]:
             if r["mode"] != mode:
                 continue
-            ends = [tuple(r["pts"][0]), tuple(r["pts"][-1])]
-            for x, y in ((a, b), (b, a)):
-                if ends[0] in near(x) | {tuple(q) for q in neighbours(near(x))} and \
-                        ends[1] in near(y) | {tuple(q) for q in neighbours(near(y))}:
-                    return True
-        return False
+            pts = [tuple(q) for q in r["pts"]]
+            for x, y, order in ((a, b, pts), (b, a, pts[::-1])):
+                if pts[0] in near(x) | neighbours(near(x)) and pts[-1] in near(y) | neighbours(near(y)):
+                    return order
+        return None
 
+    used_pipes = set()
     for f in world["flows"]:
         carriers = set()
         for leg in f.get("legs", []):
@@ -794,15 +906,25 @@ def check_legs(world, T, adj, owner, neighbours):
             if not any(x["kind"] == FLEET_KIND[m] for x in party[c].get("fleet", [])):
                 problems.append(f"{what}: carrier {party[c]['identity']['name']} has no {m} means in its fleet")
             if m == "road":
-                ok = reach([q for q in near(a) if q in adj], {q for q in near(b) if q in adj}, lambda q: adj[q])
+                path = way([q for q in near(a) if q in adj], {q for q in near(b) if q in adj}, lambda q: adj[q])
             elif m == "rail":
-                ok = reach([q for q in near(a) if q in rail], {q for q in near(b) if q in rail}, lambda q: rail[q])
+                path = way([q for q in near(a) if q in rail], {q for q in near(b) if q in rail}, lambda q: rail[q])
             elif m == "river":
-                ok = reach([q for q in near(a) if q in water], {q for q in near(b) if q in water}, water_step)
+                path = way([q for q in near(a) if q in course], {q for q in near(b) if q in course}, lambda q: course[q])
+            elif m == "pipeline":
+                path = way([("party", a)], {("party", b)}, lambda q: pipe.get(q, ()))
+                if path:
+                    path = [q for q in path if q[0] != "party"]
+                    used_pipes.update(zip(path, path[1:]))
             else:
-                ok = route_between(m, a, b)
-            if not ok:
+                path = route_between(m, a, b)
+            if not path:
                 problems.append(f"{what}: no {m} connection between them on the map")
+                continue
+            if m == "road":                  # a truck leaves from its building and drives into the other
+                gate = lambda pid, q: next((y for y in footprint(party[pid]) if abs(y[0] - q[0]) + abs(y[1] - q[1]) == 1), None)
+                path = [x for x in [gate(a, path[0])] + path + [gate(b, path[-1])] if x]
+            legs.append({"flow": f["id"], "mode": m, "from": a, "to": b, "carrier": c, "path": [list(q) for q in path]})
         for d in world["documents"]:
             if d["flow"] != f["id"]:
                 continue
@@ -810,7 +932,17 @@ def check_legs(world, T, adj, owner, neighbours):
                 if path_.split("/")[-1] in CARRIER_ROLES and pid not in carriers:
                     problems.append(f"flow '{f['id']}': {d['doc']} names carrier {party[pid]['identity']['name']} "
                                     f"({path_}), but no leg of the flow is carried by it")
-    return problems
+    # every pipeline carries a pipeline leg in the direction of the flow, or feeds a producer from its platform
+    producers = {leg["from"] for leg in legs if leg["mode"] == "pipeline"}
+    for r in world["routes"]:
+        if r["mode"] != "pipeline":
+            continue
+        path = [tuple(q) for q in r["path"]]
+        src = platform_of.get(path[0])
+        feeds = src in producers and src in at_party(path[-1])
+        if not feeds and not all(e in used_pipes for e in zip(path, path[1:])):
+            problems.append(f"pipeline '{r['id']}' carries no pipeline leg of a flow in the direction of the flow")
+    return problems, legs
 
 
 def main():

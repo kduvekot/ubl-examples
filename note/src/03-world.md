@@ -405,6 +405,20 @@ flow names must carry one of its legs. Domestic jobs go to a carrier of
 that country: a truck of one country driving within another would be
 cabotage, which only happens where a document says so.
 
+The vehicles on the map are these legs: one truck, train, barge, ship or
+aircraft per leg, travelling the way the build found for it, from the
+from-party to the to-party, and a leg flown the same way by the same carrier
+in several flows is one aircraft. A pipeline has no vehicle: the gas is shown
+flowing from the field to the consumers. Pipelines follow the rules of real
+ones. They are buried, so they cross roads, rail lines and the river
+underneath, at right angles and in a straight line, never along them; they
+keep out of towns, and nothing is built or planted on their right of way.
+They start at the producer, at its offshore platform or as a branch of
+another pipeline, end at a customer, and carry exactly the pipeline legs of
+the flows, in the direction the gas flows. Where the pipeline crosses the
+land border, a border metering station measures the gas, as at the
+interconnection points between real gas networks.
+
 ## Specifications
 
 Every document says which specification it follows. `CustomizationID` names
