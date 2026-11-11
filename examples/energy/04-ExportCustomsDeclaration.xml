@@ -32,8 +32,8 @@
       <cbc:BuildingNumber>2</cbc:BuildingNumber>
       <cbc:CityName>Gullhaven</cbc:CityName>
       <cbc:PostalZone>38540</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode>CO</cbc:CountrySubentityCode>
+      <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode>NT</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode>XB</cbc:IdentificationCode>
@@ -55,13 +55,13 @@
     </cac:PhysicalLocation>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
-      <cbc:CompanyID>CO-1238631</cbc:CompanyID>
+      <cbc:CompanyID>NT-1238631</cbc:CompanyID>
       <cbc:TaxLevelCode>State</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>STT</cbc:ID>
         <cbc:CurrencyCode>XBL</cbc:CurrencyCode>
         <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
           <cac:Country>
             <cbc:IdentificationCode>XB</cbc:IdentificationCode>
           </cac:Country>

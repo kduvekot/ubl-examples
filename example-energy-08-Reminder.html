@@ -140,14 +140,15 @@ country and state. identity of Kelpstone Gas (world/parties.json).</li>
 <strong>38540</strong><br />
 Postal code in Bayvarra's format (5 digits). identity of Kelpstone Gas
 (world/parties.json).</li>
-<li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
-State</strong><br />
-The state, part of an address in federal Bayvarra. identity of Kelpstone
-Gas (world/parties.json).</li>
+<li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Northern
+Territory</strong><br />
+The state or territory, part of an address in federal Bayvarra. identity
+of Kelpstone Gas (world/parties.json).</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
-<strong>CO</strong><br />
-The state as a code of Bayvarra's address scheme (world/countries.json).
-identity of Kelpstone Gas (world/parties.json).</li>
+<strong>NT</strong><br />
+The state or territory as a code of Bayvarra's address scheme
+(world/countries.json). identity of Kelpstone Gas
+(world/parties.json).</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-1</strong><br />
 The party's time zone, one hour behind UTC, where the world lies
@@ -196,10 +197,11 @@ West of the Greenwich meridian.</li>
 The name under which the party is registered for state sales tax;
 identity of Kelpstone Gas (world/parties.json).</li>
 <li><code>Party/PartyTaxScheme/CompanyID</code> =
-<strong>CO-1238631</strong><br />
+<strong>NT-1238631</strong><br />
 Tax number under Bayvarra's state sales tax (state code (UL Upland
-State, CO Coastal State), hyphen, 7 digits (sales tax permit of the
-state)); identity of Kelpstone Gas (world/parties.json).</li>
+State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
+tax permit of the state or territory)); identity of Kelpstone Gas
+(world/parties.json).</li>
 <li><code>Party/PartyTaxScheme/TaxLevelCode</code> =
 <strong>State</strong><br />
 The level of government that levies the tax: Bayvarra's state sales tax
@@ -211,8 +213,8 @@ UN/EDIFACT 5153 code of Bayvarra's state sales tax.</li>
 <strong>XBL</strong><br />
 The tax is accounted for in the country's currency.</li>
 <li><code>Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity</code>
-= <strong>Coastal State</strong><br />
-The state whose sales tax the party is registered for.</li>
+= <strong>Northern Territory</strong><br />
+The state or territory whose sales tax the party is registered for.</li>
 <li><code>Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
 = <strong>XB</strong><br />
 The country whose tax this is.</li>
@@ -284,9 +286,10 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the
-trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of
-Kelpstone Gas (world/parties.json).</li>
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
+Northern Territory: the plan is national and does not follow state
+borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
+with 7. identity of Kelpstone Gas (world/parties.json).</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:gas@kelpstone.example">gas@kelpstone.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -722,8 +725,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;2&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Gullhaven&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;38540&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Northern Territory&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span>&gt;NT&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
@@ -745,13 +748,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PhysicalLocation</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Kelpstone Gas Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span>&gt;CO-1238631&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span>&gt;NT-1238631&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxLevelCode</span>&gt;State&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrencyCode</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Northern Territory&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
@@ -968,6 +971,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Reminder</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>6b95b07</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f50a3da</code></p></div></footer>
 </body>
 </html>
