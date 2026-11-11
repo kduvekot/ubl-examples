@@ -50,6 +50,7 @@ The decisions taken in the review of `codelist-classification.md`, in order.
 
 | ID-Q | Decision |
 |---|---|
+| 9 | (c) Both layers, as in reality. FinancialInstitution/ID gets a BIC-like Accord-wide code (ISO 9362 structure with the world's country codes, e.g. `BLUMXBLX`, scheme `urn:ubl-examples:world:bank-identifier`, issued under the Trade Accord's payment link). FinancialInstitutionBranch/ID gets the national branch code in each country's style: XB a British-style sort code (6 digits), XU Italian-style ABI/CAB (5 + 5 digits), XL a 3-digit branch number, each with a national scheme. The account numbers (ISO 13616 structure) must contain the matching bank or branch code, which the build checks; regenerate them if needed. Each bank gets a few branches. |
 | 8 | Address registers at the level that fits each country:
 - **XU:** one national register (BAG-like, about 16 digits: municipality code + serial), `…:XU:address-register`.
 - **XB:** state registers (`…:XB:CO:address-register`, UL, NT), plus the Lumeport city register `…:XB:lumeport:address-register` for addresses inside the city (`LUM-ADR-000417`).
