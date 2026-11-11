@@ -156,6 +156,12 @@
    ]
   },
   {
+   "id": "contest",
+   "title": "A design contest for the promenade bench (Bayvarra)",
+   "text": "The contracting authority relaunches a design contest for the bench of Lumeport's harbour promenade, after cancelling the first one because no design met the brief. Several documents are revised and say which version they supersede: the prior information notice after the council raised the prize fund, the contest notice and its documents in a corrigendum, the design team's declarations, the registry's extract once new accounts are filed, and the results notice, which corrects a prize amount. No goods move.",
+   "legs": []
+  },
+  {
    "id": "carnet",
    "title": "Samples to a trade fair on the island (temporary export)",
    "text": "The manufacturer shows samples at a trade fair on the island and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, avoids paying duties.",
@@ -3249,6 +3255,198 @@
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "PriorInformationNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "The authority announces the relaunched design contest for the promenade bench, with its planned prizes.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "PriorInformationNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "Version 2 of the prior information notice: the city council raised the prize fund, and the contest notice moves by two weeks.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "ContractNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "The contest notice: a restricted design contest with three prizes, relaunched after the earlier contest was cancelled; a group must form a limited company before the follow-up contract.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "CallForTenders",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The furniture maker retrieves the contest documents: the brief, the site plan and the rules.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "37-xb",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "QualificationApplicationRequest",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The authority asks for the self-declaration on the design lead's professional qualification.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "QualificationApplicationResponse",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The design team led by the furniture maker declares its design lead, the engineering firm's architect.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "TendererQualification",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "The furniture maker requests to participate, with the engineering firm as a member of its team.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "TendererPartyQualification/MainQualifyingParty": "37-xb",
+    "TendererPartyQualification/AdditionalQualifyingParty": "27-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "ContractNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "A corrigendum, version 2 of the contest notice: the site plan was wrong, the deadline for requests is extended and the qualification widened.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "CallForTenders",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "Version 2 of the contest documents, with the corrected site plan.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "37-xb",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "QualificationApplicationRequest",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "Version 2 of the self-declaration request: the design lead may also be an industrial designer.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "QualificationApplicationResponse",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "Version 2 of the team's self-declaration: the furniture maker's own industrial designer now leads the design.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "EconomicOperatorParty": "37-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "TendererQualification",
+   "from": "37-xb",
+   "to": "2-xb",
+   "why": "Version 2 of the request to participate: the shares of the team members change with the new design lead.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "TendererPartyQualification/MainQualifyingParty": "37-xb",
+    "TendererPartyQualification/AdditionalQualifyingParty": "27-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "BusinessInformation",
+   "from": "21-xb",
+   "to": "2-xb",
+   "why": "The authority checks the lead member's registration before the jury selects the participants.",
+   "parties": {
+    "SenderParty": "21-xb",
+    "ReceiverParty": "2-xb",
+    "BusinessParty": "37-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "BusinessInformation",
+   "from": "21-xb",
+   "to": "2-xb",
+   "why": "Version 2 of the registry's extract, after the furniture maker filed its accounts for 2025.",
+   "parties": {
+    "SenderParty": "21-xb",
+    "ReceiverParty": "2-xb",
+    "BusinessParty": "37-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "ContractAwardNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "The results of the contest are published: first prize to the furniture maker's team, second to the manufacturer.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb",
+    "TenderResult/WinningParty": [
+     "37-xb",
+     "5-xu"
+    ]
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "ContractAwardNotice",
+   "from": "2-xb",
+   "to": "21-xb",
+   "why": "Version 2 of the results notice corrects the amount of the first prize.",
+   "parties": {
+    "ContractingParty": "2-xb",
+    "ReceiverParty": "21-xb",
+    "TenderResult/WinningParty": [
+     "37-xb",
+     "5-xu"
+    ]
    }
   },
   {

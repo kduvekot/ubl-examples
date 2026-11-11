@@ -6260,8 +6260,7 @@ def tendering_terms(f):
                 "Description": V("Price 60 %, quality 40 %.", "The award."),
                 "TechnicalCommitteeDescription": V("Three officers of the department.", "Who evaluates."),
                 "LowTendersDescription": V("Prices 30 % below the average are examined.", "Abnormally low."),
-                "PrizeIndicator": V("false", "Not a design contest."),
-                "PrizeDescription": V("None.", "No prize."),
+                "PrizeIndicator": V("false", "Not a design contest: no prizes."),
                 "PaymentDescription": V("No payment for tendering.", "None."),
                 "FollowupContractIndicator": V("false", "No follow-up contract."),
                 "BindingOnBuyerIndicator": V("true", "The evaluation binds the buyer."),
@@ -7080,7 +7079,12 @@ def _(f, n, doc, out):
 
 @enrich("tender", "Order")
 def _(f, n, doc, out):
-    return {"PricingExchangeRate": {**PRICING_RATE, "ForeignExchangeContract": {
+    return {"PricingExchangeRate": {**PRICING_RATE, "ExchangeMarketID": V("XLMX", "The market the rate comes from: the "
+                                                                    "contract fixes the rate at the Lumeport "
+                                                                    "Exchange's noon fixing of the ferra on the first "
+                                                                    "working day of the year, and the bank struck "
+                                                                    "the department's forward purchase at it."),
+                                    "ForeignExchangeContract": {
         "ID": V("BL-FX-26-0091", "The department's forward contract with the Bank of Lumeport, which fixes the rate "
                                  "for the year."),
         "IssueDate": V("2026-01-02", "Concluded on the rate date."),
@@ -8717,3 +8721,332 @@ def energy(n, doc):
 
 FLOWS["energy"] = ENERGY
 SCENARIOS["energy"] = _with_enrichment("energy", energy)
+
+
+# ---------------------------------------------------------------- the design contest (Bayvarra): revised documents
+# The Public Works Department relaunches the design contest for the harbour promenade's bench, which it cancelled in
+# 2025 because no entry met the brief. Several documents of the contest are revised, and each version 2 names
+# version 1 as its previous version: the prize fund is raised, a corrigendum corrects the site plan and widens a
+# selection criterion, the design team updates its declarations, the business registry updates its extract once the
+# accounts are filed, and the result notice corrects a prize amount.
+CONTEST = kit.Flow("contest", "2026-02-02")
+CFOLDER = "PWD-2026-PROM-DC"
+OLD_FOLDER = "PWD-2025-PROM-DC"
+TEAM_LEAD, TEAM_MEMBER, SECOND = "37-xb", "27-xb", "5-xu"
+LTD_LIST = "urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode"
+
+
+def contest_version(k, why2):
+    """VersionID, and for a second version its PreviousVersionID and why it was revised."""
+    if k == 1:
+        return {"VersionID": V("1", "The first version.")}
+    return {"VersionID": V("2", f"The second version, which supersedes the first: {why2}"),
+            "PreviousVersionID": V("1", "The version this one supersedes: version 1 of the same document, with the "
+                                        "same number.")}
+
+
+def contest_prizes(first, why_first):
+    return [{"RankCode": V("FIRST", "The first prize."),
+             "ValueAmount": amount(first, "XBL", why_first),
+             "Description": V("For the design the jury ranks first; its author is invited to negotiate the follow-up "
+                              "service contract.", "What comes with the prize.")},
+            {"RankCode": V("SECOND", "The second prize."),
+             "ValueAmount": amount(4000, "XBL", "The second prize, unchanged since it was planned."),
+             "Description": V("For the design the jury ranks second.", "What it is for.")},
+            {"RankCode": V("THIRD", "The third prize."),
+             "ValueAmount": amount(2000, "XBL", "The third prize."),
+             "Description": V("For the design the jury ranks third, if the jury finds it of prize standard.",
+                              "The jury may withhold it.")}]
+
+
+def contest_project():
+    return {"Name": V("Design of the harbour promenade bench", "The name of the contest."),
+            "Description": V("A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in "
+                             "salt air, accessible, and buildable for at most 900 lume a bench.", "What the "
+                                                                                                   "department "
+                                                                                                   "wants designed."),
+            "ProcurementTypeCode": V("SERVICES", "A design is a service."),
+            "MainCommodityClassification": {"ItemClassificationCode": V("83912", "The contest is for an industrial "
+                                                                                 "design, as a subclass of the UN "
+                                                                                 "Central Product Classification.")},
+            "RealizedLocation": {"Name": V("Harbour promenade, Lumeport", "Where the furniture will stand."),
+                                 "Address": {"CityName": V("Lumeport", "The city."),
+                                             "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
+            "RequestedTenderTotal": {"EstimatedOverallContractAmount": amount(54000, "XBL", "The prizes, 14,000 lume, "
+                                                                                           "and the follow-up service "
+                                                                                           "contract, estimated at "
+                                                                                           "40,000 lume.")}}
+
+
+def contest_awarding(f, first, why_first):
+    return {"Description": V("The jury ranks the designs anonymously, on design quality (40 %), durability and "
+                             "maintenance in salt air (30 %) and the cost of production (30 %).", "How the designs "
+                                                                                                  "are judged."),
+            "TechnicalCommitteeDescription": V("A jury of five: the head of parks, the city architect, a "
+                                               "representative of the disability council and two independent "
+                                               "designers.", "Who judges."),
+            "PrizeIndicator": V("true", "A design contest with prizes."),
+            "PrizeDescription": V(f"Three prizes; the first is {first:,} lume.", "The prizes in words; each is "
+                                                                                 "given below."),
+            "FollowupContractIndicator": V("true", "The winner of the first prize is invited to negotiate the "
+                                                   "service contract for the detailed design and the supervision "
+                                                   "of the production, without a new call for competition."),
+            "BindingOnBuyerIndicator": V("true", "The jury's ranking binds the department."),
+            "Prize": contest_prizes(first, why_first)}
+
+
+def contest_qualification(k):
+    widened = k == 2
+    return {"CompanyLegalFormCode": V("LTD", "The legal form the department asks for: a group of designers and "
+                                             "engineers must form a private limited company before the follow-up "
+                                             "service contract is awarded, as the procurement act allows where the "
+                                             "contract needs one liable contractor.", listID=LTD_LIST),
+            "CompanyLegalForm": Detail("a group of participants forms one before the follow-up contract is awarded; "
+                                       "for the contest itself a group names a lead member",
+                                       "the requirement applies to a group, and only before the follow-up "
+                                       "contract."),
+            "Description": V("The design lead is a registered architect or a registered industrial designer."
+                             if widened else "The design lead is a registered architect.",
+                             "The professional qualification asked for" +
+                             (", widened by the corrigendum to industrial designers, whom the earlier text "
+                              "excluded without reason." if widened else ".")),
+            "TechnicalEvaluationCriterion": {
+                "EvaluationCriterionTypeCode": V("REFERENCES", "References."),
+                "Description": V("Two completed designs of furniture or fittings for public spaces in the last five "
+                                 "years.", "What the jury checks to select the participants."),
+                "ThresholdQuantity": qty(2, "EA", "Two references."),
+                "DurationPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")}},
+            "EconomicOperatorRole": {"RoleCode": V("LEAD", "A group names a lead member for the contest."),
+                                     "RoleDescription": V("Represents the group towards the department.",
+                                                          "The role in words.")}}
+
+
+def contest_process(f, k):
+    requests_by = 89 if k == 2 else 75
+    return {"ProcedureCode": V("DESIGNCONTEST", "A design contest."),
+            "Description": V("A restricted design contest in two stages: requests to participate, then designs from "
+                             "three to five selected participants, judged anonymously.", "How the contest runs."),
+            "SubmissionMethodCode": V("ELECTRONIC", "Requests and designs through the department's platform."),
+            "CandidateReductionConstraintIndicator": V("true", "The number of participants is limited."),
+            "ParticipationRequestReceptionPeriod": {
+                "EndDate": V(f.date(requests_by), "Requests to participate by then" +
+                             (": two weeks later than version 1 said, to give time for the corrected site plan."
+                              if k == 2 else "."))},
+            "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(130), "Designs by then."),
+                                               "EndTime": V("12:00:00", "At noon.")},
+            "EconomicOperatorShortList": {
+                "LimitationDescription": V("The jury selects the participants on their references.", "How."),
+                "ExpectedQuantity": V("5", "Five participants are expected."),
+                "MinimumQuantity": V("3", "At least three, for a real competition."),
+                "MaximumQuantity": V("5", "At most five, so that the jury can judge every design in depth.")},
+            "ProcessJustification": {
+                "PreviousCancellationReasonCode": V("UNSUITABLE", "Why the earlier contest for the same design was "
+                                                                  "cancelled."),
+                "Description": V(f"Relaunch of the design contest {OLD_FOLDER}, cancelled on 20 November 2025: both "
+                                 "designs received were unacceptable, one far above any production budget and one not "
+                                 "accessible to wheelchair users. The brief now states both limits.",
+                                 "The previous procedure and what changed.")},
+            "NoticeDocumentReference": {"ID": V(f.numbers["contest-pin"], "The prior information notice of the "
+                                                                          "contest.")}}
+
+
+def contest_terms(f, k, first=8000):
+    why_first = ("The first prize, as the city council raised it before the contest was announced."
+                 if first == 8000 else "The first prize as first planned.")
+    return {"TendererQualificationRequest": contest_qualification(k),
+            "AwardingTerms": contest_awarding(f, first, why_first),
+            "AppealTerms": {"Description": V("An appeal against the selection or the jury's ranking goes to the "
+                                             "review board within ten days.", "How to appeal.")},
+            "Language": {"ID": V("en", "Designs and requests in English.")}}
+
+
+def contest(n, doc):
+    f, d = CONTEST, doc["doc"]
+    k = nth("contest", n, doc)
+    folder = {"ContractFolderID": V(CFOLDER, "The department's file number for the contest, the same on every "
+                                             "document of it.")}
+    if d == "PriorInformationNotice":
+        first = 6000 if k == 1 else 8000
+        out = {"ID": V(f.number("contest-pin", doc["from"], d), "The notice number, the same in both versions."),
+               "IssueDate": V(f.date(0 if k == 1 else 21), "Published early, so that designers can plan." if k == 1
+                              else "Revised three weeks later."),
+               **folder,
+               **contest_version(k, "on 18 February the city council raised the prize fund from 12,000 to 14,000 "
+                                    "lume, the first prize from 6,000 to 8,000, and the contest notice moves to "
+                                    "19 March."),
+               "Note": V("Advance notice of the design contest for the harbour promenade bench.", "What it "
+                                                                                                    "announces."),
+               "PlannedDate": V(f.date(30 if k == 1 else 45), "When the contest notice is planned" +
+                                (": later than version 1 said, after the council's decision." if k == 2 else ".")),
+               "NoticeTypeCode": V("PIN", "A prior information notice."),
+               "ContractingParty": contracting_party_details(),
+               "TenderingTerms": {"AwardingTerms": contest_awarding(
+                   f, first, "The first prize as first planned." if k == 1 else
+                   "The first prize, raised by the city council on 18 February.")},
+               "TenderingProcess": {"ProcedureCode": V("DESIGNCONTEST", "A design contest is planned.")},
+               "ProcurementProject": contest_project()}
+        return out
+    if d == "ContractNotice":
+        return {"ID": V(f.number("contest-notice", doc["from"], d), "The notice number, the same in both versions."),
+                "IssueDate": V(f.date(45 if k == 1 else 62), "Published on the date the revised prior information "
+                                                             "notice gave." if k == 1 else
+                               "The corrigendum, published as soon as the error was found."),
+                **folder,
+                **contest_version(k, "a corrigendum. A question from a participant showed that the site plan gave the "
+                                     "sea wall as 240 m long; it is 420 m. The corrected plan changes the number of "
+                                     "benches, so the deadline for requests to participate is extended by two weeks, "
+                                     "and the professional qualification is widened to industrial designers."),
+                "Note": V("Restricted design contest for the harbour promenade bench, with three prizes.", "What."),
+                "NoticeTypeCode": V("CN", "A contract notice; that it corrects version 1 is said by its version "
+                                          "identifiers."),
+                "ContractingParty": contracting_party_details(),
+                "TenderingTerms": contest_terms(f, k), "TenderingProcess": contest_process(f, k),
+                "ProcurementProject": contest_project()}
+    if d == "CallForTenders":
+        plan = ("PWD-PROM-SITE-PLAN-B", "The site plan, revision B: the sea wall is 420 m long, not 240 m as "
+                                        "revision A showed.") if k == 2 else \
+               ("PWD-PROM-SITE-PLAN-A", "The site plan of the promenade, revision A.")
+        return {"ID": V(f.number("contest-call", doc["from"], d), "The number of the contest documents."),
+                "IssueDate": V(f.date(46 if k == 1 else 62), "Retrieved by the furniture maker the day after the "
+                                                             "notice." if k == 1 else
+                               "The revised documents, sent with the corrigendum to everyone who retrieved them."),
+                **folder,
+                **contest_version(k, "the site plan is replaced by revision B and the selection criterion widened, "
+                                     "as the corrigendum says."),
+                "Note": V("The brief, the site plan and the rules of the contest.", "What the documents are."),
+                "TechnicalDocumentReference": {"ID": V("PWD-PROM-BRIEF", "The design brief.")},
+                "ProvidedDocumentReference": {"ID": V(*plan)},
+                "ContractingParty": contracting_party_details(),
+                "TenderingTerms": contest_terms(f, k), "TenderingProcess": contest_process(f, k),
+                "ProcurementProject": contest_project()}
+    if d == "QualificationApplicationRequest":
+        crit = ("registered architect or registered industrial designer" if k == 2 else "registered architect")
+        return {**folder, "ID": V(f.number("contest-qar", doc["from"], d), "The number of the self-declaration "
+                                                                           "the department asks for."),
+                "IssueDate": V(f.date(46 if k == 1 else 62), "Sent with the contest documents." if k == 1 else
+                               "Sent with the corrigendum."),
+                **contest_version(k, "the criterion on the design lead now admits a registered industrial designer, "
+                                     "as the corrigendum says."),
+                "ContractName": V("Design of the harbour promenade bench", "The contest."),
+                "ProcedureCode": V("DESIGNCONTEST", "A design contest."),
+                "QualificationApplicationTypeCode": V("REGULATED", "The regulated form of self-declaration."),
+                "TenderingCriterion": {
+                    "ID": V("CR-PROF", "The criterion on the design lead."),
+                    "CriterionTypeCode": V("SUITABILITY", "A criterion of professional suitability."),
+                    "Name": V("Professional qualification of the design lead", "The criterion."),
+                    "Description": V(f"The design lead is a {crit}.", "What is asked" +
+                                     (", as widened by the corrigendum." if k == 2 else ".")),
+                    "FulfilmentIndicator": V("true", "Must be met."),
+                    "EvaluationMethodTypeCode": V("PASSFAIL", "Met or not."),
+                    "TenderingCriterionPropertyGroup": {
+                        "ID": V("PG-PROF", "The questions on the design lead."),
+                        "PropertyGroupTypeCode": V("ON", "Always answered."),
+                        "TenderingCriterionProperty": {
+                            "ID": V("P-PROF-1", "The question."), "Name": V("Registration of the design lead", "Its "
+                                                                                                           "name."),
+                            "Description": V("The register and the registration number of the design lead.", "What "
+                                                                                                             "to "
+                                                                                                             "answer."),
+                            "TypeCode": V("QUESTION", "A question."),
+                            "ValueDataTypeCode": V("DESCRIPTION", "Answered in words.")}}}}
+    if d == "QualificationApplicationResponse":
+        answer = ("The design lead, Ivo Harlan, is registered as an industrial designer, no. ID-2208, in the register "
+                  "of the Bayvarran Design Council." if k == 2 else
+                  "The design lead, Edda Corwin of Saltmere Engineering, is a registered architect, no. AR-4417, in "
+                  "the register of the Bayvarran Chamber of Architects.")
+        return {**folder, "ID": V(f.number("contest-qar-response", doc["from"], d), "The team's number for its "
+                                                                                     "self-declaration."),
+                "IssueDate": V(f.date(58 if k == 1 else 70), "With the request to participate." if k == 1 else
+                               "Before the extended deadline for requests."),
+                **contest_version(k, "the team answers version 2 of the request: the furniture maker's industrial "
+                                     "designer now leads the design, and the engineering firm's architect stays in "
+                                     "the team for the structure."),
+                "ContractName": V("Design of the harbour promenade bench", "The contest."),
+                "EconomicOperatorGroupName": V("Brackenmere and Saltmere design team", "The group that enters."),
+                "ProcedureCode": V("DESIGNCONTEST", "The contest."),
+                "TenderingCriterion": {"ID": V("CR-PROF", "The criterion answered.")},
+                "TenderingCriterionResponse": {
+                    "ID": V("CRR-PROF", "The response."),
+                    "ValidatedCriterionPropertyID": V("P-PROF-1", "The question answered."),
+                    "Description": V(answer, "The answer."),
+                    "ResponseValue": {"ID": V("RV-PROF", "The answer."),
+                                      "Description": V(answer, "In words, as the question asks."),
+                                      "ResponseCode": V("MET", "The criterion is met.")}},
+                "Evidence": {"ID": V("EV-REG-LEAD", "The registration of the design lead."),
+                             "EvidenceTypeCode": V("CERTIFICATE", "A certificate of registration."),
+                             "Name": V("Certificate of registration of the design lead", "What it is.")}}
+    if d == "TendererQualification":
+        share = ("70", "30") if k == 2 else ("60", "40")
+        return {"ID": V(f.number("contest-qualification", doc["from"], d), "The team's number for its "
+                                                                            "qualification."),
+                **folder,
+                "IssueDate": V(f.date(58 if k == 1 else 70), "With the request to participate." if k == 1 else
+                               "With the revised self-declaration."),
+                **contest_version(k, "the furniture maker now leads the design, so the shares of the work change."),
+                "Note": V("The furniture maker leads the team; the engineering firm does the structure and the "
+                          "anchoring.", "Who does what."),
+                "TendererPartyQualification": {
+                    "MainQualifyingParty": {
+                        "ParticipationPercent": V(share[0], "The furniture maker's share of the work."),
+                        "BusinessIdentityEvidenceID": V(PARTY[TEAM_LEAD]["identity"]["registry_id"], "Its "
+                                                                                                     "registration."),
+                        "TendererRoleCode": V("LEAD", "The lead member of the group."),
+                        "CompletedTask": {"Description": V("Seating for the Lumeport central library's reading "
+                                                           "garden, 2024.", "A reference."),
+                                          "Period": {"StartDate": V("2024-03-01", "From."),
+                                                     "EndDate": V("2024-09-30", "To.")}}},
+                    "AdditionalQualifyingParty": {
+                        "ParticipationPercent": V(share[1], "The engineering firm's share."),
+                        "TendererRoleCode": V("MEMBER", "A member of the group.")}}}
+    if d == "BusinessInformation":
+        turnover = (Decimal(PARTY[TEAM_LEAD]["identity"]["legal"]["turnover"]["amount"]) if k == 2
+                    else Decimal("6410000.00"))
+        return {"ID": V(f.number("contest-business-info", doc["from"], d), "The registry's extract number, the same "
+                                                                           "in both versions."),
+                "IssueDate": V(f.date(92 if k == 1 else 96), "The department checks the lead member when the jury "
+                                                             "selects the participants." if k == 1 else
+                               "The day after the accounts were filed."),
+                **contest_version(k, "the furniture maker filed its accounts for 2025 on " + f.date(95) + ", and the "
+                                     "registry issues the extract again with the new turnover."),
+                "Note": V("Extract from the register of economic operators.", "What it is."),
+                "BriefDescription": V("Brackenmere Furniture: registered, no exclusion grounds recorded.", "In short."),
+                "NoticeTypeCode": V("BUSREG", "Registration information."),
+                "BusinessCapability": {
+                    "CapabilityTypeCode": V("PRODUCTION", "Production capacity."),
+                    "Description": V("Furniture of wood and steel, designed and made in its own workshop.", "What."),
+                    "ValueAmount": amount(turnover, "XBL", "The yearly turnover of 2025, from the accounts filed."
+                                          if k == 2 else "The yearly turnover of 2024, the last accounts filed.")},
+                "NoticeSubType": {"SubTypeCode": V("EXTRACT", "An extract on request.")}}
+    if d == "ContractAwardNotice":
+        first = 6000 if k == 1 else 8000
+        return {"ID": V(f.number("contest-result", doc["from"], d), "The notice number, the same in both versions."),
+                **folder,
+                "IssueDate": V(f.date(150 if k == 1 else 153), "Published after the jury's decision." if k == 1 else
+                               "The correction, three days later."),
+                **contest_version(k, "version 1 gave the first prize as 6,000 lume, the amount first planned; the "
+                                     "contest notice offered 8,000, and 8,000 is paid."),
+                "Note": V("Results of the design contest for the harbour promenade bench.", "What."),
+                "NoticeTypeCode": V("CAN", "The results of the contest."),
+                "PublishAwardIndicator": V("true", "The results are published."),
+                "PreviousDocumentReference": {"ID": V(f.numbers["contest-notice"], "The contest notice.")},
+                "ContractingParty": contracting_party_details(),
+                "TenderingTerms": {"AwardingTerms": {"Prize": contest_prizes(first, "Wrongly given as the amount "
+                                                                                    "first planned." if k == 1 else
+                                                     "The amount the contest notice offered.")[:2]}},
+                "TenderingProcess": {"ProcedureCode": V("DESIGNCONTEST", "A design contest.")},
+                "ProcurementProject": contest_project(),
+                "TenderResult": {
+                    "TenderResultCode": V("AWARDED", "The prizes are awarded."),
+                    "Description": V("First prize to the Brackenmere and Saltmere design team, second to Valdara "
+                                     "Industries. The jury withheld the third prize: no other design reached prize "
+                                     "standard.", "The jury's decision."),
+                    "AwardDate": V(f.date(146), "The day the jury decided."),
+                    "ReceivedTenderQuantity": qty(4, "EA", "Four of the five selected participants submitted a "
+                                                           "design."),
+                    "ReceivedForeignTenderQuantity": qty(1, "EA", "Valdara Industries, from Urvania."),
+                    "WinningParty": [{"Rank": V("1", "First prize.")}, {"Rank": V("2", "Second prize.")}]}}
+    raise SystemExit(f"contest scenario: no document {n} {doc['doc']}")
+
+
+FLOWS["contest"] = CONTEST
+SCENARIOS["contest"] = _with_enrichment("contest", contest)

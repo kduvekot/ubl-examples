@@ -612,7 +612,8 @@
     "28-xb"
    ],
    "flows": [
-    "tender"
+    "tender",
+    "contest"
    ],
    "documents": [
     "PriorInformationNotice",

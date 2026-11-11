@@ -431,6 +431,7 @@
       <Context address="cbc:ReminderTypeCode" values="ReminderType" metadata="code" />
       <Context address="cbc:StatementTypeCode" values="StatementType" metadata="code" />
       <Context address="cbc:MarketCode" values="Market" metadata="code" />
+      <Context address="cbc:ExchangeMarketID" values="Market" metadata="scheme" />
       <Context address="cbc:ProfileStatusCode" values="ProfileStatus" metadata="code" />
       <Context address="cbc:InvoiceTypeCode" values="UNCL1001" metadata="code" />
       <Context address="cbc:CreditNoteTypeCode" values="UNCL1001" metadata="code" />

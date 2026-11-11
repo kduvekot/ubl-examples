@@ -998,6 +998,14 @@
    ]
   },
   {
+   "element": "ExchangeMarketID",
+   "address": "cbc:ExchangeMarketID",
+   "lists": [
+    "Market"
+   ],
+   "attribute": "schemeID"
+  },
+  {
    "element": "ProfileStatusCode",
    "address": "cbc:ProfileStatusCode",
    "lists": [
@@ -8441,7 +8449,8 @@
     "46420",
     "46921",
     "87390",
-    "87310"
+    "87310",
+    "83912"
    ]
   },
   "WCOHS2022": {

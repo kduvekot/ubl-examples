@@ -737,7 +737,7 @@
   "Market": {
    "scope": "regional",
    "name": "Market identifier",
-   "description": "The regulated markets of the world, coded in the shape of ISO 10383 market identifier codes (four characters). Each code is checked against the ISO 10383 list, so that none is a real MIC.",
+   "description": "The regulated markets of the world, coded in the shape of ISO 10383 market identifier codes (four characters). Each code is checked against the ISO 10383 list, so that none is a real MIC. A market's currency segment, where it has one, sets the daily reference fixings of the world's currencies, which contracts name as the source of their exchange rates.",
    "codes": {
     "XFER": [
      "Ferrano Stock Exchange",
@@ -745,7 +745,7 @@
     ],
     "XLMX": [
      "Lumeport Exchange",
-     "The regulated market of Bayvarra, in Lumeport."
+     "The regulated market of Bayvarra, in Lumeport. Its currency segment sets the daily fixing of the ferra and the coral against the lume at noon."
     ],
     "XSLN": [
      "Selanu Securities Market",
@@ -6981,7 +6981,8 @@
     "46420": "",
     "46921": "",
     "87390": "",
-    "87310": ""
+    "87310": "",
+    "83912": ""
    }
   },
   "WCOHS2022": {
@@ -7735,6 +7736,11 @@
    "element": "MarketCode",
    "list": "Market",
    "text": "MarketName"
+  },
+  {
+   "element": "ExchangeMarketID",
+   "list": "Market",
+   "attribute": "schemeID"
   },
   {
    "element": "DescriptionCode",

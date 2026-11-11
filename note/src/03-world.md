@@ -377,14 +377,25 @@ production waste as recycled plastic; Bayvarra saws timber, makes furniture,
 packaging and clothing, and distributes and retails; the island Lisavu grows
 and gins cotton, its export. Goods cross the land border by road, rail and
 river barge and go overseas by sea and air in both directions; there is a
-public tender, a temporary export with an ATA carnet, a utility in each
-country, and gas by pipeline from Bayvarra's offshore field to Urvania's
+public tender and a design contest, a temporary export with an ATA carnet, a
+utility in each country, and gas by pipeline from Bayvarra's offshore field to Urvania's
 power station and grid. Each flow starts from the business: who buys
 from whom, on which delivery terms, and therefore who arranges and pays the
 transport. A distributor that buys free carrier (FCA) books the truck
 itself and names the carrier in its order; a retailer that buys delivered
 duty paid (DDP) leaves the transport to its supplier, who then needs an
 outgoing waybill.
+
+A document that is revised keeps its number and says which version it
+supersedes, with `VersionID` 2 and `PreviousVersionID` 1, and its reasons say
+what changed. The design contest shows this: the city of Lumeport relaunches a
+contest for its harbour promenade bench, cancelled the year before because no
+design met the brief (the new notice gives the reason), offers three prizes and
+asks a group of designers to form a limited company before the follow-up
+contract. The council raises the prize fund, a corrigendum corrects the site
+plan and widens a selection criterion, the design team updates its
+declarations, the registry reissues its extract when new accounts are filed,
+and the results notice corrects a prize amount.
 
 Every document in a flow records:
 

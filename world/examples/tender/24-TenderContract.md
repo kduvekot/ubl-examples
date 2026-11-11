@@ -508,9 +508,7 @@ Inside `TenderingTerms`:
 - `AwardingTerms/LowTendersDescription` = **Prices 30 % below the average are examined.**  
   Abnormally low.
 - `AwardingTerms/PrizeIndicator` = **false**  
-  Not a design contest.
-- `AwardingTerms/PrizeDescription` = **None.**  
-  No prize.
+  Not a design contest: no prizes.
 - `AwardingTerms/PaymentDescription` = **No payment for tendering.**  
   None.
 - `AwardingTerms/FollowupContractIndicator` = **false**  
@@ -1167,7 +1165,6 @@ Inside `TenderResult`:
       <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
       <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
       <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
-      <cbc:PrizeDescription>None.</cbc:PrizeDescription>
       <cbc:PaymentDescription>No payment for tendering.</cbc:PaymentDescription>
       <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
       <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
