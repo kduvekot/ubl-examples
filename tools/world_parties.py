@@ -24,6 +24,7 @@ something to put in it, and these checks keep it consistent:
 Usage: python3 tools/world_parties.py      (prints the problems, exit 1 if any)
 """
 import math
+import re
 import os
 import sys
 
@@ -114,6 +115,12 @@ def check(world):
             seen_endpoints[ep] = p["id"]
         if idn.get("website") and not idn["website"].split("/")[2].endswith(".example"):
             problems.append(f"{where}: website {idn['website']} must use the reserved .example domain")
+        plan = world["countries"][p["c"]].get("phone_plan")
+        for kind in ("telephone", "telefax", "mobile"):
+            number = idn.get("contact", {}).get(kind)
+            if number and plan and not re.match(plan["pattern"], number):
+                problems.append(f"{where}: {kind} {number} does not follow {world['countries'][p['c']]['name']}'s "
+                                f"numbering plan (world/countries.json): {plan['note']}")
         phone = idn.get("contact", {}).get("telephone")
         if phone and not phone.startswith(world["countries"][p["c"]]["phone_prefix"]):
             problems.append(f"{where}: telephone {phone} must start with {world['countries'][p['c']]['phone_prefix']} "

@@ -126,8 +126,8 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
-- `Contact/Telephone` = **+999 1 4150 4685**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Ferrano Rail Cargo (world/parties.json).
+- `Contact/Telephone` = **+999 1 0413 44685**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/ElectronicMail` = **freight@ferranorail.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -221,8 +221,8 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Intermodal Hub (world/parties.json).
-- `Contact/Telephone` = **+999 1 4180 5096**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Ferrano Intermodal Hub (world/parties.json).
+- `Contact/Telephone` = **+999 1 041 672 5096**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/ElectronicMail` = **terminal@ferranohub.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -344,7 +344,7 @@ Inside `StatusLocation`:
       <cbc:Name>Freight desk</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
+      <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -425,7 +425,7 @@ Inside `StatusLocation`:
       <cbc:Name>Terminal control</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 4180 5096</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 672 5096</cbc:Telephone>
       <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

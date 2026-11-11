@@ -131,8 +131,8 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Montebrio Power (world/parties.json).
 - `Party/Contact/Department` = **Trading**  
   The department the desk belongs to; identity of Montebrio Power (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 4130 5918**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 0413 55918**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Montebrio Power (world/parties.json).
 - `Party/Contact/ElectronicMail` = **trading@montebrio.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Montebrio Power (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 07:00–19:00**  
@@ -252,8 +252,8 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/Department` = **Commercial**  
   The department the desk belongs to; identity of Kelpstone Gas (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 3852 2877**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Kelpstone Gas (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 38522 12877**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/ElectronicMail` = **gas@kelpstone.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -461,7 +461,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Energy trading</cbc:Name>
         <cbc:JobTitle>Energy trader</cbc:JobTitle>
         <cbc:Department>Trading</cbc:Department>
-        <cbc:Telephone>+999 1 4130 5918</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
         <cbc:ElectronicMail>trading@montebrio.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
       </cac:Contact>
@@ -563,7 +563,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Gas sales</cbc:Name>
         <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
         <cbc:Department>Commercial</cbc:Department>
-        <cbc:Telephone>+999 2 3852 2877</cbc:Telephone>
+        <cbc:Telephone>+999 2 38522 12877</cbc:Telephone>
         <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

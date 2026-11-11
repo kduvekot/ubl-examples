@@ -75,7 +75,7 @@
         <cbc:Name>Purchasing</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -139,7 +139,7 @@
         <cbc:Name>Cargo sales</cbc:Name>
         <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 3 3000 1311</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
         <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -213,7 +213,7 @@
           <cbc:Name>Import desk</cbc:Name>
           <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 3 3000 1174</cbc:Telephone>
+          <cbc:Telephone>+999 3 724 1174</cbc:Telephone>
           <cbc:ElectronicMail>import@selanu-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
@@ -327,7 +327,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

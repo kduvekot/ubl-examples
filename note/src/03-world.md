@@ -119,7 +119,11 @@ analysis). Each party has:
 
 Names are invented and checked against real organisations. E-mail
 addresses use the reserved domain `.example` (RFC 2606), so that none can
-reach a real organisation. Account numbers follow the structure of ISO 13616
+reach a real organisation. Telephone numbers use +999, which the ITU reserves for
+a future global service (ITU-T E.164), followed by the country's digit. Each
+country has its own numbering plan: Urvania kept the open plan of Italian
+times, with area codes of different lengths (9 or 10 digits); Bayvarra has a
+British-style plan of always 10 digits; the island has short 7-digit numbers. Account numbers follow the structure of ISO 13616
 with its check digits, using the world's country codes, but they are not
 called IBANs, because the world's countries are not registered IBAN
 countries.

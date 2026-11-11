@@ -131,8 +131,8 @@ Inside `ReporterParty`:
   The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
-- `Contact/Telephone` = **+999 2 3852 1918**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Tidewell Ocean Lines (world/parties.json).
+- `Contact/Telephone` = **+999 2 38 2418 1918**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/ElectronicMail` = **bookings@tidewell.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -198,8 +198,8 @@ Inside `AuthorityParty`:
   The job of the person who answers at the desk; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Maritime Administration of Lisavu (world/parties.json).
-- `Contact/Telephone` = **+999 3 3000 2270**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Maritime Administration of Lisavu (world/parties.json).
+- `Contact/Telephone` = **+999 3 720 2270**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/ElectronicMail` = **ship@maritime-xl.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -324,8 +324,8 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 3 3000 1037**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 3 727 1037**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/ElectronicMail` = **port@port-selanu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -420,8 +420,8 @@ Inside `Shipment`:
   Expected on time.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Name` = **Bridge**  
   Whom to call.
-- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone` = **+999 2 3900 2117**  
-  The ship's satellite phone.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Contact/Telephone` = **+999 3 790 2117**  
+  The ship's phone, in the island's maritime range (79), as the ship flies the island's flag.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceLocation/Name` = **Selanu fairway buoy**  
   Where the pilot boards.
 - `ShipmentStage/ShipStoreArticle/ID` = **ST-1**  
@@ -883,7 +883,7 @@ Inside `Signature`:
       <cbc:Name>Bookings</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -942,7 +942,7 @@ Inside `Signature`:
       <cbc:Name>Ship registry</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2270</cbc:Telephone>
+      <cbc:Telephone>+999 3 720 2270</cbc:Telephone>
       <cbc:ElectronicMail>ship@maritime-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -1043,7 +1043,7 @@ Inside `Signature`:
           <cbc:Name>Port control</cbc:Name>
           <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 3 3000 1037</cbc:Telephone>
+          <cbc:Telephone>+999 3 727 1037</cbc:Telephone>
           <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
@@ -1120,7 +1120,7 @@ Inside `Signature`:
           </cac:CurrentStatus>
           <cac:Contact>
             <cbc:Name>Bridge</cbc:Name>
-            <cbc:Telephone>+999 2 3900 2117</cbc:Telephone>
+            <cbc:Telephone>+999 3 790 2117</cbc:Telephone>
           </cac:Contact>
           <cac:OccurrenceLocation>
             <cbc:Name>Selanu fairway buoy</cbc:Name>

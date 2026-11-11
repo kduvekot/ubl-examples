@@ -136,8 +136,8 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Party/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 3852 1644**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Bayforth Forwarding (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 38 2144 1644**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Party/Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -245,8 +245,8 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7121 0274**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 7121 474 274**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/ElectronicMail` = **customer@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -368,8 +368,8 @@ Inside `Delivery`:
   The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
-- `Shipment/Consignment/CarrierParty/Contact/Telephone` = **+999 2 3852 1918**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Tidewell Ocean Lines (world/parties.json).
+- `Shipment/Consignment/CarrierParty/Contact/Telephone` = **+999 2 38 2418 1918**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Tidewell Ocean Lines (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/ElectronicMail` = **bookings@tidewell.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -678,7 +678,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Export desk</cbc:Name>
         <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
         <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -770,7 +770,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -880,7 +880,7 @@ Inside `InvoiceLine`:
             <cbc:Name>Bookings</cbc:Name>
             <cbc:JobTitle>Operations planner</cbc:JobTitle>
             <cbc:Department>Operations</cbc:Department>
-            <cbc:Telephone>+999 2 3852 1918</cbc:Telephone>
+            <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
             <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>

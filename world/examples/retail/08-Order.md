@@ -173,8 +173,8 @@ Inside `BuyerCustomerParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 3851 0411**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Brightmarket Stores (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 38 2511 0411**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -197,7 +197,7 @@ Inside `BuyerCustomerParty`:
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `DeliveryContact/Name` = **Goods-in, garden department**  
   Whom the driver reports to.
-- `DeliveryContact/Telephone` = **+999 2 3851 0411**  
+- `DeliveryContact/Telephone` = **+999 2 38 2511 0411**  
   The number.
 - `AccountingContact/Name` = **Accounts payable**  
   Where invoices go.
@@ -205,7 +205,7 @@ Inside `BuyerCustomerParty`:
   The address, under the reserved .example domain.
 - `BuyerContact/Name` = **Garden department buyer**  
   Who placed the order.
-- `BuyerContact/Telephone` = **+999 2 3851 0411**  
+- `BuyerContact/Telephone` = **+999 2 38 2511 0411**  
   The number.
 
 ### Seller Supplier Party
@@ -312,8 +312,8 @@ Inside `SellerSupplierParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7121 0274**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Lumeway Distribution (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 7121 474 274**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/ElectronicMail` = **customer@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -324,7 +324,7 @@ Inside `SellerSupplierParty`:
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `DespatchContact/Name` = **Dispatch office**  
   Who despatches.
-- `DespatchContact/Telephone` = **+999 2 7121 0274**  
+- `DespatchContact/Telephone` = **+999 2 7121 474 274**  
   The number.
 - `AccountingContact/Name` = **Accounts receivable**  
   For payment questions.
@@ -332,7 +332,7 @@ Inside `SellerSupplierParty`:
   The address, under the reserved .example domain.
 - `SellerContact/Name` = **Key account manager, retail**  
   The store's contact at the distributor.
-- `SellerContact/Telephone` = **+999 2 7121 0274**  
+- `SellerContact/Telephone` = **+999 2 7121 474 274**  
   The number.
 
 ### Delivery
@@ -787,7 +787,7 @@ Inside `OrderLine`:
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -808,7 +808,7 @@ Inside `OrderLine`:
     </cac:Party>
     <cac:DeliveryContact>
       <cbc:Name>Goods-in, garden department</cbc:Name>
-      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
     </cac:DeliveryContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts payable</cbc:Name>
@@ -816,7 +816,7 @@ Inside `OrderLine`:
     </cac:AccountingContact>
     <cac:BuyerContact>
       <cbc:Name>Garden department buyer</cbc:Name>
-      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
     </cac:BuyerContact>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
@@ -904,7 +904,7 @@ Inside `OrderLine`:
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -915,7 +915,7 @@ Inside `OrderLine`:
     </cac:Party>
     <cac:DespatchContact>
       <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
     </cac:DespatchContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts receivable</cbc:Name>
@@ -923,7 +923,7 @@ Inside `OrderLine`:
     </cac:AccountingContact>
     <cac:SellerContact>
       <cbc:Name>Key account manager, retail</cbc:Name>
-      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
     </cac:SellerContact>
   </cac:SellerSupplierParty>
   <cac:Delivery>

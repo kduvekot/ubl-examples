@@ -123,8 +123,8 @@ Inside `ExporterParty`:
   The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
-- `Contact/Telephone` = **+999 1 4140 4548**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Rinova Recovery (world/parties.json).
+- `Contact/Telephone` = **+999 1 041 836 4548**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rinova Recovery (world/parties.json).
 - `Contact/ElectronicMail` = **customer@rinova.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -246,8 +246,8 @@ Inside `CustomsDeclaration`:
   The job of the person who answers at the desk; identity of Fiumella Barges (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Fiumella Barges (world/parties.json).
-- `Shipment/Consignment/CarrierParty/Contact/Telephone` = **+999 1 4170 4959**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Fiumella Barges (world/parties.json).
+- `Shipment/Consignment/CarrierParty/Contact/Telephone` = **+999 1 041 513 4959**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Fiumella Barges (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/ElectronicMail` = **chartering@fiumella.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Fiumella Barges (world/parties.json).
 - `Shipment/Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -392,8 +392,8 @@ Inside `CustomsDeclaration`:
   The job of the person who answers at the desk; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
-- `ConsigneeParty/Contact/Telephone` = **+999 2 3850 2740**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Rivermouth Packaging (world/parties.json).
+- `ConsigneeParty/Contact/Telephone` = **+999 2 38 2440 2740**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/ElectronicMail` = **order@rivermouth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -506,9 +506,9 @@ Inside `CustomsDeclaration`:
   The job of the person who answers at the desk; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/Contact/Telephone` = **+999 1 4120 5507**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/Contact/Telefax` = **+999 1 4180 0018**  
+- `CustomsParty/Contact/Telephone` = **+999 1 041 349 5507**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Customs Administration of Urvania (world/parties.json).
+- `CustomsParty/Contact/Telefax` = **+999 1 041 326 0018**  
   The customs office still lists a fax number; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/Contact/ElectronicMail` = **border@customs-xu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Customs Administration of Urvania (world/parties.json).
@@ -625,7 +625,7 @@ Inside `Signature`:
       <cbc:Name>Customer service</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 1 4140 4548</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 836 4548</cbc:Telephone>
       <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -735,7 +735,7 @@ Inside `Signature`:
             <cbc:Name>Chartering desk</cbc:Name>
             <cbc:JobTitle>Operations planner</cbc:JobTitle>
             <cbc:Department>Operations</cbc:Department>
-            <cbc:Telephone>+999 1 4170 4959</cbc:Telephone>
+            <cbc:Telephone>+999 1 041 513 4959</cbc:Telephone>
             <cbc:ElectronicMail>chartering@fiumella.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>
@@ -874,7 +874,7 @@ Inside `Signature`:
         <cbc:Name>Order desk</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2440 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -983,8 +983,8 @@ Inside `Signature`:
         <cbc:Name>Border office</cbc:Name>
         <cbc:JobTitle>Public service officer</cbc:JobTitle>
         <cbc:Department>Public services</cbc:Department>
-        <cbc:Telephone>+999 1 4120 5507</cbc:Telephone>
-        <cbc:Telefax>+999 1 4180 0018</cbc:Telefax>
+        <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
+        <cbc:Telefax>+999 1 041 326 0018</cbc:Telefax>
         <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

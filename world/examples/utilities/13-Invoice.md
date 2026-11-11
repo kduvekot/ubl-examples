@@ -129,8 +129,8 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 3000 2407**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Selanu Telecom (world/parties.json).
+- `Party/Contact/Telephone` = **+999 3 727 2407**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/ElectronicMail` = **business@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -208,8 +208,8 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 3000 1859**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Velumi Trading (world/parties.json).
+- `Party/Contact/Telephone` = **+999 3 729 1859**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Party/Contact/ElectronicMail` = **purchasing@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -527,7 +527,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Business accounts</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 3 3000 2407</cbc:Telephone>
+        <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
         <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -596,7 +596,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Purchasing</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

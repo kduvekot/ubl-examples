@@ -89,7 +89,7 @@
         <cbc:Name>Freight desk</cbc:Name>
         <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 1 4150 4685</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
         <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -186,7 +186,7 @@
           <cbc:Name>Terminal control</cbc:Name>
           <cbc:JobTitle>Operations planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 1 4180 5096</cbc:Telephone>
+          <cbc:Telephone>+999 1 041 672 5096</cbc:Telephone>
           <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

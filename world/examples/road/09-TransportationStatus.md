@@ -149,8 +149,8 @@ Inside `Consignment`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `ConsigneeParty/Contact/Telephone` = **+999 2 7121 0274**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Lumeway Distribution (world/parties.json).
+- `ConsigneeParty/Contact/Telephone` = **+999 2 7121 474 274**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/Contact/ElectronicMail` = **customer@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -239,8 +239,8 @@ Inside `Consignment`:
   The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
-- `CarrierParty/Contact/Telephone` = **+999 1 4160 4822**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Trasvia Haulage (world/parties.json).
+- `CarrierParty/Contact/Telephone` = **+999 1 041 354 4822**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/Contact/ElectronicMail` = **planning@trasvia.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -328,7 +328,7 @@ Inside `TransportEvent`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Contact/Name` = **Planning desk**  
   Whom to call about the truck.
-- `Contact/Telephone` = **+999 1 4160 4822**  
+- `Contact/Telephone` = **+999 1 041 354 4822**  
   The planners' number.
 - `Location/Name` = **Land border crossing Urvania–Bayvarra**  
   The road border crossing between the customs posts of both countries.
@@ -524,7 +524,7 @@ Inside `StatusPeriod`:
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -605,7 +605,7 @@ Inside `StatusPeriod`:
         <cbc:Name>Planning desk</cbc:Name>
         <cbc:JobTitle>Operations planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
         <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -680,7 +680,7 @@ Inside `StatusPeriod`:
     </cac:ResponsibleParty>
     <cac:Contact>
       <cbc:Name>Planning desk</cbc:Name>
-      <cbc:Telephone>+999 1 4160 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
     </cac:Contact>
     <cac:Location>
       <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>

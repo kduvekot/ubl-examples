@@ -91,7 +91,7 @@
         <cbc:Name>Purchasing</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -179,7 +179,7 @@
         <cbc:Name>Order desk</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 3850 2740</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2440 2740</cbc:Telephone>
         <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

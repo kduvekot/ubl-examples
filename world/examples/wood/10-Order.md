@@ -123,8 +123,8 @@ Inside `BuyerCustomerParty`:
   The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7120 2466**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 7121 266 466**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/ElectronicMail` = **trade@brackenmere.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -222,8 +222,8 @@ Inside `SellerSupplierParty`:
   The job of the person who answers at the desk; identity of Marrowdale Sawmill (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Marrowdale Sawmill (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7120 2329**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Marrowdale Sawmill (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 7121 929 329**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Marrowdale Sawmill (world/parties.json).
 - `Party/Contact/ElectronicMail` = **sales@marrowdalesawmill.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Marrowdale Sawmill (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -400,7 +400,7 @@ Inside `OrderLine`:
         <cbc:Name>Trade sales</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7120 2466</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
         <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -487,7 +487,7 @@ Inside `OrderLine`:
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7120 2329</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
         <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

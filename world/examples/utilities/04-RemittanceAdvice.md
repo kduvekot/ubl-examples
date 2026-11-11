@@ -179,15 +179,15 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 4120 4274**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Valdara Industries (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 041 518 4274**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `Party/Contact/ElectronicMail` = **order@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
 - `Party/Contact/OtherCommunication/ChannelCode` = **AL**  
   UN/EDIFACT 3155 code AL: cellular phone.
-- `Party/Contact/OtherCommunication/Value` = **+999 1 7000 4274**  
+- `Party/Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
   The sales desk's mobile number, also under the reserved +999.
 - `Party/ServiceProviderParty/ID` = **5-xu-SP-8-xu**  
   The service contract between the two.
@@ -294,8 +294,8 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Ferrano Energy (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Ferrano Energy (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 4130 5781**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Ferrano Energy (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 041 667 5781**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Energy (world/parties.json).
 - `Party/Contact/ElectronicMail` = **customer@ferranoenergy.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Energy (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -558,12 +558,12 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Order desk</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4120 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         <cac:OtherCommunication>
           <cbc:ChannelCode>AL</cbc:ChannelCode>
-          <cbc:Value>+999 1 7000 4274</cbc:Value>
+          <cbc:Value>+999 1 344 474 4274</cbc:Value>
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ServiceProviderParty>
@@ -663,7 +663,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4130 5781</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
         <cbc:ElectronicMail>customer@ferranoenergy.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

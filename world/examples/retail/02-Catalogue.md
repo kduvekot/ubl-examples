@@ -193,8 +193,8 @@ Inside `ProviderParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 0274**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Lumeway Distribution (world/parties.json).
+- `Contact/Telephone` = **+999 2 7121 474 274**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Contact/ElectronicMail` = **customer@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -302,8 +302,8 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Telephone` = **+999 2 3851 0411**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Brightmarket Stores (world/parties.json).
+- `Contact/Telephone` = **+999 2 38 2511 0411**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -612,8 +612,8 @@ Inside `CatalogueLine`:
   The job of the person who answers at the desk; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Contact/Telephone` = **+999 1 4130 5644**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/Contact/Telephone` = **+999 1 041 508 5644**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/ElectronicMail` = **member@codana.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -1054,7 +1054,7 @@ Inside `CatalogueLine`:
       <cbc:Name>Customer service</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7121 0274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
       <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -1144,7 +1144,7 @@ Inside `CatalogueLine`:
       <cbc:Name>Buying office</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 3851 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -1422,7 +1422,7 @@ Inside `CatalogueLine`:
             <cbc:Name>Member services</cbc:Name>
             <cbc:JobTitle>Public service officer</cbc:JobTitle>
             <cbc:Department>Public services</cbc:Department>
-            <cbc:Telephone>+999 1 4130 5644</cbc:Telephone>
+            <cbc:Telephone>+999 1 041 508 5644</cbc:Telephone>
             <cbc:ElectronicMail>member@codana.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
           </cac:Contact>

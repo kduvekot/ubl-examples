@@ -99,7 +99,7 @@
       <cbc:Name>Gas sales</cbc:Name>
       <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
       <cbc:Department>Commercial</cbc:Department>
-      <cbc:Telephone>+999 2 3852 2877</cbc:Telephone>
+      <cbc:Telephone>+999 2 38522 12877</cbc:Telephone>
       <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -247,7 +247,7 @@
         <cbc:Name>Energy trading</cbc:Name>
         <cbc:JobTitle>Energy trader</cbc:JobTitle>
         <cbc:Department>Trading</cbc:Department>
-        <cbc:Telephone>+999 1 4130 5918</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
         <cbc:ElectronicMail>trading@montebrio.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
       </cac:Contact>
@@ -309,7 +309,7 @@
         <cbc:Name>Border office</cbc:Name>
         <cbc:JobTitle>Public service officer</cbc:JobTitle>
         <cbc:Department>Public services</cbc:Department>
-        <cbc:Telephone>+999 2 7121 0137</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 337 137</cbc:Telephone>
         <cbc:ElectronicMail>border@customs-xb.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

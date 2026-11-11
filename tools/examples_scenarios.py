@@ -2841,7 +2841,7 @@ def utility_statement(f, n, doc, key, invoice_no):
 def telecom_consumption(f, sup, key, customer):
     cur = "XLC"
     line_item, data_item = ITEM["telecom-line"], ITEM["telecom-data"]
-    base = "+999 3 3000 18"
+    base = "+999 3 721 18"
     lines = []
     for k in range(6):
         number = f"{base}{50 + k}"
@@ -5391,7 +5391,8 @@ def _(f, n, doc, out):
                                       "CompletionIndicator": V("false", "Not yet."),
                                       "CurrentStatus": {"ConditionCode": V("OnTime", "Expected on time.")},
                                       "Contact": {"Name": V("Bridge", "Whom to call."),
-                                                  "Telephone": V("+999 2 3900 2117", "The ship's satellite phone.")},
+                                                  "Telephone": V("+999 3 790 2117", "The ship's phone, in the island's maritime range (79), as the "
+                                                                    "ship flies the island's flag.")},
                                       "OccurrenceLocation": {"Name": V("Selanu fairway buoy", "Where the pilot "
                                                                                               "boards.")}}},
         "ShipStoreArticle": [{"ID": V("ST-1", "Spirits in the bonded store."), "Name": V("Spirits", "What."),

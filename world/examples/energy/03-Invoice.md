@@ -142,8 +142,8 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Montebrio Power (world/parties.json).
 - `Party/Contact/Department` = **Trading**  
   The department the desk belongs to; identity of Montebrio Power (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 4130 5918**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Montebrio Power (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 0413 55918**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Montebrio Power (world/parties.json).
 - `Party/Contact/ElectronicMail` = **trading@montebrio.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Montebrio Power (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 07:00–19:00**  
@@ -241,8 +241,8 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Ferrano Energy (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Ferrano Energy (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 4130 5781**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Ferrano Energy (world/parties.json).
+- `Party/Contact/Telephone` = **+999 1 041 667 5781**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Energy (world/parties.json).
 - `Party/Contact/ElectronicMail` = **customer@ferranoenergy.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Energy (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -518,7 +518,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Energy trading</cbc:Name>
         <cbc:JobTitle>Energy trader</cbc:JobTitle>
         <cbc:Department>Trading</cbc:Department>
-        <cbc:Telephone>+999 1 4130 5918</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
         <cbc:ElectronicMail>trading@montebrio.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
       </cac:Contact>
@@ -603,7 +603,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 4130 5781</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
         <cbc:ElectronicMail>customer@ferranoenergy.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

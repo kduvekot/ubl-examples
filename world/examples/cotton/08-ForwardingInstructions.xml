@@ -74,7 +74,7 @@
       <cbc:Name>Cotton sales</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2681</cbc:Telephone>
+      <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
       <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -157,7 +157,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -248,7 +248,7 @@
           <cbc:Name>Purchasing</cbc:Name>
           <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
-          <cbc:Telephone>+999 2 3850 2603</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
           <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

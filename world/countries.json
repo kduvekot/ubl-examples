@@ -94,7 +94,11 @@
     },
     "note": "Urvanian practice: a cash discount for early payment, statutory interest on late payment."
    },
-   "history": "An Italian territory, then under British rule, independent since 1962 as a bilingual country: Urvanian and English are its official languages. Its place and street names are the Italian ones the British kept, now part of English; Urvanian gives every place its own name too, and addresses carry both."
+   "history": "An Italian territory, then under British rule, independent since 1962 as a bilingual country: Urvanian and English are its official languages. Its place and street names are the Italian ones the British kept, now part of English; Urvanian gives every place its own name too, and addresses carry both.",
+   "phone_plan": {
+    "pattern": "^\\+999 1 (0\\d{2} \\d{3} \\d{4}|0\\d{3} \\d{5}|3\\d{2} \\d{3} \\d{4})$",
+    "note": "Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits."
+   }
   },
   "XB": {
    "name": "Bayvarra",
@@ -193,6 +197,10 @@
      "step": "0.05",
      "note": "The smallest coin of the lume is 5 cents: a cash payment is rounded to 0.05; a card payment is not."
     }
+   },
+   "phone_plan": {
+    "pattern": "^\\+999 2 (38 \\d{4} \\d{4}|\\d{4} \\d{3} \\d{3}|\\d{5} \\d{5}|7\\d{3} \\d{3} \\d{3})$",
+    "note": "British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7."
    }
   },
   "XL": {
@@ -290,6 +298,10 @@
      "currency": "XBL"
     },
     "note": "The cotton fund of the Selanu Chamber of Commerce is financed by a levy of 1 % of the value of seed cotton sold, which the farm collects from the gin on the fund's behalf. Seed cotton is priced from the trade accord's lint reference price, published in lume by the Lumeport Trade Accord Council."
+   },
+   "phone_plan": {
+    "pattern": "^\\+999 3 7\\d{2} \\d{4}$",
+    "note": "A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79."
    }
   }
  },
@@ -307,7 +319,7 @@
   "degrees_per_tile": 0.01,
   "timezone": "UTC-1",
   "note": "The world lies in an empty part of the South Atlantic, about 40° South and 15° West: every coordinate in the examples points to open sea on a real map. Map tile (i, j) lies at latitude 39.80 + 0.01·j degrees South and longitude 15.60 − 0.01·i degrees West.",
-  "telephone_note": "Telephone numbers use +999, a country code that the ITU keeps in reserve (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country."
+  "telephone_note": "Telephone numbers use +999, a country code that the ITU reserves for a future global service (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country, and each country has its own numbering plan and number length (world/countries.json, phone_plan)."
  },
  "payment_cross_border": {
   "system": "TRADE-ACCORD-PAY",

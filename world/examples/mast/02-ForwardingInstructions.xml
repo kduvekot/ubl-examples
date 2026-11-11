@@ -76,7 +76,7 @@
       <cbc:Name>Bids office</cbc:Name>
       <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
-      <cbc:Telephone>+999 2 7121 0685</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
       <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -159,7 +159,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Operations planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 2 3852 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -229,7 +229,7 @@
           <cbc:Name>Business accounts</cbc:Name>
           <cbc:JobTitle>Customer service officer</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
-          <cbc:Telephone>+999 3 3000 2407</cbc:Telephone>
+          <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
           <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

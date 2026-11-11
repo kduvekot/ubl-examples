@@ -93,8 +93,8 @@ Inside `ImportingGuarantorParty`:
   The job of the person who answers at the desk; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Telephone` = **+999 3 3000 2133**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Selanu Chamber of Commerce (world/parties.json).
+- `Contact/Telephone` = **+999 3 723 2133**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/ElectronicMail` = **carnet@chamber-selanu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -178,8 +178,8 @@ Inside `ExportingGuarantorParty`:
   The job of the person who answers at the desk; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Contact/Telephone` = **+999 1 4110 5370**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Contact/Telephone` = **+999 1 041 990 5370**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/ElectronicMail` = **certificates@camera-ferrano.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -245,8 +245,8 @@ Inside `ImportingCustomsParty`:
   The job of the person who answers at the desk; identity of Island Customs Service (world/parties.json).
 - `Contact/Department` = **Public services**  
   The department the desk belongs to; identity of Island Customs Service (world/parties.json).
-- `Contact/Telephone` = **+999 3 3000 1448**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Island Customs Service (world/parties.json).
+- `Contact/Telephone` = **+999 3 728 1448**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Island Customs Service (world/parties.json).
 - `Contact/ElectronicMail` = **import@customs-xl.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Island Customs Service (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -342,7 +342,7 @@ Inside `Signature`:
       <cbc:Name>Carnet office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2133</cbc:Telephone>
+      <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
       <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -418,7 +418,7 @@ Inside `Signature`:
       <cbc:Name>Certificates office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 1 4110 5370</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 990 5370</cbc:Telephone>
       <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -477,7 +477,7 @@ Inside `Signature`:
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Public service officer</cbc:JobTitle>
       <cbc:Department>Public services</cbc:Department>
-      <cbc:Telephone>+999 3 3000 1448</cbc:Telephone>
+      <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

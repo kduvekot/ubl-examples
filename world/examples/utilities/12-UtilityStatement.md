@@ -123,8 +123,8 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
-- `Contact/Telephone` = **+999 3 3000 2407**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Selanu Telecom (world/parties.json).
+- `Contact/Telephone` = **+999 3 727 2407**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
 - `Contact/ElectronicMail` = **business@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -202,8 +202,8 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Contact/Telephone` = **+999 3 3000 1859**  
-  Telephone under +999, a country code the ITU keeps in reserve (ITU-T E.164), so the number reaches no one; identity of Velumi Trading (world/parties.json).
+- `Contact/Telephone` = **+999 3 729 1859**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Contact/ElectronicMail` = **purchasing@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -297,7 +297,7 @@ Inside `SubscriberConsumption`:
   The telecom supply of March.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **1**  
   A business line.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1850**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1850**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
   The subscription.
@@ -347,7 +347,7 @@ Inside `SubscriberConsumption`:
   The day.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00**  
   The time.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 0274**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 474 274**  
   The distributor in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International call**  
   The kind of service.
@@ -419,7 +419,7 @@ Inside `SubscriberConsumption`:
   The reference rate.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **2**  
   A business line.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1851**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1851**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
   The subscription.
@@ -473,7 +473,7 @@ Inside `SubscriberConsumption`:
   Training films are included in the business bundle.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **3**  
   A business line.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1852**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1852**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
   The subscription.
@@ -509,7 +509,7 @@ Inside `SubscriberConsumption`:
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **4**  
   A business line.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1853**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1853**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
   The subscription.
@@ -545,7 +545,7 @@ Inside `SubscriberConsumption`:
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **5**  
   A business line.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1854**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1854**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
   The subscription.
@@ -581,7 +581,7 @@ Inside `SubscriberConsumption`:
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **6**  
   A business line.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 3000 1855**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1855**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
   The subscription.
@@ -854,7 +854,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Business accounts</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 3 3000 2407</cbc:Telephone>
+      <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
       <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -921,7 +921,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Purchasing</cbc:Name>
       <cbc:JobTitle>Customer service officer</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 3 3000 1859</cbc:Telephone>
+      <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
       <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -993,7 +993,7 @@ Inside `SubscriberConsumption`:
         <cbc:TotalAmount currencyID="XLC">141.920</cbc:TotalAmount>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>1</cbc:ID>
-          <cbc:PhoneNumber>+999 3 3000 1850</cbc:PhoneNumber>
+          <cbc:PhoneNumber>+999 3 721 1850</cbc:PhoneNumber>
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
@@ -1027,7 +1027,7 @@ Inside `SubscriberConsumption`:
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 0274</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 7121 474 274</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International call</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode>INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>
@@ -1086,7 +1086,7 @@ Inside `SubscriberConsumption`:
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>2</cbc:ID>
-          <cbc:PhoneNumber>+999 3 3000 1851</cbc:PhoneNumber>
+          <cbc:PhoneNumber>+999 3 721 1851</cbc:PhoneNumber>
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
@@ -1123,7 +1123,7 @@ Inside `SubscriberConsumption`:
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
-          <cbc:PhoneNumber>+999 3 3000 1852</cbc:PhoneNumber>
+          <cbc:PhoneNumber>+999 3 721 1852</cbc:PhoneNumber>
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
@@ -1149,7 +1149,7 @@ Inside `SubscriberConsumption`:
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>4</cbc:ID>
-          <cbc:PhoneNumber>+999 3 3000 1853</cbc:PhoneNumber>
+          <cbc:PhoneNumber>+999 3 721 1853</cbc:PhoneNumber>
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
@@ -1175,7 +1175,7 @@ Inside `SubscriberConsumption`:
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>5</cbc:ID>
-          <cbc:PhoneNumber>+999 3 3000 1854</cbc:PhoneNumber>
+          <cbc:PhoneNumber>+999 3 721 1854</cbc:PhoneNumber>
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
@@ -1201,7 +1201,7 @@ Inside `SubscriberConsumption`:
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>6</cbc:ID>
-          <cbc:PhoneNumber>+999 3 3000 1855</cbc:PhoneNumber>
+          <cbc:PhoneNumber>+999 3 721 1855</cbc:PhoneNumber>
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>

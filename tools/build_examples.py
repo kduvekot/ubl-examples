@@ -175,8 +175,10 @@ def party(pid, short=False):
         if ct.get("department"):
             contact["Department"] = V(ct["department"], f"The department the desk belongs to; {src}.")
         if ct.get("telephone"):
-            contact["Telephone"] = V(ct["telephone"], "Telephone under +999, a country code the ITU keeps in reserve "
-                                                      f"(ITU-T E.164), so the number reaches no one; {src}.")
+            contact["Telephone"] = V(ct["telephone"], "Telephone under +999, a country code the ITU reserves for a "
+                                                      "future global service (ITU-T E.164), so the number reaches no "
+                                                      f"one; then the country digit and a number in {c['name']}'s own "
+                                                      f"plan: {c['phone_plan']['note']} {src}.")
         if ct.get("telefax"):
             contact["Telefax"] = V(ct["telefax"], f"The customs office still lists a fax number; {src}.")
         contact["ElectronicMail"] = V(ct["email"], "E-mail under the reserved .example domain (RFC 2606), so it cannot "
