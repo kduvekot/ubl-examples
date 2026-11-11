@@ -8,7 +8,8 @@
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:45:00</cbc:IssueTime>
-  <cbc:Note>Left on time.</cbc:Note>
+  <cbc:Note languageID="qau">Lestei vilscior tesrei.</cbc:Note>
+  <cbc:Note languageID="en">Left on time.</cbc:Note>
   <cbc:StatusAvailableIndicator>true</cbc:StatusAvailableIndicator>
   <cac:Signature>
     <cbc:ID>FIH-SIG-TPS</cbc:ID>
@@ -31,9 +32,8 @@
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -111,9 +111,8 @@
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

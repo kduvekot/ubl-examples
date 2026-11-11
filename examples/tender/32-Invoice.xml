@@ -10,7 +10,8 @@
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
+  <cbc:Note languageID="qau">Bayforth Forwarding bresui stassceov vevoe drivudraor brancao drusmefoov fansoa Bayvarra.</cbc:Note>
+  <cbc:Note languageID="en">Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
@@ -67,9 +68,8 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

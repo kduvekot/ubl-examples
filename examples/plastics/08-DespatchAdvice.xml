@@ -10,7 +10,8 @@
   <cbc:IssueTime>17:57:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note languageID="qau">Vestrie grurtrie vevoe cisoov vilscior pimao perpoor grolcuor vutraov sascue vilscior vevoe dralnonscuov vafior.</cbc:Note>
+  <cbc:Note languageID="en">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
@@ -29,9 +30,8 @@
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -267,9 +267,8 @@
           <cbc:Name>Fiumella Barges</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

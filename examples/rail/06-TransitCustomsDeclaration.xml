@@ -11,7 +11,8 @@
   <cbc:TypeCode>Transit</cbc:TypeCode>
   <cbc:SubTypeCode>External</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
-  <cbc:Note>Seals XU-VI-30411 and XU-VI-30412 to remain intact.</cbc:Note>
+  <cbc:Note languageID="qau">Bufiar XU-VI-30411 perpoor XU-VI-30412 nupoi volpia cesroo.</cbc:Note>
+  <cbc:Note languageID="en">Seals XU-VI-30411 and XU-VI-30412 to remain intact.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-14</cbc:StartDate>
@@ -44,9 +45,8 @@
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -257,9 +257,8 @@
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
@@ -348,9 +347,8 @@
           <cbc:Name>Ferrano Rail Cargo</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID>en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode>EN</cbc:LocaleCode>
+          <cbc:ID>qau</cbc:ID>
+          <cbc:Name>Urvanian</cbc:Name>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

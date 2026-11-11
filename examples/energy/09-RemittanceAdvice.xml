@@ -8,7 +8,8 @@
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-06</cbc:IssueDate>
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
-  <cbc:Note>The March gas invoice, with the surcharge of the reminder.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe March gribrior dravue, masnao vevoe gucuduesk stesdrior vevoe trorroscaar.</cbc:Note>
+  <cbc:Note languageID="en">The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">134467200</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
@@ -28,9 +29,8 @@
         <cbc:Name>Montebrio Power</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

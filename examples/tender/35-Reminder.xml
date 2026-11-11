@@ -10,7 +10,8 @@
   <cbc:IssueTime>15:23:00</cbc:IssueTime>
   <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
-  <cbc:Note>The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe trirmao stesdrior vevoe silciesk pulpaar grasgaar dulmoar; Sirtrasvior brisolroa sonpemior brascoi.</cbc:Note>
+  <cbc:Note languageID="en">The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
   <cbc:TaxPointDate>2026-05-05</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XUF</cbc:TaxCurrencyCode>
@@ -46,9 +47,8 @@
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

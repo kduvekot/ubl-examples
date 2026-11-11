@@ -8,7 +8,8 @@
   <cbc:UUID>e979bb12-c34b-549e-a55c-2eaa6ba06d08</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
   <cbc:IssueTime>15:43:00</cbc:IssueTime>
-  <cbc:Note>Payment of the invoice below.</cbc:Note>
+  <cbc:Note languageID="qal">Mamohe mutaki tohala titutu.</cbc:Note>
+  <cbc:Note languageID="en">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">64.00</cbc:TotalCreditAmount>
@@ -31,9 +32,8 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

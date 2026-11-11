@@ -10,7 +10,8 @@
   <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
+  <cbc:Note languageID="qau">Scinbrodreov dretoe nupoi: vevoe cosciar brunvengior vevoe stinae nupoi vevoe valtue tuluar.</cbc:Note>
+  <cbc:Note languageID="en">Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:PaymentCurrencyCode>XUF</cbc:PaymentCurrencyCode>
@@ -38,9 +39,8 @@
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

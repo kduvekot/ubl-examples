@@ -11,7 +11,8 @@
   <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:TaxPointDate>2026-02-07</cbc:TaxPointDate>
   <cbc:InvoiceTypeCode>389</cbc:InvoiceTypeCode>
-  <cbc:Note>Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
+  <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
+  <cbc:Note languageID="en">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
   <cbc:DocumentCurrencyCode>XLC</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode>XLC</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
@@ -95,9 +96,8 @@
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -161,9 +161,8 @@
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID>en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode>EN</cbc:LocaleCode>
+        <cbc:ID>qal</cbc:ID>
+        <cbc:Name>Lisavan</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

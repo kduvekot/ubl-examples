@@ -8,7 +8,8 @@
   <cbc:UUID>7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:30:00</cbc:IssueTime>
-  <cbc:Note>Has the container train left?</cbc:Note>
+  <cbc:Note languageID="qau">Grornuov vevoe pustrurtreor singria lestei?</cbc:Note>
+  <cbc:Note languageID="en">Has the container train left?</cbc:Note>
   <cac:Signature>
     <cbc:ID>FRC-SIG-TPSR</cbc:ID>
     <cac:SignatoryParty>
@@ -30,9 +31,8 @@
       <cbc:Name>Ferrano Rail Cargo</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -110,9 +110,8 @@
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>

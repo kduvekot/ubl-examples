@@ -10,7 +10,8 @@
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:57:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
-  <cbc:Note>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
+  <cbc:Note languageID="qau">Vevoe stinae facao vevoe tuluar lonvaa nupoi vevoe vasstifiar firdeo sataesk vevoe valtue nupoi vevoe dredrupai lunfaar.</cbc:Note>
+  <cbc:Note languageID="en">The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
@@ -25,9 +26,8 @@
       <cbc:Name>Rinova Recovery</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
@@ -117,9 +117,8 @@
       <cbc:Name>Fiumella Barges</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID>en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode>EN</cbc:LocaleCode>
+      <cbc:ID>qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
