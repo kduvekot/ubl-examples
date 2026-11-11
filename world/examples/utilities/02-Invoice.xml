@@ -52,10 +52,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
         <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -139,10 +140,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -404,7 +406,7 @@
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
-      <cbc:Name languageID="qau">Drangrolstio</cbc:Name>
+      <cbc:Name languageID="qau">Zuktrek</cbc:Name>
       <cbc:Name languageID="en">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-KWH</cbc:ID>
@@ -455,7 +457,7 @@
     </cac:Delivery>
     <cac:Item>
       <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
-      <cbc:Name languageID="qau">Drangrolstio</cbc:Name>
+      <cbc:Name languageID="qau">Zuktrek</cbc:Name>
       <cbc:Name languageID="en">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-KWH</cbc:ID>
@@ -492,7 +494,7 @@
     </cac:PurchaseReference>
     <cac:Item>
       <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
-      <cbc:Name languageID="qau">Dilsuo gribrior trindaar</cbc:Name>
+      <cbc:Name languageID="qau">Vungan zhul tazkraz</cbc:Name>
       <cbc:Name languageID="en">Natural gas supply</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FE-GAS</cbc:ID>

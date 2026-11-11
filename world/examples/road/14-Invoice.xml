@@ -37,10 +37,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
         <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4160</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -343,7 +344,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">44733</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>
-      <cbc:Name languageID="qau">Celboar pirbruluo, lutroo tratei postruesk</cbc:Name>
+      <cbc:Name languageID="qau">Kraz drutraz, dan stindrul staz</cbc:Name>
       <cbc:Name languageID="en">Road transport, full truck load</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>TH-FTL</cbc:ID>

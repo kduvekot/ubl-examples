@@ -58,7 +58,7 @@ Inside `ImportingGuarantorParty`:
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Selanu Chamber of Commerce (world/parties.json).
+  The street's name in English, the country's other official language; identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/BuildingNumber` = **30**  
   Building number of the postal address. identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -122,14 +122,16 @@ Inside `ExportingGuarantorParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Nustaar Bonfuar Vostoe** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Trazhek Han Zhatrir** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Chamber of Commerce (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/BuildingNumber` = **15**  
   Building number of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/PostalZone` = **4110**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -208,7 +210,7 @@ Inside `ImportingCustomsParty`:
 - `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Island Customs Service (world/parties.json).
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Island Customs Service (world/parties.json).
+  The street's name in English, the country's other official language; identity of Island Customs Service (world/parties.json).
 - `PostalAddress/BuildingNumber` = **53**  
   Building number of the postal address. identity of Island Customs Service (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -364,10 +366,11 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
       <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

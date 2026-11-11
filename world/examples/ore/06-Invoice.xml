@@ -39,10 +39,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
         <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -124,10 +125,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -324,7 +326,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">1720441</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Ore from the mine siding to the factory siding, per tonne.</cbc:Description>
-      <cbc:Name languageID="qau">Tedrei sosue, tarbrue fansoa tesdroe cisbroa</cbc:Name>
+      <cbc:Name languageID="qau">Kaz musaz, trir trek vir gadek</cbc:Name>
       <cbc:Name languageID="en">Rail freight, ore in bulk wagons</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FRC-ORE</cbc:ID>

@@ -163,7 +163,7 @@ Inside `AuthorityParty`:
 - `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Maritime Administration of Lisavu (world/parties.json).
+  The street's name in English, the country's other official language; identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/BuildingNumber` = **37**  
   Building number of the postal address. identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -261,7 +261,7 @@ Inside `Shipment`:
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Port of Selanu (world/parties.json).
+  The street's name in English, the country's other official language; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **32**  
   Building number of the postal address. identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Selanu**  

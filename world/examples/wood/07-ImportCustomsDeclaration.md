@@ -32,7 +32,7 @@ The manufacturer declares the import into Urvania, where import VAT is due.
   For release into free circulation.
 - `NatureOfTransactionCode` = **Purchase**  
   The goods were bought.
-- `Note` = **Nirguo dretoe dratree vevoe pesburior segrior nasgei verliov.** (languageID `qau`)  
+- `Note` = **Tralbek zhan man drek sisir gakkaz hir garsul.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): How duties are settled.
 - `Note` = **Duties paid by the importer's account at customs.** (languageID `en`)  
   The same note in English, the working language between the countries: How duties are settled.
@@ -84,14 +84,16 @@ Inside `ImporterParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -313,14 +315,16 @@ Inside `CustomsParty`:
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
 - `PostalAddress/Postbox` = **PB 18**  
   The customs office receives its post in a post box. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/StreetName` = **Lisgaov Cisiar Vulgreor** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Birran Stir Trurdrek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/StreetName` = **Valico di Confine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Customs Administration of Urvania (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/BuildingNumber` = **22**  
   Building number of the postal address. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -552,7 +556,7 @@ Inside `Signature`:
   <cbc:TypeCode>Import</cbc:TypeCode>
   <cbc:SubTypeCode>FreeCirculation</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode>Purchase</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Nirguo dretoe dratree vevoe pesburior segrior nasgei verliov.</cbc:Note>
+  <cbc:Note languageID="qau">Tralbek zhan man drek sisir gakkaz hir garsul.</cbc:Note>
   <cbc:Note languageID="en">Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
@@ -586,10 +590,11 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -787,10 +792,11 @@ Inside `Signature`:
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Lisgaov Cisiar Vulgreor</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Birran Stir Trurdrek</cbc:StreetName>
       <cbc:StreetName languageID="en">Valico di Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

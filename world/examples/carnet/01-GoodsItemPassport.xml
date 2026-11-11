@@ -10,7 +10,7 @@
   <cbc:IssueTime>15:04:00</cbc:IssueTime>
   <cbc:StatusCode>Valid</cbc:StatusCode>
   <cbc:Status>Issued</cbc:Status>
-  <cbc:Note languageID="qau">Rasraar scatear vevoe Selanu telpuo sosfiesk; nupoi brordreesk gresgriov bruceo tulmui scilsoa.</cbc:Note>
+  <cbc:Note languageID="qau">Barhek gan drek Selanu rizir tran; krir traz naz zhizhek sek mannan.</cbc:Note>
   <cbc:Note languageID="en">Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ExportReasonCode>Exhibition</cbc:ExportReasonCode>
@@ -34,10 +34,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
       <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -113,10 +114,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -336,10 +338,11 @@
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Lisgaov Cisiar Vulgreor</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Birran Stir Trurdrek</cbc:StreetName>
       <cbc:StreetName languageID="en">Valico di Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -483,7 +486,7 @@
       <cbc:Quantity unitCode="H87">2</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-        <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+        <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
         <cbc:Keyword>park bench</cbc:Keyword>

@@ -232,14 +232,16 @@ Inside `CustomsDeclaration`:
   The kind of address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `ConsigneeParty/PostalAddress/StreetName` = **Ganluar Rurtio Berdrifuar** (languageID `qau`)  
+- `ConsigneeParty/PostalAddress/StreetName` = **Bek Hekrul Trinskul** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/StreetName` = **Via della Centrale** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Montebrio Power (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/BuildingNumber` = **44**  
   Building number of the postal address. identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
+- `ConsigneeParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Montebrio Power (world/parties.json).
+- `ConsigneeParty/PostalAddress/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/PostalZone` = **4130**  
   Postal code in Urvania's format (4 digits). identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -571,10 +573,11 @@ Inside `CustomsDeclaration`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Hekrul Trinskul</cbc:StreetName>
         <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

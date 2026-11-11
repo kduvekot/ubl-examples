@@ -423,7 +423,7 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/CityName` = **Selanu**  
@@ -495,7 +495,7 @@ Inside `Shipment`:
 - `Consignment/NotifyParty/PostalAddress/StreetName` = **Vilafa Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/NotifyParty/PostalAddress/StreetName` = **Lagoon Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Nalevi Warehousing (world/parties.json).
+  The street's name in English, the country's other official language; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/NotifyParty/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/NotifyParty/PostalAddress/CityName` = **Selanu**  

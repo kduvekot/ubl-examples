@@ -28,7 +28,7 @@ The factory's monthly electricity consumption: meter readings and consumption pe
   The time the sender's system issued the document, in the sender's local time.
 - `UtilityStatementTypeCode` = **Electricity**  
   The kind of utility the statement is about.
-- `Note` = **Grergriov rotradrae rastrifeor vevoe lurlimoa vussiar scerbuor bacua.** (languageID `qau`)  
+- `Note` = **Gir zharhan narmir drek binmaz vukrek taz rir.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What the statement is.
 - `Note` = **This statement explains the consumption behind your bill.** (languageID `en`)  
   The same note in English, the working language between the countries: What the statement is.
@@ -77,14 +77,16 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Nedrii Rurtio Nibovae** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Duznaz Hekrul Skultrir** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
 - `PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Energy (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Energy (world/parties.json).
 - `PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Ferrano Energy (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Energy (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Energy (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Energy (world/parties.json).
 - `PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Energy (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -176,14 +178,16 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -323,14 +327,16 @@ Inside `SubscriberConsumption`:
   The kind of address.
 - `UtilityConsumptionPoint/Address/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `UtilityConsumptionPoint/Address/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `UtilityConsumptionPoint/Address/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `UtilityConsumptionPoint/Address/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `UtilityConsumptionPoint/Address/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `UtilityConsumptionPoint/Address/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `UtilityConsumptionPoint/Address/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `UtilityConsumptionPoint/Address/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `UtilityConsumptionPoint/Address/Region` = **Province of Ferrano**  
@@ -570,7 +576,7 @@ Inside `SubscriberConsumption`:
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:54:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode>Electricity</cbc:UtilityStatementTypeCode>
-  <cbc:Note languageID="qau">Grergriov rotradrae rastrifeor vevoe lurlimoa vussiar scerbuor bacua.</cbc:Note>
+  <cbc:Note languageID="qau">Gir zharhan narmir drek binmaz vukrek taz rir.</cbc:Note>
   <cbc:Note languageID="en">This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
@@ -599,10 +605,11 @@ Inside `SubscriberConsumption`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
       <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
       <cbc:BuildingNumber>9</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -684,10 +691,11 @@ Inside `SubscriberConsumption`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -809,10 +817,11 @@ Inside `SubscriberConsumption`:
       <cac:Address>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

@@ -26,7 +26,7 @@ The power station pays the invoice and the surcharge, in ferra.
   Paid three days after the reminder.
 - `IssueTime` = **16:36:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **Vevoe March gribrior dravue, masnao vevoe gucuduesk stesdrior vevoe trorroscaar.** (languageID `qau`)  
+- `Note` = **Drek March zhul tirnan, vek drek drastaz skul drek guzzhir.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What it settles.
 - `Note` = **The March gas invoice, with the surcharge of the reminder.** (languageID `en`)  
   The same note in English, the working language between the countries: What it settles.
@@ -63,14 +63,16 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Ganluar Rurtio Berdrifuar** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Bek Hekrul Trinskul** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via della Centrale** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Montebrio Power (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **44**  
   Building number of the postal address. identity of Montebrio Power (world/parties.json).
-- `Party/PostalAddress/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Montebrio Power (world/parties.json).
+- `Party/PostalAddress/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4130**  
   Postal code in Urvania's format (4 digits). identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -374,7 +376,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-06</cbc:IssueDate>
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Vevoe March gribrior dravue, masnao vevoe gucuduesk stesdrior vevoe trorroscaar.</cbc:Note>
+  <cbc:Note languageID="qau">Drek March zhul tirnan, vek drek drastaz skul drek guzzhir.</cbc:Note>
   <cbc:Note languageID="en">The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode>XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">134467200</cbc:TotalDebitAmount>
@@ -401,10 +403,11 @@ Inside `RemittanceAdviceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Hekrul Trinskul</cbc:StreetName>
         <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

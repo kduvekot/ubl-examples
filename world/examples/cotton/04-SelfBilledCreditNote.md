@@ -213,7 +213,7 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
+  The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Selanu**  
@@ -290,7 +290,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/StreetName` = **Sifatofu Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Lisavu Cotton Farm (world/parties.json).
+  The street's name in English, the country's other official language; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **35**  
   Building number of the postal address. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road, past the cotton fields.**  

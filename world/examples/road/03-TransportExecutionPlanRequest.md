@@ -164,14 +164,16 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Ganluar Ranvua Stisrebroe** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Bek Ban Kumek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
 - `PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Trasvia Haulage (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Trasvia Haulage (world/parties.json).
 - `PostalAddress/BuildingNumber` = **45**  
   Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Trasvia Haulage (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Trasvia Haulage (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Trasvia Haulage (world/parties.json).
 - `PostalAddress/PostalZone` = **4160**  
   Postal code in Urvania's format (4 digits). identity of Trasvia Haulage (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -321,14 +323,16 @@ Inside `FromLocation`:
   The kind of address.
 - `Address/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Address/StreetName` = **Ganluar Bonfuar Punperai** (languageID `qau`)  
+- `Address/StreetName` = **Bek Han Stalvek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Castrano Logistics (world/parties.json).
 - `Address/StreetName` = **Via del Magazzino** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Castrano Logistics (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Castrano Logistics (world/parties.json).
 - `Address/BuildingNumber` = **24**  
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
-- `Address/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Address/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Castrano Logistics (world/parties.json).
+- `Address/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Castrano Logistics (world/parties.json).
 - `Address/PostalZone` = **4130**  
   Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
 - `Address/Region` = **Province of Ferrano**  
@@ -433,14 +437,16 @@ Inside `Consignment`:
   The kind of address.
 - `ConsignorParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `ConsignorParty/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `ConsignorParty/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `ConsignorParty/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `ConsignorParty/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `ConsignorParty/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `ConsignorParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `ConsignorParty/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `ConsignorParty/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `ConsignorParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -661,10 +667,11 @@ Inside `Consignment`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
       <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
       <cbc:BuildingNumber>45</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4160</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -781,10 +788,11 @@ Inside `Consignment`:
     <cac:Address>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Bonfuar Punperai</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
       <cbc:StreetName languageID="en">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4130</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -875,10 +883,11 @@ Inside `Consignment`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

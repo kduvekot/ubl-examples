@@ -37,10 +37,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Rurtio Scerdiesk</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Hekrul Skaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via della Rete</cbc:StreetName>
         <cbc:BuildingNumber>3</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -121,10 +122,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
         <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -295,7 +297,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
-      <cbc:Name languageID="qau">Drangrolstio segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-E</cbc:ID>
@@ -320,7 +322,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
-      <cbc:Name languageID="qau">Drangrolstio segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-E</cbc:ID>
@@ -345,7 +347,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
-      <cbc:Name languageID="qau">Gribrior segoi tronstiov</cbc:Name>
+      <cbc:Name languageID="qau">Zhul gatir krek</cbc:Name>
       <cbc:Name languageID="en">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FG-NET-G</cbc:ID>

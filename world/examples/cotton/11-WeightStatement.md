@@ -65,7 +65,7 @@ Inside `SenderParty`:
 - `PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
 - `PostalAddress/StreetName` = **Gin Yard Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
+  The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -245,7 +245,7 @@ Inside `WeighingParty`:
 - `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Port of Selanu (world/parties.json).
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Port of Selanu (world/parties.json).
+  The street's name in English, the country's other official language; identity of Port of Selanu (world/parties.json).
 - `PostalAddress/BuildingNumber` = **32**  
   Building number of the postal address. identity of Port of Selanu (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  

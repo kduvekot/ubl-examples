@@ -8,7 +8,7 @@
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cbc:IssueTime>13:19:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Vevoe rasraar trubea vildoov vilscior vevoe drodraa duvear.</cbc:Note>
+  <cbc:Note languageID="qau">Drek barhek tan hek rek drek san sturvan.</cbc:Note>
   <cbc:Note languageID="en">The samples came home on the date stamped.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExportingCustomsParty>
@@ -27,10 +27,11 @@
       <cbc:AddressTypeCode>Postal</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Lisgaov Cisiar Vulgreor</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Birran Stir Trurdrek</cbc:StreetName>
       <cbc:StreetName languageID="en">Valico di Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -162,10 +163,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
       <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

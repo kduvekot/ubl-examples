@@ -72,14 +72,16 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Ganluar Ranvua Stisrebroe** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Bek Ban Kumek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Trasvia Haulage (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Trasvia Haulage (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **45**  
   Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Trasvia Haulage (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Trasvia Haulage (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Trasvia Haulage (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4160**  
   Postal code in Urvania's format (4 digits). identity of Trasvia Haulage (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -435,7 +437,7 @@ Inside `InvoiceLine`:
   186 × 240.5, rounded to the minor unit of the currency.
 - `Item/Description` = **Full truck load, price per kilometre driven loaded, tolls included.**  
   The seller's description; item road-transport of Trasvia Haulage (world/items.json).
-- `Item/Name` = **Celboar pirbruluo, lutroo tratei postruesk** (languageID `qau`)  
+- `Item/Name` = **Kraz drutraz, dan stindrul staz** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/Name` = **Road transport, full truck load** (languageID `en`)  
   The item's name in English, the working language between the countries; item road-transport of Trasvia Haulage (world/items.json).
@@ -500,10 +502,11 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
         <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4160</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -806,7 +809,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">44733</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>
-      <cbc:Name languageID="qau">Celboar pirbruluo, lutroo tratei postruesk</cbc:Name>
+      <cbc:Name languageID="qau">Kraz drutraz, dan stindrul staz</cbc:Name>
       <cbc:Name languageID="en">Road transport, full truck load</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>TH-FTL</cbc:ID>

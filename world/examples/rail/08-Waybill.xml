@@ -13,7 +13,7 @@
   <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
-  <cbc:Note languageID="qau">Gatia dilobaa: labidria, dertrolvae, musgaor.</cbc:Note>
+  <cbc:Note languageID="qau">Gurbul mizstan: dadrek, miran, sundraz.</cbc:Note>
   <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMR</cbc:WaybillTypeCode>
@@ -39,10 +39,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
       <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
-      <cbc:CityName>Serravona</cbc:CityName>
+      <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+      <cbc:CityName languageID="en">Serravona</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -122,10 +123,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

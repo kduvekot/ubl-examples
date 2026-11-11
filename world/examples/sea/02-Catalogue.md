@@ -172,7 +172,7 @@ Inside `ReceiverParty`:
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
 - `PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -359,14 +359,16 @@ Inside `CatalogueLine`:
   The kind of address.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Ganluar Ranvua Culsceor** (languageID `qau`)  
+- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Bek Ban Drinraz** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Via dei Codici** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Codana Identification Agency (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/BuildingNumber` = **29**  
   Building number of the postal address. identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Codana Identification Agency (world/parties.json).
+- `Item/StandardItemIdentification/IssuerParty/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/PostalZone` = **4130**  
   Postal code in Urvania's format (4 digits). identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -974,10 +976,11 @@ Inside `CatalogueLine`:
           <cac:PostalAddress>
             <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
             <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Ganluar Ranvua Culsceor</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Bek Ban Drinraz</cbc:StreetName>
             <cbc:StreetName languageID="en">Via dei Codici</cbc:StreetName>
             <cbc:BuildingNumber>29</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en">Ferrano</cbc:CityName>
             <cbc:PostalZone>4130</cbc:PostalZone>
             <cbc:Region>Province of Ferrano</cbc:Region>
             <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

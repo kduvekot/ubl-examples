@@ -30,7 +30,7 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380**  
   UN/EDIFACT 1001 code 380: commercial invoice.
-- `Note` = **Bayforth Forwarding bresui stassceov vevoe drivudraor brancao drusmefoov fansoa Bayvarra.** (languageID `qau`)  
+- `Note` = **Bayforth Forwarding bir dek drek sikgir raz tizzir trek Bayvarra.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): Why it is named.
 - `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.** (languageID `en`)  
   The same note in English, the working language between the countries: Why it is named.
@@ -136,14 +136,16 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -636,7 +638,7 @@ Inside `InvoiceLine`:
   The call-off line.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Name` = **Dirrear rirgroov Serra 180** (languageID `qau`)  
+- `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180** (languageID `en`)  
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
@@ -870,7 +872,7 @@ Inside `InvoiceLine`:
   Withheld on this line.
 - `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.**  
   The seller's description; item bench-installation of Valdara Industries (world/items.json).
-- `Item/Name` = **Vurrergaor stesdrior mosaesk dirrear rirgroov** (languageID `qau`)  
+- `Item/Name` = **Dreknul skul sir haz nanskir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Name` = **Installation of a park bench** (languageID `en`)  
   The item's name in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
@@ -924,7 +926,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:Note languageID="qau">Bayforth Forwarding bresui stassceov vevoe drivudraor brancao drusmefoov fansoa Bayvarra.</cbc:Note>
+  <cbc:Note languageID="qau">Bayforth Forwarding bir dek drek sikgir raz tizzir trek Bayvarra.</cbc:Note>
   <cbc:Note languageID="en">Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -988,10 +990,11 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1386,7 +1389,7 @@ Inside `InvoiceLine`:
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-      <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+      <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench</cbc:Keyword>
@@ -1585,7 +1588,7 @@ Inside `InvoiceLine`:
     </cac:WithholdingTaxTotal>
     <cac:Item>
       <cbc:Description>Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
-      <cbc:Name languageID="qau">Vurrergaor stesdrior mosaesk dirrear rirgroov</cbc:Name>
+      <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-INST-B</cbc:ID>

@@ -337,8 +337,15 @@ def address(pid):
         out["StreetName"] = [V(translate(st.value, code, street=True), f"The street's name in {lang}: {c['name']} "
                                f"is officially bilingual, and street names are given in both languages "
                                f"(world/countries.json); {src}.", languageID=code),
-                             V(st.value, f"The street's name in English, the island's other official language; "
-                                         f"{src}.", languageID="en")]
+                             V(st.value, "The street's name in English, the country's other official language"
+                                         + ("; the Italian names the British kept are part of English now"
+                                            if p["c"] == "XU" else "") + f"; {src}.", languageID="en")]
+        local = WORLD["languages"][code].get("place_names", {}).get(a.get("CityName"))
+        if local:
+            out["CityName"] = [V(local, f"The town's {lang} name, which its people have always used; {src}.",
+                                 languageID=code),
+                               V(a["CityName"], f"The town's English name, inherited from the Italian; {src}.",
+                                 languageID="en")]
     out["AddressFormatCode"] = V(p["c"], f"The address follows {c['name']}'s address format (world/countries.json): "
                                          f"{' / '.join(c['address']['lines'])}.")
     out["TimezoneOffset"] = V(c["timezone"], "The party's time zone, one hour behind UTC, where the world lies "

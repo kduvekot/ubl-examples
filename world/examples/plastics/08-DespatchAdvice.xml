@@ -10,7 +10,7 @@
   <cbc:IssueTime>17:57:00</cbc:IssueTime>
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode>Delivery</cbc:DespatchAdviceTypeCode>
-  <cbc:Note languageID="qau">Vestrie grurtrie vevoe cisoov vilscior pimao perpoor grolcuor vutraov sascue vilscior vevoe dralnonscuov vafior.</cbc:Note>
+  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
   <cbc:Note languageID="en">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
@@ -36,10 +36,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -274,10 +275,11 @@
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Skikzek Han Nestan</cbc:StreetName>
           <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
           <cbc:BuildingNumber>52</cbc:BuildingNumber>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en">Ferrano</cbc:CityName>
           <cbc:PostalZone>4170</cbc:PostalZone>
           <cbc:Region>Province of Ferrano</cbc:Region>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -350,7 +352,7 @@
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
-      <cbc:Name languageID="qau">Gremefua PE standaboa</cbc:Name>
+      <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
       <cbc:Name languageID="en">Recycled PE granulate</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-PE-R1</cbc:ID>

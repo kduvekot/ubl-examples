@@ -30,7 +30,7 @@ The invoice is past due; the manufacturer reminds the department of the balance 
   A reminder of a payment overdue.
 - `ReminderSequenceNumeric` = **1**  
   The first reminder.
-- `Note` = **Vevoe trirmao stesdrior vevoe silciesk pulpaar grasgaar dulmoar; Sirtrasvior brisolroa sonpemior brascoi.** (languageID `qau`)  
+- `Note` = **Drek stitan skul drek galhir tinnul dir stubul; Telman skadaz munskek hasir.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What it says.
 - `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies.** (languageID `en`)  
   The same note in English, the working language between the countries: What it says.
@@ -89,14 +89,16 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -518,7 +520,7 @@ Inside `ReminderLine`:
   <cbc:IssueTime>15:23:00</cbc:IssueTime>
   <cbc:ReminderTypeCode>Payment</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
-  <cbc:Note languageID="qau">Vevoe trirmao stesdrior vevoe silciesk pulpaar grasgaar dulmoar; Sirtrasvior brisolroa sonpemior brascoi.</cbc:Note>
+  <cbc:Note languageID="qau">Drek stitan skul drek galhir tinnul dir stubul; Telman skadaz munskek hasir.</cbc:Note>
   <cbc:Note languageID="en">The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
   <cbc:TaxPointDate>2026-05-05</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode>XBL</cbc:DocumentCurrencyCode>
@@ -561,10 +563,11 @@ Inside `ReminderLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

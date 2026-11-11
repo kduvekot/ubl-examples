@@ -165,7 +165,7 @@ Inside `AuthorityParty`:
 - `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Island Customs Service (world/parties.json).
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Island Customs Service (world/parties.json).
+  The street's name in English, the country's other official language; identity of Island Customs Service (world/parties.json).
 - `PostalAddress/BuildingNumber` = **53**  
   Building number of the postal address. identity of Island Customs Service (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  
@@ -345,7 +345,7 @@ Inside `ConsigneeParty`:
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
 - `PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `PostalAddress/CityName` = **Selanu**  

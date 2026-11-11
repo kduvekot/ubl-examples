@@ -28,7 +28,7 @@ Slats to the manufacturer's own dimensions and wood species: it asks the sawmill
   The time of the request; quotations refer to it.
 - `SubmissionDueDate` = **2026-02-21**  
   Quotations are wanted within five days.
-- `Note` = **Bilfie nupoi dresuor tarcuov VI-DS-SL1800.** (languageID `qau`)  
+- `Note` = **Kalnan krir zek hatul VI-DS-SL1800.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What is asked.
 - `Note` = **Slats to our drawing VI-DS-SL1800.** (languageID `en`)  
   The same note in English, the working language between the countries: What is asked.
@@ -183,14 +183,16 @@ Inside `BuyerCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -459,7 +461,7 @@ Inside `RequestForQuotationLine`:
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
   <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
-  <cbc:Note languageID="qau">Bilfie nupoi dresuor tarcuov VI-DS-SL1800.</cbc:Note>
+  <cbc:Note languageID="qau">Kalnan krir zek hatul VI-DS-SL1800.</cbc:Note>
   <cbc:Note languageID="en">Slats to our drawing VI-DS-SL1800.</cbc:Note>
   <cbc:PricingCurrencyCode>XBL</cbc:PricingCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -587,10 +589,11 @@ Inside `RequestForQuotationLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

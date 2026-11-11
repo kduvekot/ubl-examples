@@ -28,7 +28,7 @@ The chamber endorses the certificate and makes it available to the importer, who
   The time the sender's system issued the document, in the sender's local time.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
-- `Note` = **Metitrear gelfaar tefaor vevoe telpuo tolpaar.** (languageID `qau`)  
+- `Note` = **Drakhan dranan karul drek rizir denskek.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What the certificate is for.
 - `Note` = **Preferential origin under the trade accord.** (languageID `en`)  
   The same note in English, the working language between the countries: What the certificate is for.
@@ -68,14 +68,16 @@ Inside `ExporterParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -300,14 +302,16 @@ Inside `EndorserParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Nustaar Bonfuar Vostoe** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Trazhek Han Zhatrir** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Piazza del Mercato** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Chamber of Commerce (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **15**  
   Building number of the postal address. identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4110**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -397,7 +401,7 @@ Inside `CertificateOfOriginApplication`:
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
   The seller's description; item bench-serra of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Name` = **Dirrear rirgroov Serra 180** (languageID `qau`)  
+- `Shipment/GoodsItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Park bench Serra 180** (languageID `en`)  
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
@@ -601,7 +605,7 @@ Inside `CertificateOfOriginApplication`:
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.**  
   The seller's description; item bench-casting of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Name` = **Rirgroov cegae scilceor sesdaa** (languageID `qau`)  
+- `Shipment/GoodsItem/Item/Name` = **Nanskir drir manskan telstir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Bench side frame casting** (languageID `en`)  
   The item's name in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
@@ -759,7 +763,7 @@ Inside `InsuranceEndorsement`:
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
   <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note languageID="qau">Metitrear gelfaar tefaor vevoe telpuo tolpaar.</cbc:Note>
+  <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
   <cbc:Note languageID="en">Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
@@ -792,10 +796,11 @@ Inside `InsuranceEndorsement`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -992,10 +997,11 @@ Inside `InsuranceEndorsement`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
         <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
         <cbc:BuildingNumber>15</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1073,7 +1079,7 @@ Inside `InsuranceEndorsement`:
         <cbc:Quantity unitCode="H87">96</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-          <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+          <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
           <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
           <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
           <cbc:Keyword>park bench</cbc:Keyword>
@@ -1247,7 +1253,7 @@ Inside `InsuranceEndorsement`:
         <cbc:Quantity unitCode="H87">12</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
-          <cbc:Name languageID="qau">Rirgroov cegae scilceor sesdaa</cbc:Name>
+          <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
           <cbc:Name languageID="en">Bench side frame casting</cbc:Name>
           <cbc:BrandName>Valdara</cbc:BrandName>
           <cbc:ModelName>Serra 180 side frame</cbc:ModelName>

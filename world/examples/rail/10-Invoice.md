@@ -70,14 +70,16 @@ Inside `AccountingSupplierParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Vociar Rurtio Bigrufuo** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Rumir Hekrul Zhuzkek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Viale della Stazione** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
-- `Party/PostalAddress/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+- `Party/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Rail Cargo (world/parties.json).
+- `Party/PostalAddress/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -165,14 +167,16 @@ Inside `AccountingCustomerParty`:
   The kind of address.
 - `Party/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Party/PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -410,7 +414,7 @@ Inside `InvoiceLine`:
   2 × 54600, rounded to the minor unit of the currency.
 - `Item/Description` = **One container slot on the container train to the distributor's siding.**  
   The seller's description; item rail-container of Ferrano Rail Cargo (world/items.json).
-- `Item/Name` = **Tedrei sosue, pustrurtreor stesaor** (languageID `qau`)  
+- `Item/Name` = **Kaz musaz, titran skir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item rail-container of Ferrano Rail Cargo (world/items.json).
 - `Item/Name` = **Rail freight, container slot** (languageID `en`)  
   The item's name in English, the working language between the countries; item rail-container of Ferrano Rail Cargo (world/items.json).
@@ -470,10 +474,11 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
         <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -555,10 +560,11 @@ Inside `InvoiceLine`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
         <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -755,7 +761,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">109200</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>One container slot on the container train to the distributor's siding.</cbc:Description>
-      <cbc:Name languageID="qau">Tedrei sosue, pustrurtreor stesaor</cbc:Name>
+      <cbc:Name languageID="qau">Kaz musaz, titran skir</cbc:Name>
       <cbc:Name languageID="en">Rail freight, container slot</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FRC-CTR</cbc:ID>

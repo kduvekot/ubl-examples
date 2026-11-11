@@ -68,7 +68,7 @@ Inside `Consignment`:
 - `ConsigneeParty/PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/PostalAddress/StreetName` = **Reef Street** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/PostalAddress/CityName` = **Selanu**  
@@ -140,7 +140,7 @@ Inside `Consignment`:
 - `CarrierParty/PostalAddress/StreetName` = **Lupela Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/StreetName` = **Airfield Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Kelaro Air Cargo (world/parties.json).
+  The street's name in English, the country's other official language; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/BuildingNumber` = **46**  
   Building number of the postal address. identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/CityName` = **Selanu**  
@@ -214,7 +214,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Lupela Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Airfield Road** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Selanu Airport Cargo (world/parties.json).
+  The street's name in English, the country's other official language; identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **39**  
   Building number of the postal address. identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Selanu**  

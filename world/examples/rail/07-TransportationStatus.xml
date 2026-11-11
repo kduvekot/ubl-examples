@@ -10,7 +10,7 @@
   <cbc:IssueTime>13:11:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
-  <cbc:Note languageID="qau">Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.</cbc:Note>
+  <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
@@ -33,10 +33,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
         <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -129,10 +130,11 @@
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qau">Ganluar Bonfuar Drardruscuov</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Bek Han Krazhul</cbc:StreetName>
           <cbc:StreetName languageID="en">Via del Terminal</cbc:StreetName>
           <cbc:BuildingNumber>59</cbc:BuildingNumber>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en">Ferrano</cbc:CityName>
           <cbc:PostalZone>4180</cbc:PostalZone>
           <cbc:Region>Province of Ferrano</cbc:Region>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

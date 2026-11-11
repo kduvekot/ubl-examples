@@ -34,7 +34,7 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   The request updates the season's standing plan.
 - `DocumentStatusReasonDescription` = **This week's quantity of ore differs from the standing plan.**  
   Why it is sent.
-- `Note` = **Vevoe tarbrue singria facao vevoe tirmaov breruor nupoi vevoe drerpear.** (languageID `qau`)  
+- `Note` = **Drek trir sezhul mir drek daz nintrek krir drek drunbaz.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): The transport asked for.
 - `Note` = **The ore train from the mine siding to the factory.** (languageID `en`)  
   The same note in English, the working language between the countries: The transport asked for.
@@ -63,14 +63,16 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -184,14 +186,16 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Vociar Rurtio Bigrufuo** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Rumir Hekrul Zhuzkek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/StreetName` = **Viale della Stazione** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
-- `PostalAddress/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+- `PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Rail Cargo (world/parties.json).
+- `PostalAddress/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -372,14 +376,16 @@ Inside `FromLocation`:
   The kind of address.
 - `Address/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Address/StreetName` = **Tronraesk Rurtio Drurtruov** (languageID `qau`)  
+- `Address/StreetName` = **Zalsul Hekrul Varman** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Serravona Mining (world/parties.json).
 - `Address/StreetName` = **Strada della Miniera** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Serravona Mining (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Serravona Mining (world/parties.json).
 - `Address/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
-- `Address/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `Address/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Serravona Mining (world/parties.json).
+- `Address/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Serravona Mining (world/parties.json).
 - `Address/PostalZone` = **4110**  
   Postal code in Urvania's format (4 digits). identity of Serravona Mining (world/parties.json).
 - `Address/Region` = **Province of Ferrano**  
@@ -401,14 +407,16 @@ Inside `ToLocation`:
   The kind of address.
 - `Address/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `Address/StreetName` = **Ganluar Vindoov Budunuov** (languageID `qau`)  
+- `Address/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `Address/StreetName` = **Via delle Officine** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
 - `Address/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Address/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+- `Address/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+- `Address/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
 - `Address/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Address/Region` = **Province of Ferrano**  
@@ -462,14 +470,16 @@ Inside `Consignment`:
   The kind of address.
 - `ConsignorParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `ConsignorParty/PostalAddress/StreetName` = **Tronraesk Rurtio Drurtruov** (languageID `qau`)  
+- `ConsignorParty/PostalAddress/StreetName` = **Zalsul Hekrul Varman** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/PostalAddress/StreetName` = **Strada della Miniera** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Serravona Mining (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/PostalAddress/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
-- `ConsignorParty/PostalAddress/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `ConsignorParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Serravona Mining (world/parties.json).
+- `ConsignorParty/PostalAddress/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/PostalAddress/PostalZone` = **4110**  
   Postal code in Urvania's format (4 digits). identity of Serravona Mining (world/parties.json).
 - `ConsignorParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -578,7 +588,7 @@ Inside `Consignment`:
   <cbc:DocumentStatusCode>NoStatus</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode>Update</cbc:DocumentStatusReasonCode>
   <cbc:DocumentStatusReasonDescription>This week's quantity of ore differs from the standing plan.</cbc:DocumentStatusReasonDescription>
-  <cbc:Note languageID="qau">Vevoe tarbrue singria facao vevoe tirmaov breruor nupoi vevoe drerpear.</cbc:Note>
+  <cbc:Note languageID="qau">Drek trir sezhul mir drek daz nintrek krir drek drunbaz.</cbc:Note>
   <cbc:Note languageID="en">The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
@@ -600,10 +610,11 @@ Inside `Consignment`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -708,10 +719,11 @@ Inside `Consignment`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
       <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
-      <cbc:CityName>Serravona</cbc:CityName>
+      <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+      <cbc:CityName languageID="en">Serravona</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -841,10 +853,11 @@ Inside `Consignment`:
     <cac:Address>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
       <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
       <cbc:BuildingNumber>10</cbc:BuildingNumber>
-      <cbc:CityName>Serravona</cbc:CityName>
+      <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+      <cbc:CityName languageID="en">Serravona</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -859,10 +872,11 @@ Inside `Consignment`:
     <cac:Address>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -905,10 +919,11 @@ Inside `Consignment`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Tronraesk Rurtio Drurtruov</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
         <cbc:StreetName languageID="en">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

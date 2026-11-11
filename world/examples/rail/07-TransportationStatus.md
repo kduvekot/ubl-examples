@@ -30,7 +30,7 @@ The intermodal terminal reports to the rail carrier that the containers are load
   The kind of report.
 - `Description` = **Two containers loaded on the container train.**  
   In words.
-- `Note` = **Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.** (languageID `qau`)  
+- `Note` = **Krerdan skuskek mir drek stalkan sazhir kaztrir.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en`)  
   The same note in English, the working language between the countries: How it was made.
@@ -63,14 +63,16 @@ Inside `Consignment`:
   The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `CarrierParty/PostalAddress/StreetName` = **Vociar Rurtio Bigrufuo** (languageID `qau`)  
+- `CarrierParty/PostalAddress/StreetName` = **Rumir Hekrul Zhuzkek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/StreetName` = **Viale della Stazione** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
-- `CarrierParty/PostalAddress/CityName` = **Serravona**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Rail Cargo (world/parties.json).
+- `CarrierParty/PostalAddress/CityName` = **Serravona** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -169,14 +171,16 @@ Inside `Consignment`:
   The kind of address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Ganluar Bonfuar Drardruscuov** (languageID `qau`)  
+- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Bek Han Krazhul** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Via del Terminal** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Ferrano Intermodal Hub (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **59**  
   Building number of the postal address. identity of Ferrano Intermodal Hub (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Ferrano Intermodal Hub (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/PostalZone` = **4180**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Intermodal Hub (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -333,7 +337,7 @@ Inside `StatusPeriod`:
   <cbc:IssueTime>13:11:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
-  <cbc:Note languageID="qau">Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.</cbc:Note>
+  <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
@@ -356,10 +360,11 @@ Inside `StatusPeriod`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Vociar Rurtio Bigrufuo</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
         <cbc:StreetName languageID="en">Viale della Stazione</cbc:StreetName>
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -452,10 +457,11 @@ Inside `StatusPeriod`:
         <cac:PostalAddress>
           <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
           <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qau">Ganluar Bonfuar Drardruscuov</cbc:StreetName>
+          <cbc:StreetName languageID="qau">Bek Han Krazhul</cbc:StreetName>
           <cbc:StreetName languageID="en">Via del Terminal</cbc:StreetName>
           <cbc:BuildingNumber>59</cbc:BuildingNumber>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en">Ferrano</cbc:CityName>
           <cbc:PostalZone>4180</cbc:PostalZone>
           <cbc:Region>Province of Ferrano</cbc:Region>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

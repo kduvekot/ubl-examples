@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>12:39:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note languageID="qau">Metitrear gelfaar tefaor vevoe telpuo tolpaar.</cbc:Note>
+  <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
   <cbc:Note languageID="en">Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
@@ -42,10 +42,11 @@
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Vindoov Budunuov</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
       <cbc:StreetName languageID="en">Via delle Officine</cbc:StreetName>
       <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -242,10 +243,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Nustaar Bonfuar Vostoe</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
         <cbc:StreetName languageID="en">Piazza del Mercato</cbc:StreetName>
         <cbc:BuildingNumber>15</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -323,7 +325,7 @@
         <cbc:Quantity unitCode="H87">96</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-          <cbc:Name languageID="qau">Dirrear rirgroov Serra 180</cbc:Name>
+          <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
           <cbc:Name languageID="en">Park bench Serra 180</cbc:Name>
           <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
           <cbc:Keyword>park bench</cbc:Keyword>
@@ -497,7 +499,7 @@
         <cbc:Quantity unitCode="H87">12</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
-          <cbc:Name languageID="qau">Rirgroov cegae scilceor sesdaa</cbc:Name>
+          <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
           <cbc:Name languageID="en">Bench side frame casting</cbc:Name>
           <cbc:BrandName>Valdara</cbc:BrandName>
           <cbc:ModelName>Serra 180 side frame</cbc:ModelName>

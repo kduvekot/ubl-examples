@@ -57,15 +57,19 @@ has its own: copies of the UBL 2.5 default lists, unchanged, with the
 world's codes added and their own identification.
 
 The countries also speak differently. Bayvarra speaks English, the working
-language between the three countries. Urvania speaks Urvanian, with a
-Romance sound like its place names; the island is officially bilingual, as
+language between the three countries. Urvania was an Italian territory and
+then under British rule; the British kept the Italian place and street
+names, while the people kept their own Urvanian names for the same places.
+Independent since 1962, Urvania is bilingual, Urvanian and English, and the
+inherited Italian names count as English: Ferrano is also *Ruldraz*, and an
+address gives both, as in Brussels. The island is officially bilingual, as
 many Pacific islands are, in Lisavan and English, Lisavan having a
 Polynesian sound like the island's names. Both languages are invented, and
 their codes come from the range ISO 639 reserves for local use, `qaa` to
 `qtz`: `qau` for Urvanian and `qal` for Lisavan. A sender from Urvania or the
 island gives its notes in its own language and in English, each with its
-`languageID`, and a seller there names its items in both. The island names
-its streets in both official languages, as Brussels and Canada do: UBL 2.5
+`languageID`, and a seller there names its items in both. Both countries
+name their streets in both official languages, as Brussels and Canada do: UBL 2.5
 lets an address repeat its street, city and state names, one per
 language; the texts are made word by word from a fixed invented
 vocabulary, the English text being the reference. Real Polynesian languages

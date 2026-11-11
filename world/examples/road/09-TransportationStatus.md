@@ -30,7 +30,7 @@ The carrier reports that the truck has cleared the border and gives the expected
   The kind of report.
 - `Description` = **Border crossing passed; customs cleared on both sides.**  
   In words.
-- `Note` = **Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.** (languageID `qau`)  
+- `Note` = **Krerdan skuskek mir drek stalkan sazhir kaztrir.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en`)  
   The same note in English, the working language between the countries: How it was made.
@@ -175,14 +175,16 @@ Inside `Consignment`:
   The kind of address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `CarrierParty/PostalAddress/StreetName` = **Ganluar Ranvua Stisrebroe** (languageID `qau`)  
+- `CarrierParty/PostalAddress/StreetName` = **Bek Ban Kumek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Trasvia Haulage (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/PostalAddress/BuildingNumber` = **45**  
   Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
-- `CarrierParty/PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Trasvia Haulage (world/parties.json).
+- `CarrierParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Trasvia Haulage (world/parties.json).
+- `CarrierParty/PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/PostalAddress/PostalZone` = **4160**  
   Postal code in Urvania's format (4 digits). identity of Trasvia Haulage (world/parties.json).
 - `CarrierParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -428,7 +430,7 @@ Inside `StatusPeriod`:
   <cbc:IssueTime>09:10:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
-  <cbc:Note languageID="qau">Trircilguor grolcuor facao vevoe dranvetriar volbrilvear finuar.</cbc:Note>
+  <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en">Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
@@ -547,10 +549,11 @@ Inside `StatusPeriod`:
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Ranvua Stisrebroe</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
         <cbc:StreetName languageID="en">Via dei Trasporti</cbc:StreetName>
         <cbc:BuildingNumber>45</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4160</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

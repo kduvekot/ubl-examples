@@ -40,10 +40,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Rurtio Berdrifuar</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Hekrul Trinskul</cbc:StreetName>
         <cbc:StreetName languageID="en">Via della Centrale</cbc:StreetName>
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName>Serravona</cbc:CityName>
+        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+        <cbc:CityName languageID="en">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -124,10 +125,11 @@
       <cac:PostalAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Nedrii Rurtio Nibovae</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
         <cbc:StreetName languageID="en">Corso della Repubblica</cbc:StreetName>
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -298,7 +300,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">180320000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
-      <cbc:Name languageID="qau">Drangrolstio, brasbrinvia</cbc:Name>
+      <cbc:Name languageID="qau">Zuktrek, tredran</cbc:Name>
       <cbc:Name languageID="en">Electricity, wholesale</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>MB-MWH</cbc:ID>

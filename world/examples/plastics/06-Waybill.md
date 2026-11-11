@@ -36,7 +36,7 @@ The inland waterway consignment note, issued to the shipper.
   The kind of transport document.
 - `Description` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  
   The carriage in words.
-- `Note` = **Gatia dilobaa: labidria, dertrolvae, musgaor.** (languageID `qau`)  
+- `Note` = **Gurbul mizstan: dadrek, miran, sundraz.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): As the convention prescribes.
 - `Note` = **Three originals: consignor, consignee, carrier.** (languageID `en`)  
   The same note in English, the working language between the countries: As the convention prescribes.
@@ -78,14 +78,16 @@ Inside `SenderParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Voncisgroe Bonfuar Lidio** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Skikzek Han Nestan** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Fiumella Barges (world/parties.json).
 - `PostalAddress/StreetName` = **Banchina del Fiume** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Fiumella Barges (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Fiumella Barges (world/parties.json).
 - `PostalAddress/BuildingNumber` = **52**  
   Building number of the postal address. identity of Fiumella Barges (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Fiumella Barges (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Fiumella Barges (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Fiumella Barges (world/parties.json).
 - `PostalAddress/PostalZone` = **4170**  
   Postal code in Urvania's format (4 digits). identity of Fiumella Barges (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -173,14 +175,16 @@ Inside `ReceiverParty`:
   The kind of address.
 - `PostalAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `PostalAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+- `PostalAddress/StreetName` = **Bek Han Zugaz** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
-- `PostalAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Rinova Recovery (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/PostalZone` = **4140**  
   Postal code in Urvania's format (4 digits). identity of Rinova Recovery (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -522,14 +526,16 @@ Inside `Shipment`:
   The kind of address.
 - `GoodsItem/OriginAddress/AddressFormatCode` = **XU**  
   The address follows Urvania's address format (world/countries.json): StreetName BuildingNumber / PostalZone CityName.
-- `GoodsItem/OriginAddress/StreetName` = **Ganluar Bonfuar Panpea** (languageID `qau`)  
+- `GoodsItem/OriginAddress/StreetName` = **Bek Han Zugaz** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
 - `GoodsItem/OriginAddress/StreetName` = **Via del Riciclo** (languageID `en`)  
-  The street's name in English, the island's other official language; identity of Rinova Recovery (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Rinova Recovery (world/parties.json).
 - `GoodsItem/OriginAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
-- `GoodsItem/OriginAddress/CityName` = **Ferrano**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used; identity of Rinova Recovery (world/parties.json).
+- `GoodsItem/OriginAddress/CityName` = **Ferrano** (languageID `en`)  
+  The town's English name, inherited from the Italian; identity of Rinova Recovery (world/parties.json).
 - `GoodsItem/OriginAddress/PostalZone` = **4140**  
   Postal code in Urvania's format (4 digits). identity of Rinova Recovery (world/parties.json).
 - `GoodsItem/OriginAddress/Region` = **Province of Ferrano**  
@@ -644,7 +650,7 @@ Inside `Signature`:
   <cbc:IssueTime>09:38:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
-  <cbc:Note languageID="qau">Gatia dilobaa: labidria, dertrolvae, musgaor.</cbc:Note>
+  <cbc:Note languageID="qau">Gurbul mizstan: dadrek, miran, sundraz.</cbc:Note>
   <cbc:Note languageID="en">Three originals: consignor, consignee, carrier.</cbc:Note>
   <cbc:ShippingOrderID>RR-CS-26-0885</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode>CMNI</cbc:WaybillTypeCode>
@@ -670,10 +676,11 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Voncisgroe Bonfuar Lidio</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Skikzek Han Nestan</cbc:StreetName>
       <cbc:StreetName languageID="en">Banchina del Fiume</cbc:StreetName>
       <cbc:BuildingNumber>52</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4170</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -753,10 +760,11 @@ Inside `Signature`:
     <cac:PostalAddress>
       <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
       <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
       <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
       <cbc:BuildingNumber>31</cbc:BuildingNumber>
-      <cbc:CityName>Ferrano</cbc:CityName>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en">Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
       <cbc:Region>Province of Ferrano</cbc:Region>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
@@ -1055,10 +1063,11 @@ Inside `Signature`:
       <cac:OriginAddress>
         <cbc:AddressTypeCode>Business</cbc:AddressTypeCode>
         <cbc:AddressFormatCode>XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Ganluar Bonfuar Panpea</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
         <cbc:StreetName languageID="en">Via del Riciclo</cbc:StreetName>
         <cbc:BuildingNumber>31</cbc:BuildingNumber>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
         <cbc:Region>Province of Ferrano</cbc:Region>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
