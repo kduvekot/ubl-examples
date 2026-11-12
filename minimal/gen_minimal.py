@@ -175,6 +175,9 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # the services the document type names (electricity, gas, water,
                # telephone); a later layer with consumption must match (KWH)
                "UtilityStatementTypeCode": "ELECTRICITY",
+               # "the procedure under which this reminder was sent": the customs
+               # procedure of the ATA Carnet, temporary admission
+               "ProcedureCode": "TEMPORARY_ADMISSION",
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
                "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR"}
 
