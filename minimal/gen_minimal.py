@@ -424,6 +424,20 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "DigitalProcess/Description": ("Ordering", "Bestellung", "Pedido", "Hatchū"),
 }
 
+NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
+    "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Mihon Tarō"),
+    "ActivityOriginLocation/Name": ("Example Store 1", "Beispiel Filiale 1", "Exemplo Loja 1", "Mihon Tenpo 1"),
+    "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
+}
+
+def name_for(e, parent, name):
+    t = NAMES.get(etree.QName(parent).localname + "/" + name)
+    if t is None:
+        return VALUES["NameType"]
+    lang = LANG[COUNTRY]
+    e.set("languageID", lang)
+    return t[LANG_INDEX[lang]]
+
 def text_for(e, parent, name):
     pn = etree.QName(parent).localname
     t = TEXTS.get(pn + "/" + name) or TEXTS.get(name)
@@ -506,6 +520,7 @@ def build(parent, el_decl):
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
                   else id_for(parent, el_decl.get("name")) if u == "IdentifierType"
                   else text_for(e, parent, el_decl.get("name")) if u == "TextType"
+                  else name_for(e, parent, el_decl.get("name")) if u == "NameType"
                   else TIME + UTC_OFFSETS[COUNTRY] if u == "TimeType"
                   else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"

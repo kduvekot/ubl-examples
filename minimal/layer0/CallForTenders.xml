@@ -10,6 +10,6 @@
     </cac:Party>
   </cac:ContractingParty>
   <cac:ProcurementProject>
-    <cbc:Name>X</cbc:Name>
+    <cbc:Name languageID="en">Office supplies 2026</cbc:Name>
   </cac:ProcurementProject>
 </CallForTenders>
