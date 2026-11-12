@@ -156,7 +156,10 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # UBL's own style (as in its definitions, e.g. FALLS_BELOW_...),
                # without listID: the value states its meaning (IND6), and no
                # UN/EDIFACT list is used. ResponseCode: the invoice is approved.
-               "ResponseCode": "ACCEPTED"}
+               "ResponseCode": "ACCEPTED",
+               # the definition's examples (BASE PROMOTIONAL SEASONAL TOTAL); one
+               # line, no promotion or season in the document: the whole demand
+               "ForecastTypeCode": "TOTAL"}
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).

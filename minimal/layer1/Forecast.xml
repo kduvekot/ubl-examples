@@ -25,6 +25,6 @@
   </cac:ReceiverParty>
   <cac:ForecastLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:ForecastTypeCode>X</cbc:ForecastTypeCode>
+    <cbc:ForecastTypeCode>TOTAL</cbc:ForecastTypeCode>
   </cac:ForecastLine>
 </Forecast>
