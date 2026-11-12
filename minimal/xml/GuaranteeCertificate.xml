@@ -3,6 +3,14 @@
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:LiabilityAmount currencyID="INR">0</cbc:LiabilityAmount>
-  <cac:GuarantorParty/>
-  <cac:InterestedParty/>
+  <cac:GuarantorParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:GuarantorParty>
+  <cac:InterestedParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:InterestedParty>
 </GuaranteeCertificate>

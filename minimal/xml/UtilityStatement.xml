@@ -7,6 +7,14 @@
   <cac:ParentDocumentReference>
     <cbc:ID>X</cbc:ID>
   </cac:ParentDocumentReference>
-  <cac:SenderParty/>
-  <cac:ReceiverParty/>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
 </UtilityStatement>

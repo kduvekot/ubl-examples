@@ -3,9 +3,17 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:DeliveryCustomerParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:DespatchSupplierParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:DespatchSupplierParty>
 </ReceiptAdvice>

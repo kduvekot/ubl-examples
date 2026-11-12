@@ -6,8 +6,16 @@
     <cbc:StartDate>2000-01-01</cbc:StartDate>
     <cbc:EndDate>2000-01-01</cbc:EndDate>
   </cac:ExceptionObservationPeriod>
-  <cac:SenderParty/>
-  <cac:ReceiverParty/>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
   <cac:ExceptionNotificationLine>
     <cbc:ID>X</cbc:ID>
     <cbc:ComparedValueMeasure unitCode="H87">0</cbc:ComparedValueMeasure>

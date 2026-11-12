@@ -3,7 +3,11 @@
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:ContractingParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:ContractingParty>
   <cac:TenderResult>
     <cbc:AwardDate>2000-01-01</cbc:AwardDate>

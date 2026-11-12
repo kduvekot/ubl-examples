@@ -3,10 +3,18 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:AccountingCustomerParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:RemittanceAdviceLine>
     <cbc:ID>X</cbc:ID>

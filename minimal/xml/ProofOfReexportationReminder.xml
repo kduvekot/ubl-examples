@@ -6,8 +6,16 @@
   <cac:ProofOfReexportationRequestDocumentReference>
     <cbc:ID>X</cbc:ID>
   </cac:ProofOfReexportationRequestDocumentReference>
-  <cac:ImportingGuarantorParty/>
-  <cac:ExportingGuarantorParty/>
+  <cac:ImportingGuarantorParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ImportingGuarantorParty>
+  <cac:ExportingGuarantorParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>X</cbc:ID>
   </cac:GoodsItemPassportCounterfoil>

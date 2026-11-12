@@ -3,9 +3,17 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:SellerSupplierParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:InventoryReportingParty/>
+  <cac:InventoryReportingParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:InventoryReportingParty>
   <cac:StockAvailabilityReportLine>
     <cbc:ID>X</cbc:ID>
     <cbc:Quantity>0</cbc:Quantity>

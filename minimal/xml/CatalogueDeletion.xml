@@ -5,6 +5,14 @@
   <cac:DeletedCatalogueReference>
     <cbc:ID>X</cbc:ID>
   </cac:DeletedCatalogueReference>
-  <cac:ReceiverParty/>
-  <cac:ProviderParty/>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:ProviderParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ProviderParty>
 </CatalogueDeletion>

@@ -4,6 +4,14 @@
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:RegisteredDate>2000-01-01</cbc:RegisteredDate>
   <cbc:RegisteredTime>00:00:00</cbc:RegisteredTime>
-  <cac:SenderParty/>
-  <cac:ReceiverParty/>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
 </TenderReceipt>

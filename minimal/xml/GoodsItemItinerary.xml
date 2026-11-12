@@ -10,6 +10,10 @@
     <cac:TransportationService>
       <cbc:TransportServiceCode>X</cbc:TransportServiceCode>
     </cac:TransportationService>
-    <cac:TransportServiceProviderParty/>
+    <cac:TransportServiceProviderParty>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:TransportServiceProviderParty>
   </cac:TransportationSegment>
 </GoodsItemItinerary>

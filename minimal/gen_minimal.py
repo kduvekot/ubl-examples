@@ -70,7 +70,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # TendererQualification nothing else says who the tenderer is.
         "SupplierPartyType": {"cac:Party"},
         "CustomerPartyType": {"cac:Party"},
-        "QualifyingPartyType": {"cac:Party"}}
+        "QualifyingPartyType": {"cac:Party"},
+        # PartyType ("an organization, sub-organization, or individual
+        # fulfilling a role"): who it is. A name stands on its own; an ID
+        # would need a schemeID, which is a later layer's decision (IND6).
+        "PartyType": {"cac:PartyName"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

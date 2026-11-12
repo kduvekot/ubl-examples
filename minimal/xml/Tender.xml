@@ -3,7 +3,11 @@
   <cbc:ID>X</cbc:ID>
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
-  <cac:TendererParty/>
+  <cac:TendererParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:TendererParty>
   <cac:TenderedProject>
     <cac:LegalMonetaryTotal>
       <cbc:PayableAmount currencyID="ZAR">0</cbc:PayableAmount>

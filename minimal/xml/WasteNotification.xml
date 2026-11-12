@@ -2,10 +2,30 @@
 <WasteNotification xmlns="urn:oasis:names:specification:ubl:schema:xsd:WasteNotification-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
-  <cac:SenderParty/>
-  <cac:ReceiverParty/>
-  <cac:NotifierParty/>
-  <cac:CustomsParty/>
-  <cac:WasteProducerParty/>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:NotifierParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:NotifierParty>
+  <cac:CustomsParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:CustomsParty>
+  <cac:WasteProducerParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:WasteProducerParty>
   <cac:Shipment/>
 </WasteNotification>

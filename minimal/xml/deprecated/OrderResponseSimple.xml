@@ -7,9 +7,17 @@
     <cbc:ID>X</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:SellerSupplierParty>
   <cac:BuyerCustomerParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:BuyerCustomerParty>
 </OrderResponseSimple>

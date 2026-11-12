@@ -9,11 +9,23 @@
     <cac:EndorserParty>
       <cbc:RoleCode>X</cbc:RoleCode>
       <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
-      <cac:Party/>
+      <cac:Party>
+        <cac:PartyName>
+          <cbc:Name>X</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
       <cac:SignatoryContact/>
     </cac:EndorserParty>
-    <cac:PreparationParty/>
-    <cac:IssuerParty/>
+    <cac:PreparationParty>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:PreparationParty>
+    <cac:IssuerParty>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
     <cac:IssuingCountry/>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
@@ -22,7 +34,11 @@
     <cac:EndorserParty>
       <cbc:RoleCode>X</cbc:RoleCode>
       <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
-      <cac:Party/>
+      <cac:Party>
+        <cac:PartyName>
+          <cbc:Name>X</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
       <cac:SignatoryContact/>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>

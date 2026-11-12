@@ -4,7 +4,11 @@
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:VersionID>X</cbc:VersionID>
   <cac:ParticipantParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:ParticipantParty>
   <cac:DigitalProcess/>
 </DigitalAgreement>

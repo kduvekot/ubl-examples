@@ -5,8 +5,16 @@
   <cac:RelatedCatalogueReference>
     <cbc:ID>X</cbc:ID>
   </cac:RelatedCatalogueReference>
-  <cac:ProviderParty/>
-  <cac:ReceiverParty/>
+  <cac:ProviderParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ProviderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
   <cac:CataloguePricingUpdateLine>
     <cbc:ID>X</cbc:ID>
   </cac:CataloguePricingUpdateLine>

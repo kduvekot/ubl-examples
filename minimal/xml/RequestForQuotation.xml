@@ -3,7 +3,11 @@
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:IssueTime>00:00:00</cbc:IssueTime>
   <cac:SellerSupplierParty>
-    <cac:Party/>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
   </cac:SellerSupplierParty>
   <cac:RequestForQuotationLine>
     <cac:LineItem>
