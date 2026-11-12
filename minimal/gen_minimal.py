@@ -39,13 +39,35 @@ VALUES = {
     # percentages or totals must make them add up (line = quantity x price,
     # total = sum of lines, tax = taxable x percent / 100, rounded to the
     # currency's minor unit, payable = total + tax).
-    "AmountType": "100", "BinaryObjectType": "AA==", "GraphicType": "AA==",
+    "AmountType": "100", "BinaryObjectType": "(PDF_B64)", "GraphicType": "AA==",
     "PictureType": "AA==", "SoundType": "AA==", "VideoType": "AA==",
     "CodeType": "X", "DateTimeType": "2026-08-12T00:00:00", "DateType": "2026-08-12",
     "TimeType": "00:00:00", "IdentifierType": "X", "IndicatorType": "true",
     "MeasureType": "0", "NumericType": "0", "ValueType": "0", "PercentType": "0",
     "RateType": "0", "QuantityType": "10", "TextType": "X", "NameType": "X",
 }
+# Attachment content: a minimal one-page PDF that shows the text "PDF"
+# (built here byte by byte, with a correct cross-reference table).
+def _pdf():
+    import base64
+    content = b"BT /F1 48 Tf 72 72 Td (PDF) Tj ET"
+    objs = [b"<< /Type /Catalog /Pages 2 0 R >>",
+            b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+            b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 240 160] "
+            b"/Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>",
+            b"<< /Length %d >>\nstream\n" % len(content) + content + b"\nendstream",
+            b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"]
+    out, offs = b"%PDF-1.4\n", []
+    for i, o in enumerate(objs, 1):
+        offs.append(len(out))
+        out += b"%d 0 obj\n" % i + o + b"\nendobj\n"
+    xref = len(out)
+    out += b"xref\n0 %d\n0000000000 65535 f \n" % (len(objs) + 1)
+    out += b"".join(b"%010d 00000 n \n" % o for o in offs)
+    out += b"trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n" % (len(objs) + 1, xref)
+    return base64.b64encode(out).decode()
+PDF_B64 = _pdf()
+
 # Dates: D = 2026-08-12, the publication date of the UBL 2.5 OASIS Standard
 # (its pubdate), after every identifier scheme used in the set started.
 # Where D does not fit the context, an offset in days from D, chosen from the
@@ -96,10 +118,8 @@ def date_for(parent, name):
             return (D + datetime.timedelta(days=DATE_OFFSETS[key])).isoformat()
     return D.isoformat()
 
-# mimeCode: AA== is one zero byte, honestly "arbitrary binary data" (in UBL's
-# default BinaryObjectMimeCode list). Open point: a single zero byte is close
-# to a null value (IND5); a later layer embeds real content.
-ATTRS = {"mimeCode": "application/octet-stream"}
+# mimeCode: the embedded binary is a real PDF (see _pdf), so application/pdf.
+ATTRS = {"mimeCode": "application/pdf"}
 
 # Locale: every document has one, by turns in alphabetical document order, so
 # a document keeps its locale in every layer. It is used for every currency
@@ -525,7 +545,7 @@ def build(parent, el_decl):
                   else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"
                   else CODE_VALUES.get(el_decl.get("name"), VALUES[u]) if u == "CodeType"
-                  else VALUES[u])
+                  else PDF_B64 if u == "BinaryObjectType" else VALUES[u])
         attrs = {}
         cur_ns, cur = tns, tname
         while True:  # collect required attributes along the derivation chain
