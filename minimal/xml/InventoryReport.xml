@@ -17,6 +17,8 @@
   <cac:InventoryReportLine>
     <cbc:ID>X</cbc:ID>
     <cbc:Quantity>0</cbc:Quantity>
-    <cac:Item/>
+    <cac:Item>
+      <cbc:Description>X</cbc:Description>
+    </cac:Item>
   </cac:InventoryReportLine>
 </InventoryReport>

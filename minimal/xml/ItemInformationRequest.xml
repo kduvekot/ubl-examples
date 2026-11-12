@@ -23,7 +23,9 @@
     </cac:Period>
     <cac:SalesItem>
       <cbc:Quantity>0</cbc:Quantity>
-      <cac:Item/>
+      <cac:Item>
+        <cbc:Description>X</cbc:Description>
+      </cac:Item>
     </cac:SalesItem>
   </cac:ItemInformationRequestLine>
 </ItemInformationRequest>

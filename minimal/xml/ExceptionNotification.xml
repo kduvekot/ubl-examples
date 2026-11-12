@@ -20,6 +20,8 @@
     <cbc:ID>X</cbc:ID>
     <cbc:ComparedValueMeasure unitCode="H87">0</cbc:ComparedValueMeasure>
     <cbc:SourceValueMeasure unitCode="H87">0</cbc:SourceValueMeasure>
-    <cac:SupplyItem/>
+    <cac:SupplyItem>
+      <cbc:Description>X</cbc:Description>
+    </cac:SupplyItem>
   </cac:ExceptionNotificationLine>
 </ExceptionNotification>

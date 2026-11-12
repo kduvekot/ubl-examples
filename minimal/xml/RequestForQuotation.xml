@@ -12,7 +12,9 @@
   <cac:RequestForQuotationLine>
     <cac:LineItem>
       <cbc:ID>X</cbc:ID>
-      <cac:Item/>
+      <cac:Item>
+        <cbc:Description>X</cbc:Description>
+      </cac:Item>
     </cac:LineItem>
   </cac:RequestForQuotationLine>
 </RequestForQuotation>

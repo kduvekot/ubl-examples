@@ -74,7 +74,12 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # PartyType ("an organization, sub-organization, or individual
         # fulfilling a role"): who it is. A name stands on its own; an ID
         # would need a schemeID, which is a later layer's decision (IND6).
-        "PartyType": {"cac:PartyName"}}
+        "PartyType": {"cac:PartyName"},
+        # ItemType: "an item of trade. It includes a generic description
+        # applicable to all examples of the item"; a Name is only "optionally
+        # given". Identification depends on the document's perspective
+        # (buyer, seller, standard): a later layer.
+        "ItemType": {"cbc:Description"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

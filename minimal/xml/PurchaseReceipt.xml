@@ -14,6 +14,8 @@
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>X</cbc:ID>
-    <cac:Item/>
+    <cac:Item>
+      <cbc:Description>X</cbc:Description>
+    </cac:Item>
   </cac:PurchaseReceiptLine>
 </PurchaseReceipt>

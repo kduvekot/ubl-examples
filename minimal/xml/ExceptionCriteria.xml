@@ -20,6 +20,8 @@
     <cbc:ID>X</cbc:ID>
     <cbc:ThresholdValueComparisonCode>X</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity>0</cbc:ThresholdQuantity>
-    <cac:SupplyItem/>
+    <cac:SupplyItem>
+      <cbc:Description>X</cbc:Description>
+    </cac:SupplyItem>
   </cac:ExceptionCriteriaLine>
 </ExceptionCriteria>

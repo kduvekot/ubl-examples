@@ -14,6 +14,8 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>X</cbc:ID>
-    <cac:Item/>
+    <cac:Item>
+      <cbc:Description>X</cbc:Description>
+    </cac:Item>
   </cac:InvoiceLine>
 </Invoice>

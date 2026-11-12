@@ -21,6 +21,8 @@
     <cac:OrderLineReference>
       <cbc:LineID>X</cbc:LineID>
     </cac:OrderLineReference>
-    <cac:Item/>
+    <cac:Item>
+      <cbc:Description>X</cbc:Description>
+    </cac:Item>
   </cac:DespatchLine>
 </DeliveryNote>
