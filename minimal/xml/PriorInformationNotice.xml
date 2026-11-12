@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PriorInformationNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:ContractingParty>
+    <cac:Party/>
+  </cac:ContractingParty>
+</PriorInformationNotice>

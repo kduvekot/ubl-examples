@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ExceptionNotification xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExceptionNotification-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:ExceptionObservationPeriod/>
+  <cac:SenderParty/>
+  <cac:ReceiverParty/>
+  <cac:ExceptionNotificationLine>
+    <cbc:ID>X</cbc:ID>
+    <cbc:ComparedValueMeasure unitCode="X">0</cbc:ComparedValueMeasure>
+    <cbc:SourceValueMeasure unitCode="X">0</cbc:SourceValueMeasure>
+    <cac:SupplyItem/>
+  </cac:ExceptionNotificationLine>
+</ExceptionNotification>

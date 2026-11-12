@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CertificateOfOrigin xmlns="urn:oasis:names:specification:ubl:schema:xsd:CertificateOfOrigin-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cac:CertificateOfOriginApplication>
+    <cbc:ReferenceID>X</cbc:ReferenceID>
+    <cbc:CertificateType>X</cbc:CertificateType>
+    <cbc:OriginalJobID>X</cbc:OriginalJobID>
+    <cac:Shipment/>
+    <cac:EndorserParty>
+      <cbc:RoleCode>X</cbc:RoleCode>
+      <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
+      <cac:Party/>
+      <cac:SignatoryContact/>
+    </cac:EndorserParty>
+    <cac:PreparationParty/>
+    <cac:IssuerParty/>
+    <cac:IssuingCountry/>
+  </cac:CertificateOfOriginApplication>
+  <cac:IssuerEndorsement>
+    <cbc:DocumentID>X</cbc:DocumentID>
+    <cbc:ApprovalStatus>X</cbc:ApprovalStatus>
+    <cac:EndorserParty>
+      <cbc:RoleCode>X</cbc:RoleCode>
+      <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
+      <cac:Party/>
+      <cac:SignatoryContact/>
+    </cac:EndorserParty>
+  </cac:IssuerEndorsement>
+</CertificateOfOrigin>

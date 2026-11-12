@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ForecastRevision xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForecastRevision-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cbc:SequenceNumberID>X</cbc:SequenceNumberID>
+  <cac:ForecastPeriod/>
+  <cac:SenderParty/>
+  <cac:ReceiverParty/>
+  <cac:ForecastRevisionLine>
+    <cbc:ID>X</cbc:ID>
+    <cbc:RevisedForecastLineID>X</cbc:RevisedForecastLineID>
+    <cbc:SourceForecastIssueDate>2000-01-01</cbc:SourceForecastIssueDate>
+    <cbc:SourceForecastIssueTime>00:00:00</cbc:SourceForecastIssueTime>
+  </cac:ForecastRevisionLine>
+</ForecastRevision>

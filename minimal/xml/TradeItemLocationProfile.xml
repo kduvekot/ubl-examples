@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TradeItemLocationProfile xmlns="urn:oasis:names:specification:ubl:schema:xsd:TradeItemLocationProfile-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:Period/>
+  <cac:SenderParty/>
+  <cac:ReceiverParty/>
+  <cac:ItemManagementProfile>
+    <cac:EffectivePeriod/>
+    <cac:Item/>
+  </cac:ItemManagementProfile>
+</TradeItemLocationProfile>

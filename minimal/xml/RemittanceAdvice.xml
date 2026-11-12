@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:AccountingCustomerParty/>
+  <cac:AccountingSupplierParty/>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>X</cbc:ID>
+  </cac:RemittanceAdviceLine>
+</RemittanceAdvice>
