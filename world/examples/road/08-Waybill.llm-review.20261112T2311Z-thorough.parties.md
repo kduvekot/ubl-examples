@@ -1,0 +1,111 @@
+# LLM review: 08-Waybill.xml
+
+Flow: road (ROAD-2026-01) · Review date: 2026-11-12 · Part: parties
+
+## Reviewed version
+- Run: `20261112T2311Z-thorough`
+- Example: `world/examples/road/08-Waybill.xml`, Git blob `72164dc3855513c969135349f0d20e5d5cef08c2` (committed)
+- Last commit changing the example: 294c2e3 2026-11-12 English names for the island's towns; town names in both languages everywhere
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 8d0bb7f 2026-11-12 Reviews of the utilities flow, run 20261112T2230Z-thorough: parts written so far
+- Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
+- Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
+
+## What is expected
+This is one review among possibly several of this example (other runs and parts; list them with
+`list_reviews.py`). Whoever works through the reviews considers every one of them: runs find partly
+different things, and a finding that appears in only one review counts as much as one that appears
+in all. Every finding below, and every entry under "Considered and refuted", "Refuted in the merge"
+and "Outside this review", is looked into and ends either resolved (its condition holds) or
+dismissed with a stated reason. Findings marked "Needs decision: yes" are confirmed by a person
+first. The example must remain valid against the UBL 2.5 schemas and the world's code lists. This
+review only describes what is wrong; it does not say where or how the example is produced.
+
+## Findings
+
+### road/08#F1 · Medium · Urvanian province in Region instead of CountrySubentity
+- XPath: `/Waybill/cac:SenderParty/cac:PostalAddress/cbc:Region` = `Province of Ferrano`
+- XPath: `/Waybill/cac:ConsignorParty/cac:PostalAddress/cbc:Region` = `Province of Ferrano`
+- XPath: `/Waybill/cac:Shipment/cac:ReturnAddress/cbc:Region` = `Province of Ferrano`
+- XPath: `/Waybill/cac:Shipment/cac:OriginAddress/cbc:Region` = `Province of Ferrano`
+- Why: UBL 2.5 defines `Region` as "The recognized geographic or economic region or group of countries in which this address is located" and `CountrySubentity` as "The political or administrative division of a country in which this address is located, such as the name of its county, province, or state". `Province of Ferrano` names a province, i.e. an administrative division, so it belongs in `CountrySubentity`. In the same document the Bayvarran addresses put their state in `CountrySubentity` (e.g. `/Waybill/cac:ReceiverParty/cac:PostalAddress/cbc:CountrySubentity` = `Upland State`), so the two countries' first-level divisions are encoded differently. The same value occurs 219 times in the examples (counted with `grep -rho --include='*.xml' '<cbc:Region>[^<]*</cbc:Region>' world/examples`).
+- Condition: No Urvanian address in this example holds the province in `Region`; the province is in `CountrySubentity` (with `CountrySubentityCode` where the Urvanian list has one).
+- Options: (a, preferred) Move the province to `CountrySubentity` (plus code), as Bayvarra does; this matches the definition directly. (b) If the world's Urvanian provinces are not administrative divisions, use `Region` only for a real geographic/economic region and drop the province.
+- Needs decision: no
+
+### road/08#F2 · Medium · Language code in LocaleCode
+- XPath: `/Waybill/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
+- Why: `Language/LocaleCode` is "A code signifying the locale in which this language is used". A locale is a language in a region (e.g. English as used in Bayvarra), but the value is the bare ISO 639 language code `en`, with `listID` `ISO 639`, which only repeats `Language/ID` = `en` next to it. The element therefore carries no locale. The value looks deliberate (plain `en` occurs 362 times as `LocaleCode` in the examples, counted with `grep -rho --include='*.xml' '<cbc:LocaleCode[^>]*>en</cbc:LocaleCode>' world/examples | wc -l`), which is why a decision is needed.
+- Condition: Every `LocaleCode` present names a locale (language plus region, from a list of locales), or the element is absent.
+- Options: (a, preferred) Drop `LocaleCode` where it would only repeat the language: the party's language is fully given by `Language/ID`. (b) Use a locale value (e.g. a BCP 47 tag such as `en-XB`, which the examples already use as `languageID`) with a listID naming that scheme.
+- Needs decision: yes
+
+### road/08#F3 · Medium · Gate number in AdditionalStreetName of Lumeway's address
+- XPath: `/Waybill/cac:ReceiverParty/cac:PostalAddress/cbc:AdditionalStreetName` = `Gate 3`
+- Why: `AdditionalStreetName` is "An additional street name used to further clarify the address". `Gate 3` is not a street name but an entrance of the business park, information that only matters to vehicles arriving there; in Lumeway's postal and registered business address it says nothing about where mail goes. The value is part of every rendering of Lumeway's address (79 occurrences of `Gate 3` in `AdditionalStreetName` over the examples, counted with `grep -rho --include='*.xml'`).
+- Condition: No `AdditionalStreetName` of Lumeway's address holds a gate; where a gate or dock matters for a delivery it is given in an element meant for it (e.g. a delivery location's description or `Delivery/DeliveryLocation`).
+- Options: (a, preferred) Drop the gate from the address; carry it, where a delivery needs it, in the delivery's location. (b) Keep it only in delivery addresses, in `MarkAttention`/`MarkCare` or a location description, not as a street name.
+- Needs decision: no
+
+### road/08#F4 · Medium · Customs declaration issued by customs instead of the exporter
+- XPath: `/Waybill/cac:Shipment/cac:Consignment/cac:CustomsDeclaration/cbc:ID` = `VI-CD-26-0156`
+- XPath: `/Waybill/cac:Shipment/cac:Consignment/cac:CustomsDeclaration/cac:IssuerParty/cac:PartyName/cbc:Name` = `Customs Administration of Urvania`
+- XPath: `05-ExportCustomsDeclaration.xml:/ExportCustomsDeclaration/cac:CustomsDeclaration/cbc:ID` = `VI-CD-26-0156`
+- XPath: `05-ExportCustomsDeclaration.xml:/ExportCustomsDeclaration/cac:Signature/cac:SignatoryParty/cac:PartyName/cbc:Name` = `Valdara Industries`
+- Why: `CustomsDeclaration/IssuerParty` is "The Party who issues this Customs Declaration". The declaration `VI-CD-26-0156` is the one in 05-ExportCustomsDeclaration, made and signed by the exporter Valdara (its ID has Valdara's `VI` prefix). The Customs Administration of Urvania receives and processes it (`CustomsParty` in 05); it does not issue it.
+- Condition: The waybill's customs declaration names as issuer the party that made the declaration in 05-ExportCustomsDeclaration (Valdara), or names no issuer.
+- Options: (a, preferred) Valdara as `IssuerParty`. (b) Drop `IssuerParty`; the ID already resolves to 05.
+- Needs decision: no
+
+### road/08#F5 · Low · Distribution list does not match the three originals the note announces
+- XPath: `/Waybill/cbc:Note[2]` = `Three originals: consignor, consignee, carrier.`
+- XPath: `/Waybill/cac:DocumentDistribution[1]/cac:Party/cac:PartyName/cbc:Name` = `Lumeway Distribution`
+- XPath: `/Waybill/cac:DocumentDistribution[2]/cac:Party/cac:PartyName/cbc:Name` = `Lumeway Distribution`
+- Why: The note says the waybill has three originals for consignor, consignee and carrier. `DocumentDistribution` ("A list of interested parties to whom this document is distributed") lists only Lumeway, the consignee, twice (original with the goods and electronic copy). The consignor's original (Valdara) is missing from the list (the carrier, as issuer, keeps its own).
+- Condition: The distribution list and the note agree on who receives which original.
+- Options: (a, preferred) Add a distribution entry for the consignor's original to Valdara. (b) Change the note to what the list says.
+- Needs decision: no
+
+### road/08#F6 · Low · Issue location named after a company
+- XPath: `/Waybill/cac:IssueLocation/cbc:Name` = `Castrano Logistics`
+- Why: `IssueLocation` is "The location where this waybill was issued" and its `Name` "The name of this location". `Castrano Logistics` is the warehouse operator, not a place; the waybill was issued at the pickup in Ferrano (`XUFER`, the pickup location in the same document).
+- Condition: The issue location names or identifies a place (e.g. Ferrano, `XUFER`, or Castrano's warehouse in Ferrano).
+- Options: (a, preferred) Use the UN/LOCODE `XUFER` and name `Ferrano` as for the pickup. (b) Name the site ("Castrano warehouse, Ferrano").
+- Needs decision: no
+
+### road/08#F7 · Low · Registration date 1996-01-01 looks like a default, not a party's real date
+- XPath: `/Waybill/cac:SenderParty/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: `PartyLegalEntity/RegistrationDate` is "The registration date of the CompanyID". `Trasvia Haulage SRU` carry the same date, 1 January 1996, a public holiday on which no register records an incorporation. Over the examples, `1996-01-01` occurs 271 times as `RegistrationDate`, for at least 25 different companies in both countries (counted over `*.xml` with `grep -rho --include='*.xml' '<cbc:RegistrationDate>[^<]*'` and a per-RegistrationName count), while the other parties have individual dates (Lumeway 1988-10-03, Valdara 1962-04-12). It reads as a filler (IND5), not as each company's own history.
+- Condition: Each party's `RegistrationDate` is its own plausible registration date (a working day consistent with its story), or the element is absent for that party.
+- Options: (a, preferred) Give each company its own date from its history. (b) Leave `RegistrationDate` out where the world has no date for the company.
+- Needs decision: no
+
+### road/08#F8 · Low · Contacts do not fit the roles the parties have in this document
+- XPath: `/Waybill/cac:ReceiverParty/cac:Contact/cbc:Name` = `Customer service`
+- XPath: `/Waybill/cac:ReceiverParty/cac:Contact/cbc:JobTitle` = `Customer service officer`
+- XPath: `/Waybill/cac:ReceiverParty/cac:Contact/cbc:Department` = `Sales`
+- XPath: `/Waybill/cac:ConsignorParty/cac:Contact/cbc:Name` = `Order desk`
+- XPath: `/Waybill/cac:ConsignorParty/cac:Contact/cbc:JobTitle` = `Customer service officer`
+- XPath: `/Waybill/cac:ConsignorParty/cac:Contact/cbc:Department` = `Sales`
+- Why: The checklist for a party in a role asks whether its `Contact` ("The primary contact for this party") fits the role and whether name, job title ("The job title or function of this contact") and department agree. Each party carries one fixed contact in every role of the flow, so here: Lumeway as delivery recipient/consignee gives its customer-service desk in Sales; a consignee's contact receives the goods (goods-in at the distribution centre). Valdara as consignor gives its order desk in Sales; a consignor's contact deals with despatch and transport documents (and the goods leave from Castrano's warehouse).
+- Condition: Each contact listed above fits the role its party has in this document, and its name, job title and department agree with each other.
+- Options: (a, preferred) Give the parties role-specific contacts (purchasing, goods receipt, despatch, customs, accounts payable/receivable, as the role needs) and pick the one matching the role. (b) Where a party has only one contact desk, at least make job title and department consistent with the desk's name.
+- Needs decision: no
+
+### road/08#F9 · Low · Party master data copied into a document that does not use it
+- XPath: `/Waybill/cac:ConsignorParty/cac:PartyLegalEntity/cac:SecurityListing/cbc:ID` = `XU0001042501`
+- Why: Section 4.8: data that looks copied from a party's master data into a document that does not use it is a finding. Valdara's `SecurityListing` ("One or more securities issued by this Party Legal Entity that are listed on regulated markets") tells the reader where Valdara's shares are traded; nothing in this document depends on that. A waybill identifies the consignor for the contract of carriage; its stock-exchange listing has no role in it.
+- Condition: Every optional party aggregate present in this document has a reason in this document's purpose.
+- Options: (a, preferred) Leave the listed aggregates out of this document (they stay in the documents where they matter). (b) If the story gives this document a reason to carry them, state it in the document.
+- Needs decision: no
+
+## Checked and consistent
+- Party identity: Lumeway, Valdara, Castrano and Trasvia are described identically in every example of the flow that carries their full data (identifiers, tax scheme, legal entity, addresses, contact, electronic address), compared field by field over all 17 XML files of the flow; the only difference is the region subtag of the English renderings, which follows the sender.
+- Identifier check digits (`check_ids.py`): GS1 GLN `9520610900008` and ISIN `XU0001042501` are correct.
+- Roles: sender, carrier, owner of the truck and signatory Trasvia; receiver and consignee Lumeway; consignor Valdara agree with 03-TransportExecutionPlanRequest and 09-TransportationStatus.
+
+## Considered and refuted
+- `/Waybill/cac:SenderParty/cac:PostalAddress/cbc:StreetName[2]`: an Italian-language street name tagged as English (`languageID` `en-XU`) — refuted because English text normally keeps foreign street names unchanged (as with "Via del Corso" or "Piazza San Marco"); the rendering is the English exonym the sender uses, and the region subtag follows the sender. The same Urvanian address is rendered identically by every sender of the flow, only the subtag changes with the sender's country.
+- `/Waybill/cac:ReceiverParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: a GLN that could be a real one — refuted because prefix 952 is the GS1 prefix reserved for demonstrations and examples (own knowledge of the GS1 General Specifications), and the check digit is correct (`check_ids.py`).
+- `/Waybill/cac:SenderParty/cac:Contact/cbc:Telephone`: telephone numbers could be real — refuted because country code +999 is reserved by ITU-T E.164 and assigned to no country (own knowledge).
+- `/Waybill/cac:ConsignorParty/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01`: looks like a contract number rather than an identifier of the service provider — refuted because `ServiceProviderParty/ID` is "An identifier for this Service Provider" without saying who assigns it; a number Valdara assigns to its logistics provider (the VI prefix) is a legitimate reading.
+- `/Waybill/cac:ConsignorParty` = Valdara while the goods leave Castrano's warehouse — refuted because the consignor is "The Party who is reponsible for sending the goods", Valdara as seller/exporter; Castrano is its service provider, as the `ServiceProviderParty` says.
