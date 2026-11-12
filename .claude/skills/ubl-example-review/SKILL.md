@@ -83,6 +83,10 @@ need `lxml`.
 The scripts help you read; the judgement is yours. Read the XML itself wherever the listing is not
 enough.
 
+Helper scripts or notes you write yourself go in a temporary folder of your own, named after the run
+ID and part (e.g. `<scratch>/review-20261112T1430Z-thorough-parties/`), never in the repository and
+never in a folder another part of the run uses: parts run in parallel.
+
 ## 3. Method
 
 ### One example: three passes (the broad run)
