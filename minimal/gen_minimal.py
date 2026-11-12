@@ -6,9 +6,14 @@ Fetches the UBL 2.5 package from OASIS into minimal/.ubl/ (not committed)
 and writes xml/<DocType>.xml (endorsed) and xml/deprecated/<DocType>.xml.
 Self-contained: uses nothing else from this repository.
 
-Usage: python3 minimal/gen_minimal.py
+After writing, every document is checked against the UBL 2.5 rules of
+chapter 4, "Additional Document Constraints" (IND1-IND9, see check()).
+The script exits with status 1 and lists every violation if one fails.
+
+Usage: python3 minimal/gen_minimal.py               generate and check
+       python3 minimal/gen_minimal.py --check FILE...  only check FILEs
 """
-import os, glob, io, urllib.request, zipfile
+import os, re, sys, glob, io, subprocess, tempfile, urllib.request, zipfile
 from lxml import etree
 
 XS = "http://www.w3.org/2001/XMLSchema"
@@ -133,26 +138,139 @@ def content(e, t):
                 elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
                     raise NotImplementedError(p.tag)
 
-os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
-n_cur = 0
-for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
-    r = etree.parse(f).getroot()
-    ns = r.get("targetNamespace")
-    root_decl = r.find(X + "element")
-    name = root_decl.get("name")
-    nsmap = {None: ns,
-             "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
-             "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}
-    doc = etree.Element("{%s}%s" % (ns, name), nsmap=nsmap)
-    t = find("complexType", *qname(root_decl, root_decl.get("type")))
-    content(doc, t)
-    etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
-    uses = [e for e in doc.iter() if e.text == CUR or e.get("currencyID") == CUR]
-    if uses:
-        currency = CURRENCIES[n_cur % len(CURRENCIES)]
-        n_cur += 1
-        for e in uses:
-            if e.text == CUR: e.text = currency
-            if e.get("currencyID") == CUR: e.set("currencyID", currency)
-    etree.ElementTree(doc).write(os.path.join(out, "" if os.path.basename(f) in endorsed else "deprecated", name + ".xml"), xml_declaration=True,
-                                 encoding="UTF-8", pretty_print=True)
+def generate():
+    os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
+    n_cur = 0
+    written = []
+    for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
+        r = etree.parse(f).getroot()
+        ns = r.get("targetNamespace")
+        root_decl = r.find(X + "element")
+        name = root_decl.get("name")
+        nsmap = {None: ns,
+                 "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
+                 "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}
+        doc = etree.Element("{%s}%s" % (ns, name), nsmap=nsmap)
+        t = find("complexType", *qname(root_decl, root_decl.get("type")))
+        content(doc, t)
+        etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
+        uses = [e for e in doc.iter() if e.text == CUR or e.get("currencyID") == CUR]
+        if uses:
+            currency = CURRENCIES[n_cur % len(CURRENCIES)]
+            n_cur += 1
+            for e in uses:
+                if e.text == CUR: e.text = currency
+                if e.get("currencyID") == CUR: e.set("currencyID", currency)
+        path = os.path.join(out, "" if os.path.basename(f) in endorsed else "deprecated", name + ".xml")
+        with open(path, "wb") as fh:  # declaration exactly as the IND2/IND3 example
+            fh.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
+            fh.write(etree.tostring(doc, encoding="UTF-8", pretty_print=True))
+        written.append((path, f))
+    return written
+
+# --- Checks: UBL 2.5 chapter 4, Additional Document Constraints -------------
+# IND6 (absence carries no meaning) cannot be tested by machine; it is
+# handled where values are chosen (see FILL).
+CBC = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+TEXT_ELEMENTS = {  # cbc elements of "Text. Type" (TextType and NameType)
+    d.get("name") for d in schemas[CBC][0].findall(X + "element")
+    if udt_name(*qname(d, d.get("type"))) in ("TextType", "NameType")}
+
+def check(path, xsd):
+    errors = []
+    raw = open(path, "rb").read()
+    decl = re.match(rb'<\?xml[^>]*\?>', raw)
+    enc = decl and re.search(rb'encoding=["\']([^"\']+)', decl.group(0))
+    if not enc:  # IND2
+        errors.append("IND2 no character encoding in the XML declaration")
+    elif enc.group(1).upper() != b"UTF-8":  # IND3
+        errors.append("IND3 encoding is %s, not UTF-8" % enc.group(1).decode())
+    try:
+        raw.decode("utf-8")
+    except UnicodeDecodeError as ex:
+        errors.append("IND3 not valid UTF-8: %s" % ex)
+    try:
+        doc = etree.parse(path)
+    except etree.XMLSyntaxError as ex:
+        return errors + ["IND1 not well-formed: %s" % ex]
+    schema = etree.XMLSchema(etree.parse(xsd))
+    if not schema.validate(doc):  # IND1
+        errors += ["IND1 %s" % e for e in schema.error_log]
+    def path_of(e):
+        steps = []
+        while e is not None:
+            q = etree.QName(e)
+            pre = {CBC: "cbc:", CAC: "cac:"}.get(q.namespace, "")
+            sib = [s for s in (e.getparent() if e.getparent() is not None else []) if s.tag == e.tag]
+            steps.append(pre + q.localname + ("[%d]" % (sib.index(e) + 1) if len(sib) > 1 else ""))
+            e = e.getparent()
+        return "/" + "/".join(reversed(steps))
+    for e in doc.iter(etree.Element):
+        where = path_of(e)
+        if len(e) == 0 and not (e.text or "").strip():  # IND5
+            errors.append("IND5 empty element %s" % where)
+        for k, v in e.attrib.items():  # IND9
+            if not v.strip():
+                errors.append("IND9 empty attribute %s/@%s" % (where, k))
+        seen = {}  # IND7, IND8: repeated Text siblings of the same name
+        for c in e:
+            q = etree.QName(c)
+            if q.namespace == CBC and q.localname in TEXT_ELEMENTS:
+                seen.setdefault(q.localname, []).append(c.get("languageID"))
+        for n, langs in seen.items():
+            if len(langs) > 1:
+                if langs.count(None) > 1:
+                    errors.append("IND8 %s/cbc:%s: more than one without languageID" % (where, n))
+                dup = {l for l in langs if l is not None and langs.count(l) > 1}
+                if dup:
+                    errors.append("IND7 %s/cbc:%s: languageID repeated: %s" % (where, n, ", ".join(sorted(dup))))
+    return errors
+
+def phase2(paths):
+    """IND1 section's recommended second phase: UBL default code lists,
+    with the package's own XSLT and Saxon, as in val/validate.sh."""
+    val = os.path.join(UBL, "val")
+    errors = {}
+    with tempfile.TemporaryDirectory() as tmp:
+        src, res = os.path.join(tmp, "in"), os.path.join(tmp, "out")
+        os.makedirs(src); os.makedirs(res)
+        for i, p in enumerate(paths):  # one Saxon run for all files
+            os.symlink(os.path.abspath(p), os.path.join(src, "%04d.xml" % i))
+        r = subprocess.run(["java", "-jar", os.path.join(val, "saxon9he.jar"), "-s:" + src,
+                            "-o:" + res, "-xsl:" + os.path.join(val, "UBL-DefaultDTQ-2.5.xsl")],
+                           capture_output=True, text=True)
+        for i, p in enumerate(paths):
+            o = os.path.join(res, "%04d.xml" % i)
+            if not os.path.exists(o):
+                errors[p] = ["code list: not checked: " + (r.stderr.strip().splitlines() or ["?"])[-1]]
+                continue
+            msgs = re.findall(r"<svrl:text>(.*?)</svrl:text>", open(o, encoding="utf-8").read(), re.S)
+            if msgs:
+                errors[p] = ["code list: " + " ".join(m.split()) for m in msgs]
+    return errors
+
+def xsd_for(path):
+    try:
+        name = etree.QName(etree.parse(path).getroot()).localname
+    except etree.XMLSyntaxError:
+        name = "Invoice"  # not parseable; check() reports it
+    return os.path.join(xsd_dir, "maindoc", "UBL-%s-2.5.xsd" % name)
+
+if sys.argv[1:2] == ["--check"]:
+    written = [(p, xsd_for(p)) for p in sys.argv[2:]]
+else:
+    written = generate()
+failed = {}
+for path, xsd in written:
+    errs = check(path, xsd)
+    if errs:
+        failed[path] = errs
+for p, errs in phase2([p for p, _ in written]).items():
+    failed.setdefault(p, []).extend(errs)
+for p in sorted(failed):
+    print(os.path.relpath(p))
+    for e in failed[p]:
+        print("  " + e)
+print("%d documents, %d with violations" % (len(written), len(failed)))
+sys.exit(1 if failed else 0)
