@@ -111,7 +111,7 @@ given; only clashes with real standards are flagged.
 
 - **XPaths:**
   - `/TenderReceipt/cac:ReceiverParty/cac:Contact/cbc:Name` = `Order desk`, `…/cbc:JobTitle` = `Customer service officer`, `…/cbc:Department` = `Sales`
-  - `/TenderReceipt/cac:ReceiverParty/cac:ServiceProviderParty` (`ServiceTypeCode` = `LOGISTICS`, "Warehousing and despatch", Castrano Logistics)
+  - `/TenderReceipt/cac:ReceiverParty/cac:ServiceProviderParty` (`ServiceTypeCode` = `LOGISTICS` ("Logistics service"), `ServiceType` = "Warehousing and despatch", Castrano Logistics)
 - **UBL definitions:**
   - *Party. Contact*: "The primary contact for this party."
   - *Party. Service Provider Party*: "A party providing a service to this party."
@@ -145,8 +145,9 @@ given; only clashes with real standards are flagged.
   (`XU-R-104274`), the `ReceiverParty` here, so the receipt goes to the right party.
 - `cbc:ContractFolderID` = `PWD-2026-PARKS` and `cbc:ContractName` match the Tender, the
   Contract Notice and the Call for Tenders.
-- Timing: the Tender was issued 2026-02-25 09:13 and registered 2026-02-25 11:42
-  (`RegisteredDate/Time`). The receipt was issued 17:47 the same day. All of this is
+- Timing: the Tender was issued 2026-02-25 09:13. The receipt was created 2026-02-25 11:42
+  (`RegisteredDate/Time`: "the date … on which the Tender Receipt was created") and issued
+  17:47 the same day. All of this is
   before the deadline `TenderSubmissionDeadlinePeriod/EndDate` 2026-02-26 12:00 (in
   `02-ContractNotice.xml` and `03-CallForTenders.xml`). It is consistent with the note
   "Received on time … unopened until the opening": the `OpenTenderEvent` is

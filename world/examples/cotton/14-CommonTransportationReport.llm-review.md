@@ -42,7 +42,8 @@ given; only clashes with real standards are flagged.
   - The cargo carried by Tidewell Ocean Lines in this flow is the shipment on its own
     [Bill of Lading](13-BillOfLading.xml) `TOL-BL-26-0206`. The
     [Import Customs Declaration](15-ImportCustomsDeclaration.xml) declares the same
-    shipment. Both use `Shipment/cbc:ID` = `SCG-SH-26-0200`.
+    shipment. Both use `Shipment/cbc:ID` = `SCG-SH-26-0200`, and so do documents 09, 10, 11
+    and 12 of the flow.
   - `TOL-SH-26-0208` appears in no other document. The vessel, its call sign and the
     voyage `TR-26-09W` do not appear anywhere else either: the Bill of Lading has no
     vessel or voyage at all.
@@ -125,8 +126,9 @@ given; only clashes with real standards are flagged.
   - Port control handles ship movements around the clock. Office hours on weekdays make
     the contact unusable for arrivals at night or at weekends.
   - The reporter is the shipping line reporting security and health data on behalf of
-    the master. The bookings desk is its sales or cargo-booking contact, not the
-    operations or ship-agency contact an authority would call about this report.
+    the master. Its contact is an operations planner in Operations, which fits, but the
+    contact's name "Bookings" (and `bookings@tidewell.example`) suggests the cargo-booking desk
+    rather than the marine operations or ship-agency desk an authority would call.
 - **Suggestion:** Port control: `Note` "24/7". Reporter: e.g. "Marine operations" or
   "Ship agency desk".
 

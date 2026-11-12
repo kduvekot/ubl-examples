@@ -19,18 +19,17 @@ given; only clashes with real standards are flagged.
 
 | # | Severity | Element(s) | Issue |
 |---|---|---|---|
-| 1 | High | `…/cac:PaymentMandate/cbc:MaximumPaymentInstructionsNumeric`, `…/cac:PaymentMandate/cac:ValidityPeriod` | A cap of 12 collections in an open-ended mandate used monthly since September 2024 |
+| 1 | Medium | `…/cac:PaymentMandate/cbc:MaximumPaymentInstructionsNumeric`, `…/cac:PaymentMandate/cac:ValidityPeriod` | A cap of 12 collections in an open-ended mandate, probably used monthly since September 2024 |
 | 2 | Medium | `…/cac:PaymentMandate/cac:PayerParty` | Payer given although it is the debtor |
 | 3 | Low | `…/cac:CollectionInvoiceLine/cac:CollectedForParty`, `…/cac:BeneficiaryParty` | Levy collected for "the city" according to the text, but for a city department according to the parties |
-| 4 | Low | `…/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:SupplyTypeCode` | Drinking water classified as a supply of services |
-| 5 | Low | `…/cac:TaxSubtotal[2]/cac:TaxCategory/cbc:TaxExemptionReason*` | An exemption reason on a category that is "outside the scope", not exempt |
-| 6 | Low | `/Invoice/cac:PaymentTerms/cbc:PenaltySurchargePercent`, `cbc:PenaltyAmount` | Penalty terms that the follow-up Reminder does not apply |
-| 7 | Low | `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:EntitySizeCode` | A state-wide water utility as a small enterprise |
-| 8 | Medium · Recurring | `…/cac:Language/cbc:LocaleCode` | A language code where a locale is defined |
+| 4 | Medium | `…/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:SupplyTypeCode` | Drinking water classified as a supply of services, against the code list's own definition |
+| 5 | Low | `/Invoice/cac:PaymentTerms/cbc:PenaltySurchargePercent`, `cbc:PenaltyAmount` | Penalty terms that the follow-up Reminder does not apply |
+| 6 | Low | `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:EntitySizeCode` | A state-wide water utility as a small enterprise |
+| 7 | Medium · Recurring | `…/cac:Language/cbc:LocaleCode` | A language code where a locale is defined |
 
 ## Findings
 
-### 1. A collection cap that the mandate's own use has already exceeded (High)
+### 1. A collection cap that the mandate's own use has probably exceeded (Medium)
 
 - **XPaths:**
   - `/Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:MaximumPaymentInstructionsNumeric` = `12`
@@ -43,8 +42,10 @@ given; only clashes with real standards are flagged.
 - **Why it does not fit:** The cap applies to the whole validity period. That period starts
   on 2 September 2024 and has no end. Billing is monthly and collected under this
   recurring mandate. By the collection of this March 2026 bill on 23 April 2026, the
-  mandate has been used about 19 times (October 2024 – April 2026), well over 12. Read
-  literally, this collection is no longer allowed by the mandate it cites.
+  mandate has been used about 19 times (October 2024 – April 2026), well over 12, if it
+  was used every month. The XML does not record that history, so this is an inference, not a
+  contradiction between values; read literally, this collection is then no longer allowed by
+  the mandate it cites.
 - **Suggestion:** Either drop `MaximumPaymentInstructionsNumeric` (the usual case for an
   open-ended utility mandate), or give the mandate a validity period whose length matches
   the cap (e.g. 12 months, renewed). The per-collection limit `MaximumPaidAmount` 150.00
@@ -81,36 +82,21 @@ given; only clashes with real standards are flagged.
   `Contact`/`Department` if needed. Drop `BeneficiaryParty`, or use it only for a
   different party.
 
-### 4. Drinking water as a supply of services (Low)
+### 4. Drinking water as a supply of services (Medium)
 
 - **XPath:** `/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:SupplyTypeCode`
 - **Value:** `SERVICES`
 - **UBL definition:** *Tax Category. Supply Type Code*: "A code signifying the type of supply to which this tax category applies, such as goods, services, or a mixture."
 - **Why it does not fit:** The line sells 14 m³ of drinking water, a metered, tangible
   commodity priced per cubic metre. In common sales-tax and VAT practice, the supply of
-  water is a supply of goods (e.g. EU VAT Directive 2006/112/EC, Annex III point 2,
-  "supply of water"). The sewage levy on the collection line is a service, so `SERVICES`
-  fits there.
-- **Suggestion:** `GOODS` for the drinking-water line, unless the world's tax rules
-  deliberately treat water as a service. In that case, say so in the tax-category
-  text.
+  water is treated as a supply of goods (EU VAT Directive 2006/112/EC lists "supply of water"
+  in Annex III point 2, though that annex does not itself classify supplies). Decisive here is
+  the world's own code list: `SupplyTypeCode` `GOODS` is defined as including "energy and
+  water delivered through a network", so `SERVICES` contradicts the meaning of the code. The
+  sewage levy on the collection line is a service, so `SERVICES` fits there.
+- **Suggestion:** `GOODS` for the drinking-water line.
 
-### 5. Exemption reason on an "outside scope" category (Low)
-
-- **XPaths:**
-  - `/Invoice/cac:TaxTotal/cac:TaxSubtotal[2]/cac:TaxCategory/cbc:ID` = `O` ("Services outside scope of tax")
-  - `/Invoice/cac:TaxTotal/cac:TaxSubtotal[2]/cac:TaxCategory/cbc:TaxExemptionReasonCode` = `LEVY`, `…/cbc:TaxExemptionReason` = `Levy collected for a public body`
-  - The same pair on `/Invoice/cac:CollectionInvoiceLine/cac:Item/cac:ClassifiedTaxCategory`
-- **UBL definition:** *Tax Category. Tax Exemption Reason*: "The reason for tax being exempted, expressed as text."
-- **Why it does not fit:** Category `O` means the amount is outside the scope of the tax,
-  which is a different legal situation from an exemption (category `E`, used correctly on
-  the water line). The text itself gives a scope reason (a levy collected for a public
-  body), not an exemption.
-- **Suggestion:** Keep the category `O`. Phrase the reason as a scope reason ("Not a
-  supply by the seller: levy collected for the city"). A code list with separate
-  out-of-scope codes would make the difference explicit.
-
-### 6. Penalty terms that the follow-up does not use (Low, cross-document)
+### 5. Penalty terms that the follow-up does not use (Low, cross-document)
 
 - **XPaths:**
   - `/Invoice/cac:PaymentTerms/cbc:PenaltySurchargePercent` = `1.5`
@@ -127,17 +113,17 @@ given; only clashes with real standards are flagged.
   the returned-debit fee in these payment terms instead of, or in addition to, the
   percentage.
 
-### 7. A state water utility as a small enterprise (Low)
+### 6. A state water utility as a small enterprise (Low)
 
 - **XPath:** `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:EntitySizeCode`
 - **Value:** `SMALL` ("Small enterprise")
 - **UBL definition:** *Party Legal Entity. Entity Size Code*: "A code signifying the size category of the legal entity (e.g., micro, small, medium, large)."
 - **Why it does not fit:** The supplier is "Coastal State Water Company", the drinking-water
-  supplier of a whole state that also collects the capital's sewage levy. That is
-  hardly a small enterprise.
+  supplier that, judging by its name, serves a whole state, and that also collects the
+  city of Lumeport's sewage levy. That is hardly a small enterprise.
 - **Suggestion:** `LARGE` (or `MEDIUM`).
 
-### 8. `LocaleCode` holds a language, not a locale (Medium, recurring)
+### 7. `LocaleCode` holds a language, not a locale (Medium, recurring)
 
 - **XPath:** `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Language/cbc:LocaleCode`
 - **Value:** `en` with `@listID="ISO 639"`

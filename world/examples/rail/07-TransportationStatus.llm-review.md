@@ -19,8 +19,8 @@ given; only clashes with real standards are flagged.
 
 | # | Severity | Element(s) | Issue |
 |---|---|---|---|
-| 1 | High | `…/cac:MainCarriageShipmentStage/cac:OptionalTakeoverTransportEvent` | An "optional takeover" on 14 April 17:00 that no other document knows and that conflicts with the journey |
-| 2 | High | `…/cac:MainCarriageShipmentStage/cac:ActualPickupTransportEvent` | The pickup at the shipper (13 April) placed in the rail main-carriage stage, which starts on 14 April |
+| 1 | Medium | `…/cac:MainCarriageShipmentStage/cac:OptionalTakeoverTransportEvent` | An "optional takeover" on 14 April 17:00 that no other document knows and that conflicts with the journey |
+| 2 | Medium | `…/cac:MainCarriageShipmentStage/cac:ActualPickupTransportEvent` | The pickup at the shipper (13 April) placed in the rail main-carriage stage, which starts on 14 April |
 | 3 | Medium | `/TransportationStatus/cbc:Description`, `/TransportationStatus/cac:TransportEvent`, `…/cac:MainCarriageShipmentStage/cac:TransportEvent` | Status at 13:11 reports only the 05:40 loading, as an untyped event split in two; the 06:52 departure from the reporting terminal is missing |
 | 4 | Medium | `/TransportationStatus/cbc:ShippingOrderID` | A consignment identifier used as a shipping order number |
 | 5 | Medium | `/TransportationStatus/cac:DocumentReference/cbc:ID` | A consignment identifier used as a document identifier; no such document exists |
@@ -31,7 +31,7 @@ given; only clashes with real standards are flagged.
 
 ## Findings
 
-### 1. An optional takeover that conflicts with the journey (High)
+### 1. An optional takeover that conflicts with the journey (Medium)
 
 - **XPath:** `/TransportationStatus/cac:Consignment/cac:MainCarriageShipmentStage/cac:OptionalTakeoverTransportEvent`
 - **Values:** `OccurrenceDate` = `2026-04-14`, `OccurrenceTime` = `17:00:00`, `CompletionIndicator` = `false`
@@ -39,10 +39,10 @@ given; only clashes with real standards are flagged.
   - *Shipment Stage. Optional Takeover_ Transport Event*: "The optional takeover of the goods in this shipment stage."
   - Compare *Shipment Stage. Takeover_ Transport Event*: "The receiver's takeover of the goods in this shipment stage."
 - **Why it does not fit:**
-  - A takeover is the moment the receiving party takes over the goods. Per the
-    [TEP](03-TransportExecutionPlan.xml) and the [Waybill](08-Waybill.xml), the train
-    `FRC 4417` left the hub at 06:52 on 14 April, is planned to arrive at 10:30 on
-    15 April, and delivers at 11:00 on 15 April.
+  - A takeover is the moment the receiving party takes over the goods. The train `FRC 4417`
+    left the hub at 06:52 on 14 April ([05](05-TransportProgressStatus.xml) and the
+    [Waybill](08-Waybill.xml)); the [TEP](03-TransportExecutionPlan.xml) plans the arrival at
+    10:30 and the delivery at 11:00 on 15 April.
   - A takeover at 17:00 on 14 April, mid-journey, fits none of these. No other document
     in the flow has an event at that time, and nothing says who would take over the
     goods or where.
@@ -52,7 +52,7 @@ given; only clashes with real standards are flagged.
   13:00/13:20 in the Waybill, or arrival at a border), use the matching element, such as
   `EstimatedArrivalTransportEvent` or a typed `TransportEvent` with a `Location`.
 
-### 2. The pickup at the shipper is placed in the rail main-carriage stage (High)
+### 2. The pickup at the shipper is placed in the rail main-carriage stage (Medium)
 
 - **XPath:** `/TransportationStatus/cac:Consignment/cac:MainCarriageShipmentStage/cac:ActualPickupTransportEvent`
 - **Values:** `2026-04-13` `15:00:00`
@@ -64,8 +64,8 @@ given; only clashes with real standards are flagged.
     `Consignment/cac:PlannedPickupTransportEvent` of the [TEP](03-TransportExecutionPlan.xml)
     and the equipment `PickupTransportEvent` of the [Waybill](08-Waybill.xml).
   - The main carriage is the rail leg. Per
-    [05-TransportProgressStatus](05-TransportProgressStatus.xml) and the Waybill, the
-    train only arrived at the hub at 05:30 on 14 April and was loaded at 05:40, so the
+    [05-TransportProgressStatus](05-TransportProgressStatus.xml) the train only arrived at
+    the hub at 05:30 on 14 April, and per the Waybill it was loaded at 05:40, so the
     goods cannot have been picked up *in this stage* the day before.
   - The value describes pre-carriage. Under main carriage it gives the rail leg a
     start a day too early.

@@ -20,9 +20,9 @@ given; only clashes with real standards are flagged.
 | # | Severity | Element(s) | Issue |
 |---|---|---|---|
 | 1 | Medium | `/TransportExecutionPlanRequest/cac:Consignment` | The request does not say what is to be transported |
-| 2 | Medium | `/TransportExecutionPlanRequest/cbc:TransportUserRemarks`, `/TransportExecutionPlanRequest/cac:TransportServiceProviderResponseDeadlinePeriod` | Confirmation requested by a deadline, but the flow never answers; instead the sender itself reports its request as accepted |
-| 3 | Medium · Recurring | `…/cac:PostalAddress/cbc:AdditionalStreetName`, `…/cac:FromLocation/cac:Address/cbc:AdditionalStreetName` | A loading gate in the element for a street name |
-| 4 | Medium | `…/cac:ConsigneeParty/cac:Contact` | Contact name, job title and department contradict each other and do not fit the consignee role |
+| 2 | High | `/TransportExecutionPlanRequest/cbc:TransportUserRemarks`, `/TransportExecutionPlanRequest/cac:TransportServiceProviderResponseDeadlinePeriod` | Confirmation requested by a deadline, but the flow never answers; instead the sender itself reports its request as accepted |
+| 3 | Low · Recurring | `…/cac:PostalAddress/cbc:AdditionalStreetName`, `…/cac:FromLocation/cac:Address/cbc:AdditionalStreetName` | A loading gate in the element for a street name |
+| 4 | Low | `…/cac:ConsigneeParty/cac:Contact` | Contact name, job title and department contradict each other and do not fit the consignee role |
 | 5 | Low | `…/cac:ReceiverParty/cac:Contact/cbc:Name`, `…/cac:SenderParty/cac:Contact` | An export desk for a domestic job; customer service as the transport user's contact |
 | 6 | Low | `…/cac:FromLocation/cbc:Name`, `…/cac:ToLocation/cbc:Name` | Party names used as location names |
 | 7 | Low | `/TransportExecutionPlanRequest/cac:TransportContract/cbc:ID` | Framework contract that the forwarder's later documents never reference |
@@ -43,8 +43,9 @@ given; only clashes with real standards are flagged.
     weight: no summary description, no number of handling units and no
     goods item.
   - From [12-DespatchAdvice](12-DespatchAdvice.xml) the consignment is six pallets
-    (`PX`, SSCC-identified) with 24 park benches, and that document even links each
-    handling unit back to this request (`ShipmentDocumentReference` `LD-TR-26-0227`).
+    (`PX`, SSCC-identified) with 24 park benches, and that document links its first handling
+    unit back to this request (`TransportHandlingUnit[1]/cac:ShipmentDocumentReference`
+    `LD-TR-26-0227`).
     The request itself does not say any of this. A forwarder cannot judge from this
     request whether one truck and a 13.6 m loading length are needed, and the request
     asks for a full truck load (`TransportServiceCode` `FTL`).
@@ -54,7 +55,7 @@ given; only clashes with real standards are flagged.
   `cbc:TotalTransportHandlingUnitQuantity` 6 and, if wanted, the handling units or goods
   items.
 
-### 2. A confirmation that never comes (Medium, cross-document)
+### 2. A confirmation that never comes (High, cross-document)
 
 - **XPaths:**
   - `/TransportExecutionPlanRequest/cbc:TransportUserRemarks` = `Please confirm by return.`
@@ -71,12 +72,16 @@ given; only clashes with real standards are flagged.
     `AdditionalDocumentResponse` with `ResponseCode` `AP` (accepted). The transport user
     thus reports its own request as accepted, to a third party, without a document from
     the provider. The next document from the forwarder is the
-    [Waybill](13-Waybill.xml) of 29 April.
+    [Waybill](13-Waybill.xml) of 29 April. And
+    [14-TransportationStatusRequest](14-TransportationStatusRequest.xml) refers to a
+    Transport Execution Plan `BF-TEP-26-0227`
+    (`/TransportationStatusRequest/cac:TransportExecutionPlanDocumentReference/cbc:ID`) that
+    exists nowhere: a broken reference that assumes the answer this request never got.
 - **Suggestion:** Either add a `TransportExecutionPlan` from Bayforth that answers this
   request before 26 April, or drop the confirmation request and the deadline. In 10, the
   acceptance should refer to that Transport Execution Plan, not to Lumeway's own request.
 
-### 3. A loading gate in `AdditionalStreetName` (Medium, recurring)
+### 3. A loading gate in `AdditionalStreetName` (Low, recurring)
 
 - **XPaths:**
   - `/TransportExecutionPlanRequest/cac:SenderParty/cac:PostalAddress/cbc:AdditionalStreetName` = `Gate 3`
@@ -89,11 +94,13 @@ given; only clashes with real standards are flagged.
   - In the pickup location it is useful information, but UBL has a better place for
     it: a location within a location, *Location. Subsidiary_ Location* ("A location
     subsidiary to this location"), or `Location/cbc:Description`.
+  - EN 16931 maps "address line 2" (BT-36) to this element, so it is widely used for
+    address details that are not street names. That makes this a Low remark, not a breach.
 - **Suggestion:** Remove it from `PostalAddress`. In `FromLocation`, use
   `cac:SubsidiaryLocation/cbc:Name` = `Gate 3` (or the Location's `cbc:Description`).
 - **Recurring:** `AdditionalStreetName>Gate 3` occurs 79 times in 76 examples.
 
-### 4. The consignee's contact contradicts itself (Medium)
+### 4. The consignee's contact contradicts itself (Low)
 
 - **XPaths:**
   - `/TransportExecutionPlanRequest/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:Name` = `Buying office`
