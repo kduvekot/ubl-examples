@@ -159,7 +159,10 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                "ResponseCode": "ACCEPTED",
                # the definition's examples (BASE PROMOTIONAL SEASONAL TOTAL); one
                # line, no promotion or season in the document: the whole demand
-               "ForecastTypeCode": "TOTAL"}
+               "ForecastTypeCode": "TOTAL",
+               # CPFR purposes SALES_FORECAST / ORDER_FORECAST (domain knowledge,
+               # not verified against GS1): the whole demand reads as sales
+               "ForecastPurposeCode": "SALES_FORECAST"}
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).
