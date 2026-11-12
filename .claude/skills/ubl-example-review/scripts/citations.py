@@ -22,7 +22,7 @@ _cache = {}
 
 def review_xml(md):
     """The example a review file belongs to (final review or a run's part file)."""
-    return Path(re.sub(r'\.llm-review(\.[^/]+)?\.md$', '.xml', str(md)))
+    return Path(re.sub(r'\.llm-review(\.[^/]+)?\.md$', '.xml', str(Path(md).resolve())))
 
 
 def parse(xml_file):
