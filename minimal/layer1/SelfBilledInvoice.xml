@@ -39,7 +39,7 @@
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="ZAR">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="ZAR">100</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>X</cbc:ID>

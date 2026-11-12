@@ -34,7 +34,12 @@ endorsed = {os.path.basename(f) for f in glob.glob(os.path.join(UBL, "endorsed",
 
 # One value per UDT data type (UBL's unqualified data types).
 VALUES = {
-    "AmountType": "0", "BinaryObjectType": "AA==", "GraphicType": "AA==",
+    # 100: a whole number, valid for every currency (JPY has no decimals). Every
+    # document has one amount and no tax yet; a layer that adds lines, tax
+    # percentages or totals must make them add up (line = quantity x price,
+    # total = sum of lines, tax = taxable x percent / 100, rounded to the
+    # currency's minor unit, payable = total + tax).
+    "AmountType": "100", "BinaryObjectType": "AA==", "GraphicType": "AA==",
     "PictureType": "AA==", "SoundType": "AA==", "VideoType": "AA==",
     "CodeType": "X", "DateTimeType": "2026-08-12T00:00:00", "DateType": "2026-08-12",
     "TimeType": "00:00:00", "IdentifierType": "X", "IndicatorType": "true",

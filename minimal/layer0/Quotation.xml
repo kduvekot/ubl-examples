@@ -9,7 +9,7 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:QuotedMonetaryTotal>
-    <cbc:PayableAmount currencyID="BRL">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="BRL">100</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cac:LineItem>

@@ -11,6 +11,6 @@
   </cac:AccountingSupplierParty>
   <cac:DebitNoteLine>
     <cbc:ID>X</cbc:ID>
-    <cbc:LineExtensionAmount currencyID="ZAR">0</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="ZAR">100</cbc:LineExtensionAmount>
   </cac:DebitNoteLine>
 </DebitNote>
