@@ -12,5 +12,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
-  <cac:BillingReference/>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>X</cbc:ID>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
 </InvoiceStatusRequest>

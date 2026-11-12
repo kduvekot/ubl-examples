@@ -103,7 +103,12 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ContactType": {"cbc:Name"},
         # CountryType: the ISO 3166-1 code is exact and language-neutral; the
         # value comes from the document's locale.
-        "CountryType": {"cbc:IdentificationCode"}}
+        "CountryType": {"cbc:IdentificationCode"},
+        # BillingReferenceType: only in InvoiceStatusRequest, "a reference to
+        # the Invoice for which a status update is requested"; the typed
+        # reference needs no DocumentTypeCode, and the issuer follows from the
+        # exchange's own parties (its required ID follows from the schema).
+        "BillingReferenceType": {"cac:InvoiceDocumentReference"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
