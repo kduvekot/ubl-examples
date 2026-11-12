@@ -2,7 +2,9 @@
 
 usage: python3 -I count_patterns.py [R<n> ...] [--list]
 
-Without arguments: one line per pattern with occurrences and number of examples.
+Without arguments: one line per pattern with occurrences and number of examples. It counts the
+examples of the checkout this script is in (it says which), not of the current directory: run the
+copy in the checkout whose examples you want to count.
 With pattern IDs: only those. --list also prints every occurrence as `<flow>/<file>: <XPath>`.
 
 Each pattern is a function that yields (element, note) for the occurrences in one document.
@@ -225,6 +227,11 @@ def main():
     wanted = [a for a in sys.argv[1:] if not a.startswith('--')] or list(PATTERNS)
     show = '--list' in sys.argv
     docs = [(f, etree.parse(str(f)).getroot()) for f in sorted(EXAMPLES.glob('*/*.xml'))]
+    import subprocess
+    head = subprocess.run(['git', '-C', str(EXAMPLES), 'log', '-1', '--format=%h %cs'],
+                          capture_output=True, text=True).stdout.strip()
+    print(f'counting {len(docs)} examples in {EXAMPLES} (checkout at {head}); the examples counted are '
+          f'the ones next to this script, not in the current directory')
     for pid in wanted:
         hits = [(f, e) for f, root in docs for e in PATTERNS[pid](root)]
         files = {f for f, _ in hits}
