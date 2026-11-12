@@ -2,7 +2,13 @@
 
 Flow: waste (WASTE-2026-01) · Review date: 2026-11-12 · Part: parties
 
-HEADER_PLACEHOLDER
+## Reviewed version
+- Run: `20261112T1415Z-thorough`
+- Example: `world/examples/waste/01-WasteNotification.xml`, Git blob `59bbf75435c6cd8c4e16f9d3d8ff87cea9ce93be` (committed)
+- Last commit changing the example: 294c2e3 2026-11-12 English names for the island's towns; town names in both languages everywhere
+- Checkout: branch `claude/keen-feynman-45qjti`, commit d3d18df 2026-11-12 Review skill: the repository's agreed rules (no fillers, semantic conformance over practice, no fictional value that a real register assigns)
+- Skill: `.claude/skills/ubl-example-review`, last commit d3d18df 2026-11-12 Review skill: the repository's agreed rules (no fillers, semantic conformance over practice, no fictional value that a real register assigns) (committed)
+- Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
 ## What is expected
 This is one review among possibly several of this example (other runs and parts; list them with
@@ -107,6 +113,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/WasteNotification/cac:RecoveryFacilityParty/cac:Contact/cbc:Department` = `Sales`: suspected a contact unfit for the recovery facility — refuted because the facility's customer service is the desk that accepts waste from customers such as Valdara; it is a fitting contact for the facility in this role.
 - `/WasteNotification/cac:NotifierParty/cac:PartyName/cbc:Name` = `Valdara Industries`: suspected the notifier lacks the address and contact the authority needs — refuted because the same party is fully described as `SenderParty` in the same document.
 - `/WasteNotification/cac:ReceiverParty/cac:PostalAddress/cbc:Postbox` = `PB 18`: suspected a post box combined with a street address — refuted because a postal address with both a post box and the building address is a legitimate rendering for an authority.
+- `/WasteNotification/cac:SenderParty/cac:AdditionalPartyIdentification[2]/cbc:ID` = `XU-TR-104274`: suspected a customs-trader ID with no use — kept out of F4 because, as long as the notification goes to the customs administration (F2), the trader ID is the identifier that authority knows; it falls with F2.
 - `/WasteNotification/cac:RecoveryFacilityParty/cac:PartyAuthorization/cac:ValidityPeriod/cbc:EndDate` = `2029-12-31`: checked against the notification date 2026-03-23 — the permit is valid for the notified movements.
 
 ## Outside this review

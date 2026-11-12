@@ -72,7 +72,7 @@ is wrong; it does not say where or how the example is produced.
 
 ### waste/02#F7 · Low · The goods item does not identify the waste by code
 - XPath: `/WasteMovement/cac:Shipment/cac:GoodsItem/cbc:Description` = `Mixed polyethylene production waste, sorted, in big bags`
-- Why: The goods item is "described to identify it for customs, statistical, or transport purposes"; a waste movement document identifies the waste by its classification code (own knowledge: Basel/national waste list), which the facility checks against its R3 permit. Only free text is given, here and in the notification (`01-WasteNotification.xml`, finding there).
+- Why: The goods item description is "text describing this goods item to identify it for customs, statistical, or transport purposes"; a waste movement document identifies the waste by its classification code (own knowledge: Basel/national waste list), which the facility checks against its R3 permit. Only free text is given, here and in the notification (`01-WasteNotification.xml`, finding there).
 - Condition: The goods item carries the same structured waste code as the notification.
 - Options: (preferred) add `cac:Item/cac:CommodityClassification` with the waste code, identical in both documents.
 - Needs decision: no
