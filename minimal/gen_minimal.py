@@ -49,7 +49,9 @@ VALUES = {
 }
 # Indicator per element, no default. AcceptedIndicator: true, accepted; a
 # rejection would need a RejectionNote (PH#F17).
-INDICATOR_VALUES = {"AcceptedIndicator": "true"}
+INDICATOR_VALUES = {"AcceptedIndicator": "true",
+                    # yes to "enrolled in a trade register?": needs no evidence
+                    "ResponseIndicator": "true"}
 # Attachment content: a minimal one-page PDF that shows the text "PDF"
 # (built here byte by byte, with a correct cross-reference table).
 def _pdf():
@@ -111,6 +113,8 @@ def id_for(parent, name):
         return "1"
     if name in ("SequenceNumberID", "VersionID"):
         return "1"
+    if name == "ValidatedCriterionPropertyID":  # the question in this document
+        return "TenderingCriterionProperty-1"
     label = p if name == "ID" else name
     IDS[label] = IDS.get(label, 0) + 1
     return "%s-%d" % (label, IDS[label])
@@ -264,7 +268,14 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # (ResponseValue). The answer is a neutral text placeholder, not an
         # Indicator: "true" would state a real answer; a later layer fills it.
         "TenderingCriterionResponseType": {"cbc:ValidatedCriterionPropertyID", "cac:ResponseValue"},
-        "ResponseValueType": {"cbc:Response"},
+        "ResponseValueType": {"cbc:ResponseIndicator"},
+        # QualificationApplicationResponse repeats the question it answers
+        # ("the criterion as described in the Qualification Application
+        # Request"), so the answer refers to a question in the same document:
+        # one simple yes/no criterion property, answered true.
+        "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
+        "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
+        "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
         # AttachmentType: only in AttachedDocument ("a document of any kind to
         # be packaged with"), "containing the document content": embedded,
         # and binary because any kind of document must fit.
@@ -478,6 +489,11 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Ayamatte chūmon"),
     "CertificateType": ("Ordinary", "Gewöhnlich", "Comum", "Ippan"),   # from the definition's examples
     "ApprovalStatus": ("Approved", "Genehmigt", "Aprovado", "Shōnin-zumi"),
+    "TenderingCriterionProperty/Description": (
+        "Is the economic operator enrolled in a trade register?",
+        "Ist der Wirtschaftsteilnehmer in einem Handelsregister eingetragen?",
+        "O operador econômico está inscrito em um registro comercial?",
+        "Jigyōsha wa shōgyō tōki sarete imasu ka?"),
     "DigitalProcess/Description": ("Ordering", "Bestellung", "Pedido", "Hatchū"),
 }
 

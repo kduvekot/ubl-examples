@@ -22,10 +22,18 @@
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:TenderingCriterion>
+    <cac:TenderingCriterionPropertyGroup>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>TenderingCriterionProperty-1</cbc:ID>
+        <cbc:Description languageID="en">Is the economic operator enrolled in a trade register?</cbc:Description>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterionResponse>
-    <cbc:ValidatedCriterionPropertyID>ValidatedCriterionPropertyID-1</cbc:ValidatedCriterionPropertyID>
+    <cbc:ValidatedCriterionPropertyID>TenderingCriterionProperty-1</cbc:ValidatedCriterionPropertyID>
     <cac:ResponseValue>
-      <cbc:Response>X</cbc:Response>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
     </cac:ResponseValue>
   </cac:TenderingCriterionResponse>
 </QualificationApplicationResponse>
