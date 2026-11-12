@@ -113,7 +113,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # document as a whole"; the sibling DocumentReference says which
         # document, the code is the answer ("the type of response"). Its code
         # list is left to the code-list layer, like the other required codes.
-        "ResponseType": {"cbc:ResponseCode"}}
+        "ResponseType": {"cbc:ResponseCode"},
+        # LocationType: only ActivityOriginLocation so far, one particular
+        # place, so a name (an ID such as a GLN would need a scheme).
+        "LocationType": {"cbc:Name"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

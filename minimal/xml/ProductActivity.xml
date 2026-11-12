@@ -19,7 +19,9 @@
   <cac:SupplyChainActivityDataLine>
     <cbc:ID>X</cbc:ID>
     <cbc:SupplyChainActivityTypeCode>X</cbc:SupplyChainActivityTypeCode>
-    <cac:ActivityOriginLocation/>
+    <cac:ActivityOriginLocation>
+      <cbc:Name>X</cbc:Name>
+    </cac:ActivityOriginLocation>
     <cac:SalesItem>
       <cbc:Quantity>0</cbc:Quantity>
       <cac:Item>
