@@ -3,7 +3,7 @@
   <cbc:ID>TransportExecutionPlan-1</cbc:ID>
   <cac:TransportServiceProviderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Carrier 841</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:Consignment>

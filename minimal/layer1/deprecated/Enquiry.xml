@@ -6,7 +6,7 @@
       <cbc:ID schemeID="0060">990000241</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Requester 241</cbc:Name>
     </cac:PartyName>
   </cac:RequestorParty>
   <cac:ResponderParty>
@@ -14,7 +14,7 @@
       <cbc:ID schemeID="0060">990000242</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Responder 242</cbc:Name>
     </cac:PartyName>
   </cac:ResponderParty>
 </Enquiry>

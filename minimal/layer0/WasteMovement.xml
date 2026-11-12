@@ -4,22 +4,22 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Sender 961</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Receiver 962</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:NotifierParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Notifier 963</cbc:Name>
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:WasteProducerParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Waste Producer 964</cbc:Name>
     </cac:PartyName>
   </cac:WasteProducerParty>
   <cac:Shipment>

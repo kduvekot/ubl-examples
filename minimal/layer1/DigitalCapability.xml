@@ -7,7 +7,7 @@
       <cbc:ID schemeID="0060">990000211</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Business 211</cbc:Name>
     </cac:PartyName>
   </cac:BusinessParty>
   <cac:DigitalProcess>

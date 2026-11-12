@@ -13,7 +13,7 @@
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name languageID="en">Example Endorser 121</cbc:Name>
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
@@ -22,12 +22,12 @@
     </cac:EndorserParty>
     <cac:PreparationParty>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Preparer 122</cbc:Name>
       </cac:PartyName>
     </cac:PreparationParty>
     <cac:IssuerParty>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Issuer 123</cbc:Name>
       </cac:PartyName>
     </cac:IssuerParty>
     <cac:IssuingCountry>
@@ -42,7 +42,7 @@
       <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name languageID="en">Example Endorser 124</cbc:Name>
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>

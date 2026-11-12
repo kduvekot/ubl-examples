@@ -3,7 +3,7 @@
   <cbc:ID>Manifest-1</cbc:ID>
   <cac:SendingLogisticsOperatorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Logistics Operator 471</cbc:Name>
     </cac:PartyName>
   </cac:SendingLogisticsOperatorParty>
 </Manifest>

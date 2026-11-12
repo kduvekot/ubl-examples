@@ -5,12 +5,12 @@
   <cbc:LiabilityAmount currencyID="INR">100</cbc:LiabilityAmount>
   <cac:GuarantorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Guarantor 391</cbc:Name>
     </cac:PartyName>
   </cac:GuarantorParty>
   <cac:InterestedParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Depositor 392</cbc:Name>
     </cac:PartyName>
   </cac:InterestedParty>
 </GuaranteeCertificate>

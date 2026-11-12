@@ -5,14 +5,14 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Contracting Authority 631</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Economic Operator 632</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>

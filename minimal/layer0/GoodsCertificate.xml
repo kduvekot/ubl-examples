@@ -3,7 +3,7 @@
   <cbc:ID>GoodsCertificate-1</cbc:ID>
   <cac:IssuerParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Issuer 361</cbc:Name>
     </cac:PartyName>
   </cac:IssuerParty>
   <cac:Shipment>

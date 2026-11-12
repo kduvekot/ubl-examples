@@ -8,7 +8,7 @@
         <cbc:ID schemeID="0088">9520000007317</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="de">Beispiel Verkäufer 731</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
@@ -17,7 +17,7 @@
       <cbc:ID schemeID="0088">9520000007324</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Bestandsmelder 732</cbc:Name>
     </cac:PartyName>
   </cac:InventoryReportingParty>
   <cac:StockAvailabilityReportLine>

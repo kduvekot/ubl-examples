@@ -4,12 +4,12 @@
   <cbc:GoodsItemPassportID>GoodsItemPassportID-1</cbc:GoodsItemPassportID>
   <cac:ImportingGuarantorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Importing Guarantor 601</cbc:Name>
     </cac:PartyName>
   </cac:ImportingGuarantorParty>
   <cac:ExportingGuarantorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Exporting Guarantor 602</cbc:Name>
     </cac:PartyName>
   </cac:ExportingGuarantorParty>
 </ProofOfReexportationRequest>

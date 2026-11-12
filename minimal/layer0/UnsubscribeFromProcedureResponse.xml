@@ -5,14 +5,14 @@
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="pt">Exemplo Operador Econômico 941</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="pt">Exemplo Órgão Contratante 942</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>

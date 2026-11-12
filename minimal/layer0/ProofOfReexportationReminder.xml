@@ -8,12 +8,12 @@
   </cac:ProofOfReexportationRequestDocumentReference>
   <cac:ImportingGuarantorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Importing Guarantor 591</cbc:Name>
     </cac:PartyName>
   </cac:ImportingGuarantorParty>
   <cac:ExportingGuarantorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Exporting Guarantor 592</cbc:Name>
     </cac:PartyName>
   </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>

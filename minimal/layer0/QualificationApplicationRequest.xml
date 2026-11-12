@@ -5,7 +5,7 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Hatchū Kikan 621</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>

@@ -4,7 +4,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:BusinessParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Business 51</cbc:Name>
     </cac:PartyName>
   </cac:BusinessParty>
 </BusinessInformation>

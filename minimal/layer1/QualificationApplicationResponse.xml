@@ -8,7 +8,7 @@
         <cbc:ID schemeID="0199">999900MINIMAL0063141</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Contracting Authority 631</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
@@ -18,7 +18,7 @@
         <cbc:ID schemeID="0060">990000632</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Economic Operator 632</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>

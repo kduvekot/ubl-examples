@@ -9,7 +9,7 @@
         <cbc:ID schemeID="0199">999900MINIMAL0020170</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Sankasha 201</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>

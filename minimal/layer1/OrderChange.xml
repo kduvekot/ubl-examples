@@ -11,7 +11,7 @@
         <cbc:ID schemeID="0188">3999900000501</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Kōnyūsha 501</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:BuyerCustomerParty>
@@ -21,7 +21,7 @@
         <cbc:ID schemeID="0188">2999900000502</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Hanbaisha 502</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>

@@ -5,13 +5,13 @@
   <cac:RetailerCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Retailer 421</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:RetailerCustomerParty>
   <cac:InventoryReportingParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Inventory Reporter 422</cbc:Name>
     </cac:PartyName>
   </cac:InventoryReportingParty>
   <cac:InventoryReportLine>

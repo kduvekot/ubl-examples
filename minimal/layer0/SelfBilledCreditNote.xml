@@ -5,14 +5,14 @@
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="pt">Exemplo Cliente 701</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="pt">Exemplo Fornecedor 702</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingSupplierParty>

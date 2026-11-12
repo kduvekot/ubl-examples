@@ -4,14 +4,14 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Hatchū Kikan 561</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Jigyōsha 562</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>

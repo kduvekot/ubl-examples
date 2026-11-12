@@ -9,12 +9,12 @@
   </cac:ForecastPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Absender 311</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Empfänger 312</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ForecastLine>

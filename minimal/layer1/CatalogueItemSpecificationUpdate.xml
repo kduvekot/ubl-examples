@@ -10,7 +10,7 @@
       <cbc:ID schemeID="0088">9520000000912</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Provider 91</cbc:Name>
     </cac:PartyName>
   </cac:ProviderParty>
   <cac:ReceiverParty>
@@ -18,7 +18,7 @@
       <cbc:ID schemeID="0088">9520000000929</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Receiver 92</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:CatalogueItemSpecificationUpdateLine>

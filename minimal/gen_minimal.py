@@ -368,6 +368,50 @@ TAX_VALUES = {
 TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consumption tax",
              "IN": "Goods and Services Tax", "ZA": "Value-Added Tax"}
 
+# Party names: "example" + the role, in the locale's language and in Latin
+# script (Japanese in Hepburn romanization), + the party's number k as in its
+# identifier; no legal form (that would claim a registration). The language is
+# stated in languageID (IND6). Translations: not reviewed by native speakers.
+LANG = {"US": "en", "IN": "en", "ZA": "en", "DE": "de", "BR": "pt", "JP": "ja-Latn"}
+EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Mihon"}
+ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
+    "AccountingSupplierParty": ("Supplier", "Lieferant", "Fornecedor", "Kyōkyūsha"),
+    "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Kokyaku"),
+    "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Hanbaisha"),
+    "BuyerCustomerParty": ("Buyer", "Käufer", "Comprador", "Kōnyūsha"),
+    "DespatchSupplierParty": ("Shipper", "Versender", "Expedidor", "Shukkasha"),
+    "DeliveryCustomerParty": ("Consignee", "Warenempfänger", "Destinatário", "Uketorinin"),
+    "RetailerCustomerParty": ("Retailer", "Einzelhändler", "Varejista", "Kourigyōsha"),
+    "InventoryReportingParty": ("Inventory Reporter", "Bestandsmelder", "Informante de Estoque", "Zaiko Hōkokusha"),
+    "ProviderParty": ("Provider", "Anbieter", "Provedor", "Teikyōsha"),
+    "SenderParty": ("Sender", "Absender", "Remetente", "Sōshinsha"),
+    "ReceiverParty": ("Receiver", "Empfänger", "Receptor", "Jushinsha"),
+    "RequestorParty": ("Requester", "Anfragender", "Solicitante", "Iraisha"),
+    "ResponderParty": ("Responder", "Antwortender", "Respondente", "Kaitōsha"),
+    "ParticipantParty": ("Participant", "Teilnehmer", "Participante", "Sankasha"),
+    "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportador", "Unsō Gyōsha"),
+    "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Gyōsha"),
+    "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
+    "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
+    "EconomicOperatorParty": ("Economic Operator", "Wirtschaftsteilnehmer", "Operador Econômico", "Jigyōsha"),
+    "TendererParty": ("Tenderer", "Bieter", "Licitante", "Nyūsatsusha"),
+    "MainQualifyingParty": ("Main Tenderer", "Hauptbieter", "Licitante Principal", "Shu Nyūsatsusha"),
+    "InterestedParty": ("Depositor", "Hinterleger", "Depositante", "Kitakusha"),
+    "GuarantorParty": ("Guarantor", "Bürge", "Garantidor", "Hoshōnin"),
+    "BusinessParty": ("Business", "Unternehmen", "Empresa", "Kigyō"),
+    "ExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
+    "HolderParty": ("Holder", "Inhaber", "Titular", "Shojisha"),
+    "NotifierParty": ("Notifier", "Notifizierender", "Notificante", "Tsūchisha"),
+    "WasteProducerParty": ("Waste Producer", "Abfallerzeuger", "Gerador de Resíduos", "Haikibutsu Haishutsusha"),
+    "CustomsParty": ("Customs", "Zollbehörde", "Alfândega", "Zeikan"),
+    "ImportingGuarantorParty": ("Importing Guarantor", "Einfuhrbürge", "Garantidor de Importação", "Yunyū Hoshōnin"),
+    "ExportingGuarantorParty": ("Exporting Guarantor", "Ausfuhrbürge", "Garantidor de Exportação", "Yushutsu Hoshōnin"),
+    "IssuerParty": ("Issuer", "Aussteller", "Emissor", "Hakkōsha"),
+    "EndorserParty": ("Endorser", "Beglaubiger", "Endossante", "Shōmeisha"),
+    "PreparationParty": ("Preparer", "Ersteller", "Preparador", "Sakuseisha"),
+}
+LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
+
 LAYER1 = {
     "PartyTaxSchemeType": {"cbc:CompanyID"},
     # BR: the CNPJ is "an identifier for the party as registered within a
@@ -534,6 +578,10 @@ def generate(layer, fill, schemes):
         for n, party in enumerate(parties, 1):
             assert n < 10, "value scheme supports at most 9 parties per document"
             k = len(written) * 10 + n
+            lang = LANG[COUNTRY]
+            nm = party.find("{%s}PartyName/{%s}Name" % (CAC, CBC))
+            nm.text = "%s %s %d" % (EXAMPLE[lang], ROLE_NAMES[role(party)][LANG_INDEX[lang]], k)
+            nm.set("languageID", lang)
             pid = party.find("{%s}PartyIdentification/{%s}ID" % (CAC, CBC))
             if pid is not None:
                 s = scheme_for(party)

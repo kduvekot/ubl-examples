@@ -5,12 +5,12 @@
   <cbc:ParentDocumentID>ParentDocumentID-1</cbc:ParentDocumentID>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Absender 11</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Empfänger 12</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:Attachment>

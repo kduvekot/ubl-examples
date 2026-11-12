@@ -12,7 +12,7 @@
         <cbc:ID schemeID="0060">990000521</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="pt">Exemplo Vendedor 521</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
@@ -22,7 +22,7 @@
         <cbc:ID schemeID="0060">990000522</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="pt">Exemplo Comprador 522</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:BuyerCustomerParty>

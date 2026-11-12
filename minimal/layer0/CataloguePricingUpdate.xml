@@ -7,12 +7,12 @@
   </cac:RelatedCatalogueReference>
   <cac:ProviderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Provedor 101</cbc:Name>
     </cac:PartyName>
   </cac:ProviderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Receptor 102</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:CataloguePricingUpdateLine>

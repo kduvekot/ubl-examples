@@ -9,7 +9,7 @@
   </cac:ParentDocumentReference>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Sender 951</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
       <cbc:CompanyID>4000009517</cbc:CompanyID>
@@ -28,7 +28,7 @@
       <cbc:ID schemeID="0060">990000952</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Receiver 952</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
 </UtilityStatement>

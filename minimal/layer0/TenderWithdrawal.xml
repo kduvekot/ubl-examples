@@ -4,13 +4,13 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="de">Beispiel Öffentlicher Auftraggeber 791</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
   <cac:TendererParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Bieter 792</cbc:Name>
     </cac:PartyName>
   </cac:TendererParty>
 </TenderWithdrawal>

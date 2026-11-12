@@ -8,7 +8,7 @@
         <cbc:ID schemeID="0088">9520000004217</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Retailer 421</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:RetailerCustomerParty>
@@ -17,7 +17,7 @@
       <cbc:ID schemeID="0088">9520000004224</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Inventory Reporter 422</cbc:Name>
     </cac:PartyName>
   </cac:InventoryReportingParty>
   <cac:InventoryReportLine>

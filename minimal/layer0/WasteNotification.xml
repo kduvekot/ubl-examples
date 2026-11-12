@@ -4,27 +4,27 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Absender 971</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Empfänger 972</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:NotifierParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Notifizierender 973</cbc:Name>
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:CustomsParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Zollbehörde 974</cbc:Name>
     </cac:PartyName>
   </cac:CustomsParty>
   <cac:WasteProducerParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Abfallerzeuger 975</cbc:Name>
     </cac:PartyName>
   </cac:WasteProducerParty>
   <cac:Shipment>

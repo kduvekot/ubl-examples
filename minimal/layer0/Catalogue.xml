@@ -4,12 +4,12 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:ProviderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Anbieter 71</cbc:Name>
     </cac:PartyName>
   </cac:ProviderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Empfänger 72</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:CatalogueLine>

@@ -8,12 +8,12 @@
   </cac:ActivityPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Sender 571</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Receiver 572</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:SupplyChainActivityDataLine>

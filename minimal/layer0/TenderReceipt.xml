@@ -6,12 +6,12 @@
   <cbc:RegisteredTime>09:30:00-03:00</cbc:RegisteredTime>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Remetente 761</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Receptor 762</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
 </TenderReceipt>

@@ -5,7 +5,7 @@
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Supplier 661</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
         <cbc:CompanyID>000000661</cbc:CompanyID>
@@ -23,7 +23,7 @@
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Customer 662</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
         <cbc:CompanyID>000000662</cbc:CompanyID>

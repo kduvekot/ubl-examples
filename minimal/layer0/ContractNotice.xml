@@ -4,7 +4,7 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Contracting Authority 151</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>

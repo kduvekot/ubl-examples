@@ -8,7 +8,7 @@
         <cbc:ID schemeID="0088">9520000001810</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Shipper 181</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DespatchSupplierParty>
@@ -18,7 +18,7 @@
         <cbc:ID schemeID="0088">9520000001827</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Consignee 182</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DeliveryCustomerParty>

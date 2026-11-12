@@ -3,12 +3,12 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:RequestorParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Anfragender 251</cbc:Name>
     </cac:PartyName>
   </cac:RequestorParty>
   <cac:ResponderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Antwortender 252</cbc:Name>
     </cac:PartyName>
   </cac:ResponderParty>
   <cac:ParentDocumentReference>

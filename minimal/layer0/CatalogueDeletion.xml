@@ -7,12 +7,12 @@
   </cac:DeletedCatalogueReference>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Mihon Jushinsha 81</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ProviderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Mihon Teikyōsha 82</cbc:Name>
     </cac:PartyName>
   </cac:ProviderParty>
 </CatalogueDeletion>

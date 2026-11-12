@@ -5,14 +5,14 @@
   <cac:DeliveryCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Consignee 651</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="en">Example Shipper 652</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DespatchSupplierParty>

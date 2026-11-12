@@ -7,7 +7,7 @@
       <cbc:ID schemeID="0188">4999900000021</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Mihon Sōshinsha 21</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
@@ -15,7 +15,7 @@
       <cbc:ID schemeID="0188">3999900000022</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Mihon Jushinsha 22</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:TenderResult>

@@ -8,12 +8,12 @@
   </cac:ExceptionObservationPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Sender 271</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Receiver 272</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ExceptionNotificationLine>

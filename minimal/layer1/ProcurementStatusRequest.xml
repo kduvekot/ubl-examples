@@ -7,7 +7,7 @@
         <cbc:ID schemeID="0188">9999900000561</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Hatchū Kikan 561</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
@@ -17,7 +17,7 @@
         <cbc:ID schemeID="0188">8999900000562</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Mihon Jigyōsha 562</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>

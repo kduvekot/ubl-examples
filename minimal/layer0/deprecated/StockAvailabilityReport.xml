@@ -5,13 +5,13 @@
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name languageID="de">Beispiel Verkäufer 731</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:InventoryReportingParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="de">Beispiel Bestandsmelder 732</cbc:Name>
     </cac:PartyName>
   </cac:InventoryReportingParty>
   <cac:StockAvailabilityReportLine>

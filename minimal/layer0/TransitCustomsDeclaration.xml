@@ -3,7 +3,7 @@
   <cbc:ID>TransitCustomsDeclaration-1</cbc:ID>
   <cac:CustomsParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Customs 831</cbc:Name>
     </cac:PartyName>
   </cac:CustomsParty>
 </TransitCustomsDeclaration>

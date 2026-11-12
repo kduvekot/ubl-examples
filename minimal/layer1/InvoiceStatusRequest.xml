@@ -4,7 +4,7 @@
   <cbc:RequestDate>2026-08-12</cbc:RequestDate>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Mihon Sōshinsha 441</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
       <cbc:CompanyID>T5999900000441</cbc:CompanyID>
@@ -20,7 +20,7 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Mihon Jushinsha 442</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
       <cbc:CompanyID>T4999900000442</cbc:CompanyID>

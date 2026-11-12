@@ -7,7 +7,7 @@
       <cbc:ID schemeID="0088">9520000009915</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Sender 991</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
@@ -15,7 +15,7 @@
       <cbc:ID schemeID="0088">9520000009922</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>X</cbc:Name>
+      <cbc:Name languageID="en">Example Receiver 992</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:Shipment>
