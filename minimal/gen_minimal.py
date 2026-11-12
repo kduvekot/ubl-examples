@@ -172,6 +172,9 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # "the logical state of the discrete activity": an event announced
                # two weeks ahead, nothing about a proposal or agreement
                "RetailEventStatusCode": "PLANNED",
+               # the services the document type names (electricity, gas, water,
+               # telephone); a later layer with consumption must match (KWH)
+               "UtilityStatementTypeCode": "ELECTRICITY",
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
                "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR"}
 
