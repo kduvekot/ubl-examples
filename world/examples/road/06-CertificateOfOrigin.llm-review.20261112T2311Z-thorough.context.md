@@ -32,16 +32,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) drop the insurance endorsement from the application and add it, if at all, after issue (preferred: the application stage has only the applicant's signature); (b) number the insurer 1 and the chamber 2 if the insurer endorses first in the world's procedure.
 - Needs decision: no
 
-### road/06#F2 · Medium · The exporter's application carries the chamber's certificate number as its ID
-- XPath: `/CertificateOfOrigin/cbc:ID` = `FCC-CO-26-0157`
-- XPath: `/CertificateOfOrigin/cac:Signature/cbc:ID` = `VI-SIG-CO-06`
-- XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cbc:ApplicationStatusCode` = `SUBMITTED`
-- Why: `ID` is "An identifier for this document, assigned by the sender". This instance is the exporter's submitted application (signed by Valdara, issuer endorsement pending), so its sender is Valdara, yet its ID is in the Ferrano Chamber of Commerce's certificate numbering (`FCC-CO-…`), the number of the certificate the chamber issues two days later (`07-CertificateOfOrigin.xml:/CertificateOfOrigin/cbc:ID` = `FCC-CO-26-0157`). Either the chamber assigned the number before receiving the application, or the sender's ID is not the sender's.
-- Condition: the ID of the submitted application is assigned by its sender (Valdara), and the chamber's certificate number appears where the chamber has assigned it (the issued certificate and its endorsement).
-- Options: (a) give the application a Valdara document ID and keep `FCC-CO-26-0157` for the issued certificate (preferred); (b) state in the story that the chamber pre-assigns certificate numbers to applicants, and say so in a note.
-- Needs decision: yes
-
-### road/06#F3 · High · Lifecycle stage code says manufacturing only, its text says cradle to gate
+### road/06#F2 · High · Lifecycle stage code says manufacturing only, its text says cradle to gate
 - XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Shipment/cac:GoodsItem[1]/cac:Item/cac:EnvironmentalEmission/cbc:LifecycleStageCode` = `MANUFACTURING`
 - XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Shipment/cac:GoodsItem[1]/cac:Item/cac:EnvironmentalEmission/cbc:LifecycleStageDescription` = `From the ore at the mine to the bench leaving the factory gate.`
 - XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Shipment/cac:GoodsItem[1]/cac:Item/cac:EnvironmentalEmission/cbc:Description` = `Mining, steel making, casting, galvanising, sawing and the transport between them.`
@@ -49,6 +40,15 @@ review only describes what is wrong; it does not say where or how the example is
 - Condition: the lifecycle stage code and text name the same stage(s), and the emission figure covers exactly what they name.
 - Options: (a) keep the cradle-to-gate figure and state the stage in text only, or with a code covering A1 to A3 if the world list gets one (preferred: the figure is a cradle-to-gate figure); (b) keep `MANUFACTURING` and reduce figure, text and description to module A3.
 - Needs decision: no
+
+### road/06#F3 · Medium · The exporter's application carries the chamber's certificate number as its ID
+- XPath: `/CertificateOfOrigin/cbc:ID` = `FCC-CO-26-0157`
+- XPath: `/CertificateOfOrigin/cac:Signature/cbc:ID` = `VI-SIG-CO-06`
+- XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cbc:ApplicationStatusCode` = `SUBMITTED`
+- Why: `ID` is "An identifier for this document, assigned by the sender". This instance is the exporter's submitted application (signed by Valdara, issuer endorsement pending), so its sender is Valdara, yet its ID is in the Ferrano Chamber of Commerce's certificate numbering (`FCC-CO-…`), the number of the certificate the chamber issues two days later (`07-CertificateOfOrigin.xml:/CertificateOfOrigin/cbc:ID` = `FCC-CO-26-0157`). Either the chamber assigned the number before receiving the application, or the sender's ID is not the sender's.
+- Condition: the ID of the submitted application is assigned by its sender (Valdara), and the chamber's certificate number appears where the chamber has assigned it (the issued certificate and its endorsement).
+- Options: (a) give the application a Valdara document ID and keep `FCC-CO-26-0157` for the issued certificate (preferred); (b) state in the story that the chamber pre-assigns certificate numbers to applicants, and say so in a note.
+- Needs decision: yes
 
 ### road/06#F4 · Medium · FullnessIndicationCode carries the emission system boundary
 - XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Shipment/cac:GoodsItem[1]/cac:Item/cac:EnvironmentalEmission/cac:EmissionCalculationMethod/cbc:FullnessIndicationCode` = `CRADLETOGATE`
