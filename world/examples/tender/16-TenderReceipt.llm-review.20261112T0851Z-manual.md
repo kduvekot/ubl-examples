@@ -1,5 +1,15 @@
 # LLM review: 16-TenderReceipt.xml
 
+## Reviewed version
+- Run: `20261112T0851Z-manual` (a manual review, made before the skill existed; layout differs from the skill's)
+- Example: `world/examples/tender/16-TenderReceipt.xml`, Git blob `947d3f76ed323067f1f47b34b36a7e5cfb559573` (committed)
+- Last commit changing the example: d9001cd 2026-11-11 Correction pass: Rec 28, airline designator, source texts, DG and CPC checks, distribution, text partners, fillers
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 9f79ecd 2026-11-12 Publish workflow: publish only while the commit is still the head of main
+- Skill: none · Register: none
+- Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
+- Corrections: occurrence counts corrected in 12fd4c1, and findings corrected after an independent
+  verification in c4e112d (before the rule that reviews are never changed)
+
 Reviewed file: [16-TenderReceipt.xml](16-TenderReceipt.xml) · Flow: `tender` (`TENDER-2026-01`) · Review date: 2026-11-12
 
 **Basis.** The semantic model of UBL 2.5 (`UBL-Entities-2.5.gc` from

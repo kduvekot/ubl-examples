@@ -1,5 +1,15 @@
 # LLM review: 09-Invoice.xml
 
+## Reviewed version
+- Run: `20261112T0851Z-manual` (a manual review, made before the skill existed; layout differs from the skill's)
+- Example: `world/examples/utilities/09-Invoice.xml`, Git blob `7cd9491648e6900bee7fbff08c94ab75ece18c8d` (committed)
+- Last commit changing the example: d920be0 2026-11-11 Document identification: computed UBLVersionID, transaction CustomizationIDs, process profiles
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 9f79ecd 2026-11-12 Publish workflow: publish only while the commit is still the head of main
+- Skill: none · Register: none
+- Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
+- Corrections: occurrence counts corrected in 12fd4c1, and findings corrected after an independent
+  verification in c4e112d (before the rule that reviews are never changed)
+
 Reviewed file: [09-Invoice.xml](09-Invoice.xml) · Flow: `utilities` (`UTILITIES-2026-01`) · Review date: 2026-11-12
 
 **Basis.** The semantic model of UBL 2.5 (`UBL-Entities-2.5.gc` from

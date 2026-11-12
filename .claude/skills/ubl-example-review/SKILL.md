@@ -1,6 +1,6 @@
 ---
 name: ubl-example-review
-description: Semantic review of the generated UBL 2.5 examples in world/examples against the UBL 2.5 model (UBL-Entities-2.5.gc). Checks whether each value fits the meaning of its element, its parent aggregates and the document, whether values are consistent with each other and with the documents they refer to, and writes NN-DocumentType.llm-review.md next to each example that has findings. Use when asked to review one example, a flow, or all examples. Not for fixing the examples, and not for the cross-flow consistency review (timelines, capacity, equipment locations).
+description: Semantic review of the generated UBL 2.5 examples in world/examples against the UBL 2.5 model (UBL-Entities-2.5.gc). Checks whether each value fits the meaning of its element, its parent aggregates and the document, whether values are consistent with each other and with the documents they refer to, and writes NN-DocumentType.llm-review.<run-id>[.<part>].md next to each example that has findings, never overwriting earlier reviews. Use when asked to review one example, a flow, or all examples. Not for fixing the examples, and not for the cross-flow consistency review (timelines, capacity, equipment locations).
 argument-hint: "[<flow>/<NN-DocumentType> | <flow> | all] [--quick | --focus money|parties|logistics | --merge]"
 ---
 
@@ -18,7 +18,9 @@ flows with their number of XML examples and their number of existing `*.llm-revi
 > checks whether every value fits the meaning UBL 2.5 gives the element (in the context of its
 > parent aggregates and the document), whether values contradict each other, and whether
 > references to other examples resolve and make sense. Findings go into
-> `NN-DocumentType.llm-review.md` next to the example; examples without findings get no file.
+> `NN-DocumentType.llm-review.<run-id>[.<part>].md` next to the example; examples without findings
+> get no file. Every run has its own run ID, and earlier reviews are never changed, so every review
+> ever done stays visible, each with the exact version of the example it reviewed.
 > Patterns found in many examples are described once in `world/examples/recurring.llm-review.md`.
 >
 > Usage:
@@ -43,6 +45,8 @@ Use:
   download them from docs.oasis-open.org and verify the model's SHA-256.
 - The code lists in `world/codelists/`, only to read what a code means.
 - `world/examples/recurring.llm-review.md`, the register of recurring patterns (section 7).
+- Earlier reviews (`*.llm-review.*.md`) are not read: each run is an independent look. The only
+  exception is the merge of a thorough run, which reads the parts of its own run ID.
 - Your own knowledge of the standards involved (UBL, UN/CEFACT, ISO, IMO, IATA, ADR, IHR, ATA,
   tax practice, etc.). Say so when a finding rests on it.
 
@@ -70,6 +74,8 @@ need `lxml`.
   and ISO 6346 container numbers.
 - `check_xpaths.py <review.md> …`: every XPath cited in a review resolves in its example; paths
   into other examples are checked against the examples of the same flow.
+- `review_meta.py run-id <kind>` creates a run ID; `review_meta.py header <run-id> <example.xml>`
+  prints the "Reviewed version" block every review carries (section 8).
 - `count_patterns.py [R<n> …] [--list]`: counts each registered recurring pattern over all XML
   examples with its exact rule; `--list` gives every occurrence with its XPath. Use it to list a
   pattern's occurrences in the example under review and to keep the register's counts current.
@@ -98,6 +104,8 @@ enough.
    7): an occurrence of a registered pattern is listed under its ID, not as a finding.
 
 Then write the review (section 8), or decide there are no findings, and run `check_xpaths.py` on it.
+A quick run creates its run ID first (`review_meta.py run-id quick`) and writes
+`NN-DocumentType.llm-review.<run-id>.md`; a thorough run is described below.
 
 ### One flow
 
@@ -122,15 +130,18 @@ index and your findings are enough.
 One broad run finds about two thirds of what several independent runs find together, and a second
 identical run adds little: it notices the same things and misses the same things. A thorough review
 therefore combines runs that look differently. It is the default; `--quick` does the broad run only
-and writes its result directly as the review.
+and writes one file, `NN-DocumentType.llm-review.<run-id>.md`.
 
-1. **Broad run.** The three passes above, writing `NN-DocumentType.llm-review.broad.md` (same
-   layout as section 8).
+Start by creating one run ID for the whole run (`review_meta.py run-id thorough`). Every part of
+the run writes its own file, named with that run ID and the part, and every file stays.
+
+1. **Broad run.** The three passes above, writing `NN-DocumentType.llm-review.<run-id>.broad.md`.
 2. **Focused runs** (`--focus <lens>`), one per lens. The same three passes, but section 4 and the
    checklist are applied to every element of the lens without exception, including the ones that
    look fine at first sight, and pass 2 follows every object of the lens into every other example
    of the flow that carries it. Ignore everything outside the lens. Each writes
-   `NN-DocumentType.llm-review.<lens>.md`. Do not read the broad run's file or another lens's file.
+   `NN-DocumentType.llm-review.<run-id>.<lens>.md`. Do not read the broad run's file or another
+   lens's file.
    - **money**: amounts, prices, base quantities, allowances and charges and their conditions,
      taxes (category, rate, exemption reason, supply type, territory), monetary totals, payment
      means, accounts, mandates, payment terms and penalties, prepayments and payments on account,
@@ -145,20 +156,24 @@ and writes its result directly as the review.
      purpose needs (section 4.3), dates and times against the issue time, transport events and the
      stage they are in, consignments, shipments, goods items, packages, handling units, equipment,
      vehicles, places, dangerous goods data, and every code against its list and its element.
-3. **Merge and verify** (`--merge`). Read the broad and focused files of the example and:
+3. **Merge and verify** (`--merge <run-id>`). Read the broad and focused files of the example with
+   this run ID (no other reviews) and:
    - combine findings that describe the same problem (same XPath, or the same condition), keeping
      the clearest wording, all evidence, and the severity that section 6 justifies;
    - verify every finding again independently: open the XML and the referenced examples, check
      the definition, redo the arithmetic, and try to prove it wrong. Drop what does not survive,
      correct what partly survives;
    - list the occurrences of registered patterns (`count_patterns.py --list`, each checked);
-   - renumber, write `NN-DocumentType.llm-review.md` (section 8), run `check_xpaths.py`, and delete
-     the working files `NN-DocumentType.llm-review.<run>.md`;
-   - report which findings were dropped or changed, and why.
+   - number the findings, write `NN-DocumentType.llm-review.<run-id>.merged.md` (section 8) and
+     run `check_xpaths.py`. Leave the part files as they are;
+   - keep a finding that one run makes and you cannot confirm or refute with certainty, as Low with
+     "Needs decision: yes" and both arguments, rather than dropping it;
+   - in the merged file, list under "Dropped in the merge" each finding of the parts you dropped or
+     changed, with the reason, so the decision can be checked.
 
-For a flow or `all`, run the four runs as separate subagents per flow (they may run in parallel),
-then one merge subagent per flow. A subagent never sees another run's working files, except the
-merge.
+For a flow or `all`, run the four parts as separate subagents per flow (they may run in parallel),
+all with the same run ID, then one merge subagent per flow. A subagent never sees another part's
+file, except the merge.
 
 ## 4. What to check
 
@@ -281,8 +296,17 @@ or one flow, do not add patterns to the register; report candidates to the user 
 ## 8. Review file
 
 Write a review only for an example with findings or occurrences of registered patterns. Name it
-after the XML, in the same folder: `NN-DocumentType.xml` → `NN-DocumentType.llm-review.md`.
-Re-reviewing replaces the file.
+after the XML, in the same folder: `NN-DocumentType.xml` →
+`NN-DocumentType.llm-review.<run-id>.md` for a single-part run, or
+`NN-DocumentType.llm-review.<run-id>.<part>.md` (part: broad, money, parties, logistics, merged)
+for a thorough run. Never change or delete an existing review: a new run writes new files.
+
+The run ID is the UTC start time and the kind of run, e.g. `20261112T1430Z-thorough`; create it
+with `review_meta.py run-id <kind>` once per run and use it for every example of the run. Below the
+title, every review carries the block `review_meta.py header <run-id> <example.xml>` prints: the run,
+the example's Git blob and whether it is committed, the last commit changing it, the checkout's
+branch and commit, the skill's version and the register's version. Generate it when you start the
+review of that example, before anything can change.
 
 XPaths are absolute, with `cac:`/`cbc:` prefixes, the root element without prefix, and position
 predicates (`[2]`) where an element repeats. A finding may cite elements of another example by its
@@ -291,7 +315,9 @@ file name and XPath. Cite values exactly.
 ```
 # LLM review: NN-DocumentType.xml
 
-Flow: <flow> (<ProfileExecutionID>) · Review date: <YYYY-MM-DD> · Basis: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
+Flow: <flow> (<ProfileExecutionID>) · Review date: <YYYY-MM-DD> · Part: <broad|money|parties|logistics|merged|single>
+
+<the "Reviewed version" block from review_meta.py>
 
 ## What is expected
 Resolve each finding so that its condition holds. Findings marked "Needs decision: yes" are
@@ -315,6 +341,9 @@ example is produced.
 ## Checked and consistent
 - <what you verified and found correct, especially references, arithmetic and check digits>
 
+## Dropped in the merge   (merged files only)
+- <part>/F<n> <title>: dropped | changed to <…>, because <reason>
+
 ## Outside this review
 - <problems that lie entirely in other examples, and timeline, capacity or location questions
   across documents and flows (section 4); contradictions with other examples are findings, not
@@ -330,5 +359,6 @@ needs to understand the problem.
   against those examples.
 - Every referenced example you name exists, and every value you quote is in the XML.
 - Every count is over `*.xml` only and states how it was made.
+- Every review file has the "Reviewed version" block, and no earlier review was changed.
 - Report to the user: the examples reviewed, how many got a review, the number of findings by
   severity, candidate new patterns, and anything you could not check.
