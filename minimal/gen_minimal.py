@@ -181,7 +181,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
 # roles (Sender, Receiver, Seller, Buyer) follow the document's domain.
 # A key "Document/Role" overrides the key "Role".
 # Roles not listed (authorities, chambers of commerce, certificate issuers)
-# are identified by name only: no scheme has a real reason there yet.
+# are identified by name only: no scheme has a real reason there yet. So is
+# the CoO PreparationParty: "normally an individual, a group or a body", who
+# may have no tax or company number.
 GLN, LEI, DUNS, TAX = "0088", "0199", "0060", "TAX"
 PARTY_SCHEMES = {
     # tax and accounting: the tax registration is what matters on a bill
