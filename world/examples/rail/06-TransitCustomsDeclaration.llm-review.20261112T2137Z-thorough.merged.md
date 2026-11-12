@@ -261,6 +261,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: yes
 - From: merge
 
+### rail/06#F26 · Low · Item number that is a valid GTIN-12
+- XPath: `/TransitCustomsDeclaration/cac:Shipment/cac:GoodsItem/cac:Item/cac:StandardItemIdentification/cbc:ID` = `771020000027`
+- Why: Not raised by any part of this run; added by the merge to align with the merge of rail 01 (F15) and with plastics, where the same kind of value is a finding. The world-scheme item number (schemeID `urn:ubl-examples:world:item`) has twelve digits whose last is a valid GS1 check digit (merge calculation: weights 3-1 from the right over 77102000002 give 7), so it is a well-formed GTIN-12 in the UPC range (prefix 7, own knowledge: GS1 US), which could be mistaken for a real GS1 key. The same value is in 39 example files (`grep -rl --include='*.xml' '771020000027' world/examples | wc -l`). The rail 01 broad part refuted it there (world scheme, Code128 symbology); whether the format is a problem is for the owner.
+- Condition: The world's item numbers cannot be mistaken for real GS1 keys (a non-GTIN format, or a check digit that fails), or the sources record that the value is not assigned.
+- Options: (a) preferred: a world item-number format that is not a valid GTIN; (b) record a GS1 verification in the sources.
+- Needs decision: yes
+- From: merge
+
 ## Checked and consistent
 - References: `FRC-TEP-26-0328` resolves to 03; consignment VI-CS-26-0327, shipment VI-SH-26-0332, containers FRXU1044175 and FRXU1044180 (45G1, FCL, 7884 kg), seals XU-VI-30411 and XU-VI-30412 (shipper, intact) agree with the waybill (08), which refers to this declaration (`08-Waybill.xml:/Waybill/cac:Shipment/cac:Consignment/cac:TransportHandlingUnit[1]/cac:CustomsDeclaration/cbc:ID` = `VI-TD-26-0331`).
 - Goods: 192 benches, value 9 580 800 XUF = 192 × 49 900 (= order 01 and invoice 11), HS 940179 under section XX, national tariff 94017910, origin XU; NatureOfTransactionCode PURCHASE fits the sale of 01 and 11; currency XUF is that of the sale and of the declaring country.
@@ -305,6 +313,7 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F16 + parties/F7, F8 → F20: combined.
 - parties/F9, context/F11, broad/F15 (party part) → F23; broad/F15 (item part), context/F9 → F24: broad/F15 split into party and item data, as in the earlier flows.
 - F25 added by the merge (registration date 1996-01-01), for consistency with rail 01–05 and earlier flows.
+- F26 added by the merge (GTIN-like item number), to align with rail 01 F15 and plastics.
 
 ## Outside this review
 - Timeline: the declaration placing the goods under transit is issued on 14 April at 17:29, but the train left the office of departure (the hub) at 06:52 that morning (05, 08), and the waybill issued at 13:10 already cites its number (raised as a reference finding in the merged review of 08). Transit has to be declared before departure; which time is wrong is for the cross-document review. (from broad, logistics, context)

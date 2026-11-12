@@ -123,6 +123,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: yes
 - From: parties (F4)
 
+### rail/11#F12 · Low · Item number that is a valid GTIN-12
+- XPath: `/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID` = `771020000027`
+- Why: Not raised by any part of this run; added by the merge to align with the merge of rail 01 (F15) and with plastics, where the same kind of value is a finding. The world-scheme item number (schemeID `urn:ubl-examples:world:item`) has twelve digits whose last is a valid GS1 check digit (merge calculation: weights 3-1 from the right over 77102000002 give 7), so it is a well-formed GTIN-12 in the UPC range (prefix 7, own knowledge: GS1 US), which could be mistaken for a real GS1 key. The same value is in 39 example files (`grep -rl --include='*.xml' '771020000027' world/examples | wc -l`). The rail 01 broad part refuted it there (world scheme, Code128 symbology); whether the format is a problem is for the owner.
+- Condition: The world's item numbers cannot be mistaken for real GS1 keys (a non-GTIN format, or a check digit that fails), or the sources record that the value is not assigned.
+- Options: (a) preferred: a world item-number format that is not a valid GTIN; (b) record a GS1 verification in the sources.
+- Needs decision: yes
+- From: merge
+
 ## Checked and consistent
 - Arithmetic (recalculated in the merge): 192 × 49 900 = 9 580 800 XUF = line, LineExtension, TaxExclusive, Taxable, TaxInclusive and Payable amounts (tax 0 under G/EXP); settlement discount 2 % × 9 580 800 = 191 616; settlement period 17 to 27 April = 10 days; due 17 May in DueDate, PaymentMeans and PaymentTerms; penalty 8 % a year.
 - Reference `LD-PO-26-0325` resolves to the order 01; order line 1, quantity 192, price 49 900 XUF, item VI-B180 (GRY, 771020000027) and classifications agree with 01 and 06; 192 benches = the consignment of 02, 03, 06, 08; buyer and seller are the order's parties; the buyer's accounting code 4410 "Stock purchases" is the one from the order and fits a wholesaler.
@@ -156,3 +164,4 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F8 split: item part → F8 (with context/F6), party part → F9 (with parties/F6, context/F7), as in 06.
 - broad/F9 split: customer part → F10 (with parties/F5); supplier part → "Refuted in the merge".
 - parties/F4 → F11: count replaced by 217 in 102 files.
+- F12 added by the merge (GTIN-like item number), to align with rail 01 F15 and plastics.
