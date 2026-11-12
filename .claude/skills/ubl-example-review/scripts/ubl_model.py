@@ -34,9 +34,12 @@ def cache_dir():
 
 
 def _fetch(url, dest):
+    """Download once; write to a temporary name first so a parallel run never reads a partial file."""
     if not dest.exists():
         print(f'downloading {url}', file=sys.stderr)
-        urllib.request.urlretrieve(url, dest)
+        tmp = dest.with_name(f'{dest.name}.{os.getpid()}.part')
+        urllib.request.urlretrieve(url, tmp)
+        os.replace(tmp, dest)
 
 
 def model_path():

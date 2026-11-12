@@ -41,7 +41,7 @@ given; only clashes with real standards are flagged.
   world has locale-level tags: the receiver's address uses `languageID="en-XB"`.
 - **Suggestion:** `LocaleCode` = `en-XB` with a listID for BCP 47 / IETF language
   tags. Otherwise, omit the element.
-- **Recurring:** `LocaleCode listID="ISO 639">en` occurs 728 times in `world/examples`.
+- **Recurring:** `LocaleCode listID="ISO 639">en` occurs 362 times in 213 examples.
 
 ### 2. Address renderings tagged as English are Italian, and differ from the Tender (Medium, recurring)
 
@@ -61,7 +61,7 @@ given; only clashes with real standards are flagged.
 - **Suggestion:** Tag the second rendering with the language it is actually in.
   Alternatively, provide a genuine English rendering ("Workshops Street"). Keep the
   same tag as in the Tender.
-- **Recurring:** `languageID="en-XB">Via delle Officine` occurs 62 times and `en-XU` 98 times
+- **Recurring:** `languageID="en-XB">Via delle Officine` occurs 31 times and `en-XU` 49 times
   in `world/examples`. Similar cases include `Viale della Stazione` and `Via del Terminal`.
 
 ### 3. `Region` holds a province (Medium, recurring)
@@ -79,7 +79,7 @@ given; only clashes with real standards are flagged.
 - **Suggestion:** Move the value to `cbc:CountrySubentity`, and to `cbc:CountrySubentityCode` if
   Urvania's list has a code for the province. Leave `Region` out, or use it for a real
   supra-national region.
-- **Recurring:** `Region>Province of Ferrano` occurs 390 times in `world/examples`.
+- **Recurring:** `Region>Province of Ferrano` occurs 195 times in 104 examples.
 
 ### 4. A municipal department described as a company (Low)
 

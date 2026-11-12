@@ -144,7 +144,7 @@ given; only clashes with real standards are flagged.
 - **UBL definition:** *Language. Locale Code*: "A code signifying the locale in which this language is used."
 - **Why it does not fit:** The value repeats `Language/cbc:ID`. A locale is a language
   plus a region (e.g. `en-XB`), and ISO 639 is a list of languages.
-- **Recurring:** 728 occurrences in `world/examples`.
+- **Recurring:** 362 occurrences in 213 examples.
 
 ## References checked and consistent
 

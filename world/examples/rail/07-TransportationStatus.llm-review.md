@@ -147,7 +147,7 @@ given; only clashes with real standards are flagged.
     Italian with an English gloss, yet tagged as English.
 - **Suggestion:** Move the province to `CountrySubentity`. Tag the renderings with their
   real language, or provide real English renderings.
-- **Recurring:** The `Region` pattern occurs 390 times. Italian-as-English addresses
+- **Recurring:** The `Region` pattern occurs 195 times in 104 examples. Italian-as-English addresses
   occur in all documents with Urvanian parties.
 
 ### 7. Instruction about a delivery slot sent to the carrier by the terminal (Low)
@@ -192,7 +192,7 @@ given; only clashes with real standards are flagged.
 - **UBL definition:** *Party Legal Entity. Registration Date*: "The registration date of the CompanyID."
 - **Why it does not fit:** Two different companies registered on the same New Year's Day
   reads as a default value rather than a registration date. It is not wrong in itself.
-- **Recurring:** `RegistrationDate>1996-01-01` occurs 542 times in `world/examples`.
+- **Recurring:** `RegistrationDate>1996-01-01` occurs 271 times in 181 examples.
 
 ## References checked and consistent
 

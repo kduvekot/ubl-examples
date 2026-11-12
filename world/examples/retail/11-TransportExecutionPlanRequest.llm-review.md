@@ -91,7 +91,7 @@ given; only clashes with real standards are flagged.
     subsidiary to this location"), or `Location/cbc:Description`.
 - **Suggestion:** Remove it from `PostalAddress`. In `FromLocation`, use
   `cac:SubsidiaryLocation/cbc:Name` = `Gate 3` (or the Location's `cbc:Description`).
-- **Recurring:** `AdditionalStreetName>Gate 3` occurs 158 times in `world/examples`.
+- **Recurring:** `AdditionalStreetName>Gate 3` occurs 79 times in 76 examples.
 
 ### 4. The consignee's contact contradicts itself (Medium)
 
@@ -165,7 +165,7 @@ given; only clashes with real standards are flagged.
 - **UBL definition:** *Language. Locale Code*: "A code signifying the locale in which this language is used."
 - **Why it does not fit:** The value repeats `Language/cbc:ID` and names a language, not a
   locale (language plus region, e.g. `en-XB`). ISO 639 is a list of languages.
-- **Recurring:** 728 occurrences in `world/examples`.
+- **Recurring:** 362 occurrences in 213 examples.
 
 ## References checked and consistent
 
