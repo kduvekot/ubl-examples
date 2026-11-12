@@ -36,11 +36,39 @@ endorsed = {os.path.basename(f) for f in glob.glob(os.path.join(UBL, "endorsed",
 VALUES = {
     "AmountType": "0", "BinaryObjectType": "AA==", "GraphicType": "AA==",
     "PictureType": "AA==", "SoundType": "AA==", "VideoType": "AA==",
-    "CodeType": "X", "DateTimeType": "2000-01-01T00:00:00", "DateType": "2000-01-01",
+    "CodeType": "X", "DateTimeType": "2026-08-12T00:00:00", "DateType": "2026-08-12",
     "TimeType": "00:00:00", "IdentifierType": "X", "IndicatorType": "true",
     "MeasureType": "0", "NumericType": "0", "ValueType": "0", "PercentType": "0",
     "RateType": "0", "QuantityType": "0", "TextType": "X", "NameType": "X",
 }
+# Dates: D = 2026-08-12, the publication date of the UBL 2.5 OASIS Standard
+# (its pubdate), after every identifier scheme used in the set started.
+# Where D does not fit the context, an offset in days from D, chosen from the
+# element's definition. Key: "Document:Parent/Element", "Parent/Element".
+import datetime
+D = datetime.date(2026, 8, 12)
+DATE_OFFSETS = {
+    "AwardDate": -3, "ResolutionDate": -3,      # decided before the notice
+    "SourceForecastIssueDate": -7,               # the revised forecast came first
+    "ForecastPeriod/StartDate": 7, "ForecastPeriod/EndDate": 34,   # the future
+    # observed or reported: before the issue date
+    "ExceptionObservationPeriod/StartDate": -28, "ExceptionObservationPeriod/EndDate": -1,
+    "ActivityPeriod/StartDate": -28, "ActivityPeriod/EndDate": -1,
+    "ItemInformationRequest:Period/StartDate": -28, "ItemInformationRequest:Period/EndDate": -1,
+    # valid or effective from the issue date, for a year
+    "ValidityPeriod/EndDate": 364, "EffectivePeriod/EndDate": 364,
+    "TradeItemLocationProfile:Period/EndDate": 364,
+    # an announced retail event
+    "RetailEvent:Period/StartDate": 14, "RetailEvent:Period/EndDate": 20,
+}
+
+def date_for(parent, name):
+    pn = etree.QName(parent).localname
+    for key in (DOC + ":" + pn + "/" + name, pn + "/" + name, name):
+        if key in DATE_OFFSETS:
+            return (D + datetime.timedelta(days=DATE_OFFSETS[key])).isoformat()
+    return D.isoformat()
+
 # mimeCode: AA== is one zero byte, honestly "arbitrary binary data" (in UBL's
 # default BinaryObjectMimeCode list). Open point: a single zero byte is close
 # to a null value (IND5); a later layer embeds real content.
@@ -351,7 +379,7 @@ def build(parent, el_decl):
     t = find("complexType", tns, tname)
     if t.find(X + "simpleContent") is not None:
         u = udt_name(tns, tname)
-        e.text = VALUES[u]
+        e.text = date_for(parent, el_decl.get("name")) if u == "DateType" else VALUES[u]
         attrs = {}
         cur_ns, cur = tns, tname
         while True:  # collect required attributes along the derivation chain

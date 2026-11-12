@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TradeItemLocationProfile xmlns="urn:oasis:names:specification:ubl:schema:xsd:TradeItemLocationProfile-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>X</cbc:ID>
-  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:Period>
-    <cbc:StartDate>2000-01-01</cbc:StartDate>
-    <cbc:EndDate>2000-01-01</cbc:EndDate>
+    <cbc:StartDate>2026-08-12</cbc:StartDate>
+    <cbc:EndDate>2027-08-11</cbc:EndDate>
   </cac:Period>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -24,8 +24,8 @@
   </cac:ReceiverParty>
   <cac:ItemManagementProfile>
     <cac:EffectivePeriod>
-      <cbc:StartDate>2000-01-01</cbc:StartDate>
-      <cbc:EndDate>2000-01-01</cbc:EndDate>
+      <cbc:StartDate>2026-08-12</cbc:StartDate>
+      <cbc:EndDate>2027-08-11</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:Item>
       <cbc:Description>X</cbc:Description>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WeightStatement xmlns="urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>X</cbc:ID>
-  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="0088">9520000009915</cbc:ID>
