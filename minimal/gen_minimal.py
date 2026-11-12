@@ -141,14 +141,62 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
 
 # Layers: (folder, additions {aggregate type: optional children}). Each layer
 # includes everything of the layers before it.
-LAYERS = [("layer0", FILL)]
+# Layer 1: identification of parties, by role (the context decides the
+# scheme; several schemes per document where the roles differ).
+# - An ISO/IEC 6523 ICD code (official ICD list, Farance Inc. for ISO/IEC,
+#   2026-07-26) goes in PartyIdentification/ID/@schemeID: 0088 GLN (as GS1's
+#   ratified ICD 0209 standard prescribes), 0199 LEI, 0060 D-U-N-S.
+# - "TAX": the national tax number, in PartyTaxScheme/CompanyID ("assigned for
+#   tax purposes by the taxation authority"); most national numbers have no
+#   ICD, and this element says whose number it is without a schemeID.
+# Roles not listed (authorities, chambers of commerce, certificate issuers)
+# are identified by name only: no scheme has a real reason there yet.
+GLN, LEI, DUNS, TAX = "0088", "0199", "0060", "TAX"
+PARTY_SCHEMES = {
+    # tax and accounting: the tax registration is what matters on a bill
+    "AccountingSupplierParty": TAX, "AccountingCustomerParty": TAX,
+    # trade, supply chain and logistics: GS1 location numbers
+    "SellerSupplierParty": GLN, "BuyerCustomerParty": GLN,
+    "DespatchSupplierParty": GLN, "DeliveryCustomerParty": GLN,
+    "RetailerCustomerParty": GLN, "InventoryReportingParty": GLN,
+    "ProviderParty": GLN, "SenderParty": GLN, "ReceiverParty": GLN,
+    "RequestorParty": GLN, "ResponderParty": GLN, "ParticipantParty": GLN,
+    "TransportServiceProviderParty": GLN, "SendingLogisticsOperatorParty": GLN,
+    "ReporterParty": GLN,
+    # public procurement: the buyer as a legal entity; suppliers as businesses
+    # whose identity and standing buyers verify
+    "ContractingParty": LEI,
+    "EconomicOperatorParty": DUNS, "TendererParty": DUNS,
+    "MainQualifyingParty": DUNS, "InterestedParty": DUNS,
+    # finance: the guarantee creditor (a bank) as a legal entity
+    "GuarantorParty": LEI,
+    # business registration and business cards
+    "BusinessParty": DUNS,
+    # customs and waste: the legally responsible trader, by tax registration
+    "ExporterParty": TAX, "HolderParty": TAX,
+    "NotifierParty": TAX, "WasteProducerParty": TAX,
+}
+LAYER1 = {"PartyType@" + r: {"cac:PartyTaxScheme" if s == TAX else "cac:PartyIdentification"}
+          for r, s in PARTY_SCHEMES.items()}
+LAYER1.update({
+    "PartyTaxSchemeType": {"cbc:CompanyID"},
+    # TaxScheme is required in PartyTaxScheme: the particular tax scheme gets
+    # a name, as other particular things do.
+    "TaxSchemeType": {"cbc:Name"},
+})
+
+# Layers: (folder, additions {aggregate type[@role]: optional children},
+# schemeIDs by role). Each layer includes everything of the layers before it.
+LAYERS = [("layer0", FILL, {}),
+          ("layer1", LAYER1, PARTY_SCHEMES)]
 
 def layer_fills():
-    total = {}
-    for name, add in LAYERS:
+    total, schemes = {}, {}
+    for name, add, sch in LAYERS:
         for t, kids in add.items():
             total[t] = total.get(t, set()) | kids
-        yield name, {t: set(k) for t, k in total.items()}
+        schemes.update(sch)
+        yield name, {t: set(k) for t, k in total.items()}, dict(schemes)
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
@@ -156,6 +204,8 @@ for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path
     schemas.setdefault(r.get("targetNamespace"), []).append(r)
 
 QDT = "urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+CBC = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 
 def qname(node, ref):
     p, _, local = ref.rpartition(":")
@@ -218,6 +268,14 @@ def build(parent, el_decl):
         content(e, t)
     return e
 
+def role(e):
+    """The role an element plays: its own name, or for a Party inside a
+    wrapper (SupplierParty, ContractingParty ...) the wrapper's name."""
+    q = etree.QName(e).localname
+    if q == "Party" and e.getparent() is not None:
+        return etree.QName(e.getparent()).localname
+    return q
+
 def content(e, t):
     for child in t:
         if child.tag in (X + "sequence", X + "choice"):
@@ -226,13 +284,14 @@ def content(e, t):
                 raise NotImplementedError("required choice in %s" % t.get("name"))
             for p in child:
                 if p.tag == X + "element" and (p.get("minOccurs", "1") != "0"
-                                               or p.get("ref") in FILL.get(t.get("name"), ())):
+                                               or p.get("ref") in FILL.get(t.get("name"), ())
+                                               or p.get("ref") in FILL.get(t.get("name") + "@" + role(e), ())):
                     ns, name = qname(p, p.get("ref"))
                     build(e, find("element", ns, name))
                 elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
                     raise NotImplementedError(p.tag)
 
-def generate(layer, fill):
+def generate(layer, fill, schemes):
     global FILL
     FILL = fill
     out = os.path.join(HERE, layer)
@@ -251,6 +310,8 @@ def generate(layer, fill):
         t = find("complexType", *qname(root_decl, root_decl.get("type")))
         content(doc, t)
         etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
+        for pid in doc.iter("{%s}PartyIdentification" % CAC):
+            pid.find("{%s}ID" % CBC).set("schemeID", schemes[role(pid.getparent())])
         uses = [e for e in doc.iter() if e.text in (CUR, CTRY) or e.get("currencyID") == CUR]
         if uses:
             currency, country = LOCALES[n_cur % len(LOCALES)]
@@ -269,8 +330,6 @@ def generate(layer, fill):
 # --- Checks: UBL 2.5 chapter 4, Additional Document Constraints -------------
 # IND6 (absence carries no meaning) cannot be tested by machine; it is
 # handled where values are chosen (see FILL).
-CBC = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 TEXT_ELEMENTS = {  # cbc elements of "Text. Type" (TextType and NameType)
     d.get("name") for d in schemas[CBC][0].findall(X + "element")
     if udt_name(*qname(d, d.get("type"))) in ("TextType", "NameType")}
@@ -359,8 +418,8 @@ if sys.argv[1:2] == ["--check"]:
     written = [(p, xsd_for(p)) for p in sys.argv[2:]]
 else:
     written = []
-    for layer, fill in layer_fills():
-        written += generate(layer, fill)
+    for layer, fill, schemes in layer_fills():
+        written += generate(layer, fill, schemes)
 failed = {}
 for path, xsd in written:
     errs = check(path, xsd)

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogueItemSpecificationUpdate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CatalogueItemSpecificationUpdate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:RelatedCatalogueReference>
+    <cbc:ID>X</cbc:ID>
+  </cac:RelatedCatalogueReference>
+  <cac:ProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ProviderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:CatalogueItemSpecificationUpdateLine>
+    <cbc:ID>X</cbc:ID>
+    <cac:Item>
+      <cbc:Description>X</cbc:Description>
+    </cac:Item>
+  </cac:CatalogueItemSpecificationUpdateLine>
+</CatalogueItemSpecificationUpdate>

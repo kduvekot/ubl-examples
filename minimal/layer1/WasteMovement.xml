@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WasteMovement xmlns="urn:oasis:names:specification:ubl:schema:xsd:WasteMovement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:NotifierParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>X</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name>X</cbc:Name>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:NotifierParty>
+  <cac:WasteProducerParty>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>X</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name>X</cbc:Name>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:WasteProducerParty>
+  <cac:Shipment>
+    <cbc:ID>X</cbc:ID>
+  </cac:Shipment>
+</WasteMovement>

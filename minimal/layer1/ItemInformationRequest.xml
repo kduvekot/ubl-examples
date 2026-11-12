@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemInformationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ItemInformationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:Period>
+    <cbc:StartDate>2000-01-01</cbc:StartDate>
+    <cbc:EndDate>2000-01-01</cbc:EndDate>
+  </cac:Period>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:ItemInformationRequestLine>
+    <cac:Period>
+      <cbc:StartDate>2000-01-01</cbc:StartDate>
+      <cbc:EndDate>2000-01-01</cbc:EndDate>
+    </cac:Period>
+    <cac:SalesItem>
+      <cbc:Quantity>0</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>X</cbc:Description>
+      </cac:Item>
+    </cac:SalesItem>
+  </cac:ItemInformationRequestLine>
+</ItemInformationRequest>

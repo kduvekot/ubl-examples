@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Forecast xmlns="urn:oasis:names:specification:ubl:schema:xsd:Forecast-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>X</cbc:ID>
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cbc:ForecastPurposeCode>X</cbc:ForecastPurposeCode>
+  <cac:ForecastPeriod>
+    <cbc:StartDate>2000-01-01</cbc:StartDate>
+    <cbc:EndDate>2000-01-01</cbc:EndDate>
+  </cac:ForecastPeriod>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">X</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>X</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:ForecastLine>
+    <cbc:ID>X</cbc:ID>
+    <cbc:ForecastTypeCode>X</cbc:ForecastTypeCode>
+  </cac:ForecastLine>
+</Forecast>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Quotation xmlns="urn:oasis:names:specification:ubl:schema:xsd:Quotation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:IssueDate>2000-01-01</cbc:IssueDate>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0088">X</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>X</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:QuotedMonetaryTotal>
+    <cbc:PayableAmount currencyID="EUR">0</cbc:PayableAmount>
+  </cac:QuotedMonetaryTotal>
+  <cac:QuotationLine>
+    <cac:LineItem>
+      <cbc:ID>X</cbc:ID>
+      <cac:Item>
+        <cbc:Description>X</cbc:Description>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+</Quotation>
