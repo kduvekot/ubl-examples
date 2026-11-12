@@ -11,9 +11,9 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>12ABC345000188</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Federal taxes</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
@@ -24,15 +24,15 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>12ABC345000269</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Federal taxes</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="INR">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="BRL">0</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>X</cbc:ID>

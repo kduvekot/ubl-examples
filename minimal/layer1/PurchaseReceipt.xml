@@ -8,15 +8,15 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>DE999999911</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Value added tax</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="USD">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="EUR">0</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>X</cbc:ID>

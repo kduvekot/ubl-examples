@@ -2,7 +2,7 @@
 <GuaranteeCertificate xmlns="urn:oasis:names:specification:ubl:schema:xsd:GuaranteeCertificate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
-  <cbc:LiabilityAmount currencyID="BRL">0</cbc:LiabilityAmount>
+  <cbc:LiabilityAmount currencyID="INR">0</cbc:LiabilityAmount>
   <cac:GuarantorParty>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>

@@ -20,7 +20,7 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="INR">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="BRL">0</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>X</cbc:ID>

@@ -46,9 +46,10 @@ VALUES = {
 # to a null value (IND5); a later layer embeds real content.
 ATTRS = {"mimeCode": "application/octet-stream"}
 
-# Locale: one per document that needs a currency or a country, used for every
-# currency code, currencyID and country code in it (no cross-country minimal
-# documents); varied across the set by turns in alphabetical document order.
+# Locale: every document has one, by turns in alphabetical document order, so
+# a document keeps its locale in every layer. It is used for every currency
+# code, currencyID, country code and national identifier in the document (no
+# cross-country minimal documents), and is visible only where one is needed.
 # EUR has many countries; Germany stands for it.
 LOCALES = [("USD", "US"), ("EUR", "DE"), ("JPY", "JP"),
            ("INR", "IN"), ("BRL", "BR"), ("ZAR", "ZA")]
@@ -207,9 +208,62 @@ PARTY_SCHEMES = {
         "InvoiceStatusRequest", "UtilityStatement", "WasteMovement", "WasteNotification")},
 }
 
+JPCN = "0188"  # Japan: Corporate Number (法人番号, National Tax Agency), an ICD
+
 def scheme_for(party):
+    """The scheme for a party's role; in Japanese documents the national
+    Corporate Number takes D-U-N-S's place (it is how Japanese public and
+    private buyers identify a business)."""
     r = role(party)
-    return SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
+    s = SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
+    return JPCN if s == DUNS and COUNTRY == "JP" else s
+
+# Identifier values: the scheme's own format and check digit, distinct per
+# party in a document (n = 1, 2 ...), from official demonstration ranges where
+# a scheme has one, and checked not to be real registrations where a public
+# register can be queried (GLEIF, VIES, NTA; see the commit history).
+def _gs1(d):  # GS1 mod 10
+    t = sum(int(c) * (3 if i % 2 == 0 else 1) for i, c in enumerate(reversed(d)))
+    return d + str((10 - t % 10) % 10)
+def _lei(b):  # ISO 7064 MOD 97-10 (ISO 17442)
+    return b + "%02d" % (98 - int("".join(str(int(c, 36)) for c in b + "00")) % 97)
+def _jpcn(d):  # NTA: check digit first, 9 - (sum Pn*Qn mod 9), Qn = 1 odd, 2 even
+    return str(9 - sum(int(c) * (1 if n % 2 else 2) for n, c in enumerate(reversed(d), 1)) % 9) + d
+def _cnpj(b):  # Receita Federal mod 11, alphanumeric (value = ASCII - 48)
+    def dv(x, w):
+        r = sum((ord(c) - 48) * k for c, k in zip(x, w)) % 11
+        return "0" if r < 2 else str(11 - r)
+    d1 = dv(b, [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2])
+    return b + d1 + dv(b + d1, [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2])
+def _de_vat(d):  # ISO 7064 MOD 11,10
+    p = 10
+    for c in d:
+        p = (2 * ((int(c) + p) % 10 or 10)) % 11
+    return "DE" + d + str((11 - p) % 10)
+def _gstin(b):  # mod 36
+    cs, t = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", 0
+    for i, c in enumerate(b):
+        v = cs.index(c) * (2 if i % 2 else 1)
+        t += v // 36 + v % 36
+    return b + cs[(36 - t % 36) % 36]
+
+ID_VALUES = {
+    GLN: lambda n: _gs1("95200000%04d" % n),   # GS1 Prefix 952: "for demonstrations and examples"
+    LEI: lambda n: _lei("999900MINIMALEX%03d" % n),   # not in GLEIF
+    DUNS: lambda n: "99999%04d" % n,   # UNVERIFIED: D&B publishes no check or test range
+    JPCN: lambda n: _jpcn("99999999%04d" % n),   # not in the NTA register
+}
+# National tax numbers (PartyTaxScheme/CompanyID) and the tax scheme's name.
+TAX_VALUES = {
+    "US": lambda n: "00%07d" % n,   # EIN prefix 00 is not assigned by the IRS
+    "DE": lambda n: _de_vat("9999999%01d" % n),   # VIES: not valid
+    "JP": lambda n: "T" + _jpcn("99999999%04d" % n),   # qualified invoice issuer number
+    "IN": lambda n: _gstin("97ZZZCZ999%01dZ1Z" % n),   # UNVERIFIED: no public check
+    "BR": lambda n: _cnpj("12ABC345%04d" % n),   # root of Receita Federal's own example
+    "ZA": lambda n: "412345678%d" % (10 - n),   # SARS's example 4123456789; check UNVERIFIED
+}
+TAX_NAMES = {"US": "Federal taxes", "DE": "Value added tax", "JP": "Consumption tax",
+             "IN": "Goods and services tax", "BR": "Federal taxes", "ZA": "Value-added tax"}
 
 LAYER1 = {
     "PartyTaxSchemeType": {"cbc:CompanyID"},
@@ -337,13 +391,14 @@ def generate(layer, fill, schemes):
     FILL, SCHEMES = fill, schemes
     out = os.path.join(HERE, layer)
     os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
-    n_cur = 0
+    global COUNTRY
     written = []
     for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
         r = etree.parse(f).getroot()
         ns = r.get("targetNamespace")
         root_decl = r.find(X + "element")
         name = DOC = root_decl.get("name")
+        currency, COUNTRY = LOCALES[len(written) % len(LOCALES)]
         nsmap = {None: ns,
                  "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
                  "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}
@@ -351,16 +406,21 @@ def generate(layer, fill, schemes):
         t = find("complexType", *qname(root_decl, root_decl.get("type")))
         content(doc, t)
         etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
-        for pid in doc.iter("{%s}PartyIdentification" % CAC):
-            pid.find("{%s}ID" % CBC).set("schemeID", scheme_for(pid.getparent()))
-        uses = [e for e in doc.iter() if e.text in (CUR, CTRY) or e.get("currencyID") == CUR]
-        if uses:
-            currency, country = LOCALES[n_cur % len(LOCALES)]
-            n_cur += 1
-            for e in uses:
-                if e.text == CUR: e.text = currency
-                if e.text == CTRY: e.text = country
-                if e.get("currencyID") == CUR: e.set("currencyID", currency)
+        parties = [p for p in doc.iter("{*}*") if p.find("{%s}PartyName" % CAC) is not None]
+        for n, party in enumerate(parties, 1):
+            pid = party.find("{%s}PartyIdentification/{%s}ID" % (CAC, CBC))
+            if pid is not None:
+                s = scheme_for(party)
+                pid.set("schemeID", s)
+                pid.text = ID_VALUES[s](n)
+            pts = party.find("{%s}PartyTaxScheme" % CAC)
+            if pts is not None:
+                pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](n)
+                pts.find("{%s}TaxScheme/{%s}Name" % (CAC, CBC)).text = TAX_NAMES[COUNTRY]
+        for e in doc.iter():
+            if e.text == CUR: e.text = currency
+            if e.text == CTRY: e.text = COUNTRY
+            if e.get("currencyID") == CUR: e.set("currencyID", currency)
         path = os.path.join(out, "" if os.path.basename(f) in endorsed else "deprecated", name + ".xml")
         with open(path, "wb") as fh:  # declaration exactly as the IND2/IND3 example
             fh.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')

@@ -8,9 +8,9 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>DE999999911</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Value added tax</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
@@ -21,9 +21,9 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>DE999999920</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Value added tax</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>

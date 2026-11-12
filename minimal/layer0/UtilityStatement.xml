@@ -3,7 +3,7 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:UtilityStatementTypeCode>X</cbc:UtilityStatementTypeCode>
-  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+  <cbc:DocumentCurrencyCode>ZAR</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>X</cbc:ID>
   </cac:ParentDocumentReference>

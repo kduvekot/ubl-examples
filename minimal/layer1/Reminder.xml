@@ -8,9 +8,9 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>000000001</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Federal taxes</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
@@ -21,15 +21,15 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>X</cbc:CompanyID>
+        <cbc:CompanyID>000000002</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>X</cbc:Name>
+          <cbc:Name>Federal taxes</cbc:Name>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="JPY">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="USD">0</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>X</cbc:ID>

@@ -7,9 +7,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>000000001</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Federal taxes</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:SenderParty>
@@ -18,9 +18,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>000000002</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Federal taxes</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:ReceiverParty>
@@ -29,9 +29,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>000000003</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Federal taxes</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:NotifierParty>
@@ -40,9 +40,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>000000004</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Federal taxes</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:WasteProducerParty>

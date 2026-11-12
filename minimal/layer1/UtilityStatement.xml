@@ -3,7 +3,7 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:UtilityStatementTypeCode>X</cbc:UtilityStatementTypeCode>
-  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+  <cbc:DocumentCurrencyCode>ZAR</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>X</cbc:ID>
   </cac:ParentDocumentReference>
@@ -12,9 +12,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>4123456789</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Value-added tax</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:SenderParty>
@@ -23,9 +23,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>4123456788</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Value-added tax</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:ReceiverParty>

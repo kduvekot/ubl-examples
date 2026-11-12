@@ -4,7 +4,7 @@
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0060">X</cbc:ID>
+        <cbc:ID schemeID="0060">999990001</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>
@@ -12,7 +12,7 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:QuotedMonetaryTotal>
-    <cbc:PayableAmount currencyID="EUR">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="BRL">0</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cac:LineItem>

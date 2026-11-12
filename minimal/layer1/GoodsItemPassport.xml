@@ -6,9 +6,9 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>X</cbc:CompanyID>
+      <cbc:CompanyID>T8999999990001</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>X</cbc:Name>
+        <cbc:Name>Consumption tax</cbc:Name>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:HolderParty>
