@@ -30,7 +30,7 @@
     <cac:SalesItem>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>X</cbc:Description>
+        <cbc:Description languageID="pt">Caneta esferográfica azul</cbc:Description>
       </cac:Item>
     </cac:SalesItem>
   </cac:ItemInformationRequestLine>

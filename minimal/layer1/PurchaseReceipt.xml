@@ -26,7 +26,7 @@
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="de">Kugelschreiber, blau</cbc:Description>
     </cac:Item>
   </cac:PurchaseReceiptLine>
 </PurchaseReceipt>

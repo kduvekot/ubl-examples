@@ -27,7 +27,7 @@
     <cbc:ThresholdValueComparisonCode>FALLS_BELOW_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="H87">10</cbc:ThresholdQuantity>
     <cac:SupplyItem>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
     </cac:SupplyItem>
   </cac:ExceptionCriteriaLine>
 </ExceptionCriteria>

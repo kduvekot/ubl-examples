@@ -412,6 +412,27 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
 }
 LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
 
+# Texts in the locale's language, Latin script, with languageID; key
+# "Parent/Element" or "Element". Not listed: stays X (e.g. the criterion
+# answer, which waits for a real criterion). Not reviewed by native speakers.
+TEXTS = {  # (en, de, pt, ja-Latn)
+    "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica azul", "Bōrupen, ao"),
+    "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica azul", "Bōrupen, ao"),
+    "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Ayamatte chūmon"),
+    "CertificateType": ("Ordinary", "Gewöhnlich", "Comum", "Ippan"),   # from the definition's examples
+    "ApprovalStatus": ("Approved", "Genehmigt", "Aprovado", "Shōnin-zumi"),
+    "DigitalProcess/Description": ("Ordering", "Bestellung", "Pedido", "Hatchū"),
+}
+
+def text_for(e, parent, name):
+    pn = etree.QName(parent).localname
+    t = TEXTS.get(pn + "/" + name) or TEXTS.get(name)
+    if t is None:
+        return VALUES["TextType"]
+    lang = LANG[COUNTRY]
+    e.set("languageID", lang)
+    return t[LANG_INDEX[lang]]
+
 LAYER1 = {
     "PartyTaxSchemeType": {"cbc:CompanyID"},
     # BR: the CNPJ is "an identifier for the party as registered within a
@@ -484,6 +505,7 @@ def build(parent, el_decl):
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
                   else id_for(parent, el_decl.get("name")) if u == "IdentifierType"
+                  else text_for(e, parent, el_decl.get("name")) if u == "TextType"
                   else TIME + UTC_OFFSETS[COUNTRY] if u == "TimeType"
                   else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"

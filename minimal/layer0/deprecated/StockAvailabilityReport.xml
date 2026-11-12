@@ -18,7 +18,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Quantity unitCode="H87">10</cbc:Quantity>
     <cac:Item>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="de">Kugelschreiber, blau</cbc:Description>
     </cac:Item>
   </cac:StockAvailabilityReportLine>
 </StockAvailabilityReport>

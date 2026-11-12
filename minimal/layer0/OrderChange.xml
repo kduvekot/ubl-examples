@@ -23,7 +23,7 @@
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cac:Item>
-        <cbc:Description>X</cbc:Description>
+        <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

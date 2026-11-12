@@ -2,7 +2,7 @@
 <OrderCancellation xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderCancellation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>OrderCancellation-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
-  <cbc:CancellationNote>X</cbc:CancellationNote>
+  <cbc:CancellationNote languageID="de">Irrtümlich bestellt</cbc:CancellationNote>
   <cac:OrderReference>
     <cbc:ID>OrderReference-1</cbc:ID>
   </cac:OrderReference>

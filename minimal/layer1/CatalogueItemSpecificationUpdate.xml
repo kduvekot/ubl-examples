@@ -24,7 +24,7 @@
   <cac:CatalogueItemSpecificationUpdateLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
     </cac:Item>
   </cac:CatalogueItemSpecificationUpdateLine>
 </CatalogueItemSpecificationUpdate>

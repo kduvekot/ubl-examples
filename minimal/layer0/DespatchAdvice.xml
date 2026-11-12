@@ -22,7 +22,7 @@
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="de">Kugelschreiber, blau</cbc:Description>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>

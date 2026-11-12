@@ -47,7 +47,7 @@
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="pt">Caneta esferográfica azul</cbc:Description>
     </cac:Item>
   </cac:InvoiceLine>
 </FreightInvoice>

@@ -3,7 +3,7 @@
   <cbc:ID>CertificateOfOrigin-1</cbc:ID>
   <cac:CertificateOfOriginApplication>
     <cbc:ReferenceID>ReferenceID-1</cbc:ReferenceID>
-    <cbc:CertificateType>X</cbc:CertificateType>
+    <cbc:CertificateType languageID="en">Ordinary</cbc:CertificateType>
     <cbc:OriginalJobID>OriginalJobID-1</cbc:OriginalJobID>
     <cac:Shipment>
       <cbc:ID>Shipment-1</cbc:ID>
@@ -36,7 +36,7 @@
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
     <cbc:DocumentID>DocumentID-1</cbc:DocumentID>
-    <cbc:ApprovalStatus>X</cbc:ApprovalStatus>
+    <cbc:ApprovalStatus languageID="en">Approved</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode>X</cbc:RoleCode>
       <cbc:SequenceNumeric>2</cbc:SequenceNumeric>

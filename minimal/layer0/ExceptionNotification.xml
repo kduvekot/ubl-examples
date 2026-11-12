@@ -21,7 +21,7 @@
     <cbc:ComparedValueMeasure unitCode="H87">8</cbc:ComparedValueMeasure>
     <cbc:SourceValueMeasure unitCode="H87">10</cbc:SourceValueMeasure>
     <cac:SupplyItem>
-      <cbc:Description>X</cbc:Description>
+      <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
     </cac:SupplyItem>
   </cac:ExceptionNotificationLine>
 </ExceptionNotification>

@@ -11,6 +11,6 @@
     </cac:PartyName>
   </cac:BusinessParty>
   <cac:DigitalProcess>
-    <cbc:Description>X</cbc:Description>
+    <cbc:Description languageID="en">Ordering</cbc:Description>
   </cac:DigitalProcess>
 </DigitalCapability>
