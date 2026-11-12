@@ -48,6 +48,8 @@ Use:
 - The code lists in `world/codelists/`, only to read what a code means.
 - Your own knowledge of the standards involved (UBL, UN/CEFACT, ISO, IMO, IATA, ADR, IHR, ATA,
   tax practice, etc.). Say so when a finding rests on it.
+- The repository's agreed rules for the examples in `CLAUDE.md` (section 4 repeats those that bear
+  on the review).
 
 Do not use:
 - Earlier reviews (`*.llm-review.*.md`): each run is an independent look. The only exception is
@@ -241,9 +243,20 @@ When a problem you find also occurs in other examples, you may say so in the fin
 same value occurs in 79 examples", counted over `*.xml`, with how you counted). It stays a finding
 of this example.
 
+The repository's agreed rules for the examples (`CLAUDE.md`, from `analysis/codelist-decisions.md`)
+apply to the review:
+- **No fillers, and nothing implied by absence** (UBL IND5/IND6): every value needs a real business
+  reason in the world. A value without one is a finding, even if removing it lowers coverage.
+- **Semantic conformance** (UBL 2.5 §4.7/§7.2): every element is used according to its UBL
+  definition, even where established practice (EN 16931, Peppol) uses it differently. Such practice
+  never lowers a finding's severity; mention it in "Why" as context.
+- **Fictional values must not be mistaken for real ones**: a fictional code or identifier that is
+  in fact assigned in a real register (ISO 4217, MIC, GS1, ITU, ICAO, BIC, ISO 6523 …) is a finding.
+
 The examples are set in a **fictional world**: invented countries, currencies, languages, parties
 and identifier schemes. Accept them as given. Flag a value only when it clashes with a real
-standard: a real code used with a different meaning, a real organisation, or a wrong check digit.
+standard: a real code used with a different meaning, a real organisation, a value that is assigned
+in a real register, or a wrong check digit.
 
 ## 5. Checklist per aggregate type
 
