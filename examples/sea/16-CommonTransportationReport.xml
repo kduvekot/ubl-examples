@@ -119,7 +119,8 @@
       <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
       <cbc:StreetName languageID="en-XB">Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>37</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -131,7 +132,8 @@
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -203,7 +205,8 @@
           <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
           <cbc:StreetName languageID="en-XB">Wharf Road</cbc:StreetName>
           <cbc:BuildingNumber>32</cbc:BuildingNumber>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -233,7 +236,8 @@
           <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
-            <cbc:CityName>Selanu</cbc:CityName>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>

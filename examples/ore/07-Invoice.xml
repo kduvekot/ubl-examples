@@ -94,7 +94,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">120000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -187,7 +188,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -287,16 +289,22 @@
           <cbc:Name>Crevalto Bank</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4100</cbc:PostalZone>
+            <cbc:Region>Province of Ferrano</cbc:Region>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -365,7 +373,8 @@
       <cbc:TaxAmount currencyID="XUF">2839657</cbc:TaxAmount>
     </cac:TaxTotal>
     <cac:Item>
-      <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
+      <cbc:Description languageID="qau">Krahek-kutir gek trir, zul tedraz 10–30 mm, 62 % Fe, danzhan trek kaz gadek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
       <cbc:Name languageID="qau">Gek trir, zul</cbc:Name>
       <cbc:Name languageID="en-XU">Iron ore, lump</cbc:Name>
       <cac:SellersItemIdentification>

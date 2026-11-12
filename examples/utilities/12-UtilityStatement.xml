@@ -42,7 +42,8 @@
       <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
       <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
       <cbc:BuildingNumber>58</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -59,7 +60,8 @@
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -111,7 +113,8 @@
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
       <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -128,7 +131,8 @@
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -191,7 +195,8 @@
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -524,7 +529,8 @@
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
+          <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
+          <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
           <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
@@ -573,7 +579,8 @@
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
+          <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
+          <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
           <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
           <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>

@@ -116,8 +116,12 @@
               <cbc:StreetName>Exchange Street</cbc:StreetName>
               <cbc:BuildingNumber>48</cbc:BuildingNumber>
               <cbc:CityName>Lumeport</cbc:CityName>
+              <cbc:PostalZone>38523</cbc:PostalZone>
+              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+              <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
               <cac:Country>
                 <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+                <cbc:Name>Bayvarra</cbc:Name>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
@@ -195,7 +199,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -283,7 +288,8 @@
         <cbc:BaseQuantity unitCode="TNE">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
+        <cbc:Description languageID="qau">Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.</cbc:Description>
+        <cbc:Description languageID="en-XB">Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
         <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
         <cbc:Name languageID="en-XB">Recycled PE granulate</cbc:Name>
         <cac:SellersItemIdentification>

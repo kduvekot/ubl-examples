@@ -37,7 +37,8 @@
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -54,7 +55,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -105,7 +107,8 @@
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Plantation Road</cbc:StreetName>
         <cbc:Description>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Description>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:AddressLine>
@@ -118,7 +121,7 @@
           <cbc:Line>North coast</cbc:Line>
         </cac:AddressLine>
         <cac:AddressLine>
-          <cbc:Line>Selanu</cbc:Line>
+          <cbc:Line>Selanu / Port Wrenfield</cbc:Line>
         </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -159,7 +162,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MICRO</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -243,14 +247,17 @@
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
+      <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
+      <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
       <cbc:Name languageID="qal">Hiapi vusase Serra 180</cbc:Name>
       <cbc:Name languageID="en-XL">Park bench Serra 180</cbc:Name>
-      <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="qal">Vahita tofuta nakofe leputo kipaku tofami nomeko vevisi tuloha maalu.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="en-XL">Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="qal">Patike selemu lelala velute fepepa tikilau.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="en-XL">Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>VT-PB-180</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>

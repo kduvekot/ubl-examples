@@ -80,7 +80,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">80000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -167,7 +168,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -241,16 +243,22 @@
           <cbc:Name>Crevalto Bank</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4100</cbc:PostalZone>
+            <cbc:Region>Province of Ferrano</cbc:Region>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -304,7 +312,8 @@
     <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
@@ -329,7 +338,8 @@
     <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
@@ -354,7 +364,8 @@
     <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
+      <cbc:Description languageID="qau">Krek skul drek zhul rirtan gatir, ginek zalhaz bantan skul zhul kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
       <cbc:Name languageID="qau">Zhul gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>

@@ -74,7 +74,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -167,7 +168,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -267,16 +269,22 @@
           <cbc:Name>Crevalto Bank</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4100</cbc:PostalZone>
+            <cbc:Region>Province of Ferrano</cbc:Region>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -330,7 +338,8 @@
     <cbc:InvoicedQuantity unitCode="E48">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">109200</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>One container slot on the container train to the distributor's siding.</cbc:Description>
+      <cbc:Description languageID="qau">Zan titran skir rek drek titran sezhul krir drek hazman nintrek.</cbc:Description>
+      <cbc:Description languageID="en-XU">One container slot on the container train to the distributor's siding.</cbc:Description>
       <cbc:Name languageID="qau">Kaz musaz, titran skir</cbc:Name>
       <cbc:Name languageID="en-XU">Rail freight, container slot</cbc:Name>
       <cac:SellersItemIdentification>
