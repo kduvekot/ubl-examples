@@ -71,8 +71,8 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 
 ## Checked and consistent
-- Every party is described identically in all eight ore examples: compared by PartyIdentification/ID, Valdara Industries (XU-R-104274) has one full form (13 child elements) and one short form (identification and name), and so do Serravona Mining (XU-R-104137), Ferrano Rail Cargo (XU-R-104685) and Castrano Logistics (XU-R-104411); no address, tax, legal or contact detail differs between examples.
-- For each full party `PartyIdentification/cbc:ID` = `PartyLegalEntity/cbc:CompanyID`, the `ElectronicAddressID` is 'XU:' plus that ID, and `PartyTaxScheme/cbc:RegistrationName` = `PartyLegalEntity/cbc:RegistrationName`; legal form, size and liquidation status fit companies (SUA with share capital and listing, SRU without).
+- Every party is described identically in all eight ore examples: compared by PartyIdentification/ID, Valdara Industries (XU-R-104274), Serravona Mining (XU-R-104137) and Ferrano Rail Cargo (XU-R-104685) each have one full form and one short form (identification and name), and Castrano Logistics (XU-R-104411) one short form; no address, tax, legal or contact detail differs between examples.
+- For each full party `PartyIdentification/cbc:ID` = `PartyLegalEntity/cbc:CompanyID`, the `ElectronicAddressID` is 'XU:' plus that ID, and `PartyTaxScheme/cbc:RegistrationName` = `PartyLegalEntity/cbc:RegistrationName`; legal form, size and liquidation status fit companies (SUA with share capital, SRU without).
 - Roles: Serravona Mining is accounting supplier and seller, Valdara Industries accounting customer and buyer, as in `01-Order.xml` and `04-DespatchAdvice.xml`.
 - `/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name` = `Serravona Mining SUA` is the supplier's registered name; branch `03510-41700` matches the account's bank and branch digits; the same payee account is in `08-RemittanceAdvice.xml`.
 - `check_ids.py`: the ISIN `XU0001042501` of Valdara's SecurityListing has a correct check digit.
