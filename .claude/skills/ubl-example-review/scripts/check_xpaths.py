@@ -3,8 +3,8 @@
 usage: python3 -I check_xpaths.py <NN-DocumentType.llm-review.<run-id>[.<part>].md> [...]
 
 Backticked absolute paths are checked against the reviewed XML. A path with another root element
-(e.g. `/Waybill/...` cited from a TransportationStatus review) is checked against the examples of
-the same flow with that root; it passes if it resolves in at least one of them, and the matching
+(e.g. `/Waybill/...` cited from a TransportationStatus review), or one that does not resolve in the
+reviewed XML, is checked against the other examples of the same flow with that root; it passes if it resolves in at least one of them, and the matching
 files are named. Paths containing '…' are shorthand and are not checked.
 """
 import re
@@ -38,11 +38,13 @@ def main():
                 continue
             root = p.split('/')[1].split('[')[0]
             try:
-                if root == name:
-                    ok, where = resolves(p, xml), ''
+                if root == name and resolves(p, xml):
+                    ok, where = True, ''
                 else:
-                    hits = [f.name for f in sorted(flow.glob('*.xml'))
-                            if etree.QName(etree.parse(str(f)).getroot()).localname == root and resolves(p, f)]
+                    # a path into another example of the flow (also one with the same root, e.g. an
+                    # Invoice review citing another Invoice)
+                    hits = [f.name for f in sorted(flow.glob('*.xml')) if str(f) != str(Path(xml))
+                            and etree.QName(etree.parse(str(f)).getroot()).localname == root and resolves(p, f)]
                     ok, where = bool(hits), ', '.join(hits)
             except etree.XPathError as e:
                 ok, where = False, str(e)
