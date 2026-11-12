@@ -258,6 +258,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
 # are identified by name only: no scheme has a real reason there yet. So is
 # the CoO PreparationParty: "normally an individual, a group or a body", who
 # may have no tax or company number.
+# Convention (L1#F11): schemeID holds an ISO/IEC 6523 ICD, as EN 16931 and
+# Peppol do; nothing else in the document says so. For example
+#   <cbc:ID schemeID="0088">9520000000011</cbc:ID>
+# reads: ICD 0088 = "GLN, Global Location Number", so the ID is a GS1 GLN.
+# Likewise 0199 = LEI, 0060 = D-U-N-S, 0188 = Japanese Corporate Number.
 GLN, LEI, DUNS, TAX = "0088", "0199", "0060", "TAX"
 PARTY_SCHEMES = {
     # tax and accounting: the tax registration is what matters on a bill
