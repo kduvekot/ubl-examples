@@ -13,7 +13,7 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:QualificationResolution>
-    <cbc:AdmissionCode>X</cbc:AdmissionCode>
+    <cbc:AdmissionCode>true</cbc:AdmissionCode>
     <cbc:ResolutionDate>2026-08-09</cbc:ResolutionDate>
   </cac:QualificationResolution>
 </TendererQualificationResponse>

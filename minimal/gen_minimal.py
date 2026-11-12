@@ -101,7 +101,11 @@ UNITS = {
 # Code values chosen per element (others stay X until a code-list layer).
 # ThresholdValueComparisonCode: the definition lists the allowed values
 # ("EXCEEDS_EXCEPTION_VALUE FALLS_BELOW_EXCEPTION_VALUE"); a shortfall.
-CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE"}
+# AdmissionCode: a Code whose definition reads like an Indicator ("accepted
+# ... (true) or rejected ... (false)"; a UBL finding): true, admitted, since
+# a rejection would need a reason.
+CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
+               "AdmissionCode": "true"}
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).
