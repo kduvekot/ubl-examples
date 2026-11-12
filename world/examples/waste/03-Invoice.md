@@ -81,9 +81,9 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/BuildingNumber` = **31**  
   Building number of the postal address. identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Rinova Recovery (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian; identity of Rinova Recovery (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4140**  
   Postal code in Urvania's format (4 digits). identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -122,8 +122,10 @@ Inside `AccountingSupplierParty`:
   The size class follows from the company's 47 persons and its turnover of 722000000 XUF in 2025, by the Trade Accord's limits; identity of Rinova Recovery (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -198,9 +200,9 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -243,8 +245,10 @@ Inside `AccountingCustomerParty`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -338,16 +342,28 @@ Inside `PaymentMeans`:
   The bank; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca**  
-  The bank's head office; identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Trazhek Hekrul Rikbul** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **8**  
-  Its building number; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ferrano**  
-  Its town; identity of Crevalto Bank (world/parties.json).
+  Building number of the postal address. identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **4100**  
+  Postal code in Urvania's format (4 digits). identity of Crevalto Bank (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Region` = **Province of Ferrano**  
+  The province, part of an address in Urvania. identity of Crevalto Bank (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The bank's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano**  
-  The town the branch is in.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The town the branch is in.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The town the branch is in.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -422,16 +438,20 @@ Inside `InvoiceLine`:
   The tonnes received, from the waste movement document.
 - `LineExtensionAmount` = **471770** (currencyID `XUF`)  
   38.2 × 12350, rounded to the minor unit of the currency.
-- `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne collected.**  
-  The seller's description; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/Description` = **Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne collected.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/Name` = **Tuzskaz stan balman skul huntaz drunvir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/Name` = **Collection and recovery of production waste** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/LifecycleStageCode` = **ENDOFLIFE** (listID `urn:ubl-examples:world:codelist:LifecycleStageCode`)  
   The stage of the product's life the item belongs to. The code is from the Trade Accord's life cycle stage list: ENDOFLIFE = End of life.
-- `Item/LifecycleStageDescription` = **The service handles the production waste at the end of its life, before it is recycled.**  
-  The stage in words.
+- `Item/LifecycleStageDescription` = **Drek vekrir skadek drek huntaz drunvir hir drek temul skul nakskek drekvir, dizek skukstek dir ranstan.** (languageID `qau`)  
+  The stage of the item's life in words in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/LifecycleStageDescription` = **The service handles the production waste at the end of its life, before it is recycled.** (languageID `en-XU`)  
+  The stage of the item's life in words in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **RR-SVC-01**  
   The seller's own item number; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -529,7 +549,8 @@ Inside `InvoiceLine`:
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -635,7 +656,8 @@ Inside `InvoiceLine`:
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -715,16 +737,22 @@ Inside `InvoiceLine`:
           <cbc:Name>Crevalto Bank</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4100</cbc:PostalZone>
+            <cbc:Region>Province of Ferrano</cbc:Region>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -778,11 +806,13 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="TNE">38.2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
+      <cbc:Description languageID="qau">Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
       <cbc:Name languageID="qau">Tuzskaz stan balman skul huntaz drunvir</cbc:Name>
       <cbc:Name languageID="en-XU">Collection and recovery of production waste</cbc:Name>
       <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">ENDOFLIFE</cbc:LifecycleStageCode>
-      <cbc:LifecycleStageDescription>The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
+      <cbc:LifecycleStageDescription languageID="qau">Drek vekrir skadek drek huntaz drunvir hir drek temul skul nakskek drekvir, dizek skukstek dir ranstan.</cbc:LifecycleStageDescription>
+      <cbc:LifecycleStageDescription languageID="en-XU">The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-SVC-01</cbc:ID>
       </cac:SellersItemIdentification>

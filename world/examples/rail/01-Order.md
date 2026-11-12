@@ -183,9 +183,9 @@ Inside `SellerSupplierParty`:
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -226,8 +226,10 @@ Inside `SellerSupplierParty`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -341,22 +343,28 @@ Inside `OrderLine`:
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
-  The seller's description; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XB`)  
+  The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Name` = **Park bench Serra 180** (languageID `en-XB`)  
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
-- `LineItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
-  What comes with the item; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalInformation` = **Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.** (languageID `qau`)  
+  What comes with the item in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.** (languageID `en-XB`)  
+  What comes with the item in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Keyword` = **park bench, street furniture**  
   The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `LineItem/Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/ModelName` = **Serra 180**  
   The model; item bench-serra of Valdara Industries (world/items.json).
-- `LineItem/Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
-  The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/WarrantyInformation` = **Bukdrek stezskir rek drek manskan savir gilrir.** (languageID `qau`)  
+  The maker's warranty in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/WarrantyInformation` = **Five years on the frame against corrosion.** (languageID `en-XB`)  
+  The maker's warranty in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/BuyersItemIdentification/ID` = **LD-10442**  
   The buyer's own item number: it resells this item as its item bench-serra-b.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-B180**  
@@ -712,7 +720,8 @@ Inside `OrderLine`:
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -814,14 +823,17 @@ Inside `OrderLine`:
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+        <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
+        <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
-        <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+        <cbc:AdditionalInformation languageID="qau">Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.</cbc:AdditionalInformation>
+        <cbc:AdditionalInformation languageID="en-XB">Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
         <cbc:Keyword>park bench, street furniture</cbc:Keyword>
         <cbc:BrandName>Valdara</cbc:BrandName>
         <cbc:ModelName>Serra 180</cbc:ModelName>
-        <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+        <cbc:WarrantyInformation languageID="qau">Bukdrek stezskir rek drek manskan savir gilrir.</cbc:WarrantyInformation>
+        <cbc:WarrantyInformation languageID="en-XB">Five years on the frame against corrosion.</cbc:WarrantyInformation>
         <cac:BuyersItemIdentification>
           <cbc:ID>LD-10442</cbc:ID>
         </cac:BuyersItemIdentification>

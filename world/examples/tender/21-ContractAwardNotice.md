@@ -368,8 +368,6 @@ Inside `TenderingProcess`:
   The framework this one follows.
 - `Description` = **Open procedure with two lots.**  
   The procedure.
-- `NegotiationDescription` = **No negotiation: the award is on the tenders as submitted.**  
-  Why none.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
 - `UrgencyCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:UrgencyCode`)  
@@ -418,20 +416,6 @@ Inside `TenderingProcess`:
   The open procedure is the rule. The code is from the Trade Accord's process reason list: STANDARD = Standard.
 - `ProcessJustification/ProcessReason` = **Value above the threshold for open procedures.**  
   Why.
-- `ProcessJustification/Description` = **No exception applies.**  
-  In words.
-- `EconomicOperatorShortList/LimitationDescription` = **No short list in an open procedure.**  
-  Why.
-- `EconomicOperatorShortList/ExpectedQuantity` = **0**  
-  None expected.
-- `EconomicOperatorShortList/MaximumQuantity` = **0**  
-  None.
-- `EconomicOperatorShortList/MinimumQuantity` = **0**  
-  None.
-- `EconomicOperatorShortList/PreSelectedParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `EconomicOperatorShortList/PreSelectedParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `OpenTenderEvent/IdentificationID` = **OPEN-1**  
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
@@ -450,20 +434,20 @@ Inside `TenderingProcess`:
   Whom to ask.
 - `OpenTenderEvent/OccurrenceLocation/Name` = **Lumeport Public Works Department, Civic Square**  
   Where.
-- `AuctionTerms/AuctionConstraintIndicator` = **false**  
-  No electronic auction.
-- `AuctionTerms/JustificationDescription` = **The award uses quality as well as price.**  
-  Why not.
-- `AuctionTerms/Description` = **No auction.**  
-  In words.
-- `AuctionTerms/ProcessDescription` = **Not applicable.**  
-  No process.
-- `AuctionTerms/ConditionsDescription` = **Not applicable.**  
-  No conditions.
-- `AuctionTerms/ElectronicDeviceDescription` = **Not applicable.**  
-  No device.
+- `AuctionTerms/AuctionConstraintIndicator` = **true**  
+  An electronic auction is held before the award.
+- `AuctionTerms/JustificationDescription` = **The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.**  
+  Why the department uses an auction.
+- `AuctionTerms/Description` = **After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 6 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.**  
+  The terms of the auction for the tenderers. The award notice adds what happened: neither tenderer lowered its price.
+- `AuctionTerms/ProcessDescription` = **One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.**  
+  How the auction runs.
+- `AuctionTerms/ConditionsDescription` = **A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.**  
+  The conditions for bidding.
+- `AuctionTerms/ElectronicDeviceDescription` = **The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.**  
+  The device and how to connect.
 - `AuctionTerms/AuctionURI` = **https://tenders.lumeport.example/auctions**  
-  The platform, unused.
+  The auction module's address.
 - `FrameworkAgreement/ExpectedOperatorQuantity` = **1**  
   One supplier.
 - `FrameworkAgreement/MaximumOperatorQuantity` = **1**  
@@ -480,8 +464,8 @@ Inside `TenderingProcess`:
   Two years.
 - `FrameworkAgreement/SubsequentProcessTenderRequirement/Name` = **Release order**  
   Each release is a call-off order.
-- `FrameworkAgreement/SubsequentProcessTenderRequirement/Description` = **No new competition.**  
-  How.
+- `FrameworkAgreement/SubsequentProcessTenderRequirement/Description` = **Each release is ordered from the framework supplier at the framework prices, without a new competition.**  
+  How a release is placed.
 - `ContractingSystem/ID` = **FW-1**  
   The framework.
 - `ContractingSystem/ContractingSystemTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractingSystemTypeCode`)  
@@ -563,8 +547,6 @@ Inside `ProcurementProject`:
   For two years.
 - `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ContractExtension/RenewalsIndicator` = **true**  
@@ -704,8 +686,6 @@ Inside `ProcurementProjectLot`:
   For two years.
 - `ProcurementProject/ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ProcurementProject/ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ProcurementProject/ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ProcurementProject/ContractExtension/RenewalsIndicator` = **true**  
@@ -840,8 +820,6 @@ Inside `ProcurementProjectLot`:
   For two years.
 - `ProcurementProject/ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ProcurementProject/ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ProcurementProject/ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ProcurementProject/ContractExtension/RenewalsIndicator` = **true**  
@@ -901,12 +879,14 @@ Inside `TenderResult`:
   After the standstill period.
 - `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
   Before the first call-off.
-- `SubcontractTerms/Rate` = **0**  
-  The manufacturer installs with its own staff.
+- `SubcontractTerms/Rate` = **3.5**  
+  The installation's share of the contract value: 4,320 of 124,080.00 lume, rounded.
 - `SubcontractTerms/UnknownPriceIndicator` = **false**  
-  Nothing is subcontracted.
-- `SubcontractTerms/Description` = **No subcontracting.**  
-  The tender's terms.
+  The price of the subcontracted part is known: the tender's installation line.
+- `SubcontractTerms/Description` = **Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.**  
+  What is subcontracted, as the tender named it.
+- `SubcontractTerms/Amount` = **4320.00** (currencyID `XBL`)  
+  The value of the installation.
 - `WinningParty/Rank` = **1**  
   First in the evaluation.
 - `WinningParty/Party/WebsiteURI` = **https://www.valdara.example**  
@@ -938,9 +918,9 @@ Inside `TenderResult`:
 - `WinningParty/Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -981,8 +961,10 @@ Inside `TenderResult`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `WinningParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -1326,7 +1308,6 @@ Inside `TenderResult`:
     <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
-    <cbc:NegotiationDescription>No negotiation: the award is on the tenders as submitted.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
     <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
@@ -1368,22 +1349,7 @@ Inside `TenderResult`:
     <cac:ProcessJustification>
       <cbc:ProcessReasonCode listID="urn:ubl-examples:world:codelist:ProcessReasonCode">STANDARD</cbc:ProcessReasonCode>
       <cbc:ProcessReason>Value above the threshold for open procedures.</cbc:ProcessReason>
-      <cbc:Description>No exception applies.</cbc:Description>
     </cac:ProcessJustification>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list in an open procedure.</cbc:LimitationDescription>
-      <cbc:ExpectedQuantity>0</cbc:ExpectedQuantity>
-      <cbc:MaximumQuantity>0</cbc:MaximumQuantity>
-      <cbc:MinimumQuantity>0</cbc:MinimumQuantity>
-      <cac:PreSelectedParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:PreSelectedParty>
-    </cac:EconomicOperatorShortList>
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
@@ -1402,12 +1368,12 @@ Inside `TenderResult`:
       </cac:OccurrenceLocation>
     </cac:OpenTenderEvent>
     <cac:AuctionTerms>
-      <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
-      <cbc:JustificationDescription>The award uses quality as well as price.</cbc:JustificationDescription>
-      <cbc:Description>No auction.</cbc:Description>
-      <cbc:ProcessDescription>Not applicable.</cbc:ProcessDescription>
-      <cbc:ConditionsDescription>Not applicable.</cbc:ConditionsDescription>
-      <cbc:ElectronicDeviceDescription>Not applicable.</cbc:ElectronicDeviceDescription>
+      <cbc:AuctionConstraintIndicator>true</cbc:AuctionConstraintIndicator>
+      <cbc:JustificationDescription>The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.</cbc:JustificationDescription>
+      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 6 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.</cbc:Description>
+      <cbc:ProcessDescription>One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.</cbc:ProcessDescription>
+      <cbc:ConditionsDescription>A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.</cbc:ConditionsDescription>
+      <cbc:ElectronicDeviceDescription>The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.</cbc:ElectronicDeviceDescription>
       <cbc:AuctionURI>https://tenders.lumeport.example/auctions</cbc:AuctionURI>
     </cac:AuctionTerms>
     <cac:FrameworkAgreement>
@@ -1422,7 +1388,7 @@ Inside `TenderResult`:
       </cac:DurationPeriod>
       <cac:SubsequentProcessTenderRequirement>
         <cbc:Name>Release order</cbc:Name>
-        <cbc:Description>No new competition.</cbc:Description>
+        <cbc:Description>Each release is ordered from the framework supplier at the framework prices, without a new competition.</cbc:Description>
       </cac:SubsequentProcessTenderRequirement>
     </cac:FrameworkAgreement>
     <cac:ContractingSystem>
@@ -1488,7 +1454,6 @@ Inside `TenderResult`:
     </cac:PlannedPeriod>
     <cac:ContractExtension>
       <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-      <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
@@ -1617,7 +1582,6 @@ Inside `TenderResult`:
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
@@ -1747,7 +1711,6 @@ Inside `TenderResult`:
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
@@ -1800,9 +1763,10 @@ Inside `TenderResult`:
       <cbc:EndDate>2026-03-22</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
-      <cbc:Rate>0</cbc:Rate>
+      <cbc:Rate>3.5</cbc:Rate>
       <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>No subcontracting.</cbc:Description>
+      <cbc:Description>Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
     </cac:SubcontractTerms>
     <cac:WinningParty>
       <cbc:Rank>1</cbc:Rank>
@@ -1867,7 +1831,8 @@ Inside `TenderResult`:
           <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
           <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
           <cac:RegistrationAddress>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>

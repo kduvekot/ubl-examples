@@ -633,6 +633,16 @@ def address_of(pid):
     return address(pid)
 
 
+# Bonus and commission terms of a transport plan, only where the flow has them (a plan without them says nothing).
+TEP_BONUS = {"ore": ("2 % of the freight when the train is delivered on the first day of the window, so that the "
+                     "factory can start the blend a day early.", "The bonus the factory pays for an early train: "
+                                                                 "its stockyard can use the ore at once.")}
+TEP_COMMISSION = {"plastics": ("Brokerage of 1.25 % of the freight, paid by the barge operator to the barge broker "
+                               "that found the barge for this voyage.", "The commission on the freight, as usual in "
+                                                                        "inland shipping: the carrier pays the "
+                                                                        "broker.")}
+
+
 def tep_terms(flow, user, provider, days):
     """The terms of a transport plan: payment, a penalty for late delivery, notification before arrival."""
     leg = flow_leg(flow, provider)
@@ -645,8 +655,9 @@ def tep_terms(flow, user, provider, days):
             "PenaltyPaymentTerms": {"Note": V("5 % of the freight per day late, at most 25 %.", "The penalty for "
                                                                                                 "late delivery."),
                                     "PenaltySurchargePercent": V("5", "Per day late.")},
-            "BonusPaymentTerms": {"Note": V("None.", "No bonus for early delivery: the slot is fixed.")},
-            "CommissionPaymentTerms": {"Note": V("No commission: booked directly with the carrier.", "Why none.")},
+            **({"BonusPaymentTerms": {"Note": V(*TEP_BONUS[flow.id])}} if flow.id in TEP_BONUS else {}),
+            **({"CommissionPaymentTerms": {"Note": V(*TEP_COMMISSION[flow.id])}} if flow.id in TEP_COMMISSION
+               else {}),
             "ServiceChargePaymentTerms": {"Note": V("Waiting time 40 per hour beyond two hours.", "The service "
                                                                                                   "charge.")},
             "NotificationRequirement": {"NotificationTypeCode": V("PREARRIVAL", "Notice before arrival."),

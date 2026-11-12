@@ -370,8 +370,8 @@ Inside `TenderingTerms`:
   The terms.
 - `TendererQualificationRequest/CompanyLegalForm` = **Any legal form; consortia must name a lead member.**  
   The rule on the legal form, in words: any form is accepted, so there is no code to give.
-- `TendererQualificationRequest/PersonalSituation` = **No exclusion grounds.**  
-  The tenderer's situation.
+- `TendererQualificationRequest/PersonalSituation` = **The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.**  
+  What is asked of the tenderer's personal situation.
 - `TendererQualificationRequest/OperatingYearsQuantity` = **3** (unitCode `ANN`)  
   At least three years in business.
 - `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `IE`)  
@@ -436,8 +436,6 @@ Inside `TenderingTerms`:
   As a code. The code is from the Trade Accord's subcontracting conditions list: ALLOWED = Allowed.
 - `AllowedSubcontractTerms/MaximumPercent` = **30**  
   At most.
-- `AllowedSubcontractTerms/MinimumPercent` = **0**  
-  At least.
 - `TenderPreparation/TenderEnvelopeID` = **ENV-1**  
   One envelope.
 - `TenderPreparation/TenderEnvelopeTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderEnvelopeCode`)  
@@ -482,8 +480,6 @@ Inside `TenderingTerms`:
   Abnormally low.
 - `AwardingTerms/PrizeIndicator` = **false**  
   Not a design contest: no prizes.
-- `AwardingTerms/PaymentDescription` = **No payment for tendering.**  
-  None.
 - `AwardingTerms/FollowupContractIndicator` = **false**  
   No follow-up contract.
 - `AwardingTerms/BindingOnBuyerIndicator` = **true**  
@@ -510,8 +506,8 @@ Inside `TenderingTerms`:
   Unit price at least.
 - `AwardingTerms/AwardingCriterion/MaximumAmount` = **600.00** (currencyID `XBL`)  
   At most.
-- `AwardingTerms/AwardingCriterion/MinimumImprovementBid` = **Not applicable: no auction.**  
-  Stated.
+- `AwardingTerms/AwardingCriterion/MinimumImprovementBid` = **In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.**  
+  The minimum step of a bid on the price.
 - `AwardingTerms/AwardingCriterion/ID` = **AC-2**  
   Quality.
 - `AwardingTerms/AwardingCriterion/AwardingCriterionTypeCode` = **QUALITY** (listID `urn:ubl-examples:world:codelist:AwardCriterionTypeCode`)  
@@ -614,8 +610,6 @@ Inside `TenderingTerms`:
   Call-offs as UBL orders.
 - `PostAwardProcess/ElectronicPaymentUsageIndicator` = **true**  
   Paid by transfer.
-- `EconomicOperatorShortList/LimitationDescription` = **No short list.**  
-  An open procedure.
 - `SecurityClearanceTerm/Code` = **NOTREQUIRED** (listID `urn:ubl-examples:world:codelist:SecurityClearanceCode`)  
   No security clearance. The code is from the Trade Accord's security clearance list: NOTREQUIRED = Not required.
 - `SecurityClearanceTerm/Description` = **Parks are public places.**  
@@ -704,8 +698,6 @@ Inside `ProcurementProject`:
   For two years.
 - `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ContractExtension/RenewalsIndicator` = **true**  
@@ -1065,7 +1057,7 @@ Inside `ProcurementProjectLot`:
     </cac:PaymentTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalForm>Any legal form; consortia must name a lead member.</cbc:CompanyLegalForm>
-      <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
+      <cbc:PersonalSituation>The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
@@ -1118,7 +1110,6 @@ Inside `ProcurementProjectLot`:
       <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
       <cbc:SubcontractingConditionsCode listID="urn:ubl-examples:world:codelist:SubcontractingConditionsCode">ALLOWED</cbc:SubcontractingConditionsCode>
       <cbc:MaximumPercent>30</cbc:MaximumPercent>
-      <cbc:MinimumPercent>0</cbc:MinimumPercent>
     </cac:AllowedSubcontractTerms>
     <cac:TenderPreparation>
       <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
@@ -1163,7 +1154,6 @@ Inside `ProcurementProjectLot`:
       <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
       <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
       <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
-      <cbc:PaymentDescription>No payment for tendering.</cbc:PaymentDescription>
       <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
       <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
       <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
@@ -1178,7 +1168,7 @@ Inside `ProcurementProjectLot`:
         <cbc:CalculationExpressionCode listID="urn:ubl-examples:world:codelist:CalculationExpressionCode">INVERSE</cbc:CalculationExpressionCode>
         <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
         <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
-        <cbc:MinimumImprovementBid>Not applicable: no auction.</cbc:MinimumImprovementBid>
+        <cbc:MinimumImprovementBid>In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.</cbc:MinimumImprovementBid>
       </cac:AwardingCriterion>
       <cac:AwardingCriterion>
         <cbc:ID>AC-2</cbc:ID>
@@ -1310,9 +1300,6 @@ Inside `ProcurementProjectLot`:
       <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
       <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
     </cac:PostAwardProcess>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list.</cbc:LimitationDescription>
-    </cac:EconomicOperatorShortList>
     <cac:SecurityClearanceTerm>
       <cbc:Code listID="urn:ubl-examples:world:codelist:SecurityClearanceCode">NOTREQUIRED</cbc:Code>
       <cbc:Description>Parks are public places.</cbc:Description>
@@ -1379,7 +1366,6 @@ Inside `ProcurementProjectLot`:
     </cac:PlannedPeriod>
     <cac:ContractExtension>
       <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-      <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>

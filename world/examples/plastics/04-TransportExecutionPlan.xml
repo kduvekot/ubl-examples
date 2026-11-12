@@ -70,7 +70,8 @@
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
@@ -156,7 +157,8 @@
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
@@ -312,11 +314,8 @@
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
-    <cac:BonusPaymentTerms>
-      <cbc:Note>None.</cbc:Note>
-    </cac:BonusPaymentTerms>
     <cac:CommissionPaymentTerms>
-      <cbc:Note>No commission: booked directly with the carrier.</cbc:Note>
+      <cbc:Note>Brokerage of 1.25 % of the freight, paid by the barge operator to the barge broker that found the barge for this voyage.</cbc:Note>
     </cac:CommissionPaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
@@ -447,8 +446,12 @@
               <cbc:StreetName>Exchange Street</cbc:StreetName>
               <cbc:BuildingNumber>48</cbc:BuildingNumber>
               <cbc:CityName>Lumeport</cbc:CityName>
+              <cbc:PostalZone>38523</cbc:PostalZone>
+              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+              <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
               <cac:Country>
                 <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+                <cbc:Name>Bayvarra</cbc:Name>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>

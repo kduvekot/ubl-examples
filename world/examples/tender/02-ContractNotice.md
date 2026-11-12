@@ -368,8 +368,8 @@ Inside `TenderingTerms`:
   The terms.
 - `TendererQualificationRequest/CompanyLegalForm` = **Any legal form; consortia must name a lead member.**  
   The rule on the legal form, in words: any form is accepted, so there is no code to give.
-- `TendererQualificationRequest/PersonalSituation` = **No exclusion grounds.**  
-  The tenderer's situation.
+- `TendererQualificationRequest/PersonalSituation` = **The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.**  
+  What is asked of the tenderer's personal situation.
 - `TendererQualificationRequest/OperatingYearsQuantity` = **3** (unitCode `ANN`)  
   At least three years in business.
 - `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `IE`)  
@@ -434,8 +434,6 @@ Inside `TenderingTerms`:
   As a code. The code is from the Trade Accord's subcontracting conditions list: ALLOWED = Allowed.
 - `AllowedSubcontractTerms/MaximumPercent` = **30**  
   At most.
-- `AllowedSubcontractTerms/MinimumPercent` = **0**  
-  At least.
 - `TenderPreparation/TenderEnvelopeID` = **ENV-1**  
   One envelope.
 - `TenderPreparation/TenderEnvelopeTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderEnvelopeCode`)  
@@ -480,8 +478,6 @@ Inside `TenderingTerms`:
   Abnormally low.
 - `AwardingTerms/PrizeIndicator` = **false**  
   Not a design contest: no prizes.
-- `AwardingTerms/PaymentDescription` = **No payment for tendering.**  
-  None.
 - `AwardingTerms/FollowupContractIndicator` = **false**  
   No follow-up contract.
 - `AwardingTerms/BindingOnBuyerIndicator` = **true**  
@@ -508,8 +504,8 @@ Inside `TenderingTerms`:
   Unit price at least.
 - `AwardingTerms/AwardingCriterion/MaximumAmount` = **600.00** (currencyID `XBL`)  
   At most.
-- `AwardingTerms/AwardingCriterion/MinimumImprovementBid` = **Not applicable: no auction.**  
-  Stated.
+- `AwardingTerms/AwardingCriterion/MinimumImprovementBid` = **In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.**  
+  The minimum step of a bid on the price.
 - `AwardingTerms/AwardingCriterion/ID` = **AC-2**  
   Quality.
 - `AwardingTerms/AwardingCriterion/AwardingCriterionTypeCode` = **QUALITY** (listID `urn:ubl-examples:world:codelist:AwardCriterionTypeCode`)  
@@ -688,8 +684,6 @@ Inside `TenderingTerms`:
   Call-offs as UBL orders.
 - `PostAwardProcess/ElectronicPaymentUsageIndicator` = **true**  
   Paid by transfer.
-- `EconomicOperatorShortList/LimitationDescription` = **No short list.**  
-  An open procedure.
 - `SecurityClearanceTerm/Code` = **NOTREQUIRED** (listID `urn:ubl-examples:world:codelist:SecurityClearanceCode`)  
   No security clearance. The code is from the Trade Accord's security clearance list: NOTREQUIRED = Not required.
 - `SecurityClearanceTerm/Description` = **Parks are public places.**  
@@ -705,8 +699,6 @@ Inside `TenderingProcess`:
   The framework this one follows.
 - `Description` = **Open procedure with two lots.**  
   The procedure.
-- `NegotiationDescription` = **No negotiation: the award is on the tenders as submitted.**  
-  Why none.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
 - `UrgencyCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:UrgencyCode`)  
@@ -755,20 +747,6 @@ Inside `TenderingProcess`:
   The open procedure is the rule. The code is from the Trade Accord's process reason list: STANDARD = Standard.
 - `ProcessJustification/ProcessReason` = **Value above the threshold for open procedures.**  
   Why.
-- `ProcessJustification/Description` = **No exception applies.**  
-  In words.
-- `EconomicOperatorShortList/LimitationDescription` = **No short list in an open procedure.**  
-  Why.
-- `EconomicOperatorShortList/ExpectedQuantity` = **0**  
-  None expected.
-- `EconomicOperatorShortList/MaximumQuantity` = **0**  
-  None.
-- `EconomicOperatorShortList/MinimumQuantity` = **0**  
-  None.
-- `EconomicOperatorShortList/PreSelectedParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `EconomicOperatorShortList/PreSelectedParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `OpenTenderEvent/IdentificationID` = **OPEN-1**  
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
@@ -787,20 +765,20 @@ Inside `TenderingProcess`:
   Whom to ask.
 - `OpenTenderEvent/OccurrenceLocation/Name` = **Lumeport Public Works Department, Civic Square**  
   Where.
-- `AuctionTerms/AuctionConstraintIndicator` = **false**  
-  No electronic auction.
-- `AuctionTerms/JustificationDescription` = **The award uses quality as well as price.**  
-  Why not.
-- `AuctionTerms/Description` = **No auction.**  
-  In words.
-- `AuctionTerms/ProcessDescription` = **Not applicable.**  
-  No process.
-- `AuctionTerms/ConditionsDescription` = **Not applicable.**  
-  No conditions.
-- `AuctionTerms/ElectronicDeviceDescription` = **Not applicable.**  
-  No device.
+- `AuctionTerms/AuctionConstraintIndicator` = **true**  
+  An electronic auction is held before the award.
+- `AuctionTerms/JustificationDescription` = **The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.**  
+  Why the department uses an auction.
+- `AuctionTerms/Description` = **After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices.**  
+  The terms of the auction for the tenderers.
+- `AuctionTerms/ProcessDescription` = **One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.**  
+  How the auction runs.
+- `AuctionTerms/ConditionsDescription` = **A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.**  
+  The conditions for bidding.
+- `AuctionTerms/ElectronicDeviceDescription` = **The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.**  
+  The device and how to connect.
 - `AuctionTerms/AuctionURI` = **https://tenders.lumeport.example/auctions**  
-  The platform, unused.
+  The auction module's address.
 - `FrameworkAgreement/ExpectedOperatorQuantity` = **1**  
   One supplier.
 - `FrameworkAgreement/MaximumOperatorQuantity` = **1**  
@@ -817,8 +795,8 @@ Inside `TenderingProcess`:
   Two years.
 - `FrameworkAgreement/SubsequentProcessTenderRequirement/Name` = **Release order**  
   Each release is a call-off order.
-- `FrameworkAgreement/SubsequentProcessTenderRequirement/Description` = **No new competition.**  
-  How.
+- `FrameworkAgreement/SubsequentProcessTenderRequirement/Description` = **Each release is ordered from the framework supplier at the framework prices, without a new competition.**  
+  How a release is placed.
 - `ContractingSystem/ID` = **FW-1**  
   The framework.
 - `ContractingSystem/ContractingSystemTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractingSystemTypeCode`)  
@@ -900,8 +878,6 @@ Inside `ProcurementProject`:
   For two years.
 - `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ContractExtension/RenewalsIndicator` = **true**  
@@ -1041,8 +1017,6 @@ Inside `ProcurementProjectLot`:
   For two years.
 - `ProcurementProject/ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ProcurementProject/ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ProcurementProject/ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ProcurementProject/ContractExtension/RenewalsIndicator` = **true**  
@@ -1177,8 +1151,6 @@ Inside `ProcurementProjectLot`:
   For two years.
 - `ProcurementProject/ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
   The option.
-- `ProcurementProject/ContractExtension/MinimumNumberNumeric` = **0**  
-  None need be used.
 - `ProcurementProject/ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ProcurementProject/ContractExtension/RenewalsIndicator` = **true**  
@@ -1482,7 +1454,7 @@ Inside `ProcurementProjectLot`:
     </cac:PaymentTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalForm>Any legal form; consortia must name a lead member.</cbc:CompanyLegalForm>
-      <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
+      <cbc:PersonalSituation>The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
@@ -1535,7 +1507,6 @@ Inside `ProcurementProjectLot`:
       <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
       <cbc:SubcontractingConditionsCode listID="urn:ubl-examples:world:codelist:SubcontractingConditionsCode">ALLOWED</cbc:SubcontractingConditionsCode>
       <cbc:MaximumPercent>30</cbc:MaximumPercent>
-      <cbc:MinimumPercent>0</cbc:MinimumPercent>
     </cac:AllowedSubcontractTerms>
     <cac:TenderPreparation>
       <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
@@ -1580,7 +1551,6 @@ Inside `ProcurementProjectLot`:
       <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
       <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
       <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
-      <cbc:PaymentDescription>No payment for tendering.</cbc:PaymentDescription>
       <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
       <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
       <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
@@ -1595,7 +1565,7 @@ Inside `ProcurementProjectLot`:
         <cbc:CalculationExpressionCode listID="urn:ubl-examples:world:codelist:CalculationExpressionCode">INVERSE</cbc:CalculationExpressionCode>
         <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
         <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
-        <cbc:MinimumImprovementBid>Not applicable: no auction.</cbc:MinimumImprovementBid>
+        <cbc:MinimumImprovementBid>In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.</cbc:MinimumImprovementBid>
       </cac:AwardingCriterion>
       <cac:AwardingCriterion>
         <cbc:ID>AC-2</cbc:ID>
@@ -1799,9 +1769,6 @@ Inside `ProcurementProjectLot`:
       <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
       <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
     </cac:PostAwardProcess>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list.</cbc:LimitationDescription>
-    </cac:EconomicOperatorShortList>
     <cac:SecurityClearanceTerm>
       <cbc:Code listID="urn:ubl-examples:world:codelist:SecurityClearanceCode">NOTREQUIRED</cbc:Code>
       <cbc:Description>Parks are public places.</cbc:Description>
@@ -1811,7 +1778,6 @@ Inside `ProcurementProjectLot`:
     <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
-    <cbc:NegotiationDescription>No negotiation: the award is on the tenders as submitted.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
     <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
@@ -1853,22 +1819,7 @@ Inside `ProcurementProjectLot`:
     <cac:ProcessJustification>
       <cbc:ProcessReasonCode listID="urn:ubl-examples:world:codelist:ProcessReasonCode">STANDARD</cbc:ProcessReasonCode>
       <cbc:ProcessReason>Value above the threshold for open procedures.</cbc:ProcessReason>
-      <cbc:Description>No exception applies.</cbc:Description>
     </cac:ProcessJustification>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list in an open procedure.</cbc:LimitationDescription>
-      <cbc:ExpectedQuantity>0</cbc:ExpectedQuantity>
-      <cbc:MaximumQuantity>0</cbc:MaximumQuantity>
-      <cbc:MinimumQuantity>0</cbc:MinimumQuantity>
-      <cac:PreSelectedParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:PreSelectedParty>
-    </cac:EconomicOperatorShortList>
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
@@ -1887,12 +1838,12 @@ Inside `ProcurementProjectLot`:
       </cac:OccurrenceLocation>
     </cac:OpenTenderEvent>
     <cac:AuctionTerms>
-      <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
-      <cbc:JustificationDescription>The award uses quality as well as price.</cbc:JustificationDescription>
-      <cbc:Description>No auction.</cbc:Description>
-      <cbc:ProcessDescription>Not applicable.</cbc:ProcessDescription>
-      <cbc:ConditionsDescription>Not applicable.</cbc:ConditionsDescription>
-      <cbc:ElectronicDeviceDescription>Not applicable.</cbc:ElectronicDeviceDescription>
+      <cbc:AuctionConstraintIndicator>true</cbc:AuctionConstraintIndicator>
+      <cbc:JustificationDescription>The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.</cbc:JustificationDescription>
+      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices.</cbc:Description>
+      <cbc:ProcessDescription>One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.</cbc:ProcessDescription>
+      <cbc:ConditionsDescription>A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.</cbc:ConditionsDescription>
+      <cbc:ElectronicDeviceDescription>The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.</cbc:ElectronicDeviceDescription>
       <cbc:AuctionURI>https://tenders.lumeport.example/auctions</cbc:AuctionURI>
     </cac:AuctionTerms>
     <cac:FrameworkAgreement>
@@ -1907,7 +1858,7 @@ Inside `ProcurementProjectLot`:
       </cac:DurationPeriod>
       <cac:SubsequentProcessTenderRequirement>
         <cbc:Name>Release order</cbc:Name>
-        <cbc:Description>No new competition.</cbc:Description>
+        <cbc:Description>Each release is ordered from the framework supplier at the framework prices, without a new competition.</cbc:Description>
       </cac:SubsequentProcessTenderRequirement>
     </cac:FrameworkAgreement>
     <cac:ContractingSystem>
@@ -1973,7 +1924,6 @@ Inside `ProcurementProjectLot`:
     </cac:PlannedPeriod>
     <cac:ContractExtension>
       <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-      <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
@@ -2102,7 +2052,6 @@ Inside `ProcurementProjectLot`:
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
@@ -2232,7 +2181,6 @@ Inside `ProcurementProjectLot`:
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>

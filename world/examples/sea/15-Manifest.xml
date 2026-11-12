@@ -14,7 +14,6 @@
   <cbc:Note>One container for Selanu.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -120,7 +119,8 @@
       <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
       <cbc:StreetName languageID="en-XB">Wharf Road</cbc:StreetName>
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -132,7 +132,8 @@
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -278,7 +279,8 @@
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
       <cbc:StreetName languageID="en-XB">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -294,7 +296,8 @@
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -326,19 +329,16 @@
   <cac:CrewPerson>
     <cbc:FirstName>Corin</cbc:FirstName>
     <cbc:FamilyName>Halvard</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:CrewPerson>
     <cbc:FirstName>Elsbeth</cbc:FirstName>
     <cbc:FamilyName>Marrin</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:PassengerPerson>
     <cbc:FirstName>Ines</cbc:FirstName>
     <cbc:FamilyName>Tavari</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
   </cac:PassengerPerson>
   <cac:Shipment>

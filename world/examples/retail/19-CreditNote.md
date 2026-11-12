@@ -444,6 +444,33 @@ Inside `PaymentTerms`:
 - `Note` = **Settled against the next payment to the seller, unless refunded.**  
   How a credit note is settled in the world.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance the distributor granted.
+- `AllowanceChargeReasonCode` = **100** (listID `UN/EDIFACT EDED 5189`)  
+  The reason for the allowance as a code of UN/EDIFACT 5189: the distributor's support for the store's promotion is a rebate outside the ordinary price terms. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 100 = Special rebate.
+- `AllowanceChargeReason` = **Promotion support**  
+  In words.
+- `MultiplierFactorNumeric` = **0.05**  
+  Five percent.
+- `Amount` = **26.00** (currencyID `XBL`)  
+  The invoice gave the promotion support on the whole order, so the credit is 5 % less too.
+- `BaseAmount` = **520.00** (currencyID `XBL`)  
+  The goods.
+- `TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -451,7 +478,7 @@ Inside `TaxTotal`:
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **494.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+  The goods less the promotion support.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -469,14 +496,16 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **520.00** (currencyID `XBL`)  
   The sum of the line amounts.
 - `TaxExclusiveAmount` = **494.00** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
+  The goods less the allowance; no tax on a sale for resale.
 - `TaxInclusiveAmount` = **494.00** (currencyID `XBL`)  
-  The total without tax plus the tax.
+  The same: no tax.
+- `AllowanceTotalAmount` = **26.00** (currencyID `XBL`)  
+  The promotion support.
 - `PayableAmount` = **494.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the store pays: the goods less the promotion support.
 
 ### Credit Note Line
 
@@ -490,9 +519,9 @@ Inside `CreditNoteLine`:
   Why the line is credited.
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The bench refused at delivery.
-- `LineExtensionAmount` = **494.00** (currencyID `XBL`)  
-  1 × the price = 520.00, less the 5 % promotion support.
-- `TaxInclusiveLineExtensionAmount` = **494.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **520.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `TaxInclusiveLineExtensionAmount` = **520.00** (currencyID `XBL`)  
   The line with its tax.
 - `AccountingCostCode` = **6120**  
   The store's garden department.
@@ -522,18 +551,6 @@ Inside `CreditNoteLine`:
   The delivery the bench was refused at.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the line amount, for the buyer's booking per line.
-- `AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance on the line.
-- `AllowanceCharge/AllowanceChargeReasonCode` = **100** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189: support for the store's promotion, a rebate outside the ordinary price terms. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 100 = Special rebate.
-- `AllowanceCharge/AllowanceChargeReason` = **Promotion support**  
-  The invoice gave 5 % on all benches, so the credit is 5 % less too.
-- `AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  The rate.
-- `AllowanceCharge/Amount` = **26.00** (currencyID `XBL`)  
-  The deduction on the line.
-- `AllowanceCharge/BaseAmount` = **520.00** (currencyID `XBL`)  
-  The line at the full price.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -752,8 +769,6 @@ Inside `CreditNoteLine`:
   The price is per one unit.
 - `DeliveryTerms/ID` = **DDP** (schemeID `INCOTERMS`)  
   As on the order: delivered duty paid. The code is from the world's copy of Incoterms 2020: DDP = Delivered Duty Paid. An identifier that holds a code names the code's list in its schemeID.
-- `ItemPriceExtension/Amount` = **520.00** (currencyID `XBL`)  
-  Price times quantity, before the allowance.
 
 ## The document
 
@@ -1103,6 +1118,23 @@ Inside `CreditNoteLine`:
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">100</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -1120,9 +1152,10 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">26.00</cbc:AllowanceTotalAmount>
     <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
@@ -1130,8 +1163,8 @@ Inside `CreditNoteLine`:
     <cbc:UUID>226d335b-4a38-5919-b136-61b954cb2fa8</cbc:UUID>
     <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">494.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">520.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
     <cbc:AccountingCost>Garden department</cbc:AccountingCost>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
@@ -1168,14 +1201,6 @@ Inside `CreditNoteLine`:
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     </cac:TaxTotal>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">100</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
-      <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
-    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1379,9 +1404,6 @@ Inside `CreditNoteLine`:
     <cac:DeliveryTerms>
       <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
     </cac:DeliveryTerms>
-    <cac:ItemPriceExtension>
-      <cbc:Amount currencyID="XBL">520.00</cbc:Amount>
-    </cac:ItemPriceExtension>
   </cac:CreditNoteLine>
 </CreditNote>
 ```

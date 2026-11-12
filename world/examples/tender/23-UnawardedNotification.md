@@ -302,12 +302,14 @@ Inside `TenderResult`:
   After the standstill period.
 - `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
   Before the first call-off.
-- `SubcontractTerms/Rate` = **0**  
-  The manufacturer installs with its own staff.
+- `SubcontractTerms/Rate` = **3.5**  
+  The installation's share of the contract value: 4,320 of 124,080.00 lume, rounded.
 - `SubcontractTerms/UnknownPriceIndicator` = **false**  
-  Nothing is subcontracted.
-- `SubcontractTerms/Description` = **No subcontracting.**  
-  The tender's terms.
+  The price of the subcontracted part is known: the tender's installation line.
+- `SubcontractTerms/Description` = **Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.**  
+  What is subcontracted, as the tender named it.
+- `SubcontractTerms/Amount` = **4320.00** (currencyID `XBL`)  
+  The value of the installation.
 - `WinningParty/Rank` = **1**  
   First in the evaluation.
 - `WinningParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -582,9 +584,10 @@ Inside `AppealTerms`:
       <cbc:EndDate>2026-03-22</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
-      <cbc:Rate>0</cbc:Rate>
+      <cbc:Rate>3.5</cbc:Rate>
       <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>No subcontracting.</cbc:Description>
+      <cbc:Description>Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
     </cac:SubcontractTerms>
     <cac:WinningParty>
       <cbc:Rank>1</cbc:Rank>

@@ -176,8 +176,8 @@ def party(pid, short=False):
                                                      f"exemption reasons: {idn['tax_exemption_kind'].lower()}.",
                                                listID=codelists.NATIONAL.format(p["c"], "TaxExemptionReason"))
             if idn.get("tax_registration_office"):
-                tax["RegistrationAddress"] = {"CityName": V(idn["tax_registration_office"], "Where the party is "
-                                                                                            "registered for the tax."),
+                tax["RegistrationAddress"] = {"CityName": city_names(p["c"], idn["tax_registration_office"],
+                                                                     "Where the party is registered for the tax."),
                                               "CountrySubentity": V(idn["address"]["CountrySubentity"], "Its state or territory."),
                                               "Country": {"IdentificationCode": V(p["c"], "Its country.")}}
         juris = {"Country": {"IdentificationCode": V(p["c"], "The country whose tax this is.")}}
@@ -306,8 +306,8 @@ def legal_entity(pid):
         out["CorporateStockAmount"] = V(str(le["capital"]), f"The share capital, in {c['currency']['name'].lower()}; "
                                                             f"{src}.", currencyID=c["currency"]["code"])
         out["FullyPaidSharesIndicator"] = V("true", "All shares are paid up.")
-    out["RegistrationAddress"] = {"CityName": V(idn["address"]["CityName"], "The registered office, as entered in the "
-                                                                            "register."),
+    out["RegistrationAddress"] = {"CityName": city_names(p["c"], idn["address"]["CityName"], "The registered office, "
+                                                         "as entered in the register."),
                                   "Country": {"IdentificationCode": V(p["c"], "The country of registration.")}}
     out["CorporateRegistrationScheme"] = {
         "ID": V(c["register_scheme"], "The identifier of the register in the world (world/countries.json)."),
@@ -417,6 +417,26 @@ def check_tax_exemption_lists(root, where, doc):
                              f"{', '.join(sorted(sellers))}")
 
 
+def city_names(country, city, why):
+    """A town's name in an address: in both official languages where the country is bilingual and the town has a name
+    in each (world/countries.json): Urvania's towns have an Urvanian name beside the inherited Italian one, which counts
+    as English; the island's towns have an English name beside the Lisavan one. Otherwise the one name."""
+    code = WORLD["countries"][country]["languages"][0]
+    if code == "en":
+        return V(city, why)
+    lang = WORLD["languages"][code]
+    if lang.get("place_names", {}).get(city):
+        return [V(lang["place_names"][city], f"The town's {lang['name']} name, which its people have always used. "
+                                             f"{why}", languageID=code),
+                V(city, f"The town's English name, inherited from the Italian. {why}", languageID="en")]
+    if lang.get("english_place_names", {}).get(city):
+        return [V(city, f"The town's {lang['name']} name, its name on the island. {why}", languageID=code),
+                V(lang["english_place_names"][city], f"The town's English name, which its English-speaking settlers "
+                                                     f"gave it, official beside the {lang['name']} one "
+                                                     f"(world/countries.json). {why}", languageID="en")]
+    return V(city, why)
+
+
 def address(pid, register=False):
     """A party's address. register: the address's number in its address register goes with it, as it does on a
     party's postal address and a delivery address (decision ID-Q8), not where the address only says where something
@@ -467,12 +487,8 @@ def address(pid, register=False):
                              V(st.value, "The street's name in English, the country's other official language"
                                          + ("; the Italian names the British kept are part of English now"
                                             if p["c"] == "XU" else "") + f"; {src}.", languageID="en")]
-        local = WORLD["languages"][code].get("place_names", {}).get(a.get("CityName"))
-        if local:
-            out["CityName"] = [V(local, f"The town's {lang} name, which its people have always used; {src}.",
-                                 languageID=code),
-                               V(a["CityName"], f"The town's English name, inherited from the Italian; {src}.",
-                                 languageID="en")]
+    if a.get("CityName"):
+        out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
     out["TimezoneOffset"] = V(c["timezone"], "The party's time zone, one hour behind UTC, where the world lies "
                                              "(world/countries.json).")
@@ -562,11 +578,9 @@ def institution(pid):
                                 f"{p['c']} and the location {idn['bic'][6:8]}; {src}.",
                     schemeID="urn:ubl-examples:world:bank-identifier"),
             "Name": V(idn["name"], f"The bank; {src}."),
-            "Address": {"StreetName": V(a["StreetName"], f"The bank's head office; {src}."),
-                        "BuildingNumber": V(a["BuildingNumber"], f"Its building number; {src}."),
-                        "CityName": V(a["CityName"], f"Its town; {src}."),
-                        "AddressFormatCode": address_format_code(p["c"]),
-                        "Country": {"IdentificationCode": V(p["c"], "The bank's country.")}}}
+            "Address": {k: v for k, v in address(pid).items()      # the head office, from the address generator
+                        if k in ("AddressFormatCode", "StreetName", "BuildingNumber", "CityName", "PostalZone",
+                                 "CountrySubentity", "CountrySubentityCode", "Region", "Country")}}
 
 
 def institution_again(pid, first):
@@ -603,7 +617,8 @@ def account(pid, why, note=None):
                                                  schemeID=world_ids.national_scheme(bank["c"], "bank-branch")),
                                          "Name": V(branch["name"], "The branch's name."),
                                          "FinancialInstitution": institution(acc["bank"]),
-                                         "Address": {"CityName": V(branch["city"], "The town the branch is in."),
+                                         "Address": {"CityName": city_names(bank["c"], branch["city"],
+                                                                            "The town the branch is in."),
                                                      "Country": {"IdentificationCode": V(bank["c"], "Its country.")}}}
     out["Country"] = {"IdentificationCode": V(bank["c"], "The country where the account is kept.")}
     return out
@@ -786,8 +801,9 @@ def hazardous_item(it):
                                   "PlacardNotation": V(hz["sub"], "Shown on a second label."),
                                   "PlacardEndorsement": V("3", "The flammable liquid label."),
                                   "Extension": V("Subsidiary risk 3", "In words."),
-                                  "EmergencyProceduresCode": V(f"TEC{hz['sub']}", "The emergency procedures for the "
-                                                               "subsidiary hazard: the Trade Accord's emergency card "
+                                  "EmergencyProceduresCode": V(f"TEC{hz['sub']}", "UBL defines it as \"A code "
+                                                               "signifying the emergency procedures for this secondary "
+                                                               "hazard\": the Trade Accord's emergency card "
                                                                f"for class {hz['sub']}. The IMDG Code gives one pair "
                                                                "of emergency schedules for the whole UN entry (on the "
                                                                "item above), not one per hazard; the instructions in "
@@ -801,26 +817,28 @@ def hazardous_item(it):
         name, act, unit = hz["isotope"]
         out["RadioactiveMaterial"] = {"Name": V("Americium-241 sources in smoke detectors", "The material."),
                                       "SpecialFormDescription": V("Sealed source, not special form.", "Its form."),
-                                      "TransportIndexNumeric": V("0", "Excepted package: no dose rate to "
-                                                                      "speak of."),
-                                      "FissileCriticalitySafetyIndexNumeric": V("0", "Not fissile."),
                                       "ApplicableRadioactiveIsotope": {"Name": V(name, "The isotope."),
                                                                        "ActivityLevelMeasure": V(act, "Per detector.",
                                                                                                  unitCode=unit)}}
     return out
 
 
-def item_names(it, src):
-    """The item's name: in the seller's language and in English when the seller's country speaks another language
-    (Urvanian, Lisavan), each with its languageID; English only for a seller in Bayvarra."""
+def item_texts(it, text, what, src):
+    """A text about an item (its name, description, warranty …): in the seller's language and in English when the
+    seller's country speaks another language (Urvanian, Lisavan), each with its languageID; English only for a seller
+    in Bayvarra. `what` names the text, as in "The item's name"."""
     code = WORLD["countries"][PARTY[it["seller"]]["c"]]["languages"][0]
     if code == "en":
-        return V(it["name"], f"The item's short name; {src}.")
+        return V(text, f"{what}; {src}.")
     lang = WORLD["languages"][code]["name"]
-    return [V(translate(it["name"], code), f"The item's name in {lang}, the seller's language; {src}.",
-              languageID=code),
-            V(it["name"], f"The item's name in English, the working language between the countries; {src}.",
-              languageID="en")]
+    return [V(translate(text, code), f"{what} in {lang}, the seller's language; {src}.", languageID=code),
+            V(text, f"{what} in English, the working language between the countries; {src}.", languageID="en")]
+
+
+def item_names(it, src):
+    """The item's name, in the seller's languages (item_texts)."""
+    return item_texts(it, it["name"], "The item's name" if WORLD["countries"][PARTY[it["seller"]]["c"]]["languages"][0]
+                      != "en" else "The item's short name", src)
 
 
 def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref=None):
@@ -828,7 +846,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     catalogue line; `catalogue_ref` the catalogue an order line was ordered from."""
     it = ITEM[iid]
     src = f"item {it['id']} of {PARTY[it['seller']]['identity']['name']} (world/items.json)"
-    out = {"Description": V(it["description"], f"The seller's description; {src}."),
+    out = {"Description": item_texts(it, it["description"], "The seller's description", src),
            "Name": item_names(it, src)}
     maker = it
     while maker.get("resale_of"):
@@ -848,11 +866,11 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("model"):
         out["ModelName"] = V(maker["model"], f"The model; {msrc}.")
     if maker.get("additional_info"):
-        out["AdditionalInformation"] = V(maker["additional_info"], f"What comes with the item; {msrc}.")
+        out["AdditionalInformation"] = item_texts(it, maker["additional_info"], "What comes with the item", msrc)
     if catalogue:
         out["CatalogueIndicator"] = V("true", "The item is described as it appears in the seller's catalogue.")
     if maker.get("warranty"):
-        out["WarrantyInformation"] = V(maker["warranty"], f"The maker's warranty; {msrc}.")
+        out["WarrantyInformation"] = item_texts(it, maker["warranty"], "The maker's warranty", msrc)
     bid, bwhy = buyer_item_id(iid, buyer) if buyer else (None, None)
     if bid:
         out["BuyersItemIdentification"] = {"ID": V(bid, bwhy)}
@@ -914,7 +932,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                                                                 "and assembly instructions.")}
     if it.get("lifecycle"):
         out["LifecycleStageCode"] = V(it["lifecycle"][0], "The stage of the product's life the item belongs to.")
-        out["LifecycleStageDescription"] = V(it["lifecycle"][1], "The stage in words.")
+        out["LifecycleStageDescription"] = item_texts(it, it["lifecycle"][1], "The stage of the item's life in words",
+                                                      src)
     if maker.get("hs"):
         ccs = [{"ItemClassificationCode": V(maker["cpc"], "What the item is, as a subclass of the UN Central Product "
                                                           f"Classification (CPC), the trade classification for goods and "
@@ -1755,7 +1774,7 @@ if __name__ == "__main__":
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",
               ", ".join(f"{e} in {p}" for e, p in sorted(build_examples.UNBOUND)), file=sys.stderr)
     if build_examples.MISSING_WORDS:
-        print("words missing from the vocabularies of the world's languages (world/countries.json):",
+        print("words missing from the vocabularies of the world's languages (world/countries.json; save the list as missing.json and run python3 tools/lexicon.py missing.json qau|qal):",
               json.dumps(sorted(build_examples.MISSING_WORDS)), file=sys.stderr)
         ok = False
     sys.exit(0 if ok else 1)

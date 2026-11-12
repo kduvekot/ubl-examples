@@ -92,7 +92,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">600000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -185,7 +186,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -285,16 +287,22 @@
           <cbc:Name>Crevalto Bank</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName>Piazza della Banca</cbc:StreetName>
+            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4100</cbc:PostalZone>
+            <cbc:Region>Province of Ferrano</cbc:Region>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -413,7 +421,8 @@
       <cbc:Description>Factory, main connection</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+      <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
@@ -464,7 +473,8 @@
       </cac:DeliveryLocation>
     </cac:Delivery>
     <cac:Item>
-      <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+      <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
@@ -501,7 +511,8 @@
       <cbc:Description>Factory, gas of the coating line</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
+      <cbc:Description languageID="qau">Vungan zhul tazkraz, ginek zalhaz bantan: drek bazbaz velzhan bezsek vek drek zhek sarkran triktan gan dranaz stan narzhir munran; gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
       <cbc:Name languageID="qau">Vungan zhul tazkraz</cbc:Name>
       <cbc:Name languageID="en-XU">Natural gas supply</cbc:Name>
       <cac:SellersItemIdentification>

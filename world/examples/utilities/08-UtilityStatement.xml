@@ -155,8 +155,12 @@
               <cbc:StreetName>Exchange Street</cbc:StreetName>
               <cbc:BuildingNumber>48</cbc:BuildingNumber>
               <cbc:CityName>Lumeport</cbc:CityName>
+              <cbc:PostalZone>38523</cbc:PostalZone>
+              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+              <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
               <cac:Country>
                 <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+                <cbc:Name>Bayvarra</cbc:Name>
               </cac:Country>
             </cac:Address>
           </cac:FinancialInstitution>
@@ -259,9 +263,9 @@
     </cac:UtilityConsumptionPoint>
     <cac:OnAccountPayment>
       <cbc:EstimatedConsumedQuantity unitCode="MTQ">14</cbc:EstimatedConsumedQuantity>
-      <cbc:Note>No payment on account: the bill follows the reading.</cbc:Note>
+      <cbc:Note>Paid on account each month for the estimated use; the next bill settles it against the reading.</cbc:Note>
       <cac:PaymentTerms>
-        <cbc:Note>By direct debit 21 days after the bill.</cbc:Note>
+        <cbc:Note>By direct debit on the first working day of each month.</cbc:Note>
       </cac:PaymentTerms>
     </cac:OnAccountPayment>
     <cac:Consumption>

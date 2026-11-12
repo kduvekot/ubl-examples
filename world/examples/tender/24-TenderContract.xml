@@ -199,7 +199,8 @@
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -326,7 +327,7 @@
     </cac:PaymentTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalForm>Any legal form; consortia must name a lead member.</cbc:CompanyLegalForm>
-      <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
+      <cbc:PersonalSituation>The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
@@ -379,7 +380,6 @@
       <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
       <cbc:SubcontractingConditionsCode listID="urn:ubl-examples:world:codelist:SubcontractingConditionsCode">ALLOWED</cbc:SubcontractingConditionsCode>
       <cbc:MaximumPercent>30</cbc:MaximumPercent>
-      <cbc:MinimumPercent>0</cbc:MinimumPercent>
     </cac:AllowedSubcontractTerms>
     <cac:TenderPreparation>
       <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
@@ -424,7 +424,6 @@
       <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
       <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
       <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
-      <cbc:PaymentDescription>No payment for tendering.</cbc:PaymentDescription>
       <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
       <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
       <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
@@ -439,7 +438,7 @@
         <cbc:CalculationExpressionCode listID="urn:ubl-examples:world:codelist:CalculationExpressionCode">INVERSE</cbc:CalculationExpressionCode>
         <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
         <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
-        <cbc:MinimumImprovementBid>Not applicable: no auction.</cbc:MinimumImprovementBid>
+        <cbc:MinimumImprovementBid>In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.</cbc:MinimumImprovementBid>
       </cac:AwardingCriterion>
       <cac:AwardingCriterion>
         <cbc:ID>AC-2</cbc:ID>
@@ -571,9 +570,6 @@
       <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
       <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
     </cac:PostAwardProcess>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list.</cbc:LimitationDescription>
-    </cac:EconomicOperatorShortList>
     <cac:SecurityClearanceTerm>
       <cbc:Code listID="urn:ubl-examples:world:codelist:SecurityClearanceCode">NOTREQUIRED</cbc:Code>
       <cbc:Description>Parks are public places.</cbc:Description>
@@ -631,9 +627,10 @@
       <cbc:EndDate>2026-03-22</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
-      <cbc:Rate>0</cbc:Rate>
+      <cbc:Rate>3.5</cbc:Rate>
       <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>No subcontracting.</cbc:Description>
+      <cbc:Description>Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
     </cac:SubcontractTerms>
     <cac:WinningParty>
       <cbc:Rank>1</cbc:Rank>

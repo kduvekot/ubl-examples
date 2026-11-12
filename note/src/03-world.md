@@ -81,10 +81,15 @@ Polynesian sound like the island's names. Both languages are invented, and
 their codes come from the range ISO 639 reserves for local use, `qaa` to
 `qtz`: `qau` for Urvanian and `qal` for Lisavan. A sender from Urvania or the
 island gives its notes in its own language and in English, each with its
-`languageID`, and a seller there names its items in both. Both countries
-name their streets in both official languages, as Brussels and Canada do: UBL 2.5
+`languageID`, and a seller there names and describes its items in both
+(its name, description, warranty and what comes with it); a seller in
+Bayvarra does so in English only. Both countries
+name their streets and towns in both official languages, as Brussels and Canada do: UBL 2.5
 lets an address repeat its street, city and state names, one per
-language; the texts are made word by word from a fixed invented
+language. The island's towns keep their Lisavan names as the primary ones,
+and each has the English name its English-speaking settlers gave it:
+Selanu is also *Port Wrenfield*, a name checked not to be a real place.
+The texts in the invented languages are made word by word from a fixed
 vocabulary, the English text being the reference. Real Polynesian languages
 are deliberately not used, and the invented words are checked against
 common words of real languages.

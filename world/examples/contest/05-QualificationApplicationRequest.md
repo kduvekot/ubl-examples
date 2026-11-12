@@ -36,6 +36,10 @@ The authority asks for the self-declaration on the design lead's professional qu
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
 - `QualificationApplicationTypeCode` = **REGULATED** (listID `urn:ubl-examples:world:codelist:QualificationApplicationTypeCode`)  
   The regulated form of self-declaration. The code is from the Trade Accord's qualification application type list: REGULATED = Regulated.
+- `WeightScoringMethodologyNote` = **The qualification of the design lead is pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.**  
+  How the answers count.
+- `WeightingTypeCode` = **WEIGHTED** (listID `urn:ubl-examples:world:codelist:WeightingTypeCode`)  
+  The selection criteria carry weights: the jury scores the references to choose three to five participants. The code is from the Trade Accord's weighting type list: WEIGHTED = Weighted.
 
 ### Contracting Party
 
@@ -277,6 +281,62 @@ Inside `TenderingCriterion`:
   A question. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
   Answered in words. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+- `ID` = **CR-REF-PUBLIC**  
+  The criterion.
+- `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Technical and professional ability. The code is from the Trade Accord's criterion type list: TECHNICAL = Technical and professional ability.
+- `Name` = **Reference for furniture in public spaces**  
+  The criterion.
+- `Description` = **The two completed designs of furniture or fittings for public spaces in the last five years that the contest notice asks for.**  
+  What the jury scores.
+- `WeightNumeric` = **60**  
+  Its weight in the selection: 60 of 100 points.
+- `EvaluationMethodTypeCode` = **WEIGHTED** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Scored 0 to 10 and weighted. The code is from the Trade Accord's evaluation method list: WEIGHTED = Weighted.
+- `WeightingConsiderationDescription` = **The main skill the contest asks for, so it weighs most.**  
+  Why it weighs what it does.
+- `TenderingCriterionPropertyGroup/ID` = **PG-REF-PUBLIC**  
+  The questions on the reference.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered. The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-REF-PUBLIC-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **The reference**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The project, the client, the year and what the team designed.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  Answered in words. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+- `ID` = **CR-REF-COAST**  
+  The criterion.
+- `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Technical and professional ability. The code is from the Trade Accord's criterion type list: TECHNICAL = Technical and professional ability.
+- `Name` = **Reference for a coastal site**  
+  The criterion.
+- `Description` = **Whether one of the two references stands within one kilometre of the sea.**  
+  What the jury scores.
+- `WeightNumeric` = **40**  
+  Its weight in the selection: 40 of 100 points.
+- `EvaluationMethodTypeCode` = **WEIGHTED** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Scored 0 to 10 and weighted. The code is from the Trade Accord's evaluation method list: WEIGHTED = Weighted.
+- `WeightingConsiderationDescription` = **Salt air is the hardest condition of the promenade, but fewer designers have built for it, so it weighs less than the first reference.**  
+  Why it weighs what it does.
+- `TenderingCriterionPropertyGroup/ID` = **PG-REF-COAST**  
+  The questions on the reference.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered. The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-REF-COAST-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **The reference**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The project, the client, the year and what the team designed.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  Answered in words. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
 
 ## The document
 
@@ -296,6 +356,8 @@ Inside `TenderingCriterion`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
+  <cbc:WeightScoringMethodologyNote>The qualification of the design lead is pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -494,6 +556,46 @@ Inside `TenderingCriterion`:
         <cbc:ID>P-PROF-1</cbc:ID>
         <cbc:Name>Registration of the design lead</cbc:Name>
         <cbc:Description>The register and the registration number of the design lead.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-PUBLIC</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Reference for furniture in public spaces</cbc:Name>
+    <cbc:Description>The two completed designs of furniture or fittings for public spaces in the last five years that the contest notice asks for.</cbc:Description>
+    <cbc:WeightNumeric>60</cbc:WeightNumeric>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">WEIGHTED</cbc:EvaluationMethodTypeCode>
+    <cbc:WeightingConsiderationDescription>The main skill the contest asks for, so it weighs most.</cbc:WeightingConsiderationDescription>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REF-PUBLIC</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REF-PUBLIC-1</cbc:ID>
+        <cbc:Name>The reference</cbc:Name>
+        <cbc:Description>The project, the client, the year and what the team designed.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-COAST</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Reference for a coastal site</cbc:Name>
+    <cbc:Description>Whether one of the two references stands within one kilometre of the sea.</cbc:Description>
+    <cbc:WeightNumeric>40</cbc:WeightNumeric>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">WEIGHTED</cbc:EvaluationMethodTypeCode>
+    <cbc:WeightingConsiderationDescription>Salt air is the hardest condition of the promenade, but fewer designers have built for it, so it weighs less than the first reference.</cbc:WeightingConsiderationDescription>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REF-COAST</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REF-COAST-1</cbc:ID>
+        <cbc:Name>The reference</cbc:Name>
+        <cbc:Description>The project, the client, the year and what the team designed.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>

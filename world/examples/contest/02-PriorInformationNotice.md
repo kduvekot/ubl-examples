@@ -251,6 +251,8 @@ Inside `TenderingTerms`:
   A design contest with prizes.
 - `AwardingTerms/PrizeDescription` = **Three prizes; the first is 8,000 lume.**  
   The prizes in words; each is given below.
+- `AwardingTerms/PaymentDescription` = **Each selected participant that submits a design meeting the brief receives 1,000 lume towards its costs, whether or not it wins a prize.**  
+  The payment to all participants, besides the prizes.
 - `AwardingTerms/FollowupContractIndicator` = **true**  
   The winner of the first prize is invited to negotiate the service contract for the detailed design and the supervision of the production, without a new call for competition.
 - `AwardingTerms/BindingOnBuyerIndicator` = **true**  
@@ -273,6 +275,12 @@ Inside `TenderingTerms`:
   The third prize.
 - `AwardingTerms/Prize/Description` = **For the design the jury ranks third, if the jury finds it of prize standard.**  
   The jury may withhold it.
+- `EconomicOperatorShortList/LimitationDescription` = **A restricted contest: the jury will select the participants on their references.**  
+  How the number of participants will be limited, announced early.
+- `EconomicOperatorShortList/MaximumQuantity` = **5**  
+  At most five.
+- `EconomicOperatorShortList/MinimumQuantity` = **3**  
+  At least three participants are planned.
 
 ### Tendering Process
 
@@ -500,6 +508,7 @@ Inside `ProcurementProject`:
       <cbc:TechnicalCommitteeDescription>A jury of five: the head of parks, the city architect, a representative of the disability council and two independent designers.</cbc:TechnicalCommitteeDescription>
       <cbc:PrizeIndicator>true</cbc:PrizeIndicator>
       <cbc:PrizeDescription>Three prizes; the first is 8,000 lume.</cbc:PrizeDescription>
+      <cbc:PaymentDescription>Each selected participant that submits a design meeting the brief receives 1,000 lume towards its costs, whether or not it wins a prize.</cbc:PaymentDescription>
       <cbc:FollowupContractIndicator>true</cbc:FollowupContractIndicator>
       <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
       <cac:Prize>
@@ -518,6 +527,11 @@ Inside `ProcurementProject`:
         <cbc:Description>For the design the jury ranks third, if the jury finds it of prize standard.</cbc:Description>
       </cac:Prize>
     </cac:AwardingTerms>
+    <cac:EconomicOperatorShortList>
+      <cbc:LimitationDescription>A restricted contest: the jury will select the participants on their references.</cbc:LimitationDescription>
+      <cbc:MaximumQuantity>5</cbc:MaximumQuantity>
+      <cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+    </cac:EconomicOperatorShortList>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>

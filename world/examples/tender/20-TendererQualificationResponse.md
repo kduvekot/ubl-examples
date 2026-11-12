@@ -175,9 +175,9 @@ Inside `ReceiverParty`:
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -218,8 +218,10 @@ Inside `ReceiverParty`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -284,8 +286,6 @@ Inside `QualificationResolution`:
 
 - `AdmissionCode` = **ADMITTED** (listID `urn:ubl-examples:world:codelist:QualificationAdmissionCode`)  
   The tenderer meets the selection criteria and its tender is evaluated. The code is from the Trade Accord's qualification admission list: ADMITTED = Admitted.
-- `ExclusionReason` = **None: no ground for exclusion applies.**  
-  Checked against the register.
 - `Resolution` = **Admitted to the evaluation of lot 1.**  
   The decision.
 - `ResolutionDate` = **2026-03-03**  
@@ -296,8 +296,6 @@ Inside `QualificationResolution`:
   Lot 1.
 - `AdmissionCode` = **ADMITTED** (listID `urn:ubl-examples:world:codelist:QualificationAdmissionCode`)  
   The tenderer meets the selection criteria and its tender is evaluated. The code is from the Trade Accord's qualification admission list: ADMITTED = Admitted.
-- `ExclusionReason` = **None: no ground for exclusion applies.**  
-  Checked.
 - `Resolution` = **Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.**  
   The decision.
 - `ResolutionDate` = **2026-03-03**  
@@ -512,7 +510,8 @@ Inside `Signature`:
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
@@ -572,7 +571,6 @@ Inside `Signature`:
   </cac:ResolutionDocumentReference>
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
-    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
     <cbc:Resolution>Admitted to the evaluation of lot 1.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
@@ -582,7 +580,6 @@ Inside `Signature`:
   </cac:QualificationResolution>
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
-    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
     <cbc:Resolution>Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>

@@ -265,8 +265,16 @@ Inside `TenderingTerms`:
 
 Inside `TenderingProcess`:
 
+- `NegotiationDescription` = **The service contract for the detailed design and the supervision of the production is negotiated with the first-prize winner, without a new call for competition, on fees, timetable and the number of prototypes.**  
+  The negotiation that follows the contest.
 - `ProcedureCode` = **DESIGNCONTEST** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
+- `EconomicOperatorShortList/LimitationDescription` = **Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.**  
+  Why one party.
+- `EconomicOperatorShortList/PreSelectedParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EconomicOperatorShortList/PreSelectedParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Procurement Project
 
@@ -432,9 +440,9 @@ Inside `TenderResult`:
 - `WinningParty/Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -475,8 +483,10 @@ Inside `TenderResult`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `WinningParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -737,7 +747,19 @@ Inside `TenderResult`:
     </cac:AwardingTerms>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
+    <cbc:NegotiationDescription>The service contract for the detailed design and the supervision of the production is negotiated with the first-prize winner, without a new call for competition, on fees, timetable and the number of prototypes.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+    <cac:EconomicOperatorShortList>
+      <cbc:LimitationDescription>Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.</cbc:LimitationDescription>
+      <cac:PreSelectedParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PreSelectedParty>
+    </cac:EconomicOperatorShortList>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:Name>Design of the harbour promenade bench</cbc:Name>
@@ -917,7 +939,8 @@ Inside `TenderResult`:
           <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
           <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
           <cac:RegistrationAddress>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>

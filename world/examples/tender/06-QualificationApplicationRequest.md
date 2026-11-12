@@ -279,16 +279,12 @@ Inside `TenderingCriterion`:
   The criterion.
 - `Description` = **Turnover of the last three years.**  
   What.
-- `WeightNumeric` = **0**  
-  Pass or fail.
 - `FulfilmentIndicator` = **true**  
   Must be met.
 - `FulfilmentIndicatorTypeCode` = **ALL** (listID `urn:ubl-examples:world:codelist:FulfilmentIndicatorCode`)  
   All its properties. The code is from the Trade Accord's fulfilment indicator list: ALL = All properties.
 - `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
   Pass or fail. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
-- `WeightingConsiderationDescription` = **Not weighted.**  
-  Why.
 - `ProcurementProjectLotReference/ID` = **LOT-1**  
   Lot 1 of the procedure.
 - `CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
@@ -339,8 +335,6 @@ Inside `TenderingCriterion`:
   In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedAmount` = **250000.00** (currencyID `XBL`)  
   At least.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount` = **99999999.00** (currencyID `XBL`)  
-  No real maximum.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumAmount` = **250000.00** (currencyID `XBL`)  
   The minimum.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate` = **2023-01-01**  
@@ -365,12 +359,8 @@ Inside `TenderingCriterion`:
   Years. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedValueNumeric` = **3**  
   At least.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumValueNumeric` = **200**  
-  Maximum.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumValueNumeric` = **3**  
   Minimum.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumQuantity` = **200** (unitCode `ANN`)  
-  No real maximum.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity` = **3** (unitCode `ANN`)  
   At least three.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-3**  
@@ -413,6 +403,72 @@ Inside `TenderingCriterion`:
   Question or requirement. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
 - `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **PERCENT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
   A percentage. The code is from the Trade Accord's response data type list: PERCENT = Percentage.
+- `ID` = **CR-DEBT**  
+  The debt ratio criterion.
+- `CriterionTypeCode` = **ECONOMIC** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: ECONOMIC = Economic and financial standing.
+- `Name` = **Debt ratio**  
+  The criterion.
+- `Description` = **Total liabilities as a share of total assets, from the last annual accounts.**  
+  What.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Pass or fail. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `TenderingCriterionPropertyGroup/ID` = **PG-2**  
+  The group.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ONTRUE** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Answered when the criterion applies. The code is from the Trade Accord's property group type list: ONTRUE = When the indicator is true.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-5**  
+  The property.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Liabilities as a share of total assets**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: liabilities as a share of total assets.**  
+  What is asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **REQUIREMENT** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  Question or requirement. The code is from the Trade Accord's criterion property type list: REQUIREMENT = Requirement.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **PERCENT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  A percentage. The code is from the Trade Accord's response data type list: PERCENT = Percentage.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumValueNumeric` = **80**  
+  The same limit as a number, for automatic checking.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumQuantity` = **80** (unitCode `P1`)  
+  At most 80 %: a tenderer with more debt than that is not considered able to carry a two-year framework.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate` = **2025-01-01**  
+  The last
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/EndDate` = **2025-12-31**  
+  financial year.
+- `ID` = **CR-TAXES**  
+  The exclusion ground on taxes.
+- `CriterionTypeCode` = **EXCLUSION** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: EXCLUSION = Exclusion ground.
+- `Name` = **Payment of taxes and social security contributions**  
+  The criterion.
+- `Description` = **A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.**  
+  What.
+- `Legislation/ID` = **XB-PPA-2019**  
+  The act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Title.
+- `Legislation/Description` = **Exclusion grounds; the exception for minor amounts.**  
+  What.
+- `Legislation/Article` = **Art. 57**  
+  The article.
+- `TenderingCriterionPropertyGroup/ID` = **PG-3**  
+  The group.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ONTRUE** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Answered when the criterion applies. The code is from the Trade Accord's property group type list: ONTRUE = When the indicator is true.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-6**  
+  The property.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Unpaid taxes and contributions**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: unpaid taxes and contributions.**  
+  What is asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  Question or requirement. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **AMOUNT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  An amount. The code is from the Trade Accord's response data type list: AMOUNT = Amount.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount` = **1000.00** (currencyID `XBL`)  
+  Arrears up to 1,000 lume count as minor amounts and do not exclude the tenderer.
 
 ### Additional Document Reference
 
@@ -648,11 +704,9 @@ Inside `Signature`:
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
     <cbc:Name>General yearly turnover</cbc:Name>
     <cbc:Description>Turnover of the last three years.</cbc:Description>
-    <cbc:WeightNumeric>0</cbc:WeightNumeric>
     <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
     <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
     <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
-    <cbc:WeightingConsiderationDescription>Not weighted.</cbc:WeightingConsiderationDescription>
     <cac:ProcurementProjectLotReference>
       <cbc:ID>LOT-1</cbc:ID>
     </cac:ProcurementProjectLotReference>
@@ -694,7 +748,6 @@ Inside `Signature`:
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
         <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
         <cbc:ExpectedAmount currencyID="XBL">250000.00</cbc:ExpectedAmount>
-        <cbc:MaximumAmount currencyID="XBL">99999999.00</cbc:MaximumAmount>
         <cbc:MinimumAmount currencyID="XBL">250000.00</cbc:MinimumAmount>
         <cac:ApplicablePeriod>
           <cbc:StartDate>2023-01-01</cbc:StartDate>
@@ -713,9 +766,7 @@ Inside `Signature`:
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
         <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:ValueUnitCode>
         <cbc:ExpectedValueNumeric>3</cbc:ExpectedValueNumeric>
-        <cbc:MaximumValueNumeric>200</cbc:MaximumValueNumeric>
         <cbc:MinimumValueNumeric>3</cbc:MinimumValueNumeric>
-        <cbc:MaximumQuantity unitCode="ANN">200</cbc:MaximumQuantity>
         <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
       </cac:TenderingCriterionProperty>
       <cac:TenderingCriterionProperty>
@@ -744,6 +795,55 @@ Inside `Signature`:
           <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
         </cac:TenderingCriterionProperty>
       </cac:SubsidiaryTenderingCriterionPropertyGroup>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-DEBT</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
+    <cbc:Name>Debt ratio</cbc:Name>
+    <cbc:Description>Total liabilities as a share of total assets, from the last annual accounts.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-2</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-5</cbc:ID>
+        <cbc:Name>Liabilities as a share of total assets</cbc:Name>
+        <cbc:Description>Answer: liabilities as a share of total assets.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">REQUIREMENT</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
+        <cbc:MaximumValueNumeric>80</cbc:MaximumValueNumeric>
+        <cbc:MaximumQuantity unitCode="P1">80</cbc:MaximumQuantity>
+        <cac:ApplicablePeriod>
+          <cbc:StartDate>2025-01-01</cbc:StartDate>
+          <cbc:EndDate>2025-12-31</cbc:EndDate>
+        </cac:ApplicablePeriod>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
+    <cbc:Description>A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.</cbc:Description>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Exclusion grounds; the exception for minor amounts.</cbc:Description>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-3</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-6</cbc:ID>
+        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
+        <cbc:Description>Answer: unpaid taxes and contributions.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
+        <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
+        <cbc:MaximumAmount currencyID="XBL">1000.00</cbc:MaximumAmount>
+      </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>

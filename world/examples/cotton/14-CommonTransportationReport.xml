@@ -227,9 +227,11 @@
       <cac:MaritimeHealthDeclaration>
         <cbc:ID>MDH-26-0303</cbc:ID>
         <cbc:InfectiousDiseaseCaseOnBoardIndicator>false</cbc:InfectiousDiseaseCaseOnBoardIndicator>
+        <cbc:SickAnimalOnBoardIndicator>true</cbc:SickAnimalOnBoardIndicator>
         <cbc:SanitaryMeasuresAppliedIndicator>false</cbc:SanitaryMeasuresAppliedIndicator>
         <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
         <cbc:TotalIllPersonQuantity unitCode="IE">0</cbc:TotalIllPersonQuantity>
+        <cbc:SickAnimalDescription>The ship's cat has been off its food and listless for three days. It is kept in the master's cabin, away from the cargo and the galley; the master asks for a veterinarian at Lumeport.</cbc:SickAnimalDescription>
         <cac:ShipSanitationControlExemptionDocumentReference>
           <cbc:ID>SSCEC-XB-2026-0114</cbc:ID>
           <cbc:IssueDate>2026-01-14</cbc:IssueDate>

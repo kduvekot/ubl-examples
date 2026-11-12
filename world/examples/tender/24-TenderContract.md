@@ -210,9 +210,9 @@ Inside `EconomicOperatorParty`:
 - `Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -253,8 +253,10 @@ Inside `EconomicOperatorParty`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -397,8 +399,8 @@ Inside `TenderingTerms`:
   The terms.
 - `TendererQualificationRequest/CompanyLegalForm` = **Any legal form; consortia must name a lead member.**  
   The rule on the legal form, in words: any form is accepted, so there is no code to give.
-- `TendererQualificationRequest/PersonalSituation` = **No exclusion grounds.**  
-  The tenderer's situation.
+- `TendererQualificationRequest/PersonalSituation` = **The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.**  
+  What is asked of the tenderer's personal situation.
 - `TendererQualificationRequest/OperatingYearsQuantity` = **3** (unitCode `ANN`)  
   At least three years in business.
 - `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `IE`)  
@@ -463,8 +465,6 @@ Inside `TenderingTerms`:
   As a code. The code is from the Trade Accord's subcontracting conditions list: ALLOWED = Allowed.
 - `AllowedSubcontractTerms/MaximumPercent` = **30**  
   At most.
-- `AllowedSubcontractTerms/MinimumPercent` = **0**  
-  At least.
 - `TenderPreparation/TenderEnvelopeID` = **ENV-1**  
   One envelope.
 - `TenderPreparation/TenderEnvelopeTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderEnvelopeCode`)  
@@ -509,8 +509,6 @@ Inside `TenderingTerms`:
   Abnormally low.
 - `AwardingTerms/PrizeIndicator` = **false**  
   Not a design contest: no prizes.
-- `AwardingTerms/PaymentDescription` = **No payment for tendering.**  
-  None.
 - `AwardingTerms/FollowupContractIndicator` = **false**  
   No follow-up contract.
 - `AwardingTerms/BindingOnBuyerIndicator` = **true**  
@@ -537,8 +535,8 @@ Inside `TenderingTerms`:
   Unit price at least.
 - `AwardingTerms/AwardingCriterion/MaximumAmount` = **600.00** (currencyID `XBL`)  
   At most.
-- `AwardingTerms/AwardingCriterion/MinimumImprovementBid` = **Not applicable: no auction.**  
-  Stated.
+- `AwardingTerms/AwardingCriterion/MinimumImprovementBid` = **In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.**  
+  The minimum step of a bid on the price.
 - `AwardingTerms/AwardingCriterion/ID` = **AC-2**  
   Quality.
 - `AwardingTerms/AwardingCriterion/AwardingCriterionTypeCode` = **QUALITY** (listID `urn:ubl-examples:world:codelist:AwardCriterionTypeCode`)  
@@ -641,8 +639,6 @@ Inside `TenderingTerms`:
   Call-offs as UBL orders.
 - `PostAwardProcess/ElectronicPaymentUsageIndicator` = **true**  
   Paid by transfer.
-- `EconomicOperatorShortList/LimitationDescription` = **No short list.**  
-  An open procedure.
 - `SecurityClearanceTerm/Code` = **NOTREQUIRED** (listID `urn:ubl-examples:world:codelist:SecurityClearanceCode`)  
   No security clearance. The code is from the Trade Accord's security clearance list: NOTREQUIRED = Not required.
 - `SecurityClearanceTerm/Description` = **Parks are public places.**  
@@ -723,12 +719,14 @@ Inside `TenderResult`:
   After the standstill period.
 - `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
   Before the first call-off.
-- `SubcontractTerms/Rate` = **0**  
-  The manufacturer installs with its own staff.
+- `SubcontractTerms/Rate` = **3.5**  
+  The installation's share of the contract value: 4,320 of 124,080.00 lume, rounded.
 - `SubcontractTerms/UnknownPriceIndicator` = **false**  
-  Nothing is subcontracted.
-- `SubcontractTerms/Description` = **No subcontracting.**  
-  The tender's terms.
+  The price of the subcontracted part is known: the tender's installation line.
+- `SubcontractTerms/Description` = **Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.**  
+  What is subcontracted, as the tender named it.
+- `SubcontractTerms/Amount` = **4320.00** (currencyID `XBL`)  
+  The value of the installation.
 - `WinningParty/Rank` = **1**  
   First in the evaluation.
 - `WinningParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -940,7 +938,8 @@ Inside `TenderResult`:
         <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName>Ferrano</cbc:CityName>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -1067,7 +1066,7 @@ Inside `TenderResult`:
     </cac:PaymentTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalForm>Any legal form; consortia must name a lead member.</cbc:CompanyLegalForm>
-      <cbc:PersonalSituation>No exclusion grounds.</cbc:PersonalSituation>
+      <cbc:PersonalSituation>The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
       <cbc:Description>Economic and technical capacity.</cbc:Description>
@@ -1120,7 +1119,6 @@ Inside `TenderResult`:
       <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
       <cbc:SubcontractingConditionsCode listID="urn:ubl-examples:world:codelist:SubcontractingConditionsCode">ALLOWED</cbc:SubcontractingConditionsCode>
       <cbc:MaximumPercent>30</cbc:MaximumPercent>
-      <cbc:MinimumPercent>0</cbc:MinimumPercent>
     </cac:AllowedSubcontractTerms>
     <cac:TenderPreparation>
       <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
@@ -1165,7 +1163,6 @@ Inside `TenderResult`:
       <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
       <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
       <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
-      <cbc:PaymentDescription>No payment for tendering.</cbc:PaymentDescription>
       <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
       <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
       <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
@@ -1180,7 +1177,7 @@ Inside `TenderResult`:
         <cbc:CalculationExpressionCode listID="urn:ubl-examples:world:codelist:CalculationExpressionCode">INVERSE</cbc:CalculationExpressionCode>
         <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
         <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
-        <cbc:MinimumImprovementBid>Not applicable: no auction.</cbc:MinimumImprovementBid>
+        <cbc:MinimumImprovementBid>In the electronic auction, each new bid lowers the bench's unit price by at least 2 lume.</cbc:MinimumImprovementBid>
       </cac:AwardingCriterion>
       <cac:AwardingCriterion>
         <cbc:ID>AC-2</cbc:ID>
@@ -1312,9 +1309,6 @@ Inside `TenderResult`:
       <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
       <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
     </cac:PostAwardProcess>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list.</cbc:LimitationDescription>
-    </cac:EconomicOperatorShortList>
     <cac:SecurityClearanceTerm>
       <cbc:Code listID="urn:ubl-examples:world:codelist:SecurityClearanceCode">NOTREQUIRED</cbc:Code>
       <cbc:Description>Parks are public places.</cbc:Description>
@@ -1372,9 +1366,10 @@ Inside `TenderResult`:
       <cbc:EndDate>2026-03-22</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
-      <cbc:Rate>0</cbc:Rate>
+      <cbc:Rate>3.5</cbc:Rate>
       <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>No subcontracting.</cbc:Description>
+      <cbc:Description>Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
     </cac:SubcontractTerms>
     <cac:WinningParty>
       <cbc:Rank>1</cbc:Rank>

@@ -205,7 +205,19 @@
     </cac:AwardingTerms>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
+    <cbc:NegotiationDescription>The service contract for the detailed design and the supervision of the production is negotiated with the first-prize winner, without a new call for competition, on fees, timetable and the number of prototypes.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+    <cac:EconomicOperatorShortList>
+      <cbc:LimitationDescription>Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.</cbc:LimitationDescription>
+      <cac:PreSelectedParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PreSelectedParty>
+    </cac:EconomicOperatorShortList>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:Name>Design of the harbour promenade bench</cbc:Name>
@@ -385,7 +397,8 @@
           <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
           <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
           <cac:RegistrationAddress>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
