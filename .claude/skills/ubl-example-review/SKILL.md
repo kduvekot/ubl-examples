@@ -107,7 +107,11 @@ never in a folder another part of the run uses: parts run in parallel.
    value, the definition and the referenced example; redo the arithmetic; consider whether the
    value is a legitimate reading of the definition. Drop it if it does not survive, and lower its
    severity if it only partly does. Then compare the remaining findings with the register (section
-   7): an occurrence of a registered pattern is listed under its ID, not as a finding.
+   7): an occurrence of a registered pattern is listed under its ID, not as a finding, unless it
+   also contradicts something else in this example or a referenced one (e.g. a location named after
+   a company that also contradicts the loading place the same document gives). Such an occurrence
+   is a finding of its own, with the severity that contradiction justifies, and cites the pattern
+   ID.
 
 Then write the review (section 8), or decide there are no findings, and run `check_xpaths.py` and
 `check_values.py` on it.
@@ -176,6 +180,11 @@ the run writes its own file, named with that run ID and the part, and every file
    - verify every finding again independently: open the XML and the referenced examples, check
      the definition, redo the arithmetic, and try to prove it wrong. Drop what does not survive,
      correct what partly survives;
+   - group findings that are the same problem at several places of the example (the same wrong
+     value, or the same misuse of an element, in several parties, lines or stages) into one finding
+     with one `XPath` line per place, and its condition covering all of them. An occurrence that
+     also contradicts something else, or deserves another severity, stays a separate finding with
+     its own severity;
    - list the occurrences of registered patterns (`count_patterns.py --list`, each checked);
    - number the findings, write `NN-DocumentType.llm-review.<run-id>.merged.md` (section 8) and
      run `check_xpaths.py` and `check_values.py`. Leave the part files as they are;
