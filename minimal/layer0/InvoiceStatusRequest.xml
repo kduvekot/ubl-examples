@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <InvoiceStatusRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:InvoiceStatusRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>InvoiceStatusRequest-1</cbc:ID>
   <cbc:RequestDate>2026-08-12</cbc:RequestDate>
   <cac:SenderParty>
     <cac:PartyName>
@@ -14,7 +14,7 @@
   </cac:ReceiverParty>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>X</cbc:ID>
+      <cbc:ID>InvoiceDocumentReference-1</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
 </InvoiceStatusRequest>

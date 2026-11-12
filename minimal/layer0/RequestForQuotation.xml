@@ -11,7 +11,7 @@
   </cac:SellerSupplierParty>
   <cac:RequestForQuotationLine>
     <cac:LineItem>
-      <cbc:ID>X</cbc:ID>
+      <cbc:ID>1</cbc:ID>
       <cac:Item>
         <cbc:Description>X</cbc:Description>
       </cac:Item>

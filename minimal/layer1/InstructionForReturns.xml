@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <InstructionForReturns xmlns="urn:oasis:names:specification:ubl:schema:xsd:InstructionForReturns-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>InstructionForReturns-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:SellerSupplierParty>
     <cac:Party>
@@ -23,7 +23,7 @@
     </cac:Party>
   </cac:RetailerCustomerParty>
   <cac:InstructionForReturnsLine>
-    <cbc:ID>X</cbc:ID>
+    <cbc:ID>1</cbc:ID>
     <cbc:Quantity unitCode="H87">10</cbc:Quantity>
     <cac:Item>
       <cbc:Description>X</cbc:Description>

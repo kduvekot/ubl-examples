@@ -73,6 +73,22 @@ TIME = "09:30:00"
 UTC_OFFSETS = {"US": "-04:00", "DE": "+02:00", "JP": "+09:00",
                "IN": "+05:30", "BR": "-03:00", "ZA": "+02:00"}
 
+# Identifiers (the documents are unrelated): the document's own ID is its
+# type + "-1" (unique in the set); line IDs are 1 (local by convention);
+# sequence and version identifiers are 1; every other identifier is its own
+# label + a number, so no reference equals any document's ID (PH#F9, F10, F16).
+def id_for(parent, name):
+    p = etree.QName(parent).localname
+    if name == "ID" and parent.getparent() is None:
+        return DOC + "-1"
+    if (name == "ID" and (p.endswith("Line") or p == "LineItem")) or name == "LineID":
+        return "1"
+    if name in ("SequenceNumberID", "VersionID"):
+        return "1"
+    label = p if name == "ID" else name
+    IDS[label] = IDS.get(label, 0) + 1
+    return "%s-%d" % (label, IDS[label])
+
 def date_for(parent, name):
     pn = etree.QName(parent).localname
     for key in (DOC + ":" + pn + "/" + name, pn + "/" + name, name):
@@ -423,6 +439,7 @@ def build(parent, el_decl):
     if t.find(X + "simpleContent") is not None:
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
+                  else id_for(parent, el_decl.get("name")) if u == "IdentifierType"
                   else TIME + UTC_OFFSETS[COUNTRY] if u == "TimeType"
                   else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"
@@ -504,6 +521,8 @@ def generate(layer, fill, schemes):
         root_decl = r.find(X + "element")
         name = DOC = root_decl.get("name")
         currency, COUNTRY = LOCALES[len(written) % len(LOCALES)]
+        global IDS
+        IDS = {}
         nsmap = {None: ns,
                  "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
                  "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}

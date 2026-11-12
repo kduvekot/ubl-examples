@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SelfBilledCreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledCreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>SelfBilledCreditNote-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -42,6 +42,6 @@
     <cbc:PayableAmount currencyID="BRL">100</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
-    <cbc:ID>X</cbc:ID>
+    <cbc:ID>1</cbc:ID>
   </cac:CreditNoteLine>
 </SelfBilledCreditNote>

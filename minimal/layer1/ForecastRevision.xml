@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ForecastRevision xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForecastRevision-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>ForecastRevision-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
-  <cbc:SequenceNumberID>X</cbc:SequenceNumberID>
+  <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cac:ForecastPeriod>
     <cbc:StartDate>2026-08-19</cbc:StartDate>
     <cbc:EndDate>2026-09-15</cbc:EndDate>
@@ -24,8 +24,8 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ForecastRevisionLine>
-    <cbc:ID>X</cbc:ID>
-    <cbc:RevisedForecastLineID>X</cbc:RevisedForecastLineID>
+    <cbc:ID>1</cbc:ID>
+    <cbc:RevisedForecastLineID>RevisedForecastLineID-1</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-08-05</cbc:SourceForecastIssueDate>
     <cbc:SourceForecastIssueTime>09:30:00+09:00</cbc:SourceForecastIssueTime>
   </cac:ForecastRevisionLine>

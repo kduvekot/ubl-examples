@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>TransportationStatus-1</cbc:ID>
 </TransportationStatus>

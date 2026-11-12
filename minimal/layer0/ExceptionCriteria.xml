@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExceptionCriteria xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExceptionCriteria-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>ExceptionCriteria-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-08-12</cbc:StartDate>
@@ -17,7 +17,7 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ExceptionCriteriaLine>
-    <cbc:ID>X</cbc:ID>
+    <cbc:ID>1</cbc:ID>
     <cbc:ThresholdValueComparisonCode>FALLS_BELOW_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="H87">10</cbc:ThresholdQuantity>
     <cac:SupplyItem>

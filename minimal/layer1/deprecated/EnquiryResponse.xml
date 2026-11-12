@@ -18,6 +18,6 @@
     </cac:PartyName>
   </cac:ResponderParty>
   <cac:ParentDocumentReference>
-    <cbc:ID>X</cbc:ID>
+    <cbc:ID>ParentDocumentReference-1</cbc:ID>
   </cac:ParentDocumentReference>
 </EnquiryResponse>

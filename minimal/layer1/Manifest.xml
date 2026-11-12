@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Manifest xmlns="urn:oasis:names:specification:ubl:schema:xsd:Manifest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ID>X</cbc:ID>
+  <cbc:ID>Manifest-1</cbc:ID>
   <cac:SendingLogisticsOperatorParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="0088">9520000004712</cbc:ID>
