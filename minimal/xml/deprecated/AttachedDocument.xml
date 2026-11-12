@@ -13,5 +13,7 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
-  <cac:Attachment/>
+  <cac:Attachment>
+    <cbc:EmbeddedDocumentBinaryObject mimeCode="application/octet-stream">AA==</cbc:EmbeddedDocumentBinaryObject>
+  </cac:Attachment>
 </AttachedDocument>

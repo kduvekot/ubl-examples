@@ -37,7 +37,10 @@ VALUES = {
     "MeasureType": "0", "NumericType": "0", "ValueType": "0", "PercentType": "0",
     "RateType": "0", "QuantityType": "0", "TextType": "X", "NameType": "X",
 }
-ATTRS = {"mimeCode": "X"}
+# mimeCode: AA== is one zero byte, honestly "arbitrary binary data" (in UBL's
+# default BinaryObjectMimeCode list). Open point: a single zero byte is close
+# to a null value (IND5); a later layer embeds real content.
+ATTRS = {"mimeCode": "application/octet-stream"}
 
 # Locale: one per document that needs a currency or a country, used for every
 # currency code, currencyID and country code in it (no cross-country minimal
@@ -126,7 +129,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # (ResponseValue). The answer is a neutral text placeholder, not an
         # Indicator: "true" would state a real answer; a later layer fills it.
         "TenderingCriterionResponseType": {"cbc:ValidatedCriterionPropertyID", "cac:ResponseValue"},
-        "ResponseValueType": {"cbc:Response"}}
+        "ResponseValueType": {"cbc:Response"},
+        # AttachmentType: only in AttachedDocument ("a document of any kind to
+        # be packaged with"), "containing the document content": embedded,
+        # and binary because any kind of document must fit.
+        "AttachmentType": {"cbc:EmbeddedDocumentBinaryObject"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
