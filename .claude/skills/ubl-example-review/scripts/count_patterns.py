@@ -129,8 +129,81 @@ def r11(doc):  # a party's own tax exemption worded as a transaction
             yield e
 
 
+def r12(doc):  # EntitySizeCode SMALL as a default value, together with the placeholder date of R5
+    for le in doc.iter(f'{{{CAC}}}PartyLegalEntity'):
+        size, date = cbc(le, 'EntitySizeCode'), cbc(le, 'RegistrationDate')
+        if text(size) == 'SMALL' and text(date) == '1996-01-01':
+            yield size
+
+
+ADDRESS = re.compile(r'(Address|RegistrationAddress|JurisdictionRegionAddress)$')
+
+
+def r13(doc):  # English rendering tagged with a region other than the address's country
+    for addr in doc.iter():
+        if not isinstance(addr.tag, str) or not ADDRESS.search(ln(addr)):
+            continue
+        country = addr.find(f'{{{CAC}}}Country/{{{CBC}}}IdentificationCode')
+        if country is None:
+            continue
+        for e in addr:
+            lang = e.get('languageID') or ''
+            if lang.startswith('en-') and lang[3:] != text(country):
+                yield e
+
+
+def r14(doc):  # Urvanian legal form as untagged mixed Italian/English text
+    for e in doc.iter(f'{{{CBC}}}CompanyLegalForm'):
+        if not e.get('languageID') and text(e).startswith('Società'):
+            yield e
+
+
+def r15(doc):  # document reference that carries only an ID
+    for e in doc.iter(f'{{{CAC}}}AdditionalDocumentReference', f'{{{CAC}}}DocumentReference'):
+        kids = [ln(c) for c in e if isinstance(c.tag, str)]
+        if kids == ['ID']:
+            yield cbc(e, 'ID')
+
+
+def r16(doc):  # signature ID carrying the name of the example's flow
+    flow = Path(doc.getroottree().docinfo.URL or '').parent.name.lower()
+    for e in doc.iter(f'{{{CAC}}}Signature'):
+        i = cbc(e, 'ID')
+        if flow and i is not None and text(i).lower().endswith('-' + flow):
+            yield i
+
+
+PLACE_LIKE = re.compile(r'\b(Port|Airport|Terminal|Hub|Station|Quay|Yard|Depot|Warehouse|Siding|Mine)\b')
+
+
+def r17(doc):  # location named after a party (that is not itself a place) of the same document
+    names = {text(n) for n in doc.iterfind(f'.//{{{CAC}}}PartyName/{{{CBC}}}Name')
+             if not PLACE_LIKE.search(text(n))}
+    for loc in doc.iter():
+        if isinstance(loc.tag, str) and ln(loc).endswith('Location') and CAC in loc.tag:
+            n = cbc(loc, 'Name')
+            if n is not None and text(n) in names:
+                yield n
+
+
+def r18(doc):  # PriceList/StatusCode from a list of record statuses
+    for e in doc.iterfind(f'.//{{{CAC}}}PriceList/{{{CBC}}}StatusCode'):
+        if 'RecordStatusCode' in (e.get('listID') or ''):
+            yield e
+
+
+OPERATIONAL = re.compile(r'^(Port control|Terminal control|Border office)$')
+
+
+def r19(doc):  # round-the-clock operational contact with office hours
+    for c in doc.iter(f'{{{CAC}}}Contact'):
+        if OPERATIONAL.match(text(cbc(c, 'Name'))) and text(cbc(c, 'Note')).startswith('Weekdays'):
+            yield cbc(c, 'Note')
+
+
 PATTERNS = {'R1': r1, 'R2': r2, 'R3': r3, 'R4': r4, 'R5': r5, 'R6': r6, 'R7': r7, 'R8': r8, 'R9': r9,
-            'R10': r10, 'R11': r11}
+            'R10': r10, 'R11': r11, 'R12': r12, 'R13': r13, 'R14': r14, 'R15': r15, 'R16': r16,
+            'R17': r17, 'R18': r18, 'R19': r19}
 
 
 def xpath_of(e):

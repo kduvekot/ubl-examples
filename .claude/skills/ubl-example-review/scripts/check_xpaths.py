@@ -1,28 +1,18 @@
-"""Check that every absolute XPath cited in a review resolves in the reviewed XML.
+"""Check that every XPath a review cites resolves.
 
 usage: python3 -I check_xpaths.py <NN-DocumentType.llm-review.<run-id>[.<part>].md> [...]
 
-Backticked absolute paths are checked against the reviewed XML. A path with another root element
-(e.g. `/Waybill/...` cited from a TransportationStatus review), or one that does not resolve in the
-reviewed XML, is checked against the other examples of the same flow with that root; it passes if it resolves in at least one of them, and the matching
-files are named. Paths containing '…' are shorthand and are not checked.
+Citations (see citations.py): `/Root/…` in the reviewed example or, if it does not resolve there,
+in the other examples of the same flow with that root; `<flow>/NN-Doc.xml:/Root/…` or
+`NN-Doc.xml:/Root/…` in the named example. Paths containing '…' are shorthand and are skipped.
 """
-import re
 import sys
 from pathlib import Path
 
 from lxml import etree
 
-NS = {'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2',
-      'cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2',
-      'ext': 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2'}
-
-
-def resolves(path, xml_file):
-    doc = etree.parse(str(xml_file))
-    ns = dict(NS, d=doc.getroot().nsmap[None])
-    q = re.sub(r'(^|/)([A-Z][A-Za-z]*)(?=/|\[|$)', lambda m: m.group(1) + 'd:' + m.group(2), path)
-    return bool(doc.xpath(q, namespaces=ns))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from citations import citations, resolve, review_xml  # noqa: E402
 
 
 def main():
@@ -30,29 +20,20 @@ def main():
         sys.exit(__doc__)
     failed = 0
     for md in sys.argv[1:]:
-        xml = re.sub(r'\.llm-review(\.[^/]+)?\.md$', '.xml', md)  # final review or a run's working file
-        name = etree.QName(etree.parse(xml).getroot()).localname
-        flow = Path(xml).parent
-        for p in sorted(set(re.findall(r'`(/[A-Za-z][^`\s]*)`', open(md, encoding='utf-8').read()))):
-            if '…' in p:
-                continue
-            root = p.split('/')[1].split('[')[0]
+        own = review_xml(md).resolve()
+        for prefix, path in citations(md):
             try:
-                if root == name and resolves(p, xml):
-                    ok, where = True, ''
-                else:
-                    # a path into another example of the flow (also one with the same root, e.g. an
-                    # Invoice review citing another Invoice)
-                    hits = [f.name for f in sorted(flow.glob('*.xml')) if str(f) != str(Path(xml))
-                            and etree.QName(etree.parse(str(f)).getroot()).localname == root and resolves(p, f)]
-                    ok, where = bool(hits), ', '.join(hits)
+                hits = resolve(md, prefix, path)
             except etree.XPathError as e:
-                ok, where = False, str(e)
-            if not ok:
                 failed += 1
-                print(f'{md}: NO MATCH {p} {where}')
-            elif where:
-                print(f'{md}: other document, resolves in {where}: {p}')
+                print(f'{md}: INVALID {prefix}{path} ({e})')
+                continue
+            if not hits:
+                failed += 1
+                print(f'{md}: NO MATCH {prefix}{path}')
+            elif hits[0][0].resolve() != own:
+                where = ', '.join(f'{f.parent.name}/{f.name}' for f, _ in hits)
+                print(f'{md}: other document, resolves in {where}: {prefix}{path}')
     print('all cited XPaths resolve' if not failed else f'{failed} XPath(s) do not resolve')
     sys.exit(1 if failed else 0)
 
