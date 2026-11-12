@@ -211,7 +211,10 @@ PARTY_SCHEMES = {
     "ParticipantParty": LEI,
     # business registration, business cards, enquiries
     "BusinessParty": DUNS, "RequestorParty": DUNS, "ResponderParty": DUNS,
-    # customs and waste: the legally responsible trader, by tax registration
+    # customs and waste: the legally responsible trader, by tax registration.
+    # Waste roles have their own national registers (e.g. US EPA ID, German
+    # waste-register numbers), but these have no ICD and no safe test range,
+    # so the tax number is used.
     "ExporterParty": TAX, "HolderParty": TAX,
     "NotifierParty": TAX, "WasteProducerParty": TAX,
     # Sender and Receiver, by the document's domain:
