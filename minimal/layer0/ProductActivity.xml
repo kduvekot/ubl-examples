@@ -18,7 +18,7 @@
   </cac:ReceiverParty>
   <cac:SupplyChainActivityDataLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:SupplyChainActivityTypeCode>X</cbc:SupplyChainActivityTypeCode>
+    <cbc:SupplyChainActivityTypeCode>SALES</cbc:SupplyChainActivityTypeCode>
     <cac:ActivityOriginLocation>
       <cbc:Name languageID="en">Example Store 1</cbc:Name>
     </cac:ActivityOriginLocation>

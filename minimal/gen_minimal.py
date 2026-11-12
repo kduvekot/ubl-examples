@@ -166,6 +166,9 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # "the extent of this transportation service (e.g., door-to-door,
                # port-to-port)": a segment of an itinerary is part of the route;
                # a service description request is about the whole service
+               # values listed for the same element elsewhere in UBL (CANCELED_
+               # ORDERS ... SALES SHIPMENTS); a store's sales item over a period
+               "SupplyChainActivityTypeCode": "SALES",
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
                "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR"}
 
