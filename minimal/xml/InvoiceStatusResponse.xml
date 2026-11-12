@@ -3,7 +3,9 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:DocumentResponse>
-    <cac:Response/>
+    <cac:Response>
+      <cbc:ResponseCode>X</cbc:ResponseCode>
+    </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>X</cbc:ID>
     </cac:DocumentReference>

@@ -108,7 +108,12 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # the Invoice for which a status update is requested"; the typed
         # reference needs no DocumentTypeCode, and the issuer follows from the
         # exchange's own parties (its required ID follows from the schema).
-        "BillingReferenceType": {"cac:InvoiceDocumentReference"}}
+        "BillingReferenceType": {"cac:InvoiceDocumentReference"},
+        # ResponseType: only in InvoiceStatusResponse, "a response to the
+        # document as a whole"; the sibling DocumentReference says which
+        # document, the code is the answer ("the type of response"). Its code
+        # list is left to the code-list layer, like the other required codes.
+        "ResponseType": {"cbc:ResponseCode"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
