@@ -120,7 +120,13 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # EvidenceType: only ReexportationEvidence so far, "references to
         # evidence supporting that goods have been re-exported" (the type
         # itself is defined for tendering only).
-        "EvidenceType": {"cac:DocumentReference"}}
+        "EvidenceType": {"cac:DocumentReference"},
+        # TenderingCriterionResponseType: nothing else says what is answered,
+        # so both what (ValidatedCriterionPropertyID) and the answer
+        # (ResponseValue). The answer is a neutral text placeholder, not an
+        # Indicator: "true" would state a real answer; a later layer fills it.
+        "TenderingCriterionResponseType": {"cbc:ValidatedCriterionPropertyID", "cac:ResponseValue"},
+        "ResponseValueType": {"cbc:Response"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

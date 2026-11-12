@@ -16,5 +16,10 @@
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>
-  <cac:TenderingCriterionResponse/>
+  <cac:TenderingCriterionResponse>
+    <cbc:ValidatedCriterionPropertyID>X</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:Response>X</cbc:Response>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
 </QualificationApplicationResponse>
