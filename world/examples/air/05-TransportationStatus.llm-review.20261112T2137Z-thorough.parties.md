@@ -29,14 +29,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: drop `LocaleCode` where the party has no locale beyond its language; (b) carry a real locale (e.g. a BCP 47 tag such as `en-XB`, with a listID naming that list), if the world has a reason to state the locale.
 - Needs decision: no
 
-### air/05#F2 · Low · Status location named after the terminal company, without identifier
-- XPath: `/TransportationStatus/cac:StatusLocation/cbc:Name` = `Lumeport Airport Cargo Terminal`
-- Why: `cac:StatusLocation` is the place the status applies to, and its `cbc:Name` is "The name of this location." The value is the name of the sending party (`/TransportationStatus/cac:SenderParty/cac:PartyName/cbc:Name` = `Lumeport Airport Cargo Terminal`), not of a place. The same place is named as a place in `/TransportationStatus/cac:TransportEvent/cac:Location/cbc:Name` = `Lumeport airport, cargo terminal` and identified in the terminal operator's `/TransportationStatus/cac:Consignment/cac:MainCarriageShipmentStage/cac:TerminalOperatorParty/cac:PhysicalLocation/cbc:ID` = `XBLMA`; the status location carries neither.
-- Condition: the status location is named as a place and, where available, identified (UN/LOCODE `XBLMA`), consistently with the transport event's location.
-- Options: (a) preferred: use the place name of the transport event and add `cbc:ID` `XBLMA`; (b) keep the facility name and add the identifier.
-- Needs decision: no
-
-### air/05#F3 · Low · English renderings of island addresses tagged en-XB here, en-XL elsewhere
+### air/05#F2 · Low · English renderings of island addresses tagged en-XB here, en-XL elsewhere
 - XPath: `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]/@languageID` = `en-XB` (`Airfield Road`, Kelaro Air Cargo)
 - XPath: `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:CityName[2]/@languageID` = `en-XB` (`Port Wrenfield`, Kelaro Air Cargo)
 - XPath: `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName[2]/@languageID` = `en-XB` (`Port Wrenfield`, Kelaro Air Cargo)
@@ -45,7 +38,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: tag the English renderings of island addresses `en-XL` everywhere, since they are island names; (b) keep the writer's variety, and record that rule where the world's language conventions are written down.
 - Needs decision: yes (which convention the world follows)
 
-### air/05#F4 · Low · The same registration date 1996-01-01 for many unrelated companies
+### air/05#F3 · Low · The same registration date 1996-01-01 for many unrelated companies
 - XPath: `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01` (Kelaro Air Cargo)
 - XPath: `/TransportationStatus/cac:Consignment/cac:MainCarriageShipmentStage/cac:TerminalOperatorParty/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01` (Lumeport Airport Cargo Terminal)
 - Why: UBL defines `PartyLegalEntity/cbc:RegistrationDate` as "The registration date of the CompanyID." The date `1996-01-01` (a New Year's Day) is given for 25 different companies in three countries and three registers (XB:FBR, XL:ICR, XU:CR), among them Bayforth Forwarding, Kelaro Air Cargo, Nalevi Warehousing, Velumi Trading, Selanu Airport Cargo and Lumeport Airport Cargo Terminal, while other companies of the same registers have individual dates (Lumeway Distribution `1988-10-03`, Tidewell Ocean Lines `1974-03-01`, Lisavu Cotton Farm `2009-08-17`). It occurs in 181 examples (`grep -rl --include='*.xml' '<cbc:RegistrationDate>1996-01-01<'`; companies counted by RegistrationName over all `*.xml`). Unless the world has an event that registered all these companies on that day (e.g. a register re-founded under the Trade Accord, which would not explain the XU and XB registers that have earlier dates), it reads as a default value, which the rule "no fillers" excludes.
@@ -53,16 +46,23 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) give each company a date that fits its history (company histories are open work for the encyclopaedia); (b) drop `RegistrationDate` where no date is known; (c) if 1996-01-01 is an event in the story (a new register), keep it and say so there.
 - Needs decision: yes (company histories)
 
-### air/05#F5 · Low · Contact job title and department contradict the contact name
+### air/05#F4 · Low · Contact job title and department contradict the contact name
 - XPath: `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:Contact/cbc:Name` = `Cargo sales`; `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:Contact/cbc:JobTitle` = `Operations planner`; `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:Contact/cbc:Department` = `Operations` (Kelaro Air Cargo)
-- Why: `Contact/cbc:JobTitle` is "The job title or function of this contact" and `cbc:Department` "The department where this contact works". The functional names say what the contact does: Velumi Trading's `Purchasing` (the buyer's and consignee's contact), Nalevi Warehousing's `Goods inwards` (the contact of the party receiving the goods), Kelaro Air Cargo's `Cargo sales`. Their job titles and departments say something else: a purchasing contact working as a customer service officer in Sales, a goods-inwards contact in Sales, a cargo-sales contact as operations planner in Operations. Name, job title and department of one contact do not agree with each other, and the job title and department of the buyer's and the receiving warehouse's contact do not fit the role these parties play here. The same combinations recur for these parties in every example of the flow (and `Purchasing` with `Customer service officer`/`Sales` in 52 places over all `*.xml`, `grep -rh -A2 '<cbc:Name>Purchasing</cbc:Name>'`).
+- Why: `Contact/cbc:JobTitle` is "The job title or function of this contact" and `cbc:Department` "The department where this contact works". The functional name says what the contact does, but its job title and department say something else: Kelaro Air Cargo's `Cargo sales` contact (the carrier's contact) is an operations planner in Operations, so either the name or the title is wrong. Name, job title and department of one contact do not agree with each other, and they do not show which function fits the party's role here. The same combinations recur for these parties in every example of the flow (and `Purchasing` with `Customer service officer`/`Sales` in 52 places over all `*.xml`, `grep -rh -A2 '<cbc:Name>Purchasing</cbc:Name>'`).
 - Condition: in each contact, `Name`, `JobTitle` and `Department` describe the same function, and that function fits the party's role in the document (a buyer's contact buys, a delivery party's contact receives goods, a carrier's contact handles the transport).
 - Options: (a) preferred: give each party's contact a job title and department that match its functional name (e.g. Purchasing: buyer / Purchasing; Goods inwards: warehouse supervisor / Warehouse; Cargo sales: cargo sales agent / Sales, or rename the Kelaro contact to a cargo operations desk); (b) drop `JobTitle` and `Department` where they add nothing to the functional name.
 - Needs decision: no
 
+### air/05#F5 · Low · Status location named after the terminal company, without identifier
+- XPath: `/TransportationStatus/cac:StatusLocation/cbc:Name` = `Lumeport Airport Cargo Terminal`
+- Why: `cac:StatusLocation` is the place the status applies to, and its `cbc:Name` is "The name of this location." The value is the name of the sending party (`/TransportationStatus/cac:SenderParty/cac:PartyName/cbc:Name` = `Lumeport Airport Cargo Terminal`), not of a place. The same place is named as a place in `/TransportationStatus/cac:TransportEvent/cac:Location/cbc:Name` = `Lumeport airport, cargo terminal` and identified in the terminal operator's `/TransportationStatus/cac:Consignment/cac:MainCarriageShipmentStage/cac:TerminalOperatorParty/cac:PhysicalLocation/cbc:ID` = `XBLMA`; the status location carries neither.
+- Condition: the status location is named as a place and, where available, identified (UN/LOCODE `XBLMA`), consistently with the transport event's location.
+- Options: (a) preferred: use the place name of the transport event and add `cbc:ID` `XBLMA`; (b) keep the facility name and add the identifier.
+- Needs decision: no
+
 ## Checked and consistent
 - Lumeport Airport Cargo Terminal (`20412055`) is sender, signatory and terminal operator of the main carriage: consistent; ISIC `5223` (service activities incidental to air transportation) fits; its tax registration (state level, Coastal State) matches its `CountrySubentityCode` `XB-CO`.
-- The receiver and the carrier are Kelaro Air Cargo, as in the referenced waybill (`04-Waybill.xml:/Waybill/cac:CarrierParty/cac:PartyIdentification/cbc:ID` = `IC41311`); its address ID `58930746`, legal entity and contact agree with 04 (apart from the language tags of F-findings).
+- The receiver and the carrier are Kelaro Air Cargo, as in the referenced waybill (`04-Waybill.xml:/Waybill/cac:CarrierParty/cac:PartyIdentification/cbc:ID` = `IC41311`); its address ID `58930746`, legal entity and contact agree with 04 (apart from the language tags, see the finding on `en-XB`).
 - Contact of the terminal operator: `Cargo acceptance`, Operations planner, Operations: consistent with each other and with the role (accepting cargo for the flight).
 - Telephone numbers `+999 …`: E.164 country code 999 is not assigned to any country (reserved by the ITU), so the numbers cannot be mistaken for real ones (own knowledge); web and mail domains use `.example`.
 
