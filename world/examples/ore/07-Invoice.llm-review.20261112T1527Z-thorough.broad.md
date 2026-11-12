@@ -33,22 +33,15 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a, preferred) move to `CountrySubentity`; (b) drop.
 - Needs decision: no
 
-### ore/07#F2 · Low · Moisture deduction without a basis in the order or the invoice
-- XPath: `/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason` = `Moisture deduction`
-- XPath: `/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric` = `0.015`
-- XPath: `01-Order.xml:/Order/cac:OrderLine/cac:LineItem/cac:Price/cbc:PriceAmount` = `8060`
-- Why: ore is commonly priced per dry tonne and the wet tonnage corrected for the measured moisture
-  (own knowledge). Here the order prices 8 060 XUF per tonne with no dry/wet basis and no moisture
-  clause, and the invoice deducts 1.5 % without stating the measured moisture or the assay it comes
-  from. The only hint is an assay reference in the transport request
-  (`02-TransportExecutionPlanRequest.xml:/TransportExecutionPlanRequest/cac:AdditionalDocumentReference/cbc:ID`
-  = `SM-ASSAY-26-11`), which the invoice does not reference. The deduction cannot be verified from
-  the documents.
-- Condition: the basis of the deduction is visible: the moisture figure (as item property or in the
-  reason) and/or the assay reference, and the order's price basis allows such a deduction.
-- Options: (a, preferred) add the measured moisture (e.g. an item property "Moisture" 1.5 %) and an
-  additional document reference to the assay certificate; (b) state the wet/dry basis in the order's
-  price or line note.
+### ore/07#F2 · Low · The mine's site conditions copied into the invoice
+- XPath: `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation/cbc:Conditions` = `Unpaved access road; heavy vehicles only.`
+- Why: the accounting supplier's physical location (the mine and its rail siding, its access road and
+  coordinates) does nothing in an invoice for goods delivered FCA at the siding by rail; it is copied
+  from master data (section 4.8). It also appears in the remittance advice
+  (`08-RemittanceAdvice.xml:/RemittanceAdvice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation/cbc:Conditions`).
+- Condition: the invoice carries no party data it does not use.
+- Options: (a, preferred) leave the physical location out of the invoice; (b) keep only its
+  identifier if the invoice needs the place of supply.
 - Needs decision: no
 
 ### ore/07#F3 · Low · Contacts do not fit the accounting roles
@@ -71,7 +64,25 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a, preferred) leave it out; (b) give it a role.
 - Needs decision: no
 
-### ore/07#F5 · Low · World item number has the form of a valid GTIN-12 in the GS1 US range
+### ore/07#F5 · Low · Moisture deduction without a basis in the order or the invoice
+- XPath: `/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason` = `Moisture deduction`
+- XPath: `/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric` = `0.015`
+- XPath: `01-Order.xml:/Order/cac:OrderLine/cac:LineItem/cac:Price/cbc:PriceAmount` = `8060`
+- Why: ore is commonly priced per dry tonne and the wet tonnage corrected for the measured moisture
+  (own knowledge). Here the order prices 8 060 XUF per tonne with no dry/wet basis and no moisture
+  clause, and the invoice deducts 1.5 % without stating the measured moisture or the assay it comes
+  from. The only hint is an assay reference in the transport request
+  (`02-TransportExecutionPlanRequest.xml:/TransportExecutionPlanRequest/cac:AdditionalDocumentReference/cbc:ID`
+  = `SM-ASSAY-26-11`), which the invoice does not reference. The deduction cannot be verified from
+  the documents.
+- Condition: the basis of the deduction is visible: the moisture figure (as item property or in the
+  reason) and/or the assay reference, and the order's price basis allows such a deduction.
+- Options: (a, preferred) add the measured moisture (e.g. an item property "Moisture" 1.5 %) and an
+  additional document reference to the assay certificate; (b) state the wet/dry basis in the order's
+  price or line note.
+- Needs decision: no
+
+### ore/07#F6 · Low · World item number has the form of a valid GTIN-12 in the GS1 US range
 - XPath: `/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID` = `771010000013`
 - Why: 12 digits with a correct GS1 mod-10 check digit; as GTIN-13 `0771010000013`, prefix 077 in the
   GS1 US range (own knowledge). The world scheme `urn:ubl-examples:world:item` (64 `*.xml` files)
