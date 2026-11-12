@@ -687,6 +687,15 @@ def generate(layer, fill, schemes):
             kind = etree.QName(e.getparent()).localname
             seq[kind] = seq.get(kind, 0) + 1
             e.text = str(seq[kind])
+        # EndorserParty RoleCode ("e.g., issuer, embassy, insurance"): the
+        # issuer endorses first, an embassy legalizes after it, so the order
+        # of endorsement (SequenceNumeric) follows that, not document order.
+        ENDORSERS = {"IssuerEndorsement": ("ISSUER", "1"),
+                     "CertificateOfOriginApplication": ("EMBASSY", "2")}
+        for ep in doc.iter("{%s}EndorserParty" % CAC):
+            code, seqno = ENDORSERS[etree.QName(ep.getparent()).localname]
+            ep.find("{%s}RoleCode" % CBC).text = code
+            ep.find("{%s}SequenceNumeric" % CBC).text = seqno
         for e in doc.iter():
             if e.text == CUR: e.text = currency
             if e.text == CTRY: e.text = COUNTRY

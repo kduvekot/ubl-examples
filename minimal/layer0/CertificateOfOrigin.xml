@@ -9,8 +9,8 @@
       <cbc:ID>Shipment-1</cbc:ID>
     </cac:Shipment>
     <cac:EndorserParty>
-      <cbc:RoleCode>X</cbc:RoleCode>
-      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cbc:RoleCode>EMBASSY</cbc:RoleCode>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
           <cbc:Name languageID="en">Example Endorser 121</cbc:Name>
@@ -38,8 +38,8 @@
     <cbc:DocumentID>DocumentID-1</cbc:DocumentID>
     <cbc:ApprovalStatus languageID="en">Approved</cbc:ApprovalStatus>
     <cac:EndorserParty>
-      <cbc:RoleCode>X</cbc:RoleCode>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+      <cbc:RoleCode>ISSUER</cbc:RoleCode>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
           <cbc:Name languageID="en">Example Endorser 124</cbc:Name>
