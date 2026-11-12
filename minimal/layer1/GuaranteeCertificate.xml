@@ -5,7 +5,7 @@
   <cbc:LiabilityAmount currencyID="INR">0</cbc:LiabilityAmount>
   <cac:GuarantorParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="0199">999900MINIMALEX00117</cbc:ID>
+      <cbc:ID schemeID="0199">999900MINIMAL0039182</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>
@@ -13,7 +13,7 @@
   </cac:GuarantorParty>
   <cac:InterestedParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="0060">999990002</cbc:ID>
+      <cbc:ID schemeID="0060">990000392</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>

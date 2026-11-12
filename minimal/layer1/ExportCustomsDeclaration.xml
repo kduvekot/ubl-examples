@@ -6,9 +6,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>12ABC345000188</cbc:CompanyID>
+      <cbc:CompanyID>ZZ000281000140</cbc:CompanyID>
       <cac:TaxScheme>
         <cbc:Name>Federal taxes</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>BR</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:ExporterParty>

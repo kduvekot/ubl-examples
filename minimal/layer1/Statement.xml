@@ -9,9 +9,14 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>000000001</cbc:CompanyID>
+        <cbc:CompanyID>000000721</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>Federal taxes</cbc:Name>
+          <cbc:Name>Federal income tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>US</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
@@ -22,9 +27,14 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>000000002</cbc:CompanyID>
+        <cbc:CompanyID>000000722</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>Federal taxes</cbc:Name>
+          <cbc:Name>Federal income tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>US</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>

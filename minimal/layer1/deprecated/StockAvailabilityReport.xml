@@ -5,7 +5,7 @@
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0088">9520000000011</cbc:ID>
+        <cbc:ID schemeID="0088">9520000007317</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>
@@ -14,7 +14,7 @@
   </cac:SellerSupplierParty>
   <cac:InventoryReportingParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="0088">9520000000028</cbc:ID>
+      <cbc:ID schemeID="0088">9520000007324</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>

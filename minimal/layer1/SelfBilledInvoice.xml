@@ -8,9 +8,14 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>4123456789</cbc:CompanyID>
+        <cbc:CompanyID>4000007115</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>Value-added tax</cbc:Name>
+          <cbc:Name>Value-Added Tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>ZA</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>
@@ -21,9 +26,14 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>4123456788</cbc:CompanyID>
+        <cbc:CompanyID>4000007123</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>Value-added tax</cbc:Name>
+          <cbc:Name>Value-Added Tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>ZA</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
     </cac:Party>

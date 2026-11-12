@@ -7,9 +7,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>000000001</cbc:CompanyID>
+      <cbc:CompanyID>000000961</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Federal taxes</cbc:Name>
+        <cbc:Name>Federal income tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:SenderParty>
@@ -18,9 +23,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>000000002</cbc:CompanyID>
+      <cbc:CompanyID>000000962</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Federal taxes</cbc:Name>
+        <cbc:Name>Federal income tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:ReceiverParty>
@@ -29,9 +39,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>000000003</cbc:CompanyID>
+      <cbc:CompanyID>000000963</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Federal taxes</cbc:Name>
+        <cbc:Name>Federal income tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:NotifierParty>
@@ -40,9 +55,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>000000004</cbc:CompanyID>
+      <cbc:CompanyID>000000964</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Federal taxes</cbc:Name>
+        <cbc:Name>Federal income tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:WasteProducerParty>

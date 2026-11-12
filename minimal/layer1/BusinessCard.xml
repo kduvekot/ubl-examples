@@ -4,7 +4,7 @@
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:BusinessParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="0060">999990001</cbc:ID>
+      <cbc:ID schemeID="0060">990000041</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>

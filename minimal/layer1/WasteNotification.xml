@@ -7,9 +7,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>DE999999911</cbc:CompanyID>
+      <cbc:CompanyID>DE990009712</cbc:CompanyID>
       <cac:TaxScheme>
         <cbc:Name>Value added tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:SenderParty>
@@ -18,9 +23,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>DE999999920</cbc:CompanyID>
+      <cbc:CompanyID>DE990009729</cbc:CompanyID>
       <cac:TaxScheme>
         <cbc:Name>Value added tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:ReceiverParty>
@@ -29,9 +39,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>DE999999938</cbc:CompanyID>
+      <cbc:CompanyID>DE990009737</cbc:CompanyID>
       <cac:TaxScheme>
         <cbc:Name>Value added tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:NotifierParty>
@@ -45,9 +60,14 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>DE999999954</cbc:CompanyID>
+      <cbc:CompanyID>DE990009753</cbc:CompanyID>
       <cac:TaxScheme>
         <cbc:Name>Value added tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:WasteProducerParty>

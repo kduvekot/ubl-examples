@@ -206,6 +206,8 @@ PARTY_SCHEMES = {
     # about invoices, utility bills and waste: the legally responsible parties
     **{d + "/" + r: TAX for r in ("SenderParty", "ReceiverParty") for d in (
         "InvoiceStatusRequest", "UtilityStatement", "WasteMovement", "WasteNotification")},
+    # a utility customer is often not tax-registered
+    "UtilityStatement/ReceiverParty": DUNS,
 }
 
 JPCN = "0188"  # Japan: Corporate Number (法人番号, National Tax Agency), an ICD
@@ -216,7 +218,10 @@ def scheme_for(party):
     private buyers identify a business)."""
     r = role(party)
     s = SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
-    return JPCN if s == DUNS and COUNTRY == "JP" else s
+    if COUNTRY == "JP" and (s == DUNS or (s == LEI and r in ("ContractingParty", "SenderParty"))
+                            or (s == TAX and r == "HolderParty")):
+        return JPCN  # JP authorities and customs traders also have Corporate Numbers
+    return s
 
 # Identifier values: the scheme's own format and check digit, distinct per
 # party in a document (n = 1, 2 ...), from official demonstration ranges where
@@ -247,29 +252,46 @@ def _gstin(b):  # mod 36
         t += v // 36 + v % 36
     return b + cs[(36 - t % 36) % 36]
 
+# k = document position in the set x 10 + party n: values are unique across the
+# whole set (the documents are unrelated, so no two share a party).
+def _luhn_bad(d):  # a digit that makes the number fail the Luhn check
+    t = sum((int(c) * 2 - 9 if int(c) * 2 > 9 else int(c) * 2) if i % 2 == 0 else int(c)
+            for i, c in enumerate(reversed(d)))
+    return d + str((10 - t % 10 + 1) % 10)
 ID_VALUES = {
-    GLN: lambda n: _gs1("95200000%04d" % n),   # GS1 Prefix 952: "for demonstrations and examples"
-    LEI: lambda n: _lei("999900MINIMALEX%03d" % n),   # not in GLEIF
-    DUNS: lambda n: "99999%04d" % n,   # UNVERIFIED: D&B publishes no check or test range
-    JPCN: lambda n: _jpcn("99999999%04d" % n),   # not in the NTA register
+    GLN: lambda k: _gs1("952000%06d" % k),   # GS1 Prefix 952: "for demonstrations and examples"
+    LEI: lambda k: _lei("999900MINIMAL%05d" % k),   # not in GLEIF
+    # D-U-N-S has a check digit (ICD 0060: "eight digits and a check digit"),
+    # but D&B publishes neither the algorithm nor a test range: UNVERIFIED.
+    DUNS: lambda k: "99%07d" % k,
+    JPCN: lambda k: _jpcn("9999%08d" % k),   # not in the NTA register
 }
 # National tax numbers (PartyTaxScheme/CompanyID) and the tax scheme's name.
 TAX_VALUES = {
-    "US": lambda n: "00%07d" % n,   # EIN prefix 00 is not assigned by the IRS
-    "DE": lambda n: _de_vat("9999999%01d" % n),   # VIES: not valid
-    "JP": lambda n: "T" + _jpcn("99999999%04d" % n),   # qualified invoice issuer number
-    "IN": lambda n: _gstin("97ZZZCZ999%01dZ1Z" % n),   # UNVERIFIED: no public check
-    "BR": lambda n: _cnpj("12ABC345%04d" % n),   # root of Receita Federal's own example
-    "ZA": lambda n: "412345678%d" % (10 - n),   # SARS's example 4123456789; check UNVERIFIED
+    "US": lambda k: "00%07d" % k,   # EIN prefix 00 is not assigned by the IRS
+    "DE": lambda k: _de_vat("99%06d" % k),   # VIES: not valid
+    "JP": lambda k: "T" + _jpcn("9999%08d" % k),   # qualified invoice issuer number
+    "IN": lambda k: _gstin("97ZZZCZ%04dZ1Z" % k),   # 97 "Other Territory"; UNVERIFIED
+    # one root per party (the root is the legal entity), head office 0001;
+    # alphanumeric roots starting ZZ: UNVERIFIED as never assigned
+    "BR": lambda k: _cnpj("ZZ%06d0001" % k),
+    # deliberately fails the Luhn check (secondary sources: SARS uses Luhn), so
+    # it cannot be a registered vendor; UNVERIFIED
+    "ZA": lambda k: _luhn_bad("4%08d" % k),
 }
-TAX_NAMES = {"US": "Federal taxes", "DE": "Value added tax", "JP": "Consumption tax",
-             "IN": "Goods and services tax", "BR": "Federal taxes", "ZA": "Value-added tax"}
+# Official names: EU Directive 2006/112/EC "value added tax"; ZA "Value-Added Tax
+# Act"; the EIN is the federal income tax identifier; the CNPJ is used for all
+# federal taxes (better in PartyLegalEntity: open point).
+TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consumption tax",
+             "IN": "Goods and Services Tax", "BR": "Federal taxes", "ZA": "Value-Added Tax"}
 
 LAYER1 = {
     "PartyTaxSchemeType": {"cbc:CompanyID"},
     # TaxScheme is required in PartyTaxScheme: the particular tax scheme gets
     # a name, as other particular things do.
-    "TaxSchemeType": {"cbc:Name"},
+    "TaxSchemeType": {"cbc:Name", "cac:JurisdictionRegionAddress"},
+    # the jurisdiction is stated, not implied by the number's format (IND6)
+    "AddressType@JurisdictionRegionAddress": {"cac:Country"},
 }
 
 # Layers: (folder, additions {aggregate type[@role]: optional children},
@@ -408,14 +430,16 @@ def generate(layer, fill, schemes):
         etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
         parties = [p for p in doc.iter("{*}*") if p.find("{%s}PartyName" % CAC) is not None]
         for n, party in enumerate(parties, 1):
+            assert n < 10, "value scheme supports at most 9 parties per document"
+            k = len(written) * 10 + n
             pid = party.find("{%s}PartyIdentification/{%s}ID" % (CAC, CBC))
             if pid is not None:
                 s = scheme_for(party)
                 pid.set("schemeID", s)
-                pid.text = ID_VALUES[s](n)
+                pid.text = ID_VALUES[s](k)
             pts = party.find("{%s}PartyTaxScheme" % CAC)
             if pts is not None:
-                pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](n)
+                pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
                 pts.find("{%s}TaxScheme/{%s}Name" % (CAC, CBC)).text = TAX_NAMES[COUNTRY]
         for e in doc.iter():
             if e.text == CUR: e.text = currency

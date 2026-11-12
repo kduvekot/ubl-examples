@@ -4,7 +4,7 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0199">999900MINIMALEX00117</cbc:ID>
+        <cbc:ID schemeID="0199">999900MINIMAL0055187</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>
@@ -14,7 +14,7 @@
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0060">999990002</cbc:ID>
+        <cbc:ID schemeID="0060">990000552</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>

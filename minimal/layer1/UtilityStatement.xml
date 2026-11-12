@@ -12,21 +12,23 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
-      <cbc:CompanyID>4123456789</cbc:CompanyID>
+      <cbc:CompanyID>4000009517</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Value-added tax</cbc:Name>
+        <cbc:Name>Value-Added Tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>ZA</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:SenderParty>
   <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0060">990000952</cbc:ID>
+    </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
-    <cac:PartyTaxScheme>
-      <cbc:CompanyID>4123456788</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:Name>Value-added tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
   </cac:ReceiverParty>
 </UtilityStatement>
