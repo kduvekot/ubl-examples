@@ -151,7 +151,12 @@ UNITS = {
 # ... (true) or rejected ... (false)"; a UBL finding): true, admitted, since
 # a rejection would need a reason.
 CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
-               "AdmissionCode": "true"}
+               "AdmissionCode": "true",
+               # Codes without a UBL default list get a descriptive value in
+               # UBL's own style (as in its definitions, e.g. FALLS_BELOW_...),
+               # without listID: the value states its meaning (IND6), and no
+               # UN/EDIFACT list is used. ResponseCode: the invoice is approved.
+               "ResponseCode": "ACCEPTED"}
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).

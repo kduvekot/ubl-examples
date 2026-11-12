@@ -4,7 +4,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:DocumentResponse>
     <cac:Response>
-      <cbc:ResponseCode>X</cbc:ResponseCode>
+      <cbc:ResponseCode>ACCEPTED</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>DocumentReference-1</cbc:ID>
