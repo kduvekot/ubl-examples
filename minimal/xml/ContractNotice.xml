@@ -8,5 +8,7 @@
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
-  <cac:ProcurementProject/>
+  <cac:ProcurementProject>
+    <cbc:Name>X</cbc:Name>
+  </cac:ProcurementProject>
 </ContractNotice>

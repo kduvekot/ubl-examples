@@ -83,7 +83,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # ShipmentType: "an identifiable collection of one or more goods
         # items". Its ID is a transaction reference like the document's own
         # ID, assigned within the exchange, not taken from a register.
-        "ShipmentType": {"cbc:ID"}}
+        "ShipmentType": {"cbc:ID"},
+        # ProcurementProjectType ("an overall definition of this procurement
+        # project"): a particular undertaking gets a name, as a Party does
+        # (a kind of thing, like an Item, gets a description).
+        "ProcurementProjectType": {"cbc:Name"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
