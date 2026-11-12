@@ -2,11 +2,17 @@
 <ItemInformationRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:ItemInformationRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
-  <cac:Period/>
+  <cac:Period>
+    <cbc:StartDate>2000-01-01</cbc:StartDate>
+    <cbc:EndDate>2000-01-01</cbc:EndDate>
+  </cac:Period>
   <cac:SenderParty/>
   <cac:ReceiverParty/>
   <cac:ItemInformationRequestLine>
-    <cac:Period/>
+    <cac:Period>
+      <cbc:StartDate>2000-01-01</cbc:StartDate>
+      <cbc:EndDate>2000-01-01</cbc:EndDate>
+    </cac:Period>
     <cac:SalesItem>
       <cbc:Quantity>0</cbc:Quantity>
       <cac:Item/>

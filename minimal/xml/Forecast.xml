@@ -3,7 +3,10 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:ForecastPurposeCode>X</cbc:ForecastPurposeCode>
-  <cac:ForecastPeriod/>
+  <cac:ForecastPeriod>
+    <cbc:StartDate>2000-01-01</cbc:StartDate>
+    <cbc:EndDate>2000-01-01</cbc:EndDate>
+  </cac:ForecastPeriod>
   <cac:SenderParty/>
   <cac:ReceiverParty/>
   <cac:ForecastLine>

@@ -34,6 +34,11 @@ VALUES = {
 }
 ATTRS = {"currencyID": "XXX", "unitCode": "X", "mimeCode": "X"}
 
+# Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
+# PeriodType: both StartDate and EndDate. A period with only a start would be
+# "open-ended" by absence of its end, which IND6 forbids.
+FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"}}
+
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
     r = etree.parse(f).getroot()
@@ -97,7 +102,8 @@ def content(e, t):
             if child.tag == X + "choice":
                 raise NotImplementedError("required choice in %s" % t.get("name"))
             for p in child:
-                if p.tag == X + "element" and p.get("minOccurs", "1") != "0":
+                if p.tag == X + "element" and (p.get("minOccurs", "1") != "0"
+                                               or p.get("ref") in FILL.get(t.get("name"), ())):
                     ns, name = qname(p, p.get("ref"))
                     build(e, find("element", ns, name))
                 elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
