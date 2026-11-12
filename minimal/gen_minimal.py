@@ -39,13 +39,17 @@ VALUES = {
     # percentages or totals must make them add up (line = quantity x price,
     # total = sum of lines, tax = taxable x percent / 100, rounded to the
     # currency's minor unit, payable = total + tax).
-    "AmountType": "100", "BinaryObjectType": "(PDF_B64)", "GraphicType": "AA==",
-    "PictureType": "AA==", "SoundType": "AA==", "VideoType": "AA==",
-    "CodeType": "X", "DateTimeType": "2026-08-12T00:00:00", "DateType": "2026-08-12",
-    "TimeType": "00:00:00", "IdentifierType": "X", "IndicatorType": "true",
-    "MeasureType": "0", "NumericType": "0", "ValueType": "0", "PercentType": "0",
-    "RateType": "0", "QuantityType": "10", "TextType": "X", "NameType": "X",
+    "AmountType": "100", "BinaryObjectType": "(PDF_B64)",
+    "CodeType": "X", "IdentifierType": "X", "NumericType": "1",
+    "QuantityType": "10", "TextType": "X", "NameType": "X",
+    # Date, time, measure, indicator: per element (date_for, UTC_OFFSETS,
+    # MEASURE_VALUES, INDICATOR_VALUES). Percent, Rate, Value, Graphic,
+    # Picture, Sound and Video have no default on purpose: a layer that first
+    # needs one must choose a value per element (PH#F19).
 }
+# Indicator per element, no default. AcceptedIndicator: true, accepted; a
+# rejection would need a RejectionNote (PH#F17).
+INDICATOR_VALUES = {"AcceptedIndicator": "true"}
 # Attachment content: a minimal one-page PDF that shows the text "PDF"
 # (built here byte by byte, with a correct cross-reference table).
 def _pdf():
@@ -544,6 +548,7 @@ def build(parent, el_decl):
                   else TIME + UTC_OFFSETS[COUNTRY] if u == "TimeType"
                   else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"
+                  else INDICATOR_VALUES[el_decl.get("name")] if u == "IndicatorType"
                   else CODE_VALUES.get(el_decl.get("name"), VALUES[u]) if u == "CodeType"
                   else PDF_B64 if u == "BinaryObjectType" else VALUES[u])
         attrs = {}
