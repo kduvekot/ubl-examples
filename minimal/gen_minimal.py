@@ -169,6 +169,9 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # values listed for the same element elsewhere in UBL (CANCELED_
                # ORDERS ... SALES SHIPMENTS); a store's sales item over a period
                "SupplyChainActivityTypeCode": "SALES",
+               # "the logical state of the discrete activity": an event announced
+               # two weeks ahead, nothing about a proposal or agreement
+               "RetailEventStatusCode": "PLANNED",
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
                "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR"}
 
