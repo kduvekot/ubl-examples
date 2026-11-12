@@ -135,9 +135,17 @@ For every element in the example:
    another (a document number, an order number, a shipping order).
 6. **Physical plausibility within the example.** Quantities must fit their packages, packages their
    handling units, weights and dimensions their goods (e.g. stated dimensions against the stated
-   pallet or container). Timelines, capacities and locations across documents and flows belong to
-   the separate consistency review; note them under "Checked and consistent" or "Outside this
-   review" only.
+   pallet or container).
+
+**What is a finding here, and what is not.** A contradiction between this example and a document it
+refers to, or between this example and another example that describes the same object (party,
+consignment, shipment, vessel, item, account, mandate), is a finding of this review, with the other
+example cited by file name and XPath. So is a reference to a document that does not exist, and a
+reference or shared object that cannot be linked to the documents it should match. Only two kinds
+of problem are left out: problems that lie entirely in another example (they belong to that
+example's review), and questions of timelines, capacity and location across documents and flows
+(whether a train could leave then, whether goods fit a container, where a container is). Note those
+under "Outside this review".
 7. **Check digits and real codes.** Run `check_ids.py`. A wrong check digit is a finding.
 
 The examples are set in a **fictional world**: invented countries, currencies, languages, parties
@@ -188,9 +196,10 @@ answers to most often; they do not replace section 4.
   broken reference. Examples: a referenced document that does not exist; arithmetic that does not
   hold; an indicator that contradicts the text that explains it; a statement in one example that
   another example of the flow contradicts.
-- **Medium**: the element carries a meaning other than its UBL definition. Examples: a province in
-  `Region`; a consignment ID in `ShippingOrderID`; a code from another element's list; `PayerParty`
-  equal to the debtor; a language code in `LocaleCode`.
+- **Medium**: the element carries a meaning other than its UBL definition, or information the
+  document's purpose depends on is missing. Examples: a province in `Region`; a code from another
+  element's list; `PayerParty` equal to the debtor; a language code in `LocaleCode`; a pre-arrival
+  report without an arrival time; a transport request that does not say what is to be carried.
 - **Low**: plausibility, consistency or completeness remark. Examples: a contact that does not fit
   the role; a party described with an implausible size; missing details the document could carry.
 
@@ -260,7 +269,9 @@ example is produced.
 - <what you verified and found correct, especially references, arithmetic and check digits>
 
 ## Outside this review
-- <problems noticed in other examples or across documents and flows, for the consistency review>
+- <problems that lie entirely in other examples, and timeline, capacity or location questions
+  across documents and flows (section 4); contradictions with other examples are findings, not
+  this section>
 ```
 
 Number findings in order of severity, then of position in the document. Keep "Why" to what a reader

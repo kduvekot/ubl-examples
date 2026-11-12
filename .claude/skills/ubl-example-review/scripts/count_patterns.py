@@ -90,19 +90,23 @@ def r7(doc):  # public authority described as registered in a commercial registe
                 yield t
 
 
-def r8(doc):  # contact department contradicts the party's role
+def r8(doc):  # contact contradicts the party's role, or contradicts itself
+    ns = {'cac': CAC, 'cbc': CBC}
+    seen = set()
     for party in doc.iter():
         if not isinstance(party.tag, str):
             continue
         role = ln(party)
         wrong = 'Sales' if role in CUSTOMER_ROLES else 'Procurement' if role in SUPPLIER_ROLES else None
-        if not wrong:
-            continue
         # the role's own contact: directly in the role, or in its cac:Party (not nested parties)
-        for d in party.xpath('cac:Contact/cbc:Department | cac:Party/cac:Contact/cbc:Department',
-                             namespaces={'cac': CAC, 'cbc': CBC}):
-            if text(d) == wrong:
-                yield d
+        for contact in party.xpath('cac:Contact | cac:Party/cac:Contact', namespaces=ns):
+            d = text(cbc(contact, 'Department'))
+            name = text(cbc(contact, 'Name'))
+            buying = re.search(r'\b(Buying|Purchasing)\b', name)
+            if (wrong and d == wrong) or (buying and d == 'Sales'):
+                if id(contact) not in seen:
+                    seen.add(id(contact))
+                    yield cbc(contact, 'Department')
 
 
 def r9(doc):  # FullnessIndicationCode used for the emission system boundary
@@ -119,8 +123,14 @@ def r10(doc):  # emission value does not equal factor x base
                 yield v
 
 
+def r11(doc):  # a party's own tax exemption worded as a transaction
+    for e in doc.iter(f'{{{CBC}}}ExemptionReasonCode'):
+        if ln(e.getparent()) == 'PartyTaxScheme' and text(e) == 'PUBLIC':
+            yield e
+
+
 PATTERNS = {'R1': r1, 'R2': r2, 'R3': r3, 'R4': r4, 'R5': r5, 'R6': r6, 'R7': r7, 'R8': r8, 'R9': r9,
-            'R10': r10}
+            'R10': r10, 'R11': r11}
 
 
 def xpath_of(e):
