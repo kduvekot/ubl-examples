@@ -7241,15 +7241,6 @@ def _(f, n, doc, out):
         "Signature": seal("29-xb", "WS-SIG-26-E1", "The insurer's seal on the endorsement.")}}
 
 
-@enrich("sea", "ForwardingInstructions")
-def _(f, n, doc, out):
-    if doc["from"] != "10-xb":
-        return {}
-    return {"DeclaredCarriageValueAmount": amount(Decimal("50688.00"), "XBL", "The value the shipper declares for "
-                                                                              "carriage: the goods' value, so the "
-                                                                              "carrier's liability covers it.")}
-
-
 @enrich("tender", "Order")
 def _(f, n, doc, out):
     return {"PricingExchangeRate": {**PRICING_RATE, "ExchangeMarketID": V("XLMX", "The market the rate comes from: the "

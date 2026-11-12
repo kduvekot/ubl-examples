@@ -801,8 +801,9 @@ def hazardous_item(it):
                                   "PlacardNotation": V(hz["sub"], "Shown on a second label."),
                                   "PlacardEndorsement": V("3", "The flammable liquid label."),
                                   "Extension": V("Subsidiary risk 3", "In words."),
-                                  "EmergencyProceduresCode": V(f"TEC{hz['sub']}", "The emergency procedures for the "
-                                                               "subsidiary hazard: the Trade Accord's emergency card "
+                                  "EmergencyProceduresCode": V(f"TEC{hz['sub']}", "UBL defines it as \"A code "
+                                                               "signifying the emergency procedures for this secondary "
+                                                               "hazard\": the Trade Accord's emergency card "
                                                                f"for class {hz['sub']}. The IMDG Code gives one pair "
                                                                "of emergency schedules for the whole UN entry (on the "
                                                                "item above), not one per hazard; the instructions in "

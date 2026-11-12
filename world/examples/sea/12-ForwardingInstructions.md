@@ -42,8 +42,6 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   A bill of lading to order, so the buyer can transfer it.
 - `AdValoremIndicator` = **false**  
   No value declared for the carriage.
-- `DeclaredCarriageValueAmount` = **50688.00** (currencyID `XBL`)  
-  The value the shipper declares for carriage: the goods' value, so the carrier's liability covers it.
 - `OtherInstruction` = **Send the bill of lading to the forwarder.**  
   Where the documents go.
 
@@ -522,7 +520,6 @@ Inside `Signature`:
   <cbc:ShippingOrderID>LD-SH-26-0132</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">50688.00</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

@@ -496,7 +496,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/SecondaryHazard/PlacardEndorsement` = **3**  
   The flammable liquid label.
 - `Item/HazardousItem/SecondaryHazard/EmergencyProceduresCode` = **TEC3** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
-  The emergency procedures for the subsidiary hazard: the Trade Accord's emergency card for class 3. The IMDG Code gives one pair of emergency schedules for the whole UN entry (on the item above), not one per hazard; the instructions in writing of road transport (ADR 5.4.3), which the Accord's cards follow, give the actions per danger label, the subsidiary hazard's label included. The code is from the Trade Accord's transport emergency card list: TEC3 = Emergency card for class 3.
+  UBL defines it as "A code signifying the emergency procedures for this secondary hazard": the Trade Accord's emergency card for class 3. The IMDG Code gives one pair of emergency schedules for the whole UN entry (on the item above), not one per hazard; the instructions in writing of road transport (ADR 5.4.3), which the Accord's cards follow, give the actions per danger label, the subsidiary hazard's label included. The code is from the Trade Accord's transport emergency card list: TEC3 = Emergency card for class 3.
 - `Item/HazardousItem/SecondaryHazard/Extension` = **Subsidiary risk 3**  
   In words.
 - `Item/HazardousItem/FlashpointTemperature/AttributeID` = **FLASHPOINT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
