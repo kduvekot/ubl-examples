@@ -21,16 +21,39 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      # A run that starts late (after an outage, say) must not publish an older
+      # version over a newer one: it publishes only while its commit is still the
+      # head of main. The same check is repeated just before publishing, because
+      # the build takes a few minutes.
+      - name: Check that this is the newest commit on main
+        id: newest
+        run: |
+          head=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [ "$head" = "$GITHUB_SHA" ]; then
+            echo "newest=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "newest=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::main is now at ${head::7}, newer than ${GITHUB_SHA::7}: skipping, the run for the newer commit publishes the site"
+          fi
+
       - name: Install tools
+        if: steps.newest.outputs.newest == 'true'
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q xsltproc libxml2-utils pandoc python3-lxml
 
       - name: Build site
+        if: steps.newest.outputs.newest == 'true'
         run: tools/build_site.sh _site
 
       - name: Publish to gh-pages
+        if: steps.newest.outputs.newest == 'true'
         run: |
+          head=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [ "$head" != "$GITHUB_SHA" ]; then
+            echo "::notice::main moved to ${head::7} during the build: not publishing ${GITHUB_SHA::7}"
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin gh-pages >/dev/null; then
