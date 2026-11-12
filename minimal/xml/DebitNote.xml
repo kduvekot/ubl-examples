@@ -5,6 +5,6 @@
   <cac:AccountingSupplierParty/>
   <cac:DebitNoteLine>
     <cbc:ID>X</cbc:ID>
-    <cbc:LineExtensionAmount currencyID="XXX">0</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="EUR">0</cbc:LineExtensionAmount>
   </cac:DebitNoteLine>
 </DebitNote>

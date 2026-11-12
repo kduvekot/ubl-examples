@@ -10,8 +10,8 @@
   <cac:ReceiverParty/>
   <cac:ExceptionNotificationLine>
     <cbc:ID>X</cbc:ID>
-    <cbc:ComparedValueMeasure unitCode="X">0</cbc:ComparedValueMeasure>
-    <cbc:SourceValueMeasure unitCode="X">0</cbc:SourceValueMeasure>
+    <cbc:ComparedValueMeasure unitCode="H87">0</cbc:ComparedValueMeasure>
+    <cbc:SourceValueMeasure unitCode="H87">0</cbc:SourceValueMeasure>
     <cac:SupplyItem/>
   </cac:ExceptionNotificationLine>
 </ExceptionNotification>

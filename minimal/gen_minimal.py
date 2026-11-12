@@ -32,7 +32,21 @@ VALUES = {
     "MeasureType": "0", "NumericType": "0", "ValueType": "0", "PercentType": "0",
     "RateType": "0", "QuantityType": "0", "TextType": "X", "NameType": "X",
 }
-ATTRS = {"currencyID": "XXX", "unitCode": "X", "mimeCode": "X"}
+ATTRS = {"mimeCode": "X"}
+
+# Currency: one per document (every currency code and currencyID in it),
+# varied across the set by turns in alphabetical document order.
+CURRENCIES = ["USD", "EUR", "JPY", "INR", "BRL", "ZAR"]
+CUR = "@CURRENCY@"  # placeholder, replaced per document
+
+# Unit per Measure element, chosen from the element's UBL definition. No
+# default: a Measure not listed here stops the build until a unit is chosen.
+UNITS = {
+    # ExceptionNotificationLine: the compared value and the source value it
+    # is compared with count the line's SupplyItem, so the same unit: piece.
+    "ComparedValueMeasure": "H87",
+    "SourceValueMeasure": "H87",
+}
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
 # PeriodType: both StartDate and EndDate. A period with only a start would be
@@ -43,6 +57,8 @@ schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
     r = etree.parse(f).getroot()
     schemas.setdefault(r.get("targetNamespace"), []).append(r)
+
+QDT = "urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
 
 def qname(node, ref):
     p, _, local = ref.rpartition(":")
@@ -68,7 +84,7 @@ def required_attrs(t):
     out = {}
     for a in t.iter(X + "attribute"):
         if a.get("use") == "required":
-            out[a.get("name")] = ATTRS[a.get("name")]
+            out[a.get("name")] = ATTRS.get(a.get("name"))
     return out
 
 def build(parent, el_decl):
@@ -83,6 +99,8 @@ def build(parent, el_decl):
         attrs = {}
         cur_ns, cur = tns, tname
         while True:  # collect required attributes along the derivation chain
+            if (cur_ns, cur) == (QDT, "CurrencyCodeType"):
+                e.text = CUR
             ct = find("complexType", cur_ns, cur)
             attrs.update(required_attrs(ct))
             der = ct.find(".//" + X + "extension")
@@ -90,6 +108,12 @@ def build(parent, el_decl):
             b_ns, b = qname(der, der.get("base"))
             if b_ns == XS: break
             cur_ns, cur = b_ns, b
+        if "currencyID" in attrs:
+            attrs["currencyID"] = CUR
+        if "unitCode" in attrs:
+            if el_decl.get("name") not in UNITS:
+                raise KeyError("no unit chosen for " + el_decl.get("name"))
+            attrs["unitCode"] = UNITS[el_decl.get("name")]
         for k, v in attrs.items(): e.set(k, v)
     else:
         content(e, t)
@@ -110,6 +134,7 @@ def content(e, t):
                     raise NotImplementedError(p.tag)
 
 os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
+n_cur = 0
 for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
     r = etree.parse(f).getroot()
     ns = r.get("targetNamespace")
@@ -122,5 +147,12 @@ for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
     t = find("complexType", *qname(root_decl, root_decl.get("type")))
     content(doc, t)
     etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
+    uses = [e for e in doc.iter() if e.text == CUR or e.get("currencyID") == CUR]
+    if uses:
+        currency = CURRENCIES[n_cur % len(CURRENCIES)]
+        n_cur += 1
+        for e in uses:
+            if e.text == CUR: e.text = currency
+            if e.get("currencyID") == CUR: e.set("currencyID", currency)
     etree.ElementTree(doc).write(os.path.join(out, "" if os.path.basename(f) in endorsed else "deprecated", name + ".xml"), xml_declaration=True,
                                  encoding="UTF-8", pretty_print=True)

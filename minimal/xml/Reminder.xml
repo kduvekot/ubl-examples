@@ -5,7 +5,7 @@
   <cac:AccountingSupplierParty/>
   <cac:AccountingCustomerParty/>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="XXX">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="EUR">0</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>X</cbc:ID>

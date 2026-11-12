@@ -3,7 +3,7 @@
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:SellerSupplierParty/>
   <cac:QuotedMonetaryTotal>
-    <cbc:PayableAmount currencyID="XXX">0</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="USD">0</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cac:LineItem>
