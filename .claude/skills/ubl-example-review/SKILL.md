@@ -1,7 +1,7 @@
 ---
 name: ubl-example-review
 description: Semantic review of the generated UBL 2.5 examples in world/examples against the UBL 2.5 model (UBL-Entities-2.5.gc). Checks whether each value fits the meaning of its element, its parent aggregates and the document, whether values are consistent with each other and with the documents they refer to, and writes NN-DocumentType.llm-review.md next to each example that has findings. Use when asked to review one example, a flow, or all examples. Not for fixing the examples, and not for the cross-flow consistency review (timelines, capacity, equipment locations).
-argument-hint: "[<flow>/<NN-DocumentType> | <flow> | all]"
+argument-hint: "[<flow>/<NN-DocumentType> | <flow> | all] [--quick | --focus money|parties|logistics | --merge]"
 ---
 
 # Semantic review of the generated UBL examples
@@ -24,7 +24,11 @@ flows with their number of XML examples and their number of existing `*.llm-revi
 > Usage:
 > - `/ubl-example-review rail/07-TransportationStatus`: one example (e.g. to re-review after a fix)
 > - `/ubl-example-review rail`: every example of one flow
-> - `/ubl-example-review all`: every flow, one subagent per flow
+> - `/ubl-example-review all`: every flow
+>
+> By default a review is thorough: a broad run, three focused runs (money, parties, logistics) and a
+> merge that combines and verifies their findings. `--quick` does the broad run only.
+> `--focus <lens>` and `--merge` run one step of a thorough review on its own.
 >
 > The review does not change the examples. Fixing them, and the separate consistency review across
 > documents and flows (timelines, capacity, where equipment is), are separate tasks.
@@ -75,7 +79,7 @@ enough.
 
 ## 3. Method
 
-### One example: three passes
+### One example: three passes (the broad run)
 
 1. **Elements.** Run `annotate.py` and `check_ids.py`. Go through the listing top to bottom and
    apply section 4 to every element and every aggregate, using the checklist in section 5 for each
@@ -112,6 +116,49 @@ index and your findings are enough.
    (with examples and a count) in its final report.
 3. **Afterwards.** Add accepted new patterns to the register, add their occurrences to the reviews
    concerned, and give the user a summary per flow.
+
+### Thorough review: broad run, focused runs, merge
+
+One broad run finds about two thirds of what several independent runs find together, and a second
+identical run adds little: it notices the same things and misses the same things. A thorough review
+therefore combines runs that look differently. It is the default; `--quick` does the broad run only
+and writes its result directly as the review.
+
+1. **Broad run.** The three passes above, writing `NN-DocumentType.llm-review.broad.md` (same
+   layout as section 8).
+2. **Focused runs** (`--focus <lens>`), one per lens. The same three passes, but section 4 and the
+   checklist are applied to every element of the lens without exception, including the ones that
+   look fine at first sight, and pass 2 follows every object of the lens into every other example
+   of the flow that carries it. Ignore everything outside the lens. Each writes
+   `NN-DocumentType.llm-review.<lens>.md`. Do not read the broad run's file or another lens's file.
+   - **money**: amounts, prices, base quantities, allowances and charges and their conditions,
+     taxes (category, rate, exemption reason, supply type, territory), monetary totals, payment
+     means, accounts, mandates, payment terms and penalties, prepayments and payments on account,
+     and what invoices, credit notes, reminders, statements and remittance advices of the flow do
+     with them.
+   - **parties**: every party in every role: whether it is the right party for the role, its
+     identifiers, legal entity (legal form, size, registration, liquidation status), tax scheme,
+     contacts (name, job title, department against the role), addresses (each part in its element,
+     language tags), locations, and whether the same party is described the same way in every
+     example of the flow.
+   - **logistics**: every identifier and reference (kind, existence, target), what the document's
+     purpose needs (section 4.3), dates and times against the issue time, transport events and the
+     stage they are in, consignments, shipments, goods items, packages, handling units, equipment,
+     vehicles, places, dangerous goods data, and every code against its list and its element.
+3. **Merge and verify** (`--merge`). Read the broad and focused files of the example and:
+   - combine findings that describe the same problem (same XPath, or the same condition), keeping
+     the clearest wording, all evidence, and the severity that section 6 justifies;
+   - verify every finding again independently: open the XML and the referenced examples, check
+     the definition, redo the arithmetic, and try to prove it wrong. Drop what does not survive,
+     correct what partly survives;
+   - list the occurrences of registered patterns (`count_patterns.py --list`, each checked);
+   - renumber, write `NN-DocumentType.llm-review.md` (section 8), run `check_xpaths.py`, and delete
+     the working files `NN-DocumentType.llm-review.<run>.md`;
+   - report which findings were dropped or changed, and why.
+
+For a flow or `all`, run the four runs as separate subagents per flow (they may run in parallel),
+then one merge subagent per flow. A subagent never sees another run's working files, except the
+merge.
 
 ## 4. What to check
 

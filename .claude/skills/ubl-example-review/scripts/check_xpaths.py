@@ -1,6 +1,6 @@
 """Check that every absolute XPath cited in a review resolves in the reviewed XML.
 
-usage: python3 -I check_xpaths.py <NN-DocumentType.llm-review.md> [...]
+usage: python3 -I check_xpaths.py <NN-DocumentType.llm-review[.<run>].md> [...]
 
 Backticked absolute paths are checked against the reviewed XML. A path with another root element
 (e.g. `/Waybill/...` cited from a TransportationStatus review) is checked against the examples of
@@ -30,7 +30,7 @@ def main():
         sys.exit(__doc__)
     failed = 0
     for md in sys.argv[1:]:
-        xml = md.replace('.llm-review.md', '.xml')
+        xml = re.sub(r'\.llm-review(\.[a-z]+)?\.md$', '.xml', md)  # final review or a run's working file
         name = etree.QName(etree.parse(xml).getroot()).localname
         flow = Path(xml).parent
         for p in sorted(set(re.findall(r'`(/[A-Za-z][^`\s]*)`', open(md, encoding='utf-8').read()))):
