@@ -170,6 +170,19 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: yes
 - From: context (F11)
 
+### road/04#F17 · Low · Italian street names and legal forms tagged as English
+- XPath: `/DespatchAdvice/cac:DespatchSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Via del Magazzino`
+- XPath: `/DespatchAdvice/cac:DespatchSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società a responsabilità urvaniana (private limited company)`
+- XPath: `/DespatchAdvice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- XPath: `/DespatchAdvice/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`
+- XPath: `/DespatchAdvice/cac:Shipment/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]` = `Via dei Trasporti`
+- XPath: `/DespatchAdvice/cac:Shipment/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società a responsabilità urvaniana (private limited company)`
+- Why: these renderings carry an English `languageID` but are Italian. Parties (and broad in 01) refuted this: English text keeps foreign street names as proper names, and the subtag follows the sender. Counter-argument: where a `qau` rendering already gives the local name, a second rendering tagged English has a reason only if it is English, and a legal-form text such as "Società urvaniana per azioni" is not a proper name. The merge cannot settle which rule the world follows; added from the parts' refutation, aligned with the rail merge and the merger of road 13–17 (217 renderings in 102 files tagged `en-XU`/`en-XB` start with Via/Viale/Piazza/Valico/Corso/Largo/Strada/Banchina, the rail merge's count).
+- Condition: every rendering tagged as English is English, or the world's rule that place names and legal forms keep their source form under an English tag (and which region subtag an Urvanian address gets in a Bayvarran document) is documented.
+- Options: (a) document the rule for street names and render legal forms in English (preferred: street names as proper names are common practice, legal forms are not); (b) tag the Italian renderings with a tag of their own language, if the world has one.
+- Needs decision: yes
+- From: merge (from the refutation of parties)
+
 ## Checked and consistent
 - `OrderReference` LD-PO-26-0149 resolves to `01-Order.xml`; delivered quantities 96 and 12 equal the order and the order response; order line references 1 and 2 match; `LineCountNumeric` 2 (broad, logistics, context).
 - Shipment CL-SH-26-0154, consignment LD-CS-26-0152 (`03-TransportExecutionPlanRequest.xml:/TransportExecutionPlanRequest/cac:Consignment/cbc:ID` = `LD-CS-26-0152`) and gross 4106.4 kg agree with 03, 05, 06, 08 and 10 (broad, logistics, context).
@@ -188,7 +201,7 @@ This is one review among possibly several of this example (other runs and parts;
 - `/DespatchAdvice/cac:Shipment/cac:Delivery/cac:Despatch/cbc:ReleaseID` = `XU-EX-REL-55120`: a value without a use — refuted because it fits an export release shown at pickup (from context); the missing link to the declaration is F12.
 - `/DespatchAdvice/cac:SellerSupplierParty/cac:Party/cac:ServiceProviderParty`: master data — refuted because it states why Castrano despatches for Valdara (from context).
 - `/DespatchAdvice/cac:Shipment/cac:Consignment/cac:CarrierParty/cac:PartyAuthorization`: carrier licence copied — refuted by parties as borderline; kept by the merge as the weakest part of F11, with the argument.
-- `/DespatchAdvice/cac:DespatchSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XU` — refuted: proper names, subtag follows the sender (from parties).
+- `/DespatchAdvice/cac:DespatchSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XU` — refuted: proper names, subtag follows the sender (from parties). Not followed in full by the merge, see F17.
 - `/DespatchAdvice/cac:DeliveryCustomerParty/cac:Party/cac:AdditionalPartyIdentification[1]/cbc:ID`: real GLN — refuted: prefix 952, check digit correct (from parties).
 - `/DespatchAdvice/cac:DespatchSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: real numbers — refuted: +999 reserved (from parties).
 - `/DespatchAdvice/cac:SellerSupplierParty/cac:Party/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01`: contract number — refuted: the definition does not say who assigns it (from parties).
@@ -205,6 +218,7 @@ This is one review among possibly several of this example (other runs and parts;
 - parties/F6, context/F9 → F11: combined; parties' refutation of the carrier permit carried.
 - broad/F8, logistics/F4, context/F7 → F15: combined; context's `LineStatusCode` XPath moved to F8.
 - context/F11 → F16: "Needs decision" set to yes and broad's refutation carried, since the merge cannot settle whether castings are registered.
+- F17: added by the merge from parties' refutation, aligned with the rail merge and the merger of road 13–17.
 
 ## Outside this review
 - `08-Waybill.xml` is issued 2026-03-23 08:16 but reports the actual pickup at 15:05 and the departure at 16:20 of the same day; a problem of 08 (documents reporting events after their issue time).

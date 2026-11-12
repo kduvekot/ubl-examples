@@ -136,6 +136,14 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: no
 - From: merge (context considered and refuted it)
 
+### road/09#F14 · Low · Italian street names tagged as English
+- XPath: `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]` = `Via dei Trasporti`
+- Why: the second rendering of the Urvanian names is Italian text with `languageID` `en-XU`. Parties refuted it: English keeps foreign street names unchanged and the region subtag follows the sender. Against that, the tag states English for words that are not, next to an Urvanian (`qau`) rendering, so the Italian form is a third language without a tag of its own. The merge cannot settle which reading the world intends; aligned with rail and the other road merges (Low, decision). Rail counted 217 such renderings in 102 files (over `*.xml`).
+- Condition: one rule for Italian-form names in English renderings, recorded in the world's language rules, and the tags follow it.
+- Options: (a, preferred) record that English renderings keep the Italian exonym (then no change); (b) an Italian language tag for the Italian form.
+- Needs decision: yes
+- From: merge (parties considered and refuted it)
+
 ## Checked and consistent
 - `DocumentReference` TH-WB-26-0159 resolves to `08-Waybill.xml`; consignment LD-CS-26-0152, carrier ID TH-26-04471, shipment CL-SH-26-0154 and 25 pallets agree with the waybill (all parts).
 - Updated pickup 2026-03-23 15:05 = the waybill's actual pickup; updated delivery 2026-03-25 09:30 within the waybill's estimated period 09:00–11:00 and before the required 10:00; actual delivery 09:40 in `11-ReceiptAdvice.xml` (broad, logistics, context).
@@ -149,11 +157,12 @@ This is one review among possibly several of this example (other runs and parts;
 - `/TransportationStatus/cac:UpdatedPickupTransportEvent`: an "updated" pickup that already happened — refuted because reporting the actual pickup updates the planned 14:00 pickup (from logistics).
 - `/TransportationStatus/cac:TransportEvent/cac:CurrentStatus/cbc:Text` = `Driver resting in Marrowdale tonight under the driving-time rules.` against "expected … on time" — refuted because a driver resting in Marrowdale can deliver at 09:30 the next morning (from context); the driving-time question is under "Outside this review".
 - `/TransportationStatus/cac:DocumentReference/cbc:ID` with ID only — refuted by context; the merge does not follow and made it F13.
-- `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]`: Italian name tagged `en-XU` — refuted, English keeps foreign street names and the subtag follows the sender (from parties).
+- `/TransportationStatus/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]`: Italian name tagged `en-XU` — refuted by parties (English keeps foreign street names, the subtag follows the sender); the merge does not follow and made it F14.
 - `/TransportationStatus/cac:Consignment/cac:ConsigneeParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: GLN could be real — refuted, prefix 952, check digit correct (from parties).
 - `/TransportationStatus/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:Telephone`: could be real — refuted, +999 reserved (from parties).
 
 ## Changed in the merge
+- New F14 (Italian tags) from parties' refuted candidate, aligned with rail and merger C.
 - broad/F10, logistics/F3, context/F7, parties/F4 → F6: Low (logistics and parties Medium), aligned with rail and air.
 - context/F8 split into F7 (contact, with broad/F6 and parties/F5) and F8 (permit).
 - parties/F1 → F3: Needs decision no, aligned.

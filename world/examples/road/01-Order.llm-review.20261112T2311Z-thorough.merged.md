@@ -146,6 +146,27 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: no
 - From: merge
 
+### road/01#F14 · Low · Italian street names and legal forms tagged as English
+- XPath: `/Order/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- XPath: `/Order/cac:Delivery/cac:Despatch/cac:DespatchAddress/cbc:StreetName[2]` = `Via del Magazzino`
+- XPath: `/Order/cac:Delivery/cac:Despatch/cac:DespatchParty/cac:PostalAddress/cbc:StreetName[2]` = `Via del Magazzino`
+- XPath: `/Order/cac:Delivery/cac:Despatch/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]` = `Via dei Trasporti`
+- Why: these renderings carry an English `languageID` but are Italian. In this Bayvarra-issued order they are tagged `en-XB`, while the same addresses are tagged `en-XU` in the Urvanian documents (broad refuted the subtag difference: each document tags English in the issuer's locale; the rail merge kept it as a Low/yes question, folded in here). Parties (and broad in 01) refuted this: English text keeps foreign street names as proper names, and the subtag follows the sender. Counter-argument: where a `qau` rendering already gives the local name, a second rendering tagged English has a reason only if it is English, and a legal-form text such as "Società urvaniana per azioni" is not a proper name. The merge cannot settle which rule the world follows; added from the parts' refutation, aligned with the rail merge and the merger of road 13–17 (217 renderings in 102 files tagged `en-XU`/`en-XB` start with Via/Viale/Piazza/Valico/Corso/Largo/Strada/Banchina, the rail merge's count).
+- Condition: every rendering tagged as English is English, or the world's rule that place names and legal forms keep their source form under an English tag (and which region subtag an Urvanian address gets in a Bayvarran document) is documented.
+- Options: (a) document the rule for street names and render legal forms in English (preferred: street names as proper names are common practice, legal forms are not); (b) tag the Italian renderings with a tag of their own language, if the world has one.
+- Needs decision: yes
+- From: merge (from the refutation of parties, broad)
+
+### road/01#F15 · Low · Urvanian legal forms in one untagged rendering
+- XPath: `/Order/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Società urvaniana per azioni (public limited company)`
+- XPath: `/Order/cac:Delivery/cac:Despatch/cac:DespatchParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Società a responsabilità urvaniana (private limited company)`
+- XPath: `/Order/cac:Delivery/cac:Despatch/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Società a responsabilità urvaniana (private limited company)`
+- Why: in the documents Urvanian parties issue, the legal forms of Valdara, Castrano and Trasvia are given twice, tagged `qau` and `en-XU` (e.g. `02-OrderResponse.xml:/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`); this Bayvarra-issued document gives one rendering without `languageID`, while its addresses of the same parties are rendered in two tagged languages. The same party is described differently in the examples of the flow (checklist: party described the same way). Added by the merge (parties noted the subtag difference only), aligned with the rail and air merges and the merger of road 13–17.
+- Condition: each Urvanian legal form is rendered like the party's address in the same document (tagged renderings), or the single rendering carries a `languageID`.
+- Options: (a) both renderings, tagged, as in the Urvanian documents (preferred); (b) one rendering with a `languageID`.
+- Needs decision: no
+- From: merge
+
 ## Checked and consistent
 - Line arithmetic: 96 × 49 900 = 4 790 400 and 12 × 5 980 = 71 760; sum 4 862 160 = `/Order/cac:AnticipatedMonetaryTotal/cbc:LineExtensionAmount` = `4862160` = `/Order/cac:AnticipatedMonetaryTotal/cbc:PayableAmount` = `4862160` = taxable amount; tax 0 at 0 %; `LineCountNumeric` 2 (broad, money; redone in the merge).
 - Prices reappear unchanged in `15-Invoice.xml:/Invoice/cac:InvoiceLine[1]/cac:Price/cbc:PriceAmount` = `49900` and in the substituted line of `02-OrderResponse.xml:/OrderResponse/cac:OrderLine[2]/cac:SellerSubstitutedLineItem/cac:Price/cbc:PriceAmount` = `5980`; `AccountingCostCode` 4410 is repeated in `15-Invoice.xml:/Invoice/cbc:AccountingCostCode` = `4410` (money).
@@ -163,7 +184,7 @@ This is one review among possibly several of this example (other runs and parts;
 ## Considered and refuted
 - `/Order/cac:Delivery/cbc:MinimumQuantity` = `108` (and `MaximumQuantity` 108): suspected filler — refuted because equal minimum and maximum state that neither short nor over-delivery is accepted, a real ordering condition (from broad, context).
 - `/Order/cac:Delivery/cac:Despatch/cac:CarrierParty`: carrier named a day before the transport request (`03-TransportExecutionPlanRequest.xml:/TransportExecutionPlanRequest/cbc:IssueDate` = `2026-03-17`) — refuted because under FCA the buyer appoints the carrier and books it under the framework contract `03-TransportExecutionPlanRequest.xml:/TransportExecutionPlanRequest/cac:TransportContract/cbc:ID` = `LD-TH-FW-2026` (from broad, logistics, context).
-- `/Order/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`: Italian-looking rendering tagged `en-XB` — refuted because English text keeps foreign street names as proper names, and the subtag follows the sender (from broad, parties). The rail merge kept a Low/yes finding on Italian text tagged as English; no road part raised it as a finding, and the merge does not add it.
+- `/Order/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`: Italian-looking rendering tagged `en-XB` — refuted because English text keeps foreign street names as proper names, and the subtag follows the sender (from broad, parties). Not followed in full by the merge, see F14.
 - Valdara's address tagged `en-XB` here but `en-XU` in `02-OrderResponse.xml` — refuted because each document tags English in the issuer's locale (from broad).
 - `/Order/cac:BuyerCustomerParty/cac:Party/cbc:IndustryClassificationCode` = `4649` for a distributor of park benches — refuted because ISIC 4649 includes the wholesale of furniture (from broad).
 - `/Order/cac:SellerSupplierParty/cac:Party/cac:ServiceProviderParty/cac:SellerContact/cbc:Name` = `Key account desk`: SellerContact under a service provider — refuted because the definition is "The contact for the Service Provider" (from broad).
@@ -190,6 +211,8 @@ This is one review among possibly several of this example (other runs and parts;
 - broad/F7, logistics/F2, context/F4 → F11: combined; context's Medium lowered to Low (a delivery may hold several batches, so no hard conflict; IND5 remark).
 - broad/F8 → F12: the side frame's number added as a second place.
 - F13: added by the merge, aligned with the rail merge and with this flow's 04–06.
+- F14: added by the merge from broad's and parties' refutations (Italian text and en-XB subtag), aligned with the rail merge and the merger of road 13–17.
+- F15: added by the merge, aligned with the rail and air merges and the merger of road 13–17.
 
 ## Outside this review
 - The same emission, lifecycle, fullness, item-number and catalogue data recur in 04, 05, 06, 07, 10, 11, 13 and 15 of this flow (`grep -l CircularityProfile road/*.xml`); each example's review carries its own finding.

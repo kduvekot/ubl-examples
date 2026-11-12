@@ -99,6 +99,15 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: no
 - From: broad (F6), context (F8)
 
+### road/02#F10 · Low · Italian street names and legal forms tagged as English
+- XPath: `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- XPath: `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`
+- Why: these renderings carry an English `languageID` but are Italian. Parties (and broad in 01) refuted this: English text keeps foreign street names as proper names, and the subtag follows the sender. Counter-argument: where a `qau` rendering already gives the local name, a second rendering tagged English has a reason only if it is English, and a legal-form text such as "Società urvaniana per azioni" is not a proper name. The merge cannot settle which rule the world follows; added from the parts' refutation, aligned with the rail merge and the merger of road 13–17 (217 renderings in 102 files tagged `en-XU`/`en-XB` start with Via/Viale/Piazza/Valico/Corso/Largo/Strada/Banchina, the rail merge's count).
+- Condition: every rendering tagged as English is English, or the world's rule that place names and legal forms keep their source form under an English tag (and which region subtag an Urvanian address gets in a Bayvarran document) is documented.
+- Options: (a) document the rule for street names and render legal forms in English (preferred: street names as proper names are common practice, legal forms are not); (b) tag the Italian renderings with a tag of their own language, if the world has one.
+- Needs decision: yes
+- From: merge (from the refutation of parties)
+
 ## Checked and consistent
 - `/OrderResponse/cac:OrderReference/cbc:ID` = `LD-PO-26-0149` resolves to `01-Order.xml`; buyer and seller agree; issued 2026-03-17 17:42, after the order (broad, logistics, context).
 - Quantities 96 and 12 EA match the order lines; the substituted line keeps the ordered price 5980 XUF, as the notes say (broad, context).
@@ -111,7 +120,7 @@ This is one review among possibly several of this example (other runs and parts;
 ## Considered and refuted
 - `/OrderResponse/cac:OrderLine[1]/cac:OrderLineReference/cbc:UUID` = `da67b26b-2501-5b9b-9b6f-d03d5ce50a97`: the order lines in 01 have no UUID — refuted because the UUID identifies the line reference, not the order line (from broad).
 - `/OrderResponse/cac:OrderLine[2]/cac:OrderLineReference/cbc:SalesOrderLineID` = `2` only on line 2 — refuted because the seller's own line ID matters only for the revised line (from broad, context).
-- `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XU` — refuted because foreign street names stay proper names in English and the subtag follows the sender (from parties).
+- `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XU` — refuted because foreign street names stay proper names in English and the subtag follows the sender (from parties). Not followed in full by the merge, see F10.
 - `/OrderResponse/cac:BuyerCustomerParty/cac:Party/cac:AdditionalPartyIdentification[1]/cbc:ID`: GLN that could be real — refuted: prefix 952 is reserved for examples, check digit correct (from parties).
 - `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: real numbers — refuted: +999 is reserved by ITU-T E.164 (from parties).
 - `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01`: contract number rather than identifier — refuted: the definition does not say who assigns it (from parties).
@@ -128,6 +137,7 @@ This is one review among possibly several of this example (other runs and parts;
 - broad/F5, parties/F6, context/F6 → F7: combined.
 - parties/F5, context/F7 → F8: combined.
 - broad/F6, context/F8 → F9: combined; context's preference (drop line 1's reference) taken as option (a).
+- F10: added by the merge from parties' refutation, aligned with the rail merge and the merger of road 13–17.
 
 ## Outside this review
 - `03-TransportExecutionPlanRequest.xml` is issued 2026-03-17 14:16, before this response (17:42): the buyer books the truck before the seller confirms; a timeline question, plausible under a framework contract (from broad).

@@ -64,7 +64,7 @@ This is one review among possibly several of this example (other runs and parts;
 - Why: the export declaration is numbered (`VI-…`), made and signed by Valdara as exporter, with no declarant or representative besides it; Castrano appears there only as Valdara's warehousing provider. The import half of the sentence agrees with `10-ImportCustomsDeclaration.xml` (Lumeway). Under FCA, export clearance is the seller's (own knowledge of Incoterms 2020).
 - Condition: the waybill and the export declaration agree on who declares the export.
 - Options: (a, preferred) "The export is declared by the seller in Ferrano; …" (matches 05 and FCA); (b) make Castrano the declaring agent in the export declaration, which changes 05.
-- Needs decision: no
+- Needs decision: yes (who declares the export is part of the story; aligned with merger A's finding on 05, and with broad and logistics)
 - From: broad (F3, High, yes; combined with the issuer), logistics (F3, High, yes), context (F2, High, no)
 
 ### road/08#F5 · High · Customs administration named as issuer of the exporter's declaration
@@ -319,6 +319,15 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: yes
 - From: broad (Considered and refuted, not verifiable)
 
+### road/08#F31 · Low · Italian street names tagged as English
+- XPath: `/Waybill/cac:SenderParty/cac:PostalAddress/cbc:StreetName[2]` = `Via dei Trasporti`
+- XPath: `/Waybill/cac:ConsignorParty/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- Why: the second rendering of the Urvanian names is Italian text with `languageID` `en-XU`. Parties refuted it: English keeps foreign street names unchanged and the region subtag follows the sender. Against that, the tag states English for words that are not, next to an Urvanian (`qau`) rendering, so the Italian form is a third language without a tag of its own. The merge cannot settle which reading the world intends; aligned with rail and the other road merges (Low, decision). Rail counted 217 such renderings in 102 files (over `*.xml`).
+- Condition: one rule for Italian-form names in English renderings, recorded in the world's language rules, and the tags follow it.
+- Options: (a, preferred) record that English renderings keep the Italian exonym (then no change); (b) an Italian language tag for the Italian form.
+- Needs decision: yes
+- From: merge (parties considered and refuted it)
+
 ## Checked and consistent
 - Counts: 25 handling units = `TotalTransportHandlingUnitQuantity`; 24 × 4 + 12 = 108 = `TotalPackagesQuantity`; shipping marks 001–025 of 025 (broad, logistics, context).
 - Weights (redone in the merge): gross 4106.4 = 3984 + 122.4 kg (goods items of `05-ExportCustomsDeclaration.xml`), as in 03, 04, 05 and 10; tare 4106.4 − 3762 = 344.4 kg for 25 pallets, 96 films (38.4 kg) and 12 boxes, about 12 kg per pallet: light for a returnable pallet of 1.2 m² (a euro pallet of 0.96 m² weighs 20–25 kg, own knowledge), but within what a light timber pallet weighs, so no finding. 3984 / 96 = 41.5 kg gross per bench. 4.1 t is far below a truck's payload.
@@ -343,16 +352,17 @@ This is one review among possibly several of this example (other runs and parts;
 - `/Waybill/cac:Shipment/cac:Consignment/cac:TransportHandlingUnit[1]/cbc:HandlingCode`: stacking on a side-loaded curtain-sider — not a problem in itself; the height is F12 (from logistics).
 - `/Waybill/cac:Shipment/cac:Consignment/cac:MainCarriageShipmentStage/cac:LoadingPortLocation` for a road place — refuted because UBL defines it as "The location of loading for a shipment stage" (from context).
 - `/Waybill/cac:Shipment/cac:ReturnAddress` without a use — refuted because the pallets are returnable (from context).
-- `/Waybill/cac:SenderParty/cac:PostalAddress/cbc:StreetName[2]`: Italian name tagged `en-XU` — refuted because English keeps foreign street names and the subtag follows the sender (from parties).
+- `/Waybill/cac:SenderParty/cac:PostalAddress/cbc:StreetName[2]`: Italian name tagged `en-XU` — refuted by parties (English keeps foreign street names, the subtag follows the sender); the merge does not follow and made it F31.
 - `/Waybill/cac:ReceiverParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: GLN could be real — refuted, prefix 952 is for demonstrations, check digit correct (from parties).
 - `/Waybill/cac:SenderParty/cac:Contact/cbc:Telephone`: could be real — refuted, +999 is reserved (from parties).
 - `/Waybill/cac:ConsignorParty/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01` as a contract number — refuted, the definition does not say who assigns it (from parties).
 - `/Waybill/cac:ConsignorParty` = Valdara while the goods leave Castrano's warehouse — refuted because the consignor is the party responsible for sending the goods, Castrano its service provider (from parties).
 
 ## Changed in the merge
+- New F31 (Italian tags) from parties' refuted candidate, aligned with rail and merger C.
 - broad/F1, logistics/F1, context/F1 and context/F12 (fuel) → F1: combined; options of all parts kept.
 - New F3 (references to documents issued after the waybill): added by the merge from logistics/F7's remark on the despatch advice and the 13:25 export declaration, as rail did for its waybill.
-- broad/F3 split into F4 (instruction) and F5 (issuer); F5 raised from Medium (logistics/F8, context/F5, parties/F4) to High because it contradicts the declaration it cites in 05 (as rail). F4: Needs decision no (broad and logistics yes), because the preferred option only aligns the text with 05.
+- broad/F3 split into F4 (instruction) and F5 (issuer); F5 raised from Medium (logistics/F8, context/F5, parties/F4) to High because it contradicts the declaration it cites in 05 (as rail). F4: Needs decision yes as broad and logistics (context no), aligned with merger A's finding on 05.
 - parties/F2 → F8: Needs decision no, aligned with the other parts and earlier flows.
 - broad/F11, logistics/F4 → F12: Needs decision yes (broad no), because it follows the packing decision of F17; physics redone.
 - broad/F12, logistics/F5 → F17: kept Medium/yes; reason for not following rail's Low given in the finding.

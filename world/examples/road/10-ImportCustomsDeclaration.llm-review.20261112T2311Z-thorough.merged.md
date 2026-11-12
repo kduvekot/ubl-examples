@@ -45,7 +45,7 @@ This is one review among possibly several of this example (other runs and parts;
 - XPath: `07-CertificateOfOrigin.xml:/CertificateOfOrigin/cbc:VersionID` = `1`
 - Why: the reference carries only an ID, which both the submitted application (06, endorsement pending) and the approved certificate (07) have, with the same version. Without type, version, UUID or date the declaration cannot be linked to the approved certificate that the preference requires; one of the two candidates is not a valid certificate. Kept High as in `07-CertificateOfOrigin.xml` F1 (a reference that does not resolve to one document); context had Medium, logistics Low.
 - Condition: the reference identifies exactly one document, the approved certificate, and says that it is a certificate of origin.
-- Options: (a, preferred) resolve the duplicate ID in 06/07 and add `DocumentTypeCode` here; (b) add the UUID or issue date (2026-03-22) of 07 to the reference, which works even if the IDs stay.
+- Options: (a, preferred) resolve the duplicate in 06/07 (07 F1: version 2 for the approved certificate) and let the reference carry `DocumentTypeCode` and the version or issue date (2026-03-22); (b) add the UUID of 07 to the reference, which works even if ID and version stay.
 - Needs decision: no
 - From: broad (F3, High), context (F3, Medium), logistics (F3, Low)
 
@@ -191,6 +191,32 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: no
 - From: broad (F14), context (F12)
 
+### road/10#F19 · Low · Italian street names tagged as English
+- XPath: `/ImportCustomsDeclaration/cac:ConsignorParty/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- Why: the second rendering of the Urvanian names is Italian text with `languageID` `en-XB`. Parties refuted it: English keeps foreign street names unchanged and the region subtag follows the sender. Against that, the tag states English for words that are not, next to an Urvanian (`qau`) rendering, so the Italian form is a third language without a tag of its own. The merge cannot settle which reading the world intends; aligned with rail and the other road merges (Low, decision). Rail counted 217 such renderings in 102 files (over `*.xml`).
+- Condition: one rule for Italian-form names in English renderings, recorded in the world's language rules, and the tags follow it.
+- Options: (a, preferred) record that English renderings keep the Italian exonym (then no change); (b) an Italian language tag for the Italian form.
+- Needs decision: yes
+- From: merge (parties considered and refuted it)
+
+### road/10#F20 · Low · Urvanian legal form in one untagged rendering
+- XPath: `/ImportCustomsDeclaration/cac:ConsignorParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Società urvaniana per azioni (public limited company)`
+- XPath: `07-CertificateOfOrigin.xml:/CertificateOfOrigin/cac:ExporterParty/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`
+- Why: in Urvania-issued documents of the flow Valdara's legal form comes in two tagged renderings (`qau`, `en-XU`); in this Bayvarra-issued document it is one untagged text, so the same party is described differently and the language is not stated. Added by the merge, aligned with rail, air and the other road merges.
+- Condition: the legal form is rendered as the address is in this document (renderings with language tags).
+- Options: (a, preferred) both renderings, tagged.
+- Needs decision: no
+- From: merge
+
+### road/10#F21 · Low · Side frames not identified as the substituted 2026 casting
+- XPath: `/ImportCustomsDeclaration/cac:Shipment/cac:GoodsItem[2]/cac:Item/cac:SellersItemIdentification/cbc:ID` = `VI-C180`
+- XPath: `02-OrderResponse.xml:/OrderResponse/cac:OrderLine[2]/cac:SellerSubstitutedLineItem/cac:Item/cac:SellersItemIdentification/cbc:ExtendedID` = `2026`
+- Why: the order response substituted the 2026 casting for the ordered side frame (and proposed the 2025 casting from stock); this document identifies the side frames only as VI-C180, so it does not say which casting it covers. Added by the merge (no part raised it here), aligned with the other road merges and with logistics' finding on `11-ReceiptAdvice.xml`.
+- Condition: the side frame is identified as the order response identifies the substitute.
+- Options: (a, preferred) `ExtendedID` 2026; (b) drop the version distinction everywhere if it has no role.
+- Needs decision: no
+- From: merge
+
 ## Checked and consistent
 - Customs values: 4 790 400 XUF × 0.01 = 47 904.00 XBL and 71 760 × 0.01 = 717.60 XBL, the rate of `15-Invoice.xml:/Invoice/cac:PaymentExchangeRate/cbc:CalculationRate` = `0.01` on the same date; the XUF values are those of the export declaration and the invoice lines; XBL is right for values on which Bayvarran duties are assessed (money, broad; recalculated in the merge).
 - Quantities 96 and 12, gross weights 3984 and 122.4 kg (total 4106.4), shipment CL-SH-26-0154 agree with 04, 05 and 08; despatch line references 1 and 2 of CL-DA-26-0153 resolve to `04-DespatchAdvice.xml` (broad, logistics, context).
@@ -205,7 +231,7 @@ This is one review among possibly several of this example (other runs and parts;
 - `/ImportCustomsDeclaration/cbc:Note`: should state the duties in structure — refuted because the UBL 2.5 Import Customs Declaration has no duty or tax element (from money); the preference question remains F11.
 - `/ImportCustomsDeclaration/cac:CustomsExitOfficeLocation/cbc:Name` = `Customs post at the land border, Urvanian side`: wrong office for an import — refuted because the document has only `CustomsExitOfficeLocation` ("Customs exit office of the goods being declared"), and the Urvanian exit post is that office (from logistics and context; the merge follows them, see "Refuted in the merge").
 - `/ImportCustomsDeclaration/cac:ValidityPeriod`: meaningless for an import — refuted by context (the issuer may set it); the merge does not follow and keeps F12.
-- `/ImportCustomsDeclaration/cac:ConsignorParty/cac:PostalAddress/cbc:StreetName[2]`: Italian name tagged `en-XB` — refuted, English keeps foreign street names and the subtag follows the sender (from parties).
+- `/ImportCustomsDeclaration/cac:ConsignorParty/cac:PostalAddress/cbc:StreetName[2]`: Italian name tagged `en-XB` — refuted by parties (English keeps foreign street names, the subtag follows the sender); the merge does not follow and made it F19.
 - `/ImportCustomsDeclaration/cac:ImporterParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: GLN could be real — refuted, prefix 952, check digit correct (from parties).
 - `/ImportCustomsDeclaration/cac:ImporterParty/cac:Contact/cbc:Telephone`: could be real — refuted, +999 reserved (from parties).
 - `/ImportCustomsDeclaration/cac:ConsignorParty/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01` as a contract number — refuted, the definition does not say who assigns it (from parties); its presence is F15.
@@ -218,6 +244,7 @@ This is one review among possibly several of this example (other runs and parts;
 - Refuted because: the UBL 2.5 Import Customs Declaration has no office-of-entry element (logistics checked the model), and the definition names the exit office "of the goods being declared", which for this movement is the Urvanian post; the value is a legitimate reading and the missing entry office cannot be carried. The validity part of broad/F10 is kept as F12.
 
 ## Changed in the merge
+- New F19 (Italian tags, from parties' refuted candidate), F20 (untagged legal form) and F21 (2026 casting), added by the merge, aligned with rail, air and mergers A and C.
 - broad/F3, context/F3, logistics/F3 → F3: High (context Medium, logistics Low), aligned with 07 F1.
 - context/F2 → F5: High lowered to Medium, aligned with rail and air.
 - broad/F8, context/F9 → F10: Low and Needs decision yes (broad Medium, no).

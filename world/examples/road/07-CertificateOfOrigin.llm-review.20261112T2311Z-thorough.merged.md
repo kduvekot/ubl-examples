@@ -27,7 +27,7 @@ This is one review among possibly several of this example (other runs and parts;
 - XPath: `10-ImportCustomsDeclaration.xml:/ImportCustomsDeclaration/cac:AdditionalDocumentReference/cbc:ID` = `FCC-CO-26-0157`
 - Why: `ID` is "An identifier for this document, assigned by the sender" and `VersionID` "Identifies the version of this Certificate of Origin". `06-CertificateOfOrigin.xml` (the exporter's application, `ApplicationStatusCode` SUBMITTED, issuer endorsement `Pending`, signed by Valdara, 2026-03-20) and this example (approved, endorsed and legalised by the chamber and the accord council, 2026-03-22) have different content, UUIDs, issue dates and signers, yet the same ID and the same version 1. The application already carries the chamber's certificate number although its own sender is Valdara and it has its own reference (`/CertificateOfOrigin/cac:CertificateOfOriginApplication/cbc:ReferenceID` = `VI-AP-26-0158`). The import declaration's reference to `FCC-CO-26-0157` therefore resolves to both documents (`flow_index.py` lists both). Merge check: the refutation "the same certificate goes back and forth through the workflow" fails, because the same ID with the same version cannot then hold two contents.
 - Condition: the two documents can be told apart by ID or by version, and the reference in the import declaration resolves to the issued certificate only.
-- Options: (a, preferred) give the application its own ID (e.g. from VI-AP-26-0158) and keep `FCC-CO-26-0157` version 1 for the chamber's certificate, which is what the import declaration means; (b) keep the shared ID and give this certificate version 2 (and let the import declaration cite the version).
+- Options: (a, preferred, aligned with merger A for 06) keep the shared ID, which the chamber may well pre-assign to the application form, and give this approved certificate version 2, with the import declaration citing the version or issue date; (b) give the application its own ID (e.g. from VI-AP-26-0158) and keep `FCC-CO-26-0157` version 1 for the certificate (broad's and context's preference).
 - Needs decision: no
 - From: broad (F1, High), context (F3, Medium), logistics (F4, Low)
 
@@ -247,6 +247,25 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: yes
 - From: broad (F17), context (F14)
 
+### road/07#F24 · Low · Italian street names tagged as English
+- XPath: `/CertificateOfOrigin/cac:ExporterParty/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- XPath: `/CertificateOfOrigin/cac:EndorserParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Piazza del Mercato`
+- XPath: `/CertificateOfOrigin/cac:ExporterParty/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`
+- Why: the second rendering of the Urvanian names is Italian text with `languageID` `en-XU` (the same holds for the Italian legal form). Parties refuted it: English keeps foreign street names unchanged and the region subtag follows the sender. Against that, the tag states English for words that are not, next to an Urvanian (`qau`) rendering, so the Italian form is a third language without a tag of its own. The merge cannot settle which reading the world intends; aligned with rail and the other road merges (Low, decision). Rail counted 217 such renderings in 102 files (over `*.xml`).
+- Condition: one rule for Italian-form names in English renderings, recorded in the world's language rules, and the tags follow it.
+- Options: (a, preferred) record that English renderings keep the Italian exonym (then no change); (b) an Italian language tag for the Italian form.
+- Needs decision: yes
+- From: merge (parties considered and refuted it)
+
+### road/07#F25 · Low · Side frames not identified as the substituted 2026 casting
+- XPath: `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Shipment/cac:GoodsItem[2]/cac:Item/cac:SellersItemIdentification/cbc:ID` = `VI-C180`
+- XPath: `02-OrderResponse.xml:/OrderResponse/cac:OrderLine[2]/cac:SellerSubstitutedLineItem/cac:Item/cac:SellersItemIdentification/cbc:ExtendedID` = `2026`
+- Why: the order response substituted the 2026 casting for the ordered side frame (and proposed the 2025 casting from stock); this document identifies the side frames only as VI-C180, so it does not say which casting it covers. Added by the merge (no part raised it here), aligned with the other road merges and with logistics' finding on `11-ReceiptAdvice.xml`.
+- Condition: the side frame is identified as the order response identifies the substitute.
+- Options: (a, preferred) `ExtendedID` 2026; (b) drop the version distinction everywhere if it has no role.
+- Needs decision: no
+- From: merge
+
 ## Checked and consistent
 - Goods items (96 benches, 12 side frames), customs values, gross weights (3984 and 122.4 kg) and shipment ID CL-SH-26-0154 agree with `05-ExportCustomsDeclaration.xml`, `06-CertificateOfOrigin.xml` and `10-ImportCustomsDeclaration.xml` (broad, context, logistics).
 - `CertificateType` Preferential, the note and the origin remarks agree; both items have origin XU (broad, context, logistics).
@@ -261,14 +280,15 @@ This is one review among possibly several of this example (other runs and parts;
 - `/CertificateOfOrigin/cac:ExporterParty/cac:ServiceProviderParty`: suspected copied master data — refuted because it explains that the goods leave from Castrano's warehouse (from context).
 - Endorser party at document level and again in the application: suspected redundant — refuted because UBL has both and both describe the same chamber consistently (from context).
 - `/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Shipment/cbc:ID`: the 3PL's shipment ID appears before the despatch advice that reports it (`04-DespatchAdvice.xml`, 2026-03-23) — refuted because a shipment number is commonly reserved when the shipment is planned (from logistics).
-- `/CertificateOfOrigin/cac:ExporterParty/cac:PostalAddress/cbc:StreetName[2]`: Italian-language street name tagged `en-XU` — refuted because English text keeps foreign street names unchanged and the subtag follows the sender (from parties). Note: rail merges kept the same question as Low with a decision; no part raised it here, so it stays refuted for this example.
+- `/CertificateOfOrigin/cac:ExporterParty/cac:PostalAddress/cbc:StreetName[2]`: Italian-language street name tagged `en-XU` — refuted by parties because English text keeps foreign street names unchanged and the subtag follows the sender; the merge does not follow the refutation and made it F24, aligned with rail and merger C.
 - `/CertificateOfOrigin/cac:ImporterParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: GLN that could be real — refuted because prefix 952 is GS1's prefix for demonstrations and the check digit is correct (from parties).
 - `/CertificateOfOrigin/cac:ExporterParty/cac:Contact/cbc:Telephone`: numbers could be real — refuted because +999 is reserved in ITU-T E.164 (from parties).
 - `/CertificateOfOrigin/cac:ExporterParty/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01`: looks like a contract number — refuted because the definition does not say who assigns the ID; Valdara's own number for its provider is a legitimate reading (from parties).
 - `/CertificateOfOrigin/cac:EmbassyEndorsement/cac:EndorserParty/cac:SignatoryContact/cbc:Name` = `Legalisation desk` against the definition of `SignatoryContact` — broad refuted it as a model defect; the merge does not follow the refutation and keeps the question as F16 (context's finding).
 
 ## Changed in the merge
-- broad/F1, context/F3, logistics/F4 → F1: combined; High kept (logistics had Low, context Medium) because the reference in 10 resolves to two documents with different content (section 6, broken reference).
+- New F24 (Italian tags, from parties' refuted candidate) and F25 (2026 casting, added by the merge), aligned with rail and mergers A and C.
+- broad/F1, context/F3, logistics/F4 → F1: combined; High kept (logistics had Low, context Medium) because the reference in 10 resolves to two documents with different content (section 6, broken reference). Preferred option changed to version 2 (logistics' preference), aligned with merger A, which reviews 06.
 - broad/F2, logistics/F1, context/F5 → F2: combined; High (context had Medium) because the arithmetic does not hold; option (a) preferred as in rail and air (logistics preferred a real factor).
 - parties/F2 → F4: Needs decision changed from yes to no, aligned with broad, context and the earlier flows.
 - context/F2 → F7: High lowered to Medium, aligned with rail and air (the code names another stage than the figure; the fix is encoding, not a contradiction between two figures).

@@ -107,6 +107,25 @@ This is one review among possibly several of this example (other runs and parts;
 - Needs decision: no
 - From: broad (F6 in part), parties (F7), context (F5)
 
+### road/03#F11 · Low · Italian street names and legal forms tagged as English
+- XPath: `/TransportExecutionPlanRequest/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName[2]` = `Via dei Trasporti`
+- XPath: `/TransportExecutionPlanRequest/cac:FromLocation/cac:Address/cbc:StreetName[2]` = `Via del Magazzino`
+- XPath: `/TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- Why: these renderings carry an English `languageID` but are Italian. In this Bayvarra-issued request they are tagged `en-XB`, while the same addresses are tagged `en-XU` in the Urvanian documents (folded in here, as the rail merge's Low/yes question). Parties (and broad in 01) refuted this: English text keeps foreign street names as proper names, and the subtag follows the sender. Counter-argument: where a `qau` rendering already gives the local name, a second rendering tagged English has a reason only if it is English, and a legal-form text such as "Società urvaniana per azioni" is not a proper name. The merge cannot settle which rule the world follows; added from the parts' refutation, aligned with the rail merge and the merger of road 13–17 (217 renderings in 102 files tagged `en-XU`/`en-XB` start with Via/Viale/Piazza/Valico/Corso/Largo/Strada/Banchina, the rail merge's count).
+- Condition: every rendering tagged as English is English, or the world's rule that place names and legal forms keep their source form under an English tag (and which region subtag an Urvanian address gets in a Bayvarran document) is documented.
+- Options: (a) document the rule for street names and render legal forms in English (preferred: street names as proper names are common practice, legal forms are not); (b) tag the Italian renderings with a tag of their own language, if the world has one.
+- Needs decision: yes
+- From: merge (from the refutation of parties)
+
+### road/03#F12 · Low · Urvanian legal forms in one untagged rendering
+- XPath: `/TransportExecutionPlanRequest/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Società a responsabilità urvaniana (private limited company)`
+- XPath: `/TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Società urvaniana per azioni (public limited company)`
+- Why: in the documents Urvanian parties issue, the legal forms of Valdara, Castrano and Trasvia are given twice, tagged `qau` and `en-XU` (e.g. `02-OrderResponse.xml:/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`); this Bayvarra-issued document gives one rendering without `languageID`, while its addresses of the same parties are rendered in two tagged languages. The same party is described differently in the examples of the flow (checklist: party described the same way). Added by the merge (parties noted the subtag difference only), aligned with the rail and air merges and the merger of road 13–17.
+- Condition: each Urvanian legal form is rendered like the party's address in the same document (tagged renderings), or the single rendering carries a `languageID`.
+- Options: (a) both renderings, tagged, as in the Urvanian documents (preferred); (b) one rendering with a `languageID`.
+- Needs decision: no
+- From: merge
+
 ## Checked and consistent
 - Requested pickup 2026-03-23 14:00 at Ferrano equals the order's requested despatch; requested delivery 2026-03-25 10:00 at Marrowdale equals the waybill's required delivery (`08-Waybill.xml:/Waybill/cac:Shipment/cac:Consignment/cac:MainCarriageShipmentStage/cbc:RequiredDeliveryTime` = `10:00:00`); both lie in the service periods (2026-03-23 to 2026-03-26) (broad, logistics, context).
 - Consignment LD-CS-26-0152 and gross weight 4106.4 kg (= 3984 + 122.4) agree with 04, 05 and 08; 25 pallets = 24 bench pallets + one pallet of 12 boxed side frames (broad, logistics).
@@ -123,7 +142,7 @@ This is one review among possibly several of this example (other runs and parts;
 - `/TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:ServiceProviderParty/cbc:ServiceType` = `Warehousing and despatch`: master data — refuted because it explains why the pickup is at Castrano (from context; broad had it in its F6, see F10).
 - `/TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01`: contract number rather than identifier — refuted: the definition does not say who assigns it (from parties).
 - Consignment without structured goods items or package count — refuted because summary, gross weight, pallet count and FTL say what is carried (from context).
-- `/TransportExecutionPlanRequest/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XB` — refuted: proper names, subtag follows the sender (from parties).
+- `/TransportExecutionPlanRequest/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XB` — refuted: proper names, subtag follows the sender (from parties). Not followed in full by the merge, see F11.
 - `/TransportExecutionPlanRequest/cac:SenderParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: real GLN — refuted: prefix 952, check digit correct (from parties).
 - `/TransportExecutionPlanRequest/cac:SenderParty/cac:Contact/cbc:Telephone`: real numbers — refuted: +999 reserved (from parties).
 - `/TransportExecutionPlanRequest/cac:ReceiverParty`: full party data next to `TransportServiceProviderParty` with ID and name only — refuted: one full rendering of the addressee suffices (from parties).
@@ -138,6 +157,8 @@ This is one review among possibly several of this example (other runs and parts;
 - broad/F5, parties/F6, logistics/F2, context/F4 → F8: combined.
 - logistics/F1 → F9: kept against broad's and context's refutations as a Low completeness remark; physics recalculated by the merge.
 - the master-data part of broad/F6, parties/F7, context/F5 → F10: combined; the consignor's `ServiceProviderParty` removed from the finding (context's refutation, rail merge).
+- F11: added by the merge from parties' refutation, aligned with the rail merge and the merger of road 13–17.
+- F12: added by the merge, aligned with the rail and air merges and the merger of road 13–17.
 
 ## Outside this review
 - The actual pickup (15:05 in `08-Waybill.xml` and `09-TransportationStatus.xml`) is an hour after the requested 14:00; a timeline question.

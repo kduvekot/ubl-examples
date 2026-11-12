@@ -172,11 +172,23 @@ This is one review among possibly several of this example (other runs and parts;
 
 ### road/05#F17 · Low · Signature ID built from the flow name
 - XPath: `/ExportCustomsDeclaration/cac:Signature/cbc:ID` = `VI-SIG-EX-road`
-- Why: `Signature/ID` is "An identifier for this signature"; `road` is the name of this repository's flow, meaningless to Valdara or customs, while other signatures of the flow follow the signer's numbering (e.g. `07-CertificateOfOrigin.xml:/CertificateOfOrigin/cac:CertificateOfOriginApplication/cac:Signature/cbc:ID` = `VI-SIG-COA` aside, the chamber's `FCC-SIG-26-0309`). Counted with `grep -rhoE --include='*.xml' '<cbc:ID>[A-Z]+-SIG-[^<]*-[a-z]+<'`: 14 signature IDs end in a flow name. The signature also carries only an ID and a signatory, no method, time or attachment (context); the air merge treated such signatures as a convention (Low, needs decision); this finding is about the ID only.
+- Why: `Signature/ID` is "An identifier for this signature"; `road` is the name of this repository's flow, meaningless to Valdara or customs, while other signatures of the flow follow the signer's numbering (e.g. `07-CertificateOfOrigin.xml:/CertificateOfOrigin/cac:IssuerEndorsement/cac:Signature/cbc:ID` = `FCC-SIG-26-0309`). Counted with `grep -rhoE --include='*.xml' '<cbc:ID>[A-Z]+-SIG-[^<]*-[a-z]+<'`: 14 signature IDs end in a flow name. The signature also carries only an ID and a signatory, no method, time or attachment (context); the air merge treated such signatures as a convention (Low, needs decision); this finding is about the ID only.
 - Condition: the signature ID follows the signer's own numbering, without repository or flow names.
 - Options: (a) number it in Valdara's series, e.g. after the declaration ID (preferred); (b) drop the signature if the story has no signed declaration (the air merge's preference for unsigned signatures).
 - Needs decision: no
 - From: broad (F11), context (F11)
+
+### road/05#F18 · Low · Italian street names and legal forms tagged as English
+- XPath: `/ExportCustomsDeclaration/cac:ExporterParty/cac:PostalAddress/cbc:StreetName[2]` = `Via delle Officine`
+- XPath: `/ExportCustomsDeclaration/cac:ExporterParty/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società urvaniana per azioni (public limited company)`
+- XPath: `/ExportCustomsDeclaration/cac:CustomsDeclaration/cac:Shipment/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName[2]` = `Via dei Trasporti`
+- XPath: `/ExportCustomsDeclaration/cac:CustomsDeclaration/cac:Shipment/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Società a responsabilità urvaniana (private limited company)`
+- XPath: `/ExportCustomsDeclaration/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:StreetName[2]` = `Valico di Confine`
+- Why: these renderings carry an English `languageID` but are Italian. Parties (and broad in 01) refuted this: English text keeps foreign street names as proper names, and the subtag follows the sender. Counter-argument: where a `qau` rendering already gives the local name, a second rendering tagged English has a reason only if it is English, and a legal-form text such as "Società urvaniana per azioni" is not a proper name. The merge cannot settle which rule the world follows; added from the parts' refutation, aligned with the rail merge and the merger of road 13–17 (217 renderings in 102 files tagged `en-XU`/`en-XB` start with Via/Viale/Piazza/Valico/Corso/Largo/Strada/Banchina, the rail merge's count).
+- Condition: every rendering tagged as English is English, or the world's rule that place names and legal forms keep their source form under an English tag (and which region subtag an Urvanian address gets in a Bayvarran document) is documented.
+- Options: (a) document the rule for street names and render legal forms in English (preferred: street names as proper names are common practice, legal forms are not); (b) tag the Italian renderings with a tag of their own language, if the world has one.
+- Needs decision: yes
+- From: merge (from the refutation of parties)
 
 ## Checked and consistent
 - Goods items: 96 benches valued 4 790 400 XUF (= 96 × 49 900) and 12 side frames 71 760 XUF (= 12 × 5 980), equal to `15-Invoice.xml:/Invoice/cac:InvoiceLine[1]/cbc:LineExtensionAmount` = `4790400`; the exporter is the invoice's seller (`15-Invoice.xml:/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID` = `XU-R-104274`), which supports the export exemption; the import side converts at 0.01 XBL per XUF (`10-ImportCustomsDeclaration.xml:/ImportCustomsDeclaration/cac:Shipment/cac:GoodsItem[1]/cbc:DeclaredCustomsValueAmount` = `47904.00`) (broad, money, logistics, context).
@@ -194,7 +206,7 @@ This is one review among possibly several of this example (other runs and parts;
 - `/ExportCustomsDeclaration/cac:ExporterParty/cac:ServiceProviderParty`: master data — refuted because it explains that the goods leave from Castrano's warehouse (from context); it does not make Castrano the declarant (F1).
 - `/ExportCustomsDeclaration/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme`: customs authority with a VAT registration — refuted because public bodies are commonly VAT-registered for their taxable activities (from parties).
 - `/ExportCustomsDeclaration/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:Postbox` = `PB 18` with a street and type POSTAL — refuted: a postal address may carry both (from parties).
-- `/ExportCustomsDeclaration/cac:ExporterParty/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XU` — refuted: proper names, subtag follows the sender (from parties).
+- `/ExportCustomsDeclaration/cac:ExporterParty/cac:PostalAddress/cbc:StreetName[2]`: Italian-looking name tagged `en-XU` — refuted: proper names, subtag follows the sender (from parties). Not followed in full by the merge, see F18.
 - `/ExportCustomsDeclaration/cac:CustomsDeclaration/cac:ConsigneeParty/cac:AdditionalPartyIdentification[1]/cbc:ID`: real GLN — refuted: prefix 952, check digit correct (from parties).
 - `/ExportCustomsDeclaration/cac:ExporterParty/cac:Contact/cbc:Telephone`: real numbers — refuted: +999 reserved (from parties).
 - `/ExportCustomsDeclaration/cac:ExporterParty/cac:ServiceProviderParty/cbc:ID` = `VI-SP-2026-01`: contract number — refuted: the definition does not say who assigns it (from parties).
@@ -212,6 +224,7 @@ This is one review among possibly several of this example (other runs and parts;
 - broad/F8, context/F9 → F13: combined.
 - broad/F10, logistics/F4, context/F10 → F16: combined.
 - broad/F11, context/F11 → F17: combined; context's "signature says what it is" kept as option (b) only, the condition is about the ID.
+- F18: added by the merge from parties' refutation, aligned with the rail merge and the merger of road 13–17.
 
 ## Outside this review
 - `08-Waybill.xml` names the customs administration as `IssuerParty` of the declaration; that element's error lies in 08 (its contradiction with this document is F1).
