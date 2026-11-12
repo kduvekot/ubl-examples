@@ -3,5 +3,9 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:IssueTime>00:00:00</cbc:IssueTime>
-  <cac:TransportMeans/>
+  <cac:TransportMeans>
+    <cac:RoadTransport>
+      <cbc:LicensePlateID>X</cbc:LicensePlateID>
+    </cac:RoadTransport>
+  </cac:TransportMeans>
 </TransportProgressStatus>

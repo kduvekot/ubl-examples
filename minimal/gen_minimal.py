@@ -56,7 +56,11 @@ UNITS = {
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
 # PeriodType: both StartDate and EndDate. A period with only a start would be
 # "open-ended" by absence of its end, which IND6 forbids.
-FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"}}
+# TransportMeansType ("a particular vehicle or vessel"): only the mode-specific
+# aggregates identify the vehicle; road is the simplest (its required
+# LicensePlateID follows from the schema).
+FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
+        "TransportMeansType": {"cac:RoadTransport"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
