@@ -202,6 +202,7 @@ review only describes what is wrong; it does not say where or how the example is
 - parties/F3 (Low, yes) → F9: broad's refutation added as counter-argument; severity and decision unchanged.
 - context/F6 → F13: broad's refutation added as counter-argument; kept Low.
 - context/F7 → F14: the last instance's XPath added.
+- parties/F3 (remark on the untagged legal form) → F10: a finding of its own, aligned with the merges of air 01–05, wood and plastics.
 
 ## Outside this review
 - Timeline: issued 13 May 10:07, two minutes after `05-TransportationStatus.xml` reports the cargo accepted at the airport terminal, and before the waybill (10:43) (from broad).

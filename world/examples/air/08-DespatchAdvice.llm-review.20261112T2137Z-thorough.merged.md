@@ -214,6 +214,7 @@ review only describes what is wrong; it does not say where or how the example is
 - F9 is new as a finding (context/F9 cites NoStatus only as evidence), for consistency with wood and plastics.
 - broad/F4 options: "drop LocaleCode" now preferred, as parties, context and the other flows.
 - broad/F8 and parties/F5 → F14: combined.
+- parties/F3 (remark on the untagged legal form) → F12: a finding of its own, aligned with the merges of air 01–05, wood and plastics.
 
 ## Outside this review
 - Timeline: issued 14 May 10:48, after the 07:00 departure of KXL207 in `04-Waybill.xml` and before the arrival report of `09-TransportationStatus.xml`; which flight the cargo took is recorded in 07's review (F2) (from broad).

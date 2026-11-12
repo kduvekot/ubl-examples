@@ -184,5 +184,6 @@ review only describes what is wrong; it does not say where or how the example is
 - context/F9 → F9: count corrected to 137 of 147 Signature aggregates (lxml count in the merge).
 - broad/F4 options: "drop LocaleCode" is now preferred, as in parties, context and the other flows.
 - broad/F8 and parties/F5 → F13: combined, Department values added.
+- parties/F3 (remark on the untagged legal form) → F11: a finding of its own, aligned with the merges of air 01–05, wood and plastics.
 - broad/F1, logistics/F2, context/F1 → F1: combined; option (a) tied to F2's timing.
 - broad/F2, logistics/F1, context/F2 → F2: combined; logistics' second reading kept, needs decision yes as in all three parts.

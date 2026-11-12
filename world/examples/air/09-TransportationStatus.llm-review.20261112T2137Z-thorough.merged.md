@@ -29,7 +29,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `04-Waybill.xml:/Waybill/cac:Shipment/cac:Consignment/cac:ChildConsignment/cbc:ConsignorAssignedID` = `LD-FI-26-0322`
 - Why: ShippingOrderID is "A reference number for a shipping order". The value is the consignment's ID, given again in Consignment/ID; the forwarding instructions, the shipper's order to the forwarder, give `LD-SH-26-0323` as the shipping order (re-checked in the merge: `04-Waybill.xml` and `05-TransportationStatus.xml` carry the consignment ID as well, so the flow has two different shipping order numbers for one shipment). An identifier of one kind used as another, contradicting another example of the flow. Note that 03's own value equals its Shipment/ID; which value is the true shipping order number is settled in the reviews of 03 and 04 (the forwarding instructions' own ID `LD-FI-26-0322` is the other candidate).
 - Condition: ShippingOrderID holds the same shipping order identifier as `03-ForwardingInstructions.xml` and `04-Waybill.xml` (once settled there), or is absent.
-- Options: (a) preferred: the shipping order number settled for 03 and 04 (`LD-SH-26-0323` as 03 has it now, or `LD-FI-26-0322`); (b) drop it, since the forwarder knows the consignment ID (broad's preference).
+- Options: (a) preferred: the same value as 03, 04 and 05 once settled there, which the merged reviews of 03–05 prefer to be the forwarding instructions' own number `LD-FI-26-0322`; (b) `LD-SH-26-0323` everywhere; (c) drop it, since the forwarder knows the consignment ID (broad's preference).
 - Needs decision: no
 - From: broad (F2), logistics (F2), context (F2)
 
@@ -141,7 +141,7 @@ review only describes what is wrong; it does not say where or how the example is
 
 ## Changed in the merge
 - logistics/F4 (Low, missing time) folded into F4 (generic event), since broad and context already named the missing time there; the condition now requires the time.
-- broad/F2 options: preference changed from "drop" to "the shipping order number settled for 03 and 04", as logistics and context, and in line with the merger of 01–05; drop kept as option (b).
+- broad/F2 options: preference changed from "drop" to the value settled for 03–05 (`LD-FI-26-0322`, as the merged reviews of 03–05 prefer; context proposed the same), in line with the merger of 01–05; `LD-SH-26-0323` (logistics) and drop (broad) kept as options (b) and (c).
 - context/F6 → F9: count corrected to 137 of 147 (lxml count in the merge).
 - broad/F5, logistics/F5, context/F5, parties/F5 → F10: combined.
 - broad/F6 and parties/F4 → F8: combined, Department values added.

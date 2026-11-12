@@ -183,7 +183,8 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F5 and parties/F6 → F8: combined.
 - broad/F2 options: "drop LocaleCode" preferred, as parties, context and the other flows.
 - parties/F5 → F13: kept separate from F8 (here name and title disagree; in F8 the role is wrong), option (a) tied to F12.
+- parties/F3 (remark on the untagged legal form) → F11: a finding of its own, aligned with the merges of air 01–05, wood and plastics; option (a) tied to F12.
 
 ## Outside this review
 - The cargo was offloaded and flew a day later according to `07-FulfilmentCancellation.xml:/FulfilmentCancellation/cbc:CancellationNote` = `The cargo missed its flight; it goes on the next day's flight under a new despatch advice.`, while the status report of the same day says it arrived (`09-TransportationStatus.xml:/TransportationStatus/cbc:Description` = `Cargo arrived and ready for customs clearance.`): recorded as findings in 07 and 09; for this invoice it only bears on the service date of F9 (from money).
-- Whether the waybill's volume of 0.576 m³ is supported by the package dimensions in `03-ForwardingInstructions.xml` (per box or per package aggregate) is a question for the review of `04-Waybill.xml` (from money).
+- Whether the waybill's volume of 0.576 m³ is supported by the package dimensions in `03-ForwardingInstructions.xml` (per box or per package aggregate) is a question for the reviews of `03-ForwardingInstructions.xml` and `04-Waybill.xml` (from money; both merged reviews record it, the box capacity as High in 03 and the chargeable weight as Low in 04). F1 holds in either reading.
