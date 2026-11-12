@@ -2,12 +2,14 @@
 
 usage: python3 -I check_xpaths.py <NN-DocumentType.llm-review.md> [...]
 
-Only backticked paths that start with the review's own root element are checked; paths into other
-documents (e.g. `/Waybill/...` cited from a TransportationStatus review) are listed as skipped.
-Paths containing '…' are shorthand and are not checked.
+Backticked absolute paths are checked against the reviewed XML. A path with another root element
+(e.g. `/Waybill/...` cited from a TransportationStatus review) is checked against the examples of
+the same flow with that root; it passes if it resolves in at least one of them, and the matching
+files are named. Paths containing '…' are shorthand and are not checked.
 """
 import re
 import sys
+from pathlib import Path
 
 from lxml import etree
 
@@ -16,30 +18,39 @@ NS = {'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateCompon
       'ext': 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2'}
 
 
+def resolves(path, xml_file):
+    doc = etree.parse(str(xml_file))
+    ns = dict(NS, d=doc.getroot().nsmap[None])
+    q = re.sub(r'(^|/)([A-Z][A-Za-z]*)(?=/|\[|$)', lambda m: m.group(1) + 'd:' + m.group(2), path)
+    return bool(doc.xpath(q, namespaces=ns))
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     failed = 0
     for md in sys.argv[1:]:
         xml = md.replace('.llm-review.md', '.xml')
-        doc = etree.parse(xml)
-        root = doc.getroot()
-        ns = dict(NS, d=root.nsmap[None])
-        name = etree.QName(root).localname
+        name = etree.QName(etree.parse(xml).getroot()).localname
+        flow = Path(xml).parent
         for p in sorted(set(re.findall(r'`(/[A-Za-z][^`\s]*)`', open(md, encoding='utf-8').read()))):
             if '…' in p:
                 continue
-            if not p.startswith(f'/{name}/') and p != f'/{name}':
-                print(f'{md}: skipped (other document) {p}')
-                continue
-            q = re.sub(r'(^|/)([A-Z][A-Za-z]*)(?=/|\[|$)', lambda m: m.group(1) + 'd:' + m.group(2), p)
+            root = p.split('/')[1].split('[')[0]
             try:
-                ok = bool(doc.xpath(q, namespaces=ns))
+                if root == name:
+                    ok, where = resolves(p, xml), ''
+                else:
+                    hits = [f.name for f in sorted(flow.glob('*.xml'))
+                            if etree.QName(etree.parse(str(f)).getroot()).localname == root and resolves(p, f)]
+                    ok, where = bool(hits), ', '.join(hits)
             except etree.XPathError as e:
-                ok, p = False, f'{p} ({e})'
+                ok, where = False, str(e)
             if not ok:
                 failed += 1
-                print(f'{md}: NO MATCH {p}')
+                print(f'{md}: NO MATCH {p} {where}')
+            elif where:
+                print(f'{md}: other document, resolves in {where}: {p}')
     print('all cited XPaths resolve' if not failed else f'{failed} XPath(s) do not resolve')
     sys.exit(1 if failed else 0)
 
