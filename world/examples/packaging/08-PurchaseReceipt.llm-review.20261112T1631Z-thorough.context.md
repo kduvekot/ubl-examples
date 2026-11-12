@@ -41,7 +41,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/PurchaseReceipt/cac:PurchaseReceiptLine/cac:Item/cbc:Description` = `Men's cotton shirt; the state sales tax is added at the till.`
 - Why: `Item/Description` is "Text describing this item". The second half describes how the sale is taxed, not the shirt; it belongs to the receipt (a `Note`) or follows from the structured values already there (`Price/PriceAmount` 29.95 net, `TaxInclusivePriceAmount` 31.9, `TaxTotal`). The same text is in 3 examples (`grep -rl --include='*.xml' 'sales tax is added at the till'`).
 - Condition: the item description describes only the item; any explanation of the till tax is in a document-level note.
-- Options: (a) preferred: drop the tax sentence from the description (the structured tax data say it); (b) move it to `/PurchaseReceipt/cbc:Note`.
+- Options: (a) preferred: drop the tax sentence from the description (the structured tax data say it); (b) move it to a document-level `Note` of the receipt.
 - Needs decision: no
 
 ### packaging/08#F4 · Low · The store's buying office as contact on a customer's receipt
