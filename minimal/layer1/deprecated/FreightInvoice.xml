@@ -10,17 +10,17 @@
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
-      <cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000341000124</cbc:CompanyID>
-        <cac:TaxScheme>
-          <cbc:Name>Federal taxes</cbc:Name>
+        <cac:CorporateRegistrationScheme>
+          <cbc:Name>Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -28,17 +28,17 @@
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
-      <cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000342000179</cbc:CompanyID>
-        <cac:TaxScheme>
-          <cbc:Name>Federal taxes</cbc:Name>
+        <cac:CorporateRegistrationScheme>
+          <cbc:Name>Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>

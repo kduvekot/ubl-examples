@@ -309,12 +309,16 @@ TAX_VALUES = {
 }
 # Official names: EU Directive 2006/112/EC "value added tax"; ZA "Value-Added Tax
 # Act"; the EIN is the federal income tax identifier; the CNPJ is used for all
-# federal taxes (better in PartyLegalEntity: open point).
+# federal taxes, so for BR it goes in PartyLegalEntity (the register).
 TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consumption tax",
-             "IN": "Goods and Services Tax", "BR": "Federal taxes", "ZA": "Value-Added Tax"}
+             "IN": "Goods and Services Tax", "ZA": "Value-Added Tax"}
 
 LAYER1 = {
     "PartyTaxSchemeType": {"cbc:CompanyID"},
+    # BR: the CNPJ is "an identifier for the party as registered within a
+    # company registration scheme"; the scheme is named and states its country
+    "PartyLegalEntityType": {"cbc:CompanyID", "cac:CorporateRegistrationScheme"},
+    "CorporateRegistrationSchemeType": {"cbc:Name", "cac:JurisdictionRegionAddress"},
     # TaxScheme is required in PartyTaxScheme: the particular tax scheme gets
     # a name, as other particular things do.
     "TaxSchemeType": {"cbc:Name", "cac:JurisdictionRegionAddress"},
@@ -418,6 +422,8 @@ def party_extra(e, t):
     if t.get("name") != "PartyType":
         return ()
     s = scheme_for(e)
+    if s == TAX and COUNTRY == "BR":
+        return ("cac:PartyLegalEntity",)  # the CNPJ registers the legal entity
     return () if s is None else ("cac:PartyTaxScheme",) if s == TAX else ("cac:PartyIdentification",)
 
 def content(e, t):
@@ -465,6 +471,11 @@ def generate(layer, fill, schemes):
                 s = scheme_for(party)
                 pid.set("schemeID", s)
                 pid.text = ID_VALUES[s](k)
+            ple = party.find("{%s}PartyLegalEntity" % CAC)
+            if ple is not None:
+                ple.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
+                ple.find("{%s}CorporateRegistrationScheme/{%s}Name" % (CAC, CBC)).text = \
+                    "Cadastro Nacional da Pessoa Jurídica"
             pts = party.find("{%s}PartyTaxScheme" % CAC)
             if pts is not None:
                 pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
