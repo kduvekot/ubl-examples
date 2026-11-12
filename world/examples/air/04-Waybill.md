@@ -88,8 +88,10 @@ Inside `SenderParty`:
   The street's name in English, the country's other official language; identity of Kelaro Air Cargo (world/parties.json).
 - `PostalAddress/BuildingNumber` = **46**  
   Building number of the postal address. identity of Kelaro Air Cargo (world/parties.json).
-- `PostalAddress/CityName` = **Selanu**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+- `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -112,8 +114,10 @@ Inside `SenderParty`:
   The size class follows from the company's 13 persons and its turnover of 2590000.000 XLC in 2025, by the Trade Accord's limits; identity of Kelaro Air Cargo (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
-  The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
@@ -431,8 +435,10 @@ Inside `Shipment`:
   The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **16**  
   Building number of the postal address. identity of Velumi Trading (world/parties.json).
-- `Consignment/ConsigneeParty/PostalAddress/CityName` = **Selanu**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+- `Consignment/ConsigneeParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+- `Consignment/ConsigneeParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -455,8 +461,10 @@ Inside `Shipment`:
   The size class follows from the company's 34 persons and its turnover of 1940000.000 XLC in 2025, by the Trade Accord's limits; identity of Velumi Trading (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
-  The registered office, as entered in the register.
+- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
+- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
 - `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
@@ -507,8 +515,10 @@ Inside `Shipment`:
   The street's name in English, the country's other official language; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Selanu**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/SubstituteCarrierParty/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Consignment/SubstituteCarrierParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -531,8 +541,10 @@ Inside `Shipment`:
   The size class follows from the company's 17 persons and its turnover of 2500000.000 XLC in 2025, by the Trade Accord's limits; identity of Nalevi Warehousing (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `Consignment/SubstituteCarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
-  The registered office, as entered in the register.
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
+- `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
 - `Consignment/SubstituteCarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/SubstituteCarrierParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
@@ -702,7 +714,8 @@ Inside `Signature`:
       <cbc:StreetName languageID="qal">Lupela Natii</cbc:StreetName>
       <cbc:StreetName languageID="en-XL">Airfield Road</cbc:StreetName>
       <cbc:BuildingNumber>46</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -719,7 +732,8 @@ Inside `Signature`:
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -985,7 +999,8 @@ Inside `Signature`:
           <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
           <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
           <cbc:BuildingNumber>16</cbc:BuildingNumber>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -1002,7 +1017,8 @@ Inside `Signature`:
           <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
-            <cbc:CityName>Selanu</cbc:CityName>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
@@ -1051,7 +1067,8 @@ Inside `Signature`:
           <cbc:StreetName languageID="qal">Vilafa Natii</cbc:StreetName>
           <cbc:StreetName languageID="en-XL">Lagoon Road</cbc:StreetName>
           <cbc:BuildingNumber>9</cbc:BuildingNumber>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -1068,7 +1085,8 @@ Inside `Signature`:
           <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
-            <cbc:CityName>Selanu</cbc:CityName>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>

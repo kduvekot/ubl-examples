@@ -60,7 +60,8 @@
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
@@ -109,7 +110,8 @@
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
       <cbc:StreetName languageID="en-XU">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
-      <cbc:CityName>Selanu</cbc:CityName>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -121,7 +123,8 @@
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Port Wrenfield</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
@@ -198,7 +201,8 @@
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>

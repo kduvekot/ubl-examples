@@ -5197,7 +5197,7 @@ def _(f, n, doc, out):
         "BirthplaceLocation": {"Name": V(e["birthplace"], "The place of birth."),
                                "Address": {"Country": {"IdentificationCode": V("XU", "In Urvania.")}}},
         "Contact": contact("Mobile on the road", "How to reach the employee at the fair.", "5-xu"),
-        "ResidenceAddress": {"CityName": V("Ferrano", "Where the employee lives."),
+        "ResidenceAddress": {"CityName": build_examples.city_names("XU", "Ferrano", "Where the employee lives."),
                              "Country": {"IdentificationCode": V("XU", "In Urvania.")}}}}}
 
 

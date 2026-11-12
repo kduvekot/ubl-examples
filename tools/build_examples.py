@@ -176,8 +176,8 @@ def party(pid, short=False):
                                                      f"exemption reasons: {idn['tax_exemption_kind'].lower()}.",
                                                listID=codelists.NATIONAL.format(p["c"], "TaxExemptionReason"))
             if idn.get("tax_registration_office"):
-                tax["RegistrationAddress"] = {"CityName": V(idn["tax_registration_office"], "Where the party is "
-                                                                                            "registered for the tax."),
+                tax["RegistrationAddress"] = {"CityName": city_names(p["c"], idn["tax_registration_office"],
+                                                                     "Where the party is registered for the tax."),
                                               "CountrySubentity": V(idn["address"]["CountrySubentity"], "Its state or territory."),
                                               "Country": {"IdentificationCode": V(p["c"], "Its country.")}}
         juris = {"Country": {"IdentificationCode": V(p["c"], "The country whose tax this is.")}}
@@ -306,8 +306,8 @@ def legal_entity(pid):
         out["CorporateStockAmount"] = V(str(le["capital"]), f"The share capital, in {c['currency']['name'].lower()}; "
                                                             f"{src}.", currencyID=c["currency"]["code"])
         out["FullyPaidSharesIndicator"] = V("true", "All shares are paid up.")
-    out["RegistrationAddress"] = {"CityName": V(idn["address"]["CityName"], "The registered office, as entered in the "
-                                                                            "register."),
+    out["RegistrationAddress"] = {"CityName": city_names(p["c"], idn["address"]["CityName"], "The registered office, "
+                                                         "as entered in the register."),
                                   "Country": {"IdentificationCode": V(p["c"], "The country of registration.")}}
     out["CorporateRegistrationScheme"] = {
         "ID": V(c["register_scheme"], "The identifier of the register in the world (world/countries.json)."),
@@ -417,6 +417,26 @@ def check_tax_exemption_lists(root, where, doc):
                              f"{', '.join(sorted(sellers))}")
 
 
+def city_names(country, city, why):
+    """A town's name in an address: in both official languages where the country is bilingual and the town has a name
+    in each (world/countries.json): Urvania's towns have an Urvanian name beside the inherited Italian one, which counts
+    as English; the island's towns have an English name beside the Lisavan one. Otherwise the one name."""
+    code = WORLD["countries"][country]["languages"][0]
+    if code == "en":
+        return V(city, why)
+    lang = WORLD["languages"][code]
+    if lang.get("place_names", {}).get(city):
+        return [V(lang["place_names"][city], f"The town's {lang['name']} name, which its people have always used. "
+                                             f"{why}", languageID=code),
+                V(city, f"The town's English name, inherited from the Italian. {why}", languageID="en")]
+    if lang.get("english_place_names", {}).get(city):
+        return [V(city, f"The town's {lang['name']} name, its name on the island. {why}", languageID=code),
+                V(lang["english_place_names"][city], f"The town's English name, which its English-speaking settlers "
+                                                     f"gave it, official beside the {lang['name']} one "
+                                                     f"(world/countries.json). {why}", languageID="en")]
+    return V(city, why)
+
+
 def address(pid, register=False):
     """A party's address. register: the address's number in its address register goes with it, as it does on a
     party's postal address and a delivery address (decision ID-Q8), not where the address only says where something
@@ -467,12 +487,8 @@ def address(pid, register=False):
                              V(st.value, "The street's name in English, the country's other official language"
                                          + ("; the Italian names the British kept are part of English now"
                                             if p["c"] == "XU" else "") + f"; {src}.", languageID="en")]
-        local = WORLD["languages"][code].get("place_names", {}).get(a.get("CityName"))
-        if local:
-            out["CityName"] = [V(local, f"The town's {lang} name, which its people have always used; {src}.",
-                                 languageID=code),
-                               V(a["CityName"], f"The town's English name, inherited from the Italian; {src}.",
-                                 languageID="en")]
+    if a.get("CityName"):
+        out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
     out["TimezoneOffset"] = V(c["timezone"], "The party's time zone, one hour behind UTC, where the world lies "
                                              "(world/countries.json).")
@@ -562,11 +578,9 @@ def institution(pid):
                                 f"{p['c']} and the location {idn['bic'][6:8]}; {src}.",
                     schemeID="urn:ubl-examples:world:bank-identifier"),
             "Name": V(idn["name"], f"The bank; {src}."),
-            "Address": {"StreetName": V(a["StreetName"], f"The bank's head office; {src}."),
-                        "BuildingNumber": V(a["BuildingNumber"], f"Its building number; {src}."),
-                        "CityName": V(a["CityName"], f"Its town; {src}."),
-                        "AddressFormatCode": address_format_code(p["c"]),
-                        "Country": {"IdentificationCode": V(p["c"], "The bank's country.")}}}
+            "Address": {k: v for k, v in address(pid).items()      # the head office, from the address generator
+                        if k in ("AddressFormatCode", "StreetName", "BuildingNumber", "CityName", "PostalZone",
+                                 "CountrySubentity", "CountrySubentityCode", "Region", "Country")}}
 
 
 def institution_again(pid, first):
@@ -603,7 +617,8 @@ def account(pid, why, note=None):
                                                  schemeID=world_ids.national_scheme(bank["c"], "bank-branch")),
                                          "Name": V(branch["name"], "The branch's name."),
                                          "FinancialInstitution": institution(acc["bank"]),
-                                         "Address": {"CityName": V(branch["city"], "The town the branch is in."),
+                                         "Address": {"CityName": city_names(bank["c"], branch["city"],
+                                                                            "The town the branch is in."),
                                                      "Country": {"IdentificationCode": V(bank["c"], "Its country.")}}}
     out["Country"] = {"IdentificationCode": V(bank["c"], "The country where the account is kept.")}
     return out

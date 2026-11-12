@@ -71,7 +71,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -170,7 +171,8 @@
           <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>

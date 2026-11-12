@@ -1655,7 +1655,8 @@
     "sent": "hastir",
     "consignee's": "trelgir",
     "must": "skukek",
-    "producer": "stelskek"
+    "producer": "stelskek",
+    "banca": "rikbul"
    }
   },
   "qal": {
@@ -1663,6 +1664,10 @@
    "own_name": "Lisavuana",
    "country": "XL",
    "note": "The island's language, invented for the world, with a Polynesian sound like the island's names: syllables of a consonant and a vowel, no clusters, words ending in a vowel. It is official beside English. Code from the ISO 639 local-use range; texts from a fixed invented vocabulary, word by word; the English text beside it is the reference. Its words are checked so that none is a common word of a real Polynesian language.",
+   "english_place_names_note": "The island's towns are known by their Lisavan names, which stay the primary ones; each also has the English name its English-speaking settlers gave it, official beside it, as Urvania's towns have their Urvanian and their English (inherited Italian) names. An address gives both, Lisavan first. The English names were checked so that none is a well-known real place.",
+   "english_place_names": {
+    "Selanu": "Port Wrenfield"
+   },
    "lexicon": {
     "a": "fitae",
     "accepted": "sapeta",

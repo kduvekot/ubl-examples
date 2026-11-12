@@ -37,7 +37,8 @@
         <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -54,7 +55,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -105,7 +107,8 @@
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Plantation Road</cbc:StreetName>
         <cbc:Description>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Description>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:AddressLine>
@@ -118,7 +121,7 @@
           <cbc:Line>North coast</cbc:Line>
         </cac:AddressLine>
         <cac:AddressLine>
-          <cbc:Line>Selanu</cbc:Line>
+          <cbc:Line>Selanu / Port Wrenfield</cbc:Line>
         </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -159,7 +162,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MICRO</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>

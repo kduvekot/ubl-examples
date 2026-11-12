@@ -109,9 +109,9 @@ Inside `TransitExporterParty`:
 - `PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -154,8 +154,10 @@ Inside `TransitExporterParty`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -367,9 +369,9 @@ Inside `CustomsParty`:
 - `PostalAddress/BuildingNumber` = **22**  
   Building number of the postal address. identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Customs Administration of Urvania (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian; identity of Customs Administration of Urvania (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/Region` = **Province of Ferrano**  
@@ -398,8 +400,10 @@ Inside `CustomsParty`:
   Number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -473,9 +477,9 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **38**  
   Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Ferrano Rail Cargo (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian; identity of Ferrano Rail Cargo (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/PostalZone` = **4150**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/Region` = **Province of Ferrano**  
@@ -514,8 +518,10 @@ Inside `Shipment`:
   The size class follows from the company's 14 persons and its turnover of 851000000 XUF in 2025, by the Trade Accord's limits; identity of Ferrano Rail Cargo (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `Consignment/CarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona**  
-  The registered office, as entered in the register.
+- `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -931,7 +937,8 @@ Inside `Signature`:
       <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
@@ -1145,7 +1152,8 @@ Inside `Signature`:
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:CompanyID>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
-        <cbc:CityName>Ferrano</cbc:CityName>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:Country>
@@ -1242,7 +1250,8 @@ Inside `Signature`:
           <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
-            <cbc:CityName>Serravona</cbc:CityName>
+            <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>

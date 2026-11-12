@@ -130,7 +130,8 @@
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XB">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -146,7 +147,8 @@
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -197,8 +199,12 @@
             <cbc:StreetName>Exchange Street</cbc:StreetName>
             <cbc:BuildingNumber>48</cbc:BuildingNumber>
             <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38523</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
@@ -227,16 +233,20 @@
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-            <cbc:StreetName>Reef Street</cbc:StreetName>
+            <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+            <cbc:StreetName languageID="en-XB">Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
-            <cbc:CityName>Selanu</cbc:CityName>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              <cbc:Name>Lisavu</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>

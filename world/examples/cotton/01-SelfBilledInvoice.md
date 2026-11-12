@@ -93,8 +93,10 @@ Inside `AccountingCustomerParty`:
   The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/CityName` = **Selanu**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -117,8 +119,10 @@ Inside `AccountingCustomerParty`:
   The size class follows from the company's 22 persons and its turnover of 3660000.000 XLC in 2025, by the Trade Accord's limits; identity of Selanu Cotton Ginnery (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
-  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
@@ -174,8 +178,10 @@ Inside `AccountingSupplierParty`:
   The street's name in English, the country's other official language; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
   How to find the farm, which has no house number on a street. identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/CityName` = **Selanu**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/District` = **North coast**  
   The district of the island, used to find a farm off the main roads. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **-1**  
@@ -186,7 +192,7 @@ Inside `AccountingSupplierParty`:
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/AddressLine/Line` = **North coast**  
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
-- `Party/PostalAddress/AddressLine/Line` = **Selanu**  
+- `Party/PostalAddress/AddressLine/Line` = **Selanu / Port Wrenfield**  
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
@@ -244,8 +250,10 @@ Inside `AccountingSupplierParty`:
   The size class follows from the company's 5 persons and its turnover of 146000.000 XLC in 2025, by the Trade Accord's limits; identity of Lisavu Cotton Farm (world/parties.json). The code is from the Trade Accord's entity size list: MICRO = Micro enterprise.
 - `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu**  
-  The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
@@ -342,16 +350,24 @@ Inside `PaymentMeans`:
   The bank; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street**  
-  The bank's head office; identity of Bank of Selanu (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Bank of Selanu (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street** (languageID `en-XL`)  
+  The street's name in English, the country's other official language; identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **23**  
-  Its building number; identity of Bank of Selanu (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu**  
-  Its town; identity of Bank of Selanu (world/parties.json).
+  Building number of the postal address. identity of Bank of Selanu (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Selanu (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Selanu (world/parties.json).
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The bank's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu**  
-  The town the branch is in.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Lisavu**  
+  The country's name, for readers of the address.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town the branch is in.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town the branch is in.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -491,7 +507,8 @@ Inside `InvoiceLine`:
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -508,7 +525,8 @@ Inside `InvoiceLine`:
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -559,7 +577,8 @@ Inside `InvoiceLine`:
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Plantation Road</cbc:StreetName>
         <cbc:Description>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Description>
-        <cbc:CityName>Selanu</cbc:CityName>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:AddressLine>
@@ -572,7 +591,7 @@ Inside `InvoiceLine`:
           <cbc:Line>North coast</cbc:Line>
         </cac:AddressLine>
         <cac:AddressLine>
-          <cbc:Line>Selanu</cbc:Line>
+          <cbc:Line>Selanu / Port Wrenfield</cbc:Line>
         </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -613,7 +632,8 @@ Inside `InvoiceLine`:
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MICRO</cbc:EntitySizeCode>
         <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -695,16 +715,20 @@ Inside `InvoiceLine`:
           <cbc:Name>Bank of Selanu</cbc:Name>
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-            <cbc:StreetName>Reef Street</cbc:StreetName>
+            <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+            <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
             <cbc:BuildingNumber>23</cbc:BuildingNumber>
-            <cbc:CityName>Selanu</cbc:CityName>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              <cbc:Name>Lisavu</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName>Selanu</cbc:CityName>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>

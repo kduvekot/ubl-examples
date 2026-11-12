@@ -442,9 +442,9 @@ Inside `TenderResult`:
 - `WinningParty/Party/PostalAddress/BuildingNumber` = **17**  
   Building number of the postal address. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used; identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian; identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/Region` = **Province of Ferrano**  
@@ -485,8 +485,10 @@ Inside `TenderResult`:
   The share capital, in ferra; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up.
-- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano**  
-  The registered office, as entered in the register.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
+- `WinningParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
+  The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `WinningParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `WinningParty/Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -940,7 +942,8 @@ Inside `TenderResult`:
           <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
           <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
           <cac:RegistrationAddress>
-            <cbc:CityName>Ferrano</cbc:CityName>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
