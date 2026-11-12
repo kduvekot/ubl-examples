@@ -162,7 +162,12 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                "ForecastTypeCode": "TOTAL",
                # CPFR purposes SALES_FORECAST / ORDER_FORECAST (domain knowledge,
                # not verified against GS1): the whole demand reads as sales
-               "ForecastPurposeCode": "SALES_FORECAST"}
+               "ForecastPurposeCode": "SALES_FORECAST",
+               # "the extent of this transportation service (e.g., door-to-door,
+               # port-to-port)": a segment of an itinerary is part of the route;
+               # a service description request is about the whole service
+               "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
+               "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR"}
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).
@@ -565,7 +570,8 @@ def build(parent, el_decl):
                   else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"
                   else INDICATOR_VALUES[el_decl.get("name")] if u == "IndicatorType"
-                  else CODE_VALUES.get(el_decl.get("name"), VALUES[u]) if u == "CodeType"
+                  else CODE_VALUES.get(DOC + ":" + el_decl.get("name"),
+                                  CODE_VALUES.get(el_decl.get("name"), VALUES[u])) if u == "CodeType"
                   else PDF_B64 if u == "BinaryObjectType" else VALUES[u])
         attrs = {}
         cur_ns, cur = tns, tname

@@ -4,6 +4,6 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:IssueTime>09:30:00+02:00</cbc:IssueTime>
   <cac:TransportationService>
-    <cbc:TransportServiceCode>X</cbc:TransportServiceCode>
+    <cbc:TransportServiceCode>DOOR_TO_DOOR</cbc:TransportServiceCode>
   </cac:TransportationService>
 </TransportServiceDescriptionRequest>

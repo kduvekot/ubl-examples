@@ -8,7 +8,7 @@
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportationService>
-      <cbc:TransportServiceCode>X</cbc:TransportServiceCode>
+      <cbc:TransportServiceCode>PORT_TO_PORT</cbc:TransportServiceCode>
     </cac:TransportationService>
     <cac:TransportServiceProviderParty>
       <cac:PartyIdentification>
