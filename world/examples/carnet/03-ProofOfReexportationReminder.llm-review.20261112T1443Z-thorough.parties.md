@@ -20,7 +20,6 @@ reason. Findings marked "Needs decision: yes" are confirmed by a person first. T
 remain valid against the UBL 2.5 schemas and the world's code lists. This review only describes what
 is wrong; it does not say where or how the example is produced.
 
-
 ## Findings
 
 ### carnet/03#F1 · Medium · A province in Region
