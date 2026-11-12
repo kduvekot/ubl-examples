@@ -54,7 +54,16 @@ what is wrong; it does not say where or how the example is produced.
 - Options: (a, preferred) Delivery/DeliveryParty with Castrano Logistics, next to the delivery location already there; (b) leave the party out and keep the cost centre text.
 - Needs decision: no
 
-### utilities/02#F4 · Low · Reference to a previous invoice line with no purpose in this invoice
+### utilities/02#F4 · Medium · Province in Region
+- XPath: `/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cac:Address/cbc:Region` = `Province of Ferrano`
+- XPath: `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:Region` = `Province of Ferrano`
+- XPath: `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:Region` = `Province of Ferrano`
+- Why: Region is "The recognized geographic or economic region or group of countries in which this address is located"; a province is a territorial division of the country, for which UBL has CountrySubentity. The Bayvarran examples of this flow put their states in CountrySubentity. The same value is in Region in 104 examples (`grep -l --include='*.xml' -r '<cbc:Region>Province of'`).
+- Condition: Urvanian provinces are given in CountrySubentity, not in Region.
+- Options: (a, preferred) CountrySubentity (with a code where a list exists).
+- Needs decision: no
+
+### utilities/02#F5 · Low · Reference to a previous invoice line with no purpose in this invoice
 - XPath: `/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID` = `FE-INV-26-0211`
 - XPath: `/Invoice/cac:BillingReference/cac:BillingReferenceLine/cbc:ID` = `2`
 - Why: BillingReference is "A reference to a billing document associated with this document." This is a normal commercial invoice (380) for March 2026; nothing in it corrects, settles or continues FE-INV-26-0211 or its line 2 (no note, no amount, no line referring to it). The referenced invoice is not an example of the flow (flow_index: `-> ?`). Without a stated reason the reference is a filler, or a story element that is not told (e.g. a correction of last month's warehouse line).
@@ -62,7 +71,7 @@ what is wrong; it does not say where or how the example is produced.
 - Options: (a) remove the reference; (b) give it a reason in the story (e.g. a meter correction of February's warehouse line, then with an amount in this invoice). Preference: (a) unless the story needs (b).
 - Needs decision: yes
 
-### utilities/02#F5 · Low · Electricity and gas booked as "Raw materials and parts"
+### utilities/02#F6 · Low · Electricity and gas booked as "Raw materials and parts"
 - XPath: `/Invoice/cbc:AccountingCostCode` = `3100`
 - XPath: `/Invoice/cbc:AccountingCost` = `Raw materials and parts`
 - Why: AccountingCost is "The buyer's accounting code, applied to the Invoice as a whole". Electricity and gas are energy costs, not raw materials and parts; the same code and text are used for Valdara's purchases of goods in 12 examples (`grep -l --include='*.xml' -r 'Raw materials and parts'`), and 3100 equals Valdara's ISIC code (`/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:IndustryClassificationCode` = `3100`). Line 2 shows that Valdara uses separate cost centres (`/Invoice/cac:InvoiceLine[2]/cbc:AccountingCostCode` = `7100`).
@@ -70,22 +79,13 @@ what is wrong; it does not say where or how the example is produced.
 - Options: (a, preferred) an energy cost account; (b) leave it out at document level and give cost centres per line.
 - Needs decision: no
 
-### utilities/02#F6 · Low · Customer master data the invoice does nothing with
+### utilities/02#F7 · Low · Customer master data the invoice does nothing with
 - XPath: `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:AdditionalPartyIdentification[2]/cbc:ID` = `XU-TR-104274`
 - XPath: `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:SecurityListing/cbc:ID` = `XU0001042501`
 - XPath: `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name` = `Order desk`
 - Why: A domestic energy invoice uses neither the customs trader number nor the stock-exchange listing of the customer; both look copied from master data. The customer contact is the "Order desk" in Sales, while the invoice concerns energy supply under a contract and is paid by accounts payable. (The ServiceProviderParty Castrano Logistics does have a reason here, since line 2 is its warehouse.)
 - Condition: The customer carries only data the invoice uses, and its contact handles energy invoices.
 - Options: (a, preferred) drop the customs trader ID and the security listing, and give an accounts-payable or energy contact.
-- Needs decision: no
-
-### utilities/02#F7 · Medium · Province in Region
-- XPath: `/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cac:Address/cbc:Region` = `Province of Ferrano`
-- XPath: `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:Region` = `Province of Ferrano`
-- XPath: `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:Region` = `Province of Ferrano`
-- Why: Region is "The recognized geographic or economic region or group of countries in which this address is located"; a province is a territorial division of the country, for which UBL has CountrySubentity. The Bayvarran examples of this flow put their states in CountrySubentity. The same value is in Region in 104 examples (`grep -l --include='*.xml' -r '<cbc:Region>Province of'`).
-- Condition: Urvanian provinces are given in CountrySubentity, not in Region.
-- Options: (a, preferred) CountrySubentity (with a code where a list exists).
 - Needs decision: no
 
 ## Checked and consistent
