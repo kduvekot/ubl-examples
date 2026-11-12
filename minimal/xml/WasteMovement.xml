@@ -22,5 +22,7 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
   </cac:WasteProducerParty>
-  <cac:Shipment/>
+  <cac:Shipment>
+    <cbc:ID>X</cbc:ID>
+  </cac:Shipment>
 </WasteMovement>

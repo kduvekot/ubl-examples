@@ -5,7 +5,9 @@
     <cbc:ReferenceID>X</cbc:ReferenceID>
     <cbc:CertificateType>X</cbc:CertificateType>
     <cbc:OriginalJobID>X</cbc:OriginalJobID>
-    <cac:Shipment/>
+    <cac:Shipment>
+      <cbc:ID>X</cbc:ID>
+    </cac:Shipment>
     <cac:EndorserParty>
       <cbc:RoleCode>X</cbc:RoleCode>
       <cbc:SequenceNumeric>0</cbc:SequenceNumeric>

@@ -6,5 +6,7 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
   </cac:IssuerParty>
-  <cac:Shipment/>
+  <cac:Shipment>
+    <cbc:ID>X</cbc:ID>
+  </cac:Shipment>
 </GoodsCertificate>

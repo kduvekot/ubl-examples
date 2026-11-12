@@ -79,7 +79,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # applicable to all examples of the item"; a Name is only "optionally
         # given". Identification depends on the document's perspective
         # (buyer, seller, standard): a later layer.
-        "ItemType": {"cbc:Description"}}
+        "ItemType": {"cbc:Description"},
+        # ShipmentType: "an identifiable collection of one or more goods
+        # items". Its ID is a transaction reference like the document's own
+        # ID, assigned within the exchange, not taken from a register.
+        "ShipmentType": {"cbc:ID"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
