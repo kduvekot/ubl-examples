@@ -8,19 +8,25 @@
     <cbc:ID>X</cbc:ID>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="0088">X</cbc:ID>
-    </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>X</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name>X</cbc:Name>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
   </cac:SenderParty>
   <cac:ReceiverParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="0088">X</cbc:ID>
-    </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>X</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name>X</cbc:Name>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
   </cac:ReceiverParty>
 </UtilityStatement>

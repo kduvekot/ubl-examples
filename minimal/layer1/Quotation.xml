@@ -4,7 +4,7 @@
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0088">X</cbc:ID>
+        <cbc:ID schemeID="0060">X</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>X</cbc:Name>

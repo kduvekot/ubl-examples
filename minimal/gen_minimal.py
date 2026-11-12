@@ -139,30 +139,38 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # and binary because any kind of document must fit.
         "AttachmentType": {"cbc:EmbeddedDocumentBinaryObject"}}
 
-# Layers: (folder, additions {aggregate type: optional children}). Each layer
-# includes everything of the layers before it.
-# Layer 1: identification of parties, by role (the context decides the
-# scheme; several schemes per document where the roles differ).
+# Layer 1: identification of parties, by role in its document's context
+# (several schemes per document where the roles differ; no scheme dominant).
 # - An ISO/IEC 6523 ICD code (official ICD list, Farance Inc. for ISO/IEC,
 #   2026-07-26) goes in PartyIdentification/ID/@schemeID: 0088 GLN (as GS1's
 #   ratified ICD 0209 standard prescribes), 0199 LEI, 0060 D-U-N-S.
 # - "TAX": the national tax number, in PartyTaxScheme/CompanyID ("assigned for
 #   tax purposes by the taxation authority"); most national numbers have no
 #   ICD, and this element says whose number it is without a schemeID.
+# GLN is a Global *Location* Number: only for location-bound roles and GS1's
+# own domains (catalogue data, CPFR/forecasting, retail, logistics). Generic
+# roles (Sender, Receiver, Seller, Buyer) follow the document's domain.
+# A key "Document/Role" overrides the key "Role".
 # Roles not listed (authorities, chambers of commerce, certificate issuers)
 # are identified by name only: no scheme has a real reason there yet.
 GLN, LEI, DUNS, TAX = "0088", "0199", "0060", "TAX"
 PARTY_SCHEMES = {
     # tax and accounting: the tax registration is what matters on a bill
     "AccountingSupplierParty": TAX, "AccountingCustomerParty": TAX,
-    # trade, supply chain and logistics: GS1 location numbers
-    "SellerSupplierParty": GLN, "BuyerCustomerParty": GLN,
+    # ordering and quoting between businesses: D-U-N-S, long used in EDI
+    "SellerSupplierParty": DUNS, "BuyerCustomerParty": DUNS,
+    # ship-from and ship-to: locations
     "DespatchSupplierParty": GLN, "DeliveryCustomerParty": GLN,
+    # retail stores and stock locations
     "RetailerCustomerParty": GLN, "InventoryReportingParty": GLN,
-    "ProviderParty": GLN, "SenderParty": GLN, "ReceiverParty": GLN,
-    "RequestorParty": GLN, "ResponderParty": GLN, "ParticipantParty": GLN,
-    "TransportServiceProviderParty": GLN, "SendingLogisticsOperatorParty": GLN,
-    "ReporterParty": GLN,
+    "InstructionForReturns/SellerSupplierParty": GLN,
+    "StockAvailabilityReport/SellerSupplierParty": GLN,
+    # catalogue data (GS1's data synchronisation domain)
+    "ProviderParty": GLN,
+    # logistics operators and reports
+    "SendingLogisticsOperatorParty": GLN, "ReporterParty": GLN,
+    # a transport contract's provider, as a legal entity
+    "TransportServiceProviderParty": LEI,
     # public procurement: the buyer as a legal entity; suppliers as businesses
     # whose identity and standing buyers verify
     "ContractingParty": LEI,
@@ -170,20 +178,45 @@ PARTY_SCHEMES = {
     "MainQualifyingParty": DUNS, "InterestedParty": DUNS,
     # finance: the guarantee creditor (a bank) as a legal entity
     "GuarantorParty": LEI,
-    # business registration and business cards
-    "BusinessParty": DUNS,
+    # agreements between legal entities
+    "ParticipantParty": LEI,
+    # business registration, business cards, enquiries
+    "BusinessParty": DUNS, "RequestorParty": DUNS, "ResponderParty": DUNS,
     # customs and waste: the legally responsible trader, by tax registration
     "ExporterParty": TAX, "HolderParty": TAX,
     "NotifierParty": TAX, "WasteProducerParty": TAX,
+    # Sender and Receiver, by the document's domain:
+    # generic business messages
+    "SenderParty": DUNS, "ReceiverParty": DUNS,
+    # GS1 domains: catalogue, item information, CPFR and forecasting
+    **{d + "/" + r: GLN for r in ("SenderParty", "ReceiverParty") for d in (
+        "Catalogue", "CatalogueDeletion", "CatalogueItemSpecificationUpdate",
+        "CataloguePricingUpdate", "CatalogueRequest", "ItemInformationRequest",
+        "Forecast", "ForecastRevision", "ExceptionCriteria", "ExceptionNotification",
+        "ProductActivity", "RetailEvent", "TradeItemLocationProfile",
+        "WeightStatement", "CommonTransportationReport")},
+    # procurement: the contracting authority sends to the economic operator
+    **{d + "/SenderParty": LEI for d in (
+        "AwardedNotification", "UnawardedNotification", "TenderReceipt",
+        "TendererQualificationResponse")},
+    **{d + "/ReceiverParty": DUNS for d in (
+        "AwardedNotification", "UnawardedNotification", "TenderReceipt",
+        "TendererQualificationResponse")},
+    # about invoices, utility bills and waste: the legally responsible parties
+    **{d + "/" + r: TAX for r in ("SenderParty", "ReceiverParty") for d in (
+        "InvoiceStatusRequest", "UtilityStatement", "WasteMovement", "WasteNotification")},
 }
-LAYER1 = {"PartyType@" + r: {"cac:PartyTaxScheme" if s == TAX else "cac:PartyIdentification"}
-          for r, s in PARTY_SCHEMES.items()}
-LAYER1.update({
+
+def scheme_for(party):
+    r = role(party)
+    return SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
+
+LAYER1 = {
     "PartyTaxSchemeType": {"cbc:CompanyID"},
     # TaxScheme is required in PartyTaxScheme: the particular tax scheme gets
     # a name, as other particular things do.
     "TaxSchemeType": {"cbc:Name"},
-})
+}
 
 # Layers: (folder, additions {aggregate type[@role]: optional children},
 # schemeIDs by role). Each layer includes everything of the layers before it.
@@ -276,6 +309,13 @@ def role(e):
         return etree.QName(e.getparent()).localname
     return q
 
+def party_extra(e, t):
+    """Layer 1: the identification a Party gets for its role."""
+    if t.get("name") != "PartyType":
+        return ()
+    s = scheme_for(e)
+    return () if s is None else ("cac:PartyTaxScheme",) if s == TAX else ("cac:PartyIdentification",)
+
 def content(e, t):
     for child in t:
         if child.tag in (X + "sequence", X + "choice"):
@@ -285,15 +325,16 @@ def content(e, t):
             for p in child:
                 if p.tag == X + "element" and (p.get("minOccurs", "1") != "0"
                                                or p.get("ref") in FILL.get(t.get("name"), ())
-                                               or p.get("ref") in FILL.get(t.get("name") + "@" + role(e), ())):
+                                               or p.get("ref") in FILL.get(t.get("name") + "@" + role(e), ())
+                                               or p.get("ref") in party_extra(e, t)):
                     ns, name = qname(p, p.get("ref"))
                     build(e, find("element", ns, name))
                 elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
                     raise NotImplementedError(p.tag)
 
 def generate(layer, fill, schemes):
-    global FILL
-    FILL = fill
+    global FILL, SCHEMES, DOC
+    FILL, SCHEMES = fill, schemes
     out = os.path.join(HERE, layer)
     os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
     n_cur = 0
@@ -302,7 +343,7 @@ def generate(layer, fill, schemes):
         r = etree.parse(f).getroot()
         ns = r.get("targetNamespace")
         root_decl = r.find(X + "element")
-        name = root_decl.get("name")
+        name = DOC = root_decl.get("name")
         nsmap = {None: ns,
                  "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
                  "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}
@@ -311,7 +352,7 @@ def generate(layer, fill, schemes):
         content(doc, t)
         etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
         for pid in doc.iter("{%s}PartyIdentification" % CAC):
-            pid.find("{%s}ID" % CBC).set("schemeID", schemes[role(pid.getparent())])
+            pid.find("{%s}ID" % CBC).set("schemeID", scheme_for(pid.getparent()))
         uses = [e for e in doc.iter() if e.text in (CUR, CTRY) or e.get("currencyID") == CUR]
         if uses:
             currency, country = LOCALES[n_cur % len(LOCALES)]
