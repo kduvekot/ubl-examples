@@ -1,9 +1,14 @@
-"""Layer 0: XSD-minimal UBL 2.5 documents.
+"""Minimal UBL 2.5 documents, built layer by layer.
 
-Only the elements (minOccurs >= 1) and attributes (use="required") the
-schemas demand, with one fixed value per unqualified data type.
+Layer 0: only the elements (minOccurs >= 1) and attributes (use="required")
+the schemas demand, plus the optional children chapter 4 makes necessary
+(FILL), with one fixed value per unqualified data type.
+Each further layer is a table of decisions on top of the layers below it
+(LAYERS); the same schema walk builds every layer, so element order,
+required children, locales and checks follow automatically.
+
 Fetches the UBL 2.5 package from OASIS into minimal/.ubl/ (not committed)
-and writes xml/<DocType>.xml (endorsed) and xml/deprecated/<DocType>.xml.
+and writes <layer>/<DocType>.xml (endorsed) and <layer>/deprecated/.
 Self-contained: uses nothing else from this repository.
 
 After writing, every document is checked against the UBL 2.5 rules of
@@ -26,7 +31,6 @@ if not os.path.isdir(UBL):
         zipfile.ZipFile(io.BytesIO(r.read())).extractall(os.path.join(HERE, ".ubl"))
 xsd_dir = os.path.join(UBL, "xsd")
 endorsed = {os.path.basename(f) for f in glob.glob(os.path.join(UBL, "endorsed", "xsd", "maindoc", "*.xsd"))}
-out = os.path.join(HERE, "xml")
 
 # One value per UDT data type (UBL's unqualified data types).
 VALUES = {
@@ -135,6 +139,17 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # and binary because any kind of document must fit.
         "AttachmentType": {"cbc:EmbeddedDocumentBinaryObject"}}
 
+# Layers: (folder, additions {aggregate type: optional children}). Each layer
+# includes everything of the layers before it.
+LAYERS = [("layer0", FILL)]
+
+def layer_fills():
+    total = {}
+    for name, add in LAYERS:
+        for t, kids in add.items():
+            total[t] = total.get(t, set()) | kids
+        yield name, {t: set(k) for t, k in total.items()}
+
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
     r = etree.parse(f).getroot()
@@ -217,7 +232,10 @@ def content(e, t):
                 elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
                     raise NotImplementedError(p.tag)
 
-def generate():
+def generate(layer, fill):
+    global FILL
+    FILL = fill
+    out = os.path.join(HERE, layer)
     os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
     n_cur = 0
     written = []
@@ -340,7 +358,9 @@ def xsd_for(path):
 if sys.argv[1:2] == ["--check"]:
     written = [(p, xsd_for(p)) for p in sys.argv[2:]]
 else:
-    written = generate()
+    written = []
+    for layer, fill in layer_fills():
+        written += generate(layer, fill)
 failed = {}
 for path, xsd in written:
     errs = check(path, xsd)
