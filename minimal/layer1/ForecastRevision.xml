@@ -27,6 +27,6 @@
     <cbc:ID>X</cbc:ID>
     <cbc:RevisedForecastLineID>X</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-08-05</cbc:SourceForecastIssueDate>
-    <cbc:SourceForecastIssueTime>00:00:00</cbc:SourceForecastIssueTime>
+    <cbc:SourceForecastIssueTime>09:30:00+09:00</cbc:SourceForecastIssueTime>
   </cac:ForecastRevisionLine>
 </ForecastRevision>

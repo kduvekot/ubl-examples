@@ -67,6 +67,12 @@ DATE_OFFSETS = {
     "RetailEvent:Period/StartDate": 14, "RetailEvent:Period/EndDate": 20,
 }
 
+# Times: 09:30 local, with the locale's UTC offset on D (midnight is the
+# "time unknown" value, and without an offset the zone is implied, IND6).
+TIME = "09:30:00"
+UTC_OFFSETS = {"US": "-04:00", "DE": "+02:00", "JP": "+09:00",
+               "IN": "+05:30", "BR": "-03:00", "ZA": "+02:00"}
+
 def date_for(parent, name):
     pn = etree.QName(parent).localname
     for key in (DOC + ":" + pn + "/" + name, pn + "/" + name, name):
@@ -417,6 +423,8 @@ def build(parent, el_decl):
     if t.find(X + "simpleContent") is not None:
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
+                  else TIME + UTC_OFFSETS[COUNTRY] if u == "TimeType"
+                  else D.isoformat() + "T" + TIME + UTC_OFFSETS[COUNTRY] if u == "DateTimeType"
                   else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"
                   else CODE_VALUES.get(el_decl.get("name"), VALUES[u]) if u == "CodeType"
                   else VALUES[u])

@@ -3,7 +3,7 @@
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:RegisteredDate>2026-08-12</cbc:RegisteredDate>
-  <cbc:RegisteredTime>00:00:00</cbc:RegisteredTime>
+  <cbc:RegisteredTime>09:30:00-03:00</cbc:RegisteredTime>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="0199">999900MINIMAL0076139</cbc:ID>
