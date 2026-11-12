@@ -44,7 +44,7 @@ VALUES = {
     "CodeType": "X", "DateTimeType": "2026-08-12T00:00:00", "DateType": "2026-08-12",
     "TimeType": "00:00:00", "IdentifierType": "X", "IndicatorType": "true",
     "MeasureType": "0", "NumericType": "0", "ValueType": "0", "PercentType": "0",
-    "RateType": "0", "QuantityType": "0", "TextType": "X", "NameType": "X",
+    "RateType": "0", "QuantityType": "10", "TextType": "X", "NameType": "X",
 }
 # Dates: D = 2026-08-12, the publication date of the UBL 2.5 OASIS Standard
 # (its pubdate), after every identifier scheme used in the set started.
@@ -96,6 +96,16 @@ UNITS = {
     # is compared with count the line's SupplyItem, so the same unit: piece.
     "ComparedValueMeasure": "H87",
     "SourceValueMeasure": "H87",
+}
+
+# Unit per Quantity ("Parent/Element"): its unitCode is optional, but without
+# it the unit is implied by absence (IND6). No default, as for Measures.
+QUANTITY_UNITS = {
+    "WorkReportLine/Quantity": "HUR",   # "the quantity of work": hours
+    # goods: pieces of the line's item
+    "InstructionForReturnsLine/Quantity": "H87", "InventoryReportLine/Quantity": "H87",
+    "StockAvailabilityReportLine/Quantity": "H87", "SalesItem/Quantity": "H87",
+    "ExceptionCriteriaLine/ThresholdQuantity": "H87",
 }
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
@@ -414,6 +424,11 @@ def build(parent, el_decl):
             if el_decl.get("name") not in UNITS:
                 raise KeyError("no unit chosen for " + el_decl.get("name"))
             attrs["unitCode"] = UNITS[el_decl.get("name")]
+        if u == "QuantityType":
+            key = etree.QName(parent).localname + "/" + el_decl.get("name")
+            if key not in QUANTITY_UNITS:
+                raise KeyError("no unit chosen for " + key)
+            attrs["unitCode"] = QUANTITY_UNITS[key]
         for k, v in attrs.items(): e.set(k, v)
     else:
         content(e, t)

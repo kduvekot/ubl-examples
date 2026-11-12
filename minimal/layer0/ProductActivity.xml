@@ -23,7 +23,7 @@
       <cbc:Name>X</cbc:Name>
     </cac:ActivityOriginLocation>
     <cac:SalesItem>
-      <cbc:Quantity>0</cbc:Quantity>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
         <cbc:Description>X</cbc:Description>
       </cac:Item>

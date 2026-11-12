@@ -22,7 +22,7 @@
       <cbc:EndDate>2026-08-11</cbc:EndDate>
     </cac:Period>
     <cac:SalesItem>
-      <cbc:Quantity>0</cbc:Quantity>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
         <cbc:Description>X</cbc:Description>
       </cac:Item>

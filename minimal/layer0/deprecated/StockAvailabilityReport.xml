@@ -16,7 +16,7 @@
   </cac:InventoryReportingParty>
   <cac:StockAvailabilityReportLine>
     <cbc:ID>X</cbc:ID>
-    <cbc:Quantity>0</cbc:Quantity>
+    <cbc:Quantity unitCode="H87">10</cbc:Quantity>
     <cac:Item>
       <cbc:Description>X</cbc:Description>
     </cac:Item>
