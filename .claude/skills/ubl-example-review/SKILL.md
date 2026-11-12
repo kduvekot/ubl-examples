@@ -64,7 +64,11 @@ need `lxml`.
   IDs it references, resolved to the example whose document ID they are (`-> ?` when none).
 - `check_ids.py <example.xml>`: check digits of GS1 keys, ISIN, IBAN-like accounts, RF references
   and ISO 6346 container numbers.
-- `check_xpaths.py <review.md> …`: every XPath cited in a review resolves in its example.
+- `check_xpaths.py <review.md> …`: every XPath cited in a review resolves in its example; paths
+  into other examples are checked against the examples of the same flow.
+- `count_patterns.py [R<n> …] [--list]`: counts each registered recurring pattern over all XML
+  examples with its exact rule; `--list` gives every occurrence with its XPath. Use it to list a
+  pattern's occurrences in the example under review and to keep the register's counts current.
 
 The scripts help you read; the judgement is yours. Read the XML itself wherever the listing is not
 enough.
@@ -212,8 +216,10 @@ examples. Each is described once there, with an ID that never changes or gets re
 - Condition / Options / Needs decision: <as for a finding>
 ```
 
-A pattern goes into the register when the same problem occurs in at least three examples. A
-document review lists only its own occurrences under the pattern's ID. When reviewing one example
+A pattern goes into the register when the same problem occurs in at least three examples. Its
+counting rule is added to `count_patterns.py` under the same ID, and the register's counts come
+from that script. A document review lists only its own occurrences under the pattern's ID
+(`count_patterns.py --list` shows them; check each one, the rules are heuristics). When reviewing one example
 or one flow, do not add patterns to the register; report candidates to the user instead.
 
 ## 8. Review file
