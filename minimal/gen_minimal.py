@@ -64,7 +64,13 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # TenderedProjectType: the project is identified by the Tender's
         # ContractFolderID; the content is the bid, "the total amount for
         # this tendered project" (its PayableAmount follows from the schema).
-        "TenderedProjectType": {"cac:LegalMonetaryTotal"}}
+        "TenderedProjectType": {"cac:LegalMonetaryTotal"},
+        # Party wrappers: the other children are accounts, contacts or
+        # features *of* the party; cac:Party is "the ... Party itself". In
+        # TendererQualification nothing else says who the tenderer is.
+        "SupplierPartyType": {"cac:Party"},
+        "CustomerPartyType": {"cac:Party"},
+        "QualifyingPartyType": {"cac:Party"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

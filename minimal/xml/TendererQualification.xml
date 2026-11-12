@@ -4,6 +4,8 @@
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:TendererPartyQualification>
-    <cac:MainQualifyingParty/>
+    <cac:MainQualifyingParty>
+      <cac:Party/>
+    </cac:MainQualifyingParty>
   </cac:TendererPartyQualification>
 </TendererQualification>

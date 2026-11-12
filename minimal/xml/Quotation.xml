@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Quotation xmlns="urn:oasis:names:specification:ubl:schema:xsd:Quotation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
-  <cac:SellerSupplierParty/>
+  <cac:SellerSupplierParty>
+    <cac:Party/>
+  </cac:SellerSupplierParty>
   <cac:QuotedMonetaryTotal>
     <cbc:PayableAmount currencyID="USD">0</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>

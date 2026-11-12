@@ -3,8 +3,12 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>BRL</cbc:DocumentCurrencyCode>
-  <cac:AccountingSupplierParty/>
-  <cac:AccountingCustomerParty/>
+  <cac:AccountingSupplierParty>
+    <cac:Party/>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party/>
+  </cac:AccountingCustomerParty>
   <cac:StatementLine>
     <cbc:ID>X</cbc:ID>
   </cac:StatementLine>

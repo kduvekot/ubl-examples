@@ -2,7 +2,9 @@
 <DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
-  <cac:AccountingSupplierParty/>
+  <cac:AccountingSupplierParty>
+    <cac:Party/>
+  </cac:AccountingSupplierParty>
   <cac:DebitNoteLine>
     <cbc:ID>X</cbc:ID>
     <cbc:LineExtensionAmount currencyID="EUR">0</cbc:LineExtensionAmount>

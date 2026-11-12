@@ -6,6 +6,10 @@
   <cac:OrderReference>
     <cbc:ID>X</cbc:ID>
   </cac:OrderReference>
-  <cac:BuyerCustomerParty/>
-  <cac:SellerSupplierParty/>
+  <cac:BuyerCustomerParty>
+    <cac:Party/>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party/>
+  </cac:SellerSupplierParty>
 </OrderCancellation>

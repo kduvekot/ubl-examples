@@ -3,8 +3,12 @@
   <cbc:ID>X</cbc:ID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:Shipment/>
-  <cac:AccountingSupplierParty/>
-  <cac:AccountingCustomerParty/>
+  <cac:AccountingSupplierParty>
+    <cac:Party/>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party/>
+  </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
     <cbc:PayableAmount currencyID="JPY">0</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
