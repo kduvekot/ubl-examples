@@ -98,6 +98,10 @@ UNITS = {
     "SourceValueMeasure": "H87",
 }
 
+# Value per Measure, no default. ExceptionNotificationLine: the compared value
+# must differ from the source value, or there is no exception (PH#F3).
+MEASURE_VALUES = {"SourceValueMeasure": "10", "ComparedValueMeasure": "8"}
+
 # Unit per Quantity ("Parent/Element"): its unitCode is optional, but without
 # it the unit is implied by absence (IND6). No default, as for Measures.
 QUANTITY_UNITS = {
@@ -403,7 +407,8 @@ def build(parent, el_decl):
     t = find("complexType", tns, tname)
     if t.find(X + "simpleContent") is not None:
         u = udt_name(tns, tname)
-        e.text = date_for(parent, el_decl.get("name")) if u == "DateType" else VALUES[u]
+        e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
+                  else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType" else VALUES[u])
         attrs = {}
         cur_ns, cur = tns, tname
         while True:  # collect required attributes along the derivation chain
