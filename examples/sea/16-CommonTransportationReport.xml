@@ -12,7 +12,7 @@
   <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
   <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
-  <cbc:Note>No incidents on board.</cbc:Note>
+  <cbc:Note>Pilot requested at the Selanu fairway buoy; the ship berths without anchoring.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ReporterParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
@@ -265,6 +265,7 @@
       <cac:PassengerPerson>
         <cbc:FirstName>Ines</cbc:FirstName>
         <cbc:FamilyName>Tavari</cbc:FamilyName>
+        <cbc:GenderCode listID="ISO 5218">2</cbc:GenderCode>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
       </cac:PassengerPerson>
       <cac:ReportingPerson>
@@ -275,16 +276,19 @@
       <cac:CrewMemberPerson>
         <cbc:FirstName>Corin</cbc:FirstName>
         <cbc:FamilyName>Halvard</cbc:FamilyName>
+        <cbc:GenderCode listID="ISO 5218">1</cbc:GenderCode>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
       </cac:CrewMemberPerson>
       <cac:CrewMemberPerson>
         <cbc:FirstName>Elsbeth</cbc:FirstName>
         <cbc:FamilyName>Marrin</cbc:FamilyName>
+        <cbc:GenderCode listID="ISO 5218">2</cbc:GenderCode>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
       </cac:CrewMemberPerson>
       <cac:CrewMemberPerson>
         <cbc:FirstName>Rafe</cbc:FirstName>
         <cbc:FamilyName>Dunmore</cbc:FamilyName>
+        <cbc:GenderCode listID="ISO 5218">1</cbc:GenderCode>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFENG</cbc:RoleCode>
       </cac:CrewMemberPerson>
       <cac:SecurityOfficerPerson>
@@ -300,7 +304,7 @@
       <cac:DestinationPortCall>
         <cbc:ID>XLSEL-26-0517</cbc:ID>
         <cbc:PlannedOperationsDescription>Discharge one container, load six.</cbc:PlannedOperationsDescription>
-        <cbc:PlannedWorksDescription>None.</cbc:PlannedWorksDescription>
+        <cbc:PlannedWorksDescription>Overhaul of the No. 2 auxiliary engine alongside, about 8 hours; the main engine stays ready to sail.</cbc:PlannedWorksDescription>
         <cbc:PlannedInspectionsDescription>Port state control is due.</cbc:PlannedInspectionsDescription>
         <cbc:ExpectedAnchorageIndicator>false</cbc:ExpectedAnchorageIndicator>
         <cbc:PositionInPortID>BERTH-2</cbc:PositionInPortID>
@@ -395,7 +399,7 @@
         <cbc:TanksNotExchangedQuantity unitCode="EA">0</cbc:TanksNotExchangedQuantity>
         <cbc:TotalBallastWaterOnBoardMeasure unitCode="TNE">1240</cbc:TotalBallastWaterOnBoardMeasure>
         <cbc:TotalBallastWaterCapacityMeasure unitCode="TNE">2480</cbc:TotalBallastWaterCapacityMeasure>
-        <cbc:OtherControlActions>None.</cbc:OtherControlActions>
+        <cbc:OtherControlActions>Sediment flushed from the forepeak tank during the exchange and recorded in the ballast water record book.</cbc:OtherControlActions>
         <cbc:NoControlActionsReason>Exchange done at more than 200 nautical miles from land.</cbc:NoControlActionsReason>
         <cac:UptakeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
@@ -526,7 +530,6 @@
         <cbc:ReinspectionRequiredIndicator>false</cbc:ReinspectionRequiredIndicator>
         <cbc:TotalDeadPersonQuantity unitCode="IE">0</cbc:TotalDeadPersonQuantity>
         <cbc:TotalIllPersonQuantity unitCode="IE">1</cbc:TotalIllPersonQuantity>
-        <cbc:SickAnimalDescription>None on board.</cbc:SickAnimalDescription>
         <cbc:StowawayDescription>None found in the search before departure.</cbc:StowawayDescription>
         <cbc:LastDrinkingWaterAnalysisDate>2026-04-02</cbc:LastDrinkingWaterAnalysisDate>
         <cac:WHOAffectedAreaVisit>

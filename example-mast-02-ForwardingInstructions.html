@@ -1553,12 +1553,6 @@ The material.</li>
 <li><code>GoodsItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription</code>
 = <strong>Sealed source, not special form.</strong><br />
 Its form.</li>
-<li><code>GoodsItem/Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric</code>
-= <strong>0</strong><br />
-Excepted package: no dose rate to speak of.</li>
-<li><code>GoodsItem/Item/HazardousItem/RadioactiveMaterial/FissileCriticalitySafetyIndexNumeric</code>
-= <strong>0</strong><br />
-Not fissile.</li>
 <li><code>GoodsItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/Name</code>
 = <strong>Americium-241</strong><br />
 The isotope.</li>
@@ -2308,92 +2302,90 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
 <span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Americium-241 sources in smoke detectors&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SpecialFormDescription</span>&gt;Sealed source, not special form.&lt;/<span class="kw">cbc:SpecialFormDescription</span>&gt;</span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TransportIndexNumeric</span>&gt;0&lt;/<span class="kw">cbc:TransportIndexNumeric</span>&gt;</span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:FissileCriticalitySafetyIndexNumeric</span>&gt;0&lt;/<span class="kw">cbc:FissileCriticalitySafetyIndexNumeric</span>&gt;</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Americium-241&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ActivityLevelMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;2Q&quot;</span>&gt;37&lt;/<span class="kw">cbc:ActivityLevelMeasure</span>&gt;</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Remover for the protective coating of circuit boards, in 5-litre cans.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;381400&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;35110&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;8&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;8&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Packed as the rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-E,S-C&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;132&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TunnelRestrictionCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE ADR tunnel restriction code&quot;</span>&gt;D/E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MaritimePollutantCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MarinePollutantCode&quot;</span>&gt;N&lt;/<span class="kw">cbc:MaritimePollutantCode</span>&gt;</span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TechnicalName</span>&gt;ethanolamine, propanol&lt;/<span class="kw">cbc:TechnicalName</span>&gt;</span>
-<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Corrosive liquid, flammable, n.o.s.&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2920&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC3&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
-<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Americium-241&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ActivityLevelMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;2Q&quot;</span>&gt;37&lt;/<span class="kw">cbc:ActivityLevelMeasure</span>&gt;</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Remover for the protective coating of circuit boards, in 5-litre cans.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;381400&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;35110&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;8&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;8&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Packed as the rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-E,S-C&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;132&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TunnelRestrictionCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE ADR tunnel restriction code&quot;</span>&gt;D/E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MaritimePollutantCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MarinePollutantCode&quot;</span>&gt;N&lt;/<span class="kw">cbc:MaritimePollutantCode</span>&gt;</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TechnicalName</span>&gt;ethanolamine, propanol&lt;/<span class="kw">cbc:TechnicalName</span>&gt;</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Corrosive liquid, flammable, n.o.s.&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2920&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC3&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;20&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeasureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureQualifierCode&quot;</span>&gt;TARGET&lt;/<span class="kw">cbc:MeasureCode</span>&gt;</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Keep away from heat.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;35&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

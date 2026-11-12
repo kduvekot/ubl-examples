@@ -833,8 +833,10 @@ member.</strong><br />
 The rule on the legal form, in words: any form is accepted, so there is
 no code to give.</li>
 <li><code>TendererQualificationRequest/PersonalSituation</code> =
-<strong>No exclusion grounds.</strong><br />
-The tenderer's situation.</li>
+<strong>The tenderer must not be in any of the exclusion situations of
+the Public Procurement Act, and declares this in its
+self-declaration.</strong><br />
+What is asked of the tenderer's personal situation.</li>
 <li><code>TendererQualificationRequest/OperatingYearsQuantity</code> =
 <strong>3</strong> (unitCode <code>ANN</code>)<br />
 At least three years in business.</li>
@@ -943,9 +945,6 @@ list: ALLOWED = Allowed.</li>
 <li><code>AllowedSubcontractTerms/MaximumPercent</code> =
 <strong>30</strong><br />
 At most.</li>
-<li><code>AllowedSubcontractTerms/MinimumPercent</code> =
-<strong>0</strong><br />
-At least.</li>
 <li><code>TenderPreparation/TenderEnvelopeID</code> =
 <strong>ENV-1</strong><br />
 One envelope.</li>
@@ -1020,9 +1019,6 @@ Abnormally low.</li>
 <li><code>AwardingTerms/PrizeIndicator</code> =
 <strong>false</strong><br />
 Not a design contest: no prizes.</li>
-<li><code>AwardingTerms/PaymentDescription</code> = <strong>No payment
-for tendering.</strong><br />
-None.</li>
 <li><code>AwardingTerms/FollowupContractIndicator</code> =
 <strong>false</strong><br />
 No follow-up contract.</li>
@@ -1067,8 +1063,9 @@ Unit price at least.</li>
 <strong>600.00</strong> (currencyID <code>XBL</code>)<br />
 At most.</li>
 <li><code>AwardingTerms/AwardingCriterion/MinimumImprovementBid</code> =
-<strong>Not applicable: no auction.</strong><br />
-Stated.</li>
+<strong>In the electronic auction, each new bid lowers the bench's unit
+price by at least 2 lume.</strong><br />
+The minimum step of a bid on the price.</li>
 <li><code>AwardingTerms/AwardingCriterion/ID</code> =
 <strong>AC-2</strong><br />
 Quality.</li>
@@ -1247,9 +1244,6 @@ Call-offs as UBL orders.</li>
 <li><code>PostAwardProcess/ElectronicPaymentUsageIndicator</code> =
 <strong>true</strong><br />
 Paid by transfer.</li>
-<li><code>EconomicOperatorShortList/LimitationDescription</code> =
-<strong>No short list.</strong><br />
-An open procedure.</li>
 <li><code>SecurityClearanceTerm/Code</code> =
 <strong>NOTREQUIRED</strong> (listID
 <code>urn:ubl-examples:world:codelist:SecurityClearanceCode</code>)<br />
@@ -1358,14 +1352,20 @@ After the standstill period.</li>
 <li><code>ContractFormalizationPeriod/EndDate</code> =
 <strong>2026-03-22</strong><br />
 Before the first call-off.</li>
-<li><code>SubcontractTerms/Rate</code> = <strong>0</strong><br />
-The manufacturer installs with its own staff.</li>
+<li><code>SubcontractTerms/Rate</code> = <strong>3.5</strong><br />
+The installation's share of the contract value: 4,320 of 124,080.00
+lume, rounded.</li>
 <li><code>SubcontractTerms/UnknownPriceIndicator</code> =
 <strong>false</strong><br />
-Nothing is subcontracted.</li>
-<li><code>SubcontractTerms/Description</code> = <strong>No
-subcontracting.</strong><br />
-The tender's terms.</li>
+The price of the subcontracted part is known: the tender's installation
+line.</li>
+<li><code>SubcontractTerms/Description</code> = <strong>Saltmere
+Engineering installs the benches (lot 2) as subcontractor, at the
+tender's price of 18 lume a bench.</strong><br />
+What is subcontracted, as the tender named it.</li>
+<li><code>SubcontractTerms/Amount</code> = <strong>4320.00</strong>
+(currencyID <code>XBL</code>)<br />
+The value of the installation.</li>
 <li><code>WinningParty/Rank</code> = <strong>1</strong><br />
 First in the evaluation.</li>
 <li><code>WinningParty/Party/PartyIdentification/ID</code> =
@@ -1708,7 +1708,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TendererQualificationRequest</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Any legal form; consortia must name a lead member.&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PersonalSituation</span>&gt;No exclusion grounds.&lt;/<span class="kw">cbc:PersonalSituation</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PersonalSituation</span>&gt;The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.&lt;/<span class="kw">cbc:PersonalSituation</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OperatingYearsQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;3&lt;/<span class="kw">cbc:OperatingYearsQuantity</span>&gt;</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EmployeeQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;10&lt;/<span class="kw">cbc:EmployeeQuantity</span>&gt;</span>
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Economic and technical capacity.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -1761,277 +1761,273 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4320.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubcontractingConditionsCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubcontractingConditionsCode&quot;</span>&gt;ALLOWED&lt;/<span class="kw">cbc:SubcontractingConditionsCode</span>&gt;</span>
 <span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumPercent</span>&gt;30&lt;/<span class="kw">cbc:MaximumPercent</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumPercent</span>&gt;0&lt;/<span class="kw">cbc:MinimumPercent</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AllowedSubcontractTerms</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderPreparation</span>&gt;</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TenderEnvelopeID</span>&gt;ENV-1&lt;/<span class="kw">cbc:TenderEnvelopeID</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TenderEnvelopeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderEnvelopeCode&quot;</span>&gt;COMBINED&lt;/<span class="kw">cbc:TenderEnvelopeTypeCode</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;One encrypted envelope per tender.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OpenTenderID</span>&gt;OPEN-1&lt;/<span class="kw">cbc:OpenTenderID</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentTenderRequirement</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Price schedule&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Unit prices per lot.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TemplateDocumentReference</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;PWD-PRICE-TPL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TemplateDocumentReference</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentTenderRequirement</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderEncryptionData</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MessageFormat</span>&gt;CMS&lt;/<span class="kw">cbc:MessageFormat</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EncryptionCertificateAttachment</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ExternalReference</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:URI</span>&gt;https://tenders.lumeport.example/cert.pem&lt;/<span class="kw">cbc:URI</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ExternalReference</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EncryptionCertificateAttachment</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EncryptionCertificatePathChain</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;PWD-CA <span class="dv">&amp;gt;</span> PWD-TENDER&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:URI</span>&gt;https://tenders.lumeport.example/chain.pem&lt;/<span class="kw">cbc:URI</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EncryptionCertificatePathChain</span>&gt;</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EncryptionSymmetricAlgorithm</span>&gt;</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;AES-256-GCM&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OID</span>&gt;2.16.840.1.101.3.4.1.46&lt;/<span class="kw">cbc:OID</span>&gt;</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EncryptionSymmetricAlgorithm</span>&gt;</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderEncryptionData</span>&gt;</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderPreparation</span>&gt;</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractExecutionRequirement</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Recycled steel&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExecutionRequirementCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ExecutionRequirementCode&quot;</span>&gt;ENVIRONMENTAL&lt;/<span class="kw">cbc:ExecutionRequirementCode</span>&gt;</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;At least 30 % recycled steel in the frames.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractExecutionRequirement</span>&gt;</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingTerms</span>&gt;</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WeightingAlgorithmCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WeightingAlgorithmCode&quot;</span>&gt;WSUM&lt;/<span class="kw">cbc:WeightingAlgorithmCode</span>&gt;</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Price 60 %, quality 40 %.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;Three officers of the department.&lt;/<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LowTendersDescription</span>&gt;Prices 30 % below the average are examined.&lt;/<span class="kw">cbc:LowTendersDescription</span>&gt;</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeIndicator</span>&gt;false&lt;/<span class="kw">cbc:PrizeIndicator</span>&gt;</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDescription</span>&gt;No payment for tendering.&lt;/<span class="kw">cbc:PaymentDescription</span>&gt;</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;false&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NoFurtherNegotiationIndicator</span>&gt;true&lt;/<span class="kw">cbc:NoFurtherNegotiationIndicator</span>&gt;</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AwardingCriterion</span>&gt;</span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;AC-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AwardCriterionTypeCode&quot;</span>&gt;PRICE&lt;/<span class="kw">cbc:AwardingCriterionTypeCode</span>&gt;</span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Price&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The lowest total of unit prices.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:WeightNumeric</span>&gt;60&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Weight</span>&gt;60 %&lt;/<span class="kw">cbc:Weight</span>&gt;</span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CalculationExpression</span>&gt;60 × lowest / tendered&lt;/<span class="kw">cbc:CalculationExpression</span>&gt;</span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CalculationExpressionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CalculationExpressionCode&quot;</span>&gt;INVERSE&lt;/<span class="kw">cbc:CalculationExpressionCode</span>&gt;</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;350.00&lt;/<span class="kw">cbc:MinimumAmount</span>&gt;</span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;600.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumImprovementBid</span>&gt;Not applicable: no auction.&lt;/<span class="kw">cbc:MinimumImprovementBid</span>&gt;</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AwardingCriterion</span>&gt;</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AwardingCriterion</span>&gt;</span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;AC-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AwardCriterionTypeCode&quot;</span>&gt;QUALITY&lt;/<span class="kw">cbc:AwardingCriterionTypeCode</span>&gt;</span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Quality&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:WeightNumeric</span>&gt;40&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;10&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SubordinateAwardingCriterion</span>&gt;</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;AC-2.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Durability of the coating&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeightNumeric</span>&gt;20&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SubordinateAwardingCriterion</span>&gt;</span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AwardingCriterion</span>&gt;</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TechnicalCommitteePerson</span>&gt;</span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FirstName</span>&gt;Mara&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FamilyName</span>&gt;Delling&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Head of parks&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TechnicalCommitteePerson</span>&gt;</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalInformationParty</span>&gt;</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalInformationParty</span>&gt;</span>
-<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentProviderParty</span>&gt;</span>
-<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentProviderParty</span>&gt;</span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderRecipientParty</span>&gt;</span>
-<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderRecipientParty</span>&gt;</span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractResponsibleParty</span>&gt;</span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractResponsibleParty</span>&gt;</span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderEvaluationParty</span>&gt;</span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderEvaluationParty</span>&gt;</span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:QualificationRequestRecipientParty</span>&gt;</span>
-<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:QualificationRequestRecipientParty</span>&gt;</span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderValidityPeriod</span>&gt;</span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;90&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
-<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderValidityPeriod</span>&gt;</span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractAcceptancePeriod</span>&gt;</span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;10&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractAcceptancePeriod</span>&gt;</span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AppealTerms</span>&gt;</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Appeals to the review board within ten days of the award.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PresentationPeriod</span>&gt;</span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;10&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
-<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PresentationPeriod</span>&gt;</span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AppealInformationParty</span>&gt;</span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AppealInformationParty</span>&gt;</span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AppealTerms</span>&gt;</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BudgetAccountLine</span>&gt;</span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;BL-PARKS-26&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:TotalAmount</span>&gt;</span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:BudgetAccount</span>&gt;</span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;4.2.110&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BudgetYearNumeric</span>&gt;2026&lt;/<span class="kw">cbc:BudgetYearNumeric</span>&gt;</span>
-<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RequiredClassificationScheme</span>&gt;</span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LUM-BUDGET&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ClassificationCategory</span>&gt;</span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Parks&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CodeValue</span>&gt;4.2&lt;/<span class="kw">cbc:CodeValue</span>&gt;</span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ClassificationCategory</span>&gt;</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RequiredClassificationScheme</span>&gt;</span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:BudgetAccount</span>&gt;</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BudgetAccountLine</span>&gt;</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReplacedNoticeDocumentReference</span>&gt;</span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-PIN&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReplacedNoticeDocumentReference</span>&gt;</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LotDistribution</span>&gt;</span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumLotsAwardedNumeric</span>&gt;2&lt;/<span class="kw">cbc:MaximumLotsAwardedNumeric</span>&gt;</span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumLotsSubmittedNumeric</span>&gt;2&lt;/<span class="kw">cbc:MaximumLotsSubmittedNumeric</span>&gt;</span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GroupingLots</span>&gt;Lots 1 and 2 may be awarded together.&lt;/<span class="kw">cbc:GroupingLots</span>&gt;</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LotsGroup</span>&gt;</span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LotsGroupID</span>&gt;G-1&lt;/<span class="kw">cbc:LotsGroupID</span>&gt;</span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
-<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LotsGroup</span>&gt;</span>
-<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LotDistribution</span>&gt;</span>
-<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostAwardProcess</span>&gt;</span>
-<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicCatalogueUsageIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicCatalogueUsageIndicator</span>&gt;</span>
-<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicInvoiceAcceptedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicInvoiceAcceptedIndicator</span>&gt;</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicOrderUsageIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicOrderUsageIndicator</span>&gt;</span>
-<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicPaymentUsageIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicPaymentUsageIndicator</span>&gt;</span>
-<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostAwardProcess</span>&gt;</span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LimitationDescription</span>&gt;No short list.&lt;/<span class="kw">cbc:LimitationDescription</span>&gt;</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SecurityClearanceTerm</span>&gt;</span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Code</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SecurityClearanceCode&quot;</span>&gt;NOTREQUIRED&lt;/<span class="kw">cbc:Code</span>&gt;</span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Parks are public places.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SecurityClearanceTerm</span>&gt;</span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-P&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;OPEN&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Park benches for the city parks&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SUPPLIES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderResult</span>&gt;</span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardID</span>&gt;PWD-2026-PARKS-AWARD-1&lt;/<span class="kw">cbc:AwardID</span>&gt;</span>
-<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TenderResultCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderResultCode&quot;</span>&gt;AWARDED&lt;/<span class="kw">cbc:TenderResultCode</span>&gt;</span>
-<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdvertisementAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;320.00&lt;/<span class="kw">cbc:AdvertisementAmount</span>&gt;</span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardDate</span>&gt;2026-03-09&lt;/<span class="kw">cbc:AwardDate</span>&gt;</span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedTenderQuantity</span>&gt;</span>
-<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LowerTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:LowerTenderAmount</span>&gt;</span>
-<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:HigherTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:HigherTenderAmount</span>&gt;</span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedElectronicTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedElectronicTenderQuantity</span>&gt;</span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedForeignTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ReceivedForeignTenderQuantity</span>&gt;</span>
-<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contract</span>&gt;</span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
-<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MON&quot;</span>&gt;24&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
-<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contract</span>&gt;</span>
-<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardedTenderedProject</span>&gt;</span>
-<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VariantID</span>&gt;V0&lt;/<span class="kw">cbc:VariantID</span>&gt;</span>
-<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
-<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardedTenderedProject</span>&gt;</span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractFormalizationPeriod</span>&gt;</span>
-<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-19&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-22&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractFormalizationPeriod</span>&gt;</span>
-<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubcontractTerms</span>&gt;</span>
-<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Rate</span>&gt;0&lt;/<span class="kw">cbc:Rate</span>&gt;</span>
-<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UnknownPriceIndicator</span>&gt;false&lt;/<span class="kw">cbc:UnknownPriceIndicator</span>&gt;</span>
-<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;No subcontracting.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubcontractTerms</span>&gt;</span>
-<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:WinningParty</span>&gt;</span>
-<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Rank</span>&gt;1&lt;/<span class="kw">cbc:Rank</span>&gt;</span>
-<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:WinningParty</span>&gt;</span>
-<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderResult</span>&gt;</span>
-<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TenderContract</span>&gt;</span></code></pre></div>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AllowedSubcontractTerms</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderPreparation</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TenderEnvelopeID</span>&gt;ENV-1&lt;/<span class="kw">cbc:TenderEnvelopeID</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TenderEnvelopeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderEnvelopeCode&quot;</span>&gt;COMBINED&lt;/<span class="kw">cbc:TenderEnvelopeTypeCode</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;One encrypted envelope per tender.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OpenTenderID</span>&gt;OPEN-1&lt;/<span class="kw">cbc:OpenTenderID</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentTenderRequirement</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Price schedule&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Unit prices per lot.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TemplateDocumentReference</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;PWD-PRICE-TPL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TemplateDocumentReference</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentTenderRequirement</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderEncryptionData</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MessageFormat</span>&gt;CMS&lt;/<span class="kw">cbc:MessageFormat</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EncryptionCertificateAttachment</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ExternalReference</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:URI</span>&gt;https://tenders.lumeport.example/cert.pem&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ExternalReference</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EncryptionCertificateAttachment</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EncryptionCertificatePathChain</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;PWD-CA <span class="dv">&amp;gt;</span> PWD-TENDER&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:URI</span>&gt;https://tenders.lumeport.example/chain.pem&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EncryptionCertificatePathChain</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EncryptionSymmetricAlgorithm</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;AES-256-GCM&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OID</span>&gt;2.16.840.1.101.3.4.1.46&lt;/<span class="kw">cbc:OID</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EncryptionSymmetricAlgorithm</span>&gt;</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderEncryptionData</span>&gt;</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderPreparation</span>&gt;</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractExecutionRequirement</span>&gt;</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Recycled steel&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExecutionRequirementCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ExecutionRequirementCode&quot;</span>&gt;ENVIRONMENTAL&lt;/<span class="kw">cbc:ExecutionRequirementCode</span>&gt;</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;At least 30 % recycled steel in the frames.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractExecutionRequirement</span>&gt;</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingTerms</span>&gt;</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WeightingAlgorithmCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WeightingAlgorithmCode&quot;</span>&gt;WSUM&lt;/<span class="kw">cbc:WeightingAlgorithmCode</span>&gt;</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Price 60 %, quality 40 %.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;Three officers of the department.&lt;/<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LowTendersDescription</span>&gt;Prices 30 % below the average are examined.&lt;/<span class="kw">cbc:LowTendersDescription</span>&gt;</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeIndicator</span>&gt;false&lt;/<span class="kw">cbc:PrizeIndicator</span>&gt;</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;false&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NoFurtherNegotiationIndicator</span>&gt;true&lt;/<span class="kw">cbc:NoFurtherNegotiationIndicator</span>&gt;</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AwardingCriterion</span>&gt;</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;AC-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AwardCriterionTypeCode&quot;</span>&gt;PRICE&lt;/<span class="kw">cbc:AwardingCriterionTypeCode</span>&gt;</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Price&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The lowest total of unit prices.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:WeightNumeric</span>&gt;60&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Weight</span>&gt;60 %&lt;/<span class="kw">cbc:Weight</span>&gt;</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CalculationExpression</span>&gt;60 × lowest / tendered&lt;/<span class="kw">cbc:CalculationExpression</span>&gt;</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CalculationExpressionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CalculationExpressionCode&quot;</span>&gt;INVERSE&lt;/<span class="kw">cbc:CalculationExpressionCode</span>&gt;</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;350.00&lt;/<span class="kw">cbc:MinimumAmount</span>&gt;</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;600.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumImprovementBid</span>&gt;In the electronic auction, each new bid lowers the bench&#39;s unit price by at least 2 lume.&lt;/<span class="kw">cbc:MinimumImprovementBid</span>&gt;</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AwardingCriterion</span>&gt;</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AwardingCriterion</span>&gt;</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;AC-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AwardCriterionTypeCode&quot;</span>&gt;QUALITY&lt;/<span class="kw">cbc:AwardingCriterionTypeCode</span>&gt;</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Quality&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:WeightNumeric</span>&gt;40&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;10&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SubordinateAwardingCriterion</span>&gt;</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;AC-2.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Durability of the coating&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeightNumeric</span>&gt;20&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SubordinateAwardingCriterion</span>&gt;</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AwardingCriterion</span>&gt;</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TechnicalCommitteePerson</span>&gt;</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FirstName</span>&gt;Mara&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FamilyName</span>&gt;Delling&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Head of parks&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TechnicalCommitteePerson</span>&gt;</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalInformationParty</span>&gt;</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalInformationParty</span>&gt;</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentProviderParty</span>&gt;</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentProviderParty</span>&gt;</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderRecipientParty</span>&gt;</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderRecipientParty</span>&gt;</span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractResponsibleParty</span>&gt;</span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractResponsibleParty</span>&gt;</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderEvaluationParty</span>&gt;</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderEvaluationParty</span>&gt;</span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:QualificationRequestRecipientParty</span>&gt;</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:QualificationRequestRecipientParty</span>&gt;</span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderValidityPeriod</span>&gt;</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;90&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderValidityPeriod</span>&gt;</span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractAcceptancePeriod</span>&gt;</span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;10&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractAcceptancePeriod</span>&gt;</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AppealTerms</span>&gt;</span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Appeals to the review board within ten days of the award.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PresentationPeriod</span>&gt;</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;10&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PresentationPeriod</span>&gt;</span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AppealInformationParty</span>&gt;</span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AppealInformationParty</span>&gt;</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AppealTerms</span>&gt;</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BudgetAccountLine</span>&gt;</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;BL-PARKS-26&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:TotalAmount</span>&gt;</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:BudgetAccount</span>&gt;</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;4.2.110&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BudgetYearNumeric</span>&gt;2026&lt;/<span class="kw">cbc:BudgetYearNumeric</span>&gt;</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RequiredClassificationScheme</span>&gt;</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LUM-BUDGET&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ClassificationCategory</span>&gt;</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Parks&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CodeValue</span>&gt;4.2&lt;/<span class="kw">cbc:CodeValue</span>&gt;</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ClassificationCategory</span>&gt;</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RequiredClassificationScheme</span>&gt;</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:BudgetAccount</span>&gt;</span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BudgetAccountLine</span>&gt;</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReplacedNoticeDocumentReference</span>&gt;</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-PIN&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReplacedNoticeDocumentReference</span>&gt;</span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LotDistribution</span>&gt;</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumLotsAwardedNumeric</span>&gt;2&lt;/<span class="kw">cbc:MaximumLotsAwardedNumeric</span>&gt;</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumLotsSubmittedNumeric</span>&gt;2&lt;/<span class="kw">cbc:MaximumLotsSubmittedNumeric</span>&gt;</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GroupingLots</span>&gt;Lots 1 and 2 may be awarded together.&lt;/<span class="kw">cbc:GroupingLots</span>&gt;</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LotsGroup</span>&gt;</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LotsGroupID</span>&gt;G-1&lt;/<span class="kw">cbc:LotsGroupID</span>&gt;</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LotsGroup</span>&gt;</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LotDistribution</span>&gt;</span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostAwardProcess</span>&gt;</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicCatalogueUsageIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicCatalogueUsageIndicator</span>&gt;</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicInvoiceAcceptedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicInvoiceAcceptedIndicator</span>&gt;</span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicOrderUsageIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicOrderUsageIndicator</span>&gt;</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicPaymentUsageIndicator</span>&gt;true&lt;/<span class="kw">cbc:ElectronicPaymentUsageIndicator</span>&gt;</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostAwardProcess</span>&gt;</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SecurityClearanceTerm</span>&gt;</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Code</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SecurityClearanceCode&quot;</span>&gt;NOTREQUIRED&lt;/<span class="kw">cbc:Code</span>&gt;</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Parks are public places.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SecurityClearanceTerm</span>&gt;</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-P&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;OPEN&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Park benches for the city parks&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SUPPLIES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderResult</span>&gt;</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardID</span>&gt;PWD-2026-PARKS-AWARD-1&lt;/<span class="kw">cbc:AwardID</span>&gt;</span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TenderResultCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderResultCode&quot;</span>&gt;AWARDED&lt;/<span class="kw">cbc:TenderResultCode</span>&gt;</span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdvertisementAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;320.00&lt;/<span class="kw">cbc:AdvertisementAmount</span>&gt;</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardDate</span>&gt;2026-03-09&lt;/<span class="kw">cbc:AwardDate</span>&gt;</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedTenderQuantity</span>&gt;</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LowerTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:LowerTenderAmount</span>&gt;</span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:HigherTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:HigherTenderAmount</span>&gt;</span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedElectronicTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedElectronicTenderQuantity</span>&gt;</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedForeignTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ReceivedForeignTenderQuantity</span>&gt;</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contract</span>&gt;</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MON&quot;</span>&gt;24&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contract</span>&gt;</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardedTenderedProject</span>&gt;</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VariantID</span>&gt;V0&lt;/<span class="kw">cbc:VariantID</span>&gt;</span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardedTenderedProject</span>&gt;</span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractFormalizationPeriod</span>&gt;</span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-19&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-22&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractFormalizationPeriod</span>&gt;</span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubcontractTerms</span>&gt;</span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Rate</span>&gt;3.5&lt;/<span class="kw">cbc:Rate</span>&gt;</span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UnknownPriceIndicator</span>&gt;false&lt;/<span class="kw">cbc:UnknownPriceIndicator</span>&gt;</span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender&#39;s price of 18 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4320.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubcontractTerms</span>&gt;</span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:WinningParty</span>&gt;</span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Rank</span>&gt;1&lt;/<span class="kw">cbc:Rank</span>&gt;</span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:WinningParty</span>&gt;</span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderResult</span>&gt;</span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TenderContract</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

@@ -589,6 +589,11 @@ A design contest with prizes.</li>
 <li><code>AwardingTerms/PrizeDescription</code> = <strong>Three prizes;
 the first is 8,000 lume.</strong><br />
 The prizes in words; each is given below.</li>
+<li><code>AwardingTerms/PaymentDescription</code> = <strong>Each
+selected participant that submits a design meeting the brief receives
+1,000 lume towards its costs, whether or not it wins a
+prize.</strong><br />
+The payment to all participants, besides the prizes.</li>
 <li><code>AwardingTerms/FollowupContractIndicator</code> =
 <strong>true</strong><br />
 The winner of the first prize is invited to negotiate the service
@@ -632,6 +637,16 @@ The third prize.</li>
 design the jury ranks third, if the jury finds it of prize
 standard.</strong><br />
 The jury may withhold it.</li>
+<li><code>EconomicOperatorShortList/LimitationDescription</code> =
+<strong>A restricted contest: the jury will select the participants on
+their references.</strong><br />
+How the number of participants will be limited, announced early.</li>
+<li><code>EconomicOperatorShortList/MaximumQuantity</code> =
+<strong>5</strong><br />
+At most five.</li>
+<li><code>EconomicOperatorShortList/MinimumQuantity</code> =
+<strong>3</strong><br />
+At least three participants are planned.</li>
 </ul>
 <h3 id="tendering-process">Tendering Process</h3>
 <p>Inside <code>TenderingProcess</code>:</p>
@@ -873,51 +888,57 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;A jury of five: the head of parks, the city architect, a representative of the disability council and two independent designers.&lt;/<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;</span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeIndicator</span>&gt;true&lt;/<span class="kw">cbc:PrizeIndicator</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeDescription</span>&gt;Three prizes; the first is 8,000 lume.&lt;/<span class="kw">cbc:PrizeDescription</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;true&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;FIRST&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;8000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;SECOND&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks second.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;THIRD&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks third, if the jury finds it of prize standard.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;DESIGNCONTEST&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Design of the harbour promenade bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PriorInformationNotice</span>&gt;</span></code></pre></div>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDescription</span>&gt;Each selected participant that submits a design meeting the brief receives 1,000 lume towards its costs, whether or not it wins a prize.&lt;/<span class="kw">cbc:PaymentDescription</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;true&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;FIRST&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;8000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;SECOND&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks second.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;THIRD&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks third, if the jury finds it of prize standard.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LimitationDescription</span>&gt;A restricted contest: the jury will select the participants on their references.&lt;/<span class="kw">cbc:LimitationDescription</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span>&gt;5&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;DESIGNCONTEST&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Design of the harbour promenade bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PriorInformationNotice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

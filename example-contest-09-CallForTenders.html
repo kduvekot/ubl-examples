@@ -694,6 +694,11 @@ A design contest with prizes.</li>
 <li><code>AwardingTerms/PrizeDescription</code> = <strong>Three prizes;
 the first is 8,000 lume.</strong><br />
 The prizes in words; each is given below.</li>
+<li><code>AwardingTerms/PaymentDescription</code> = <strong>Each
+selected participant that submits a design meeting the brief receives
+1,000 lume towards its costs, whether or not it wins a
+prize.</strong><br />
+The payment to all participants, besides the prizes.</li>
 <li><code>AwardingTerms/FollowupContractIndicator</code> =
 <strong>true</strong><br />
 The winner of the first prize is invited to negotiate the service
@@ -1272,144 +1277,145 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;A jury of five: the head of parks, the city architect, a representative of the disability council and two independent designers.&lt;/<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeIndicator</span>&gt;true&lt;/<span class="kw">cbc:PrizeIndicator</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeDescription</span>&gt;Three prizes; the first is 8,000 lume.&lt;/<span class="kw">cbc:PrizeDescription</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;true&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;FIRST&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;8000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;SECOND&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks second.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;THIRD&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks third, if the jury finds it of prize standard.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AppealTerms</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;An appeal against the selection or the jury&#39;s ranking goes to the review board within ten days.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IndustryClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISIC Rev.4&quot;</span>&gt;8423&lt;/<span class="kw">cbc:IndustryClassificationCode</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:lumeport:address-register&quot;</span>&gt;LUM-ADR-075593&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span>&gt;Justice Row&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;20&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Old town&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PostalZone</span>&gt;38519&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationName</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410822&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Registry&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Procurement officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Procurement&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2122 0822&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;registry@review-xb.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410822&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AppealTerms</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;DESIGNCONTEST&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubmissionMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubmissionMethodCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:SubmissionMethodCode</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CandidateReductionConstraintIndicator</span>&gt;true&lt;/<span class="kw">cbc:CandidateReductionConstraintIndicator</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-12&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-02&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0633&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcessJustification</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreviousCancellationReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CancellationReasonCode&quot;</span>&gt;UNSUITABLE&lt;/<span class="kw">cbc:PreviousCancellationReasonCode</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Relaunch of the design contest PWD-2025-PROM-DC, cancelled on 20 November 2025: both designs received were unacceptable, one far above any production budget and one not accessible to wheelchair users. The brief now states both limits.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcessJustification</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LimitationDescription</span>&gt;The jury selects the participants on their references.&lt;/<span class="kw">cbc:LimitationDescription</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExpectedQuantity</span>&gt;5&lt;/<span class="kw">cbc:ExpectedQuantity</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span>&gt;5&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Design of the harbour promenade bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CallForTenders</span>&gt;</span></code></pre></div>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDescription</span>&gt;Each selected participant that submits a design meeting the brief receives 1,000 lume towards its costs, whether or not it wins a prize.&lt;/<span class="kw">cbc:PaymentDescription</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;true&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;FIRST&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;8000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;SECOND&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks second.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;THIRD&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks third, if the jury finds it of prize standard.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AppealTerms</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;An appeal against the selection or the jury&#39;s ranking goes to the review board within ten days.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IndustryClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISIC Rev.4&quot;</span>&gt;8423&lt;/<span class="kw">cbc:IndustryClassificationCode</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:lumeport:address-register&quot;</span>&gt;LUM-ADR-075593&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span>&gt;Justice Row&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;20&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Old town&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PostalZone</span>&gt;38519&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-1&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationName</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410822&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyLiquidationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode&quot;</span>&gt;ACTIVE&lt;/<span class="kw">cbc:CompanyLiquidationStatusCode</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RegistrationAddress</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XB:FBR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Federal business register of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CorporateRegistrationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode&quot;</span>&gt;COMMERCIAL&lt;/<span class="kw">cbc:CorporateRegistrationTypeCode</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CorporateRegistrationScheme</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Registry&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Procurement officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Procurement&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2122 0822&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;registry@review-xb.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410822&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AppealTerms</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;DESIGNCONTEST&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubmissionMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubmissionMethodCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:SubmissionMethodCode</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CandidateReductionConstraintIndicator</span>&gt;true&lt;/<span class="kw">cbc:CandidateReductionConstraintIndicator</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-12&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-02&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0633&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcessJustification</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreviousCancellationReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CancellationReasonCode&quot;</span>&gt;UNSUITABLE&lt;/<span class="kw">cbc:PreviousCancellationReasonCode</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Relaunch of the design contest PWD-2025-PROM-DC, cancelled on 20 November 2025: both designs received were unacceptable, one far above any production budget and one not accessible to wheelchair users. The brief now states both limits.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcessJustification</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LimitationDescription</span>&gt;The jury selects the participants on their references.&lt;/<span class="kw">cbc:LimitationDescription</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExpectedQuantity</span>&gt;5&lt;/<span class="kw">cbc:ExpectedQuantity</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span>&gt;5&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Design of the harbour promenade bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CallForTenders</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

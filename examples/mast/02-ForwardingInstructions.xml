@@ -543,8 +543,6 @@
           <cac:RadioactiveMaterial>
             <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
             <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-            <cbc:TransportIndexNumeric>0</cbc:TransportIndexNumeric>
-            <cbc:FissileCriticalitySafetyIndexNumeric>0</cbc:FissileCriticalitySafetyIndexNumeric>
             <cac:ApplicableRadioactiveIsotope>
               <cbc:Name>Americium-241</cbc:Name>
               <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>

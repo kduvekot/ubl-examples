@@ -14,6 +14,8 @@
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
+  <cbc:WeightScoringMethodologyNote>The qualification of the design lead is pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
   <cac:ContractingParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
@@ -212,6 +214,46 @@
         <cbc:ID>P-PROF-1</cbc:ID>
         <cbc:Name>Registration of the design lead</cbc:Name>
         <cbc:Description>The register and the registration number of the design lead.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-PUBLIC</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Reference for furniture in public spaces</cbc:Name>
+    <cbc:Description>The two completed designs of furniture or fittings for public spaces in the last five years that the contest notice asks for.</cbc:Description>
+    <cbc:WeightNumeric>60</cbc:WeightNumeric>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">WEIGHTED</cbc:EvaluationMethodTypeCode>
+    <cbc:WeightingConsiderationDescription>The main skill the contest asks for, so it weighs most.</cbc:WeightingConsiderationDescription>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REF-PUBLIC</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REF-PUBLIC-1</cbc:ID>
+        <cbc:Name>The reference</cbc:Name>
+        <cbc:Description>The project, the client, the year and what the team designed.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-COAST</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Reference for a coastal site</cbc:Name>
+    <cbc:Description>Whether one of the two references stands within one kilometre of the sea.</cbc:Description>
+    <cbc:WeightNumeric>40</cbc:WeightNumeric>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">WEIGHTED</cbc:EvaluationMethodTypeCode>
+    <cbc:WeightingConsiderationDescription>Salt air is the hardest condition of the promenade, but fewer designers have built for it, so it weighs less than the first reference.</cbc:WeightingConsiderationDescription>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REF-COAST</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REF-COAST-1</cbc:ID>
+        <cbc:Name>The reference</cbc:Name>
+        <cbc:Description>The project, the client, the year and what the team designed.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>

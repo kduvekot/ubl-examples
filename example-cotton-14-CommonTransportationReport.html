@@ -665,6 +665,9 @@ The maritime declaration of health.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/InfectiousDiseaseCaseOnBoardIndicator</code>
 = <strong>false</strong><br />
 No infectious disease.</li>
+<li><code>ShipmentStage/MaritimeHealthDeclaration/SickAnimalOnBoardIndicator</code>
+= <strong>true</strong><br />
+A sick animal is on board: the ship's cat.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasuresAppliedIndicator</code>
 = <strong>false</strong><br />
 No sanitary measures on this voyage.</li>
@@ -674,6 +677,11 @@ The exemption certificate is valid until July.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity</code>
 = <strong>0</strong> (unitCode <code>IE</code>)<br />
 No one ill.</li>
+<li><code>ShipmentStage/MaritimeHealthDeclaration/SickAnimalDescription</code>
+= <strong>The ship's cat has been off its food and listless for three
+days. It is kept in the master's cabin, away from the cargo and the
+galley; the master asks for a veterinarian at Lumeport.</strong><br />
+What the port health authority needs to know about the animal.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/ID</code>
 = <strong>SSCEC-XB-2026-0114</strong><br />
 The ship sanitation control exemption certificate: the ship carries it
@@ -1001,52 +1009,54 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;MDH-26-0303&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InfectiousDiseaseCaseOnBoardIndicator</span>&gt;false&lt;/<span class="kw">cbc:InfectiousDiseaseCaseOnBoardIndicator</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;false&lt;/<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalIllPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalIllPersonQuantity</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ShipSanitationControlExemptionDocumentReference</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SSCEC-XB-2026-0114&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentDescription</span>&gt;Ship Sanitation Control Exemption Certificate (International Health Regulations 2005, Annex 3): the inspection found no evidence of infection or contamination, so no control measures were needed.&lt;/<span class="kw">cbc:DocumentDescription</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ShipSanitationControlExemptionDocumentReference</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:JourneyID</span>&gt;TR-26-09W&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Bayvarra&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;WB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;1511&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MaritimeTransport</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:vessel&quot;</span>&gt;XB-S-20231&lt;/<span class="kw">cbc:VesselID</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselName</span>&gt;Tidewell Reef&lt;/<span class="kw">cbc:VesselName</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RadioCallSignID</span>&gt;QBTR4&lt;/<span class="kw">cbc:RadioCallSignID</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MMSIRegistrationID</span>&gt;298702231&lt;/<span class="kw">cbc:MMSIRegistrationID</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipsRequirements</span>&gt;Shore power at the container quay.&lt;/<span class="kw">cbc:ShipsRequirements</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;7480&lt;/<span class="kw">cbc:GrossTonnageMeasure</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;3910&lt;/<span class="kw">cbc:NetTonnageMeasure</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SegregatedBallastMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1900&lt;/<span class="kw">cbc:SegregatedBallastMeasure</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipConfigurationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipConfigurationCode&quot;</span>&gt;FEEDER&lt;/<span class="kw">cbc:ShipConfigurationCode</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;REG-XB-S-20231&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MaritimeTransport</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CommonTransportationReport</span>&gt;</span></code></pre></div>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:SickAnimalOnBoardIndicator</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;false&lt;/<span class="kw">cbc:SanitaryMeasuresAppliedIndicator</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;true&lt;/<span class="kw">cbc:ValidSanitationCertificateOnBoardIndicator</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalIllPersonQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalIllPersonQuantity</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SickAnimalDescription</span>&gt;The ship&#39;s cat has been off its food and listless for three days. It is kept in the master&#39;s cabin, away from the cargo and the galley; the master asks for a veterinarian at Lumeport.&lt;/<span class="kw">cbc:SickAnimalDescription</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ShipSanitationControlExemptionDocumentReference</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SSCEC-XB-2026-0114&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentDescription</span>&gt;Ship Sanitation Control Exemption Certificate (International Health Regulations 2005, Annex 3): the inspection found no evidence of infection or contamination, so no control measures were needed.&lt;/<span class="kw">cbc:DocumentDescription</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411781&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ShipSanitationControlExemptionDocumentReference</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaritimeHealthDeclaration</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:JourneyID</span>&gt;TR-26-09W&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Bayvarra&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;WB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;1511&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MaritimeTransport</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:vessel&quot;</span>&gt;XB-S-20231&lt;/<span class="kw">cbc:VesselID</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:VesselName</span>&gt;Tidewell Reef&lt;/<span class="kw">cbc:VesselName</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RadioCallSignID</span>&gt;QBTR4&lt;/<span class="kw">cbc:RadioCallSignID</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MMSIRegistrationID</span>&gt;298702231&lt;/<span class="kw">cbc:MMSIRegistrationID</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipsRequirements</span>&gt;Shore power at the container quay.&lt;/<span class="kw">cbc:ShipsRequirements</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;7480&lt;/<span class="kw">cbc:GrossTonnageMeasure</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetTonnageMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;C62&quot;</span>&gt;3910&lt;/<span class="kw">cbc:NetTonnageMeasure</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SegregatedBallastMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1900&lt;/<span class="kw">cbc:SegregatedBallastMeasure</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ShipConfigurationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShipConfigurationCode&quot;</span>&gt;FEEDER&lt;/<span class="kw">cbc:ShipConfigurationCode</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;REG-XB-S-20231&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryCertificateDocumentReference</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RegistryPortLocation</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MaritimeTransport</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CommonTransportationReport</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

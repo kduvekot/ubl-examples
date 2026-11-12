@@ -226,7 +226,6 @@
   </cac:ResolutionDocumentReference>
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
-    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
     <cbc:Resolution>Admitted to the evaluation of lot 1.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
@@ -236,7 +235,6 @@
   </cac:QualificationResolution>
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
-    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
     <cbc:Resolution>Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>

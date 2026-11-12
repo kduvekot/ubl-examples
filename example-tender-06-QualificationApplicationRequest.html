@@ -633,8 +633,6 @@ The criterion.</li>
 <li><code>Description</code> = <strong>Turnover of the last three
 years.</strong><br />
 What.</li>
-<li><code>WeightNumeric</code> = <strong>0</strong><br />
-Pass or fail.</li>
 <li><code>FulfilmentIndicator</code> = <strong>true</strong><br />
 Must be met.</li>
 <li><code>FulfilmentIndicatorTypeCode</code> = <strong>ALL</strong>
@@ -647,9 +645,6 @@ indicator list: ALL = All properties.</li>
 <code>urn:ubl-examples:world:codelist:EvaluationMethodCode</code>)<br />
 Pass or fail. The code is from the Trade Accord's evaluation method
 list: PASSFAIL = Pass or fail.</li>
-<li><code>WeightingConsiderationDescription</code> = <strong>Not
-weighted.</strong><br />
-Why.</li>
 <li><code>ProcurementProjectLotReference/ID</code> =
 <strong>LOT-1</strong><br />
 Lot 1 of the procedure.</li>
@@ -738,9 +733,6 @@ list: XBL = Lume.</li>
 <li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedAmount</code>
 = <strong>250000.00</strong> (currencyID <code>XBL</code>)<br />
 At least.</li>
-<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount</code>
-= <strong>99999999.00</strong> (currencyID <code>XBL</code>)<br />
-No real maximum.</li>
 <li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumAmount</code>
 = <strong>250000.00</strong> (currencyID <code>XBL</code>)<br />
 The minimum.</li>
@@ -783,15 +775,9 @@ Recommendation 20) list: ANN = year.</li>
 <li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedValueNumeric</code>
 = <strong>3</strong><br />
 At least.</li>
-<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumValueNumeric</code>
-= <strong>200</strong><br />
-Maximum.</li>
 <li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumValueNumeric</code>
 = <strong>3</strong><br />
 Minimum.</li>
-<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumQuantity</code>
-= <strong>200</strong> (unitCode <code>ANN</code>)<br />
-No real maximum.</li>
 <li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity</code>
 = <strong>3</strong> (unitCode <code>ANN</code>)<br />
 At least three.</li>
@@ -870,6 +856,120 @@ property type list: QUESTION = Question.</li>
 <code>urn:ubl-examples:world:codelist:ResponseDataTypeCode</code>)<br />
 A percentage. The code is from the Trade Accord's response data type
 list: PERCENT = Percentage.</li>
+<li><code>ID</code> = <strong>CR-DEBT</strong><br />
+The debt ratio criterion.</li>
+<li><code>CriterionTypeCode</code> = <strong>ECONOMIC</strong> (listID
+<code>urn:ubl-examples:world:codelist:CriterionTypeCode</code>)<br />
+Its kind. The code is from the Trade Accord's criterion type list:
+ECONOMIC = Economic and financial standing.</li>
+<li><code>Name</code> = <strong>Debt ratio</strong><br />
+The criterion.</li>
+<li><code>Description</code> = <strong>Total liabilities as a share of
+total assets, from the last annual accounts.</strong><br />
+What.</li>
+<li><code>EvaluationMethodTypeCode</code> = <strong>PASSFAIL</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:EvaluationMethodCode</code>)<br />
+Pass or fail. The code is from the Trade Accord's evaluation method
+list: PASSFAIL = Pass or fail.</li>
+<li><code>TenderingCriterionPropertyGroup/ID</code> =
+<strong>PG-2</strong><br />
+The group.</li>
+<li><code>TenderingCriterionPropertyGroup/PropertyGroupTypeCode</code> =
+<strong>ONTRUE</strong> (listID
+<code>urn:ubl-examples:world:codelist:PropertyGroupTypeCode</code>)<br />
+Answered when the criterion applies. The code is from the Trade Accord's
+property group type list: ONTRUE = When the indicator is true.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID</code>
+= <strong>P-5</strong><br />
+The property.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name</code>
+= <strong>Liabilities as a share of total assets</strong><br />
+Its name.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description</code>
+= <strong>Answer: liabilities as a share of total assets.</strong><br />
+What is asked.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode</code>
+= <strong>REQUIREMENT</strong> (listID
+<code>urn:ubl-examples:world:codelist:CriterionPropertyTypeCode</code>)<br />
+Question or requirement. The code is from the Trade Accord's criterion
+property type list: REQUIREMENT = Requirement.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode</code>
+= <strong>PERCENT</strong> (listID
+<code>urn:ubl-examples:world:codelist:ResponseDataTypeCode</code>)<br />
+A percentage. The code is from the Trade Accord's response data type
+list: PERCENT = Percentage.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumValueNumeric</code>
+= <strong>80</strong><br />
+The same limit as a number, for automatic checking.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumQuantity</code>
+= <strong>80</strong> (unitCode <code>P1</code>)<br />
+At most 80 %: a tenderer with more debt than that is not considered able
+to carry a two-year framework.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate</code>
+= <strong>2025-01-01</strong><br />
+The last</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/EndDate</code>
+= <strong>2025-12-31</strong><br />
+financial year.</li>
+<li><code>ID</code> = <strong>CR-TAXES</strong><br />
+The exclusion ground on taxes.</li>
+<li><code>CriterionTypeCode</code> = <strong>EXCLUSION</strong> (listID
+<code>urn:ubl-examples:world:codelist:CriterionTypeCode</code>)<br />
+Its kind. The code is from the Trade Accord's criterion type list:
+EXCLUSION = Exclusion ground.</li>
+<li><code>Name</code> = <strong>Payment of taxes and social security
+contributions</strong><br />
+The criterion.</li>
+<li><code>Description</code> = <strong>A tenderer that has not paid its
+taxes or social security contributions is excluded, unless only minor
+amounts are unpaid.</strong><br />
+What.</li>
+<li><code>Legislation/ID</code> = <strong>XB-PPA-2019</strong><br />
+The act.</li>
+<li><code>Legislation/Title</code> = <strong>Public Procurement
+Act</strong><br />
+Title.</li>
+<li><code>Legislation/Description</code> = <strong>Exclusion grounds;
+the exception for minor amounts.</strong><br />
+What.</li>
+<li><code>Legislation/Article</code> = <strong>Art. 57</strong><br />
+The article.</li>
+<li><code>TenderingCriterionPropertyGroup/ID</code> =
+<strong>PG-3</strong><br />
+The group.</li>
+<li><code>TenderingCriterionPropertyGroup/PropertyGroupTypeCode</code> =
+<strong>ONTRUE</strong> (listID
+<code>urn:ubl-examples:world:codelist:PropertyGroupTypeCode</code>)<br />
+Answered when the criterion applies. The code is from the Trade Accord's
+property group type list: ONTRUE = When the indicator is true.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID</code>
+= <strong>P-6</strong><br />
+The property.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name</code>
+= <strong>Unpaid taxes and contributions</strong><br />
+Its name.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description</code>
+= <strong>Answer: unpaid taxes and contributions.</strong><br />
+What is asked.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode</code>
+= <strong>QUESTION</strong> (listID
+<code>urn:ubl-examples:world:codelist:CriterionPropertyTypeCode</code>)<br />
+Question or requirement. The code is from the Trade Accord's criterion
+property type list: QUESTION = Question.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode</code>
+= <strong>AMOUNT</strong> (listID
+<code>urn:ubl-examples:world:codelist:ResponseDataTypeCode</code>)<br />
+An amount. The code is from the Trade Accord's response data type list:
+AMOUNT = Amount.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueCurrencyCode</code>
+= <strong>XBL</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+In lume. The code is from the world's copy of UBL's Currency (ISO 4217)
+list: XBL = Lume.</li>
+<li><code>TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount</code>
+= <strong>1000.00</strong> (currencyID <code>XBL</code>)<br />
+Arrears up to 1,000 lume count as minor amounts and do not exclude the
+tenderer.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -1108,121 +1208,165 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionTypeCode&quot;</span>&gt;ECONOMIC&lt;/<span class="kw">cbc:CriterionTypeCode</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;General yearly turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Turnover of the last three years.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:WeightNumeric</span>&gt;0&lt;/<span class="kw">cbc:WeightNumeric</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FulfilmentIndicator</span>&gt;true&lt;/<span class="kw">cbc:FulfilmentIndicator</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FulfilmentIndicatorTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FulfilmentIndicatorCode&quot;</span>&gt;ALL&lt;/<span class="kw">cbc:FulfilmentIndicatorTypeCode</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EvaluationMethodTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EvaluationMethodCode&quot;</span>&gt;PASSFAIL&lt;/<span class="kw">cbc:EvaluationMethodTypeCode</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:WeightingConsiderationDescription</span>&gt;Not weighted.&lt;/<span class="kw">cbc:WeightingConsiderationDescription</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38111&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubTenderingCriterion</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CR-TURNOVER-A&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Average turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubTenderingCriterion</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Legislation</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XB-PPA-2019&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Title</span>&gt;Public Procurement Act&lt;/<span class="kw">cbc:Title</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Selection criteria.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JurisdictionLevel</span>&gt;National&lt;/<span class="kw">cbc:JurisdictionLevel</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Article</span>&gt;Art. 58&lt;/<span class="kw">cbc:Article</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:URI</span>&gt;https://law.bayvarra.example/ppa&lt;/<span class="kw">cbc:URI</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Legislation</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PG-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The figures.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PropertyGroupTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PropertyGroupTypeCode&quot;</span>&gt;ONTRUE&lt;/<span class="kw">cbc:PropertyGroupTypeCode</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FulfilmentIndicator</span>&gt;true&lt;/<span class="kw">cbc:FulfilmentIndicator</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FulfilmentIndicatorTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FulfilmentIndicatorCode&quot;</span>&gt;ALL&lt;/<span class="kw">cbc:FulfilmentIndicatorTypeCode</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Yearly turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: yearly turnover.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;REQUIREMENT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;AMOUNT&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:ValueCurrencyCode</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;250000.00&lt;/<span class="kw">cbc:ExpectedAmount</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;99999999.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;250000.00&lt;/<span class="kw">cbc:MinimumAmount</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ApplicablePeriod</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2023-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ApplicablePeriod</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TemplateEvidence</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;EV-ACC&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Accounts&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TemplateEvidence</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Years in business&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: years in business.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;QUANTITY&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueUnitCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade&quot;</span>&gt;ANN&lt;/<span class="kw">cbc:ValueUnitCode</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedValueNumeric</span>&gt;3&lt;/<span class="kw">cbc:ExpectedValueNumeric</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumValueNumeric</span>&gt;200&lt;/<span class="kw">cbc:MaximumValueNumeric</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumValueNumeric</span>&gt;3&lt;/<span class="kw">cbc:MinimumValueNumeric</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;200&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Registered in a business register&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: registered in a business register.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;INDICATOR&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedID</span>&gt;REG&lt;/<span class="kw">cbc:ExpectedID</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ExpectedIndicator</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ExpectedResponseCode&quot;</span>&gt;REGISTERED&lt;/<span class="kw">cbc:ExpectedCode</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedDescription</span>&gt;Entered in a national register.&lt;/<span class="kw">cbc:ExpectedDescription</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedURI</span>&gt;https://register.bayvarra.example&lt;/<span class="kw">cbc:ExpectedURI</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TranslationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TranslationTypeCode&quot;</span>&gt;NONE&lt;/<span class="kw">cbc:TranslationTypeCode</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificationLevelDescription</span>&gt;A plain extract will do.&lt;/<span class="kw">cbc:CertificationLevelDescription</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CopyQualityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CopyQualityCode&quot;</span>&gt;COPY&lt;/<span class="kw">cbc:CopyQualityTypeCode</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubsidiaryTenderingCriterionPropertyGroup</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;PG-1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Consortium&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;P-4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Share in the consortium&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Answer: share in the consortium.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;PERCENT&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubsidiaryTenderingCriterionPropertyGroup</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingCriterion</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-CFT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-SIG-QAR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">QualificationApplicationRequest</span>&gt;</span></code></pre></div>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FulfilmentIndicator</span>&gt;true&lt;/<span class="kw">cbc:FulfilmentIndicator</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FulfilmentIndicatorTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FulfilmentIndicatorCode&quot;</span>&gt;ALL&lt;/<span class="kw">cbc:FulfilmentIndicatorTypeCode</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EvaluationMethodTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EvaluationMethodCode&quot;</span>&gt;PASSFAIL&lt;/<span class="kw">cbc:EvaluationMethodTypeCode</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcurementProjectLotReference</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38111&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubTenderingCriterion</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CR-TURNOVER-A&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Average turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubTenderingCriterion</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Legislation</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XB-PPA-2019&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Title</span>&gt;Public Procurement Act&lt;/<span class="kw">cbc:Title</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Selection criteria.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JurisdictionLevel</span>&gt;National&lt;/<span class="kw">cbc:JurisdictionLevel</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Article</span>&gt;Art. 58&lt;/<span class="kw">cbc:Article</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:URI</span>&gt;https://law.bayvarra.example/ppa&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Legislation</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PG-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The figures.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PropertyGroupTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PropertyGroupTypeCode&quot;</span>&gt;ONTRUE&lt;/<span class="kw">cbc:PropertyGroupTypeCode</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FulfilmentIndicator</span>&gt;true&lt;/<span class="kw">cbc:FulfilmentIndicator</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FulfilmentIndicatorTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:FulfilmentIndicatorCode&quot;</span>&gt;ALL&lt;/<span class="kw">cbc:FulfilmentIndicatorTypeCode</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Yearly turnover&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: yearly turnover.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;REQUIREMENT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;AMOUNT&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:ValueCurrencyCode</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;250000.00&lt;/<span class="kw">cbc:ExpectedAmount</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;250000.00&lt;/<span class="kw">cbc:MinimumAmount</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ApplicablePeriod</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2023-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ApplicablePeriod</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TemplateEvidence</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;EV-ACC&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Accounts&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TemplateEvidence</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Years in business&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: years in business.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;QUANTITY&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueUnitCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade&quot;</span>&gt;ANN&lt;/<span class="kw">cbc:ValueUnitCode</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedValueNumeric</span>&gt;3&lt;/<span class="kw">cbc:ExpectedValueNumeric</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumValueNumeric</span>&gt;3&lt;/<span class="kw">cbc:MinimumValueNumeric</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Registered in a business register&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: registered in a business register.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;INDICATOR&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedID</span>&gt;REG&lt;/<span class="kw">cbc:ExpectedID</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ExpectedIndicator</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ExpectedResponseCode&quot;</span>&gt;REGISTERED&lt;/<span class="kw">cbc:ExpectedCode</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedDescription</span>&gt;Entered in a national register.&lt;/<span class="kw">cbc:ExpectedDescription</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpectedURI</span>&gt;https://register.bayvarra.example&lt;/<span class="kw">cbc:ExpectedURI</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TranslationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TranslationTypeCode&quot;</span>&gt;NONE&lt;/<span class="kw">cbc:TranslationTypeCode</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificationLevelDescription</span>&gt;A plain extract will do.&lt;/<span class="kw">cbc:CertificationLevelDescription</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CopyQualityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CopyQualityCode&quot;</span>&gt;COPY&lt;/<span class="kw">cbc:CopyQualityTypeCode</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubsidiaryTenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;PG-1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Consortium&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;P-4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Share in the consortium&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Answer: share in the consortium.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;PERCENT&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubsidiaryTenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingCriterion</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingCriterion</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CR-DEBT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionTypeCode&quot;</span>&gt;ECONOMIC&lt;/<span class="kw">cbc:CriterionTypeCode</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Debt ratio&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Total liabilities as a share of total assets, from the last annual accounts.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EvaluationMethodTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EvaluationMethodCode&quot;</span>&gt;PASSFAIL&lt;/<span class="kw">cbc:EvaluationMethodTypeCode</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PG-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PropertyGroupTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PropertyGroupTypeCode&quot;</span>&gt;ONTRUE&lt;/<span class="kw">cbc:PropertyGroupTypeCode</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-5&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Liabilities as a share of total assets&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: liabilities as a share of total assets.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;REQUIREMENT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;PERCENT&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumValueNumeric</span>&gt;80&lt;/<span class="kw">cbc:MaximumValueNumeric</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;80&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ApplicablePeriod</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ApplicablePeriod</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingCriterion</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingCriterion</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CR-TAXES&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionTypeCode&quot;</span>&gt;EXCLUSION&lt;/<span class="kw">cbc:CriterionTypeCode</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Payment of taxes and social security contributions&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Legislation</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XB-PPA-2019&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Title</span>&gt;Public Procurement Act&lt;/<span class="kw">cbc:Title</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Exclusion grounds; the exception for minor amounts.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Article</span>&gt;Art. 57&lt;/<span class="kw">cbc:Article</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Legislation</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PG-3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PropertyGroupTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PropertyGroupTypeCode&quot;</span>&gt;ONTRUE&lt;/<span class="kw">cbc:PropertyGroupTypeCode</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;P-6&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Unpaid taxes and contributions&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Answer: unpaid taxes and contributions.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CriterionPropertyTypeCode&quot;</span>&gt;QUESTION&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueDataTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ResponseDataTypeCode&quot;</span>&gt;AMOUNT&lt;/<span class="kw">cbc:ValueDataTypeCode</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:ValueCurrencyCode</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;1000.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TenderingCriterionProperty</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderingCriterionPropertyGroup</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingCriterion</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-CFT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-SIG-QAR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">QualificationApplicationRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

@@ -757,12 +757,13 @@ Its value.</li>
 <li><code>OnAccountPayment/EstimatedConsumedQuantity</code> =
 <strong>14</strong> (unitCode <code>MTQ</code>)<br />
 The expected use next month.</li>
-<li><code>OnAccountPayment/Note</code> = <strong>No payment on account:
-the bill follows the reading.</strong><br />
-How the household pays.</li>
+<li><code>OnAccountPayment/Note</code> = <strong>Paid on account each
+month for the estimated use; the next bill settles it against the
+reading.</strong><br />
+How the household pays between readings.</li>
 <li><code>OnAccountPayment/PaymentTerms/Note</code> = <strong>By direct
-debit 21 days after the bill.</strong><br />
-As on the bill.</li>
+debit on the first working day of each month.</strong><br />
+When the payment on account is collected.</li>
 <li><code>Consumption/UtilityStatementTypeCode</code> =
 <strong>WATER</strong> (listID
 <code>urn:ubl-examples:world:codelist:UtilityTypeCode</code>)<br />
@@ -1360,9 +1361,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:UtilityConsumptionPoint</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OnAccountPayment</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;14&lt;/<span class="kw">cbc:EstimatedConsumedQuantity</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;No payment on account: the bill follows the reading.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Paid on account each month for the estimated use; the next bill settles it against the reading.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;By direct debit 21 days after the bill.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;By direct debit on the first working day of each month.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OnAccountPayment</span>&gt;</span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consumption</span>&gt;</span>
@@ -1540,6 +1541,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

@@ -1095,13 +1095,10 @@ The conversion.</li>
 <li><code>Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity</code>
 = <strong>61200</strong> (unitCode <code>KWH</code>)<br />
 The energy, which the retail company bills.</li>
-<li><code>Consumption/LegalMonetaryTotal/LineExtensionAmount</code> =
-<strong>0</strong> (currencyID <code>XUF</code>)<br />
-The statement carries no amounts: the retail company prices the
-energy.</li>
 <li><code>Consumption/LegalMonetaryTotal/PayableAmount</code> =
 <strong>0</strong> (currencyID <code>XUF</code>)<br />
-Nothing to pay on it.</li>
+Nothing to pay on it: the statement carries no amounts, the retail
+company prices the energy. The element is required, so it is 0.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -1494,14 +1491,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EnergyWaterConsumptionCorrection</span>&gt;</span>
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnergyWaterSupply</span>&gt;</span>
 <span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consumption</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consumption</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>9f79ecd</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>b77996d</code></p></div></footer>
 </body>
 </html>

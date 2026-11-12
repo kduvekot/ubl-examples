@@ -288,12 +288,6 @@
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-04-04</cbc:Date>
   </cac:PaymentExchangeRate>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">100</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Goodwill</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">0.00</cbc:Amount>
-  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
