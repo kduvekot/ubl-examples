@@ -32,7 +32,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/Invoice/cbc:IssueDate` = `2026-04-02`
 - Why: Redone by the merge: 2026-04-02 + 30 days = 2026-05-02; the three due dates are 2026-04-23 (+21 days) and the penalty period starts on 2026-04-24, so a surcharge would apply to a payment the note says is not yet due. Refutation attempted: counting 30 days from the end of the invoice period gives 2026-04-30, not 2026-04-23 either. Same in 02 ("30 days net") and 13 ("45 days net"). The remittance 07 pays on 2026-04-19, within both terms.
 - Condition: Note, due dates and penalty period start state the same term.
-- Options: (a, preferred) note "21 days net", matching the penalty period and the flow's other invoices (money, context), unless the XB-STD terms are 30 days; (b) due dates 2026-05-02 and penalty period from 2026-05-03 (broad's preference if XB-STD says 30 days).
+- Options: (a, preferred) due dates 2026-05-02 and penalty period from 2026-05-03: the terms ID `XB-STD` means "30 days net; 1.5 % surcharge per month late" with the due date 30 days after issue in 14 of the 15 invoices outside this flow that carry it (checked by the merge over `world/examples/*/*.xml`, e.g. `energy/06-Invoice.xml`; `mast/05-Invoice.xml` is due after 45 days), which is broad's condition for this option; (b) note "21 days net" with a terms ID of its own (money, context), which keeps the flow's 2026-04-23 (and matches 09, whose XB-STD note says "Collected by direct debit 21 days after the invoice date.").
 - Needs decision: no
 - From: broad (F1), money (F1), context (F1)
 
@@ -144,6 +144,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/Invoice/cac:CollectionInvoiceLine/cbc:Note`: names the city while the party is its works department — refuted, the department is the city's body charging the levy (from parties).
 - `/Invoice/cac:CollectionInvoiceLine/cac:CollectedForParty/cac:PartyIdentification/cbc:ID`: a public department in a business register scheme — refuted for this review: the world identifies it this way everywhere; a question for the world's identifier rules (from parties).
 - `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: a real GLN — refuted, GS1 prefix 952 is reserved for demonstrations and examples; check digit valid (from parties).
+- `/Invoice/cac:CollectionInvoiceLine/cac:BeneficiaryParty/cac:PartyName/cbc:Name`: beneficiary repeating CollectedForParty as a filler — refuted, the two definitions state two different facts and both are true of the works department (from parties, context; the merge agrees and refutes broad/F6, see "Refuted in the merge").
 - `/Invoice/cac:BuyerCustomerParty`: repeats the accounting customer — refuted, "The buyer." has no condition (from context).
 - `/Invoice/cac:PurchaseReference/cbc:ID`: the supply contract as purchase reference — refuted, "a subscription number" is a named example (from context).
 
@@ -158,6 +159,6 @@ review only describes what is wrong; it does not say where or how the example is
 ## Changed in the merge
 - broad/F5 and context/F5 → F9 and F10: marketing data and contact split, as parties had them.
 - broad/F4 (yes) → F8, Needs decision: no: aligned with utilities/05#F11 and the packaging merges.
-- F1: preference set to the note "21 days net" (money, context); broad's option kept.
+- F1: preference set to the due dates 2026-05-02 (broad's condition holds: XB-STD means 30 days in the other flows); money's and context's "21 days net" kept as option (b). Aligned with merger B's reasoning for 13.
 - F3: count corrected to 364 occurrences in 213 files.
 - broad/F6 moved to "Refuted in the merge".

@@ -47,7 +47,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/Invoice/cac:PaymentTerms/cac:SettlementPeriod/cbc:EndDate` = `2026-04-12`
 - Why: Redone by the merge: 2026-04-02 + 30 days = 2026-05-02; the three due dates are 2026-04-23, 21 days after issue (23 days after the end of the invoice period). The settlement period does follow the note's 10 days, so the note is the stated term and the due dates contradict its net term. Refutation attempted: "30 days net" could count from the end of the invoice period (2026-03-31 + 30 = 2026-04-30) or from receipt; neither gives 2026-04-23. The same 2026-04-23 occurs in 06 ("30 days net") and in 13 ("45 days net").
 - Condition: The due dates and the net term in the note give the same date.
-- Options: (a, preferred) note "21 days net" (keeps the flow's due dates, and remittance 04 stays within both terms), unless the world's utility terms are the general XU-STD 30 days, then the terms ID changes too; (b) due dates 2026-05-02.
+- Options: (a, preferred) due dates 2026-05-02: the terms ID `XU-STD` means "30 days net; 2 % discount when paid within 10 days" with the due date 30 days after issue in every other example that carries it (checked by the merge over `world/examples/*/*.xml`: 12 invoices in the energy, ore, plastics, rail, road, tender and waste flows, e.g. `energy/02-Invoice.xml`), so the note is the world's standard term and the due dates are the outlier; remittance 04 stays within both terms; (b) note "21 days net" with a terms ID of its own, if utility bills are meant to have shorter terms (money's and context's preference, which keeps the flow's 2026-04-23).
 - Needs decision: no
 - From: broad (F2), money (F2), context (F1)
 
@@ -184,7 +184,7 @@ review only describes what is wrong; it does not say where or how the example is
 - context/F7 → F9 and F10: master data and contact split; the ServiceProviderParty XPath dropped from F9 because broad and parties show its use on line 2.
 - broad/F7 → F9 and F10: same split.
 - parties/F5 and logistics/F3 → F11: combined (same element), options from both.
-- F2: preference set to the note "21 days net" (money, context); broad's conditional preference kept in the option text.
+- F2: preference set to the due dates 2026-05-02, following broad's condition: XU-STD means 30 days in all 12 other invoices that carry it; money's and context's "21 days net" kept as option (b). Aligned with merger B's reasoning for 13 (XL-STD).
 - F12 added for alignment with earlier flows' merges.
 
 ## Outside this review
