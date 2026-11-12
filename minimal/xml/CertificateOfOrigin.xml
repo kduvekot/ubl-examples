@@ -30,7 +30,9 @@
         <cbc:Name>X</cbc:Name>
       </cac:PartyName>
     </cac:IssuerParty>
-    <cac:IssuingCountry/>
+    <cac:IssuingCountry>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:IssuingCountry>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
     <cbc:DocumentID>X</cbc:DocumentID>

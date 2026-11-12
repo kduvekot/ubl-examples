@@ -39,10 +39,14 @@ VALUES = {
 }
 ATTRS = {"mimeCode": "X"}
 
-# Currency: one per document (every currency code and currencyID in it),
-# varied across the set by turns in alphabetical document order.
-CURRENCIES = ["USD", "EUR", "JPY", "INR", "BRL", "ZAR"]
-CUR = "@CURRENCY@"  # placeholder, replaced per document
+# Locale: one per document that needs a currency or a country, used for every
+# currency code, currencyID and country code in it (no cross-country minimal
+# documents); varied across the set by turns in alphabetical document order.
+# EUR has many countries; Germany stands for it.
+LOCALES = [("USD", "US"), ("EUR", "DE"), ("JPY", "JP"),
+           ("INR", "IN"), ("BRL", "BR"), ("ZAR", "ZA")]
+CUR = "@CURRENCY@"  # placeholders, replaced per document
+CTRY = "@COUNTRY@"
 
 # Unit per Measure element, chosen from the element's UBL definition. No
 # default: a Measure not listed here stops the build until a unit is chosen.
@@ -96,7 +100,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # ContactType: only SignatoryContact so far, "the individual ... who
         # signs". A signature needs the person's name, despite UBL's advice to
         # use a functional rather than a personal name.
-        "ContactType": {"cbc:Name"}}
+        "ContactType": {"cbc:Name"},
+        # CountryType: the ISO 3166-1 code is exact and language-neutral; the
+        # value comes from the document's locale.
+        "CountryType": {"cbc:IdentificationCode"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
@@ -146,6 +153,8 @@ def build(parent, el_decl):
         while True:  # collect required attributes along the derivation chain
             if (cur_ns, cur) == (QDT, "CurrencyCodeType"):
                 e.text = CUR
+            if (cur_ns, cur) == (QDT, "CountryIdentificationCodeType"):
+                e.text = CTRY
             ct = find("complexType", cur_ns, cur)
             attrs.update(required_attrs(ct))
             der = ct.find(".//" + X + "extension")
@@ -194,12 +203,13 @@ def generate():
         t = find("complexType", *qname(root_decl, root_decl.get("type")))
         content(doc, t)
         etree.cleanup_namespaces(doc)  # drop cac/cbc where unused
-        uses = [e for e in doc.iter() if e.text == CUR or e.get("currencyID") == CUR]
+        uses = [e for e in doc.iter() if e.text in (CUR, CTRY) or e.get("currencyID") == CUR]
         if uses:
-            currency = CURRENCIES[n_cur % len(CURRENCIES)]
+            currency, country = LOCALES[n_cur % len(LOCALES)]
             n_cur += 1
             for e in uses:
                 if e.text == CUR: e.text = currency
+                if e.text == CTRY: e.text = country
                 if e.get("currencyID") == CUR: e.set("currencyID", currency)
         path = os.path.join(out, "" if os.path.basename(f) in endorsed else "deprecated", name + ".xml")
         with open(path, "wb") as fh:  # declaration exactly as the IND2/IND3 example
