@@ -10,7 +10,7 @@
     </cac:Shipment>
     <cac:EndorserParty>
       <cbc:RoleCode>X</cbc:RoleCode>
-      <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
           <cbc:Name>X</cbc:Name>
@@ -39,7 +39,7 @@
     <cbc:ApprovalStatus>X</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode>X</cbc:RoleCode>
-      <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
           <cbc:Name>X</cbc:Name>

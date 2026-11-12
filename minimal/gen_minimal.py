@@ -485,6 +485,13 @@ def generate(layer, fill, schemes):
             if pts is not None:
                 pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
                 pts.find("{%s}TaxScheme/{%s}Name" % (CAC, CBC)).text = TAX_NAMES[COUNTRY]
+        # SequenceNumeric: "the order ... in the sequence", from 1, numbered
+        # through the document among things of the same kind (PH#F11)
+        seq = {}
+        for e in doc.iter("{%s}SequenceNumeric" % CBC):
+            kind = etree.QName(e.getparent()).localname
+            seq[kind] = seq.get(kind, 0) + 1
+            e.text = str(seq[kind])
         for e in doc.iter():
             if e.text == CUR: e.text = currency
             if e.text == CTRY: e.text = COUNTRY

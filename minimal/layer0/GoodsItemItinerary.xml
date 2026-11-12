@@ -6,7 +6,7 @@
   <cbc:VersionID>X</cbc:VersionID>
   <cbc:TransportExecutionPlanReferenceID>X</cbc:TransportExecutionPlanReferenceID>
   <cac:TransportationSegment>
-    <cbc:SequenceNumeric>0</cbc:SequenceNumeric>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportationService>
       <cbc:TransportServiceCode>X</cbc:TransportServiceCode>
     </cac:TransportationService>
