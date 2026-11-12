@@ -92,7 +92,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # supported by a party are kinds of process, so a description. (Its
         # ID is defined for "the digital collaboration"; ProfileID would need
         # a scheme decision.)
-        "DigitalProcessType": {"cbc:Description"}}
+        "DigitalProcessType": {"cbc:Description"},
+        # ContactType: only SignatoryContact so far, "the individual ... who
+        # signs". A signature needs the person's name, despite UBL's advice to
+        # use a functional rather than a personal name.
+        "ContactType": {"cbc:Name"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

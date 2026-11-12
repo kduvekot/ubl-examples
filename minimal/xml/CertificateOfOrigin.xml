@@ -16,7 +16,9 @@
           <cbc:Name>X</cbc:Name>
         </cac:PartyName>
       </cac:Party>
-      <cac:SignatoryContact/>
+      <cac:SignatoryContact>
+        <cbc:Name>X</cbc:Name>
+      </cac:SignatoryContact>
     </cac:EndorserParty>
     <cac:PreparationParty>
       <cac:PartyName>
@@ -41,7 +43,9 @@
           <cbc:Name>X</cbc:Name>
         </cac:PartyName>
       </cac:Party>
-      <cac:SignatoryContact/>
+      <cac:SignatoryContact>
+        <cbc:Name>X</cbc:Name>
+      </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>
 </CertificateOfOrigin>
