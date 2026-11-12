@@ -24,7 +24,7 @@
   </cac:ReceiverParty>
   <cac:ExceptionCriteriaLine>
     <cbc:ID>X</cbc:ID>
-    <cbc:ThresholdValueComparisonCode>X</cbc:ThresholdValueComparisonCode>
+    <cbc:ThresholdValueComparisonCode>FALLS_BELOW_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="H87">10</cbc:ThresholdQuantity>
     <cac:SupplyItem>
       <cbc:Description>X</cbc:Description>

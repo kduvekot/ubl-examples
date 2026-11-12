@@ -98,6 +98,11 @@ UNITS = {
     "SourceValueMeasure": "H87",
 }
 
+# Code values chosen per element (others stay X until a code-list layer).
+# ThresholdValueComparisonCode: the definition lists the allowed values
+# ("EXCEEDS_EXCEPTION_VALUE FALLS_BELOW_EXCEPTION_VALUE"); a shortfall.
+CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE"}
+
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).
 MEASURE_VALUES = {"SourceValueMeasure": "10", "ComparedValueMeasure": "8"}
@@ -408,7 +413,9 @@ def build(parent, el_decl):
     if t.find(X + "simpleContent") is not None:
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
-                  else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType" else VALUES[u])
+                  else MEASURE_VALUES[el_decl.get("name")] if u == "MeasureType"
+                  else CODE_VALUES.get(el_decl.get("name"), VALUES[u]) if u == "CodeType"
+                  else VALUES[u])
         attrs = {}
         cur_ns, cur = tns, tname
         while True:  # collect required attributes along the derivation chain
