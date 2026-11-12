@@ -1,7 +1,7 @@
 ---
 name: ubl-example-review
 description: Semantic review of the generated UBL 2.5 examples in world/examples against the UBL 2.5 model (UBL-Entities-2.5.gc). Checks whether each value fits the meaning of its element, its parent aggregates and the document, whether values are consistent with each other and with the documents they refer to, and writes NN-DocumentType.llm-review.<run-id>[.<part>].md next to each example that has findings, never overwriting earlier reviews. Use when asked to review one example, a flow, or all examples. Not for fixing the examples, and not for the cross-flow consistency review (timelines, capacity, equipment locations).
-argument-hint: "[<flow>/<NN-DocumentType> | <flow> | all] [--quick | --focus money|parties|logistics|context | --merge <run-id>]"
+argument-hint: "[<flow>/<NN-DocumentType> | <flow> [<flow> …] | all] [--quick | --focus money|parties|logistics|context | --merge <run-id>]"
 ---
 
 # Semantic review of the generated UBL examples
@@ -27,6 +27,8 @@ flows with their number of XML examples and their number of existing `*.llm-revi
 > Usage:
 > - `/ubl-example-review rail/07-TransportationStatus`: one example (e.g. to re-review after a fix)
 > - `/ubl-example-review rail`: every example of one flow
+> - `/ubl-example-review carnet mast`: several (small) flows in one run, which costs less than one
+>   run per flow
 > - `/ubl-example-review all`: every flow
 >
 > By default a review is thorough: a broad run, four focused runs (money, parties, logistics,
@@ -127,10 +129,14 @@ Run `flow_index.py <flow>` first and keep the index in mind as the context for r
 the examples one at a time, in order. Do not keep the full listing of earlier examples in mind; the
 index and your findings are enough.
 
-### Several flows (`all`)
+### Several flows (`<flow> <flow> …` or `all`)
 
-Run one thorough review per flow (below), each with its own run ID; flows may run in parallel. At the
-end, give the user a summary per flow: examples reviewed, findings by severity, the number of
+Several flows named together form one run with one run ID: each part (below) reviews the examples of
+all those flows, one flow after the other, so that the fixed cost of a part (reading this skill,
+downloading the model, the flow indexes) is paid once; then one merge per flow, the merges in
+parallel. Group small flows this way (up to about ten examples per run); give a large flow a run of
+its own. For `all`, form such groups, smallest flows first, and run the groups one after the other.
+At the end, give the user a summary per flow: examples reviewed, findings by severity, the number of
 findings that need a decision, and problems that appear in many examples (the same finding in
 several reviews), as information for whoever works through the reviews.
 
