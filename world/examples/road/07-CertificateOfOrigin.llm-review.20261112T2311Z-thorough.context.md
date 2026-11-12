@@ -165,7 +165,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Shipment `CL-SH-26-0154`, goods items, values and weights match `05-ExportCustomsDeclaration.xml` and `06-CertificateOfOrigin.xml`.
 - The application status `APPROVED`, the issuer endorsement `Approved` with its remark and the chamber's signatures fit an issued certificate, and follow the submitted application of 2026-03-20.
 - `CertificateType` `Preferential`, the note and the origin remarks agree; both items have origin XU.
-- The import declaration refers to this certificate (`10-ImportCustomsDeclaration.xml:/ImportCustomsDeclaration/cac:CustomsDeclaration/cac:AdditionalDocumentReference/cbc:ID` = `FCC-CO-26-0157`).
+- The import declaration refers to this certificate (`10-ImportCustomsDeclaration.xml:/ImportCustomsDeclaration/cac:AdditionalDocumentReference/cbc:ID` = `FCC-CO-26-0157`).
 
 ## Considered and refuted
 - `/CertificateOfOrigin/cac:ExporterParty/cac:ServiceProviderParty`: suspected master data — refuted because it explains that the goods leave from Castrano's warehouse.
