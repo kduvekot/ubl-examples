@@ -60,7 +60,11 @@ UNITS = {
 # aggregates identify the vehicle; road is the simplest (its required
 # LicensePlateID follows from the schema).
 FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
-        "TransportMeansType": {"cac:RoadTransport"}}
+        "TransportMeansType": {"cac:RoadTransport"},
+        # TenderedProjectType: the project is identified by the Tender's
+        # ContractFolderID; the content is the bid, "the total amount for
+        # this tendered project" (its PayableAmount follows from the schema).
+        "TenderedProjectType": {"cac:LegalMonetaryTotal"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

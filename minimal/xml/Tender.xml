@@ -4,5 +4,9 @@
   <cbc:ContractFolderID>X</cbc:ContractFolderID>
   <cbc:IssueDate>2000-01-01</cbc:IssueDate>
   <cac:TendererParty/>
-  <cac:TenderedProject/>
+  <cac:TenderedProject>
+    <cac:LegalMonetaryTotal>
+      <cbc:PayableAmount currencyID="ZAR">0</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+  </cac:TenderedProject>
 </Tender>
