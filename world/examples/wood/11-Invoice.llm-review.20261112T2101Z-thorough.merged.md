@@ -69,7 +69,7 @@ review only describes what is wrong; it does not say where or how the example is
 ### wood/11#F5 · Low · Resale/manufacture exemption without the buyer's exemption certificate
 - XPath: `/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode` = `RESALE`
 - XPath: `/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode` = `RESALE`
-- XPath: `10-Order.xml:/Order/cac:OrderLine/cac:LineItem/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode` = `RESALE`
+- XPath: `10-Order.xml:/Order/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode` = `RESALE`
 - Why: The seller charges no state sales tax on a domestic sale within Upland State because the buyer, a furniture maker, uses the timber for manufacture. In state sales-tax practice (own knowledge of the money part, e.g. US resale and manufacturing exemptions) such an exemption is not the seller's to decide: it rests on an exemption or resale certificate of the buyer, which the seller keeps and usually quotes on the invoice. Neither the invoice nor the order names one, so nothing in the documents supports the exemption. Whether Bayvarra's state sales tax works this way is a question of the world.
 - Condition: The exemption can be traced to the buyer's exemption certificate or registration (a referenced certificate or an identifier in the buyer's tax scheme data), or the story says why Bayvarra's state sales tax needs none.
 - Options: (a, preferred) reference the buyer's resale/manufacture certificate (`AdditionalDocumentReference` with its number) in the invoice and the order; (b) record in the story that the exemption is granted without a certificate.
