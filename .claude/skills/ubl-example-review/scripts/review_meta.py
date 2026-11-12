@@ -1,4 +1,4 @@
-"""Run ID and the version header of a review: which XML, which commit, which skill, which register.
+"""Run ID and the version header of a review: which XML, which commit, which skill.
 
 usage:
   python3 -I review_meta.py run-id <kind>          print a new run ID, e.g. 20261112T1430Z-thorough
@@ -17,7 +17,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ubl_model import EXAMPLES, MODEL_SHA256, REPO  # noqa: E402
 
 SKILL = Path(__file__).resolve().parent.parent
-REGISTER = EXAMPLES / 'recurring.llm-review.md'
 
 
 def git(*args):
@@ -49,11 +48,6 @@ def header(run_id, xml):
         f"- Skill: `.claude/skills/ubl-example-review`, last commit {commit_line('HEAD', SKILL)}"
         f" ({state(SKILL / 'SKILL.md')})",
     ]
-    if REGISTER.exists():
-        lines.append(f"- Register: `{REGISTER.relative_to(REPO)}`, Git blob "
-                     f"`{git('hash-object', str(REGISTER))}` ({state(REGISTER)})")
-    else:
-        lines.append('- Register: none')
     lines.append(f'- Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 {MODEL_SHA256[:8]}…{MODEL_SHA256[-7:]})')
     return '\n'.join(lines)
 
