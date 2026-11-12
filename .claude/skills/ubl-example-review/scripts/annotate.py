@@ -107,4 +107,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except BrokenPipeError:  # output cut off by head, grep -m1 …: not an error
+        sys.stderr.close()
