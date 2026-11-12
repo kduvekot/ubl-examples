@@ -438,16 +438,20 @@ Inside `InvoiceLine`:
   The tonnes received, from the waste movement document.
 - `LineExtensionAmount` = **471770** (currencyID `XUF`)  
   38.2 × 12350, rounded to the minor unit of the currency.
-- `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne collected.**  
-  The seller's description; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/Description` = **Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne collected.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/Name` = **Tuzskaz stan balman skul huntaz drunvir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/Name` = **Collection and recovery of production waste** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/LifecycleStageCode` = **ENDOFLIFE** (listID `urn:ubl-examples:world:codelist:LifecycleStageCode`)  
   The stage of the product's life the item belongs to. The code is from the Trade Accord's life cycle stage list: ENDOFLIFE = End of life.
-- `Item/LifecycleStageDescription` = **The service handles the production waste at the end of its life, before it is recycled.**  
-  The stage in words.
+- `Item/LifecycleStageDescription` = **Drek vekrir skadek drek huntaz drunvir hir drek temul skul nakskek drekvir, dizek skukstek dir ranstan.** (languageID `qau`)  
+  The stage of the item's life in words in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
+- `Item/LifecycleStageDescription` = **The service handles the production waste at the end of its life, before it is recycled.** (languageID `en-XU`)  
+  The stage of the item's life in words in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **RR-SVC-01**  
   The seller's own item number; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -802,11 +806,13 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="TNE">38.2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
+      <cbc:Description languageID="qau">Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
       <cbc:Name languageID="qau">Tuzskaz stan balman skul huntaz drunvir</cbc:Name>
       <cbc:Name languageID="en-XU">Collection and recovery of production waste</cbc:Name>
       <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">ENDOFLIFE</cbc:LifecycleStageCode>
-      <cbc:LifecycleStageDescription>The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
+      <cbc:LifecycleStageDescription languageID="qau">Drek vekrir skadek drek huntaz drunvir hir drek temul skul nakskek drekvir, dizek skukstek dir ranstan.</cbc:LifecycleStageDescription>
+      <cbc:LifecycleStageDescription languageID="en-XU">The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-SVC-01</cbc:ID>
       </cac:SellersItemIdentification>

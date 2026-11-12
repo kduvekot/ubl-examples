@@ -292,8 +292,10 @@ Inside `ForecastRevisionLine`:
   To the end.
 - `SalesItem/Quantity` = **30000** (unitCode `KGM`)  
   Raised to five containers.
-- `SalesItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.**  
-  The seller's description; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `SalesItem/Item/Description` = **Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `SalesItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.** (languageID `en-XB`)  
+  The seller's description in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `SalesItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `SalesItem/Item/PackSizeNumeric` = **227**  
@@ -572,7 +574,8 @@ Inside `ForecastRevisionLine`:
     <cac:SalesItem>
       <cbc:Quantity unitCode="KGM">30000</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
+        <cbc:Description languageID="qal">Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.</cbc:Description>
+        <cbc:Description languageID="en-XB">Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>

@@ -443,8 +443,10 @@ Inside `DespatchLine`:
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
-- `Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
-  The seller's description; item ore-lump of Serravona Mining (world/items.json).
+- `Item/Description` = **Krahek-kutir gek trir, zul tedraz 10–30 mm, 62 % Fe, danzhan trek kaz gadek.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item ore-lump of Serravona Mining (world/items.json).
+- `Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item ore-lump of Serravona Mining (world/items.json).
 - `Item/Name` = **Gek trir, zul** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item ore-lump of Serravona Mining (world/items.json).
 - `Item/Name` = **Iron ore, lump** (languageID `en-XU`)  
@@ -828,7 +830,8 @@ Inside `DespatchLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
+      <cbc:Description languageID="qau">Krahek-kutir gek trir, zul tedraz 10–30 mm, 62 % Fe, danzhan trek kaz gadek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
       <cbc:Name languageID="qau">Gek trir, zul</cbc:Name>
       <cbc:Name languageID="en-XU">Iron ore, lump</cbc:Name>
       <cac:SellersItemIdentification>

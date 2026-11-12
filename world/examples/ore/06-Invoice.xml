@@ -341,7 +341,8 @@
     <cbc:InvoicedQuantity unitCode="TNE">1788.4</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">1720441</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Ore from the mine siding to the factory siding, per tonne.</cbc:Description>
+      <cbc:Description languageID="qau">Trir mir drek daz nintrek krir drek drunbaz nintrek, ginek zhurkaz.</cbc:Description>
+      <cbc:Description languageID="en-XU">Ore from the mine siding to the factory siding, per tonne.</cbc:Description>
       <cbc:Name languageID="qau">Kaz musaz, trir trek vir gadek</cbc:Name>
       <cbc:Name languageID="en-XU">Rail freight, ore in bulk wagons</cbc:Name>
       <cac:SellersItemIdentification>

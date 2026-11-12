@@ -711,8 +711,10 @@ Inside `SubscriberConsumption`:
   The name of code TEL in the Trade Accord's utility type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The supply the item is for, as a code. The code is from the Trade Accord's utility type list: TEL = Telephone.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Business telephone and data line, monthly subscription.**  
-  The tariff in words.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Levise nikeile tofami titefe litile, pafipa vivukane.** (languageID `qal`)  
+  The tariff in words in Lisavan, the seller's language; world/items.json.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Business telephone and data line, monthly subscription.** (languageID `en-XL`)  
+  The tariff in words in English, the working language between the countries; world/items.json.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Subscription**  
   The name of code SUB in the Trade Accord's consumption type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **SUB** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
@@ -765,8 +767,10 @@ Inside `SubscriberConsumption`:
   The name of code TEL in the Trade Accord's utility type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The supply the item is for, as a code. The code is from the Trade Accord's utility type list: TEL = Telephone.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Mobile data beyond the subscription, per gigabyte.**  
-  The tariff in words.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Livule titefe lehimi vivukane, tatata menuti.** (languageID `qal`)  
+  The tariff in words in Lisavan, the seller's language; world/items.json.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Mobile data beyond the subscription, per gigabyte.** (languageID `en-XL`)  
+  The tariff in words in English, the working language between the countries; world/items.json.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/PackQuantity` = **5** (unitCode `E34`)  
   Data beyond the subscriptions is sold in packs of 5 GB.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/PackSizeNumeric` = **7**  
@@ -1326,7 +1330,8 @@ Inside `SubscriberConsumption`:
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
+          <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
+          <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
           <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
@@ -1375,7 +1380,8 @@ Inside `SubscriberConsumption`:
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
           <cbc:SubscriberType>Telephone</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
+          <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
+          <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
           <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
           <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>

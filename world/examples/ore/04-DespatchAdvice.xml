@@ -359,7 +359,8 @@
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
+      <cbc:Description languageID="qau">Krahek-kutir gek trir, zul tedraz 10–30 mm, 62 % Fe, danzhan trek kaz gadek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
       <cbc:Name languageID="qau">Gek trir, zul</cbc:Name>
       <cbc:Name languageID="en-XU">Iron ore, lump</cbc:Name>
       <cac:SellersItemIdentification>

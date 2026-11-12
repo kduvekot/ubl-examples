@@ -414,8 +414,10 @@ Inside `InvoiceLine`:
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Six business lines**  
   Where it is.
-- `Item/Description` = **Business telephone and data line, monthly subscription.**  
-  The seller's description; item telecom-line of Selanu Telecom (world/items.json).
+- `Item/Description` = **Levise nikeile tofami titefe litile, pafipa vivukane.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item telecom-line of Selanu Telecom (world/items.json).
+- `Item/Description` = **Business telephone and data line, monthly subscription.** (languageID `en-XL`)  
+  The seller's description in English, the working language between the countries; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/Name` = **Levise nikeile litile** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/Name` = **Business telephone line** (languageID `en-XL`)  
@@ -446,8 +448,10 @@ Inside `InvoiceLine`:
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Mobile data pool**  
   Where it is.
-- `Item/Description` = **Mobile data beyond the subscription, per gigabyte.**  
-  The seller's description; item telecom-data of Selanu Telecom (world/items.json).
+- `Item/Description` = **Livule titefe lehimi vivukane, tatata menuti.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item telecom-data of Selanu Telecom (world/items.json).
+- `Item/Description` = **Mobile data beyond the subscription, per gigabyte.** (languageID `en-XL`)  
+  The seller's description in English, the working language between the countries; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/Name` = **Livule titefe** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/Name` = **Mobile data** (languageID `en-XL`)  
@@ -768,7 +772,8 @@ Inside `InvoiceLine`:
       <cbc:Description>Six business lines</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
+      <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
+      <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
       <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
       <cbc:Name languageID="en-XL">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
@@ -798,7 +803,8 @@ Inside `InvoiceLine`:
       <cbc:Description>Mobile data pool</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
+      <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
+      <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
       <cbc:Name languageID="qal">Livule titefe</cbc:Name>
       <cbc:Name languageID="en-XL">Mobile data</cbc:Name>
       <cac:SellersItemIdentification>

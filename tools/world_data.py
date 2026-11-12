@@ -86,6 +86,10 @@ def translate(text, code, street=False):
                 start = True
             continue
         low = tok.lower()
+        if tok in UNIT_SYMBOLS:              # a symbol of a unit stays as it is, as numbers do
+            out.append(tok)
+            start = False
+            continue
         proper = (tok[0].isupper() and not start and not street) or tok in proper_names()
         start = False
         if proper:
@@ -108,7 +112,8 @@ def translate(text, code, street=False):
 
 
 def proper_names():
-    """Words of names, which a translation keeps: parties, places, countries, currencies, languages, card schemes."""
+    """Words of names, which a translation keeps: parties, places, countries, currencies, languages, card schemes,
+    and the brands and models of items."""
     global PROPER
     if PROPER is None:
         world = _world()
@@ -117,12 +122,14 @@ def proper_names():
                 [c["name"] for c in world["countries"].values()] + \
                 [c["currency"]["name"] for c in world["countries"].values()] + \
                 [x["name"] for x in world["languages"].values()] + \
-                [x["name"] for x in world.get("card_schemes", {}).values()]
+                [x["name"] for x in world.get("card_schemes", {}).values()] + \
+                [i[k] for i in world.get("items", []) for k in ("brand", "model") if i.get(k)]
         PROPER = {w for n in names for w in re.findall(r"[A-Z][A-Za-z'’]*", n)} - COMMON_NAME_WORDS
     return PROPER
 
 
 PROPER = None
+UNIT_SYMBOLS = {"mm", "cm", "m", "km", "kg", "t", "kWh", "MWh", "GB"}     # SI and common unit symbols
 COMMON_NAME_WORDS = set("""Accord Administration Agency Air Airport Bank Barges Board Border Brokers Cargo Chamber Coastal
 Commerce Company Cotton Council Customs Department Distribution Energy Engineering Factoring Farm Forwarding Furniture
 Gas Ginnery Grid Haulage Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime

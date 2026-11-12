@@ -359,8 +359,10 @@ Inside `OrderLine`:
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `TNE`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.**  
-  The seller's description; item granulate-pe of Rinova Recovery (world/items.json).
+- `LineItem/Item/Description` = **Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item granulate-pe of Rinova Recovery (world/items.json).
+- `LineItem/Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.** (languageID `en-XB`)  
+  The seller's description in English, the working language between the countries; item granulate-pe of Rinova Recovery (world/items.json).
 - `LineItem/Item/Name` = **Ranstan PE skalsir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item granulate-pe of Rinova Recovery (world/items.json).
 - `LineItem/Item/Name` = **Recycled PE granulate** (languageID `en-XB`)  
@@ -689,7 +691,8 @@ Inside `OrderLine`:
         <cbc:BaseQuantity unitCode="TNE">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
+        <cbc:Description languageID="qau">Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.</cbc:Description>
+        <cbc:Description languageID="en-XB">Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
         <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
         <cbc:Name languageID="en-XB">Recycled PE granulate</cbc:Name>
         <cac:SellersItemIdentification>

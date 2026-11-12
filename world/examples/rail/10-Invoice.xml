@@ -338,7 +338,8 @@
     <cbc:InvoicedQuantity unitCode="E48">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">109200</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>One container slot on the container train to the distributor's siding.</cbc:Description>
+      <cbc:Description languageID="qau">Zan titran skir rek drek titran sezhul krir drek hazman nintrek.</cbc:Description>
+      <cbc:Description languageID="en-XU">One container slot on the container train to the distributor's siding.</cbc:Description>
       <cbc:Name languageID="qau">Kaz musaz, titran skir</cbc:Name>
       <cbc:Name languageID="en-XU">Rail freight, container slot</cbc:Name>
       <cac:SellersItemIdentification>

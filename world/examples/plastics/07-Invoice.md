@@ -424,8 +424,10 @@ Inside `InvoiceLine`:
   The tonnes carried.
 - `LineExtensionAmount` = **179400** (currencyID `XUF`)  
   120 × 1495, rounded to the minor unit of the currency.
-- `Item/Description` = **Bulk cargo down the river to the coast of Bayvarra, per tonne.**  
-  The seller's description; item barge-freight of Fiumella Barges (world/items.json).
+- `Item/Description` = **Vir nirrir zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item barge-freight of Fiumella Barges (world/items.json).
+- `Item/Description` = **Bulk cargo down the river to the coast of Bayvarra, per tonne.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item barge-freight of Fiumella Barges (world/items.json).
 - `Item/Name` = **Gakzaz musaz, vir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item barge-freight of Fiumella Barges (world/items.json).
 - `Item/Name` = **River freight, bulk** (languageID `en-XU`)  
@@ -770,7 +772,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="TNE">120</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
+      <cbc:Description languageID="qau">Vir nirrir zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.</cbc:Description>
+      <cbc:Description languageID="en-XU">Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
       <cbc:Name languageID="qau">Gakzaz musaz, vir</cbc:Name>
       <cbc:Name languageID="en-XU">River freight, bulk</cbc:Name>
       <cac:SellersItemIdentification>

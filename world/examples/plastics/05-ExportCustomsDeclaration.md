@@ -280,8 +280,10 @@ Inside `CustomsDeclaration`:
   The gross weight of the goods of this item.
 - `Shipment/GoodsItem/Quantity` = **120** (unitCode `TNE`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.**  
-  The seller's description; item granulate-pe of Rinova Recovery (world/items.json).
+- `Shipment/GoodsItem/Item/Description` = **Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item granulate-pe of Rinova Recovery (world/items.json).
+- `Shipment/GoodsItem/Item/Description` = **Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item granulate-pe of Rinova Recovery (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Ranstan PE skalsir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item granulate-pe of Rinova Recovery (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Recycled PE granulate** (languageID `en-XU`)  
@@ -799,7 +801,8 @@ Inside `Signature`:
         <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
+          <cbc:Description languageID="qau">Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.</cbc:Description>
+          <cbc:Description languageID="en-XU">Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
           <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
           <cbc:Name languageID="en-XU">Recycled PE granulate</cbc:Name>
           <cac:SellersItemIdentification>

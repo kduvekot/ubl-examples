@@ -296,7 +296,8 @@
       <cbc:Description>Six business lines</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Business telephone and data line, monthly subscription.</cbc:Description>
+      <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
+      <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
       <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
       <cbc:Name languageID="en-XL">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
@@ -326,7 +327,8 @@
       <cbc:Description>Mobile data pool</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Mobile data beyond the subscription, per gigabyte.</cbc:Description>
+      <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
+      <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
       <cbc:Name languageID="qal">Livule titefe</cbc:Name>
       <cbc:Name languageID="en-XL">Mobile data</cbc:Name>
       <cac:SellersItemIdentification>

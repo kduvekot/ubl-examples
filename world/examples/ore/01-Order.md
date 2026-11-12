@@ -463,8 +463,10 @@ Inside `OrderLine`:
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `TNE`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.**  
-  The seller's description; item ore-lump of Serravona Mining (world/items.json).
+- `LineItem/Item/Description` = **Krahek-kutir gek trir, zul tedraz 10–30 mm, 62 % Fe, danzhan trek kaz gadek.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item ore-lump of Serravona Mining (world/items.json).
+- `LineItem/Item/Description` = **Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item ore-lump of Serravona Mining (world/items.json).
 - `LineItem/Item/Name` = **Gek trir, zul** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item ore-lump of Serravona Mining (world/items.json).
 - `LineItem/Item/Name` = **Iron ore, lump** (languageID `en-XU`)  
@@ -869,7 +871,8 @@ Inside `OrderLine`:
         <cbc:BaseQuantity unitCode="TNE">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
+        <cbc:Description languageID="qau">Krahek-kutir gek trir, zul tedraz 10–30 mm, 62 % Fe, danzhan trek kaz gadek.</cbc:Description>
+        <cbc:Description languageID="en-XU">Non-agglomerated iron ore, lump size 10–30 mm, 62 % Fe, loose in rail wagons.</cbc:Description>
         <cbc:Name languageID="qau">Gek trir, zul</cbc:Name>
         <cbc:Name languageID="en-XU">Iron ore, lump</cbc:Name>
         <cac:SellersItemIdentification>

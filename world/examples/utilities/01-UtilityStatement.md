@@ -543,8 +543,10 @@ Inside `SubscriberConsumption`:
   The name of code ELEC in the Trade Accord's utility type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **ELEC** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The supply the item is for, as a code. The code is from the Trade Accord's utility type list: ELEC = Electricity.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
-  The tariff in words.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
+  The tariff in words in Urvanian, the seller's language; world/items.json.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
+  The tariff in words in English, the working language between the countries; world/items.json.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
   The name of code MET in the Trade Accord's consumption type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
@@ -1012,7 +1014,8 @@ Inside `SubscriberConsumption`:
           <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
           <cbc:SubscriberType>Electricity</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:SubscriberTypeCode>
-          <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+          <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+          <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>

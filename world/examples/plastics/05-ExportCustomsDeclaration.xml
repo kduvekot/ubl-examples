@@ -222,7 +222,8 @@
         <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
+          <cbc:Description languageID="qau">Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.</cbc:Description>
+          <cbc:Description languageID="en-XU">Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
           <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
           <cbc:Name languageID="en-XU">Recycled PE granulate</cbc:Name>
           <cac:SellersItemIdentification>

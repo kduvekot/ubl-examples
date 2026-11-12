@@ -420,8 +420,10 @@ Inside `InvoiceLine`:
   The factory's electricity connection, March.
 - `LineExtensionAmount` = **2559360** (currencyID `XUF`)  
   412800 × 6.2, rounded to the minor unit of the currency.
-- `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.**  
-  The seller's description; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Description` = **Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/Name` = **Zuktrek gatir krek** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/Name` = **Electricity network use** (languageID `en-XU`)  
@@ -446,8 +448,10 @@ Inside `InvoiceLine`:
   The warehouse's electricity connection, March.
 - `LineExtensionAmount` = **115320** (currencyID `XUF`)  
   18600 × 6.2, rounded to the minor unit of the currency.
-- `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.**  
-  The seller's description; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Description` = **Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/Name` = **Zuktrek gatir krek** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/Name` = **Electricity network use** (languageID `en-XU`)  
@@ -472,8 +476,10 @@ Inside `InvoiceLine`:
   The factory's gas connection, March.
 - `LineExtensionAmount` = **116280** (currencyID `XUF`)  
   61200 × 1.9, rounded to the minor unit of the currency.
-- `Item/Description` = **Use of the gas distribution network, per kilowatt hour of gas taken at the connection.**  
-  The seller's description; item network-gas of Ferrano Grid (world/items.json).
+- `Item/Description` = **Krek skul drek zhul rirtan gatir, ginek zalhaz bantan skul zhul kirhan hir drek trekstan.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item network-gas of Ferrano Grid (world/items.json).
+- `Item/Description` = **Use of the gas distribution network, per kilowatt hour of gas taken at the connection.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item network-gas of Ferrano Grid (world/items.json).
 - `Item/Name` = **Zhul gatir krek** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item network-gas of Ferrano Grid (world/items.json).
 - `Item/Name` = **Gas network use** (languageID `en-XU`)  
@@ -810,7 +816,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
@@ -835,7 +842,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
@@ -860,7 +868,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
+      <cbc:Description languageID="qau">Krek skul drek zhul rirtan gatir, ginek zalhaz bantan skul zhul kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>
       <cbc:Name languageID="qau">Zhul gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>

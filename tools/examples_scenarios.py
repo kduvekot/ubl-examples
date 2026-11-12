@@ -2681,7 +2681,8 @@ def consumption_line(f, sup, key, k, d, why):
                             "SubscriberType": V(KIND[sup], "The kind of supply."),
                             "SubscriberTypeCode": V(UTILITY[KIND[sup]], "The supply the item is for, as a code."),
                             "Contract": {"ID": V(METERS[key][0], "The supply contract the tariff belongs to.")},
-                            "Description": V(it["description"], "The tariff in words."),
+                            "Description": build_examples.item_texts(it, it["description"], "The tariff in words",
+                                                                    "world/items.json"),
                             "ConsumptionType": V("Metered" if it["kind"] == "goods" or d["item"] != "telecom-line"
                                                  else "Subscription", "How the quantity is measured."),
                             "ConsumptionTypeCode": V("MET" if d["item"] != "telecom-line" else "SUB", "As a code."),

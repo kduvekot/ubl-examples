@@ -420,8 +420,10 @@ Inside `InvoiceLine`:
   A quarter of the 18,000 kg the farm expects to deliver: the share the season agreement advances.
 - `LineExtensionAmount` = **1017.000** (currencyID `XLC`)  
   Quantity times price, rounded to the minor unit.
-- `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.**  
-  The seller's description; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.** (languageID `en-XL`)  
+  The seller's description in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Name` = **Votike tekapa** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Name` = **Seed cotton** (languageID `en-XL`)  
@@ -767,7 +769,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="KGM">4500</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">1017.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
+      <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
+      <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
       <cbc:Name languageID="en-XL">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>

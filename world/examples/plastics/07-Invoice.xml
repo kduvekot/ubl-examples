@@ -320,7 +320,8 @@
     <cbc:InvoicedQuantity unitCode="TNE">120</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
+      <cbc:Description languageID="qau">Vir nirrir zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.</cbc:Description>
+      <cbc:Description languageID="en-XU">Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
       <cbc:Name languageID="qau">Gakzaz musaz, vir</cbc:Name>
       <cbc:Name languageID="en-XU">River freight, bulk</cbc:Name>
       <cac:SellersItemIdentification>

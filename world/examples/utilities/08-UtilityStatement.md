@@ -538,7 +538,7 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The supply the item is for, as a code. The code is from the Trade Accord's utility type list: WATER = Water.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Drinking water supply, per cubic metre.**  
-  The tariff in words.
+  The tariff in words; world/items.json.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
   The name of code MET in the Trade Accord's consumption type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  

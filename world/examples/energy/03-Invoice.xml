@@ -315,7 +315,8 @@
     <cbc:InvoicedQuantity unitCode="MWH">18400</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">180320000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
+      <cbc:Description languageID="qau">Zuktrek vizhir muzstir drek zhek hir drek ranek dukmir, kinaz man drek balkul bantan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek, tredran</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity, wholesale</cbc:Name>
       <cac:SellersItemIdentification>

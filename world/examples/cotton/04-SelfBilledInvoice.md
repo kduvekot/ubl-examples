@@ -789,8 +789,10 @@ Inside `InvoiceLine`:
   The delivered line, unchanged. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `Delivery/DeliveryNoteLineReference/DocumentReference/ID` = **LCF-DN-26-0193**  
   The farm's delivery note.
-- `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.**  
-  The seller's description; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+- `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.** (languageID `en-XL`)  
+  The seller's description in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Name` = **Votike tekapa** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Name` = **Seed cotton** (languageID `en-XL`)  
@@ -1361,7 +1363,8 @@ Inside `InvoiceLine`:
       </cac:DeliveryNoteLineReference>
     </cac:Delivery>
     <cac:Item>
-      <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
+      <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
+      <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
       <cbc:Name languageID="en-XL">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>

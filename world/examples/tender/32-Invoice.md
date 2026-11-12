@@ -670,22 +670,28 @@ Inside `InvoiceLine`:
   40 × 499.00, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The call-off line.
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.**  
-  The seller's description; item bench-serra of Valdara Industries (world/items.json).
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
-- `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
-  What comes with the item; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalInformation` = **Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.** (languageID `qau`)  
+  What comes with the item in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.** (languageID `en-XU`)  
+  What comes with the item in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Keyword` = **park bench, street furniture**  
   The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
   The model; item bench-serra of Valdara Industries (world/items.json).
-- `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
-  The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
+- `Item/WarrantyInformation` = **Bukdrek stezskir rek drek manskan savir gilrir.** (languageID `qau`)  
+  The maker's warranty in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Item/WarrantyInformation` = **Five years on the frame against corrosion.** (languageID `en-XU`)  
+  The maker's warranty in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; item bench-serra of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
@@ -902,8 +908,10 @@ Inside `InvoiceLine`:
   40 × 18.00, rounded to the minor unit of the currency.
 - `WithholdingTaxTotal/TaxAmount` = **72.00** (currencyID `XBL`)  
   Withheld on this line.
-- `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.**  
-  The seller's description; item bench-installation of Valdara Industries (world/items.json).
+- `Item/Description` = **Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
+- `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Name` = **Dreknul skul sir haz nanskir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Name` = **Installation of a park bench** (languageID `en-XU`)  
@@ -1439,14 +1447,17 @@ Inside `InvoiceLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
-      <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="qau">Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="en-XU">Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="qau">Bukdrek stezskir rek drek manskan savir gilrir.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="en-XU">Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
@@ -1639,7 +1650,8 @@ Inside `InvoiceLine`:
       <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
     </cac:WithholdingTaxTotal>
     <cac:Item>
-      <cbc:Description>Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
+      <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
       <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>

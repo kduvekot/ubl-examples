@@ -353,22 +353,28 @@ Inside `PurchaseReceiptLine`:
   Two benches for the pickers' rest place under the trees by the weighing shed.
 - `LineExtensionAmount` = **578.000** (currencyID `XLC`)  
   Quantity times the price paid, before the sales tax.
-- `Item/Description` = **The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.**  
-  The seller's description; item bench-serra-x of Velumi Trading (world/items.json).
+- `Item/Description` = **Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item bench-serra-x of Velumi Trading (world/items.json).
+- `Item/Description` = **The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.** (languageID `en-XL`)  
+  The seller's description in English, the working language between the countries; item bench-serra-x of Velumi Trading (world/items.json).
 - `Item/Name` = **Hiapi vusase Serra 180** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item bench-serra-x of Velumi Trading (world/items.json).
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XL`)  
   The item's name in English, the working language between the countries; item bench-serra-x of Velumi Trading (world/items.json).
-- `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
-  What comes with the item; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalInformation` = **Vahita tofuta nakofe leputo kipaku tofami nomeko vevisi tuloha maalu.** (languageID `qal`)  
+  What comes with the item in Lisavan, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.** (languageID `en-XL`)  
+  What comes with the item in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Keyword` = **park bench, street furniture**  
   The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
   The model; item bench-serra of Valdara Industries (world/items.json).
-- `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
-  The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
+- `Item/WarrantyInformation` = **Patike selemu lelala velute fepepa tikilau.** (languageID `qal`)  
+  The maker's warranty in Lisavan, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+- `Item/WarrantyInformation` = **Five years on the frame against corrosion.** (languageID `en-XL`)  
+  The maker's warranty in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **VT-PB-180**  
   The seller's own item number; item bench-serra-x of Velumi Trading (world/items.json).
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
@@ -816,14 +822,17 @@ Inside `PurchaseReceiptLine`:
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
+      <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
+      <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
       <cbc:Name languageID="qal">Hiapi vusase Serra 180</cbc:Name>
       <cbc:Name languageID="en-XL">Park bench Serra 180</cbc:Name>
-      <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="qal">Vahita tofuta nakofe leputo kipaku tofami nomeko vevisi tuloha maalu.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="en-XL">Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="qal">Patike selemu lelala velute fepepa tikilau.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="en-XL">Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>VT-PB-180</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>

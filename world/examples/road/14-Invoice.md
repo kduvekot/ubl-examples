@@ -463,8 +463,10 @@ Inside `InvoiceLine`:
   The kilometres driven loaded, from Ferrano to Marrowdale.
 - `LineExtensionAmount` = **44733** (currencyID `XUF`)  
   186 × 240.5, rounded to the minor unit of the currency.
-- `Item/Description` = **Full truck load, price per kilometre driven loaded, tolls included.**  
-  The seller's description; item road-transport of Trasvia Haulage (world/items.json).
+- `Item/Description` = **Dan stindrul staz, mustek ginek zumul virskek dinskan, starek kritrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item road-transport of Trasvia Haulage (world/items.json).
+- `Item/Description` = **Full truck load, price per kilometre driven loaded, tolls included.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/Name` = **Kraz drutraz, dan stindrul staz** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/Name` = **Road transport, full truck load** (languageID `en-XU`)  
@@ -854,7 +856,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="KMT">186</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">44733</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>
+      <cbc:Description languageID="qau">Dan stindrul staz, mustek ginek zumul virskek dinskan, starek kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>
       <cbc:Name languageID="qau">Kraz drutraz, dan stindrul staz</cbc:Name>
       <cbc:Name languageID="en-XU">Road transport, full truck load</cbc:Name>
       <cac:SellersItemIdentification>

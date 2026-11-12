@@ -556,8 +556,10 @@ Inside `InvoiceLine`:
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Factory, main connection**  
   Where it is.
-- `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
-  The seller's description; item electricity of Ferrano Energy (world/items.json).
+- `Item/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
+- `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Zuktrek** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Electricity** (languageID `en-XU`)  
@@ -606,8 +608,10 @@ Inside `InvoiceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Ferrano**  
   Where the power was used.
-- `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.**  
-  The seller's description; item electricity of Ferrano Energy (world/items.json).
+- `Item/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
+- `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Zuktrek** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
 - `Item/Name` = **Electricity** (languageID `en-XU`)  
@@ -648,8 +652,10 @@ Inside `InvoiceLine`:
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Factory, gas of the coating line**  
   Where it is.
-- `Item/Description` = **Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.**  
-  The seller's description; item gas of Ferrano Energy (world/items.json).
+- `Item/Description` = **Vungan zhul tazkraz, ginek zalhaz bantan: drek bazbaz velzhan bezsek vek drek zhek sarkran triktan gan dranaz stan narzhir munran; gatir vinskan kritrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item gas of Ferrano Energy (world/items.json).
+- `Item/Description` = **Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item gas of Ferrano Energy (world/items.json).
 - `Item/Name` = **Vungan zhul tazkraz** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item gas of Ferrano Energy (world/items.json).
 - `Item/Name` = **Natural gas supply** (languageID `en-XU`)  
@@ -1095,7 +1101,8 @@ Inside `InvoiceLine`:
       <cbc:Description>Factory, main connection</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+      <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
@@ -1146,7 +1153,8 @@ Inside `InvoiceLine`:
       </cac:DeliveryLocation>
     </cac:Delivery>
     <cac:Item>
-      <cbc:Description>Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+      <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity</cbc:Name>
       <cac:SellersItemIdentification>
@@ -1183,7 +1191,8 @@ Inside `InvoiceLine`:
       <cbc:Description>Factory, gas of the coating line</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description>Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
+      <cbc:Description languageID="qau">Vungan zhul tazkraz, ginek zalhaz bantan: drek bazbaz velzhan bezsek vek drek zhek sarkran triktan gan dranaz stan narzhir munran; gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.</cbc:Description>
       <cbc:Name languageID="qau">Vungan zhul tazkraz</cbc:Name>
       <cbc:Name languageID="en-XU">Natural gas supply</cbc:Name>
       <cac:SellersItemIdentification>

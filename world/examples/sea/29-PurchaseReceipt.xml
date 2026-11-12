@@ -247,14 +247,17 @@
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
+      <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
+      <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
       <cbc:Name languageID="qal">Hiapi vusase Serra 180</cbc:Name>
       <cbc:Name languageID="en-XL">Park bench Serra 180</cbc:Name>
-      <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="qal">Vahita tofuta nakofe leputo kipaku tofami nomeko vevisi tuloha maalu.</cbc:AdditionalInformation>
+      <cbc:AdditionalInformation languageID="en-XL">Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="qal">Patike selemu lelala velute fepepa tikilau.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="en-XL">Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>VT-PB-180</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>

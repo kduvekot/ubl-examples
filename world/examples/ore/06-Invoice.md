@@ -442,8 +442,10 @@ Inside `InvoiceLine`:
   The weight carried, from the consignment note: the freight is per tonne.
 - `LineExtensionAmount` = **1720441** (currencyID `XUF`)  
   1788.4 × 962, rounded to the minor unit of the currency.
-- `Item/Description` = **Ore from the mine siding to the factory siding, per tonne.**  
-  The seller's description; item rail-ore of Ferrano Rail Cargo (world/items.json).
+- `Item/Description` = **Trir mir drek daz nintrek krir drek drunbaz nintrek, ginek zhurkaz.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item rail-ore of Ferrano Rail Cargo (world/items.json).
+- `Item/Description` = **Ore from the mine siding to the factory siding, per tonne.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item rail-ore of Ferrano Rail Cargo (world/items.json).
 - `Item/Name` = **Kaz musaz, trir trek vir gadek** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item rail-ore of Ferrano Rail Cargo (world/items.json).
 - `Item/Name` = **Rail freight, ore in bulk wagons** (languageID `en-XU`)  
@@ -809,7 +811,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="TNE">1788.4</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">1720441</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Ore from the mine siding to the factory siding, per tonne.</cbc:Description>
+      <cbc:Description languageID="qau">Trir mir drek daz nintrek krir drek drunbaz nintrek, ginek zhurkaz.</cbc:Description>
+      <cbc:Description languageID="en-XU">Ore from the mine siding to the factory siding, per tonne.</cbc:Description>
       <cbc:Name languageID="qau">Kaz musaz, trir trek vir gadek</cbc:Name>
       <cbc:Name languageID="en-XU">Rail freight, ore in bulk wagons</cbc:Name>
       <cac:SellersItemIdentification>

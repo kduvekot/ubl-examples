@@ -266,7 +266,8 @@
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
+      <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
+      <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
       <cbc:Name languageID="en-XL">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>

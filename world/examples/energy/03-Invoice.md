@@ -422,8 +422,10 @@ Inside `InvoiceLine`:
   Fed into the grid for the retail company in March.
 - `LineExtensionAmount` = **180320000** (currencyID `XUF`)  
   18400 × 9800, rounded to the minor unit of the currency.
-- `Item/Description` = **Electricity fed into the grid at the power station, sold by the megawatt hour.**  
-  The seller's description; item power-wholesale of Montebrio Power (world/items.json).
+- `Item/Description` = **Zuktrek vizhir muzstir drek zhek hir drek ranek dukmir, kinaz man drek balkul bantan.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item power-wholesale of Montebrio Power (world/items.json).
+- `Item/Description` = **Electricity fed into the grid at the power station, sold by the megawatt hour.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item power-wholesale of Montebrio Power (world/items.json).
 - `Item/Name` = **Zuktrek, tredran** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item power-wholesale of Montebrio Power (world/items.json).
 - `Item/Name` = **Electricity, wholesale** (languageID `en-XU`)  
@@ -763,7 +765,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="MWH">18400</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">180320000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
+      <cbc:Description languageID="qau">Zuktrek vizhir muzstir drek zhek hir drek ranek dukmir, kinaz man drek balkul bantan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity fed into the grid at the power station, sold by the megawatt hour.</cbc:Description>
       <cbc:Name languageID="qau">Zuktrek, tredran</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity, wholesale</cbc:Name>
       <cac:SellersItemIdentification>

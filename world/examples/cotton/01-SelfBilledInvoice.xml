@@ -315,7 +315,8 @@
     <cbc:InvoicedQuantity unitCode="KGM">4500</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">1017.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
+      <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
+      <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
       <cbc:Name languageID="qal">Votike tekapa</cbc:Name>
       <cbc:Name languageID="en-XL">Seed cotton</cbc:Name>
       <cac:SellersItemIdentification>

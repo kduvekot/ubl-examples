@@ -822,17 +822,22 @@ def hazardous_item(it):
     return out
 
 
-def item_names(it, src):
-    """The item's name: in the seller's language and in English when the seller's country speaks another language
-    (Urvanian, Lisavan), each with its languageID; English only for a seller in Bayvarra."""
+def item_texts(it, text, what, src):
+    """A text about an item (its name, description, warranty …): in the seller's language and in English when the
+    seller's country speaks another language (Urvanian, Lisavan), each with its languageID; English only for a seller
+    in Bayvarra. `what` names the text, as in "The item's name"."""
     code = WORLD["countries"][PARTY[it["seller"]]["c"]]["languages"][0]
     if code == "en":
-        return V(it["name"], f"The item's short name; {src}.")
+        return V(text, f"{what}; {src}.")
     lang = WORLD["languages"][code]["name"]
-    return [V(translate(it["name"], code), f"The item's name in {lang}, the seller's language; {src}.",
-              languageID=code),
-            V(it["name"], f"The item's name in English, the working language between the countries; {src}.",
-              languageID="en")]
+    return [V(translate(text, code), f"{what} in {lang}, the seller's language; {src}.", languageID=code),
+            V(text, f"{what} in English, the working language between the countries; {src}.", languageID="en")]
+
+
+def item_names(it, src):
+    """The item's name, in the seller's languages (item_texts)."""
+    return item_texts(it, it["name"], "The item's name" if WORLD["countries"][PARTY[it["seller"]]["c"]]["languages"][0]
+                      != "en" else "The item's short name", src)
 
 
 def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref=None):
@@ -840,7 +845,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     catalogue line; `catalogue_ref` the catalogue an order line was ordered from."""
     it = ITEM[iid]
     src = f"item {it['id']} of {PARTY[it['seller']]['identity']['name']} (world/items.json)"
-    out = {"Description": V(it["description"], f"The seller's description; {src}."),
+    out = {"Description": item_texts(it, it["description"], "The seller's description", src),
            "Name": item_names(it, src)}
     maker = it
     while maker.get("resale_of"):
@@ -860,11 +865,11 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("model"):
         out["ModelName"] = V(maker["model"], f"The model; {msrc}.")
     if maker.get("additional_info"):
-        out["AdditionalInformation"] = V(maker["additional_info"], f"What comes with the item; {msrc}.")
+        out["AdditionalInformation"] = item_texts(it, maker["additional_info"], "What comes with the item", msrc)
     if catalogue:
         out["CatalogueIndicator"] = V("true", "The item is described as it appears in the seller's catalogue.")
     if maker.get("warranty"):
-        out["WarrantyInformation"] = V(maker["warranty"], f"The maker's warranty; {msrc}.")
+        out["WarrantyInformation"] = item_texts(it, maker["warranty"], "The maker's warranty", msrc)
     bid, bwhy = buyer_item_id(iid, buyer) if buyer else (None, None)
     if bid:
         out["BuyersItemIdentification"] = {"ID": V(bid, bwhy)}
@@ -926,7 +931,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                                                                 "and assembly instructions.")}
     if it.get("lifecycle"):
         out["LifecycleStageCode"] = V(it["lifecycle"][0], "The stage of the product's life the item belongs to.")
-        out["LifecycleStageDescription"] = V(it["lifecycle"][1], "The stage in words.")
+        out["LifecycleStageDescription"] = item_texts(it, it["lifecycle"][1], "The stage of the item's life in words",
+                                                      src)
     if maker.get("hs"):
         ccs = [{"ItemClassificationCode": V(maker["cpc"], "What the item is, as a subclass of the UN Central Product "
                                                           f"Classification (CPC), the trade classification for goods and "

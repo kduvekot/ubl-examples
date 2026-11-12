@@ -440,8 +440,10 @@ Inside `InvoiceLine`:
   Two container slots.
 - `LineExtensionAmount` = **109200** (currencyID `XUF`)  
   2 × 54600, rounded to the minor unit of the currency.
-- `Item/Description` = **One container slot on the container train to the distributor's siding.**  
-  The seller's description; item rail-container of Ferrano Rail Cargo (world/items.json).
+- `Item/Description` = **Zan titran skir rek drek titran sezhul krir drek hazman nintrek.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item rail-container of Ferrano Rail Cargo (world/items.json).
+- `Item/Description` = **One container slot on the container train to the distributor's siding.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item rail-container of Ferrano Rail Cargo (world/items.json).
 - `Item/Name` = **Kaz musaz, titran skir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item rail-container of Ferrano Rail Cargo (world/items.json).
 - `Item/Name` = **Rail freight, container slot** (languageID `en-XU`)  
@@ -804,7 +806,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="E48">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">109200</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>One container slot on the container train to the distributor's siding.</cbc:Description>
+      <cbc:Description languageID="qau">Zan titran skir rek drek titran sezhul krir drek hazman nintrek.</cbc:Description>
+      <cbc:Description languageID="en-XU">One container slot on the container train to the distributor's siding.</cbc:Description>
       <cbc:Name languageID="qau">Kaz musaz, titran skir</cbc:Name>
       <cbc:Name languageID="en-XU">Rail freight, container slot</cbc:Name>
       <cac:SellersItemIdentification>
