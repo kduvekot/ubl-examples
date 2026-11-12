@@ -7,5 +7,7 @@
       <cbc:Name>X</cbc:Name>
     </cac:PartyName>
   </cac:BusinessParty>
-  <cac:DigitalProcess/>
+  <cac:DigitalProcess>
+    <cbc:Description>X</cbc:Description>
+  </cac:DigitalProcess>
 </DigitalCapability>

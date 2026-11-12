@@ -87,7 +87,12 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # ProcurementProjectType ("an overall definition of this procurement
         # project"): a particular undertaking gets a name, as a Party does
         # (a kind of thing, like an Item, gets a description).
-        "ProcurementProjectType": {"cbc:Name"}}
+        "ProcurementProjectType": {"cbc:Name"},
+        # DigitalProcessType: the processes in scope of an agreement or
+        # supported by a party are kinds of process, so a description. (Its
+        # ID is defined for "the digital collaboration"; ProfileID would need
+        # a scheme decision.)
+        "DigitalProcessType": {"cbc:Description"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):

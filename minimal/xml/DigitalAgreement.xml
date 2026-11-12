@@ -10,5 +10,7 @@
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
-  <cac:DigitalProcess/>
+  <cac:DigitalProcess>
+    <cbc:Description>X</cbc:Description>
+  </cac:DigitalProcess>
 </DigitalAgreement>
