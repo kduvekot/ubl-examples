@@ -4,5 +4,9 @@
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>X</cbc:ID>
   </cac:GoodsItemPassportCounterfoil>
-  <cac:ReexportationEvidence/>
+  <cac:ReexportationEvidence>
+    <cac:DocumentReference>
+      <cbc:ID>X</cbc:ID>
+    </cac:DocumentReference>
+  </cac:ReexportationEvidence>
 </ProofOfReexportation>

@@ -116,7 +116,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ResponseType": {"cbc:ResponseCode"},
         # LocationType: only ActivityOriginLocation so far, one particular
         # place, so a name (an ID such as a GLN would need a scheme).
-        "LocationType": {"cbc:Name"}}
+        "LocationType": {"cbc:Name"},
+        # EvidenceType: only ReexportationEvidence so far, "references to
+        # evidence supporting that goods have been re-exported" (the type
+        # itself is defined for tendering only).
+        "EvidenceType": {"cac:DocumentReference"}}
 
 schemas = {}  # targetNamespace -> list of schema roots
 for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
