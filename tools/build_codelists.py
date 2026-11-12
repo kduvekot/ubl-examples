@@ -372,7 +372,7 @@ def check():
         if os.path.isdir(os.path.join(OUT, "gc")) else []
     problems += [f"world/codelists/gc/{s}: no longer a list of the world" for s in stale]
     if world_data.MISSING_WORDS:
-        problems.append("words missing from the vocabularies of the world's languages (world/countries.json): "
+        problems.append("words missing from the vocabularies of the world's languages (world/countries.json; save the list as missing.json and run python3 tools/lexicon.py missing.json qau|qal): "
                         + json.dumps(sorted(world_data.MISSING_WORDS)))
     for name, rows in world_rows(world_data.load()["countries"]).items():
         path = os.path.join(OUT, name.replace(".gc", "-world.gc"))
@@ -397,7 +397,7 @@ def main():
         raise SystemExit("\n".join(problems))
     files = world_lists()
     if world_data.MISSING_WORDS:
-        raise SystemExit("words missing from the vocabularies of the world's languages (world/countries.json): "
+        raise SystemExit("words missing from the vocabularies of the world's languages (world/countries.json; save the list as missing.json and run python3 tools/lexicon.py missing.json qau|qal): "
                          + json.dumps(sorted(world_data.MISSING_WORDS)))
     os.makedirs(os.path.join(OUT, "gc"), exist_ok=True)
     for name in os.listdir(os.path.join(OUT, "gc")):

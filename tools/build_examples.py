@@ -1773,7 +1773,7 @@ if __name__ == "__main__":
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",
               ", ".join(f"{e} in {p}" for e, p in sorted(build_examples.UNBOUND)), file=sys.stderr)
     if build_examples.MISSING_WORDS:
-        print("words missing from the vocabularies of the world's languages (world/countries.json):",
+        print("words missing from the vocabularies of the world's languages (world/countries.json; save the list as missing.json and run python3 tools/lexicon.py missing.json qau|qal):",
               json.dumps(sorted(build_examples.MISSING_WORDS)), file=sys.stderr)
         ok = False
     sys.exit(0 if ok else 1)
