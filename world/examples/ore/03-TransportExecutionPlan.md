@@ -486,10 +486,8 @@ Inside `TransportExecutionTerms`:
   When the freight is paid.
 - `DeliveryTerms/ID` = **FCA** (schemeID `INCOTERMS`)  
   The buyer's terms with the mine, for the carrier's information. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
-- `BonusPaymentTerms/Note` = **None.**  
-  No bonus for early delivery: the slot is fixed.
-- `CommissionPaymentTerms/Note` = **No commission: booked directly with the carrier.**  
-  Why none.
+- `BonusPaymentTerms/Note` = **2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.**  
+  The bonus the factory pays for an early train: its stockyard can use the ore at once.
 - `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
   The penalty for late delivery.
 - `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
@@ -998,11 +996,8 @@ Inside `Consignment`:
       <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     </cac:DeliveryTerms>
     <cac:BonusPaymentTerms>
-      <cbc:Note>None.</cbc:Note>
+      <cbc:Note>2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.</cbc:Note>
     </cac:BonusPaymentTerms>
-    <cac:CommissionPaymentTerms>
-      <cbc:Note>No commission: booked directly with the carrier.</cbc:Note>
-    </cac:CommissionPaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
       <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>

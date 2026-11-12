@@ -343,6 +343,23 @@
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">100</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -360,9 +377,10 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XBL">494.00</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="XBL">494.00</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">26.00</cbc:AllowanceTotalAmount>
     <cbc:PayableAmount currencyID="XBL">494.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
@@ -370,8 +388,8 @@
     <cbc:UUID>226d335b-4a38-5919-b136-61b954cb2fa8</cbc:UUID>
     <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">494.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">494.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">520.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
     <cbc:AccountingCost>Garden department</cbc:AccountingCost>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
@@ -408,14 +426,6 @@
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     </cac:TaxTotal>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">100</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Promotion support</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:Amount currencyID="XBL">26.00</cbc:Amount>
-      <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
-    </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -619,8 +629,5 @@
     <cac:DeliveryTerms>
       <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
     </cac:DeliveryTerms>
-    <cac:ItemPriceExtension>
-      <cbc:Amount currencyID="XBL">520.00</cbc:Amount>
-    </cac:ItemPriceExtension>
   </cac:CreditNoteLine>
 </CreditNote>

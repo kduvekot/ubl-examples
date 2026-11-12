@@ -42,8 +42,6 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
   Made out to order: the buyer can transfer it by endorsement.
 - `AdValoremIndicator` = **false**  
   No value declared to the carrier: its liability stays limited.
-- `DeclaredCarriageValueAmount` = **0.00** (currencyID `XBL`)  
-  No value declared.
 - `OtherInstruction` = **Three originals issued.**  
   How many originals there are.
 
@@ -684,8 +682,6 @@ Inside `Shipment`:
   The port of discharge.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Consignment/MainCarriageShipmentStage/TransshipPortLocation/Name` = **None: a direct sailing**  
-  No transhipment on the way.
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceDate` = **2026-05-18**  
   The container is available at Selanu.
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceTime` = **14:00:00**  
@@ -1366,7 +1362,6 @@ Inside `Signature`:
   <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1924,9 +1919,6 @@ Inside `Signature`:
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
-        <cac:TransshipPortLocation>
-          <cbc:Name>None: a direct sailing</cbc:Name>
-        </cac:TransshipPortLocation>
         <cac:AvailabilityTransportEvent>
           <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>

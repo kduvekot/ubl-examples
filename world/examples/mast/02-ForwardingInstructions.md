@@ -677,10 +677,6 @@ Inside `Shipment`:
   The material.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Sealed source, not special form.**  
   Its form.
-- `GoodsItem/Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric` = **0**  
-  Excepted package: no dose rate to speak of.
-- `GoodsItem/Item/HazardousItem/RadioactiveMaterial/FissileCriticalitySafetyIndexNumeric` = **0**  
-  Not fissile.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/Name` = **Americium-241**  
   The isotope.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/ActivityLevelMeasure` = **37** (unitCode `2Q`)  
@@ -1322,8 +1318,6 @@ Inside `Shipment`:
           <cac:RadioactiveMaterial>
             <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
             <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-            <cbc:TransportIndexNumeric>0</cbc:TransportIndexNumeric>
-            <cbc:FissileCriticalitySafetyIndexNumeric>0</cbc:FissileCriticalitySafetyIndexNumeric>
             <cac:ApplicableRadioactiveIsotope>
               <cbc:Name>Americium-241</cbc:Name>
               <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>

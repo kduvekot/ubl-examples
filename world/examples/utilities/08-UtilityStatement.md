@@ -361,10 +361,10 @@ Inside `SubscriberConsumption`:
   Its value.
 - `OnAccountPayment/EstimatedConsumedQuantity` = **14** (unitCode `MTQ`)  
   The expected use next month.
-- `OnAccountPayment/Note` = **No payment on account: the bill follows the reading.**  
-  How the household pays.
-- `OnAccountPayment/PaymentTerms/Note` = **By direct debit 21 days after the bill.**  
-  As on the bill.
+- `OnAccountPayment/Note` = **Paid on account each month for the estimated use; the next bill settles it against the reading.**  
+  How the household pays between readings.
+- `OnAccountPayment/PaymentTerms/Note` = **By direct debit on the first working day of each month.**  
+  When the payment on account is collected.
 - `Consumption/UtilityStatementTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of supply. The code is from the Trade Accord's utility type list: WATER = Water.
 - `Consumption/MainPeriod/StartDate` = **2026-03-01**  
@@ -820,9 +820,9 @@ Inside `SubscriberConsumption`:
     </cac:UtilityConsumptionPoint>
     <cac:OnAccountPayment>
       <cbc:EstimatedConsumedQuantity unitCode="MTQ">14</cbc:EstimatedConsumedQuantity>
-      <cbc:Note>No payment on account: the bill follows the reading.</cbc:Note>
+      <cbc:Note>Paid on account each month for the estimated use; the next bill settles it against the reading.</cbc:Note>
       <cac:PaymentTerms>
-        <cbc:Note>By direct debit 21 days after the bill.</cbc:Note>
+        <cbc:Note>By direct debit on the first working day of each month.</cbc:Note>
       </cac:PaymentTerms>
     </cac:OnAccountPayment>
     <cac:Consumption>

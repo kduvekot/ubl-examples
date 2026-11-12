@@ -349,12 +349,6 @@
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
-    <cac:BonusPaymentTerms>
-      <cbc:Note>None.</cbc:Note>
-    </cac:BonusPaymentTerms>
-    <cac:CommissionPaymentTerms>
-      <cbc:Note>No commission: booked directly with the carrier.</cbc:Note>
-    </cac:CommissionPaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
       <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>

@@ -489,10 +489,6 @@ Inside `TransportExecutionTerms`:
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
   When the freight is paid.
-- `BonusPaymentTerms/Note` = **None.**  
-  No bonus for early delivery: the slot is fixed.
-- `CommissionPaymentTerms/Note` = **No commission: booked directly with the carrier.**  
-  Why none.
 - `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
   The penalty for late delivery.
 - `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
@@ -1047,12 +1043,6 @@ Inside `Consignment`:
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
-    <cac:BonusPaymentTerms>
-      <cbc:Note>None.</cbc:Note>
-    </cac:BonusPaymentTerms>
-    <cac:CommissionPaymentTerms>
-      <cbc:Note>No commission: booked directly with the carrier.</cbc:Note>
-    </cac:CommissionPaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
       <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>

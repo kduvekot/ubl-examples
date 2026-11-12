@@ -38,8 +38,6 @@ Before arrival the carrier lists the cargo on board for the island's customs.
   The first version.
 - `AdValoremIndicator` = **false**  
   No value declared for the carriage.
-- `DeclaredCarriageValueAmount` = **0.00** (currencyID `XBL`)  
-  No value declared.
 
 ### Sending Logistics Operator Party
 
@@ -417,16 +415,12 @@ Inside `CrewPerson`:
   The master of the ship.
 - `FamilyName` = **Halvard**  
   The family name.
-- `GenderCode` = **0** (listID `ISO 5218`)  
-  ISO 5218 code 0: not known; the manifest does not record it. The code is from the world's copy of ISO/IEC 5218 Representation of human sexes: 0 = Not known.
 - `RoleCode` = **MASTER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
   The person's role on board. The code is from the Trade Accord's role on board list: MASTER = Master.
 - `FirstName` = **Elsbeth**  
   The chief officer.
 - `FamilyName` = **Marrin**  
   The family name.
-- `GenderCode` = **0** (listID `ISO 5218`)  
-  ISO 5218 code 0: not known; the manifest does not record it. The code is from the world's copy of ISO/IEC 5218 Representation of human sexes: 0 = Not known.
 - `RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
   The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
 
@@ -438,8 +432,6 @@ Inside `PassengerPerson`:
   The one passenger: a supercargo travelling with the cargo.
 - `FamilyName` = **Tavari**  
   The family name.
-- `GenderCode` = **0** (listID `ISO 5218`)  
-  ISO 5218 code 0: not known; the manifest does not record it. The code is from the world's copy of ISO/IEC 5218 Representation of human sexes: 0 = Not known.
 - `RoleCode` = **PASSENGER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
   The person's role on board. The code is from the Trade Accord's role on board list: PASSENGER = Passenger.
 
@@ -584,7 +576,6 @@ Inside `Signature`:
   <cbc:Note>One container for Selanu.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -896,19 +887,16 @@ Inside `Signature`:
   <cac:CrewPerson>
     <cbc:FirstName>Corin</cbc:FirstName>
     <cbc:FamilyName>Halvard</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:CrewPerson>
     <cbc:FirstName>Elsbeth</cbc:FirstName>
     <cbc:FamilyName>Marrin</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:PassengerPerson>
     <cbc:FirstName>Ines</cbc:FirstName>
     <cbc:FamilyName>Tavari</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
   </cac:PassengerPerson>
   <cac:Shipment>

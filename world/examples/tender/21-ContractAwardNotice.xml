@@ -287,7 +287,6 @@
     <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
-    <cbc:NegotiationDescription>No negotiation: the award is on the tenders as submitted.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
     <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
@@ -329,22 +328,7 @@
     <cac:ProcessJustification>
       <cbc:ProcessReasonCode listID="urn:ubl-examples:world:codelist:ProcessReasonCode">STANDARD</cbc:ProcessReasonCode>
       <cbc:ProcessReason>Value above the threshold for open procedures.</cbc:ProcessReason>
-      <cbc:Description>No exception applies.</cbc:Description>
     </cac:ProcessJustification>
-    <cac:EconomicOperatorShortList>
-      <cbc:LimitationDescription>No short list in an open procedure.</cbc:LimitationDescription>
-      <cbc:ExpectedQuantity>0</cbc:ExpectedQuantity>
-      <cbc:MaximumQuantity>0</cbc:MaximumQuantity>
-      <cbc:MinimumQuantity>0</cbc:MinimumQuantity>
-      <cac:PreSelectedParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:PreSelectedParty>
-    </cac:EconomicOperatorShortList>
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
@@ -363,12 +347,12 @@
       </cac:OccurrenceLocation>
     </cac:OpenTenderEvent>
     <cac:AuctionTerms>
-      <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
-      <cbc:JustificationDescription>The award uses quality as well as price.</cbc:JustificationDescription>
-      <cbc:Description>No auction.</cbc:Description>
-      <cbc:ProcessDescription>Not applicable.</cbc:ProcessDescription>
-      <cbc:ConditionsDescription>Not applicable.</cbc:ConditionsDescription>
-      <cbc:ElectronicDeviceDescription>Not applicable.</cbc:ElectronicDeviceDescription>
+      <cbc:AuctionConstraintIndicator>true</cbc:AuctionConstraintIndicator>
+      <cbc:JustificationDescription>The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.</cbc:JustificationDescription>
+      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 6 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.</cbc:Description>
+      <cbc:ProcessDescription>One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.</cbc:ProcessDescription>
+      <cbc:ConditionsDescription>A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.</cbc:ConditionsDescription>
+      <cbc:ElectronicDeviceDescription>The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.</cbc:ElectronicDeviceDescription>
       <cbc:AuctionURI>https://tenders.lumeport.example/auctions</cbc:AuctionURI>
     </cac:AuctionTerms>
     <cac:FrameworkAgreement>
@@ -383,7 +367,7 @@
       </cac:DurationPeriod>
       <cac:SubsequentProcessTenderRequirement>
         <cbc:Name>Release order</cbc:Name>
-        <cbc:Description>No new competition.</cbc:Description>
+        <cbc:Description>Each release is ordered from the framework supplier at the framework prices, without a new competition.</cbc:Description>
       </cac:SubsequentProcessTenderRequirement>
     </cac:FrameworkAgreement>
     <cac:ContractingSystem>
@@ -449,7 +433,6 @@
     </cac:PlannedPeriod>
     <cac:ContractExtension>
       <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-      <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
@@ -578,7 +561,6 @@
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
@@ -708,7 +690,6 @@
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
-        <cbc:MinimumNumberNumeric>0</cbc:MinimumNumberNumeric>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
@@ -761,9 +742,10 @@
       <cbc:EndDate>2026-03-22</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
-      <cbc:Rate>0</cbc:Rate>
+      <cbc:Rate>3.5</cbc:Rate>
       <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>No subcontracting.</cbc:Description>
+      <cbc:Description>Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
     </cac:SubcontractTerms>
     <cac:WinningParty>
       <cbc:Rank>1</cbc:Rank>

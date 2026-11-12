@@ -299,12 +299,16 @@ Inside `Shipment`:
   The maritime declaration of health.
 - `ShipmentStage/MaritimeHealthDeclaration/InfectiousDiseaseCaseOnBoardIndicator` = **false**  
   No infectious disease.
+- `ShipmentStage/MaritimeHealthDeclaration/SickAnimalOnBoardIndicator` = **true**  
+  A sick animal is on board: the ship's cat.
 - `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasuresAppliedIndicator` = **false**  
   No sanitary measures on this voyage.
 - `ShipmentStage/MaritimeHealthDeclaration/ValidSanitationCertificateOnBoardIndicator` = **true**  
   The exemption certificate is valid until July.
 - `ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity` = **0** (unitCode `IE`)  
   No one ill.
+- `ShipmentStage/MaritimeHealthDeclaration/SickAnimalDescription` = **The ship's cat has been off its food and listless for three days. It is kept in the master's cabin, away from the cargo and the galley; the master asks for a veterinarian at Lumeport.**  
+  What the port health authority needs to know about the animal.
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/ID` = **SSCEC-XB-2026-0114**  
   The ship sanitation control exemption certificate: the ship carries it instead of a control certificate. Unique only with its issuer (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssueDate` = **2026-01-14**  
@@ -585,9 +589,11 @@ Inside `TransportMeans`:
       <cac:MaritimeHealthDeclaration>
         <cbc:ID>MDH-26-0303</cbc:ID>
         <cbc:InfectiousDiseaseCaseOnBoardIndicator>false</cbc:InfectiousDiseaseCaseOnBoardIndicator>
+        <cbc:SickAnimalOnBoardIndicator>true</cbc:SickAnimalOnBoardIndicator>
         <cbc:SanitaryMeasuresAppliedIndicator>false</cbc:SanitaryMeasuresAppliedIndicator>
         <cbc:ValidSanitationCertificateOnBoardIndicator>true</cbc:ValidSanitationCertificateOnBoardIndicator>
         <cbc:TotalIllPersonQuantity unitCode="IE">0</cbc:TotalIllPersonQuantity>
+        <cbc:SickAnimalDescription>The ship's cat has been off its food and listless for three days. It is kept in the master's cabin, away from the cargo and the galley; the master asks for a veterinarian at Lumeport.</cbc:SickAnimalDescription>
         <cac:ShipSanitationControlExemptionDocumentReference>
           <cbc:ID>SSCEC-XB-2026-0114</cbc:ID>
           <cbc:IssueDate>2026-01-14</cbc:IssueDate>

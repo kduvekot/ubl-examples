@@ -12,7 +12,8 @@
   <cbc:Description>Shipped on board.</cbc:Description>
   <cbc:Note>Freight collect.</cbc:Note>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
+  <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
+  <cbc:DeclaredCarriageValueAmount currencyID="XLC">6055.452</cbc:DeclaredCarriageValueAmount>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

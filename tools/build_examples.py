@@ -801,9 +801,6 @@ def hazardous_item(it):
         name, act, unit = hz["isotope"]
         out["RadioactiveMaterial"] = {"Name": V("Americium-241 sources in smoke detectors", "The material."),
                                       "SpecialFormDescription": V("Sealed source, not special form.", "Its form."),
-                                      "TransportIndexNumeric": V("0", "Excepted package: no dose rate to "
-                                                                      "speak of."),
-                                      "FissileCriticalitySafetyIndexNumeric": V("0", "Not fissile."),
                                       "ApplicableRadioactiveIsotope": {"Name": V(name, "The isotope."),
                                                                        "ActivityLevelMeasure": V(act, "Per detector.",
                                                                                                  unitCode=unit)}}

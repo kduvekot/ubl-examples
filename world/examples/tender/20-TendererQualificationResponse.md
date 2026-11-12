@@ -284,8 +284,6 @@ Inside `QualificationResolution`:
 
 - `AdmissionCode` = **ADMITTED** (listID `urn:ubl-examples:world:codelist:QualificationAdmissionCode`)  
   The tenderer meets the selection criteria and its tender is evaluated. The code is from the Trade Accord's qualification admission list: ADMITTED = Admitted.
-- `ExclusionReason` = **None: no ground for exclusion applies.**  
-  Checked against the register.
 - `Resolution` = **Admitted to the evaluation of lot 1.**  
   The decision.
 - `ResolutionDate` = **2026-03-03**  
@@ -296,8 +294,6 @@ Inside `QualificationResolution`:
   Lot 1.
 - `AdmissionCode` = **ADMITTED** (listID `urn:ubl-examples:world:codelist:QualificationAdmissionCode`)  
   The tenderer meets the selection criteria and its tender is evaluated. The code is from the Trade Accord's qualification admission list: ADMITTED = Admitted.
-- `ExclusionReason` = **None: no ground for exclusion applies.**  
-  Checked.
 - `Resolution` = **Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.**  
   The decision.
 - `ResolutionDate` = **2026-03-03**  
@@ -572,7 +568,6 @@ Inside `Signature`:
   </cac:ResolutionDocumentReference>
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
-    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
     <cbc:Resolution>Admitted to the evaluation of lot 1.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
@@ -582,7 +577,6 @@ Inside `Signature`:
   </cac:QualificationResolution>
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
-    <cbc:ExclusionReason>None: no ground for exclusion applies.</cbc:ExclusionReason>
     <cbc:Resolution>Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>

@@ -391,19 +391,6 @@ Inside `PaymentExchangeRate`:
 - `Date` = **2026-04-04**  
   The rate of the document's date.
 
-### Allowance Charge
-
-Inside `AllowanceCharge`:
-
-- `ChargeIndicator` = **false**  
-  An allowance.
-- `AllowanceChargeReasonCode` = **100** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 100 = Special rebate.
-- `AllowanceChargeReason` = **Goodwill**  
-  For the inconvenience.
-- `Amount` = **0.00** (currencyID `XBL`)  
-  None in money: the bench is replaced.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -1047,12 +1034,6 @@ Inside `CreditNoteLine`:
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-04-04</cbc:Date>
   </cac:PaymentExchangeRate>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">100</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Goodwill</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">0.00</cbc:Amount>
-  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

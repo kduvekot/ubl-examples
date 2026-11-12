@@ -320,7 +320,7 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxableAmount` = **5.00** (currencyID `XBL`)  
   The fee.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  None.
+  No tax: the fee is outside the scope of the sales tax.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A reminder fee is compensation, not a supply: outside the scope of the sales tax. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Compensation for late payment**  

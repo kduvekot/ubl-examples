@@ -387,7 +387,6 @@
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XUF">0</cbc:LineExtensionAmount>
         <cbc:PayableAmount currencyID="XUF">0</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>

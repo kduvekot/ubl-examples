@@ -16,7 +16,6 @@
   <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -574,9 +573,6 @@
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
-        <cac:TransshipPortLocation>
-          <cbc:Name>None: a direct sailing</cbc:Name>
-        </cac:TransshipPortLocation>
         <cac:AvailabilityTransportEvent>
           <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>

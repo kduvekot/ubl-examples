@@ -532,8 +532,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **12480.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **11856.00** (currencyID `XBL`)  
+  The goods less the promotion support.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -1221,7 +1221,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">12480.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">11856.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

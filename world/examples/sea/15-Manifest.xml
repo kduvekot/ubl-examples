@@ -14,7 +14,6 @@
   <cbc:Note>One container for Selanu.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XBL">0.00</cbc:DeclaredCarriageValueAmount>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
@@ -326,19 +325,16 @@
   <cac:CrewPerson>
     <cbc:FirstName>Corin</cbc:FirstName>
     <cbc:FamilyName>Halvard</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:CrewPerson>
     <cbc:FirstName>Elsbeth</cbc:FirstName>
     <cbc:FamilyName>Marrin</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
   </cac:CrewPerson>
   <cac:PassengerPerson>
     <cbc:FirstName>Ines</cbc:FirstName>
     <cbc:FamilyName>Tavari</cbc:FamilyName>
-    <cbc:GenderCode listID="ISO 5218">0</cbc:GenderCode>
     <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
   </cac:PassengerPerson>
   <cac:Shipment>

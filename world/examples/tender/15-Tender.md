@@ -466,7 +466,7 @@ Inside `TenderedProject`:
 - `TenderLine/TaxInclusiveLineExtensionAmount` = **119760.00** (currencyID `XBL`)  
   No tax for a public body.
 - `TenderLine/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
-  None.
+  No tax for a public body.
 - `TenderLine/OrderableUnit` = **Pallet of 4**  
   Called off in pallets.
 - `TenderLine/ContentUnitQuantity` = **4** (unitCode `EA`)  

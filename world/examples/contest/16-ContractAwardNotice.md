@@ -267,8 +267,16 @@ Inside `TenderingTerms`:
 
 Inside `TenderingProcess`:
 
+- `NegotiationDescription` = **The service contract for the detailed design and the supervision of the production is negotiated with the first-prize winner, without a new call for competition, on fees, timetable and the number of prototypes.**  
+  The negotiation that follows the contest.
 - `ProcedureCode` = **DESIGNCONTEST** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
+- `EconomicOperatorShortList/LimitationDescription` = **Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.**  
+  Why one party.
+- `EconomicOperatorShortList/PreSelectedParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EconomicOperatorShortList/PreSelectedParty/PartyName/Name` = **Brackenmere Furniture**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Procurement Project
 
@@ -740,7 +748,19 @@ Inside `TenderResult`:
     </cac:AwardingTerms>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
+    <cbc:NegotiationDescription>The service contract for the detailed design and the supervision of the production is negotiated with the first-prize winner, without a new call for competition, on fees, timetable and the number of prototypes.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+    <cac:EconomicOperatorShortList>
+      <cbc:LimitationDescription>Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.</cbc:LimitationDescription>
+      <cac:PreSelectedParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:PreSelectedParty>
+    </cac:EconomicOperatorShortList>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:Name>Design of the harbour promenade bench</cbc:Name>

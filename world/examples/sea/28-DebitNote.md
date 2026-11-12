@@ -546,7 +546,7 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxableAmount` = **51.250** (currencyID `XLC`)  
   The debit.
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  None.
+  No tax: the island has no sales tax.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   Lisavu has no sales tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  

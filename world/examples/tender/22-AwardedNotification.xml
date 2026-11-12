@@ -258,9 +258,10 @@
       <cbc:EndDate>2026-03-22</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
-      <cbc:Rate>0</cbc:Rate>
+      <cbc:Rate>3.5</cbc:Rate>
       <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>No subcontracting.</cbc:Description>
+      <cbc:Description>Saltmere Engineering installs the benches (lot 2) as subcontractor, at the tender's price of 18 lume a bench.</cbc:Description>
+      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
     </cac:SubcontractTerms>
     <cac:WinningParty>
       <cbc:Rank>1</cbc:Rank>

@@ -492,10 +492,8 @@ Inside `SubscriberConsumption`:
   The conversion.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity` = **61200** (unitCode `KWH`)  
   The energy, which the retail company bills.
-- `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **0** (currencyID `XUF`)  
-  The statement carries no amounts: the retail company prices the energy.
 - `Consumption/LegalMonetaryTotal/PayableAmount` = **0** (currencyID `XUF`)  
-  Nothing to pay on it.
+  Nothing to pay on it: the statement carries no amounts, the retail company prices the energy. The element is required, so it is 0.
 
 ## The document
 
@@ -889,7 +887,6 @@ Inside `SubscriberConsumption`:
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XUF">0</cbc:LineExtensionAmount>
         <cbc:PayableAmount currencyID="XUF">0</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
