@@ -77,6 +77,16 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: drop it.
 - Needs decision: no
 
+### sea/07#F6 · Low · The transport user's contact is its sales customer service
+- XPath: `/TransportServiceDescriptionRequest/cac:SenderParty/cac:Contact/cbc:JobTitle` = `Customer service officer`
+- XPath: `/TransportServiceDescriptionRequest/cac:SenderParty/cac:Contact/cbc:Department` = `Sales`
+- Why: Lumeway asks a carrier about sailings as a transport user; the carrier will answer the
+  function that books transport (shipping, logistics), not the sales customer service that serves
+  Lumeway's buyers.
+- Condition: the sender's contact is the function that books transport, or absent.
+- Options: (a) preferred: a shipping/logistics contact of Lumeway.
+- Needs decision: no
+
 ## Checked and consistent
 - Receiver and TransportServiceProviderParty are the same carrier (register ID 20411918); its
   contact (Bookings, operations planner) fits a carrier answering service requests.
