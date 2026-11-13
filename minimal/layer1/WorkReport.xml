@@ -8,7 +8,7 @@
         <cbc:ID schemeID="0060">990001001</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Exemplo Vendedor 1001</cbc:Name>
+        <cbc:Name languageID="pt">Vendedor Exemplo 1001</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
@@ -18,7 +18,7 @@
         <cbc:ID schemeID="0060">990001002</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Exemplo Comprador 1002</cbc:Name>
+        <cbc:Name languageID="pt">Comprador Exemplo 1002</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:BuyerCustomerParty>

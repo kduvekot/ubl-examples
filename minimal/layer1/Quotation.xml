@@ -7,7 +7,7 @@
         <cbc:ID schemeID="0060">990000641</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Exemplo Vendedor 641</cbc:Name>
+        <cbc:Name languageID="pt">Vendedor Exemplo 641</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>

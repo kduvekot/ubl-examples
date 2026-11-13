@@ -7,7 +7,7 @@
       <cbc:ID schemeID="0060">990000041</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Empresa 41</cbc:Name>
+      <cbc:Name languageID="pt">Empresa Exemplo 41</cbc:Name>
     </cac:PartyName>
   </cac:BusinessParty>
 </BusinessCard>

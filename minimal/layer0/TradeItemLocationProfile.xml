@@ -8,12 +8,12 @@
   </cac:Period>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Remetente 821</cbc:Name>
+      <cbc:Name languageID="pt">Remetente Exemplo 821</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Destinatário 822</cbc:Name>
+      <cbc:Name languageID="pt">Destinatário Exemplo 822</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ItemManagementProfile>
