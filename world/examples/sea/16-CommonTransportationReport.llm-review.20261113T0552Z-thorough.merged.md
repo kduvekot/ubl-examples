@@ -264,6 +264,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad (F14, part)
 
+### sea/16#F24 · Low · Signature with an ID and a signatory only
+- XPath: `/CommonTransportationReport/cac:Signature/cbc:ID` = `TWL-SIG-CTR`
+- Why: `Signature` carries only an `ID` and a `SignatoryParty`: no signature method, no date or time, no attached or referenced digital signature, so it says nothing more than the party names already say. In addition, the prefix TWL differs from Tidewell's own document prefix TOL (TOL-CTR-26-0141) and the rest is the document type, which reads as an identifier made up for the example rather than the signer's own numbering. Added by the merge (no part raised it), aligned with the earlier flows' merges (air, utilities, retail, sea b: Low/yes, most signatures in the examples have this form).
+- Condition: The signature carries what makes it a signature (method, time, or the referenced signature), or is absent; its ID is the signer's own number.
+- Options: (a) preferred: drop the `Signature` where no signature is applied; (b) add `SignatureMethod`, a signing date/time and the digital signature reference.
+- Needs decision: yes (a world-wide convention)
+- From: merge (no part raised it)
+
 ## Checked and consistent
 - Reference: `TOL-MF-26-0140` resolves to `15-Manifest.xml` (same vessel, journey `TH-26-19E`, one container `TWLU4120872` for Selanu, matching "Discharge one container"). Registry certificate `REG-XB-S-20117`, vessel ID, name, call sign `QBTH7`, GT 9940, NT 5120 (ratio 0.52), segregated ballast 2480 t = `TotalBallastWaterCapacityMeasure` 2480 t agree with 14 and 15; type 1511 and FEEDER agree; course 088 fits the eastbound direction (broad, logistics, context).
 - MMSI `298702117`: MID 298 is not allocated by the ITU (`world/codelists/sources/PROVENANCE-second-round.md` line 206: the ITU MID table re-read 2026-11-11 lists none of 280–299), so it cannot be mistaken for a real station (merge).
@@ -294,6 +302,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/CommonTransportationReport/cac:Shipment/cac:ShipmentStage/cac:FuelConsumption/cac:FuelProviderParty/cac:PartyName/cbc:Name` = `Port of Lumeport`: a bunker purchase that should be billed in the flow — refuted: the report only states who supplied the fuel (from money).
 
 ## Changed in the merge
+- Added by the merge: F24 (signature with ID and signatory only, Low/yes), aligned with the earlier flows.
 - broad/F1, context/F1, logistics/F1 and logistics/F2 → F1: combined (two positions at one time, and position/speed/arrival); one fix covers both.
 - logistics/F4 and parties/F1 → F2: combined; kept High/yes. Broad and context had the map distance under "Outside this review"; the merge treats the contradiction inside this report as a finding.
 - context/F2 split: the distance contradiction joins broad/F2 and logistics/F3 in F3 (High); the misuse of `NoControlActionsReason` joins broad/F3 in F6 (Medium, as broad), because the two conditions are independent.

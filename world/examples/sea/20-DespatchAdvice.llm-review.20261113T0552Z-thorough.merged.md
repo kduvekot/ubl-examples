@@ -180,6 +180,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad (F3); context and logistics under "Outside this review"
 
+### sea/20#F17 · Low · Signature with an ID and a signatory only
+- XPath: `/DespatchAdvice/cac:Signature/cbc:ID` = `LD-SIG-26-DA`
+- Why: `Signature` carries only an `ID` and a `SignatoryParty`: no signature method, no date or time, no attached or referenced digital signature, so it says nothing more than the party names already say. In addition, the ID is built from the document type, which reads as an identifier made up for the example rather than the signer's own numbering. Added by the merge (no part raised it), aligned with the earlier flows' merges (air, utilities, retail, sea b: Low/yes, most signatures in the examples have this form).
+- Condition: The signature carries what makes it a signature (method, time, or the referenced signature), or is absent; its ID is the signer's own number.
+- Options: (a) preferred: drop the `Signature` where no signature is applied; (b) add `SignatureMethod`, a signing date/time and the digital signature reference.
+- Needs decision: yes (a world-wide convention)
+- From: merge (no part raised it)
+
 ## Checked and consistent
 - References: order `VT-PO-26-0127` with lines 1 and 2 (`05-Order.xml`) and packing list `LD-PL-26-0134` (`10-PackingList.xml`, issued 2026-05-12 15:59, before this advice) exist; shipment and consignment IDs are those of the bill of lading (broad, context, logistics).
 - Quantities: 24 pallets × 4 = 96 benches; 12 side frames with 12 item instances, serials VI-SF-01230 to VI-SF-01241 without gaps, one melt; equal to order, packing list, bill of lading (24 pallets + 1 pallet of 12 boxes = 25), import declaration, invoice and receipt advice (96 and 11 + 1 rejected) (broad, context, logistics).
@@ -196,6 +204,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/DespatchAdvice/cac:BuyerCustomerParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID` = `XL-TR-041859`: the buyer's customs trader number — refuted: the goods cross a customs border to the importer's warehouse (from parties).
 
 ## Changed in the merge
+- Added by the merge: F17 (signature with ID and signatory only, Low/yes), aligned with the earlier flows.
 - Added by the merge: F1 (emission triple, High), F6 (MANUFACTURING), F7 (CRADLETOGATE), F14 (GTIN prefix, Low/yes), F15 (world item numbers, Low/yes), aligned with 19, sea d and the earlier flows.
 - broad/F5 (Low) and logistics/F1 (Medium) → F5 (Medium): a despatch advice without despatch date and container lacks what its purpose depends on.
 - context/F3 Needs decision yes → no (F8), aligned with all flows.

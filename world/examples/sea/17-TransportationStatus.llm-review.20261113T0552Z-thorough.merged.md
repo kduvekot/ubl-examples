@@ -117,6 +117,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: yes
 - From: money (F1); broad and context refuted parts of it (arguments above)
 
+### sea/17#F10 · Low · Signature with an ID and a signatory only
+- XPath: `/TransportationStatus/cac:Signature/cbc:ID` = `PS-SIG-TS-17`
+- Why: `Signature` carries only an `ID` and a `SignatoryParty`: no signature method, no date or time, no attached or referenced digital signature, so it says nothing more than the party names already say. In addition, the ID ends in the example number 17, which reads as an identifier made up for the example rather than the signer's own numbering. Added by the merge (no part raised it), aligned with the earlier flows' merges (air, utilities, retail, sea b: Low/yes, most signatures in the examples have this form).
+- Condition: The signature carries what makes it a signature (method, time, or the referenced signature), or is absent; its ID is the signer's own number.
+- Options: (a) preferred: drop the `Signature` where no signature is applied; (b) add `SignatureMethod`, a signing date/time and the digital signature reference.
+- Needs decision: yes (a world-wide convention)
+- From: merge (no part raised it)
+
 ## Checked and consistent
 - Reference `TOL-BL-26-0139` resolves to `14-BillOfLading.xml`: same consignment `LD-CS-26-0133`, container `TWLU4120872` (ISO 6346 check digit 2 correct), carrier Tidewell Ocean Lines and consignee Velumi Trading; stage ID 2 agrees with the main carriage stage of 14 and 15 (broad, logistics, context).
 - Timeline within the document (merge re-checked): arrival 06:30, discharge 11:20 (completed), container event 11:40, detention 12:00, quarantine 15:00 (completed), issue 16:36; all before the issue time. Arrival agrees with the requested arrival 06:00 at the fairway buoy in `16-CommonTransportationReport.xml`.
@@ -136,6 +144,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/TransportationStatus/cac:Consignment/cac:MainCarriageShipmentStage/cac:DetentionTransportEvent/cbc:Description` = `Wooden pallets must carry the heat-treatment mark.`: detention costs that should appear as a charge — refuted: the hold was completed the same day (`/TransportationStatus/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cac:QuarantineTransportEvent/cbc:CompletionIndicator` = `true`); no charge implied (from money).
 
 ## Changed in the merge
+- Added by the merge: F10 (signature with ID and signatory only, Low/yes), aligned with the earlier flows.
 - broad/F1, logistics/F1, context/F1 → F1: combined; context's Medium raised to High (contradiction with the referenced bill of lading, section 6); the flow-wide count of values added.
 - broad/F2, context/F2, logistics/F2 → F2: combined.
 - broad/F3, context/F3, logistics/F3 → F4: combined.

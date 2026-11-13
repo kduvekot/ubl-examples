@@ -222,6 +222,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad (F4), logistics (F5), money (F2)
 
+### sea/19#F21 · Low · Signature with an ID and a signatory only
+- XPath: `/ImportCustomsDeclaration/cac:Signature/cbc:ID` = `TCB-SIG-IM-sea`
+- Why: `Signature` carries only an `ID` and a `SignatoryParty`: no signature method, no date or time, no attached or referenced digital signature, so it says nothing more than the party names already say. In addition, the ID ends in the flow name "sea", which reads as an identifier made up for the example rather than the signer's own numbering. Added by the merge (no part raised it), aligned with the earlier flows' merges (air, utilities, retail, sea b: Low/yes, most signatures in the examples have this form).
+- Condition: The signature carries what makes it a signature (method, time, or the referenced signature), or is absent; its ID is the signer's own number.
+- Options: (a) preferred: drop the `Signature` where no signature is applied; (b) add `SignatureMethod`, a signing date/time and the digital signature reference.
+- Needs decision: yes (a world-wide convention)
+- From: merge (no part raised it)
+
 ## Checked and consistent
 - Values: 49920.00 × 0.4 = 19968.000 and 768.00 × 0.4 = 307.200 XLC at 0.4 XLC per XBL (forwarding instructions, bill of lading, invoice); the same values in XBL in `11-ExportCustomsDeclaration.xml`; 19968.000 + 307.200 = 20275.200 XLC = 50688.00 XBL (FOB) (broad, money, logistics; merge recalculated).
 - Weights: 3984 + 122.4 = 4106.4 kg, equal to the packing list and the bill of lading; 3984 / 96 = 41.5 kg per bench including its share of 24 pallets; 122.4 / 12 = 10.2 kg per casting; 7856.4 − 3750 = 4106.4 (broad, logistics).
@@ -244,6 +252,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Missing duty and tax amounts — refuted: the UBL 2.5 ImportCustomsDeclaration has no duty or tax aggregates; customs makes the assessment (from money).
 
 ## Changed in the merge
+- Added by the merge: F21 (signature with ID and signatory only, Low/yes), aligned with the earlier flows.
 - Added by the merge: F1 (emission triple, High), F8 (MANUFACTURING, Medium), F9 (CRADLETOGATE, Medium), F18 (GTIN prefix, Low/yes), F19 (world item number, Low/yes), aligned with the earlier flows' merges; no part raised them in this example.
 - broad/F8 split: the customs authority's company attributes join parties/F1 in F4 (Medium, as all earlier flows); the importer contact joins parties/F5 in F13.
 - broad/F5 (Low) → F7 (Medium), as context/F1 and logistics/F1: the code is the classification the declaration rests on, from the wrong country's list.
