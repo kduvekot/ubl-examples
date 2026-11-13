@@ -83,21 +83,29 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad (F3), parties (F2)
 
-### cotton/02#F7 · Low · The ginnery's English address tagged as Bayvarran English, and its legal form in one untagged rendering
+### cotton/02#F7 · Low · The ginnery's English address and the item text tagged as Bayvarran English
 - XPath: `/Forecast/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName[2]` = `Gin Yard Road`
 - XPath: `/Forecast/cac:ReceiverParty/cac:PostalAddress/cbc:CityName[2]` = `Port Wrenfield`
 - XPath: `/Forecast/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName[2]` = `Port Wrenfield`
-- XPath: `/Forecast/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Island limited company`
 - XPath: `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cbc:Name[2]` = `Cotton lint, compressed bale`
 - XPath: `01-SelfBilledInvoice.xml:/SelfBilledInvoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName[2]` = `Gin Yard Road`
-- XPath: `01-SelfBilledInvoice.xml:/SelfBilledInvoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[1]` = `Tivufo kilika humaki`
-- Why: here the English names of the ginnery's Lisavan address carry `languageID` `en-XB`; in the ginnery's own documents (01 and others) the same names carry `en-XL`, and its legal form is given in Lisavan and English, while here only the English form appears, without `languageID`. The item's English name and description are tagged `en-XB` here and `en-XL` in 10, 11 and 16 (broad). So the same party and item are described two ways in the flow, apparently following the sender (parties lists the Bayvarran-sent 02, 07, 08, 09, 13, 15 and 18). Both parts that raised it said "no"; the merge sets "yes" to align with every earlier flow's merge, which kept the same question Low/yes because a tag that follows the issuer's English is also a defensible reading and no convention is recorded.
-- Condition: the same rendering of the same address, legal form and item text carries the same renderings and `languageID`s in every example, or the rule by which the tag follows the issuer is recorded.
-- Options: (a, preferred) the renderings and tags of 01 (`en-XL`, Lisavan + English legal form) everywhere, because `languageID` describes the text, not its reader; (b) record that tags follow the issuer and apply it to every text of the party.
+- Why: here the English names of the ginnery's Lisavan address carry `languageID` `en-XB`; in the ginnery's own documents (01 and others) the same names carry `en-XL`. The item's English name and description are tagged `en-XB` here and `en-XL` in 10, 11 and 16 (broad). So the same party and item are described two ways in the flow, apparently following the sender (parties lists the Bayvarran-sent 02, 07, 08, 09, 13, 15 and 18). Both parts that raised it said "no"; the merge sets "yes" to align with every earlier flow's merge, which kept the same question Low/yes because a tag that follows the issuer's English is also a defensible reading and no convention is recorded.
+- Condition: the same rendering of the same address and item text carries the same `languageID` in every example, or the rule by which the tag follows the issuer is recorded.
+- Options: (a, preferred) the tags of 01 (`en-XL`) everywhere, because `languageID` describes the text, not its reader; (b) record that tags follow the issuer and apply it to every text of the party.
 - Needs decision: yes
 - From: broad (F4), parties (F3)
 
-### cotton/02#F8 · Low · `PackSizeNumeric` 227 for a bale "of about 227 kg"
+### cotton/02#F8 · Low · The ginnery's legal form in one untagged English rendering
+- XPath: `/Forecast/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyLegalForm` = `Island limited company`
+- XPath: `01-SelfBilledInvoice.xml:/SelfBilledInvoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[1]` = `Tivufo kilika humaki`
+- XPath: `01-SelfBilledInvoice.xml:/SelfBilledInvoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm[2]` = `Island limited company`
+- Why: in the ginnery's own documents its legal form is given in Lisavan and English, each with `languageID`; here the Lisavan rendering is dropped and the English one has no `languageID`, although the Lisavan street and city names are kept. The same party's legal-entity data differ between examples (parties). Split from F7 by the merge, aligned with merger B of this flow and the road, rail and air merges (separate Low/no: no convention question, only consistency).
+- Condition: the ginnery's legal form carries the same renderings and `languageID`s in every example of the flow.
+- Options: (a, preferred) both renderings with their tags, as in 01.
+- Needs decision: no
+- From: parties (F3, legal-form part)
+
+### cotton/02#F9 · Low · `PackSizeNumeric` 227 for a bale "of about 227 kg"
 - XPath: `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cbc:PackSizeNumeric` = `227`
 - XPath: `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cbc:PackQuantity` = `1`
 - XPath: `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cbc:Description[2]` = `Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.`
@@ -107,7 +115,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: yes
 - From: broad (F7, Low), logistics (F2, Medium), context (F3, Medium)
 
-### cotton/02#F9 · Low · Origin area "North coast" in `Region` here, in `District` in the farm's address
+### cotton/02#F10 · Low · Origin area "North coast" in `Region` here, in `District` in the farm's address
 - XPath: `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cac:OriginAddress/cbc:Region` = `North coast`
 - XPath: `01-SelfBilledInvoice.xml:/SelfBilledInvoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:District` = `North coast`
 - Why: `Region` is "The recognized geographic or economic region or group of countries in which this address is located"; `District` is "The district or geographical division of a country or region in which this address is located". The farm's address places the north coast of Lisavu in `District`; here the same area is a `Region`. Logistics refuted it within its lens: a recognised growing region of origin is what `Region` covers. That reading is possible, but then the farm's address puts the same area in another element; the inconsistency remains, so the finding stays Low.
@@ -116,7 +124,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad (F6), context (F4); logistics (considered and refuted, argument carried)
 
-### cotton/02#F10 · Low · Classing results in the applicant's remarks
+### cotton/02#F11 · Low · Classing results in the applicant's remarks
 - XPath: `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cac:Certificate/cbc:Remarks` = `Grade Middling, staple 1-1/8 inch, micronaire 4.2.`
 - Why: `Certificate/Remarks` is "Remarks by the applicant for this certificate". The text is the classer's result, signed by the chamber's classer (`Signature/Note`), not a remark of the applicant. Independent of F1 (if the certificate stays anywhere in the flow, the same applies).
 - Condition: the classing result is not carried as an applicant's remark, or the remark is really the applicant's.
@@ -138,16 +146,16 @@ review only describes what is wrong; it does not say where or how the example is
 - `/Forecast/cac:AdditionalDocumentReference/cbc:ID` = `SCG-SEASON-2026`: broad left it out as readable; the merge followed context and made it F2. (from broad)
 - `/Forecast/cac:SenderParty/cbc:IndustryClassificationCode` = `1312`: a weaving mill buying raw lint — refuted: an integrated mill spins and weaves; plausible main activity. (from broad)
 - `/Forecast/cac:ReceiverParty/cac:Contact/cbc:Name` = `Cotton sales`: the ginnery's sales contact receives a forecast of what its customer will buy — fits the role. (from parties)
-- `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cac:OriginAddress/cbc:Region` = `North coast`: logistics refuted (a recognised growing region); the merge kept the inconsistency with the farm's `District` as F9 (from broad, context). (from logistics)
-- `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cbc:PackQuantity` = `1`: one subunit per item as a filler — refuted: states that the item is sold by the bale. (from context; broad saw it as adding nothing, folded into F8's options)
+- `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cac:OriginAddress/cbc:Region` = `North coast`: logistics refuted (a recognised growing region); the merge kept the inconsistency with the farm's `District` as F10 (from broad, context). (from logistics)
+- `/Forecast/cac:ForecastLine/cac:SalesItem/cac:Item/cbc:PackQuantity` = `1`: one subunit per item as a filler — refuted: states that the item is sold by the bale. (from context; broad saw it as adding nothing, folded into F9's options)
 - `/Forecast/cbc:Note` = `Depends on clothing orders from the store.`: unrelated — refuted: explains why the forecast may change, which 07 then does. (from context)
 
 ## Changed in the merge
 - broad/F1, logistics/F1, context/F1 → F1: combined, all evidence kept.
 - context/F2 → F2: kept Medium/yes; broad's partial refutation added; references to `SCG-SEASON-2026` verified over the flow.
 - broad/F2, parties/F1 → F3: combined; count verified.
-- broad/F7 (Low), logistics/F2, context/F3 (Medium) → F8: Low with needs decision yes (parts: no), because a per-kilogram reading (item = 1 kg; raised by merger B of this flow) fits the definition and cannot be excluded; aligned with merger B.
+- broad/F7 (Low), logistics/F2, context/F3 (Medium) → F9: Low with needs decision yes (parts: no), because a per-kilogram reading (item = 1 kg; raised by merger B of this flow) fits the definition and cannot be excluded; aligned with merger B.
 - broad/F8, money/F1, parties/F5 → F4: grouped (tax registration + customs-trader numbers).
 - broad/F3, parties/F2 → F6: combined.
-- broad/F4, parties/F3 → F7: combined (legal form and item name added as places); needs decision changed from no to yes, to align with the earlier flows' merges (tag following the issuer is a defensible reading; no convention recorded).
-- broad/F6, context/F4 → F9: combined, logistics' counter-argument added.
+- broad/F4, parties/F3 → F7 and F8: the untagged legal form split off as F8 (Low/no, aligned with merger B and road/rail/air); item name added as a place in F7; F7's needs decision changed from no to yes, to align with the earlier flows' merges (tag following the issuer is a defensible reading; no convention recorded).
+- broad/F6, context/F4 → F10: combined, logistics' counter-argument added.
