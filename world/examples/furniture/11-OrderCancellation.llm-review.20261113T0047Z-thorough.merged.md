@@ -92,6 +92,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: parties (web site, social media; tax registrations and share capital), context (logo, web site, social media, share capital)
 
+### furniture/11#F8 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files), while Brightmarket has its own date (`/*/cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1979-02-14`).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - `/OrderCancellation/cac:OrderReference/cbc:ID` = `BS-PO-26-0576` resolves to `10-Order.xml`, the repeat order of the same buyer and seller, issued before the cancellation; "the second delivery" in the cancellation note fits it.
 - `/OrderCancellation/cac:AdditionalDocumentReference/cbc:ID` = `BS-DOC-26-0572` resolves to `06-ProductActivity.xml`, `BF-DOC-26-0573` to `07-ExceptionNotification.xml`; the reason (sales below the agreed threshold) matches them.
@@ -103,13 +111,14 @@ review only describes what is wrong; it does not say where or how the example is
 - `/OrderCancellation/cbc:CancellationNote`: "the second delivery is not needed" for what is a separate order — refuted because the repeat order is in plain words the second delivery of the line (from context).
 - `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge) (from parties).
 - `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because 999 is spare in ITU-T E.164 and the domains are under .example (from parties).
-- `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing depends on it (from parties).
+- `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F8 by the merge.
 - `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact — refuted because it fits the seller and name, title and department agree (from parties).
 - `/OrderCancellation/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: state-level versus city-level address register — refuted because the rule is "address registers by country level" (from parties).
 - `/OrderCancellation/cac:BuyerCustomerParty/cac:Party/cac:SocialMediaProfile/cbc:Name`: handle and account number in `Name`/`ID` — refuted because the aggregate is the profile; its presence is F7 (from parties).
 - The broad part's refutation of the beneficiary repeating the buyer, and the broad and context parts' refutation of the originator document, are carried in F5 and F4, which the merge kept as findings.
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F8: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - broad/F1, logistics/F1, context/F1 → F1: combined; option (a) BM-OWN-BRAND-2026 preferred, as two of three parts (broad preferred removal, kept as (b)).
 - broad/F2, parties/F1, context/F2 → F2: removal preferred, as in earlier flows.
 - logistics/F2 → F4: kept Low/yes against the refutations of broad and context, both arguments stated.

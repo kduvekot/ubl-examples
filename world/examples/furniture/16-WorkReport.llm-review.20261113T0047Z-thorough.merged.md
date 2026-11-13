@@ -135,6 +135,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: money
 
+### furniture/16#F13 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - Hours (merge recalculation): sub-lines 7 h + 7 h = 14 h = `/WorkReport/cac:WorkReportLine/cbc:Quantity` = `14` = `/WorkReport/cac:WorkQuantityTotal/cbc:Quantity` = `14` = the ordered hours in `15-Order.xml`.
 - Amounts: 14 × 48 = 672.00 = `/WorkReport/cac:WorkReportLine/cbc:LineExtensionAmount` = `672.00` = `/WorkReport/cac:StatementMonetaryTotal/cbc:LineExtensionAmount` = `672.00`; 672.00 + 24.00 = 696.00 = `/WorkReport/cac:StatementMonetaryTotal/cbc:PayableAmount` = `696.00`; `17-Invoice.xml` bills these figures and refers to this report and its line 1.
@@ -154,11 +162,12 @@ review only describes what is wrong; it does not say where or how the example is
 - `/WorkReport/cac:BuyerCustomerParty/cac:Party/cac:PostalAddress/cbc:MarkAttention`: head of procurement and procurement officer — refuted, two functions of the same office (from parties).
 - `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge) (from parties).
 - `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because 999 is spare in ITU-T E.164 and the domains are under .example (from parties).
-- `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing depends on it (from parties).
+- `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F13 by the merge.
 - `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact — refuted because name, title and department agree and the desk plausibly handles the relationship (from parties).
 - `/WorkReport/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: state-level versus city-level address register — refuted because the rule is "address registers by country level" (from parties).
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F13: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - broad/F1 (Medium, yes), context/F3 (Low, no) → F1: Medium (the element carries a meaning other than its definition) with "Needs decision: no" (moving a reference does not change the story); context's option (a) preferred.
 - broad/F2, parties/F1 → F2: "Needs decision" no (parties: yes), as for public bodies in all earlier flows.
 - broad/F3, parties/F2, context/F1 → F3: removal preferred.

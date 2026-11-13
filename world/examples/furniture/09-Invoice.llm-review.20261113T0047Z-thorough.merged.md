@@ -107,6 +107,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: money
 
+### furniture/09#F10 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files), while Brightmarket has its own date (`/*/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1979-02-14`).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - Lines (merge recalculation): 20 sets × 610 = 12200.00; sub-lines 20 × 380 = 7600.00 and 40 × 115 = 4600.00, sum 12200.00; line 2 free of charge, 20 × 0 = 0.00. Only the parent lines enter `LegalMonetaryTotal/LineExtensionAmount` (12200.00 + 0.00).
 - Totals: `/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount` = `12200.00` = tax exclusive = tax inclusive (tax 0.00, exempt) = `/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount` = `12200.00`; `/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount` = `12200.00` covers both lines.
@@ -126,13 +134,14 @@ review only describes what is wrong; it does not say where or how the example is
 - `/Invoice/cac:InvoiceLine[1]/cac:SubInvoiceLine[1]`: priced sub-lines suspected to double the amounts — refuted because only the parent lines enter the totals (from context).
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge); the same holds for every 952… key (from parties).
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because country code 999 is spare in ITU-T E.164, and the domains are under the reserved .example (from parties).
-- `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing says the register is closed that day and no other value depends on it (from parties).
+- `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F10 by the merge.
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact as accounting supplier — refuted because a small enterprise's trade-sales desk plausibly handles the whole customer relationship, and name, title and department agree (from parties).
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: a state-level address register for Brackenmere and a city register for the Lumeport parties — refuted because the rule is "address registers by country level", and Bayvarra keeps them per state or city (from parties).
 - `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:SocialMediaProfile/cbc:Name`: handle and account number in `Name` and `ID` rather than the platform — refuted because the aggregate is the profile; its presence is F6 (from parties).
 - `/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID`: the Marrowdale branch could contradict the account — refuted because the account number contains branch 387120 and the account name is Brackenmere's registration name (from parties).
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F10: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - logistics/F1 → F1: severity Medium → High, as broad/F1, because section 6 names a referenced document that does not exist as High; options of both parts combined; the numbering argument qualified (other BF series have their own serials).
 - broad/F2, parties/F1, context/F1 → F2: options ordered with removal preferred (broad preferred en-XB), as parties, context and all earlier flows' merges; count recounted.
 - broad/F3, money/F1 → F3: combined; the world list's definition of RESALE added; options of both kept.

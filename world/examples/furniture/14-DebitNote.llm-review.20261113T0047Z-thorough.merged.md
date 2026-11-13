@@ -104,6 +104,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: parties (web site, social media), context (also logo and share capital)
 
+### furniture/14#F9 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files), while Brightmarket has its own date (`/*/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1979-02-14`).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - Line (merge recalculation): 1 service unit (`/DebitNote/cac:DebitNoteLine/cac:Price/cbc:BaseQuantity` = `1`, E48) × 85 = `/DebitNote/cac:DebitNoteLine/cbc:LineExtensionAmount` = `85.00` = `/DebitNote/cac:DebitNoteLine/cbc:TaxInclusiveLineExtensionAmount` = `85.00` (tax 0.00) = `/DebitNote/cac:LegalMonetaryTotal/cbc:PayableAmount` = `85.00`; taxable amount 85.00.
 - Tax: exempt STT with `SVCB2B` "Service to a business" (world list: "A service supplied to a business is not a retail sale") fits a transport service between two businesses.
@@ -122,12 +130,13 @@ review only describes what is wrong; it does not say where or how the example is
 - `/DebitNote/cac:Delivery/cac:DeliveryLocation/cbc:Name`: location name contains the company name — refuted because it names Brackenmere's Marrowdale site, identified by its own GLN (from parties).
 - `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge) (from parties).
 - `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because 999 is spare in ITU-T E.164 and the domains are under .example (from parties).
-- `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing depends on it (from parties).
+- `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F9 by the merge.
 - `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact — refuted because name, title and department agree and the desk plausibly handles the relationship (from parties).
 - `/DebitNote/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: state-level versus city-level address register — refuted because the rule is "address registers by country level" (from parties).
 - `/DebitNote/cac:AccountingCustomerParty/cac:Party/cac:SocialMediaProfile/cbc:Name`: handle and account number in `Name`/`ID` — refuted because the aggregate is the profile; its presence is F8 (from parties).
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F9: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - broad/F1, context/F1, parties/F1, money/F1 → F1: combined; money's Medium raised to High (values in the document contradict each other); the cost-centre part of broad/F1 moved to F2.
 - context/F2 → F2: kept Medium, joined by the cost-centre part of broad/F1; dependency on F1 stated.
 - broad/F2, context/F3, logistics/F1 → F3: combined at Medium (logistics had Low, its argument stated); options of all three kept.

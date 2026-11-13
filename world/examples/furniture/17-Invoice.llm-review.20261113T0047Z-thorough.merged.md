@@ -100,6 +100,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad, context, parties
 
+### furniture/17#F9 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - Arithmetic (merge recalculation): 6 × 880 = 5280.00 and 14 × 48 = 672.00; `/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount` = `5952.00`; + charge 24.00 = `/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount` = `5976.00` = `/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount` = `5976.00`; tax 0.00; tax inclusive and payable 5976.00.
 - Penalty (merge recalculation): 1.5 % × 5976.00 = 89.64 = `/Invoice/cac:PaymentTerms/cbc:PenaltyAmount` = `89.64`, for one month from 2026-05-10, the day after the due date; due date 2026-04-09 + 30 days = 2026-05-09 = `/Invoice/cbc:DueDate` = `2026-05-09`.
@@ -116,7 +124,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/Invoice/cac:BuyerAssignedReference/cbc:BuyerReference` = `Accounts payable, public works`: fits the element ("used for internal routing of the document"); only its code's link to the parks programme is part of F5 (from context).
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge) (from parties).
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because 999 is spare in ITU-T E.164 and the domains are under .example (from parties).
-- `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing depends on it (from parties).
+- `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F9 by the merge.
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact as accounting supplier — refuted because name, title and department agree and the desk plausibly handles the relationship (from parties).
 - `/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: state-level versus city-level address register — refuted because the rule is "address registers by country level" (from parties).
 - `/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID`: the Marrowdale branch could contradict the account — refuted because the account number contains branch 387120 (from parties).
@@ -124,6 +132,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:MarkAttention`: head of procurement and procurement officer — refuted as a contradiction between the two (same office) (from parties); that both are the wrong function for an accounting customer is F6.
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F9: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - broad/F2, parties/F1 → F2: "Needs decision" no (parties: yes), as for public bodies in all earlier flows.
 - broad/F3, parties/F2, context/F2 → F3: removal preferred.
 - broad/F4 (yes), money/F3 (no) → F4: combined, "Needs decision: yes", as 16#F4.

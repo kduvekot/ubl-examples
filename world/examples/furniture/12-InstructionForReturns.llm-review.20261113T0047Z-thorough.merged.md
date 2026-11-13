@@ -92,6 +92,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: parties (web site, social media; tax registrations and share capital), context (logo, web site, social media, share capital)
 
+### furniture/12#F8 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files), while Brightmarket has its own date (`/*/cac:RetailerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1979-02-14`).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - Physics (merge recalculation): `/InstructionForReturns/cac:Shipment/cbc:GrossWeightMeasure` = `282` kg for 6 sets = 47 kg per set of one 1400 mm hardwood bench and two chairs in cartons. Own estimates (not in the flow; no other furniture example states a weight): bench 25 to 30 kg, chair 8 to 10 kg, cartons 1 to 2 kg per piece, i.e. 44 to 56 kg per set. Plausible. Gross weight ("goods plus packaging plus transport equipment") fits sets in original cartons without further equipment.
 - Stock (merge recalculation): 20 delivered (`09-Invoice.xml`) − 3 sold to 2026-04-20 (`06-ProductActivity.xml`) = at most 17 on hand; returning 6 leaves at most 11, close to the target of 10 in `04-TradeItemLocationProfile.xml`, which fits "to free the store's shelf".
@@ -104,7 +112,7 @@ review only describes what is wrong; it does not say where or how the example is
 - `/InstructionForReturns/cac:InstructionForReturnsLine/cbc:Note` = `In their original cartons.`: suspected filler — refuted because packing instructions are a real part of a return instruction (from context); missing package counts for the cartons — refuted because the gross weight is given and no other value depends on the count (from logistics).
 - `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge) (from parties).
 - `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because 999 is spare in ITU-T E.164 and the domains are under .example (from parties).
-- `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing depends on it (from parties).
+- `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F8 by the merge.
 - `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact — refuted because it fits the seller and name, title and department agree (from parties).
 - `/InstructionForReturns/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: state-level versus city-level address register — refuted because the rule is "address registers by country level" (from parties).
 - `/InstructionForReturns/cac:RetailerCustomerParty/cac:Party/cac:SocialMediaProfile/cbc:Name`: handle and account number in `Name`/`ID` — refuted because the aggregate is the profile; its presence is F7 (from parties).
@@ -119,6 +127,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Refuted because: the store carries the goods with its own van (`14-DebitNote.xml`, "Collected with the store's van."), so the shipment is the store's and a store number is the natural shipment identifier; the maker can quote it once the return was agreed after the exception notification of 2026-04-21 (logistics refuted it on the same ground). The serial 0427 being the instruction's date does not make it the maker's number. What the instruction lacks about the carrier is F3.
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F8: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - logistics/F1, parties/F1, broad/F2, context/F2 → F1 (Medium) and F3 (Low): the missing destination (all four parts) kept as Medium, because the document's purpose depends on it (broad and context had Low); the carrier and cost arrangement (context's F2, a remark in logistics/F1) split off as F3 with context's "Needs decision: yes", because its option (b) removes a document from the flow.
 - broad/F1, parties/F2, context/F1 → F2: removal preferred, as in earlier flows.
 - broad/F4, parties/F3, context/F3 → F4: combined.

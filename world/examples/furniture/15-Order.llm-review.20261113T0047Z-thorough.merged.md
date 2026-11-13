@@ -79,6 +79,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 - From: broad, context, parties
 
+### furniture/15#F7 · Low · Brackenmere's registration date is the date shared by 25 companies
+- XPath: `/Order/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate` = `1996-01-01`
+- Why: The parties part suspected a placeholder date and refuted it (nothing in the world says the register is closed that day, and no other value depends on it). The merge keeps it as a finding it cannot settle, for alignment with merger A (furniture 01–08) and the merges of every earlier flow: `1996-01-01` is the registration date of 25 companies, 271 times in 181 examples (`grep -rho --include='*.xml' '<cbc:RegistrationDate>1996-01-01' world/examples | wc -l`, `grep -rl` for the files).
+- Condition: Brackenmere's registration date is a date from its company history, or the shared date is confirmed as a story fact.
+- Options: (a, preferred) an individual date from the company's history; (b) confirm 1996-01-01 as a story event; (c) omit the element where no document uses it.
+- Needs decision: yes
+- From: parties (under "Considered and refuted"; made a finding by the merge)
+
 ## Checked and consistent
 - Arithmetic (merge recalculation): 6 × 880 = 5280.00 (`/Order/cac:OrderLine[1]/cac:LineItem/cbc:LineExtensionAmount` = `5280.00`); 14 h × 48 = 672.00 (`/Order/cac:OrderLine[2]/cac:LineItem/cbc:LineExtensionAmount` = `672.00`); sum 5952.00 = `/Order/cac:AnticipatedMonetaryTotal/cbc:PayableAmount` = `5952.00` = `/Order/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount` = `5952.00`; tax 0.00, exempt PUBLIC, the treatment 17 applies; prices state their base quantity (1 EA, 1 HUR).
 - The 6 desks and 14 hours are what `16-WorkReport.xml` reports and `17-Invoice.xml` bills; 14 h is two installers × 7 h, about 2 h 20 min per desk (own estimate 1.5 to 3 h per hardwood desk).
@@ -93,11 +101,12 @@ review only describes what is wrong; it does not say where or how the example is
 - `/Order/cac:BuyerCustomerParty/cac:Party/cac:PostalAddress/cbc:MarkAttention`: head of procurement in the address and a procurement officer as contact — refuted because they are two functions of the same office (from parties).
 - `/Order/cac:SellerSupplierParty/cac:Party/cac:AdditionalPartyIdentification/cbc:ID`: GLN 9523710900008 could be a real GS1 key — refuted because GS1 prefix 952 is reserved for demonstrations and examples (own knowledge) (from parties).
 - `/Order/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telephone`: +999 numbers could be real — refuted because 999 is spare in ITU-T E.164 and the domains are under .example (from parties).
-- `/Order/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: 1996-01-01 looks like a placeholder — refuted because nothing depends on it (from parties).
+- `/Order/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationDate`: placeholder date — refuted by parties; made F7 by the merge.
 - `/Order/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:JobTitle`: Brackenmere's trade-sales contact — refuted because it fits the seller and name, title and department agree (from parties).
 - `/Order/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:ID`: state-level versus city-level address register — refuted because the rule is "address registers by country level" (from parties).
 
 ## Changed in the merge
+- parties' refuted candidate (RegistrationDate 1996-01-01) → F7: made a Low finding with "Needs decision: yes", the parties' refutation carried as counter-argument, for alignment with merger A (01–08) and every earlier flow's merge.
 - broad/F1, parties/F1 → F1: "Needs decision" set to no (parties: yes), as in all earlier flows for public bodies and customs authorities described as companies: the preferred option only removes values; the City of Lumeport as legal entity kept as option (b), which would be a story change.
 - broad/F2, parties/F2, context/F1 → F2: removal preferred, as in earlier flows.
 - logistics/F1, parties/F3 → F3: combined (place and date).
