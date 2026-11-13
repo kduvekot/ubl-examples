@@ -3,7 +3,7 @@
   <cbc:ID>TransportExecutionPlanRequest-1</cbc:ID>
   <cac:TransportServiceProviderParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Frachtführer 851</cbc:Name>
+      <cbc:Name languageID="de">Beispielfrachtführer 851</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:Consignment>

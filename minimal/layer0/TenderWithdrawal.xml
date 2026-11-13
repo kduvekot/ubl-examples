@@ -10,7 +10,7 @@
   </cac:ContractingParty>
   <cac:TendererParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Bieter 792</cbc:Name>
+      <cbc:Name languageID="de">Beispielbieter 792</cbc:Name>
     </cac:PartyName>
   </cac:TendererParty>
 </TenderWithdrawal>

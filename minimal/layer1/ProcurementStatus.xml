@@ -17,7 +17,7 @@
         <cbc:ID schemeID="0060">990000552</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="de">Beispiel Wirtschaftsteilnehmer 552</cbc:Name>
+        <cbc:Name languageID="de">Beispielwirtschaftsteilnehmer 552</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>

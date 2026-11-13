@@ -12,7 +12,7 @@
       <cbc:ID schemeID="0088">9520000003111</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Absender 311</cbc:Name>
+      <cbc:Name languageID="de">Beispielabsender 311</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
@@ -20,7 +20,7 @@
       <cbc:ID schemeID="0088">9520000003128</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Empfänger 312</cbc:Name>
+      <cbc:Name languageID="de">Beispielempfänger 312</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ForecastLine>

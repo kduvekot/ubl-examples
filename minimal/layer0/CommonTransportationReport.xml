@@ -4,17 +4,17 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:ReporterParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Berichterstatter 131</cbc:Name>
+      <cbc:Name languageID="de">Beispielberichterstatter 131</cbc:Name>
     </cac:PartyName>
   </cac:ReporterParty>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Absender 132</cbc:Name>
+      <cbc:Name languageID="de">Beispielabsender 132</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispiel Empfänger 133</cbc:Name>
+      <cbc:Name languageID="de">Beispielempfänger 133</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
 </CommonTransportationReport>

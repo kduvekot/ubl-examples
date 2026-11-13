@@ -11,7 +11,7 @@
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="de">Beispiel Wirtschaftsteilnehmer 552</cbc:Name>
+        <cbc:Name languageID="de">Beispielwirtschaftsteilnehmer 552</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>

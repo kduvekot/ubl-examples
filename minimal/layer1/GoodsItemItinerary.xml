@@ -15,7 +15,7 @@
         <cbc:ID schemeID="0199">999900MINIMAL0037145</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="de">Beispiel Frachtführer 371</cbc:Name>
+        <cbc:Name languageID="de">Beispielfrachtführer 371</cbc:Name>
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
   </cac:TransportationSegment>

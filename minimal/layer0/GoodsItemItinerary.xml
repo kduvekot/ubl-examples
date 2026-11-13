@@ -12,7 +12,7 @@
     </cac:TransportationService>
     <cac:TransportServiceProviderParty>
       <cac:PartyName>
-        <cbc:Name languageID="de">Beispiel Frachtführer 371</cbc:Name>
+        <cbc:Name languageID="de">Beispielfrachtführer 371</cbc:Name>
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
   </cac:TransportationSegment>

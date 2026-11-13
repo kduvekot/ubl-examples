@@ -5,7 +5,7 @@
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="de">Beispiel Lieferant 611</cbc:Name>
+        <cbc:Name languageID="de">Beispiellieferant 611</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingSupplierParty>

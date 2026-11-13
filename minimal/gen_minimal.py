@@ -500,7 +500,7 @@ TEXTS = {  # (en, de, pt, ja-Latn)
 
 NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
     "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Mihon Tarō"),
-    "ActivityOriginLocation/Name": ("Example Store 1", "Beispiel Filiale 1", "Loja Exemplo 1", "Sanpuru Tenpo 1"),
+    "ActivityOriginLocation/Name": ("Example Store 1", "Beispielfiliale 1", "Loja Exemplo 1", "Sanpuru Tenpo 1"),
     "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
 }
 
@@ -695,8 +695,14 @@ def generate(layer, fill, schemes):
             nm = party.find("{%s}PartyName/{%s}Name" % (CAC, CBC))
             r_name = ROLE_NAMES[role(party)][LANG_INDEX[lang]]
             # Portuguese puts the modifier after the noun: "Comprador Exemplo 492"
-            nm.text = ("%s %s %d" % (r_name, EXAMPLE[lang], k) if lang == "pt"
-                       else "%s %s %d" % (EXAMPLE[lang], r_name, k))
+            # German compounds one-word roles ("Beispielkäufer 492"); multi-word
+            # roles stay separate ("Beispiel Öffentlicher Auftraggeber 1")
+            if lang == "pt":
+                nm.text = "%s %s %d" % (r_name, EXAMPLE[lang], k)
+            elif lang == "de" and " " not in r_name:
+                nm.text = "%s%s %d" % (EXAMPLE[lang], r_name[0].lower() + r_name[1:], k)
+            else:
+                nm.text = "%s %s %d" % (EXAMPLE[lang], r_name, k)
             nm.set("languageID", lang)
             pid = party.find("{%s}PartyIdentification/{%s}ID" % (CAC, CBC))
             if pid is not None:
