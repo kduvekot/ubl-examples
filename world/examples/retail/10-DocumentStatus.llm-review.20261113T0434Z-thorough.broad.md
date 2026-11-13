@@ -31,15 +31,7 @@ what is wrong; it does not say where or how the example is produced.
 - Options: (a, preferred) a status time after 11:52 (or a request time before 11:14).
 - Needs decision: no
 
-### retail/10#F2 · Low · Acceptance reported for Lumeway's own transport request, a document the receiver does not know
-- XPath: `/DocumentStatus/cac:AdditionalDocumentResponse/cac:DocumentReference/cbc:ID` = `LD-TR-26-0227`
-- XPath: `/DocumentStatus/cac:AdditionalDocumentResponse/cac:Response/cbc:ResponseCode` = `AP`
-- Why: `AdditionalDocumentResponse` is "A document linked or related to the document for which the status was requested". `LD-TR-26-0227` is 11-TransportExecutionPlanRequest, which Lumeway sent to Bayforth Forwarding; Brightmarket has never received it. The response code "Accepted" says the transport request was accepted, which only Bayforth could do, and no acceptance by Bayforth exists in the flow (14-TransportationStatusRequest refers to a transport execution plan `BF-TEP-26-0227` that no example carries). The reference without any description tells Brightmarket nothing.
-- Condition: an additional document response refers to a document whose status the receiver can understand, with a status that the flow supports; or it is absent.
-- Options: (a, preferred) drop it, and let the note say that transport is booked; (b) keep it with a document type or description ("transport booked with the carrier") and a response code that describes Lumeway's own status of it, if the world's list has one.
-- Needs decision: no
-
-### retail/10#F3 · Medium · Language codes in LocaleCode
+### retail/10#F2 · Medium · Language codes in LocaleCode
 - XPath: `/DocumentStatus/cac:SenderParty/cac:Language/cbc:LocaleCode` = `en`
 - XPath: `/DocumentStatus/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
 - Why: `LocaleCode` is "A code signifying the locale in which this language is used"; `en` with `listID` `ISO 639` repeats the language code that `Language/cbc:ID` already holds and names no locale. The pattern occurs 362 times in 213 examples (`grep -rho --include='*.xml' '<cbc:LocaleCode[^>]*>[^<]*'` over `world/examples`).
@@ -47,11 +39,19 @@ what is wrong; it does not say where or how the example is produced.
 - Options: (a, preferred) drop it; (b) a locale such as `en-XB` from a list that defines it, if a regional variant matters.
 - Needs decision: no
 
-### retail/10#F4 · Medium · A vehicle gate as additional street name in Lumeway's postal address
+### retail/10#F3 · Medium · A vehicle gate as additional street name in Lumeway's postal address
 - XPath: `/DocumentStatus/cac:SenderParty/cac:PostalAddress/cbc:AdditionalStreetName` = `Gate 3`
 - Why: `AdditionalStreetName` is "An additional street name used to further clarify the address". A gate of a business park is a vehicle access detail, not a street name, and has no place in a postal address. The value occurs in 76 examples (`grep -rc --include='*.xml' '<cbc:AdditionalStreetName>Gate 3<'`, files with a non-zero count).
 - Condition: no address of Lumeway holds a gate in `AdditionalStreetName`.
 - Options: (a, preferred) drop it from the postal address and give the gate where a vehicle needs it (loading location, delivery instructions); (b) if Bayvarra's address format really makes the gate part of the postal address, record that in the format definition; the finding is then dismissed.
+- Needs decision: no
+
+### retail/10#F4 · Low · Acceptance reported for Lumeway's own transport request, a document the receiver does not know
+- XPath: `/DocumentStatus/cac:AdditionalDocumentResponse/cac:DocumentReference/cbc:ID` = `LD-TR-26-0227`
+- XPath: `/DocumentStatus/cac:AdditionalDocumentResponse/cac:Response/cbc:ResponseCode` = `AP`
+- Why: `AdditionalDocumentResponse` is "A document linked or related to the document for which the status was requested". `LD-TR-26-0227` is 11-TransportExecutionPlanRequest, which Lumeway sent to Bayforth Forwarding; Brightmarket has never received it. The response code "Accepted" says the transport request was accepted, which only Bayforth could do, and no acceptance by Bayforth exists in the flow (14-TransportationStatusRequest refers to a transport execution plan `BF-TEP-26-0227` that no example carries). The reference without any description tells Brightmarket nothing.
+- Condition: an additional document response refers to a document whose status the receiver can understand, with a status that the flow supports; or it is absent.
+- Options: (a, preferred) drop it, and let the note say that transport is booked; (b) keep it with a document type or description ("transport booked with the carrier") and a response code that describes Lumeway's own status of it, if the world's list has one.
 - Needs decision: no
 
 ### retail/10#F5 · Low · Brightmarket's contact: buying office, customer service officer and sales at once
