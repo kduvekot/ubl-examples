@@ -35,7 +35,7 @@ review only describes what is wrong; it does not say where or how the example is
 ### retail/15#F2 · Medium · A language code in LocaleCode
 - XPath: `/TransportationStatus/cac:SenderParty/cac:Language/cbc:LocaleCode` = `en`
 - XPath: `/TransportationStatus/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
-- Why: `LocaleCode` is "A code signifying the locale in which this language is used"; `en` with `listID` `ISO 639` is the language code itself, repeats `Language/cbc:ID` and names no locale (no country or region). ISO 639 is a list of languages, not of locales. The same value occurs 364 times in 213 XML files (`grep -rho --include='*.xml' 'LocaleCode listID="ISO 639">en<' world/examples | wc -l`, and `grep -rl` for the files; recounted in the merge).
+- Why: `LocaleCode` is "A code signifying the locale in which this language is used"; `en` with `listID` `ISO 639` is the language code itself, repeats `Language/cbc:ID` and names no locale (no country or region). ISO 639 is a list of languages, not of locales. The same value occurs 362 times in 213 XML files (`grep -rho --include='*.xml' '<cbc:LocaleCode listID="ISO 639">en<' world/examples | wc -l`, and `grep -rl` for the files; recounted in the merge; the parties part's 364 also counted `PreferredLanguageLocaleCode` and `TenderLanguageLocaleCode`).
 - Condition: no `Language/cbc:LocaleCode` holds a bare language code; where present it identifies a locale and its `listID` names a list of locales.
 - Options: (a, preferred) drop `LocaleCode`: nothing in this document depends on a locale; (b) a real locale such as English as used in Bayvarra (`en-XB`) from a list that defines locales (context preferred this). Fixed in the party master data, so it applies everywhere.
 - Needs decision: no

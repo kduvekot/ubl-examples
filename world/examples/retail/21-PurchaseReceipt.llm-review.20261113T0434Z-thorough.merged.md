@@ -57,7 +57,7 @@ review only describes what is wrong; it does not say where or how the example is
 
 ### retail/21#F4 · Medium · A language code in LocaleCode
 - XPath: `/PurchaseReceipt/cac:AccountingSupplierParty/cac:Party/cac:Language/cbc:LocaleCode` = `en`
-- Why: `LocaleCode` is "A code signifying the locale in which this language is used"; `en` with `listID` `ISO 639` is the language code itself and names no locale. 364 occurrences in 213 XML files (`grep -rho --include='*.xml' 'LocaleCode listID="ISO 639">en<' world/examples | wc -l`; `grep -rl` for the files).
+- Why: `LocaleCode` is "A code signifying the locale in which this language is used"; `en` with `listID` `ISO 639` is the language code itself and names no locale. 362 occurrences in 213 XML files (`grep -rho --include='*.xml' '<cbc:LocaleCode listID="ISO 639">en<' world/examples | wc -l`; `grep -rl` for the files; recounted in the merge).
 - Condition: no `LocaleCode` holds a bare language code; where present it identifies a locale from a list of locales.
 - Options: (a, preferred) drop it; (b) `en-XB` from a locale list (context preferred this).
 - Needs decision: no
