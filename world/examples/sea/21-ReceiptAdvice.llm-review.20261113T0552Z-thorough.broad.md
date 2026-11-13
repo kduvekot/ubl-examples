@@ -22,25 +22,14 @@ review only describes what is wrong; it does not say where or how the example is
 
 ## Findings
 
-### sea/21#F1 · Medium · Credit requested from the seller for damage after the risk had passed to the buyer
-- XPath: `/ReceiptAdvice/cbc:RejectActionCode` = `CREDIT`
-- XPath: `/ReceiptAdvice/cac:ReceiptLine[2]/cbc:RejectReason` = `One box crushed at the port; the frame inside is cracked.`
-- XPath: `/ReceiptAdvice/cbc:RejectReason` = `Damaged in transit.`
-- XPath: `14-BillOfLading.xml:/BillOfLading/cac:Shipment/cac:Consignment/cac:DeliveryTerms/cbc:LossRisk` = `Risk passes when the goods are on board the vessel in Lumeport.`
-- XPath: `14-BillOfLading.xml:/BillOfLading/cac:Shipment/cac:Consignment/cac:DeliveryTerms/cbc:LossRiskResponsibilityCode` = `BUYER`
-- Why: The goods were sold CIF Selanu, and the bill of lading states that the risk passed to the buyer when the goods were on board at Lumeport. The casting was crushed "at the port" of Selanu, i.e. after the risk had passed; the loss falls on the buyer and is recovered from the carrier/terminal or the cargo insurance (policy `WS-CP-26-4471`, arranged under CIF), not by a credit from the seller. Asking the despatch party for a credit contradicts the agreed risk transfer (and `26-CreditNote.xml` then grants it).
-- Condition: The requested action and the later documents agree with the risk transfer: either a claim against carrier/insurer, or a stated reason why the seller credits anyway (goodwill, or damage traced to packing).
-- Options: (a) keep the credit, but give it a reason the risk rules allow (e.g. insufficient packing, or goodwill agreed with the seller); (b) change the action to a claim against the insurer/carrier and drop the credit from the flow. Preferred (a) if the flow is to keep the credit note.
-- Needs decision: yes
-
-### sea/21#F2 · Medium · Gate number in AdditionalStreetName of the despatch party's postal address
+### sea/21#F1 · Medium · Gate number in AdditionalStreetName of the despatch party's postal address
 - XPath: `/ReceiptAdvice/cac:DespatchSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName` = `Gate 3`
 - Why: `AdditionalStreetName` is "An additional street name used to further clarify the address." "Gate 3" is a vehicle entrance, not a street name, and is not part of a postal address. The value occurs in 76 examples (`grep -l` over `world/examples/*/*.xml`).
 - Condition: No gate in `AdditionalStreetName`.
 - Options: drop it from the postal address (preferred).
 - Needs decision: no
 
-### sea/21#F3 · Low · Received quantity 11 suggests a missing casting, though the twelfth arrived damaged
+### sea/21#F2 · Low · Received quantity 11 suggests a missing casting, though the twelfth arrived damaged
 - XPath: `/ReceiptAdvice/cac:ReceiptLine[2]/cbc:ReceivedQuantity` = `11`
 - XPath: `/ReceiptAdvice/cac:ReceiptLine[2]/cbc:RejectedQuantity` = `1`
 - Why: Twelve castings were despatched (`20-DespatchAdvice.xml`), and the note says the twelfth arrived in a crushed box: it was received and then rejected. `ReceivedQuantity` is "The quantity received"; giving 11 reads as eleven arrived and one is missing, while `RejectedQuantity` 1 says one was refused. Read together, 11 + 1 = 12 works only if "received" means "accepted".
@@ -48,7 +37,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: `ReceivedQuantity` 12 with `RejectedQuantity` 1 (preferred: received is what physically arrived); or keep 11 and record the reading as the world's rule.
 - Needs decision: no
 
-### sea/21#F4 · Low · Contacts whose name, title and department disagree
+### sea/21#F3 · Low · Contacts whose name, title and department disagree
 - XPath: `/ReceiptAdvice/cac:DeliveryCustomerParty/cac:Party/cac:Contact/cbc:JobTitle` = `Customer service officer`
 - XPath: `/ReceiptAdvice/cac:DeliveryCustomerParty/cac:Party/cac:Contact/cbc:Department` = `Sales`
 - XPath: `/ReceiptAdvice/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Name` = `Purchasing`
@@ -58,7 +47,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: Goods inwards / Receiving clerk / Warehouse; Purchasing / Buyer / Purchasing.
 - Needs decision: no
 
-### sea/21#F5 · Low · Product master data copied into the receipt advice
+### sea/21#F4 · Low · Product master data copied into the receipt advice
 - XPath: `/ReceiptAdvice/cac:ReceiptLine[1]/cac:Item/cbc:WarrantyInformation` = `Five years on the frame against corrosion.`
 - XPath: `/ReceiptAdvice/cac:ReceiptLine[1]/cac:Item/cbc:Keyword` = `park bench, street furniture`
 - Why: A receipt advice reports what arrived; warranty text, search keywords, sales conditions, circularity and emission data (all present on line 1's item) are catalogue data the receipt does nothing with.
@@ -66,7 +55,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: reduce the item to its identifiers (preferred).
 - Needs decision: no
 
-### sea/21#F6 · Low · Bill of lading referenced without saying what it is
+### sea/21#F5 · Low · Bill of lading referenced without saying what it is
 - XPath: `/ReceiptAdvice/cac:AdditionalDocumentReference/cbc:ID` = `TOL-BL-26-0139`
 - Why: The additional reference gives only an ID, with no document type, so the receiver cannot tell it is the bill of lading under which the goods arrived.
 - Condition: The reference states its document type.
@@ -81,5 +70,6 @@ review only describes what is wrong; it does not say where or how the example is
 - Notes in Lisavan and English carry `qal` and `en-XL`.
 
 ## Considered and refuted
+- `/ReceiptAdvice/cbc:RejectActionCode` = `CREDIT`: credit requested from the seller for a casting crushed at Selanu although the bill of lading puts the risk on the buyer from loading at Lumeport (`14-BillOfLading.xml:/BillOfLading/cac:Shipment/cac:Consignment/cac:DeliveryTerms/cbc:LossRisk` = `Risk passes when the goods are on board the vessel in Lumeport.`) — refuted: the buyer may ask; `26-CreditNote.xml` grants the credit expressly as goodwill under CIF and claims from the insurer, so the flow is consistent.
 - `/ReceiptAdvice/cac:ReceiptLine[1]/cbc:ReceivedDate` = `2026-05-21`: the B/L's on-carriage receipt event is 2026-05-19 — refuted: on the B/L (issued 05-14) that event is planned (`CompletionIndicator` false); the customs inspection at Selanu explains a later receipt.
 - `/ReceiptAdvice/cac:ReceiptLine[2]/cbc:Note` = `One box crushed at the port; the frame inside is cracked.`: a sealed container's box crushed "at the port" — refuted: the container was opened for the customs inspection at Selanu (`28-DebitNote.xml`), where handling damage is plausible.
