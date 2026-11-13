@@ -28,7 +28,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/OrderResponse/cac:DeliveryTerms/cbc:ID` = `CIF`
 - Why: the response accepts the order (`OrderResponseCode` `AP`, lines "Confirmed as ordered.") with a `PayableAmount` of 50,688.00 XBL, so the balance after the 10,000.00 deposit is 40,688.00. The invoice for this sale adds sea freight and cargo insurance (`22-Invoice.xml:/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount` = `3090.00`) and bills 53,778.00 (`22-Invoice.xml:/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount` = `53778.00`), with a balance of 43,778.00 (`22-Invoice.xml:/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount` = `43778.00`). Recalculated: 50,688.00 + 2,950.00 + 140.00 = 53,778.00; 53,778.00 − 10,000.00 = 43,778.00; the deposit is 10,000 / 50,688 = 19.73 % here and 10,000 / 53,778 = 18.59 % in the invoice (`22-Invoice.xml:/Invoice/cac:PaymentTerms[1]/cbc:PaymentPercent` = `18.59`). The two documents state different amounts to be paid for the same sale. Under CIF the seller pays carriage and insurance; whether it prices them into 520 or passes them on, the response is where an added charge would be announced, and it announces none.
 - Condition: the amount the order response confirms as payable (and the balance its note implies) equals what the invoice bills, or the response states the charges that will be added and the invoice adds only those.
-- Options: (a) preferred: announce the CIF freight and insurance in the order response (document-level charges, totals including them), so that response and invoice agree (catalogue price 520 is a trade price); (b) treat 520 as the CIF price and drop the separate charges from the invoice; (c) say in the note that freight and insurance are billed on top. The choice decides how CIF is priced in the flow (see 05#F13).
+- Options: (a) preferred: treat 520 as the CIF price and drop the separate freight and insurance charges from the invoice (CIF prices normally include carriage and insurance; aligned with sea merger c's preference for 22-Invoice.xml); (b) announce the freight and insurance in the order response (document-level charges, totals including them), so that response and invoice agree (money part's preference: the catalogue price is a trade price); (c) say in the note that freight and insurance are billed on top. The choice decides how CIF is priced in the flow (see 05#F13).
 - Needs decision: yes
 - From: money (F1)
 
@@ -175,6 +175,7 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F7 (no) + context/F6 (yes) → F7: yes.
 - broad/F10 (no) + parties/F3 (yes) → F8: yes.
 - broad's refutation of NoStatus → F13 (Low/no), aligned with earlier flows.
+- money/F1 → F1: preferred option changed from announcing the charges in the response to dropping them from the invoice, aligned with sea merger c (22-Invoice.xml); money's preference kept as (b).
 - context/F4 → Refuted in the merge.
 
 ## Outside this review

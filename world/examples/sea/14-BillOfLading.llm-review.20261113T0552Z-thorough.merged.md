@@ -52,8 +52,8 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `19-ImportCustomsDeclaration.xml:/ImportCustomsDeclaration/cac:Shipment/cac:GoodsItem[2]/cbc:DeclaredCustomsValueAmount` = `307.200`
 - Why: `Consignment/DeclaredCustomsValueAmount` is "The total declared value for customs purposes of all the goods in this consignment …". 53,778.00 is the CIF value (goods 50,688.00 + freight 2,700.00 + bunker 250.00 + premium 140.00, recomputed; the same as `/BillOfLading/cac:Shipment/cac:Consignment/cac:DeliveryTerms/cbc:Amount`). The export declaration declares 50,688.00 XBL; the import declaration declares 19,968.000 + 307.200 = 20,275.200 XLC, which at the flow's rate 0.4 is 20,275.200 / 0.4 = 50,688.00 XBL again (recomputed), i.e. the goods value, with a freight share carried separately on goods item 1 (`19-ImportCustomsDeclaration.xml:/ImportCustomsDeclaration/cac:Shipment/cac:GoodsItem[1]/cac:FreightAllowanceCharge/cbc:Amount` = `1162.121`, = 2,905.30 XBL, 2,950.00 × 49,920 / 50,688). No declaration declares 53,778.00. The money and context parts refuted the difference because the import into Lisavu is valued CIF; but the import declaration in the flow does not declare a CIF value, so the bill of lading contradicts it either way. Which value is right depends on Lisavu's valuation basis (a question the cotton merges also left open).
 - Condition: the bill of lading's declared customs value equals the value declared to customs for the consignment, or is absent.
-- Options: (a) preferred: drop it from the bill of lading (the carrier declares no customs value); (b) 50,688.00 XBL as both declarations; (c) if Lisavu values CIF, keep 53,778.00 and change the import declaration's declared values instead.
-- Needs decision: yes (Lisavu's customs valuation basis, if option c)
+- Options: (a) preferred: Lisavu values CIF: keep 53,778.00 here and change the import declaration's declared values to the CIF basis (21,511.200 XLC = 53,778.00 × 0.4, recomputed), as the merge of 16–22 prefers for `19-ImportCustomsDeclaration.xml`; (b) drop the value from the bill of lading (the carrier declares no customs value); (c) 50,688.00 XBL, if Lisavu values on the goods price.
+- Needs decision: yes (Lisavu's customs valuation basis)
 - From: broad (F1); money and context considered and refuted it (not followed)
 
 ### sea/14#F4 · High · Total invoice amount is the goods value, not the invoice total
@@ -320,7 +320,7 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F10, money/F4, parties/F10, context/F9 → F12: grouped; context's certificate point folded in.
 - broad/F11 → F15 and F16: split into vessel data and exchange rate.
 - parties/F6 → F21 and F22 (split); broad/F13 (no) aligned to yes.
-- broad/F1 → F3: High kept against money's and context's refutation, needs decision yes added for option (c).
+- broad/F1 → F3: High kept against money's and context's refutation; needs decision yes added (valuation basis) and the preferred option aligned with the merge of 16–22 (CIF basis, fix 19). That merge rates the same pair Medium/yes in 19 because the basis is undecided; here it stays High because this document's value contradicts the value declared in 19 whichever basis is chosen (section 6), and the fix may lie in either document.
 - LocaleCode: preferred option set to drop.
 - F24, F25 added by the merge.
 

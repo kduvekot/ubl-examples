@@ -142,7 +142,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/Order/cac:DeliveryTerms/cbc:ID` = `CIF`
 - Why: `AnticipatedMonetaryTotal` is "The total amount for the Order anticipated by the buyer". Under CIF the seller contracts and pays carriage and insurance to Selanu. The buyer anticipates the goods value only (recalculated: 96 × 520 = 49,920.00 + 12 × 64 = 768.00 → 50,688.00), while the invoice for this order adds sea freight and insurance (`22-Invoice.xml:/Invoice/cac:AllowanceCharge[1]/cbc:Amount` = `2950.00`, `22-Invoice.xml:/Invoice/cac:AllowanceCharge[2]/cbc:Amount` = `140.00`; 50,688.00 + 2,950.00 + 140.00 = 53,778.00 = `22-Invoice.xml:/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount` = `53778.00`). Either the CIF price includes freight and insurance (then the invoice charges them twice) or the seller passes them on (then the order and the order response would show it). The order alone cannot tell; the choice changes the money story of the flow.
 - Condition: the order's anticipated total and the way the flow bills freight and insurance under CIF tell the same story.
-- Options: (a) preferred: keep the goods value here and make the freight and insurance surcharge explicit in the order response (see 06), as the catalogue price is a trade price; (b) anticipated freight and insurance charges in the order; (c) treat 520 as a CIF price and stop billing them separately.
+- Options: (a) preferred: treat 520 as a CIF price and stop billing freight and insurance separately in the invoice (nothing changes here; aligned with 06#F1 and sea merger c); (b) keep the goods value here and make the surcharge explicit in the order response (money part's preference, the catalogue price being a trade price); (c) anticipated freight and insurance charges in the order.
 - Needs decision: yes
 - From: money (F1)
 
@@ -221,3 +221,4 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F10, parties/F6, logistics/F3, context/F7 → F11: grouped.
 - broad/F7 → F14: kept as Low/yes with money's refutation; preferred option changed to resolving 02#F6 (the cause lies in the catalogue's encoding).
 - broad/F8 + context/F5 → F16: grouped; the XU national tariff code added (as air/01#F10).
+- money/F1 → F13: preferred option changed to the CIF-price reading (money preferred (b)), aligned with 06#F1 and sea merger c.
