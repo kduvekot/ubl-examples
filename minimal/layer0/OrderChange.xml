@@ -8,14 +8,14 @@
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Kōnyūsha 501</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Sanpuru Kaite 501</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Hanbaisha 502</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Sanpuru Urite 502</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>

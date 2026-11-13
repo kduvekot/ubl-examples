@@ -446,8 +446,8 @@ EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Sanpu
 ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "AccountingSupplierParty": ("Supplier", "Lieferant", "Fornecedor", "Shiiresaki"),
     "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Tokuisaki"),
-    "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Hanbaisha"),
-    "BuyerCustomerParty": ("Buyer", "Käufer", "Comprador", "Kōnyūsha"),
+    "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Urite"),
+    "BuyerCustomerParty": ("Buyer", "Käufer", "Comprador", "Kaite"),
     "DespatchSupplierParty": ("Shipper", "Versender", "Expedidor", "Shukkasha"),
     "DeliveryCustomerParty": ("Consignee", "Warenempfänger", "Destinatário", "Niukenin"),
     "RetailerCustomerParty": ("Retailer", "Einzelhändler", "Varejista", "Kourigyōsha"),
