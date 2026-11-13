@@ -76,27 +76,14 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: a locale; (b) drop it.
 - Needs decision: no
 
-### sea/12#F5 · Low · Carrier's booking number on the request that asks for the booking
-- XPath: `/ForwardingInstructions/cbc:CarrierAssignedID` = `TWL-BK-26-55710`
-- XPath: `/ForwardingInstructions/cbc:Note` = `Please confirm the booking.`
-- Why: CarrierAssignedID is the identifier the carrier assigned. The instructions ask the carrier to
-  confirm the booking, so the carrier has not yet answered; nothing in the flow (no booking
-  confirmation, and the number occurs in no other example, grep over `world/examples/*/*.xml`)
-  shows where the number came from, and the bill of lading does not carry it.
-- Condition: a carrier-assigned booking number appears only after the carrier has assigned it (in
-  a document of the flow, or stated as a prior booking), and the documents after it use it.
-- Options: (a) preferred: drop it here (the carrier assigns it in its answer); (b) state that the
-  space was pre-booked by phone and use the number in the bill of lading.
-- Needs decision: no
-
-### sea/12#F6 · Low · Exchange rate the instructions do nothing with
+### sea/12#F5 · Low · Exchange rate the instructions do nothing with
 - XPath: `/ForwardingInstructions/cac:ExchangeRate/cbc:CalculationRate` = `0.4`
 - Why: there is no amount in the document at all; the rate has no use.
 - Condition: no exchange rate without an amount that needs it.
 - Options: (a) preferred: drop it.
 - Needs decision: no
 
-### sea/12#F7 · Low · Reference to the purchase order with only an ID
+### sea/12#F6 · Low · Reference to the purchase order with only an ID
 - XPath: `/ForwardingInstructions/cac:DocumentReference/cbc:ID` = `VT-PO-26-0127`
 - Why: the carrier receives the buyer's order number with no type; it cannot tell what it is, nor
   does it need it for the carriage.
@@ -104,7 +91,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: drop it; (b) type it as the buyer's order.
 - Needs decision: no
 
-### sea/12#F8 · Low · Consignor's and consignee's contacts are sales customer service; consignor's legal data copied
+### sea/12#F7 · Low · Consignor's and consignee's contacts are sales customer service; consignor's legal data copied
 - XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:Contact/cbc:JobTitle` = `Customer service officer`
 - XPath: `/ForwardingInstructions/cac:Shipment/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:Name` = `Purchasing`
 - XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:PartyLegalEntity/cbc:CorporateStockAmount` = `2500000`
@@ -115,7 +102,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: shipping/goods-inwards contacts; drop legal and tax data.
 - Needs decision: no
 
-### sea/12#F9 · Low · A gate in AdditionalStreetName of the consignor's postal address
+### sea/12#F8 · Low · A gate in AdditionalStreetName of the consignor's postal address
 - XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:PostalAddress/cbc:AdditionalStreetName` = `Gate 3`
 - Why: a gate is not a street.
 - Condition: no gate in the postal address.
@@ -130,6 +117,11 @@ review only describes what is wrong; it does not say where or how the example is
   Bayforth to Tidewell.
 
 ## Considered and refuted
+- `/ForwardingInstructions/cbc:CarrierAssignedID`: the carrier's booking number `TWL-BK-26-55710`
+  on instructions that still ask "Please confirm the booking" — refuted: a forwarder typically
+  obtains the booking number first and then sends the shipping instructions for confirmation; the
+  bill of lading carries the same number (`14-BillOfLading.xml:/BillOfLading/cbc:CarrierAssignedID`
+  = `TWL-BK-26-55710`).
 - `/ForwardingInstructions/cbc:OtherInstruction`: "Send the bill of lading to the forwarder" in the
   forwarder's own instructions — refuted: Bayforth asks the carrier to send the bill to Bayforth,
   which makes sense.
