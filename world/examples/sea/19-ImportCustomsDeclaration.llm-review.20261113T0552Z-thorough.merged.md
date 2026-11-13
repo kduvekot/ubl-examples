@@ -2,7 +2,13 @@
 
 Flow: sea (SEA-2026-01) · Review date: 2026-11-13 · Part: merged
 
-@@HEADER@@
+## Reviewed version
+- Run: `20261113T0552Z-thorough`
+- Example: `world/examples/sea/19-ImportCustomsDeclaration.xml`, Git blob `64061347e935665afd0ab08807b3400cadbb512f` (committed)
+- Last commit changing the example: 294c2e3 2026-11-12 English names for the island's towns; town names in both languages everywhere
+- Checkout: branch `claude/keen-feynman-45qjti`, commit fe38caa 2026-11-13 Reviews of the sea flow, run 20261113T0552Z-thorough: parts written so far
+- Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
+- Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
 ## What is expected
 This is one review among possibly several of this example (other runs and parts; list them with
