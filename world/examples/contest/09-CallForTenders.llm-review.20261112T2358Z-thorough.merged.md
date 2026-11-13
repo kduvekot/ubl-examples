@@ -105,10 +105,10 @@ review only describes what is wrong; it does not say where or how the example is
 ### contest/09#F9 · Low · Requested legal form applies to the follow-up contract, not to the contest participants
 - XPath: `/CallForTenders/cac:TenderingTerms/cac:TendererQualificationRequest/cbc:CompanyLegalFormCode` = `LTD`
 - XPath: `/CallForTenders/cac:TenderingTerms/cac:TendererQualificationRequest/cbc:CompanyLegalForm` = `Limited company (private): a group of participants forms one before the follow-u…`
-- Why: `TendererQualificationRequest/CompanyLegalFormCode` is "The legal status requested for potential tenderers". The code requests a private limited company, but the text says that for the contest itself a group only names a lead member and forms the company before the follow-up contract. Code and text describe different moments and different addressees.
+- Why: `TendererQualificationRequest/CompanyLegalFormCode` is "The legal status requested for potential tenderers". The code requests a private limited company, but the text says that for the contest itself a group only names a lead member and forms the company before the follow-up contract. Code and text describe different moments and different addressees. Against it (the merge's own refutation attempt): the text can be read as explaining the code, i.e. the legal form requested is that of the company a group must form before the follow-up contract, which a sole participant such as Brackenmere already has. Both readings are possible, so the merge cannot settle it.
 - Condition: what the code requests and what the text says apply to the same tenderers at the same step.
 - Options: (preferred) state the requirement for the follow-up contract in text only and drop the code, if participants need no legal form; or keep the code and word the text as a requirement on groups at the time of the contest.
-- Needs decision: no
+- Needs decision: yes
 - From: context (F6)
 
 ### contest/09#F10 · Low · DurationPeriod of the reference criterion holds the look-back window
@@ -190,6 +190,7 @@ review only describes what is wrong; it does not say where or how the example is
 - broad/F6 → split into F7 (contract notice not referenced, with logistics/F1) and F8 (ID-only brief and site plan, with logistics/F2); its "rules of the contest are not referenced" part moved to Considered and refuted, following logistics.
 - context/F9 (Low, no) → F13: kept Low, needs decision no; broad's refutation and the eForms practice added as counter-argument (semantic conformance: the definition prevails).
 - money/F1 → F11: broad's refutation added as counter-argument; severity and decision unchanged.
+- context/F6 (Low, no) → F9: needs decision yes, because the text can be read as explaining the code (aligned with merger A for 03, 04, 08, where a part refuted it on that ground).
 - broad/F5, context/F2 → F12: combined; parties' and logistics' refutations added as counter-argument.
 
 ## Outside this review
