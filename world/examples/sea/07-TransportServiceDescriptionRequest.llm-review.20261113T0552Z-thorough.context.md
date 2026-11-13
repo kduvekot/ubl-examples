@@ -26,8 +26,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/TransportServiceDescriptionRequest/cac:TransportationService/cbc:TransportServiceCode` = `OCEANCONT`
 - Why: TransportServiceCode is "a code signifying the extent of this transportation service (e.g.,
   door-to-door, port-to-port)". "Container liner service" names a mode and kind of service, not its
-  extent; whether Lumeway wants port-to-port (it delivers to the terminal itself, per the flow's
-  pre-carriage) or door-to-door is not said.
+  extent; whether Lumeway wants port-to-port or door-to-door is not said.
 - Condition: TransportServiceCode holds an extent (e.g. port-to-port), from a list of extents; the
   kind of service (container liner) is given where UBL has an element for it (e.g. the service's
   transport mode or a description).
