@@ -43,7 +43,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Why: 0.82 × a base of 1 each = 0.82, not 96 kg CO2e ("a numeric factor used to calculate the value
   measurement").
 - Condition: factor × base = value, or factor and base absent.
-- Options: (a) preferred: drop factor and base (and, see F5, the emission from the packing list).
+- Options: (a) preferred: drop factor and base (and, see F6, the emission from the packing list).
 - Needs decision: no
 
 ### sea/10#F3 · Medium · A packing list that does not say how the goods are packed

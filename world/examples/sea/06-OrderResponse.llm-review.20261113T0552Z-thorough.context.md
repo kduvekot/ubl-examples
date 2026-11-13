@@ -52,7 +52,15 @@ review only describes what is wrong; it does not say where or how the example is
   reference already identifies the payment.
 - Needs decision: no
 
-### sea/06#F3 · Low · Packages counted as items
+### sea/06#F3 · Medium · A language code in LocaleCode
+- XPath: `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:Language/cbc:LocaleCode` = `en`
+- Why: LocaleCode is "a code signifying the locale in which this language is used"; the value is the
+  ISO 639 language code.
+- Condition: absent or a locale.
+- Options: (a) preferred: a locale; (b) drop it.
+- Needs decision: no
+
+### sea/06#F4 · Low · Packages counted as items
 - XPath: `/OrderResponse/cbc:TotalPackagesQuantity` = `108`
 - Why: TotalPackagesQuantity is "the total number of packages contained in the Order Response";
   108 is the number of items ordered (96 benches + 12 side frames). The goods travel on pallets of
@@ -66,7 +74,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: drop it (see F1), or give the pallet count.
 - Needs decision: no
 
-### sea/06#F4 · Low · Originator document the order never mentioned
+### sea/06#F5 · Low · Originator document the order never mentioned
 - XPath: `/OrderResponse/cac:OriginatorDocumentReference/cbc:ID` = `PS-REQ-26-0031`
 - Why: OriginatorDocumentReference is "a reference to an originator document associated with this
   document". The port's request PS-REQ-26-0031 is neither in the order this responds to
@@ -78,7 +86,7 @@ review only describes what is wrong; it does not say where or how the example is
   (b) drop it here.
 - Needs decision: no
 
-### sea/06#F5 · Low · The digital agreement given as the contract of the order
+### sea/06#F6 · Low · The digital agreement given as the contract of the order
 - XPath: `/OrderResponse/cac:Contract/cbc:ID` = `LD-DAG-26-0125`
 - XPath: `/OrderResponse/cac:Contract/cbc:ContractType` = `Digital trade agreement`
 - Why: Contract is "a contract associated with the Order being responded to". 03-DigitalAgreement
@@ -90,20 +98,12 @@ review only describes what is wrong; it does not say where or how the example is
   story makes the digital agreement also the trading framework, and say so in the agreement.
 - Needs decision: yes (whether the digital agreement is also the sales framework)
 
-### sea/06#F6 · Low · Velumi's contact: purchasing name with a seller's title and department
+### sea/06#F7 · Low · Velumi's contact: purchasing name with a seller's title and department
 - XPath: `/OrderResponse/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Name` = `Purchasing`
 - XPath: `/OrderResponse/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:JobTitle` = `Customer service officer`
 - Why: the buyer's purchasing contact carries the sales department and customer-service title.
 - Condition: purchasing title and department, or none.
 - Options: (a) preferred: purchasing title and department.
-- Needs decision: no
-
-### sea/06#F7 · Medium · A language code in LocaleCode
-- XPath: `/OrderResponse/cac:SellerSupplierParty/cac:Party/cac:Language/cbc:LocaleCode` = `en`
-- Why: LocaleCode is "a code signifying the locale in which this language is used"; the value is the
-  ISO 639 language code.
-- Condition: absent or a locale.
-- Options: (a) preferred: a locale; (b) drop it.
 - Needs decision: no
 
 ### sea/06#F8 · Low · A gate in AdditionalStreetName of the seller's postal address

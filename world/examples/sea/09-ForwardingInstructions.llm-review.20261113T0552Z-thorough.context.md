@@ -58,7 +58,17 @@ review only describes what is wrong; it does not say where or how the example is
   container is known.
 - Needs decision: no
 
-### sea/09#F3 · Low · The insurer as the party that holds the insurance
+### sea/09#F3 · Medium · A language code in LocaleCode
+- XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:Language/cbc:LocaleCode` = `en`
+- XPath: `/ForwardingInstructions/cac:FreightForwarderParty/cac:Language/cbc:LocaleCode` = `en`
+- XPath: `/ForwardingInstructions/cac:Shipment/cac:InsurancePolicy/cac:InsurerParty/cac:Language/cbc:LocaleCode` = `en`
+- Why: LocaleCode is "a code signifying the locale in which this language is used"; each holds the
+  ISO 639 language code.
+- Condition: absent or a locale.
+- Options: (a) preferred: a locale; (b) drop it.
+- Needs decision: no
+
+### sea/09#F4 · Low · The insurer as the party that holds the insurance
 - XPath: `/ForwardingInstructions/cac:Shipment/cac:Consignment/cac:InsuranceParty/cac:PartyName/cbc:Name` = `Wavesure Cargo Insurance`
 - XPath: `/ForwardingInstructions/cac:Shipment/cac:InsurancePolicy/cac:InsurerParty/cac:PartyName/cbc:Name` = `Wavesure Cargo Insurance`
 - Why: InsuranceParty is "the Party who holds the insurance for this Consignment"; the insurer is
@@ -70,7 +80,7 @@ review only describes what is wrong; it does not say where or how the example is
   names the insurer.
 - Needs decision: yes (who holds the cover in the story)
 
-### sea/09#F4 · Low · Final delivery to the 3PL in the seller's instructions under CIF
+### sea/09#F5 · Low · Final delivery to the 3PL in the seller's instructions under CIF
 - XPath: `/ForwardingInstructions/cac:Shipment/cac:Consignment/cac:FinalDeliveryTransportationService/cbc:Name` = `Truck from the port of Selanu to the 3PL`
 - Why: FinalDeliveryTransportationService is "the service for delivery to the consignee under the
   transport contract for this consignment". The sale is CIF Port of Selanu
@@ -85,7 +95,7 @@ review only describes what is wrong; it does not say where or how the example is
   the forwarder's instructions if Lumeway arranges it.
 - Needs decision: yes (who arranges the on-carriage in Selanu)
 
-### sea/09#F5 · Low · Exchange rate the instructions do nothing with
+### sea/09#F6 · Low · Exchange rate the instructions do nothing with
 - XPath: `/ForwardingInstructions/cac:ExchangeRate/cbc:TargetCurrencyCode` = `XLC`
 - XPath: `/ForwardingInstructions/cac:ExchangeRate/cbc:CalculationRate` = `0.4`
 - Why: ExchangeRate is "information about the rate of exchange … between two currencies". The only
@@ -96,7 +106,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: drop it.
 - Needs decision: no
 
-### sea/09#F6 · Low · Reference to the purchase order with only an ID
+### sea/09#F7 · Low · Reference to the purchase order with only an ID
 - XPath: `/ForwardingInstructions/cac:DocumentReference/cbc:ID` = `VT-PO-26-0127`
 - Why: A DocumentReference is "a reference to another document associated with this document"; the
   forwarder receives a buyer's order number without a type code or description and cannot tell what
@@ -105,7 +115,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: DocumentTypeCode for an order, or a description.
 - Needs decision: no
 
-### sea/09#F7 · Low · Consignor's and consignee's contacts are sales customer service
+### sea/09#F8 · Low · Consignor's and consignee's contacts are sales customer service
 - XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:Contact/cbc:JobTitle` = `Customer service officer`
 - XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:Contact/cbc:Department` = `Sales`
 - XPath: `/ForwardingInstructions/cac:Shipment/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:Name` = `Purchasing`
@@ -116,16 +126,6 @@ review only describes what is wrong; it does not say where or how the example is
 - Condition: the consignor's contact is a shipping/despatch function and the consignee's a goods
   receiving function, or the contacts are absent.
 - Options: (a) preferred: shipping and goods-inwards contacts.
-- Needs decision: no
-
-### sea/09#F8 · Medium · A language code in LocaleCode
-- XPath: `/ForwardingInstructions/cac:ConsignorParty/cac:Language/cbc:LocaleCode` = `en`
-- XPath: `/ForwardingInstructions/cac:FreightForwarderParty/cac:Language/cbc:LocaleCode` = `en`
-- XPath: `/ForwardingInstructions/cac:Shipment/cac:InsurancePolicy/cac:InsurerParty/cac:Language/cbc:LocaleCode` = `en`
-- Why: LocaleCode is "a code signifying the locale in which this language is used"; each holds the
-  ISO 639 language code.
-- Condition: absent or a locale.
-- Options: (a) preferred: a locale; (b) drop it.
 - Needs decision: no
 
 ### sea/09#F9 · Low · A gate in AdditionalStreetName of the consignor's postal address

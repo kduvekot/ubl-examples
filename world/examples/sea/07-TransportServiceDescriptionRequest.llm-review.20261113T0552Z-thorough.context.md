@@ -35,7 +35,16 @@ review only describes what is wrong; it does not say where or how the example is
   extents.
 - Needs decision: no
 
-### sea/07#F2 · Low · The request does not say between which places, or for what cargo
+### sea/07#F2 · Medium · A language code in LocaleCode (two places)
+- XPath: `/TransportServiceDescriptionRequest/cac:SenderParty/cac:Language/cbc:LocaleCode` = `en`
+- XPath: `/TransportServiceDescriptionRequest/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
+- Why: LocaleCode is "a code signifying the locale in which this language is used"; both values are
+  the ISO 639 language code.
+- Condition: absent or a locale.
+- Options: (a) preferred: a locale; (b) drop it.
+- Needs decision: no
+
+### sea/07#F3 · Low · The request does not say between which places, or for what cargo
 - XPath: `/TransportServiceDescriptionRequest/cbc:Note` = `Weekly sailings to Selanu, please.`
 - XPath: `/TransportServiceDescriptionRequest/cac:TransportationService/cbc:TransportServiceCode` = `OCEANCONT`
 - Why: The document requests a Transport Service Description "from a party with a transport demand
@@ -47,15 +56,6 @@ review only describes what is wrong; it does not say where or how the example is
   kind of equipment, or the note says them.
 - Options: (a) preferred: the service's places in the structure the TransportationService offers,
   plus the equipment size; (b) at least name Lumeport in the note.
-- Needs decision: no
-
-### sea/07#F3 · Medium · A language code in LocaleCode (two places)
-- XPath: `/TransportServiceDescriptionRequest/cac:SenderParty/cac:Language/cbc:LocaleCode` = `en`
-- XPath: `/TransportServiceDescriptionRequest/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
-- Why: LocaleCode is "a code signifying the locale in which this language is used"; both values are
-  the ISO 639 language code.
-- Condition: absent or a locale.
-- Options: (a) preferred: a locale; (b) drop it.
 - Needs decision: no
 
 ### sea/07#F4 · Low · Legal and tax master data of both parties in an information request

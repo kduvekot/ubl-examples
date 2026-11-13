@@ -6,7 +6,7 @@ Flow: sea (SEA-2026-01) · Review date: 2026-11-13 · Part: parties
 - Run: `20261113T0552Z-thorough`
 - Example: `world/examples/sea/14-BillOfLading.xml`, Git blob `661653ae609f88a3a1ea21ce846d10c0b8de2faf` (committed)
 - Last commit changing the example: 294c2e3 2026-11-12 English names for the island's towns; town names in both languages everywhere
-- Checkout: branch `claude/keen-feynman-45qjti`, commit 41ae2a6 2026-11-13 Reviews of the sea flow, run 20261113T0552Z-thorough: parts written so far
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 01cf804 2026-11-13 Reviews of the sea flow, run 20261113T0552Z-thorough: parts written so far
 - Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
 - Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
@@ -37,7 +37,7 @@ review only describes what is wrong; it does not say where or how the example is
 - XPath: `/BillOfLading/cbc:OtherInstruction` = `Three originals issued.`
 - XPath: `/BillOfLading/cac:DocumentDistribution[1]/cac:Party/cac:PartyName/cbc:Name` = `Bayforth Forwarding`
 - XPath: `/BillOfLading/cac:DocumentDistribution[1]/cbc:DistributionTypeCode` = `ORIGINALCOURIER`
-- Why: `BillOfLadingHolderParty` is "The Party who holds the Bill of Lading for this Consignment". This bill is issued to order, in three originals, and the originals are sent by courier to Bayforth Forwarding, as 12-ForwardingInstructions.xml asked ("Send the bill of lading to the forwarder"). At the time of issue the holder is therefore the forwarder (for the shipper), not Velumi Trading; Velumi becomes holder only when the originals are endorsed and handed over (in the world, after payment). The holder role contradicts the distribution in the same document, unless the element is meant as the intended final holder, which its definition does not say.
+- Why: `BillOfLadingHolderParty` is "The Party who holds the Bill of Lading for this Consignment". This bill is issued to order, in three originals, and the originals are sent by courier to Bayforth Forwarding, as 12-ForwardingInstructions.xml asked ("Send the bill of lading to the forwarder"). At the time of issue the holder is therefore the forwarder (for the shipper), not Velumi Trading; Velumi becomes holder only when the originals are endorsed and handed over to it. The holder role contradicts the distribution in the same document, unless the element is meant as the intended final holder, which its definition does not say.
 - Condition: The bill of lading holder named in the document is the party that holds the originals at the time the document states, consistent with `DocumentDistribution`.
 - Options: Preferred: name the party that holds the originals at issue (Bayforth Forwarding, or Lumeway Distribution as shipper if the forwarder holds them on its behalf). Alternative: keep Velumi Trading and change the distribution and story so that the originals go to Velumi.
 - Needs decision: yes
@@ -120,7 +120,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 
 ## Checked and consistent
-- Consignor Lumeway Distribution, carrier and signatory Tidewell Ocean Lines, freight forwarder Bayforth Forwarding and consignee Velumi Trading agree with 09-, 10- and 12-ForwardingInstructions/PackingList; the original despatch party is the consignor; the equipment supplier is the carrier (container prefix of Tidewell).
+- Consignor Lumeway Distribution, carrier and signatory Tidewell Ocean Lines, freight forwarder Bayforth Forwarding and consignee Velumi Trading agree with 09-ForwardingInstructions.xml, 10-PackingList.xml and 12-ForwardingInstructions.xml; the original despatch party is the consignor; the equipment supplier is the carrier (container prefix of Tidewell).
 - Verified gross mass: weighing party, shipper party and responsible party are all Lumeway Distribution, which fits SOLAS method 2 (the shipper weighs the contents and adds the tare) and the shipper’s own scale `LD-SCALE-03`.
 - Insurance parties: policy holder Lumeway Distribution (the CIF seller), beneficiary Velumi Trading (the buyer, to whom risk passes on board), broker Bayforth Forwarding (instructed in 09 to insure the cargo) — consistent with the delivery terms of this example.
 - The scanned copy goes to Nalevi Warehousing, the notify party and on-carriage carrier, which needs the bill to collect the container.

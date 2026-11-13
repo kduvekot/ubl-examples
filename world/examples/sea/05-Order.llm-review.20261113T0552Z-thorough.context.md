@@ -48,7 +48,7 @@ review only describes what is wrong; it does not say where or how the example is
   ValueBaseMeasure; 0.82 × 1 each = 0.82, not 96 kg CO2e. (Copied from the catalogue, where the
   same contradiction stands.)
 - Condition: factor × base = value in the stated units, or factor and base absent.
-- Options: (a) preferred: drop factor and base (and see F4: the order need not carry the footprint
+- Options: (a) preferred: drop factor and base (and see F5: the order need not carry the footprint
   at all).
 - Needs decision: no
 
@@ -61,7 +61,15 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: drop it.
 - Needs decision: no
 
-### sea/05#F4 · Low · The order repeats the seller's catalogue description of the item
+### sea/05#F4 · Medium · A language code in LocaleCode
+- XPath: `/Order/cac:SellerSupplierParty/cac:Party/cac:Language/cbc:LocaleCode` = `en`
+- Why: LocaleCode is "a code signifying the locale in which this language is used"; the value is the
+  ISO 639 language code.
+- Condition: absent or a locale.
+- Options: (a) preferred: a Bayvarran English locale; (b) drop it.
+- Needs decision: no
+
+### sea/05#F5 · Low · The order repeats the seller's catalogue description of the item
 - XPath: `/Order/cac:OrderLine[1]/cac:LineItem/cac:Item/cbc:Keyword` = `park bench, street furniture`
 - XPath: `/Order/cac:OrderLine[1]/cac:LineItem/cac:Item/cbc:WarrantyInformation` = `Five years on the frame against corrosion.`
 - XPath: `/Order/cac:OrderLine[1]/cac:LineItem/cac:Item/cac:AdditionalItemProperty[5]/cbc:TestMethod` = `Static load on the seat for one hour, three seats loaded evenly, no lasting deformation`
@@ -79,7 +87,7 @@ review only describes what is wrong; it does not say where or how the example is
   (b) keep only properties the buyer requires (e.g. load capacity as a requirement).
 - Needs decision: no
 
-### sea/05#F5 · Low · Contacts of the buyer and the delivery party carry a seller's title and department
+### sea/05#F6 · Low · Contacts of the buyer and the delivery party carry a seller's title and department
 - XPath: `/Order/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Name` = `Purchasing`
 - XPath: `/Order/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:JobTitle` = `Customer service officer`
 - XPath: `/Order/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Department` = `Sales`
@@ -94,7 +102,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) preferred: titles and departments matching the function.
 - Needs decision: no
 
-### sea/05#F6 · Low · Delivery location named as a warehouse no other document knows
+### sea/05#F7 · Low · Delivery location named as a warehouse no other document knows
 - XPath: `/Order/cac:Delivery/cac:DeliveryLocation/cbc:Description` = `Lanoro warehouse, Selanu`
 - XPath: `/Order/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name` = `Nalevi Warehousing`
 - Why: The goods are to be delivered to Nalevi Warehousing, whose address is Lagoon Road 9, Selanu.
@@ -106,14 +114,6 @@ review only describes what is wrong; it does not say where or how the example is
   recognisably the place where the follow-up documents deliver.
 - Options: (a) preferred: name the location as Nalevi's warehouse with its address or identifier;
   (b) drop the location and rely on the DeliveryParty's address.
-- Needs decision: no
-
-### sea/05#F7 · Medium · A language code in LocaleCode
-- XPath: `/Order/cac:SellerSupplierParty/cac:Party/cac:Language/cbc:LocaleCode` = `en`
-- Why: LocaleCode is "a code signifying the locale in which this language is used"; the value is the
-  ISO 639 language code.
-- Condition: absent or a locale.
-- Options: (a) preferred: a Bayvarran English locale; (b) drop it.
 - Needs decision: no
 
 ### sea/05#F8 · Low · A gate in AdditionalStreetName of the seller's postal address

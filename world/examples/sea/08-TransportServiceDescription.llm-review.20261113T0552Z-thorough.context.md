@@ -66,7 +66,24 @@ review only describes what is wrong; it does not say where or how the example is
   service carries); (b) a CPC service code for coastal container freight.
 - Needs decision: no
 
-### sea/08#F4 · Low · Emission of the service without a base
+### sea/08#F4 · Medium · A kind of service in the element for the extent of the service
+- XPath: `/TransportServiceDescription/cac:TransportationService/cbc:TransportServiceCode` = `OCEANCONT`
+- Why: TransportServiceCode is "a code signifying the extent of this transportation service (e.g.,
+  door-to-door, port-to-port)"; "container liner service" is a kind of service.
+- Condition: an extent code (e.g. port-to-port), the kind given elsewhere.
+- Options: (a) preferred: port-to-port, since the description is a sailing Lumeport–Selanu.
+- Needs decision: no
+
+### sea/08#F5 · Medium · A language code in LocaleCode (two places)
+- XPath: `/TransportServiceDescription/cac:SenderParty/cac:Language/cbc:LocaleCode` = `en`
+- XPath: `/TransportServiceDescription/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
+- Why: LocaleCode is "a code signifying the locale in which this language is used"; both are the ISO
+  639 language code.
+- Condition: absent or a locale.
+- Options: (a) preferred: a locale; (b) drop it.
+- Needs decision: no
+
+### sea/08#F6 · Low · Emission of the service without a base
 - XPath: `/TransportServiceDescription/cac:TransportationService/cac:EnvironmentalEmission/cbc:ValueMeasure` = `380`
 - Why: The emission is "an environmental emission resulting from this transportation service". A
   two-day feeder sailing with a 1,000 TEU capacity (stated in the same service) emits in the order
@@ -78,23 +95,6 @@ review only describes what is wrong; it does not say where or how the example is
   that base.
 - Options: (a) preferred: a factor per FEU/TEU with its base, or a description "per 40 ft
   container"; (b) drop it.
-- Needs decision: no
-
-### sea/08#F5 · Medium · A kind of service in the element for the extent of the service
-- XPath: `/TransportServiceDescription/cac:TransportationService/cbc:TransportServiceCode` = `OCEANCONT`
-- Why: TransportServiceCode is "a code signifying the extent of this transportation service (e.g.,
-  door-to-door, port-to-port)"; "container liner service" is a kind of service.
-- Condition: an extent code (e.g. port-to-port), the kind given elsewhere.
-- Options: (a) preferred: port-to-port, since the description is a sailing Lumeport–Selanu.
-- Needs decision: no
-
-### sea/08#F6 · Medium · A language code in LocaleCode (two places)
-- XPath: `/TransportServiceDescription/cac:SenderParty/cac:Language/cbc:LocaleCode` = `en`
-- XPath: `/TransportServiceDescription/cac:ReceiverParty/cac:Language/cbc:LocaleCode` = `en`
-- Why: LocaleCode is "a code signifying the locale in which this language is used"; both are the ISO
-  639 language code.
-- Condition: absent or a locale.
-- Options: (a) preferred: a locale; (b) drop it.
 - Needs decision: no
 
 ### sea/08#F7 · Low · Shipper's contact for a transport offer is its sales customer service
