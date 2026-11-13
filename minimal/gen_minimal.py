@@ -444,8 +444,8 @@ TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consump
 LANG = {"US": "en", "IN": "en", "ZA": "en", "DE": "de", "BR": "pt", "JP": "ja-Latn"}
 EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Sanpuru"}
 ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
-    "AccountingSupplierParty": ("Supplier", "Lieferant", "Fornecedor", "Kyōkyūsha"),
-    "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Kokyaku"),
+    "AccountingSupplierParty": ("Supplier", "Lieferant", "Fornecedor", "Shiiresaki"),
+    "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Tokuisaki"),
     "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Hanbaisha"),
     "BuyerCustomerParty": ("Buyer", "Käufer", "Comprador", "Kōnyūsha"),
     "DespatchSupplierParty": ("Shipper", "Versender", "Expedidor", "Shukkasha"),
