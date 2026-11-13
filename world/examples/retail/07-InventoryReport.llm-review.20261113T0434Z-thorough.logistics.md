@@ -6,7 +6,7 @@ Flow: retail (RETAIL-2026-01) · Review date: 2026-11-13 · Part: logistics
 - Run: `20261113T0434Z-thorough`
 - Example: `world/examples/retail/07-InventoryReport.xml`, Git blob `e1019ee6a13e2a7196d8ba163e99b452ac02b47f` (committed)
 - Last commit changing the example: d920be0 2026-11-11 Document identification: computed UBLVersionID, transaction CustomizationIDs, process profiles
-- Checkout: branch `claude/keen-feynman-45qjti`, commit 935fb81 2026-11-13 Reviews of the cotton and retail flows: files written so far
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 6bf7444 2026-11-13 Reviews of the cotton and retail flows: files written so far
 - Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
 - Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
@@ -43,9 +43,9 @@ review only describes what is wrong; it does not say where or how the example is
 
 ### retail/07#F3 · Low · Inventory location without the store it is in
 - XPath: `/InventoryReport/cac:InventoryReportLine/cac:InventoryLocation/cbc:Name` = `Garden department, ground floor`
-- Why: InventoryLocation is "The location of the reported quantity of goods". The name gives a department and floor but no store, address or GLN; the retailer's other documents identify its goods-in by GLN (`08-Order.xml:/Order/cac:Delivery/cac:DeliveryLocation/cbc:ID` = `9522610900019`). The supplier who replenishes on this report cannot tell which store's stock it is.
+- Why: InventoryLocation is "The location of the reported quantity of goods". The name gives a department and floor but no store, address or GLN; the retailer's other documents identify this very place by GLN: `22-Order.xml:/Order/cac:Delivery/cac:DeliveryLocation/cbc:ID` = `9522610900026` with `22-Order.xml:/Order/cac:Delivery/cac:DeliveryLocation/cbc:Name` = `Garden department, Lumeport store`. The supplier who replenishes on this report cannot tell which store's stock it is.
 - Condition: the inventory location identifies the store (name of the store, and its GLN or address) as well as the department.
-- Options: (a, preferred) add the store's GLN as Location/ID and its name ("Brightmarket Lumeport, garden department, ground floor"); (b) an Address of the store.
+- Options: (a, preferred) add GLN `9522610900026` as Location/ID and name the store ("Garden department, Lumeport store, ground floor"); (b) an Address of the store.
 - Needs decision: no
 
 ## Checked and consistent

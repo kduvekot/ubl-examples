@@ -6,7 +6,7 @@ Flow: retail (RETAIL-2026-01) · Review date: 2026-11-13 · Part: logistics
 - Run: `20261113T0434Z-thorough`
 - Example: `world/examples/retail/06-RetailEvent.xml`, Git blob `d0b57c7c84cd16cde8dca7daf766830c3f61056c` (committed)
 - Last commit changing the example: d920be0 2026-11-11 Document identification: computed UBLVersionID, transaction CustomizationIDs, process profiles
-- Checkout: branch `claude/keen-feynman-45qjti`, commit 935fb81 2026-11-13 Reviews of the cotton and retail flows: files written so far
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 6bf7444 2026-11-13 Reviews of the cotton and retail flows: files written so far
 - Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
 - Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
@@ -43,9 +43,10 @@ review only describes what is wrong; it does not say where or how the example is
 ### retail/06#F3 · Low · Participating location named after the company, without an identifier
 - XPath: `/RetailEvent/cac:PromotionalEvent/cac:PromotionalSpecification/cac:PromotionalEventLineItem/cac:EventLineItem/cac:ParticipatingLocationsLocation/cbc:Name` = `Brightmarket Stores, Lumeport`
 - XPath: `08-Order.xml:/Order/cac:Delivery/cac:DeliveryLocation/cbc:ID` = `9522610900019`
-- Why: ParticipatingLocationsLocation is "The location of the stores involved in the event". The name is the retailer plus a city, not a store, and carries no GLN, although the flow identifies Brightmarket's places by GLN (goods-in `9522610900019` in 08 and 12). A supplier planning deliveries for the promotion cannot tell which store (or whether all Lumeport stores) take part.
+- XPath: `22-Order.xml:/Order/cac:Delivery/cac:DeliveryLocation/cbc:ID` = `9522610900026`
+- Why: ParticipatingLocationsLocation is "The location of the stores involved in the event". The name is the retailer plus a city, not a store, and carries no GLN, although the flow identifies Brightmarket's places by GLN: goods-in `9522610900019` in 08, and the garden department of the Lumeport store `9522610900026` in 22 (also `furniture/06-ProductActivity.xml:/ProductActivity/cac:SupplyChainActivityDataLine/cac:ActivityOriginLocation/cbc:Name` = `Brightmarket Stores, garden department, Lumeport`). A supplier planning deliveries for the promotion cannot tell which store (or whether all Lumeport stores) take part.
 - Condition: the participating location identifies the store(s) taking part, by name of the store and, where one exists, its GLN.
-- Options: (a, preferred) the store's name and GLN (the same store whose goods-in receives the order); (b) if several stores take part, one event line item per store.
+- Options: (a, preferred) the store's name and the garden department's GLN `9522610900026`, where the display stands; (b) if several stores take part, one event line item per store.
 - Needs decision: no
 
 ## Checked and consistent
