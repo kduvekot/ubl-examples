@@ -448,7 +448,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Tokuisaki"),
     "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Urite"),
     "BuyerCustomerParty": ("Buyer", "Käufer", "Comprador", "Kaite"),
-    "DespatchSupplierParty": ("Shipper", "Versender", "Expedidor", "Shukkasha"),
+    "DespatchSupplierParty": ("Shipper", "Versender", "Expedidor", "Niokurinin"),
     "DeliveryCustomerParty": ("Consignee", "Warenempfänger", "Destinatário", "Niukenin"),
     "RetailerCustomerParty": ("Retailer", "Einzelhändler", "Varejista", "Kourigyōsha"),
     "InventoryReportingParty": ("Inventory Reporter", "Bestandsmelder", "Informante de Estoque", "Zaiko Hōkokusha"),
