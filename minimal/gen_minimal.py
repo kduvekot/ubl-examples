@@ -473,10 +473,10 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "NotifierParty": ("Notifier", "Notifizierender", "Notificante", "Tsūkokusha"),
     "WasteProducerParty": ("Waste Producer", "Abfallerzeuger", "Gerador de Resíduos", "Haishutsu Jigyōsha"),
     "CustomsParty": ("Customs", "Zollbehörde", "Alfândega", "Zeikan"),
-    "ImportingGuarantorParty": ("Importing Guarantor", "Einfuhrbürge", "Garantidor de Importação", "Yunyū Hoshōnin"),
-    "ExportingGuarantorParty": ("Exporting Guarantor", "Ausfuhrbürge", "Garantidor de Exportação", "Yushutsu Hoshōnin"),
+    "ImportingGuarantorParty": ("Importing Guarantor", "Einfuhrbürge", "Garantidor de Importação", "Yunyū Hoshō Dantai"),
+    "ExportingGuarantorParty": ("Exporting Guarantor", "Ausfuhrbürge", "Garantidor de Exportação", "Yushutsu Hoshō Dantai"),
     "IssuerParty": ("Issuer", "Aussteller", "Emissor", "Hakkōsha"),
-    "EndorserParty": ("Endorser", "Beglaubiger", "Endossante", "Shōmeisha"),
+    "EndorserParty": ("Endorser", "Beglaubigungsstelle", "Endossante", "Shōmeisha"),
     "PreparationParty": ("Preparer", "Ersteller", "Preparador", "Sakuseisha"),
 }
 LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
