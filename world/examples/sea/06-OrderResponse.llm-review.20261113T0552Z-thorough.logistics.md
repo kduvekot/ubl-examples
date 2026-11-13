@@ -6,7 +6,7 @@ Flow: sea (SEA-2026-01) · Review date: 2026-11-13 · Part: logistics
 - Run: `20261113T0552Z-thorough`
 - Example: `world/examples/sea/06-OrderResponse.xml`, Git blob `8c32d38abff802a363b6a976f771dad7ef600e7d` (committed)
 - Last commit changing the example: 294c2e3 2026-11-12 English names for the island's towns; town names in both languages everywhere
-- Checkout: branch `claude/keen-feynman-45qjti`, commit 0919fae 2026-11-13 Reviews of the sea flow, run 20261113T0552Z-thorough: parts written so far
+- Checkout: branch `claude/keen-feynman-45qjti`, commit b532c38 2026-11-13 Reviews of the sea flow, run 20261113T0552Z-thorough: parts written so far
 - Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
 - Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
@@ -31,7 +31,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Needs decision: no
 
 ## Checked and consistent
-- `/OrderResponse/cbc:GrossVolumeMeasure` = `41.5` ("including packaging") is consistent with the packing list's net volume of 38.9 m³ "excluding packaging": 2.6 m³ for 25 pallets and film, about 0.1 m³ per pallet (pallet decks of about 1.85 × 0.77 × 0.15 m, own estimate, give 0.21 m³ each but overlap the goods' footprint, so the order of magnitude fits).
+- `/OrderResponse/cbc:GrossVolumeMeasure` = `41.5` ("including packaging") is consistent with the packing list's net volume of 38.9 m³ "excluding packaging": the difference of 2.6 m³ for 25 pallets is about 0.1 m³ per pallet, which for a pallet about 1.85 m long (the bench length) means a low skid of about 0.65 × 0.09 m in section (own estimate); light, but possible for film-wrapped benches on skids.
 - Physics: 41.5 m³ in one 40-foot general-purpose box (inside about 12.03 × 2.35 × 2.39 m ≈ 67.7 m³, own knowledge) fills about 61 %; 7,856 kg gross is far below the 30,480 kg maximum gross of a 42G1 box.
 - The order reference `VT-PO-26-0127` resolves to `05-Order.xml`; quantities 96 and 12, prices and line IDs agree with it. The contract `LD-DAG-26-0125` resolves to `03-DigitalAgreement.xml`.
 - The delivery terms place is identified as `XLSEL`, the same LOCODE as in the bill of lading and the invoice.
