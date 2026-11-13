@@ -6,7 +6,7 @@ Flow: contest (CONTEST-2026-01) · Review date: 2026-11-13 · Part: context
 - Run: `20261112T2358Z-thorough`
 - Example: `world/examples/contest/03-ContractNotice.xml`, Git blob `7954b4a6494a5104f6b223a28caf36da90fc85ff` (committed)
 - Last commit changing the example: b77996d 2026-11-12 Remove the last fillers from the examples
-- Checkout: branch `claude/keen-feynman-45qjti`, commit d34919f 2026-11-13 Reviews of the contest flow, run 20261112T2358Z-thorough: parts written so far
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 690a166 2026-11-13 Reviews of the contest flow, run 20261112T2358Z-thorough: parts written so far
 - Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
 - Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
