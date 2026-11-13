@@ -6,7 +6,7 @@ Flow: contest (CONTEST-2026-01) · Review date: 2026-11-13 · Part: context
 - Run: `20261112T2358Z-thorough`
 - Example: `world/examples/contest/14-BusinessInformation.xml`, Git blob `ea59d9c8ec70285678a63c9762adc18d4f21b15e` (committed)
 - Last commit changing the example: 50682e5 2026-11-11 Stage 5, tender part: a design contest with revised documents
-- Checkout: branch `claude/keen-feynman-45qjti`, commit 690a166 2026-11-13 Reviews of the contest flow, run 20261112T2358Z-thorough: parts written so far
+- Checkout: branch `claude/keen-feynman-45qjti`, commit 70e2a4d 2026-11-13 Reviews of the contest flow, run 20261112T2358Z-thorough: parts written so far
 - Skill: `.claude/skills/ubl-example-review`, last commit dadf784 2026-11-12 Reviews of the energy flow, run 20261112T1608Z-thorough: parts written so far; citations.py resolves review paths, so relative paths work for citations into other flows (committed)
 - Model: UBL 2.5, UBL-Entities-2.5.gc (SHA-256 c7df070e…fe988d1)
 
@@ -37,7 +37,7 @@ This is one review among possibly several of this example (other runs and parts;
 - XPath: `/BusinessInformation/cac:ReceiverParty/cac:AdditionalPartyIdentification/cbc:ID` = `XB-TR-410548`
 - XPath: `/BusinessInformation/cac:ReceiverParty/cac:PartyTaxScheme/cbc:ExemptionReasonCode` = `PUBLIC`
 - XPath: `/BusinessInformation/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID` = `STT`
-- Why: BusinessInformation carries no amount that is taxed, no tax total and no customs procedure, yet the parties bring their state sales tax registration (PartyTaxScheme, with TaxScheme `STT`) and their customs trader number (AdditionalPartyIdentification, scheme `customs-trader`). Section 4.8 of the review rules: data copied from a party's master data into a document that does not use it. For the contracting authority the tax scheme also states ExemptionReasonCode `PUBLIC`, whose meaning in the list is "Sale to a public body"; PartyTaxScheme/ExemptionReasonCode is "A reason for the party's exemption from tax", so even where the scheme is kept, the reason should be the party's own status, not a kind of sale.
+- Why: BusinessInformation carries no amount that is taxed, no tax total and no customs procedure, yet the parties bring their tax registration (PartyTaxScheme) and, where they have one, their customs trader number (AdditionalPartyIdentification, scheme `customs-trader`). Section 4.8 of the review rules: data copied from a party's master data into a document that does not use it. For the contracting authority the tax scheme also states ExemptionReasonCode `PUBLIC`, whose meaning in the list is "Sale to a public body"; PartyTaxScheme/ExemptionReasonCode is "A reason for the party's exemption from tax", so even where the scheme is kept, the reason should be the party's own status, not a kind of sale.
 - Condition: The parties of this document carry no tax scheme and no customs trader number, unless something in the document uses them; where a PartyTaxScheme of a public body is kept, its exemption reason names the party's status.
 - Options: Preferred: leave PartyTaxScheme and the customs trader identifier out of the notices and qualification documents, as the Bayvarra Information Service is described throughout the flow. Alternative: keep them only where a tax or customs check is part of the step, and say so in the document.
 - Needs decision: no
