@@ -12,7 +12,7 @@
   </cac:ProviderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Receptor 102</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Destinatário 102</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:CataloguePricingUpdateLine>

@@ -18,7 +18,7 @@
       <cbc:ID schemeID="0088">9520000001025</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Receptor 102</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Destinatário 102</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:CataloguePricingUpdateLine>

@@ -11,7 +11,7 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Receptor 762</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Destinatário 762</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
 </TenderReceipt>

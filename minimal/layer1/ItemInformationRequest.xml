@@ -19,7 +19,7 @@
       <cbc:ID schemeID="0088">9520000004620</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Receptor 462</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Destinatário 462</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ItemInformationRequestLine>
@@ -30,7 +30,7 @@
     <cac:SalesItem>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
-        <cbc:Description languageID="pt">Caneta esferográfica azul</cbc:Description>
+        <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
       </cac:Item>
     </cac:SalesItem>
   </cac:ItemInformationRequestLine>

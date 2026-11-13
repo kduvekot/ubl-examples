@@ -8,12 +8,12 @@
   </cac:ValidityPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Mihon Sōshinsha 261</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Sanpuru Sōshinsha 261</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Mihon Jushinsha 262</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Sanpuru Jushinsha 262</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ExceptionCriteriaLine>

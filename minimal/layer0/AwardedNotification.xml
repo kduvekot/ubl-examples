@@ -4,12 +4,12 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Mihon Sōshinsha 21</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Sanpuru Sōshinsha 21</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Mihon Jushinsha 22</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Sanpuru Jushinsha 22</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:TenderResult>

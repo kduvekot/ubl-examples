@@ -439,38 +439,39 @@ TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consump
 # Party names: "example" + the role, in the locale's language and in Latin
 # script (Japanese in Hepburn romanization), + the party's number k as in its
 # identifier; no legal form (that would claim a registration). The language is
-# stated in languageID (IND6). Translations: not reviewed by native speakers.
+# stated in languageID (IND6). Translations: checked against two independent
+# translations (minimal/translations-for-review.md); open points still listed there.
 LANG = {"US": "en", "IN": "en", "ZA": "en", "DE": "de", "BR": "pt", "JP": "ja-Latn"}
-EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Mihon"}
+EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Sanpuru"}
 ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "AccountingSupplierParty": ("Supplier", "Lieferant", "Fornecedor", "Kyōkyūsha"),
     "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Kokyaku"),
     "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Hanbaisha"),
     "BuyerCustomerParty": ("Buyer", "Käufer", "Comprador", "Kōnyūsha"),
     "DespatchSupplierParty": ("Shipper", "Versender", "Expedidor", "Shukkasha"),
-    "DeliveryCustomerParty": ("Consignee", "Warenempfänger", "Destinatário", "Uketorinin"),
+    "DeliveryCustomerParty": ("Consignee", "Warenempfänger", "Destinatário", "Niukenin"),
     "RetailerCustomerParty": ("Retailer", "Einzelhändler", "Varejista", "Kourigyōsha"),
     "InventoryReportingParty": ("Inventory Reporter", "Bestandsmelder", "Informante de Estoque", "Zaiko Hōkokusha"),
     "ProviderParty": ("Provider", "Anbieter", "Provedor", "Teikyōsha"),
     "SenderParty": ("Sender", "Absender", "Remetente", "Sōshinsha"),
-    "ReceiverParty": ("Receiver", "Empfänger", "Receptor", "Jushinsha"),
+    "ReceiverParty": ("Receiver", "Empfänger", "Destinatário", "Jushinsha"),
     "RequestorParty": ("Requester", "Anfragender", "Solicitante", "Iraisha"),
     "ResponderParty": ("Responder", "Antwortender", "Respondente", "Kaitōsha"),
     "ParticipantParty": ("Participant", "Teilnehmer", "Participante", "Sankasha"),
-    "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportador", "Unsō Gyōsha"),
-    "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Gyōsha"),
+    "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
+    "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
     "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
     "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
     "EconomicOperatorParty": ("Economic Operator", "Wirtschaftsteilnehmer", "Operador Econômico", "Jigyōsha"),
     "TendererParty": ("Tenderer", "Bieter", "Licitante", "Nyūsatsusha"),
     "MainQualifyingParty": ("Main Tenderer", "Hauptbieter", "Licitante Principal", "Shu Nyūsatsusha"),
-    "InterestedParty": ("Depositor", "Hinterleger", "Depositante", "Kitakusha"),
-    "GuarantorParty": ("Guarantor", "Bürge", "Garantidor", "Hoshōnin"),
+    "InterestedParty": ("Depositor", "Hinterleger", "Depositante", "Kyōtakusha"),
+    "GuarantorParty": ("Guarantor", "Garantiegeber", "Garantidor", "Hoshōnin"),
     "BusinessParty": ("Business", "Unternehmen", "Empresa", "Kigyō"),
     "ExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
     "HolderParty": ("Holder", "Inhaber", "Titular", "Shojisha"),
-    "NotifierParty": ("Notifier", "Notifizierender", "Notificante", "Tsūchisha"),
-    "WasteProducerParty": ("Waste Producer", "Abfallerzeuger", "Gerador de Resíduos", "Haikibutsu Haishutsusha"),
+    "NotifierParty": ("Notifier", "Notifizierender", "Notificante", "Tsūkokusha"),
+    "WasteProducerParty": ("Waste Producer", "Abfallerzeuger", "Gerador de Resíduos", "Haishutsu Jigyōsha"),
     "CustomsParty": ("Customs", "Zollbehörde", "Alfândega", "Zeikan"),
     "ImportingGuarantorParty": ("Importing Guarantor", "Einfuhrbürge", "Garantidor de Importação", "Yunyū Hoshōnin"),
     "ExportingGuarantorParty": ("Exporting Guarantor", "Ausfuhrbürge", "Garantidor de Exportação", "Yushutsu Hoshōnin"),
@@ -484,22 +485,22 @@ LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
 # "Parent/Element" or "Element". Not listed: stays X (e.g. the criterion
 # answer, which waits for a real criterion). Not reviewed by native speakers.
 TEXTS = {  # (en, de, pt, ja-Latn)
-    "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica azul", "Bōrupen, ao"),
-    "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica azul", "Bōrupen, ao"),
-    "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Ayamatte chūmon"),
+    "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
+    "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
+    "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Gohatchū"),
     "CertificateType": ("Ordinary", "Gewöhnlich", "Comum", "Ippan"),   # from the definition's examples
-    "ApprovalStatus": ("Approved", "Genehmigt", "Aprovado", "Shōnin-zumi"),
+    "ApprovalStatus": ("Approved", "Genehmigt", "Aprovado", "Shōninzumi"),
     "TenderingCriterionProperty/Description": (
         "Is the economic operator enrolled in a trade register?",
         "Ist der Wirtschaftsteilnehmer in einem Handelsregister eingetragen?",
         "O operador econômico está inscrito em um registro comercial?",
         "Jigyōsha wa shōgyō tōki sarete imasu ka?"),
-    "DigitalProcess/Description": ("Ordering", "Bestellung", "Pedido", "Hatchū"),
+    "DigitalProcess/Description": ("Ordering", "Bestellung", "Pedidos", "Hatchū"),
 }
 
 NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
     "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Mihon Tarō"),
-    "ActivityOriginLocation/Name": ("Example Store 1", "Beispiel Filiale 1", "Exemplo Loja 1", "Mihon Tenpo 1"),
+    "ActivityOriginLocation/Name": ("Example Store 1", "Beispiel Filiale 1", "Exemplo Loja 1", "Sanpuru Tenpo 1"),
     "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
 }
 

@@ -9,12 +9,12 @@
   </cac:ForecastPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Mihon Sōshinsha 321</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Sanpuru Sōshinsha 321</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Mihon Jushinsha 322</cbc:Name>
+      <cbc:Name languageID="ja-Latn">Sanpuru Jushinsha 322</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ForecastRevisionLine>

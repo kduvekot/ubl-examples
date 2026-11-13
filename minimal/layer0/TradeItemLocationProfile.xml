@@ -13,7 +13,7 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exemplo Receptor 822</cbc:Name>
+      <cbc:Name languageID="pt">Exemplo Destinatário 822</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ItemManagementProfile>
@@ -22,7 +22,7 @@
       <cbc:EndDate>2027-08-11</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:Item>
-      <cbc:Description languageID="pt">Caneta esferográfica azul</cbc:Description>
+      <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
     </cac:Item>
   </cac:ItemManagementProfile>
 </TradeItemLocationProfile>
