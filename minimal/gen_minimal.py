@@ -464,7 +464,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
     "EconomicOperatorParty": ("Economic Operator", "Wirtschaftsteilnehmer", "Operador Econômico", "Jigyōsha"),
     "TendererParty": ("Tenderer", "Bieter", "Licitante", "Nyūsatsusha"),
-    "MainQualifyingParty": ("Main Tenderer", "Hauptbieter", "Licitante Principal", "Shu Nyūsatsusha"),
+    "MainQualifyingParty": ("Main Tenderer", "Hauptbieter", "Licitante Principal", "Daihyō Nyūsatsusha"),
     "InterestedParty": ("Depositor", "Hinterleger", "Depositante", "Kyōtakusha"),
     "GuarantorParty": ("Guarantor", "Garantiegeber", "Garantidor", "Hoshōnin"),
     "BusinessParty": ("Business", "Unternehmen", "Empresa", "Kigyō"),
