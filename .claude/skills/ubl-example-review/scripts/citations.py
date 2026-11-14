@@ -7,6 +7,11 @@ A review cites an element in one of two ways, always between backticks:
   `<flow>/NN-DocumentType.xml:/Root/…`     a path in a named example, also in another flow
   `NN-DocumentType.xml:/Root/…`            a path in a named example of the same flow
 Paths containing '…' are shorthand and are skipped.
+
+A review file that is not next to its example (e.g. a cross-flow review in analysis/) has no reviewed
+example: `<flow>/NN-DocumentType.xml:/…` is resolved against world/examples/ of this checkout, whatever
+folder the review file is in; a bare `/Root/…` or `NN-DocumentType.xml:/…` citation cannot be resolved
+there (see unresolvable()).
 """
 import re
 from pathlib import Path
@@ -17,12 +22,27 @@ NS = {'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateCompon
       'cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2',
       'ext': 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2'}
 CITATION = re.compile(r'`((?:[\w.-]+/)?[\w.-]+\.xml:)?(/[A-Za-z][^`\s]*)`')
+EXAMPLES = Path(__file__).resolve().parents[4] / 'world' / 'examples'
 _cache = {}
 
 
 def review_xml(md):
     """The example a review file belongs to (final review or a run's part file)."""
     return Path(re.sub(r'\.llm-review(\.[^/]+)?\.md$', '.xml', str(Path(md).resolve())))
+
+
+def next_to_example(md):
+    """True if the review file sits next to the example it reviews (review_xml(md) exists)."""
+    xml = review_xml(md)
+    return xml.suffix == '.xml' and xml.is_file()
+
+
+def unresolvable(md, file_prefix):
+    """Why a citation cannot be resolved from this review file, else ''."""
+    if next_to_example(md) or '/' in file_prefix:
+        return ''
+    what = 'a same-flow citation' if file_prefix else 'a bare /Root/… citation'
+    return f'{what} needs the reviewed example, but the review file is not next to an example'
 
 
 def parse(xml_file):
@@ -46,6 +66,10 @@ def root_name(xml_file):
 
 def candidates(md, file_prefix, path):
     """The example files a citation may refer to, in order of preference."""
+    if not next_to_example(md):
+        # no reviewed example: only `<flow>/NN-DocumentType.xml:` citations, against world/examples/
+        name = file_prefix[:-1]
+        return [EXAMPLES / name] if '/' in name else []
     xml = review_xml(md)
     flow = xml.parent
     if file_prefix:

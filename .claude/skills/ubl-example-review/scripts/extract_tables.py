@@ -31,6 +31,8 @@ languageID is written `[lang] value`; `*_scheme`/`*_list` columns hold the schem
 values in the column before, in the same order (empty attribute -> '-'); columns marked "with unit"
 append the unitCode/currencyID after a space. role_path is the element's own path from the root as
 local names without prefixes or positions (e.g. Invoice/AccountingSupplierParty/Party).
+Style 'nvl' (payment_terms: settlement_discount, penalty) is 'nv' plus the attributes other than
+unitCode/currencyID/languageID in brackets, e.g. `PenaltyInterestRate/TimeBasisCode=ANN [listID=…]`.
 """
 import csv
 import fnmatch
@@ -82,6 +84,12 @@ def fmt(e):
 
 def unit(e):
     return e.get('unitCode') or e.get('currencyID') or ''
+
+
+def extra_attrs(e):
+    """' [listID=… schemeID=…]' for the attributes that fmt/fmt_unit do not show, else ''."""
+    a = ' '.join(f'{k}={v}' for k, v in sorted(e.attrib.items()) if k not in ('unitCode', 'currencyID', 'languageID'))
+    return f' [{a}]' if a else ''
 
 
 def fmt_unit(e):
@@ -632,6 +640,30 @@ PERIOD_COLS = [
     c('description', 'Description'),
 ]
 
+SUPPLIER_ROLES = ('AccountingSupplierParty', 'SellerSupplierParty')
+CUSTOMER_ROLES = ('AccountingCustomerParty', 'BuyerCustomerParty', 'CustomerParty', 'ContractingParty')
+
+
+def top_leaf(doc, name):
+    """Text of the document's own (top-level) leaf with this name, else ''."""
+    return join(fmt(x) for x in kids(doc.root) if ln(x) == name and is_leaf(x))
+
+
+def doc_party(doc, roles):
+    """(role, party) of the first top-level role in `roles` (in that priority) that the document has,
+    else ('', None). The party is the cac:Party inside the role wrapper, or the role element itself."""
+    for role in roles:
+        for ch in kids(doc.root):
+            if ln(ch) == role and not is_leaf(ch):
+                inner = [p for p in kids(ch) if ln(p) == 'Party']
+                return role, (inner[0] if inner else ch)
+    return '', None
+
+
+def party_country(p):
+    return first(p, 'PostalAddress/Country/IdentificationCode') if p is not None else ''
+
+
 TAX_COLS = [
     c('kind', style=lambda d, e: ln(e)),
     c('taxable_amount', 'TaxableAmount', style='u'), c('tax_amount', 'TaxAmount', style='u'),
@@ -645,6 +677,13 @@ TAX_COLS = [
     c('jurisdiction', '*TaxScheme/JurisdictionRegionAddress/*', style='nv'),
     c('supply_type', 'SupplyTypeCode'),
     c('total_tax_amount', style=lambda d, e: first(e.getparent(), 'TaxAmount') if ln(e.getparent()).endswith('TaxTotal') else ''),
+    c('document_currency', style=lambda d, e: top_leaf(d, 'DocumentCurrencyCode')),
+    c('supplier_role', style=lambda d, e: doc_party(d, SUPPLIER_ROLES)[0]),
+    c('supplier', style=lambda d, e: party_name(doc_party(d, SUPPLIER_ROLES)[1]) if doc_party(d, SUPPLIER_ROLES)[1] is not None else ''),
+    c('supplier_country', style=lambda d, e: party_country(doc_party(d, SUPPLIER_ROLES)[1])),
+    c('customer_role', style=lambda d, e: doc_party(d, CUSTOMER_ROLES)[0]),
+    c('customer', style=lambda d, e: party_name(doc_party(d, CUSTOMER_ROLES)[1]) if doc_party(d, CUSTOMER_ROLES)[1] is not None else ''),
+    c('customer_country', style=lambda d, e: party_country(doc_party(d, CUSTOMER_ROLES)[1])),
 ]
 
 RATE_COLS = [
@@ -652,6 +691,11 @@ RATE_COLS = [
     c('target_currency', 'TargetCurrencyCode'), c('target_base_rate', 'TargetCurrencyBaseRate'),
     c('rate', 'CalculationRate'), c('operator', 'MathematicOperatorCode'), c('date', 'Date'),
     c('market', 'ExchangeMarketID'), c('contract', 'ForeignExchangeContract/*', style='nv'),
+    c('document_currency', style=lambda d, e: top_leaf(d, 'DocumentCurrencyCode')),
+    c('tax_currency', style=lambda d, e: top_leaf(d, 'TaxCurrencyCode')),
+    c('pricing_currency', style=lambda d, e: top_leaf(d, 'PricingCurrencyCode')),
+    c('payment_currency', style=lambda d, e: top_leaf(d, 'PaymentCurrencyCode')),
+    c('payment_alternative_currency', style=lambda d, e: top_leaf(d, 'PaymentAlternativeCurrencyCode')),
 ]
 
 
@@ -695,9 +739,11 @@ ACCOUNT_COLS = [
 
 PAYMENT_TERMS_COLS = [
     c('id', 'ID'), c('means_id', 'PaymentMeansID'), c('prepaid_payment_reference', 'PrepaidPaymentReferenceID'),
-    c('note', 'Note'), c('reference_event', 'ReferenceEventCode'), c('percent', 'PaymentPercent'),
-    c('amount', 'Amount', style='u'), c('settlement_discount', 'SettlementDiscount*', style='nv'),
-    c('penalty', 'Penalty*', style='nv'), c('due_date', 'PaymentDueDate'), c('installment_due_date', 'InstallmentDueDate'),
+    c('note', 'Note'), c('reference_event', 'ReferenceEventCode'),
+    c('reference_event_list', 'ReferenceEventCode', style='@listID'), c('percent', 'PaymentPercent'),
+    c('amount', 'Amount', style='u'),
+    c('settlement_discount', 'SettlementDiscount*', 'SettlementPeriod/*', style='nvl'),
+    c('penalty', 'Penalty*', style='nvl'), c('due_date', 'PaymentDueDate'), c('installment_due_date', 'InstallmentDueDate'),
     c('invoicing_party_reference', 'InvoicingPartyReference'),
     c('periods', '*Period/*', style='nv'), c('details_uri', 'PaymentTermsDetailsURI'),
 ]
@@ -783,6 +829,8 @@ def cell(doc, e, leaves, used, spec):
         return join(fmt_unit(x) for _, x in hits)
     if style == 'nv':
         return join(f'{r}={fmt_unit(x)}' for r, x in hits)
+    if style == 'nvl':
+        return join(f'{r}={fmt_unit(x)}{extra_attrs(x)}' for r, x in hits)
     if style.startswith('@'):
         return join(x.get(style[1:]) or '-' for _, x in hits) if any(x.get(style[1:]) for _, x in hits) else ''
     raise ValueError(style)
@@ -1058,6 +1106,26 @@ DESCRIPTIONS = {
 }
 
 
+NOTES = [
+    '- `taxes.csv` supplier/customer: `supplier_role`/`customer_role` name the top-level role element of the '
+    'document that was used, `supplier`/`customer` its party name and `supplier_country`/`customer_country` the '
+    'IdentificationCode of that party\'s PostalAddress/Country. The role is the first one present, in this order: '
+    'supplier = AccountingSupplierParty, SellerSupplierParty; customer = AccountingCustomerParty, '
+    'BuyerCustomerParty, CustomerParty, ContractingParty. Only direct children of the root count (a party in a '
+    'consignment does not); a document without such a role has empty cells (the supplier of a tender notice or a '
+    'UtilityStatement, for instance). `document_currency` = the root\'s DocumentCurrencyCode.',
+    '- `exchange_rates.csv`: `element` is the kind of rate (PricingExchangeRate, TaxExchangeRate, '
+    'PaymentExchangeRate, PaymentAlternativeExchangeRate, or a plain ExchangeRate inside payment terms, a price '
+    'or a line); `document_currency`, `tax_currency`, `pricing_currency`, `payment_currency` and '
+    '`payment_alternative_currency` are the root\'s own DocumentCurrencyCode, TaxCurrencyCode, PricingCurrencyCode, '
+    'PaymentCurrencyCode and PaymentAlternativeCurrencyCode (empty where the document has none).',
+    '- `payment_terms.csv`: `settlement_discount` holds SettlementDiscountPercent/Amount and the SettlementPeriod, '
+    '`penalty` holds PenaltySurchargePercent, PenaltyAmount, PenaltyPeriod and PenaltyInterestRate, each as '
+    '`path=value unit`, followed by `[attribute=value]` for any attribute other than unit/currency/language '
+    '(listID of the interest-rate codes). The periods are repeated in `periods`.',
+]
+
+
 def load():
     return [Doc(p) for p in sorted(EXAMPLES.glob('*/*.xml'))]
 
@@ -1088,7 +1156,7 @@ def write(out):
               f'- examples changed against the commit: {"yes" if git("status", "--porcelain", "--", "world/examples") else "no"}',
               '', 'Conventions: see the docstring of extract_tables.py (cells with several values are joined with '
               '` | `; `[lang] value` for values with a languageID; role_path = local names from the root; `other` '
-              'holds the leaves below a thematic row that no column takes).', '',
+              'holds the leaves below a thematic row that no column takes).', '', *NOTES, '',
               '| table | rows | description | columns |', '|---|---:|---|---|']
     for t in ORDER:
         rows = tables.get(t, [])

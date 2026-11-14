@@ -5,6 +5,8 @@ usage: python3 -I check_xpaths.py <NN-DocumentType.llm-review.<run-id>[.<part>].
 Citations (see citations.py): `/Root/…` in the reviewed example or, if it does not resolve there,
 in the other examples of the same flow with that root; `<flow>/NN-Doc.xml:/Root/…` or
 `NN-Doc.xml:/Root/…` in the named example. Paths containing '…' are shorthand and are skipped.
+A review file that is not next to an example (e.g. in analysis/) can cite `<flow>/NN-Doc.xml:/Root/…`
+only; these resolve against world/examples/. Other citations there are reported as UNRESOLVABLE.
 """
 import sys
 from pathlib import Path
@@ -12,7 +14,7 @@ from pathlib import Path
 from lxml import etree
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from citations import citations, resolve, review_xml  # noqa: E402
+from citations import citations, next_to_example, resolve, review_xml, unresolvable  # noqa: E402
 
 
 def main():
@@ -20,8 +22,13 @@ def main():
         sys.exit(__doc__)
     failed = 0
     for md in sys.argv[1:]:
-        own = review_xml(md).resolve()
+        own = review_xml(md).resolve() if next_to_example(md) else None
         for prefix, path in citations(md):
+            why = unresolvable(md, prefix)
+            if why:
+                failed += 1
+                print(f'{md}: UNRESOLVABLE {prefix}{path} ({why})')
+                continue
             try:
                 hits = resolve(md, prefix, path)
             except etree.XPathError as e:
@@ -31,7 +38,7 @@ def main():
             if not hits:
                 failed += 1
                 print(f'{md}: NO MATCH {prefix}{path}')
-            elif hits[0][0].resolve() != own:
+            elif own is not None and hits[0][0].resolve() != own:
                 where = ', '.join(f'{f.parent.name}/{f.name}' for f, _ in hits)
                 print(f'{md}: other document, resolves in {where}: {prefix}{path}')
     print('all cited XPaths resolve' if not failed else f'{failed} XPath(s) do not resolve')
