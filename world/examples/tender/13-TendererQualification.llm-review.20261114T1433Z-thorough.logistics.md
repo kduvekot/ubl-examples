@@ -61,12 +61,20 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) list three completed tasks (preferred); (b) describe the Ferrano task as three yearly supply contracts.
 - Needs decision: no
 
+### tender/13#F6 · Low · The subcontractor's share of 20 % does not match the tender made the same morning
+- XPath: `/TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cbc:ParticipationPercent` = `20`
+- XPath: `/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cbc:ParticipationPercent` = `80`
+- Why: `ParticipationPercent` is "the extent to which this party is expected to participate in the tendering process, expressed as a percentage". Saltmere does the installation (note 2). In the tender issued 21 minutes later, the installation is `15-Tender.xml:/Tender/cac:TenderedProject/cac:TenderLine[2]/cbc:LineExtensionAmount` = `4320.00` of a total of 124080.00 XBL, i.e. 3.5 %, and the tendering terms also put the subcontracted task at 4320.00 XBL. By value Saltmere's share is 3.5 %, not 20 %. The definition does not say the percentage is by value, so this is a plausibility remark, but no other basis for 20 % is visible in the flow.
+- Condition: the participation percentages can be derived from the tender (by value: about 96.5 % and 3.5 %), or the basis of the split is stated.
+- Options: (a) use the shares by value (preferred); (b) keep 80/20 and say in the role description what it measures.
+- Needs decision: no
+
 ## Checked and consistent
 - `check_ids.py`: ISIN `XU0001042501` has a correct check digit.
 - Issued 2026-02-25 08:52, 21 minutes before the tender that refers to it (15, 2026-02-25 09:13, `TendererQualificationDocumentReference` `VI-DOC-26-0199`) and before the deadline; `VI-DOC-26-0199` precedes Valdara's `VI-DOC-26-0201` in number and time.
 - `ContractFolderID` `PWD-2026-PARKS`; interested lots `LOT-1` and `LOT-2` are the two lots of the procedure.
 - Requirements of 01 to 03 are met by the figures: 41 years in operation (3 required), 180 employees (10 required), ISIC 3100 (required class), financial capability 9,200,000.00 XBL (turnover above 250,000.00 required).
-- Participation 80 % + 20 % = 100 %; the subcontractor's 20 % is within the 30 % the tendering terms allow.
+- Participation 80 % + 20 % = 100 %; 20 % is within the 30 % the tendering terms allow for subcontracting (but see F6).
 - Completed task: 2023-01-01 to 2025-12-31 is three years, within "five years" before the issue date; 540000.00 / 3 = 180000.00 = `AnnualAverageAmount`.
 - Saltmere Engineering (register 20410685) is the subcontractor named in the tender 15.
 - Unit codes ANN, IE, EA; world-list codes resolve.
