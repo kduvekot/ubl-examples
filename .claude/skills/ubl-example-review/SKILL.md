@@ -203,6 +203,38 @@ For a flow or `all`, run the five parts as separate subagents per flow (they may
 all with the same run ID, then one merge subagent per flow (or one per group of examples for a large
 flow). A subagent never sees another part's file, except the merge.
 
+### Running a thorough review: practice
+
+How the runs of 2026-11-12/13 were done; follow it so that later runs stay consistent with them.
+
+- **Status and earlier decisions.** `analysis/review-merge-decisions.md` lists which flows have a
+  thorough review (with run ID) and the decisions the merges made on recurring problems. Read it
+  before a run; a merge aligns with it.
+- **Size of a part.** One part subagent handles up to about 15–20 examples. For a larger flow, split
+  every lens into halves (e.g. 01–15 and 16–29, ten subagents in all). Each half uses the whole flow
+  for references and comparisons but writes files only for its own examples.
+- **Size of a merge.** One merge subagent handles 6–9 examples; a large flow gets two to four
+  merges, run in parallel.
+- **Write as you go.** Every part and every merge writes the file of an example as soon as that
+  example is done, so that work survives an interruption.
+- **Decisions files.** Each merge writes its decisions on recurring problems (problem, severity,
+  needs decision, preferred option) early to `<scratch>/<flow>-merge-decisions-<letter>.md`, reads
+  the files of the other merges of the run and the decisions in
+  `analysis/review-merge-decisions.md`, and aligns, or explains a difference in its file. At the end
+  of the run, append the run's decision files to the appendix of
+  `analysis/review-merge-decisions.md` and update its status table; the scratch folder does not
+  survive the session.
+- **Commit while it runs.** Commit the files of the run regularly (only
+  `*.llm-review.<run-id>.*.md`), not only at the end.
+- **Usage limits.** When a subagent stops on a usage limit, its transcript is kept: after the reset,
+  send it a message to continue (it first checks that its last file is complete), rather than
+  starting a new subagent.
+- **Cost, as measured.** About 170–200k tokens per example for a thorough review (parts and merge),
+  about 10–11 % of a 5-hour window per million tokens.
+- **Known refutation.** MMSI MID 297/298 and call signs starting with Q are not allocated
+  (`world/codelists/sources/PROVENANCE-second-round.md`, ITU tables re-read 2026-11-11); a part that
+  claims otherwise is refuted in the merge.
+
 ## 4. What to check
 
 For every element in the example:
