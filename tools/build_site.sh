@@ -96,6 +96,7 @@ done
 rm -rf "$OUT/.world-md"
 # The example documents: a page per document (values and reasons), and the XML files themselves
 for md in world/examples/*/*.md; do
+  case "$md" in *.llm-review.*) continue ;; esac   # reviews of the examples are not published
   flow=$(basename "$(dirname "$md")"); name=$(basename "$md" .md)
   mkdir -p "$OUT/examples/$flow" && cp "world/examples/$flow/$name.xml" "$OUT/examples/$flow/"
   sed "s#](\($name\.xml\))#](examples/$flow/\1)#" "$md" > "$OUT/.example.md"

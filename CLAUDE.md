@@ -25,6 +25,8 @@
 
 - **Fix things at the source:** the generators `tools/build_examples.py`, `tools/examples_kit.py`, `tools/examples_scenarios.py`, the world data and `lists.json`. Never edit the generated XML or `.md` by hand.
 - **Full build and checks:** `bash tools/build_site.sh <outdir>` (outdir outside the repo or `_site`). It builds the code lists, the examples and the map, and runs the world, identity, address and IND checks plus XSD and phase-2 validation.
+  - Requires Python 3 with `lxml`, and `xsltproc`, `xmllint` and `pandoc` (`apt-get install -y xsltproc libxml2-utils pandoc`). It fetches the OASIS stylesheets into `.oasis` and the UBL 2.5 files into `.ubl`, so it needs access to github.com and docs.oasis-open.org.
+  - The reviews `*.llm-review.*.md` next to the examples are not generated: the build leaves them alone and does not publish them.
 - **Validation only:** `python3 tools/validate_examples.py world/examples/*/*.xml`.
 - **Coverage** of the endorsed UBL 2.5 elements: `sh tools/coverage_world.sh`. It is now 5153/5160, and the 7 missing elements are uncovered on purpose (see Open work).
 - **New words** for the invented languages: when the build reports missing words, save the list as `missing.json` and run `python3 tools/lexicon.py missing.json qau` (or `qal`). Never invent words by hand.

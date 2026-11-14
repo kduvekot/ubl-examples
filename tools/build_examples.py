@@ -1743,7 +1743,7 @@ def main(flow_id, check=False):
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow
-        if name not in produced:
+        if name not in produced and ".llm-review." not in name:   # reviews are not generated: keep them
             if check:
                 stale.append(f"world/examples/{flow_id}/{name} (no longer a document of the flow)")
             else:
