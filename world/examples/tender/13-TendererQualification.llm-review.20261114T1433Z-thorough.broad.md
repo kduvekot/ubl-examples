@@ -107,7 +107,17 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) add `EV-DEC-1` to the Evidence list and give `VI-ESPD-26` a document type, or drop it (preferred); (b) none other seen.
 - Needs decision: no
 
-### tender/13#F11 · Low · Bids office of the subcontractor staffed by a procurement officer
+### tender/13#F11 · Low · A 20 % share for the subcontractor whose work is 3.5 % of the tender
+- XPath: `/TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cbc:ParticipationPercent` = `20`
+- XPath: `/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cbc:ParticipationPercent` = `80`
+- XPath: `15-Tender.xml:/Tender/cac:TenderedProject/cac:TenderLine[2]/cbc:LineExtensionAmount` = `4320.00`
+- XPath: `15-Tender.xml:/Tender/cac:TenderedProject/cac:LegalMonetaryTotal/cbc:PayableAmount` = `124080.00`
+- Why: ParticipationPercent is "The extent to which this party is expected to participate in the tendering process, expressed as a percentage." Saltmere is the subcontractor "for the installation" (the note). In the tender 15, issued 21 minutes later, the installation is line 2 with 4 320.00 of 124 080.00 lume, i.e. 3.5 %, not 20 %.
+- Condition: The shares declared in the qualification agree with the split of the tender.
+- Options: (a) about 3.5 % and 96.5 % (preferred); (b) say what else Saltmere does for 20 %.
+- Needs decision: no
+
+### tender/13#F12 · Low · Bids office of the subcontractor staffed by a procurement officer
 - XPath: `/TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:Contact/cbc:Name` = `Bids office`
 - XPath: `/TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:Contact/cbc:JobTitle` = `Procurement officer`
 - XPath: `/TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:Contact/cbc:Department` = `Procurement`
@@ -116,7 +126,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) e.g. "Bid manager", department "Sales" or "Bids" (preferred); (b) drop job title and department.
 - Needs decision: no
 
-### tender/13#F12 · Low · The logistics service provider of the tenderer in its qualification
+### tender/13#F13 · Low · The logistics service provider of the tenderer in its qualification
 - XPath: `/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:ServiceProviderParty/cbc:ServiceType` = `Warehousing and despatch`
 - XPath: `/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:ServiceProviderParty/cac:Party/cac:PartyName/cbc:Name` = `Castrano Logistics`
 - Why: The qualifying party carries its logistics service provider (Castrano Logistics, warehousing and despatch, with a key account desk). The qualification declares capacity, references and declarations; it names Saltmere as the party it relies on, and does nothing with a warehouse operator. The data looks copied from master data.
@@ -124,7 +134,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) remove the service provider here (preferred); (b) if Valdara relies on Castrano for the delivery, declare it as such in the qualification.
 - Needs decision: no
 
-### tender/13#F13 · Low · A public body described as a company in a commercial register
+### tender/13#F14 · Low · A public body described as a company in a commercial register
 - XPath: `/TendererQualification/cac:ContractingParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLiquidationStatusCode` = `ACTIVE`
 - XPath: `/TendererQualification/cac:ContractingParty/cac:Party/cac:PartyLegalEntity/cac:CorporateRegistrationScheme/cbc:CorporateRegistrationTypeCode` = `COMMERCIAL`
 - Why: Applies to: Lumeport Public Works Department. A public body (a department of the city of Lumeport, a public information service, a review board) is not a company: it cannot be in liquidation, and a commercial register is not where a public body is registered. The same description of the Lumeport Public Works Department is used in all 36 examples of the flow (compared by a hash of the party's leaf values).
@@ -132,7 +142,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Options: (a) drop CompanyLiquidationStatusCode for public bodies and give the scheme a type other than "Commercial register" (preferred); (b) keep the business register and say in the world's rules that public bodies are entered in it.
 - Needs decision: no
 
-### tender/13#F14 · Low · The department's tax exemption reason describes a sale
+### tender/13#F15 · Low · The department's tax exemption reason describes a sale
 - XPath: `/TendererQualification/cac:ContractingParty/cac:Party/cac:PartyTaxScheme/cbc:ExemptionReasonCode` = `PUBLIC`
 - XPath: `/TendererQualification/cac:ContractingParty/cac:Party/cac:PartyTaxScheme/cbc:ExemptionReason` = `Sale to a public body: public bodies are exempt from the state sales tax`
 - Why: ExemptionReasonCode in PartyTaxScheme is "A reason for the party's exemption from tax". The code's name is "Sale to a public body", a property of a transaction; the party's own status is "is a public body". The same value is in every example of the flow that describes the department in full.
@@ -143,7 +153,7 @@ review only describes what is wrong; it does not say where or how the example is
 ## Checked and consistent
 - check_ids.py: ISIN `XU0001042501` has a correct check digit.
 - Completed task: 180 000.00 a year × 3 years (2023-01-01 to 2025-12-31) = 540 000.00 = TotalTaskAmount; its evidence `EV-FER-PARKS` is in the Evidence list; the customer, the City of Ferrano, is the city of Valdara's seat.
-- Participation 80 % + 20 % = 100 %; 20 % for the subcontractor is within the 30 % the notice allows.
+- Participation 80 % + 20 % = 100 %; 20 % is within the 30 % the notice allows for subcontracting.
 - 180 employees and 41 years are above the notice's minimum of 10 employees and 3 years; ISIC 3100 is the class required; both lots of interest exist.
 - The qualification (2026-02-25 08:52) precedes Valdara's tender 15 (09:13 the same day), which refers to it by its ID `VI-DOC-26-0199`.
 - Saltmere Engineering is described identically in 13 and 15 (hash of leaf values); ISIC 4290 fits a firm that anchors street furniture.
@@ -153,4 +163,3 @@ review only describes what is wrong; it does not say where or how the example is
 - `/TendererQualification/cbc:Note[1]`: whether the Urvanian note says the same as the English one cannot be checked, the language being invented — refuted as a finding; nothing indicates a difference.
 - `/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:CompletedTask/cbc:PartyCapacityAmount`: equal to the total task amount — refuted because the party carried out the whole task itself, so its capacity for it is the total.
 - `/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:PartyLegalEntity/cac:SecurityListing`: listing and share capital in a qualification — refuted because they bear on the financial standing the qualification declares.
-- `/TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cbc:ParticipationPercent`: 20 % for the installation, while the notice estimates lot 2 at 3.5 % of the total — refuted because the share is the tenderer's own split and stays under the allowed 30 %.
