@@ -32,12 +32,11 @@ thorough review"). When a run is finished, its decision tables are appended to t
 | cotton | 18 | `20261113T0121Z-thorough` | 18 |
 | retail | 22 | `20261113T0434Z-thorough` | 22 |
 | sea | 29 | `20261113T0552Z-thorough` | 29 |
-| **tender** | 36 | **not reviewed yet** | 0 |
+| tender | 36 | `20261114T1433Z-thorough` | 36 |
 
 Five manual reviews (run `20261112T0851Z-manual`) also exist; they predate the skill.
 
 Not done yet:
-- the thorough review of **tender**;
 - the separate **consistency review** across documents and flows (timelines, capacity, where
   equipment is, the map). Many reviews list such questions under "Outside this review".
 
@@ -1223,3 +1222,311 @@ FINAL (merged files 23-29 written; check_xpaths.py and check_values.py pass for 
 | 28 CollectedForParty customs for an outlay already paid; port as BeneficiaryParty on the collection line | Medium | no | money + parties. |
 | 28 OriginatorParty = Island Customs Service; B/L as DeliveryNoteDocumentReference | Medium | no | separate findings (broad grouped both; context/parties/logistics separate). |
 
+
+### tender-merge-decisions-a
+
+#### tender merge decisions, merger A (tender 01-05), run 20261114T1433Z-thorough
+
+FINAL (merged files 01-05 written; check_xpaths/check_values pass). Read analysis/review-merge-decisions.md (main table, contest rows) and tender-merge-decisions-B/C/D/E.md. Aligned with them on every shared row; differences explained in the rows.
+
+| Problem | Severity | Needs decision | Preferred option / note |
+|---|---|---|---|
+| LocaleCode `en` (ISO 639) | Medium | no | drop LocaleCode; a locale (en-XB) from a locale list as option. Count 362 elements in 213 files (`grep -rho --include='*.xml' '<cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>'`); my first draft's 364 also hit PreferredLanguageLocaleCode/TenderLanguageLocaleCode (B's correction, adopted). In 04 `PreferredLanguageLocaleCode` `en` folded into the same finding (its definition asks for a locale); `TenderLanguageLocaleCode` in 05 refuted (definition asks for a language). |
+| Province of Ferrano in Region | Medium | no | move to CountrySubentity. 219 in 104 files (22 tender files). Only 03 (Valdara as receiver). |
+| Public bodies (PWD, Bayvarra Information Service, Procurement Review Board) as COMMERCIAL-register companies with liquidation status | Medium | no | drop the liquidation status and the COMMERCIAL type (no public-body register type in the world list). Parts said Low; raised as main table, B, C, D, E. |
+| PUBLIC exemption text "Sale to a public body: ..." in the department's PartyTaxScheme | Low | no | reword the text to the party's status, keep the code (its definition names the buyer's status). Money refuted it in 01-03 (second half states the status) – carried as counter-argument. As B, C, D, E. |
+| Copied master data (customs trader IDs; in 03 also Valdara's Castrano ServiceProviderParty, VAT registration, share capital, listing) | Low | no | one finding per example; CorporateStockAmount "number of shares" noted for the TC. |
+| RegistrationDate 1996-01-01 | Low | yes | per company a real date. 271 in 181 files. In 04/05 (Marrowdale) parties said no; aligned with main table: yes. In 04 the separate 22-operating-years vs 1996 finding is Low/no (as B's note). |
+| Call for tenders cited as PWD-2026-PARKS-CFT (8 files; 03 is LPWD-DOC-26-0189, 25 cites that) | High | no | cite 03's ID; in 01 (issued a month before 03) drop the reference; in 03 drop the self-reference. As B, C, D. |
+| ReplacedNoticeDocumentReference PWD-2026-PARKS-PIN (01, 02, 03, 24) | High | no | drop it (01 is version 1 of the first notice; 02/03 already link the PIN by NoticeDocumentReference). Broad said yes; removal is encoding. As D. |
+| LatestSecurityClearanceDate with SecurityClearanceTerm NOTREQUIRED (01, 02, 03, 24) | High | no | drop the date (and the "not required" term). Logistics said Medium; as D. |
+| Lot 2 WORKS in 01, SERVICES in 02, 03, 21 | High | no | SERVICES and the same name in 01. Kept as a High finding also in 02 and 03 (one side of the contradiction), with the fix placed in 01; logistics' refutation for 02/03 carried. |
+| Procedure periods before the issue date (02, 03: requested publication 2026-01-27, periods from 2026-01-26, three periods ended by issue) | High | yes | parts split between issuing 02/03 on 2026-01-26 (logistics, context) and moving the periods (broad); the merge keeps both without preference. In 03 context's refutation (copy sent to one operator, available since 26 Jan) answers only the availability start. |
+| Restricted-procedure periods (InvitationSubmission, ParticipationInvitation, ParticipationRequestReception) in an open procedure (02, 03) | Medium | no | drop the periods (or keep only a registration period ending after 04); restricted procedure as story option. Draft 1 said yes (broad, logistics); changed to no to align with B (09): every document calls the procedure OPEN, so removal is encoding. |
+| Expression of interest (04) after the reception period ended; confirmed in 05 | Low | yes | logistics High, broad Low, context Outside. Cannot settle whether the world's EOI is a request to participate in an open procedure; fix in 02/03 either way. |
+| Tender guarantee 2400.00 at AmountRate 2 (2 % of 124080 = 2481.60, of 119760 = 2395.20) | Medium | no | drop AmountRate (fixed sum, as certificate 14) or state base and rounding. Money High, broad Low. As D. |
+| AllowedSubcontractTerms Rate 30 = MaximumPercent 30, Amount 4320.00 (3.48 %), UnknownPriceIndicator false (01, 02, 03) | Medium | no | keep MaximumPercent; drop Rate, Amount, UnknownPriceIndicator. Money High, context Low, broad refuted (carried). As D. C's "20 % (13) vs 3.48 %" is a different place. |
+| Paper-copy fee in RequiredFeeAmount / FeeDescription (concession fee), on project and lots | Medium | no | drop; DocumentationFeeAmount already states it. All parts. |
+| MaximumAdvertisementAmount 500.00 (01, 02, 03) | Low | yes | broad Low/yes, context Medium/yes, money refuted (pairs with TenderResult/AdvertisementAmount 320.00 in 21). Cannot settle: both arguments; TC write-up on the unclear definition. |
+| VariantConstraintIndicator true with MaximumVariantQuantity 1 | Medium | no | drop the indicator. |
+| GREEN (StrategicProcurementCode) in ProcurementAdditionalType/ProcurementTypeCode | Medium | yes | eForms practice vs UBL definition; TC write-up; at least not on the installation lot. |
+| Turnover: "at least" vs GT, 250000 vs 2 × 124080 = 248160 | Medium | no | GE (the world list has it) and one stated limit. Money Medium, broad/context Low. |
+| Request-for-tender line Min/Max amount = unit prices, EstimatedAmount = line total | Medium | no | line totals in the line, unit limits only in the price criterion. Money only. |
+| Framework EstimatedMaximumValueAmount 148896 (excl. renewal) / MaximumValueAmount 186120 (02, 03) | Medium | yes | money; broad refuted (ceiling may be lower than the arithmetic maximum) – accepted for the maximum, not for the estimate. |
+| OriginalContractingSystemID PWD-FW-2024-PARKS in a procedure that reopens nothing (02, 03) | Medium | no | drop. Context said yes (call-off story as option). |
+| Qualification request with EconomicOperatorRole LEAD | Low | no | drop the role (the list also has SOLE). |
+| Contest indicators (Prize, FollowupContract, BindingOnBuyer) and NoFurtherNegotiation in an open supply procedure | Low | no | drop. |
+| Default values UrgencyCode NORMAL, CandidateReduction false, TerminatedIndicator false (02, 03) | Low | no | drop (IND6). |
+| Roles all filled with the contracting party (originator, beneficiary, six tendering-terms roles) | Low | no | drop the repetitions; keep a role only with its own contact. Context said yes (parks department as own body: story option), parties no, broad refuted (carried). As contest and C. |
+| PIN details that refer to a framework, auction and opening not announced in it (01) | Low | no | announce them in the process description, or reduce the PIN (context's yes kept as option). |
+| Lot 2 described with bench data; lot-level terms "As for the procedure."; lot 2 money terms that a lot-2-only tender cannot meet (02, 03) | Low | no / no / yes | separate findings; the money-terms one is yes (money: per-lot terms vs requiring both lots). |
+| Auction announced, no trace in the flow (02, 03) | Low | yes | money; logistics put it under Outside. |
+| Estimate equal to the winning tender to the cent (01-03) | Low | yes | as C (15). |
+| Budget line for two years on 2026; penalty clause without base | Low | yes / no | money. |
+| Size class: Marrowdale SMALL with 85 employees (04, 05) | High | yes | aligned with B: SMALL requires fewer than 50 persons AND the turnover limit, so 85 strictly contradicts it. Broad said no; the size is story. |
+| Size class: Valdara LARGE with 180 employees (03) | Low | yes | as B and C: LARGE reads "250 persons OR turnover above ...", no strict contradiction. |
+| Valdara's Urvanian address tagged en-XB (issuer) vs en-XU elsewhere; Italianate names tagged English (03) | Low | yes | added by the merge against the refutations of broad and parties, to align with the main table, C, D, E (en-XB in 13 tender files, en-XU in 9). |
+| Valdara's legal form in one untagged rendering (03) | Low | no | added by the merge, as C, D (separate Low/no). |
+| Contact of Valdara = order desk as receiver of a call for tenders (03) | Low | no | |
+| Review board's registry with the buyer's job title (02, 03) | Low | no | |
+| Sawmill's signature prefix HS (04) | Low | no | as B (10). |
+| Issue on a Sunday against "Weekdays 08:00-17:00" (05) | Low | yes | aligned with B (09, 10): cannot settle; context said no, broad refuted (carried). |
+| FundingProgramCode PARKS-26 without listID (broad in 01-03) | refuted in the merge | – | party-internal programme number; context and logistics refuted it too. |
+| LegalDocumentReference = the act at lot level (03, context) | refuted in the merge | – | definition "A reference to a legal document"; broad and logistics refuted it. |
+| Price under quality criterion AC-2; Brackenmere citing Valdara's qualification; withdrawal 18 vs tender 19; tender-phase data in the contract | – | – | do not arise in 01-05 (see C, D). |
+| MMSI MID 297/298, Q call signs | – | – | do not arise in 01-05. |
+
+##### Differences from the other merges and from analysis/review-merge-decisions.md
+- None on severity or decision for shared rows after the final alignment. Two changes made to align: restricted-procedure periods yes → no (B), LocaleCode count 364 → 362 (B).
+- The main table has no row for size classes; A follows B (SMALL/85 High yes; LARGE/180 Low yes).
+
+
+### tender-merge-decisions-b
+
+#### tender merge decisions, merger B (tender 06-14), run 20261114T1433Z-thorough
+
+FINAL (merged files 06-14 written; check_xpaths.py and check_values.py pass for all nine: all XPaths resolve, 73/49/16/31/23/18/51/65/53 values match). Read analysis/review-merge-decisions.md (main table, contest a/b in particular) and tender-merge-decisions-A (final), C (draft 2), D (final), E (draft 1). Aligned with them on every shared row; differences explained.
+
+| Problem | Severity | Needs decision | Preferred option / note |
+|---|---|---|---|
+| LocaleCode `en` (ISO 639) (06-14) | Medium | no | drop LocaleCode (preferred) or a locale such as en-XB from a locale list. 362 elements in 213 files (`grep -rho --include='*.xml' '<cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>'`). |
+| Province of Ferrano in Region (Valdara, 12-14) | Medium | no | move to CountrySubentity. 219 in 104 files. |
+| Public bodies (PWD everywhere; Bayvarra Information Service in 12) as COMMERCIAL-register companies with liquidation status | Medium | no | drop the liquidation status and the COMMERCIAL type, keep register name/number. Parts said Low everywhere; raised to Medium as A, C, D, E and the main table. |
+| PUBLIC exemption text "Sale to a public body: ..." in the department's PartyTaxScheme (06-14) | Low | no | reword to the party's status; the code's list definition fits. |
+| Copied master data (customs trader IDs; Castrano ServiceProviderParty; share capital) | Low | no | one finding per example. Exceptions: in the register extract 12 the BUSINESS PARTY's customs number is refuted in the merge (an extract reports its subject's registrations; as contest b 13/14), and Castrano there is Low/yes (context found it, parties/broad refuted: a business information document describes the business). In 14 Valdara's SecurityListing is refuted in the merge (it identifies the immobilised shares). |
+| RegistrationDate 1996-01-01 (Brackenmere 06-09, Marrowdale 10-11) | Low | yes | per company a real date. Stated years named in "Why" (Marrowdale 22 operating years in 04). In 07 Brackenmere's 26 years against 1996 is its own Low/yes finding (contradiction inside 07, but the 26 sits unlabelled in the wrong response, so not High). Valdara's 1962-04-12 is its own date; 41 operating years against it is Low/no (13). |
+| Call for tenders cited as PWD-2026-PARKS-CFT (06) | High | no | cite LPWD-DOC-26-0189 with a document type. As A, C, D. |
+| Size class SMALL for Marrowdale with 85 employees in 04 (10, 11) | High | yes | SMALL is "Fewer than 50 persons AND a turnover of at most …": 85 persons strictly contradict it. A and E aligned. |
+| Size class LARGE for Valdara with 180 employees (12, 13, 14) | Low | yes | LARGE is "250 persons OR a turnover above …": no strict contradiction while no turnover is stated. Broad said High in 13/14; aligned with A, C, D. |
+| Valdara's capability figures 12 (6000 EA, 4.8M) vs 13 (4000 benches/year, 9.2M) | Low | yes | one finding in each of 12 and 13: no contradiction can be shown while 12's measure is unnamed; which figures are Valdara's is story. Parts: context Medium/yes, money/parties Low/yes, logistics Low/no (refuted in 13). The undescribed financial capability 9.2M in 13 is a separate Medium/no (the qualification's purpose depends on the turnover). |
+| Consortium coding for a sole tenderer with a subcontractor (13: LEAD twice, Saltmere in AdditionalQualifyingParty) | Medium | yes | SOLE for Valdara (preferred, matches 15). The world's SUBCONTRACTOR code means "a subcontractor whose capacities are relied on (ESPD OERON)", so Saltmere's placement is a judgement on UBL's "when bidding as a consortium" (TC write-up), hence yes. 07's EconomicOperatorGroupName = Brackenmere's own name: Low/no. |
+| Subcontracting share 20 % (13) vs 3.5 % of the tender (15) and Rate 3.5 in 22 | Low | no | 96.5/3.5 or state the base. Money said Medium; aligned with C (base of ParticipationPercent not fixed). |
+| BusinessClassificationEvidenceID = ISIC-3100 (13) | Medium | no | an evidence ID or none. |
+| BusinessIdentityEvidenceID = register number (13) | Low | yes | split off the parts' Medium; aligned with the contest merges (cannot settle; logistics refuted). |
+| One completed task vs threshold 3; certified timber not addressed (13) | Medium | no | aligned with contest a/b (Medium/no); broad said yes, logistics Low. |
+| Request criteria differ from the notices (06: debt ratio added; references, staff, timber not asked) | Medium | yes | broad/money Low, context Medium; the request's purpose is to define the procedure's criteria; yes because which criteria apply is story. |
+| FulfilmentIndicator true in a request (06) | Medium | no | drop the indicators; keep the type code only as a rule (TC write-up). As contest a. Context said yes. |
+| "Expected" amount/value equal to the minimum (06) | Medium | no | drop ExpectedAmount/ExpectedValueNumeric. The numeric/quantity double for one limit: Low/yes (three parts refuted it). |
+| Turnover asked 2023-2025, answered 2025 only; "All criteria answered" with one of six properties (07) | Medium; High | no | all parts High for the note; the period Medium (logistics/money) over Low (broad/context). |
+| Response value with one element of every type (07) | Medium | no | all parts Medium. |
+| Response / qualification references with ID only or to nothing (07 BF-ESPD-26, no reference to 06; 13 VI-ESPD-26, EV-DEC-1) | Low | no | as contest a (missing reference to the request Low/no). Context: 07 Medium, 13 yes (missing exchange) — options kept. |
+| WeightingTypeCode NONE / TranslationTypeCode NONE (06, 07) | refuted in the merge | - | IND6: an explicit "not weighted" / "accepted in its own language" is a statement with a business reason; the response model has its own weighting elements. |
+| Restricted-procedure periods in an open procedure (09) | Medium | no | drop the periods; restricted procedure as story option. A and E aligned. The periods ending before the notice's own issue date lie in 02/03 (A: High/yes). |
+| Roles filled with the contracting party (09: DocumentProvider, TenderRecipient) | Low | no | drop; broad's refutation carried. As A. |
+| Project name "Park benches for the city parks" vs "... parks renewal programme" (08, 09; also 24) | Low | no | notice's name. |
+| Issue on a Saturday/Sunday against "Weekdays 08:00-17:00" contacts (09 Sat, 10 Sun) | Low | yes | cannot settle (world calendar not stated; a contact's hours are not issue rules). 10 added by the merge from broad's refuted candidate, for consistency with 09. A aligned (05). |
+| Legislation references repeated in a status answer (09); Urvanian as AdditionalNoticeLanguage with only an address in it (12) | Low | yes | one part found, broad refuted; cannot settle. |
+| OperationType MANUFACTURE (business activity) and BusinessPartyGroup of two competing tenderers (12) | Medium; Medium | no; yes | all parts that raised them Medium. RequestedPublicationDate on an extract: Low/no (context said Medium). |
+| Language tag en-XB on Valdara's address in Bayvarran-issued documents (12, 14); Italian names tagged English (12, 13, 14); untagged single legal form (12, 14) | Low; Low; Low | yes; yes; no | parties refuted every one (tag follows issuer; world names); the merge made them findings to align with the main table, carrying the refutation. |
+| Guarantee 14: BANKGUAR + ImmobilizedSecurity of the tenderer's own shares; IssuerParty = Valdara for the bank's certificate; face value 2500 vs market 3100 three days later | Medium yes; Medium no; Medium no | | all parts agree on the issuer; the constitution question Medium/yes (context, logistics Medium; broad, money Low). Guarantee 2400 vs 2 %: refuted for 14 (lies in 01-03, A). |
+| Signature ID prefix HS for Marrowdale (MS) (10; also 04) | Low | no | |
+| Contacts: Brackenmere "Trade sales"/Customer service officer/Sales (06-09) | refuted | - | DIFFERENCE from contest a (kept it Low): both parts of this run that looked at it refuted it (a public buyer's request is a sales matter for a supplier; name, title and department agree). Valdara's "Order desk" in 13/14 and Saltmere's "Bids office"/Procurement officer in 13: Low/no (parties, broad). |
+| Brackenmere citing Valdara's qualification (17/19); no guarantee certificate for Brackenmere; no QAR for Valdara | - | - | "Outside this review" in 07, 13, 14, 06 (they lie in 17/19 or in the flow's story; C has the 17/19 finding High/no). |
+| Document numbers out of date order in one sender's series (06: LPWD 0192 on 02-13 before 0191 on 02-15) | Low | no | |
+| MMSI / Q call signs | - | - | do not arise in 06-14. |
+
+##### Differences from analysis/review-merge-decisions.md and the other merges
+- Contacts: Brackenmere's sales contact stays refuted (contest a kept it Low/no) — both parts of this run refuted it with a reason the merge accepts.
+- WeightingTypeCode/TranslationTypeCode NONE refuted in the merge (no earlier row).
+- Size classes: no row in the main table; SMALL/85 High/yes and LARGE/180 Low/yes, which A, C, D and E now follow.
+- Otherwise aligned with every shared row of the main table and of A, C, D, E.
+
+
+### tender-merge-decisions-c
+
+#### tender merge decisions, merger C (tender 15-23), run 20261114T1433Z-thorough
+
+FINAL (merged files 15-23 written; check_xpaths.py and check_values.py pass for all nine: all XPaths resolve, 75/29/62/22/63/37/113/39/24 values match). Read analysis/review-merge-decisions.md (main table, contest a/b, furniture a/b) and tender-merge-decisions-A (final), B (draft 2), D (final), E (draft 1). Aligned with them on every shared row; differences explained.
+
+| Problem | Severity | Needs decision | Preferred option / note |
+|---|---|---|---|
+| LocaleCode `en` (ISO 639) | Medium | no | drop LocaleCode; locale (en-XB) from a locale list as option. 362 cbc:LocaleCode in 213 files. As all flows, A, B, D, E. |
+| Province of Ferrano in Region (Valdara) | Medium | no | move to CountrySubentity. 219 in 104 files. As all flows. |
+| Public bodies (PWD in every example; Information Service and Review Board in 21) as COMMERCIAL-register companies with liquidation status | Medium | no | drop liquidation status and COMMERCIAL type, or a public-body register type. Parts said Low throughout 15-23; raised, as A, B, D, E and the main table. |
+| PUBLIC exemption text "Sale to a public body: ..." at party level | Low | no | reword text as the party's status; code fits. Broad's refutation (19-23: second half states the status) carried as counter-argument. As A, B, D, E. |
+| Copied master data (customs trader IDs, Castrano ServiceProviderParty, share capital, listing, order desk's mobile) in tendering documents | Low | no | one finding per example; parties' refutation of share capital/listing (part of the legal entity) carried. Customs trader numbers added by the merge where no part raised them (21, 22, 23). |
+| Valdara's order desk as contact in the tendering documents (15, 16, 20, 21, 22) | Low | no | grouped with contacts (15) or with the master-data finding; parties' and broad's refutation ("the contact Valdara gave") carried. Brackenmere's "Trade sales" contact refuted (carried), as B. |
+| RegistrationDate 1996-01-01 (Brackenmere in 17, 18, 19, 23) | Low | yes | as all flows; parties said no. |
+| Call for tenders cited as PWD-2026-PARKS-CFT (15, 17, 19) | High | no | use LPWD-DOC-26-0189. In 19 broad and logistics said Medium: raised, as A, B, D. |
+| Tender price (124080 / 116640 / 119040) in the response to AC-2, no response to AC-1 (15, 17, 19) | Medium | no | response to AC-1 with the price (or unit prices); AC-2 years only. Logistics said Low: raised. |
+| Size class LARGE vs 180 employees (Valdara, 15, 16) | Low | yes | LARGE = "250 persons OR turnover above the limit"; no turnover stated -> no strict contradiction (broad's High lowered). As A, B. (SMALL with 85 employees is High/yes in A and B, because SMALL is an AND; does not arise in 15-23.) |
+| Fees (paper copy 50, courier 12) in the tenders 15, 17, 19 | Low | no | remove. Money (15, 17) and broad/context (19) said yes; removing them changes no story; option (b) kept. |
+| No guarantee of Brackenmere in the flow / tender cites no guarantee (17, 19) | Low | yes | add a certificate of Brackenmere or record that it is outside the examples. In 15 (Valdara has one, 14): Low/no, cite it. |
+| Tender/estimate equal to the cent (15, 21) | Low | yes | rounded estimate in 01-03 preferred. |
+| Subcontractor share 20 % (13) vs 3.48 % of the tender (15) | Low | no | measure stated, or about 3.5 % in 13. |
+| TenderResult/SubcontractTerms Rate 3.5 vs 4320/124080 = 3.48 % (21, 22, 23) | Low | no | drop Rate. Broad and context refuted it in 21 (rounding; legitimate reading in a result), carried. Different element from A/D's AllowedSubcontractTerms (Medium). |
+| Brackenmere's tenders 17 and 19 cite Valdara's qualification VI-DOC-26-0199 (issued 02-25, after both) and Valdara's evidence VI-REF-2025 | High | no | cite BF-DOC-26-0193 and own evidence; logistics' yes and its separate Medium for the evidence folded in. |
+| Warranty 5 years on the line vs 6 years "on the frame and the slats" in the AC-2 response (17, 19) | High | no | six years on the line. |
+| Withdrawal 18 (02-24 17:56, "a corrected tender follows") after tender 19 (02-24 12:10, "the withdrawn tender") | High | no | finding in both 18 and 19 (parties/money had it under "Outside"). Either issue time may move. |
+| Withdrawal 18 cites tender receipt PWD-RCPT-BF-1 (no such document; not the department's numbering) | High | yes | add a receipt for 17 or remove. Parts Low/Medium/High; High as furniture b's unresolved delivery note. |
+| Appeal period of the qualification decision (20) = the award's (03-09..03-19), against "within ten days" of 03-03 | High | yes | 03-03..03-13, or say only the award can be appealed (the call: "within ten days of the award"). Broad Medium, logistics High, context High/yes. |
+| Review board as information party, receiver and mediator of the appeal (20, 23) | Low | yes | keep AppealReceiverParty only; whether there is mediation is story. All parts yes. Receiver without contact: separate Low/no. |
+| Appeal terms in a fully positive qualification notification (20) | Low | yes | context. |
+| Contract formalised / signed on the last day of the appeal period (22, 23) | Low | yes | formalisation from 03-20. Aligned with D (24: Low/yes, inclusive end date cannot be read from the XML); my draft had no. |
+| Award notice issued in the appeal period and before the contract; department numbers not in issue order (21, 22) | Low | 21: yes (logistics), 22: no | 21 combines both (date of the notice is story); 22 only the numbering. |
+| Open-tender event still SCHEDULED/not completed in the award notice (21) | High | no | completed, or drop. |
+| Periods / document availability before the contract notice (21) | High | yes | split from the restricted-procedure periods: dates contradicting 02's issue date are High (broad, logistics); which documents move is the calendar. |
+| Restricted-procedure periods in an open procedure (21) | Medium | no | drop. As A (02, 03) and B (09). |
+| OriginalContractingSystemID without reopening; PublishAwardIndicator on a supply (21) | Medium | no | drop. PublishAwardIndicator differs from contest b (Low/yes): there a services procurement; here a supply. |
+| Framework EstimatedMaximumValueAmount / MaximumValueAmount composed differently (21) | Medium | no | not High: a reading where the 288 benches include the renewal is conceivable, though unlikely. |
+| Paper-copy fee in RequiredFeeAmount (concession fee) (21) | Medium | no | drop. As A. |
+| RequestForTenderLine Min/Max per bench vs Estimate total (21) | Medium | no | context Medium, money Low, broad refuted (carried). |
+| Tender-phase data copied into the award notice (21) | Low | no | context said yes; aligned with D's row for the contract (encoding, not story). |
+| Auction announced, no trace in the award (21) | Low | yes | story. |
+| Additional notice language qau without Urvanian text (21) | Low | yes | parties refuted (plausible second language); depends on the Trade Accord. |
+| Performance guarantee demanded in 22, announced nowhere, not in the contract | Low | yes | announce it in 02/03 and carry it in 24, or drop. Not High: unsupported, not contradicted. |
+| Winner's subcontract terms in the loser's notification (23) | Low | yes | context; broad/money/parties refuted (published in 21), carried. |
+| Replacement item: VI-C180-2026 ID only (15: Low/no); BF-SLAT-PB2 read as a spare part (17, 19: Low/yes) | Low | 15 no; 17, 19 yes | 19 broad/context said Medium; lowered, the reading rests on the identifier alone. |
+| Originator/Beneficiary = contracting party (15, 17, 19, 21) | Low | no | remove. Broad and parties refuted in some examples; counter-arguments carried. As A. |
+| Italian street name / legal form tagged English; en-XB vs en-XU by issuer (Valdara: 15, 16, 20, 21, 22) | Low | yes | added by the merge in 15 and 16 from parties' refutation; parties raised it in 20-22. Untagged single legal form (Bayvarran-issued 16, 20, 21, 22): separate Low/no. As D, E and the main table. |
+| Signature ID with the example's file number (15, 17, 19) | Low | no | raised by logistics in 19; added by the merge in 15 and 17. As "Signature ID with flow name" in earlier flows and E. |
+| ID-only references (BF-DS-PARK 17, 19; PWD-MIN-QUAL-26 20; PWD-SPEC-BENCH-26/PWD-QA-26 21; PWD-EVAL-REPORT-26 22; PWD-EVAL-SCORES-BF 23) | Low | no | add DocumentType / date. Refutations (identifier says what it is; non-UBL annex) carried. VI-DS-B180 in 15 stays refuted (it is the ItemSpecificationDocumentReference of 25-33). |
+| No unit price in the tenders (15, 17, 19) | Low | no | money found it in 15/17, refuted it in 19; made a finding in 19 for consistency. |
+| Zero tax total without subtotal (15, 17, 19) | Low | no | |
+| One tendered project for two lots (19) | Low | yes | context; broad refuted the same in 15 (carried). |
+| Ordering terms identical to Valdara's (17) | Low | yes | context; broad refuted ("possible"); cannot settle. |
+| Brackenmere tendering for lot 2 without a lot-2 qualification (17) | Low | no | context; broad's refutation (may tender for several lots) answers another question. |
+| Refuted in the merge | – | – | none: every part finding survived in some form (one wrong statement of fact, broad's "auction held on 6 March" in 21, dropped from the wording). |
+
+Differences from analysis/review-merge-decisions.md: none in substance. The main table has no row for size classes (A/B/C rows above), appeal/standstill, award-notice content or the tender-specific rows.
+Differences from the other merges: only the formalisation-on-the-last-appeal-day row, where I first said no and changed to D's yes.
+
+
+### tender-merge-decisions-d
+
+#### tender merge decisions, merger D (tender 24-29), run 20261114T1433Z-thorough
+
+FINAL (merged files 24-29 written; check_xpaths.py and check_values.py pass for all six: all XPaths resolve, 94/71/70/54/35/76 values match). Read analysis/review-merge-decisions.md (main table, contest a/b, furniture a/b, air row on order-change totals) and tender-merge-decisions-A/B/C/E.md (A draft 1, B and C draft 2, E draft 1). Aligned with them on every shared row; differences explained.
+
+| Problem | Severity | Needs decision | Preferred option / note |
+|---|---|---|---|
+| LocaleCode `en` (ISO 639) (24-29) | Medium | no | drop LocaleCode (preferred), or a real locale (en-XB) from a locale list. 362 in 213 files (`grep -rho --include='*.xml' '<cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>'`). As all flows, A, B, C, E. |
+| Province of Ferrano in Region (Valdara, Castrano, Trasvia, Crevalto Bank) (24-29) | Medium | no | move to CountrySubentity. One finding per example, one XPath line per place. As all flows. |
+| Public bodies (PWD) as COMMERCIAL-register companies with liquidation status (24-29) | Medium | no | drop liquidation status and COMMERCIAL type. Parts said Low everywhere; raised, as A, B, C, E and the main table. |
+| PUBLIC exemption text "Sale to a public body: ..." at party level (24-29) | Low | no | reword text as the party's status; code fits. As A, B, C, E. |
+| Party master data copied (customs trader IDs of both parties, Castrano ServiceProviderParty, share capital, listing) | Low | no | one finding per example; refutations (listing = part of the legal entity; service provider tells who despatches) carried as counter-arguments. Customs-trader IDs added by the merge where no part raised them (24-28). Exceptions: in 29 (despatch advice issued by Castrano itself, cross-border consignment) the ServiceProviderParty and the customs-trader IDs are refuted. |
+| Full catalogue record of the item in order / despatch advice (26, 29) | Low | no | own finding, separate from party data. Context said yes ("design decision"); aligned with the main table and E: no. |
+| Contacts not fitting the role | Low | no | one finding per example, all contacts grouped (24: contractor's order desk for a framework contract; 29: warehouse office with sales title, delivery recipient = procurement office). Not raised/refuted in 25-28 (order desk fits catalogue, orders, acceptance). |
+| RegistrationDate 1996-01-01 (29: Castrano, Trasvia) | Low | yes | per company a real date. Parties said no; aligned yes. Valdara (1962-04-12) and PWD (none) are not affected, so 24-28 have no such finding. |
+| Call for tenders / prior notice cited as PWD-2026-PARKS-CFT / -PIN (24) | High | no | cite LPWD-DOC-26-0189; drop ReplacedNoticeDocumentReference from the contract. Parts said Medium; raised (section 6: referenced document that does not exist; 25 cites the call by its real ID). As A, B, C. |
+| Tender-phase data in the contract (tender guarantee, envelopes, fee, advertising ceiling, qualification and award criteria, committee, recipient roles, draft contract, next-notice timing) (24) | Low | no | one finding: reduce TenderingTerms to execution terms and state the performance guarantee (6204.00, 22). Money and context said yes, broad/logistics/parties no; encoding, not story. A's separate rows (MaximumAdvertisementAmount Low/yes, LEAD role Low/no, roles = contracting party Low/no) are folded into this one finding for the contract, because in a signed contract they are all the same problem (terms that ended with the award). |
+| LatestSecurityClearanceDate with NOTREQUIRED (24) | High | no | drop the date. Logistics Medium raised; as A. |
+| Tender guarantee 2400.00 at AmountRate 2 (24) | Medium | no | drop AmountRate (fixed sum, certificate 14 unchanged). As A. Resolved in 24 also by removing the tender guarantee (tender-phase row). |
+| AllowedSubcontractTerms Rate 30 = MaximumPercent 30, Amount 4320.00 (3.48 %); result Rate 3.5 (4342.80 ≠ 4320.00) (24) | Medium | no | keep MaximumPercent; drop Rate/Amount in the allowed terms and the rounded Rate in the result. As A. |
+| Turnover "at least" vs GT, 250000 vs 2 × 124080 (24) | Low | no | DIFFERENCE from A (Medium in 01-03): in the signed contract the criterion no longer decides admission, so Low; reason written in 24#F21. |
+| VariantConstraintIndicator true with MaximumVariantQuantity 1 (24) | Medium | no | drop the indicator. As A. |
+| Contest indicators (Prize, FollowupContract, BindingOnBuyer) in a supply procedure (24) | Low | no | drop. As A. |
+| PublishAwardIndicator true for SUPPLIES (24) | Medium | no | drop. DIFFERENCE from contest b (Low/yes): there the contract was a service contract, where the definition can apply; here the procurement type is SUPPLIES. |
+| Contract identified three ways (LPWD-DOC-26-0210, PWD-CONTRACT-2026-PARKS, PWD-2026-PARKS = ContractFolderID) (24) | Low | yes | add DocumentType to (or drop) PWD-CONTRACT-2026-PARKS; whether contract and file share one number is the world's numbering rule (broad Medium/yes, logistics Low/no). |
+| Contract signed on the last day of the appeal period (24) | Low | yes | sign on 20 March; inclusive end date cannot be read from the XML. |
+| Project name "Park benches for the city parks" (24) | Low | no | notice's name. As B. |
+| Contract without reference to the accepted tender / unit prices (24) | Medium | no | reference VI-DOC-26-0201 (money said Low). |
+| Sales territory XU for prices exempt as export from XU (25) | High | no | territory XB or none. Money Medium not followed. |
+| Bench emission triple 96 kg / 0.82 / 1 EA (25, 26, 29) | High | no | drop factor and base. Broad Medium, logistics High: High, as the main table and E. |
+| CRADLETOGATE in FullnessIndicationCode (25, 26, 29) | Medium | no | drop; TC write-up as option. Context said yes; aligned no. |
+| LifecycleStageCode MANUFACTURING with cradle-to-gate description (25 context Low; added by the merge in 26, 29) | Medium | no | aligned with the main table. |
+| CatalogueIndicator in the catalogue (25) | Medium | no | drop (meaning other than the definition; broad said Low). |
+| PriceList/StatusCode ACTIVE from RecordStatusCode (25) | Medium | no | original/revision code or drop. |
+| CallForTendersLineReference line 2, which 03 does not have (25) | High | no | drop the line reference. |
+| Installation "by the manufacturer's installers" vs subcontractor Saltmere (25) | Medium | no | reword or drop the clause. Broad/context High, parties Medium, logistics Low; Medium because the possessive can be read loosely ("installers engaged by the manufacturer"). |
+| Installation not ordered (26, 27, 28) but billed (32) and penalised (34) for the release | High | yes | order line for 40 installations at 18.00 (preferred) or a separate order. Broad High, money Medium, context Low, logistics refuted (32's problem); High because the order/change/response and the invoice contradict each other about what the release contains (finding of both sides). E: please treat 32/34 consistently. |
+| Pricing currency XUF with the price in XBL (26); XUF pricing currency, tax currency and three exchange rates in documents with no price or conversion (27, 28) | 26: High / no; 27, 28: Low / yes (forward contract) | | 26: code contradicts the price's currency in the same document; which option (drop XUF vs price 49900 XUF) follows 25#F17. 27, 28: "exchange rates with nothing to convert" Low, as the main table; broad's Medium (charge in XBL contradicts pricing currency) not followed (a charge is not a price). |
+| Contract prices in XUF in the catalogue for a contract tendered in XBL (25) | Low | yes | prices in XBL as tendered (preferred) or a stated fixed rate. Money only; broad/context refuted (order names XUF), carried. |
+| Forward FX contract BL-FX-26-0091 (dated 2026-01-02, before the PIN; on the pricing rate; seller restating the buyer's hedge in 28) (26, 27, 28) | Low | yes | drop from order documents; if hedging is story, a forward dated after the award on the invoice's payment rate. |
+| Line-level pricing exchange rate equal to the document's (26) | Medium | no | drop (definition's condition "if it differs" not met). |
+| Payment terms "30 days after the invoice, as the contract says" vs contract "30 days after each accepted release" (27) | High | no | remove PaymentTerms from the change (preferred) or quote the contract. Broad said yes; no, because the contract is unambiguous. E: the invoice's own terms against the contract are 32's. |
+| OrderChange AnticipatedMonetaryTotal = new total, not the amount of change (27) | Medium | no | totals = 200.00 (definition). Money/context said yes; aligned with the air merge (air/01: totals = amount of change, no decision). |
+| Changed line without item identification; new colour in text only (27) | Medium | no | SellersItemIdentification with green variant (GRN). Logistics Medium; broad/context Low. |
+| Colour variant GRY / Ferro grey on the moss-green benches (29) | High | no | green variant (GRN). As E. |
+| Bayforth Forwarding as FreightForwarderParty in the order change (27) | Low | yes | remove (preferred) or give it a visible role in 29-31. Only 27 in my range names it in a transport role; in 32-35 it is the tax representative (E). |
+| SalesOrderID VI-SO-26-0058 in the buyer's order (26) / missing in the response (28) | 26: Medium / no; 28: Low / no | | move to 28. |
+| Delivery ReleaseID = framework release number (26) | Medium | no | drop; "Release 1" in a note. |
+| Order without requested delivery date; DAP place as text only (26) / response without promised date (28) | Low | no | aligned with the main table (orders without requested date: Low); logistics' Medium recorded. |
+| Despatch advice without despatch/delivery dates and delivery location (29) | Medium | no | as the main table (despatch advice: Medium). |
+| OutstandingQuantity 200 = rest of the framework (29) | Medium | no | drop. |
+| Gross weight 1660 kg for 40 benches vs 34 + 22.5 kg resource consumption (29) | refuted in the merge | - | As E (30): ResourceConsumption is a resource consumed, not product content; the world's bench is 39.19 kg net / 41.5 kg gross (sea/10-PackingList 3762 / 3984 kg for 96), 1660 = 40 × 41.5. Pallet tare under "Outside this review". |
+| No packages/handling units/vehicle (29) | Low | no | |
+| NoStatus document/line status (29) | Low | no | drop. As the main table. |
+| References with ID only (27 PWD-COLOUR-RAL6005, 29 line DocumentReference) | Low | no | DocumentType. As the main table; refutations carried. |
+| OriginatorDocumentReference = contract number (26, 27) | Low | no | drop. |
+| Programme code PWD-PARKS-26 vs PARKS-26 (26, 29) | Low | no | one code for the programme; accounting-code refutations carried. |
+| OrderDocumentReference PWD-PO-26-0212 that does not exist (28) | High | no | drop. |
+| No serial numbers although the contract requires them (29) | Low | no | |
+| Castrano SMALL while 100 % owned by LARGE Valdara (29) | Low | yes | as B/C's size-class rows (world's size rule undecided). |
+| Language tags en-XB / en-XU on Valdara (and item texts in 26) | Low | yes | one rule, documented; preferred en-XU. Italian names / legal forms tagged as English folded into the same finding (added by the merge in 24-29, from broad's refutation in 27), as the earlier flows. |
+| Untagged single legal form of Valdara in Bayvarran-issued documents (24, 26, 27) | Low | no | separate finding, both renderings tagged. As C and road/rail/air/wood/plastics/cotton. |
+| GTIN-like world item number 771020000027 (25, 26, 29) | Low | yes | added by the merge (broad and logistics refuted it in 25), aligned with the main table. |
+| Recycled steel (30 %) not shown on the item (25) | Low | yes | broad no, context yes; what the product is made of is story. |
+| Warranty: the awarded ten years on the coating missing from the catalogue (25) | Low | no | |
+| MMSI MID 297/298, Q call signs | refuted | - | do not occur in 24-29. |
+
+
+### tender-merge-decisions-e
+
+#### tender merge decisions, merger E (tender 30-36), run 20261114T1433Z-thorough
+
+FINAL (merged files 30-36 written; check_xpaths.py and check_values.py pass for all seven: all XPaths resolve, 430 quoted values match). Read analysis/review-merge-decisions.md first and tender-merge-decisions-A/B/C/D.md (as of 16:35); aligned on every shared row (LocaleCode, Region, public bodies Medium, PUBLIC exemption text, copied master data, catalogue data Low/no, RegistrationDate Low/yes, emission triple High, CRADLETOGATE Medium/no, colour GRY High, "manufacturer's installers" Medium, installation not ordered High/yes, forward FX contract Low/yes, gross weight 1660 refuted). Differences are explained in the rows.
+
+| Problem | Severity | Needs decision | Preferred option / note |
+|---|---|---|---|
+| LocaleCode `en` (ISO 639) (30-36) | Medium | no | drop (preferred), en-XB from a locale list as option. As analysis and A-D. 362 in 213 files. |
+| Province of Ferrano in Region (30-36) | Medium | no | move to CountrySubentity. As analysis and A-D. 219 in 104 files. |
+| Public bodies (department, Urvanian and Bayvarran customs) as COMMERCIAL-register companies with liquidation status (30-36) | Medium | no | drop the company attributes. All parts said Low; raised as analysis and A-D. |
+| Department's party exemption PUBLIC "Sale to a public body: ..." (30-36) | Low | no | reword the text to the party's status, keep the code (its list definition "A body of the federation, a state or a city buys free of sales tax" names the buyer). Changed from my draft 1 (parties preferred a new code) to align with A-D; recorded under "Changed in the merge". |
+| Copied party master data (Valdara's share capital, listing, Castrano service provider with a contact without means of contact) (30-36) | Low | no | one finding per example; parties' and broad's refutations (listing = legal-entity description; service provider relevant to despatch) carried as counter-arguments. Issuer's own share capital listed for completeness only (analysis). |
+| Full catalogue record of the item in customs declarations, invoice and credit note (30-33) | Low | no | own finding, separate from party data. Context said yes; aligned with analysis and D: no. |
+| RegistrationDate 1996-01-01 (only Trasvia in 30) | Low | yes | per company a real date. Parties said no; aligned yes. Only 30 carries it in 30-36. |
+| Bench emission triple 96 kg / 0.82 / 1 EA (30-33) | High | no | drop factor and base. Broad Medium, logistics High: High, as analysis and D. |
+| CRADLETOGATE in FullnessIndicationCode (30-33) | Medium | no | drop; TC write-up as option. Context said yes; aligned with analysis. |
+| Colour variant GRY / Ferro grey after the change to moss green (30-33) | High | no | the green variant (D names it GRN) or no colour data. In 32 also against its own colour charge. |
+| Gross weight 1660 kg for 40 benches vs ResourceConsumption 34 + 22.5 kg (30, 31) | refuted in the merge | - | ResourceConsumption is "a resource consumed" in making the bench, not its content; the world's bench is 39.19 kg net / 41.5 kg gross (sea/10-PackingList: 3762 / 3984 kg for 96), 1660 = 40 x 41.5. Pallet tare (about 9 kg a pallet) under "Outside this review". As D for 29. |
+| Customs value without the 200.00 colour charge, while the invoice exempts 20160.00 as exported goods (30, 31) | Medium | no | declare the value including the charge (2016000 XUF / 20160.00 XBL). Broad/context Low yes, money/logistics Medium no. Differs from analysis/wood ("packing charge left out: Medium, yes"; "customs value basis: Medium, yes"): a charge for the goods' own colour belongs to the price of the goods under any valuation basis, and the exporter's own invoice already treats it so; the FOB/CIF/DAP basis question stays open and is mentioned in 31. |
+| Exit office named by a description ("Customs post at the land border, Urvanian side") (30, 31) | Low | yes | broad/logistics finding, parties refuted (world convention, six examples); cannot settle whether the world has more than one crossing. |
+| Urvanian national tariff code (XU list) in the Bayvarran import declaration (31) | Medium | yes | Bayvarran or common Accord tariff, or HS only. |
+| "Duties paid by the importer's account" without any duty (31) | Low | yes | money finding, context refuted; whether duty is due under the Accord is a world rule. |
+| NotifierParty = importer, without contact (31) | Low | no | drop. Broad refuted, carried. |
+| Signature ID with the flow name (30 VI-SIG-EX-tender, 31 LPWD-SIG-IM-tender) | Low | no | signatory's numbering (31: PWD-SIG-..., the department's 14 other IDs). As analysis. |
+| References with ID only (30 order reference, 33 damage report / work report / purchase references, 36 payment authorisation) | Low | no | DocumentType / description. As analysis and D. |
+| Contacts not fitting the role (exporter = sales order desk; procurement office and order desk on billing documents) (30, 32-36) | Low | no | one finding per example. In 31 the importer's procurement contact was refuted by broad and parties (carried). |
+| en-XB / en-XU tags and legal-form renderings of Valdara (30-36) | Low | yes | one rule, documented; preferred en-XU everywhere. As analysis and D. |
+| Installation billed against an order without an installation line (32) | High | yes | add the installation to the order (preferred) or a separate order; 33-36 build on it. As D (26-28). |
+| Installation invoiced (tax point 31 March) before it can have been done, while 34 penalises it as late (32/F2, 34/F2) | High | yes | bill it after installation. Context said Low (timeline); raised to High because 29 and 34 contradict the invoice's tax point (section 6). The "could it have been done" part stays a consistency-review question. |
+| "By the manufacturer's installers" vs subcontractor Saltmere (32, 33) | Medium | no | reword to the supplier's subcontractor. As D (25). |
+| Pricing currency XUF with prices in XBL (32, 33) | High | no | drop PricingCurrencyCode and the pricing rates (tendered prices are in lume). As D (26). In 33 the ferra price is also the "alternative" price, the reverse role. |
+| Price-level PricingExchangeRate equal to the document's ("if it differs" not met) (32) | Medium | no | drop. As sea D (condition not met). |
+| Pricing/tax currency and rates with nothing to convert, identity rate XBL->XBL (35) | Low | no | drop; keep payment currency and rate. As analysis (identity/unused rates Low/no). D rated 27/28 Low/yes because of the forward contract; in 35 the forward contract sits on a pricing rate that goes anyway (no prices), so removal is encoding: no. |
+| Forward FX contract BL-FX-26-0091 (buyer's hedge, 2 Jan) on the seller's pricing rate (32, 33) | Low | yes | remove from seller documents, or move to the buyer's payment rate dated after the award. As D. |
+| Tax-currency TaxTotal with one G subtotal including the O service (32) | High | no | two subtotals 2016000 G / 72000 O. |
+| Credit note with TaxCurrencyCode XUF but no XUF tax total; payment currency/rate for a credit that is deducted (33) | Low | no | add the XUF total; drop payment currency and rate. |
+| Payment terms XU-STD (30 days from invoice, 2 %, 8 % interest) vs contract "30 days after each accepted release"; "Urvania's statutory interest" (32, 35; paid in 36) | High (32, 35); Low (36) | yes | contract terms with an acceptance date in the flow; 35 and 36 follow. Interest folded into the payment-terms finding (same condition). Differs from D's 27 row (High, no): there removal of the change's own terms text suffices; here the fix needs an acceptance date or a contract change (story). |
+| Bayforth Forwarding as tax representative with no tax registration and no Bayvarran tax (32-35) | Low | yes | remove (preferred) or show the Bayvarran tax it accounts for with its STT registration. Differs from cotton's "tax representative for a domestic farm: Medium, yes": here the seller is non-resident in Bayvarra, so a representative is plausible in principle; only the tax to represent is missing. |
+| CollectedForParty Bayforth on the credited installation line (33) | Medium | yes | remove. Yes (all three parts): who Bayforth is in the flow is a story question; sea D's CollectedForParty row (Medium, no) concerned an outlay with a clear party. |
+| Installation SERVICES / SVCABROAD vs WORKS, public body (32) | Low | yes | money finding; broad's "undecidable" carried. |
+| Buyer/Seller parties equal to the accounting parties (32) | refuted in the merge | - | no "if different" condition; IND6 favours stating them; parties refuted the same. |
+| Line originator/beneficiary = accounting customer (33) | Low | no | drop the repetition. Aligned with A and C ("roles filled with the contracting party: Low, no"); parties' and broad's refutation carried. |
+| FreeOfChargeIndicator false stated (33) | refuted in the merge | - | IND6 argues for the explicit value. |
+| Credit of one bench without its share of the 200.00 colour charge (33) | refuted in the merge | - | lump-sum charge for the release, without base or multiplier (27, 28, 32). |
+| Credit settlement "next release's invoice" (line) vs "next payment" (document) vs set-off in 35/36 (33) | High | no | one statement: deducted from VI-INV-26-0221. |
+| Invoice periods on a credit note for one invoice (33) | Medium | no | drop (definition's condition not met). |
+| Debit note 34 with creditor and debtor reversed | High | yes | swap the accounting parties (department as supplier/creditor), as analysis (furniture b, sea d); SelfBilledCreditNote and a Valdara credit note as options. All five parts found it (one High, four Medium). |
+| How 35 and 36 treat debit note 34 (credit line 6.48) | High | yes | kept as a finding in 35/F3 and 36/F1 (money), although broad, logistics and context refuted it: the two examples contradict each other; the fix is in 34 (option (a) leaves 35 and 36 unchanged), decided together with 34/F1. |
+| Debit note: penalty days without any dates (34) | Medium | yes | add due and completion dates; yes because they are new facts of the story (context), broad/logistics said no. |
+| Debit note line withholding 1.08 vs document 0.72 (34) | Low | yes | money High, broad Low; could not settle (a document allowance reduces the base after the lines, as for tax totals). |
+| Zero tax totals without scheme/category (34, 35) | Low | 34 yes (with the withholding on a penalty, a tax-treatment reading); 35 no | as C (Low, no) for 35; 34 combined with the withholding question. |
+| Reminder MultiplierFactorNumeric 0.08 x 20286.32 = 1622.91 != 22.23 (35) | High | no | drop the factor (or 0.0010959) and state rate and days. |
+| Withholding remittance 69.48 as PrepaidPayment (35) | Medium | no | remove or move to a note. |
+| Remittance advice without payment date and ferra amount (36) | Medium | no | PaymentMeans/PaymentDueDate and advice in ferra with line exchange rates (the RemittanceAdvice has no payment currency/rate, checked in the gc). Broad Medium, others Low. |
+| Contract cited by the procurement file number PWD-2026-PARKS; originator ref = same; programme code PWD-PARKS-26 vs PARKS-26 (32-34) | Low | no | one finding per example; logistics' "consistent with 21-24" refutation carried. As D (programme code). |
+| MMSI MID 297/298, Q call signs | refuted | - | known refutation; did not arise in 30-36. |
+
+##### Counts of the merged files
+
+| Example | High | Medium | Low | Needs decision | Refuted in the merge |
+|---|---|---|---|---|---|
+| 30-ExportCustomsDeclaration | 2 | 5 | 10 | 3 | 1 (broad/F1) |
+| 31-ImportCustomsDeclaration | 2 | 6 | 9 | 4 | 1 (broad/F1) |
+| 32-Invoice | 7 | 6 | 11 | 7 | 1 (context/F13 part) |
+| 33-CreditNote | 4 | 7 | 13 | 4 | 2 (broad/F7 part, context/F11 part) |
+| 34-DebitNote | 2 | 4 | 9 | 7 | 0 |
+| 35-Reminder | 3 | 4 | 7 | 4 | 0 |
+| 36-RemittanceAdvice | 1 | 4 | 6 | 3 | 0 |
