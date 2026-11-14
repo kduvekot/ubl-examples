@@ -2,6 +2,13 @@
 
 usage: python3 -I extract_tables.py [<outdir>]        (default: <repo>/.review/tables/)
        python3 -I extract_tables.py --self-test [<n>] [<outdir>]
+       python3 -I extract_tables.py --check [<outdir>]
+
+--check says whether the tables in <outdir> are current: built by this version of the script from the
+examples as they are now. It compares the SHA-256 of every example and of this script with the ones
+recorded in <outdir>/SOURCES.sha256 when the tables were written, names every example that was
+changed, added or removed since, and exits 0 (current) or 1 (stale or missing: run the script again).
+The comparison is on file contents, so it does not matter which commits were made in between.
 
 Reads nothing but world/examples/*/*.xml of the checkout this script sits in. Writes one CSV per
 table (UTF-8, header row, rows in file order and then document order, so two runs on the same commit
@@ -1144,6 +1151,34 @@ def git(*args):
     return r.stdout.strip()
 
 
+def sources():
+    """SHA-256 of this script and of every example, as the lines of SOURCES.sha256."""
+    files = [Path(__file__).resolve()] + sorted(EXAMPLES.glob('*/*.xml'))
+    return [f'{hashlib.sha256(p.read_bytes()).hexdigest()}  '
+            f'{"extract_tables.py" if i == 0 else p.relative_to(EXAMPLES).as_posix()}' for i, p in enumerate(files)]
+
+
+def check(out):
+    """Are the tables in `out` built by this script from the examples as they are now? Returns problems."""
+    rec = out / 'SOURCES.sha256'
+    if not rec.is_file():
+        return [f'no tables in {out} (no SOURCES.sha256): run extract_tables.py']
+    old = dict(reversed(l.split('  ', 1)) for l in rec.read_text(encoding='utf-8').splitlines() if l)
+    new = dict(reversed(l.split('  ', 1)) for l in sources())
+    problems = []
+    for name in sorted(set(old) | set(new)):
+        if name not in new:
+            problems.append(f'removed since the tables were built: {name}')
+        elif name not in old:
+            problems.append(f'added since the tables were built: {name}')
+        elif old[name] != new[name]:
+            problems.append(f'changed since the tables were built: {name}')
+    missing = [t for t in ORDER if not (out / f'{t}.csv').is_file()]
+    if missing:
+        problems.append('missing tables: ' + ', '.join(missing))
+    return problems
+
+
 def write(out):
     docs = load()
     tables, columns = extract(docs)
@@ -1163,6 +1198,7 @@ def write(out):
         (out / f'{t}.csv').write_text(csv_text(rows, columns[t]), encoding='utf-8')
         readme.append(f'| `{t}.csv` | {len(rows)} | {DESCRIPTIONS[t]} | {", ".join(columns[t])} |')
     (out / 'README.md').write_text('\n'.join(readme) + '\n', encoding='utf-8')
+    (out / 'SOURCES.sha256').write_text('\n'.join(sources()) + '\n', encoding='utf-8')
     for t in ORDER:
         print(f'{len(tables.get(t, [])):7d}  {t}.csv')
     print(f'written to {out}')
@@ -1266,6 +1302,14 @@ def main():
         n = int(args.pop(0)) if args and args[0].isdigit() else 60
         out = Path(args[0]) if args else DEFAULT_OUT
         sys.exit(1 if self_test(n, out) else 0)
+    if args and args[0] == '--check':
+        out = (Path(args[1]) if len(args) > 1 else DEFAULT_OUT).resolve()
+        problems = check(out)
+        for x in problems:
+            print(x)
+        print(f'tables in {out}: ' + ('STALE, run extract_tables.py again' if problems else
+                                      f'current ({len(sources()) - 1} examples and the script unchanged)'))
+        sys.exit(1 if problems else 0)
     out = Path(args[0]) if args else DEFAULT_OUT
     write(out.resolve())
 
