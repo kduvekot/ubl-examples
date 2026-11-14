@@ -96,9 +96,9 @@ review only describes what is wrong; it does not say where or how the example is
 - DAP with delivery location "Public works depot, Lumeport" fits the later documents: Valdara exports (30), the department imports (31).
 
 ## Considered and refuted
-- `/Order/cac:OrderLine`: no line for the installation although lot 2 was awarded and the average release (20680.00) includes it — refuted for this lens: the order may cover the supply only; whether the installation of this release is ordered elsewhere is a story question (see "Outside this review").
+- `/Order/cac:OrderLine`: no line for the installation although lot 2 was awarded and the average release (20680.00) includes it — refuted for this lens: the order may cover the supply only; that the invoice nevertheless bills 40 installations is a finding of `32-Invoice.xml`.
 - `/Order/cac:DeliveryTerms/cac:DeliveryLocation/cbc:Description`: a description instead of a structured address — refuted: the delivery party's address is given, and the named place for DAP may be text.
 - `/Order/cac:Contract/cbc:ID`: equal to the procurement file number — refuted: consistent with the award documents.
 
 ## Outside this review
-- No document of the flow orders or invoices the installation of the 40 benches (lot 2).
+- No document of the flow orders the installation of the 40 benches (lot 2), although the invoice `32-Invoice.xml` bills it (720.00); see the review of 32.
