@@ -67,7 +67,7 @@ review only describes what is wrong; it does not say where or how the example is
 - Why: The only standstill the flow states is the appeal period of the unsuccessful tenderer, which runs to and including 2026-03-19. The formalisation period starts that same day, the performance guarantee is due then, and the contract is in fact issued on it (24), while an appeal could still be presented. The notification itself does not say when the standstill ends.
 - Condition: The formalisation period starts after the last day on which an appeal can be presented, and the notification's dates make "after the standstill period" checkable.
 - Options: (a) formalisation (and the contract) from 2026-03-20 (preferred); (b) end the appeal period on 2026-03-18 in the documents that state it.
-- Needs decision: no
+- Needs decision: yes
 - From: logistics (needs decision yes), context; broad listed it under "Outside this review"
 
 ### tender/22#F6 · Low · The department's document numbers do not follow the issue times
@@ -171,7 +171,7 @@ review only describes what is wrong; it does not say where or how the example is
 
 ## Changed in the merge
 - broad/F5, parties/F4, context/F5 → F3: raised to Medium, as analysis/review-merge-decisions.md and the other tender merges.
-- logistics/F2 (needs decision yes), context/F4 (no) → F5: no; moving a date by a day is encoding.
+- logistics/F2 (needs decision yes), context/F4 (no) → F5: yes, aligned with merger D (24, contract signed on the last day of the appeal period: Low/yes): whether an end date is inclusive cannot be read from the XML, so the merge cannot settle whether the periods overlap.
 - broad/F4, parties/F6, context/F6 → F8: one master-data finding with the contact; customs trader numbers added by the merge.
 - parties/F5 split into F10 (tags, Low/yes) and F11 (untagged legal form, Low/no).
 
