@@ -41,6 +41,9 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Use Port Wrenfield in all English free texts and place names (about 30 texts; party names stay).
 - Recommendation: b): it keeps the story and needs one sentence; English readers of an address then know both names.
 - Related: D2
+- **Decided (owner, 2026-11-15): the story stays, with a stated rule (a refinement of b).** Addresses give both names, Lisavan first, as now: Port Wrenfield is the official English name in Lisavu's address register. In running English text everyone writes "Selanu": islanders, Bayvarrans and Urvanians alike. Party names such as the port's and the bank's keep "Selanu"; they are proper names. No example changes; the rule goes into `note/src/03-world.md`, and one document shows both names together outside an address.
+- **What it means for the world:** Port Wrenfield is the name the English-speaking settlers gave the town; it is still the official English name and stands in every address, but it is fading from use. In speech and in writing, also in English, the town is Selanu. Using the Lisavan names for places is a trait of Lisavan English, as the Italian names are a trait of Urvanian English. Real parallels: Uluru / Ayers Rock, Tāmaki Makaurau / Auckland, Iqaluit / Frobisher Bay, Nuuk / Godthåb, Baile Átha Cliath / Dublin, Turku / Åbo.
+- **To confirm when it is implemented:** Urvania works the other way round and stays as it is: English text uses the inherited Italian name (Ferrano, Serravona) and Urvanian text the Urvanian one (Ruldraz, Drinzul). Whether other places of the world (the island's other towns, Bayvarra's towns) have a second name, and which name English text uses for each, is to be listed in the story when the encyclopaedia is written.
 
 ## Party master data and signatures (332 findings)
 
