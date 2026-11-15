@@ -552,11 +552,12 @@ Open threads of this story line:
 
 **Every register issues its own numbers (owner, 2026-11-15).** A company's Codana number or GS1 company prefix is not its business register number and not its tax number: each is issued by a different body, in that body's own series, and none is derived from another. No number may occur in a similar form in two numbering schemes: each scheme has its own shape, so that a value shows which scheme it belongs to, and no value of one scheme repeats the digits of a value of another. The build checks this.
 
-What the documents do today, to be changed under this rule:
-- The Codana number is the business register number cut to five digits (`0990:10427` from `XU-R-104274`; Rivermouth's `0990:20274` from `20412740`).
-- The customs trader number repeats the register number in all three countries (`XU-TR-104274` from `XU-R-104274`, `XB-TR-410274` from `20410274`, `XL-TR-041859` from `IC41859`).
-- Telephone numbers end in the party's register number (`+999 1 041 518 4274`).
-- The endpoint is the country and the register number (`XU:XU-R-104274`).
+What the documents do today, and what becomes of it (owner, 2026-11-15):
+- **Codana number:** today the business register number cut to five digits (`0990:10427` from `XU-R-104274`; Rivermouth's `0990:20274` from `20412740`). **Changes:** Codana issues its numbers in order of registration since 1999, unrelated to the business register; a large early member such as Valdara has a low one.
+- **Telephone numbers:** today they end in the party's register number (`+999 1 041 518 4274`). **Changes:** no relation to any identifier.
+- **Electronic address (endpoint):** the country and the register number (`XU:XU-R-104274`). **Stays, as a stated rule:** the network addresses a company by a number it already has, as Peppol does; an electronic address is always an existing identifier under a scheme code and never a new number.
+- **Customs trader number:** repeats the register number in all three countries (`XU-TR-104274` from `XU-R-104274`, `XB-TR-410274` from `20410274`, `XL-TR-041859` from `IC41859`). **Open**, see the threads below.
+- **Build check:** no identifier of a party repeats the digits of another of its identifiers, apart from the stated reuse in the electronic address (and the customs trader number, if that is kept); each scheme keeps its own shape.
 
 The shapes in use, per country: Urvania: register `XU-R-` and six digits, tax `XU` and nine digits, customs trader `XU-TR-` and six digits. Bayvarra: register eight digits starting `2041`, tax the state's two letters and seven digits (`CO-1238220`), customs trader `XB-TR-` and six digits. Lisavu: register `IC` and five digits, customs trader `XL-TR-` and six digits, no tax number. Codana: five digits, always written with `0990:` or `KXU`. GS1 Bayvarra: seven digits starting `952`.
 
@@ -591,7 +592,7 @@ The data identifier is the prefix a bar code uses to say what follows; in a UBL 
 Sources checked for this design (2026-11-15): ISO/IEC 15459-1, -2, -4 and -6 (iso.org catalogue and the public previews on iteh.ai: 50 characters for items and groupings, 20 recommended for a one-line bar code); ANSI MH10.8.2 data identifiers (mhi.org: J, 1J to 6J, 25P, 25S, 25T, 25B, 25L, 18V, 25K, 26K); the E.D.C. quick guide to unique labelling by ISO/IEC 15459; and `analysis/source-verification.md` for the agency code `KXU` and the code `0990`. The full standards are paywalled; the agency-code and company-number length rules of part 2 could not be read beyond what `analysis/source-verification.md` records.
 
 Open threads of this story line:
-- **Numbers that real practice builds from another number.** Two of today's derivations have real parallels: a customs trader number built from the national business or tax number (the EU's EORI), and an electronic address built from a register number (Peppol). To decide: whether these two stay as stated rules of the world (the same number reused on purpose, said so in the story), or whether customs and the delivery network also issue numbers of their own.
+- **The customs trader number.** Today it repeats the business register number in all three countries. Real practice does both: the EU's EORI number is built from the national business or tax number. To decide: whether customs registers a trader under its register number, as a stated rule of the world, or issues a number of its own.
 - **Site codes for Urvanian places** (Valdara's plant, Castrano's warehouse): only where a document uses one.
 - **Returnable items on the Codana side**: none exist in the examples; nothing is numbered without a case.
 - **Serials and lots in globally unique form**: fits the castings and the bench lots; to settle with the goods chain (D21) and the melt-number cause.
