@@ -36,9 +36,10 @@ thorough review"). When a run is finished, its decision tables are appended to t
 
 Five manual reviews (run `20261112T0851Z-manual`) also exist; they predate the skill.
 
-Not done yet:
-- the separate **consistency review** across documents and flows (timelines, capacity, where
-  equipment is, the map). Many reviews list such questions under "Outside this review".
+The separate **consistency review** across documents and flows is done: run
+`20261114T2143Z-consistency`, index in `analysis/consistency-review.20261114T2143Z-consistency.md`,
+one file per topic (conditions, timelines, equipment, parties, items, identifiers). It gives every
+"Outside this review" entry of the merged reviews an outcome.
 
 `python3 -I .claude/skills/ubl-example-review/scripts/list_reviews.py <flow>` lists every review of a
 flow with its findings and the version it reviewed.
