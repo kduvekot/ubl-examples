@@ -56,7 +56,11 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Keep the data and dismiss the findings (the 1996 date is then a stated default).
 - Recommendation: a), with Valdara MEDIUM unless a turnover above 50 million lume is wanted, and the sawmill MEDIUM (it states 85 persons); keep the farm's yearly registration only if the island's register really expires (then say so).
 - Related: D8
-- **Decided so far (owner, 2026-11-15):** the history the founding dates hang on (see "Story lines" at the end of this file): the Lumeport Agreement of 1974 and the Lumeport Trade Accord, signed in 1994 and in force on 1 January 1996. Option a) is the direction: each of the 25 parties gets its own founding date, headcount and turnover, proposed as one table tied to that history, for the owner to correct. **Still to decide:** the table itself; Valdara's size; whether the cotton farm's registration expires yearly.
+- **Decided (owner, 2026-11-15): a), with the founding table under "Story lines" as the current base.** Each of the 25 parties gets its own founding date, headcount and turnover, tied to the history of the Trade Accord; the size class follows from the figures. The table may still be corrected. Decided with it:
+  - **Valdara Industries stays LARGE.** The world data gives it 3,083 persons and a turnover of 23.6 billion ferra, and it is listed on the Ferrano Stock Exchange. The error is in the tender flow, which states 180 employees and 41 years in operation (tender/13): the tender states Valdara's real figures, or says that the 180 are the staff of its street-furniture division. conditions#F12 and the per-example findings on Valdara's size are resolved that way, not by changing the size.
+  - **The cotton farm's registration keeps its yearly expiry**, as a rule of Lisavu's farm register: a grower's registration is renewed each season. The story says so.
+  - **Marrowdale Sawmill and Brackenmere Furniture** take their founding year from what their own tenders state (22 and 26 years in business); the sawmill takes its headcount (85) from its own tender.
+- **Open:** each party's day and month; whether the ports and the telecom operator are companies with a register entry (as proposed: the date the company was registered) or public bodies without one (see C04, public bodies in a commercial register); whether the textile mill is LARGE (260 persons) or MEDIUM (about 190).
 
 ### D5 · Who allocates the standard item identifier, and may world item numbers look like valid GTIN-12s?
 - Why it matters: Cause C61 World item numbers that are valid GTIN-12s; Valdara's items under Lumeway's GS1 prefix; 76 findings (76 marked "yes").
@@ -467,12 +471,50 @@ The backstory decided while working through the decisions above, kept in one pla
 | 1 January 1996 | The Accord enters into force. Hauliers, forwarders, customs brokers and a factoring company are set up around this date to serve the new cross-border trade. | Some of the parties now dated 1996-01-01 keep 1996 as their founding year, with their own days; ports, utilities, state bodies and industry get older or other dates. |
 | 2007 onward | Later protocols of the Accord: an energy market (Ferrano Grid is split off in 2007; Kelpstone Gas dates from 2011), then the procurement rules, the payment link and card schemes, and electronic business documents. | Why the three countries share procurement rules, a payment link and code lists although each keeps its own taxes. |
 
+### Founding table of the 25 parties (D4), current base
+
+Turnover in million lume for all three countries (1 lume = 100 ferra = 0.4 coral). "Persons" gives the headcount in `world/parties.json` at the time of the decision and the proposed one. The headcounts and turnovers are estimates from what each party does; only the two marked rows come from documents.
+
+| Country | Party | Founded | Why then | Persons now → proposed | Turnover | Size |
+|---|---|---|---|---|---|---|
+| XU | Fiumella Barges | 1953 | Landlocked Urvania always shipped bulk down the river | 30 → 30 | 5.4 | SMALL |
+| XU | Ferrano Rail Cargo | 1964 | The state railway's freight arm, set up after independence | 14 → 380 | 54 | LARGE |
+| XU | Trasvia Haulage | 1996 | Cross-border trucking opens with the Accord | 27 → 27 | 3.9 | SMALL |
+| XU | Ferrano Intermodal Hub | 1997 | Border terminal built for the Accord's traffic | 14 → 60 | 11 | MEDIUM |
+| XU | Castrano Logistics | 1998 | Valdara spins off its logistics as exports grow | 29 → 140 | 19 | MEDIUM |
+| XU | Codana Identification Agency | 1999 | Shared numbering for trade between the three countries | 13 → 13 | 3.9 | SMALL |
+| XU | Rinova Recovery | 2003 | Recycling of industrial waste | 47 → 47 | 7.2 | SMALL |
+| XB | Wavesure Cargo Insurance | 1927 | Marine insurance in an old port city | 46 → 120 | 38 | MEDIUM |
+| XB | Coastal State Water Company | 1954 | State-owned utility | 17 → 410 | 62 | LARGE |
+| XB | Bayforth Forwarding | 1976 | Forwarding for the island trade after the agreement of 1974 | 40 → 95 | 14 | MEDIUM |
+| XB | Lumeport Textile Mill | 1976 | Built to spin the island's duty-free cotton | 42 → 260 | 31 | LARGE |
+| XB | Lumeport Airport Cargo Terminal | 1983 | Air freight to the island | 29 → 85 | 9.6 | MEDIUM |
+| XB | Port of Lumeport | 1991 | The old harbour board turned into a company | 31 → 640 | 96 | LARGE |
+| XB | Harbourline Factoring | 1996 | Financing cross-border receivables | 21 → 21 | 6.3 | SMALL |
+| XB | Brackenmere Furniture | 2000 | Its own tender states 26 years in business (document) | 19 → 19 | 6.8 | SMALL |
+| XB | Marrowdale Sawmill | 2004 | Its own tender states 22 years and 85 employees (document) | 26 → 85 | 11.8 | MEDIUM |
+| XB | Rivermouth Packaging | 2005 | Packaging from recycled plastic | 23 → 23 | 6.8 | SMALL |
+| XL | Selanu Cotton Ginnery | 1936 | Cotton is the island's old export | 22 → 64 | 9.2 | MEDIUM |
+| XL | Port of Selanu | 1972 | Port company formed ahead of the agreement of 1974 | 28 → 150 | 22.5 | MEDIUM |
+| XL | Tevaro Customs Brokers | 1975 | Import declarations for the new shipping service | 13 → 13 | 7.1 | SMALL |
+| XL | Kelaro Air Cargo | 1987 | The island's airline; the freighter came later | 13 → 38 | 6.5 | SMALL |
+| XL | Selanu Airport Cargo | 1989 | A branch of the port company | 15 → 15 | 3.1 | SMALL |
+| XL | Selanu Telecom | 1993 | The telephone department turned into a company | 20 → 180 | 35 | MEDIUM |
+| XL | Nalevi Warehousing | 1998 | Warehousing for imports after the Accord | 17 → 17 | 6.3 | SMALL |
+| XL | Velumi Trading | 2002 | Importer and shop for garden furniture | 34 → 34 | 4.9 | SMALL |
+
+How the dates fall into the history: the old trades before 1962 (barges, insurance, the ginnery, the water company); the companies the Lumeport Agreement of 1974 called for (the port company, the customs broker, the forwarder, the textile mill); the Accord's wave of 1996 to 1999 (the haulier, the factoring company, the border terminal, Valdara's logistics arm, the numbering agency, island warehousing).
+
+The parties that already had their own data keep it: Bank of Lumeport 1903, Crevalto Bank 1921, Ferrano Energy 1949, Serravona Mining 1958, Valdara Industries 1962, Bank of Selanu 1965, Tidewell Ocean Lines 1974, Montebrio Power 1974, Brightmarket Stores 1979, Lumeway Distribution 1988, Ferrano Grid 2007, Lisavu Cotton Farm 2009, Kelpstone Gas 2011.
+
+**Lisavu's farm register.** A grower's registration is renewed each season, so a farm's register entry carries an expiry date.
+
 Open threads of this story line:
 - **What Lisavu gave up in 1996.** The island's state lives on customs duty and an import consumption tax. Suggested: duties on Accord goods ended and the import consumption tax stayed. To decide with D18.
 - **The fixed exchange rates.** The three currencies trade at fixed parities (1 lume = 100 ferra = 0.4 coral) all year. Whether a currency arrangement is part of the Accord or a later protocol is not decided.
 - **Bayvarra's and Lisavu's own history.** No date is set for their settlement or independence. For the encyclopaedia.
 - **The dates of the later protocols** (procurement, payment link, electronic documents) are not set.
-- **The founding table of the 25 parties** (D4).
+- **The founding table of the 25 parties** (D4) is a current base, open to correction: each party's day and month; whether the ports and the telecom operator are companies or public bodies; the textile mill's size.
 
 ### The Englishes of the world (D1, D2, D3)
 
