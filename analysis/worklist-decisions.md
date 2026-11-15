@@ -56,6 +56,7 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Keep the data and dismiss the findings (the 1996 date is then a stated default).
 - Recommendation: a), with Valdara MEDIUM unless a turnover above 50 million lume is wanted, and the sawmill MEDIUM (it states 85 persons); keep the farm's yearly registration only if the island's register really expires (then say so).
 - Related: D8
+- **Decided so far (owner, 2026-11-15):** the history the founding dates hang on (see "Story lines" at the end of this file): the Lumeport Agreement of 1974 and the Lumeport Trade Accord, signed in 1994 and in force on 1 January 1996. Option a) is the direction: each of the 25 parties gets its own founding date, headcount and turnover, proposed as one table tied to that history, for the owner to correct. **Still to decide:** the table itself; Valdara's size; whether the cotton farm's registration expires yearly.
 
 ### D5 · Who allocates the standard item identifier, and may world item numbers look like valid GTIN-12s?
 - Why it matters: Cause C61 World item numbers that are valid GTIN-12s; Valdara's items under Lumeway's GS1 prefix; 76 findings (76 marked "yes").
@@ -447,3 +448,42 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
 - Recommendation: a).
 - Related: none
 
+## Story lines
+
+The backstory decided while working through the decisions above, kept in one place so that no thread is lost. It is the source for `note/src/03-world.md` when a decision is implemented, and for the encyclopaedia of the world. Each line names the decision it came from; "open" marks a thread that is not decided yet.
+
+### History of the three countries and the Trade Accord (D4)
+
+| Year | Event | What it explains in the world |
+|---|---|---|
+| before 1962 | Urvania is an Italian territory, then under British rule. The British keep the Italian place and street names. | Urvanian English and its Italian names; Urvania's continental institutions (value added tax, Italian-style bank codes). |
+| 1903 | The Bank of Lumeport is founded. | The settlers' economy of Bayvarra is older than Urvania's state. |
+| 1949, 1958 | Ferrano Energy and Serravona Mining are founded. | Urvania's state-founded energy and mining. |
+| 1962 | Urvania becomes independent, bilingual in Urvanian and English. It builds a protected economy around state mining, energy and its own manufacturers. Valdara Industries is founded the same year. | Why Urvania is the late and different partner. |
+| 1974 | **The Lumeport Agreement** between Bayvarra and Lisavu: the island's cotton enters Bayvarra free of duty, and a regular shipping service links the two. The island keeps its duties on imports. Tidewell Ocean Lines is founded to run the service. | The lint reference price is published in lume; the old tie between the island and Bayvarra's port; Tidewell's founding year. |
+| 1988 | Lumeway Distribution is founded in Bayvarra. | |
+| early 1990s | Urvania opens its economy. | Real parallels: the Canada–US agreement of 1988 that Mexico joined to form NAFTA in 1994; India 1991; Mercosur 1991. |
+| 1994 | **The Lumeport Trade Accord** is signed in Lumeport: Urvania joins, and the agreement of 1974 becomes a free trade area for all three countries. | The Accord's name: it grew out of the agreement signed in Lumeport. |
+| 1 January 1996 | The Accord enters into force. Hauliers, forwarders, customs brokers and a factoring company are set up around this date to serve the new cross-border trade. | Some of the parties now dated 1996-01-01 keep 1996 as their founding year, with their own days; ports, utilities, state bodies and industry get older or other dates. |
+| 2007 onward | Later protocols of the Accord: an energy market (Ferrano Grid is split off in 2007; Kelpstone Gas dates from 2011), then the procurement rules, the payment link and card schemes, and electronic business documents. | Why the three countries share procurement rules, a payment link and code lists although each keeps its own taxes. |
+
+Open threads of this story line:
+- **What Lisavu gave up in 1996.** The island's state lives on customs duty and an import consumption tax. Suggested: duties on Accord goods ended and the import consumption tax stayed. To decide with D18.
+- **The fixed exchange rates.** The three currencies trade at fixed parities (1 lume = 100 ferra = 0.4 coral) all year. Whether a currency arrangement is part of the Accord or a later protocol is not decided.
+- **Bayvarra's and Lisavu's own history.** No date is set for their settlement or independence. For the encyclopaedia.
+- **The dates of the later protocols** (procurement, payment link, electronic documents) are not set.
+- **The founding table of the 25 parties** (D4).
+
+### The Englishes of the world (D1, D2, D3)
+
+- English is not one language across the three countries. Each country's English was shaped by its history and by the language spoken there before, and has drifted from standard English. The varieties are written `en-XU`, `en-XB` and `en-XL`. (D1)
+- **Urvanian English** carries the Italian place and street names the British kept, and stands beside Urvanian. **Bayvarran English** is the settlers' English and the working language between the three countries. **Lisavan English** stands beside Lisavan on the island and uses the Lisavan names for places. (D1, D3)
+- A party whose language is English states which English it writes (`LocaleCode`). (D1)
+- A text keeps the English it was written in when it travels: a party's address and other master data carry that party's variety in every document, and free text carries the issuer's. One document can hold two Englishes side by side. (D2)
+- **Selanu and Port Wrenfield.** Port Wrenfield is the name the English-speaking settlers gave Lisavu's capital. It is still the official English name and stands in every address, Lisavan name first, but it is fading from use: in speech and in writing, also in English, the town is Selanu. Urvania works the other way round: English text uses the inherited Italian name (Ferrano, Serravona) and Urvanian text the Urvanian one (Ruldraz, Drinzul). (D3)
+
+Open threads of this story line:
+- **A few visible traits of each English** (spelling, loan words, date and number habits), so that the difference is more than a tag. (D1)
+- **Whether a party whose first language is Urvanian or Lisavan also states its English locale.** (D1)
+- **Localised item texts.** An item's name and description may be localised for each market it is sold in, as a product shipped to France gets a French name and description; which items, by whom, and which text a document carries. (D2, with D5 and D11)
+- **Second names of other places** (the island's other towns, Bayvarra's towns), and which name English text uses for each. (D3)
