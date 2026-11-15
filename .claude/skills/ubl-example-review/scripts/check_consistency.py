@@ -5,7 +5,9 @@ usage: python3 -I check_consistency.py [<tablesdir>]      (default: <repo>/.revi
 Prints, per check, the number of hits and every hit with the places it comes from
 (`flow/file:xpath`), plus summary lines per kind where a check has several kinds. A hit is not a
 finding: it only shows where values differ that a reviewer should look at. Comparisons are exact
-string comparisons of the table cells; empty cells are ignored. Exit code is always 0.
+string comparisons of the table cells; empty cells are ignored, and so are cells that hold nothing but
+'-' placeholders and ' | ' separators: an empty identifier or name is not "the same identifier" and is
+never used as the key of a group. Exit code is always 0.
 
 Checks:
   1 same-id-different-thing   the same identifier value + scheme on things with different names
@@ -21,6 +23,9 @@ Checks:
   8 person-variants           the same contact/person name under different parties or with
                               different job title, department, telephone or mail
   9 period-end-before-start   periods whose end is before their start
+ 10 mention-before-issue      a row of references.csv or document_id_mentions.csv whose matched example
+                              was issued after the citing document (date only unless both carry a time;
+                              skipped if either side has no issue date; for several matches, the earliest)
 """
 import csv
 import re
@@ -35,6 +40,16 @@ DEFAULT = REPO / '.review' / 'tables'
 def load(d, name):
     with open(d / f'{name}.csv', encoding='utf-8', newline='') as f:
         return list(csv.DictReader(f))
+
+
+def blank(s):
+    """True for an empty cell or one with nothing but '-' placeholders, ' | ' separators and spaces."""
+    return not s.strip('-| \t')
+
+
+def keyed(ident, key):
+    """The group `key`, or '' (= no group) if the identifier or name `ident` in it is blank."""
+    return '' if blank(ident) else key
 
 
 def where(r, xpath=None):
@@ -76,7 +91,7 @@ def variants(rows, key, value, rep, kind, label, min_variants=2, value_label=Non
     for r in rows:
         k = key(r)
         v = value(r)
-        if k and v:
+        if k and v and not blank(v):
             groups[k][v].append(where(r))
     for k in sorted(groups):
         vs = groups[k]
@@ -87,10 +102,10 @@ def variants(rows, key, value, rep, kind, label, min_variants=2, value_label=Non
 def check_same_id(d, rep):
     rep.start('1 same-id-different-thing', 'same identifier value + scheme, different names')
     pids = load(d, 'party_ids')
-    variants(pids, lambda r: (r['value'], r['scheme_id']), lambda r: r['party_name'], rep, 'party',
+    variants(pids, lambda r: keyed(r['value'], (r['value'], r['scheme_id'])), lambda r: r['party_name'], rep, 'party',
              'party identifier (value, scheme)')
     iids = load(d, 'item_ids')
-    variants(iids, lambda r: (r['kind'], r['value'], r['scheme_id']), lambda r: r['item_name'], rep, 'item',
+    variants(iids, lambda r: keyed(r['value'], (r['kind'], r['value'], r['scheme_id'])), lambda r: r['item_name'], rep, 'item',
              'item identifier (kind, value, scheme)')
     tm = load(d, 'transport_means')
     for col, scheme, desc in (('vessel_id', 'vessel_id_scheme', ('vessel_name', 'type_code', 'registration_nationality_id')),
@@ -99,15 +114,15 @@ def check_same_id(d, rep):
                               ('trailer_plate', None, ('type_code',)), ('train_id', None, ('type_code',)),
                               ('rail_car_id', 'rail_car_id_scheme', ('type_code',)),
                               ('aircraft_id', 'aircraft_id_scheme', ('type_code', 'registration_nationality_id'))):
-        variants(tm, lambda r: (r[col], r[scheme]) if scheme else r[col],
+        variants(tm, lambda r: keyed(r[col], (r[col], r[scheme]) if scheme else r[col]),
                  lambda r: ' / '.join(f'{x}={r[x]}' for x in desc if r[x]), rep, f'transport_means.{col}',
                  f'{col}')
     eq = load(d, 'transport_equipment')
-    variants(eq, lambda r: (r['id'], r['id_scheme']) if r['id'] else '',
+    variants(eq, lambda r: keyed(r['id'], (r['id'], r['id_scheme'])),
              lambda r: ' / '.join(f'{x}={r[x]}' for x in ('type_code', 'size_type', 'tare_weight') if r[x]),
              rep, 'equipment', 'equipment (id, scheme)')
     fa = load(d, 'financial_accounts')
-    variants(fa, lambda r: (r['id'], r['id_scheme']) if r['id'] else '',
+    variants(fa, lambda r: keyed(r['id'], (r['id'], r['id_scheme'])),
              lambda r: ' / '.join(f'{x}={r[x]}' for x in ('name', 'currency', 'institution_id', 'branch_id') if r[x]),
              rep, 'account', 'financial account (id, scheme)')
 
@@ -141,7 +156,7 @@ def check_documents(d, rep):
     docs = load(d, 'documents')
     g = defaultdict(list)
     for r in docs:
-        if r['id']:
+        if r['id'] and not blank(r['issuer']):
             g[(r['issuer'], r['id'])].append(r)
     for k in sorted(g):
         if len(g[k]) > 1:
@@ -174,7 +189,7 @@ def check_numbering(d, rep):
     docs = load(d, 'documents')
     g = defaultdict(list)
     for r in docs:
-        if r['id'] and r['issue_timestamp'] and re.search(r'\d', r['id']):
+        if r['id'] and r['issue_timestamp'] and re.search(r'\d', r['id']) and not blank(r['issuer']):
             g[(r['issuer'], r['root'], re.sub(r'\d', '#', r['id']))].append(r)
     for k in sorted(g):
         rs = sorted(g[k], key=lambda r: (numkey(r['id']), r['id']))
@@ -215,11 +230,12 @@ def check_references(d, rep):
 def check_rates(d, rep):
     rep.start('7 exchange-rate-variants', 'same source/target currency and date, different rate or operator')
     rows = load(d, 'exchange_rates')
-    variants(rows, lambda r: (r['source_currency'], r['target_currency'], r['date']) if r['date'] else '',
+    variants(rows, lambda r: (r['source_currency'], r['target_currency'], r['date'])
+             if r['date'] and not blank(r['source_currency']) and not blank(r['target_currency']) else '',
              lambda r: f'rate {r["rate"]} operator {r["operator"] or "-"} base {r["source_base_rate"] or "-"}/'
                        f'{r["target_base_rate"] or "-"}', rep, 'same pair and date', '(source, target, date)')
     undated = [r for r in rows if not r['date']]
-    variants(undated, lambda r: (r['source_currency'], r['target_currency']),
+    variants(undated, lambda r: keyed(r['source_currency'] + r['target_currency'], (r['source_currency'], r['target_currency'])),
              lambda r: f'rate {r["rate"]} operator {r["operator"] or "-"}', rep, 'same pair, no date',
              '(source, target) without date')
 
@@ -248,6 +264,24 @@ def check_periods(d, rep):
             rep.hit('end before start', f'{r["element"]} {r["start"]} -> {r["end"]}', [('period', [where(r)])])
 
 
+def check_mentions(d, rep):
+    rep.start('10 mention-before-issue', 'cited example issued after the citing document (references.csv and '
+                                         'document_id_mentions.csv; date only unless both carry a time)')
+    issue = {f'{r["flow"]}/{r["file"]}': r['issue_timestamp'] for r in load(d, 'documents')}
+    for table in ('references', 'document_id_mentions'):
+        for r in load(d, table):
+            own = issue.get(f'{r["flow"]}/{r["file"]}', '')
+            matches = [m for m in r['example_matches'].split(' | ') if m and issue.get(m)]
+            if not own or not matches:
+                continue
+            first_m = min(matches, key=lambda m: issue[m])  # the earliest version
+            a, b = comparable(own, issue[first_m])
+            if b > a:
+                rep.hit(table, f'{r["element"]} {r.get("value") or r["id"]!r} cites an example issued later',
+                        [(f'citing document issued {own}', [where(r)]),
+                         (f'cited example issued {issue[first_m]}', [first_m])])
+
+
 def main():
     d = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT
     if not (d / 'documents.csv').exists():
@@ -255,7 +289,7 @@ def main():
         sys.exit(0)
     rep = Report()
     for f in (check_same_id, check_party_names, check_items, check_documents, check_numbering, check_references,
-              check_rates, check_persons, check_periods):
+              check_rates, check_persons, check_periods, check_mentions):
         f(d, rep)
     try:
         rep.print()

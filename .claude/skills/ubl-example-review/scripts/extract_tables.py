@@ -33,6 +33,13 @@ Two kinds of tables:
             (an "entity"; e.g. a party inside a consignment). Leaves that no column takes go to the
             column `other` as `relative/path=value`, so nothing below a row is lost.
 
+One more special table: document_id_mentions = the identifier leaves (rows of identifiers) whose value is the
+document ID (root cbc:ID) of another example, for the citations that are not inside a *Reference aggregate
+(a transit declaration named in a customs element, say). Left out: the root cbc:ID itself, leaves inside
+a *Reference aggregate (rows of references), and values that equal only the document's own ID. The match is
+the exact string; every example with that ID is listed, so a short ID that several documents share
+or that is also a line number shows up as a hit with all its matches (nothing is filtered).
+
 Cell conventions: several values in one cell are joined with ' | ' in document order; a value with a
 languageID is written `[lang] value`; `*_scheme`/`*_list` columns hold the schemeID/listID of the
 values in the column before, in the same order (empty attribute -> '-'); columns marked "with unit"
@@ -994,6 +1001,23 @@ ITEM_ID_COLS = BASE + ['kind', 'value', 'scheme_id', 'item_xpath', 'item_name', 
 
 CUSTOMS_COLS = BASE + ['value', 'attributes'] + CONTEXT
 
+MENTION_COLS = BASE + ['value', 'scheme_id', 'example_matches', 'matched_roots', 'matched_issue', 'own_issue'] + CONTEXT
+
+
+def issue_of(m):
+    return 'T'.join(x for x in (m['issue_date'], m['issue_time']) if x)
+
+
+def id_mention(doc, e, index):
+    """The other examples whose document ID is the value of this identifier leaf, unless the leaf is the
+    document's own ID or sits inside a *Reference aggregate (a row of references): else []."""
+    v = text(e)
+    if v not in index or (e.getparent() is doc.root and ln(e) == 'ID'):
+        return []
+    if any(entity_table(a) == 'references' for a in e.iterancestors()):
+        return []
+    return [m for m in index[v] if m['where'] != f'{doc.flow}/{doc.file}']
+
 
 def index_documents(docs):
     idx = defaultdict(list)
@@ -1021,6 +1045,14 @@ def extract(docs):
             if is_leaf(e):
                 t = leaf_table(e)
                 tables[t].append(generic_row(d, e, t))
+                if t == 'identifiers':
+                    ms = id_mention(d, e, index)
+                    if ms:
+                        r = tables[t][-1]
+                        tables['document_id_mentions'].append(dict(
+                            r, example_matches=join(m['where'] for m in ms), matched_roots=join(m['root'] for m in ms),
+                            matched_issue=join(issue_of(m) or '-' for m in ms),
+                            own_issue='T'.join(x for x in (first(d.root, 'IssueDate'), first(d.root, 'IssueTime')) if x)))
                 if CUSTOMS.search(ln(e)):
                     tables['customs'].append(dict(d.base(e), value=fmt_unit(e), attributes=attrs(e), **context(d, e)))
                 continue
@@ -1053,7 +1085,8 @@ def extract(docs):
                                 d.base(leaf), kind=kind, value=text(leaf), scheme_id=leaf.get('schemeID', ''),
                                 item_xpath=d.xpath(e), item_name=first(e, 'Name'), item_main_id=item_main_id(e),
                                 line_id=first(ln_, 'ID') if ln_ is not None else ''))
-    columns = {'documents': DOC_COLS, 'party_ids': PARTY_ID_COLS, 'item_ids': ITEM_ID_COLS, 'customs': CUSTOMS_COLS}
+    columns = {'documents': DOC_COLS, 'party_ids': PARTY_ID_COLS, 'item_ids': ITEM_ID_COLS, 'customs': CUSTOMS_COLS,
+               'document_id_mentions': MENTION_COLS}
     for t, cols in GENERIC_COLS.items():
         columns[t] = BASE + cols + CONTEXT
     for name, _, cols in ENTITIES:
@@ -1061,7 +1094,7 @@ def extract(docs):
     return tables, columns
 
 
-ORDER = ['documents', 'parties', 'party_ids', 'contacts', 'identifiers', 'references', 'dates', 'periods', 'locations',
+ORDER = ['documents', 'parties', 'party_ids', 'contacts', 'identifiers', 'references', 'document_id_mentions', 'dates', 'periods', 'locations',
          'transport_means', 'shipment_stages', 'transport_events', 'transport_equipment', 'consignments',
          'handling_units', 'goods_items', 'hazardous_items', 'items', 'item_ids', 'lines', 'amounts', 'taxes',
          'exchange_rates', 'payment_means', 'payment_mandates', 'financial_accounts', 'payment_terms',
@@ -1079,6 +1112,11 @@ DESCRIPTIONS = {
     'identifiers': 'generic: every leaf whose name ends in ID (cbc:ID, UUID, …)',
     'references': 'one row per *Reference aggregate; example_matches = examples whose document ID equals the '
                   'referenced ID (the referencing example itself excluded)',
+    'document_id_mentions': 'one row per identifier leaf (a row of identifiers) whose value equals the document ID of '
+                            'another example, except the root cbc:ID and leaves inside a *Reference aggregate (see '
+                            'references); example_matches/matched_roots/matched_issue = those examples, their root '
+                            'elements and issue timestamps (- if none), in the same order; own_issue = this '
+                            'document\'s issue timestamp',
     'dates': 'generic: every leaf ending in Date or Time; timestamp = date + T + time of the sibling pair '
              '(XDate/XTime) where both exist, on both rows',
     'periods': 'one row per *Period aggregate with start/end (date T time) and duration',
@@ -1249,9 +1287,13 @@ def self_test(n, out):
                 ok = ln(e) == r['root'] and first(e, 'ID') == r['id']
             else:
                 ok = ln(e) == r['element']
-            if ok and (t in GENERIC_COLS or t in ('party_ids', 'item_ids')):
+            if ok and (t in GENERIC_COLS or t in ('party_ids', 'item_ids', 'document_id_mentions')):
                 ok = text(e) == r['value']
                 what = f' value={r["value"][:40]!r}'
+            if ok and t == 'document_id_mentions':
+                ids = [first(etree.parse(str(EXAMPLES / m)).getroot(), 'ID') for m in r['example_matches'].split(SEP)]
+                ok = all(i == r['value'] for i in ids) and len(ids) == len(r['matched_roots'].split(SEP))
+                what += f' matches={r["example_matches"][:60]!r}'
             if ok and t == 'parties':
                 ok = r['name'] == join(fmt(x) for x in e.xpath('cac:PartyName/cbc:Name', namespaces=NS))
                 what = f' name={r["name"][:40]!r}'
