@@ -71,6 +71,9 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Keep everything and record the reason in the reviews.
 - Recommendation: a): the distributor-assigned GTIN is a stated, real GS1 practice; the only real risk is numbers that pass as real GTINs.
 - Related: D10, D11
+- **Decided (owner, 2026-11-15): two systems stay (a), with the ISO side designed as the real ISO/IEC 15459 works.** The design is under "Story lines: Identification, the GS1 way and the Codana way". In short: the world item numbers (`771…`, `772…`, scheme `urn:ubl-examples:world:item`) go; an item on the Codana side is identified by the company's Codana prefix plus the company's own part number (`KXU10427B180`); Lumeway's GTIN stays as the distributor's own number and names Lumeway, not Codana, as its issuer; no check character; no GS1 organisation as a party. Decision ID-Q4 in `analysis/codelist-decisions.md` is replaced for item numbers, and the identification paragraph of `note/src/03-world.md` is rewritten.
+- **Findings:** the 76 findings on world item numbers that pass as GTIN-12 are resolved by the new form. The findings that object to two "standard" identities of one item (items#F2 and those like it) are dismissed: the two systems are the story, and a distributor giving an imported item its own GTIN is real practice.
+- **Left for later:** site codes for Urvanian places (only where a document uses one); returnable items on the Codana side (none exist); serials and lots in globally unique form (with D21 and the melt-number cause).
 
 ### D6 · What must a Signature carry, and where is one kept?
 - Why it matters: Cause C49 Signature aggregates with only an ID and a signatory; 38 findings (36 marked "yes").
@@ -482,7 +485,7 @@ Turnover in million lume for all three countries (1 lume = 100 ferra = 0.4 coral
 | XU | Trasvia Haulage | 1996 | Cross-border trucking opens with the Accord | 27 → 27 | 3.9 | SMALL |
 | XU | Ferrano Intermodal Hub | 1997 | Border terminal built for the Accord's traffic | 14 → 60 | 11 | MEDIUM |
 | XU | Castrano Logistics | 1998 | Valdara spins off its logistics as exports grow | 29 → 140 | 19 | MEDIUM |
-| XU | Codana Identification Agency | 1999 | Shared numbering for trade between the three countries | 13 → 13 | 3.9 | SMALL |
+| XU | Codana Identification Agency | 1999 | Urvania's public numbering body, set up when the country opened its trade | 13 → 13 | 3.9 | SMALL |
 | XU | Rinova Recovery | 2003 | Recycling of industrial waste | 47 → 47 | 7.2 | SMALL |
 | XB | Wavesure Cargo Insurance | 1927 | Marine insurance in an old port city | 46 → 120 | 38 | MEDIUM |
 | XB | Coastal State Water Company | 1954 | State-owned utility | 17 → 410 | 62 | LARGE |
@@ -529,3 +532,46 @@ Open threads of this story line:
 - **Whether a party whose first language is Urvanian or Lisavan also states its English locale.** (D1)
 - **Localised item texts.** An item's name and description may be localised for each market it is sold in, as a product shipped to France gets a French name and description; which items, by whom, and which text a document carries. (D2, with D5 and D11)
 - **Second names of other places** (the island's other towns, Bayvarra's towns), and which name English text uses for each. (D3)
+
+### Identification, the GS1 way and the Codana way (D5)
+
+**Two systems, chosen by who a company trades with.**
+- **GS1** is the system of Bayvarra's retail and distribution chain: Lumeway Distribution, Brightmarket Stores and Brackenmere Furniture. Their company prefixes start with 952, which GS1 reserves for examples. A company builds its own GTINs, GLNs, SSCCs and GRAIs from its prefix; the world has no GS1 organisation as a party.
+- **Codana**, the Codana Identification Agency, is Urvania's public numbering body, founded in 1999 when the country opened its trade. It is an issuing agency under ISO/IEC 15459 with the agency code `KXU`, and keeps the organisation register behind the ISO/IEC 6523 code `0990`. It registers any company that asks, foreign ones too: Rivermouth Packaging is Bayvarran, but its customer is Valdara, so it uses its customer's system.
+- **Own numbers only**: the island's cotton farm and ginnery, the sawmill, the engineering company and the utilities.
+
+**One company number, three uses.** A company registers once with Codana and gets a five-digit number. That number is its party identifier (`0990:10427` for Valdara Industries) and the root of everything it labels (`KXU10427…`). This is how the real non-GS1 systems work: a D&B DUNS number is ISO/IEC 6523 code 0060 and agency code `UN`; an Odette number is 0177 and `OD`; GS1 itself is 0088 (the GLN) and the agency codes `0` to `9`.
+
+**Codana's rule book.**
+- Company prefix: `KXU` followed by the five-digit company number (8 characters).
+- After the prefix comes the company's own reference, in upper-case letters and digits only, without hyphens or spaces.
+- No identifier is longer than 20 characters, which ISO/IEC 15459 recommends for a one-line bar code (the standard allows 50 for items, serials and lots, and 35 for transport units).
+- There is no check character, as in ISO/IEC 15459 itself. The build checks instead that the prefix of every identifier is the company number of the party that issued it.
+- Codana does not hand out item numbers. It gives a company its number; the company numbers its own items, lots, pallets and places.
+
+**What each thing looks like.**
+
+| Thing | The company's own number | Globally unique form (Codana) | ISO/IEC 15459 part, data identifier | GS1 side |
+|---|---|---|---|---|
+| Item (the bench) | `VI-B180` | `KXU10427B180` | part 6, 25P | GTIN (Lumeway's `9520610000012`) |
+| One serialised item (a casting) | `VI-SF-01230` | `KXU10427SF01230` | part 4, 25S | serialised GTIN |
+| Production lot | `VI-LOT-260510` | `KXU10427LOT260510` | part 6, 25T | GTIN and lot |
+| Transport unit (a pallet) | none | `KXU104411490000015` (Castrano Logistics) | part 1, J | SSCC |
+| Returnable transport item | none | prefix, type and serial | part 5, 25B | GRAI |
+| Site | none | prefix and site code | 25L | GLN |
+| Company | register number | `0990:10427` | ISO/IEC 6523 (18V in a bar code) | GLN |
+
+The data identifier is the prefix a bar code uses to say what follows; in a UBL document the element says that, so it is not part of the value. In a document the company's own number stays where it is (the seller's item identification, the serial, the lot); the globally unique form is the standard identification, given where a document crosses company borders and the receiver needs it.
+
+**What the examples show with it.**
+- The bench crosses from one system to the other: Valdara ships it as `KXU10427B180`; Lumeway gives it a GTIN for the shops and carries the maker's number alongside, as an importer may.
+- A pallet needs no relabelling: GS1 is itself an ISO/IEC 15459 agency, so Lumeway's warehouse reads Castrano's licence plate and its own SSCCs alike.
+- One company number serves as party identifier and as the root of the company's labels.
+
+Sources checked for this design (2026-11-15): ISO/IEC 15459-1, -2, -4 and -6 (iso.org catalogue and the public previews on iteh.ai: 50 characters for items and groupings, 20 recommended for a one-line bar code); ANSI MH10.8.2 data identifiers (mhi.org: J, 1J to 6J, 25P, 25S, 25T, 25B, 25L, 18V, 25K, 26K); the E.D.C. quick guide to unique labelling by ISO/IEC 15459; and `analysis/source-verification.md` for the agency code `KXU` and the code `0990`. The full standards are paywalled; the agency-code and company-number length rules of part 2 could not be read beyond what `analysis/source-verification.md` records.
+
+Open threads of this story line:
+- **Site codes for Urvanian places** (Valdara's plant, Castrano's warehouse): only where a document uses one.
+- **Returnable items on the Codana side**: none exist in the examples; nothing is numbered without a case.
+- **Serials and lots in globally unique form**: fits the castings and the bench lots; to settle with the goods chain (D21) and the melt-number cause.
+- **Which other items carry world item numbers today** (`772…` and the rest) and which company's prefix each gets.
