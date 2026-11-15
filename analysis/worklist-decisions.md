@@ -536,9 +536,29 @@ Open threads of this story line:
 ### Identification, the GS1 way and the Codana way (D5)
 
 **Two systems, chosen by who a company trades with.**
-- **GS1** is the system of Bayvarra's retail and distribution chain: Lumeway Distribution, Brightmarket Stores and Brackenmere Furniture. Their company prefixes start with 952, which GS1 reserves for examples. A company builds its own GTINs, GLNs, SSCCs and GRAIs from its prefix; the world has no GS1 organisation as a party.
+- **GS1** is the system of Bayvarra's retail and distribution chain: Lumeway Distribution, Brightmarket Stores and Brackenmere Furniture. Their company prefixes start with 952, which GS1 reserves for examples. **GS1 Bayvarra** licenses the prefixes: a not-for-profit association owned by its member companies, begun around 1981 as an article numbering association when Brightmarket and other retailers wanted bar codes at the till, and renamed in 2005 when the worldwide organisation took the name GS1 (the real history: the European association started in 1977, the name GS1 dates from 2005). It gives a company a seven-digit company prefix; the company builds its own GTINs, GLNs, SSCCs and GRAIs from it. GS1 Bayvarra also serves Lisavu, which has no organisation of its own. It is part of the story, not a party in the documents, until a document has a reason to name it.
 - **Codana**, the Codana Identification Agency, is Urvania's public numbering body, founded in 1999 when the country opened its trade. It is an issuing agency under ISO/IEC 15459 with the agency code `KXU`, and keeps the organisation register behind the ISO/IEC 6523 code `0990`. It registers any company that asks, foreign ones too: Rivermouth Packaging is Bayvarran, but its customer is Valdara, so it uses its customer's system.
 - **Own numbers only**: the island's cotton farm and ginnery, the sawmill, the engineering company and the utilities.
+
+**Codana and GS1 Bayvarra side by side.**
+
+| | Codana | GS1 Bayvarra |
+|---|---|---|
+| Country | Urvania | Bayvarra (also serves Lisavu) |
+| What it is | A public body, set up by the state | An association of companies |
+| Founded | 1999, when Urvania opened its trade | Around 1981, by retailers and distributors |
+| Standard | ISO/IEC 15459 and ISO/IEC 6523 | GS1 |
+| Gives a company | A five-digit company number | A seven-digit company prefix |
+
+**Every register issues its own numbers (owner, 2026-11-15).** A company's Codana number or GS1 company prefix is not its business register number and not its tax number: each is issued by a different body, in that body's own series, and none is derived from another. No number may occur in a similar form in two numbering schemes: each scheme has its own shape, so that a value shows which scheme it belongs to, and no value of one scheme repeats the digits of a value of another. The build checks this.
+
+What the documents do today, to be changed under this rule:
+- The Codana number is the business register number cut to five digits (`0990:10427` from `XU-R-104274`; Rivermouth's `0990:20274` from `20412740`).
+- The customs trader number repeats the register number in all three countries (`XU-TR-104274` from `XU-R-104274`, `XB-TR-410274` from `20410274`, `XL-TR-041859` from `IC41859`).
+- Telephone numbers end in the party's register number (`+999 1 041 518 4274`).
+- The endpoint is the country and the register number (`XU:XU-R-104274`).
+
+The shapes in use, per country: Urvania: register `XU-R-` and six digits, tax `XU` and nine digits, customs trader `XU-TR-` and six digits. Bayvarra: register eight digits starting `2041`, tax the state's two letters and seven digits (`CO-1238220`), customs trader `XB-TR-` and six digits. Lisavu: register `IC` and five digits, customs trader `XL-TR-` and six digits, no tax number. Codana: five digits, always written with `0990:` or `KXU`. GS1 Bayvarra: seven digits starting `952`.
 
 **One company number, three uses.** A company registers once with Codana and gets a five-digit number. That number is its party identifier (`0990:10427` for Valdara Industries) and the root of everything it labels (`KXU10427…`). This is how the real non-GS1 systems work: a D&B DUNS number is ISO/IEC 6523 code 0060 and agency code `UN`; an Odette number is 0177 and `OD`; GS1 itself is 0088 (the GLN) and the agency codes `0` to `9`.
 
@@ -571,6 +591,7 @@ The data identifier is the prefix a bar code uses to say what follows; in a UBL 
 Sources checked for this design (2026-11-15): ISO/IEC 15459-1, -2, -4 and -6 (iso.org catalogue and the public previews on iteh.ai: 50 characters for items and groupings, 20 recommended for a one-line bar code); ANSI MH10.8.2 data identifiers (mhi.org: J, 1J to 6J, 25P, 25S, 25T, 25B, 25L, 18V, 25K, 26K); the E.D.C. quick guide to unique labelling by ISO/IEC 15459; and `analysis/source-verification.md` for the agency code `KXU` and the code `0990`. The full standards are paywalled; the agency-code and company-number length rules of part 2 could not be read beyond what `analysis/source-verification.md` records.
 
 Open threads of this story line:
+- **Numbers that real practice builds from another number.** Two of today's derivations have real parallels: a customs trader number built from the national business or tax number (the EU's EORI), and an electronic address built from a register number (Peppol). To decide: whether these two stay as stated rules of the world (the same number reused on purpose, said so in the story), or whether customs and the delivery network also issue numbers of their own.
 - **Site codes for Urvanian places** (Valdara's plant, Castrano's warehouse): only where a document uses one.
 - **Returnable items on the Codana side**: none exist in the examples; nothing is numbered without a case.
 - **Serials and lots in globally unique form**: fits the castings and the bench lots; to settle with the goods chain (D21) and the melt-number cause.
