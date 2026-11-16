@@ -87,7 +87,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C47 | `FullnessIndicationCode` CRADLETOGATE and `LifecycleStageCode` MANUFACTURING for a cradle-to-gate footprint | world rule | 74 | 40 | 7 | 0/74/0 | decided: D10 | world/items.json, world/codelists/lists.json | waits: O25 |
 | C48 | Catalogue and product-passport data copied into business documents | world rule | 41 | 38 | 8 | 0/0/41 | decided: D11 | tools/build_examples.py, item() | waits: O20 |
 | C49 | Signature aggregates with only an ID and a signatory | world rule | 38 | 38 | 4 | 0/1/37 | deferred: D6 | tools/examples_kit.py, tep() | waits: signatures stage |
-| C50 | Tax category O for goods, 0 % on O, and Lisavu's tax scheme without ID | world rule | 29 | 13 | 4 | 0/6/23 | decided: D15 | tools/examples_kit.py, tax_rule() | ready 22 of 29; D30 1, D31 6 |
+| C50 | Tax category O for goods, 0 % on O, and Lisavu's tax scheme without ID | world rule | 29 | 13 | 4 | 0/6/23 | decided: D15 | tools/examples_kit.py, tax_rule() | ready 29 of 29 (D30 and D31 decided) |
 | C51 | Contract payment terms never applied by the invoices under the contract | world rule | 12 | 10 | 4 | 10/0/2 | decided: D22 | tools/examples_kit.py, payment_terms() | ready 9 of 12; D28 3 |
 | C52 | Customs value on a different basis in each flow | world rule | 12 | 12 | 6 | 1/6/5 | decided: D16 | tools/examples_kit.py, goods_items() | waits: O46 |
 | C53 | Documents dated at the weekend against a Monday-to-Friday week | world rule | 12 | 12 | 6 | 1/2/9 | decided: D27 | tools/examples_scenarios.py, world/parties.json | ready 9 of 12; D28 3 |
@@ -128,11 +128,11 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C88 | Plastics flow: recycled-content certificate issued by a chamber of commerce | flow story | 5 | 5 | 1 | 0/0/5 | owner: D41 | world/parties.json, world/items.json | waits: D41 |
 | C89 | Wood flow: slat units and isolated slips | flow story | 10 | 5 | 1 | 1/0/9 | owner: D43 | tools/examples_scenarios.py, wood() | waits: D43 |
 | C90 | Rail flow: container train documents | flow story | 33 | 8 | 1 | 3/6/24 | owner: D37 | tools/examples_scenarios.py, rail() | waits: D37 |
-| C91 | Utility statement builder: average amount, supplier consumption, subscriber data | flow story | 30 | 6 | 2 | 3/9/18 | owner: D31 | tools/examples_scenarios.py, utility_statement() | waits: D31 |
-| C92 | Utilities: the telecom statement and invoice | flow story | 15 | 3 | 1 | 4/5/6 | owner: D31 | tools/examples_scenarios.py, telecom_consumption() | waits: D31 |
-| C93 | Utilities: the household's water on account, the mandate and the levy | flow story | 13 | 5 | 1 | 2/3/8 | owner: D31 | tools/examples_scenarios.py, utilities() | waits: D31 |
+| C91 | Utility statement builder: average amount, supplier consumption, subscriber data | flow story | 30 | 6 | 2 | 3/9/18 | owner: D31 | tools/examples_scenarios.py, utility_statement() | ready (D31 decided) |
+| C92 | Utilities: the telecom statement and invoice | flow story | 15 | 3 | 1 | 4/5/6 | owner: D31 | tools/examples_scenarios.py, telecom_consumption() | ready (D31 decided) |
+| C93 | Utilities: the household's water on account, the mandate and the levy | flow story | 13 | 5 | 1 | 2/3/8 | owner: D31 | tools/examples_scenarios.py, utilities() | ready (D31 decided) |
 | C94 | Utilities: excise and estimate-correction amounts | flow story | 7 | 3 | 1 | 6/1/0 | none | tools/examples_scenarios.py, energy_tax() | ready |
-| C95 | Utilities: isolated slips | flow story | 7 | 6 | 1 | 1/2/4 | owner: D31 | tools/examples_scenarios.py, utilities() | waits: D31 |
+| C95 | Utilities: isolated slips | flow story | 7 | 6 | 1 | 1/2/4 | owner: D31 | tools/examples_scenarios.py, utilities() | ready (D31 decided) |
 | C96 | Qualification requests and responses (ESPD-like) in contest and tender | flow story | 32 | 8 | 2 | 1/11/20 | owner: D29 | tools/examples_scenarios.py, qualification_limits() | ready (D29 decided) |
 | C97 | Procurement notices (contest and tender): notice types, defaults, languages, links | flow story | 31 | 14 | 2 | 0/6/25 | owner: D29 | tools/examples_scenarios.py, notice_head() | ready (D29 decided) |
 | C98 | Contest: the design team, references, prizes and versions | flow story | 24 | 13 | 1 | 1/4/19 | owner: D29 | tools/examples_scenarios.py, contest_version() | ready (D29 decided) |
@@ -1419,7 +1419,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Fix `utility_statement()`; D31 for the yes-findings (subscriber data, consumer level).
 - Depends on / blocks: none
 - Touched by: D23 (utility bills are due 21 days after the bill under one Accord code, O73), D15 (O16).
-- State: waits for D31.
+- State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: energy: 01#F4; utilities: 01#F3, 01#F5, 01#F9, 01#F12, 01#F13, 01#F14, 03#F3, 03#F7, 03#F8, 03#F10, 03#F11, 03#F15, 05#F1, 05#F3, 05#F9, 05#F10, 05#F12, 05#F13, 08#F4, 08#F5, 08#F7, 08#F12, 08#F14, 08#F16, 08#F17, 12#F9, 12#F14, 12#F20, 12#F21
 
 ### C92 · Utilities: the telecom statement and invoice
@@ -1431,7 +1431,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: Possibly not a problem for utilities/13#F2 and 14#F2 (blockchain identifier): `note/src/03-world.md` says "Coral net, the island's clearing, settles tokenised deposits on the Bank of Selanu's ledger".
 - Touched by: D12 and D15 (O16: "Mobile data beyond the subscription, per gigabyte" with a pack of 5 gigabytes and a pack size of 7; the island's telephone bill carries no tax section), D23 (O73).
-- State: waits for D31.
+- State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: utilities: 12#F1, 12#F2, 12#F3, 12#F4, 12#F6, 12#F7, 12#F8, 12#F15, 12#F18, 12#F19, 12#F22, 13#F2, 13#F9, 13#F10, 14#F2
 
 ### C93 · Utilities: the household's water on account, the mandate and the levy
@@ -1442,7 +1442,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D31 (preferred by utilities/08#F1: drop the on-account scheme).
 - Depends on / blocks: none
 - Touched by: D15 (O16: the levy coded `O` with `LEVY`; C50's six levy findings go with D31), D23 (O73).
-- State: waits for D31.
+- State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: utilities: 05#F5, 08#F1, 08#F6, 09#F1, 09#F3, 09#F4, 09#F7, 10#F7, 10#F8, 10#F10, 11#F3, 11#F5, 11#F8
 
 ### C94 · Utilities: excise and estimate-correction amounts
@@ -1464,7 +1464,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Fix in the scenario; utilities/03#F6 (who subscribes) goes to D31.
 - Depends on / blocks: none
 - Touched by: D23 (O73).
-- State: waits for D31.
+- State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: utilities: 01#F6, 02#F5, 02#F7, 03#F6, 04#F2, 08#F13, 10#F3
 
 ### C96 · Qualification requests and responses (ESPD-like) in contest and tender
