@@ -122,8 +122,8 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C82 | Energy flow: 2400 MWh exported to Montebrio, sold to Ferrano Energy, imported by nobody | flow story | 9 | 3 | 1 | 4/4/1 | owner: D44 | tools/examples_scenarios.py | waits: D44 |
 | C83 | Energy flow: isolated slips | flow story | 8 | 5 | 1 | 1/2/5 | none | tools/examples_scenarios.py, utility_statement() | ready |
 | C84 | Packaging flow: isolated slips | flow story | 5 | 4 | 1 | 0/0/5 | none | tools/examples_scenarios.py, packaging() | ready |
-| C85 | Air flow: the missed-flight story and the CPT order change | flow story | 13 | 8 | 1 | 2/0/11 | owner: D39 | tools/examples_scenarios.py, air() | waits: D39 |
-| C86 | Air flow: packing, consolidation and charges of the castings | flow story | 10 | 3 | 1 | 3/2/5 | owner: D39 | tools/examples_scenarios.py, air_consignment() | waits: D39 |
+| C85 | Air flow: the missed-flight story and the CPT order change | flow story | 13 | 8 | 1 | 2/0/11 | owner: D39 | tools/examples_scenarios.py, air() | ready (D39 decided) |
+| C86 | Air flow: packing, consolidation and charges of the castings | flow story | 10 | 3 | 1 | 3/2/5 | owner: D39 | tools/examples_scenarios.py, air_consignment() | ready (D39 decided) |
 | C87 | Plastics flow: barge waybill and goods data | flow story | 15 | 4 | 1 | 2/4/9 | owner: D41 | tools/examples_scenarios.py, plastics() | waits: D41 |
 | C88 | Plastics flow: recycled-content certificate issued by a chamber of commerce | flow story | 5 | 5 | 1 | 0/0/5 | owner: D41 | world/parties.json, world/items.json | waits: D41 |
 | C89 | Wood flow: slat units and isolated slips | flow story | 10 | 5 | 1 | 1/0/9 | owner: D43 | tools/examples_scenarios.py, wood() | waits: D43 |
@@ -1353,7 +1353,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D39 (preferred by air/07#F2: an evening flight on 13 May was missed).
 - Depends on / blocks: C72 (order of cancellation and replacement)
 - Touched by: D27 (a flight leaving Lumeport at 07:00 lands in Selanu at 10:00 island time after two hours), D21 (O63: the eight air frames are an urgent order cross-docked at Lumeport, with one manufacture date, the road leg from Ferrano and the customs treatment across Bayvarra; C70's and C72's air findings go with this cause).
-- State: waits for D39.
+- State: D39 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D39).
 - Findings: air: 01#F5, 01#F6, 02#F4, 02#F6, 04#F10, 04#F11, 05#F6, 07#F2, 07#F3, 07#F7, 08#F8, 09#F6, 10#F14
 
 ### C86 · Air flow: packing, consolidation and charges of the castings
@@ -1364,7 +1364,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: With D39 (consolidation story); the arithmetic fixes need none.
 - Depends on / blocks: none
 - Touched by: D20 (a spare side frame is one frame carton of 10.2 kg), D21 (O63), D19 (O58: the freighter's range).
-- State: waits for D39.
+- State: D39 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D39).
 - Findings: air: 03#F2, 03#F9, 04#F2, 04#F6, 04#F7, 04#F13, 04#F14, 04#F17, 10#F1, 10#F6
 
 ### C87 · Plastics flow: barge waybill and goods data
