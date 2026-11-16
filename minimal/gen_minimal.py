@@ -499,7 +499,7 @@ TEXTS = {  # (en, de, pt, ja-Latn)
 }
 
 NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
-    "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Mihon Tarō"),
+    "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Sanpuru Tarō"),
     "ActivityOriginLocation/Name": ("Example Store 1", "Beispielfiliale 1", "Loja Exemplo 1", "Sanpuru Tenpo 1"),
     "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
 }
