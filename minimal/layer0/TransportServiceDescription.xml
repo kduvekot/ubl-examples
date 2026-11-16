@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TransportServiceDescription xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescription-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<TransportServiceDescription xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescription-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>TransportServiceDescription-1</cbc:ID>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyName>
+      <cbc:Name languageID="pt">Transportadora Exemplo 881</cbc:Name>
+    </cac:PartyName>
+  </cac:TransportServiceProviderParty>
+  <cac:TransportationService>
+    <cbc:TransportServiceCode>DOOR_TO_DOOR</cbc:TransportServiceCode>
+  </cac:TransportationService>
 </TransportServiceDescription>

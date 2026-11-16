@@ -196,7 +196,8 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # procedure of the ATA Carnet, temporary admission
                "ProcedureCode": "TEMPORARY_ADMISSION",
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
-               "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR"}
+               "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR",
+               "TransportServiceDescription:TransportServiceCode": "DOOR_TO_DOOR"}
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).
@@ -313,6 +314,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # advice states the amount paid
         "QualificationApplicationRequestType": {"cac:TenderingCriterion"},
         "RemittanceAdviceType": {"cbc:TotalPaymentAmount"},
+        # a service announcement: what service, by which provider
+        "TransportServiceDescriptionType": {"cac:TransportationService", "cac:TransportServiceProviderParty"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
