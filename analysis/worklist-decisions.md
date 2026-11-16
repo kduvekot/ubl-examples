@@ -862,7 +862,7 @@ The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg fo
 
 ## Open points
 
-Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
+Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts. **A check after every decision (owner's question, 2026-11-16):** before a decision is reported as recorded, the answer given to the owner is read again against this file, sentence by sentence: every "I would", "I'd add", "to settle with" and every caveat in the answer must be in the decision, a story line or this list. Each flow decision (D28 to D45) starts with its goods balance (O66) as well as its open points.
 
 ### To decide with a later decision
 
@@ -880,7 +880,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O10 | The content of the care kit (furniture), of the ground anchor set (tender), and the two levels of the slat bundle (wood) | D7 | D32, D28, D43 |
 | O11 | The ionisation smoke detector set of the mast flow | D7 | D36 |
 | O12 | Moss green in the tender flow: a standard variant or a special colour with a surcharge | D11 | D28 |
-| O13 | Valdara's tender figures: 180 employees, 41 years, 9.2 million of financial capability | D4, D14 | D28 |
+| O13 | Valdara's tender figures: 180 employees, 41 years, 9.2 million of financial capability; the notices announce the Bayvarran exemption for public bodies while a foreign bidder invoices with its own country's tax (D17) | D4, D14, D17 | D28 |
 | O14 | Lumeway's position on Valdara's direct bid; the buyer's estimate equal to the bid | D14 | D28 |
 | O15 | The reason for Lumeway's lower side-frame price of 20 May | D14 | D34 |
 | O16 | "Mobile data, per gigabyte" with a pack of 5 gigabytes and a pack size of 7; the levy collected for a public body coded `O` with `LEVY` on utility bills | D12, D15 | D31, D17 |
@@ -901,9 +901,9 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O20 | The profile per document type of what a document says about an item, as a table for the owner | D11 |
 | O21 | Each party's day and month of founding; the textile mill's size (LARGE with 260 persons or MEDIUM with about 190) | D4 |
 | O22 | New Codana numbers in order of registration; telephone numbers without relation to an identifier; the build check that no identifier of a party repeats another | D5 |
-| O23 | Which other items carry world item numbers today (`772…` and the rest) and which company's prefix each gets; GTINs for the Elderwick bench and chair from Brightmarket's prefix | D5, D7 |
+| O23 | Which other items carry world item numbers today (`772…` and the rest) and which company's prefix each gets; GTINs for the Elderwick bench and chair from Brightmarket's prefix; Lumeway's GTIN names Lumeway, not Codana, as its issuer (sea/02 and the documents that follow it) | D5, D7 |
 | O24 | Site codes for Urvanian places and returnable items on the Codana side: only where a document needs one | D5 |
-| O25 | The two figures of the bench's footprint (sourcing, manufacturing), whether the total stays 96 kg, and the same split for other items | D10 |
+| O25 | The two figures of the bench's footprint (sourcing, manufacturing), whether the total stays 96 kg, and the same split for other items; the item's steel consumption (34 kg stated, about 21 kg of steel in the bench, D20) and its wood consumption (22.5 kg, which is exactly the five slats) | D10, D20 |
 | O26 | The cotton shipment: bale count, per-bale weights and totals must agree (27 bales, 6,129 kg, 6,190.29 kg gross) | D12 |
 | O46 | Read the WTO Valuation Agreement (Articles 1 and 8) before the valuation bases are implemented; work out how each delivery term (FCA, FOB, CPT, CIF, DAP) is brought to each country's basis, and which elements carry the value without freight and the freight | D16 |
 | O47 | The withholding scheme's name; the form of a tax representative's registration; whether the representative is named on every invoice of the contract; the new definition of `SVCABROAD` in English and Urvanian | D17 |
@@ -925,7 +925,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O60 | Distances and durations: a stated distance equals the route's length on the map; the time between departure and arrival fits the distance and the mode's speed | D19 |
 | O62 | Item physics, for every physical item of the world (the bench is the worked example): dimensions and a stated density give the weight; parts sum to the whole, parcels to pallets, and pallets fit the holds; anything a person lifts is within 25 kg or the documents say how it is moved. One short sheet per item, checked by the build. Items to do: the Elderwick bench, chair and care kit, the office desk, the slat and its bundle, the side frame, the cotton bale, the packaging film, the plastic granulate, the mast equipment, the ore. | D20 |
 | O65 | The goods-chain check: stock never below zero; nothing leaves before it arrived; nothing is made after it ships; a previous customs declaration covers the lots and serials it is cited for. Extended to the other chains of the world (O66). | D21 |
-| O66 | The other goods chains, each with its own balance: ore to steel to castings (the mine's tonnage against the castings made); slats to benches (4,800 slats are 960 benches); timber to Brackenmere's furniture; seed cotton to lint to fabric (the ginning out-turn; the farm's deliveries against 27 bales); recycled granulate to packaging film to the packed goods; production waste to the recycler; gas to electricity (already found in balance); the Elderwick pieces from Brackenmere to the store to the shopper | D21 |
+| O66 | The other goods chains, each with its own balance, taken one at a time with its flow (each flow decision starts with its balance): ore to steel to castings (the mine's tonnage against the steel the castings need; ore, road, sea, air); slats to benches (4,800 slats delivered are 960 benches against about 330 benches shipped in the documents: a stock of slats for 630 more, or an oversized order, to settle with D43); timber to Brackenmere's furniture (wood, furniture); seed cotton to lint to fabric (what the farms deliver against the 27 bales exported; ginning turns roughly a third of seed cotton into lint; cotton, D33); recycled granulate to packaging film to the packed goods (plastics, packaging, D41); production waste to the recycler (waste, plastics, D42); gas to electricity (already found in balance; D44); the Elderwick pieces from Brackenmere to the store to the shopper (furniture, retail, D32, D34). **What each balance needs that the documents mostly do not state:** a conversion rate with a real-world range (ore to steel, seed cotton to lint, granulate to film), stated like the density in the item physics (O62), and a period with a start and an end (the bench: March to June; cotton: a harvest; energy: a month). **Not every chain needs a ledger:** where a flow shows one shipment and nothing depends on the totals, a plausibility check of the yield is enough. The bench is done first and in full, as the model (O64, O65). | D21 |
 | O30 | Nobody resells below cost plus stated freight; gross margin and turnover per person within the bands | D14 |
 | O31 | A list of the world's items with the reasoning for each HS heading, for a person to verify once | D13 |
 | O32 | The prefix of every Codana identifier is the company number of the party that issued it | D5 |
@@ -945,6 +945,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 
 | No. | Open point | From |
 |---|---|---|
+| O68 | The two maps of the world's position and the script that drew them (`placement.png`, `placement_rio_grande_rise.png`, `plot.py`, with the downloaded depth grid) are in the session's scratch folder, which does not survive the session. To decide: keep them in the repository (for example under `analysis/`) as the record of the placement, or let them go and redraw when needed. | D19 |
 | O37 | "Elderwick" in the trademark registers (USPTO, EUIPO, UKIPO, WIPO) | D7 |
 | O38 | ICD `0990`, the market codes `XFER` and `XLMX`, the owner codes `TWLU` and `FRXU` against their real registers | the reviews, D5 |
 
