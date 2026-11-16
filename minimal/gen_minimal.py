@@ -44,14 +44,18 @@ xsd_dir = os.path.join(UBL, "xsd")
 endorsed = {os.path.basename(f) for f in glob.glob(os.path.join(UBL, "endorsed", "xsd", "maindoc", "*.xsd"))}
 
 # One value per UDT data type (UBL's unqualified data types).
+# A code, identifier, text or name without a chosen value gets this marker,
+# and check() rejects it (as it rejects the old placeholder X): a later
+# layer can never silently write a placeholder (ST#F5).
+UNCHOSEN = "@UNCHOSEN@"
 VALUES = {
     # Amounts: per document (AMOUNTS, amount_for). A layer that adds lines,
     # tax percentages or totals must make them add up (line = quantity x price,
     # total = sum of lines, tax = taxable x percent / 100, rounded to the
     # currency's minor unit, payable = total + tax).
     "BinaryObjectType": "(PDF_B64)",
-    "CodeType": "X", "IdentifierType": "X", "NumericType": "1",
-    "QuantityType": "10", "TextType": "X", "NameType": "X",
+    "CodeType": UNCHOSEN, "IdentifierType": UNCHOSEN, "NumericType": "1",
+    "QuantityType": "10", "TextType": UNCHOSEN, "NameType": UNCHOSEN,
     # Date, time, measure, indicator: per element (date_for, UTC_OFFSETS,
     # MEASURE_VALUES, INDICATOR_VALUES). Percent, Rate, Value, Graphic,
     # Picture, Sound and Video have no default on purpose: a layer that first
@@ -1055,6 +1059,8 @@ def check(path, xsd):
         where = path_of(e)
         if len(e) == 0 and not (e.text or "").strip():  # IND5
             errors.append("IND5 empty element %s" % where)
+        elif len(e) == 0 and (e.text or "").strip() in (UNCHOSEN, "X"):  # IND5 null-like
+            errors.append("IND5 placeholder value %r in %s" % (e.text.strip(), where))
         for k, v in e.attrib.items():  # IND9
             if not v.strip():
                 errors.append("IND9 empty attribute %s/@%s" % (where, k))
