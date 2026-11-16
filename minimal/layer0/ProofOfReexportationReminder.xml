@@ -4,7 +4,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:ProcedureCode>TEMPORARY_ADMISSION</cbc:ProcedureCode>
   <cac:ProofOfReexportationRequestDocumentReference>
-    <cbc:ID>ProofOfReexportationRequestDocumentReference-1</cbc:ID>
+    <cbc:ID>ProofOfReexportationRequestDocumentReference-591</cbc:ID>
   </cac:ProofOfReexportationRequestDocumentReference>
   <cac:ImportingGuarantorParty>
     <cac:PartyName>
@@ -17,6 +17,6 @@
     </cac:PartyName>
   </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>
-    <cbc:ID>GoodsItemPassportCounterfoil-1</cbc:ID>
+    <cbc:ID>GoodsItemPassportCounterfoil-591</cbc:ID>
   </cac:GoodsItemPassportCounterfoil>
 </ProofOfReexportationReminder>

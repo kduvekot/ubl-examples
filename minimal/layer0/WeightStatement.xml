@@ -13,6 +13,6 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:Shipment>
-    <cbc:ID>Shipment-1</cbc:ID>
+    <cbc:ID>Shipment-991</cbc:ID>
   </cac:Shipment>
 </WeightStatement>

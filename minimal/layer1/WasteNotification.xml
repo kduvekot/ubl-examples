@@ -72,6 +72,6 @@
     </cac:PartyTaxScheme>
   </cac:WasteProducerParty>
   <cac:Shipment>
-    <cbc:ID>Shipment-1</cbc:ID>
+    <cbc:ID>Shipment-971</cbc:ID>
   </cac:Shipment>
 </WasteNotification>

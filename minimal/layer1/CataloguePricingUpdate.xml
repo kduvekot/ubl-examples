@@ -3,7 +3,7 @@
   <cbc:ID>CataloguePricingUpdate-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:RelatedCatalogueReference>
-    <cbc:ID>RelatedCatalogueReference-1</cbc:ID>
+    <cbc:ID>RelatedCatalogueReference-101</cbc:ID>
   </cac:RelatedCatalogueReference>
   <cac:ProviderParty>
     <cac:PartyIdentification>

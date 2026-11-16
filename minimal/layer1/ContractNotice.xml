@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ContractFolderID>ContractFolderID-1</cbc:ContractFolderID>
+  <cbc:ContractFolderID>ContractFolderID-151</cbc:ContractFolderID>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -12,6 +12,6 @@
     </cac:Party>
   </cac:ContractingParty>
   <cac:ProcurementProject>
-    <cbc:Name languageID="en">Office supplies 2026</cbc:Name>
+    <cbc:Name languageID="en">Office supplies 2026 (15)</cbc:Name>
   </cac:ProcurementProject>
 </ContractNotice>

@@ -4,7 +4,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:IssueTime>09:30:00+02:00</cbc:IssueTime>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:TransportExecutionPlanReferenceID>TransportExecutionPlanReferenceID-1</cbc:TransportExecutionPlanReferenceID>
+  <cbc:TransportExecutionPlanReferenceID>TransportExecutionPlanReferenceID-371</cbc:TransportExecutionPlanReferenceID>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportationService>

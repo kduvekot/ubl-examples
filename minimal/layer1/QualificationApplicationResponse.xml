@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QualificationApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-  <cbc:ContractFolderID>ContractFolderID-1</cbc:ContractFolderID>
+  <cbc:ContractFolderID>ContractFolderID-631</cbc:ContractFolderID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:ContractingParty>
     <cac:Party>
@@ -25,7 +25,7 @@
   <cac:TenderingCriterion>
     <cac:TenderingCriterionPropertyGroup>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>TenderingCriterionProperty-1</cbc:ID>
+        <cbc:ID>TenderingCriterionProperty-631</cbc:ID>
         <cbc:Description languageID="en">Is the economic operator enrolled in a trade register?</cbc:Description>
       </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>

@@ -128,7 +128,9 @@ def id_for(parent, name):
         return "TenderingCriterionProperty-1"
     label = p if name == "ID" else name
     IDS[label] = IDS.get(label, 0) + 1
-    return "%s-%d" % (label, IDS[label])
+    assert IDS[label] < 10, "identifier scheme supports at most 9 per label per document"
+    # unique across the set (documents are unrelated): document position x 10 + n
+    return "%s-%d" % (label, DOCNO * 10 + IDS[label])
 
 def date_for(parent, name):
     pn = etree.QName(parent).localname
@@ -518,11 +520,14 @@ NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
 }
 
 def name_for(e, parent, name):
-    t = NAMES.get(etree.QName(parent).localname + "/" + name)
+    key = etree.QName(parent).localname + "/" + name
+    t = NAMES.get(key)
     if t is None:
         return VALUES["NameType"]
     lang = LANG[COUNTRY]
     e.set("languageID", lang)
+    if key == "ProcurementProject/Name":  # unique across the set
+        return "%s (%d)" % (t[LANG_INDEX[lang]], DOCNO)
     return t[LANG_INDEX[lang]]
 
 def text_for(e, parent, name):
@@ -691,8 +696,8 @@ def generate(layer, fill, schemes):
         root_decl = r.find(X + "element")
         name = DOC = root_decl.get("name")
         currency, COUNTRY = LOCALES[len(written) % len(LOCALES)]
-        global IDS
-        IDS = {}
+        global IDS, DOCNO
+        IDS, DOCNO = {}, len(written)
         nsmap = {None: ns,
                  "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
                  "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}

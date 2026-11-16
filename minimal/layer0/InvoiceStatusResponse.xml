@@ -7,7 +7,7 @@
       <cbc:ResponseCode>ACCEPTED</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>DocumentReference-1</cbc:ID>
+      <cbc:ID>DocumentReference-451</cbc:ID>
     </cac:DocumentReference>
   </cac:DocumentResponse>
 </InvoiceStatusResponse>

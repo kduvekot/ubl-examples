@@ -2,6 +2,6 @@
 <PackingList xmlns="urn:oasis:names:specification:ubl:schema:xsd:PackingList-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>PackingList-1</cbc:ID>
   <cac:Shipment>
-    <cbc:ID>Shipment-1</cbc:ID>
+    <cbc:ID>Shipment-531</cbc:ID>
   </cac:Shipment>
 </PackingList>

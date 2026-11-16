@@ -36,7 +36,7 @@
   </cac:ReceiverParty>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>InvoiceDocumentReference-1</cbc:ID>
+      <cbc:ID>InvoiceDocumentReference-441</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
 </InvoiceStatusRequest>

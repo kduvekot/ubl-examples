@@ -10,9 +10,9 @@
     </cac:PartyName>
   </cac:HolderParty>
   <cac:Shipment>
-    <cbc:ID>Shipment-1</cbc:ID>
+    <cbc:ID>Shipment-381</cbc:ID>
   </cac:Shipment>
   <cac:GoodsItemPassportCounterfoil>
-    <cbc:ID>GoodsItemPassportCounterfoil-1</cbc:ID>
+    <cbc:ID>GoodsItemPassportCounterfoil-381</cbc:ID>
   </cac:GoodsItemPassportCounterfoil>
 </GoodsItemPassport>

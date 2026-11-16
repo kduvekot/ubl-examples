@@ -5,7 +5,7 @@
   <cbc:UtilityStatementTypeCode>ELECTRICITY</cbc:UtilityStatementTypeCode>
   <cbc:DocumentCurrencyCode>ZAR</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
-    <cbc:ID>ParentDocumentReference-1</cbc:ID>
+    <cbc:ID>ParentDocumentReference-951</cbc:ID>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
     <cac:PartyName>
