@@ -396,6 +396,10 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Keep and state that the prefix is not an issuer key.
 - Recommendation: a).
 - Related: D24
+- **Decided (owner, 2026-11-16): a), designed together with the numbering styles of D24; the table under "Story lines: Who numbers how" is the current base.** Each company has one short code of its own, chosen and held in the world data, not derived from its initials; it appears only where the company's numbering style has a prefix, and then for everything the company numbers. One code per kind of thing within a company (Valdara's remittance advices and its repair manual no longer share `RM`; Lumeway's packing lists and price lists no longer share `PL`). Signature identifiers take the company's one code when the signatures stage comes (D6).
+- **What the documents do today:** Bayforth Forwarding and Brackenmere Furniture both use `BF` (invoices `BF-INV-26-…`, item numbers, signatures, creditor references `RF…BFINV…`); seven parties sign under a second prefix (Tidewell `TOL` and `TWL`, Brightmarket `BS` and `BM`, the department `LPWD` and `PWD`, the water company `CSWC` and `CSW`, the Bank of Lumeport `BL` and `BLUM`, the textile mill `LTM` and `LT`, the sawmill `MS` and `HS`); `VI-RM`, `VI-TR` and `LD-PL` each stand for two kinds of thing.
+- **Three rules across the styles:** (1) Urvanian invoices and credit notes follow the law whatever the company's size: numbered within the year, `2026/0920`. (2) Transport documents follow their trade: an air waybill is the airline's three-digit prefix, a serial and a check digit; a bill of lading carries the shipping line's code and a number; utility bills are numbered by customer account and period. (3) Whoever runs the system gives the number: a shopper's web order carries the shop's number (today the consumer Robin Ashdale issues `RA-PO-…`), and Selanu Airport Cargo, a branch of the port company, numbers in the port's series.
+- **Follows:** creditor references on invoices are built from the invoice number and change with it (`RF08BFINV260211` becomes a reference such as `RF45 2026 0920`, with its check digits recalculated).
 
 ### D26 · Does `ProfileExecutionID` stay one per flow, or one per collaboration?
 - Why it matters: Cause C76 `ProfileExecutionID` is the flow name in all 250 documents; 1 finding (1 marked "yes").
@@ -913,6 +917,26 @@ The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg fo
 - **The style differs.** In Urvania an invoice is numbered within the year, and the year is part of the number, by its rules for value added tax. Large companies use plain numeric ranges from their business systems, one range per kind of document, that run on from year to year. Mid-sized companies use a prefix, the kind and the year. Small ones write the year and a number. Public bodies use file references.
 - **A number says nothing by itself.** What a document is, and who issued it, is said by its elements.
 
+### Who numbers how (D24, D25), current base
+
+A company's numbers look the way they do because of its country's rules, its size and its trade.
+
+| Style | Issuers | Example |
+|---|---|---|
+| **Numeric ranges**, one per kind of document, running on from year to year; each company has its own ranges | Urvania: Valdara Industries, Serravona Mining, Montebrio Power, Ferrano Rail Cargo, Ferrano Energy. Bayvarra: Brightmarket Stores, Kelpstone Gas, Lumeport Textile Mill, Port of Lumeport, Bank of Lumeport, Tidewell Ocean Lines, Coastal State Water Company | Valdara's order `4500021873`; Brightmarket's order `7100045520` |
+| **Code, kind, year, number**, restarting each year | Lumeway Distribution `LMW`, Bayforth Forwarding `BYF`, Marrowdale Sawmill `MDS`, Castrano Logistics `CAS`, Ferrano Grid `FGR`, Ferrano Intermodal Hub `FIH`, Lumeport Airport Cargo Terminal `LAC`, Selanu Telecom `STL`, Port of Selanu `POS` (also its branch Selanu Airport Cargo), Selanu Cotton Ginnery `SCG` | `LMW-INV-26-0920` |
+| **Year and number** | Brackenmere Furniture, Rivermouth Packaging, Harbourline Factoring, Saltmere Engineering, Trasvia Haulage, Fiumella Barges, Rinova Recovery, Velumi Trading, Nalevi Warehousing, Tevaro Customs Brokers, Kelaro Air Cargo (for what is not an air waybill); the Lisavu Cotton Farm writes `14/2026` | `26-0142` |
+| **File reference** | Lumeport Public Works Department, Bayvarra Information Service, Procurement Review Board of Bayvarra, Lumeport Trade Accord Council, Ferrano Chamber of Commerce, Selanu Chamber of Commerce, the customs services | `PWD/2026/0187`; `FCC/CO/2026/0157` |
+| **None** | A consumer (Robin Ashdale): a web order carries the shop's number | |
+
+Across the styles:
+- **Urvanian invoices and credit notes** are numbered within the year by law, `2026/0920`, whatever the seller's own style.
+- **Transport documents follow their trade:** an air waybill has the airline's three-digit prefix, a serial and a check digit; a bill of lading the shipping line's code and a number; a utility bill the customer's account and the period.
+- **Whoever runs the system gives the number.**
+- **A creditor reference** on an invoice is built from the invoice number.
+
+The codes of the mid-sized companies are chosen by them and are unique in the world; no code is made from initials. The table is a current base, open to correction.
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts. **Nothing is lost by accident (owner, 2026-11-16):** anything made in a session that is not in the repository (a drawing, a script, a download that cannot be fetched again, a table of results) is either committed in the same turn or named here as an open point with what would be lost. **A check after every decision (owner's question, 2026-11-16):** before a decision is reported as recorded, the answer given to the owner is read again against this file, sentence by sentence: every "I would", "I'd add", "to settle with" and every caveat in the answer must be in the decision, a story line or this list. Each flow decision (D28 to D45) starts with its goods balance (O66) as well as its open points.
@@ -970,7 +994,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
 | O64 | The production record at Valdara and the stock ledgers of Lumeway, Brightmarket and Velumi as world data: lots and serial ranges for the rail delivery; which lot each sale draws on; melt numbers and coating batches per lot; serials and lots in their globally unique form where a document crosses company borders (D5) | D21 |
 | O73 | The Accord's code and text for the utility term of 21 days; the four utility invoices and their statements, reminders and remittances; cotton/16 due in 45 days and mast/05 in 30, with what follows from the new due dates | D23 |
-| O75 | The table of which of the 40 issuers uses which numbering style (statutory invoice numbering, numeric ranges, prefix-kind-year, simple, file reference), with each issuer's yearly volume per kind of document, as a proposal for the owner; Urvania's rule for invoice numbers in the story; the exact formats (digits, separators, series) | D24 |
+| O75 | Numbering at implementation: each issuer's yearly volume per kind of document, from its turnover, which sets the actual numbers; the exact formats (digits, separators, each large company's ranges); Kelaro's fictional airline prefix checked against the real list, and the air waybill's check digit in `check_ids.py`; Tidewell's bill-of-lading code; the utility bills' account-and-period numbers; codes for the mid-sized companies entered in `world/parties.json`; new codes for the kinds of thing that share one today | D24, D25 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -1024,4 +1048,5 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O43 | A carbon border rule that asks for the footprint on the import declaration | D11 |
 | O51 | A trading partner outside the three countries: a fourth country, currency and party; a floating rate and a reason to hedge; goods that pay duty because they are not of Accord origin | O2, D18 |
 | O67 | A page of the site that shows the goods' journey: a timeline of where every lot is on every day, and the routes on the map with their dates | D21 |
+| O76 | A customs reference number given by customs to each accepted declaration, with a fixed structure and a check digit, under the Accord's customs data model (today the declarant numbers the declaration) | D25 |
 | O44 | A sale to a consumer in Urvania, to show a price that includes value added tax | D14 |
