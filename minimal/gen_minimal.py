@@ -10,7 +10,8 @@ dates follow from D, the UBL 2.5 publication date (DATE_OFFSETS);
 identifiers, names, texts, codes, quantities, measures and indicators are
 chosen per element (id_for, ROLE_NAMES, TEXTS, NAMES, CODE_VALUES,
 QUANTITY_UNITS, MEASURE_VALUES, INDICATOR_VALUES); identifier values
-follow each scheme's format and check digit (ID_VALUES, TAX_VALUES).
+follow each scheme's format and check digit where it has one, with
+documented exceptions (ID_VALUES, TAX_VALUES, DUNS_TEST).
 A value type with no rule and no default stops the build, so a later
 layer must choose it. The documents are unrelated to each other: values
 are unique across the set, and references point outside it.
@@ -190,7 +191,8 @@ UNITS = {
     "GrossWeightMeasure": "KGM",   # a weight: kilogram
 }
 
-# Code values chosen per element (others stay X until a code-list layer).
+# Code values chosen per element or per document; a code without a value
+# here is UNCHOSEN and rejected by check().
 # ThresholdValueComparisonCode: the definition lists the allowed values
 # ("EXCEEDS_EXCEPTION_VALUE FALLS_BELOW_EXCEPTION_VALUE"); a shortfall.
 # AdmissionCode: a Code whose definition reads like an Indicator ("accepted
@@ -222,7 +224,7 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # two weeks ahead, nothing about a proposal or agreement
                "RetailEventStatusCode": "PLANNED",
                # the services the document type names (electricity, gas, water,
-               # telephone); a later layer with consumption must match (KWH)
+               # telephone); the consumption is in KWH (SubscriberConsumption)
                "UtilityStatementTypeCode": "ELECTRICITY",
                # "the procedure under which this reminder was sent": the customs
                # procedure of the ATA Carnet, temporary admission
@@ -313,18 +315,18 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # CountryType: the ISO 3166-1 code is exact and language-neutral; the
         # value comes from the document's locale.
         "CountryType": {"cbc:IdentificationCode"},
-        # BillingReferenceType: only in InvoiceStatusRequest, "a reference to
-        # the Invoice for which a status update is requested"; the typed
+        # BillingReferenceType (InvoiceStatusRequest, Reminder, RemittanceAdvice
+        # and Statement lines): the referenced invoice; the typed
         # reference needs no DocumentTypeCode, and the issuer follows from the
         # exchange's own parties (its required ID follows from the schema).
         "BillingReferenceType": {"cac:InvoiceDocumentReference"},
-        # ResponseType: only in InvoiceStatusResponse, "a response to the
-        # document as a whole"; the sibling DocumentReference says which
-        # document, the code is the answer ("the type of response"). Its code
-        # list is left to the code-list layer, like the other required codes.
+        # ResponseType (InvoiceStatusResponse, ApplicationResponse,
+        # DocumentStatus): "a response to the document as a whole"; the
+        # sibling DocumentReference says which document, the code is the
+        # answer (descriptive, no listID; CODE_VALUES).
         "ResponseType": {"cbc:ResponseCode"},
-        # LocationType: only ActivityOriginLocation so far, one particular
-        # place, so a name (an ID such as a GLN would need a scheme).
+        # LocationType (activity origin, transport status location): one
+        # particular place, so a name (an ID such as a GLN would need a scheme).
         "LocationType": {"cbc:Name"},
         # EvidenceType: only ReexportationEvidence so far, "references to
         # evidence supporting that goods have been re-exported" (the type
@@ -341,8 +343,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # Request"), so the answer refers to a question in the same document:
         # one simple yes/no criterion property, answered true.
         # Document level (IND6): optional elements that carry a document's
-        # defined purpose, without which the document says nothing. Each is
-        # also a UBL finding (ubl-findings.md, "essential but optional").
+        # defined purpose, without which the document says nothing. These are
+        # listed as UBL findings (ubl-findings.md, "essential but optional").
         # ApplicationResponse: "the application's response to a transaction".
         "ApplicationResponseType": {"cac:DocumentResponse"},
         # BillOfLading "evidences a contract of carriage": who carries, for
@@ -460,7 +462,7 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
         "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
         "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
-        # AttachmentType: only in AttachedDocument ("a document of any kind to
+        # AttachmentType (AttachedDocument: "a document of any kind to
         # be packaged with"), "containing the document content": embedded,
         # and binary because any kind of document must fit.
         "AttachmentType": {"cbc:EmbeddedDocumentBinaryObject"}}
@@ -634,6 +636,11 @@ DUNS_TEST = [  # (D-U-N-S, country of the fictitious test company)
 
 _duns_used = []
 def next_duns():
+    # Assigned in document order: a later layer that adds a D-U-N-S party
+    # earlier in the set shifts the later values (ID3#F3; acceptable, as
+    # every value stays an official test number and unique).
+    if len(_duns_used) >= len(DUNS_TEST):
+        raise ValueError("all %d official D-U-N-S test numbers are in use" % len(DUNS_TEST))
     n = DUNS_TEST[len(_duns_used)][0]
     _duns_used.append(n)
     return n
@@ -671,8 +678,9 @@ TAX_NAMES = {"US": "Federal Income Tax", "DE": "Umsatzsteuer", "JP": "Shōhizei"
              "IN": "Goods and Services Tax", "ZA": "Value-Added Tax"}
 
 # Party names: "example" + the role, in the locale's language and in Latin
-# script (Japanese in Hepburn romanization), + the party's number k as in its
-# identifier; no legal form (that would claim a registration). The language is
+# script (Japanese in Hepburn romanization), + the party's number k (document
+# position x 10 + party; also in its identifier, except D-U-N-S, which are
+# official test numbers); no legal form (that would claim a registration). The language is
 # stated in languageID (IND6). Translations: checked against two independent
 # human translations; agreed points applied, differences decided one by one.
 # BCP 47 tags that state exactly what is used: Brazilian Portuguese (pt-BR)
@@ -729,9 +737,10 @@ LANG_INDEX = {"en": 0, "de": 1, "pt-BR": 2, "ja-Latn-hepburn": 3}
 
 # Texts in the locale's language, Latin script, with languageID; key
 # "Document:Parent/Element", "Parent/Element" or "Element". Translations:
-# checked against two independent human translations; terms added after that
-# review (e.g. report type, work item, retail event, waste, enquiry) are not
-# yet reviewed.
+# round 1 checked against two, round 2 against three independent human
+# translations (majority rule). Not yet reviewed: the RetailEvent fallbacks
+# for other locales, and the enquiry texts' new wording (built from approved
+# terms).
 TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     # a freight invoice invoices a transport service, not goods (DM#F114)
