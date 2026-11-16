@@ -427,6 +427,20 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Another week (story change).
 - Recommendation: a), with a build check on the issue weekday per issuer kind; decide together with the issue-time mechanism (C72).
 - Related: none
+- **Decided (owner, 2026-11-16): a), with working days per kind of party, public holidays, two time zones and no summer time.**
+  1. **Working days per kind of party.** Offices and factories: Monday to Friday. Shops: Monday to Saturday. Ports, carriers, terminals, border customs and the operations of utilities: every day; their contacts say so.
+  2. **A document is dated on a day its issuer works,** unless it says why not. The build checks it.
+  3. **Public holidays** as in the calendar under "Story lines: The calendar", the current base: 11 days in Urvania, 8 in Bayvarra, 9 in Lisavu. The states are secular: holidays keep dates a reader recognises under civil names; no religion is named and there is no state church (the model is Uruguay, which in 1919 kept its holidays and renamed them: 25 December became Family Day, 6 January Children's Day, Holy Week Tourism Week).
+  4. **Conflicts are not avoided (owner):** one country may be closed while another works, and one state while another. A ship's arrival is planned around such days by those who plan it, and flying runs every day. The examples may show the consequences (an order read a day later, a due date moved to the next working day, a deadline counted in the contracting body's working days).
+  5. **The same week in all three countries.**
+  6. **Two time zones, no summer time.** The mainland is one hour behind UTC (UTC−01:00), the island on UTC (UTC+00:00), all year. This settles open point O57.
+  7. **Times carry their offset.** A time is written with its offset from UTC (`07:00:00-01:00`), at least wherever a document crosses the zone boundary; an address states its zone as an offset.
+- **Why the zones hold (calculated):** a zone is 15 degrees wide. Ferrano (16.4° West) has the sun highest at 12:05 on the clock, Lumeport (13.8° West) at 11:55, both in the middle of UTC−1; Selanu (2.0° West) at 12:08 on UTC. On mainland time the island's sun would be highest at about 11:08. The flight of air/04 leaves Lumeport at 07:00 (08:00 UTC), flies two hours and lands at 10:00 island time. Day length: 13.9 hours in December and 10.1 in June on the mainland (30° South), 14.2 and 9.8 on the island (33° South).
+- **Why no summer time:** the swing in daylight is small; at this latitude real places have mostly dropped it (South Africa has none; Uruguay, Brazil and Namibia abolished it; Western Australia and Queensland do not use it), stated from memory; and it would shift every time from January to March by an hour. Not chosen: summer time in Bayvarra only, as a second time difference between neighbours (the real case is Queensland and New South Wales).
+- **Names of the zones:** the documents use offsets from UTC, as ISO 8601 does; abbreviations are not standardised and collide ("CAT" is Central Africa Time, two hours ahead of UTC), so the world uses none. For people, each country names its own legal time: Urvanian Time and Bayvarran Time, both UTC−01:00, and Lisavu Time, UTC+00:00. "GMT" is not used: it is the name of the United Kingdom's civil time.
+- **What the documents do today:** 48 of 249 dated documents (19 %) are dated on a Saturday or Sunday, 47 of them by an issuer whose own contact says "Weekdays 08:00–17:00"; 633 of 779 contacts give weekday hours and none other; no holiday is stated anywhere; all 451 times are written without an offset; all 670 `TimezoneOffset` values in addresses are `-1`, the island's included.
+- **Against the proposed holidays (counted 2026-11-16):** few documents fall on one: three issued by Bayvarran parties on Upland State Day (13 April), three on Bayvarra's Labour Day (4 May), one on Settlers' Day (16 February); three documents are issued on Urvania's Independence Day (9 March) and three on the island's Harvest Festival (15 May). Each is looked at with its flow: moved, or kept as a document of a party that works that day.
+
 
 ## Flow stories (decide per flow) (877 findings)
 
@@ -943,6 +957,63 @@ Across the styles:
 
 The codes of the mid-sized companies are chosen by them and are unique in the world; no code is made from initials. The table is a current base, open to correction.
 
+### The calendar (D27), current base
+
+**The week.** Monday to Friday for offices and factories, Monday to Saturday for shops, every day for ports, carriers, terminals, border customs and the operations of utilities. The same week in all three countries.
+
+**The states are secular.** There is no state church and the law names no religion. The holidays fall on dates a reader recognises and carry civil names.
+
+**The seasons are those of the south:** December is midsummer and August midwinter. The island's cotton is picked from March to May.
+
+**Shared: 1 January,** New Year's Day and Accord Day (the Trade Accord came into force on 1 January 1996).
+
+**Urvania: 11 days, on fixed dates, in the Italian manner. A holiday on a weekend is not made up for.**
+
+| Date in 2026 | Day | Why |
+|---|---|---|
+| Thursday 1 January | New Year and Accord Day | Shared |
+| Tuesday 6 January | Children's Day | The Italian gift-giving day, under a civil name |
+| Monday 9 March | Independence Day | Independence in 1962 |
+| Friday 1 May | Labour Day | |
+| Wednesday 17 June | Language Day | The day Urvanian became an official language beside English |
+| Saturday 15 August | Ferragosto | Kept from the Italians (the Roman emperor Augustus's rest after the harvest), though it falls in midwinter here; people still call it the summer rest |
+| Wednesday 14 October | Constitution Day | The constitution adopted after independence |
+| Monday 2 November | Remembrance Day | The Italian custom of visiting the family graves, as a civil day |
+| Friday 25 and Saturday 26 December | Family Day and the Day of Rest | The year-end holiday, in midsummer |
+| One local day | Founders' Day of one's town | Ferrano: Friday 4 September. Serravona: Friday 4 December, Miners' Day |
+
+**Bayvarra: 8 days, mostly Mondays, in the British manner: bank holidays. A holiday on a weekend is given on the next working day.**
+
+| Date in 2026 | Day | Why |
+|---|---|---|
+| Thursday 1 January | New Year and Accord Day | Shared |
+| Monday 16 February | Settlers' Day (third Monday in February) | The first landing |
+| Monday 4 May | Labour Day (first Monday in May) | |
+| Monday 3 August | Winter Bank Holiday (first Monday in August) | The British August holiday, moved into winter by geography |
+| Monday 19 October | Federation Day (third Monday in October) | The states formed the federation |
+| Friday 25 December | Family Day | |
+| Monday 28 December | Boxing Day, observed (26 December is a Saturday) | |
+| One state day | Upland State Day: Monday 13 April. Coastal State Day: Monday 30 November | Bayvarra is federal; Marrowdale is in Upland State and Lumeport in Coastal State |
+
+**Lisavu: 9 days, around the sea and the cotton.**
+
+| Date in 2026 | Day | Why |
+|---|---|---|
+| Thursday 1 January | New Year and Accord Day | Shared |
+| Friday 6 February | Seafarers' Day (first Friday in February) | An island that lives by ships |
+| Wednesday 18 March | Agreement Day | The Lumeport Agreement of 1974, which ended the island's isolation |
+| Friday 1 May | Labour Day | |
+| Friday 15 May | Harvest Festival (third Friday in May) | When the cotton is in |
+| Tuesday 7 July | Island Day | Self-government |
+| Monday 21 September | Elders' Day | The Lisavan tradition of honouring the old, at the start of spring |
+| Friday 25 and Saturday 26 December | Family Day and the Day of Rest | |
+
+**When the countries are out of step.** On 1 May Urvania and the island are closed and Bayvarra works; on Monday 4 May it is the other way round. On Upland State Day Marrowdale is closed and Lumeport is open. An order sent on the other's holiday is read a day later; a due date on a holiday moves to the next working day; a payment between two countries settles on a day both banking systems are open; a deadline in working days counts the working days of the party that set it. Ports, ships, aircraft and border customs work through all of it.
+
+**Time.** The mainland is one hour behind UTC and the island on UTC, all year; there is no summer time. Each country names its own legal time (Urvanian Time, Bayvarran Time, Lisavu Time); documents state offsets from UTC and use no abbreviations. A flight that leaves Lumeport at 07:00 and lands in Selanu at 10:00 has been two hours in the air.
+
+For comparison: the United Kingdom has 8 public holidays, Italy 12, the richer countries about 11 on average.
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts. **Nothing is lost by accident (owner, 2026-11-16):** anything made in a session that is not in the repository (a drawing, a script, a download that cannot be fetched again, a table of results) is either committed in the same turn or named here as an open point with what would be lost. **A check after every decision (owner's question, 2026-11-16):** before a decision is reported as recorded, the answer given to the owner is read again against this file, sentence by sentence: every "I would", "I'd add", "to settle with" and every caveat in the answer must be in the decision, a story line or this list. Each flow decision (D28 to D45) starts with its goods balance (O66) as well as its open points.
@@ -995,13 +1066,14 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O49 | The elements of the import declaration for the preference claim, the proof of origin and the tax due; the Accord's preference criteria; whether Urvania's import VAT is paid at the border or accounted for in the return; the carnet's amount at 10 % | D18 |
 | O55 | The position of the world: confirm on a nautical chart that both areas are open sea and outside the 200-nautical-mile zones of Tristan da Cunha, Gough, Saint Helena and Trindade; confirm that no extended-shelf claim (Brazil, the United Kingdom, Namibia, South Africa) and no sea-bed licence of the International Seabed Authority reaches either area; set the origin and the degrees per square in `world/countries.json`; check that no coordinate in a document falls on real land | D19 |
 | O56 | The island's map: cliffs on the west coast, port, airport and town on the east; the sea route round a cape; the runway east to west; the road from the port; the inset on the site's map | D19 |
-| O57 | The island's time: an hour ahead of the mainland or the same; times in island documents; the world's time zone in `world/countries.json` (today UTC−1 for all) | D19 |
+| ~~O57~~ | ~~The island's time~~ **Settled 2026-11-16 (D27):** the island is on UTC, an hour ahead of the mainland (UTC−01:00); no summer time; times carry their offset. | D19 |
 | O58 | The freighter's range: about 1,060 km with the load of the air flow, against the ATR 72-600F data the world holds (`world/codelists/sources/atr`) | D19 |
 | O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
 | O64 | The production record at Valdara and the stock ledgers of Lumeway, Brightmarket and Velumi as world data: lots and serial ranges for the rail delivery; which lot each sale draws on; melt numbers and coating batches per lot; serials and lots in their globally unique form where a document crosses company borders (D5) | D21 |
 | O73 | The Accord's code and text for the utility term of 21 days; the four utility invoices and their statements, reminders and remittances; cotton/16 due in 45 days and mast/05 in 30, with what follows from the new due dates | D23 |
 | O75 | Numbering at implementation: each issuer's yearly volume per kind of document, from its turnover, which sets the actual numbers; the exact formats (digits, separators, each large company's ranges); Kelaro's fictional airline prefix checked against the real list, and the air waybill's check digit in `check_ids.py`; Tidewell's bill-of-lading code; the utility bills' account-and-period numbers; codes for the mid-sized companies entered in `world/parties.json`; new codes for the kinds of thing that share one today; the shopper's web order retail/22 renumbered as Brightmarket's (today `RA-PO-…`, issued by the consumer); Selanu Airport Cargo in the port's series; a style for the parties that issue no document today but may (Crevalto Bank, Bank of Selanu, Wavesure Cargo Insurance, Codana, the customs services) | D24, D25 |
 | O77 | The collaborations in each flow: which documents belong to which transaction, who starts it and gives the `ProfileExecutionID`, in which form; what a document carries that takes part in two collaborations; a build check that documents sharing an execution identifier share the parties and refer to each other | D26 |
+| O78 | The calendar in the documents: the 48 weekend documents moved to working days or given to a party that works that day; contact hours for the round-the-clock parties and for shops; the documents that fall on a holiday; `Address/TimezoneOffset` as an offset, the island's as UTC; offsets on times; the world's time zone in `world/countries.json`; the Accord's rule for a due date on a holiday (next working day) and for payments between countries (a day both banking systems are open); whose working days a deadline counts in | D27 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -1015,6 +1087,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O65 | The goods-chain check: stock never below zero; nothing leaves before it arrived; nothing is made after it ships; a previous customs declaration covers the lots and serials it is cited for. Extended to the other chains of the world (O66). | D21 |
 | O66 | The other goods chains, each with its own balance, taken one at a time with its flow (each flow decision starts with its balance): ore to steel to castings (the mine's tonnage against the steel the castings need; ore, road, sea, air); slats to benches (4,800 slats delivered are 960 benches against about 330 benches shipped in the documents: a stock of slats for 630 more, or an oversized order, to settle with D43); timber to Brackenmere's furniture (wood, furniture); seed cotton to lint to fabric (what the farms deliver against the 27 bales exported; ginning turns roughly a third of seed cotton into lint; cotton, D33); recycled granulate to packaging film to the packed goods (plastics, packaging, D41); production waste to the recycler (waste, plastics, D42); gas to electricity (already found in balance; D44); the Elderwick pieces from Brackenmere to the store to the shopper (furniture, retail, D32, D34). **What each balance needs that the documents mostly do not state:** a conversion rate with a real-world range (ore to steel, seed cotton to lint, granulate to film), stated like the density in the item physics (O62), and a period with a start and an end (the bench: March to June; cotton: a harvest; energy: a month). **Not every chain needs a ledger:** where a flow shows one shipment and nothing depends on the totals, a plausibility check of the yield is enough. The bench is done first and in full, as the model (O64, O65). | D21 |
 | O70 | Payment terms: an invoice under a contract or plan with payment terms carries those terms and a due date that follows from them; a standard terms ID means one text and one period everywhere (D23); a reminder's interest runs from the due date of the terms that apply | D22, D23 |
+| O79 | The calendar check: a document is dated on a day its issuer works (working days per kind of party, the country's and the state's holidays), unless it says why not; a due date is a working day of the payee's bank; times of documents that cross the zone boundary carry an offset | D27 |
 | O30 | Nobody resells below cost plus stated freight; gross margin and turnover per person within the bands | D14 |
 | O31 | A list of the world's items with the reasoning for each HS heading, for a person to verify once | D13 |
 | O32 | The prefix of every Codana identifier is the company number of the party that issued it | D5 |
@@ -1028,6 +1101,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O52 | Whether an earlier review of the parities ever changed a rate, and when | O2 |
 | O59 | The island's capes, its high ground, its climate and winds, checked against a source; the mainland's rivers, uplands and coasts; how a land in mid-ocean came to be settled, and by whom | D19 |
 | O74 | The Accord's chapter on public services: its name and year; which services it covers (electricity, gas, water, telephone); what else the common minimum for customers holds besides the 21 days (a consumption statement with every bill, notice before disconnection); which utilities are public today (the Coastal State Water Company is state-owned; Ferrano Energy was founded by the state in 1949; Selanu Telecom was a government department until 1993); check the real parallels against sources | D23 |
+| O80 | The holidays' back stories in full, and the events behind their dates: Urvania's independence (9 March 1962), its constitution (14 October), the day Urvanian became official (17 June); Bayvarra's first landing (Settlers' Day) and its federation; the island's self-government (7 July), the Lumeport Agreement (18 March 1974), the Lisavan tradition of Elders' Day; the towns' Founders' Days | D27 |
 | O35 | Bayvarra's and Lisavu's own history (settlement, independence); the dates of the Accord's later protocols | D4 |
 | O36 | The year Brightmarket launched Elderwick and what else the label covers; names for Brackenmere's own lines, if a document needs them | D7 |
 
