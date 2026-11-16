@@ -17,6 +17,7 @@
   <cac:QuotationLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
         <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
       </cac:Item>

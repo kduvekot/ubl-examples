@@ -19,6 +19,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
         <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
       </cac:Item>

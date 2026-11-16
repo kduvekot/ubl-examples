@@ -12,6 +12,7 @@
   <cac:RequestForQuotationLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
         <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
       </cac:Item>

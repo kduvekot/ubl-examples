@@ -9,6 +9,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="pt">Cliente Exemplo 162</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
     <cbc:PayableAmount currencyID="BRL">100</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>

@@ -20,6 +20,24 @@
       </cac:PartyTaxScheme>
     </cac:Party>
   </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="de">Beispielkunde 432</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>DE990004321</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
     <cbc:PayableAmount currencyID="EUR">100</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>

@@ -20,6 +20,24 @@
       </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="pt">Cliente Exemplo 162</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyLegalEntity>
+        <cbc:CompanyID>ZZ000162000197</cbc:CompanyID>
+        <cac:CorporateRegistrationScheme>
+          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>BR</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
     <cbc:PayableAmount currencyID="BRL">100</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>

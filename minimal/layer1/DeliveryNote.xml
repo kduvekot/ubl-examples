@@ -24,8 +24,12 @@
   </cac:DeliveryCustomerParty>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:DeliveredQuantity unitCode="H87">10</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
+      <cac:OrderReference>
+        <cbc:ID>OrderReference-181</cbc:ID>
+      </cac:OrderReference>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>

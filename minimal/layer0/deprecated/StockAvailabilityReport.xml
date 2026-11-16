@@ -11,7 +11,7 @@
   </cac:SellerSupplierParty>
   <cac:InventoryReportingParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispielbestandsmelder 732</cbc:Name>
+      <cbc:Name languageID="de">Beispielfiliale 732</cbc:Name>
     </cac:PartyName>
   </cac:InventoryReportingParty>
   <cac:StockAvailabilityReportLine>

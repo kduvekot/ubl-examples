@@ -215,6 +215,7 @@ QUANTITY_UNITS = {
     "InstructionForReturnsLine/Quantity": "H87", "InventoryReportLine/Quantity": "H87",
     "StockAvailabilityReportLine/Quantity": "H87", "SalesItem/Quantity": "H87",
     "ExceptionCriteriaLine/ThresholdQuantity": "H87",
+    "DespatchLine/DeliveredQuantity": "H87", "LineItem/Quantity": "H87",
 }
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
@@ -327,6 +328,15 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # WeightStatement: the weight. GrossWeightMeasure is "goods plus
         # packaging plus transport equipment", the verified gross mass idea.
         "WeightStatement:ShipmentType": {"cbc:GrossWeightMeasure"},
+        # bills name the customer they are addressed to; lines that despatch,
+        # deliver or order state their quantity, and an order-line reference
+        # names its order
+        "InvoiceType": {"cac:AccountingCustomerParty"},
+        "CreditNoteType": {"cac:AccountingCustomerParty"},
+        "DebitNoteType": {"cac:AccountingCustomerParty"},
+        "DespatchLineType": {"cbc:DeliveredQuantity"},
+        "OrderLineReferenceType": {"cac:OrderReference"},
+        "LineItemType": {"cbc:Quantity"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
@@ -520,6 +530,8 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "ResponderParty": ("Responder", "Antwortender", "Respondente", "Kaitōsha"),
     "ParticipantParty": ("Participant", "Teilnehmer", "Participante", "Sankasha"),
     "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
+    # StockAvailabilityReport: the receiving branch (DM#F118)
+    "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
     "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
@@ -780,7 +792,7 @@ def generate(layer, fill, schemes):
             k = len(written) * 10 + n
             lang = LANG[COUNTRY]
             nm = party.find("{%s}PartyName/{%s}Name" % (CAC, CBC))
-            r_name = ROLE_NAMES[role(party)][LANG_INDEX[lang]]
+            r_name = (ROLE_NAMES.get(DOC + "/" + role(party)) or ROLE_NAMES[role(party)])[LANG_INDEX[lang]]
             # Portuguese puts the modifier after the noun: "Comprador Exemplo 492"
             # German compounds one-word roles ("Beispielkäufer 492"); multi-word
             # roles stay separate ("Beispiel Öffentlicher Auftraggeber 1")
