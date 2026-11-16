@@ -658,7 +658,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
     "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
     "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
-    "EconomicOperatorParty": ("Economic Operator", "Wirtschaftsteilnehmer", "Operador Econômico", "Jigyōsha"),
+    "EconomicOperatorParty": ("Economic Operator", "Wirtschaftsteilnehmer", "Fornecedor", "Jigyōsha"),
     "TendererParty": ("Tenderer", "Bieter", "Licitante", "Nyūsatsusha"),
     "MainQualifyingParty": ("Main Tenderer", "Hauptbieter", "Licitante Principal", "Daihyō Nyūsatsusha"),
     "InterestedParty": ("Depositor", "Hinterleger", "Depositante", "Kyōtakusha"),
