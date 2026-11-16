@@ -253,10 +253,12 @@ QUANTITY_UNITS = {
     "DespatchLine/DeliveredQuantity": "H87", "LineItem/Quantity": "H87",
     "ReceiptLine/ReceivedQuantity": "H87",
     "MainQualifyingParty/OperatingYearsQuantity": "ANN",   # years
+    "SubscriberConsumption/TotalMeteredQuantity": "KWH",   # electricity
 }
 
 # Quantity values other than the base 10 ("Parent/Element").
-QUANTITY_VALUES = {"MainQualifyingParty/OperatingYearsQuantity": "12"}
+QUANTITY_VALUES = {"MainQualifyingParty/OperatingYearsQuantity": "12",
+                   "SubscriberConsumption/TotalMeteredQuantity": "350"}  # a month, household
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
 # PeriodType: both StartDate and EndDate. A period with only a start would be
@@ -424,6 +426,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ContractAwardNotice:TenderResultType": {"cac:WinningParty"},
         "ImportCustomsDeclarationType": {"cac:ImporterParty"},
         "GoodsCertificateType": {"cbc:Description"},  # what kind of certificate
+        # a utility statement shows its consumption (DM#F116): the consumption
+        # point and the total metered quantity, in kWh (electricity)
+        "UtilityStatementType": {"cac:SubscriberConsumption"},
+        "SubscriberConsumptionType": {"cbc:TotalMeteredQuantity"},
         # a tenderer's qualification: years in operation (UBL's own example)
         "TendererQualification:QualifyingPartyType": {"cbc:OperatingYearsQuantity"},
         "TransportExecutionPlanType": {"cac:MainTransportationService"},
@@ -796,11 +802,6 @@ LAYER1 = {
 # Repetition where the meaning needs more than one occurrence (DM#F12): an
 # agreement needs at least two participants ("bi-lateral and multi-lateral").
 REPEAT = {"DigitalAgreementType/cac:ParticipantParty": 2}
-
-# Planned for a later layer (each layer stays valid on its own):
-# - UtilityStatement consumption (DM#F116): SubscriberConsumption ->
-#   UtilityConsumptionPoint -> consumed quantity in KWH (ELECTRICITY). Until
-#   then the statement does not show its consumption.
 
 # Layers: (folder, additions {aggregate type[@role]: optional children},
 # schemeIDs by role). Each layer includes everything of the layers before it.

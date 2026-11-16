@@ -17,4 +17,10 @@
       <cbc:Name languageID="en">Example Receiver 952</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:SubscriberConsumption>
+    <cbc:TotalMeteredQuantity unitCode="KWH">350</cbc:TotalMeteredQuantity>
+    <cac:UtilityConsumptionPoint>
+      <cbc:ID>UtilityConsumptionPoint-951</cbc:ID>
+    </cac:UtilityConsumptionPoint>
+  </cac:SubscriberConsumption>
 </UtilityStatement>

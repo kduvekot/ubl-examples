@@ -24,7 +24,7 @@ These findings come from building a set of minimal, semantically meaningful exam
 | F10 | TenderStatusRequest. Contracting Party | spelling: "eceiving" |
 | F11 | TransitCustomsDeclaration (document) | definition copied from another document |
 | F12 | CatalogueRequest. Provider Party | definition contradicts the specification's roles |
-| E1–E69 | (69 elements in about 45 document types) | optional, but essential to the document's defined purpose |
+| E1–E70 | (70 elements in about 45 document types) | optional, but essential to the document's defined purpose |
 
 ## Findings
 
@@ -124,7 +124,7 @@ These findings come from building a set of minimal, semantically meaningful exam
 
 UBL defines each document type by its purpose ("A document used to request payment", "A document used to update information about prices in an existing Catalogue" …). In many document types, however, the element that carries that purpose is optional. A schema-valid instance may then contain only an identifier and an issue date, and its purpose is implied by the document type alone. That is meaning by absence, which UBL 2.5 §4.4 (IND6) rules out for instances, and it undermines semantic conformance (§4.7, §7.2).
 
-While building minimal but meaningful example documents, these 69 optional elements turned out to be necessary for a document to fulfil its own UBL definition. For each, the TC may want to consider:
+While building minimal but meaningful example documents, these 70 optional elements turned out to be necessary for a document to fulfil its own UBL definition. For each, the TC may want to consider:
 
 - making the element required (minOccurs 1) in the document's schema or in its endorsed cardinality, or
 - stating in the document type's definition what a conforming instance must at least contain.
@@ -208,4 +208,4 @@ While building minimal but meaningful example documents, these 69 optional eleme
 | E67 | QualificationApplicationResponse | `cac:TenderingCriterion` (QualificationApplicationResponse) | 0..n | The criterion as described in the Qualification Application Request. | the answers refer to criteria | `endorsed/xsd/maindoc/UBL-QualificationApplicationResponse-2.5.xsd:419` |
 | E68 | TendererQualification | `cbc:OperatingYearsQuantity` (QualifyingParty) | 0..1 | The number of years that this qualifying party has been in operation. | a qualification must state at least one qualifying characteristic (here one of UBL's examples) | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:36335` |
 | E69 | ContractAwardNotice | `cac:WinningParty` (TenderResult) | 0..n | A party that is identified as the awarded by a tender result. | an award notice must name the winner | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:46790` |
-
+| E70 | UtilityStatement | `cac:SubscriberConsumption` (UtilityStatement) | 0..n | A utility statement for a particular consumption point. | a statement "containing information on the consumption" must state a consumption | `endorsed/xsd/maindoc/UBL-UtilityStatement-2.5.xsd:409` |
