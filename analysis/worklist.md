@@ -116,8 +116,8 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C76 | `ProfileExecutionID` is the flow name in all 250 documents | generator mechanism | 1 | 1 | 0 | 0/1/0 | decided: D26 | tools/build_examples.py | waits: after stage 6 (D24) |
 | C77 | Waste flow: a transboundary notification for a movement inside one town; no weighbridge statement | flow story | 19 | 3 | 1 | 1/6/12 | owner: D42 | tools/examples_scenarios.py, waste() | waits: D42 |
 | C78 | Carnet flow: counterfoils, time limits and the duty claim | flow story | 20 | 4 | 1 | 2/4/14 | owner: D40 | tools/examples_scenarios.py, carnet() | waits: D40 |
-| C79 | Mast flow: dangerous-goods data of the battery, detector and stripper consignment | flow story | 36 | 5 | 1 | 2/13/21 | owner: D36 | world/items.json, tools/build_examples.py | waits: D36 |
-| C80 | Mast flow: the air waybill and the ULDs | flow story | 6 | 3 | 1 | 0/1/5 | owner: D36 | tools/examples_scenarios.py, mast() | waits: D36 |
+| C79 | Mast flow: dangerous-goods data of the battery, detector and stripper consignment | flow story | 36 | 5 | 1 | 2/13/21 | owner: D36 | world/items.json, tools/build_examples.py | ready (D36 decided) |
+| C80 | Mast flow: the air waybill and the ULDs | flow story | 6 | 3 | 1 | 0/1/5 | owner: D36 | tools/examples_scenarios.py, mast() | ready (D36 decided) |
 | C81 | Ore flow: monthly call-off, plan "as requested", bonus and moisture | flow story | 7 | 5 | 1 | 1/0/6 | owner: D45 | tools/examples_scenarios.py, ore() | waits: D45 |
 | C82 | Energy flow: 2400 MWh exported to Montebrio, sold to Ferrano Energy, imported by nobody | flow story | 9 | 3 | 1 | 4/4/1 | owner: D44 | tools/examples_scenarios.py | waits: D44 |
 | C83 | Energy flow: isolated slips | flow story | 8 | 5 | 1 | 1/2/5 | none | tools/examples_scenarios.py, utility_statement() | ready |
@@ -1287,7 +1287,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D36 for the yes-findings (crate weights, CAO, endorsements); the rest are encoding fixes in items.json and `mast_consignment()`.
 - Depends on / blocks: none
 - Touched by: D20 (the handling limit: a crate a person lifts stays within 25 kg, or the documents say how it is moved), D8 (Selanu Telecom is ISIC 6120), O11 (the ionisation smoke detector set, from D7).
-- State: waits for D36.
+- State: D36 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D36); the coverage it costs is won back by O124 and O126.
 - Findings: mast: 01#F1, 01#F3, 01#F4, 01#F5, 01#F6, 01#F7, 02#F1, 02#F5, 02#F6, 02#F8, 02#F9, 02#F18, 02#F19, 02#F20, 02#F21, 02#F22, 02#F23, 03#F2, 03#F6, 03#F7, 03#F19, 03#F20, 03#F21, 04#F3, 04#F4, 04#F13, 04#F14, 04#F15, 04#F16, 05#F3, 05#F4, 05#F5, 05#F9, 05#F10, 05#F11, 05#F12
 
 ### C80 · Mast flow: the air waybill and the ULDs
@@ -1298,7 +1298,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: With D36.
 - Depends on / blocks: none
 - Touched by: D19 and D27 (the flight is about two hours; the island's times are UTC+00:00).
-- State: waits for D36.
+- State: D36 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D36); the coverage it costs is won back by O124 and O126.
 - Findings: mast: 01#F8, 02#F16, 02#F17, 03#F5, 03#F9, 03#F18
 
 ### C81 · Ore flow: monthly call-off, plan "as requested", bonus and moisture
