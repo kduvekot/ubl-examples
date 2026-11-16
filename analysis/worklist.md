@@ -114,7 +114,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C74 | Document numbers: one counter per flow shared by all issuers | generator mechanism | 10 | 8 | 3 | 2/1/7 | decided: D24 | tools/examples_kit.py, Flow.number() | waits: after stage 6 (D24) |
 | C75 | Issuer prefixes: `BF` for two parties, second prefixes for signatures | generator mechanism | 4 | 3 | 1 | 0/1/3 | decided: D25 | tools/examples_kit.py, initials() | waits: after stage 6 (D24) 2, signatures stage 2 |
 | C76 | `ProfileExecutionID` is the flow name in all 250 documents | generator mechanism | 1 | 1 | 0 | 0/1/0 | decided: D26 | tools/build_examples.py | waits: after stage 6 (D24) |
-| C77 | Waste flow: a transboundary notification for a movement inside one town; no weighbridge statement | flow story | 19 | 3 | 1 | 1/6/12 | owner: D42 | tools/examples_scenarios.py, waste() | waits: D42 |
+| C77 | Waste flow: a transboundary notification for a movement inside one town; no weighbridge statement | flow story | 19 | 3 | 1 | 1/6/12 | owner: D42 | tools/examples_scenarios.py, waste() | ready (D42 decided) |
 | C78 | Carnet flow: counterfoils, time limits and the duty claim | flow story | 20 | 4 | 1 | 2/4/14 | owner: D40 | tools/examples_scenarios.py, carnet() | ready (D40 decided) |
 | C79 | Mast flow: dangerous-goods data of the battery, detector and stripper consignment | flow story | 36 | 5 | 1 | 2/13/21 | owner: D36 | world/items.json, tools/build_examples.py | ready (D36 decided) |
 | C80 | Mast flow: the air waybill and the ULDs | flow story | 6 | 3 | 1 | 0/1/5 | owner: D36 | tools/examples_scenarios.py, mast() | ready (D36 decided) |
@@ -1265,7 +1265,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D42 (domestic vs transboundary, weight statement added).
 - Depends on / blocks: none
 - Touched by: D38 (the weight statement is one of the documents D38 proposes to add), D11 (the net weight is stated first in the weight statement), O66 (the flow decision starts with its goods balance: production waste to the recycler); C12's waste/02#F4 goes with this cause.
-- State: waits for D42.
+- State: D42 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D42).
 - Findings: waste: 01#F1, 01#F2, 01#F4, 01#F5, 01#F6, 01#F7, 01#F12, 01#F14, 02#F2, 02#F3, 02#F5, 02#F7, 02#F8, 02#F10, 02#F11, 02#F17, 03#F1, 03#F5, 03#F6
 
 ### C78 · Carnet flow: counterfoils, time limits and the duty claim
