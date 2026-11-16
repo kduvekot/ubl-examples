@@ -294,6 +294,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # BillOfLading "evidences a contract of carriage": who carries, for
         # whom, and what.
         "BillOfLadingType": {"cac:CarrierParty", "cac:ConsignorParty", "cac:Shipment"},
+        # CataloguePricingUpdate updates prices: each line carries the price.
+        "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
+        "ItemLocationQuantityType": {"cac:Price"},
         "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
         "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
         "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
