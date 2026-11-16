@@ -143,6 +143,8 @@ def id_for(parent, name):
     # document is a line number too (VA#F9)
     if (name == "ID" and (p.endswith("Line") or p == "LineItem")) or name in ("LineID", "RevisedForecastLineID"):
         return "1"
+    if name == "RegistrationNationalityID":  # the vehicle's country (ST#F3)
+        return CTRY
     if name in ("SequenceNumberID", "VersionID"):
         return "1"
     if name == "ValidatedCriterionPropertyID":  # the question in this document
@@ -251,9 +253,10 @@ QUANTITY_UNITS = {
 # "open-ended" by absence of its end, which IND6 forbids.
 # TransportMeansType ("a particular vehicle or vessel"): only the mode-specific
 # aggregates identify the vehicle; road is the simplest (its required
-# LicensePlateID follows from the schema).
+# LicensePlateID follows from the schema). RegistrationNationalityID states
+# the country that registered the plate (the locale), not left implied (ST#F3).
 FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
-        "TransportMeansType": {"cac:RoadTransport"},
+        "TransportMeansType": {"cac:RoadTransport", "cbc:RegistrationNationalityID"},
         # TenderedProjectType: the project is identified by the Tender's
         # ContractFolderID; the content is the bid, "the total amount for
         # this tendered project" (its PayableAmount follows from the schema).
