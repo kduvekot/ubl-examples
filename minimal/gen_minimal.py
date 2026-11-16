@@ -402,10 +402,13 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "OrderChange:LineItemType": {"cbc:LineStatusCode"},
         # procurement documents identify their procedure; a prior information
         # notice names what is to be bought
-        **{d + "Type": {"cbc:ContractFolderID"} for d in (
-            "ProcurementStatus", "ProcurementStatusRequest", "TenderStatus",
-            "TenderStatusRequest", "TenderWithdrawal",
-            "UnsubscribeFromProcedureRequest", "UnsubscribeFromProcedureResponse")},
+        "ProcurementStatusType": {"cbc:ContractFolderID"},
+        "ProcurementStatusRequestType": {"cbc:ContractFolderID"},
+        "TenderStatusType": {"cbc:ContractFolderID"},
+        "TenderStatusRequestType": {"cbc:ContractFolderID"},
+        "TenderWithdrawalType": {"cbc:ContractFolderID"},
+        "UnsubscribeFromProcedureRequestType": {"cbc:ContractFolderID"},
+        "UnsubscribeFromProcedureResponseType": {"cbc:ContractFolderID"},
         "PriorInformationNoticeType": {"cac:ProcurementProject"},
         # UBL has no status code here; the status is the open tender period
         # (DM3#F102): open for tenders until the deadline
@@ -847,6 +850,8 @@ def text_for(e, parent, name):
     return t[LANG_INDEX[lang]]
 
 LAYER1 = {
+    # PartyTaxScheme carries the party's national tax number ("an identifier
+    # for the party assigned for tax purposes by the taxation authority")
     "PartyTaxSchemeType": {"cbc:CompanyID"},
     # BR: the CNPJ is "an identifier for the party as registered within a
     # company registration scheme"; the scheme is named and states its country
@@ -1003,16 +1008,29 @@ def content(e, t):
             if child.tag == X + "choice":
                 raise NotImplementedError("required choice in %s" % t.get("name"))
             for p in child:
-                if p.tag == X + "element" and (p.get("minOccurs", "1") != "0"
-                                               or p.get("ref") in FILL.get(t.get("name"), ())
-                                               or p.get("ref") in FILL.get(t.get("name") + "@" + role(e), ())
-                                               or p.get("ref") in FILL.get(DOC + ":" + t.get("name"), ())
-                                               or p.get("ref") in party_extra(e, t)):
-                    ns, name = qname(p, p.get("ref"))
-                    for _ in range(REPEAT.get(t.get("name") + "/" + p.get("ref"), 1)):
-                        build(e, find("element", ns, name))
-                elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
-                    raise NotImplementedError(p.tag)
+                if p.tag != X + "element":
+                    if p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
+                        raise NotImplementedError(p.tag)
+                    continue
+                ref, tn = p.get("ref"), t.get("name")
+                # why this element is present (recorded for the Markdown files)
+                if p.get("minOccurs", "1") != "0":
+                    why = ("required", None)
+                elif ref in FILL.get(tn, ()):
+                    why = ("FILL", tn)
+                elif ref in FILL.get(tn + "@" + role(e), ()):
+                    why = ("FILL", tn + "@" + role(e))
+                elif ref in FILL.get(DOC + ":" + tn, ()):
+                    why = ("FILL", DOC + ":" + tn)
+                elif ref in party_extra(e, t):
+                    why = ("PARTY", role(e))
+                else:
+                    continue
+                ns, name = qname(p, p.get("ref"))
+                for i in range(REPEAT.get(tn + "/" + ref, 1)):
+                    WHY[build(e, find("element", ns, name))] = why if i == 0 else ("REPEAT", tn + "/" + ref)
+
+WHY = {}  # element -> (rule, key): why it is present; reset per document
 
 def generate(layer, fill, schemes):
     global FILL, SCHEMES, DOC
@@ -1035,6 +1053,7 @@ def generate(layer, fill, schemes):
         currency, COUNTRY = LOCALES[len(written) % len(LOCALES)]
         global IDS, DOCNO
         IDS, DOCNO = {}, len(written)
+        WHY.clear()
         nsmap = {None: ns,
                  "cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
                  "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"}
@@ -1121,6 +1140,7 @@ def generate(layer, fill, schemes):
         with open(path, "wb") as fh:  # declaration exactly as the IND2/IND3 example
             fh.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
             fh.write(etree.tostring(doc, encoding="UTF-8", pretty_print=True))
+        write_md(doc, path, root_decl, is_endorsed)
         written.append((path, f))
     return written
 
@@ -1135,7 +1155,7 @@ def table_comments(name):
     keys without one get the comment block above the dict itself."""
     lines = open(__file__, encoding="utf-8").read().split("\n")
     toks = list(tokenize.generate_tokens(iter([l + "\n" for l in lines]).__next__))
-    out, buf, depth, active = {}, [], 0, False
+    out, buf, depth, active, current = {}, [], 0, False, ""
     line_keys, trail_line, preamble = {}, None, ""
     for i, tk in enumerate(toks):
         if not active:
@@ -1168,10 +1188,143 @@ def table_comments(name):
         elif (tk.type == tokenize.STRING and depth == 1 and i + 1 < len(toks)
               and toks[i + 1].string == ":"):
             key = ast.literal_eval(tk.string)
-            out[key] = " ".join(buf).strip()
+            if buf:   # a key without its own comment shares the block's comment
+                current = " ".join(buf).strip()
+            out[key] = current
             buf = []
             line_keys.setdefault(tk.start[0], []).append(key)
-    return {k: (v or preamble) for k, v in out.items()}
+    return out, preamble
+
+_TC = {}
+def reason(table, key, fallback=True):
+    """The reason for KEY in TABLE; with fallback, the table's own comment
+    when the key has none."""
+    if table not in _TC:
+        _TC[table] = table_comments(table)
+    own, pre = _TC[table]
+    return own.get(key) or (pre if fallback and key in own else "")
+
+SCHEME_NOTES = {
+    GLN: "GS1 GLN (ICD 0088) from GS1 Prefix 952, reserved for demonstrations",
+    LEI: "LEI (ICD 0199) with prefix 9999, not in the GLEIF register",
+    DUNS: "D-U-N-S (ICD 0060): an official D&B test number (a fictitious company)",
+    JPCN: "Japanese Corporate Number (ICD 0188), not in the NTA register",
+}
+
+def md_cell(t):
+    return " ".join(str(t).split()).replace("|", "\\|")
+
+def md_path(e):
+    steps = []
+    while e is not None and e.getparent() is not None:
+        q = etree.QName(e)
+        steps.append({CBC: "cbc:", CAC: "cac:"}.get(q.namespace, "") + q.localname)
+        e = e.getparent()
+    return "/".join(reversed(steps))
+
+def data_type(e):
+    q = etree.QName(e)
+    try:
+        d = find("element", q.namespace, q.localname)
+        return udt_name(*qname(d, d.get("type")))
+    except Exception:
+        return ""
+
+def present_because(e):
+    """The reason of the nearest element on the path that was added on
+    purpose; "required by the schema" if all of them are required."""
+    x, inner = e, True
+    while x is not None and x.getparent() is not None:
+        w = WHY.get(x)
+        if w is not None and w[0] != "required":
+            text = present_reason(w)
+            return text if inner else "within %s, added because: %s" % (etree.QName(x).localname, text)
+        x, inner = x.getparent(), False
+    return "required by the schema"
+
+def present_reason(w):
+    if w[0] == "FILL":
+        return reason("FILL", w[1]) or reason("LAYER1", w[1]) or "added on purpose"
+    if w[0] == "PARTY":
+        return "party identification for %s: %s" % (w[1], reason("PARTY_SCHEMES", w[1]))
+    return reason("REPEAT", w[1]) or "repeated on purpose"
+
+def value_because(e):
+    q, p = etree.QName(e).localname, etree.QName(e.getparent()).localname
+    gp = etree.QName(e.getparent().getparent()).localname if e.getparent().getparent() is not None else ""
+    u = data_type(e)
+    if p == "PartyIdentification":
+        return SCHEME_NOTES.get(e.get("schemeID"), "")
+    if q == "CompanyID":
+        return "national number, %s (%s)" % (COUNTRY, reason("TAX_VALUES", COUNTRY) or "format and check digit of the scheme")
+    if q == "Name" and p == "PartyName":
+        return "Example + the party's role in the locale's language + its number"
+    if q == "Name" and p in ("TaxScheme", "CorporateRegistrationScheme"):
+        return "the official name of the scheme, in the locale's language"
+    if q in ("IdentificationCode", "RegistrationNationalityID"):
+        return "the document's locale country (ISO 3166-1)"
+    if e.get("currencyID") or q.endswith("CurrencyCode"):
+        base = "the document's locale currency"
+        return base + ("; " + reason("AMOUNTS", DOC) if u == "AmountType" else "")
+    if u == "DateType":
+        for k in (DOC + ":" + p + "/" + q, p + "/" + q, q):
+            if k in DATE_OFFSETS:
+                return "D %+d days: %s" % (DATE_OFFSETS[k], reason("DATE_OFFSETS", k))
+        return "D = 2026-08-12, the UBL 2.5 publication date"
+    if u == "TimeType":
+        return "09:30 local time with the locale's UTC offset"
+    if u == "QuantityType":
+        k = next((x for x in (DOC + ":" + p + "/" + q, p + "/" + q) if x in QUANTITY_UNITS), "")
+        why = reason("QUANTITY_UNITS", k, fallback=False)
+        return "unit %s%s" % (QUANTITY_UNITS.get(k, ""), (": " + why) if why else "")
+    if u == "MeasureType":
+        return reason("MEASURE_VALUES", q) or reason("UNITS", q)
+    if q == "RoleCode" and p == "EndorserParty":
+        return ("from the definition's examples (issuer, embassy, insurance): the issuer "
+                "endorses first, an embassy legalizes after it")
+    if u == "CodeType":
+        return reason("CODE_VALUES", DOC + ":" + q) or reason("CODE_VALUES", q)
+    if u == "IndicatorType":
+        return reason("INDICATOR_VALUES", q)
+    if u in ("TextType", "NameType"):
+        return (reason("TEXTS", DOC + ":" + p + "/" + q) or reason("TEXTS", p + "/" + q)
+                or reason("TEXTS", q) or reason("NAMES", p + "/" + q)
+                or "in the locale's language")
+    if u == "IdentifierType":
+        if e.getparent().getparent() is None and q == "ID":
+            return "the document type + 1"
+        if e.text == "1":
+            return "line number (lines are numbered locally)"
+        return "its own label + a number unique across the set"
+    if u == "NumericType":
+        return "the order in its sequence, from 1"
+    if u == "BinaryObjectType":
+        return "a minimal one-page PDF that shows the text PDF"
+    return ""
+
+def write_md(doc, path, root_decl, is_endorsed):
+    d = find("complexType", *qname(root_decl, root_decl.get("type"))).find(".//{*}Definition")
+    lang = LANG[COUNTRY]
+    L = ["# %s" % DOC, "",
+         "**UBL definition:** %s" % md_cell(d.text if d is not None else ""), "",
+         "- **Status:** %s" % ("endorsed document type" if is_endorsed else "deprecated in UBL 2.5"),
+         "- **Locale:** %s, currency %s, language `%s`, UTC offset %s" % (
+             COUNTRY, LOCALES[DOCNO % len(LOCALES)][0], lang, UTC_OFFSETS[COUNTRY]),
+         "- **Values shown:** every value in `%s.xml`, in document order." % DOC, "",
+         "| Element | Value | Present because | Value because |", "|---|---|---|---|"]
+    for e in doc.iter(etree.Element):
+        if len(e):
+            continue
+        attrs = " ".join('%s="%s"' % (k, v) for k, v in e.attrib.items())
+        val = (e.text or "").strip()
+        if len(val) > 60:
+            val = val[:57] + "..."
+        L.append("| `%s` | %s%s | %s | %s |" % (
+            md_path(e), md_cell(val), (" (%s)" % md_cell(attrs)) if attrs else "",
+            md_cell(present_because(e)), md_cell(value_because(e))))
+    L += ["", "Generated by `minimal/gen_minimal.py` from the reasons recorded in it; do not edit by hand."]
+    with open(path[:-4] + ".md", "w", encoding="utf-8") as fh:
+        fh.write("\n".join(L) + "\n")
 
 # --- Checks: UBL 2.5 chapter 4, Additional Document Constraints -------------
 # IND6 (absence carries no meaning) cannot be tested by machine; it is
