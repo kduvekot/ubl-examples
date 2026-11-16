@@ -416,6 +416,7 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # declarant; a transport execution plan (request) its service
         "ContractAwardNotice:TenderResultType": {"cac:WinningParty"},
         "ImportCustomsDeclarationType": {"cac:ImporterParty"},
+        "GoodsCertificateType": {"cbc:Description"},  # what kind of certificate
         "TransportExecutionPlanType": {"cac:MainTransportationService"},
         "TransportExecutionPlanRequestType": {"cac:MainTransportationService"},
         # bills name the customer they are addressed to; lines that despatch,
@@ -719,6 +720,8 @@ TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     "EnquiryResponse/Description": ("Yes, the item is available from stock.",
                                     "Ja, der Artikel ist ab Lager verfügbar.",
                                     "Sim, o item está disponível em estoque.", "Hai, zaiko ga arimasu."),
+    "GoodsCertificate/Description": ("Certificate of conformity", "Konformitätsbescheinigung",
+                                     "Certificado de conformidade", "Tekigō shōmeisho"),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
                    "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
     # a hazardous waste shipped across borders for recycling (Basel A1160)
