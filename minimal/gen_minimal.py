@@ -440,7 +440,7 @@ TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consump
 # script (Japanese in Hepburn romanization), + the party's number k as in its
 # identifier; no legal form (that would claim a registration). The language is
 # stated in languageID (IND6). Translations: checked against two independent
-# translations (minimal/translations-for-review.md); open points still listed there.
+# human translations; agreed points applied, differences decided one by one.
 LANG = {"US": "en", "IN": "en", "ZA": "en", "DE": "de", "BR": "pt", "JP": "ja-Latn"}
 EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Sanpuru"}
 ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
