@@ -20,5 +20,6 @@
   </cac:ReceiverParty>
   <cac:Shipment>
     <cbc:ID>Shipment-991</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">12000</cbc:GrossWeightMeasure>
   </cac:Shipment>
 </WeightStatement>

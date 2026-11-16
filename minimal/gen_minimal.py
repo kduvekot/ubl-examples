@@ -159,6 +159,7 @@ UNITS = {
     # is compared with count the line's SupplyItem, so the same unit: piece.
     "ComparedValueMeasure": "H87",
     "SourceValueMeasure": "H87",
+    "GrossWeightMeasure": "KGM",   # a weight: kilogram
 }
 
 # Code values chosen per element (others stay X until a code-list layer).
@@ -203,7 +204,8 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
 
 # Value per Measure, no default. ExceptionNotificationLine: the compared value
 # must differ from the source value, or there is no exception (PH#F3).
-MEASURE_VALUES = {"SourceValueMeasure": "10", "ComparedValueMeasure": "8"}
+MEASURE_VALUES = {"SourceValueMeasure": "10", "ComparedValueMeasure": "8",
+                  "GrossWeightMeasure": "12000"}  # a loaded 20-foot container, kg
 
 # Unit per Quantity ("Parent/Element"): its unitCode is optional, but without
 # it the unit is implied by absence (IND6). No default, as for Measures.
@@ -322,6 +324,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # request: the consignment it asks about
         "TransportationStatusType": {"cbc:TransportExecutionStatusCode", "cac:Consignment"},
         "TransportationStatusRequestType": {"cac:Consignment"},
+        # WeightStatement: the weight. GrossWeightMeasure is "goods plus
+        # packaging plus transport equipment", the verified gross mass idea.
+        "WeightStatement:ShipmentType": {"cbc:GrossWeightMeasure"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
@@ -734,6 +739,7 @@ def content(e, t):
                 if p.tag == X + "element" and (p.get("minOccurs", "1") != "0"
                                                or p.get("ref") in FILL.get(t.get("name"), ())
                                                or p.get("ref") in FILL.get(t.get("name") + "@" + role(e), ())
+                                               or p.get("ref") in FILL.get(DOC + ":" + t.get("name"), ())
                                                or p.get("ref") in party_extra(e, t)):
                     ns, name = qname(p, p.get("ref"))
                     for _ in range(REPEAT.get(t.get("name") + "/" + p.get("ref"), 1)):
