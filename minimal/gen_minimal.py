@@ -139,7 +139,9 @@ def id_for(parent, name):
     p = etree.QName(parent).localname
     if name == "ID" and parent.getparent() is None:
         return DOC + "-1"
-    if (name == "ID" and (p.endswith("Line") or p == "LineItem")) or name == "LineID":
+    # lines are numbered locally (1); a reference to a line in another
+    # document is a line number too (VA#F9)
+    if (name == "ID" and (p.endswith("Line") or p == "LineItem")) or name in ("LineID", "RevisedForecastLineID"):
         return "1"
     if name in ("SequenceNumberID", "VersionID"):
         return "1"

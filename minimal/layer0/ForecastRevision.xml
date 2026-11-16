@@ -19,7 +19,7 @@
   </cac:ReceiverParty>
   <cac:ForecastRevisionLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:RevisedForecastLineID>RevisedForecastLineID-321</cbc:RevisedForecastLineID>
+    <cbc:RevisedForecastLineID>1</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-08-05</cbc:SourceForecastIssueDate>
     <cbc:SourceForecastIssueTime>09:30:00+09:00</cbc:SourceForecastIssueTime>
     <cac:SalesItem>
