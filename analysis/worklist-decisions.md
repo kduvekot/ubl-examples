@@ -1330,6 +1330,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O117 | The reopening at implementation: what was renovated and what the department sells; the retail event's store-opening type and its texts; the store's other ranges in the event, if any; Lumeway's winter catalogue named in the deletion; the refused bench back in Lumeway's ledger (O64) | D34 |
 | O118 | Coverage before and after D34, shown to the owner: the elements the reviews remove (purchase-card capability, comparison, substitute, pricing reference, warranty period and the like) against what the reopening adds | D34 |
 | O121 | The road flow at implementation: the certificate's chamber as the Accord's authorised body in the world's treaty texts; the endorser's signatory contact recorded for the TC write-up (mandatory, defined for the exporter's signer); the coverage before and after (the embassy endorsement goes) | D35 |
+| O123 | The flight Lumeport to Selanu in the documents: scheduled block 2 h 45 eastbound and 3 h 00 westbound, the actual flight about 2 h 20 eastbound (D19 as corrected with D36); air/04 (07:00 to 10:00 today) and the mast waybill follow, and any actual time shown is a landing within the margin; the air flow's missed-flight story (D39) is built on these times | D19, D36 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -1375,7 +1376,6 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O105 | The ICC's advice on CIF and CIP for containerised goods (Incoterms 2020, the guidance notes to CIF), read before the flow's text cites it. Stated from memory on 2026-11-16 (D30) | D30 |
 | O120 | The card rules on the security code (PCI DSS: it may be sent for authorisation but not kept afterwards), read in the official text before the story cites them. Stated from memory on 2026-11-16 (D34) | D34 |
 | O122 | The ISO/IEC 15459 issuing agency code "K" used for the licence plates of the road waybill (road/08#F30): verify it against the register and record it in the sources, or give the plates a world scheme | D35 |
-| O123 | The flight Lumeport to Selanu in the documents: scheduled block 2 h 45 eastbound and 3 h 00 westbound, the actual flight about 2 h 20 eastbound (D19 as corrected with D36); air/04 (07:00 to 10:00 today) and the mast waybill follow, and any actual time shown is a landing within the margin; the air flow's missed-flight story (D39) is built on these times | D19, D36 |
 
 ### For the write-up to the OASIS UBL TC
 
