@@ -7,6 +7,11 @@
     <cbc:OriginalJobID>OriginalJobID-121</cbc:OriginalJobID>
     <cac:Shipment>
       <cbc:ID>Shipment-121</cbc:ID>
+      <cac:OriginAddress>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:OriginAddress>
     </cac:Shipment>
     <cac:EndorserParty>
       <cbc:RoleCode>EMBASSY</cbc:RoleCode>

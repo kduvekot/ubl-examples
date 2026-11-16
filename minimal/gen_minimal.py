@@ -328,6 +328,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # WeightStatement: the weight. GrossWeightMeasure is "goods plus
         # packaging plus transport equipment", the verified gross mass idea.
         "WeightStatement:ShipmentType": {"cbc:GrossWeightMeasure"},
+        # a certificate of origin states the origin (the locale country: a CoO
+        # is issued in the country of origin)
+        "CertificateOfOrigin:ShipmentType": {"cac:OriginAddress"},
+        "AddressType@OriginAddress": {"cac:Country"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
