@@ -31,7 +31,7 @@
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:TenderingCriterionResponse>
-    <cbc:ValidatedCriterionPropertyID>TenderingCriterionProperty-1</cbc:ValidatedCriterionPropertyID>
+    <cbc:ValidatedCriterionPropertyID>TenderingCriterionProperty-631</cbc:ValidatedCriterionPropertyID>
     <cac:ResponseValue>
       <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
     </cac:ResponseValue>

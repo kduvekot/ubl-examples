@@ -152,7 +152,8 @@ def id_for(parent, name):
     if name in ("SequenceNumberID", "VersionID"):
         return "1"
     if name == "ValidatedCriterionPropertyID":  # the question in this document
-        return "TenderingCriterionProperty-1"
+        assert "TenderingCriterionProperty" in IDS, "the answered property must come first"
+        return "TenderingCriterionProperty-%d" % (DOCNO * 10 + IDS["TenderingCriterionProperty"])
     label = p if name == "ID" else name
     IDS[label] = IDS.get(label, 0) + 1
     assert IDS[label] < 10, "identifier scheme supports at most 9 per label per document"
@@ -1083,6 +1084,13 @@ def check(path, xsd):
             steps.append(pre + q.localname + ("[%d]" % (sib.index(e) + 1) if len(sib) > 1 else ""))
             e = e.getparent()
         return "/" + "/".join(reversed(steps))
+    # references inside a document must resolve (DM3#F101): an answer refers
+    # to a criterion property of the same document
+    props = {e.text for e in doc.iter("{%s}ID" % CBC)
+             if etree.QName(e.getparent()).localname == "TenderingCriterionProperty"}
+    for e in doc.iter("{%s}ValidatedCriterionPropertyID" % CBC):
+        if e.text not in props:
+            errors.append("REF %s refers to no TenderingCriterionProperty in the document" % path_of(e))
     for e in doc.iter(etree.Element):
         where = path_of(e)
         if len(e) == 0 and not (e.text or "").strip():  # IND5
