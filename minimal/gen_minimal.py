@@ -488,7 +488,7 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Gohatchū"),
-    "CertificateType": ("Ordinary", "Gewöhnlich", "Comum", "Ippan"),   # from the definition's examples
+    "CertificateType": ("Ordinary", "Nichtpräferenziell", "Comum", "Ippan"),   # from the definition's examples
     "ApprovalStatus": ("Approved", "Genehmigt", "Aprovado", "Shōninzumi"),
     "TenderingCriterionProperty/Description": (
         "Is the economic operator enrolled in a trade register?",
