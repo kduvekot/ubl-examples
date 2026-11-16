@@ -469,7 +469,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "GuarantorParty": ("Guarantor", "Garantiegeber", "Garantidor", "Hoshōnin"),
     "BusinessParty": ("Business", "Unternehmen", "Empresa", "Kigyō"),
     "ExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
-    "HolderParty": ("Holder", "Inhaber", "Titular", "Shojisha"),
+    "HolderParty": ("Holder", "Inhaber", "Titular", "Meiginin"),
     "NotifierParty": ("Notifier", "Notifizierender", "Notificante", "Tsūkokusha"),
     "WasteProducerParty": ("Waste Producer", "Abfallerzeuger", "Gerador de Resíduos", "Haishutsu Jigyōsha"),
     "CustomsParty": ("Customs", "Zollbehörde", "Alfândega", "Zeikan"),
