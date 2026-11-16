@@ -8,4 +8,10 @@
       <cbc:LicensePlateID>LicensePlateID-861</cbc:LicensePlateID>
     </cac:RoadTransport>
   </cac:TransportMeans>
+  <cac:TransportSchedule>
+    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cac:StatusLocation>
+      <cbc:Name languageID="ja-Latn">Sanpuru Tāminaru 1</cbc:Name>
+    </cac:StatusLocation>
+  </cac:TransportSchedule>
 </TransportProgressStatus>

@@ -373,6 +373,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "GoodsItemType": {"cac:Item"},
         "WaybillType": {"cac:CarrierParty", "cac:ConsignorParty"},
         "TransitCustomsDeclarationType": {"cac:TransitExporterParty", "cac:Shipment"},
+        # a progress status shows progress: the transport is at a terminal
+        "TransportProgressStatusType": {"cac:TransportSchedule"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -634,6 +636,7 @@ TEXTS = {  # (en, de, pt, ja-Latn)
 
 NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
     "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Sanpuru Tarō"),
+    "StatusLocation/Name": ("Example Terminal 1", "Beispielterminal 1", "Terminal Exemplo 1", "Sanpuru Tāminaru 1"),
     "ActivityOriginLocation/Name": ("Example Store 1", "Beispielfiliale 1", "Loja Exemplo 1", "Sanpuru Tenpo 1"),
     "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
 }
