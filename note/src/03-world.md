@@ -94,14 +94,18 @@ building number or a post box carries the code of its country's format in
 fields, so they cannot disagree. The build checks all three. A farm on the
 island has no house number: its track is described instead ("at kilometre 4").
 
-Urvania's energy market is unbundled, as the EU's is and as the Trade
-Accord's energy protocol of 2007 asks: a gas-fired power
+Urvania's energy market is unbundled, as the EU's is: a gas-fired power
 station produces electricity, a grid operator runs the electricity and gas
 networks and reads the meters, and a retail company buys the energy and
 bills the customers. The gas comes from an offshore field off Bayvarra's
-north coast and crosses the border by pipeline. In Bayvarra and on the
-island one company still does everything, so the three countries show
-three arrangements.
+north coast and crosses the border by pipeline. The Trade Accord's energy
+protocol of 2007 asks for less than that: a network is run with its own
+accounts and its own management and is open to others on equal terms;
+whether it becomes a company of its own is each country's choice, and an
+isolated system is exempt. Urvania chose the full split in 2007. Bayvarra
+keeps one energy company with a separately run network division, and the
+island, connected to no one, has one company that does everything, so the
+three countries show three arrangements.
 
 The supply of electricity, gas, water and telephone to end customers is a
 national matter under the Accord: each country keeps its own utilities,
