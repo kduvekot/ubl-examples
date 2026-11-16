@@ -809,7 +809,7 @@ NAMES = {  # (en, de, pt-BR, ja-Latn-hepburn); visibly fictitious
     "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Sanpuru Tarō"),
     "StatusLocation/Name": ("Example Terminal 1", "Beispielterminal 1", "Terminal Exemplo 1", "Sanpuru Tāminaru 1"),
     "ActivityOriginLocation/Name": ("Example Store 1", "Beispielfiliale 1", "Loja Exemplo 1", "Sanpuru Tenpo 1"),
-    "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
+    "ProcurementProject/Name": ("Office supplies 2027", "Büromaterial 2027", "Material de escritório 2027", "Jimu Yōhin 2027"),
 }
 
 SECOND_SIGNATORY = ("Sam Example", "Sam Beispiel", "Sam Exemplo", "Sanpuru Samu")
@@ -821,8 +821,9 @@ def name_for(e, parent, name):
         return VALUES["NameType"]
     lang = LANG[COUNTRY]
     e.set("languageID", lang)
-    if key == "ProcurementProject/Name":  # unique across the set
-        return "%s (%d)" % (t[LANG_INDEX[lang]], DOCNO)
+    if key == "ProcurementProject/Name":  # unique; the next year; numbered as
+        # the document's procedure identifier (ContractFolderID-k) (VA3#F6)
+        return "%s (%d)" % (t[LANG_INDEX[lang]], DOCNO * 10 + 1)
     return t[LANG_INDEX[lang]]
 
 def text_for(e, parent, name):
