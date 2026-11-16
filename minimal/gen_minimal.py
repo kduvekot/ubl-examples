@@ -783,6 +783,12 @@ def generate(layer, fill, schemes):
             code, seqno = ENDORSERS[etree.QName(ep.getparent()).localname]
             ep.find("{%s}RoleCode" % CBC).text = code
             ep.find("{%s}SequenceNumeric" % CBC).text = seqno
+        # the issuer's endorsement is given by the issuer itself (DM#F4)
+        issuer = doc.find(".//{%s}IssuerParty/{%s}PartyName/{%s}Name" % (CAC, CAC, CBC))
+        ie = doc.find(".//{%s}IssuerEndorsement/{%s}EndorserParty/{%s}Party/{%s}PartyName/{%s}Name"
+                      % (CAC, CAC, CAC, CAC, CBC))
+        if issuer is not None and ie is not None:
+            ie.text = issuer.text
         for e in doc.iter():
             if e.text == CUR: e.text = currency
             if e.text == CTRY: e.text = COUNTRY

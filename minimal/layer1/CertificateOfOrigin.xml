@@ -42,7 +42,7 @@
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyName>
-          <cbc:Name languageID="en">Example Endorser 124</cbc:Name>
+          <cbc:Name languageID="en">Example Issuer 123</cbc:Name>
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
