@@ -28,6 +28,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
+      <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
         <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>

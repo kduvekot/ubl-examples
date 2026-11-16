@@ -189,6 +189,8 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                "SupplyChainActivityTypeCode": "SALES",
                # a falls-below threshold on stock: a stock-out warning
                "ExceptionCriteria:SupplyChainActivityTypeCode": "ON_HAND",
+               # UBL default list LineStatusCode (Added, Cancelled, ..., Revised)
+               "OrderChange:LineStatusCode": "Revised",
                "ExceptionNotification:SupplyChainActivityTypeCode": "ON_HAND",
                # "the logical state of the discrete activity": an event announced
                # two weeks ahead, nothing about a proposal or agreement
@@ -344,6 +346,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ItemInformationRequestLineType": {"cbc:SupplyChainActivityTypeCode"},
         # forwarding instructions: who instructs (consignor) which forwarder
         "ForwardingInstructionsType": {"cac:ConsignorParty", "cac:FreightForwarderParty"},
+        # an order change says that its line is changed
+        "OrderChange:LineItemType": {"cbc:LineStatusCode"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
