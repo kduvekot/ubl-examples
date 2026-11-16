@@ -22,5 +22,11 @@
     <cbc:RevisedForecastLineID>RevisedForecastLineID-321</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-08-05</cbc:SourceForecastIssueDate>
     <cbc:SourceForecastIssueTime>09:30:00+09:00</cbc:SourceForecastIssueTime>
+    <cac:SalesItem>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
+      </cac:Item>
+    </cac:SalesItem>
   </cac:ForecastRevisionLine>
 </ForecastRevision>

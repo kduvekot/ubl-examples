@@ -298,6 +298,14 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # for DocumentStatus its status, as for InvoiceStatusResponse).
         "DocumentStatusType": {"cac:DocumentResponse"},
         "DocumentStatusRequestType": {"cac:RequestedDocumentReference"},
+        # Expressions of interest concern a tendering process; forecast and
+        # revision lines forecast an item and a quantity; a fulfilment
+        # cancellation cancels a despatch (spec 2.3.5.1.4).
+        "ExpressionOfInterestRequestType": {"cbc:ContractFolderID"},
+        "ExpressionOfInterestResponseType": {"cbc:ContractFolderID"},
+        "ForecastLineType": {"cac:SalesItem"},
+        "ForecastRevisionLineType": {"cac:SalesItem"},
+        "FulfilmentCancellationType": {"cac:DespatchDocumentReference"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
