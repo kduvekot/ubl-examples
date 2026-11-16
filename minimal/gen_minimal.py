@@ -541,16 +541,49 @@ def _luhn_bad(d):  # a digit that makes the number fail the Luhn check
     t = sum((int(c) * 2 - 9 if int(c) * 2 > 9 else int(c) * 2) if i % 2 == 0 else int(c)
             for i, c in enumerate(reversed(d)))
     return d + str((10 - t % 10 + 1) % 10)
+# Source: https://docs.dnb.com/direct/2.0/en-US/duns-testing ("Test D-U-N-S
+# Numbers ... for a fictitious company"), fetched 2026-11-16, 123 numbers.
+# They show no simple check digit (no Luhn or weighted mod 10/11 rule fits),
+# although the ICD 0060 entry speaks of one.
+DUNS_TEST = [  # (D-U-N-S, country of the fictitious test company)
+    ("214567885", "GB"), ("231634267", "GB"), ("239337363", "GB"), ("241018923", "CA"), ("241019160", "CA"), ("241019210", "CA"),
+    ("241019251", "CA"), ("241019293", "CA"), ("241019335", "CA"), ("241019343", "CA"), ("241019368", "CA"), ("241019384", "CA"),
+    ("241019426", "CA"), ("241019467", "CA"), ("241019509", "CA"), ("251930517", "CA"), ("302150375", "AT"), ("302150433", "AT"),
+    ("302150557", "AT"), ("302150672", "AT"), ("302150730", "AT"), ("302150854", "AT"), ("302150912", "AT"), ("302150979", "AT"),
+    ("302151035", "AT"), ("362152907", "US"), ("362179884", "US"), ("362185022", "US"), ("362212164", "US"), ("362217981", "US"),
+    ("362221561", "US"), ("362223542", "US"), ("362229937", "US"), ("362241676", "US"), ("362241718", "US"), ("362242799", "US"),
+    ("362248101", "US"), ("362248622", "US"), ("362253754", "US"), ("362257557", "US"), ("362264934", "US"), ("362267465", "US"),
+    ("362267986", "US"), ("362272945", "US"), ("362277019", "US"), ("362288719", "US"), ("362301025", "US"), ("362301223", "US"),
+    ("362304136", "US"), ("362312238", "US"), ("362313236", "US"), ("362315272", "US"), ("362338589", "US"), ("362343068", "US"),
+    ("362344348", "US"), ("362348448", "US"), ("362353612", "US"), ("362353661", "US"), ("362368859", "US"), ("362372034", "US"),
+    ("362379732", "US"), ("362380904", "US"), ("362381043", "US"), ("362383429", "US"), ("362398385", "US"), ("362399722", "US"),
+    ("362403953", "US"), ("362417987", "US"), ("362425501", "US"), ("362428687", "US"), ("610788163", "US"), ("610788171", "US"),
+    ("610796604", "US"), ("610796612", "US"), ("610796620", "US"), ("656251469", "TW"), ("662983733", "HK"), ("673054128", "AZ"),
+    ("673054149", "RO"), ("673054180", "IS"), ("673054193", "AZ"), ("673054206", "BY"), ("673054222", "LV"), ("673054268", "RO"),
+    ("673054300", "IS"), ("673054305", "UA"), ("673054359", "BY"), ("673054370", "LV"), ("673054412", "RO"), ("673054417", "RU"),
+    ("673054446", "IS"), ("673054453", "UA"), ("680332202", "HK"), ("680332207", "HK"), ("680332210", "HK"), ("680332215", "HK"),
+    ("680332223", "HK"), ("680332228", "HK"), ("680332231", "HK"), ("680332236", "HK"), ("680332244", "HK"), ("680332249", "HK"),
+    ("914580993", "BR"), ("914581004", "BR"), ("914581009", "BR"), ("914581012", "BR"), ("914581017", "BR"), ("934994976", "PE"),
+    ("934994984", "PE"), ("934994989", "PE"), ("934994992", "PE"), ("934994997", "PE"), ("978705614", "AR"), ("978705622", "AR"),
+    ("978705627", "AR"), ("978705630", "AR"), ("978705635", "AR"), ("978705643", "AR"), ("978705697", "AR"), ("978705700", "AR"),
+    ("978705705", "AR"), ("978705713", "AR"), ("978705718", "AR"),
+]
+
+_duns_used = []
+def next_duns():
+    n = DUNS_TEST[len(_duns_used)][0]
+    _duns_used.append(n)
+    return n
+
 ID_VALUES = {
     GLN: lambda k: _gs1("952000%06d" % k),   # GS1 Prefix 952: "for demonstrations and examples"
     LEI: lambda k: _lei("999900MINIMAL%05d" % k),   # not in GLEIF
-    # D-U-N-S has a check digit (ICD 0060: "eight digits and a check digit"),
-    # but D&B publishes neither the algorithm nor a test range: UNVERIFIED.
-    # D&B's public D-U-N-S Lookup (dnb.com/en-us/smb/duns/duns-lookup.html)
-    # searches by company name, not by number, so these values cannot be
-    # checked against it. Kept on purpose (ID#F1): D-U-N-S keeps the schemes
-    # varied; the 99... pattern makes a collision unlikely, not impossible.
-    DUNS: lambda k: "99%07d" % k,
+    # D-U-N-S: Dun & Bradstreet's official test numbers (DUNS_TEST), which
+    # return data "for a fictitious company"; each party takes the next unused
+    # one, so values are unique across the set. The test company's country
+    # often differs from the document's locale: that keeps them visibly
+    # fictitious (decision on ID#F1).
+    DUNS: lambda k: next_duns(),
     JPCN: lambda k: _jpcn("9999%08d" % k),   # not in the NTA register
 }
 # National tax numbers (PartyTaxScheme/CompanyID) and the tax scheme's name.
@@ -859,6 +892,7 @@ def generate(layer, fill, schemes):
     out = os.path.join(HERE, layer)
     os.makedirs(os.path.join(out, "deprecated"), exist_ok=True)
     global COUNTRY
+    _duns_used.clear()  # the same assignment in every layer
     written = []
     for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
         global schemas

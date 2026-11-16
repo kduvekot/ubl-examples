@@ -3,7 +3,7 @@
   <cbc:ID>ForwardingInstructions-1</cbc:ID>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="0060">990000331</cbc:ID>
+      <cbc:ID schemeID="0060">241019509</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name languageID="en">Example Consignor 331</cbc:Name>

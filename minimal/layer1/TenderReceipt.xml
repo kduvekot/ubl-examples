@@ -14,7 +14,7 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="0060">990000762</cbc:ID>
+      <cbc:ID schemeID="0060">362212164</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name languageID="pt">Destinatário Exemplo 762</cbc:Name>
