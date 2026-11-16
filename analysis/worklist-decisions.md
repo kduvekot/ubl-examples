@@ -235,6 +235,13 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Drop the withholding and the representative (conditions#F4 option c; changes the story).
 - Recommendation: a): the story already states it; conditions#F4's preferred (c) would contradict `note/src/03-world.md`.
 - Related: none
+- **Decided (owner, 2026-11-16): a), in three parts.**
+  1. **Bayvarra's withholding stays, for public bodies only**, as `note/src/03-world.md` states it: a public body withholds 10 % of the price of a service from a business not established in Bayvarra and pays it to the state. The rule becomes readable from the document: the scheme's name says that it applies to payments by public bodies; the scheme carries the tax type `INCOME` (the world's list: "A tax on the income or profit of a person or business, including a withholding tax"), so that it is not taken for a sales tax; and the tax representative carries its registration with the tax office for that role. conditions#F4's preferred option (drop the withholding) is not followed: the reviewers could not see the story, and the documents agree with it (the department withholds on Valdara's installation; Lumeway, a company, does not withhold on Trasvia's transport in road/14).
+  2. **A seller states its own country's tax.** This holds in all 250 documents and is recorded as a rule. A Bayvarran bidder invoices the department with the Bayvarran exemption for public bodies (`PUBLIC`); Valdara invoices with Urvania's treatment (export for the benches, a service supplied abroad for the installation). The notices describe only the Bayvarran case; their wording goes to the tender flow (D28).
+  3. **Urvania's reason code `SVCABROAD` is widened** from "a service to a business established abroad" to "a service supplied outside Urvania": to a customer established abroad, or on land abroad. Fixing benches to the ground in Lumeport is work on land, which in the European model of value added tax that Urvania follows is taxed where the land is, whoever the customer is. One code then covers Trasvia's transport for Lumeway and Valdara's installation for the department; conditions#F8 is resolved by the definition, not by a new code.
+- **Settles open point O45:** `TaxScheme/TaxTypeCode` gets its real case on the withholding scheme (`INCOME`).
+- **Follows from D9:** the debit note tender/34 carries a withholding amount on a penalty (1.08 on the line, 0.72 on the document). A penalty is paid by Valdara, not to it, so nothing is withheld; it goes when that document is re-homed (O6).
+- **To work out at implementation (O47):** the scheme's name; the form of a tax representative's registration and who registers it; whether the representative is named on every invoice of the contract or once; the world list's new definition of `SVCABROAD` in English and Urvanian.
 
 ### D18 · Are imports between Accord members duty-free with a preference claim, and what import taxes are due?
 - Why it matters: Cause C57 Duties, import taxes and Trade Accord preference stated nowhere; 6 findings (6 marked "yes").
@@ -773,6 +780,9 @@ Nobody resells below what they paid plus the freight the documents state.
 ### Customs between the three countries (D16; D17 and D18 to follow)
 
 - **Valuation is national.** The Accord is a free trade area, not a customs union; each member values imports its own way, within the WTO's rules. Urvania includes freight and insurance to its border, in the continental way, like its value added tax. Bayvarra values goods as they left the exporting country, without freight, in the settlers' tradition (as the United States, Canada and Australia do). Lisavu, an island that lives on import taxes, values everything landed.
+- **A seller states its own country's tax.** An Urvanian seller's invoice shows Urvanian value added tax or the reason none is due; a Bayvarran seller's shows the state sales tax or an exemption; a Lisavan seller's shows no tax section (D15, D17).
+- **Bayvarra taxes what foreign businesses earn from its public purse, at source.** A public body withholds 10 % of the price of a service from a business not established in Bayvarra and pays it to the state. It is a tax on income, not a sales tax, and it applies to public bodies only: a company such as Lumeway withholds nothing from a foreign carrier. The foreign supplier names a tax representative in Bayvarra, registered with the tax office (D17).
+- **Urvania does not tax a service supplied outside Urvania:** to a customer established abroad, or on land abroad (D17).
 - **What is common:** the value starts from the price actually paid, and charges that are part of that price (a special finish, export packing) belong to it.
 
 ## Open points
@@ -800,7 +810,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O15 | The reason for Lumeway's lower side-frame price of 20 May | D14 | D34 |
 | O16 | "Mobile data, per gigabyte" with a pack of 5 gigabytes and a pack size of 7; the levy collected for a public body coded `O` with `LEVY` on utility bills | D12, D15 | D31, D17 |
 | O17 | Whether the ports and the telecom operator are companies with a register entry or public bodies | D4 | the cause C04, stage 1 |
-| O45 | `TaxScheme/TaxTypeCode` is used only in a Lisavan "no tax" section that D15 removes; it needs a real case elsewhere (the presumptive tax on farm produce, the import consumption tax) or goes uncovered | D15 | D17, D18 |
+| ~~O45~~ | ~~`TaxScheme/TaxTypeCode` needs a real case~~ **Settled 2026-11-16 (D17):** the withholding scheme carries the tax type `INCOME`. | D15 | D17 |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
@@ -816,6 +826,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O25 | The two figures of the bench's footprint (sourcing, manufacturing), whether the total stays 96 kg, and the same split for other items | D10 |
 | O26 | The cotton shipment: bale count, per-bale weights and totals must agree (27 bales, 6,129 kg, 6,190.29 kg gross) | D12 |
 | O46 | Read the WTO Valuation Agreement (Articles 1 and 8) before the valuation bases are implemented; work out how each delivery term (FCA, FOB, CPT, CIF, DAP) is brought to each country's basis, and which elements carry the value without freight and the freight | D16 |
+| O47 | The withholding scheme's name; the form of a tax representative's registration; whether the representative is named on every invoice of the contract; the new definition of `SVCABROAD` in English and Urvanian | D17 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
