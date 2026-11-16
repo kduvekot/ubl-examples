@@ -110,7 +110,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C70 | One melt, one coating batch and one manufacture time for every casting and lot | cross-flow story | 6 | 4 | 2 | 3/0/3 | none | world/items.json, tools/examples_kit.py | ready 4 of 6; D39 2 |
 | C71 | Goods "from the distributor's stock" made days before they leave, and no document moves them | cross-flow story | 4 | 4 | 1 | 1/1/2 | decided: D21 | tools/examples_kit.py, instances() | ready |
 | C72 | Documents that report or cite what happens after their own issue time | generator mechanism | 38 | 32 | 9 | 30/1/7 | none | tools/build_examples.py, tools/examples_scenarios.py | ready 35 of 38; D30 1, D34 1, D39 1 |
-| C73 | References to documents under IDs no document has, or to documents the flow does not contain | generator mechanism | 27 | 25 | 8 | 20/3/4 | owner: D38 | tools/examples_scenarios.py, air() | ready 20 of 27; D34 1, D38 6 |
+| C73 | References to documents under IDs no document has, or to documents the flow does not contain | generator mechanism | 27 | 25 | 8 | 20/3/4 | owner: D38 | tools/examples_scenarios.py, air() | ready (D38 decided) |
 | C74 | Document numbers: one counter per flow shared by all issuers | generator mechanism | 10 | 8 | 3 | 2/1/7 | decided: D24 | tools/examples_kit.py, Flow.number() | waits: after stage 6 (D24) |
 | C75 | Issuer prefixes: `BF` for two parties, second prefixes for signatures | generator mechanism | 4 | 3 | 1 | 0/1/3 | decided: D25 | tools/examples_kit.py, initials() | waits: after stage 6 (D24) 2, signatures stage 2 |
 | C76 | `ProfileExecutionID` is the flow name in all 250 documents | generator mechanism | 1 | 1 | 0 | 0/1/0 | decided: D26 | tools/build_examples.py | waits: after stage 6 (D24) |
@@ -1220,7 +1220,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Wrong IDs: correct them (no decision). Missing documents: decide per flow whether to add them (D38). Build check: `flow_index.py`'s "-> ?" references reported by the build.
 - Depends on / blocks: none
 - Touched by: D38 (open) itself says that the correctable wrong IDs need no decision; D24 (the corrected references take the new numbers in stage 5).
-- State: ready in part: the 20 wrong IDs are ready; the 6 references to documents the flows do not contain wait for D38 (waste/02#F1, furniture/09#F1, retail/14#F1, tender/18#F2, ore/02#F10, ore/03#F15); retail/01#F1 (a request for an update of a catalogue that exists nowhere) waits for D34.
+- State: D38 decided 2026-11-16; ready: the 20 wrong IDs are corrected, four documents are added (waste/04, furniture/19, retail/23, tender/40), the ore references stay typed references to documents outside the examples.
 - Findings: air: 03#F1, 06#F1, 08#F2; furniture: 09#F1; ore: 02#F10, 03#F15; rail: 07#F1, 09#F4; retail: 01#F1, 06#F2, 14#F1, 18#F12; sea: 13#F3; tender: 01#F3, 02#F3, 02#F4, 03#F3, 03#F4, 06#F1, 13#F13, 15#F1, 17#F1, 18#F2, 19#F4, 24#F2, 28#F1; waste: 02#F1
 
 ### C74 · Document numbers: one counter per flow shared by all issuers
