@@ -92,7 +92,8 @@ PDF_B64 = _pdf()
 import datetime
 D = datetime.date(2026, 8, 12)
 DATE_OFFSETS = {
-    "AwardDate": -3, "ResolutionDate": -3,      # decided before the notice
+    "AwardDate": -2, "ResolutionDate": -2,      # decided before the notice, on a
+                                                 # business day (Mon 2026-08-10)
     "SourceForecastIssueDate": -7,               # the revised forecast came first
     "ForecastPeriod/StartDate": 7, "ForecastPeriod/EndDate": 34,   # the future
     # observed or reported: before the issue date
@@ -492,12 +493,13 @@ JPCN = "0188"  # Japan: Corporate Number (法人番号, National Tax Agency), an
 def scheme_for(party):
     """The scheme for a party's role. In Japanese documents the national
     Corporate Number replaces D-U-N-S, the LEI of contracting authorities
-    (ContractingParty, procurement SenderParty) and the tax number of the
+    (ContractingParty, procurement SenderParty), the LEI of agreement
+    participants (businesses) and the tax number of the
     carnet holder: Japanese buyers, authorities and customs identify
     businesses and public bodies by it."""
     r = role(party)
     s = SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
-    if COUNTRY == "JP" and (s == DUNS or (s == LEI and r in ("ContractingParty", "SenderParty"))
+    if COUNTRY == "JP" and (s == DUNS or (s == LEI and r in ("ContractingParty", "SenderParty", "ParticipantParty"))
                             or (s == TAX and r == "HolderParty")):
         return JPCN  # JP authorities and customs traders also have Corporate Numbers
     return s
