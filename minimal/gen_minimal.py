@@ -344,10 +344,6 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # ResponseIndicator true).
         "TenderingCriterionResponseType": {"cbc:ValidatedCriterionPropertyID", "cac:ResponseValue"},
         "ResponseValueType": {"cbc:ResponseIndicator"},
-        # QualificationApplicationResponse repeats the question it answers
-        # ("the criterion as described in the Qualification Application
-        # Request"), so the answer refers to a question in the same document:
-        # one simple yes/no criterion property, answered true.
         # Document level (IND6): optional elements that carry a document's
         # defined purpose, without which the document says nothing. They are
         # listed as UBL findings (ubl-findings.md, "essential but optional",
@@ -480,6 +476,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
         "PriceType": {"cbc:BaseQuantity"},   # the price is per one piece
+        # QualificationApplicationResponse repeats the question it answers
+        # ("the criterion as described in the Qualification Application
+        # Request"), so the answer refers to a question in the same document:
+        # one simple yes/no criterion property, answered true.
         "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
         "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
         "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
@@ -1123,6 +1123,55 @@ def generate(layer, fill, schemes):
             fh.write(etree.tostring(doc, encoding="UTF-8", pretty_print=True))
         written.append((path, f))
     return written
+
+# --- Explanations: a generated Markdown file per example --------------------
+# The reasons are the comments next to each table entry in this file; they
+# are read from the source itself, so code and explanation cannot drift.
+import tokenize, ast
+def table_comments(name):
+    """{key: reason} for the dict literal NAME: the comment block above the
+    key, plus a comment at the end of its line (shared by all keys on that
+    line, continued on following comment-only lines aligned to the right);
+    keys without one get the comment block above the dict itself."""
+    lines = open(__file__, encoding="utf-8").read().split("\n")
+    toks = list(tokenize.generate_tokens(iter([l + "\n" for l in lines]).__next__))
+    out, buf, depth, active = {}, [], 0, False
+    line_keys, trail_line, preamble = {}, None, ""
+    for i, tk in enumerate(toks):
+        if not active:
+            if (tk.type == tokenize.NAME and tk.string == name and tk.start[1] == 0
+                    and i + 2 < len(toks) and toks[i + 1].string == "=" and toks[i + 2].string == "{"):
+                active, n, pre = True, tk.start[0] - 2, []
+                while n >= 0 and lines[n].lstrip().startswith("#"):
+                    pre.insert(0, lines[n].lstrip()[1:].strip()); n -= 1
+                preamble = " ".join(pre)
+            continue
+        if tk.type == tokenize.OP and tk.string in "([{":
+            depth += 1
+        elif tk.type == tokenize.OP and tk.string in ")]}":
+            depth -= 1
+            if depth == 0:
+                break
+        elif tk.type == tokenize.COMMENT:
+            text = tk.string[1:].strip()
+            row = tk.start[0]
+            if row in line_keys:                       # end-of-line comment
+                for k in line_keys[row]:
+                    out[k] = (out[k] + " " + text).strip()
+                trail_line = row
+            elif trail_line == row - 1 and tk.start[1] >= 40:   # continued
+                for k in line_keys[trail_line]:
+                    out[k] = (out[k] + " " + text).strip()
+                line_keys[row] = line_keys[trail_line]; trail_line = row
+            else:
+                buf.append(text); trail_line = None
+        elif (tk.type == tokenize.STRING and depth == 1 and i + 1 < len(toks)
+              and toks[i + 1].string == ":"):
+            key = ast.literal_eval(tk.string)
+            out[key] = " ".join(buf).strip()
+            buf = []
+            line_keys.setdefault(tk.start[0], []).append(key)
+    return {k: (v or preamble) for k, v in out.items()}
 
 # --- Checks: UBL 2.5 chapter 4, Additional Document Constraints -------------
 # IND6 (absence carries no meaning) cannot be tested by machine; it is
