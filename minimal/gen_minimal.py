@@ -118,6 +118,7 @@ DATE_OFFSETS = {
     "AwardDate": -2, "ResolutionDate": -2,      # decided before the notice, on a
                                                  # business day (Mon 2026-08-10)
     "SourceForecastIssueDate": -7,               # the revised forecast came first
+    "ActualArrivalTransportEvent/OccurrenceDate": -1,   # arrived before the report
     "ForecastPeriod/StartDate": 7, "ForecastPeriod/EndDate": 34,   # the future
     # observed or reported: before the issue date
     "ExceptionObservationPeriod/StartDate": -28, "ExceptionObservationPeriod/EndDate": -1,
@@ -375,7 +376,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "TransportServiceDescriptionType": {"cac:TransportationService", "cac:TransportServiceProviderParty"},
         # a status report: the status, and the consignment it is about; the
         # request: the consignment it asks about
-        "TransportationStatusType": {"cbc:TransportExecutionStatusCode", "cac:Consignment"},
+        "TransportationStatusType": {"cbc:TransportExecutionStatusCode", "cac:Consignment",
+                                     # the status as of when (TransportEvent is for
+                                     # "additional events not defined elsewhere")
+                                     "cbc:IssueDate", "cbc:IssueTime"},
         "TransportationStatusRequestType": {"cac:Consignment"},
         # WeightStatement: the weight. GrossWeightMeasure is "goods plus
         # packaging plus transport equipment", the verified gross mass idea.
@@ -432,6 +436,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "TransitCustomsDeclarationType": {"cac:TransitExporterParty", "cac:Shipment"},
         # a progress status shows progress: the transport is at a terminal
         "TransportProgressStatusType": {"cac:TransportSchedule"},
+        # ... stated as a dated arrival at the status location (DM3#F105, ST3#F3)
+        "TransportScheduleType": {"cac:ActualArrivalTransportEvent"},
+        "TransportEventType": {"cbc:OccurrenceDate", "cbc:OccurrenceTime"},
         # the waste documents name the waste shipped
         "WasteMovement:ShipmentType": {"cac:GoodsItem"},
         "WasteNotification:ShipmentType": {"cac:GoodsItem"},

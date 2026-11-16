@@ -14,5 +14,9 @@
     <cac:StatusLocation>
       <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Tāminaru 1</cbc:Name>
     </cac:StatusLocation>
+    <cac:ActualArrivalTransportEvent>
+      <cbc:OccurrenceDate>2026-08-11</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>09:30:00+09:00</cbc:OccurrenceTime>
+    </cac:ActualArrivalTransportEvent>
   </cac:TransportSchedule>
 </TransportProgressStatus>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>TransportationStatus-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cbc:IssueTime>09:30:00-04:00</cbc:IssueTime>
   <cbc:TransportExecutionStatusCode>IN_TRANSIT</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>Consignment-901</cbc:ID>
