@@ -686,7 +686,7 @@ ROLE_NAMES = {  # role: (en, de, pt-BR, ja-Latn-hepburn)
     "WinningParty": ("Winning Tenderer", "Zuschlagsempfänger", "Licitante Vencedor", "Rakusatsusha"),
     "TransitExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
     "CarrierParty": ("Carrier", "Frachtführer", "Transportador", "Unsōnin"),
-    "ConsignorParty": ("Consignor", "Absender", "Expedidor", "Niokurinin"),
+    "ConsignorParty": ("Consignor", "Absender", "Remetente", "Niokurinin"),
     "FreightForwarderParty": ("Freight Forwarder", "Spediteur", "Agente de Cargas", "Fowādā"),
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
     "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
@@ -724,15 +724,15 @@ TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     # the period (late August) fits a back-to-school promotion
     "RetailEvent/Description": ("Back-to-school promotion", "Schulanfangsaktion",
                                 "Promoção de volta às aulas", "Shingakki kyanpēn"),
-    "Enquiry/Description": ("Is the item available from stock?", "Ist der Artikel ab Lager verfügbar?",
+    "Enquiry/Description": ("Is the item available from stock?", "Ist der Artikel ab Lager lieferbar?",
                             "O item está disponível em estoque?", "Shōhin wa zaiko ga arimasu ka?"),
     "EnquiryResponse/Description": ("Yes, the item is available from stock.",
-                                    "Ja, der Artikel ist ab Lager verfügbar.",
+                                    "Ja, der Artikel ist ab Lager lieferbar.",
                                     "Sim, o item está disponível em estoque.", "Hai, zaiko ga arimasu."),
     "GoodsCertificate/Description": ("Certificate of conformity", "Konformitätsbescheinigung",
                                      "Certificado de conformidade", "Tekigō shōmeisho"),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
-                   "Notificação prévia de chegada", "Nyūkō mae tsūhō"),
+                   "Notificação prévia de chegada", "Tōchaku mae tsūchi"),
     # a hazardous waste shipped across borders for recycling (Basel A1160)
     **{d + ":Item/Description": ("Used lead-acid batteries", "Gebrauchte Blei-Säure-Batterien",
                                  "Baterias chumbo-ácido usadas", "Shiyōzumi namari chikudenchi")
