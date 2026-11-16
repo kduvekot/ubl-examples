@@ -51,7 +51,7 @@
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
-        <cbc:Name languageID="en">Alex Example</cbc:Name>
+        <cbc:Name languageID="en">Sam Example</cbc:Name>
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>

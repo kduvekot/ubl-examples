@@ -724,6 +724,8 @@ NAMES = {  # (en, de, pt-BR, ja-Latn-hepburn); visibly fictitious
     "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
 }
 
+SECOND_SIGNATORY = ("Sam Example", "Sam Beispiel", "Sam Exemplo", "Sanpuru Hanako")
+
 def name_for(e, parent, name):
     key = etree.QName(parent).localname + "/" + name
     t = NAMES.get(key)
@@ -986,6 +988,11 @@ def generate(layer, fill, schemes):
             code, seqno = ENDORSERS[etree.QName(ep.getparent()).localname]
             ep.find("{%s}RoleCode" % CBC).text = code
             ep.find("{%s}SequenceNumeric" % CBC).text = seqno
+        # the issuer's endorsement is signed by its own person, not by the
+        # embassy's signatory (VA#F3)
+        sig = doc.find(".//{%s}IssuerEndorsement//{%s}SignatoryContact/{%s}Name" % (CAC, CAC, CBC))
+        if sig is not None:
+            sig.text = SECOND_SIGNATORY[LANG_INDEX[LANG[COUNTRY]]]
         # the issuer's endorsement is given by the issuer itself (DM#F4)
         issuer = doc.find(".//{%s}IssuerParty/{%s}PartyName/{%s}Name" % (CAC, CAC, CBC))
         ie = doc.find(".//{%s}IssuerEndorsement/{%s}EndorserParty/{%s}Party/{%s}PartyName/{%s}Name"
