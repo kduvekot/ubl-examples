@@ -252,6 +252,17 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Leave silent and drop "Duties paid".
 - Recommendation: a): a free trade area with certificates of preferential origin (road/07) implies preference; Lisavu's import tax is already in the story.
 - Related: D16, D15
+- **Decided (owner, 2026-11-16): a), worked out per country.**
+  - **Common to all three:** goods of Accord origin are free of duty, on proof. Every import declaration claims the preference, names the criterion and refers to its proof of origin. Goods from outside the Accord pay each country's own tariff (the examples have none). The note "Duties paid by the importer's account at customs." goes from all six declarations.
+  - **Urvania:** no duty on Accord goods; value added tax of 20 % at import, on the value with freight and insurance to the border (D16); a business deducts it again.
+  - **Bayvarra:** no duty on Accord goods and no tax at import; its sales tax is charged once, at the final retail sale.
+  - **Lisavu:** no duty on Accord goods; the import consumption tax of 10 % on the landed value (plus duty, where duty is due), as `world/countries.json` already has it (scheme `IMP`, "rate": 10, "levied_on": "import, customs value plus duty").
+- **Settles open point O1 (what Lisavu gave up in 1996):** when the Accord came into force the island stopped charging duty on its partners' goods and kept the import consumption tax, which falls on every import whatever its origin. That tax is the island's substitute for a sales tax and the reason it could afford to join. Duty still falls on goods from outside the Accord.
+- **Settles open point O3 (the customs trader number):** customs registers a trader under its business register number, as a stated rule of the world (the EU's EORI number is built the same way). It is the second stated reuse of an identifier, after the electronic address (D5); the build check on identifiers names both.
+- **Follows for the price table (D14):** Velumi pays 520.00 for the bench, about 32 for sea freight, clearance and insurance, and about 55 of import consumption tax (10 % of the landed 552): a cost of about 607 against a shop price of 722.50 (289 coral), a margin of 16 %. Velumi is importer and shop in one and needs both margins. Proposed: a shop price near 375 coral (about 940 lume, roughly 35 %); an island price a quarter above the mainland's 749 is believable for imported goods. Open point O48.
+- **Follows for the carnet flow (D40):** "Duties and import consumption tax of 1,300 coral" on two benches worth 99,800 ferra (about 399 coral) is more than three times their value; at 10 % the tax at stake is about 40 coral.
+- **To work out at implementation (O49):** which elements of the import declaration carry the preference claim, the proof of origin and the tax due; the Accord's list of preference criteria; whether Urvania's import VAT is paid at the border or accounted for in the importer's return; Urvania's and Lisavu's tariff rates for goods from outside the Accord, if a document ever needs one.
+
 
 ## Geography and the goods chain (23 findings)
 
@@ -742,7 +753,7 @@ Lume per piece, before tax. Only the two prices in bold change.
 | Bench: Lumeway to Brightmarket and to Velumi | Trade price | 520.00 | 520.00 | Truck from Ferrano, about 4.50 | 22 % |
 | Bench: Brightmarket to a shopper, regular | Shop price | 749.00 | 749.00 | Delivery to the store, about 4.50 | 30 % |
 | Bench: Brightmarket to a shopper, spring promotion | Shop price less 10 % | 674.10 | 674.10 | | 22 % |
-| Bench: Velumi to an island customer | Shop price | 722.50 (289 coral) | 722.50 | Sea freight, clearance and insurance, about 32 | up to 24 %, less the island's import tax |
+| Bench: Velumi to an island customer | Shop price | 722.50 (289 coral) | 722.50 | Sea freight, clearance and insurance, about 32 | 16 % after the import consumption tax of 10 % (D18); see O48 |
 | Side frame: Valdara to Lumeway | Distributor price | 59.80 | **47.50** | | |
 | Side frame: Lumeway to Velumi | Trade price | 64.00 | 64.00 | | 24 % |
 | Side frame: Lumeway's revised list of 20 May | Trade price | 58.00 | 58.00 | | 16 % |
@@ -783,6 +794,9 @@ Nobody resells below what they paid plus the freight the documents state.
 - **A seller states its own country's tax.** An Urvanian seller's invoice shows Urvanian value added tax or the reason none is due; a Bayvarran seller's shows the state sales tax or an exemption; a Lisavan seller's shows no tax section (D15, D17).
 - **Bayvarra taxes what foreign businesses earn from its public purse, at source.** A public body withholds 10 % of the price of a service from a business not established in Bayvarra and pays it to the state. It is a tax on income, not a sales tax, and it applies to public bodies only: a company such as Lumeway withholds nothing from a foreign carrier. The foreign supplier names a tax representative in Bayvarra, registered with the tax office (D17).
 - **Urvania does not tax a service supplied outside Urvania:** to a customer established abroad, or on land abroad (D17).
+- **Goods of Accord origin cross the borders free of duty, on proof of origin.** Goods from outside the Accord pay each country's own tariff. What is still due at the border differs: in Urvania, value added tax of 20 % on the value with freight to the border, which a business deducts again; in Bayvarra, nothing, because its sales tax is charged once at the final retail sale; in Lisavu, the import consumption tax of 10 % on the landed value (D18).
+- **What Lisavu gave up in 1996.** When the Accord came into force the island stopped charging duty on its partners' goods and kept the import consumption tax, which falls on every import whatever its origin. It is the island's substitute for a sales tax and the reason it could afford to join. Imported goods cost more on the island than on the mainland: freight, and 10 % on top (D18).
+- **Customs registers a trader under its business register number** (D18).
 - **What is common:** the value starts from the price actually paid, and charges that are part of that price (a special finish, export packing) belong to it.
 
 ## Open points
@@ -793,9 +807,9 @@ Everything that was left open while deciding, in one list, so that nothing depen
 
 | No. | Open point | From | Taken up with |
 |---|---|---|---|
-| O1 | What Lisavu gave up in 1996: duties on Accord goods ended, the import consumption tax stayed? Its rate decides Velumi's margin on the bench. | D4, D14 | D18 |
+| ~~O1~~ | ~~What Lisavu gave up in 1996~~ **Settled 2026-11-16 (D18):** duties on Accord goods ended; the import consumption tax of 10 % stayed. Velumi's margin: see O48. | D4, D14 | D18 |
 | O2 | Whether the fixed exchange rates are a currency arrangement of the Accord or of a later protocol | D4 | D18 or the conditions decisions |
-| O3 | The customs trader number: built from the business register number (as the EU's EORI) or issued by customs | D5 | D16 to D18 |
+| ~~O3~~ | ~~The customs trader number~~ **Settled 2026-11-16 (D18):** built from the business register number, as a stated rule. | D5 | D18 |
 | O4 | Serials and lots in globally unique form; the melt and serial numbers (one melt number on castings from three dates) | D5, D11 | D21 |
 | O5 | Localised item texts: which items, by whom, which text a document carries; Urvanian and Lisavan item texts | D2 | D21 or the item profile (O20) |
 | O6 | The three buyer-issued debit notes: furniture/14, sea/28, tender/34 | D9 | D32, D30, D28 |
@@ -811,6 +825,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O16 | "Mobile data, per gigabyte" with a pack of 5 gigabytes and a pack size of 7; the levy collected for a public body coded `O` with `LEVY` on utility bills | D12, D15 | D31, D17 |
 | O17 | Whether the ports and the telecom operator are companies with a register entry or public bodies | D4 | the cause C04, stage 1 |
 | ~~O45~~ | ~~`TaxScheme/TaxTypeCode` needs a real case~~ **Settled 2026-11-16 (D17):** the withholding scheme carries the tax type `INCOME`. | D15 | D17 |
+| O48 | Velumi's shop price for the bench: 289 coral gives 16 % after the import consumption tax; proposed about 375 coral. The same check for the side frame and Velumi's other imports. | D18 | the price table (D14), D30 |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
@@ -827,6 +842,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O26 | The cotton shipment: bale count, per-bale weights and totals must agree (27 bales, 6,129 kg, 6,190.29 kg gross) | D12 |
 | O46 | Read the WTO Valuation Agreement (Articles 1 and 8) before the valuation bases are implemented; work out how each delivery term (FCA, FOB, CPT, CIF, DAP) is brought to each country's basis, and which elements carry the value without freight and the freight | D16 |
 | O47 | The withholding scheme's name; the form of a tax representative's registration; whether the representative is named on every invoice of the contract; the new definition of `SVCABROAD` in English and Urvanian | D17 |
+| O49 | The elements of the import declaration for the preference claim, the proof of origin and the tax due; the Accord's preference criteria; whether Urvania's import VAT is paid at the border or accounted for in the return; the carnet's amount at 10 % | D18 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
