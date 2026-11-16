@@ -294,6 +294,15 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Assembled, fewer benches per hold (changes quantities and invoices in road, sea, rail).
 - Recommendation: a), as the merge decisions and equipment#F1 prefer.
 - Related: D21
+- **Decided (owner, 2026-11-16): a), the bench ships knocked down, as three parcels.** A single flat pack of 45 kg was first proposed and rejected on the owner's question whether a person can carry it: it cannot (see the handling rule below).
+  - **Parts (calculated):** hardwood slat 1,800 × 95 × 38 mm = 6.5 litres at 4.5 kg, a density of about 690 kg/m³ (kiln-dried oak, ash or beech: 680 to 750), five to a bench, 22.5 kg. Cast-steel side frame 10.0 kg = 1.27 litres at 7,850 kg/m³, about 2.3 m of member with a section of about 5.5 cm² (for example 40 × 14 mm); with three adults on the bench, about 150 kg on a frame, the bending stress in the seat bar is about 100 MPa against a yield strength of 250 MPa or more, a safety factor of about 2.5; galvanising adds about 0.2 kg. Bolt set: 20 M8 bolts with nuts and washers, about 1.0 kg. **Bench net 43.5 kg.**
+  - **Parcels:** frame carton with one side frame, about 820 × 620 × 80 mm, 10.2 kg; frame carton with the other side frame and the bolt set, 11.2 kg; slat bundle of five slats, strapped, about 1,800 × 200 × 120 mm, 23.0 kg. **Bench gross 44.4 kg** (today 41.5 kg in every flow). The spare side frame that the road, sea and air flows ship at 10.2 kg is one frame carton.
+  - **Pallet of four benches:** four slat bundles and eight frame cartons, about 178 kg of goods and about 200 kg with the pallet, about 1,850 × 650 × 750 mm; stacks two or three high; moved by fork-lift. 24 such pallets and the castings pallet fit a 13.6 m trailer (21 floor positions), a 40-foot container (18) and a 45-foot rail container, in two layers.
+  - **The ground anchors** stay a separate item, as the tender has them.
+- **The handling rule (new rule of the world):** the three countries apply the limit of ISO 11228-1 for manual handling: 25 kg for one person in good conditions; two people lifting together about two thirds of their combined capacity (about 33 kg). Every parcel a person lifts stays within it, or the documents say how it is moved (a pallet by fork-lift, a cotton bale of about 227 kg by machine). The slat bundle is at the limit and long; two people carry it.
+- **What follows:** "one full truck" and "one 40-foot container" stay as kinds of booking (the truck or container is booked for this shipment alone), not as statements that the hold is full: 96 knocked-down benches weigh about 4.3 tonnes and take about half a trailer; a 20-foot container would be too small. The consignment weights change wherever the bench travels (41.5 to 44.4 kg each), and the pallets' own weight is added to consignment and container weights, which leave it out today (25 pallets, about half a tonne). Installation has real content: a crew unloads parcels, assembles and anchors. The item's steel consumption (34 kg for about 21 kg of steel in the product) is looked at with the footprint (O25).
+- **What it does to the examples (counted 2026-11-16):** 49 documents in seven flows carry the bench (retail 12, sea 11, road 10, tender 9, air 3, rail 3, carnet 1). Quantities, prices and invoice amounts do not change. What changes: the bench's gross weight and the totals built from it; the pallet's size (stated only in road/08) and the package description below the pallet; the notes on full loads.
+- **What it does to coverage:** nothing is lost: every packaging element in use stays in use. None of the seven uncovered elements is helped. Several elements that are thin today get a real case: `ContainedPackage` (used once, in the air flow) for the parcels on a pallet; `TotalPackagesQuantity` beside `TotalTransportHandlingUnitQuantity`, which now differ (300 parcels on 25 pallets); `PackageLevelCode` and `PackLevelCode` for parcel, pallet and item; `HandlingCode` and `HandlingInstructions` (a two-person lift for the slat bundle); `ShippingMarks` ("parcel 1 of 3").
 
 ### D21 · How did the May lots reach Lumeway's stock, and under which declaration?
 - Why it matters: Cause C71 Goods "from the distributor's stock" made days before they leave, and no document moves them; 4 findings (3 marked "yes").
@@ -826,6 +835,16 @@ Open threads: O50 (the forward contract in the tender flow), O51 (a trading part
 - **Distances.** One map square is 14 km. By road, Ferrano to Marrowdale is about 180 km and Marrowdale to Lumeport about 85 km; the ore train runs about 155 km. The sea crossing takes about a day and a half to two days, the freighter's flight about two hours. The island's clocks would naturally be an hour ahead of the mainland's.
 - **On the map of the site** the island stands in an inset, as distant territory does on real maps (Shetland on maps of Britain, Hawaii on maps of the United States).
 
+### The park bench Serra 180, as built and shipped (D20)
+
+- **What it is:** two cast and galvanised steel side frames of 10 kg each, five hardwood slats of 1,800 × 95 × 38 mm at 4.5 kg each, and a set of 20 bolts: 43.5 kg. It is bolted to the ground with four anchors, which are a separate item.
+- **How it ships:** knocked down, in three parcels that a person can carry: two frame cartons (10.2 and 11.2 kg, the second with the bolts) and a strapped bundle of five slats (23 kg, carried by two because of its length). A spare side frame is simply one frame carton. Four benches make a pallet of about 200 kg, moved by fork-lift.
+- **Who puts it together:** an installation crew of two assembles and anchors the benches in a park; a shopper who buys one takes home three parcels.
+
+### Work and safety: the handling limit (D20)
+
+The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg for one person in good conditions, and about two thirds of the combined capacity for two people lifting together. Goods are packed so that a parcel a person lifts stays within it; anything heavier is moved by machine, and the documents say so. It is the kind of rule a trade agreement's labour chapter shares between its members.
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
@@ -877,6 +896,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O56 | The island's map: cliffs on the west coast, port, airport and town on the east; the sea route round a cape; the runway east to west; the road from the port; the inset on the site's map | D19 |
 | O57 | The island's time: an hour ahead of the mainland or the same; times in island documents; the world's time zone in `world/countries.json` (today UTC−1 for all) | D19 |
 | O58 | The freighter's range: about 1,060 km with the load of the air flow, against the ATR 72-600F data the world holds (`world/codelists/sources/atr`) | D19 |
+| O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -886,6 +906,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | No. | Check | From |
 |---|---|---|
 | O60 | Distances and durations: a stated distance equals the route's length on the map; the time between departure and arrival fits the distance and the mode's speed | D19 |
+| O62 | Item physics, for every physical item of the world (the bench is the worked example): dimensions and a stated density give the weight; parts sum to the whole, parcels to pallets, and pallets fit the holds; anything a person lifts is within 25 kg or the documents say how it is moved. One short sheet per item, checked by the build. Items to do: the Elderwick bench, chair and care kit, the office desk, the slat and its bundle, the side frame, the cotton bale, the packaging film, the plastic granulate, the mast equipment, the ore. | D20 |
 | O30 | Nobody resells below cost plus stated freight; gross margin and turnover per person within the bands | D14 |
 | O31 | A list of the world's items with the reasoning for each HS heading, for a person to verify once | D13 |
 | O32 | The prefix of every Codana identifier is the company number of the party that issued it | D5 |
@@ -920,7 +941,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | No. | Topic | From |
 |---|---|---|
 | O41 | Assembled products with a bill of materials (the park bench with its side frames and slats) | D7 |
-| O42 | Products delivered in several packages (GS1's trade item piece, application identifier 8006) | D7 |
+| O42 | Products delivered in several packages: the park bench now is one (three parcels, D20). Still for later: how the parcels of one item are numbered (GS1's trade item piece, application identifier 8006; the ISO/IEC 15459 equivalent on the Codana side) and which documents carry the piece numbers | D7, D20 |
 | O43 | A carbon border rule that asks for the footprint on the import declaration | D11 |
 | O51 | A trading partner outside the three countries: a fourth country, currency and party; a floating rate and a reason to hedge; goods that pay duty because they are not of Accord origin | O2, D18 |
 | O44 | A sale to a consumer in Urvania, to show a price that includes value added tax | D14 |
