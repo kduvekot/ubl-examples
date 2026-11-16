@@ -291,6 +291,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # also a UBL finding (ubl-findings.md, "essential but optional").
         # ApplicationResponse: "the application's response to a transaction".
         "ApplicationResponseType": {"cac:DocumentResponse"},
+        # BillOfLading "evidences a contract of carriage": who carries, for
+        # whom, and what.
+        "BillOfLadingType": {"cac:CarrierParty", "cac:ConsignorParty", "cac:Shipment"},
         "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
         "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
         "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
@@ -337,7 +340,9 @@ PARTY_SCHEMES = {
     # logistics operators and reports
     "SendingLogisticsOperatorParty": GLN, "ReporterParty": GLN,
     # a transport contract's provider, as a legal entity
-    "TransportServiceProviderParty": LEI,
+    "TransportServiceProviderParty": LEI, "CarrierParty": LEI,
+    # ship-from of a carriage (bill of lading): logistics, like the despatch party
+    "ConsignorParty": GLN,
     # public procurement: the buyer as a legal entity; suppliers as businesses
     # whose identity and standing buyers verify
     "ContractingParty": LEI,
@@ -479,6 +484,8 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "ResponderParty": ("Responder", "Antwortender", "Respondente", "Kaitōsha"),
     "ParticipantParty": ("Participant", "Teilnehmer", "Participante", "Sankasha"),
     "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
+    "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
+    "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
     "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
     "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
