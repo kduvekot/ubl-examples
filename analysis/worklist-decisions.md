@@ -114,6 +114,8 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Keep and dismiss.
 - Recommendation: a), main activity per party (ISIC allows one main class).
 - Related: D4
+- **Decided (owner, 2026-11-16):** Selanu Telecom changes to ISIC 6120 (wireless telecommunications). Ferrano Energy and Ferrano Grid keep 3510 (electric power); the findings on their class are dismissed, because the class names a party's principal activity (ISIC classes a business by it, and UBL allows one class per party) and does not claim that the party does nothing else.
+- **What it means for the world:** Selanu Telecom is today a mobile and data operator with a fixed-line past (the island's telephone department, a company since 1993). Urvania's two energy companies are electricity companies first: Ferrano Energy dates from 1949 and Ferrano Grid was split off in 2007, while gas is the younger business, arrived with the pipeline from Kelpstone Gas (2011).
 
 ### D9 · In a debit note issued by the buyer, is the buyer the accounting supplier?
 - Why it matters: Cause C66 Debit notes with accounting supplier and customer reversed; 5 findings (5 marked "yes").
@@ -484,6 +486,7 @@ The backstory decided while working through the decisions above, kept in one pla
 | early 1990s | Urvania opens its economy. | Real parallels: the Canada–US agreement of 1988 that Mexico joined to form NAFTA in 1994; India 1991; Mercosur 1991. |
 | 1994 | **The Lumeport Trade Accord** is signed in Lumeport: Urvania joins, and the agreement of 1974 becomes a free trade area for all three countries. | The Accord's name: it grew out of the agreement signed in Lumeport. |
 | 1 January 1996 | The Accord enters into force. Hauliers, forwarders, customs brokers and a factoring company are set up around this date to serve the new cross-border trade. | Some of the parties now dated 1996-01-01 keep 1996 as their founding year, with their own days; ports, utilities, state bodies and industry get older or other dates. |
+| 2011 | Kelpstone Gas starts producing from its offshore field; the pipeline brings gas to Urvania. Ferrano Energy and Ferrano Grid, electricity companies until then, take up gas as a second business. | Why both are classed as electricity companies (D8). |
 | 2007 onward | Later protocols of the Accord: an energy market (Ferrano Grid is split off in 2007; Kelpstone Gas dates from 2011), then the procurement rules, the payment link and card schemes, and electronic business documents. | Why the three countries share procurement rules, a payment link and code lists although each keeps its own taxes. |
 
 ### Founding table of the 25 parties (D4), current base
