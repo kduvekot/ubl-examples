@@ -626,3 +626,20 @@ Open threads of this story line:
 - The prices of the bench, the chair and the set, and the occasion on which a piece is bought alone (with D32).
 - A lookup of "Elderwick" in the trademark registers (USPTO, EUIPO, UKIPO, WIPO).
 - Names for Brackenmere's own lines, if a document needs them.
+
+### Packs, kits and offers (from D7)
+
+The examples show side by side the ways items are combined, each with a real case that already exists in the world. No new product is added for it.
+
+| Case | What it is | The world's example | Identity |
+|---|---|---|---|
+| A single item | One thing, ordered and sold alone | The Elderwick Marrow bench; the chair | Its own number (a GTIN on the GS1 side) |
+| A pack of the same item | n times the same, packed as one unit | The sawmill's bundle of 50 hardwood bench slats (wood flow) | The item and the pack are two levels, each with its own number; the sawmill uses its own numbers |
+| A kit of different items | a and b wrapped in one package and sold as c | The care kit for the garden furniture (furniture flow), an Elderwick item; the ground anchor set of the park bench (tender flow) | One item with its own number and a stated content; on the GS1 side its own GTIN, because it is physically combined |
+| An offer | Items bought together for less; never one package | The Marrow set: a bench and two chairs | No number of its own; each piece keeps its own (GS1: a virtual bundle) |
+
+The content of each pack and kit (how many anchors and bolts, what is in the care kit) is settled with its flow: wood (D43), tender (D28), furniture (D32). The cotton bale's "pack size 227" is a weight, not a pack; that is D12. The ionisation smoke detector set of the mast flow is dangerous goods and is looked at with that flow (D36).
+
+**For a later enhancement (owner, 2026-11-16), not part of the current work:**
+- **Assembled products:** an item put together from parts, with its bill of materials; where the parts are ordered, stocked or replaced on their own (the park bench with its side frames and slats is the world's obvious case, and the spare side frame already exists).
+- **Products delivered in several packages:** one item in box 1 and box 2, as flat-packed furniture is. GS1 numbers the boxes as pieces of the one trade item (the trade item piece, application identifier 8006, "piece 1 of 2"); it applies where the pieces cannot be ordered or sold separately.
