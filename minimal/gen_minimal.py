@@ -565,10 +565,18 @@ def layer_fills():
         schemes.update(sch)
         yield name, {t: set(k) for t, k in total.items()}, dict(schemes)
 
-schemas = {}  # targetNamespace -> list of schema roots
-for f in glob.glob(os.path.join(xsd_dir, "common", "*.xsd")) + glob.glob(os.path.join(xsd_dir, "maindoc", "*.xsd")):
-    r = etree.parse(f).getroot()
-    schemas.setdefault(r.get("targetNamespace"), []).append(r)
+# Two schema sets: the endorsed ones (stricter endorsed cardinalities) build
+# and validate the 93 endorsed document types; the full ones the 8 deprecated
+# document types, which are not in the endorsed set (ST#F1).
+endorsed_dir = os.path.join(UBL, "endorsed", "xsd")
+def load_schemas(d):
+    out = {}  # targetNamespace -> list of schema roots
+    for f in glob.glob(os.path.join(d, "common", "*.xsd")) + glob.glob(os.path.join(d, "maindoc", "*.xsd")):
+        r = etree.parse(f).getroot()
+        out.setdefault(r.get("targetNamespace"), []).append(r)
+    return out
+FULL_SCHEMAS, ENDORSED_SCHEMAS = load_schemas(xsd_dir), load_schemas(endorsed_dir)
+schemas = FULL_SCHEMAS
 
 QDT = "urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
 CBC = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
@@ -691,6 +699,11 @@ def generate(layer, fill, schemes):
     global COUNTRY
     written = []
     for f in sorted(glob.glob(os.path.join(xsd_dir, "maindoc", "UBL-*-2.5.xsd"))):
+        global schemas
+        is_endorsed = os.path.basename(f) in endorsed
+        if is_endorsed:
+            f = os.path.join(endorsed_dir, "maindoc", os.path.basename(f))
+        schemas = ENDORSED_SCHEMAS if is_endorsed else FULL_SCHEMAS
         r = etree.parse(f).getroot()
         ns = r.get("targetNamespace")
         root_decl = r.find(X + "element")
@@ -759,7 +772,7 @@ def generate(layer, fill, schemes):
             if e.text == CUR: e.text = currency
             if e.text == CTRY: e.text = COUNTRY
             if e.get("currencyID") == CUR: e.set("currencyID", currency)
-        path = os.path.join(out, "" if os.path.basename(f) in endorsed else "deprecated", name + ".xml")
+        path = os.path.join(out, "" if is_endorsed else "deprecated", name + ".xml")
         with open(path, "wb") as fh:  # declaration exactly as the IND2/IND3 example
             fh.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
             fh.write(etree.tostring(doc, encoding="UTF-8", pretty_print=True))
@@ -851,7 +864,8 @@ def xsd_for(path):
         name = etree.QName(etree.parse(path).getroot()).localname
     except etree.XMLSyntaxError:
         name = "Invoice"  # not parseable; check() reports it
-    return os.path.join(xsd_dir, "maindoc", "UBL-%s-2.5.xsd" % name)
+    e = os.path.join(endorsed_dir, "maindoc", "UBL-%s-2.5.xsd" % name)
+    return e if os.path.exists(e) else os.path.join(xsd_dir, "maindoc", "UBL-%s-2.5.xsd" % name)
 
 if sys.argv[1:2] == ["--check"]:
     written = [(p, xsd_for(p)) for p in sys.argv[2:]]

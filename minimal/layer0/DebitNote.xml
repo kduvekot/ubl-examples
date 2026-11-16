@@ -9,6 +9,9 @@
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingSupplierParty>
+  <cac:LegalMonetaryTotal>
+    <cbc:PayableAmount currencyID="ZAR">100</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:LineExtensionAmount currencyID="ZAR">100</cbc:LineExtensionAmount>
