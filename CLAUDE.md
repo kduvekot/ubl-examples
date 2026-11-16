@@ -21,6 +21,18 @@
   - `analysis/source-verification.md` and `analysis/q18-payment-channel.md`.
 - **External code lists:** sources in `world/codelists/sources/` (provenance and SHA-256 in `PROVENANCE.md` and `PROVENANCE-second-round.md`); list definitions in `world/codelists/lists.json`.
 
+## Where the reviews, the worklist and the open decisions are
+
+The examples were reviewed in November 2026 and the findings are being worked through. Nothing in the examples has been changed for them yet.
+
+- **Reviews of each example:** `world/examples/<flow>/NN-DocType.llm-review.<run-id>.merged.md` (250 files, made with the skill `.claude/skills/ubl-example-review`; the part files next to them are the merge's input). Status and the merges' decisions on recurring problems: `analysis/review-merge-decisions.md`.
+- **Review across flows:** `analysis/consistency-review.20261114T2143Z-consistency.md` (index) and one file per topic beside it.
+- **The worklist:** `analysis/worklist.md` groups the 3,348 findings into 128 root causes, in stages. `analysis/worklist-assignments.csv` links every finding to its cause.
+- **The owner's decisions:** `analysis/worklist-decisions.md`. It holds the decisions D1 to D46 with their outcome, the **story lines** (the backstory decided so far: history, geography, languages, identification, prices, calendar and more) and the register of **open points** (O-numbers). It is maintained by hand and is the authority for what was decided on 2026-11-15/16; where it revises `analysis/codelist-decisions.md` or `note/src/03-world.md`, it wins until those are brought into line. Read its section "Open points", and the rules at its head, before deciding or fixing anything.
+- **Tables and checks over all examples** (no tokens, seconds): `python3 -I .claude/skills/ubl-example-review/scripts/extract_tables.py` writes CSV tables to `.review/tables/` (not committed; `--check` says whether they are current); `check_consistency.py` prints mechanical hits; `list_findings.py` collects every finding of every review.
+- **The world's position on the real ocean:** `analysis/world-position/` (maps, drawing scripts, sources).
+- **Never run `analysis/review-scripts/worklist/make_docs.py`:** it would overwrite the decisions file.
+
 ## How to work
 
 - **Fix things at the source:** the generators `tools/build_examples.py`, `tools/examples_kit.py`, `tools/examples_scenarios.py`, the world data and `lists.json`. Never edit the generated XML or `.md` by hand.
@@ -59,7 +71,11 @@ These are the general rules at the top of `analysis/codelist-decisions.md`.
 
 ## Open work
 
-1. **The owner's review of the examples, flow by flow,** smallest flows first: waste, carnet, mast …
+0. **Work through the review findings** (see "Where the reviews, the worklist and the open decisions are"):
+   - the flow decisions D28 to D46 in `analysis/worklist-decisions.md`, with the owner, one at a time; each starts with its open points and its goods balance;
+   - then the stages of `analysis/worklist.md`: fixes that need no decision, the world rules decided in D1 to D27, master data, the goods chain, time and numbering, the flow stories, build checks, and last the signatures stage;
+   - rules agreed for this work: every decision is recorded in the decisions file with what it means for the world; every open question goes into the open-points register in the same turn; nothing made in a session is left outside the repository by accident.
+1. **The owner's review of the examples, flow by flow,** smallest flows first: waste, carnet, mast … (now done together with the flow decisions of item 0).
 2. **An encyclopaedia of the world** (name still to choose), linked from the map: clicking a tile opens the page for what is there. It covers:
    - countries, history, settlement and the Trade Accord and other treaties;
    - towns and remarkable buildings;
