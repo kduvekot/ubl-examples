@@ -721,9 +721,11 @@ TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Dōro kamotsu unsō"),
     "WorkItemDescription": ("Maintenance of office equipment", "Wartung von Bürogeräten",
                             "Manutenção de equipamentos de escritório", "Jimu kiki no hoshu"),
-    # the period (late August) fits a back-to-school promotion
-    "RetailEvent/Description": ("Back-to-school promotion", "Schulanfangsaktion",
-                                "Promoção de volta às aulas", "Shingakki kyanpēn"),
+    # the document is in the India locale; late August falls in the monsoon
+    # season (June-September), not in India's school-year start (April-June).
+    # Only the English text is used; the others are unreviewed fallbacks.
+    "RetailEvent/Description": ("Monsoon sale", "Monsunaktion",
+                                "Promoção de monções", "Monsūn sēru"),
     "Enquiry/Description": ("Is the item available from stock?", "Ist der Artikel ab Lager lieferbar?",
                             "O item está disponível em estoque?", "Shōhin wa zaiko ga arimasu ka?"),
     "EnquiryResponse/Description": ("Yes, the item is available from stock.",

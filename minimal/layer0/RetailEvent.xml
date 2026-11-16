@@ -3,7 +3,7 @@
   <cbc:ID>RetailEvent-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:RetailEventStatusCode>PLANNED</cbc:RetailEventStatusCode>
-  <cbc:Description languageID="en">Back-to-school promotion</cbc:Description>
+  <cbc:Description languageID="en">Monsoon sale</cbc:Description>
   <cac:Period>
     <cbc:StartDate>2026-08-26</cbc:StartDate>
     <cbc:EndDate>2026-09-01</cbc:EndDate>
