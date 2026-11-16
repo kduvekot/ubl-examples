@@ -21,7 +21,8 @@ Each further layer is a table of decisions on top of the layers below it
 required children, locales and checks follow automatically.
 
 Fetches the UBL 2.5 package from OASIS into minimal/.ubl/ (not committed)
-and writes <layer>/<DocType>.xml (endorsed) and <layer>/deprecated/.
+and writes the final layer (OUTPUT_LAYERS): layer1/<DocType>.xml (endorsed)
+and layer1/deprecated/.
 Self-contained: uses nothing else from this repository.
 
 After writing, every document is checked against the UBL 2.5 rules of
@@ -867,6 +868,10 @@ REPEAT = {"DigitalAgreementType/cac:ParticipantParty": 2}
 LAYERS = [("layer0", FILL, {}),
           ("layer1", LAYER1, PARTY_SCHEMES)]
 
+# Only the final layer is written: layer 0 (schema-required + purpose) is the
+# step that layer 1 (+ party identification) builds on, not a set of its own.
+OUTPUT_LAYERS = {"layer1"}
+
 def layer_fills():
     total, schemes = {}, {}
     for name, add, sch in LAYERS:
@@ -1221,7 +1226,8 @@ if sys.argv[1:2] == ["--check"]:
 else:
     written = []
     for layer, fill, schemes in layer_fills():
-        written += generate(layer, fill, schemes)
+        if layer in OUTPUT_LAYERS:
+            written += generate(layer, fill, schemes)
 failed = {}
 for path, xsd in written:
     errs = check(path, xsd)
