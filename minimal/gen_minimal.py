@@ -378,6 +378,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # the waste documents name the waste shipped
         "WasteMovement:ShipmentType": {"cac:GoodsItem"},
         "WasteNotification:ShipmentType": {"cac:GoodsItem"},
+        # an enquiry asks something, its response answers it
+        "EnquiryType": {"cbc:Description"},
+        "EnquiryResponseType": {"cbc:Description"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -623,6 +626,11 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     # the period (late August) fits a back-to-school promotion
     "RetailEvent/Description": ("Back-to-school promotion", "Schulanfangsaktion",
                                 "Promoção de volta às aulas", "Shingakki kyanpēn"),
+    "Enquiry/Description": ("Is the item available from stock?", "Ist der Artikel ab Lager verfügbar?",
+                            "O item está disponível em estoque?", "Shōhin wa zaiko ga arimasu ka?"),
+    "EnquiryResponse/Description": ("Yes, the item is available from stock.",
+                                    "Ja, der Artikel ist ab Lager verfügbar.",
+                                    "Sim, o item está disponível em estoque.", "Hai, zaiko ga arimasu."),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
                    "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
     # a hazardous waste shipped across borders for recycling (Basel A1160)
