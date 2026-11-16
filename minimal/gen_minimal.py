@@ -756,7 +756,7 @@ NAMES = {  # (en, de, pt-BR, ja-Latn-hepburn); visibly fictitious
     "ProcurementProject/Name": ("Office supplies 2026", "Büromaterial 2026", "Material de escritório 2026", "Jimu Yōhin 2026"),
 }
 
-SECOND_SIGNATORY = ("Sam Example", "Sam Beispiel", "Sam Exemplo", "Sanpuru Hanako")
+SECOND_SIGNATORY = ("Sam Example", "Sam Beispiel", "Sam Exemplo", "Sanpuru Samu")
 
 def name_for(e, parent, name):
     key = etree.QName(parent).localname + "/" + name
