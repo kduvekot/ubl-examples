@@ -195,7 +195,7 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
 - **The prices today (lume, per bench):** Valdara to Lumeway 499.00 and to the public works department 499.00; Lumeway to Brightmarket and to Velumi 520.00 (a margin of 4 %); Brightmarket to a shopper 633.00 before sales tax (18 %); Velumi to an island customer 722.50 (289 coral). Side frame: Valdara to Lumeway 59.80; Lumeway to Velumi 64.00, and 58.00 on its revised list of 20 May, below its cost.
 - **The costs the documents state:** truck Ferrano to Marrowdale, 186 km, 447.33 for 96 benches and 12 frames (about 4.70 a bench); delivery to the store, 38 km, 108.30 a trip; sea freight, export clearance and cargo insurance to the island 3,175.00 for 96 benches (about 33 a bench). Not stated: customs clearance at the land border, warehousing, the factoring fee.
 - **What the figures show:** with a distributor price of about 399 the bench gives Lumeway about 22 %, which is enough for the item. For the company it is not: 183 persons on a turnover of 33.9 million is 185,000 per person, half to a quarter of what a distributor turns over, so the headcount or the turnover in the founding table needs correcting. Valdara's 77,000 per person (3,083 persons, 236 million) is about half of what a manufacturer shows. Brightmarket's 18 % on the bench is far below what a department store needs.
-- **To do:** one table, for the owner to correct, with the bench and the side frame at every step of the chain and the costs between the steps, so that the distributor, the store and the island importer each fall in their band; with it the corrections to Lumeway's and Valdara's figures in the D4 table; what it does to the tender flow (where Valdara's bid lies between the distributor price and the shop price); and whether prices to consumers include the local tax.
+- **Decided (owner, 2026-11-16): the price table under "Story lines: Prices along the chain" is the current base.** Only Valdara's two prices to Lumeway change (bench 499.00 to 399.00, side frame 59.80 to 47.50); the road and rail flows recalculate; the tender, retail and sea flows keep their prices. Five companies get corrected figures (Lumeway, Valdara, Brackenmere, Tevaro, Nalevi). Open points: see the register at the end of this file.
 
 ## Customs and tax (57 findings)
 
@@ -715,3 +715,132 @@ Open threads of this story line:
 - **Moss green in the tender flow:** either a standard variant (the order change names it, and no surcharge is due) or a special colour (the order change specifies it, and the surcharge is right). Today the change is in free text only, the later documents say grey, and the surcharge is charged. To decide with D28.
 - **A rule that asks for a fact later:** a carbon border scheme would make an importer declare the emissions embedded in steel goods; the footprint would then stand on the import declaration for that reason. The world has no such rule; a possibility for later.
 - The melt and serial numbers (one melt number on castings from three dates) are put right where lot and piece data is stated, with the goods chain (D21).
+
+### Prices along the chain (D14), current base
+
+Lume per piece, before tax. Only the two prices in bold change.
+
+| Step | Price type | Now | Base | Costs to get there | Seller's margin |
+|---|---|---|---|---|---|
+| Bench: Valdara to Lumeway | Distributor price | 499.00 | **399.00** | | |
+| Bench: Valdara to the public works department | Contract price | 499.00 | 499.00 | Delivered by Valdara | |
+| Bench: Lumeway to Brightmarket and to Velumi | Trade price | 520.00 | 520.00 | Truck from Ferrano, about 4.50 | 22 % |
+| Bench: Brightmarket to a shopper, regular | Shop price | 749.00 | 749.00 | Delivery to the store, about 4.50 | 30 % |
+| Bench: Brightmarket to a shopper, spring promotion | Shop price less 10 % | 674.10 | 674.10 | | 22 % |
+| Bench: Velumi to an island customer | Shop price | 722.50 (289 coral) | 722.50 | Sea freight, clearance and insurance, about 32 | up to 24 %, less the island's import tax |
+| Side frame: Valdara to Lumeway | Distributor price | 59.80 | **47.50** | | |
+| Side frame: Lumeway to Velumi | Trade price | 64.00 | 64.00 | | 24 % |
+| Side frame: Lumeway's revised list of 20 May | Trade price | 58.00 | 58.00 | | 16 % |
+
+What recalculates: Valdara's invoice in the road flow from 4,862,160 to 3,887,400 ferra (96 benches and 12 frames), in the rail flow from 9,580,800 to 7,660,800 ferra (192 benches), with the orders, customs values and payments that follow from them.
+
+**The tender against the chain** (per bench): distributor price 399; Brackenmere's corrected bid 496 with installation; Valdara's bid 499 plus 18 for installation; Lumeway's trade price 520; shop price 749. Valdara bids 100 above what its distributor pays and 21 below what its distributor charges: a direct project price. It has no reason to bid below the distributor price and every reason to bid between that and the trade price.
+
+**Consumer prices and tax.** In Bayvarra the shop price excludes the sales tax, which is added at the till (674.10, tax 43.82 at 6.5 %, 717.92 to pay): the tax is levied once at the final sale, by the state. In Lisavu there is no sales tax, so the price is the price. Urvania has no sale to a consumer in the examples; with its value added tax, consumer prices would include the tax.
+
+**Rules of thumb, checked by the build.** Estimates of typical ranges, meant to catch the implausible.
+
+| Kind of company | Gross margin on resale | Turnover per person (lume) |
+|---|---|---|
+| Distributor, wholesaler | 15 to 30 % | 300,000 to 700,000 |
+| Retailer | 30 to 45 %, lower during a promotion | 120,000 to 300,000 |
+| Manufacturer, industry | not checked | 120,000 to 300,000 |
+| Transport, logistics, services | not checked | 90,000 to 250,000 |
+| Utilities, banks, insurance | not checked | 150,000 to 600,000 |
+
+Nobody resells below what they paid plus the freight the documents state.
+
+**Corrections to company figures** (they replace the figures of the founding table of D4 and of the world data):
+
+| Company | Persons | Turnover (million lume) | Per person | Base |
+|---|---|---|---|---|
+| Lumeway Distribution | 183 | 33.9 | 185,000 | 78 persons (435,000); stays MEDIUM |
+| Valdara Industries | 3,083 | 236 | 77,000 | Turnover 520 million (169,000); stays LARGE |
+| Brackenmere Furniture | 19 | 6.8 | 359,000 | 45 persons (152,000); stays SMALL |
+| Tevaro Customs Brokers | 13 | 7.1 | 546,000 | Turnover 2.4 million (185,000) |
+| Nalevi Warehousing | 17 | 6.3 | 370,000 | Turnover 2.6 million (153,000) |
+
+**The distribution agreement.** Lumeway Distribution became Valdara's distributor for Bayvarra and the island in 1996, when the Trade Accord came into force. That is why Valdara's benches reach the island through Lumeport.
+
+## Open points
+
+Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
+
+### To decide with a later decision
+
+| No. | Open point | From | Taken up with |
+|---|---|---|---|
+| O1 | What Lisavu gave up in 1996: duties on Accord goods ended, the import consumption tax stayed? Its rate decides Velumi's margin on the bench. | D4, D14 | D18 |
+| O2 | Whether the fixed exchange rates are a currency arrangement of the Accord or of a later protocol | D4 | D18 or the conditions decisions |
+| O3 | The customs trader number: built from the business register number (as the EU's EORI) or issued by customs | D5 | D16 to D18 |
+| O4 | Serials and lots in globally unique form; the melt and serial numbers (one melt number on castings from three dates) | D5, D11 | D21 |
+| O5 | Localised item texts: which items, by whom, which text a document carries; Urvanian and Lisavan item texts | D2 | D21 or the item profile (O20) |
+| O6 | The three buyer-issued debit notes: furniture/14, sea/28, tender/34 | D9 | D32, D30, D28 |
+| O7 | The world's real debit note: demurrage in the rail or sea flow first, waiting time second; not forced | D9 | D37, D30 |
+| O8 | The extra box of side frames in the road flow: reported over, then neither billed nor returned | D9 | D35 |
+| O9 | The Marrow bench, chair and set: list prices, the set discount, how the documents carry the offer, the quantities in SET, the occasion on which a piece is bought alone | D7 | D32 |
+| O10 | The content of the care kit (furniture), of the ground anchor set (tender), and the two levels of the slat bundle (wood) | D7 | D32, D28, D43 |
+| O11 | The ionisation smoke detector set of the mast flow | D7 | D36 |
+| O12 | Moss green in the tender flow: a standard variant or a special colour with a surcharge | D11 | D28 |
+| O13 | Valdara's tender figures: 180 employees, 41 years, 9.2 million of financial capability | D4, D14 | D28 |
+| O14 | Lumeway's position on Valdara's direct bid; the buyer's estimate equal to the bid | D14 | D28 |
+| O15 | The reason for Lumeway's lower side-frame price of 20 May | D14 | D34 |
+| O16 | "Mobile data, per gigabyte" with a pack of 5 gigabytes and a pack size of 7 | D12 | D31 |
+| O17 | Whether the ports and the telecom operator are companies with a register entry or public bodies | D4 | the cause C04, stage 1 |
+| O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
+
+### To work out when a decision is implemented
+
+| No. | Open point | From |
+|---|---|---|
+| O19 | The world locale list (three codes with what marks each variety); whether a party whose first language is Urvanian or Lisavan states its English locale; the paragraph for the note | D1 |
+| O20 | The profile per document type of what a document says about an item, as a table for the owner | D11 |
+| O21 | Each party's day and month of founding; the textile mill's size (LARGE with 260 persons or MEDIUM with about 190) | D4 |
+| O22 | New Codana numbers in order of registration; telephone numbers without relation to an identifier; the build check that no identifier of a party repeats another | D5 |
+| O23 | Which other items carry world item numbers today (`772…` and the rest) and which company's prefix each gets; GTINs for the Elderwick bench and chair from Brightmarket's prefix | D5, D7 |
+| O24 | Site codes for Urvanian places and returnable items on the Codana side: only where a document needs one | D5 |
+| O25 | The two figures of the bench's footprint (sourcing, manufacturing), whether the total stays 96 kg, and the same split for other items | D10 |
+| O26 | The cotton shipment: bale count, per-bale weights and totals must agree (27 bales, 6,129 kg, 6,190.29 kg gross) | D12 |
+| O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
+| O28 | The world's price type list says for each type whether it includes tax | D14 |
+| O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
+
+### For the build checks (worklist stage 7)
+
+| No. | Check | From |
+|---|---|---|
+| O30 | Nobody resells below cost plus stated freight; gross margin and turnover per person within the bands | D14 |
+| O31 | A list of the world's items with the reasoning for each HS heading, for a person to verify once | D13 |
+| O32 | The prefix of every Codana identifier is the company number of the party that issued it | D5 |
+
+### For the encyclopaedia and the backstory
+
+| No. | Open point | From |
+|---|---|---|
+| O33 | A few visible traits of each English (spelling, loan words, date and number habits) | D1 |
+| O34 | Second names of other places, and which name English text uses for each | D3 |
+| O35 | Bayvarra's and Lisavu's own history (settlement, independence); the dates of the Accord's later protocols | D4 |
+| O36 | The year Brightmarket launched Elderwick and what else the label covers; names for Brackenmere's own lines, if a document needs them | D7 |
+
+### To check outside the repository
+
+| No. | Open point | From |
+|---|---|---|
+| O37 | "Elderwick" in the trademark registers (USPTO, EUIPO, UKIPO, WIPO) | D7 |
+| O38 | ICD `0990`, the market codes `XFER` and `XLMX`, the owner codes `TWLU` and `FRXU` against their real registers | the reviews, D5 |
+
+### For the write-up to the OASIS UBL TC
+
+| No. | Point | From |
+|---|---|---|
+| O39 | UBL 2.5 has no element for the system boundary of a product footprint; the name `FullnessIndicationCode` under `EmissionCalculationMethod` invites misreading | D10 |
+| O40 | `Signature/ValidationDate` is the date of verification; the aggregate has no element for the time of signing | D6 |
+
+### Later enhancements, not part of the current work
+
+| No. | Topic | From |
+|---|---|---|
+| O41 | Assembled products with a bill of materials (the park bench with its side frames and slats) | D7 |
+| O42 | Products delivered in several packages (GS1's trade item piece, application identifier 8006) | D7 |
+| O43 | A carbon border rule that asks for the footprint on the import declaration | D11 |
+| O44 | A sale to a consumer in Urvania, to show a price that includes value added tax | D14 |
