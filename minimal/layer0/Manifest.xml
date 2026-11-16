@@ -6,4 +6,7 @@
       <cbc:Name languageID="en">Example Logistics Operator 471</cbc:Name>
     </cac:PartyName>
   </cac:SendingLogisticsOperatorParty>
+  <cac:Shipment>
+    <cbc:ID>Shipment-471</cbc:ID>
+  </cac:Shipment>
 </Manifest>

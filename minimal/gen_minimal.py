@@ -173,7 +173,7 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # UBL's own style (as in its definitions, e.g. FALLS_BELOW_...),
                # without listID: the value states its meaning (IND6), and no
                # UN/EDIFACT list is used. ResponseCode: the invoice is approved.
-               "ResponseCode": "ACCEPTED",
+               "ResponseCode": "ACCEPTED", "OrderResponseCode": "ACCEPTED",
                # the definition's examples (BASE PROMOTIONAL SEASONAL TOTAL); one
                # line, no promotion or season in the document: the whole demand
                "ForecastTypeCode": "TOTAL",
@@ -306,6 +306,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ForecastLineType": {"cac:SalesItem"},
         "ForecastRevisionLineType": {"cac:SalesItem"},
         "FulfilmentCancellationType": {"cac:DespatchDocumentReference"},
+        # a manifest lists its cargo; an order response states its answer
+        "ManifestType": {"cac:Shipment"},
+        "OrderResponseType": {"cbc:OrderResponseCode"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
