@@ -10,6 +10,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
+  <cac:ParticipantParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="ja-Latn">Sanpuru Sankasha 202</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ParticipantParty>
   <cac:DigitalProcess>
     <cbc:Description languageID="ja-Latn">Hatchū</cbc:Description>
   </cac:DigitalProcess>

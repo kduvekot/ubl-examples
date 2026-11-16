@@ -13,6 +13,16 @@
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
+  <cac:ParticipantParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0199">999900MINIMAL0020267</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="ja-Latn">Sanpuru Sankasha 202</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ParticipantParty>
   <cac:DigitalProcess>
     <cbc:Description languageID="ja-Latn">Hatchū</cbc:Description>
   </cac:DigitalProcess>

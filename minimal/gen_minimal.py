@@ -294,6 +294,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # BillOfLading "evidences a contract of carriage": who carries, for
         # whom, and what.
         "BillOfLadingType": {"cac:CarrierParty", "cac:ConsignorParty", "cac:Shipment"},
+        # DocumentStatus / DocumentStatusRequest: the document concerned (and
+        # for DocumentStatus its status, as for InvoiceStatusResponse).
+        "DocumentStatusType": {"cac:DocumentResponse"},
+        "DocumentStatusRequestType": {"cac:RequestedDocumentReference"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
@@ -567,6 +571,10 @@ LAYER1 = {
     "AddressType@JurisdictionRegionAddress": {"cac:Country"},
 }
 
+# Repetition where the meaning needs more than one occurrence (DM#F12): an
+# agreement needs at least two participants ("bi-lateral and multi-lateral").
+REPEAT = {"DigitalAgreementType/cac:ParticipantParty": 2}
+
 # Layers: (folder, additions {aggregate type[@role]: optional children},
 # schemeIDs by role). Each layer includes everything of the layers before it.
 LAYERS = [("layer0", FILL, {}),
@@ -702,7 +710,8 @@ def content(e, t):
                                                or p.get("ref") in FILL.get(t.get("name") + "@" + role(e), ())
                                                or p.get("ref") in party_extra(e, t)):
                     ns, name = qname(p, p.get("ref"))
-                    build(e, find("element", ns, name))
+                    for _ in range(REPEAT.get(t.get("name") + "/" + p.get("ref"), 1)):
+                        build(e, find("element", ns, name))
                 elif p.tag in (X + "sequence", X + "choice", X + "any") and p.get("minOccurs", "1") != "0":
                     raise NotImplementedError(p.tag)
 
