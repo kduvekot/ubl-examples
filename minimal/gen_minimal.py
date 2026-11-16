@@ -2,7 +2,18 @@
 
 Layer 0: only the elements (minOccurs >= 1) and attributes (use="required")
 the schemas demand, plus the optional children chapter 4 makes necessary
-(FILL), with one fixed value per unqualified data type.
+(FILL). Layer 1 adds party identification (PARTY_SCHEMES).
+
+Values: every value has a reason in its context, not a placeholder. Each
+document has a locale (LOCALES: currency, country, language, time zone);
+dates follow from D, the UBL 2.5 publication date (DATE_OFFSETS);
+identifiers, names, texts, codes, quantities, measures and indicators are
+chosen per element (id_for, ROLE_NAMES, TEXTS, NAMES, CODE_VALUES,
+QUANTITY_UNITS, MEASURE_VALUES, INDICATOR_VALUES); identifier values
+follow each scheme's format and check digit (ID_VALUES, TAX_VALUES).
+A value type with no rule and no default stops the build, so a later
+layer must choose it. The documents are unrelated to each other: values
+are unique across the set, and references point outside it.
 Each further layer is a table of decisions on top of the layers below it
 (LAYERS); the same schema walk builds every layer, so element order,
 required children, locales and checks follow automatically.
@@ -433,7 +444,9 @@ TAX_VALUES = {
 # Official names: EU Directive 2006/112/EC "value added tax"; ZA "Value-Added Tax
 # Act"; the EIN is the federal income tax identifier; the CNPJ is used for all
 # federal taxes, so for BR it goes in PartyLegalEntity (the register).
-TAX_NAMES = {"US": "Federal income tax", "DE": "Value added tax", "JP": "Consumption tax",
+# In the locale's language (languageID set, IND6): DE Umsatzsteuer (UStG),
+# JP Shōhizei (consumption tax, romanized as other Japanese texts).
+TAX_NAMES = {"US": "Federal income tax", "DE": "Umsatzsteuer", "JP": "Shōhizei",
              "IN": "Goods and Services Tax", "ZA": "Value-Added Tax"}
 
 # Party names: "example" + the role, in the locale's language and in Latin
@@ -712,12 +725,15 @@ def generate(layer, fill, schemes):
             ple = party.find("{%s}PartyLegalEntity" % CAC)
             if ple is not None:
                 ple.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
-                ple.find("{%s}CorporateRegistrationScheme/{%s}Name" % (CAC, CBC)).text = \
-                    "Cadastro Nacional da Pessoa Jurídica"
+                crn = ple.find("{%s}CorporateRegistrationScheme/{%s}Name" % (CAC, CBC))
+                crn.text = "Cadastro Nacional da Pessoa Jurídica"
+                crn.set("languageID", "pt")
             pts = party.find("{%s}PartyTaxScheme" % CAC)
             if pts is not None:
                 pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
-                pts.find("{%s}TaxScheme/{%s}Name" % (CAC, CBC)).text = TAX_NAMES[COUNTRY]
+                tsn = pts.find("{%s}TaxScheme/{%s}Name" % (CAC, CBC))
+                tsn.text = TAX_NAMES[COUNTRY]
+                tsn.set("languageID", LANG[COUNTRY])
         # SequenceNumeric: "the order ... in the sequence", from 1, numbered
         # through the document among things of the same kind (PH#F11)
         seq = {}

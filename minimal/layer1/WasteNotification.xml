@@ -9,7 +9,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>DE990009712</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Value added tax</cbc:Name>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>DE</cbc:IdentificationCode>
@@ -25,7 +25,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>DE990009729</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Value added tax</cbc:Name>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>DE</cbc:IdentificationCode>
@@ -41,7 +41,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>DE990009737</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Value added tax</cbc:Name>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>DE</cbc:IdentificationCode>
@@ -62,7 +62,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>DE990009753</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Value added tax</cbc:Name>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>DE</cbc:IdentificationCode>

@@ -14,7 +14,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>4000009517</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Value-Added Tax</cbc:Name>
+        <cbc:Name languageID="en">Value-Added Tax</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>ZA</cbc:IdentificationCode>

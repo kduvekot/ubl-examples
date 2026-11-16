@@ -9,7 +9,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>T5999900000441</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Consumption tax</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Shōhizei</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>JP</cbc:IdentificationCode>
@@ -25,7 +25,7 @@
     <cac:PartyTaxScheme>
       <cbc:CompanyID>T4999900000442</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name>Consumption tax</cbc:Name>
+        <cbc:Name languageID="ja-Latn">Shōhizei</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>JP</cbc:IdentificationCode>

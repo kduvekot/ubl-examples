@@ -10,7 +10,7 @@
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000161000142</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name>Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>

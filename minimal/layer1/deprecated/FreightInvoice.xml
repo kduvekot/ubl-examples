@@ -13,7 +13,7 @@
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000341000124</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name>Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
@@ -31,7 +31,7 @@
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000342000179</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name>Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>

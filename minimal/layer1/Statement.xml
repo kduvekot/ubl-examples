@@ -11,7 +11,7 @@
       <cac:PartyTaxScheme>
         <cbc:CompanyID>000000721</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>Federal income tax</cbc:Name>
+          <cbc:Name languageID="en">Federal income tax</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>US</cbc:IdentificationCode>
@@ -29,7 +29,7 @@
       <cac:PartyTaxScheme>
         <cbc:CompanyID>000000722</cbc:CompanyID>
         <cac:TaxScheme>
-          <cbc:Name>Federal income tax</cbc:Name>
+          <cbc:Name languageID="en">Federal income tax</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>US</cbc:IdentificationCode>
