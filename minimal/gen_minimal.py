@@ -340,6 +340,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # exception lines say what they count (operational exception)
         "ExceptionCriteriaLineType": {"cbc:SupplyChainActivityTypeCode"},
         "ExceptionNotificationLineType": {"cbc:SupplyChainActivityTypeCode"},
+        # an information request says which information: sales data
+        "ItemInformationRequestLineType": {"cbc:SupplyChainActivityTypeCode"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order

@@ -23,6 +23,7 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ItemInformationRequestLine>
+    <cbc:SupplyChainActivityTypeCode>SALES</cbc:SupplyChainActivityTypeCode>
     <cac:Period>
       <cbc:StartDate>2026-07-15</cbc:StartDate>
       <cbc:EndDate>2026-08-11</cbc:EndDate>
