@@ -133,10 +133,10 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C93 | Utilities: the household's water on account, the mandate and the levy | flow story | 13 | 5 | 1 | 2/3/8 | owner: D31 | tools/examples_scenarios.py, utilities() | waits: D31 |
 | C94 | Utilities: excise and estimate-correction amounts | flow story | 7 | 3 | 1 | 6/1/0 | none | tools/examples_scenarios.py, energy_tax() | ready |
 | C95 | Utilities: isolated slips | flow story | 7 | 6 | 1 | 1/2/4 | owner: D31 | tools/examples_scenarios.py, utilities() | waits: D31 |
-| C96 | Qualification requests and responses (ESPD-like) in contest and tender | flow story | 32 | 8 | 2 | 1/11/20 | owner: D29 | tools/examples_scenarios.py, qualification_limits() | waits: D29 |
-| C97 | Procurement notices (contest and tender): notice types, defaults, languages, links | flow story | 31 | 14 | 2 | 0/6/25 | owner: D29 | tools/examples_scenarios.py, notice_head() | waits: D29 |
-| C98 | Contest: the design team, references, prizes and versions | flow story | 24 | 13 | 1 | 1/4/19 | owner: D29 | tools/examples_scenarios.py, contest_version() | waits: D29 |
-| C99 | Contest: the estimated contract amount of 54,000 lume | flow story | 8 | 8 | 1 | 0/0/8 | owner: D29 | tools/examples_scenarios.py, contest_project() | waits: D29 |
+| C96 | Qualification requests and responses (ESPD-like) in contest and tender | flow story | 32 | 8 | 2 | 1/11/20 | owner: D29 | tools/examples_scenarios.py, qualification_limits() | ready (D29 decided) |
+| C97 | Procurement notices (contest and tender): notice types, defaults, languages, links | flow story | 31 | 14 | 2 | 0/6/25 | owner: D29 | tools/examples_scenarios.py, notice_head() | ready (D29 decided) |
+| C98 | Contest: the design team, references, prizes and versions | flow story | 24 | 13 | 1 | 1/4/19 | owner: D29 | tools/examples_scenarios.py, contest_version() | ready (D29 decided) |
+| C99 | Contest: the estimated contract amount of 54,000 lume | flow story | 8 | 8 | 1 | 0/0/8 | owner: D29 | tools/examples_scenarios.py, contest_project() | ready (D29 decided) |
 | C100 | Road flow: isolated slips of the truck shipment | flow story | 25 | 10 | 1 | 1/6/18 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
 | C101 | Road flow: application and certificate of origin | flow story | 14 | 3 | 1 | 4/4/6 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
 | C102 | Road flow: the substituted 2026 casting | flow story | 8 | 7 | 1 | 0/1/7 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
@@ -1475,7 +1475,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Fix the shared qualification builders; yes-findings with D29.
 - Depends on / blocks: none
 - Touched by: D4 (the headcounts, founding years and sizes that qualification responses state follow the founding table).
-- State: waits for D29.
+- State: D29 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D29).
 - Findings: contest: 05#F3, 05#F10, 06#F3, 06#F4, 06#F5, 06#F12, 06#F13, 06#F14, 07#F5, 10#F1, 10#F8, 11#F1, 11#F4, 11#F6, 11#F7, 11#F8, 11#F9, 12#F5; tender: 06#F4, 06#F5, 06#F6, 06#F7, 06#F8, 06#F13, 06#F14, 06#F15, 06#F16, 07#F1, 07#F4, 07#F5, 07#F6, 07#F7
 
 ### C97 · Procurement notices (contest and tender): notice types, defaults, languages, links
@@ -1486,7 +1486,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes in the shared notice builders; the yes-findings with D29.
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
-- State: waits for D29.
+- State: D29 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D29).
 - Findings: contest: 03#F1, 03#F7, 03#F8, 03#F10, 04#F10, 04#F11, 04#F12, 04#F13, 05#F11, 08#F1, 08#F8, 08#F9, 08#F11, 09#F7, 09#F9, 09#F10, 09#F13, 10#F9, 15#F3, 15#F13, 16#F2, 16#F13; tender: 01#F14, 02#F18, 02#F27, 03#F27, 03#F44, 12#F7, 21#F5, 21#F18, 24#F3
 
 ### C98 · Contest: the design team, references, prizes and versions
@@ -1497,7 +1497,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D29.
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
-- State: waits for D29.
+- State: D29 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D29).
 - Findings: contest: 02#F3, 04#F3, 04#F7, 05#F7, 05#F12, 06#F11, 07#F1, 07#F4, 07#F8, 09#F8, 09#F12, 10#F7, 11#F5, 12#F1, 12#F6, 13#F3, 13#F4, 14#F3, 14#F4, 14#F5, 15#F1, 15#F2, 16#F1, 16#F11
 
 ### C99 · Contest: the estimated contract amount of 54,000 lume
@@ -1508,7 +1508,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide with D29.
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
-- State: waits for D29.
+- State: D29 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D29).
 - Findings: contest: 01#F6, 02#F7, 03#F11, 04#F14, 08#F12, 09#F11, 15#F12, 16#F12
 
 ### C100 · Road flow: isolated slips of the truck shipment
