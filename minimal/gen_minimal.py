@@ -365,6 +365,14 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ReceiptAdviceType": {"cac:ReceiptLine"},
         "ReceiptLineType": {"cbc:ReceivedQuantity", "cac:Item"},
         "WorkReportLineType": {"cbc:WorkItemDescription"},
+        # a retail event says what it is and is dated; a packing list
+        # describes goods; a waybill names its issuer (carrier) and consignor;
+        # a transit declaration has a declarant and what is declared
+        "RetailEventType": {"cbc:Description", "cbc:IssueDate"},
+        "PackingList:ShipmentType": {"cac:GoodsItem"},
+        "GoodsItemType": {"cac:Item"},
+        "WaybillType": {"cac:CarrierParty", "cac:ConsignorParty"},
+        "TransitCustomsDeclarationType": {"cac:TransitExporterParty", "cac:Shipment"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -443,7 +451,7 @@ PARTY_SCHEMES = {
     # Waste roles have their own national registers (e.g. US EPA ID, German
     # waste-register numbers), but these have no ICD and no safe test range,
     # so the tax number is used.
-    "ExporterParty": TAX, "HolderParty": TAX,
+    "ExporterParty": TAX, "HolderParty": TAX, "TransitExporterParty": TAX,
     "NotifierParty": TAX, "WasteProducerParty": TAX,
     # Sender and Receiver, by the document's domain:
     # generic business messages
@@ -572,6 +580,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     # StockAvailabilityReport: the receiving branch (DM#F118)
     "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
     "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
+    "TransitExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
     "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),
     "FreightForwarderParty": ("Freight Forwarder", "Spediteur", "Agente de Carga", "Fōwādā"),
@@ -606,6 +615,9 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Rikujō yusō"),
     "WorkItemDescription": ("Maintenance of office equipment", "Wartung der Büroausstattung",
                             "Manutenção de equipamentos de escritório", "Jimu kiki no hoshu"),
+    # the period (late August) fits a back-to-school promotion
+    "RetailEvent/Description": ("Back-to-school promotion", "Schulanfangsaktion",
+                                "Promoção de volta às aulas", "Shingakki kyanpēn"),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
                    "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),

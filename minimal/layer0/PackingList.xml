@@ -3,5 +3,10 @@
   <cbc:ID>PackingList-1</cbc:ID>
   <cac:Shipment>
     <cbc:ID>Shipment-531</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
 </PackingList>

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>Waybill-1</cbc:ID>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0188">1999900000981</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name languageID="ja-Latn">Sanpuru Niokurinin 981</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsignorParty>
+  <cac:CarrierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0199">999900MINIMAL0098255</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name languageID="ja-Latn">Sanpuru Unsō Gyōsha 982</cbc:Name>
+    </cac:PartyName>
+  </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>Shipment-981</cbc:ID>
   </cac:Shipment>

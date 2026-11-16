@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TransitCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransitCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>TransitCustomsDeclaration-1</cbc:ID>
+  <cac:TransitExporterParty>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Exporter 831</cbc:Name>
+    </cac:PartyName>
+  </cac:TransitExporterParty>
   <cac:CustomsParty>
     <cac:PartyName>
-      <cbc:Name languageID="en">Example Customs 831</cbc:Name>
+      <cbc:Name languageID="en">Example Customs 832</cbc:Name>
     </cac:PartyName>
   </cac:CustomsParty>
+  <cac:Shipment>
+    <cbc:ID>Shipment-831</cbc:ID>
+  </cac:Shipment>
 </TransitCustomsDeclaration>
