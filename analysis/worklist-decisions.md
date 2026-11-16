@@ -154,6 +154,8 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Keep the story rule and dismiss the findings.
 - Recommendation: a): copying everything is the same filler problem as party master data (C01) and hides what a document really needs.
 - Related: D10, D5
+- **Decided (owner, 2026-11-16): a), as a rule about when a fact becomes known.** The sentence in `note/src/03-world.md` ("The maker's facts travel with the item wherever it appears") is replaced by the rule under "Story lines: What a document says about an item". In short: a fact is stated first in the document of the moment it becomes known, and a later document repeats it only if its own transaction uses it; otherwise it identifies the item, the lot or the earlier document.
+- **On the reviews:** the "is this needed here?" check was part of every review (the skill's rule on presence, and the "context" part did nothing else); it produced these 41 findings and the two largest causes of the worklist (party master data in every role, one contact template per kind of party). The reviews judged what is present; they did not work out, per document type, what should be there and when each fact first becomes known. That profile is made at implementation, as a table per document type for the owner.
 
 ### D12 · What is the pack of a cotton bale?
 - Why it matters: Cause C65 Bale weight of about 227 kg as `PackSizeNumeric`; 7 findings (7 marked "yes").
@@ -666,3 +668,38 @@ The content of each pack and kit (how many anchors and bolts, what is in the car
 Open threads of this story line:
 - What becomes of the three buyer-issued debit notes (furniture/14, sea/28, tender/34), each with its flow.
 - Where the world has a real debit note: demurrage in the rail or sea flow is the first candidate, waiting time the second; it is not forced.
+
+### What a document says about an item (D11)
+
+**An item's facts come in three layers, each known at a different moment.**
+
+| Layer | Known when | Examples in the world | Stated first in |
+|---|---|---|---|
+| The item type and its variants | When the product is designed | Dimensions, materials, the standard colours (the grey bench is the variant `GRY`), the warranty, the footprint per bench, the commodity code | The catalogue, the product information |
+| The lot or the single piece | When it is made, graded or tested | The lot `VI-LOT-260510` and its manufacture date, a casting's serial and melt number, the classing grade and moisture of a cotton lot | The document that accompanies the goods: the despatch advice, a certificate, a weight statement |
+| The transaction | When it is ordered, shipped, measured or cleared | Which variant is chosen, anything made to order (a special colour), the quantity and price, the actual gross weight of a shipment, a seal number, a meter reading, the customs value | The transaction's own document: the order, the despatch advice, the invoice, the declaration |
+
+**The rule.**
+1. A fact is stated first in the document of the moment it becomes known.
+2. A later document repeats a fact only if its own transaction uses it. Otherwise it identifies the item, the lot or the earlier document, and the reader finds the fact there.
+
+The rule works in both directions: a catalogue with a lot number is as wrong as an invoice with the search keywords. Companies keep their item data in step through catalogues; every later document points to the item by its identifier. A reader who follows one bench through its documents sees it gain facts: a type in the catalogue, a variant in the order, a lot and serial numbers when it leaves the factory, a weight and a seal on the truck, a value at the border.
+
+**Colour.** The colours an item comes in are type facts, listed in the catalogue as variants; an order names the variant it wants by its identifier and states nothing new about the item. Only a colour the catalogue does not offer is specified in the order, as something made to order.
+
+**A starting profile per document type** (to be worked out at implementation):
+
+| Document | What it carries about the item |
+|---|---|
+| Catalogue, item information, product passport | Everything about the type and its variants |
+| Order, order response | Identification, name, the variant chosen, anything made to order |
+| Despatch and receipt advice | Identification, name, lot or serial numbers, handling and dangerous-goods data |
+| Invoice, credit note | Identification, name, and what tax needs |
+| Customs declaration | Description, commodity code, origin, weights |
+| Shopper's receipt | Name, brand, and the warranty, as the shopper's proof |
+
+Open threads of this story line:
+- The profile per document type, as a table for the owner.
+- **Moss green in the tender flow:** either a standard variant (the order change names it, and no surcharge is due) or a special colour (the order change specifies it, and the surcharge is right). Today the change is in free text only, the later documents say grey, and the surcharge is charged. To decide with D28.
+- **A rule that asks for a fact later:** a carbon border scheme would make an importer declare the emissions embedded in steel goods; the footprint would then stand on the import declaration for that reason. The world has no such rule; a possibility for later.
+- The melt and serial numbers (one melt number on castings from three dates) are put right where lot and piece data is stated, with the goods chain (D21).
