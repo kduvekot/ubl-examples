@@ -353,6 +353,12 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) A buyer's-period rule for cross-border invoices (story change).
 - Recommendation: a).
 - Related: D22
+- **Decided (owner, 2026-11-16): a), with the utility term as a rule of the Accord.**
+  - **Utility bills** get terms of their own: due 21 days after the bill. The rule is the Accord's, not each country's, which is why all four utility invoices of the examples (electricity in Urvania, water in Bayvarra twice, telephone on the island) already agree on 21 days. The code is one Accord code for all three countries (a name such as `TA-UTIL`, to be fixed), not a country code. A bill collected by direct debit says so in its text and is collected on the due date. No utility bill cites `XU-STD`, `XB-STD` or `XL-STD`, and no document redefines one of those codes (utilities/09 does today).
+  - **The three invoices between Bayvarra and the island** follow the seller's standard terms (D22): cotton/16 (the island's ginnery to the Bayvarran mill, `XL-STD`) becomes due in 45 days instead of 30; mast/05 (Saltmere to Selanu Telecom, `XB-STD`) in 30 instead of 45. sea/22 (Lumeway to Velumi) has a deposit and a balance, an arrangement the two agreed, which under D22 may count as contract terms; whether its 45 days stand is settled with the sea flow (open point O72).
+- **Why the Accord (owner):** utilities were public services, and the countries did not open them to each other. The Accord keeps the supply of electricity, gas, water and telephone to end customers a national matter: each member keeps its own utility, public or under national licence, and no utility of one member supplies end customers in another. In return the members agreed a common minimum for the customers of those protected suppliers, of which the 21 days are part. Checked in the examples: no utility serves a customer across a border (Ferrano Energy serves Urvania, the Coastal State Water Company Bayvarra, Selanu Telecom the island). The one cross-border energy trade is wholesale: Kelpstone Gas of Bayvarra sells gas by pipeline to Urvania's power station and to Ferrano Energy, which the Accord's energy protocol of 2007 allows.
+- **Real parallels:** trade agreements commonly leave public services out (the WTO's services agreement excludes services supplied in the exercise of governmental authority; Mexico kept its state energy companies out of NAFTA; the EU treats "services of general economic interest" under rules of their own). Regulators commonly set a minimum time to pay a utility bill. Stated from general knowledge, not checked against sources today.
+
 
 ## Numbering and identity of documents (15 findings)
 
@@ -574,7 +580,7 @@ The backstory decided while working through the decisions above, kept in one pla
 | 1994 | **The Lumeport Trade Accord** is signed in Lumeport: Urvania joins, and the agreement of 1974 becomes a free trade area for all three countries. | The Accord's name: it grew out of the agreement signed in Lumeport. |
 | 1 January 1996 | The Accord enters into force. The ferra joins the lume and the coral at a fixed parity; the parities are reviewed every five years from then on (last on 1 January 2022, unchanged; next on 1 January 2027). The island stops charging duty on its partners' goods and keeps its import consumption tax. Lumeway Distribution becomes Valdara's distributor for Bayvarra and the island. Hauliers, forwarders, customs brokers and a factoring company are set up around this date to serve the new cross-border trade. | Some of the parties now dated 1996-01-01 keep 1996 as their founding year, with their own days; ports, utilities, state bodies and industry get older or other dates. |
 | 2011 | Kelpstone Gas starts producing from its offshore field; the pipeline brings gas to Urvania. Ferrano Energy and Ferrano Grid, electricity companies until then, take up gas as a second business. | Why both are classed as electricity companies (D8). |
-| 2007 onward | Later protocols of the Accord: an energy market (Ferrano Grid is split off in 2007; Kelpstone Gas dates from 2011), then the procurement rules, the payment link and card schemes, and electronic business documents. | Why the three countries share procurement rules, a payment link and code lists although each keeps its own taxes. |
+| 2007 onward | Later protocols of the Accord: an energy protocol in 2007 that opens the wholesale trade in gas and electricity and has networks run apart from supply, while the supply to end customers stays national (Ferrano Grid is split off in 2007; Kelpstone Gas dates from 2011), then the procurement rules, the payment link and card schemes, and electronic business documents. | Why the three countries share procurement rules, a payment link and code lists although each keeps its own taxes. |
 
 ### Founding table of the 25 parties (D4), current base
 
@@ -875,7 +881,14 @@ The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg fo
 
 - **Three layers.** First, what the parties agreed in a contract or a framework agreement. Where they agreed nothing, the seller's standard terms, which follow its country's practice: Urvania gives 2 % discount for payment within ten days of 30 days net; Bayvarra charges a surcharge per month late on 30 days net; the island gives 45 days. Where neither says anything about late payment, the statutory interest of the seller's country (in Urvania 8 % a year).
 - **Across a border** the seller's country's rule applies, unless the contract chooses another.
+- **Utility bills are due in 21 days,** in all three countries, by a rule of the Accord (D23). A standard terms code means one text and one period wherever it is used.
 - **Examples in the world:** Valdara's framework agreement with Ferrano Rail Cargo sets 30 days net from the consignment note, so the carrier's invoices carry no discount and fall due from the consignment note. The public works contract sets 30 days after each accepted release, so Valdara's invoice falls due from the acceptance, not from its own date.
+
+### Utilities: public services the Accord leaves national (D23)
+
+- **Each country keeps its own.** The supply of electricity, gas, water and telephone to end customers is a national matter under the Accord: each member keeps its utility, public or under national licence, and no utility of one member supplies end customers in another. Ferrano Energy serves Urvania, the Coastal State Water Company serves Bayvarra's Coastal State, Selanu Telecom serves the island. There is no cross-border utility.
+- **Wholesale energy does cross the border.** The Accord's energy protocol of 2007 opened the trade in gas and electricity between producers, networks and suppliers, and asked for networks to be run apart from supply (Urvania's Ferrano Grid was split off that year). Since 2011 Kelpstone Gas of Bayvarra sells gas by pipeline to Urvania's power station and to Ferrano Energy.
+- **A common minimum for customers.** Because the customers of a protected supplier cannot go elsewhere, the members agreed minimum rules for utility bills. One of them: a bill is due 21 days after it is issued, in all three countries.
 
 ## Open points
 
@@ -909,6 +922,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O54 | The gas field's distance ("four kilometres"), the road distances 186 km and 38 km, and every other stated distance, derived from the map at 14 km a square | D19 | D44, D35, D34 and the build |
 | O63 | The eight air frames as a cross-dock: one manufacture date, the road leg from Ferrano to Lumeport, the customs treatment across Bayvarra (transit or import and re-export), the despatch type | D21 | D39 |
 | O69 | The tender release needs an acceptance with a date (a receipt advice, a work report or a response that accepts the delivery and the installation), so that "30 days after each accepted release" gives a due date; whether the reminder tender/35 is then still justified and from which day interest runs | D22 | D28 |
+| O72 | sea/22: a deposit and a balance agreed between Lumeway and Velumi, due after 45 days; under D22 an agreed arrangement may count as contract terms; whether the 45 days stand | D23 | D30 |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
@@ -932,6 +946,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O58 | The freighter's range: about 1,060 km with the load of the air flow, against the ATR 72-600F data the world holds (`world/codelists/sources/atr`) | D19 |
 | O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
 | O64 | The production record at Valdara and the stock ledgers of Lumeway, Brightmarket and Velumi as world data: lots and serial ranges for the rail delivery; which lot each sale draws on; melt numbers and coating batches per lot; serials and lots in their globally unique form where a document crosses company borders (D5) | D21 |
+| O73 | The Accord's code and text for the utility term of 21 days; the four utility invoices and their statements, reminders and remittances; cotton/16 due in 45 days and mast/05 in 30, with what follows from the new due dates | D23 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -957,6 +972,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O34 | Second names of other places, and which name English text uses for each | D3 |
 | O52 | Whether an earlier review of the parities ever changed a rate, and when | O2 |
 | O59 | The island's capes, its high ground, its climate and winds, checked against a source; the mainland's rivers, uplands and coasts; how a land in mid-ocean came to be settled, and by whom | D19 |
+| O74 | The Accord's chapter on public services: its name and year; which services it covers (electricity, gas, water, telephone); what else the common minimum for customers holds besides the 21 days (a consumption statement with every bill, notice before disconnection); which utilities are public today (the Coastal State Water Company is state-owned; Ferrano Energy was founded by the state in 1949; Selanu Telecom was a government department until 1993); check the real parallels against sources | D23 |
 | O35 | Bayvarra's and Lisavu's own history (settlement, independence); the dates of the Accord's later protocols | D4 |
 | O36 | The year Brightmarket launched Elderwick and what else the label covers; names for Brackenmere's own lines, if a document needs them | D7 |
 
