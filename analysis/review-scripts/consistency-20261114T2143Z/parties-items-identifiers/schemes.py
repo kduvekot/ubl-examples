@@ -1,0 +1,16 @@
+import csv,collections,re
+rows=list(csv.DictReader(open('identifiers.csv')))
+def pat(v): return re.sub(r'[A-Za-z]','A',re.sub(r'\d','9',v))
+by=collections.defaultdict(list)
+for r in rows: by[r['scheme_id']].append(r)
+for s,rs in sorted(by.items(),key=lambda x:-len(x[1])):
+    vals=set(r['value'] for r in rs)
+    el=collections.Counter(r['parent']+'/'+r['element'] for r in rs)
+    pats=collections.Counter(pat(r['value']) for r in rs)
+    names=collections.Counter(r['scheme_name'] for r in rs if r['scheme_name'])
+    ag=collections.Counter(r['scheme_agency_id'] for r in rs if r['scheme_agency_id'])
+    print(f"### {s!r}: {len(rs)} uses, {len(vals)} values, {len(set(r['file']+r['flow'] for r in rs))} files, flows {','.join(sorted(set(r['flow'] for r in rs)))}")
+    print("   names:",dict(names),"agency:",dict(ag))
+    print("   elements:",'; '.join(f'{k} {v}' for k,v in el.most_common(12)), '...' if len(el)>12 else '')
+    print("   patterns:",'; '.join(f'{k} {v}' for k,v in pats.most_common(8)))
+    print("   e.g.:",', '.join(sorted(vals)[:6]))

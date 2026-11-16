@@ -862,7 +862,7 @@ The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg fo
 
 ## Open points
 
-Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts. **A check after every decision (owner's question, 2026-11-16):** before a decision is reported as recorded, the answer given to the owner is read again against this file, sentence by sentence: every "I would", "I'd add", "to settle with" and every caveat in the answer must be in the decision, a story line or this list. Each flow decision (D28 to D45) starts with its goods balance (O66) as well as its open points.
+Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts. **Nothing is lost by accident (owner, 2026-11-16):** anything made in a session that is not in the repository (a drawing, a script, a download that cannot be fetched again, a table of results) is either committed in the same turn or named here as an open point with what would be lost. **A check after every decision (owner's question, 2026-11-16):** before a decision is reported as recorded, the answer given to the owner is read again against this file, sentence by sentence: every "I would", "I'd add", "to settle with" and every caveat in the answer must be in the decision, a story line or this list. Each flow decision (D28 to D45) starts with its goods balance (O66) as well as its open points.
 
 ### To decide with a later decision
 
@@ -945,7 +945,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 
 | No. | Open point | From |
 |---|---|---|
-| O68 | The two maps of the world's position and the script that drew them (`placement.png`, `placement_rio_grande_rise.png`, `plot.py`, with the downloaded depth grid) are in the session's scratch folder, which does not survive the session. To decide: keep them in the repository (for example under `analysis/`) as the record of the placement, or let them go and redraw when needed. | D19 |
+| ~~O68~~ | ~~The maps of the world's position and the script are in the session's scratch folder~~ **Settled 2026-11-16:** kept in `analysis/world-position/` (both maps, both drawing scripts, a README with sources and limits). The reviewers' and the worklist's helper scripts are kept in `analysis/review-scripts/`. | D19 |
 | O37 | "Elderwick" in the trademark registers (USPTO, EUIPO, UKIPO, WIPO) | D7 |
 | O38 | ICD `0990`, the market codes `XFER` and `XLMX`, the owner codes `TWLU` and `FRXU` against their real registers | the reviews, D5 |
 
