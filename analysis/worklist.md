@@ -124,8 +124,8 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C84 | Packaging flow: isolated slips | flow story | 5 | 4 | 1 | 0/0/5 | none | tools/examples_scenarios.py, packaging() | ready |
 | C85 | Air flow: the missed-flight story and the CPT order change | flow story | 13 | 8 | 1 | 2/0/11 | owner: D39 | tools/examples_scenarios.py, air() | ready (D39 decided) |
 | C86 | Air flow: packing, consolidation and charges of the castings | flow story | 10 | 3 | 1 | 3/2/5 | owner: D39 | tools/examples_scenarios.py, air_consignment() | ready (D39 decided) |
-| C87 | Plastics flow: barge waybill and goods data | flow story | 15 | 4 | 1 | 2/4/9 | owner: D41 | tools/examples_scenarios.py, plastics() | waits: D41 |
-| C88 | Plastics flow: recycled-content certificate issued by a chamber of commerce | flow story | 5 | 5 | 1 | 0/0/5 | owner: D41 | world/parties.json, world/items.json | waits: D41 |
+| C87 | Plastics flow: barge waybill and goods data | flow story | 15 | 4 | 1 | 2/4/9 | owner: D41 | tools/examples_scenarios.py, plastics() | ready (D41 decided) |
+| C88 | Plastics flow: recycled-content certificate issued by a chamber of commerce | flow story | 5 | 5 | 1 | 0/0/5 | owner: D41 | world/parties.json, world/items.json | ready (D41 decided) |
 | C89 | Wood flow: slat units and isolated slips | flow story | 10 | 5 | 1 | 1/0/9 | owner: D43 | tools/examples_scenarios.py, wood() | waits: D43 |
 | C90 | Rail flow: container train documents | flow story | 33 | 8 | 1 | 3/6/24 | owner: D37 | tools/examples_scenarios.py, rail() | ready (D37 decided) |
 | C91 | Utility statement builder: average amount, supplier consumption, subscriber data | flow story | 30 | 6 | 2 | 3/9/18 | owner: D31 | tools/examples_scenarios.py, utility_statement() | ready (D31 decided) |
@@ -1375,7 +1375,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; plastics/07#F5 (VAT on carriage of exports) goes to D41.
 - Depends on / blocks: none
 - Touched by: D16 (plastics/09 drops the river freight from the customs value), D18 (the preference claim), O66 (granulate to film to packed goods).
-- State: waits for D41.
+- State: D41 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D41).
 - Findings: plastics: 04#F1, 04#F8, 06#F2, 06#F7, 06#F8, 06#F9, 06#F10, 06#F11, 06#F13, 06#F14, 06#F16, 07#F5, 08#F4, 08#F5, 08#F6
 
 ### C88 · Plastics flow: recycled-content certificate issued by a chamber of commerce
@@ -1386,7 +1386,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D41.
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
-- State: waits for D41.
+- State: D41 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D41).
 - Findings: plastics: 01#F11, 05#F12, 08#F8, 09#F18, 10#F7
 
 ### C89 · Wood flow: slat units and isolated slips
