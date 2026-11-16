@@ -147,10 +147,10 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C107 | Cotton flow: classing and phytosanitary certificates | flow story | 15 | 7 | 1 | 5/1/9 | owner: D33 | tools/examples_scenarios.py, cotton() | ready (D33 decided) |
 | C108 | Cotton flow: the sea export (bill of lading, VGM, pre-arrival report) | flow story | 13 | 8 | 1 | 2/3/8 | owner: D33 | tools/examples_scenarios.py, cotton() | ready (D33 decided) |
 | C109 | Cotton flow: classing results carried as the applicant's remarks | flow story | 7 | 7 | 1 | 0/0/7 | none | tools/examples_scenarios.py, cotton() | ready |
-| C110 | Retail flow: catalogue request, catalogue, updates and deletion | flow story | 15 | 5 | 1 | 3/4/8 | owner: D34 | tools/examples_scenarios.py, catalogue_update_head() | waits: D34 |
-| C111 | Retail flow: promotion, forecast, inventory and the shop sale | flow story | 13 | 4 | 1 | 2/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
-| C112 | Retail flow: isolated slips | flow story | 12 | 5 | 1 | 1/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
-| C113 | Retail flow: the delivery to the store (carrier references, arrival day) | flow story | 12 | 6 | 1 | 3/2/7 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
+| C110 | Retail flow: catalogue request, catalogue, updates and deletion | flow story | 15 | 5 | 1 | 3/4/8 | owner: D34 | tools/examples_scenarios.py, catalogue_update_head() | ready (D34 decided) |
+| C111 | Retail flow: promotion, forecast, inventory and the shop sale | flow story | 13 | 4 | 1 | 2/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | ready (D34 decided) |
+| C112 | Retail flow: isolated slips | flow story | 12 | 5 | 1 | 1/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | ready (D34 decided) |
+| C113 | Retail flow: the delivery to the store (carrier references, arrival day) | flow story | 12 | 6 | 1 | 3/2/7 | owner: D34 | tools/examples_scenarios.py, retail() | ready (D34 decided) |
 | C114 | Sea flow: bill of lading and ship reports | flow story | 21 | 5 | 1 | 3/7/11 | owner: D30 | tools/examples_scenarios.py, sea_consignment() | ready (D30 decided) |
 | C115 | Sea flow: isolated slips | flow story | 20 | 11 | 1 | 2/3/15 | owner: D30 | tools/examples_scenarios.py, sea() | ready (D30 decided) |
 | C116 | Sea flow: factoring, statement, payment and the island's debit note | flow story | 16 | 6 | 1 | 5/4/7 | owner: D30 | tools/examples_scenarios.py, sea_with_debit() | ready (D30 decided) |
@@ -1629,7 +1629,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D34 (new catalogue vs update).
 - Depends on / blocks: none
 - Touched by: D14 (O15: the reason for Lumeway's side-frame price of 20 May), D5 (GTINs); C73's retail/01#F1 goes with this cause.
-- State: waits for D34.
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
 - Findings: retail: 01#F3, 01#F7, 01#F10, 02#F2, 02#F5, 02#F13, 02#F14, 03#F2, 03#F3, 03#F9, 03#F12, 04#F5, 04#F12, 20#F1, 20#F4
 
 ### C111 · Retail flow: promotion, forecast, inventory and the shop sale
@@ -1640,7 +1640,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D34 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D14 (shop price 749.00, promotion 674.10, the sales tax added at the till), D27 (shops work Monday to Saturday).
-- State: waits for D34.
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
 - Findings: retail: 05#F1, 05#F10, 06#F5, 06#F6, 06#F7, 06#F11, 06#F13, 06#F14, 07#F10, 07#F14, 21#F3, 21#F7, 21#F12
 
 ### C112 · Retail flow: isolated slips
@@ -1652,7 +1652,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: Possibly not a problem for retail/22#F7 (full card number and CVV in the webshop order): `note/src/03-world.md` says "A webshop order is different: the card is not at hand, so the order carries the full number, the card's dates and its security code".
 - Touched by: none of D1 to D27.
-- State: waits for D34.
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
 - Findings: retail: 08#F5, 08#F8, 08#F12, 10#F4, 18#F2, 18#F10, 18#F11, 18#F13, 19#F2, 22#F2, 22#F5, 22#F7
 
 ### C113 · Retail flow: the delivery to the store (carrier references, arrival day)
@@ -1663,7 +1663,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D34 (the delivery day; merge decision Medium/yes).
 - Depends on / blocks: none
 - Touched by: D27 (working days and times with offsets), D19 (O54: the 38 km to the store); C72's retail/12#F4 goes with this cause.
-- State: waits for D34.
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
 - Findings: retail: 12#F10, 12#F11, 13#F2, 14#F2, 14#F6, 15#F1, 15#F4, 16#F4, 17#F4, 17#F8, 17#F12, 17#F14
 
 ### C114 · Sea flow: bill of lading and ship reports
