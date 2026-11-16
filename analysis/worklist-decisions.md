@@ -275,6 +275,13 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Drop party coordinates; keep and scale only ports and airports.
 - Recommendation: a): one constant changes, and the many stated distances and times stay; the site's map rendering must be checked.
 - Related: D21
+- **Decided (owner, 2026-11-16): the island is overseas, and the map square is 14 km.** Neither a) nor b) as written.
+  - **Scale:** one map square is 14 km (the area of the first proposal of 10 km, doubled). The mainland is about 560 km from west to east and 390 km from north to south; each mainland country has about 95,000 km² (the size of Portugal or Hungary). Road and rail distances are taken from the route's length on the map: Ferrano to Marrowdale 182 km (the documents state 186), the mine to Ferrano about 154 km, Marrowdale to Lumeport about 84 km (the documents state 38), the offshore gas field tens of kilometres from the plant (the energy flow states "four kilometres"). The houses on the map are not to scale; a square with one building stands for a district.
+  - **The island:** an isolated island in the Atlantic, about 1,000 km east of Lumeport, shown in an inset on the map. About 110 by 85 km (the size of Cyprus). Its west coast, the side towards the mainland, is the windward side: steep cliffs facing the prevailing westerly wind and the ocean swell, with no landing. The port, the airport, the town of Selanu and the cotton lie on the lee side, the east coast; ships round a cape to reach port. High ground on the windward side catches the rain; the lee side is drier and sunnier, which is where the cotton grows.
+  - **Proposed position (for the owner's approval, see the map):** the mainland on the Rio Grande Rise, a real plateau of the South Atlantic sea floor that rises from 4,000 m to less than 500 m below the surface: 29.1° to 32.9° South, 36.9° to 31.4° West. The island at 34.0° South, 20.9° West, on the western flank of the Mid-Atlantic Ridge, where the sea floor lies about 3,700 m deep (Saint Helena and Tristan da Cunha are volcanoes that rise from such depths). Lumeport's port to the island's west coast: about 970 km; to Selanu on the east side about 1,065 km in a straight line.
+- **Why there:** every coordinate falls on open sea (checked against NOAA ETOPO1 at 10 arc-minutes: no land in either area; the shallowest point under the mainland is 477 m deep). The nearest real land is Tristan da Cunha, about 850 km from the island; Gough Island about 1,200 km; Trindade about 1,260 km from the mainland. The latitude is warm enough for the island's cotton (about 34° South, where cotton is grown in Australia) and has westerly winds for most of the year and a south-westerly ocean swell all year. The position in the world data today (39.8° South, 15.6° West) would be too cool for cotton, and at 14 km a square the mainland would reach Gough Island.
+- **Times:** the sea crossing is about 520 to 580 nautical miles, 38 to 43 hours at the ship's 13.5 knots. The flight is about two hours. The mainland lies around 34° West and the island around 21° West, so the island's clocks would naturally be an hour ahead: a flight leaving Lumeport at 07:00 and landing in Selanu at 10:00 local time, as air/04 has it, is then a two-hour flight.
+- **Sources and limits:** sea floor from NOAA ETOPO1 (downloaded 2026-11-16 from NOAA's ERDDAP server, one value every 10 arc-minutes, so small islands do not show in it; the positions of the real islands are from memory and marked on the map). Winds and climate are stated from general knowledge, not from a source.
 
 ### D20 · Does the bench ship assembled or knocked down, how large is its pallet, and what does it weigh?
 - Why it matters: Cause C69 The bench as shipped: pallets that do not fit, and a bench lighter than its parts; 7 findings (6 marked "yes").
@@ -809,6 +816,13 @@ Nobody resells below what they paid plus the freight the documents state.
 
 Open threads: O50 (the forward contract in the tender flow), O51 (a trading partner outside the world, later), O52 (earlier reviews, for the encyclopaedia).
 
+### Geography: where the world lies (D19)
+
+- **The mainland** is a land of about 560 by 390 km in the South Atlantic, on the Rio Grande Rise: Urvania in the west, inland; Bayvarra in the east, on the coast, with Lumeport on its east shore facing the open ocean. Each country is about the size of Portugal. (Proposed position: 29.1° to 32.9° South, 36.9° to 31.4° West.)
+- **Lisavu** is an isolated island about 1,000 km further east, the size of Cyprus, a volcanic island rising from the deep sea floor (proposed: 34.0° South, 20.9° West). From the mainland the first sight of it is a wall of cliffs: its west coast faces the prevailing westerly wind and the ocean swell and has no landing. Ships round a cape to the lee side, where the port, the airport, the town of Selanu and the cotton fields lie, in the island's rain shadow. An island cut off like this has to work for its ties, which is the story of the Lumeport Agreement of 1974 and of the shipping line founded to serve it.
+- **Distances.** One map square is 14 km. By road, Ferrano to Marrowdale is about 180 km and Marrowdale to Lumeport about 85 km; the ore train runs about 155 km. The sea crossing takes about a day and a half to two days, the freighter's flight about two hours. The island's clocks would naturally be an hour ahead of the mainland's.
+- **On the map of the site** the island stands in an inset, as distant territory does on real maps (Shetland on maps of Britain, Hawaii on maps of the United States).
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
@@ -837,6 +851,8 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | ~~O45~~ | ~~`TaxScheme/TaxTypeCode` needs a real case~~ **Settled 2026-11-16 (D17):** the withholding scheme carries the tax type `INCOME`. | D15 | D17 |
 | O48 | Velumi's shop price for the bench: 289 coral gives 16 % after the import consumption tax; proposed about 375 coral. The same check for the side frame and Velumi's other imports. | D18 | the price table (D14), D30 |
 | O50 | The forward exchange contract of the tender flow becomes Valdara's hedge across the review of 1 January 2027: made after the award, covering the releases due after the review; how the pricing currency (ferra), the pricing exchange rate and the contract in lume hang together; out of the documents of parties that are not part of it | O2 | D28 |
+| O53 | The sea voyage Lumeport to Selanu: one passage time (38 to 43 hours) in the service description, the manifest, the pre-arrival report and the status messages; the arrival moves earlier | D19 | D30 |
+| O54 | The gas field's distance ("four kilometres"), the road distances 186 km and 38 km, and every other stated distance, derived from the map at 14 km a square | D19 | D44, D35, D34 and the build |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
@@ -854,6 +870,10 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O46 | Read the WTO Valuation Agreement (Articles 1 and 8) before the valuation bases are implemented; work out how each delivery term (FCA, FOB, CPT, CIF, DAP) is brought to each country's basis, and which elements carry the value without freight and the freight | D16 |
 | O47 | The withholding scheme's name; the form of a tax representative's registration; whether the representative is named on every invoice of the contract; the new definition of `SVCABROAD` in English and Urvanian | D17 |
 | O49 | The elements of the import declaration for the preference claim, the proof of origin and the tax due; the Accord's preference criteria; whether Urvania's import VAT is paid at the border or accounted for in the return; the carnet's amount at 10 % | D18 |
+| O55 | The position of the world: confirm on a nautical chart that both areas are open sea and clear of Tristan da Cunha, Gough and Trindade; set the origin and the degrees per square in `world/countries.json`; check that no coordinate in a document falls on real land | D19 |
+| O56 | The island's map: cliffs on the west coast, port, airport and town on the east; the sea route round a cape; the runway east to west; the road from the port; the inset on the site's map | D19 |
+| O57 | The island's time: an hour ahead of the mainland or the same; times in island documents; the world's time zone in `world/countries.json` (today UTC−1 for all) | D19 |
+| O58 | The freighter's range: about 1,060 km with the load of the air flow, against the ATR 72-600F data the world holds (`world/codelists/sources/atr`) | D19 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -862,6 +882,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 
 | No. | Check | From |
 |---|---|---|
+| O60 | Distances and durations: a stated distance equals the route's length on the map; the time between departure and arrival fits the distance and the mode's speed | D19 |
 | O30 | Nobody resells below cost plus stated freight; gross margin and turnover per person within the bands | D14 |
 | O31 | A list of the world's items with the reasoning for each HS heading, for a person to verify once | D13 |
 | O32 | The prefix of every Codana identifier is the company number of the party that issued it | D5 |
@@ -873,6 +894,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O33 | A few visible traits of each English (spelling, loan words, date and number habits) | D1 |
 | O34 | Second names of other places, and which name English text uses for each | D3 |
 | O52 | Whether an earlier review of the parities ever changed a rate, and when | O2 |
+| O59 | The island's capes, its high ground, its climate and winds, checked against a source; the mainland's rivers, uplands and coasts on the Rio Grande Rise | D19 |
 | O35 | Bayvarra's and Lisavu's own history (settlement, independence); the dates of the Accord's later protocols | D4 |
 | O36 | The year Brightmarket launched Elderwick and what else the label covers; names for Brackenmere's own lines, if a document needs them | D7 |
 
