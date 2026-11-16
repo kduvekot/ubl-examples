@@ -682,12 +682,12 @@ ROLE_NAMES = {  # role: (en, de, pt-BR, ja-Latn-hepburn)
     # StockAvailabilityReport: the receiving branch (DM#F118)
     "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
     "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
-    "ImporterParty": ("Importer", "Einführer", "Importador", "Yunyūsha"),
+    "ImporterParty": ("Importer", "Importeur", "Importador", "Yunyūsha"),
     "WinningParty": ("Winning Tenderer", "Zuschlagsempfänger", "Licitante Vencedor", "Rakusatsusha"),
     "TransitExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
-    "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
-    "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),
-    "FreightForwarderParty": ("Freight Forwarder", "Spediteur", "Agente de Carga", "Fōwādā"),
+    "CarrierParty": ("Carrier", "Frachtführer", "Transportador", "Unsōnin"),
+    "ConsignorParty": ("Consignor", "Absender", "Expedidor", "Niokurinin"),
+    "FreightForwarderParty": ("Freight Forwarder", "Spediteur", "Agente de Cargas", "Fowādā"),
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
     "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
     "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
@@ -718,8 +718,8 @@ LANG_INDEX = {"en": 0, "de": 1, "pt-BR": 2, "ja-Latn-hepburn": 3}
 TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     # a freight invoice invoices a transport service, not goods (DM#F114)
-    "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Rikujō yusō"),
-    "WorkItemDescription": ("Maintenance of office equipment", "Wartung der Büroausstattung",
+    "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Dōro kamotsu unsō"),
+    "WorkItemDescription": ("Maintenance of office equipment", "Wartung von Bürogeräten",
                             "Manutenção de equipamentos de escritório", "Jimu kiki no hoshu"),
     # the period (late August) fits a back-to-school promotion
     "RetailEvent/Description": ("Back-to-school promotion", "Schulanfangsaktion",
@@ -732,10 +732,10 @@ TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     "GoodsCertificate/Description": ("Certificate of conformity", "Konformitätsbescheinigung",
                                      "Certificado de conformidade", "Tekigō shōmeisho"),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
-                   "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
+                   "Notificação prévia de chegada", "Nyūkō mae tsūhō"),
     # a hazardous waste shipped across borders for recycling (Basel A1160)
     **{d + ":Item/Description": ("Used lead-acid batteries", "Gebrauchte Blei-Säure-Batterien",
-                                 "Baterias de chumbo-ácido usadas", "Shiyōzumi namari chikudenchi")
+                                 "Baterias chumbo-ácido usadas", "Shiyōzumi namari chikudenchi")
        for d in ("WasteMovement", "WasteNotification")},
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Gohatchū"),
