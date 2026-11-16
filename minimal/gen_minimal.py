@@ -119,6 +119,7 @@ DATE_OFFSETS = {
                                                  # business day (Mon 2026-08-10)
     "SourceForecastIssueDate": -7,               # the revised forecast came first
     "ActualArrivalTransportEvent/OccurrenceDate": -1,   # arrived before the report
+    "TenderSubmissionDeadlinePeriod/EndDate": 27,       # four weeks, Tue 2026-09-08
     "ForecastPeriod/StartDate": 7, "ForecastPeriod/EndDate": 34,   # the future
     # observed or reported: before the issue date
     "ExceptionObservationPeriod/StartDate": -28, "ExceptionObservationPeriod/EndDate": -1,
@@ -407,6 +408,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
             "TenderStatusRequest", "TenderWithdrawal",
             "UnsubscribeFromProcedureRequest", "UnsubscribeFromProcedureResponse")},
         "PriorInformationNoticeType": {"cac:ProcurementProject"},
+        # UBL has no status code here; the status is the open tender period
+        # (DM3#F102): open for tenders until the deadline
+        "ProcurementStatus:ProcurementStatusType": {"cac:TenderSubmissionDeadlinePeriod"},
+        "TenderStatus:TenderStatusType": {"cac:TenderSubmissionDeadlinePeriod"},
         # commercial documents say what they concern: the overdue invoice and
         # its amount (= the total), the balance, what is credited, what was
         # received, what work was done
