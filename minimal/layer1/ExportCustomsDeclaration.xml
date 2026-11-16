@@ -3,12 +3,12 @@
   <cbc:ID>ExportCustomsDeclaration-1</cbc:ID>
   <cac:ExporterParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Exportador Exemplo 281</cbc:Name>
+      <cbc:Name languageID="pt-BR">Exportador Exemplo 281</cbc:Name>
     </cac:PartyName>
     <cac:PartyLegalEntity>
       <cbc:CompanyID>ZZ000281000140</cbc:CompanyID>
       <cac:CorporateRegistrationScheme>
-        <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+        <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>BR</cbc:IdentificationCode>

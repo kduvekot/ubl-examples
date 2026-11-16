@@ -8,14 +8,14 @@
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Kaite 501</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Kaite 501</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Urite 502</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Urite 502</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
@@ -25,7 +25,7 @@
       <cbc:LineStatusCode>Revised</cbc:LineStatusCode>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
-        <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
+        <cbc:Description languageID="ja-Latn-hepburn">Bōrupen, ao</cbc:Description>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

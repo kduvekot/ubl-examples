@@ -5,12 +5,12 @@
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Cliente Exemplo 701</cbc:Name>
+        <cbc:Name languageID="pt-BR">Cliente Exemplo 701</cbc:Name>
       </cac:PartyName>
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000701000198</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
@@ -23,12 +23,12 @@
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Fornecedor Exemplo 702</cbc:Name>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 702</cbc:Name>
       </cac:PartyName>
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000702000132</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
@@ -44,7 +44,7 @@
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
+      <cbc:Description languageID="pt-BR">Caneta esferográfica, azul</cbc:Description>
     </cac:Item>
   </cac:CreditNoteLine>
 </SelfBilledCreditNote>

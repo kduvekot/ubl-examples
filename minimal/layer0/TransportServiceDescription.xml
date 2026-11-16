@@ -3,7 +3,7 @@
   <cbc:ID>TransportServiceDescription-1</cbc:ID>
   <cac:TransportServiceProviderParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Transportadora Exemplo 881</cbc:Name>
+      <cbc:Name languageID="pt-BR">Transportadora Exemplo 881</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:TransportationService>

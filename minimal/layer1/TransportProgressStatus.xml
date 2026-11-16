@@ -11,7 +11,7 @@
   <cac:TransportSchedule>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:StatusLocation>
-      <cbc:Name languageID="ja-Latn">Sanpuru Tāminaru 1</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Tāminaru 1</cbc:Name>
     </cac:StatusLocation>
   </cac:TransportSchedule>
 </TransportProgressStatus>

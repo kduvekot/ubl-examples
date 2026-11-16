@@ -9,7 +9,7 @@
         <cbc:ID schemeID="0060">362241718</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Fornecedor Exemplo 941</cbc:Name>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 941</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>
@@ -19,7 +19,7 @@
         <cbc:ID schemeID="0199">999900MINIMAL0094278</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Órgão Contratante Exemplo 942</cbc:Name>
+        <cbc:Name languageID="pt-BR">Órgão Contratante Exemplo 942</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>

@@ -5,7 +5,7 @@
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Hatchū Kikan 621</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Hatchū Kikan 621</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
@@ -13,7 +13,7 @@
     <cac:TenderingCriterionPropertyGroup>
       <cac:TenderingCriterionProperty>
         <cbc:ID>TenderingCriterionProperty-621</cbc:ID>
-        <cbc:Description languageID="ja-Latn">Jigyōsha wa shōgyō tōki sarete imasu ka?</cbc:Description>
+        <cbc:Description languageID="ja-Latn-hepburn">Jigyōsha wa shōgyō tōki sarete imasu ka?</cbc:Description>
       </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>

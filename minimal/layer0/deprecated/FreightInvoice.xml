@@ -8,14 +8,14 @@
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Fornecedor Exemplo 341</cbc:Name>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 341</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Cliente Exemplo 342</cbc:Name>
+        <cbc:Name languageID="pt-BR">Cliente Exemplo 342</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingCustomerParty>
@@ -25,7 +25,7 @@
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description languageID="pt">Frete rodoviário</cbc:Description>
+      <cbc:Description languageID="pt-BR">Frete rodoviário</cbc:Description>
     </cac:Item>
   </cac:InvoiceLine>
 </FreightInvoice>

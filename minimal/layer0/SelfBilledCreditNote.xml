@@ -5,14 +5,14 @@
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Cliente Exemplo 701</cbc:Name>
+        <cbc:Name languageID="pt-BR">Cliente Exemplo 701</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Fornecedor Exemplo 702</cbc:Name>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 702</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:AccountingSupplierParty>
@@ -22,7 +22,7 @@
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
+      <cbc:Description languageID="pt-BR">Caneta esferográfica, azul</cbc:Description>
     </cac:Item>
   </cac:CreditNoteLine>
 </SelfBilledCreditNote>

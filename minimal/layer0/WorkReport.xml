@@ -5,20 +5,20 @@
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Vendedor Exemplo 1001</cbc:Name>
+        <cbc:Name languageID="pt-BR">Vendedor Exemplo 1001</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Comprador Exemplo 1002</cbc:Name>
+        <cbc:Name languageID="pt-BR">Comprador Exemplo 1002</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:WorkReportLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:WorkItemDescription languageID="pt">Manutenção de equipamentos de escritório</cbc:WorkItemDescription>
+    <cbc:WorkItemDescription languageID="pt-BR">Manutenção de equipamentos de escritório</cbc:WorkItemDescription>
     <cbc:Quantity unitCode="HUR">10</cbc:Quantity>
   </cac:WorkReportLine>
 </WorkReport>

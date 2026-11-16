@@ -7,7 +7,7 @@
         <cbc:ID schemeID="0060">362179884</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Vendedor Exemplo 641</cbc:Name>
+        <cbc:Name languageID="pt-BR">Vendedor Exemplo 641</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
@@ -19,7 +19,7 @@
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
-        <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
+        <cbc:Description languageID="pt-BR">Caneta esferográfica, azul</cbc:Description>
       </cac:Item>
     </cac:LineItem>
   </cac:QuotationLine>

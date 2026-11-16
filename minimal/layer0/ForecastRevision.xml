@@ -9,12 +9,12 @@
   </cac:ForecastPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Sōshinsha 321</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sōshinsha 321</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Jushinsha 322</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Jushinsha 322</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ForecastRevisionLine>
@@ -25,7 +25,7 @@
     <cac:SalesItem>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
-        <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
+        <cbc:Description languageID="ja-Latn-hepburn">Bōrupen, ao</cbc:Description>
       </cac:Item>
     </cac:SalesItem>
   </cac:ForecastRevisionLine>

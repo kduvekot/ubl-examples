@@ -6,7 +6,7 @@
       <cbc:ID schemeID="0199">999900MINIMAL0088167</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Transportadora Exemplo 881</cbc:Name>
+      <cbc:Name languageID="pt-BR">Transportadora Exemplo 881</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:TransportationService>

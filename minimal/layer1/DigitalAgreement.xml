@@ -9,7 +9,7 @@
         <cbc:ID schemeID="0188">6999900000201</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Sankasha 201</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sankasha 201</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
@@ -19,11 +19,11 @@
         <cbc:ID schemeID="0188">5999900000202</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Sankasha 202</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sankasha 202</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
   <cac:DigitalProcess>
-    <cbc:Description languageID="ja-Latn">Hatchū</cbc:Description>
+    <cbc:Description languageID="ja-Latn-hepburn">Hatchū</cbc:Description>
   </cac:DigitalProcess>
 </DigitalAgreement>

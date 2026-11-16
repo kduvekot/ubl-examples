@@ -8,12 +8,12 @@
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Fornecedor Exemplo 341</cbc:Name>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 341</cbc:Name>
       </cac:PartyName>
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000341000124</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
@@ -26,12 +26,12 @@
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Cliente Exemplo 342</cbc:Name>
+        <cbc:Name languageID="pt-BR">Cliente Exemplo 342</cbc:Name>
       </cac:PartyName>
       <cac:PartyLegalEntity>
         <cbc:CompanyID>ZZ000342000179</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
-          <cbc:Name languageID="pt">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode>BR</cbc:IdentificationCode>
@@ -47,7 +47,7 @@
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description languageID="pt">Frete rodoviário</cbc:Description>
+      <cbc:Description languageID="pt-BR">Frete rodoviário</cbc:Description>
     </cac:Item>
   </cac:InvoiceLine>
 </FreightInvoice>

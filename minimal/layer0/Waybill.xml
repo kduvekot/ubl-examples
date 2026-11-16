@@ -3,12 +3,12 @@
   <cbc:ID>Waybill-1</cbc:ID>
   <cac:ConsignorParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Niokurinin 981</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Niokurinin 981</cbc:Name>
     </cac:PartyName>
   </cac:ConsignorParty>
   <cac:CarrierParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Unsō Gyōsha 982</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Unsō Gyōsha 982</cbc:Name>
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>

@@ -6,14 +6,14 @@
   <cac:EconomicOperatorParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Fornecedor Exemplo 941</cbc:Name>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 941</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="pt">Órgão Contratante Exemplo 942</cbc:Name>
+        <cbc:Name languageID="pt-BR">Órgão Contratante Exemplo 942</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>

@@ -8,12 +8,12 @@
   </cac:Period>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Remetente Exemplo 461</cbc:Name>
+      <cbc:Name languageID="pt-BR">Remetente Exemplo 461</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="pt">Destinatário Exemplo 462</cbc:Name>
+      <cbc:Name languageID="pt-BR">Destinatário Exemplo 462</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ItemInformationRequestLine>
@@ -25,7 +25,7 @@
     <cac:SalesItem>
       <cbc:Quantity unitCode="H87">10</cbc:Quantity>
       <cac:Item>
-        <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
+        <cbc:Description languageID="pt-BR">Caneta esferográfica, azul</cbc:Description>
       </cac:Item>
     </cac:SalesItem>
   </cac:ItemInformationRequestLine>

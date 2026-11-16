@@ -4,12 +4,12 @@
   <cbc:RequestDate>2026-08-12</cbc:RequestDate>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Sōshinsha 441</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sōshinsha 441</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
       <cbc:CompanyID>T5999900000441</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name languageID="ja-Latn">Shōhizei</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Shōhizei</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>JP</cbc:IdentificationCode>
@@ -20,12 +20,12 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Jushinsha 442</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Jushinsha 442</cbc:Name>
     </cac:PartyName>
     <cac:PartyTaxScheme>
       <cbc:CompanyID>T4999900000442</cbc:CompanyID>
       <cac:TaxScheme>
-        <cbc:Name languageID="ja-Latn">Shōhizei</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Shōhizei</cbc:Name>
         <cac:JurisdictionRegionAddress>
           <cac:Country>
             <cbc:IdentificationCode>JP</cbc:IdentificationCode>

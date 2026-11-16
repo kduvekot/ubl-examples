@@ -630,9 +630,12 @@ TAX_NAMES = {"US": "Federal Income Tax", "DE": "Umsatzsteuer", "JP": "Shōhizei"
 # identifier; no legal form (that would claim a registration). The language is
 # stated in languageID (IND6). Translations: checked against two independent
 # human translations; agreed points applied, differences decided one by one.
-LANG = {"US": "en", "IN": "en", "ZA": "en", "DE": "de", "BR": "pt", "JP": "ja-Latn"}
-EXAMPLE = {"en": "Example", "de": "Beispiel", "pt": "Exemplo", "ja-Latn": "Sanpuru"}
-ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
+# BCP 47 tags that state exactly what is used: Brazilian Portuguese (pt-BR)
+# and Japanese in Latin script, Hepburn romanization (IANA variant
+# "hepburn": ja-Latn-hepburn).
+LANG = {"US": "en", "IN": "en", "ZA": "en", "DE": "de", "BR": "pt-BR", "JP": "ja-Latn-hepburn"}
+EXAMPLE = {"en": "Example", "de": "Beispiel", "pt-BR": "Exemplo", "ja-Latn-hepburn": "Sanpuru"}
+ROLE_NAMES = {  # role: (en, de, pt-BR, ja-Latn-hepburn)
     "AccountingSupplierParty": ("Supplier", "Lieferant", "Fornecedor", "Shiiresaki"),
     "AccountingCustomerParty": ("Customer", "Kunde", "Cliente", "Tokuisaki"),
     "SellerSupplierParty": ("Seller", "Verkäufer", "Vendedor", "Urite"),
@@ -675,14 +678,14 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "EndorserParty": ("Endorser", "Beglaubigungsstelle", "Endossante", "Shōmeisha"),
     "PreparationParty": ("Preparer", "Ersteller", "Preparador", "Sakuseisha"),
 }
-LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
+LANG_INDEX = {"en": 0, "de": 1, "pt-BR": 2, "ja-Latn-hepburn": 3}
 
 # Texts in the locale's language, Latin script, with languageID; key
 # "Document:Parent/Element", "Parent/Element" or "Element". Translations:
 # checked against two independent human translations; terms added after that
 # review (e.g. report type, work item, retail event, waste, enquiry) are not
 # yet reviewed.
-TEXTS = {  # (en, de, pt, ja-Latn)
+TEXTS = {  # (en, de, pt-BR, ja-Latn-hepburn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     # a freight invoice invoices a transport service, not goods (DM#F114)
     "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Rikujō yusō"),
@@ -714,7 +717,7 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "DigitalProcess/Description": ("Ordering", "Bestellung", "Pedidos", "Hatchū"),
 }
 
-NAMES = {  # (en, de, pt, ja-Latn); visibly fictitious
+NAMES = {  # (en, de, pt-BR, ja-Latn-hepburn); visibly fictitious
     "SignatoryContact/Name": ("Alex Example", "Alex Beispiel", "Alex Exemplo", "Sanpuru Tarō"),
     "StatusLocation/Name": ("Example Terminal 1", "Beispielterminal 1", "Terminal Exemplo 1", "Sanpuru Tāminaru 1"),
     "ActivityOriginLocation/Name": ("Example Store 1", "Beispielfiliale 1", "Loja Exemplo 1", "Sanpuru Tenpo 1"),
@@ -943,7 +946,7 @@ def generate(layer, fill, schemes):
             # Portuguese puts the modifier after the noun: "Comprador Exemplo 492"
             # German compounds one-word roles ("Beispielkäufer 492"); multi-word
             # roles stay separate ("Beispiel Öffentlicher Auftraggeber 1")
-            if lang == "pt":
+            if lang == "pt-BR":
                 nm.text = "%s %s %d" % (r_name, EXAMPLE[lang], k)
             elif lang == "de" and " " not in r_name:
                 nm.text = "%s%s %d" % (EXAMPLE[lang], r_name[0].lower() + r_name[1:], k)
@@ -960,7 +963,7 @@ def generate(layer, fill, schemes):
                 ple.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)
                 crn = ple.find("{%s}CorporateRegistrationScheme/{%s}Name" % (CAC, CBC))
                 crn.text = "Cadastro Nacional da Pessoa Jurídica"
-                crn.set("languageID", "pt")
+                crn.set("languageID", "pt-BR")
             pts = party.find("{%s}PartyTaxScheme" % CAC)
             if pts is not None:
                 pts.find("{%s}CompanyID" % CBC).text = TAX_VALUES[COUNTRY](k)

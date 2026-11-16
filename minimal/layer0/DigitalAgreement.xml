@@ -6,18 +6,18 @@
   <cac:ParticipantParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Sankasha 201</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sankasha 201</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
   <cac:ParticipantParty>
     <cac:Party>
       <cac:PartyName>
-        <cbc:Name languageID="ja-Latn">Sanpuru Sankasha 202</cbc:Name>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sankasha 202</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:ParticipantParty>
   <cac:DigitalProcess>
-    <cbc:Description languageID="ja-Latn">Hatchū</cbc:Description>
+    <cbc:Description languageID="ja-Latn-hepburn">Hatchū</cbc:Description>
   </cac:DigitalProcess>
 </DigitalAgreement>

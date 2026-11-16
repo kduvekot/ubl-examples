@@ -8,12 +8,12 @@
   </cac:ValidityPeriod>
   <cac:SenderParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Sōshinsha 261</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sōshinsha 261</cbc:Name>
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="ja-Latn">Sanpuru Jushinsha 262</cbc:Name>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Jushinsha 262</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ExceptionCriteriaLine>
@@ -22,7 +22,7 @@
     <cbc:ThresholdQuantity unitCode="H87">10</cbc:ThresholdQuantity>
     <cbc:SupplyChainActivityTypeCode>ON_HAND</cbc:SupplyChainActivityTypeCode>
     <cac:SupplyItem>
-      <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
+      <cbc:Description languageID="ja-Latn-hepburn">Bōrupen, ao</cbc:Description>
     </cac:SupplyItem>
   </cac:ExceptionCriteriaLine>
 </ExceptionCriteria>
