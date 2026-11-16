@@ -46,6 +46,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="E54">1</cbc:InvoicedQuantity>
     <cac:Item>
       <cbc:Description languageID="pt-BR">Frete rodoviário</cbc:Description>
     </cac:Item>

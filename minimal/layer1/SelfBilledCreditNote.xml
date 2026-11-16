@@ -43,6 +43,7 @@
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:CreditedQuantity unitCode="H87">10</cbc:CreditedQuantity>
     <cac:Item>
       <cbc:Description languageID="pt-BR">Caneta esferográfica, azul</cbc:Description>
     </cac:Item>

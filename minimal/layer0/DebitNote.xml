@@ -21,6 +21,10 @@
   </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:DebitedQuantity unitCode="H87">10</cbc:DebitedQuantity>
     <cbc:LineExtensionAmount currencyID="ZAR">270.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+    </cac:Item>
   </cac:DebitNoteLine>
 </DebitNote>

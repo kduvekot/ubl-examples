@@ -21,6 +21,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">10</cbc:InvoicedQuantity>
     <cac:Item>
       <cbc:Description languageID="de">Kugelschreiber, blau</cbc:Description>
     </cac:Item>

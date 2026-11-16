@@ -32,4 +32,7 @@
       <cbc:Name languageID="de">Beispielempfänger 134</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:Shipment>
+    <cbc:ID>Shipment-131</cbc:ID>
+  </cac:Shipment>
 </CommonTransportationReport>

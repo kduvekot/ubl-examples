@@ -25,6 +25,7 @@
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Quantity unitCode="H87">10</cbc:Quantity>
     <cac:Item>
       <cbc:Description languageID="de">Kugelschreiber, blau</cbc:Description>
     </cac:Item>

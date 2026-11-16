@@ -253,12 +253,16 @@ QUANTITY_UNITS = {
     "ExceptionCriteriaLine/ThresholdQuantity": "H87",
     "DespatchLine/DeliveredQuantity": "H87", "LineItem/Quantity": "H87",
     "ReceiptLine/ReceivedQuantity": "H87",
+    "InvoiceLine/InvoicedQuantity": "H87", "CreditNoteLine/CreditedQuantity": "H87",
+    "FreightInvoice:InvoiceLine/InvoicedQuantity": "E54",   # one road freight trip
+    "DebitNoteLine/DebitedQuantity": "H87", "PurchaseReceiptLine/Quantity": "H87",
     "MainQualifyingParty/OperatingYearsQuantity": "ANN",   # years
     "SubscriberConsumption/TotalMeteredQuantity": "KWH",   # electricity
 }
 
 # Quantity values other than the base 10 ("Parent/Element").
 QUANTITY_VALUES = {"MainQualifyingParty/OperatingYearsQuantity": "12",
+                   "FreightInvoice:InvoiceLine/InvoicedQuantity": "1",
                    "SubscriberConsumption/TotalMeteredQuantity": "350"}  # a month, household
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
@@ -377,7 +381,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "CertificateOfOrigin:ShipmentType": {"cac:OriginAddress"},
         "AddressType@OriginAddress": {"cac:Country"},
         # a report to authorities: what kind of report, and for which authority
-        "CommonTransportationReportType": {"cbc:ReportType", "cac:AuthorityParty"},
+        # ... and what arrives (DM3#F1)
+        "CommonTransportationReportType": {"cbc:ReportType", "cac:AuthorityParty", "cac:Shipment"},
         # exception lines say what they count (operational exception)
         "ExceptionCriteriaLineType": {"cbc:SupplyChainActivityTypeCode"},
         "ExceptionNotificationLineType": {"cbc:SupplyChainActivityTypeCode"},
@@ -402,7 +407,12 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "StatementLineType": {"cac:BillingReference", "cbc:BalanceAmount"},
         # a remittance line: the invoice paid (a debit item) and its amount
         "RemittanceAdviceLineType": {"cac:BillingReference", "cbc:DebitLineAmount"},
-        "CreditNoteLineType": {"cac:Item"},
+        "CreditNoteLineType": {"cac:Item", "cbc:CreditedQuantity"},
+        # bill lines state the quantity, so amounts read as 10 x unit price
+        # (VA3#F2); a debit line also says what is debited (DM3#F3)
+        "InvoiceLineType": {"cbc:InvoicedQuantity"},
+        "PurchaseReceiptLineType": {"cbc:Quantity"},
+        "DebitNoteLineType": {"cac:Item", "cbc:DebitedQuantity"},
         "ReceiptAdviceType": {"cac:ReceiptLine"},
         "ReceiptLineType": {"cbc:ReceivedQuantity", "cac:Item"},
         "WorkReportLineType": {"cbc:WorkItemDescription"},
@@ -871,8 +881,9 @@ def build(parent, el_decl):
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
                   else amount_for() if u == "AmountType"
-                  else QUANTITY_VALUES.get(etree.QName(parent).localname + "/" + el_decl.get("name"),
-                                           VALUES[u]) if u == "QuantityType"
+                  else QUANTITY_VALUES.get(DOC + ":" + etree.QName(parent).localname + "/" + el_decl.get("name"),
+                       QUANTITY_VALUES.get(etree.QName(parent).localname + "/" + el_decl.get("name"),
+                                           VALUES[u])) if u == "QuantityType"
                   else id_for(parent, el_decl.get("name")) if u == "IdentifierType"
                   else text_for(e, parent, el_decl.get("name")) if u == "TextType"
                   else name_for(e, parent, el_decl.get("name")) if u == "NameType"
@@ -905,6 +916,8 @@ def build(parent, el_decl):
             attrs["unitCode"] = UNITS[el_decl.get("name")]
         if u == "QuantityType":
             key = etree.QName(parent).localname + "/" + el_decl.get("name")
+            if DOC + ":" + key in QUANTITY_UNITS:
+                key = DOC + ":" + key
             if key not in QUANTITY_UNITS:
                 raise KeyError("no unit chosen for " + key)
             attrs["unitCode"] = QUANTITY_UNITS[key]
