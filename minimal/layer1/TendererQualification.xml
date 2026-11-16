@@ -5,6 +5,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:TendererPartyQualification>
     <cac:MainQualifyingParty>
+      <cbc:OperatingYearsQuantity unitCode="ANN">12</cbc:OperatingYearsQuantity>
       <cac:Party>
         <cac:PartyIdentification>
           <cbc:ID schemeID="0188">9999900000801</cbc:ID>

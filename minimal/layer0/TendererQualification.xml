@@ -5,6 +5,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cac:TendererPartyQualification>
     <cac:MainQualifyingParty>
+      <cbc:OperatingYearsQuantity unitCode="ANN">12</cbc:OperatingYearsQuantity>
       <cac:Party>
         <cac:PartyName>
           <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Daihyō Nyūsatsusha 801</cbc:Name>

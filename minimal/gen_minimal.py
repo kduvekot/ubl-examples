@@ -252,7 +252,11 @@ QUANTITY_UNITS = {
     "ExceptionCriteriaLine/ThresholdQuantity": "H87",
     "DespatchLine/DeliveredQuantity": "H87", "LineItem/Quantity": "H87",
     "ReceiptLine/ReceivedQuantity": "H87",
+    "MainQualifyingParty/OperatingYearsQuantity": "ANN",   # years
 }
+
+# Quantity values other than the base 10 ("Parent/Element").
+QUANTITY_VALUES = {"MainQualifyingParty/OperatingYearsQuantity": "12"}
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
 # PeriodType: both StartDate and EndDate. A period with only a start would be
@@ -417,6 +421,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ContractAwardNotice:TenderResultType": {"cac:WinningParty"},
         "ImportCustomsDeclarationType": {"cac:ImporterParty"},
         "GoodsCertificateType": {"cbc:Description"},  # what kind of certificate
+        # a tenderer's qualification: years in operation (UBL's own example)
+        "TendererQualification:QualifyingPartyType": {"cbc:OperatingYearsQuantity"},
         "TransportExecutionPlanType": {"cac:MainTransportationService"},
         "TransportExecutionPlanRequestType": {"cac:MainTransportationService"},
         # bills name the customer they are addressed to; lines that despatch,
@@ -858,6 +864,8 @@ def build(parent, el_decl):
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
                   else amount_for() if u == "AmountType"
+                  else QUANTITY_VALUES.get(etree.QName(parent).localname + "/" + el_decl.get("name"),
+                                           VALUES[u]) if u == "QuantityType"
                   else id_for(parent, el_decl.get("name")) if u == "IdentifierType"
                   else text_for(e, parent, el_decl.get("name")) if u == "TextType"
                   else name_for(e, parent, el_decl.get("name")) if u == "NameType"
