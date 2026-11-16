@@ -222,6 +222,10 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Per country, stated in each declaration.
 - Recommendation: a), as conditions#F5 prefers; it is the common practice (WTO valuation, own knowledge of the reviews).
 - Related: D18
+- **Decided (owner, 2026-11-16): c), each country values imports on its own basis.** Urvania: the price paid for the goods with freight and insurance to its border (a CIF-type value). Bayvarra: the price paid for the goods as they left the exporting country, without freight and insurance (an FOB-type value). Lisavu: the price paid with freight and insurance to the island. In all three, charges that are part of the price paid belong to the value (the special colour of tender/32, the export pallets of wood/08). Every declaration follows the rule of the country it is lodged in, and a customs value declared on a transport document agrees with the declaration.
+- **Why not one rule (the worklist recommended a):** the Accord is "a free trade area, not a customs union", with tariffs and rates staying national (`note/src/03-world.md`); valuation left to the members fits that, and it shows a real difference: under the WTO Valuation Agreement the value starts from the price actually paid, and each member chooses whether freight and insurance to its border are included (most do, the EU among them; the United States, Canada, Australia and New Zealand do not). Stated from knowledge of the agreement; **its text (Articles 1 and 8) is still to be read before implementation** (open point O46).
+- **What it changes:** Bayvarra: road/10 and cotton/15 are right as they are; plastics/09 drops the river freight (it already states 98,046.00 as `FreeOnBoardValueAmount` beside a declared value of 99,840.00); tender/31 deducts the carriage from its delivered price and adds the colour charge. Urvania: wood/07 adds the pallet charge; energy/05 stays. Lisavu: sea/19 states the landed value, which then agrees with the 53,778.00 lume of the bill of lading. The transit declaration rail/06 follows the rule of the country that asks for it.
+- **What it means for the world:** the same bench has one customs value entering Bayvarra and another entering Lisavu, and each declaration shows why. On the island the import consumption tax is charged on the landed value (D18).
 
 ### D17 · When does Bayvarra withhold tax on non-residents' services and require a tax representative, and how does Urvania treat a foreign public body?
 - Why it matters: Cause C54 Bayvarran withholding tax and tax representative only in the tender, and Urvania's "service to a business abroad" for a public body; 10 findings (8 marked "yes").
@@ -766,6 +770,11 @@ Nobody resells below what they paid plus the freight the documents state.
 
 **The distribution agreement.** Lumeway Distribution became Valdara's distributor for Bayvarra and the island in 1996, when the Trade Accord came into force. That is why Valdara's benches reach the island through Lumeport.
 
+### Customs between the three countries (D16; D17 and D18 to follow)
+
+- **Valuation is national.** The Accord is a free trade area, not a customs union; each member values imports its own way, within the WTO's rules. Urvania includes freight and insurance to its border, in the continental way, like its value added tax. Bayvarra values goods as they left the exporting country, without freight, in the settlers' tradition (as the United States, Canada and Australia do). Lisavu, an island that lives on import taxes, values everything landed.
+- **What is common:** the value starts from the price actually paid, and charges that are part of that price (a special finish, export packing) belong to it.
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
@@ -806,6 +815,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O24 | Site codes for Urvanian places and returnable items on the Codana side: only where a document needs one | D5 |
 | O25 | The two figures of the bench's footprint (sourcing, manufacturing), whether the total stays 96 kg, and the same split for other items | D10 |
 | O26 | The cotton shipment: bale count, per-bale weights and totals must agree (27 bales, 6,129 kg, 6,190.29 kg gross) | D12 |
+| O46 | Read the WTO Valuation Agreement (Articles 1 and 8) before the valuation bases are implemented; work out how each delivery term (FCA, FOB, CPT, CIF, DAP) is brought to each country's basis, and which elements carry the value without freight and the freight | D16 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
