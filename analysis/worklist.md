@@ -143,9 +143,9 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C103 | Furniture flow: quotation, orders, invoice, return and credit | flow story | 27 | 9 | 1 | 0/1/26 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
 | C104 | Furniture flow: the replenishment and sales-reporting documents | flow story | 21 | 5 | 1 | 0/10/11 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
 | C105 | Furniture flow: the department's desks and installation | flow story | 10 | 3 | 1 | 0/0/10 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
-| C106 | Cotton flow: self-billing between ginnery and farm, and the mill's forecasts | flow story | 26 | 6 | 1 | 1/4/21 | owner: D33 | tools/examples_kit.py, self_billed() | waits: D33 |
-| C107 | Cotton flow: classing and phytosanitary certificates | flow story | 15 | 7 | 1 | 5/1/9 | owner: D33 | tools/examples_scenarios.py, cotton() | waits: D33 |
-| C108 | Cotton flow: the sea export (bill of lading, VGM, pre-arrival report) | flow story | 13 | 8 | 1 | 2/3/8 | owner: D33 | tools/examples_scenarios.py, cotton() | waits: D33 |
+| C106 | Cotton flow: self-billing between ginnery and farm, and the mill's forecasts | flow story | 26 | 6 | 1 | 1/4/21 | owner: D33 | tools/examples_kit.py, self_billed() | ready (D33 decided) |
+| C107 | Cotton flow: classing and phytosanitary certificates | flow story | 15 | 7 | 1 | 5/1/9 | owner: D33 | tools/examples_scenarios.py, cotton() | ready (D33 decided) |
+| C108 | Cotton flow: the sea export (bill of lading, VGM, pre-arrival report) | flow story | 13 | 8 | 1 | 2/3/8 | owner: D33 | tools/examples_scenarios.py, cotton() | ready (D33 decided) |
 | C109 | Cotton flow: classing results carried as the applicant's remarks | flow story | 7 | 7 | 1 | 0/0/7 | none | tools/examples_scenarios.py, cotton() | ready |
 | C110 | Retail flow: catalogue request, catalogue, updates and deletion | flow story | 15 | 5 | 1 | 3/4/8 | owner: D34 | tools/examples_scenarios.py, catalogue_update_head() | waits: D34 |
 | C111 | Retail flow: promotion, forecast, inventory and the shop sale | flow story | 13 | 4 | 1 | 2/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
@@ -1585,7 +1585,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D33 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D15 (a Lisavan sale has no tax section; the presumptive tax stays), D23 (cotton/16 is due in 45 days), O66 (seed cotton to lint).
-- State: waits for D33.
+- State: D33 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D33: the flow moves into the harvest).
 - Findings: cotton: 02#F2, 03#F3, 04#F5, 04#F9, 04#F10, 04#F12, 04#F13, 04#F14, 04#F18, 04#F19, 04#F20, 05#F5, 05#F6, 05#F9, 05#F10, 05#F13, 05#F14, 05#F15, 05#F16, 05#F20, 05#F24, 05#F25, 06#F5, 06#F6, 07#F1, 07#F8
 
 ### C107 · Cotton flow: classing and phytosanitary certificates
@@ -1596,7 +1596,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D33 (who issues the phytosanitary certificate).
 - Depends on / blocks: none
 - Touched by: D11 (the classing grade and moisture are lot facts, stated first in the certificate).
-- State: waits for D33.
+- State: D33 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D33: the flow moves into the harvest).
 - Findings: cotton: 02#F1, 05#F2, 05#F21, 07#F11, 10#F1, 10#F2, 10#F3, 10#F4, 10#F6, 10#F8, 10#F15, 10#F17, 11#F6, 14#F3, 15#F7
 
 ### C108 · Cotton flow: the sea export (bill of lading, VGM, pre-arrival report)
@@ -1607,7 +1607,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D33 (documentary collection or not).
 - Depends on / blocks: none
 - Touched by: D12 (O26: 27 bales, 6,129 kg, 6,190.29 kg gross), C15.
-- State: waits for D33.
+- State: D33 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D33: the flow moves into the harvest).
 - Findings: cotton: 08#F9, 09#F1, 11#F5, 12#F1, 12#F2, 12#F4, 13#F1, 13#F3, 13#F7, 14#F4, 15#F6, 17#F2, 17#F5
 
 ### C109 · Cotton flow: classing results carried as the applicant's remarks
