@@ -332,6 +332,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # is issued in the country of origin)
         "CertificateOfOrigin:ShipmentType": {"cac:OriginAddress"},
         "AddressType@OriginAddress": {"cac:Country"},
+        # a report to authorities: what kind of report, and for which authority
+        "CommonTransportationReportType": {"cbc:ReportType", "cac:AuthorityParty"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -536,6 +538,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     # StockAvailabilityReport: the receiving branch (DM#F118)
     "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
+    "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
     "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
@@ -567,6 +570,8 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     # a freight invoice invoices a transport service, not goods (DM#F114)
     "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Rikujō yusō"),
+    "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
+                   "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Gohatchū"),
     "CertificateType": ("Ordinary", "Nichtpräferenziell", "Comum", "Ippan"),   # from the definition's examples
