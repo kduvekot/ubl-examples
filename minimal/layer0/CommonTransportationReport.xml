@@ -20,7 +20,7 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyName>
-      <cbc:Name languageID="de">Beispielempfänger 134</cbc:Name>
+      <cbc:Name languageID="de">Beispielbehörde 132</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:Shipment>

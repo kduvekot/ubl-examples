@@ -13,5 +13,10 @@
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>Shipment-831</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
 </TransitCustomsDeclaration>

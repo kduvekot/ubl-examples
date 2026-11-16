@@ -255,6 +255,7 @@ QUANTITY_UNITS = {
     "ExceptionCriteriaLine/ThresholdQuantity": "H87",
     "DespatchLine/DeliveredQuantity": "H87", "LineItem/Quantity": "H87",
     "ReceiptLine/ReceivedQuantity": "H87",
+    "Price/BaseQuantity": "H87",
     "InvoiceLine/InvoicedQuantity": "H87", "CreditNoteLine/CreditedQuantity": "H87",
     "FreightInvoice:InvoiceLine/InvoicedQuantity": "E54",   # one road freight trip
     "DebitNoteLine/DebitedQuantity": "H87", "PurchaseReceiptLine/Quantity": "H87",
@@ -264,6 +265,7 @@ QUANTITY_UNITS = {
 
 # Quantity values other than the base 10 ("Parent/Element").
 QUANTITY_VALUES = {"MainQualifyingParty/OperatingYearsQuantity": "12",
+                   "Price/BaseQuantity": "1",
                    "FreightInvoice:InvoiceLine/InvoicedQuantity": "1",
                    "SubscriberConsumption/TotalMeteredQuantity": "350"}  # a month, household
 
@@ -423,6 +425,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # a transit declaration has a declarant and what is declared
         "RetailEventType": {"cbc:Description", "cbc:IssueDate"},
         "PackingList:ShipmentType": {"cac:GoodsItem"},
+        "TransitCustomsDeclaration:ShipmentType": {"cac:GoodsItem"},
+        "Waybill:ShipmentType": {"cac:GoodsItem"},
         "GoodsItemType": {"cac:Item"},
         "WaybillType": {"cac:CarrierParty", "cac:ConsignorParty"},
         "TransitCustomsDeclarationType": {"cac:TransitExporterParty", "cac:Shipment"},
@@ -459,6 +463,7 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
+        "PriceType": {"cbc:BaseQuantity"},   # the price is per one piece
         "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
         "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
         "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
@@ -564,8 +569,12 @@ def scheme_for(party):
     businesses and public bodies by it."""
     r = role(party)
     s = SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
-    if COUNTRY == "JP" and (s == DUNS or (s == LEI and r in ("ContractingParty", "SenderParty", "ParticipantParty"))
-                            or (s == TAX and r == "HolderParty")):
+    if COUNTRY == "JP" and (s == DUNS
+                            or (s == LEI and r in ("ContractingParty", "SenderParty", "ParticipantParty",
+                                                   "CarrierParty", "FreightForwarderParty",
+                                                   "TransportServiceProviderParty"))
+                            or (s == TAX and r in ("HolderParty", "ImporterParty", "ExporterParty",
+                                                   "TransitExporterParty"))):
         return JPCN  # JP authorities and customs traders also have Corporate Numbers
     return s
 
@@ -706,6 +715,9 @@ ROLE_NAMES = {  # role: (en, de, pt-BR, ja-Latn-hepburn)
     "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     # StockAvailabilityReport: the receiving branch (DM#F118)
     "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
+    # WorkReport: work, i.e. a service, not goods (Brazil: prestador/tomador)
+    "WorkReport/SellerSupplierParty": ("Service Provider", "Dienstleister", "Prestador de Serviços", "Ekimu Teikyōsha"),
+    "WorkReport/BuyerCustomerParty": ("Service Recipient", "Leistungsempfänger", "Tomador de Serviços", "Ekimu Juryōsha"),
     "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
     "ImporterParty": ("Importer", "Importeur", "Importador", "Yunyūsha"),
     "WinningParty": ("Winning Tenderer", "Zuschlagsempfänger", "Licitante Vencedor", "Rakusatsusha"),
@@ -1057,6 +1069,12 @@ def generate(layer, fill, schemes):
         sig = doc.find(".//{%s}IssuerEndorsement//{%s}SignatoryContact/{%s}Name" % (CAC, CAC, CBC))
         if sig is not None:
             sig.text = SECOND_SIGNATORY[LANG_INDEX[LANG[COUNTRY]]]
+        # CommonTransportationReport: UBL defines both AuthorityParty and
+        # ReceiverParty as the party receiving the report: the same party
+        if DOC == "CommonTransportationReport":
+            ap = doc.find(".//{%s}AuthorityParty" % CAC)
+            rp = doc.find(".//{%s}ReceiverParty" % CAC)
+            rp.getparent().replace(rp, etree.fromstring(etree.tostring(ap).replace(b"AuthorityParty", b"ReceiverParty")))
         # the issuer's endorsement is given by the issuer itself (DM#F4)
         issuer = doc.find(".//{%s}IssuerParty/{%s}PartyName/{%s}Name" % (CAC, CAC, CBC))
         ie = doc.find(".//{%s}IssuerEndorsement/{%s}EndorserParty/{%s}Party/{%s}PartyName/{%s}Name"

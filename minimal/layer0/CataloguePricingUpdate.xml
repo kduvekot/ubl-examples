@@ -20,6 +20,7 @@
     <cac:RequiredItemLocationQuantity>
       <cac:Price>
         <cbc:PriceAmount currencyID="BRL">7.50</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="H87">1</cbc:BaseQuantity>
       </cac:Price>
     </cac:RequiredItemLocationQuantity>
   </cac:CataloguePricingUpdateLine>

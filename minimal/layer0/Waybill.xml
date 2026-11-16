@@ -13,5 +13,10 @@
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>Shipment-981</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="ja-Latn-hepburn">Bōrupen, ao</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
 </Waybill>
