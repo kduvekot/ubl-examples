@@ -18,4 +18,12 @@
       <cbc:Name languageID="en">Example Receiver 2</cbc:Name>
     </cac:PartyName>
   </cac:ReceiverParty>
+  <cac:DocumentResponse>
+    <cac:Response>
+      <cbc:ResponseCode>ACCEPTED</cbc:ResponseCode>
+    </cac:Response>
+    <cac:DocumentReference>
+      <cbc:ID>DocumentReference-1</cbc:ID>
+    </cac:DocumentReference>
+  </cac:DocumentResponse>
 </ApplicationResponse>

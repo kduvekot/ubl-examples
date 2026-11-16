@@ -286,6 +286,11 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # ("the criterion as described in the Qualification Application
         # Request"), so the answer refers to a question in the same document:
         # one simple yes/no criterion property, answered true.
+        # Document level (IND6): optional elements that carry a document's
+        # defined purpose, without which the document says nothing. Each is
+        # also a UBL finding (ubl-findings.md, "essential but optional").
+        # ApplicationResponse: "the application's response to a transaction".
+        "ApplicationResponseType": {"cac:DocumentResponse"},
         "QualificationApplicationResponseType": {"cac:TenderingCriterion"},
         "TenderingCriterionType": {"cac:TenderingCriterionPropertyGroup"},
         "TenderingCriterionPropertyType": {"cbc:ID", "cbc:Description"},
