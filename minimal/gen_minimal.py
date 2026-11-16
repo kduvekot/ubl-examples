@@ -187,6 +187,9 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # values listed for the same element elsewhere in UBL (CANCELED_
                # ORDERS ... SALES SHIPMENTS); a store's sales item over a period
                "SupplyChainActivityTypeCode": "SALES",
+               # a falls-below threshold on stock: a stock-out warning
+               "ExceptionCriteria:SupplyChainActivityTypeCode": "ON_HAND",
+               "ExceptionNotification:SupplyChainActivityTypeCode": "ON_HAND",
                # "the logical state of the discrete activity": an event announced
                # two weeks ahead, nothing about a proposal or agreement
                "RetailEventStatusCode": "PLANNED",
@@ -334,6 +337,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "AddressType@OriginAddress": {"cac:Country"},
         # a report to authorities: what kind of report, and for which authority
         "CommonTransportationReportType": {"cbc:ReportType", "cac:AuthorityParty"},
+        # exception lines say what they count (operational exception)
+        "ExceptionCriteriaLineType": {"cbc:SupplyChainActivityTypeCode"},
+        "ExceptionNotificationLineType": {"cbc:SupplyChainActivityTypeCode"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order

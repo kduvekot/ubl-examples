@@ -26,6 +26,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:ComparedValueMeasure unitCode="H87">8</cbc:ComparedValueMeasure>
     <cbc:SourceValueMeasure unitCode="H87">10</cbc:SourceValueMeasure>
+    <cbc:SupplyChainActivityTypeCode>ON_HAND</cbc:SupplyChainActivityTypeCode>
     <cac:SupplyItem>
       <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
     </cac:SupplyItem>

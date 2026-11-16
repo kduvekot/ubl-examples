@@ -20,6 +20,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:ThresholdValueComparisonCode>FALLS_BELOW_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="H87">10</cbc:ThresholdQuantity>
+    <cbc:SupplyChainActivityTypeCode>ON_HAND</cbc:SupplyChainActivityTypeCode>
     <cac:SupplyItem>
       <cbc:Description languageID="ja-Latn">Bōrupen, ao</cbc:Description>
     </cac:SupplyItem>
