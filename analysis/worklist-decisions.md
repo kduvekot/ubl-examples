@@ -374,7 +374,19 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
 - **What the documents do today:** every flow has one block of consecutive numbers shared by all its issuers (sea 0123 to 0154, road 0149 to 0168, energy 0149 to 0160, utilities 0313 to 0324, wood 0625 to 0638), so one issuer's numbers jump with the flow: Lumeway's invoice of 30 April is 0236 and that of 14 May is 0147; Valdara's orders are 0627 in February, 0304 in March, 0521 in April. All 250 document numbers have the shape prefix, kind, two-digit year, four digits.
 - **Why:** a document number is the issuer's own record; for invoices tax rules usually require an unbroken sequence per issuer, and a later invoice with a lower number is a red flag to an auditor.
 - **When:** after the issue times are final (documents that cite later ones, the sea voyage, the tender dates), because numbers follow time. It is one of the last things implemented.
-- **Open, asked by the owner (open point O75):** whether numbers restart each year and whether all issuers use one format, or each company and country its own.
+- **Also decided (owner, 2026-11-16): numbering styles differ by country and by kind of company,** from a small set of styles:
+
+  | Style | Who | Example | Restarts each year |
+  |---|---|---|---|
+  | Statutory invoice numbering | Urvanian sellers, for invoices and credit notes | `2026/0920` | Yes, by Urvania's rules for value added tax |
+  | Numeric ranges, one per kind of document | Large companies with a business system: Valdara, Brightmarket, the banks, Tidewell | `4500012345` | No |
+  | Prefix, kind and year | Mid-sized companies, as all issuers have it today | `LD-INV-26-0920` | Yes |
+  | Simple | Small companies and the farm | `2026-14` | Yes |
+  | File reference | Public bodies | `PWD/2026/0187` | Yes |
+
+  Whether numbers restart is a matter of the country's law or habit (continental Europe numbers invoices within the year; the English-speaking business world usually runs on); the format is a matter of the company's size and software. Bayvarra and Lisavu have no rule on it.
+- **What it teaches:** an identifier is opaque. A uniform pattern invites reading meaning into a number ("LD" is Lumeway, "INV" is an invoice); a reader finds out what a document is from its elements, not from its number. The cost is that a reference no longer shows at a glance who issued a document; the explanation next to each example still says it.
+- **To follow (open point O75):** the table of which issuer uses which style, with each issuer's yearly volume per kind of document, as a proposal for the owner, like the founding table.
 
 ### D25 · Which prefix does each party use, and is `BF` given to Bayforth or Brackenmere?
 - Why it matters: Cause C75 Issuer prefixes: `BF` for two parties, second prefixes for signatures; 4 findings (1 marked "yes").
@@ -895,6 +907,12 @@ The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg fo
 - **Wholesale energy does cross the border.** The Accord's energy protocol of 2007 opened the trade in gas and electricity between producers, networks and suppliers, and asked for networks to be run apart from supply (Urvania's Ferrano Grid was split off that year). Since 2011 Kelpstone Gas of Bayvarra sells gas by pipeline to Urvania's power station and to Ferrano Energy.
 - **A common minimum for customers.** Because the customers of a protected supplier cannot go elsewhere, the members agreed minimum rules for utility bills. One of them: a bill is due 21 days after it is issued, in all three countries.
 
+### Document numbers (D24)
+
+- **Every issuer keeps its own numbers,** per kind of document, rising with time. The examples show a sample of each company's sequence: a distributor that issues some 2,800 invoices a year is near number 920 at the end of April; a farm is in its low two digits.
+- **The style differs.** In Urvania an invoice is numbered within the year, and the year is part of the number, by its rules for value added tax. Large companies use plain numeric ranges from their business systems, one range per kind of document, that run on from year to year. Mid-sized companies use a prefix, the kind and the year. Small ones write the year and a number. Public bodies use file references.
+- **A number says nothing by itself.** What a document is, and who issued it, is said by its elements.
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts. **Nothing is lost by accident (owner, 2026-11-16):** anything made in a session that is not in the repository (a drawing, a script, a download that cannot be fetched again, a table of results) is either committed in the same turn or named here as an open point with what would be lost. **A check after every decision (owner's question, 2026-11-16):** before a decision is reported as recorded, the answer given to the owner is read again against this file, sentence by sentence: every "I would", "I'd add", "to settle with" and every caveat in the answer must be in the decision, a story line or this list. Each flow decision (D28 to D45) starts with its goods balance (O66) as well as its open points.
@@ -952,7 +970,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
 | O64 | The production record at Valdara and the stock ledgers of Lumeway, Brightmarket and Velumi as world data: lots and serial ranges for the rail delivery; which lot each sale draws on; melt numbers and coating batches per lot; serials and lots in their globally unique form where a document crosses company borders (D5) | D21 |
 | O73 | The Accord's code and text for the utility term of 21 days; the four utility invoices and their statements, reminders and remittances; cotton/16 due in 45 days and mast/05 in 30, with what follows from the new due dates | D23 |
-| O75 | The numbering style: restart each year or run on; one format for all issuers or a style per country and kind of company; the yearly volume per issuer and kind of document | D24 |
+| O75 | The table of which of the 40 issuers uses which numbering style (statutory invoice numbering, numeric ranges, prefix-kind-year, simple, file reference), with each issuer's yearly volume per kind of document, as a proposal for the owner; Urvania's rule for invoice numbers in the story; the exact formats (digits, separators, series) | D24 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
