@@ -100,6 +100,9 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Maker's brand: the story drops "own line".
 - Recommendation: a): the story (an own-line set made by the furniture maker) is the reason for the flow.
 - Related: none
+- **Decided (owner, 2026-11-16): a), the store's own label, under an invented name: Elderwick.** The garden set is the Elderwick Marrow garden bench set: brand Elderwick, owned by Brightmarket Stores; model Marrow; made by Brackenmere Furniture, who is the manufacturer party and no longer the brand. It changes the twelve documents of the furniture flow and the shopper's receipt in the retail flow, which gives Brackenmere's brand today.
+- **With it:** the set's GTIN moves from Brackenmere's company prefix (`9523710000012`) to Brightmarket's, because under GS1 rules the brand owner numbers the item (D5). Brackenmere's own products keep its brand and its GTINs: the office desk `BF-DK-16` (`9523710000029`) and the park bench PB-2 of its tender. The set's texts are the store's (the open thread on item texts from D2).
+- **The name check (2026-11-16, one web search per candidate, not a lookup in the trademark registers):** Elderwick and Mossgate: nothing found. Dropped: Fernhollow (an abandoned US application "Fern Hollow" for lighting, and a new "Fernrest" application for garden furniture), Larkmoor (too close to Wayfair's "Lark Manor" and the registered "Larkbury"), Thornquay (a real company in Toronto), Wrenhaven (a real company; "Wren" is a large kitchen brand). "Nothing found" is not proof; a register lookup stays open.
 
 ### D8 · Which industry class does each party get where the class leaves out what it does?
 - Why it matters: Cause C64 Industry classes that leave out what the party does; 9 findings (5 marked "yes").
@@ -608,3 +611,14 @@ Open threads of this story line:
 ### Signatures and trust (D6), deferred
 
 Not decided yet; to be designed as a stage of its own after the story fixes. The direction: real electronic signatures in the examples, with a key pair and a certificate for each signing party. The world needs an answer to who vouches for a company's signature. The pieces that exist: the Lumeport Trade Accord Council governs the digital agreement under which the parties exchange documents, and the one complete signature names the Council's validator. The natural design is an issuer of company certificates in each country and a list of trusted issuers kept by the Council, as one more of the later protocols of the Accord (the real parallel is the EU's eIDAS regulation with its trusted lists). A national difference to consider: Urvania may require invoices to be signed, as Italy did for years, while Bayvarra and Lisavu do not.
+
+### Brands: the maker's and the store's (D7)
+
+- **Elderwick** is Brightmarket Stores' own label for home and garden. It is built to stand as a brand of its own, as most retailers' private labels are, so that it could be sold in other chains or spun off. The name reads as a village name the settlers brought with them ("wick" is an old English word for a settlement; the elder is a tree), in the family of Marrowdale, Brackenmere and Saltmere. Brightmarket was founded in 1979; the year it launched Elderwick is open.
+- **The Elderwick Marrow garden bench set** (a bench of 1400 mm and two chairs in hardwood) is made by Brackenmere Furniture to the store's specification. The shopper sees the store's label; the maker's name is on no label. This is the world's private-label case: an item whose brand owner and manufacturer are different parties.
+- **Brackenmere Furniture** sells its own office and outdoor furniture under its own name: the office desk (1600 × 800 mm), the park bench PB-2 it tenders with, and the furnishing of public offices with installation. Its own lines have no names yet; none is invented until a document needs one.
+
+Open threads of this story line:
+- The year Brightmarket launched Elderwick, and what else the label covers.
+- A lookup of "Elderwick" in the trademark registers (USPTO, EUIPO, UKIPO, WIPO).
+- Names for Brackenmere's own lines, if a document needs them.
