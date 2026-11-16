@@ -17,7 +17,7 @@
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="BRL">100</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="BRL">75.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>

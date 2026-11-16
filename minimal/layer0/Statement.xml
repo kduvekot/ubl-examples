@@ -3,7 +3,7 @@
   <cbc:ID>Statement-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
-  <cbc:TotalBalanceAmount currencyID="USD">100</cbc:TotalBalanceAmount>
+  <cbc:TotalBalanceAmount currencyID="USD">16.00</cbc:TotalBalanceAmount>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>

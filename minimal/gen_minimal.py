@@ -45,12 +45,11 @@ endorsed = {os.path.basename(f) for f in glob.glob(os.path.join(UBL, "endorsed",
 
 # One value per UDT data type (UBL's unqualified data types).
 VALUES = {
-    # 100: a whole number, valid for every currency (JPY has no decimals). Every
-    # document has one amount and no tax yet; a layer that adds lines, tax
-    # percentages or totals must make them add up (line = quantity x price,
+    # Amounts: per document (AMOUNTS, amount_for). A layer that adds lines,
+    # tax percentages or totals must make them add up (line = quantity x price,
     # total = sum of lines, tax = taxable x percent / 100, rounded to the
     # currency's minor unit, payable = total + tax).
-    "AmountType": "100", "BinaryObjectType": "(PDF_B64)",
+    "BinaryObjectType": "(PDF_B64)",
     "CodeType": "X", "IdentifierType": "X", "NumericType": "1",
     "QuantityType": "10", "TextType": "X", "NameType": "X",
     # Date, time, measure, indicator: per element (date_for, UTC_OFFSETS,
@@ -58,6 +57,25 @@ VALUES = {
     # Picture, Sound and Video have no default on purpose: a layer that first
     # needs one must choose a value per element (PH#F19).
 }
+# Amounts per document, fitting what the document is about (mostly 10
+# ballpoint pens at a plausible unit price per currency), round, with the
+# currency's minor unit (JPY none, the others two decimals); amounts in one
+# document agree (line = total). No default: a new amount stops the build.
+AMOUNTS = {
+    "Invoice": 15, "PurchaseReceipt": 15, "RemittanceAdvice": 15,   # EUR 10 x 1.50
+    "Reminder": 16, "Statement": 16,                                 # USD 10 x 1.60
+    "CreditNote": 75, "SelfBilledCreditNote": 75, "Quotation": 75,   # BRL 10 x 7.50
+    "CataloguePricingUpdate": 7.5,                                   # BRL one pen
+    "DebitNote": 270, "SelfBilledInvoice": 270,                      # ZAR 10 x 27.00
+    "FreightInvoice": 1200,                                          # BRL road freight
+    "GuaranteeCertificate": 50000,                                   # INR bid bond
+    "Tender": 500000,                                                # JPY office supplies bid
+}
+MINOR_UNITS = {"JPY": 0}  # ISO 4217; the other locale currencies have 2
+
+def amount_for():
+    return "%.*f" % (MINOR_UNITS.get(LOCALES[DOCNO % len(LOCALES)][0], 2), AMOUNTS[DOC])
+
 # Indicator per element, no default. AcceptedIndicator: true, accepted; a
 # rejection would need a RejectionNote (PH#F17).
 INDICATOR_VALUES = {"AcceptedIndicator": "true",
@@ -811,6 +829,7 @@ def build(parent, el_decl):
     if t.find(X + "simpleContent") is not None:
         u = udt_name(tns, tname)
         e.text = (date_for(parent, el_decl.get("name")) if u == "DateType"
+                  else amount_for() if u == "AmountType"
                   else id_for(parent, el_decl.get("name")) if u == "IdentifierType"
                   else text_for(e, parent, el_decl.get("name")) if u == "TextType"
                   else name_for(e, parent, el_decl.get("name")) if u == "NameType"

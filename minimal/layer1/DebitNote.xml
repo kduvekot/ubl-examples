@@ -39,10 +39,10 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="ZAR">100</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="ZAR">270.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:LineExtensionAmount currencyID="ZAR">100</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="ZAR">270.00</cbc:LineExtensionAmount>
   </cac:DebitNoteLine>
 </DebitNote>

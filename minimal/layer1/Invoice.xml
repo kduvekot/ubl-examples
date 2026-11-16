@@ -39,7 +39,7 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="EUR">100</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="EUR">15.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

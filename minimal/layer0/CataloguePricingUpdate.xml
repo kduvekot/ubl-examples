@@ -19,7 +19,7 @@
     <cbc:ID>1</cbc:ID>
     <cac:RequiredItemLocationQuantity>
       <cac:Price>
-        <cbc:PriceAmount currencyID="BRL">100</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="BRL">7.50</cbc:PriceAmount>
       </cac:Price>
     </cac:RequiredItemLocationQuantity>
   </cac:CataloguePricingUpdateLine>

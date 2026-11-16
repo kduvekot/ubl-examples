@@ -39,11 +39,11 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:LegalMonetaryTotal>
-    <cbc:PayableAmount currencyID="USD">100</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="USD">16.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="USD">100</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="USD">16.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>InvoiceDocumentReference-661</cbc:ID>
