@@ -103,7 +103,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C63 | Lisavu Cotton Farm: address lines that repeat the structured address, and a yearly expiring registration | master data | 11 | 6 | 2 | 0/0/11 | decided: D4 | world/parties.json, tools/build_examples.py | ready |
 | C64 | Industry classes that leave out what the party does | master data | 9 | 9 | 2 | 0/0/9 | decided: D8 | world/parties.json | ready |
 | C65 | Bale weight of about 227 kg as `PackSizeNumeric` | master data | 7 | 7 | 1 | 0/0/7 | decided: D12 | world/items.json | ready |
-| C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | waits: D32 1 (tender: D28, sea: D30 decided) |
+| C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | ready (D28, D30, D32 decided) |
 | C67 | Side frame classified HS 7325.99 instead of a part of a seat | master data | 5 | 5 | 2 | 0/4/1 | decided: D13 | world/items.json | waits: O27 |
 | C68 | Valdara's distributor price equals its public contract price; Lumeway's revised frame price is below cost | master data | 1 | 1 | 0 | 0/0/1 | decided: D14 | world/items.json | ready |
 | C69 | The bench as shipped: pallets that do not fit, and a bench lighter than its parts | cross-flow story | 7 | 6 | 3 | 1/3/3 | decided: D20 | world/items.json, tools/examples_kit.py | ready |
@@ -140,9 +140,9 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C100 | Road flow: isolated slips of the truck shipment | flow story | 25 | 10 | 1 | 1/6/18 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
 | C101 | Road flow: application and certificate of origin | flow story | 14 | 3 | 1 | 4/4/6 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
 | C102 | Road flow: the substituted 2026 casting | flow story | 8 | 7 | 1 | 0/1/7 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
-| C103 | Furniture flow: quotation, orders, invoice, return and credit | flow story | 27 | 9 | 1 | 0/1/26 | owner: D32 | tools/examples_scenarios.py, furniture() | waits: D32 |
-| C104 | Furniture flow: the replenishment and sales-reporting documents | flow story | 21 | 5 | 1 | 0/10/11 | owner: D32 | tools/examples_scenarios.py, furniture() | waits: D32 |
-| C105 | Furniture flow: the department's desks and installation | flow story | 10 | 3 | 1 | 0/0/10 | owner: D32 | tools/examples_scenarios.py, furniture() | waits: D32 |
+| C103 | Furniture flow: quotation, orders, invoice, return and credit | flow story | 27 | 9 | 1 | 0/1/26 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
+| C104 | Furniture flow: the replenishment and sales-reporting documents | flow story | 21 | 5 | 1 | 0/10/11 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
+| C105 | Furniture flow: the department's desks and installation | flow story | 10 | 3 | 1 | 0/0/10 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
 | C106 | Cotton flow: self-billing between ginnery and farm, and the mill's forecasts | flow story | 26 | 6 | 1 | 1/4/21 | owner: D33 | tools/examples_kit.py, self_billed() | waits: D33 |
 | C107 | Cotton flow: classing and phytosanitary certificates | flow story | 15 | 7 | 1 | 5/1/9 | owner: D33 | tools/examples_scenarios.py, cotton() | waits: D33 |
 | C108 | Cotton flow: the sea export (bill of lading, VGM, pre-arrival report) | flow story | 13 | 8 | 1 | 2/3/8 | owner: D33 | tools/examples_scenarios.py, cotton() | waits: D33 |
@@ -1552,7 +1552,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D32.
 - Depends on / blocks: none
 - Touched by: D7 (Elderwick; bench and chair are separate items and the set is an offer, O9; the care kit's content, O10), D9 (furniture/14 is re-homed, O6; C14's, C26's and C39's furniture/14 findings and the quotation used as a contract in furniture/11 go with this cause).
-- State: waits for D32.
+- State: D32 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D32: the Marrow line is a dining set).
 - Findings: furniture: 01#F2, 01#F7, 01#F8, 01#F9, 02#F3, 02#F8, 08#F5, 08#F6, 08#F7, 08#F8, 08#F10, 09#F3, 09#F7, 09#F9, 10#F3, 10#F4, 10#F5, 10#F10, 10#F11, 11#F3, 11#F4, 12#F1, 12#F3, 13#F2, 13#F3, 13#F5, 14#F5
 
 ### C104 · Furniture flow: the replenishment and sales-reporting documents
@@ -1563,7 +1563,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D32 for the yes-findings; encoding fixes otherwise.
 - Depends on / blocks: none
 - Touched by: D7 (O9: the quantities in SET in the exception criteria).
-- State: waits for D32.
+- State: D32 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D32: the Marrow line is a dining set).
 - Findings: furniture: 03#F1, 03#F3, 04#F1, 04#F2, 04#F7, 04#F9, 05#F1, 05#F2, 05#F7, 05#F8, 06#F5, 06#F6, 06#F7, 06#F8, 07#F1, 07#F2, 07#F3, 07#F4, 07#F5, 07#F10, 07#F11
 
 ### C105 · Furniture flow: the department's desks and installation
@@ -1574,7 +1574,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide with D32.
 - Depends on / blocks: none
 - Touched by: D17 (a Bayvarran seller invoices the department with `PUBLIC`).
-- State: waits for D32.
+- State: D32 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D32: the Marrow line is a dining set).
 - Findings: furniture: 15#F3, 15#F5, 16#F4, 16#F6, 16#F8, 16#F10, 16#F12, 17#F4, 17#F6, 17#F7
 
 ### C106 · Cotton flow: self-billing between ginnery and farm, and the mill's forecasts
