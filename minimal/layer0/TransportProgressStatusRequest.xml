@@ -4,7 +4,7 @@
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
   <cbc:IssueTime>09:30:00+05:30</cbc:IssueTime>
   <cac:TransportMeans>
-    <cbc:RegistrationNationalityID>IN</cbc:RegistrationNationalityID>
+    <cbc:RegistrationNationalityID schemeID="urn:iso:std:iso:3166">IN</cbc:RegistrationNationalityID>
     <cac:RoadTransport>
       <cbc:LicensePlateID>LicensePlateID-871</cbc:LicensePlateID>
     </cac:RoadTransport>

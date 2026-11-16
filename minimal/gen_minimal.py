@@ -1093,6 +1093,10 @@ def generate(layer, fill, schemes):
                       % (CAC, CAC, CAC, CAC, CBC))
         if issuer is not None and ie is not None:
             ie.text = issuer.text
+        # the vehicle's country code states its scheme (ST3#F4): the canonical
+        # URI of UBL 2.5's own default ISO 3166 list (CountryIdentificationCode)
+        for e in doc.iter("{%s}RegistrationNationalityID" % CBC):
+            e.set("schemeID", "urn:iso:std:iso:3166")
         for e in doc.iter():
             if e.text == CUR: e.text = currency
             if e.text == CTRY: e.text = COUNTRY
