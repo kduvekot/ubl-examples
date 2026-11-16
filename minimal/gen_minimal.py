@@ -396,6 +396,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # received, what work was done
         "ReminderLineType": {"cac:BillingReference", "cbc:DebitLineAmount"},
         "StatementType": {"cbc:TotalBalanceAmount"},
+        "StatementLineType": {"cac:BillingReference", "cbc:BalanceAmount"},
+        # a remittance line: the invoice paid (a debit item) and its amount
+        "RemittanceAdviceLineType": {"cac:BillingReference", "cbc:DebitLineAmount"},
         "CreditNoteLineType": {"cac:Item"},
         "ReceiptAdviceType": {"cac:ReceiptLine"},
         "ReceiptLineType": {"cbc:ReceivedQuantity", "cac:Item"},

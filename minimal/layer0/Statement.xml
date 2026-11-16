@@ -20,5 +20,11 @@
   </cac:AccountingCustomerParty>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:BalanceAmount currencyID="USD">16.00</cbc:BalanceAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>InvoiceDocumentReference-721</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
   </cac:StatementLine>
 </Statement>

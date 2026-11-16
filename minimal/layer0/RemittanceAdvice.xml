@@ -19,5 +19,11 @@
   </cac:AccountingSupplierParty>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:DebitLineAmount currencyID="EUR">15.00</cbc:DebitLineAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>InvoiceDocumentReference-671</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
