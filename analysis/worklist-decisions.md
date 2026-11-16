@@ -208,6 +208,10 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) No TaxTotal at all on Lisavan documents.
 - Recommendation: c) for documents with no tax at all, a) where a withholding or levy is stated on the same document; drop the 0 % everywhere.
 - Related: D18
+- **Decided (owner, 2026-11-16): c), and no rate on category `O` anywhere.** A Lisavan sale carries no tax section: no `TaxTotal`, no tax category on the line, no tax scheme. The invoice still states the fact positively through its totals (the amount without tax, the amount with tax and the amount to pay are equal), so nothing is implied by absence. Taxes the island does have keep their section: the presumptive tax withheld on farm produce (1 and 2 %), and customs duty and the import consumption tax on the import declarations (D18). Where `O` is used for what it means (UN/EDIFACT 5305: "Services outside scope of tax"), as for Urvania's services to customers abroad, it stays, without a percent.
+- **What it means for the world:** the island's documents are visibly simpler than the mainland's. A Lisavan invoice is an amount and a payment; an Urvanian one carries value added tax; a Bayvarran one a state sales tax or an exemption from it. Real parallels: invoices from Hong Kong or from the US state of Oregon have no tax line.
+- **Coverage checked (2026-11-16):** every element of the removed sections is used elsewhere (`TaxScheme/Name` three times, the others dozens of times), except one: `TaxScheme/TaxTypeCode` occurs only in a Lisavan "no tax" section. It needs a real case elsewhere or goes uncovered (open point O45).
+- **Not settled by this decision:** the other uses of `O` that the cause C50 lists, such as the levy collected for a public body on a Bayvarran utility bill (`O` with the exemption code `LEVY`), go with the utilities flow (D31) and the tax rules (D17).
 
 ### D16 · On which basis do the three countries value imports for customs?
 - Why it matters: Cause C52 Customs value on a different basis in each flow; 12 findings (9 marked "yes").
@@ -785,8 +789,9 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O13 | Valdara's tender figures: 180 employees, 41 years, 9.2 million of financial capability | D4, D14 | D28 |
 | O14 | Lumeway's position on Valdara's direct bid; the buyer's estimate equal to the bid | D14 | D28 |
 | O15 | The reason for Lumeway's lower side-frame price of 20 May | D14 | D34 |
-| O16 | "Mobile data, per gigabyte" with a pack of 5 gigabytes and a pack size of 7 | D12 | D31 |
+| O16 | "Mobile data, per gigabyte" with a pack of 5 gigabytes and a pack size of 7; the levy collected for a public body coded `O` with `LEVY` on utility bills | D12, D15 | D31, D17 |
 | O17 | Whether the ports and the telecom operator are companies with a register entry or public bodies | D4 | the cause C04, stage 1 |
+| O45 | `TaxScheme/TaxTypeCode` is used only in a Lisavan "no tax" section that D15 removes; it needs a real case elsewhere (the presumptive tax on farm produce, the import consumption tax) or goes uncovered | D15 | D17, D18 |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
