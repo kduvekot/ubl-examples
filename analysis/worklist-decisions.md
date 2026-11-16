@@ -165,6 +165,9 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Pack size 1 (one bale per package).
 - Recommendation: a): the weight is already given; the pack size element counts units.
 - Related: none
+- **Decided (owner, 2026-11-16): a).** The pack elements come off the cotton item. The nominal bale weight stays in the item's description ("in compressed bales of about 227 kg"), a fact of the item type. The number of bales is the shipment's package count, with the packaging type "bale", a fact of the transaction. Each bale's real weight is stated in the weight statement from the ginnery's weighbridge, a fact of the single piece (D11).
+- **To check at implementation:** 6,129 kg ordered and invoiced, at about 227 kg a bale, is 27 bales; the bill of lading gives 6,190.29 kg gross. The bale count, the per-bale weights of the weight statement and these totals are three statements about the same cotton and must agree.
+- **`PackSizeNumeric` used correctly elsewhere (asked by the owner):** the element stays covered by the sawmill's slat in the wood flow: "Hardwood bench slat 1800", `PackSizeNumeric` 50, a bundle of 50 slats; the order for 4,800 slats is 96 bundles. That is the world's pack of the same item ("Story lines: Packs, kits and offers"). The third use is doubtful and goes to the utilities flow (D31): utilities/12 gives "Mobile data beyond the subscription, per gigabyte" a `PackQuantity` of 5 gigabytes and a `PackSizeNumeric` of 7.
 
 ### D13 · Is the spare side frame classified as a cast article (7325.99) or as a part of a seat (9401.99)?
 - Why it matters: Cause C67 Side frame classified HS 7325.99 instead of a part of a seat; 5 findings (1 marked "yes").
