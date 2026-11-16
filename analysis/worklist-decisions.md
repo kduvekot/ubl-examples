@@ -370,6 +370,11 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - b) Keep flow blocks and state the rule (does not explain inversions within one issuer).
 - Recommendation: a), after the issue times are settled (C72) so that the order is final.
 - Related: D25, D26
+- **Decided (owner, 2026-11-16): a), with numbers that reflect the size of the business.** Each issuer numbers its own documents, per kind of document, and its numbers rise with the time of issue across all flows. The numbers are not consecutive over the examples: each issuer has an estimated yearly volume per kind of document, and a document's number follows from the date it is issued, so the examples show a sample of each company's sequence with gaps where its other business lies (Lumeway, with a turnover of 34 million, issues some 2,800 invoices a year: about number 0920 on 30 April and 1030 on 14 May; the cotton farm issues a few dozen delivery notes). Every reference to a document, every creditor reference built from an invoice number and every signature identifier follows. Three payers no longer share one remittance number (utilities).
+- **What the documents do today:** every flow has one block of consecutive numbers shared by all its issuers (sea 0123 to 0154, road 0149 to 0168, energy 0149 to 0160, utilities 0313 to 0324, wood 0625 to 0638), so one issuer's numbers jump with the flow: Lumeway's invoice of 30 April is 0236 and that of 14 May is 0147; Valdara's orders are 0627 in February, 0304 in March, 0521 in April. All 250 document numbers have the shape prefix, kind, two-digit year, four digits.
+- **Why:** a document number is the issuer's own record; for invoices tax rules usually require an unbroken sequence per issuer, and a later invoice with a lower number is a red flag to an auditor.
+- **When:** after the issue times are final (documents that cite later ones, the sea voyage, the tender dates), because numbers follow time. It is one of the last things implemented.
+- **Open, asked by the owner (open point O75):** whether numbers restart each year and whether all issuers use one format, or each company and country its own.
 
 ### D25 · Which prefix does each party use, and is `BF` given to Bayforth or Brackenmere?
 - Why it matters: Cause C75 Issuer prefixes: `BF` for two parties, second prefixes for signatures; 4 findings (1 marked "yes").
@@ -947,6 +952,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
 | O64 | The production record at Valdara and the stock ledgers of Lumeway, Brightmarket and Velumi as world data: lots and serial ranges for the rail delivery; which lot each sale draws on; melt numbers and coating batches per lot; serials and lots in their globally unique form where a document crosses company borders (D5) | D21 |
 | O73 | The Accord's code and text for the utility term of 21 days; the four utility invoices and their statements, reminders and remittances; cotton/16 due in 45 days and mast/05 in 30, with what follows from the new due dates | D23 |
+| O75 | The numbering style: restart each year or run on; one format for all issuers or a style per country and kind of company; the yearly volume per issuer and kind of document | D24 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
