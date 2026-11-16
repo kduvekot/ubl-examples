@@ -663,6 +663,11 @@ LAYER1 = {
 # agreement needs at least two participants ("bi-lateral and multi-lateral").
 REPEAT = {"DigitalAgreementType/cac:ParticipantParty": 2}
 
+# Planned for a later layer (each layer stays valid on its own):
+# - UtilityStatement consumption (DM#F116): SubscriberConsumption ->
+#   UtilityConsumptionPoint -> consumed quantity in KWH (ELECTRICITY). Until
+#   then the statement does not show its consumption.
+
 # Layers: (folder, additions {aggregate type[@role]: optional children},
 # schemeIDs by role). Each layer includes everything of the layers before it.
 LAYERS = [("layer0", FILL, {}),
