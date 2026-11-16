@@ -178,12 +178,10 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # the definition's examples (BASE PROMOTIONAL SEASONAL TOTAL); one
                # line, no promotion or season in the document: the whole demand
                "ForecastTypeCode": "TOTAL",
-               # CPFR purposes SALES_FORECAST / ORDER_FORECAST (domain knowledge,
-               # not verified against GS1): the whole demand reads as sales
+               # UBL: a forecast purpose "is either Sales forecast or Order
+               # Forecast" (ForecastException/ForecastPurposeCode); the whole
+               # demand reads as sales
                "ForecastPurposeCode": "SALES_FORECAST",
-               # "the extent of this transportation service (e.g., door-to-door,
-               # port-to-port)": a segment of an itinerary is part of the route;
-               # a service description request is about the whole service
                # values listed for the same element elsewhere in UBL (CANCELED_
                # ORDERS ... SALES SHIPMENTS); a store's sales item over a period
                "SupplyChainActivityTypeCode": "SALES",
@@ -201,6 +199,9 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                # "the procedure under which this reminder was sent": the customs
                # procedure of the ATA Carnet, temporary admission
                "ProcedureCode": "TEMPORARY_ADMISSION",
+               # TransportServiceCode, "the extent of this transportation service
+               # (e.g., door-to-door, port-to-port)": a segment of an itinerary is
+               # part of the route; a service (description) is the whole service
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
                "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR",
                "TransportServiceDescription:TransportServiceCode": "DOOR_TO_DOOR",
@@ -288,10 +289,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # evidence supporting that goods have been re-exported" (the type
         # itself is defined for tendering only).
         "EvidenceType": {"cac:DocumentReference"},
-        # TenderingCriterionResponseType: nothing else says what is answered,
-        # so both what (ValidatedCriterionPropertyID) and the answer
-        # (ResponseValue). The answer is a neutral text placeholder, not an
-        # Indicator: "true" would state a real answer; a later layer fills it.
+        # TenderingCriterionResponseType: what is answered (ValidatedCriterion-
+        # PropertyID, the yes/no property repeated in the same document, see
+        # QualificationApplicationResponseType) and the answer (ResponseValue/
+        # ResponseIndicator true).
         "TenderingCriterionResponseType": {"cbc:ValidatedCriterionPropertyID", "cac:ResponseValue"},
         "ResponseValueType": {"cbc:ResponseIndicator"},
         # QualificationApplicationResponse repeats the question it answers
@@ -409,8 +410,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
 # - "TAX": the national tax number, in PartyTaxScheme/CompanyID ("assigned for
 #   tax purposes by the taxation authority"); most national numbers have no
 #   ICD, and this element says whose number it is without a schemeID.
-# GLN is a Global *Location* Number: only for location-bound roles and GS1's
-# own domains (catalogue data, CPFR/forecasting, retail, logistics). Generic
+# GLN: GS1 defines it for parties and locations; here it is used only for
+# location-bound roles and in GS1's own domains (catalogue data, CPFR/
+# forecasting, retail, logistics), so that GS1 does not dominate. Generic
 # roles (Sender, Receiver, Seller, Buyer) follow the document's domain.
 # A key "Document/Role" overrides the key "Role".
 # Roles not listed (authorities, chambers of commerce, certificate issuers)
@@ -488,9 +490,11 @@ PARTY_SCHEMES = {
 JPCN = "0188"  # Japan: Corporate Number (法人番号, National Tax Agency), an ICD
 
 def scheme_for(party):
-    """The scheme for a party's role; in Japanese documents the national
-    Corporate Number takes D-U-N-S's place (it is how Japanese public and
-    private buyers identify a business)."""
+    """The scheme for a party's role. In Japanese documents the national
+    Corporate Number replaces D-U-N-S, the LEI of contracting authorities
+    (ContractingParty, procurement SenderParty) and the tax number of the
+    carnet holder: Japanese buyers, authorities and customs identify
+    businesses and public bodies by it."""
     r = role(party)
     s = SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
     if COUNTRY == "JP" and (s == DUNS or (s == LEI and r in ("ContractingParty", "SenderParty"))
@@ -498,10 +502,12 @@ def scheme_for(party):
         return JPCN  # JP authorities and customs traders also have Corporate Numbers
     return s
 
-# Identifier values: the scheme's own format and check digit, distinct per
-# party in a document (n = 1, 2 ...), from official demonstration ranges where
-# a scheme has one, and checked not to be real registrations where a public
-# register can be queried (GLEIF, VIES, NTA; see the commit history).
+# Identifier values: the scheme's own format and check digit, except where a
+# deliberately invalid value is the only proof of non-assignment (ZA: fails
+# Luhn; US: unassigned prefix 00) or the algorithm is unpublished (D-U-N-S);
+# unique across the set; from official demonstration ranges where a scheme
+# has one; checked not to be registered where a register can be queried
+# (GLEIF, VIES, NTA, BrasilAPI for CNPJ; identification review, 2026-11-16).
 def _gs1(d):  # GS1 mod 10
     t = sum(int(c) * (3 if i % 2 == 0 else 1) for i, c in enumerate(reversed(d)))
     return d + str((10 - t % 10) % 10)
@@ -558,12 +564,12 @@ TAX_VALUES = {
     # it cannot be a registered vendor; UNVERIFIED
     "ZA": lambda k: _luhn_bad("4%08d" % k),
 }
-# Official names: EU Directive 2006/112/EC "value added tax"; ZA "Value-Added Tax
-# Act"; the EIN is the federal income tax identifier; the CNPJ is used for all
-# federal taxes, so for BR it goes in PartyLegalEntity (the register).
+# Official names: ZA "Value-Added Tax Act"; IN "Goods and Services Tax"; the
+# EIN is the federal income tax identifier; the CNPJ is used for all federal
+# taxes, so for BR it goes in PartyLegalEntity (the register).
 # In the locale's language (languageID set, IND6): DE Umsatzsteuer (UStG),
 # JP Shōhizei (consumption tax, romanized as other Japanese texts).
-TAX_NAMES = {"US": "Federal income tax", "DE": "Umsatzsteuer", "JP": "Shōhizei",
+TAX_NAMES = {"US": "Federal Income Tax", "DE": "Umsatzsteuer", "JP": "Shōhizei",
              "IN": "Goods and Services Tax", "ZA": "Value-Added Tax"}
 
 # Party names: "example" + the role, in the locale's language and in Latin
@@ -619,8 +625,10 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
 LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
 
 # Texts in the locale's language, Latin script, with languageID; key
-# "Parent/Element" or "Element". Not listed: stays X (e.g. the criterion
-# answer, which waits for a real criterion). Not reviewed by native speakers.
+# "Document:Parent/Element", "Parent/Element" or "Element". Translations:
+# checked against two independent human translations; terms added after that
+# review (e.g. report type, work item, retail event, waste, enquiry) are not
+# yet reviewed.
 TEXTS = {  # (en, de, pt, ja-Latn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     # a freight invoice invoices a transport service, not goods (DM#F114)
