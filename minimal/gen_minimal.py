@@ -375,6 +375,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "TransitCustomsDeclarationType": {"cac:TransitExporterParty", "cac:Shipment"},
         # a progress status shows progress: the transport is at a terminal
         "TransportProgressStatusType": {"cac:TransportSchedule"},
+        # the waste documents name the waste shipped
+        "WasteMovement:ShipmentType": {"cac:GoodsItem"},
+        "WasteNotification:ShipmentType": {"cac:GoodsItem"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -622,6 +625,10 @@ TEXTS = {  # (en, de, pt, ja-Latn)
                                 "Promoção de volta às aulas", "Shingakki kyanpēn"),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
                    "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
+    # a hazardous waste shipped across borders for recycling (Basel A1160)
+    **{d + ":Item/Description": ("Used lead-acid batteries", "Gebrauchte Blei-Säure-Batterien",
+                                 "Baterias de chumbo-ácido usadas", "Shiyōzumi namari chikudenchi")
+       for d in ("WasteMovement", "WasteNotification")},
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Gohatchū"),
     "CertificateType": ("Ordinary", "Nichtpräferenziell", "Comum", "Ippan"),   # from the definition's examples

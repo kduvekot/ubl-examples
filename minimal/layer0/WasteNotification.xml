@@ -29,5 +29,10 @@
   </cac:WasteProducerParty>
   <cac:Shipment>
     <cbc:ID>Shipment-971</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="de">Gebrauchte Blei-Säure-Batterien</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
 </WasteNotification>

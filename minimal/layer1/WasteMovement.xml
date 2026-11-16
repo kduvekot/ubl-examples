@@ -68,5 +68,10 @@
   </cac:WasteProducerParty>
   <cac:Shipment>
     <cbc:ID>Shipment-961</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="en">Used lead-acid batteries</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
 </WasteMovement>
