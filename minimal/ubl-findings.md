@@ -24,7 +24,7 @@ These findings come from building a set of minimal, semantically meaningful exam
 | F10 | TenderStatusRequest. Contracting Party | spelling: "eceiving" |
 | F11 | TransitCustomsDeclaration (document) | definition copied from another document |
 | F12 | CatalogueRequest. Provider Party | definition contradicts the specification's roles |
-| E1–E70 | (70 elements in about 45 document types) | optional, but essential to the document's defined purpose |
+| E1–E80 | (80 elements in about 45 document types) | optional, but essential to the document's defined purpose |
 
 ## Findings
 
@@ -124,7 +124,7 @@ These findings come from building a set of minimal, semantically meaningful exam
 
 UBL defines each document type by its purpose ("A document used to request payment", "A document used to update information about prices in an existing Catalogue" …). In many document types, however, the element that carries that purpose is optional. A schema-valid instance may then contain only an identifier and an issue date, and its purpose is implied by the document type alone. That is meaning by absence, which UBL 2.5 §4.4 (IND6) rules out for instances, and it undermines semantic conformance (§4.7, §7.2).
 
-While building minimal but meaningful example documents, these 70 optional elements turned out to be necessary for a document to fulfil its own UBL definition. For each, the TC may want to consider:
+While building minimal but meaningful example documents, these 80 optional elements turned out to be necessary for a document to fulfil its own UBL definition. For each, the TC may want to consider:
 
 - making the element required (minOccurs 1) in the document's schema or in its endorsed cardinality, or
 - stating in the document type's definition what a conforming instance must at least contain.
@@ -162,7 +162,7 @@ While building minimal but meaningful example documents, these 70 optional eleme
 | E21 | CommonTransportationReport | `cbc:ReportType` (CommonTransportationReport) | 0..n | A text that identifies the type of report to business users. | a report to authorities must say what it reports | `endorsed/xsd/maindoc/UBL-CommonTransportationReport-2.5.xsd:214` |
 | E22 | CommonTransportationReport | `cac:AuthorityParty` (CommonTransportationReport) | 0..1 | The Party who receives the Common Transportation Report. This Party is normally an Authority or regulator. | ... and to which authority | `endorsed/xsd/maindoc/UBL-CommonTransportationReport-2.5.xsd:295` |
 | E23 | WeightStatement | `cbc:GrossWeightMeasure` (Shipment) | 0..1 | The total gross weight of a shipment; the weight of the goods plus packaging plus transport equipment. | a weight statement must state a weight | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:40833` |
-| E24 | PackingList; WasteMovement; WasteNotification | `cac:GoodsItem` (Shipment) | 0..n | A goods item included in this shipment. | describes how goods are packed / which waste is moved: the goods must be stated | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:41130` |
+| E24 | PackingList; WasteMovement; WasteNotification; TransitCustomsDeclaration; Waybill | `cac:GoodsItem` (Shipment) | 0..n | A goods item included in this shipment. | describes how goods are packed / which waste is moved: the goods must be stated | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:41130` |
 | E25 | CertificateOfOrigin | `cac:OriginAddress` (Shipment) | 0..1 | The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade. | the origin is the certificate's one essential claim | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:41211` |
 | E26 | GoodsCertificate | `cbc:Description` (GoodsCertificate) | 0..n | Textual description of this goods certificate | a certificate must say what it certifies | `endorsed/xsd/maindoc/UBL-GoodsCertificate-2.5.xsd:198` |
 | E27 | ImportCustomsDeclaration | `cac:ImporterParty` (ImportCustomsDeclaration) | 0..1 | The Party who makes the import declaration, or on whose behalf the import declaration is made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted. | a declaration needs a declarant | `endorsed/xsd/maindoc/UBL-ImportCustomsDeclaration-2.5.xsd:314` |
@@ -209,3 +209,13 @@ While building minimal but meaningful example documents, these 70 optional eleme
 | E68 | TendererQualification | `cbc:OperatingYearsQuantity` (QualifyingParty) | 0..1 | The number of years that this qualifying party has been in operation. | a qualification must state at least one qualifying characteristic (here one of UBL's examples) | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:36335` |
 | E69 | ContractAwardNotice | `cac:WinningParty` (TenderResult) | 0..n | A party that is identified as the awarded by a tender result. | an award notice must name the winner | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:46790` |
 | E70 | UtilityStatement | `cac:SubscriberConsumption` (UtilityStatement) | 0..n | A utility statement for a particular consumption point. | a statement "containing information on the consumption" must state a consumption | `endorsed/xsd/maindoc/UBL-UtilityStatement-2.5.xsd:409` |
+| E71 | DebitNote | `cac:Item` (DebitNoteLine) | 0..1 | The item associated with this debit note line. | a debit line must say what is debited | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:13406` |
+| E72 | DebitNote | `cbc:DebitedQuantity` (DebitNoteLine) | 0..1 | The quantity of Items debited in this debit note line. | ... and how much, so the amount reads as quantity x price | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:12990` |
+| E73 | Invoice; SelfBilledInvoice | `cbc:InvoicedQuantity` (InvoiceLine) | 0..1 | The quantity (of items) on this invoice line. | an invoice line must state the quantity invoiced, so the amount reads as quantity x price | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:23623` |
+| E74 | CreditNote; SelfBilledCreditNote | `cbc:CreditedQuantity` (CreditNoteLine) | 0..1 | The quantity of items credited in this credit note line. | a credit line must state the quantity credited | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:11893` |
+| E75 | PurchaseReceipt | `cbc:Quantity` (PurchaseReceiptLine) | 0..1 | The quantity (of items) on this purchase receipt line. | a receipt line must state the quantity purchased | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:35970` |
+| E76 | CommonTransportationReport | `cac:Shipment` (CommonTransportationReport) | 0..1 | A shipment to which this common transportation report applies. | a pre-arrival notification must say what arrives | `endorsed/xsd/maindoc/UBL-CommonTransportationReport-2.5.xsd:364` |
+| E77 | CataloguePricingUpdate | `cbc:BaseQuantity` (Price) | 0..1 | The quantity at which this price applies. | a price must say for which quantity it applies | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:34371` |
+| E78 | TransportProgressStatus | `cac:ActualArrivalTransportEvent` (TransportSchedule) | 0..1 | The actual arrival at a location. | a progress status must state the event, not imply it | `endorsed/xsd/common/UBL-CommonAggregateComponents-2.5.xsd:52725` |
+| E79 | TransportationStatus | `cbc:IssueDate` (TransportationStatus) | 0..1 | The date, assigned by the sender, on which this document was issued. | a status must say as of when | `endorsed/xsd/maindoc/UBL-TransportationStatus-2.5.xsd:169` |
+| E80 | ProcurementStatus | `cac:TenderSubmissionDeadlinePeriod` (ProcurementStatus) | 0..1 | The period during which tenders must be delivered. | a procedure status must state a status; UBL has no status code, so the open tender period carries it | `endorsed/xsd/maindoc/UBL-ProcurementStatus-2.5.xsd:251` |

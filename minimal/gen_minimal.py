@@ -12,8 +12,9 @@ chosen per element (id_for, ROLE_NAMES, TEXTS, NAMES, CODE_VALUES,
 QUANTITY_UNITS, MEASURE_VALUES, INDICATOR_VALUES); identifier values
 follow each scheme's format and check digit where it has one, with
 documented exceptions (ID_VALUES, TAX_VALUES, DUNS_TEST).
-A value type with no rule and no default stops the build, so a later
-layer must choose it. The documents are unrelated to each other: values
+A value with no rule either stops the build (measures, units, amounts,
+indicators) or is written as UNCHOSEN and rejected by check() (codes,
+identifiers, texts, names), so a later layer must choose it. The documents are unrelated to each other: values
 are unique across the set, and references point outside it.
 Each further layer is a table of decisions on top of the layers below it
 (LAYERS); the same schema walk builds every layer, so element order,
@@ -347,8 +348,9 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # Request"), so the answer refers to a question in the same document:
         # one simple yes/no criterion property, answered true.
         # Document level (IND6): optional elements that carry a document's
-        # defined purpose, without which the document says nothing. These are
-        # listed as UBL findings (ubl-findings.md, "essential but optional").
+        # defined purpose, without which the document says nothing. They are
+        # listed as UBL findings (ubl-findings.md, "essential but optional",
+        # E1-E80).
         # ApplicationResponse: "the application's response to a transaction".
         "ApplicationResponseType": {"cac:DocumentResponse"},
         # BillOfLading "evidences a contract of carriage": who carries, for
@@ -434,6 +436,7 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # a transit declaration has a declarant and what is declared
         "RetailEventType": {"cbc:Description", "cbc:IssueDate"},
         "PackingList:ShipmentType": {"cac:GoodsItem"},
+        # a declaration declares goods, a waybill describes a shipment (DM3#F103, F104)
         "TransitCustomsDeclaration:ShipmentType": {"cac:GoodsItem"},
         "Waybill:ShipmentType": {"cac:GoodsItem"},
         "GoodsItemType": {"cac:Item"},
@@ -441,7 +444,7 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "TransitCustomsDeclarationType": {"cac:TransitExporterParty", "cac:Shipment"},
         # a progress status shows progress: the transport is at a terminal
         "TransportProgressStatusType": {"cac:TransportSchedule"},
-        # ... stated as a dated arrival at the status location (DM3#F105, ST3#F3)
+        # ... stated as a dated arrival at the status location (ST3#F3)
         "TransportScheduleType": {"cac:ActualArrivalTransportEvent"},
         "TransportEventType": {"cbc:OccurrenceDate", "cbc:OccurrenceTime"},
         # the waste documents name the waste shipped
@@ -556,6 +559,9 @@ PARTY_SCHEMES = {
         "Forecast", "ForecastRevision", "ExceptionCriteria", "ExceptionNotification",
         "ProductActivity", "RetailEvent", "TradeItemLocationProfile",
         "WeightStatement", "CommonTransportationReport")},
+    # ... except the CommonTransportationReport receiver: it is the authority
+    # (the same party, name only; FC#F2)
+    "CommonTransportationReport/ReceiverParty": None,
     # procurement: the contracting authority sends to the economic operator
     **{d + "/SenderParty": LEI for d in (
         "AwardedNotification", "UnawardedNotification", "TenderReceipt",
@@ -576,9 +582,10 @@ def scheme_for(party):
     """The scheme for a party's role. In Japanese documents the national
     Corporate Number replaces D-U-N-S, the LEI of contracting authorities
     (ContractingParty, procurement SenderParty), the LEI of agreement
-    participants (businesses) and the tax number of the
-    carnet holder: Japanese buyers, authorities and customs identify
-    businesses and public bodies by it."""
+    participants, carriers, forwarders and transport service providers, and
+    the tax number of the carnet holder, importers and exporters: Japanese
+    buyers, authorities and customs identify businesses and public bodies
+    by it."""
     r = role(party)
     s = SCHEMES.get(DOC + "/" + r, SCHEMES.get(r))
     if COUNTRY == "JP" and (s == DUNS
@@ -702,8 +709,8 @@ TAX_NAMES = {"US": "Federal Income Tax", "DE": "Umsatzsteuer", "JP": "Shōhizei"
 # script (Japanese in Hepburn romanization), + the party's number k (document
 # position x 10 + party; also in its identifier, except D-U-N-S, which are
 # official test numbers); no legal form (that would claim a registration). The language is
-# stated in languageID (IND6). Translations: checked against two independent
-# human translations; agreed points applied, differences decided one by one.
+# stated in languageID (IND6). Translations: round 1 checked against two,
+# round 2 against three independent human translations (majority rule).
 # BCP 47 tags that state exactly what is used: Brazilian Portuguese (pt-BR)
 # and Japanese in Latin script, Hepburn romanization (IANA variant
 # "hepburn": ja-Latn-hepburn).
@@ -727,7 +734,9 @@ ROLE_NAMES = {  # role: (en, de, pt-BR, ja-Latn-hepburn)
     "TransportServiceProviderParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     # StockAvailabilityReport: the receiving branch (DM#F118)
     "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
-    # WorkReport: work, i.e. a service, not goods (Brazil: prestador/tomador)
+    # WorkReport: work, i.e. a service, not goods (Brazil: prestador/tomador,
+    # VA3#F4). Only the pt-BR terms are used (the WorkReport is BR); the
+    # others are unreviewed fallbacks.
     "WorkReport/SellerSupplierParty": ("Service Provider", "Dienstleister", "Prestador de Serviços", "Ekimu Teikyōsha"),
     "WorkReport/BuyerCustomerParty": ("Service Recipient", "Leistungsempfänger", "Tomador de Serviços", "Ekimu Juryōsha"),
     "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
@@ -821,8 +830,9 @@ def name_for(e, parent, name):
         return VALUES["NameType"]
     lang = LANG[COUNTRY]
     e.set("languageID", lang)
-    if key == "ProcurementProject/Name":  # unique; the next year; numbered as
-        # the document's procedure identifier (ContractFolderID-k) (VA3#F6)
+    if key == "ProcurementProject/Name":  # unique; the next year; numbered
+        # with the document's k, as its ContractFolderID-k where it has one
+        # (VA3#F6; the PriorInformationNotice has none)
         return "%s (%d)" % (t[LANG_INDEX[lang]], DOCNO * 10 + 1)
     return t[LANG_INDEX[lang]]
 
