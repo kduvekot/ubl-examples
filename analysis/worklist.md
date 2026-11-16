@@ -137,9 +137,9 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C97 | Procurement notices (contest and tender): notice types, defaults, languages, links | flow story | 31 | 14 | 2 | 0/6/25 | owner: D29 | tools/examples_scenarios.py, notice_head() | ready (D29 decided) |
 | C98 | Contest: the design team, references, prizes and versions | flow story | 24 | 13 | 1 | 1/4/19 | owner: D29 | tools/examples_scenarios.py, contest_version() | ready (D29 decided) |
 | C99 | Contest: the estimated contract amount of 54,000 lume | flow story | 8 | 8 | 1 | 0/0/8 | owner: D29 | tools/examples_scenarios.py, contest_project() | ready (D29 decided) |
-| C100 | Road flow: isolated slips of the truck shipment | flow story | 25 | 10 | 1 | 1/6/18 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
-| C101 | Road flow: application and certificate of origin | flow story | 14 | 3 | 1 | 4/4/6 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
-| C102 | Road flow: the substituted 2026 casting | flow story | 8 | 7 | 1 | 0/1/7 | owner: D35 | tools/examples_scenarios.py, road() | waits: D35 |
+| C100 | Road flow: isolated slips of the truck shipment | flow story | 25 | 10 | 1 | 1/6/18 | owner: D35 | tools/examples_scenarios.py, road() | ready (D35 decided) |
+| C101 | Road flow: application and certificate of origin | flow story | 14 | 3 | 1 | 4/4/6 | owner: D35 | tools/examples_scenarios.py, road() | ready (D35 decided) |
+| C102 | Road flow: the substituted 2026 casting | flow story | 8 | 7 | 1 | 0/1/7 | owner: D35 | tools/examples_scenarios.py, road() | ready (D35 decided) |
 | C103 | Furniture flow: quotation, orders, invoice, return and credit | flow story | 27 | 9 | 1 | 0/1/26 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
 | C104 | Furniture flow: the replenishment and sales-reporting documents | flow story | 21 | 5 | 1 | 0/10/11 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
 | C105 | Furniture flow: the department's desks and installation | flow story | 10 | 3 | 1 | 0/0/10 | owner: D32 | tools/examples_scenarios.py, furniture() | ready (D32 decided) |
@@ -1519,7 +1519,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; the yes ones with D35.
 - Depends on / blocks: none
 - Touched by: D19 (O54: the road distances 186 km and 38 km are derived from the map; Ferrano to Marrowdale is about 182 km), D20 (the load becomes 24 pallets of knocked-down benches and the castings pallet), D9 (O8: the extra box of side frames is settled with D35), D14 (the road invoice is recalculated).
-- State: waits for D35.
+- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance waits for the place list (O54, O91).
 - Findings: road: 01#F10, 01#F11, 02#F4, 02#F5, 03#F5, 03#F9, 08#F2, 08#F11, 08#F13, 08#F14, 08#F18, 08#F24, 08#F25, 08#F26, 08#F28, 08#F29, 08#F30, 09#F10, 09#F11, 12#F1, 13#F8, 13#F15, 14#F11, 16#F11, 17#F8
 
 ### C101 · Road flow: application and certificate of origin
@@ -1530,7 +1530,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D35 for the endorsement roles; the rest are encoding fixes.
 - Depends on / blocks: none
 - Touched by: D18 (the import declaration claims the preference and refers to the certificate as proof of origin), D27 (the certificate dated on a working day of its issuer).
-- State: waits for D35.
+- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance waits for the place list (O54, O91).
 - Findings: road: 06#F1, 06#F3, 06#F7, 06#F15, 06#F16, 06#F17, 07#F1, 07#F6, 07#F9, 07#F10, 07#F16, 07#F17, 07#F18, 10#F3
 
 ### C102 · Road flow: the substituted 2026 casting
@@ -1541,7 +1541,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Carry the extended ID through; road/13#F9 (the extra frame) with D35.
 - Depends on / blocks: none
 - Touched by: D9 (O8), D5 (the 2026 casting is identified by `VI-C180` with an extended ID, C44).
-- State: waits for D35.
+- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance waits for the place list (O54, O91).
 - Findings: road: 02#F6, 04#F15, 07#F25, 10#F21, 11#F12, 13#F9, 13#F18, 15#F13
 
 ### C103 · Furniture flow: quotation, orders, invoice, return and credit
