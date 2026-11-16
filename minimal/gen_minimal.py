@@ -269,7 +269,7 @@ QUANTITY_UNITS = {
 QUANTITY_VALUES = {"MainQualifyingParty/OperatingYearsQuantity": "12",
                    "Price/BaseQuantity": "1",
                    "FreightInvoice:InvoiceLine/InvoicedQuantity": "1",
-                   "SubscriberConsumption/TotalMeteredQuantity": "350"}  # a month, household
+                   "SubscriberConsumption/TotalMeteredQuantity": "350"}  # a small business's month; the period is the parent invoice's
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
 # PeriodType: both StartDate and EndDate. A period with only a start would be
