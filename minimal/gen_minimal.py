@@ -342,6 +342,8 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ExceptionNotificationLineType": {"cbc:SupplyChainActivityTypeCode"},
         # an information request says which information: sales data
         "ItemInformationRequestLineType": {"cbc:SupplyChainActivityTypeCode"},
+        # forwarding instructions: who instructs (consignor) which forwarder
+        "ForwardingInstructionsType": {"cac:ConsignorParty", "cac:FreightForwarderParty"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -401,8 +403,10 @@ PARTY_SCHEMES = {
     "SendingLogisticsOperatorParty": GLN, "ReporterParty": GLN,
     # a transport contract's provider, as a legal entity
     "TransportServiceProviderParty": LEI, "CarrierParty": LEI,
-    # ship-from of a carriage (bill of lading): logistics, like the despatch party
-    "ConsignorParty": GLN,
+    # the consignor is a commercial shipper (a business): D-U-N-S; the freight
+    # forwarder is the counterparty of a forwarding contract: LEI, as the
+    # carrier. GLN stays for real locations and GS1 domains (not dominant).
+    "ConsignorParty": DUNS, "FreightForwarderParty": LEI,
     # public procurement: the buyer as a legal entity; suppliers as businesses
     # whose identity and standing buyers verify
     "ContractingParty": LEI,
@@ -549,6 +553,7 @@ ROLE_NAMES = {  # role: (en, de, pt, ja-Latn)
     "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
     "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),
+    "FreightForwarderParty": ("Freight Forwarder", "Spediteur", "Agente de Carga", "Fōwādā"),
     "SendingLogisticsOperatorParty": ("Logistics Operator", "Logistikdienstleister", "Operador Logístico", "Butsuryū Jigyōsha"),
     "ReporterParty": ("Reporter", "Berichterstatter", "Relator", "Hōkokusha"),
     "ContractingParty": ("Contracting Authority", "Öffentlicher Auftraggeber", "Órgão Contratante", "Hatchū Kikan"),
