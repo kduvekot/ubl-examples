@@ -348,7 +348,7 @@ Details that make a document richer but are not needed to understand it (prices 
 - **Condition:** The changed line carries the changed value. With DM#F28 fixed, the quantity is the natural one: a new quantity different from the original order's, which the document cannot show but would state.
 - **Options:**
   1. Fix DM#F28 and accept "new quantity 10" as the change.
-  2. Additionally add `LineStatusCode` (UBL default list LineStatusCode: `Revised`, per `cva/UBL-DefaultDTQ-2.5.cva`) to state explicitly that the line is changed.
+  2. Additionally add `LineStatusCode` (UBL default list LineStatusCode-2.0, values Added, Cancelled, Disputed, NoStatus and Revised, per `val/UBL-DefaultDTQ-2.5.xsl` l. 574) to state explicitly that the line is changed.
 - **Needs decision:** yes.
 
 ### OrderResponse
