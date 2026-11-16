@@ -313,6 +313,14 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - c) Direct supply from Valdara (drop "from the distributor's stock").
 - Recommendation: a): it keeps every flow's dates and changes only product data; then C70 (melt, serials, batches) follows.
 - Related: D19, D20
+- **Decided (owner, 2026-11-16): a) for the goods that came from stock, and a cross-dock for the urgent air frames.**
+  - **The ledger the documents imply (benches at Lumeway, Marrowdale):** 25 March, in by road, +96, lot `VI-LOT-260320` made 20 March, stock 96; 15 April, in by rail, +192, no lot stated, stock 288; 29 April, out to Brightmarket, −24, stated as lot `VI-LOT-260426` made 26 April, stock 264; 13 May, out by sea to Velumi, −96, stated as lot `VI-LOT-260510` made 10 May, stock 168. Lumeway never runs short of benches; the goods that leave carry lots that never arrived, and the lots that arrived are never sold.
+  - **Side frames at Lumeway:** 25 March, in by road, +12, serials `VI-SF-01490` onward, made 20 March; 13 May, out by sea, −12, stated as `VI-SF-01230` to `01241` made 10 May; 13 and 14 May, out by air, −8, `VI-SF-03190` to `03197`, made 10 May in air/06 and 11 May in air/08. Lumeway receives 12 frames and sends out 20; the May serials are lower than the March ones.
+  - **Benches and the 12 sea frames leave from the stock that arrived.** Brightmarket's 24 benches come from the March road lot; the island's 96 from the April rail delivery, which gets lot numbers; the 12 frames by sea are the 12 that came by road, with their March serials. The sea export's previous declaration then is the import under which those goods entered Bayvarra (the March road import for the frames, the rail delivery's declaration for the benches).
+  - **The eight air frames are an urgent order and a cross-dock:** Velumi asks for eight more on 11 May; Lumeway has none left; Valdara casts them, they are trucked to Lumeport, pass through Lumeway's dispatch area without entering its stock, and fly. The despatch type for a cross-dock exists in the world's list. Their manufacture date is one date, and their customs treatment across Bayvarra is settled with the air flow (D39).
+  - **Serial and melt numbers follow time:** serials rise with the manufacture date; each casting day has its own melt number and each lot its own coating batch (today all 40 melt numbers are `M-26-0412`, and one coating batch `ZN-26-114` covers lots from 20 March to 10 May). This takes up open point O4.
+- **The goods chain becomes part of the world's data, with a check:** a production record at Valdara (lot, date, quantity, serial range, melt, coating batch); a stock ledger per warehouse (Lumeway first, then Brightmarket and Velumi); and a build check that stock never goes below zero, nothing leaves before it arrived, nothing is made after it ships, and each journey's time fits its distance at 14 km a square. Open points O63 to O65.
+
 
 ## Payment terms (20 findings)
 
@@ -845,6 +853,13 @@ Open threads: O50 (the forward contract in the tender flow), O51 (a trading part
 
 The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg for one person in good conditions, and about two thirds of the combined capacity for two people lifting together. Goods are packed so that a parcel a person lifts stays within it; anything heavier is moved by machine, and the documents say so. It is the kind of rule a trade agreement's labour chapter shares between its members.
 
+### The goods chain of the park bench (D21)
+
+- **Valdara makes to order, in lots.** A lot has a date, a quantity, a coating batch; every side frame has a serial number that rises with the day it was cast, and every casting day has its own melt number.
+- **Lumeway holds stock in Marrowdale.** It received 96 benches and 12 spare frames by road on 25 March and 192 benches by rail on 15 April, and sells from that stock in the order the goods arrived: 24 benches to Brightmarket on 29 April, 96 benches and the 12 frames to Velumi on the island on 13 May. At the end of May it still holds 168 benches.
+- **An urgent order does not come from stock.** When Velumi asks for eight more frames on 11 May, Lumeway has none; Valdara casts them and they are passed through Lumeway's dispatch area to the aircraft, a cross-dock.
+- **Valdara also sells direct:** 40 benches to the public works department on 30 March, from a lot of their own, and two benches travel to a fair under a carnet.
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
@@ -856,7 +871,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | ~~O1~~ | ~~What Lisavu gave up in 1996~~ **Settled 2026-11-16 (D18):** duties on Accord goods ended; the import consumption tax of 10 % stayed. Velumi's margin: see O48. | D4, D14 | D18 |
 | ~~O2~~ | ~~Whether the fixed exchange rates are a currency arrangement~~ **Settled 2026-11-16:** an adjustable peg under the Accord's monetary protocol, reviewed every five years (see "Story lines: Money"). The forward contract of the tender flow: see O50. | D4 | D18 |
 | ~~O3~~ | ~~The customs trader number~~ **Settled 2026-11-16 (D18):** built from the business register number, as a stated rule. | D5 | D18 |
-| O4 | Serials and lots in globally unique form; the melt and serial numbers (one melt number on castings from three dates) | D5, D11 | D21 |
+| ~~O4~~ | ~~Serials and lots; the melt and serial numbers~~ **Settled 2026-11-16 (D21):** serials rise with the manufacture date, each casting day has its own melt number, each lot its own coating batch. The globally unique form of serials and lots (Codana prefix) stays with O63. | D5, D11 | D21 |
 | O5 | Localised item texts: which items, by whom, which text a document carries; Urvanian and Lisavan item texts | D2 | D21 or the item profile (O20) |
 | O6 | The three buyer-issued debit notes: furniture/14, sea/28, tender/34 | D9 | D32, D30, D28 |
 | O7 | The world's real debit note: demurrage in the rail or sea flow first, waiting time second; not forced | D9 | D37, D30 |
@@ -875,6 +890,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O50 | The forward exchange contract of the tender flow becomes Valdara's hedge across the review of 1 January 2027: made after the award, covering the releases due after the review; how the pricing currency (ferra), the pricing exchange rate and the contract in lume hang together; out of the documents of parties that are not part of it | O2 | D28 |
 | O53 | The sea voyage Lumeport to Selanu: one passage time (38 to 43 hours) in the service description, the manifest, the pre-arrival report and the status messages; the arrival moves earlier | D19 | D30 |
 | O54 | The gas field's distance ("four kilometres"), the road distances 186 km and 38 km, and every other stated distance, derived from the map at 14 km a square | D19 | D44, D35, D34 and the build |
+| O63 | The eight air frames as a cross-dock: one manufacture date, the road leg from Ferrano to Lumeport, the customs treatment across Bayvarra (transit or import and re-export), the despatch type | D21 | D39 |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
@@ -897,6 +913,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O57 | The island's time: an hour ahead of the mainland or the same; times in island documents; the world's time zone in `world/countries.json` (today UTC−1 for all) | D19 |
 | O58 | The freighter's range: about 1,060 km with the load of the air flow, against the ATR 72-600F data the world holds (`world/codelists/sources/atr`) | D19 |
 | O61 | The bench as three parcels in the documents: package levels, parcel counts beside pallet counts, handling instructions, shipping marks; the pallet's size; the pallets' own weight in consignment and container weights; the bench at 44.4 kg in the 49 documents that carry it | D20 |
+| O64 | The production record at Valdara and the stock ledgers of Lumeway, Brightmarket and Velumi as world data: lots and serial ranges for the rail delivery; which lot each sale draws on; melt numbers and coating batches per lot; serials and lots in their globally unique form where a document crosses company borders (D5) | D21 |
 | O27 | Read the legal notes to Section XV and Note 1(d) to Chapter 94 against the official text before the side frame becomes 9401.99 | D13 |
 | O28 | The world's price type list says for each type whether it includes tax | D14 |
 | O29 | Confirm that Urvania works the other way round for place names (English text uses the Italian name) | D3 |
@@ -907,6 +924,8 @@ Everything that was left open while deciding, in one list, so that nothing depen
 |---|---|---|
 | O60 | Distances and durations: a stated distance equals the route's length on the map; the time between departure and arrival fits the distance and the mode's speed | D19 |
 | O62 | Item physics, for every physical item of the world (the bench is the worked example): dimensions and a stated density give the weight; parts sum to the whole, parcels to pallets, and pallets fit the holds; anything a person lifts is within 25 kg or the documents say how it is moved. One short sheet per item, checked by the build. Items to do: the Elderwick bench, chair and care kit, the office desk, the slat and its bundle, the side frame, the cotton bale, the packaging film, the plastic granulate, the mast equipment, the ore. | D20 |
+| O65 | The goods-chain check: stock never below zero; nothing leaves before it arrived; nothing is made after it ships; a previous customs declaration covers the lots and serials it is cited for. Extended to the other chains of the world (O66). | D21 |
+| O66 | The other goods chains, each with its own balance: ore to steel to castings (the mine's tonnage against the castings made); slats to benches (4,800 slats are 960 benches); timber to Brackenmere's furniture; seed cotton to lint to fabric (the ginning out-turn; the farm's deliveries against 27 bales); recycled granulate to packaging film to the packed goods; production waste to the recycler; gas to electricity (already found in balance); the Elderwick pieces from Brackenmere to the store to the shopper | D21 |
 | O30 | Nobody resells below cost plus stated freight; gross margin and turnover per person within the bands | D14 |
 | O31 | A list of the world's items with the reasoning for each HS heading, for a person to verify once | D13 |
 | O32 | The prefix of every Codana identifier is the company number of the party that issued it | D5 |
@@ -944,4 +963,5 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O42 | Products delivered in several packages: the park bench now is one (three parcels, D20). Still for later: how the parcels of one item are numbered (GS1's trade item piece, application identifier 8006; the ISO/IEC 15459 equivalent on the Codana side) and which documents carry the piece numbers | D7, D20 |
 | O43 | A carbon border rule that asks for the footprint on the import declaration | D11 |
 | O51 | A trading partner outside the three countries: a fourth country, currency and party; a floating rate and a reason to hedge; goods that pay duty because they are not of Accord origin | O2, D18 |
+| O67 | A page of the site that shows the goods' journey: a timeline of where every lot is on every day, and the routes on the map with their dates | D21 |
 | O44 | A sale to a consumer in Urvania, to show a price that includes value added tax | D14 |
