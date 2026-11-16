@@ -221,6 +221,7 @@ QUANTITY_UNITS = {
     "StockAvailabilityReportLine/Quantity": "H87", "SalesItem/Quantity": "H87",
     "ExceptionCriteriaLine/ThresholdQuantity": "H87",
     "DespatchLine/DeliveredQuantity": "H87", "LineItem/Quantity": "H87",
+    "ReceiptLine/ReceivedQuantity": "H87",
 }
 
 # Optional children added to an aggregate type on purpose (UBL 2.5 chapter 4).
@@ -355,6 +356,15 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
             "TenderStatusRequest", "TenderWithdrawal",
             "UnsubscribeFromProcedureRequest", "UnsubscribeFromProcedureResponse")},
         "PriorInformationNoticeType": {"cac:ProcurementProject"},
+        # commercial documents say what they concern: the overdue invoice and
+        # its amount (= the total), the balance, what is credited, what was
+        # received, what work was done
+        "ReminderLineType": {"cac:BillingReference", "cbc:DebitLineAmount"},
+        "StatementType": {"cbc:TotalBalanceAmount"},
+        "CreditNoteLineType": {"cac:Item"},
+        "ReceiptAdviceType": {"cac:ReceiptLine"},
+        "ReceiptLineType": {"cbc:ReceivedQuantity", "cac:Item"},
+        "WorkReportLineType": {"cbc:WorkItemDescription"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -594,6 +604,8 @@ TEXTS = {  # (en, de, pt, ja-Latn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     # a freight invoice invoices a transport service, not goods (DM#F114)
     "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Rikujō yusō"),
+    "WorkItemDescription": ("Maintenance of office equipment", "Wartung der Büroausstattung",
+                            "Manutenção de equipamentos de escritório", "Jimu kiki no hoshu"),
     "ReportType": ("Pre-arrival notification", "Voranmeldung der Ankunft",
                    "Notificação de pré-chegada", "Nyūkō mae tsūhō"),
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),

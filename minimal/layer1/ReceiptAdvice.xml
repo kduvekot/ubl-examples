@@ -22,4 +22,11 @@
       </cac:PartyName>
     </cac:Party>
   </cac:DespatchSupplierParty>
+  <cac:ReceiptLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ReceivedQuantity unitCode="H87">10</cbc:ReceivedQuantity>
+    <cac:Item>
+      <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+    </cac:Item>
+  </cac:ReceiptLine>
 </ReceiptAdvice>

@@ -43,5 +43,11 @@
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:DebitLineAmount currencyID="USD">100</cbc:DebitLineAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>InvoiceDocumentReference-661</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
   </cac:ReminderLine>
 </Reminder>

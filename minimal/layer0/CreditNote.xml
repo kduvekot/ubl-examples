@@ -21,5 +21,8 @@
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
+    <cac:Item>
+      <cbc:Description languageID="pt">Caneta esferográfica, azul</cbc:Description>
+    </cac:Item>
   </cac:CreditNoteLine>
 </CreditNote>

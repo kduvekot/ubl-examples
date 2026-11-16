@@ -18,6 +18,7 @@
   </cac:BuyerCustomerParty>
   <cac:WorkReportLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:WorkItemDescription languageID="pt">Manutenção de equipamentos de escritório</cbc:WorkItemDescription>
     <cbc:Quantity unitCode="HUR">10</cbc:Quantity>
   </cac:WorkReportLine>
 </WorkReport>
