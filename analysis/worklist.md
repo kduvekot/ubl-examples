@@ -103,7 +103,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C63 | Lisavu Cotton Farm: address lines that repeat the structured address, and a yearly expiring registration | master data | 11 | 6 | 2 | 0/0/11 | decided: D4 | world/parties.json, tools/build_examples.py | ready |
 | C64 | Industry classes that leave out what the party does | master data | 9 | 9 | 2 | 0/0/9 | decided: D8 | world/parties.json | ready |
 | C65 | Bale weight of about 227 kg as `PackSizeNumeric` | master data | 7 | 7 | 1 | 0/0/7 | decided: D12 | world/items.json | ready |
-| C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | waits: D28 3, D30 1, D32 1 |
+| C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | waits: D30 1, D32 1 (tender: D28 decided) |
 | C67 | Side frame classified HS 7325.99 instead of a part of a seat | master data | 5 | 5 | 2 | 0/4/1 | decided: D13 | world/items.json | waits: O27 |
 | C68 | Valdara's distributor price equals its public contract price; Lumeway's revised frame price is below cost | master data | 1 | 1 | 0 | 0/0/1 | decided: D14 | world/items.json | ready |
 | C69 | The bench as shipped: pallets that do not fit, and a bench lighter than its parts | cross-flow story | 7 | 6 | 3 | 1/3/3 | decided: D20 | world/items.json, tools/examples_kit.py | ready |
@@ -156,16 +156,16 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C116 | Sea flow: factoring, statement, payment and the island's debit note | flow story | 16 | 6 | 1 | 5/4/7 | owner: D30 | tools/examples_scenarios.py, sea_with_debit() | waits: D30 |
 | C117 | Sea flow: business card, digital agreement and capabilities | flow story | 15 | 3 | 1 | 0/4/11 | owner: D30 | tools/examples_scenarios.py, digital_service() | waits: D30 |
 | C118 | Sea flow: the CIF sale, freight and insurance | flow story | 14 | 10 | 1 | 3/3/8 | owner: D30 | tools/examples_scenarios.py, sea_invoice_terms() | waits: D30 |
-| C119 | Tender: tendering terms copied into notices, call, award and contract | flow story | 86 | 13 | 1 | 4/40/42 | owner: D28 | tools/examples_scenarios.py, tendering_terms() | waits: D28 |
-| C120 | Tender: contract, catalogue and call-off (releases, despatch, credit, reminder) | flow story | 30 | 11 | 1 | 2/6/22 | owner: D28 | tools/examples_scenarios.py, tender() | waits: D28 |
-| C121 | Tender: the procurement project and its lots | flow story | 26 | 11 | 1 | 3/0/23 | owner: D28 | tools/examples_scenarios.py, procurement_project() | waits: D28 |
-| C122 | Tender: the tenders, receipt and withdrawal | flow story | 15 | 4 | 1 | 2/0/13 | owner: D28 | tools/examples_scenarios.py, tender_lines() | waits: D28 |
-| C123 | Tender: the installation billed but never ordered | flow story | 14 | 7 | 1 | 7/4/3 | owner: D28 | tools/examples_scenarios.py, tender() | waits: D28 |
-| C124 | Tender: expressions of interest, status, register extract and Valdara's qualification | flow story | 13 | 3 | 1 | 0/5/8 | owner: D28 | tools/examples_scenarios.py | waits: D28 |
-| C125 | Tender: procedure periods against the notices' issue dates | flow story | 10 | 9 | 1 | 5/0/5 | owner: D28 | tools/examples_scenarios.py, out_day() | waits: D28 |
-| C126 | Tender: the guarantee certificate | flow story | 9 | 4 | 1 | 0/3/6 | owner: D28 | tools/examples_scenarios.py | waits: D28 |
-| C127 | Tender: award, notifications and appeal | flow story | 7 | 3 | 1 | 1/0/6 | owner: D28 | tools/examples_scenarios.py, tender_result() | waits: D28 |
-| C128 | Tender: moss green ordered, grey identified | flow story | 6 | 6 | 1 | 5/1/0 | none | tools/examples_scenarios.py, tender() | waits: D28 |
+| C119 | Tender: tendering terms copied into notices, call, award and contract | flow story | 86 | 13 | 1 | 4/40/42 | owner: D28 | tools/examples_scenarios.py, tendering_terms() | ready (D28 decided) |
+| C120 | Tender: contract, catalogue and call-off (releases, despatch, credit, reminder) | flow story | 30 | 11 | 1 | 2/6/22 | owner: D28 | tools/examples_scenarios.py, tender() | ready (D28 decided) |
+| C121 | Tender: the procurement project and its lots | flow story | 26 | 11 | 1 | 3/0/23 | owner: D28 | tools/examples_scenarios.py, procurement_project() | ready (D28 decided) |
+| C122 | Tender: the tenders, receipt and withdrawal | flow story | 15 | 4 | 1 | 2/0/13 | owner: D28 | tools/examples_scenarios.py, tender_lines() | ready (D28 decided) |
+| C123 | Tender: the installation billed but never ordered | flow story | 14 | 7 | 1 | 7/4/3 | owner: D28 | tools/examples_scenarios.py, tender() | ready (D28 decided) |
+| C124 | Tender: expressions of interest, status, register extract and Valdara's qualification | flow story | 13 | 3 | 1 | 0/5/8 | owner: D28 | tools/examples_scenarios.py | ready (D28 decided) |
+| C125 | Tender: procedure periods against the notices' issue dates | flow story | 10 | 9 | 1 | 5/0/5 | owner: D28 | tools/examples_scenarios.py, out_day() | ready (D28 decided) |
+| C126 | Tender: the guarantee certificate | flow story | 9 | 4 | 1 | 0/3/6 | owner: D28 | tools/examples_scenarios.py | ready (D28 decided) |
+| C127 | Tender: award, notifications and appeal | flow story | 7 | 3 | 1 | 1/0/6 | owner: D28 | tools/examples_scenarios.py, tender_result() | ready (D28 decided) |
+| C128 | Tender: moss green ordered, grey identified | flow story | 6 | 6 | 1 | 5/1/0 | none | tools/examples_scenarios.py, tender() | ready (D28 decided) |
 
 ## Order of work
 
@@ -1729,7 +1729,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Fix `tendering_terms()` once (most options need no decision); D28 for the yes-findings (auction, framework values, budget).
 - Depends on / blocks: none
 - Touched by: D17 (O13: the notices' wording on the Bayvarran exemption), D27 (deadlines counted in the working days of the party that set them).
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender (86): 01#F1, 01#F7, 01#F8, 01#F9, 01#F10 …. Full list in `analysis/worklist-assignments.csv`.
 
 ### C120 · Tender: contract, catalogue and call-off (releases, despatch, credit, reminder)
@@ -1740,7 +1740,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28.
 - Depends on / blocks: none
 - Touched by: D22 (the invoice falls due 30 days after the accepted release, O69; Urvania's statutory 8 % for late payment), O12 (moss green, from D11), O50 (the forward contract becomes Valdara's hedge); C11's tender findings go with this cause.
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 24#F4, 25#F3, 25#F12, 25#F16, 25#F17, 25#F19, 25#F20, 25#F22, 26#F12, 26#F14, 27#F3, 27#F9, 27#F10, 27#F11, 28#F6, 29#F3, 29#F10, 29#F12, 32#F17, 32#F18, 33#F1, 33#F7, 33#F12, 33#F13, 34#F3, 34#F11, 35#F12, 36#F2, 36#F6, 36#F9
 
 ### C121 · Tender: the procurement project and its lots
@@ -1751,7 +1751,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28 (the estimate).
 - Depends on / blocks: none
 - Touched by: D14 (the tender keeps its prices: Valdara's bid 499 plus 18 for installation; O14: Lumeway's position on the direct bid and the estimate equal to the bid); C14's tender/33#F18 goes with this cause.
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 01#F4, 01#F27, 01#F28, 01#F29, 01#F30, 02#F5, 02#F32, 02#F33, 02#F34, 02#F38, 02#F39, 03#F5, 03#F33, 03#F34, 03#F35, 03#F39, 03#F40, 08#F6, 09#F10, 15#F15, 21#F14, 21#F17, 24#F14, 26#F15, 29#F14, 32#F19
 
 ### C122 · Tender: the tenders, receipt and withdrawal
@@ -1762,7 +1762,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D4 (O13: the figures the tenders state).
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 15#F11, 15#F16, 15#F17, 16#F6, 17#F3, 17#F11, 17#F13, 17#F15, 17#F16, 17#F17, 19#F3, 19#F11, 19#F13, 19#F15, 19#F16
 
 ### C123 · Tender: the installation billed but never ordered
@@ -1773,7 +1773,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28 (preferred: order line for the installation, separate later invoice).
 - Depends on / blocks: C51 (D22), C54 (D17)
 - Touched by: D17 (`SVCABROAD` widened covers Valdara's installation on land abroad; the department withholds 10 %), D22 (O69), D9 (tender/34's penalty is re-homed as a supplier's credit note or a deduction in the remittance advice, O6), D20 (installation has real content: a crew of two assembles and anchors the benches).
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 25#F11, 25#F18, 26#F3, 27#F2, 28#F2, 32#F1, 32#F2, 32#F4, 32#F8, 32#F16, 33#F5, 33#F6, 34#F2, 34#F9
 
 ### C124 · Tender: expressions of interest, status, register extract and Valdara's qualification
@@ -1784,7 +1784,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28.
 - Depends on / blocks: none
 - Touched by: D4 (the tender states Valdara's real figures, or says that the 180 are the staff of its street-furniture division; O13; C60's 8 Valdara findings go with this cause).
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 09#F5, 12#F4, 12#F5, 12#F6, 12#F13, 12#F14, 12#F15, 13#F1, 13#F3, 13#F4, 13#F10, 13#F11, 13#F12
 
 ### C125 · Tender: procedure periods against the notices' issue dates
@@ -1795,7 +1795,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28 (move the notices to late January, or the periods).
 - Depends on / blocks: none
 - Touched by: D27 (procedure dates on working days of the contracting body; C53's three tender findings go with this cause).
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 01#F2, 02#F1, 03#F1, 04#F4, 05#F4, 20#F1, 21#F2, 21#F12, 22#F5, 24#F13
 
 ### C126 · Tender: the guarantee certificate
@@ -1806,7 +1806,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28.
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 14#F1, 14#F2, 14#F3, 14#F7, 14#F8, 14#F9, 15#F12, 17#F12, 19#F12
 
 ### C127 · Tender: award, notifications and appeal
@@ -1817,7 +1817,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D28.
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
-- State: waits for D28.
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 20#F6, 20#F7, 20#F8, 21#F1, 23#F3, 23#F4, 23#F5
 
 ### C128 · Tender: moss green ordered, grey identified
@@ -1828,6 +1828,6 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Carry the variant D28 chooses (O12) through every document from the order change on: a standard variant named by its identifier, with no surcharge, or a special colour specified in the order change, with the surcharge.
 - Depends on / blocks: none
 - Touched by: D11 (O12: moss green is either a standard variant that the order change names, so that no surcharge is due, or a special colour that the order change specifies, so that the surcharge is right; taken up with D28).
-- State: waits for D28 (O12).
+- State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 27#F4, 29#F1, 30#F1, 31#F1, 32#F3, 33#F2
 
