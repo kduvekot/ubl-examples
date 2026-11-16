@@ -530,11 +530,11 @@ The backstory decided while working through the decisions above, kept in one pla
 | 1903 | The Bank of Lumeport is founded. | The settlers' economy of Bayvarra is older than Urvania's state. |
 | 1949, 1958 | Ferrano Energy and Serravona Mining are founded. | Urvania's state-founded energy and mining. |
 | 1962 | Urvania becomes independent, bilingual in Urvanian and English. It builds a protected economy around state mining, energy and its own manufacturers. Valdara Industries is founded the same year. | Why Urvania is the late and different partner. |
-| 1974 | **The Lumeport Agreement** between Bayvarra and Lisavu: the island's cotton enters Bayvarra free of duty, and a regular shipping service links the two. The island keeps its duties on imports. Tidewell Ocean Lines is founded to run the service. | The lint reference price is published in lume; the old tie between the island and Bayvarra's port; Tidewell's founding year. |
+| 1974 | **The Lumeport Agreement** between Bayvarra and Lisavu: the island's cotton enters Bayvarra free of duty, a regular shipping service links the two, and the coral is tied to the lume. The island keeps its duties on imports. Tidewell Ocean Lines is founded to run the service. | The lint reference price is published in lume; the old tie between the island and Bayvarra's port; Tidewell's founding year. |
 | 1988 | Lumeway Distribution is founded in Bayvarra. | |
 | early 1990s | Urvania opens its economy. | Real parallels: the Canada–US agreement of 1988 that Mexico joined to form NAFTA in 1994; India 1991; Mercosur 1991. |
 | 1994 | **The Lumeport Trade Accord** is signed in Lumeport: Urvania joins, and the agreement of 1974 becomes a free trade area for all three countries. | The Accord's name: it grew out of the agreement signed in Lumeport. |
-| 1 January 1996 | The Accord enters into force. Hauliers, forwarders, customs brokers and a factoring company are set up around this date to serve the new cross-border trade. | Some of the parties now dated 1996-01-01 keep 1996 as their founding year, with their own days; ports, utilities, state bodies and industry get older or other dates. |
+| 1 January 1996 | The Accord enters into force. The ferra joins the lume and the coral at a fixed parity; the parities are reviewed every five years from then on (last on 1 January 2022, unchanged; next on 1 January 2027). The island stops charging duty on its partners' goods and keeps its import consumption tax. Lumeway Distribution becomes Valdara's distributor for Bayvarra and the island. Hauliers, forwarders, customs brokers and a factoring company are set up around this date to serve the new cross-border trade. | Some of the parties now dated 1996-01-01 keep 1996 as their founding year, with their own days; ports, utilities, state bodies and industry get older or other dates. |
 | 2011 | Kelpstone Gas starts producing from its offshore field; the pipeline brings gas to Urvania. Ferrano Energy and Ferrano Grid, electricity companies until then, take up gas as a second business. | Why both are classed as electricity companies (D8). |
 | 2007 onward | Later protocols of the Accord: an energy market (Ferrano Grid is split off in 2007; Kelpstone Gas dates from 2011), then the procurement rules, the payment link and card schemes, and electronic business documents. | Why the three countries share procurement rules, a payment link and code lists although each keeps its own taxes. |
 
@@ -799,6 +799,16 @@ Nobody resells below what they paid plus the freight the documents state.
 - **Customs registers a trader under its business register number** (D18).
 - **What is common:** the value starts from the price actually paid, and charges that are part of that price (a special finish, export packing) belong to it.
 
+### Money: three currencies at fixed parities (open point O2)
+
+- **The parities.** 1 lume = 100 ferra = 0.4 coral. They are fixed by the Accord's monetary protocol and reviewed every five years, against how the three economies have developed. This is an adjustable peg, as the Bretton Woods system was and the European exchange-rate mechanism with its realignments; the West African CFA franc held one parity for decades and was then devalued in one step, in 1994.
+- **History.** The coral has been tied to the lume since the Lumeport Agreement of 1974: an island that sells its cotton in lume has every reason to tie its money to it. The ferra joined at a fixed parity when Urvania came into the Accord in 1996. The last review, on 1 January 2022, left the parities unchanged. The next is on 1 January 2027.
+- **What it means for the documents.** Through 2026 every exchange rate in the examples is the parity; nothing moves. There is still a daily official rate, the noon fixing of the Lumeport Exchange, which does not change between reviews. The Accord's size classes give their turnover limits in all three currencies at the parities.
+- **Currency risk is real across a review.** Anything agreed now and paid after 1 January 2027 may be paid at another rate. A forward exchange contract protects a long commitment across the review date. The world's case is the two-year framework contract of the tender flow: it is priced in lume, Valdara's costs are in ferra, so the risk is Valdara's and the forward is Valdara's, made after the award, for the releases due after the review. (Today the documents show a forward dated 2 January 2026, before the procedure began, read as the buyer's hedge, on the pricing rate of six documents, at exactly the parity.)
+- **Not chosen:** a spot conversion contract at the parity (it would state nothing); floating rates (every amount in two currencies would need a rate per date).
+
+Open threads: O50 (the forward contract in the tender flow), O51 (a trading partner outside the world, later), O52 (earlier reviews, for the encyclopaedia).
+
 ## Open points
 
 Everything that was left open while deciding, in one list, so that nothing depends on memory. Each point says where it came from and when it is taken up. **How it is used:** when a decision or a stage is reached, its open points are listed first; a point is struck out here with the date and the outcome when it is settled; a new open point is added here in the same turn in which it comes up. The list is checked in full before the decisions are called finished and again before each stage of the worklist starts.
@@ -808,7 +818,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | No. | Open point | From | Taken up with |
 |---|---|---|---|
 | ~~O1~~ | ~~What Lisavu gave up in 1996~~ **Settled 2026-11-16 (D18):** duties on Accord goods ended; the import consumption tax of 10 % stayed. Velumi's margin: see O48. | D4, D14 | D18 |
-| O2 | Whether the fixed exchange rates are a currency arrangement of the Accord or of a later protocol | D4 | D18 or the conditions decisions |
+| ~~O2~~ | ~~Whether the fixed exchange rates are a currency arrangement~~ **Settled 2026-11-16:** an adjustable peg under the Accord's monetary protocol, reviewed every five years (see "Story lines: Money"). The forward contract of the tender flow: see O50. | D4 | D18 |
 | ~~O3~~ | ~~The customs trader number~~ **Settled 2026-11-16 (D18):** built from the business register number, as a stated rule. | D5 | D18 |
 | O4 | Serials and lots in globally unique form; the melt and serial numbers (one melt number on castings from three dates) | D5, D11 | D21 |
 | O5 | Localised item texts: which items, by whom, which text a document carries; Urvanian and Lisavan item texts | D2 | D21 or the item profile (O20) |
@@ -826,6 +836,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O17 | Whether the ports and the telecom operator are companies with a register entry or public bodies | D4 | the cause C04, stage 1 |
 | ~~O45~~ | ~~`TaxScheme/TaxTypeCode` needs a real case~~ **Settled 2026-11-16 (D17):** the withholding scheme carries the tax type `INCOME`. | D15 | D17 |
 | O48 | Velumi's shop price for the bench: 289 coral gives 16 % after the import consumption tax; proposed about 375 coral. The same check for the side frame and Velumi's other imports. | D18 | the price table (D14), D30 |
+| O50 | The forward exchange contract of the tender flow becomes Valdara's hedge across the review of 1 January 2027: made after the award, covering the releases due after the review; how the pricing currency (ferra), the pricing exchange rate and the contract in lume hang together; out of the documents of parties that are not part of it | O2 | D28 |
 | O18 | Signatures: the rule for what is signed, whether Urvania requires signed invoices, the trust model, where the signature is carried, test keys and reproducible signing | D6 | the signatures stage |
 
 ### To work out when a decision is implemented
@@ -861,6 +872,7 @@ Everything that was left open while deciding, in one list, so that nothing depen
 |---|---|---|
 | O33 | A few visible traits of each English (spelling, loan words, date and number habits) | D1 |
 | O34 | Second names of other places, and which name English text uses for each | D3 |
+| O52 | Whether an earlier review of the parities ever changed a rate, and when | O2 |
 | O35 | Bayvarra's and Lisavu's own history (settlement, independence); the dates of the Accord's later protocols | D4 |
 | O36 | The year Brightmarket launched Elderwick and what else the label covers; names for Brackenmere's own lines, if a document needs them | D7 |
 
@@ -885,4 +897,5 @@ Everything that was left open while deciding, in one list, so that nothing depen
 | O41 | Assembled products with a bill of materials (the park bench with its side frames and slats) | D7 |
 | O42 | Products delivered in several packages (GS1's trade item piece, application identifier 8006) | D7 |
 | O43 | A carbon border rule that asks for the footprint on the import declaration | D11 |
+| O51 | A trading partner outside the three countries: a fourth country, currency and party; a floating rate and a reason to hedge; goods that pay duty because they are not of Accord origin | O2, D18 |
 | O44 | A sale to a consumer in Urvania, to show a price that includes value added tax | D14 |
