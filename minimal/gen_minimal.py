@@ -538,6 +538,10 @@ ID_VALUES = {
     LEI: lambda k: _lei("999900MINIMAL%05d" % k),   # not in GLEIF
     # D-U-N-S has a check digit (ICD 0060: "eight digits and a check digit"),
     # but D&B publishes neither the algorithm nor a test range: UNVERIFIED.
+    # D&B's public D-U-N-S Lookup (dnb.com/en-us/smb/duns/duns-lookup.html)
+    # searches by company name, not by number, so these values cannot be
+    # checked against it. Kept on purpose (ID#F1): D-U-N-S keeps the schemes
+    # varied; the 99... pattern makes a collision unlikely, not impossible.
     DUNS: lambda k: "99%07d" % k,
     JPCN: lambda k: _jpcn("9999%08d" % k),   # not in the NTA register
 }
