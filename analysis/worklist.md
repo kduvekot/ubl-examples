@@ -127,7 +127,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C87 | Plastics flow: barge waybill and goods data | flow story | 15 | 4 | 1 | 2/4/9 | owner: D41 | tools/examples_scenarios.py, plastics() | waits: D41 |
 | C88 | Plastics flow: recycled-content certificate issued by a chamber of commerce | flow story | 5 | 5 | 1 | 0/0/5 | owner: D41 | world/parties.json, world/items.json | waits: D41 |
 | C89 | Wood flow: slat units and isolated slips | flow story | 10 | 5 | 1 | 1/0/9 | owner: D43 | tools/examples_scenarios.py, wood() | waits: D43 |
-| C90 | Rail flow: container train documents | flow story | 33 | 8 | 1 | 3/6/24 | owner: D37 | tools/examples_scenarios.py, rail() | waits: D37 |
+| C90 | Rail flow: container train documents | flow story | 33 | 8 | 1 | 3/6/24 | owner: D37 | tools/examples_scenarios.py, rail() | ready (D37 decided) |
 | C91 | Utility statement builder: average amount, supplier consumption, subscriber data | flow story | 30 | 6 | 2 | 3/9/18 | owner: D31 | tools/examples_scenarios.py, utility_statement() | ready (D31 decided) |
 | C92 | Utilities: the telecom statement and invoice | flow story | 15 | 3 | 1 | 4/5/6 | owner: D31 | tools/examples_scenarios.py, telecom_consumption() | ready (D31 decided) |
 | C93 | Utilities: the household's water on account, the mandate and the levy | flow story | 13 | 5 | 1 | 2/3/8 | owner: D31 | tools/examples_scenarios.py, utilities() | ready (D31 decided) |
@@ -1408,7 +1408,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; the yes-findings (roles of the hub, CMR vs CIM, Container Convention) go to D37.
 - Depends on / blocks: none
 - Touched by: D9 (demurrage after five days' free time is the first candidate for the world's real debit note, O7), D21 (the April rail delivery gets lot numbers and supplies the island's 96 benches), D22 (the carrier's invoices follow the framework), D20 (96 knocked-down benches per container), D14 (the rail invoice is recalculated); C30's rail/08#F1 goes with this cause.
-- State: waits for D37.
+- State: D37 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D37); the train times wait for the place list (O54, O91).
 - Findings: rail: 02#F3, 02#F13, 03#F3, 03#F14, 03#F15, 03#F20, 03#F21, 04#F2, 04#F3, 04#F6, 04#F7, 05#F2, 05#F4, 05#F5, 05#F8, 06#F14, 06#F18, 06#F22, 07#F4, 07#F8, 08#F8, 08#F10, 08#F15, 08#F17, 08#F18, 08#F19, 08#F21, 08#F22, 08#F24, 08#F25, 09#F1, 09#F6, 09#F7
 
 ### C91 · Utility statement builder: average amount, supplier consumption, subscriber data
