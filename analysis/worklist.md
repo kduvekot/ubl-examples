@@ -95,7 +95,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C55 | Standard terms IDs that do not mean the same number of days everywhere | world rule | 8 | 8 | 4 | 8/0/0 | decided: D23 | tools/examples_kit.py, payment_terms() | ready 7 of 8; D30 1 |
 | C56 | The map scale: all coordinates inside 35 km, against distances and times of hours and days | world rule | 8 | 7 | 2 | 4/0/4 | decided: D19 | world/countries.json, tools/build_examples.py | waits: D44 4, O82 4 |
 | C57 | Duties, import taxes and Trade Accord preference stated nowhere | world rule | 6 | 5 | 4 | 1/2/3 | decided: D18 | tools/examples_scenarios.py, import_extras() | ready 4 of 6; D40 2 |
-| C58 | One sea voyage with four passage times | world rule | 4 | 3 | 1 | 2/1/1 | decided: D19 | tools/examples_scenarios.py, sea() | waits: D30 |
+| C58 | One sea voyage with four passage times | world rule | 4 | 3 | 1 | 2/1/1 | decided: D19 | tools/examples_scenarios.py, sea() | waits: O91 (rule settled in D30) |
 | C59 | Lisavu's capital: "Port Wrenfield" in English addresses, "Selanu" in every other English text | world rule | 1 | 1 | 0 | 0/1/0 | decided: D3 | world/countries.json, tools/build_examples.py | ready |
 | C60 | Default founding date 1996-01-01 and size classes that do not fit the parties | master data | 181 | 169 | 15 | 4/0/177 | decided: D4 | world/parties.json, tools/codelists.py | ready 165 of 181; D28 8, owner, not settled 1, O17 7 |
 | C61 | World item numbers that are valid GTIN-12s; Valdara's items under Lumeway's GS1 prefix | master data | 76 | 54 | 9 | 0/0/76 | decided: D5 | world/items.json, world/parties.json | ready 74 of 76; owner, not settled 2 |
@@ -103,7 +103,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C63 | Lisavu Cotton Farm: address lines that repeat the structured address, and a yearly expiring registration | master data | 11 | 6 | 2 | 0/0/11 | decided: D4 | world/parties.json, tools/build_examples.py | ready |
 | C64 | Industry classes that leave out what the party does | master data | 9 | 9 | 2 | 0/0/9 | decided: D8 | world/parties.json | ready |
 | C65 | Bale weight of about 227 kg as `PackSizeNumeric` | master data | 7 | 7 | 1 | 0/0/7 | decided: D12 | world/items.json | ready |
-| C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | waits: D30 1, D32 1 (tender: D28 decided) |
+| C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | waits: D32 1 (tender: D28, sea: D30 decided) |
 | C67 | Side frame classified HS 7325.99 instead of a part of a seat | master data | 5 | 5 | 2 | 0/4/1 | decided: D13 | world/items.json | waits: O27 |
 | C68 | Valdara's distributor price equals its public contract price; Lumeway's revised frame price is below cost | master data | 1 | 1 | 0 | 0/0/1 | decided: D14 | world/items.json | ready |
 | C69 | The bench as shipped: pallets that do not fit, and a bench lighter than its parts | cross-flow story | 7 | 6 | 3 | 1/3/3 | decided: D20 | world/items.json, tools/examples_kit.py | ready |
@@ -151,11 +151,11 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C111 | Retail flow: promotion, forecast, inventory and the shop sale | flow story | 13 | 4 | 1 | 2/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
 | C112 | Retail flow: isolated slips | flow story | 12 | 5 | 1 | 1/2/9 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
 | C113 | Retail flow: the delivery to the store (carrier references, arrival day) | flow story | 12 | 6 | 1 | 3/2/7 | owner: D34 | tools/examples_scenarios.py, retail() | waits: D34 |
-| C114 | Sea flow: bill of lading and ship reports | flow story | 21 | 5 | 1 | 3/7/11 | owner: D30 | tools/examples_scenarios.py, sea_consignment() | waits: D30 |
-| C115 | Sea flow: isolated slips | flow story | 20 | 11 | 1 | 2/3/15 | owner: D30 | tools/examples_scenarios.py, sea() | waits: D30 |
-| C116 | Sea flow: factoring, statement, payment and the island's debit note | flow story | 16 | 6 | 1 | 5/4/7 | owner: D30 | tools/examples_scenarios.py, sea_with_debit() | waits: D30 |
-| C117 | Sea flow: business card, digital agreement and capabilities | flow story | 15 | 3 | 1 | 0/4/11 | owner: D30 | tools/examples_scenarios.py, digital_service() | waits: D30 |
-| C118 | Sea flow: the CIF sale, freight and insurance | flow story | 14 | 10 | 1 | 3/3/8 | owner: D30 | tools/examples_scenarios.py, sea_invoice_terms() | waits: D30 |
+| C114 | Sea flow: bill of lading and ship reports | flow story | 21 | 5 | 1 | 3/7/11 | owner: D30 | tools/examples_scenarios.py, sea_consignment() | ready (D30 decided) |
+| C115 | Sea flow: isolated slips | flow story | 20 | 11 | 1 | 2/3/15 | owner: D30 | tools/examples_scenarios.py, sea() | ready (D30 decided) |
+| C116 | Sea flow: factoring, statement, payment and the island's debit note | flow story | 16 | 6 | 1 | 5/4/7 | owner: D30 | tools/examples_scenarios.py, sea_with_debit() | ready (D30 decided) |
+| C117 | Sea flow: business card, digital agreement and capabilities | flow story | 15 | 3 | 1 | 0/4/11 | owner: D30 | tools/examples_scenarios.py, digital_service() | ready (D30 decided) |
+| C118 | Sea flow: the CIF sale, freight and insurance | flow story | 14 | 10 | 1 | 3/3/8 | owner: D30 | tools/examples_scenarios.py, sea_invoice_terms() | ready (D30 decided) |
 | C119 | Tender: tendering terms copied into notices, call, award and contract | flow story | 86 | 13 | 1 | 4/40/42 | owner: D28 | tools/examples_scenarios.py, tendering_terms() | ready (D28 decided) |
 | C120 | Tender: contract, catalogue and call-off (releases, despatch, credit, reminder) | flow story | 30 | 11 | 1 | 2/6/22 | owner: D28 | tools/examples_scenarios.py, tender() | ready (D28 decided) |
 | C121 | Tender: the procurement project and its lots | flow story | 26 | 11 | 1 | 3/0/23 | owner: D28 | tools/examples_scenarios.py, procurement_project() | ready (D28 decided) |
@@ -1674,7 +1674,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D30 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D19 (O53: one passage time of 38 to 43 hours; the arrival moves earlier), D27 (the island is on UTC+00:00), D20 (pallets of parcels), D21 (the island's 96 benches come from the April rail delivery).
-- State: waits for D30.
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
 - Findings: sea: 13#F7, 14#F1, 14#F4, 14#F5, 14#F6, 14#F7, 14#F8, 15#F7, 15#F8, 16#F6, 16#F7, 16#F8, 16#F13, 16#F14, 16#F15, 16#F16, 16#F18, 16#F20, 16#F21, 17#F2, 17#F9
 
 ### C115 · Sea flow: isolated slips
@@ -1685,7 +1685,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: With D30.
 - Depends on / blocks: none
 - Touched by: D19 (O53), D9 (O7: demurrage could explain the container between its release on 19 May and the receipt on 21 May).
-- State: waits for D30.
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
 - Findings: sea: 05#F14, 06#F5, 06#F6, 06#F12, 07#F3, 08#F1, 08#F2, 08#F6, 08#F7, 08#F12, 08#F13, 10#F10, 11#F14, 12#F6, 18#F8, 19#F14, 21#F7, 21#F8, 21#F9; consistency: timelines#F7
 
 ### C116 · Sea flow: factoring, statement, payment and the island's debit note
@@ -1696,7 +1696,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; yes-findings with D30.
 - Depends on / blocks: none
 - Touched by: D9 (sea/28 is not a debit note: the importer's customs inspection cost is re-homed, O6; C11's, C26's, C39's, C50's and C72's sea/28 findings go with this cause), D23 (O72: sea/22's deposit and balance).
-- State: waits for D30.
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
 - Findings: sea: 22#F7, 22#F13, 22#F14, 24#F1, 24#F2, 25#F3, 25#F6, 26#F4, 26#F6, 26#F7, 27#F1, 27#F2, 28#F2, 28#F5, 28#F6, 28#F12
 
 ### C117 · Sea flow: business card, digital agreement and capabilities
@@ -1707,7 +1707,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D30 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D6 (the digital agreement's signature waits for the signatures stage).
-- State: waits for D30.
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
 - Findings: sea: 01#F3, 01#F4, 01#F5, 01#F12, 03#F6, 03#F7, 03#F8, 03#F12, 03#F13, 03#F14, 03#F15, 03#F16, 03#F18, 04#F4, 04#F10
 
 ### C118 · Sea flow: the CIF sale, freight and insurance
@@ -1718,7 +1718,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D30 (preferred by sea/22#F3: drop the two charges).
 - Depends on / blocks: C52 (D16)
 - Touched by: D16 (Lisavu values landed: sea/19 states the landed value, which agrees with the 53,778.00 of the bill of lading), D18 (the import consumption tax of 10 % on the landed value; O48: Velumi's shop price).
-- State: waits for D30.
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
 - Findings: sea: 05#F12, 05#F13, 06#F1, 09#F1, 09#F7, 11#F13, 14#F12, 14#F13, 14#F14, 18#F3, 19#F20, 22#F3, 25#F1, 26#F3
 
 ### C119 · Tender: tendering terms copied into notices, call, award and contract
