@@ -62,5 +62,35 @@
         account numbers follow.
       </para>
     </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">ISO/IEC 15459:</emphasis> the standard,
+        in several parts, for unique identifiers issued under registered
+        issuing agencies, under which Codana is an issuing agency and
+        GS1 another.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">ISO 8601:</emphasis> the standard for
+        dates and times, whose week numbering and offsets from UTC the
+        documents use.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">ISO 11228-1:</emphasis> the standard on
+        manual handling (lifting and carrying), whose limit of 25 kg for
+        one person in good conditions the three countries apply.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <emphasis role="strong">WTO Valuation Agreement:</emphasis> the
+        World Trade Organization's agreement on customs valuation
+        (Articles 1 and 8), within which each country values its
+        imports.
+      </para>
+    </listitem>
   </itemizedlist>
 </section>
