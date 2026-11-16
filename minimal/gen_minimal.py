@@ -348,6 +348,13 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         "ForwardingInstructionsType": {"cac:ConsignorParty", "cac:FreightForwarderParty"},
         # an order change says that its line is changed
         "OrderChange:LineItemType": {"cbc:LineStatusCode"},
+        # procurement documents identify their procedure; a prior information
+        # notice names what is to be bought
+        **{d + "Type": {"cbc:ContractFolderID"} for d in (
+            "ProcurementStatus", "ProcurementStatusRequest", "TenderStatus",
+            "TenderStatusRequest", "TenderWithdrawal",
+            "UnsubscribeFromProcedureRequest", "UnsubscribeFromProcedureResponse")},
+        "PriorInformationNoticeType": {"cac:ProcurementProject"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order

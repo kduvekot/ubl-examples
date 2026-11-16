@@ -8,4 +8,7 @@
       </cac:PartyName>
     </cac:Party>
   </cac:ContractingParty>
+  <cac:ProcurementProject>
+    <cbc:Name languageID="en">Office supplies 2026 (54)</cbc:Name>
+  </cac:ProcurementProject>
 </PriorInformationNotice>
