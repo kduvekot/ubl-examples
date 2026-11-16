@@ -6,6 +6,9 @@
       <cbc:Name languageID="de">Beispielfrachtführer 851</cbc:Name>
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>DOOR_TO_DOOR</cbc:TransportServiceCode>
+  </cac:MainTransportationService>
   <cac:Consignment>
     <cbc:ID>Consignment-851</cbc:ID>
   </cac:Consignment>

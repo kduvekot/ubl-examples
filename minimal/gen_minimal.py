@@ -232,6 +232,8 @@ CODE_VALUES = {"ThresholdValueComparisonCode": "FALLS_BELOW_EXCEPTION_VALUE",
                "GoodsItemItinerary:TransportServiceCode": "PORT_TO_PORT",
                "TransportServiceDescriptionRequest:TransportServiceCode": "DOOR_TO_DOOR",
                "TransportServiceDescription:TransportServiceCode": "DOOR_TO_DOOR",
+               "TransportExecutionPlan:TransportServiceCode": "DOOR_TO_DOOR",
+               "TransportExecutionPlanRequest:TransportServiceCode": "DOOR_TO_DOOR",
                # "the overall status of transport service execution": under way
                "TransportExecutionStatusCode": "IN_TRANSIT"}
 
@@ -410,6 +412,12 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # an enquiry asks something, its response answers it
         "EnquiryType": {"cbc:Description"},
         "EnquiryResponseType": {"cbc:Description"},
+        # an award notice names the winner; an import declaration its
+        # declarant; a transport execution plan (request) its service
+        "ContractAwardNotice:TenderResultType": {"cac:WinningParty"},
+        "ImportCustomsDeclarationType": {"cac:ImporterParty"},
+        "TransportExecutionPlanType": {"cac:MainTransportationService"},
+        "TransportExecutionPlanRequestType": {"cac:MainTransportationService"},
         # bills name the customer they are addressed to; lines that despatch,
         # deliver or order state their quantity, and an order-line reference
         # names its order
@@ -490,6 +498,7 @@ PARTY_SCHEMES = {
     # waste-register numbers), but these have no ICD and no safe test range,
     # so the tax number is used.
     "ExporterParty": TAX, "HolderParty": TAX, "TransitExporterParty": TAX,
+    "ImporterParty": TAX, "WinningParty": DUNS,
     "NotifierParty": TAX, "WasteProducerParty": TAX,
     # Sender and Receiver, by the document's domain:
     # generic business messages
@@ -663,6 +672,8 @@ ROLE_NAMES = {  # role: (en, de, pt-BR, ja-Latn-hepburn)
     # StockAvailabilityReport: the receiving branch (DM#F118)
     "StockAvailabilityReport/InventoryReportingParty": ("Branch", "Filiale", "Filial", "Shiten"),
     "AuthorityParty": ("Authority", "Behörde", "Autoridade", "Tōkyoku"),
+    "ImporterParty": ("Importer", "Einführer", "Importador", "Yunyūsha"),
+    "WinningParty": ("Winning Tenderer", "Zuschlagsempfänger", "Licitante Vencedor", "Rakusatsusha"),
     "TransitExporterParty": ("Exporter", "Ausführer", "Exportador", "Yushutsusha"),
     "CarrierParty": ("Carrier", "Frachtführer", "Transportadora", "Unsō Gyōsha"),
     "ConsignorParty": ("Consignor", "Versender", "Expedidor", "Niokurinin"),

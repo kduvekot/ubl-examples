@@ -11,5 +11,12 @@
   </cac:ContractingParty>
   <cac:TenderResult>
     <cbc:AwardDate>2026-08-10</cbc:AwardDate>
+    <cac:WinningParty>
+      <cac:Party>
+        <cac:PartyName>
+          <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Rakusatsusha 142</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:WinningParty>
   </cac:TenderResult>
 </ContractAwardNotice>
