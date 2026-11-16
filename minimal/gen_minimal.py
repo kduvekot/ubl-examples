@@ -309,6 +309,10 @@ FILL = {"PeriodType": {"cbc:StartDate", "cbc:EndDate"},
         # a manifest lists its cargo; an order response states its answer
         "ManifestType": {"cac:Shipment"},
         "OrderResponseType": {"cbc:OrderResponseCode"},
+        # the request defines the criterion its response repeats; a remittance
+        # advice states the amount paid
+        "QualificationApplicationRequestType": {"cac:TenderingCriterion"},
+        "RemittanceAdviceType": {"cbc:TotalPaymentAmount"},
         # CataloguePricingUpdate updates prices: each line carries the price.
         "CataloguePricingUpdateLineType": {"cac:RequiredItemLocationQuantity"},
         "ItemLocationQuantityType": {"cac:Price"},
@@ -531,6 +535,8 @@ LANG_INDEX = {"en": 0, "de": 1, "pt": 2, "ja-Latn": 3}
 # answer, which waits for a real criterion). Not reviewed by native speakers.
 TEXTS = {  # (en, de, pt, ja-Latn)
     "Item/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
+    # a freight invoice invoices a transport service, not goods (DM#F114)
+    "FreightInvoice:Item/Description": ("Road freight", "Straßentransport", "Frete rodoviário", "Rikujō yusō"),
     "SupplyItem/Description": ("Ballpoint pen, blue", "Kugelschreiber, blau", "Caneta esferográfica, azul", "Bōrupen, ao"),
     "CancellationNote": ("Ordered in error", "Irrtümlich bestellt", "Pedido feito por engano", "Gohatchū"),
     "CertificateType": ("Ordinary", "Nichtpräferenziell", "Comum", "Ippan"),   # from the definition's examples
@@ -562,7 +568,7 @@ def name_for(e, parent, name):
 
 def text_for(e, parent, name):
     pn = etree.QName(parent).localname
-    t = TEXTS.get(pn + "/" + name) or TEXTS.get(name)
+    t = TEXTS.get(DOC + ":" + pn + "/" + name) or TEXTS.get(pn + "/" + name) or TEXTS.get(name)
     if t is None:
         return VALUES["TextType"]
     lang = LANG[COUNTRY]

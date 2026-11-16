@@ -2,6 +2,7 @@
 <RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>RemittanceAdvice-1</cbc:ID>
   <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cbc:TotalPaymentAmount currencyID="EUR">100</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyName>
