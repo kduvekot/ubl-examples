@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>DebitNote-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Supplier 171</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>4000001712</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:Name languageID="en">Value-Added Tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>ZA</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Customer 172</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>4000001720</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:Name languageID="en">Value-Added Tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>ZA</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:LegalMonetaryTotal>
+    <cbc:PayableAmount currencyID="ZAR">270.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:DebitNoteLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DebitedQuantity unitCode="H87">10</cbc:DebitedQuantity>
+    <cbc:LineExtensionAmount currencyID="ZAR">270.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+    </cac:Item>
+  </cac:DebitNoteLine>
+</DebitNote>

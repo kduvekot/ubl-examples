@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>TransportExecutionPlanRequest-1</cbc:ID>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0199">999900MINIMAL0085160</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name languageID="de">Beispielfrachtführer 851</cbc:Name>
+    </cac:PartyName>
+  </cac:TransportServiceProviderParty>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode>DOOR_TO_DOOR</cbc:TransportServiceCode>
+  </cac:MainTransportationService>
+  <cac:Consignment>
+    <cbc:ID>Consignment-851</cbc:ID>
+  </cac:Consignment>
+</TransportExecutionPlanRequest>

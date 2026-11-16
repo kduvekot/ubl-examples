@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CertificateOfOrigin xmlns="urn:oasis:names:specification:ubl:schema:xsd:CertificateOfOrigin-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>CertificateOfOrigin-1</cbc:ID>
+  <cac:CertificateOfOriginApplication>
+    <cbc:ReferenceID>ReferenceID-121</cbc:ReferenceID>
+    <cbc:CertificateType languageID="en">Ordinary</cbc:CertificateType>
+    <cbc:OriginalJobID>OriginalJobID-121</cbc:OriginalJobID>
+    <cac:Shipment>
+      <cbc:ID>Shipment-121</cbc:ID>
+      <cac:OriginAddress>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:OriginAddress>
+    </cac:Shipment>
+    <cac:EndorserParty>
+      <cbc:RoleCode>EMBASSY</cbc:RoleCode>
+      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyName>
+          <cbc:Name languageID="en">Example Endorser 121</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name languageID="en">Alex Example</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+    <cac:PreparationParty>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Preparer 122</cbc:Name>
+      </cac:PartyName>
+    </cac:PreparationParty>
+    <cac:IssuerParty>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Issuer 123</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+    <cac:IssuingCountry>
+      <cbc:IdentificationCode>US</cbc:IdentificationCode>
+    </cac:IssuingCountry>
+  </cac:CertificateOfOriginApplication>
+  <cac:IssuerEndorsement>
+    <cbc:DocumentID>DocumentID-121</cbc:DocumentID>
+    <cbc:ApprovalStatus languageID="en">Approved</cbc:ApprovalStatus>
+    <cac:EndorserParty>
+      <cbc:RoleCode>ISSUER</cbc:RoleCode>
+      <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+      <cac:Party>
+        <cac:PartyName>
+          <cbc:Name languageID="en">Example Issuer 123</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+      <cac:SignatoryContact>
+        <cbc:Name languageID="en">Sam Example</cbc:Name>
+      </cac:SignatoryContact>
+    </cac:EndorserParty>
+  </cac:IssuerEndorsement>
+</CertificateOfOrigin>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WasteMovement xmlns="urn:oasis:names:specification:ubl:schema:xsd:WasteMovement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>WasteMovement-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Sender 961</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>000000961</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="en">Federal Income Tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Receiver 962</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>000000962</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="en">Federal Income Tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:ReceiverParty>
+  <cac:NotifierParty>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Notifier 963</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>000000963</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="en">Federal Income Tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:NotifierParty>
+  <cac:WasteProducerParty>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Waste Producer 964</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>000000964</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="en">Federal Income Tax</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:WasteProducerParty>
+  <cac:Shipment>
+    <cbc:ID>Shipment-961</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="en">Used lead-acid batteries</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Shipment>
+</WasteMovement>

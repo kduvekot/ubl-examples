@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcurementStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProcurementStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ContractFolderID>ContractFolderID-551</cbc:ContractFolderID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:TenderSubmissionDeadlinePeriod>
+    <cbc:StartDate>2026-08-12</cbc:StartDate>
+    <cbc:EndDate>2026-09-08</cbc:EndDate>
+  </cac:TenderSubmissionDeadlinePeriod>
+  <cac:ContractingParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0199">999900MINIMAL0055187</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="de">Beispiel Öffentlicher Auftraggeber 551</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:EconomicOperatorParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0060">302151035</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="de">Beispielwirtschaftsteilnehmer 552</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:EconomicOperatorParty>
+</ProcurementStatus>
