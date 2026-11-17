@@ -50,6 +50,13 @@ Inside `OrderReference`:
 - `ID` = **VI-PO-26-0627**  
   The manufacturer's order.
 
+### Despatch Document Reference
+
+Inside `DespatchDocumentReference`:
+
+- `ID` = **MS-DA-26-0633**  
+  The despatch advice of the goods billed.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -295,6 +302,19 @@ Inside `SellerSupplierParty`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Marrowdale Sawmill**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-02-26**  
+  The day the goods billed were delivered.
+- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Valdara Industries works, Ferrano**  
+  Where the goods billed are delivered.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Payment Means
 
@@ -602,6 +622,9 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>MS-DA-26-0633</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
@@ -825,6 +848,18 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-02-26</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

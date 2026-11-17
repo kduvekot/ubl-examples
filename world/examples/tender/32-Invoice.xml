@@ -24,6 +24,9 @@
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>CL-DA-26-0215</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:DocumentType>Procurement file</cbc:DocumentType>
@@ -283,6 +286,12 @@
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:TaxRepresentativeParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-31</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Public works depot, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

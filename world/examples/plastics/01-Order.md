@@ -354,7 +354,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **120** (unitCode `TNE`)  
   One barge load of recycled granulate in jumbo bags.
 - `LineItem/LineExtensionAmount` = **9984000** (currencyID `XUF`)  

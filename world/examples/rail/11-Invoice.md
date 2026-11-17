@@ -56,6 +56,19 @@ Inside `OrderReference`:
 - `ID` = **LD-PO-26-0325**  
   The buyer's order.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **VI-TD-26-0331**  
+  The transit declaration the benches left Urvania under: the evidence for the export exemption (rail/11#F7).
+- `DocumentTypeCode` = **TransitCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VI-TD-26-0331 is the example rail/06, a TransitCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransitCustomsDeclaration = Transit Customs Declaration.
+- `ID` = **FRC-WB-26-0334**  
+  The rail consignment note, signed on delivery at the siding.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FRC-WB-26-0334 is the example rail/08, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -313,6 +326,17 @@ Inside `SellerSupplierParty`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Valdara Industries**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-04-15**  
+  The day the containers were placed at the siding.
+- `DeliveryLocation/ID` = **9520610900015** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `DeliveryLocation/Name` = **Lumeway rail siding, Marrowdale**  
+  Where the boxes are placed for unloading.
 
 ### Payment Means
 
@@ -706,6 +730,14 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0325</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-TD-26-0331</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransitCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FRC-WB-26-0334</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
@@ -937,6 +969,13 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-04-15</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+      <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

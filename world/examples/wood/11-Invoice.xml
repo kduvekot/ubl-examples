@@ -214,6 +214,12 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-09</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Marrowdale Sawmill, timber yard</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

@@ -406,7 +406,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **40** (unitCode `EA`)  
   The first call-off under the contract: forty benches for the harbour park.
 - `LineItem/LineExtensionAmount` = **19960.00** (currencyID `XBL`)  

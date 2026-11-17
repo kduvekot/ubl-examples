@@ -448,7 +448,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **24** (unitCode `EA`)  
   Six pallets for the garden department's spring promotion.
 - `LineItem/LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
@@ -663,8 +663,8 @@ Inside `OrderLine`:
   The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
 - `LineItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
-- `BuyerProposedSubstituteLineItem/ID` = **1**  
-  The store's fall-back if the Serra 180 is out of stock.
+- `BuyerProposedSubstituteLineItem/ID` = **1.1**  
+  The store's fall-back if the Serra 180 is out of stock: an ID of its own (retail/08#F9).
 - `BuyerProposedSubstituteLineItem/Quantity` = **24** (unitCode `EA`)  
   The same quantity.
 - `BuyerProposedSubstituteLineItem/Item/Name` = **Park bench Serra 180, moss green**  
@@ -1214,7 +1214,7 @@ Inside `OrderLine`:
       </cac:Item>
     </cac:LineItem>
     <cac:BuyerProposedSubstituteLineItem>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>1.1</cbc:ID>
       <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180, moss green</cbc:Name>

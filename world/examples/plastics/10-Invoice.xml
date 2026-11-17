@@ -276,6 +276,14 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+    </cac:Despatch>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

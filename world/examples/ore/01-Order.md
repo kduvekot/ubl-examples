@@ -452,7 +452,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **1800** (unitCode `TNE`)  
   One train: 30 wagons of about 60 tonnes.
 - `LineItem/LineExtensionAmount` = **14508000** (currencyID `XUF`)  

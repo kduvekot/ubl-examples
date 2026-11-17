@@ -261,6 +261,18 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

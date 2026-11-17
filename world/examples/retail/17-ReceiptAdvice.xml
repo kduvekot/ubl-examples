@@ -262,7 +262,7 @@
       <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
       <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
       <cac:ReceivedHandlingUnitReceiptLine>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>1-3</cbc:ID>
         <cbc:ReceivedQuantity unitCode="EA">3</cbc:ReceivedQuantity>
         <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
         <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>

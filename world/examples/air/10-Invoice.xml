@@ -224,7 +224,9 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-05-14</cbc:ActualDeliveryDate>
     <cac:Shipment>
+      <cbc:ID>LD-SH-26-0323</cbc:ID>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0324</cbc:ID>
         <cac:CarrierParty>

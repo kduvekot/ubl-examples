@@ -264,7 +264,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **6** (unitCode `EA`)  
   Six packs: four hours of back-up power for the mast.
 - `LineItem/LineExtensionAmount` = **14400.00** (currencyID `XBL`)  
@@ -318,7 +318,7 @@ Inside `OrderLine`:
 - `LineItem/Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
   The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/ID` = **2**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **1** (unitCode `SET`)  
   One set of ten for the equipment room.
 - `LineItem/LineExtensionAmount` = **180.00** (currencyID `XBL`)  
@@ -376,7 +376,7 @@ Inside `OrderLine`:
 - `LineItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/ActivityLevelMeasure` = **37** (unitCode `2Q`)  
   Per detector.
 - `LineItem/ID` = **3**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **20** (unitCode `LTR`)  
   Four cans of five litres for the circuit boards.
 - `LineItem/LineExtensionAmount` = **190.00** (currencyID `XBL`)  

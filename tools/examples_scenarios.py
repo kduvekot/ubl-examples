@@ -752,9 +752,18 @@ def rail(n, doc):
                            key="freight-invoice")
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 11, 30, "Issued on delivery at the distributor's siding.",
-                           {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
+                            "AdditionalDocumentReference": [
+                                {"ID": V(f.numbers["transit"], "The transit declaration the benches left Urvania "
+                                                               "under: the evidence for the export exemption "
+                                                               "(rail/11#F7).")},
+                                {"ID": V(f.numbers["waybill"], "The rail consignment note, signed on delivery at "
+                                                               "the siding.")}]},
                            extra={"Note": V("Delivered at place: the price includes the carriage to the siding.",
-                                            "Why the invoice has no separate freight line.")})
+                                            "Why the invoice has no separate freight line."),
+                                  "Delivery": {"ActualDeliveryDate": V(f.date(9), "The day the containers were "
+                                                                                 "placed at the siding."),
+                                               "DeliveryLocation": RAIL_SIDING}})
     raise SystemExit(f"rail scenario: no document {n} {doc['doc']}")
 
 
@@ -936,7 +945,7 @@ RETAIL = kit.Flow("retail", "2026-04-20", [
      "orderline_extra": {
          "CatalogueLineReference": {"LineID": V("1", "The catalogue line ordered from.")},
          "BuyerProposedSubstituteLineItem": {
-             "ID": V("1", "The store's fall-back if the Serra 180 is out of stock."),
+             "ID": V("1.1", "The store's fall-back if the Serra 180 is out of stock: an ID of its own (retail/08#F9)."),
              "Quantity": qty(24, "EA", "The same quantity."),
              "Item": {"Name": V("Park bench Serra 180, moss green", "The other frame colour: the store would take "
                                                                      "it."),
@@ -1064,7 +1073,7 @@ def retail(n, doc):
                                                                            "distribution centre."),
                                   "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}
             u["HandlingUnitDespatchLine"] = {
-                "ID": V(f"{k}", "The pallet's line: the benches on it."),
+                "ID": V(f"1-{k}", "The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9)."),
                 "DeliveredQuantity": qty(4, "EA", "Four benches on the pallet."),
                 "OrderLineReference": {"LineID": V("1", "The order line the benches belong to.")},
                 "Item": {"Name": V(bench["name"], "The item, named only: it is described in full on despatch line "
@@ -1103,7 +1112,7 @@ def retail(n, doc):
                                "Status": {"ConditionCode": V("DAMAGED", "The pallet's condition on arrival."),
                                           "Description": V("Three benches accepted, one refused.", "What was done.")},
                                "ReceivedHandlingUnitReceiptLine": {
-                                   "ID": V("1", "The receipt of the pallet."),
+                                   "ID": V("1-3", "The receipt of the pallet, as part of receipt line 1 (retail/17#F13)."),
                                    "ReceivedQuantity": qty(3, "EA", "Three benches accepted from this pallet."),
                                    "RejectedQuantity": qty(1, "EA", "One refused."),
                                    "RejectReason": V("Damaged in transit.", "Why.")}}}
@@ -1925,7 +1934,8 @@ def sea(n, doc):
 
 # ---------------------------------------------------------------- the air flow (an urgent part, CPT airport)
 AIR = kit.Flow("air", "2026-05-11", [
-    {"item": "bench-casting-b", "ordered": 8, "why": "Eight side frames, needed before the ship arrives."}])
+    {"item": "bench-casting-b", "ordered": 8, "why": "Eight side frames, needed before the ship arrives.",
+     "line": "3"}])     # added by the order change to the sea order's lines 1 and 2 (air/01#F1)
 
 
 def air_consignment(f, doc):
@@ -2032,7 +2042,7 @@ def air(n, doc):
             "Signature": {"ID": V("LD-SIG-26-0512", "The distributor's seal."),
                           "SignatoryParty": party("6-xb", short=True)},
             "OrderLine": {"LineItem": {
-                "ID": V("1", "The added line."),
+                "ID": V("3", "The added line, line 3 of the order as changed."),
                 "Quantity": qty(8, "EA", "Confirmed."),
                 "DeliveryTerms": {"ID": V("CPT", "Carriage paid to the airport of Selanu, for this line.",
                                           schemeID="INCOTERMS")},
@@ -2104,7 +2114,11 @@ def air(n, doc):
                            [{"item": "air-freight", "qty": w, "invoice_why": "The chargeable weight: the gross weight "
                                                                              "of the boxed frames."}],
                            key="forwarder-invoice",
-                           extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(3), "The day the frames were flown "
+                                                                                 "and handed over at Selanu "
+                                                                                 "airport (air/10#F9)."),
+                                               "Shipment": {"ID": V(f.numbers["shipment"], "The shipment flown."),
+                                                            "Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment flown.")}}}})
     raise SystemExit(f"air scenario: no document {n} {doc['doc']}")
 
@@ -2327,7 +2341,15 @@ def cotton(n, doc):
                                                                                    "The consignment shipped.")}}}})
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 28, 30, "Issued when the bales are on board.",
-                           {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")}})
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")},
+                            "AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading: the bales "
+                                                                                     "are on board, which is the "
+                                                                                     "delivery under FOB.")}},
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(28), "Free on board: delivered when "
+                                                                                  "the bales were loaded on the "
+                                                                                  "ship (cotton/16#F6)."),
+                                               "DeliveryLocation": kit.place("XLSEL", "The port of loading, where "
+                                                                                      "FOB delivers.")}})
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 55, "The mill pays the ginnery: money flows to the island.")
     raise SystemExit(f"cotton scenario: no document {n} {doc['doc']}")
@@ -3251,7 +3273,12 @@ def wood(n, doc):
         return kit.invoice(f, n, doc, 21, 30, "Issued when the timber was collected.",
                            {"OrderReference": ref(f, "order-timber", "The furniture maker's order.")},
                            [{"item": "timber-beam", "qty": 12, "invoice_why": "The cubic metres collected."}],
-                           key="invoice-timber")
+                           key="invoice-timber",
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(21), "Ex works: delivered when the "
+                                                                                  "furniture maker collected the "
+                                                                                  "timber (wood/11#F4)."),
+                                               "DeliveryLocation": {"Name": V("Marrowdale Sawmill, timber yard",
+                                                                              "Where the timber was collected.")}}})
     raise SystemExit(f"wood scenario: no document {n} {doc['doc']}")
 
 

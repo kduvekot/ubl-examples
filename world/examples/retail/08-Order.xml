@@ -533,7 +533,7 @@
       </cac:Item>
     </cac:LineItem>
     <cac:BuyerProposedSubstituteLineItem>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>1.1</cbc:ID>
       <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180, moss green</cbc:Name>

@@ -291,6 +291,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `ActualDeliveryDate` = **2026-05-14**  
+  The day the frames were flown and handed over at Selanu airport (air/10#F9).
+- `Shipment/ID` = **LD-SH-26-0323**  
+  The shipment flown.
 - `Shipment/Consignment/ID` = **LD-CS-26-0324**  
   The consignment flown.
 - `Shipment/Consignment/CarrierParty/WebsiteURI` = **https://www.kelaro.example**  
@@ -754,7 +758,9 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-05-14</cbc:ActualDeliveryDate>
     <cac:Shipment>
+      <cbc:ID>LD-SH-26-0323</cbc:ID>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0324</cbc:ID>
         <cac:CarrierParty>

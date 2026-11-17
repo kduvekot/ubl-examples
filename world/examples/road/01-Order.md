@@ -632,7 +632,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   24 pallets of 4 benches: one full truck.
 - `LineItem/LineExtensionAmount` = **4790400** (currencyID `XUF`)  
@@ -842,7 +842,7 @@ Inside `OrderLine`:
 - `LineItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 - `LineItem/ID` = **2**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   Spare side frames, for the distributor's service stock.
 - `LineItem/LineExtensionAmount` = **71760** (currencyID `XUF`)  

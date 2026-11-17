@@ -316,6 +316,13 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Rivermouth Packaging**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryLocation/Name` = **Lumeport Textile Mill, goods-in**  
+  Where the goods billed are delivered.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -738,6 +745,11 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>Lumeport Textile Mill, goods-in</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

@@ -416,8 +416,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206102170000014**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1**  
-  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-1**  
+  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -466,8 +466,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206102170000021**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **2**  
-  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-2**  
+  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -496,8 +496,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206102170000038**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **3**  
-  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-3**  
+  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -526,8 +526,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206102170000045**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **4**  
-  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-4**  
+  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -556,8 +556,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206102170000052**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **5**  
-  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-5**  
+  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -586,8 +586,8 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206102170000069**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **6**  
-  The pallet's line: the benches on it.
+- `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-6**  
+  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -1176,7 +1176,7 @@ Inside `DespatchLine`:
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000014</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>1-1</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -1223,7 +1223,7 @@ Inside `DespatchLine`:
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000021</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>2</cbc:ID>
+        <cbc:ID>1-2</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -1250,7 +1250,7 @@ Inside `DespatchLine`:
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000038</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>3</cbc:ID>
+        <cbc:ID>1-3</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -1277,7 +1277,7 @@ Inside `DespatchLine`:
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000045</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>4</cbc:ID>
+        <cbc:ID>1-4</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -1304,7 +1304,7 @@ Inside `DespatchLine`:
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000052</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>5</cbc:ID>
+        <cbc:ID>1-5</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -1331,7 +1331,7 @@ Inside `DespatchLine`:
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000069</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>6</cbc:ID>
+        <cbc:ID>1-6</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>

@@ -345,6 +345,15 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Rinova Recovery**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryLocation/Name` = **River quay of Rivermouth Packaging, Lumeport**  
+  Where the goods billed are delivered.
+- `Despatch/ActualDespatchDate` = **2026-04-19**  
+  The invoice is issued on despatch: the day the goods left.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -833,6 +842,14 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+    </cac:Despatch>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

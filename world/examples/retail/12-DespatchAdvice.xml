@@ -341,7 +341,7 @@
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000014</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>1-1</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -388,7 +388,7 @@
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000021</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>2</cbc:ID>
+        <cbc:ID>1-2</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -415,7 +415,7 @@
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000038</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>3</cbc:ID>
+        <cbc:ID>1-3</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -442,7 +442,7 @@
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000045</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>4</cbc:ID>
+        <cbc:ID>1-4</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -469,7 +469,7 @@
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000052</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>5</cbc:ID>
+        <cbc:ID>1-5</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>
@@ -496,7 +496,7 @@
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206102170000069</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
-        <cbc:ID>6</cbc:ID>
+        <cbc:ID>1-6</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
         <cac:OrderLineReference>
           <cbc:LineID>1</cbc:LineID>

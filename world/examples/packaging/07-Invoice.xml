@@ -18,6 +18,9 @@
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0525</cbc:ID>
   </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>LTM-DA-26-0526</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
@@ -232,6 +235,15 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+      <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+    </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-05-12</cbc:ActualDespatchDate>
+    </cac:Despatch>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

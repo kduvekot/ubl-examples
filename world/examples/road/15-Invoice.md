@@ -321,10 +321,16 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `DeliveryLocation/ID` = **9520610900039** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-in: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `DeliveryLocation/Name` = **Lumeway distribution centre, goods-in, Marrowdale**  
+  Where the goods billed are delivered.
 - `DeliveryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Despatch/ActualDespatchDate` = **2026-03-23**  
+  The invoice is issued on despatch: the day the goods left.
 
 ### Payment Means
 
@@ -1016,6 +1022,10 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
+      <cbc:Name>Lumeway distribution centre, goods-in, Marrowdale</cbc:Name>
+    </cac:DeliveryLocation>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -1024,6 +1034,9 @@ Inside `InvoiceLine`:
         <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
     </cac:DeliveryParty>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

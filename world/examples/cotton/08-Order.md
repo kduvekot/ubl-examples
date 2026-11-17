@@ -300,7 +300,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **6129** (unitCode `KGM`)  
   27 bales of about 227 kg: one container of lint.
 - `LineItem/LineExtensionAmount` = **6055.452** (currencyID `XLC`)  

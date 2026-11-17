@@ -289,8 +289,8 @@ Inside `FreightForwarderParty`:
 
 Inside `OrderLine`:
 
-- `LineItem/ID` = **1**  
-  The added line.
+- `LineItem/ID` = **3**  
+  The added line, line 3 of the order as changed.
 - `LineItem/Quantity` = **8** (unitCode `EA`)  
   Confirmed.
 - `LineItem/DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
@@ -520,7 +520,7 @@ Inside `OrderLine`:
   </cac:FreightForwarderParty>
   <cac:OrderLine>
     <cac:LineItem>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>3</cbc:ID>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cac:DeliveryTerms>
         <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>

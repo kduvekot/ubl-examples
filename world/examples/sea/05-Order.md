@@ -401,7 +401,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **b79591a7-1ff5-5442-b47e-328e3c23e0c7**  
   A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
@@ -637,7 +637,7 @@ Inside `OrderLine`:
 - `LineItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 - `LineItem/ID` = **2**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **6c15f781-fb79-59c5-b7b2-bbd9c564ae2b**  
   A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  

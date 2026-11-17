@@ -60,6 +60,13 @@ Inside `OrderReference`:
 - `ID` = **LPWD-PO-26-0212**  
   The authority's call-off order.
 
+### Despatch Document Reference
+
+Inside `DespatchDocumentReference`:
+
+- `ID` = **CL-DA-26-0215**  
+  The despatch advice of the goods billed.
+
 ### Originator Document Reference
 
 Inside `OriginatorDocumentReference`:
@@ -368,6 +375,15 @@ Inside `TaxRepresentativeParty`:
   A party referred to from another party's details: its identifier and name are enough.
 - `PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-03-31**  
+  The day the goods billed were delivered.
+- `DeliveryLocation/Name` = **Public works depot, Lumeport**  
+  Where the goods billed are delivered.
 
 ### Payment Means
 
@@ -966,6 +982,9 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>CL-DA-26-0215</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:DocumentType>Procurement file</cbc:DocumentType>
@@ -1225,6 +1244,12 @@ Inside `InvoiceLine`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:TaxRepresentativeParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-31</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Public works depot, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

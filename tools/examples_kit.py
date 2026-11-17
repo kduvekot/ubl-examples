@@ -319,7 +319,8 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
             "LineExtensionAmount": amount(base, cur, "The sum of the line amounts."),
             "PayableAmount": amount(base + tax, cur, "What the buyer expects to pay, tax included.")},
         "OrderLine": [{"LineItem": {
-            "ID": V(str(i), "The line number."),
+            "ID": V(d.get("line", str(i)), "The line number: a line added by a change keeps a number of its own "
+                                           "(worklist C34)."),
             "Quantity": qty(q, ITEM[d["item"]]["unit"], d.get("why", "The quantity ordered.")),
             "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
             "Price": price_block(d["item"], cur),
@@ -421,7 +422,9 @@ def despatch_delivery(flow, day):
     legs = next(x for x in WORLD["flows"] if x["id"] == flow.id).get("legs", [])
     leg = next((x for x in legs if x["mode"] != "road"), legs[0] if legs else {"mode": "road"})
     mode = leg["mode"]
-    arrive = flow.date(day + leg.get("transit_days", TRANSIT_DAYS[mode]))   # a leg may state its own transit
+    flow.numbers["despatch-day"] = day
+    flow.numbers["delivery-day"] = day + leg.get("transit_days", TRANSIT_DAYS[mode])
+    arrive = flow.date(flow.numbers["delivery-day"])        # a leg may state its own transit
     return {"Despatch": {"ActualDespatchDate": V(flow.date(day), "The goods left on the day of this advice.")},
             "EstimatedDeliveryPeriod": {"StartDate": V(arrive, f"Expected after the usual transit by {mode}."),
                                         "EndDate": V(arrive, "The same day.")}}
@@ -450,11 +453,13 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
         "DespatchLine": [{"ID": V(str(i), "The line number."),
                           "Note": V(d.get("why", "As ordered."), "The line as the order put it."),
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
-                          "OrderLineReference": {"LineID": V(str(i), "The order line this line fulfils.")},
+                          "OrderLineReference": {"LineID": V(d.get("line", str(i)), "The order line this line "
+                                                                                    "fulfils.")},
                           "Item": item(d["item"], buyer=doc["to"], instance=instances(flow, d, which, day))}
                          for i, d in enumerate(deal, 1)],
     }
     flow.numbers["despatch"] = flow.numbers[f"despatch-{key}"]
+    flow.numbers["despatch-to"] = doc["to"]
     return merge_extra(out, extra)
 
 
@@ -476,7 +481,7 @@ def receipt_advice(flow, n, doc, day, why):
                                                                            "announced.")),
                              "Note": V(d.get("received_why", "Received as despatched."), "The line in words."),
                              "ReceivedDate": V(flow.date(day), "Unloaded."),
-                             "OrderLineReference": {"LineID": V(str(i), "The order line.")},
+                             "OrderLineReference": {"LineID": V(d.get("line", str(i)), "The order line.")},
                              "DespatchLineReference": {"LineID": V(str(i), "The despatch line."),
                                                        "DocumentReference": {"ID": V(flow.numbers["despatch"],
                                                                                      "The despatch advice.")}},
@@ -556,8 +561,9 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     }
     line_features(rows, out["InvoiceLine"], cur, gross)
     if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
-        for i, line in enumerate(out["InvoiceLine"], 1):
-            line["OrderLineReference"] = {"LineID": V(str(i), "The order line this invoice line bills.")}
+        for i, (line, (d, *_)) in enumerate(zip(out["InvoiceLine"], rows), 1):
+            line["OrderLineReference"] = {"LineID": V(d.get("line", str(i)), "The order line this invoice line "
+                                                                             "bills.")}
     if "TaxPointDate" not in out and PARTY[seller]["c"] == "XU":
         out["TaxPointDate"] = V(flow.date(day), "Urvania's value added tax becomes due on the invoice date.")
     if charges:
@@ -569,7 +575,36 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     flow.numbers[f"{key}-amount"] = base + sum(r[2] for r in charge_rows) + tax
     flow.numbers[f"{key}-date"] = flow.date(day)
     flow.numbers[f"{key}-currency"] = cur
-    return merge_extra(out, extra)
+    out = merge_extra(out, extra)
+    if any(ITEM[r[0]["item"]]["kind"] == "goods" for r in rows):
+        invoice_delivery(flow, out, buyer, day)
+    return out
+
+
+def invoice_delivery(flow, out, buyer, day):
+    """An invoice for goods is linked to the delivery it bills (worklist C32): the despatch advice of this sale,
+    where the flow has one, and the delivery: where the goods go and when they arrived, or, for an invoice issued
+    on despatch, when they left."""
+    same = flow.numbers.get("despatch-to") == buyer        # the despatch advice of this sale, not of another
+    if same and "despatch" in flow.numbers and "DespatchDocumentReference" not in out:
+        out["DespatchDocumentReference"] = {"ID": V(flow.numbers["despatch"], "The despatch advice of the goods "
+                                                                              "billed.")}
+    if "Delivery" in out:
+        return
+    legs = next(x for x in WORLD["flows"] if x["id"] == flow.id).get("legs", [])
+    leg = next((x for x in legs if x["to"] == buyer), None)
+    delivery = {}
+    if leg:
+        delivery["DeliveryLocation"] = leg_location(leg, "to", "Where the goods billed are delivered.")
+    arrived = flow.numbers.get("delivery-day") if same else None
+    if arrived is not None and arrived <= day:
+        delivery = {"ActualDeliveryDate": V(flow.date(arrived), "The day the goods billed were delivered."),
+                    **delivery}
+    elif same and flow.numbers.get("despatch-day") is not None:
+        delivery["Despatch"] = {"ActualDespatchDate": V(flow.date(flow.numbers["despatch-day"]), "The invoice is "
+                                                        "issued on despatch: the day the goods left.")}
+    if delivery:
+        out["Delivery"] = delivery
 
 
 def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None):

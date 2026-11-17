@@ -331,7 +331,7 @@ Inside `OrderLine`:
 - `Note` = **Price as quoted.**  
   Why no price question.
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **4278e92c-6141-5575-b08f-555e19cf4b75**  
   A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **The store's own line: bench and two chairs per set.**  

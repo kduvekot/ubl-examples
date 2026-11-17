@@ -348,7 +348,7 @@
     <cbc:Note>Eight side frames, needed before the ship arrives.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
-      <cbc:LineID>1</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

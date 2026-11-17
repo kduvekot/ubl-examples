@@ -328,6 +328,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-04-30</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+      <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

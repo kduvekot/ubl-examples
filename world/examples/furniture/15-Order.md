@@ -301,7 +301,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **6** (unitCode `EA`)  
   Six desks for the new planning office.
 - `LineItem/LineExtensionAmount` = **5280.00** (currencyID `XBL`)  
@@ -339,7 +339,7 @@ Inside `OrderLine`:
 - `LineItem/Item/Dimension/Measure` = **740** (unitCode `MMT`)  
   Its size.
 - `LineItem/ID` = **2**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **14** (unitCode `HUR`)  
   Two installers for seven hours.
 - `LineItem/LineExtensionAmount` = **672.00** (currencyID `XBL`)  

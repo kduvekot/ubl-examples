@@ -296,7 +296,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **12** (unitCode `MTQ`)  
   Hardwood for a month of furniture production.
 - `LineItem/LineExtensionAmount` = **6480.00** (currencyID `XBL`)  

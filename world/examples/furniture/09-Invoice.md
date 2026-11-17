@@ -297,6 +297,15 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Brackenmere Furniture**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `DeliveryLocation/Name` = **Goods-in of the Lumeport store**  
+  Where the goods billed are delivered.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -753,6 +762,12 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+      <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

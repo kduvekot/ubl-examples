@@ -43,7 +43,8 @@
      "to_place": {
       "name": "Lumeway distribution centre, goods-in, Marrowdale",
       "gln": "6-xb:goodsin"
-     }
+     },
+     "transit_days": 2
     }
    ]
   },

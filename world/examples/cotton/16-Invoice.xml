@@ -19,6 +19,10 @@
   <cac:OrderReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0206</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -201,6 +205,18 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-02</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

@@ -50,6 +50,15 @@ Inside `OrderReference`:
 - `ID` = **LTM-PO-26-0198**  
   The mill's order.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **TOL-BL-26-0206**  
+  The bill of lading: the bales are on board, which is the delivery under FOB.
+- `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TOL-BL-26-0206 is the example cotton/13, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -257,6 +266,19 @@ Inside `SellerSupplierParty`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-03-02**  
+  Free on board: delivered when the bales were loaded on the ship (cotton/16#F6).
+- `DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Port of Selanu**  
+  The port of loading, where FOB delivers.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Payment Means
 
@@ -481,6 +503,10 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0206</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
@@ -663,6 +689,18 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-02</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

@@ -243,6 +243,15 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Saltmere Engineering**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-06-04**  
+  The day the goods billed were delivered.
+- `DeliveryLocation/Name` = **Selanu Telecom mast site**  
+  Where the goods billed are delivered.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -788,6 +797,12 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-06-04</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Selanu Telecom mast site</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

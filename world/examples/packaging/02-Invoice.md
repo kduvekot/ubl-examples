@@ -342,6 +342,17 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Rivermouth Packaging**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Valdara Industries works, Ferrano**  
+  Where the goods billed are delivered.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -813,6 +824,17 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

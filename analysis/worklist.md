@@ -768,6 +768,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D9 ("Story lines: Billing documents": Valdara invoices on despatch, so its invoices refer to the despatch).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): an invoice for goods refers to the despatch advice of its own sale and states the delivery: the place from the leg to the buyer, the day the goods arrived, or, for an invoice issued on despatch, the day they left (`kit.invoice_delivery()`; a despatch advice records its despatch and expected delivery day, D9); scenario-specific deliveries for the forwarder's air freight (air/10, the day flown), the ginnery's FOB sale (cotton/16, on board at Selanu, with the bill of lading), the sawmill's ex-works timber (wood/11, collected at the yard) and Valdara's rail export (rail/11, at the siding, with the transit declaration and the consignment note as the export evidence). The road leg takes two days (D35), so the road invoice of 24 March states its despatch.
 - Findings: air: 10#F9; cotton: 16#F6; packaging: 02#F8, 04#F3, 07#F3; rail: 11#F7; wood: 08#F9, 11#F4
 
 ### C33 · "Three originals" against the distribution list
@@ -791,6 +792,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): a deal line may name the order line it is (`line` in the flow's deal); the kit uses it for the order line's ID and every later reference to it (order response, despatch and receipt lines, invoice lines). The air frames are line 3 of the sea order as changed, from the order change to both despatch advices; the retail substitute is line `1.1`, the per-pallet despatch lines `1-1` to `1-6`, the damaged pallet's receipt line `1-3`.
 - Findings: air: 01#F1, 02#F1, 06#F2, 08#F3; retail: 08#F9, 12#F9, 17#F13
 
 ### C35 · One transport service code per mode

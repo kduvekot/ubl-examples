@@ -348,7 +348,7 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number.
+  The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **4800** (unitCode `EA`)  
   Slats for 960 benches: five per bench, 96 bundles of 50.
 - `LineItem/LineExtensionAmount` = **34560.00** (currencyID `XBL`)  

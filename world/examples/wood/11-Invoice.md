@@ -268,6 +268,15 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Marrowdale Sawmill**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-03-09**  
+  Ex works: delivered when the furniture maker collected the timber (wood/11#F4).
+- `DeliveryLocation/Name` = **Marrowdale Sawmill, timber yard**  
+  Where the timber was collected.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -646,6 +655,12 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-09</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Marrowdale Sawmill, timber yard</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
