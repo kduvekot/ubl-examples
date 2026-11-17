@@ -244,8 +244,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **19960.00** (currencyID `XBL`)  
-  The customs value in lume, at the reference rate.
+- `GoodsItem/DeclaredCustomsValueAmount` = **20160.00** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 19,960.00 XBL, with the special colour, part of the price paid (200.00 XBL), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **1660** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **40** (unitCode `EA`)  
@@ -660,7 +660,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">19960.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">20160.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>

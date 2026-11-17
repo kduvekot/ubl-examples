@@ -150,8 +150,8 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Hardwood bench slat 1800**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **34560.00** (currencyID `XBL`)  
-  The value of the slats, in lume.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **34800.00** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 34,560.00 XBL, with the export pallets the buyer pays for, part of the price paid (240.00 XBL), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `Shipment/GoodsItem/Quantity` = **4800** (unitCode `EA`)  
@@ -479,7 +479,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Hardwood bench slat 1800</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">34560.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">34800.00</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
         <cac:Item>

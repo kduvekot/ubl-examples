@@ -107,7 +107,7 @@
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Recycled PE granulate</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XUF">9984000</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XUF">9804600</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
         <cac:Item>

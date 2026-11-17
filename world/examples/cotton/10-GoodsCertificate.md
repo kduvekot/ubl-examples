@@ -260,8 +260,6 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Cotton lint, compressed bale**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **6055.452** (currencyID `XLC`)  
-  The value of the bales, in coral.
 - `GoodsItem/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **6129** (unitCode `KGM`)  
@@ -302,30 +300,6 @@ Inside `Shipment`:
   The district of the island where the cotton was grown, as the farm's address names it.
 - `GoodsItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `GoodsItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
-  The number of the certificate, unique only with its issuer, who is named below (decision ID-Q10).
-- `GoodsItem/Item/Certificate/CertificateTypeCode` = **COTTONCLASS** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: COTTONCLASS = Cotton classing.
-- `GoodsItem/Item/Certificate/CertificateType` = **Tekapa vekona** (languageID `qal`)  
-  The name of code COTTONCLASS in the Trade Accord's certificate type list. In Lisavan, the sender's language.
-- `GoodsItem/Item/Certificate/CertificateType` = **Cotton classing** (languageID `en-XL`)  
-  The name of code COTTONCLASS in the Trade Accord's certificate type list. In English.
-- `GoodsItem/Item/Certificate/Remarks` = **Grade Middling, staple 1-1/8 inch, micronaire 4.2.**  
-  What the certificate states about the goods.
-- `GoodsItem/Item/Certificate/IssuerParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/Certificate/IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/Certificate/Signature/ID` = **SCC-SIG-2026-0042**  
-  The signature's identifier.
-- `GoodsItem/Item/Certificate/Signature/Note` = **Signed by the cotton classer of the chamber.**  
-  Who signed.
-- `GoodsItem/Item/Certificate/Signature/ValidationDate` = **2026-02-20**  
-  The day the signature was placed.
-- `GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Attestation
 
@@ -625,7 +599,6 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Cotton lint, compressed bale</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">6055.452</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="KGM">6129</cbc:Quantity>
       <cac:Item>
@@ -661,34 +634,6 @@ Inside `Signature`:
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
         </cac:OriginAddress>
-        <cac:Certificate>
-          <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>
-          <cbc:CertificateType languageID="qal">Tekapa vekona</cbc:CertificateType>
-          <cbc:CertificateType languageID="en-XL">Cotton classing</cbc:CertificateType>
-          <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
-          <cac:IssuerParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
-            </cac:PartyName>
-          </cac:IssuerParty>
-          <cac:Signature>
-            <cbc:ID>SCC-SIG-2026-0042</cbc:ID>
-            <cbc:Note>Signed by the cotton classer of the chamber.</cbc:Note>
-            <cbc:ValidationDate>2026-02-20</cbc:ValidationDate>
-            <cac:SignatoryParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
-              </cac:PartyName>
-            </cac:SignatoryParty>
-          </cac:Signature>
-        </cac:Certificate>
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>

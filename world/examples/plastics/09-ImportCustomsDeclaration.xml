@@ -165,7 +165,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">99840.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">98046.00</cbc:DeclaredCustomsValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">99840.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">98046.00</cbc:FreeOnBoardValueAmount>
       <cbc:InsuranceValueAmount currencyID="XBL">0.00</cbc:InsuranceValueAmount>

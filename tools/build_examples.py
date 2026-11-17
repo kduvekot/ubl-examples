@@ -1921,6 +1921,62 @@ def _currencies(node, out, prices=None):
             _currencies(v, out, prices)
 
 
+# ---------------------------------------------------------------- customs value on each country's basis (C52, D16)
+def world_rate(a, b):
+    if a == b:
+        return Decimal(1)
+    r = WORLD["exchange_rates"]
+    return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
+
+
+VALUATION = {   # flow -> what the declarations add to or take from the goods lines, by D16 and WTO Articles 1 and 8
+    "wood": [("all", Decimal("240.00"), "XBL", "the export pallets the buyer pays for, part of the price paid")],
+    "tender": [("all", Decimal("200.00"), "XBL", "the special colour, part of the price paid")],
+    "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
+                                                     "distinguished from the price (179,400 ferra)")],
+    "sea": [("XL", Decimal("2950.00"), "XBL", "the sea freight to the island"),
+            ("XL", Decimal("140.00"), "XBL", "the cargo insurance")],
+}
+
+
+def customs_values(content, doc):
+    """A customs declaration values the goods on the basis of the country it is lodged in (D16, after the WTO
+    Valuation Agreement, Articles 1 and 8): Urvania the price paid with freight and insurance to its border,
+    Bayvarra the price paid as the goods left the exporting country, Lisavu the price paid with freight and
+    insurance to the island; charges that are part of the price belong to it, and carriage after the border
+    stays out only where it is distinguished from the price (Note to Article 1). The goods lines carry the price
+    of the goods; VALUATION adds the rest, shared over the goods items by their value."""
+    if doc["doc"] not in ("ExportCustomsDeclaration", "ImportCustomsDeclaration"):
+        return
+    rules = VALUATION.get(doc["flow"])
+    if not rules:
+        return
+    country = PARTY[doc["parties"].get("CustomsParty") or doc["to"]]["c"]
+    holder = content.get("CustomsDeclaration", content) if doc["doc"] == "ExportCustomsDeclaration" else content
+    goods = holder["Shipment"]["GoodsItem"]
+    goods = goods if isinstance(goods, list) else [goods]
+    vals = [Decimal(g["DeclaredCustomsValueAmount"].value) for g in goods]
+    cur = goods[0]["DeclaredCustomsValueAmount"].attrs["currencyID"]
+    minor = {"XUF": 0, "XBL": 2, "XLC": 3}[cur]
+    q = Decimal(1).scaleb(-minor)
+    adds = [(a * world_rate(c, cur), why) for scope, a, c, why in rules if scope in ("all", country)]
+    if not adds:
+        return
+    extra = sum(a for a, _ in adds)
+    base = sum(vals)
+    shares = [(extra * v / base).quantize(q) for v in vals]
+    shares[-1] = extra.quantize(q) - sum(shares[:-1])
+    basis = {"XU": "Urvania values the goods with freight and insurance to its border",
+             "XB": "Bayvarra values the goods as they left the exporting country",
+             "XL": "Lisavu values the goods with freight and insurance to the island"}[country]
+    text = "; ".join(f"{why} ({a.quantize(q):,} {cur})" for a, why in adds)
+    for g, v, sh in zip(goods, vals, shares):
+        old = g["DeclaredCustomsValueAmount"]
+        g["DeclaredCustomsValueAmount"] = V(str((v + sh).quantize(q)), f"{basis} (D16): the goods at "
+                                            f"{v.quantize(q):,} {cur}, with {text}, shared over the goods items by "
+                                            "their value.", **old.attrs)
+
+
 # ---------------------------------------------------------------- origin and the tax due at import (C57, D18)
 def origin_notes(content):
     """The exporter's statement on origin (examples_kit.origin_statement) goes into the invoice's note."""
@@ -2894,6 +2950,7 @@ def main(flow_id, check=False):
         redundant_roles(content, doc)
         untaxed_sales(content, doc)
         declaration_invoices(content, doc)
+        customs_values(content, doc)
         import_preference(content, doc)
         origin_notes(content)
         border_transport(content, doc)

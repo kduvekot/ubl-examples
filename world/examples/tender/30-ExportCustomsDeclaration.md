@@ -154,8 +154,8 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **1996000** (currencyID `XUF`)  
-  The value of the goods, in ferra.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **2016000** (currencyID `XUF`)  
+  Urvania values the goods with freight and insurance to its border (D16): the goods at 1,996,000 XUF, with the special colour, part of the price paid (20,000 XUF), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **1660** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `Shipment/GoodsItem/Quantity` = **40** (unitCode `EA`)  
@@ -589,7 +589,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XUF">1996000</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XUF">2016000</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">40</cbc:Quantity>
         <cac:Item>

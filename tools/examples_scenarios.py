@@ -7269,6 +7269,10 @@ def _(f, n, doc, out):
 
 @enrich("cotton", "GoodsCertificate")
 def _(f, n, doc, out):
+    for g in lines_of(out.get("Shipment", {}), "GoodsItem"):   # a phytosanitary certificate attests the goods'
+        g.pop("DeclaredCustomsValueAmount", None)              # health: no customs value, no classing certificate
+        if isinstance(g.get("Item"), dict):                    # (cotton/10#F9)
+            g["Item"].pop("Certificate", None)
     gp = out.get("GoodsProcessing")
     if isinstance(gp, dict) and isinstance(gp.get("CriterionItem"), dict):
         gp["CriterionItem"]["TypeCode"] = V("PROCESSING", "A criterion on how the goods were processed.")

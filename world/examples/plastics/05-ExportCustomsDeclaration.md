@@ -152,8 +152,8 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Recycled PE granulate**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **9984000** (currencyID `XUF`)  
-  The value of the granulate, in ferra.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **9804600** (currencyID `XUF`)  
+  Urvania values the goods with freight and insurance to its border (D16): the goods at 9,984,000 XUF, with less the river freight after loading, which the seller distinguished from the price (179,400 ferra) (-179,400 XUF), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `Shipment/GoodsItem/Quantity` = **120** (unitCode `TNE`)  
@@ -422,7 +422,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Recycled PE granulate</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XUF">9984000</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XUF">9804600</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
         <cac:Item>

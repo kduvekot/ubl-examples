@@ -32,9 +32,9 @@ The manufacturer declares the import into Urvania, where import VAT is due.
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,456,000 tezhul, 691,200 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
+- `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,480,000 tezhul, 696,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
-- `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,456,000 ferra, 691,200 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
+- `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,480,000 ferra, 696,000 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
@@ -230,8 +230,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Hardwood bench slat 1800**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **3456000** (currencyID `XUF`)  
-  The customs value in ferra: the value in lume at the reference rate (1 lume = 100 ferra).
+- `GoodsItem/DeclaredCustomsValueAmount` = **3480000** (currencyID `XUF`)  
+  Urvania values the goods with freight and insurance to its border (D16): the goods at 3,456,000 XUF, with the export pallets the buyer pays for, part of the price paid (24,000 XUF), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **4800** (unitCode `EA`)  
@@ -393,8 +393,8 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,456,000 tezhul, 691,200 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
-  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,456,000 ferra, 691,200 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
+  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,480,000 tezhul, 696,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,480,000 ferra, 696,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -547,7 +547,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Hardwood bench slat 1800</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XUF">3456000</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">3480000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>

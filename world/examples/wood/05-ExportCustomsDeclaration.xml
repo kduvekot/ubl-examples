@@ -106,7 +106,7 @@
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Hardwood bench slat 1800</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">34560.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">34800.00</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
         <cac:Item>
