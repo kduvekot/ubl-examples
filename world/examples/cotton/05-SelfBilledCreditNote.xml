@@ -317,6 +317,13 @@
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:Name>No general sales tax</cbc:Name>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:TaxExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
@@ -349,7 +356,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">75.000</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XLC">70.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>

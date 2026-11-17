@@ -410,6 +410,16 @@ Inside `AllowanceCharge`:
   5 % of the goods, agreed for the promotion.
 - `BaseAmount` = **12480.00** (currencyID `XBL`)  
   The goods.
+- `TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Tax Total
 
@@ -417,8 +427,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **12480.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **11856.00** (currencyID `XBL`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -988,11 +998,20 @@ Inside `OrderLine`:
     <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
     <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
     <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">12480.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">11856.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

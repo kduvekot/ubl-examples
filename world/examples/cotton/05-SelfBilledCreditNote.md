@@ -472,6 +472,12 @@ Inside `AllowanceCharge`:
   The farm bears the classing of its cotton, as the agreement says.
 - `Amount` = **5.000** (currencyID `XLC`)  
   The chamber's fee for the lot.
+- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxScheme/Name` = **No general sales tax**  
+  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 
 ### Tax Exchange Rate
 
@@ -539,8 +545,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.000** (currencyID `XLC`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **75.000** (currencyID `XLC`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **70.000** (currencyID `XLC`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -954,6 +960,13 @@ Inside `CreditNoteLine`:
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:Name>No general sales tax</cbc:Name>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:TaxExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
@@ -986,7 +999,7 @@ Inside `CreditNoteLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">75.000</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XLC">70.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>

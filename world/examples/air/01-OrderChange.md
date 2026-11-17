@@ -409,8 +409,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **51200.00** (currencyID `XBL`)  
-  The order as changed; no tax on an export.
+- `TaxSubtotal/TaxableAmount` = **512.00** (currencyID `XBL`)  
+  The change; no tax on an export.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -428,10 +428,10 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **51200.00** (currencyID `XBL`)  
-  The order as changed: the lines of the sea order and the eight frames added.
-- `PayableAmount` = **51200.00** (currencyID `XBL`)  
-  No tax on an export; freight comes on the invoices.
+- `LineExtensionAmount` = **512.00** (currencyID `XBL`)  
+  The change: the eight frames added; the sea order's lines are unchanged.
+- `PayableAmount` = **512.00** (currencyID `XBL`)  
+  What the change adds to the order: no tax on an export; freight comes on the invoices.
 
 ### Order Line
 
@@ -813,7 +813,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">51200.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">512.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -827,8 +827,8 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">51200.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">51200.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">512.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>

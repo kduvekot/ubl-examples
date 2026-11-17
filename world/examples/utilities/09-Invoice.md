@@ -397,8 +397,8 @@ Inside `TaxTotal`:
   The name of code WATER in Bayvarra's national sales tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxableAmount` = **5.88** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **0.00** (currencyID `XBL`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -832,7 +832,7 @@ Inside `InvoiceLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">5.88</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>

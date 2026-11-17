@@ -307,11 +307,20 @@
     <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
     <cbc:Amount currencyID="XBL">624.00</cbc:Amount>
     <cbc:BaseAmount currencyID="XBL">12480.00</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">12480.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">11856.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

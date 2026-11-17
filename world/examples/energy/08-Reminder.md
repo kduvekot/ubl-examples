@@ -338,6 +338,16 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax on a surcharge for late payment.
+- `TaxSubtotal/TaxableAmount` = **19872.00** (currencyID `XBL`)  
+  The surcharge.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax: the surcharge is compensation, not a supply (energy/08#F7).
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  Outside the scope of the state sales tax: compensation for late payment. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Compensation for late payment**  
+  Why no tax.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Legal Monetary Total
 
@@ -654,6 +664,17 @@ Inside `ReminderLine`:
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">19872.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">1344672.00</cbc:LineExtensionAmount>

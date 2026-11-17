@@ -344,6 +344,16 @@ Inside `AllowanceCharge`:
   96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.
 - `Amount` = **240.00** (currencyID `XBL`)  
   96 pallets at 2.50 lume.
+- `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
+- `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Destination Country
 
@@ -357,7 +367,21 @@ Inside `DestinationCountry`:
 Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
-  No sales tax on an export.
+  The sum of the tax of all categories.
+- `TaxSubtotal/TaxableAmount` = **34800.00** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Quoted Monetary Total
 
@@ -788,12 +812,34 @@ Inside `QuotationLine`:
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ACH</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:DestinationCountry>
     <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
   </cac:DestinationCountry>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>

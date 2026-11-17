@@ -1556,6 +1556,63 @@ def check_instance_rules(root, where):
             seen[key] = c
 
 
+# ---------------------------------------------------------------- the tax arithmetic of a document (worklist C24)
+def _line_amounts(node, out):
+    """(category ID, percent, amount) of every line with a tax category, anywhere below node."""
+    if isinstance(node, list):
+        for x in node:
+            _line_amounts(x, out)
+    elif isinstance(node, dict):
+        cat = node.get("Item", {}).get("ClassifiedTaxCategory") if isinstance(node.get("Item"), dict) else None
+        if isinstance(node.get("LineExtensionAmount"), V) and isinstance(node.get("Item"), dict):
+            cid = cat["ID"].value if isinstance(cat, dict) and isinstance(cat.get("ID"), V) else None
+            pct = cat.get("Percent").value if isinstance(cat, dict) and isinstance(cat.get("Percent"), V) else "0"
+            out.append((cid, Decimal(pct), Decimal(node["LineExtensionAmount"].value)))
+            return
+        for k, v in node.items():         # a levy collected for someone else is no part of the supply
+            if k not in ("AllowanceCharge", "TaxTotal", "CollectionInvoiceLine", "CollectionCreditNoteLine"):
+                _line_amounts(v, out)
+
+
+def tax_arithmetic(content, where):
+    """A subtotal's taxable amount is the lines of its category plus the document's charges less its allowances
+    of that category; an allowance or charge without a category, in a document with one category, takes it."""
+    tt = content.get("TaxTotal")
+    subs = tt.get("TaxSubtotal") if isinstance(tt, dict) else None
+    subs = subs if isinstance(subs, list) else [subs] if isinstance(subs, dict) else []
+    if not subs:
+        return
+    lines = []
+    _line_amounts(content, lines)
+    if not lines:
+        return
+    acs = content.get("AllowanceCharge")
+    acs = acs if isinstance(acs, list) else [acs] if isinstance(acs, dict) else []
+    if len(subs) == 1:                        # a line without a category belongs to the document's only one
+        only = subs[0]["TaxCategory"]["ID"].value
+        lines = [(c or only, p, a) for c, p, a in lines]
+    cats = {x[0] for x in lines}
+    for ac in acs:
+        if "TaxCategory" not in ac and len(cats) == 1 and len(subs) == 1:
+            ac["TaxCategory"] = {k: v for k, v in subs[0]["TaxCategory"].items()}
+    for sub in subs:
+        cid = sub["TaxCategory"]["ID"].value
+        base = sum(a for c, _, a in lines if c == cid)
+        for ac in acs:
+            if isinstance(ac.get("TaxCategory"), dict) and ac["TaxCategory"]["ID"].value == cid:
+                sign = 1 if ac["ChargeIndicator"].value == "true" else -1
+                base += sign * Decimal(ac["Amount"].value)
+        old = sub["TaxableAmount"]
+        if Decimal(old.value) != base:
+            pct = sub["TaxCategory"].get("Percent")
+            if isinstance(pct, V) and Decimal(pct.value) != 0:
+                raise SystemExit(f"{where}: taxable amount of category {cid} is {old.value}, the lines and charges "
+                                 f"make {base}: the tax would change (worklist C24)")
+            sub["TaxableAmount"] = V(f"{base:.{len(old.value.partition('.')[2])}f}", "The lines of this category "
+                                     "plus the document's charges less its allowances of the category (worklist "
+                                     "C24).", **old.attrs)
+
+
 # ---------------------------------------------------------------- when an order wants its goods (worklist C28)
 def requested_delivery(content, doc, n):
     """Every order and order change states when the goods are wanted (or, ex works, when they are collected); where
@@ -2031,6 +2088,7 @@ def main(flow_id, check=False):
         content = place_parties(doc, content)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
         requested_delivery(content, doc, n)
+        tax_arithmetic(content, f"{flow_id} {n} {doc['doc']}")
         transport_goods(content, doc)
         identify_places(content)
         shipment_weights(content, flow_id)

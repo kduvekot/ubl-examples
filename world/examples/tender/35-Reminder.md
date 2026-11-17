@@ -34,8 +34,6 @@ The invoice is past due; the manufacturer reminds the department of the balance 
   The note in Urvanian, the sender's language (world/countries.json): What it says.
 - `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What it says.
-- `TaxPointDate` = **2026-05-05**  
-  The interest's tax point.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -462,13 +460,6 @@ Inside `PaymentAlternativeExchangeRate`:
 - `Date` = **2026-05-05**  
   The rate of the document's date.
 
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.00** (currencyID `XBL`)  
-  No tax on interest.
-
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
@@ -532,7 +523,6 @@ Inside `ReminderLine`:
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note languageID="qau">Drek stitan skul drek galhir tinnul dir stubul; Telman skadaz munskek hasir.</cbc:Note>
   <cbc:Note languageID="en-XU">The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
-  <cbc:TaxPointDate>2026-05-05</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
@@ -855,9 +845,6 @@ Inside `ReminderLine`:
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-05</cbc:Date>
   </cac:PaymentAlternativeExchangeRate>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">20286.32</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">22.23</cbc:ChargeTotalAmount>

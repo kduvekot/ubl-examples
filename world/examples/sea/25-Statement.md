@@ -492,13 +492,6 @@ Inside `AllowanceCharge`:
 - `Amount` = **3090.00** (currencyID `XBL`)  
   Included in the balance.
 
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.00** (currencyID `XBL`)  
-  No tax in the account: the goods were exported.
-
 ### Statement Line
 
 Inside `StatementLine`:
@@ -995,9 +988,6 @@ Inside `StatementLine`:
     <cbc:AllowanceChargeReason>Freight and insurance of the CIF invoice</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">3090.00</cbc:Amount>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-  </cac:TaxTotal>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>

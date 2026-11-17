@@ -661,8 +661,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.000** (currencyID `XLC`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **4068.000** (currencyID `XLC`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **4248.000** (currencyID `XLC`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -1266,7 +1266,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">4068.000</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XLC">4248.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>

@@ -258,6 +258,17 @@
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">19872.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">1344672.00</cbc:LineExtensionAmount>

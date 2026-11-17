@@ -1993,15 +1993,14 @@ def air(n, doc):
                           "Carriage paid to the island's airport for the urgent frames: the distributor pays the air "
                           "freight; the rest of the order stays CIF by sea.", "Selanu airport, cargo terminal")
         order.pop("OrderTypeCode")
-        sea_base = sum(r[2] for r in kit.lines(SEA, "6-xb", "1-xl", "XBL"))
         air_base = Decimal(order["AnticipatedMonetaryTotal"]["LineExtensionAmount"].value)
-        order["AnticipatedMonetaryTotal"] = {
-            "LineExtensionAmount": amount(sea_base + air_base, "XBL", "The order as changed: the lines of the sea "
-                                                                      "order and the eight frames added."),
-            "PayableAmount": amount(sea_base + air_base, "XBL", "No tax on an export; freight comes on the "
-                                                                "invoices.")}
-        order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(sea_base + air_base, "XBL", "The order as "
-                                                                      "changed; no tax on an export.")
+        order["AnticipatedMonetaryTotal"] = {      # the amount of the change, as the definition says (air/01#F2)
+            "LineExtensionAmount": amount(air_base, "XBL", "The change: the eight frames added; the sea order's "
+                                                           "lines are unchanged."),
+            "PayableAmount": amount(air_base, "XBL", "What the change adds to the order: no tax on an export; "
+                                                     "freight comes on the invoices.")}
+        order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(air_base, "XBL", "The change; no tax on an "
+                                                                                      "export.")
         order.setdefault("OrderReference", {})["SalesOrderID"] = V(
             SEA.numbers.get("sales-order", f"LD-SO-26-{SEA.base:04d}"), "The distributor's number of the order the "
             "change applies to: in the order reference, since the change's own SalesOrderID would be the seller's "
@@ -5321,7 +5320,8 @@ def _(f, n, doc, out):
             "TransactionConditions": {"Description": V("Quoted per thousand slats; minimum one truck.", "The "
                                                                                                        "conditions.")},
             "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
-            "TaxTotal": {"TaxAmount": amount(0, "XBL", "No sales tax on an export.")}}
+            "TaxTotal": kit.tax_total([({"item": "slat-1800"}, None, Decimal("34800.00"),
+                                        kit.tax_rule("36-xb", "5-xu", "slat-1800"))], "XBL")[1]}
 
 
 @enrich("furniture", "RequestForQuotation")
@@ -7433,8 +7433,7 @@ def _(f, n, doc, out):
         ln["UUID"] = line_uuid(f, "statement", ln["ID"].value)
         ln["OriginatorCustomerParty"] = {"Party": party(HARBOUR, short=True)}
         ln["BeneficiaryParty"] = party(HARBOUR, short=True)
-    return {**for_harbour(), "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax in the account: the goods were "
-                                                                        "exported.")}}
+    return {**for_harbour()}       # a statement of account states no tax (sea/25#F7)
 
 
 @enrich("sea", "RemittanceAdvice")
@@ -8113,7 +8112,6 @@ def tender_complete(n, doc):
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
                 "Note": V("The balance of the first release is overdue; Urvania's statutory interest applies.",
                           "What it says."),
-                "TaxPointDate": V(f.date(113), "The interest's tax point."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoice"),
                 **tender_currencies(f, 113),
                 "PaymentCurrencyCode": V("XUF", "Payment in ferra, as for the invoice."),
@@ -8145,7 +8143,6 @@ def tender_complete(n, doc):
                                     "MultiplierFactorNumeric": V("0.08", "8 % a year."),
                                     "Amount": amount(interest, cur, f"{late} days at 8 % a year on the balance."),
                                     "BaseAmount": amount(balance, cur, "The overdue balance.")},
-                "TaxTotal": {"TaxAmount": amount(0, cur, "No tax on interest.")},
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(balance, cur, "The overdue balance."),
                                        "ChargeTotalAmount": amount(interest, cur, "The interest."),
                                        "PayableAmount": amount(balance + interest, cur, "Now due.")},
@@ -8883,7 +8880,16 @@ def energy(n, doc):
                 "PaymentTerms": {"Note": V("Please pay the invoice in ferra and the surcharge with it.", "What is "
                                                                                                         "asked."),
                                  "PaymentDueDate": V(f.date(70), "A week after the reminder.")},
-                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax on a surcharge for late payment.")},
+                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax on a surcharge for late payment."),
+                             "TaxSubtotal": {"TaxableAmount": amount(sur, "XBL", "The surcharge."),
+                                             "TaxAmount": amount(0, "XBL", "No tax: the surcharge is compensation, "
+                                                                           "not a supply (energy/08#F7)."),
+                                             "TaxCategory": {"ID": V("O", "Outside the scope of the state sales "
+                                                                          "tax: compensation for late payment."),
+                                                             "TaxExemptionReason": V("Compensation for late payment",
+                                                                                     "Why no tax."),
+                                                             "TaxScheme": {"ID": V("STT", "UN/EDIFACT 5153 code of "
+                                                                                         "the state sales tax.")}}}},
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(lume + sur, "XBL", "The invoice in lume and "
                                                                                         "the surcharge."),
                                        "PayableAmount": amount(lume + sur, "XBL", "Now due, in lume at the rate.")},
