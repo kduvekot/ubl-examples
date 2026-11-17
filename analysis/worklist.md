@@ -1082,6 +1082,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The story and Q24 stand; D18 settles the open question of conditions#F6.
 - State: ready in part: 4 findings ready; carnet/03#F1 and 03#F2 wait for D40 (the carnet's timeline; by D18 the tax at stake on the two benches is about 40 coral).
+- Fixed (2026-11-17, stage 2, 4 findings): every import declaration claims the Accord's preference per goods item, with the criterion of the goods' origin (`origin_criterion` in `world/items.json`), and refers to its proof: the certificate of origin in road, else the commercial invoice, which now carries the exporter's statement on origin (`origin_statement()` in `tools/examples_kit.py`, `origin_notes()`); it states what is due at import by its country's rule, in the note and as the goods item's tax category: Urvania 20 % VAT on the customs value, Bayvarra nothing, Lisavu 10 % import consumption tax on the landed value (`import_preference()` in `tools/build_examples.py`). The note "Duties paid by the importer's account at customs." is gone. energy/05's proof waits for its dates (O78); carnet/03 waits for D40.
 - Findings: carnet: 03#F1, 03#F2; plastics: 09#F7; road: 10#F11; tender: 31#F13; consistency: conditions#F6
 
 ### C58 · One sea voyage with four passage times

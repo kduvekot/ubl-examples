@@ -10,7 +10,7 @@
   <cbc:IssueTime>11:14:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-17</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Delivered at place: the price includes the carriage to the siding.</cbc:Note>
+  <cbc:Note>Delivered at place: the price includes the carriage to the siding. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>

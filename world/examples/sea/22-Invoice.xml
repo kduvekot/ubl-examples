@@ -10,7 +10,7 @@
   <cbc:IssueTime>12:32:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">393</cbc:InvoiceTypeCode>
-  <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
+  <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>

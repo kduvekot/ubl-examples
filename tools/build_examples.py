@@ -1921,6 +1921,100 @@ def _currencies(node, out, prices=None):
             _currencies(v, out, prices)
 
 
+# ---------------------------------------------------------------- origin and the tax due at import (C57, D18)
+def origin_notes(content):
+    """The exporter's statement on origin (examples_kit.origin_statement) goes into the invoice's note."""
+    stmt = content.pop("_origin", None)
+    if not stmt:
+        return
+    why = ("The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, "
+           "to claim the Trade Accord's preference (D18).")
+    note = content.get("Note")
+    if note is None:
+        content["Note"] = V(stmt, why)
+    elif isinstance(note, V):
+        content["Note"] = V(f"{note.value} {stmt}", f"{note.why} {why}", **note.attrs)
+    else:
+        raise SystemExit("origin_notes: a statement on origin and several notes")
+
+
+ITEM_BY_NAME = {it["name"]: iid for iid, it in ITEM.items()}
+
+
+def kit_maker(iid):
+    """The item as its maker sells it: a resold item has the maker's origin."""
+    it = ITEM[iid]
+    while it.get("resale_of"):
+        it = ITEM[it["resale_of"]]
+    return it
+
+
+def import_preference(content, doc):
+    """An import declaration claims the Trade Accord's preference for goods of Accord origin, names the criterion
+    and refers to its proof of origin, and states what is due at import by its country's rule (D18): in Urvania
+    value added tax of 20 % on the customs value, which a business deducts again; in Bayvarra nothing; in Lisavu
+    the import consumption tax of 10 % on the landed value. UBL's import declaration has no tax total, so the
+    goods item carries the tax category and the note the amount."""
+    if doc["doc"] != "ImportCustomsDeclaration":
+        return
+    c = PARTY[doc["parties"]["ImporterParty"]]["c"]
+    country = WORLD["countries"][c]
+    goods = content["Shipment"]["GoodsItem"]
+    goods = goods if isinstance(goods, list) else [goods]
+    total, cur = Decimal(0), None
+    for g in goods:
+        iid = ITEM_BY_NAME[g["Description"].value]
+        mk = kit_maker(iid)
+        if mk["origin"] == c:
+            raise SystemExit(f"{doc['flow']}: import of goods of the importing country's own origin")
+        g["PreferenceCriterionCode"] = V(mk["origin_criterion"], f"The goods are of {mk['origin']} origin under the "
+                                         "Trade Accord, by this criterion: the preference claimed, free of duty "
+                                         "(D18).")
+        value = g["DeclaredCustomsValueAmount"]
+        total += Decimal(value.value)
+        cur = value.attrs["currencyID"]
+        if c == "XU":
+            g["Item"]["ClassifiedTaxCategory"] = {
+                "ID": V("S", "Urvania's value added tax at import, at the standard rate."),
+                "Percent": V(str(country["tax"]["schemes"][0]["rates"]["standard"]), "The standard rate."),
+                "TaxScheme": {"ID": V("VAT", "UN/EDIFACT 5153 code VAT: value added tax.")}}
+        elif c == "XL":
+            imp = next(x for x in country["tax"]["schemes"] if x["id"] == "IMP")
+            g["Item"]["ClassifiedTaxCategory"] = {
+                "ID": V("S", "The island's import consumption tax applies."),
+                "Percent": V(str(imp["rate"]), "Its rate, on the landed value."),
+                "TaxScheme": {"ID": V("IMP", "The island's import consumption tax, as the world codes it."),
+                              "TaxTypeCode": V("CONSUMPTION", "A tax on consumption, charged at import.")}}
+    minor = 3 if cur == "XLC" else 2 if cur == "XBL" else 0
+    q = Decimal(1).scaleb(-minor)
+    money_name = next(x["currency"]["name"].lower() for x in WORLD["countries"].values()
+                      if x["currency"]["code"] == cur) if cur else ""
+    if c == "XU":
+        rate = country["tax"]["schemes"][0]["rates"]["standard"]
+        tax = (total * rate / 100).quantize(q)
+        text = (f"No duty: goods of Accord origin. Import value added tax: {rate} % of the customs value of {total:,} "
+                f"{money_name}, {tax:,} {money_name}, paid at the border; the importer deducts it again in its return.")
+    elif c == "XL":
+        tax = (total * 10 / 100).quantize(q)
+        text = (f"No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of {total:,} "
+                f"{money_name}, {tax:,} {money_name}.")
+    else:
+        text = ("No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at "
+                "the final retail sale.")
+    content["Note"] = V(text, "What is due at import, by the importing country's rule (D18).")
+    refs = content.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    for r in refs:
+        w = r["ID"].why
+        if "commercial invoice" in w and not any(d["doc"] == "CertificateOfOrigin" for d in WORLD["documents"]
+                                                 if d["flow"] == doc["flow"]):
+            r["ID"] = V(r["ID"].value, w.rstrip(".") + "; its statement on origin is the proof of origin the "
+                                                       "preference claim refers to (D18).", **r["ID"].attrs)
+        elif "certificate of origin" in w.lower():
+            r["ID"] = V(r["ID"].value, w.rstrip(".") + "; the proof of origin the preference claim refers to "
+                                                       "(D18).", **r["ID"].attrs)
+
+
 # ---------------------------------------------------------------- a Lisavan sale has no tax section (C50, D15)
 SELLER_ROLES = ("AccountingSupplierParty", "SellerSupplierParty", "SupplierParty", "ProviderParty")
 
@@ -2716,6 +2810,8 @@ def main(flow_id, check=False):
         redundant_roles(content, doc)
         untaxed_sales(content, doc)
         declaration_invoices(content, doc)
+        import_preference(content, doc)
+        origin_notes(content)
         border_transport(content, doc)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
         requested_delivery(content, doc, n)

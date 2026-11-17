@@ -169,6 +169,9 @@ def check(world):
                 problems.append(f"{where}: national tariff code {nat!r} does not extend the HS subheading {hs}")
             if it.get("origin") not in world["countries"]:
                 problems.append(f"{where}: country of origin {it.get('origin')} is not a country of the world")
+            if it.get("origin_criterion") not in ("P", "S", "V"):
+                problems.append(f"{where}: goods need the Trade Accord's preference criterion of their origin "
+                                "(origin_criterion P, S or V, D18)")
             if it.get("gross_kg", 0) < it.get("net_kg", 0):
                 problems.append(f"{where}: gross weight below net weight")
         if it.get("resale_of"):

@@ -11,7 +11,7 @@
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note>No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>

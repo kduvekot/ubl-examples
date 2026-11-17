@@ -10,6 +10,7 @@
   <cbc:IssueTime>12:38:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-16</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>

@@ -30,8 +30,8 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `Note` = **Carriage paid to: the price includes the barge to the river quay.**  
-  Why the invoice has no separate freight line.
+- `Note` = **Carriage paid to: the price includes the barge to the river quay. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion P).**  
+  Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
 - `TaxPointDate` = **2026-04-20**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -452,7 +452,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
+  <cbc:Note>Carriage paid to: the price includes the barge to the river quay. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion P).</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>

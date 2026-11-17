@@ -30,8 +30,8 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.**  
-  Why it is named.
+- `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
+  Why it is named. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
 - `TaxPointDate` = **2026-03-31**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -891,7 +891,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
+  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>

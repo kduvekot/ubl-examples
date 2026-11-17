@@ -10,6 +10,7 @@
   <cbc:IssueTime>14:06:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-01</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3150</cbc:AccountingCostCode>
   <cbc:AccountingCost>Packaging materials</cbc:AccountingCost>

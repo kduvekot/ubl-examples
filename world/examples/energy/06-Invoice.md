@@ -30,8 +30,8 @@ The gas producer invoices March's gas to the power station, in ferra as the supp
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `Note` = **Priced in ferra as the supply contract says: the buyer's own currency.**  
-  Why ferra.
+- `Note` = **Priced in ferra as the supply contract says: the buyer's own currency. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion P).**  
+  Why ferra. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the buyer's currency, agreed in the contract; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `LineCountNumeric` = **1**  
@@ -435,7 +435,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>11:25:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-03</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Priced in ferra as the supply contract says: the buyer's own currency.</cbc:Note>
+  <cbc:Note>Priced in ferra as the supply contract says: the buyer's own currency. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion P).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>

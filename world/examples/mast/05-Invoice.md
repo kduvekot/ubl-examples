@@ -30,6 +30,8 @@ Goods and carriage to the site; an export, so no sales tax.
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
+- `Note` = **The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).**  
+  The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **3**  
@@ -580,6 +582,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>17:34:00</cbc:IssueTime>
   <cbc:DueDate>2026-07-04</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>

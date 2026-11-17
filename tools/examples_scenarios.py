@@ -913,8 +913,6 @@ def plastics(n, doc):
             "DeclaredStatisticsValueAmount": amount(Decimal("99840"), "XBL", "The value for the trade statistics: "
                                                     "the invoice value at the border."),
             "InsuranceValueAmount": amount(Decimal("0"), "XBL", "The buyer did not insure the river carriage."),
-            "PreferenceCriterionCode": V("P", "The goods are wholly obtained in Urvania: preference criterion P of "
-                                              "the trade accord."),
             "RequiredCustomsID": V("3901.10.00", "The tariff code Bayvarra's customs requires on the declaration."),
             "CustomsStatusCode": V("FOREIGN", "Bayvarra's customs status: goods from abroad, not yet released for "
                                               "free circulation."),
@@ -4667,7 +4665,6 @@ def import_extras(f, n, doc, out):
     x = {"TypeCode": V("IMPORT", "An import declaration."),
          "SubTypeCode": V("FREECIRC", "For release into free circulation."),
          "NatureOfTransactionCode": V("PURCHASE", "The goods were bought."),
-         "Note": V("Duties paid by the importer's account at customs.", "How duties are settled."),
          "VersionID": V("1", "The first version."),
          "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(c, "The customs territory of import.")}},
          "NotifierParty": party(doc["from"], short=True),

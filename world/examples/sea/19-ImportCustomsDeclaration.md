@@ -32,10 +32,10 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Seviva nopeto ninote leninivi haime momai viope.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): How duties are settled.
-- `Note` = **Duties paid by the importer's account at customs.** (languageID `en-XL`)  
-  The same note in English, the working language between the countries: How duties are settled.
+- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 20,275.200 venamo, 2,027.520 venamo.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
+- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 20,275.200 coral, 2,027.520 coral.** (languageID `en-XL`)  
+  The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
 
@@ -264,6 +264,8 @@ Inside `Shipment`:
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
+  The goods are of XU origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: S = Sufficiently processed.
 - `GoodsItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
@@ -316,6 +318,14 @@ Inside `Shipment`:
   The seller's general terms of trade.
 - `GoodsItem/Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
+- `GoodsItem/Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The island's import consumption tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/ClassifiedTaxCategory/Percent` = **10**  
+  Its rate, on the landed value.
+- `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **IMP** (schemeID `UN/EDIFACT EDED 5153`)  
+  The island's import consumption tax, as the world codes it. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: IMP = Import tax. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/TaxTypeCode` = **CONSUMPTION** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
+  A tax on consumption, charged at import. The code is from the Trade Accord's tax type list: CONSUMPTION = Tax on consumption.
 - `GoodsItem/Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `GoodsItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -496,6 +506,8 @@ Inside `Shipment`:
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
   The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
+  The goods are of XU origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: S = Sufficiently processed.
 - `GoodsItem/Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `GoodsItem/Item/Name` = **Bench side frame casting**  
@@ -522,6 +534,14 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **42999** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
+- `GoodsItem/Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The island's import consumption tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/ClassifiedTaxCategory/Percent` = **10**  
+  Its rate, on the landed value.
+- `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **IMP** (schemeID `UN/EDIFACT EDED 5153`)  
+  The island's import consumption tax, as the world codes it. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: IMP = Import tax. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/TaxTypeCode` = **CONSUMPTION** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
+  A tax on consumption, charged at import. The code is from the Trade Accord's tax type list: CONSUMPTION = Tax on consumption.
 - `GoodsItem/Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `GoodsItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
@@ -590,7 +610,7 @@ Inside `AdditionalDocumentReference`:
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BF-EX-26-0135 is the example sea/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 - `ID` = **LD-INV-26-0147**  
-  The commercial invoice the customs value rests on (worklist C12).
+  The commercial invoice the customs value rests on (worklist C12); its statement on origin is the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LD-INV-26-0147 is the example sea/22, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
@@ -621,8 +641,8 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Seviva nopeto ninote leninivi haime momai viope.</cbc:Note>
-  <cbc:Note languageID="en-XL">Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 20,275.200 venamo, 2,027.520 venamo.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 20,275.200 coral, 2,027.520 coral.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -815,6 +835,7 @@ Inside `Signature`:
       <cbc:DeclaredCustomsValueAmount currencyID="XLC">19968.000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -862,6 +883,14 @@ Inside `Signature`:
             <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:TransactionConditions>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>10</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
         <cac:AdditionalItemProperty>
           <cbc:Name>Frame material</cbc:Name>
           <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
@@ -1025,6 +1054,7 @@ Inside `Signature`:
       <cbc:DeclaredCustomsValueAmount currencyID="XLC">307.200</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
@@ -1051,6 +1081,14 @@ Inside `Signature`:
           <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>10</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

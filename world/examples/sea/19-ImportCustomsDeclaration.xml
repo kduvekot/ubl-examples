@@ -11,8 +11,8 @@
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Seviva nopeto ninote leninivi haime momai viope.</cbc:Note>
-  <cbc:Note languageID="en-XL">Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 20,275.200 venamo, 2,027.520 venamo.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 20,275.200 coral, 2,027.520 coral.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -205,6 +205,7 @@
       <cbc:DeclaredCustomsValueAmount currencyID="XLC">19968.000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -252,6 +253,14 @@
             <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:TransactionConditions>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>10</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
         <cac:AdditionalItemProperty>
           <cbc:Name>Frame material</cbc:Name>
           <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
@@ -415,6 +424,7 @@
       <cbc:DeclaredCustomsValueAmount currencyID="XLC">307.200</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
@@ -441,6 +451,14 @@
           <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>10</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

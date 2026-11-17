@@ -28,7 +28,8 @@
      "62",
      "P1"
     ]
-   ]
+   ],
+   "origin_criterion": "P"
   },
   {
    "id": "bench-serra",
@@ -224,7 +225,8 @@
      "Coating batch",
      "ZN-26-114"
     ]
-   ]
+   ],
+   "origin_criterion": "S"
   },
   {
    "id": "bench-casting",
@@ -260,7 +262,8 @@
      "M-26-0412"
     ]
    ],
-   "made_time": "06:40:00"
+   "made_time": "06:40:00",
+   "origin_criterion": "S"
   },
   {
    "id": "granulate-pe",
@@ -310,7 +313,8 @@
      "Melt flow index",
      "0.9 g/10 min"
     ]
-   ]
+   ],
+   "origin_criterion": "P"
   },
   {
    "id": "waste-recovery",
@@ -527,7 +531,8 @@
      "Kiln charge",
      "K-07"
     ]
-   ]
+   ],
+   "origin_criterion": "P"
   },
   {
    "id": "timber-beam",
@@ -549,7 +554,8 @@
    "package": {
     "type": "BE",
     "per_package": 1
-   }
+   },
+   "origin_criterion": "P"
   },
   {
    "id": "garden-set",
@@ -581,7 +587,8 @@
      "MMT"
     ]
    ],
-   "gtin": "9523710000012"
+   "gtin": "9523710000012",
+   "origin_criterion": "S"
   },
   {
    "id": "office-desk",
@@ -627,7 +634,8 @@
      "MMT"
     ]
    ],
-   "gtin": "9523710000029"
+   "gtin": "9523710000029",
+   "origin_criterion": "S"
   },
   {
    "id": "installation",
@@ -681,7 +689,8 @@
      "Sizes",
      "S to XL"
     ]
-   ]
+   ],
+   "origin_criterion": "S"
   },
   {
    "id": "film-pe",
@@ -725,7 +734,8 @@
      "country": "XU"
     }
    },
-   "purchase": "packaging"
+   "purchase": "packaging",
+   "origin_criterion": "S"
   },
   {
    "id": "garment-bag",
@@ -749,7 +759,8 @@
     "type": "BX",
     "per_package": 500
    },
-   "purchase": "packaging"
+   "purchase": "packaging",
+   "origin_criterion": "S"
   },
   {
    "id": "water",
@@ -923,7 +934,8 @@
    "gross_kg": 1,
    "package": {
     "type": "NE"
-   }
+   },
+   "origin_criterion": "P"
   },
   {
    "id": "cotton-bale",
@@ -979,7 +991,8 @@
    "buyer_ids": {
     "40-xb": "LT-RAW-COT"
    },
-   "origin_district": "North coast"
+   "origin_district": "North coast",
+   "origin_criterion": "P"
   },
   {
    "id": "telecom-line",
@@ -1112,7 +1125,8 @@
     "erg": "147",
     "tunnel": "E",
     "note": "State of charge below 30 %, as the air rules require."
-   }
+   },
+   "origin_criterion": "S"
   },
   {
    "id": "smoke-detector",
@@ -1148,7 +1162,8 @@
      "2Q"
     ],
     "note": "Excepted package: no radioactive label, the UN number on the package."
-   }
+   },
+   "origin_criterion": "S"
   },
   {
    "id": "coating-stripper",
@@ -1183,7 +1198,8 @@
     "ems": "F-E,S-C",
     "erg": "132",
     "tunnel": "D/E"
-   }
+   },
+   "origin_criterion": "S"
   },
   {
    "id": "natural-gas",
@@ -1203,7 +1219,8 @@
    "description": "Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.",
    "net_kg": 75,
    "gross_kg": 75,
-   "purchase": "energy"
+   "purchase": "energy",
+   "origin_criterion": "P"
   },
   {
    "id": "power-wholesale",

@@ -1725,7 +1725,15 @@
     "route": "zhuvir",
     "stored": "ginstek",
     "revision": "trirdir",
-    "bayvarran": "traktan"
+    "bayvarran": "traktan",
+    "added": "vanbir",
+    "again": "trensek",
+    "coral": "dukdir",
+    "deducts": "serdaz",
+    "duty": "murdrir",
+    "ferra": "tezhul",
+    "importer": "stazstan",
+    "landed": "tertek"
    }
   },
   "qal": {
@@ -2826,7 +2834,15 @@
     "route": "pounu",
     "stored": "lusii",
     "revision": "paatu",
-    "bayvarran": "vupelepi"
+    "bayvarran": "vupelepi",
+    "added": "pavata",
+    "again": "nahapi",
+    "coral": "venamo",
+    "deducts": "tenaka",
+    "duty": "namafe",
+    "ferra": "vohala",
+    "importer": "tanole",
+    "landed": "tafone"
    }
   },
   "en": {

@@ -32,8 +32,8 @@ The distributor, as importer, declares the goods in Bayvarra and claims the pref
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Duties paid by the importer's account at customs.**  
-  How duties are settled.
+- `Note` = **No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.**  
+  What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
 
@@ -240,6 +240,8 @@ Inside `Shipment`:
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
+  The goods are of XU origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: S = Sufficiently processed.
 - `GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XB`)  
@@ -452,6 +454,8 @@ Inside `Shipment`:
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
   The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
+  The goods are of XU origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: S = Sufficiently processed.
 - `GoodsItem/Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
 - `GoodsItem/Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.** (languageID `en-XB`)  
@@ -488,7 +492,7 @@ Inside `Shipment`:
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **FCC-CO-26-0157**  
-  The certificate of origin, to claim the preferential duty rate.
+  The certificate of origin, to claim the preferential duty rate; the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **CertificateOfOrigin** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: FCC-CO-26-0157 is the example road/06, a CertificateOfOrigin; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
 - `ID` = **VI-EX-26-0155**  
@@ -527,7 +531,7 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note>No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -688,6 +692,7 @@ Inside `Signature`:
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">47904.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
         <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
@@ -870,6 +875,7 @@ Inside `Signature`:
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">717.60</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
         <cbc:Description languageID="en-XB">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>

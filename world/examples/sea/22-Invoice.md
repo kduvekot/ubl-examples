@@ -30,8 +30,8 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **393** (listID `UN/EDIFACT EDED 1001`)  
   The invoice is assigned to the factor, who collects it: a factored invoice, a subtype UN/EDIFACT 1001 has its own code for. The code is from the world's copy of UN/EDIFACT 1001 Document name: 393 = Factored invoice.
-- `Note` = **This receivable has been assigned to Harbourline Factoring; pay only to the account stated.**  
-  The notice of assignment the factoring agreement requires.
+- `Note` = **This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
+  The notice of assignment the factoring agreement requires. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PaymentAlternativeCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -878,7 +878,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>12:32:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-28</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">393</cbc:InvoiceTypeCode>
-  <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
+  <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>

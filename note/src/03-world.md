@@ -821,8 +821,12 @@ Lumeport's water company also collects the city's sewage levy, as a line
 collected on behalf of the city, and runs the city's district heating.
 
 Goods of Accord origin cross the borders free of duty, on proof of origin:
-every import declaration claims the preference, names the criterion and
-refers to its proof of origin. Goods from outside the Accord pay each
+every import declaration claims the preference, names the criterion
+(wholly obtained, sufficiently processed, or regional value content) and
+refers to its proof of origin. The proof is a certificate of origin from a
+chamber of commerce where the exporter asks for one, or else the exporter's
+statement on origin on its commercial invoice, worded as the origin
+declarations of the EU's preferential arrangements. Goods from outside the Accord pay each
 country's own tariff. What is still due at the border differs. In Urvania,
 value added tax of 20 % on the value with freight to the border, which a
 business deducts again. In Bayvarra nothing, because its sales tax is

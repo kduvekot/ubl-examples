@@ -32,8 +32,8 @@ The packaging maker declares the import in Bayvarra.
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Duties paid by the importer's account at customs.**  
-  How duties are settled.
+- `Note` = **No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.**  
+  What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
 
@@ -243,7 +243,7 @@ Inside `Shipment`:
 - `GoodsItem/Quantity` = **120** (unitCode `TNE`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
-  The goods are wholly obtained in Urvania: preference criterion P of the trade accord. The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
+  The goods are of XU origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
 - `GoodsItem/RequiredCustomsID` = **3901.10.00**  
   The tariff code Bayvarra's customs requires on the declaration.
 - `GoodsItem/CustomsStatusCode` = **FOREIGN** (listID `urn:ubl-examples:world:codelist:CustomsStatusCode`)  
@@ -360,7 +360,7 @@ Inside `AdditionalDocumentReference`:
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: RR-EX-26-0887 is the example plastics/05, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 - `ID` = **RR-INV-26-0894**  
-  The commercial invoice the customs value rests on (worklist C12).
+  The commercial invoice the customs value rests on (worklist C12); its statement on origin is the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: RR-INV-26-0894 is the example plastics/10, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
@@ -391,7 +391,7 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note>No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>

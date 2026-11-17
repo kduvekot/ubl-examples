@@ -30,6 +30,8 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   As the payment terms below count it: 45 days net.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
+- `Note` = **The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).**  
+  The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the seller's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **2200**  
@@ -407,6 +409,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>12:38:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-16</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>

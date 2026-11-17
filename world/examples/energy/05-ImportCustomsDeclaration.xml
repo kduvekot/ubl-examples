@@ -8,6 +8,8 @@
   <cbc:UUID>588c4166-cc9d-5604-8074-7a2b5bb9884a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:55:00</cbc:IssueTime>
+  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 132,480,000 tezhul, 26,496,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 132,480,000 ferra, 26,496,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
@@ -157,6 +159,7 @@
       <cbc:DeclaredCustomsValueAmount currencyID="XUF">132480000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="MWH">36800</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
         <cbc:Name>Natural gas</cbc:Name>
@@ -175,6 +178,13 @@
           <cbc:CommodityCode listID="WCO HS 2022">271121</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">12020</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>20</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
       </cac:Item>
     </cac:GoodsItem>
     <cac:ShipmentStage>

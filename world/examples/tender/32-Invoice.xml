@@ -10,7 +10,7 @@
   <cbc:IssueTime>09:28:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.</cbc:Note>
+  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>

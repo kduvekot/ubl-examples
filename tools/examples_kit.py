@@ -617,6 +617,9 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
                                    "AllowanceChargeReason": V(c["reason"], c["why"]),
                                    "Amount": amount(c["amount"], cur, c["amount_why"]),
                                    "TaxCategory": tax_category(r[3])} for c, r in zip(charges, charge_rows)]
+    stmt = origin_statement(flow, seller, buyer, [d["item"] for d, *_ in rows])
+    if stmt:
+        out["_origin"] = stmt                    # written into the Note at the end (build_examples.origin_notes)
     flow.numbers[f"{key}-amount"] = base + sum(r[2] for r in charge_rows) + tax
     flow.numbers[f"{key}-date"] = flow.date(day)
     flow.numbers[f"{key}-currency"] = cur
@@ -997,6 +1000,32 @@ def rate(a, b):
 
 
 HS_SECTION = {"26": "V", "27": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
+
+
+ADJECTIVE = {"XU": "Urvanian", "XB": "Bayvarran", "XL": "Lisavan"}
+
+
+def maker_of(iid):
+    it = ITEM[iid]
+    while it.get("resale_of"):
+        it = ITEM[it["resale_of"]]
+    return it
+
+
+def origin_statement(flow, seller, buyer, iids):
+    """The exporter's statement on origin for an invoice of goods from one Accord country to another, the proof of
+    origin an import declaration refers to where no certificate of origin is issued (D18, O49), worded as the
+    origin declarations of the EU's preferential arrangements."""
+    if PARTY[seller]["c"] == PARTY[buyer]["c"]:
+        return None
+    if any(d["doc"] == "CertificateOfOrigin" for d in WORLD["documents"] if d["flow"] == flow.id):
+        return None
+    goods = [maker_of(i) for i in iids if ITEM[i].get("kind") == "goods"]
+    if not goods or len({g["origin"] for g in goods}) != 1:
+        return None
+    crit = "/".join(sorted({g["origin_criterion"] for g in goods}))
+    return (f"The exporter of the goods covered by this document declares that these goods are of "
+            f"{ADJECTIVE[goods[0]['origin']]} preferential origin under the Trade Accord (criterion {crit}).")
 
 
 def customs_item(iid):

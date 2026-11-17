@@ -11,8 +11,8 @@
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Tralbek zhan man drek sisir gakkaz hir garsul.</cbc:Note>
-  <cbc:Note languageID="en-XU">Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,456,000 tezhul, 691,200 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,456,000 ferra, 691,200 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -168,6 +168,7 @@
       <cbc:DeclaredCustomsValueAmount currencyID="XUF">3456000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
@@ -185,6 +186,13 @@
           <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>20</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
         <cac:AdditionalItemProperty>
           <cbc:ID>MC</cbc:ID>
           <cbc:Name>Moisture content</cbc:Name>

@@ -26,6 +26,10 @@ The power station declares the gas it received in March into Urvania.
   The monthly declaration of the gas received in March.
 - `IssueTime` = **16:55:00**  
   The time the sender's system issued the document, in the sender's local time.
+- `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 132,480,000 tezhul, 26,496,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
+- `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 132,480,000 ferra, 26,496,000 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
+  The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 
 ### Importer Party
 
@@ -217,6 +221,8 @@ Inside `Shipment`:
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **36800** (unitCode `MWH`)  
   The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
+  The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
 - `GoodsItem/Item/Description` = **Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.**  
   The seller's description; item natural-gas of Kelpstone Gas (world/items.json).
 - `GoodsItem/Item/Name` = **Natural gas**  
@@ -235,6 +241,12 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 271121 = Natural gas, in gaseous state.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **12020** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 12020 = Natural gas, liquefied or in the gaseous state.
+- `GoodsItem/Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  Urvania's value added tax at import, at the standard rate. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/ClassifiedTaxCategory/Percent` = **20**  
+  The standard rate.
+- `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `ShipmentStage/ID` = **1**  
   The only stage.
 - `ShipmentStage/TransportModeCode` = **7** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -255,6 +267,8 @@ Inside `Shipment`:
   <cbc:UUID>588c4166-cc9d-5604-8074-7a2b5bb9884a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:55:00</cbc:IssueTime>
+  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 132,480,000 tezhul, 26,496,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 132,480,000 ferra, 26,496,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
@@ -404,6 +418,7 @@ Inside `Shipment`:
       <cbc:DeclaredCustomsValueAmount currencyID="XUF">132480000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="MWH">36800</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
         <cbc:Name>Natural gas</cbc:Name>
@@ -422,6 +437,13 @@ Inside `Shipment`:
           <cbc:CommodityCode listID="WCO HS 2022">271121</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">12020</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>20</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
       </cac:Item>
     </cac:GoodsItem>
     <cac:ShipmentStage>
