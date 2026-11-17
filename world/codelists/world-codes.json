@@ -5495,7 +5495,12 @@
     "ARRIVAL",
     "BORDERCROSS",
     "CUSTOMSRELEASE",
-    "DELIVERY"
+    "DELIVERY",
+    "ACCEPTANCE",
+    "LOADING",
+    "DISCHARGE",
+    "ENROUTE",
+    "STORAGE"
    ]
   },
   "TransportExecutionStatus": {

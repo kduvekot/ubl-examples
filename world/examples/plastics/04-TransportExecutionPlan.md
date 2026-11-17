@@ -658,20 +658,36 @@ Inside `Consignment`:
   Loading finished: 120 bags in the hold.
 - `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00**  
   The local time.
+- `MainCarriageShipmentStage/LoadingTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `MainCarriageShipmentStage/LoadingTransportEvent/Location/Name` = **Quay of Rinova Recovery, Ferrano**  
+  At the recovery plant's own quay on the river.
+- `MainCarriageShipmentStage/LoadingTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-20**  
   The barge leaves Urvania at the river border.
 - `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **16:00:00**  
   The local time.
+- `MainCarriageShipmentStage/ExportationTransportEvent/Location/Name` = **River border Urvania–Bayvarra**  
+  Where the barge leaves Urvania.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-22**  
   Planned unloading at the Lumeport quay.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
   The local time.
 - `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
+- `MainCarriageShipmentStage/DischargeTransportEvent/Location/Name` = **River quay, Lumeport**  
+  The quay named in the CPT terms, where the bags are unloaded.
 - `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-19**  
   The barge operator takes over the bags at the quay.
 - `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00**  
   The local time.
+- `MainCarriageShipmentStage/TakeoverTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `MainCarriageShipmentStage/TakeoverTransportEvent/Location/Name` = **Quay of Rinova Recovery, Ferrano**  
+  At the recovery plant's own quay on the river.
+- `MainCarriageShipmentStage/TakeoverTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/EstimatedTransitPeriod/DurationMeasure` = **3** (unitCode `DAY`)  
   Three days downstream, with the locks.
 - `MainCarriageShipmentStage/MasterPerson/FirstName` = **Tomaso**  
@@ -1187,19 +1203,43 @@ Inside `Consignment`:
       <cac:LoadingTransportEvent>
         <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:LoadingTransportEvent>
       <cac:ExportationTransportEvent>
         <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
+        </cac:Location>
       </cac:ExportationTransportEvent>
       <cac:DischargeTransportEvent>
         <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:Name>River quay, Lumeport</cbc:Name>
+        </cac:Location>
       </cac:DischargeTransportEvent>
       <cac:TakeoverTransportEvent>
         <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:TakeoverTransportEvent>
       <cac:EstimatedTransitPeriod>
         <cbc:DurationMeasure unitCode="DAY">3</cbc:DurationMeasure>

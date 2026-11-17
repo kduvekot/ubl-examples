@@ -564,6 +564,8 @@ Inside `Shipment`:
   The local time.
 - `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Description` = **Seal check, no inspection of the goods.**  
   What happened, in words.
+- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Location/Name` = **Road border crossing Urvania–Bayvarra**  
+  Where customs checked the seals.
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
   The truck left the warehouse.
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
@@ -2622,6 +2624,9 @@ Inside `Signature`:
           <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
           <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
+          <cac:Location>
+            <cbc:Name>Road border crossing Urvania–Bayvarra</cbc:Name>
+          </cac:Location>
         </cac:ExaminationTransportEvent>
         <cac:ActualDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>

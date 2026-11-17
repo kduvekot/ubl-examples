@@ -193,6 +193,15 @@
       <cac:ActualDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>18:10:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:ActualDepartureTransportEvent>
       <cac:SecurityOfficerPerson>
         <cbc:FirstName>Tamsin</cbc:FirstName>
@@ -203,6 +212,7 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
     <cac:Location>
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>

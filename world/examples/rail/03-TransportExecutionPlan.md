@@ -524,10 +524,20 @@ Inside `Consignment`:
   The carrier collects the packed boxes.
 - `PlannedPickupTransportEvent/OccurrenceTime` = **15:00:00**  
   The local time.
+- `PlannedPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PlannedPickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Ferrano**  
+  At the 3PL's warehouse in Ferrano, where the boxes are packed.
+- `PlannedPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PlannedDeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
   And places them at the siding.
 - `PlannedDeliveryTransportEvent/OccurrenceTime` = **11:00:00**  
   The local time.
+- `PlannedDeliveryTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `PlannedDeliveryTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
+  Where the boxes are placed for unloading.
 - `ConsigneeParty/WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -674,18 +684,38 @@ Inside `Consignment`:
   The timetable departure from the hub.
 - `MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00**  
   The local time.
+- `MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
+  At the intermodal hub, where the boxes go on the train.
+- `MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
   The timetable arrival in Marrowdale.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
   The local time.
+- `MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
+  Where the boxes are placed for unloading.
 - `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The departure as expected that morning.
 - `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
   The local time.
+- `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
+  At the intermodal hub, where the boxes go on the train.
+- `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
   The arrival as expected.
 - `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **10:40:00**  
   The local time.
+- `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
+  Where the boxes are placed for unloading.
 
 ## The document
 
@@ -1071,10 +1101,23 @@ Inside `Consignment`:
     <cac:PlannedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:PlannedPickupTransportEvent>
     <cac:PlannedDeliveryTransportEvent>
       <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+        <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+      </cac:Location>
     </cac:PlannedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1199,18 +1242,44 @@ Inside `Consignment`:
       <cac:PlannedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:PlannedDepartureTransportEvent>
       <cac:PlannedArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+          <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+        </cac:Location>
       </cac:PlannedArrivalTransportEvent>
       <cac:EstimatedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:EstimatedDepartureTransportEvent>
       <cac:EstimatedArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+          <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+        </cac:Location>
       </cac:EstimatedArrivalTransportEvent>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>

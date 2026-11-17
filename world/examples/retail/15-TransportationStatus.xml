@@ -15,6 +15,7 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ENROUTE</cbc:TransportEventTypeCode>
     <cbc:Description>On its way from the distribution centre; arrival expected at 14:00.</cbc:Description>
     <cac:Location>
       <cbc:Name>Marrowdale ring road</cbc:Name>
@@ -204,5 +205,9 @@
     <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
     <cbc:Description>Expected arrival at the store.</cbc:Description>
+    <cac:Location>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+      <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+    </cac:Location>
   </cac:UpdatedDeliveryTransportEvent>
 </TransportationStatus>

@@ -692,14 +692,32 @@ Inside `Shipment`:
   The local time.
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/Location/Name` = **Port of Selanu**  
+  At the Port of Selanu.
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceDate` = **2026-05-13**  
   Stacked at the quay until loading.
 - `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceTime` = **10:30:00**  
   The local time.
+- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceDate` = **2026-05-13**  
   The terminal accepted the container.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceTime` = **10:15:00**  
   The local time.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/MainCarriageShipmentStage/FreightChargeLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Name` = **Port of Lumeport**  
@@ -736,6 +754,12 @@ Inside `Shipment`:
   The container was dropped at the container quay.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00**  
   The local time.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/ChargeIndicator` = **true**  
   The truck to the port.
 - `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
@@ -758,10 +782,14 @@ Inside `Shipment`:
   Stored at the 3PL until called off.
 - `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
+- `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  
+  The 3PL's warehouse on the island, where the goods are received and stored.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-05-19**  
   Planned receipt at the 3PL.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
+- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  
+  The 3PL's warehouse on the island, where the goods are received and stored.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container's number: the owner code of the ocean carrier, U for a freight container, six digits and the ISO 6346 check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
@@ -1935,14 +1963,41 @@ Inside `Signature`:
           <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:AvailabilityTransportEvent>
         <cac:StorageTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:StorageTransportEvent>
         <cac:AcceptanceTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:AcceptanceTransportEvent>
         <cac:FreightChargeLocation>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
@@ -1981,6 +2036,15 @@ Inside `Signature`:
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:DropoffTransportEvent>
         <cac:FreightAllowanceCharge>
           <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
@@ -2004,10 +2068,16 @@ Inside `Signature`:
         <cac:WarehousingTransportEvent>
           <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:Name>Nalevi Warehousing, Selanu</cbc:Name>
+          </cac:Location>
         </cac:WarehousingTransportEvent>
         <cac:ReceiptTransportEvent>
           <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:Name>Nalevi Warehousing, Selanu</cbc:Name>
+          </cac:Location>
         </cac:ReceiptTransportEvent>
       </cac:OnCarriageShipmentStage>
       <cac:TransportHandlingUnit>

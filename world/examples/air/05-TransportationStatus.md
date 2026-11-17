@@ -250,6 +250,8 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-05-13**  
   The day the event took place.
+- `TransportEventTypeCode` = **ACCEPTANCE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
 - `Description` = **Cargo accepted and built up for the flight.**  
   What happened, in words.
 - `Location/Name` = **Lumeport airport, cargo terminal**  
@@ -502,6 +504,7 @@ Inside `StatusPeriod`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
     <cac:Location>
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>

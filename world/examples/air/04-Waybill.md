@@ -597,10 +597,22 @@ Inside `Shipment`:
   The forwarder asked for the morning flight.
 - `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **07:00:00**  
   The local time.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Lumeport airport**  
+  The airport of departure.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceDate` = **2026-05-14**  
   Arriving before the 3PL's cut-off.
 - `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceTime` = **10:00:00**  
   The local time.
+- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/Name` = **Selanu airport**  
+  The airport of destination.
+- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Exchange Rate
 
@@ -1152,10 +1164,28 @@ Inside `Signature`:
         <cac:RequestedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+            <cbc:Name>Lumeport airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:RequestedDepartureTransportEvent>
         <cac:RequestedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+            <cbc:Name>Selanu airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:RequestedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
     </cac:Consignment>

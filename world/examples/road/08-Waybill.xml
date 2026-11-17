@@ -464,6 +464,9 @@
           <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
           <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
+          <cac:Location>
+            <cbc:Name>Road border crossing Urvania–Bayvarra</cbc:Name>
+          </cac:Location>
         </cac:ExaminationTransportEvent>
         <cac:ActualDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>

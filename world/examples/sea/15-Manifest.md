@@ -477,10 +477,22 @@ Inside `Shipment`:
   The planned departure from Lumeport.
 - `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:00:00**  
   The local time.
+- `ShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `ShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-05-17**  
   Expected off Selanu in the evening.
 - `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **22:00:00**  
   The local time.
+- `ShipmentStage/EstimatedArrivalTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/EstimatedArrivalTransportEvent/Location/Name` = **Port of Selanu**  
+  At the Port of Selanu.
+- `ShipmentStage/EstimatedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/MasterPerson/FirstName` = **Corin**  
   The master, who signs the manifest.
 - `ShipmentStage/MasterPerson/FamilyName` = **Halvard**  
@@ -917,10 +929,28 @@ Inside `Signature`:
       <cac:EstimatedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-05-15</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:EstimatedDepartureTransportEvent>
       <cac:EstimatedArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>22:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:EstimatedArrivalTransportEvent>
       <cac:MasterPerson>
         <cbc:FirstName>Corin</cbc:FirstName>

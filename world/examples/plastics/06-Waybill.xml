@@ -391,19 +391,43 @@
         <cac:LoadingTransportEvent>
           <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:LoadingTransportEvent>
         <cac:ExportationTransportEvent>
           <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
+          </cac:Location>
         </cac:ExportationTransportEvent>
         <cac:DischargeTransportEvent>
           <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:Name>River quay, Lumeport</cbc:Name>
+          </cac:Location>
         </cac:DischargeTransportEvent>
         <cac:TakeoverTransportEvent>
           <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:TakeoverTransportEvent>
         <cac:EstimatedTransitPeriod>
           <cbc:DurationMeasure unitCode="DAY">3</cbc:DurationMeasure>

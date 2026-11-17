@@ -230,6 +230,7 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
     <cac:Location>
       <cbc:Name>Selanu airport, cargo terminal</cbc:Name>

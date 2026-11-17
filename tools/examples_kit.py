@@ -963,10 +963,14 @@ def import_declaration(flow, n, doc, day, why, value_why, refs=None, deal=None):
     return out
 
 
-def transportation_status(flow, n, doc, day, event_why, description, location, extra=None):
+def transportation_status(flow, n, doc, day, event_why, description, location, extra=None, event_type=None):
+    if not event_type:
+        raise SystemExit(f"{flow.id} {n}: a status report says what happened as a code (worklist C18)")
     out = {"ID": V(flow.number(f"status-{n}", doc["from"], "TransportationStatus"), "The sender's status report number."),
            "IssueDate": V(flow.date(day), event_why),
            "TransportEvent": {"OccurrenceDate": V(flow.date(day), "The day the event took place."),
+                              "TransportEventTypeCode": V(event_type, "The kind of event, as the carriers of the "
+                                                                      "world code them."),
                               "Description": V(description, "What happened, in words."),
                               "Location": {"Name": V(location, "Where it happened.")}},
            "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),

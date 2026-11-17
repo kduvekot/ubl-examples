@@ -1902,6 +1902,13 @@ def main(flow_id, check=False):
         if "UUID" in header and isinstance(content.get("ID"), V):
             DOC_UUIDS[(flow_id, content["ID"].value)] = header["UUID"].value
         roots.append((xmlname(n, doc), root))
+        for e in root.iter():                  # every transport event says where, and what if generic (C18)
+            if isinstance(e.tag, str) and etree.QName(e).localname.endswith("TransportEvent"):
+                if e.find(f"{{{NS_CAC}}}Location") is None:
+                    raise SystemExit(f"{flow_id} {n} {doc['doc']}: {etree.QName(e).localname} without a place "
+                                     "(worklist C18)")
+                if etree.QName(e).localname == "TransportEvent" and e.find(f"{{{NS_CBC}}}TransportEventTypeCode") is None:
+                    raise SystemExit(f"{flow_id} {n} {doc['doc']}: TransportEvent without a type code (worklist C18)")
         for e in root.iter():                  # a status that only says there is none is a filler (worklist C16)
             if isinstance(e.tag, str) and e.text == "NoStatus":
                 raise SystemExit(f"{flow_id} {n} {doc['doc']}: {etree.QName(e).localname} NoStatus states nothing "

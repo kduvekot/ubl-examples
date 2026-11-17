@@ -399,6 +399,12 @@ Inside `UpdatedPickupTransportEvent`:
   The collection as it happened.
 - `OccurrenceTime` = **15:05:00**  
   The local time.
+- `Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Location/Name` = **Castrano Logistics warehouse, Ferrano**  
+  At the 3PL's warehouse in Ferrano, where the boxes are packed.
+- `Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Updated Delivery Transport Event
 
@@ -408,6 +414,10 @@ Inside `UpdatedDeliveryTransportEvent`:
   The delivery as now expected.
 - `OccurrenceTime` = **09:30:00**  
   The local time.
+- `Location/ID` = **9520610900039** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-in: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Location/Name` = **Lumeway goods-in, Marrowdale**  
+  Where the goods are unloaded.
 
 ### Status Location
 
@@ -752,10 +762,23 @@ Inside `StatusPeriod`:
   <cac:UpdatedPickupTransportEvent>
     <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+    <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:Location>
   </cac:UpdatedPickupTransportEvent>
   <cac:UpdatedDeliveryTransportEvent>
     <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>09:30:00</cbc:OccurrenceTime>
+    <cac:Location>
+      <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
+      <cbc:Name>Lumeway goods-in, Marrowdale</cbc:Name>
+    </cac:Location>
   </cac:UpdatedDeliveryTransportEvent>
   <cac:StatusLocation>
     <cbc:Name>Trasvia Haulage</cbc:Name>

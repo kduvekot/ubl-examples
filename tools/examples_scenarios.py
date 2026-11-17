@@ -131,7 +131,9 @@ def road_stage(f, actual):
         stage["ActualDepartureTransportEvent"] = kit.event(f, 7, "16:20:00", "The truck left the warehouse.",
                                                            kit.place("XUFER", "Castrano Logistics warehouse."))
         stage["ExaminationTransportEvent"] = kit.event(f, 8, "07:45:00", "Customs looked at the seals at the border.",
-                                                       description="Seal check, no inspection of the goods.")
+                                                       description="Seal check, no inspection of the goods.",
+                                                       location={"Name": V("Road border crossing Urvania–Bayvarra",
+                                                                           "Where customs checked the seals.")})
     return stage
 
 
@@ -452,7 +454,8 @@ def road(n, doc):
                                "ID": V(f.numbers["consignment"], "The consignment carried, as the distributor numbered "
                                                                  "it when booking the truck."),
                                "ActualDeliveryTransportEvent": kit.event(f, 9, "09:40:00", "Delivered at dock 4: the "
-                                                                         "carriage invoiced is complete.")},
+                                                                         "carriage invoiced is complete.",
+                                                                         location=LUMEWAY_GOODS_IN)},
                                "GoodsItem": {"ID": V("1", "The benches carried."),
                                              "ReceiptLineReference": {
                                                  "LineID": V("1", "The line of the consignee's receipt advice."),
@@ -485,6 +488,15 @@ RAIL = kit.Flow("rail", "2026-04-06", [
 
 RAIL_BOXES = [kit.container_number("FRX", 104417), kit.container_number("FRX", 104418)]
 RAIL_SEALS = ["XU-VI-30411", "XU-VI-30412"]
+# where the rail flow's events happen (worklist C18): every event names its place
+LUMEWAY_GOODS_IN = {**kit.gln_location("6-xb", "goodsin"), "Name": V("Lumeway goods-in, Marrowdale", "Where the "
+                                                                      "goods are unloaded.")}
+RAIL_WAREHOUSE = kit.place("XUFER", "At the 3PL's warehouse in Ferrano, where the boxes are packed.",
+                           name="Castrano Logistics warehouse, Ferrano")
+RAIL_HUB = kit.place("XUFER", "At the intermodal hub, where the boxes go on the train.", name="Ferrano Intermodal Hub")
+RAIL_BORDER = {"Name": V("Rail border station Urvania–Bayvarra", "Where the train crosses the border.")}
+RAIL_SIDING = {**kit.gln_location("6-xb", "siding"), "Name": V("Lumeway rail siding, Marrowdale", "Where the boxes "
+                                                                 "are placed for unloading.")}
 
 
 def rail_container(f, k, full):
@@ -534,11 +546,11 @@ def rail_container(f, k, full):
         "UnloadingLocation": kit.place("XBMRW", "Unpacked at the distributor's siding."),
         "StorageLocation": {"Name": V("Ferrano Intermodal Hub, stack C", "Where the box waited for the train.")},
         "PositioningTransportEvent": kit.event(f, 6, "08:00:00", "The empty box was delivered to the warehouse "
-                                                                 "for packing."),
-        "PickupTransportEvent": kit.event(f, 7, "15:00:00", "Collected packed from the warehouse."),
-        "HandlingTransportEvent": kit.event(f, 7, "18:30:00", "Stacked at the hub overnight."),
-        "LoadingTransportEvent": kit.event(f, 8, "05:40:00", "Lifted onto the wagon."),
-        "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned arrival at the siding.", done=False),
+                                                                 "for packing.", location=RAIL_WAREHOUSE),
+        "PickupTransportEvent": kit.event(f, 7, "15:00:00", "Collected packed from the warehouse.", location=RAIL_WAREHOUSE),
+        "HandlingTransportEvent": kit.event(f, 7, "18:30:00", "Stacked at the hub overnight.", location=RAIL_HUB),
+        "LoadingTransportEvent": kit.event(f, 8, "05:40:00", "Lifted onto the wagon.", location=RAIL_HUB),
+        "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned arrival at the siding.", done=False, location=RAIL_SIDING),
         "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight for this box."),
                                    "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                    "AllowanceChargeReason": V("Rail freight per container", "In words."),
@@ -578,15 +590,15 @@ def rail_stage(f, actual):
                                       "What waiting costs."),
            "CrewQuantity": qty(2, "IE", "Two persons: a driver and a train manager."),
            "PassengerQuantity": qty(0, "IE", "No persons: a freight train carries no passengers."),
-           "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub."),
-           "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival in Marrowdale."),
-           "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning."),
-           "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "The arrival as expected.")}
+           "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub.", location=RAIL_HUB),
+           "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival in Marrowdale.", location=RAIL_SIDING),
+           "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning.", location=RAIL_HUB),
+           "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "The arrival as expected.", location=RAIL_SIDING)}
     if actual:
         out["ActualDepartureTransportEvent"] = kit.event(f, 8, "06:52:00", "The train left the hub.",
                                                          {"Name": V("Ferrano Intermodal Hub", "Where.")})
-        out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned passage of the border station.")
-        out["ActualWaypointTransportEvent"] = kit.event(f, 8, "13:20:00", "The train passed the border station.")
+        out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned passage of the border station.", location=RAIL_BORDER)
+        out["ActualWaypointTransportEvent"] = kit.event(f, 8, "13:20:00", "The train passed the border station.", location=RAIL_BORDER)
     return out
 
 
@@ -610,16 +622,16 @@ def rail_consignment(f, view):
            "ContainerizedIndicator": V("true", "Two full containers."),
            "SummaryDescription": V("192 park benches in two 40-foot containers.", "The goods in a few words.")}
     if view == "request":
-        out["RequestedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The boxes are packed by then.")
-        out["RequestedDeliveryTransportEvent"] = kit.event(f, 10, None, "The distributor expects them on day 10.")
+        out["RequestedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The boxes are packed by then.", location=RAIL_WAREHOUSE)
+        out["RequestedDeliveryTransportEvent"] = kit.event(f, 10, None, "The distributor expects them on day 10.", location=RAIL_SIDING)
         out["MainCarriageShipmentStage"] = {
             "ID": V("1", "The rail carriage asked for."),
-            "RequestedDepartureTransportEvent": kit.event(f, 8, "07:00:00", "The morning train from the hub."),
+            "RequestedDepartureTransportEvent": kit.event(f, 8, "07:00:00", "The morning train from the hub.", location=RAIL_HUB),
             "RequestedWaypointTransportEvent": kit.event(f, 8, None, "Via the border station, where the transit "
                                                                      "is checked.",
                                                          {"Name": V("Rail border station Urvania–Bayvarra", "The "
                                                                                                             "waypoint.")}),
-            "RequestedArrivalTransportEvent": kit.event(f, 9, None, "Arriving the next day.")}
+            "RequestedArrivalTransportEvent": kit.event(f, 9, None, "Arriving the next day.", location=RAIL_SIDING)}
         return out
     out["TransportContract"] = {"ID": V("FRC-CON-2026-005", "The framework contract for container slots."),
                                 "IssueDate": V("2026-01-05", "Signed at the start of the year."),
@@ -627,8 +639,10 @@ def rail_consignment(f, view):
     out["PrepaidPaymentTerms"] = {"Note": V("Freight prepaid by the consignor under DAP.", "The seller pays the "
                                                                                           "carriage.")}
     if view == "plan":
-        out["PlannedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The carrier collects the packed boxes.")
-        out["PlannedDeliveryTransportEvent"] = kit.event(f, 9, "11:00:00", "And places them at the siding.")
+        out["PlannedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The carrier collects the packed boxes.",
+                                                       location=RAIL_WAREHOUSE)
+        out["PlannedDeliveryTransportEvent"] = kit.event(f, 9, "11:00:00", "And places them at the siding.",
+                                                         location=RAIL_SIDING)
         out["MainCarriageShipmentStage"] = rail_stage(f, False)
         return out
     out.update({
@@ -696,15 +710,15 @@ def rail(n, doc):
                                              "ID": V("1", "The main carriage, by rail."),
                                              "ActualPickupTransportEvent": kit.event(f, 7, "15:00:00", "The boxes "
                                                                                      "were collected from the "
-                                                                                     "warehouse."),
+                                                                                     "warehouse.", location=RAIL_WAREHOUSE),
                                              "OptionalTakeoverTransportEvent": kit.event(
                                                  f, 8, "17:00:00", "If the morning train is full, the boxes go on the "
-                                                                   "evening train.", done=False),
+                                                                   "evening train.", done=False, location=RAIL_HUB),
                                              "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned "
                                                                                  "placement at the siding.",
-                                                                                 done=False),
+                                                                                 done=False, location=RAIL_SIDING),
                                              "TransportEvent": kit.event(f, 8, "05:40:00", "Both boxes lifted onto "
-                                                                                           "the train.", done=True)}}})
+                                                                                           "the train.", done=True, location=RAIL_HUB, type_code="LOADING")}}}, event_type="LOADING")
     if doc["doc"] == "Waybill":
         out = kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the containers.", w,
                           "The gross weight of the two containers' cargo.")
@@ -724,6 +738,10 @@ def rail(n, doc):
 
 
 # ---------------------------------------------------------------- the plastics flow (Urvania -> Bayvarra, barge, CPT)
+# where the barge's events happen (worklist C18)
+BARGE_QUAY = kit.place("XUFER", "At the recovery plant's own quay on the river.", name="Quay of Rinova Recovery, Ferrano")
+BARGE_BORDER = {"Name": V("River border Urvania–Bayvarra", "Where the barge leaves Urvania.")}
+BARGE_UNLOADING = {"Name": V("River quay, Lumeport", "The quay named in the CPT terms, where the bags are unloaded.")}
 PLASTICS = kit.Flow("plastics", "2026-04-13", [
     {"item": "granulate-pe", "ordered": 120, "why": "One barge load of recycled granulate in jumbo bags."}])
 
@@ -742,11 +760,11 @@ def barge_stage(f, actual):
            "EstimatedTransitPeriod": {"DurationMeasure": V("3", "Three days downstream, with the locks.",
                                                            unitCode="DAY")},
            "TakeoverTransportEvent": kit.event(f, 6, "09:00:00", "The barge operator takes over the bags at the "
-                                                                 "quay."),
-           "LoadingTransportEvent": kit.event(f, 6, "13:30:00", "Loading finished: 120 bags in the hold."),
-           "ExportationTransportEvent": kit.event(f, 7, "16:00:00", "The barge leaves Urvania at the river border."),
+                                                                 "quay.", location=BARGE_QUAY),
+           "LoadingTransportEvent": kit.event(f, 6, "13:30:00", "Loading finished: 120 bags in the hold.", location=BARGE_QUAY),
+           "ExportationTransportEvent": kit.event(f, 7, "16:00:00", "The barge leaves Urvania at the river border.", location=BARGE_BORDER),
            "DischargeTransportEvent": kit.event(f, 9, "08:00:00", "Planned unloading at the Lumeport quay.",
-                                                done=False)}
+                                                done=False, location=BARGE_UNLOADING)}
     return out
 
 
@@ -1145,6 +1163,11 @@ SCENARIOS.update({"rail": rail, "plastics": plastics, "retail": retail})
 
 
 # ---------------------------------------------------------------- the sea flow (Bayvarra -> Lisavu, CIF)
+# where the sea flow's events happen (worklist C18)
+SEA_LUMEPORT = kit.place("XBLMP", "At the container quay of the Port of Lumeport.")
+SEA_SELANU = kit.place("XLSEL", "At the Port of Selanu.")
+SEA_3PL = {"Name": V("Nalevi Warehousing, Selanu", "The 3PL's warehouse on the island, where the goods are received "
+                                                   "and stored.")}
 SEA = kit.Flow("sea", "2026-05-04", [
     {"item": "bench-serra-b", "ordered": 96, "why": "One 40-foot container: 24 pallets of 4 benches."},
     {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock.",
@@ -1310,7 +1333,7 @@ def sea_consignment(f, view):
             "CabotageIndicator": V("false", "A Bayvarran truck within Bayvarra: no cabotage."),
             "CarrierParty": party("10-xb", short=True),
             "TransportMeans": kit.means("10-xb", "B-05"),
-            "DropoffTransportEvent": kit.event(f, 9, "10:15:00", "The container was dropped at the container quay.")},
+            "DropoffTransportEvent": kit.event(f, 9, "10:15:00", "The container was dropped at the container quay.", location=SEA_LUMEPORT)},
         "MainCarriageShipmentStage": {
             "ID": V("2", "By sea from Lumeport to Selanu."),
             "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
@@ -1324,10 +1347,10 @@ def sea_consignment(f, view):
                                                                                  unitCode="MTR")}}},
             "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
             "UnloadingPortLocation": kit.place("XLSEL", "The port of discharge."),
-            "AcceptanceTransportEvent": kit.event(f, 9, "10:15:00", "The terminal accepted the container."),
+            "AcceptanceTransportEvent": kit.event(f, 9, "10:15:00", "The terminal accepted the container.", location=SEA_LUMEPORT),
             "AvailabilityTransportEvent": kit.event(f, 14, "14:00:00", "The container is available at Selanu.",
-                                                    done=False),
-            "StorageTransportEvent": kit.event(f, 9, "10:30:00", "Stacked at the quay until loading."),
+                                                    done=False, location=SEA_SELANU),
+            "StorageTransportEvent": kit.event(f, 9, "10:30:00", "Stacked at the quay until loading.", location=SEA_LUMEPORT),
             "FreightChargeLocation": kit.place("XBLMP", "The freight is payable in Lumeport.")},
         "OnCarriageShipmentStage": {
             "ID": V("3", "By truck from the port of Selanu to the 3PL."),
@@ -1335,8 +1358,8 @@ def sea_consignment(f, view):
                                                                  "Transport"),
             "OnCarriageIndicator": V("true", "After the main carriage."),
             "CarrierParty": party("9-xl", short=True),
-            "ReceiptTransportEvent": kit.event(f, 15, None, "Planned receipt at the 3PL.", done=False),
-            "WarehousingTransportEvent": kit.event(f, 15, None, "Stored at the 3PL until called off.", done=False)},
+            "ReceiptTransportEvent": kit.event(f, 15, None, "Planned receipt at the 3PL.", done=False, location=SEA_3PL),
+            "WarehousingTransportEvent": kit.event(f, 15, None, "Stored at the 3PL until called off.", done=False, location=SEA_3PL)},
         "InsurancePolicy": {"ID": V("WS-CP-26-4471", "The cargo policy of the insurer."),
                             "InsuranceTypeCode": V("ALLRISKS", "Cover against all risks."),
                             "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "110 % of the CIF "
@@ -1624,11 +1647,11 @@ def sea(n, doc):
                                          {"Consignment": {"MainCarriageShipmentStage": {
                                              "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
                                              "ActualDepartureTransportEvent": kit.event(f, 10, "18:10:00", "The ship "
-                                                                                        "sailed."),
+                                                                                        "sailed.", location=SEA_LUMEPORT),
                                              "SecurityOfficerPerson": kit.person("Tamsin", "Orrel", "The port "
                                                                                  "facility security officer who "
                                                                                  "cleared the loading.",
-                                                                                 job="Port facility security officer")}}})
+                                                                                 job="Port facility security officer")}}}, event_type="LOADING")
     if doc["doc"] == "BillOfLading":
         return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
                 "IssueDate": V(f.date(10), "Issued when the goods are shipped on board."),
@@ -1666,10 +1689,10 @@ def sea(n, doc):
                                  "MasterPerson": kit.person("Corin", "Halvard", "The master, who signs the manifest.",
                                                             role="MASTER"),
                                  "EstimatedArrivalTransportEvent": kit.event(f, 13, "22:00:00", "Expected off Selanu "
-                                                                                                "in the evening."),
+                                                                                                "in the evening.", location=SEA_SELANU),
                                  "EstimatedDepartureTransportEvent": kit.event(f, 11, "06:00:00", "The planned "
                                                                                                   "departure from "
-                                                                                                  "Lumeport.")},
+                                                                                                  "Lumeport.", location=SEA_LUMEPORT)},
                              "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, False)}}}
     if doc["doc"] == "CommonTransportationReport":
         return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
@@ -1692,12 +1715,12 @@ def sea(n, doc):
                                          "Port of Selanu", {"Consignment": {"MainCarriageShipmentStage": {
                                              "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
                                              "ActualArrivalTransportEvent": kit.event(f, 14, "06:30:00", "The ship "
-                                                                                      "berthed at Selanu."),
+                                                                                      "berthed at Selanu.", location=SEA_SELANU),
                                              "DischargeTransportEvent": kit.event(f, 14, "11:20:00", "The container "
-                                                                                  "came off the ship.", done=True),
+                                                                                  "came off the ship.", done=True, location=SEA_SELANU),
                                              "DetentionTransportEvent": kit.event(
                                                  f, 14, "12:00:00", "Held by customs for a check of the pallets.",
-                                                 description="Wooden pallets must carry the heat-treatment mark."),
+                                                 description="Wooden pallets must carry the heat-treatment mark.", location=SEA_SELANU),
                                              "ReportingPerson": kit.person("Ama", "Kelune", "The terminal's duty "
                                                                            "officer who reports.", job="Duty "
                                                                            "officer")},
@@ -1705,7 +1728,7 @@ def sea(n, doc):
                                                  "ID": V(CONTAINER, "The container.", schemeID="ISO6346"),
                                                  "QuarantineTransportEvent": kit.event(
                                                      f, 14, "15:00:00", "Released from the quarantine check: all "
-                                                     "pallets heat-treated.", done=True),
+                                                     "pallets heat-treated.", done=True, location=SEA_SELANU),
                                                  "ServiceAllowanceCharge": {
                                                      "ChargeIndicator": V("true", "A service charge."),
                                                      "AllowanceChargeReasonCode": V("HD", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
@@ -1714,7 +1737,7 @@ def sea(n, doc):
                                                      "Amount": amount(Decimal("185.00"), "XBL", "As in the carrier's "
                                                                                                 "tariff.")},
                                                  "TransportEvent": kit.event(f, 14, "11:40:00", "Stacked in the "
-                                                                                                "import yard.")}}}})
+                                                                                                "import yard.", location=SEA_SELANU, type_code="STORAGE")}}}}, event_type="DISCHARGE")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return kit.invoice(f, n, doc, 15, 30, "Issued after the sailing.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
@@ -1924,7 +1947,7 @@ def air_consignment(f, doc):
             "ConsignmentQuantity": qty(1, "EA", "One consignment."),
             "FreightForwarderParty": party("10-xb", short=True),
             "TransportEvent": kit.event(f, 2, "19:00:00", "Latest acceptance at the cargo terminal for the morning "
-                                                          "flight.", done=False),
+                                                          "flight.", done=False, location=kit.place("XBLMA", "The cargo terminal at Lumeport airport."), type_code="ACCEPTANCE"),
             "TransportHandlingUnit": {
                 "ID": kit.unit_id("6-xb", f, 1, "The skid the boxes are strapped to"),
                 "TransportHandlingUnitTypeCode": V("SI", "UN/ECE Recommendation 21 code SI: skid."),
@@ -2038,14 +2061,14 @@ def air(n, doc):
                 "LoadingPortLocation": kit.place("XBLMA", "The airport of departure."),
                 "UnloadingPortLocation": kit.place("XLSLA", "The airport of destination."),
                 "RequestedDepartureTransportEvent": kit.event(f, 3, "07:00:00", "The forwarder asked for the morning "
-                                                                                "flight."),
-                "RequestedArrivalTransportEvent": kit.event(f, 3, "10:00:00", "Arriving before the 3PL's cut-off.")}})
+                                                                                "flight.", location=kit.place("XBLMA", "The airport of departure.")),
+                "RequestedArrivalTransportEvent": kit.event(f, 3, "10:00:00", "Arriving before the 3PL's cut-off.", location=kit.place("XLSLA", "The airport of destination."))}})
         return out
     if doc["doc"] == "TransportationStatus" and doc["from"] == "17-xb":
         return kit.transportation_status(f, n, doc, 2, "Reported when the cargo is built up for the flight.",
                                          "Cargo accepted and built up for the flight.", "Lumeport airport, cargo "
                                                                                         "terminal",
-                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}})
+                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}}, event_type="ACCEPTANCE")
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 2, "Sent to the buyer's 3PL when the cargo leaves.",
                                    "The gross weight of the boxed frames.")
@@ -2053,7 +2076,7 @@ def air(n, doc):
         return kit.transportation_status(f, n, doc, 3, "Reported when the cargo has landed.",
                                          "Cargo arrived and ready for customs clearance.", "Selanu airport, cargo "
                                                                                           "terminal",
-                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}})
+                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}}, event_type="ARRIVAL")
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 4, 30, "Issued after the flight.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The air waybill.")}},
@@ -3588,7 +3611,9 @@ def sea(n, doc):
                               "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
                                                                                         "Codes for Modes of "
                                                                                         "Transport")},
-            "TransportEvent": kit.event(f, 10, "18:00:00", "The next departure from Lumeport.", done=False),
+            "TransportEvent": kit.event(f, 10, "18:00:00", "The next departure from Lumeport.", done=False,
+                                      location=kit.place("XBLMP", "The port the service sails from."),
+                                      type_code="DEPARTURE"),
             "ResponsibleTransportServiceProviderParty": party("11-xb", short=True),
             "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases."),
                                       "ValueMeasure": V("380", "Per 40-foot container on the crossing.",
@@ -4261,8 +4286,10 @@ def status_extras(f, n, doc, out):
         x["TransportationStatusRequestDocumentReference"] = {"ID": V(f.numbers["ts-request"], "The request "
                                                                                               "answered.")}
     if f.id == "road":
-        x["UpdatedDeliveryTransportEvent"] = kit.event(f, 9, "09:30:00", "The delivery as now expected.")
-        x["UpdatedPickupTransportEvent"] = kit.event(f, 7, "15:05:00", "The collection as it happened.")
+        x["UpdatedDeliveryTransportEvent"] = kit.event(f, 9, "09:30:00", "The delivery as now expected.",
+                                                       location=LUMEWAY_GOODS_IN)
+        x["UpdatedPickupTransportEvent"] = kit.event(f, 7, "15:05:00", "The collection as it happened.",
+                                                     location=RAIL_WAREHOUSE)
     return x
 
 
@@ -4308,16 +4335,16 @@ def _(f, n, doc, out):
                                   "ReliabilityPercent": V("95", "How sure the schedule is."),
                                   "Remarks": V("On time.", "The status."),
                                   "StatusLocation": {"Name": V("Ferrano Intermodal Hub", "The stop.")},
-                                  "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable."),
-                                  "ActualDepartureTransportEvent": kit.event(f, 8, "06:52:00", "The departure."),
+                                  "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable.", location=RAIL_HUB),
+                                  "ActualDepartureTransportEvent": kit.event(f, 8, "06:52:00", "The departure.", location=RAIL_HUB),
                                   "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "Expected in "
-                                                                                                "Marrowdale."),
-                                  "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable."),
+                                                                                                "Marrowdale.", location=RAIL_SIDING),
+                                  "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable.", location=RAIL_SIDING),
                                   "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "As expected "
-                                                                                                  "that morning."),
+                                                                                                  "that morning.", location=RAIL_HUB),
                                   "ActualArrivalTransportEvent": kit.event(f, 8, "05:30:00", "The train arrived "
                                                                                              "at the hub for "
-                                                                                             "loading.")}}
+                                                                                             "loading.", location=RAIL_HUB)}}
 
 
 @enrich("rail", "GoodsItemItinerary")
@@ -8405,7 +8432,10 @@ def retail_complete(n, doc):
              "TransportationStatusTypeCode": V("CURRENT", "The current status."),
              "UpdatedDeliveryTransportEvent": {"OccurrenceDate": V(f.date(9), "Today."),
                                                "OccurrenceTime": V("14:00:00", "The expected arrival."),
-                                               "Description": V("Expected arrival at the store.", "In words.")}})
+                                               "Description": V("Expected arrival at the store.", "In words."),
+                                               "Location": {**kit.gln_location("26-xb", "goods-in"),
+                                                            "Name": V("Goods-in of the Lumeport store", "Where "
+                                                                      "the truck is expected.")}}}, event_type="ENROUTE")
     return retail(n, doc)
 
 

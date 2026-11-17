@@ -282,7 +282,17 @@
       <cac:TransportEvent>
         <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>19:00:00</cbc:OccurrenceTime>
+        <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Name>Lumeport airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:TransportEvent>
       <cac:TransportHandlingUnit>
         <cbc:ID schemeID="GS1 SSCC">095206103190000015</cbc:ID>

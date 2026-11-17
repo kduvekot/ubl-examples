@@ -306,6 +306,10 @@ Inside `Delivery`:
   Delivered at dock 4: the carriage invoiced is complete.
 - `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceTime` = **09:40:00**  
   The local time.
+- `Shipment/Consignment/ActualDeliveryTransportEvent/Location/ID` = **9520610900039** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-in: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Shipment/Consignment/ActualDeliveryTransportEvent/Location/Name` = **Lumeway goods-in, Marrowdale**  
+  Where the goods are unloaded.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
@@ -740,6 +744,10 @@ Inside `InvoiceLine`:
         <cac:ActualDeliveryTransportEvent>
           <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>09:40:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
+            <cbc:Name>Lumeway goods-in, Marrowdale</cbc:Name>
+          </cac:Location>
         </cac:ActualDeliveryTransportEvent>
         <cac:CarrierParty>
           <cac:PartyIdentification>

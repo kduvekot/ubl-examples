@@ -188,6 +188,7 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
     <cac:Location>
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>

@@ -600,6 +600,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D27 (a time carries its offset from UTC, at least where a document crosses the zone boundary, O78).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): every transport event names its place (the leg's warehouse, hub, border station, quay, port, airport or the receiver's goods-in, with a UN/LOCODE-form code or a GLN where the world has one), and an event in the generic `TransportEvent` carries a type code; `transportation_status()` requires one. The world's event-type list gains `ACCEPTANCE`, `LOADING`, `DISCHARGE`, `ENROUTE` and `STORAGE` (O146). The build rejects an event without a place, or a generic one without a type. Places get their identifiers from the place list (O91).
 - Findings: air: 03#F6, 05#F3, 09#F4; plastics: 04#F22, 06#F20; rail: 02#F7, 03#F19, 07#F3, 07#F6, 08#F11, 09#F3; retail: 15#F5; road: 08#F27; sea: 08#F8, 13#F5, 14#F18, 16#F19, 17#F4, 17#F5
 
 ### C19 · Framework transport-plan clauses and periods mis-encoded

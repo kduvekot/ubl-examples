@@ -359,8 +359,16 @@ Inside `Shipment`:
   Latest acceptance at the cargo terminal for the morning flight.
 - `Consignment/TransportEvent/OccurrenceTime` = **19:00:00**  
   The local time.
+- `Consignment/TransportEvent/TransportEventTypeCode` = **ACCEPTANCE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
 - `Consignment/TransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
+- `Consignment/TransportEvent/Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/TransportEvent/Location/Name` = **Lumeport airport**  
+  The cargo terminal at Lumeport airport.
+- `Consignment/TransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/TransportHandlingUnit/ID` = **095206103190000015** (schemeID `GS1 SSCC`)  
   The skid the boxes are strapped to: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **SI** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -749,7 +757,17 @@ Inside `Signature`:
       <cac:TransportEvent>
         <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>19:00:00</cbc:OccurrenceTime>
+        <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Name>Lumeport airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:TransportEvent>
       <cac:TransportHandlingUnit>
         <cbc:ID schemeID="GS1 SSCC">095206103190000015</cbc:ID>

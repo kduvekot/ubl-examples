@@ -1712,7 +1712,11 @@
     "took": "hangaz",
     "bagged": "hadrek",
     "domestic": "tehaz",
-    "advice": "hurgir"
+    "advice": "hurgir",
+    "discharged": "skurtrir",
+    "en": "zersul",
+    "route": "zhuvir",
+    "stored": "ginstek"
    }
   },
   "qal": {
@@ -2807,7 +2811,11 @@
     "took": "kakena",
     "bagged": "kufeke",
     "domestic": "nalesa",
-    "advice": "lakika"
+    "advice": "lakika",
+    "discharged": "kilulilo",
+    "en": "hanesi",
+    "route": "pounu",
+    "stored": "lusii"
    }
   },
   "en": {

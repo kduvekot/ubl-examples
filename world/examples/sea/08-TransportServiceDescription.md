@@ -342,8 +342,16 @@ Inside `TransportationService`:
   The next departure from Lumeport.
 - `TransportEvent/OccurrenceTime` = **18:00:00**  
   The local time.
+- `TransportEvent/TransportEventTypeCode` = **DEPARTURE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: DEPARTURE = Departure.
 - `TransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
+- `TransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `TransportEvent/Location/Name` = **Port of Lumeport**  
+  The port the service sails from.
+- `TransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ResponsibleTransportServiceProviderParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ResponsibleTransportServiceProviderParty/PartyName/Name` = **Tidewell Ocean Lines**  
@@ -624,7 +632,17 @@ Inside `TransportationService`:
     <cac:TransportEvent>
       <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+      <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DEPARTURE</cbc:TransportEventTypeCode>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:TransportEvent>
     <cac:ResponsibleTransportServiceProviderParty>
       <cac:PartyIdentification>

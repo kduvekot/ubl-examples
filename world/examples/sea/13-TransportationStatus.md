@@ -255,6 +255,12 @@ Inside `Consignment`:
   The ship sailed.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **18:10:00**  
   The local time.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `MainCarriageShipmentStage/SecurityOfficerPerson/FirstName` = **Tamsin**  
   The port facility security officer who cleared the loading.
 - `MainCarriageShipmentStage/SecurityOfficerPerson/FamilyName` = **Orrel**  
@@ -268,6 +274,8 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-05-14**  
   The day the event took place.
+- `TransportEventTypeCode` = **LOADING** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: LOADING = Loaded.
 - `Description` = **Container TWLU4120872 loaded on board.**  
   What happened, in words.
 - `Location/Name` = **Port of Lumeport, container quay**  
@@ -608,6 +616,15 @@ Inside `StatusPeriod`:
       <cac:ActualDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>18:10:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:ActualDepartureTransportEvent>
       <cac:SecurityOfficerPerson>
         <cbc:FirstName>Tamsin</cbc:FirstName>
@@ -618,6 +635,7 @@ Inside `StatusPeriod`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
     <cac:Location>
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>

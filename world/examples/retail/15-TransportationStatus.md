@@ -44,6 +44,8 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-04-29**  
   The day the event took place.
+- `TransportEventTypeCode` = **ENROUTE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ENROUTE = En route.
 - `Description` = **On its way from the distribution centre; arrival expected at 14:00.**  
   What happened, in words.
 - `Location/Name` = **Marrowdale ring road**  
@@ -278,6 +280,10 @@ Inside `UpdatedDeliveryTransportEvent`:
   The expected arrival.
 - `Description` = **Expected arrival at the store.**  
   In words.
+- `Location/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Location/Name` = **Goods-in of the Lumeport store**  
+  Where the truck is expected.
 
 ## The document
 
@@ -299,6 +305,7 @@ Inside `UpdatedDeliveryTransportEvent`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ENROUTE</cbc:TransportEventTypeCode>
     <cbc:Description>On its way from the distribution centre; arrival expected at 14:00.</cbc:Description>
     <cac:Location>
       <cbc:Name>Marrowdale ring road</cbc:Name>
@@ -488,6 +495,10 @@ Inside `UpdatedDeliveryTransportEvent`:
     <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
     <cbc:Description>Expected arrival at the store.</cbc:Description>
+    <cac:Location>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+      <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+    </cac:Location>
   </cac:UpdatedDeliveryTransportEvent>
 </TransportationStatus>
 ```

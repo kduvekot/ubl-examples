@@ -241,6 +241,10 @@
         <cac:ActualDeliveryTransportEvent>
           <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>09:40:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
+            <cbc:Name>Lumeway goods-in, Marrowdale</cbc:Name>
+          </cac:Location>
         </cac:ActualDeliveryTransportEvent>
         <cac:CarrierParty>
           <cac:PartyIdentification>

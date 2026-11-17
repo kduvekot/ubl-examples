@@ -296,9 +296,22 @@
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:RequestedPickupTransportEvent>
     <cac:RequestedDeliveryTransportEvent>
       <cbc:OccurrenceDate>2026-04-16</cbc:OccurrenceDate>
+      <cac:Location>
+        <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+        <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+      </cac:Location>
     </cac:RequestedDeliveryTransportEvent>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -406,9 +419,22 @@
       <cac:RequestedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:RequestedDepartureTransportEvent>
       <cac:RequestedArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+          <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+        </cac:Location>
       </cac:RequestedArrivalTransportEvent>
       <cac:RequestedWaypointTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>

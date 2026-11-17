@@ -476,10 +476,28 @@
         <cac:RequestedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+            <cbc:Name>Lumeport airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:RequestedDepartureTransportEvent>
         <cac:RequestedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+            <cbc:Name>Selanu airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:RequestedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
     </cac:Consignment>

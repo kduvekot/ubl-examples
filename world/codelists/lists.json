@@ -1102,6 +1102,26 @@
     "DELIVERY": [
      "Delivery",
      "The goods are delivered."
+    ],
+    "ACCEPTANCE": [
+     "Accepted",
+     "The carrier or the terminal accepts the goods for carriage."
+    ],
+    "LOADING": [
+     "Loaded",
+     "The goods are loaded onto the means of transport."
+    ],
+    "DISCHARGE": [
+     "Discharged",
+     "The goods are unloaded from the means of transport."
+    ],
+    "ENROUTE": [
+     "En route",
+     "The goods are on their way between two places."
+    ],
+    "STORAGE": [
+     "Stored",
+     "The goods are put in a store or a yard to wait for the next step."
     ]
    }
   },

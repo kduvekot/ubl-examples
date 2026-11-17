@@ -216,26 +216,70 @@
     <cac:ActualArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>05:30:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:ActualArrivalTransportEvent>
     <cac:ActualDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:ActualDepartureTransportEvent>
     <cac:EstimatedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:EstimatedDepartureTransportEvent>
     <cac:EstimatedArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+        <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+      </cac:Location>
     </cac:EstimatedArrivalTransportEvent>
     <cac:PlannedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:Location>
     </cac:PlannedDepartureTransportEvent>
     <cac:PlannedArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+        <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+      </cac:Location>
     </cac:PlannedArrivalTransportEvent>
   </cac:TransportSchedule>
 </TransportProgressStatus>
