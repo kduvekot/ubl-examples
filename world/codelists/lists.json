@@ -257,8 +257,8 @@
      "Goods sent to a buyer outside Urvania; the export is evidenced by the customs declaration."
     ],
     "SVCABROAD": [
-     "Service to a business established outside Urvania",
-     "The service is taxed where the customer is established."
+     "Service supplied outside Urvania",
+     "A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax (decision D17, which widened \"a service to a business established outside Urvania\")."
     ],
     "HEALTH": [
      "Medical care",

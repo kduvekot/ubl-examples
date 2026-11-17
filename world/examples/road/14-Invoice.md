@@ -374,12 +374,10 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
+  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service to a business established outside Urvania.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
   The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
@@ -418,12 +416,10 @@ Inside `InvoiceLine`:
 - `Item/SellersItemIdentification/ID` = **TH-FTL**  
   The seller's own item number; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
+  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service to a business established outside Urvania.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
   The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
@@ -732,9 +728,8 @@ Inside `InvoiceLine`:
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -761,9 +756,8 @@ Inside `InvoiceLine`:
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>

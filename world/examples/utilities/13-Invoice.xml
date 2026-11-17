@@ -213,28 +213,7 @@
     <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
     <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
     <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:Name>No general sales tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">135.566</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
@@ -260,14 +239,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>ST-BL</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
@@ -291,14 +262,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>ST-GB</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>

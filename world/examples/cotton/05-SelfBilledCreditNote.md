@@ -28,8 +28,6 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-02-16**  
   Set off on the day of payment.
-- `TaxPointDate` = **2026-02-14**  
-  The day the withholding becomes due.
 - `CreditNoteTypeCode` = **261** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 261, "A document which indicates that the customer is claiming credit in a self billing environment": the customer corrects its own self-billed invoice. It repeats what the root SelfBilledCreditNote already says, but its definition is exact; 381, the supplier's credit note, would not be. The code is from the world's copy of UN/EDIFACT 1001 Document name: 261 = Self billed credit note.
 - `Note` = **Lakau-votee tetela tamasu tilala kimii mitavema.** (languageID `qal`)  
@@ -442,29 +440,6 @@ Inside `AllowanceCharge`:
   The farm bears the classing of its cotton, as the agreement says.
 - `Amount` = **5.000** (currencyID `XLC`)  
   The chamber's fee for the lot.
-- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
-
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.000** (currencyID `XLC`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **70.000** (currencyID `XLC`)  
-  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
-- `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 
 ### Withholding Tax Total
 
@@ -482,7 +457,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxExclusiveAmount` = **70.000** (currencyID `XLC`)  
   The credit less the fee.
 - `TaxInclusiveAmount` = **70.000** (currencyID `XLC`)  
-  No tax on the island.
+  The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `AllowanceTotalAmount` = **5.000** (currencyID `XLC`)  
   The classing fee the farm bears.
 - `WithholdingTaxTotalAmount` = **1.500** (currencyID `XLC`)  
@@ -535,14 +510,6 @@ Inside `CreditNoteLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
-- `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **0.03** (currencyID `XLC`)  
   The price difference between the agreed grade and the lower grade, per kilogram.
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
@@ -562,7 +529,6 @@ Inside `CreditNoteLine`:
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:IssueTime>13:28:00</cbc:IssueTime>
   <cbc:DueDate>2026-02-16</cbc:DueDate>
-  <cbc:TaxPointDate>2026-02-14</cbc:TaxPointDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">261</cbc:CreditNoteTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tetela tamasu tilala kimii mitavema.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed credit note under the season agreement.</cbc:Note>
@@ -853,28 +819,7 @@ Inside `CreditNoteLine`:
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:Name>No general sales tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">70.000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:WithholdingTaxTotal>
     <cbc:TaxAmount currencyID="XLC">1.500</cbc:TaxAmount>
   </cac:WithholdingTaxTotal>
@@ -922,14 +867,6 @@ Inside `CreditNoteLine`:
         <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.03</cbc:PriceAmount>

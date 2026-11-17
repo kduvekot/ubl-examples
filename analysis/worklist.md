@@ -997,6 +997,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: In `tax_rule()` and `tax_category()`, write no tax section and no line tax category for a Lisavan seller (the presumptive tax keeps its `WithholdingTaxTotal`) and no percent on `O`. `TaxScheme/TaxTypeCode` keeps its coverage through the withholding scheme `INCOME` of D17 (O45, settled).
 - Depends on / blocks: none
 - State: ready in part: 22 findings ready; the six levy findings (utilities/06#F4, 06#F5, 09#F8, 09#F9, 11#F6, 11#F7) wait for D31 (O16: D15 leaves the levy to D31 and D17, and D17 does not settle it); sea/28#F15 waits for D30 (O6).
+- Fixed (2026-11-17, stage 2, 22 findings): a Lisavan seller's document has no tax section: no `TaxTotal`, no tax category on lines, items or charges, no tax scheme, no tax point date; its totals with and without tax are the same and say why (`untaxed_sales()` in `tools/build_examples.py`); the presumptive tax keeps its `WithholdingTaxTotal`, the customs declarations their duties. Category `O` carries no `Percent` anywhere (`tax_category()` in `tools/examples_kit.py`). The scheme "No general sales tax" is gone, except in sea/28, which waits for D30 (O6); the six levy findings wait for D31 (O16).
 - Findings: cotton: 01#F2, 01#F8, 01#F9, 04#F6, 04#F21, 04#F22, 05#F7, 05#F22, 05#F23, 08#F2, 08#F11, 08#F12, 08#F13, 16#F2, 16#F4, 16#F5; road: 14#F12; sea: 28#F15, 29#F2, 29#F13; utilities: 06#F4, 06#F5, 09#F8, 09#F9, 11#F6, 11#F7, 12#F17, 13#F7, 13#F8
 
 ### C51 · Contract payment terms never applied by the invoices under the contract
@@ -1044,6 +1045,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The story rule of `note/src/03-world.md` stands, as D17 decides.
 - State: ready in part: 7 findings ready; tender/34#F7, 34#F8 and 34#F10 wait for D28 (tender/34 is re-homed, O6; D17: nothing is withheld on a penalty).
+- Fixed (2026-11-17, stage 2, 7 findings): the withholding scheme is named for what it is, payments by public bodies to non-resident businesses, with `TaxTypeCode` `INCOME` (`withholding_scheme()` in `tools/examples_scenarios.py`); the tax representative carries its registration with the Bayvarran tax office (`tax_representative()`) on the invoice and the credit note, and is gone from the reminder; the credit note's withholding has its subtotal; the reminder no longer lists the withholding as a prepaid payment but says in its note that the balance is net of it; `SVCABROAD` means a service supplied outside Urvania (O47). tender/34 waits for D28.
 - Findings: tender: 32#F15, 33#F15, 33#F16, 34#F7, 34#F8, 34#F10, 35#F4, 35#F10; consistency: conditions#F4, conditions#F8
 
 ### C55 · Standard terms IDs that do not mean the same number of days everywhere

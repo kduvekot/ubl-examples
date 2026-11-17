@@ -308,23 +308,6 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
   Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.000** (currencyID `XLC`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **6055.452** (currencyID `XLC`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
-
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
@@ -334,7 +317,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxExclusiveAmount` = **6055.452** (currencyID `XLC`)  
   The total without tax: the line amounts, no allowances or charges.
 - `TaxInclusiveAmount` = **6055.452** (currencyID `XLC`)  
-  The total without tax plus the tax.
+  The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `PayableAmount` = **6055.452** (currencyID `XLC`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
@@ -370,14 +353,6 @@ Inside `InvoiceLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
-- `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Item/AdditionalItemProperty/Name` = **Grade**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Middling**  
@@ -646,20 +621,6 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">6055.452</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">6055.452</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XLC">6055.452</cbc:TaxExclusiveAmount>
@@ -690,14 +651,6 @@ Inside `InvoiceLine`:
         <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
       <cac:AdditionalItemProperty>
         <cbc:Name>Grade</cbc:Name>
         <cbc:Value>Middling</cbc:Value>

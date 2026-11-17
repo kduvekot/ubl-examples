@@ -446,8 +446,6 @@ Inside `TaxTotal`:
   No tax: the island has no sales tax.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   Lisavu has no sales tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
   Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 
@@ -881,7 +879,6 @@ Inside `DebitNoteLine`:
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>

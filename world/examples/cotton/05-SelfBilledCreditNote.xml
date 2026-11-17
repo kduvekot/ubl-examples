@@ -9,7 +9,6 @@
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:IssueTime>13:28:00</cbc:IssueTime>
   <cbc:DueDate>2026-02-16</cbc:DueDate>
-  <cbc:TaxPointDate>2026-02-14</cbc:TaxPointDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">261</cbc:CreditNoteTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tetela tamasu tilala kimii mitavema.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed credit note under the season agreement.</cbc:Note>
@@ -300,28 +299,7 @@
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:Name>No general sales tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">70.000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:WithholdingTaxTotal>
     <cbc:TaxAmount currencyID="XLC">1.500</cbc:TaxAmount>
   </cac:WithholdingTaxTotal>
@@ -369,14 +347,6 @@
         <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.03</cbc:PriceAmount>

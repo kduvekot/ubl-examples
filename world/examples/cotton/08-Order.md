@@ -181,25 +181,6 @@ Inside `DestinationCountry`:
 - `IdentificationCode` = **XB** (listID `ISO 3166`)  
   The bales go to Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.000** (currencyID `XLC`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **6055.452** (currencyID `XLC`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
-- `TaxSubtotal/TaxCategory/TaxScheme/TaxTypeCode` = **CONSUMPTION** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
-  The import consumption tax is a tax on consumption. The code is from the Trade Accord's tax type list: CONSUMPTION = Tax on consumption.
-
 ### Anticipated Monetary Total
 
 Inside `AnticipatedMonetaryTotal`:
@@ -411,21 +392,6 @@ Inside `OrderLine`:
   <cac:DestinationCountry>
     <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
   </cac:DestinationCountry>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">6055.452</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">6055.452</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XLC">6055.452</cbc:PayableAmount>

@@ -385,8 +385,6 @@ Inside `TaxTotal`:
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **LEVY** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: LEVY = Levy collected for a public body.
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
@@ -441,8 +439,6 @@ Inside `CollectionInvoiceLine`:
   The seller's own item number; item sewage-levy of Coastal State Water Company (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **LEVY** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: LEVY = Levy collected for a public body.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
@@ -803,7 +799,6 @@ Inside `InvoiceLine`:
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
@@ -846,7 +841,6 @@ Inside `InvoiceLine`:
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>

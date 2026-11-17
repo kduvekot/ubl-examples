@@ -2384,6 +2384,29 @@ def TO_FERRA(day):
             "Date": V(day, "The rate of the document's date.")}
 
 
+def withholding_scheme():
+    """Bayvarra's withholding on payments by public bodies to non-resident businesses (D17, O47): a tax on the
+    supplier's income, which the paying body keeps back and pays to the state."""
+    return {"ID": V("OTH", "UN/EDIFACT 5153 code OTH: other taxes, the withholding tax."),
+            "Name": V("Withholding tax on payments by public bodies to non-resident businesses", "The tax in words: "
+                      "it applies only where a public body pays a business not established in Bayvarra (D17)."),
+            "TaxTypeCode": V("INCOME", "A tax on the supplier's income, not on the supply: the public body keeps it "
+                                       "back from the payment.")}
+
+
+def tax_representative():
+    """Bayforth Forwarding, the manufacturer's tax representative in Bayvarra, with its registration with the
+    Bayvarran tax office for the withholding it accounts for (D17, O47)."""
+    rep = party("10-xb", short=True)
+    rep["PartyTaxScheme"] = {"RegistrationName": V(build_examples.legal_name("10-xb"), "The representative's "
+                                                   "registered name."),
+                             "CompanyID": V(PARTY["10-xb"]["identity"]["tax_id"], "The representative's number with "
+                                            "Bayvarra's tax office, under which it accounts for the withholding of "
+                                            "the non-resident manufacturer it represents."),
+                             "TaxScheme": withholding_scheme()}
+    return rep
+
+
 def withholding(f, out):
     """Bayvarra's withholding on services of non-resident businesses to public bodies (world/countries.json): the
     department keeps 10 % of the installation and pays it to the state; the supplier's tax representative."""
@@ -2392,8 +2415,7 @@ def withholding(f, out):
     base = Decimal(line["LineExtensionAmount"].value)
     tax = money(base * Decimal(wh["percent"]) / 100, "XBL")
     cat = {"ID": V("S", "The withholding applies."), "Percent": V(wh["percent"], wh["on"]),
-           "TaxScheme": {"ID": V("OTH", "UN/EDIFACT 5153 code OTH: other taxes, the withholding tax."),
-                         "Name": V("Withholding tax on services of non-residents", "The tax in words.")}}
+           "TaxScheme": withholding_scheme()}
     total = {"TaxAmount": amount(tax, "XBL", f"{wh['percent']} % of the installation."),
              "TaxSubtotal": {"TaxableAmount": amount(base, "XBL", "The installation, the only service."),
                              "TaxAmount": amount(tax, "XBL", "Withheld."), "TaxCategory": cat}}
@@ -2404,7 +2426,7 @@ def withholding(f, out):
     payable = Decimal(lmt["PayableAmount"].value) - tax
     lmt["PayableAmount"] = amount(payable, "XBL", "What the department pays the manufacturer: the total less the tax "
                                                   "it withholds.")
-    out["TaxRepresentativeParty"] = party("10-xb", short=True)
+    out["TaxRepresentativeParty"] = tax_representative()
     out["Note"] = V("Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.", "Why it is "
                                                                                                       "named.")
     f.numbers["invoice-amount"] = payable
@@ -6125,15 +6147,21 @@ def tender_with_credit(n, doc):
                                                                                  "bench.")},
                 "WorkReportDocumentReference": {"ID": V("VI-WR-26-0080", "The installation report.")},
                 "PurchaseReference": {"ID": V("PARK-HB", "The harbour park.")},
-                "TaxRepresentativeParty": party("10-xb", short=True),
+                "TaxRepresentativeParty": tax_representative(),
                 "TaxExchangeRate": {"SourceCurrencyCode": V("XBL", "The credit's currency."),
                                     "TargetCurrencyCode": V("XUF", "The tax currency."),
                                     "CalculationRate": V("100", "1 lume = 100 ferra.")},
                 "PricingExchangeRate": PRICING_RATE,
                 "PaymentExchangeRate": TO_FERRA(f.date(82)),
-                "WithholdingTaxTotal": {"TaxAmount": amount(Decimal("1.80"), "XBL", "The withholding on the "
-                                                                                   "credited installation, "
-                                                                                   "reversed.")}})
+                "WithholdingTaxTotal": {
+                    "TaxAmount": amount(Decimal("1.80"), "XBL", "The withholding on the credited installation, "
+                                                               "reversed."),
+                    "TaxSubtotal": {"TaxableAmount": amount(Decimal("18.00"), "XBL", "The installation credited."),
+                                    "TaxAmount": amount(Decimal("1.80"), "XBL", "10 % of it, no longer withheld."),
+                                    "TaxCategory": {"ID": V("S", "The withholding applies."),
+                                                    "Percent": V(WORLD["countries"]["XB"]["tax"]["withholding"]
+                                                                 ["percent"], "The rate, as on the invoice."),
+                                                    "TaxScheme": withholding_scheme()}}}})
     lmt = out["LegalMonetaryTotal"]
     gross = Decimal(lmt["PayableAmount"].value)
     lmt["WithholdingTaxTotalAmount"] = amount(Decimal("1.80"), "XBL", "The department had withheld this on the "
@@ -8091,8 +8119,10 @@ def tender_complete(n, doc):
                 "IssueDate": V(f.date(113), "Five days after the due date."),
                 "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
-                "Note": V("The balance of the first release is overdue; Urvania's statutory interest applies.",
-                          "What it says."),
+                "Note": V("The balance of the first release is overdue; Urvania's statutory interest applies. "
+                          f"The balance is net of the {withheld} lume the department withheld and paid to the "
+                          "state (receipt XB-WHT-26-04-1187).", "What it says, and why the withholding is not "
+                                                                "reminded: it is already deducted (tender/35#F4)."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoice"),
                 **tender_currencies(f, 113),
                 "PaymentCurrencyCode": V("XUF", "Payment in ferra, as for the invoice."),
@@ -8106,17 +8136,10 @@ def tender_complete(n, doc):
                 "ReminderPeriod": {"StartDate": V(f.date(109), "Overdue from the day after the due date"),
                                    "EndDate": V(f.date(113), "to the reminder.")},
                 "Signature": seal("5-xu", "VI-SIG-REM"),
-                "TaxRepresentativeParty": party("10-xb", short=True),
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account.")},
                 "PaymentTerms": {"Note": V("Please pay within seven days.", "What is asked."),
                                  "PaymentDueDate": V(f.date(120), "A week after the reminder.")},
-                "PrepaidPayment": {"ID": V("XB-WHT-26-04-1187", "The state's receipt for the tax the department "
-                                                                "withheld and paid for the manufacturer."),
-                                   "PaidAmount": amount(withheld, cur, "The withholding paid to the state: 72.00 on "
-                                                                       "the invoice, less the parts reversed by the "
-                                                                       "credit and the penalty."),
-                                   "PaidDate": V(f.date(110), "Paid to the state.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
                                     "AllowanceChargeReasonCode": V("48", "UN/EDIFACT 7161 has no code for interest, so the code is from UN/EDIFACT 5189, with that list's listID."),
                                     "AllowanceChargeReason": V("Statutory interest", "Urvania's interest on late "

@@ -224,20 +224,6 @@
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">6055.452</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">6055.452</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XLC">6055.452</cbc:TaxExclusiveAmount>
@@ -268,14 +254,6 @@
         <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
       <cac:AdditionalItemProperty>
         <cbc:Name>Grade</cbc:Name>
         <cbc:Value>Middling</cbc:Value>

@@ -252,8 +252,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
   The line's share of the bundle discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -304,20 +302,12 @@ Inside `SubscriberConsumption`:
   All of it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/BaseAmount` = **2.400** (currencyID `XLC`)  
   Twelve minutes at the 0.200 tariff for calls abroad.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Amount` = **0.000** (currencyID `XLC`)  
   No call duty: included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Duty` = **Set-up**  
   The name of code SETUP in the Trade Accord's telecommunications duty list.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/DutyCode` = **SETUP** (listID `urn:ubl-examples:world:codelist:TelecomDutyCode`)  
   As a code. The code is from the Trade Accord's telecommunications duty list: SETUP = Set-up.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TimeDuty/Amount` = **0.000** (currencyID `XLC`)  
   No time duty: included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TimeDuty/Duty` = **Per minute**  
@@ -360,8 +350,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
   The line's share of the bundle discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -414,8 +402,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
   The line's share of the bundle discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -450,8 +436,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
   The line's share of the bundle discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -486,8 +470,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
   The line's share of the bundle discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -522,8 +504,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
   The line's share of the bundle discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
@@ -604,8 +584,6 @@ Inside `SubscriberConsumption`:
   5 %.
 - `SupplierConsumption/ConsumptionLine/AllowanceCharge/Amount` = **6.354** (currencyID `XLC`)  
   On the subscriptions of this line.
-- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-BL**  
   The utility's tariff item.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **ST-C-1077**  
@@ -626,12 +604,6 @@ Inside `SubscriberConsumption`:
   The name of code M in the Trade Accord's utility charge type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
   As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
   The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **21.18** (currencyID `XLC`)  
@@ -660,8 +632,6 @@ Inside `SubscriberConsumption`:
   Its last day.
 - `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
   Where it was delivered.
-- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-GB**  
   The utility's tariff item.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **ST-C-1077**  
@@ -686,12 +656,6 @@ Inside `SubscriberConsumption`:
   The name of code M in the Trade Accord's utility charge type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
   As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
   The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **0.424** (currencyID `XLC`)  
@@ -866,9 +830,6 @@ Inside `SubscriberConsumption`:
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
           </cac:AllowanceCharge>
-          <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -903,20 +864,10 @@ Inside `SubscriberConsumption`:
               <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
               <cbc:BaseAmount currencyID="XLC">2.400</cbc:BaseAmount>
             </cac:AllowanceCharge>
-            <cac:TaxTotal>
-              <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-            </cac:TaxTotal>
             <cac:CallDuty>
               <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
               <cbc:Duty>Set-up</cbc:Duty>
               <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">SETUP</cbc:DutyCode>
-              <cac:TaxCategory>
-                <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-                <cbc:Percent>0</cbc:Percent>
-                <cac:TaxScheme>
-                  <cbc:Name>No general sales tax</cbc:Name>
-                </cac:TaxScheme>
-              </cac:TaxCategory>
             </cac:CallDuty>
             <cac:TimeDuty>
               <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
@@ -948,9 +899,6 @@ Inside `SubscriberConsumption`:
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
           </cac:AllowanceCharge>
-          <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -985,9 +933,6 @@ Inside `SubscriberConsumption`:
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
           </cac:AllowanceCharge>
-          <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -1011,9 +956,6 @@ Inside `SubscriberConsumption`:
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
           </cac:AllowanceCharge>
-          <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -1037,9 +979,6 @@ Inside `SubscriberConsumption`:
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
           </cac:AllowanceCharge>
-          <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -1063,9 +1002,6 @@ Inside `SubscriberConsumption`:
             <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
           </cac:AllowanceCharge>
-          <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-          </cac:TaxTotal>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
             <cbc:CallDate>2026-03-31</cbc:CallDate>
@@ -1139,9 +1075,6 @@ Inside `SubscriberConsumption`:
           <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
           <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
         </cac:AllowanceCharge>
-        <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-        </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>ST-BL</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
@@ -1153,13 +1086,6 @@ Inside `SubscriberConsumption`:
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-            <cbc:Percent>0</cbc:Percent>
-            <cac:TaxScheme>
-              <cbc:Name>No general sales tax</cbc:Name>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
           <cac:Contract>
             <cbc:ID>ST-C-1077</cbc:ID>
           </cac:Contract>
@@ -1189,9 +1115,6 @@ Inside `SubscriberConsumption`:
             <cbc:Description>The consumption point of the statement.</cbc:Description>
           </cac:DeliveryLocation>
         </cac:Delivery>
-        <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-        </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>ST-GB</cbc:ID>
           <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
@@ -1205,13 +1128,6 @@ Inside `SubscriberConsumption`:
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-            <cbc:Percent>0</cbc:Percent>
-            <cac:TaxScheme>
-              <cbc:Name>No general sales tax</cbc:Name>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
           <cac:Contract>
             <cbc:ID>ST-C-1077</cbc:ID>
           </cac:Contract>

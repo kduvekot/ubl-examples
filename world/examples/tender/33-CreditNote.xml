@@ -199,6 +199,15 @@
     <cac:PartyName>
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+        <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
+        <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
   </cac:TaxRepresentativeParty>
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
@@ -242,9 +251,8 @@
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -253,6 +261,19 @@
   </cac:TaxTotal>
   <cac:WithholdingTaxTotal>
     <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">18.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+          <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
+          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">517.00</cbc:LineExtensionAmount>
@@ -506,9 +527,8 @@
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>

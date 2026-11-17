@@ -126,21 +126,6 @@
   <cac:DestinationCountry>
     <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
   </cac:DestinationCountry>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">6055.452</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">6055.452</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XLC">6055.452</cbc:PayableAmount>

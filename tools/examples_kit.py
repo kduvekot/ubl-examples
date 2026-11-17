@@ -88,8 +88,8 @@ def tax_rule(seller, buyer, iid):
         if it["kind"] == "goods":
             return ("G", 0, scheme, "Goods exported from Urvania: no value added tax is charged on an export "
                                     "(category G, free export item).", "Export of goods outside Urvania")
-        return ("O", 0, scheme, "A service to a business abroad is supplied where the customer is, outside the scope of "
-                                "Urvania's value added tax (category O).", "Service to a business established outside Urvania")
+        return ("O", 0, scheme, "A service supplied outside Urvania, to a customer established abroad, is outside the "
+                                "scope of Urvania's value added tax (category O).", "Service supplied outside Urvania")
     if s["c"] == "XB":
         if b["c"] != "XB":
             return ("G", 0, scheme, "An export from Bayvarra: the state sales tax is not charged (category G).",
@@ -122,8 +122,10 @@ def supply_kind(iid):
 
 def tax_category(rule, kind=None):
     code, percent, scheme, why, exemption = rule
-    out = {"ID": V(code, why), "Percent": V(str(percent), "The rate for this category." if percent else
-                                            "No tax is charged in this category.")}
+    out = {"ID": V(code, why)}
+    if code != "O":                     # outside the scope of the tax: no rate at all (D15)
+        out["Percent"] = V(str(percent), "The rate for this category." if percent else
+                           "No tax is charged in this category.")
     if exemption:
         cc = next((k for k, c in WORLD["countries"].items() if exemption in c["tax"].get("exemption_codes", {})), None)
         if cc:

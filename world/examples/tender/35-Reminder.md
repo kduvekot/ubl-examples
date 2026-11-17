@@ -30,8 +30,8 @@ The invoice is past due; the manufacturer reminds the department of the balance 
   A reminder of a payment overdue. The code is from the Trade Accord's reminder type list: PAYMENT = Payment reminder.
 - `ReminderSequenceNumeric` = **1**  
   The first reminder.
-- `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies.**  
-  What it says.
+- `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies. The balance is net of the 69.48 lume the department withheld and paid to the state (receipt XB-WHT-26-04-1187).**  
+  What it says, and why the withholding is not reminded: it is already deducted (tender/35#F4).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -219,15 +219,6 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Tax Representative Party
-
-Inside `TaxRepresentativeParty`:
-
-- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -289,17 +280,6 @@ Inside `PaymentTerms`:
   What is asked.
 - `PaymentDueDate` = **2026-05-12**  
   A week after the reminder.
-
-### Prepaid Payment
-
-Inside `PrepaidPayment`:
-
-- `ID` = **XB-WHT-26-04-1187**  
-  The state's receipt for the tax the department withheld and paid for the manufacturer.
-- `PaidAmount` = **69.48** (currencyID `XBL`)  
-  The withholding paid to the state: 72.00 on the invoice, less the parts reversed by the credit and the penalty.
-- `PaidDate` = **2026-05-02**  
-  Paid to the state.
 
 ### Allowance Charge
 
@@ -424,7 +404,7 @@ Inside `ReminderLine`:
   <cbc:IssueTime>15:23:00</cbc:IssueTime>
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
-  <cbc:Note>The balance of the first release is overdue; Urvania's statutory interest applies.</cbc:Note>
+  <cbc:Note>The balance of the first release is overdue; Urvania's statutory interest applies. The balance is net of the 69.48 lume the department withheld and paid to the state (receipt XB-WHT-26-04-1187).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
@@ -576,14 +556,6 @@ Inside `ReminderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Bayforth Forwarding</cbc:Name>
-    </cac:PartyName>
-  </cac:TaxRepresentativeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cac:PayeeFinancialAccount>
@@ -630,11 +602,6 @@ Inside `ReminderLine`:
     <cbc:Note>Please pay within seven days.</cbc:Note>
     <cbc:PaymentDueDate>2026-05-12</cbc:PaymentDueDate>
   </cac:PaymentTerms>
-  <cac:PrepaidPayment>
-    <cbc:ID>XB-WHT-26-04-1187</cbc:ID>
-    <cbc:PaidAmount currencyID="XBL">69.48</cbc:PaidAmount>
-    <cbc:PaidDate>2026-05-02</cbc:PaidDate>
-  </cac:PrepaidPayment>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">48</cbc:AllowanceChargeReasonCode>

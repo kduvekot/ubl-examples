@@ -1921,6 +1921,46 @@ def _currencies(node, out, prices=None):
             _currencies(v, out, prices)
 
 
+# ---------------------------------------------------------------- a Lisavan sale has no tax section (C50, D15)
+SELLER_ROLES = ("AccountingSupplierParty", "SellerSupplierParty", "SupplierParty", "ProviderParty")
+
+
+def untaxed_sales(content, doc):
+    """Lisavu has no sales tax or value added tax, so a Lisavan seller's document carries no tax section at all: no
+    TaxTotal, no tax category on a line, an item or a charge, no tax scheme; its totals with and without tax are
+    the same. The island's own taxes keep theirs: the presumptive tax withheld on farm produce
+    (WithholdingTaxTotal) and the duty and import tax of the customs declarations (D18)."""
+    if DOC_CLASS.get(doc["doc"]) == "customs":
+        return
+    seller = next((doc["parties"][r] for r in SELLER_ROLES if isinstance(doc["parties"].get(r), str)), None)
+    if seller is None and (DOC_CLASS.get(doc["doc"]) == "invoice" or doc["doc"] == "UtilityStatement"):
+        seller = doc["from"]
+    if seller not in PARTY or PARTY[seller]["c"] != "XL":
+        return
+
+    def strip(node):
+        if isinstance(node, list):
+            for x in node:
+                strip(x)
+            return
+        if not isinstance(node, dict):
+            return
+        for k in list(node):
+            if k in ("TaxTotal", "ClassifiedTaxCategory", "TaxCategory", "TaxCurrencyCode", "TaxExchangeRate",
+                     "TaxPointDate"):
+                del node[k]
+            elif k != "WithholdingTaxTotal":
+                strip(node[k])
+    strip(content)
+    for total in ("LegalMonetaryTotal", "RequestedMonetaryTotal", "AnticipatedMonetaryTotal"):
+        t = content.get(total)
+        if isinstance(t, dict) and isinstance(t.get("TaxInclusiveAmount"), V):
+            v = t["TaxInclusiveAmount"]
+            t["TaxInclusiveAmount"] = V(v.value, "The same as the total without tax: Lisavu has no sales tax or "
+                                                 "value added tax, so no tax is due and the document has no tax "
+                                                 "section (D15).", **v.attrs)
+
+
 # ---------------------------------------------------------------- party roles that only repeat another (worklist C08)
 def _party_key(node):
     """Who a party element names: its first identifier, else its name. A wrapper (CustomerParty and the like) is
@@ -2627,7 +2667,10 @@ def check_party_profiles(flow_id, roots, docs):
                     continue
                 steps, x = [], d
                 while x is not e:
-                    steps.append(etree.QName(x).localname)
+                    name = etree.QName(x).localname
+                    if name == "PartyTaxScheme":       # a party may be registered for several taxes: per scheme
+                        name += "[" + (x.findtext(f"{{{NS_CAC}}}TaxScheme/{{{NS_CBC}}}ID") or "") + "]"
+                    steps.append(name)
                     x = x.getparent()
                 if "Contact" in steps:                  # the desk differs with the role (C02)
                     continue
@@ -2671,6 +2714,7 @@ def main(flow_id, check=False):
         CONTENT = content
         content = place_parties(doc, content)
         redundant_roles(content, doc)
+        untaxed_sales(content, doc)
         declaration_invoices(content, doc)
         border_transport(content, doc)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")

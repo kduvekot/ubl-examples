@@ -303,29 +303,6 @@ Inside `AllowanceCharge`:
   5 % of the six subscriptions.
 - `BaseAmount` = **127.080** (currencyID `XLC`)  
   The six subscriptions.
-- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
-
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.000** (currencyID `XLC`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **135.566** (currencyID `XLC`)  
-  The lines less the discount: no tax applies on the island.
-- `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 
 ### Legal Monetary Total
 
@@ -336,7 +313,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxExclusiveAmount` = **135.566** (currencyID `XLC`)  
   The lines less the discount.
 - `TaxInclusiveAmount` = **135.566** (currencyID `XLC`)  
-  No tax on the island.
+  The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
   The bundle discount.
 - `AllowanceTotalTaxInclusiveAmount` = **6.354** (currencyID `XLC`)  
@@ -370,14 +347,6 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/SellersItemIdentification/ID` = **ST-BL**  
   The seller's own item number; item telecom-line of Selanu Telecom (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
-- `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **21.18** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `MON`)  
@@ -404,14 +373,6 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item telecom-data of Selanu Telecom (world/items.json).
 - `Item/SellersItemIdentification/ID` = **ST-GB**  
   The seller's own item number; item telecom-data of Selanu Telecom (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
-- `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **0.424** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `E34`)  
@@ -635,28 +596,7 @@ Inside `InvoiceLine`:
     <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
     <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
     <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:Name>No general sales tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">135.566</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
@@ -682,14 +622,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>ST-BL</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
@@ -713,14 +645,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>ST-GB</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>

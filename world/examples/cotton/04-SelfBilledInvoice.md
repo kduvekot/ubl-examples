@@ -28,8 +28,6 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-03-24**  
   The supplier's usual term, which the customer applies to itself.
-- `TaxPointDate` = **2026-02-07**  
-  The day the withholding becomes due.
 - `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 389, "An invoice the invoicee is producing instead of the seller": exactly what this document is. It repeats what the root SelfBilledInvoice already says, as no narrower subtype applies; 380 would be wrong, since a commercial invoice is the seller's document "claiming payment", and the customer claims nothing here, it settles what it owes. The code is from the world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed invoice.
 - `Note` = **Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.** (languageID `qal`)  
@@ -554,33 +552,8 @@ Inside `AllowanceCharge`:
   In words.
 - `PerUnitAmount` = **0.010** (currencyID `XLC`)  
   0.010 coral per kilogram.
-- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
-- `TaxTotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  No tax on the haulage on the island.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Credit transfer, with the invoice. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **0.000** (currencyID `XLC`)  
-  The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **4248.000** (currencyID `XLC`)  
-  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
-- `TaxSubtotal/TaxAmount` = **0.000** (currencyID `XLC`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 
 ### Withholding Tax Total
 
@@ -642,7 +615,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxExclusiveAmount` = **4248.000** (currencyID `XLC`)  
   The cotton and the haulage.
 - `TaxInclusiveAmount` = **4248.000** (currencyID `XLC`)  
-  No tax on the island.
+  The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `AllowanceTotalTaxInclusiveAmount` = **0.000** (currencyID `XLC`)  
   No allowances.
 - `ChargeTotalAmount` = **180.000** (currencyID `XLC`)  
@@ -709,14 +682,6 @@ Inside `InvoiceLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  Lisavu has no sales tax or value added tax: no tax applies (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
-- `Item/ClassifiedTaxCategory/TaxScheme/Name` = **No general sales tax**  
-  Lisavu has no general tax on sales; the scheme is named only, as UN/EDIFACT 5153 has no code for the absence of a tax.
 - `Price/PriceAmount` = **0.226** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
@@ -736,7 +701,6 @@ Inside `InvoiceLine`:
   <cbc:IssueDate>2026-02-07</cbc:IssueDate>
   <cbc:IssueTime>15:50:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-24</cbc:DueDate>
-  <cbc:TaxPointDate>2026-02-07</cbc:TaxPointDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">389</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
@@ -1114,34 +1078,10 @@ Inside `InvoiceLine`:
     <cbc:AccountingCostCode>210</cbc:AccountingCostCode>
     <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
     <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:Name>No general sales tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-    <cac:TaxTotal>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    </cac:TaxTotal>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">4248.000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:WithholdingTaxTotal>
     <cbc:TaxAmount currencyID="XLC">61.360</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -1236,14 +1176,6 @@ Inside `InvoiceLine`:
         <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>

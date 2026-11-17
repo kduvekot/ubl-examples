@@ -292,7 +292,6 @@
       <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cac:TaxScheme>
           <cbc:Name>No general sales tax</cbc:Name>
         </cac:TaxScheme>

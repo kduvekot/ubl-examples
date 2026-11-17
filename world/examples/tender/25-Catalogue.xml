@@ -398,9 +398,8 @@
       </cac:Price>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>

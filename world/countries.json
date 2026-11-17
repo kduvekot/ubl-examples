@@ -48,7 +48,7 @@
     ],
     "exemption_codes": {
      "Export of goods outside Urvania": "EXP",
-     "Service to a business established outside Urvania": "SVCABROAD"
+     "Service supplied outside Urvania": "SVCABROAD"
     },
     "exemption_codes_note": "The exemption reasons as codes of Urvania's national list (world/codelists/lists.json, XU:TaxExemptionReason); the EU's VATEX list does not apply in the world."
    },

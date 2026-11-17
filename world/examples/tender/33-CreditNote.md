@@ -274,6 +274,16 @@ Inside `TaxRepresentativeParty`:
   A party referred to from another party's details: its identifier and name are enough.
 - `PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
+- `PartyTaxScheme/RegistrationName` = **Bayforth Forwarding Ltd**  
+  The representative's registered name.
+- `PartyTaxScheme/CompanyID` = **CO-1234932** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  The representative's number with Bayvarra's tax office, under which it accounts for the withholding of the non-resident manufacturer it represents. The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
+- `PartyTaxScheme/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
+- `PartyTaxScheme/TaxScheme/Name` = **Withholding tax on payments by public bodies to non-resident businesses**  
+  The tax in words: it applies only where a public body pays a business not established in Bayvarra (D17).
+- `PartyTaxScheme/TaxScheme/TaxTypeCode` = **INCOME** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
+  A tax on the supplier's income, not on the supply: the public body keeps it back from the payment. The code is from the Trade Accord's tax type list: INCOME = Tax on income.
 
 ### Payment Terms
 
@@ -348,12 +358,10 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
+  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service to a business established outside Urvania.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
   The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
@@ -364,6 +372,20 @@ Inside `WithholdingTaxTotal`:
 
 - `TaxAmount` = **1.80** (currencyID `XBL`)  
   The withholding on the credited installation, reversed.
+- `TaxSubtotal/TaxableAmount` = **18.00** (currencyID `XBL`)  
+  The installation credited.
+- `TaxSubtotal/TaxAmount` = **1.80** (currencyID `XBL`)  
+  10 % of it, no longer withheld.
+- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The withholding applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **10**  
+  The rate, as on the invoice.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Withholding tax on payments by public bodies to non-resident businesses**  
+  The tax in words: it applies only where a public body pays a business not established in Bayvarra (D17).
+- `TaxSubtotal/TaxCategory/TaxScheme/TaxTypeCode` = **INCOME** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
+  A tax on the supplier's income, not on the supply: the public body keeps it back from the payment. The code is from the Trade Accord's tax type list: INCOME = Tax on income.
 
 ### Legal Monetary Total
 
@@ -651,12 +673,10 @@ Inside `CreditNoteLine`:
 - `Item/SellersItemIdentification/ID` = **VI-INST-B**  
   The seller's own item number; item bench-installation of Valdara Industries (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **0**  
-  No tax is charged in this category.
+  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service to a business established outside Urvania.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business established outside Urvania**  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
   The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
@@ -871,6 +891,15 @@ Inside `CreditNoteLine`:
     <cac:PartyName>
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+        <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
+        <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
   </cac:TaxRepresentativeParty>
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
@@ -914,9 +943,8 @@ Inside `CreditNoteLine`:
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -925,6 +953,19 @@ Inside `CreditNoteLine`:
   </cac:TaxTotal>
   <cac:WithholdingTaxTotal>
     <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">18.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+          <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
+          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">517.00</cbc:LineExtensionAmount>
@@ -1178,9 +1219,8 @@ Inside `CreditNoteLine`:
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service to a business established outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
