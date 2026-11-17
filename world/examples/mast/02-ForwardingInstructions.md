@@ -223,10 +223,10 @@ Inside `Shipment`:
 
 - `ID` = **SE-SH-26-0715**  
   The shipment.
-- `GrossWeightMeasure` = **376** (unitCode `KGM`)  
-  The gross weight.
 - `Consignment/ID` = **SE-CS-26-0716**  
   The consignment.
+- `Consignment/GrossWeightMeasure` = **376** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.selanutelecom.example**  
@@ -951,9 +951,9 @@ Inside `Shipment`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>SE-SH-26-0715</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>

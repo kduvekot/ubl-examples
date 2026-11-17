@@ -426,10 +426,10 @@ Inside `Shipment`:
 
 - `ID` = **SM-SH-26-0309**  
   The shipment as the despatching party numbered it.
-- `GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
-  The weight the carrier takes over, from the weighbridge.
 - `Consignment/ID` = **VI-CS-26-0306**  
   The consignment of the transport booking.
+- `Consignment/GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The weight the carrier takes over, from the weighbridge.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Valdara Industries**  
@@ -833,9 +833,9 @@ Inside `Signature`:
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>SM-SH-26-0309</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0306</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

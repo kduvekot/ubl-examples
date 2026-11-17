@@ -223,10 +223,10 @@
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
+      <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>

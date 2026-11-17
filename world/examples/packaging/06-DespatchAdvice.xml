@@ -230,9 +230,9 @@
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>LTM-SH-26-0527</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0528</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>

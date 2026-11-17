@@ -256,9 +256,9 @@
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>SM-SH-26-0309</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0306</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>

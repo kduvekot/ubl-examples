@@ -347,9 +347,9 @@
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0216</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>CL-CS-26-0217</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>

@@ -1556,6 +1556,69 @@ def check_instance_rules(root, where):
             seen[key] = c
 
 
+# ---------------------------------------------------------------- shipment weights (worklist C15)
+def _equipment(node, out):
+    """The transport equipment of a shipment, as (tare, gross) pairs: each piece once, not again where a goods item
+    names its container."""
+    if isinstance(node, list):
+        for x in node:
+            _equipment(x, out)
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            if k == "TransportEquipment":
+                for eq in v if isinstance(v, list) else [v]:
+                    if isinstance(eq, dict):
+                        out.append((eq.get("TareWeightMeasure"), eq.get("GrossWeightMeasure")))
+            elif k not in ("GoodsItem", "GoodsItemContainer"):
+                _equipment(v, out)
+
+
+def shipment_weights(content, flow_id):
+    """Shipment/GrossWeightMeasure includes the transport equipment by its definition, Consignment/GrossWeightMeasure
+    excludes it (worklist C15). Where a document states its equipment, the shipment's weight is the goods plus the
+    tares, or the equipment's gross weights, and the goods' weight is the consignment's; where it does not, the
+    goods' weight stays only on the consignment or the goods item."""
+    if flow_id == "waste":                     # the weighbridge weight is the loaded truck: the waste flow (D42)
+        return
+
+    def walk(node):
+        if isinstance(node, list):
+            for x in node:
+                walk(x)
+            return
+        if not isinstance(node, dict):
+            return
+        for k, v in list(node.items()):
+            if k == "Shipment" and isinstance(v, dict) and isinstance(v.get("GrossWeightMeasure"), V):
+                g = v["GrossWeightMeasure"]
+                cons = v.get("Consignment")
+                equipment = []
+                _equipment(v, equipment)
+                if isinstance(cons, dict) and "GrossWeightMeasure" not in cons:
+                    cons["GrossWeightMeasure"] = V(g.value, "The gross weight of the goods with their packaging, "
+                                                   "without the transport equipment, as a consignment's weight is "
+                                                   f"defined (worklist C15). {g.why}", **g.attrs)
+                goods_item = any(isinstance(x, dict) and "GrossWeightMeasure" in x
+                                 for x in (v.get("GoodsItem") if isinstance(v.get("GoodsItem"), list)
+                                           else [v.get("GoodsItem")]))
+                if equipment and all(isinstance(t, V) for t, _ in equipment):
+                    total = Decimal(g.value) + sum(Decimal(t.value) for t, _ in equipment)
+                    v["GrossWeightMeasure"] = V(f"{total:f}".rstrip("0").rstrip("."), f"The goods ({g.value} kg) and "
+                                                f"the tare of the transport equipment ({' + '.join(t.value for t, _ in equipment)} "
+                                                "kg): a shipment's gross weight includes the equipment (worklist C15).",
+                                                **g.attrs)
+                elif equipment and all(isinstance(w, V) for _, w in equipment):
+                    total = sum(Decimal(w.value) for _, w in equipment)
+                    v["GrossWeightMeasure"] = V(f"{total:f}".rstrip("0").rstrip("."), "The gross weights of the "
+                                                f"transport equipment with the goods in it ({' + '.join(w.value for _, w in equipment)} "
+                                                "kg): a shipment's gross weight includes the equipment (worklist C15).",
+                                                **g.attrs)
+                elif isinstance(cons, dict) or goods_item:
+                    del v["GrossWeightMeasure"]
+            walk(v)
+    walk(content)
+
+
 # ---------------------------------------------------------------- the kind of every referenced document (worklist C06)
 # A reference in a generic or role-only element (AdditionalDocumentReference, DocumentReference, the supporting,
 # evidence, originator … references) says what kind of document it points to, with DocumentTypeCode or
@@ -1864,6 +1927,7 @@ def main(flow_id, check=False):
         content = scenario(n, doc)
         content = place_parties(doc, content)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
+        shipment_weights(content, flow_id)
         bilingual_notes(doc, content)
         for path, value in doc.get("values", {}).items():   # the world's manifest values must be what the scenario says
             node = content

@@ -268,8 +268,8 @@ Inside `Shipment`:
   No priority: the next sailing will do. The code is from the Trade Accord's shipping priority list: STANDARD = Standard.
 - `HandlingInstructions` = **Castings pallet at the doors.**  
   How the container is stowed.
-- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
-  The gross weight of the goods.
+- `GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
+  The goods (4106.4 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `NetWeightMeasure` = **3762** (unitCode `KGM`)  
   The goods without packaging.
 - `NetVolumeMeasure` = **38.9** (unitCode `MTQ`)  
@@ -282,6 +282,8 @@ Inside `Shipment`:
   Where the goods end up.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment.
+- `Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the goods.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.velumi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
@@ -869,7 +871,7 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
     <cbc:HandlingInstructions>Castings pallet at the doors.</cbc:HandlingInstructions>
-    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
     <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
     <cbc:NetVolumeMeasure unitCode="MTQ">38.9</cbc:NetVolumeMeasure>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
@@ -877,6 +879,7 @@ Inside `Signature`:
     <cbc:DeliveryInstructions>Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.</cbc:DeliveryInstructions>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

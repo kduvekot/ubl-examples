@@ -229,10 +229,10 @@ Inside `Shipment`:
 
 - `ID` = **SCG-SH-26-0200**  
   The shipment to be booked.
-- `GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
-  The gross weight of the bales.
 - `Consignment/ID` = **LTM-CS-26-0201**  
   The consignment.
+- `Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the bales.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.lumeporttextile.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeport Textile Mill (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **1312** (listID `ISIC Rev.4`)  
@@ -552,9 +552,9 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>

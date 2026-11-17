@@ -322,10 +322,10 @@ Inside `Shipment`:
 
 - `ID` = **SM-SH-26-0309**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
-  Weighed on the weighbridge at loading: 30 wagons.
 - `Consignment/ID` = **VI-CS-26-0306**  
   The buyer's consignment, quoted back.
+- `Consignment/GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). Weighed on the weighbridge at loading: 30 wagons.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.ferranorail.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/IndustryClassificationCode` = **4912** (listID `ISIC Rev.4`)  
@@ -725,9 +725,9 @@ Inside `DespatchLine`:
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>SM-SH-26-0309</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0306</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>

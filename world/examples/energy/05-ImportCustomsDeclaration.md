@@ -353,8 +353,6 @@ Inside `Shipment`:
 
 - `ID` = **KG-SH-26-0154**  
   The shipment declared.
-- `GrossWeightMeasure` = **2760000** (unitCode `KGM`)  
-  The gross weight arriving.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Natural gas**  
@@ -673,7 +671,6 @@ Inside `Shipment`:
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>KG-SH-26-0154</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Natural gas</cbc:Description>

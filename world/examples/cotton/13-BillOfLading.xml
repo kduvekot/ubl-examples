@@ -254,9 +254,9 @@
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>

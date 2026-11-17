@@ -185,9 +185,9 @@
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>SE-SH-26-0715</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5120</cbc:IndustryClassificationCode>

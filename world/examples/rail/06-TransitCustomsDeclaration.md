@@ -428,10 +428,12 @@ Inside `Shipment`:
 
 - `ID` = **VI-SH-26-0332**  
   The shipment under transit.
-- `GrossWeightMeasure` = **7968** (unitCode `KGM`)  
-  The gross weight under transit.
+- `GrossWeightMeasure` = **15768** (unitCode `KGM`)  
+  The gross weights of the transport equipment with the goods in it (7884 + 7884 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `Consignment/ID` = **VI-CS-26-0327**  
   The consignment on the train.
+- `Consignment/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight under transit.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.ferranorail.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/IndustryClassificationCode` = **4912** (listID `ISIC Rev.4`)  
@@ -1163,9 +1165,10 @@ Inside `Signature`:
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0332</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">15768</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>

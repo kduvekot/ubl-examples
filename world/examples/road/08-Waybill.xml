@@ -336,7 +336,6 @@
     <cbc:ID>CL-SH-26-0154</cbc:ID>
     <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">UPRIGHT</cbc:HandlingCode>
     <cbc:Information>Steel street furniture for resale.</cbc:Information>
-    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:NetNetWeightMeasure unitCode="KGM">3762</cbc:NetNetWeightMeasure>
     <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
@@ -348,6 +347,7 @@
       <cbc:ConsigneeAssignedID>LD-GI-0412</cbc:ConsigneeAssignedID>
       <cbc:ConsignorAssignedID>CL-DA-26-0153</cbc:ConsignorAssignedID>
       <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
+      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
       <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>
       <cbc:Remarks>Received in apparent good order; seals XU-CL-77310 on the trailer doors.</cbc:Remarks>

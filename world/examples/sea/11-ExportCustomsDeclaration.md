@@ -162,8 +162,6 @@ Inside `CustomsDeclaration`:
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/ID` = **LD-SH-26-0132**  
   The shipment declared.
-- `Shipment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
-  The gross weight leaving the country.
 - `Shipment/InsuranceValueAmount` = **59155.80** (currencyID `XBL`)  
   The cargo insurance the seller took out under CIF.
 - `Shipment/DeclaredCustomsValueAmount` = **50688.00** (currencyID `XBL`)  
@@ -174,6 +172,8 @@ Inside `CustomsDeclaration`:
   On board in Lumeport.
 - `Shipment/Consignment/ID` = **LD-CS-26-0133**  
   The consignment carried.
+- `Shipment/Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
 - `Shipment/Consignment/OfficeOfExitLocation/Name` = **Customs office, port of Lumeport**  
   Where the goods leave Bayvarra: the same port.
 - `Shipment/Consignment/OfficeOfExportLocation/Name` = **Customs office, port of Lumeport**  
@@ -832,13 +832,13 @@ Inside `Signature`:
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">50688.00</cbc:DeclaredCustomsValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">50688.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">50688.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
         <cac:OfficeOfExitLocation>
           <cbc:Name>Customs office, port of Lumeport</cbc:Name>
         </cac:OfficeOfExitLocation>

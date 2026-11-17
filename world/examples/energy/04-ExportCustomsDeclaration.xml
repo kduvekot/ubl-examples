@@ -113,9 +113,9 @@
     <cbc:ID>KG-CD-26-0153</cbc:ID>
     <cac:Shipment>
       <cbc:ID>KG-SH-26-0154</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">2940000</cbc:GrossWeightMeasure>
       <cac:Consignment>
         <cbc:ID>KG-CS-26-0155</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">2940000</cbc:GrossWeightMeasure>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>

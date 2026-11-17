@@ -270,9 +270,9 @@
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>SE-SH-26-0715</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>

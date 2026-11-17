@@ -566,6 +566,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D20 (the bench weighs 44.4 kg gross, and the pallets' own weight, about half a tonne for 25 pallets, is added to consignment and container weights; O61).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): one rule in the build (`shipment_weights()` in `tools/build_examples.py`): where a document states its transport equipment, the shipment's gross weight is the goods plus the tares (the sea container: 4,106.4 + 3,750 = 7,856.4 kg) or the equipment's gross weights (the two rail boxes: 2 × 7,884 = 15,768 kg), and the goods' weight is the consignment's, whose definition excludes the equipment; where it does not, the goods' weight is on the consignment or the goods item only. The waste flow's weighbridge weight is the loaded truck and goes with D42. The bench's weights change with D20 in stage 4.
 - Findings: cotton: 03#F11, 09#F5, 11#F1, 13#F4, 15#F1; mast: 02#F4, 03#F4, 04#F2; ore: 04#F1, 05#F3; rail: 06#F1, 08#F2; sea: 06#F2, 09#F4, 10#F1, 11#F6, 12#F3, 14#F2, 15#F2, 19#F5, 20#F4; wood: 05#F7, 06#F11, 07#F10
 
 ### C16 · "NoStatus" as document or line status

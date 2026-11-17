@@ -251,7 +251,6 @@
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Cotton lint, compressed bale</cbc:Description>

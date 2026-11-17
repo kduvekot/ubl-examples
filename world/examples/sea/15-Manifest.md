@@ -433,8 +433,8 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment on the manifest.
-- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
-  The gross weight of this shipment.
+- `GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
+  The goods (4106.4 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `ShipmentStage/ID` = **2**  
   The sea leg.
 - `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -897,7 +897,7 @@ Inside `Signature`:
   </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>

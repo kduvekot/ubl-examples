@@ -253,10 +253,10 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0323**  
   The shipment to be booked.
-- `GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
-  The gross weight of the eight boxed frames.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The distributor's consignment number.
+- `Consignment/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the eight boxed frames.
 - `Consignment/NetNetWeightMeasure` = **76** (unitCode `KGM`)  
   The castings alone.
 - `Consignment/NetVolumeMeasure` = **0.42** (unitCode `MTQ`)  
@@ -666,9 +666,9 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0323</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

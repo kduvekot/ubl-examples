@@ -330,10 +330,10 @@ Inside `Shipment`:
 
 - `ID` = **RR-SH-26-0889**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **120480** (unitCode `KGM`)  
-  The gross weight loaded.
 - `Consignment/ID` = **RR-CS-26-0885**  
   The consignment the goods travel in, as numbered when the transport was booked.
+- `Consignment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.fiumella.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Fiumella Barges (world/parties.json).
 - `Consignment/CarrierParty/IndustryClassificationCode` = **5022** (listID `ISIC Rev.4`)  
@@ -775,9 +775,9 @@ Inside `DespatchLine`:
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>

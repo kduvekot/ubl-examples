@@ -332,9 +332,10 @@
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0332</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">15768</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>

@@ -152,10 +152,10 @@ Inside `CustomsDeclaration`:
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/ID` = **MS-SH-26-0632**  
   The shipment declared.
-- `Shipment/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
-  The gross weight leaving the country.
 - `Shipment/Consignment/ID` = **MS-CS-26-0629**  
   The consignment carried.
+- `Shipment/Consignment/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
 - `Shipment/Consignment/CarrierParty/WebsiteURI` = **https://www.trasvia.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Trasvia Haulage (world/parties.json).
 - `Shipment/Consignment/CarrierParty/IndustryClassificationCode` = **4923** (listID `ISIC Rev.4`)  
@@ -699,9 +699,9 @@ Inside `Signature`:
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>MS-SH-26-0632</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
       <cac:Consignment>
         <cbc:ID>MS-CS-26-0629</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
         <cac:CarrierParty>
           <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
           <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>

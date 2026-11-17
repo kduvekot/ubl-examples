@@ -236,9 +236,9 @@
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0230</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0228</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>

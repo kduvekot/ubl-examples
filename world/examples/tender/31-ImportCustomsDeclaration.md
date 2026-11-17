@@ -371,8 +371,6 @@ Inside `Shipment`:
 
 - `ID` = **CL-SH-26-0216**  
   The shipment declared.
-- `GrossWeightMeasure` = **1660** (unitCode `KGM`)  
-  The gross weight arriving.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -898,7 +896,6 @@ Inside `Signature`:
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0216</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>

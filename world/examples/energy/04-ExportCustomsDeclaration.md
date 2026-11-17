@@ -158,10 +158,10 @@ Inside `CustomsDeclaration`:
   The declaration as lodged with the customs of the exporting country.
 - `Shipment/ID` = **KG-SH-26-0154**  
   The shipment declared.
-- `Shipment/GrossWeightMeasure` = **2940000** (unitCode `KGM`)  
-  The gross weight leaving the country.
 - `Shipment/Consignment/ID` = **KG-CS-26-0155**  
   The consignment carried.
+- `Shipment/Consignment/GrossWeightMeasure` = **2940000** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Kelpstone Gas**  
@@ -495,9 +495,9 @@ Inside `CustomsDeclaration`:
     <cbc:ID>KG-CD-26-0153</cbc:ID>
     <cac:Shipment>
       <cbc:ID>KG-SH-26-0154</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">2940000</cbc:GrossWeightMeasure>
       <cac:Consignment>
         <cbc:ID>KG-CS-26-0155</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">2940000</cbc:GrossWeightMeasure>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>

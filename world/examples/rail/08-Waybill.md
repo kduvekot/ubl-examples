@@ -308,8 +308,8 @@ Inside `Shipment`:
 
 - `ID` = **VI-SH-26-0332**  
   The shipment as the despatching party numbered it.
-- `GrossWeightMeasure` = **7968** (unitCode `KGM`)  
-  The gross weight of the two containers' cargo.
+- `GrossWeightMeasure` = **15768** (unitCode `KGM`)  
+  The gross weights of the transport equipment with the goods in it (7884 + 7884 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `Consignment/ID` = **VI-CS-26-0327**  
   The manufacturer's consignment number.
 - `Consignment/ContractedCarrierAssignedID` = **FRC-CON-2026-005/88**  
@@ -318,6 +318,8 @@ Inside `Shipment`:
   The rail carrier's job number.
 - `Consignment/SummaryDescription` = **192 park benches in two 40-foot containers.**  
   The goods in a few words.
+- `Consignment/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the two containers' cargo.
 - `Consignment/ContainerizedIndicator` = **true**  
   Two full containers.
 - `Consignment/TotalTransportHandlingUnitQuantity` = **2** (unitCode `EA`)  
@@ -1060,12 +1062,13 @@ Inside `Signature`:
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0332</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">15768</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
       <cbc:PerformingCarrierAssignedID>FRC-J-26-3318</cbc:PerformingCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>

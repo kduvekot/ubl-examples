@@ -288,10 +288,10 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0230**  
   The shipment as the despatching party numbered it.
-- `GrossWeightMeasure` = **996** (unitCode `KGM`)  
-  The gross weight taken over.
 - `Consignment/ID` = **LD-CS-26-0228**  
   The consignment of the transport booking.
+- `Consignment/GrossWeightMeasure` = **996** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight taken over.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.brightmarket.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
 - `Consignment/ConsigneeParty/LogoReferenceID` = **BM-LOGO-2024**  
@@ -681,9 +681,9 @@ Inside `Signature`:
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0230</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0228</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
         <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>

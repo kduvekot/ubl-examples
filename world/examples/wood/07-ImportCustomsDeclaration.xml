@@ -311,7 +311,6 @@
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>MS-SH-26-0632</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Hardwood bench slat 1800</cbc:Description>

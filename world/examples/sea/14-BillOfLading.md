@@ -366,8 +366,8 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment carried.
-- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
-  The gross weight of the cargo.
+- `GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
+  The goods (4106.4 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `TotalGoodsItemQuantity` = **2** (unitCode `EA`)  
   Benches and side frames.
 - `ConsignmentQuantity` = **1** (unitCode `EA`)  
@@ -392,6 +392,8 @@ Inside `Shipment`:
   The item of the carrier's own freight tariff for this cargo: furniture. A code the carrier defines, so it has no code list.
 - `Consignment/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
   The premium the seller paid under CIF.
+- `Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo.
 - `Consignment/ShippingPriorityLevelCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ShippingPriorityCode`)  
   The normal sailing, no priority loading. The code is from the Trade Accord's shipping priority list: STANDARD = Standard.
 - `Consignment/HandlingCode` = **DECK** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
@@ -1665,7 +1667,7 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">7856.4</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
@@ -1679,6 +1681,7 @@ Inside `Signature`:
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
       <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>

@@ -290,10 +290,10 @@ Inside `Shipment`:
 
 - `ID` = **LTM-SH-26-0527**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **168** (unitCode `KGM`)  
-  The gross weight of the cartons.
 - `Consignment/ID` = **LTM-CS-26-0528**  
   The consignment the goods travel in, as numbered when the transport was booked.
+- `Consignment/GrossWeightMeasure` = **168** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cartons.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.bayforth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Bayforth Forwarding (world/parties.json).
 - `Consignment/CarrierParty/IndustryClassificationCode` = **5229** (listID `ISIC Rev.4`)  
@@ -671,9 +671,9 @@ Inside `DespatchLine`:
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>LTM-SH-26-0527</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0528</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>

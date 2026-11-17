@@ -296,12 +296,12 @@ Inside `Shipment`:
 
 - `ID` = **RR-SH-26-0889**  
   The shipment as the despatching party numbered it.
-- `GrossWeightMeasure` = **120480** (unitCode `KGM`)  
-  The gross weight on board.
 - `Consignment/ID` = **RR-CS-26-0885**  
   The seller's consignment number.
 - `Consignment/CarrierAssignedID` = **FB4-26-031/2**  
   The barge operator's number: the second lot of the voyage.
+- `Consignment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight on board.
 - `Consignment/ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
@@ -920,10 +920,10 @@ Inside `Signature`:
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
+      <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>

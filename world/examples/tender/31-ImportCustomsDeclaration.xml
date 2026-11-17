@@ -289,7 +289,6 @@
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0216</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>

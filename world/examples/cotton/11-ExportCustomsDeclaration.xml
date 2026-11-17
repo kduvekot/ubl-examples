@@ -98,9 +98,9 @@
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>SCG-SH-26-0200</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cac:Consignment>
         <cbc:ID>LTM-CS-26-0201</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       </cac:Consignment>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>

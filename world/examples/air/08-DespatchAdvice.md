@@ -334,10 +334,10 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0323**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
-  The gross weight of the boxed frames.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The consignment the goods travel in, as numbered when the transport was booked.
+- `Consignment/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the boxed frames.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.kelaro.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/IndustryClassificationCode` = **5120** (listID `ISIC Rev.4`)  
@@ -843,9 +843,9 @@ Inside `DespatchLine`:
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0323</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">5120</cbc:IndustryClassificationCode>

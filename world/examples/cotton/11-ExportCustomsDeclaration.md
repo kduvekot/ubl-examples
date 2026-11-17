@@ -140,10 +140,10 @@ Inside `CustomsDeclaration`:
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Shipment/ID` = **SCG-SH-26-0200**  
   The shipment declared.
-- `Shipment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
-  The gross weight leaving the country.
 - `Shipment/Consignment/ID` = **LTM-CS-26-0201**  
   The consignment carried.
+- `Shipment/Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Cotton lint, compressed bale**  
@@ -493,9 +493,9 @@ Inside `Signature`:
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>SCG-SH-26-0200</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cac:Consignment>
         <cbc:ID>LTM-CS-26-0201</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       </cac:Consignment>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>

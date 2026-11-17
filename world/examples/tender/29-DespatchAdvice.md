@@ -418,10 +418,10 @@ Inside `Shipment`:
 
 - `ID` = **CL-SH-26-0216**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **1660** (unitCode `KGM`)  
-  The gross weight loaded.
 - `Consignment/ID` = **CL-CS-26-0217**  
   The consignment the goods travel in, as numbered when the transport was booked.
+- `Consignment/GrossWeightMeasure` = **1660** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
 - `Consignment/CarrierParty/WebsiteURI` = **https://www.trasvia.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/IndustryClassificationCode` = **4923** (listID `ISIC Rev.4`)  
@@ -1146,9 +1146,9 @@ Inside `DespatchLine`:
   </cac:SellerSupplierParty>
   <cac:Shipment>
     <cbc:ID>CL-SH-26-0216</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>CL-CS-26-0217</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>

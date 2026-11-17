@@ -426,8 +426,6 @@ Inside `Shipment`:
   The carrier's handling code: keep upright. The code is from the Trade Accord's handling instruction list: UPRIGHT = Keep upright.
 - `Information` = **Steel street furniture for resale.**  
   What the goods are, for the driver.
-- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
-  The gross weight the carrier takes over.
 - `NetNetWeightMeasure` = **3762** (unitCode `KGM`)  
   The goods alone, without any packaging.
 - `GrossVolumeMeasure` = **41.5** (unitCode `MTQ`)  
@@ -448,6 +446,8 @@ Inside `Shipment`:
   The consignor's reference: its despatch advice.
 - `Consignment/SummaryDescription` = **Park benches and spare side frames on 25 pallets.**  
   The goods in a few words, as on the consignment note.
+- `Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight the carrier takes over.
 - `Consignment/NetWeightMeasure` = **3762** (unitCode `KGM`)  
   The weight of the goods without packaging.
 - `Consignment/LoadingLengthMeasure` = **9.3** (unitCode `MTR`)  
@@ -2496,7 +2496,6 @@ Inside `Signature`:
     <cbc:ID>CL-SH-26-0154</cbc:ID>
     <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">UPRIGHT</cbc:HandlingCode>
     <cbc:Information>Steel street furniture for resale.</cbc:Information>
-    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
     <cbc:NetNetWeightMeasure unitCode="KGM">3762</cbc:NetNetWeightMeasure>
     <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
@@ -2508,6 +2507,7 @@ Inside `Signature`:
       <cbc:ConsigneeAssignedID>LD-GI-0412</cbc:ConsigneeAssignedID>
       <cbc:ConsignorAssignedID>CL-DA-26-0153</cbc:ConsignorAssignedID>
       <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
+      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
       <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
       <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>
       <cbc:Remarks>Received in apparent good order; seals XU-CL-77310 on the trailer doors.</cbc:Remarks>
