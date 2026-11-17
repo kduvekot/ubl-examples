@@ -50,19 +50,19 @@ const envTex = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
 function rand(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
 
-function woodTexture(seed) {
+function woodTexture(seed, wood) {
   const c = document.createElement('canvas'); c.width = 2048; c.height = 256;
   const g = c.getContext('2d'); const r = rand(seed);
-  g.fillStyle = '#b48a58'; g.fillRect(0, 0, c.width, c.height);
+  g.fillStyle = wood.colour; g.fillRect(0, 0, c.width, c.height);
   for (let i = 0; i < 260; i++) {
     const y = r() * c.height, a = 0.04 + r() * 0.12, w = 0.6 + r() * 2.6;
-    g.strokeStyle = r() < 0.5 ? 'rgba(90,58,30,' + a + ')' : 'rgba(225,190,140,' + a + ')';
+    g.strokeStyle = r() < 0.5 ? 'rgba(' + wood.grain_dark + ',' + a + ')' : 'rgba(' + wood.grain_light + ',' + a + ')';
     g.lineWidth = w; g.beginPath(); g.moveTo(0, y);
     for (let x = 0; x <= c.width; x += 64) g.lineTo(x, y + Math.sin(x / (180 + r() * 200) + i) * (2 + r() * 5));
     g.stroke();
   }
   for (let i = 0; i < 40; i++) { // medullary rays of oak
-    g.fillStyle = 'rgba(230,200,150,0.18)';
+    g.fillStyle = 'rgba(' + wood.grain_light + ',0.18)';
     g.fillRect(r() * c.width, r() * c.height, 8 + r() * 30, 1.5);
   }
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
@@ -129,7 +129,7 @@ window.renderScene = async function (cfg) {
   ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
   const root = await load(cfg.glb);
   const frameMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(cfg.frame || '#555D61'), metalness: 0.0, roughness: 0.5, envMapIntensity: 0.7 });
-  const zinc = new THREE.MeshStandardMaterial({ color: 0xb8bcc0, metalness: 0.85, roughness: 0.38 });
+  const zinc = new THREE.MeshStandardMaterial({ color: 0xc9ccd0, metalness: 0.9, roughness: 0.3 }); // stainless A2
   const kraft = new THREE.MeshStandardMaterial({ color: 0xb98e5c, roughness: 0.9, metalness: 0 });
   const strap = new THREE.MeshStandardMaterial({ color: 0x24508c, roughness: 0.5 });
   const palletMat = new THREE.MeshStandardMaterial({ color: 0xd2b98d, roughness: 0.85 });
@@ -140,10 +140,10 @@ window.renderScene = async function (cfg) {
     o.castShadow = true; o.receiveShadow = true;
     const n = named(o);
     if (/frame/.test(n)) o.material = frameMat;
-    else if (/slat/.test(n)) { boxUV(o.geometry, 'x'); o.material = new THREE.MeshStandardMaterial({ map: woodTexture(seed++), roughness: 0.72, metalness: 0 }); }
+    else if (/slat/.test(n)) { boxUV(o.geometry, 'x'); o.material = new THREE.MeshStandardMaterial({ map: woodTexture(seed++, cfg.wood), roughness: 0.72, metalness: 0 }); }
     else if (/bolt|nut|washer/.test(n)) o.material = zinc;
     else if (/carton/.test(n)) { o.material = kraft; const k = n.match(/carton_[0-9]+/)[0]; if (!cartons.has(k)) cartons.set(k, []); cartons.get(k).push(o); }
-    else if (/bundle/.test(n)) { boxUV(o.geometry, 'x'); o.material = new THREE.MeshStandardMaterial({ map: woodTexture(seed++), roughness: 0.72 }); }
+    else if (/bundle/.test(n)) { boxUV(o.geometry, 'x'); o.material = new THREE.MeshStandardMaterial({ map: woodTexture(seed++, cfg.wood), roughness: 0.72 }); }
     else if (/strap/.test(n)) o.material = strap;
     else if (/pallet/.test(n)) o.material = palletMat;
   });
@@ -193,12 +193,16 @@ function serve() {
   await page.waitForFunction('window.ready === true');
   const col = P.materials.colours;
   // three.js coordinates after rotation: x = bench length, y = up, z = -depth (front of the bench at z = 0)
+  const W = P.woods;
+  for (const f of fs.readdirSync(OUT)) if (f.endsWith('.png')) fs.unlinkSync(path.join(OUT, f));
+  const ash = W[W.main_wood], oak = W[W.comparison_wood];
   const jobs = [
-    { out: 'serra180_GRY_three-quarter.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
-    { out: 'serra180_GRN_three-quarter.png', glb: '/glb/serra180_GRN.glb', frame: col.GRN.srgb_approx, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
-    { out: 'serra180_detail_frame_and_slats.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, cam: [-0.42, 0.86, 0.62], target: [0.12, 0.47, -0.30], fov: 34 },
-    { out: 'serra180_parcels_knocked_down.png', glb: '/glb/serra180_parcels.glb', cam: [-0.75, 1.55, 1.75], target: [0.9, 0.03, -0.15], fov: 34, labels: true },
-    { out: 'serra180_pallet_of_four.png', glb: '/glb/serra180_pallet.glb', cam: [-1.35, 1.75, 2.6], target: [0.92, 0.33, -0.35], fov: 32 },
+    { out: 'serra180_GRY_tm-ash_three-quarter.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, wood: ash, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
+    { out: 'serra180_GRN_tm-ash_three-quarter.png', glb: '/glb/serra180_GRN.glb', frame: col.GRN.srgb_approx, wood: ash, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
+    { out: 'serra180_GRY_oak_three-quarter.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, wood: oak, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
+    { out: 'serra180_detail_frame_and_slats_tm-ash.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, wood: ash, cam: [-0.42, 0.86, 0.62], target: [0.12, 0.47, -0.30], fov: 34 },
+    { out: 'serra180_parcels_knocked_down.png', glb: '/glb/serra180_parcels.glb', wood: ash, cam: [-0.75, 1.55, 1.75], target: [0.9, 0.03, -0.15], fov: 34, labels: true },
+    { out: 'serra180_pallet_of_four.png', glb: '/glb/serra180_pallet.glb', wood: ash, cam: [-1.35, 1.75, 2.6], target: [0.92, 0.33, -0.35], fov: 32 },
   ];
   for (const j of jobs) {
     const t0 = Date.now();

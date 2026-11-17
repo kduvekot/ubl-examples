@@ -108,7 +108,7 @@
   },
   "bolts": {
     "count": 20,
-    "type": "Cup square neck (carriage) bolt ISO 8677 M8 x 60, hex nut ISO 4032 M8, washer ISO 7089 8, hot-dip galvanised",
+    "type": "Cup square neck (carriage) bolt ISO 8677 M8 x 60, hex nut ISO 4032 M8, washer ISO 7089 8; stainless steel A2-70 / A2 (1.4301); A4 (1.4401) for coastal sites",
     "d": 8,
     "length": 60,
     "head_diameter": 20,
@@ -121,7 +121,14 @@
     "washer_od": 16,
     "washer_id": 8.4,
     "washer_t": 1.6,
-    "bag_mass": 0.02
+    "bag_mass": 0.02,
+    "material": "stainless steel A2 (EN 1.4301)",
+    "density": 7930,
+    "neck_seat": "square seat for the neck pre-formed in the slat (8.2 mm square, 5 mm deep) in thermally modified ash; holes pre-drilled Ø9 in both woods",
+    "torque_Nm": {
+      "tm_ash": 10,
+      "oak": 15
+    }
   },
   "materials": {
     "steel_density": 7850,
@@ -345,5 +352,61 @@
     "co2e_cradle_to_gate": 96,
     "manual_one_person": 25,
     "manual_two_person": 33
+  },
+  "woods": {
+    "_note": "main_wood is the slat wood from May 2026; the other is the comparison case (the current delivery). Names: never use trade names for the modified wood.",
+    "main_wood": "tm_ash",
+    "comparison_wood": "oak",
+    "tm_ash": {
+      "name": "thermally modified European ash",
+      "short": "thermally modified ash",
+      "process": "thermal modification at about 212 °C",
+      "density": 554,
+      "density_basis": "at 20 °C / 65 % RH (handbook table), taken as the delivery state",
+      "untreated_density": 625,
+      "mc_delivery": 5,
+      "mc_outdoor": [
+        8,
+        12
+      ],
+      "base_class": "EN 338 D40 before modification (European ash, DIN 4074-5 LS13 via EN 1912)",
+      "f_mk_base": 40,
+      "strength_ratio": 0.809,
+      "E0_mean": 13000,
+      "E_ratio_clear": 1.105,
+      "service_class": 3,
+      "k_mod_short": 0.7,
+      "k_mod_short_sc2": 0.9,
+      "gamma_M": 1.3,
+      "durability": "class 2 by the producers' handbook (EN 350 method), use class 3",
+      "swelling_12_to_outdoor_mm": 1.0,
+      "colour": "#3b2516",
+      "grain_dark": "24,14,8",
+      "grain_light": "92,60,38"
+    },
+    "oak": {
+      "name": "European oak heartwood",
+      "short": "oak",
+      "process": "kiln-dried",
+      "density": 690,
+      "density_basis": "at 12 % moisture content (world figure)",
+      "mc_delivery": 12,
+      "mc_outdoor": [
+        15,
+        20
+      ],
+      "base_class": "EN 338 D30 (visually graded European oak)",
+      "f_mk_base": 30,
+      "strength_ratio": 1.0,
+      "E0_mean": 11000,
+      "service_class": 3,
+      "k_mod_short": 0.7,
+      "gamma_M": 1.3,
+      "durability": "class 2-4 (EN 350:2016), heartwood",
+      "swelling_12_to_outdoor_mm": 2.5,
+      "colour": "#b48a58",
+      "grain_dark": "90,58,30",
+      "grain_light": "225,190,140"
+    }
   }
 }

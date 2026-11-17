@@ -6,8 +6,10 @@ Nothing in the world's data is changed by this directory.
 
 ## Files
 
-- `parameters.json`: the single source of truth (dimensions, materials, loads, casting, packaging, vehicles, and the
-  world's current figures for comparison).
+- `parameters.json`: the single source of truth (dimensions, materials, the two slat woods under `woods` with
+  `main_wood` = thermally modified ash and `comparison_wood` = oak, stainless fixings, loads, casting, packaging,
+  vehicles, and the world's current figures for comparison). The analysis runs for both woods; drawings and the
+  main figures use the main wood.
 - `build_bench.py`: builds everything from the parameters: the solids (build123d / OpenCascade), the analysis
   (masses, centre of gravity, slat and frame stresses, casting yield, parcels, pallet, vehicles), STEP and GLB files,
   the SVG drawings, `results.json`, then calls `render.js` and `report.py`.

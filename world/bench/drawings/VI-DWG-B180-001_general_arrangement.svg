@@ -962,14 +962,15 @@
 <text class="txt" x="232.00" y="161.90" font-size="2.3" text-anchor="start" font-weight="normal">   440 to 460 mm (gap 0 to 20 mm, grouted after levelling).</text>
 <text class="txt" x="232.00" y="165.60" font-size="2.3" text-anchor="start" font-weight="normal">2  Fixed to the ground by four M12 ground anchors (separate item),</text>
 <text class="txt" x="232.00" y="169.30" font-size="2.3" text-anchor="start" font-weight="normal">   two per side frame, through the Ø14 holes in the feet.</text>
-<text class="txt" x="232.00" y="173.00" font-size="2.3" text-anchor="start" font-weight="normal">3  Slats: 5 hardwood, 1800 x 95 x 38; 3 on the seat</text>
-<text class="txt" x="232.00" y="176.70" font-size="2.3" text-anchor="start" font-weight="normal">   (gaps 22), 2 on the back; 20 carriage bolts M8 x 60.</text>
-<text class="txt" x="232.00" y="180.40" font-size="2.3" text-anchor="start" font-weight="normal">4  Overall: 1800 long over the slats, 1660 over the armrests,</text>
-<text class="txt" x="232.00" y="184.10" font-size="2.3" text-anchor="start" font-weight="normal">   620 deep, 780 high. Seat width between the</text>
-<text class="txt" x="232.00" y="187.80" font-size="2.3" text-anchor="start" font-weight="normal">   armrests 1540 = 3 x 513.</text>
-<text class="txt" x="232.00" y="191.50" font-size="2.3" text-anchor="start" font-weight="normal">5  Bench net mass 49.9 kg (frames galvanised and coated).</text>
-<text class="txt" x="232.00" y="195.20" font-size="2.3" text-anchor="start" font-weight="normal">6  Load: UR-SF-0450, 450 kg on the seat, 1 h, no lasting</text>
-<text class="txt" x="232.00" y="198.90" font-size="2.3" text-anchor="start" font-weight="normal">   deformation; checked also against EN 581-2 (contract use).</text>
+<text class="txt" x="232.00" y="173.00" font-size="2.3" text-anchor="start" font-weight="normal">3  Slats: 5, 1800 x 95 x 38, thermally modified ash (oak</text>
+<text class="txt" x="232.00" y="176.70" font-size="2.3" text-anchor="start" font-weight="normal">   until April); 3 on the seat (gaps 22), 2 on the back; 20 carriage</text>
+<text class="txt" x="232.00" y="180.40" font-size="2.3" text-anchor="start" font-weight="normal">   bolts M8 x 60, nuts and washers in stainless steel A2 (A4 at the coast).</text>
+<text class="txt" x="232.00" y="184.10" font-size="2.3" text-anchor="start" font-weight="normal">4  Overall: 1800 long over the slats, 1660 over the armrests,</text>
+<text class="txt" x="232.00" y="187.80" font-size="2.3" text-anchor="start" font-weight="normal">   620 deep, 780 high. Seat width between the</text>
+<text class="txt" x="232.00" y="191.50" font-size="2.3" text-anchor="start" font-weight="normal">   armrests 1540 = 3 x 513.</text>
+<text class="txt" x="232.00" y="195.20" font-size="2.3" text-anchor="start" font-weight="normal">5  Bench net mass 45.5 kg (frames galvanised and coated).</text>
+<text class="txt" x="232.00" y="198.90" font-size="2.3" text-anchor="start" font-weight="normal">6  Load: UR-SF-0450, 450 kg on the seat, 1 h, no lasting</text>
+<text class="txt" x="232.00" y="202.60" font-size="2.3" text-anchor="start" font-weight="normal">   deformation; checked also against EN 581-2 (contract use).</text>
 <rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
 <polyline class="tbl" points="230.00,258.00 410.00,258.00"/>
 <text class="txt" x="233.00" y="255.20" font-size="5" text-anchor="start" font-weight="bold">Valdara Industries</text>
@@ -1000,6 +1001,6 @@
 <text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
 <polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
 <text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
-<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see BOM, drawing 005   mass 49.9 kg net</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see BOM, drawing 005   mass 45.5 kg net</text>
 <text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
 <text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>
