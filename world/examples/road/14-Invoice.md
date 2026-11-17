@@ -34,9 +34,9 @@ The carrier invoices the transport to the party that booked it; under FCA that i
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `AccountingCostCode` = **4410**  
+- `AccountingCostCode` = **4600**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Stock purchases**  
+- `AccountingCost` = **Freight and forwarding**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
@@ -513,8 +513,8 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-25</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4600</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>

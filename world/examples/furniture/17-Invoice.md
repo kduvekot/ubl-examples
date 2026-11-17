@@ -32,9 +32,9 @@ Furniture and installation; a sale to a public body is exempt from sales tax, an
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **PWD-OFF-26**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Planning office fit-out 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
@@ -559,8 +559,8 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-05-09</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>PWD-OFF-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Planning office fit-out 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>

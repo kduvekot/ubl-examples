@@ -34,9 +34,9 @@ The factory's monthly electricity consumption: meter readings and consumption pe
   The same note in English, the working language between the countries: What the statement is.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the utility's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `AccountingCostCode` = **3100**  
+- `AccountingCostCode` = **6300**  
   The customer's cost centre, as on the bill.
-- `AccountingCost` = **Raw materials and parts**  
+- `AccountingCost` = **Energy**  
   The cost centre in words.
 
 ### Parent Document Reference
@@ -587,8 +587,8 @@ Inside `SubscriberConsumption`:
   <cbc:Note languageID="qau">Gir zharhan narmir drek binmaz vukrek taz rir.</cbc:Note>
   <cbc:Note languageID="en-XU">This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:AccountingCostCode>6300</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Energy</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>FE-INV-26-0313</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>

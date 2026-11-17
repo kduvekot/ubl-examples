@@ -32,7 +32,7 @@ A second delivery, placed before the slow sales were clear.
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
   The buyer's cost centre, to be quoted on the invoice.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Home and garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of order lines.
@@ -445,7 +445,7 @@ Inside `OrderLine`:
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderDocumentReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>

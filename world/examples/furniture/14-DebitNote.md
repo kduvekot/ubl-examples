@@ -36,7 +36,7 @@ The store charges the furniture maker for transporting the returned sets back.
   The lume, the currency of the trade; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
   The store books the income on its garden department.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Home and garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   One line.
@@ -464,7 +464,7 @@ Inside `DebitNoteLine`:
   The line with its tax.
 - `AccountingCostCode` = **6120**  
   The store's cost centre the income is booked on.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Home and garden department**  
   The cost centre in words.
 - `PaymentPurposeCode` = **SCVE** (listID `ISO 20022 ExternalPurpose1Code`)  
   What the payment is for, as an ISO 20022 purpose: a service, the transport back. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SCVE = PurchaseSaleOfServices.
@@ -531,7 +531,7 @@ Inside `DebitNoteLine`:
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
@@ -860,7 +860,7 @@ Inside `DebitNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">85.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SCVE</cbc:PaymentPurposeCode>
     <cac:DiscrepancyResponse>
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>

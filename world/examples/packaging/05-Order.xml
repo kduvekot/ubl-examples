@@ -10,8 +10,8 @@
   <cbc:IssueTime>09:33:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>6140</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Clothing department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>

@@ -30,9 +30,9 @@ Clothing for the store. Delivery terms DDP store: the mill delivers.
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **6120**  
+- `AccountingCostCode` = **6140**  
   The buyer's cost centre, to be quoted on the invoice.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Clothing department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of order lines.
@@ -375,8 +375,8 @@ Inside `OrderLine`:
   <cbc:IssueTime>09:33:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>6140</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Clothing department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>

@@ -36,10 +36,6 @@ The household has not paid by the due date; the utility reminds it of the amount
   The fee becomes due on the reminder date.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the unpaid bill; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **1210**  
-  The water company's receivables account for households.
-- `AccountingCost` = **Household receivables**  
-  In words.
 - `LineCountNumeric` = **2**  
   The bill and the fee.
 
@@ -383,10 +379,6 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **5.00** (currencyID `XBL`)  
   The fee for a returned direct debit, as the terms set.
-- `AccountingCostCode` = **8320**  
-  The water company books the fee as other income.
-- `AccountingCost` = **Reminder fees**  
-  In words.
 - `Amount` = **5.00** (currencyID `XBL`)  
   The fee charged.
 
@@ -408,8 +400,6 @@ Inside `ReminderLine`:
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:TaxPointDate>2026-05-01</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>1210</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Household receivables</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ReminderPeriod>
     <cbc:StartDate>2026-04-23</cbc:StartDate>
@@ -683,8 +673,6 @@ Inside `ReminderLine`:
     <cbc:Note>The fee for the returned direct debit.</cbc:Note>
     <cbc:UUID>d00e70a0-d7c3-5fb5-ac47-8f037a876e63</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
-    <cbc:AccountingCostCode>8320</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Reminder fees</cbc:AccountingCost>
     <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>

@@ -28,9 +28,9 @@ The installers report the work done; the department approves it.
   Reported when the installation was finished.
 - `Note` = **Approved by the department's facilities officer.**  
   The approval.
-- `AccountingCostCode` = **PWD-PARKS-26**  
-  The department's programme.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCostCode` = **PWD-OFF-26**  
+  The department's cost centre for the job: the planning office's fit-out (furniture/16#F5).
+- `AccountingCost` = **Planning office fit-out 2026**  
   The cost centre in words.
 
 ### Signature
@@ -414,8 +414,8 @@ Inside `WorkReportLine`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:Note>Approved by the department's facilities officer.</cbc:Note>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>PWD-OFF-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Planning office fit-out 2026</cbc:AccountingCost>
   <cac:Signature>
     <cbc:ID>PWD-SIG-26-WR</cbc:ID>
     <cac:SignatoryParty>

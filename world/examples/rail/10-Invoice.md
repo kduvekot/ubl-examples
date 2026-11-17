@@ -34,9 +34,9 @@ Under DAP the seller pays the carriage: the rail carrier invoices the container 
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `AccountingCostCode` = **3100**  
+- `AccountingCostCode` = **4100**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Raw materials and parts**  
+- `AccountingCost` = **Freight**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
@@ -478,8 +478,8 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Freight</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>

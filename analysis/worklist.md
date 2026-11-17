@@ -557,6 +557,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D9 (furniture/14 is re-homed with the furniture flow, O6).
 - State: ready in part: 22 findings ready; furniture/14#F2 waits for D32 (O6); tender/33#F18 (the programme code against the procurement documents, the subject of C121) waits for D28.
+- Fixed in part (2026-11-17, stage 1 step 1e): every buyer has a chart of cost centres by kind of purchase (`cost_centres` in `world/parties.json`: goods, packaging, freight and forwarding, energy and water, telephone and data, services, and per item where a department buys it, such as the store's clothing department for shirts and the department's planning-office fit-out for desks and installation); each item names its kind of purchase (`purchase` in `world/items.json`); the order, invoice, credit note and utility statement take the cost centre of what they buy (`kit.cost_centre(..., iid=...)`). The issuers' own ledger codes go from the farm's delivery note and the water company's reminder. Still to come: furniture/14#F2 goes with the removed debit note (D32); tender/33#F18 (the programme code) with the tender flow (D28). Coverage: O145.
 - Findings: air: 10#F4; cotton: 03#F2; furniture: 14#F2, 15#F4, 16#F5, 17#F5; packaging: 03#F2, 04#F2, 05#F2, 07#F2; rail: 10#F4; retail: 16#F3; road: 14#F5; sea: 18#F4; tender: 33#F18; utilities: 01#F8, 02#F8, 03#F4, 05#F11, 06#F8, 10#F1, 12#F10, 13#F3; waste: 03#F4
 
 ### C15 · Shipment gross weight without the transport equipment

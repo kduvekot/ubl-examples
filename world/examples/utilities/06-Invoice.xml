@@ -11,8 +11,8 @@
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>8100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Store energy and water</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>

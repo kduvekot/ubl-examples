@@ -32,9 +32,9 @@ Packaging for manufacture, exempt from sales tax.
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **2200**  
+- `AccountingCostCode` = **2300**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Raw cotton**  
+- `AccountingCost` = **Packaging**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
@@ -500,8 +500,8 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-06-02</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
+  <cbc:AccountingCostCode>2300</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Packaging</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>

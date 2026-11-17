@@ -30,10 +30,6 @@ The farm delivers a trailer of seed cotton at the gin and confirms what it deliv
   The note in Lisavan, the sender's language (world/countries.json): What was delivered.
 - `Note` = **Three trailer loads, weighed at the gin.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What was delivered.
-- `AccountingCostCode` = **200**  
-  The gin's cost centre for seed cotton.
-- `AccountingCost` = **Seed cotton purchases**  
-  The cost centre in words.
 - `LineCountNumeric` = **1**  
   One line.
 
@@ -378,8 +374,6 @@ Inside `DespatchLine`:
   <cbc:IssueTime>14:29:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa.</cbc:Note>
   <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin.</cbc:Note>
-  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>

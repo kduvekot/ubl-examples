@@ -11,8 +11,8 @@
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>

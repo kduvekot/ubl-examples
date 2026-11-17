@@ -10,8 +10,6 @@
   <cbc:IssueTime>14:29:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa.</cbc:Note>
   <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin.</cbc:Note>
-  <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>

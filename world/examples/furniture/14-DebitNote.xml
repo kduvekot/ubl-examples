@@ -13,7 +13,7 @@
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
@@ -342,7 +342,7 @@
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">85.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SCVE</cbc:PaymentPurposeCode>
     <cac:DiscrepancyResponse>
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>

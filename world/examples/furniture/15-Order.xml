@@ -10,8 +10,8 @@
   <cbc:IssueTime>08:46:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>PWD-OFF-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Planning office fit-out 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>

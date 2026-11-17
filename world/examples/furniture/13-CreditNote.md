@@ -36,7 +36,7 @@ The returned bench sets are credited.
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
   The buyer's cost centre, as on the invoice credited.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Home and garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
@@ -497,7 +497,7 @@ Inside `CreditNoteLine`:
   <cbc:Note>The store paid the invoice; the credit is refunded.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>

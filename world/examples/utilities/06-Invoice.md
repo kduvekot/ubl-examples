@@ -32,9 +32,9 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **6120**  
+- `AccountingCostCode` = **8100**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Store energy and water**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of lines: one invoice line for the water and one collection line for the city's levy; the totals include both.
@@ -553,8 +553,8 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>8100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Store energy and water</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>

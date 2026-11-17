@@ -32,7 +32,7 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
   The buyer's cost centre, as on the invoice credited.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Home and garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
@@ -786,7 +786,7 @@ Inside `CreditNoteLine`:
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>

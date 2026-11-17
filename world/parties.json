@@ -217,6 +217,24 @@
       "department": "Sales",
       "email": "tenders@valdara.example"
      }
+    },
+    "cost_centres": {
+     "packaging": {
+      "code": "3150",
+      "name": "Packaging materials"
+     },
+     "freight": {
+      "code": "4100",
+      "name": "Freight"
+     },
+     "energy": {
+      "code": "6300",
+      "name": "Energy"
+     },
+     "services": {
+      "code": "6400",
+      "name": "Waste disposal and other services"
+     }
     }
    }
   },
@@ -302,6 +320,12 @@
       "job_title": "Accounts payable clerk",
       "department": "Finance",
       "email": "payables@castrano.example"
+     }
+    },
+    "cost_centres": {
+     "energy": {
+      "code": "6300",
+      "name": "Energy and water"
      }
     }
    },
@@ -1194,6 +1218,16 @@
       "department": "Sales",
       "email": "sales@lumeway.example"
      }
+    },
+    "cost_centres": {
+     "freight": {
+      "code": "4600",
+      "name": "Freight and forwarding"
+     },
+     "services": {
+      "code": "4700",
+      "name": "Services"
+     }
     }
    }
   },
@@ -1266,7 +1300,7 @@
     },
     "cost_centre": {
      "code": "6120",
-     "name": "Garden department"
+     "name": "Home and garden department"
     },
     "identification": {
      "convention": "GS1",
@@ -1312,6 +1346,30 @@
       "job_title": "Customer service officer",
       "department": "Customer service",
       "email": "service@brightmarket.example"
+     }
+    },
+    "cost_centres": {
+     "energy": {
+      "code": "8100",
+      "name": "Store energy and water"
+     },
+     "freight": {
+      "code": "8200",
+      "name": "Inbound freight"
+     },
+     "services": {
+      "code": "8300",
+      "name": "Services"
+     },
+     "items": {
+      "shirt": {
+       "code": "6140",
+       "name": "Clothing department"
+      },
+      "shirt-r": {
+       "code": "6140",
+       "name": "Clothing department"
+      }
      }
     }
    },
@@ -1456,6 +1514,18 @@
       "job_title": "Accounts payable clerk",
       "department": "Finance",
       "email": "finance@publicworks-lumeport.example"
+     }
+    },
+    "cost_centres": {
+     "items": {
+      "office-desk": {
+       "code": "PWD-OFF-26",
+       "name": "Planning office fit-out 2026"
+      },
+      "installation": {
+       "code": "PWD-OFF-26",
+       "name": "Planning office fit-out 2026"
+      }
      }
     }
    }
@@ -2669,6 +2739,20 @@
       "department": "Finance",
       "email": "receivables@velumi.example"
      }
+    },
+    "cost_centres": {
+     "freight": {
+      "code": "600",
+      "name": "Freight and customs"
+     },
+     "telecom": {
+      "code": "700",
+      "name": "Telephone and data"
+     },
+     "services": {
+      "code": "800",
+      "name": "Services"
+     }
     }
    }
   },
@@ -3399,6 +3483,16 @@
       "department": "Sales",
       "email": "sales@lumeporttextile.example"
      }
+    },
+    "cost_centres": {
+     "packaging": {
+      "code": "2300",
+      "name": "Packaging"
+     },
+     "freight": {
+      "code": "2400",
+      "name": "Freight and forwarding"
+     }
     }
    }
   },
@@ -3505,6 +3599,12 @@
       "job_title": "Credit controller",
       "department": "Finance",
       "email": "receivables@rivermouth.example"
+     }
+    },
+    "cost_centres": {
+     "freight": {
+      "code": "1400",
+      "name": "Freight"
      }
     }
    }

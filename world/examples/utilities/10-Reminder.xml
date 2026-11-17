@@ -13,8 +13,6 @@
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:TaxPointDate>2026-05-01</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>1210</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Household receivables</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ReminderPeriod>
     <cbc:StartDate>2026-04-23</cbc:StartDate>
@@ -288,8 +286,6 @@
     <cbc:Note>The fee for the returned direct debit.</cbc:Note>
     <cbc:UUID>d00e70a0-d7c3-5fb5-ac47-8f037a876e63</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
-    <cbc:AccountingCostCode>8320</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Reminder fees</cbc:AccountingCost>
     <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>

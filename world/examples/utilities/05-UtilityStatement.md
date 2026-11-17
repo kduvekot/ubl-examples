@@ -32,9 +32,9 @@ The shop's water consumption, read from its meter.
   What the statement is.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the utility's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **6120**  
+- `AccountingCostCode` = **8100**  
   The customer's cost centre, as on the bill.
-- `AccountingCost` = **Garden department**  
+- `AccountingCost` = **Store energy and water**  
   The cost centre in words.
 
 ### Parent Document Reference
@@ -564,8 +564,8 @@ Inside `SubscriberConsumption`:
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
   <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>8100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Store energy and water</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0317</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>

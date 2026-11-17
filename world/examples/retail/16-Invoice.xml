@@ -11,8 +11,8 @@
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4600</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>

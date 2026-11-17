@@ -10,8 +10,8 @@
   <cbc:IssueTime>08:44:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:AccountingCostCode>3150</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Packaging materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>

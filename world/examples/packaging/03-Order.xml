@@ -10,8 +10,8 @@
   <cbc:IssueTime>08:56:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
+  <cbc:AccountingCostCode>2300</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Packaging</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>

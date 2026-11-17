@@ -226,9 +226,15 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
     return out
 
 
-def cost_centre(pid, why):
-    """The buyer's accounting cost, as code and text, from its identity."""
-    cc = PARTY[pid]["identity"].get("cost_centre")
+def cost_centre(pid, why, iid=None):
+    """The buyer's accounting cost, as code and text, from its identity: the cost centre of its chart for what is
+    bought (worklist C14): for the item itself, or for its kind of purchase (freight, energy, telecom, packaging,
+    services; world/items.json "purchase"), else the buyer's main cost centre."""
+    idn = PARTY[pid]["identity"]
+    cc = idn.get("cost_centre")
+    chart = idn.get("cost_centres", {})
+    if iid:
+        cc = chart.get("items", {}).get(iid) or chart.get(ITEM[iid].get("purchase", "goods")) or cc
     if not cc:
         return {}
     return {"AccountingCostCode": V(cc["code"], why), "AccountingCost": V(cc["name"], "The cost centre in words.")}
@@ -309,7 +315,7 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency, in which the seller's prices are"
                                               if cur == currency_of(seller) else "the buyer's currency, agreed in the "
                                                                                  "contract"),
-        **cost_centre(buyer, "The buyer's cost centre, to be quoted on the invoice."),
+        **cost_centre(buyer, iid=rows[0][0]["item"], why="The buyer's cost centre, to be quoted on the invoice."),
         "LineCountNumeric": V(str(len(rows)), "The number of order lines."),
         "DeliveryTerms": {"ID": V(doc["values"]["DeliveryTerms/ID"], terms_why, schemeID="INCOTERMS"),
                           "DeliveryLocation": {"Description": V(location, "Where the delivery terms place the "
@@ -530,7 +536,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
         V("380", "A commercial invoice, as UN/EDIFACT 1001 codes it."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency" if cur == currency_of(seller)
                                               else "the buyer's currency, agreed in the contract"),
-        **cost_centre(buyer, "The buyer's cost centre, quoted in its order, so the invoice is booked without "
+        **cost_centre(buyer, iid=rows[0][0]["item"], why="The buyer's cost centre, quoted in its order, so the invoice is booked without "
                             "asking."),
         "LineCountNumeric": V(str(len(rows)), "The number of invoice lines, as a check on the transfer."),
         "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][-1], "The language of the "
@@ -1086,7 +1092,7 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs, currency=None):
             "IssueDate": V(flow.date(day), why),
             "CreditNoteTypeCode": V("381", "UN/EDIFACT 1001 code 381: credit note."),
             "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice credited"),
-            **cost_centre(buyer, "The buyer's cost centre, as on the invoice credited."),
+            **cost_centre(buyer, iid=rows[0][0]["item"], why="The buyer's cost centre, as on the invoice credited."),
             "LineCountNumeric": V(str(len(rows)), "The number of lines."),
             "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][-1], "The language of the "
                                                                                               "texts."),

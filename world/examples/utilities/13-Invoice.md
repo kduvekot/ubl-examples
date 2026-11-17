@@ -32,9 +32,9 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the seller's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `AccountingCostCode` = **500**  
+- `AccountingCostCode` = **700**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Stock for municipal projects**  
+- `AccountingCost` = **Telephone and data**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
@@ -487,8 +487,8 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>

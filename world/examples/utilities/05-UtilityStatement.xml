@@ -11,8 +11,8 @@
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
   <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>8100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Store energy and water</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0317</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>

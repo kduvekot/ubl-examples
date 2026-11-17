@@ -30,9 +30,9 @@ Furniture for the public works offices, installed. Delivery terms DAP the office
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **PWD-OFF-26**  
   The buyer's cost centre, to be quoted on the invoice.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Planning office fit-out 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of order lines.
@@ -370,8 +370,8 @@ Inside `OrderLine`:
   <cbc:IssueTime>08:46:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>PWD-OFF-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Planning office fit-out 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>

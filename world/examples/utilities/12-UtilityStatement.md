@@ -34,9 +34,9 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
   The same note in English, the working language between the countries: What the statement is.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the utility's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `AccountingCostCode` = **500**  
+- `AccountingCostCode` = **700**  
   The customer's cost centre, as on the bill.
-- `AccountingCost` = **Stock for municipal projects**  
+- `AccountingCost` = **Telephone and data**  
   The cost centre in words.
 
 ### Parent Document Reference
@@ -799,8 +799,8 @@ Inside `SubscriberConsumption`:
   <cbc:Note languageID="qal">Mikake votetaka hanano mofilufo kisala vepili vafosu.</cbc:Note>
   <cbc:Note languageID="en-XL">This statement explains the consumption behind your bill.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>ST-INV-26-0323</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>

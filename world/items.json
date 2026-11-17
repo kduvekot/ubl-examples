@@ -327,7 +327,8 @@
    "lifecycle": [
     "ENDOFLIFE",
     "The service handles the production waste at the end of its life, before it is recycled."
-   ]
+   ],
+   "purchase": "services"
   },
   {
    "id": "road-transport",
@@ -340,7 +341,8 @@
     "currency": "XUF"
    },
    "sellers_id": "TH-FTL",
-   "description": "Full truck load, price per kilometre driven loaded, tolls included."
+   "description": "Full truck load, price per kilometre driven loaded, tolls included.",
+   "purchase": "freight"
   },
   {
    "id": "rail-ore",
@@ -353,7 +355,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FRC-ORE",
-   "description": "Ore from the mine siding to the factory siding, per tonne."
+   "description": "Ore from the mine siding to the factory siding, per tonne.",
+   "purchase": "freight"
   },
   {
    "id": "rail-container",
@@ -366,7 +369,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FRC-CTR",
-   "description": "One container slot on the container train to the distributor's siding."
+   "description": "One container slot on the container train to the distributor's siding.",
+   "purchase": "freight"
   },
   {
    "id": "barge-freight",
@@ -379,7 +383,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FB-BULK",
-   "description": "Bagged cargo in jumbo bags down the river to the coast of Bayvarra, per tonne."
+   "description": "Bagged cargo in jumbo bags down the river to the coast of Bayvarra, per tonne.",
+   "purchase": "freight"
   },
   {
    "id": "electricity",
@@ -393,7 +398,8 @@
    },
    "sellers_id": "FE-KWH",
    "description": "Electricity supply, per kilowatt hour, network charges included.",
-   "supply": "goods"
+   "supply": "goods",
+   "purchase": "energy"
   },
   {
    "id": "slat-1800",
@@ -646,7 +652,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-INST",
-   "description": "Installation of furniture on site, per hour per installer."
+   "description": "Installation of furniture on site, per hour per installer.",
+   "purchase": "services"
   },
   {
    "id": "shirt",
@@ -729,7 +736,8 @@
      "where": "Rinova Recovery's plant, Ferrano",
      "country": "XU"
     }
-   }
+   },
+   "purchase": "packaging"
   },
   {
    "id": "garment-bag",
@@ -752,7 +760,8 @@
    "package": {
     "type": "BX",
     "per_package": 500
-   }
+   },
+   "purchase": "packaging"
   },
   {
    "id": "water",
@@ -766,7 +775,8 @@
    },
    "sellers_id": "CW-M3",
    "description": "Drinking water supply, per cubic metre.",
-   "supply": "goods"
+   "supply": "goods",
+   "purchase": "energy"
   },
   {
    "id": "sea-freight",
@@ -779,7 +789,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-SEA40",
-   "description": "Port-to-port sea freight for one 40-foot container, booked with the ocean carrier."
+   "description": "Port-to-port sea freight for one 40-foot container, booked with the ocean carrier.",
+   "purchase": "freight"
   },
   {
    "id": "air-freight",
@@ -792,7 +803,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-AIR",
-   "description": "Airport-to-airport air freight per kilogram chargeable weight, road feeder included."
+   "description": "Airport-to-airport air freight per kilogram chargeable weight, road feeder included.",
+   "purchase": "freight"
   },
   {
    "id": "export-clearance",
@@ -805,7 +817,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-CLR",
-   "description": "Preparing and lodging one export declaration as customs agent."
+   "description": "Preparing and lodging one export declaration as customs agent.",
+   "purchase": "freight"
   },
   {
    "id": "cargo-insurance",
@@ -818,7 +831,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-INS",
-   "description": "Cargo insurance for one shipment, arranged with the insurer."
+   "description": "Cargo insurance for one shipment, arranged with the insurer.",
+   "purchase": "freight"
   },
   {
    "id": "bench-serra-b",
@@ -990,7 +1004,8 @@
     "currency": "XLC"
    },
    "sellers_id": "ST-BL",
-   "description": "Business telephone and data line, monthly subscription."
+   "description": "Business telephone and data line, monthly subscription.",
+   "purchase": "telecom"
   },
   {
    "id": "telecom-data",
@@ -1003,7 +1018,8 @@
     "currency": "XLC"
    },
    "sellers_id": "ST-GB",
-   "description": "Mobile data beyond the subscription, per gigabyte."
+   "description": "Mobile data beyond the subscription, per gigabyte.",
+   "purchase": "telecom"
   },
   {
    "id": "bench-serra-r",
@@ -1030,7 +1046,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BM-SVC-RT",
-   "description": "Transport of returned goods back to the supplier, per delivery."
+   "description": "Transport of returned goods back to the supplier, per delivery.",
+   "purchase": "freight"
   },
   {
    "id": "road-transport-b",
@@ -1043,7 +1060,8 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-ROAD",
-   "description": "Truck load within Bayvarra, price per kilometre driven loaded."
+   "description": "Truck load within Bayvarra, price per kilometre driven loaded.",
+   "purchase": "freight"
   },
   {
    "id": "sewage-levy",
@@ -1058,7 +1076,8 @@
    "sellers_id": "CSW-LEVY",
    "levy": "2-xb",
    "description": "The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.",
-   "supply": "none"
+   "supply": "none",
+   "purchase": "energy"
   },
   {
    "id": "bench-installation",
@@ -1071,7 +1090,8 @@
     "currency": "XUF"
    },
    "sellers_id": "VI-INST-B",
-   "description": "Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers."
+   "description": "Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.",
+   "purchase": "services"
   },
   {
    "id": "battery-pack",
@@ -1194,7 +1214,8 @@
    "origin": "XB",
    "description": "Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.",
    "net_kg": 75,
-   "gross_kg": 75
+   "gross_kg": 75,
+   "purchase": "energy"
   },
   {
    "id": "power-wholesale",
@@ -1208,7 +1229,8 @@
    },
    "sellers_id": "MB-MWH",
    "description": "Electricity fed into the grid at the power station, sold by the megawatt hour.",
-   "supply": "goods"
+   "supply": "goods",
+   "purchase": "energy"
   },
   {
    "id": "network-electricity",
@@ -1221,7 +1243,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FG-NET-E",
-   "description": "Use of the electricity distribution network, per kilowatt hour taken at the connection."
+   "description": "Use of the electricity distribution network, per kilowatt hour taken at the connection.",
+   "purchase": "energy"
   },
   {
    "id": "network-gas",
@@ -1234,7 +1257,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FG-NET-G",
-   "description": "Use of the gas distribution network, per kilowatt hour of gas taken at the connection."
+   "description": "Use of the gas distribution network, per kilowatt hour of gas taken at the connection.",
+   "purchase": "energy"
   },
   {
    "id": "gas",
@@ -1248,7 +1272,8 @@
    },
    "sellers_id": "FE-GAS",
    "description": "Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.",
-   "supply": "goods"
+   "supply": "goods",
+   "purchase": "energy"
   }
  ]
 }

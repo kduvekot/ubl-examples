@@ -12,8 +12,8 @@
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:AccountingCostCode>6400</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Waste disposal and other services</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>

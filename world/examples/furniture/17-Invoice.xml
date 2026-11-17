@@ -11,8 +11,8 @@
   <cbc:DueDate>2026-05-09</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>PWD-OFF-26</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Planning office fit-out 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>

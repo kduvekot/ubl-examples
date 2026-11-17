@@ -2769,7 +2769,7 @@ def utility_statement(f, n, doc, key, invoice_no):
     cur = kit.currency_of(sup)
     rows = BILLS[key]
     out = {"Note": V("This statement explains the consumption behind your bill.", "What the statement is."),
-           **kit.cost_centre(customer, "The customer's cost centre, as on the bill."),
+           **kit.cost_centre(customer, "The customer's cost centre, as on the bill.", iid=rows[0]["item"]),
            "AdditionalDocumentReference": {"ID": V(f"{kit.initials(sup)}-TARIFF-2026", "The utility's tariff sheet "
                                                                                    "for 2026."),
                                            "DocumentTypeCode": V("TARIFF", "What the document is."),
@@ -3137,8 +3137,6 @@ def utilities(n, doc):
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the unpaid bill"),
                 "ReminderPeriod": {"StartDate": V(f.date(22), "Overdue from the failed collection."),
                                    "EndDate": V(f.date(30), "Until the reminder.")},
-                "AccountingCostCode": V("1210", "The water company's receivables account for households."),
-                "AccountingCost": V("Household receivables", "In words."),
                 "LineCountNumeric": V("2", "The bill and the fee."),
                 "AdditionalDocumentReference": {"ID": V("BLUM-RTN-26-04-0193", "The bank's notice that the direct "
                                                                                "debit was returned."),
@@ -3186,9 +3184,7 @@ def utilities(n, doc):
                                   "DebitLineAmount": amount(Decimal("5.00"), cur, "The fee for a returned direct "
                                                                                   "debit, as the terms set."),
                                   "Amount": amount(Decimal("5.00"), cur, "The fee charged."),
-                                  "AccountingCostCode": V("8320", "The water company books the fee as other "
-                                                                  "income."),
-                                  "AccountingCost": V("Reminder fees", "In words.")}]}
+                                  }]}
     raise SystemExit(f"utilities scenario: no document {n} {doc['doc']}")
 
 
@@ -4596,7 +4592,6 @@ def _(f, n, doc, out):
 @enrich("cotton", "DeliveryNote")
 def _(f, n, doc, out):
     return {"Note": V("Three trailer loads, weighed at the gin.", "What was delivered."),
-            **kit.cost_centre("39-xl", "The gin's cost centre for seed cotton."),
             "LineCountNumeric": V("1", "One line."),
             "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off under the season agreement.")},
             "AdditionalDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket.")},
@@ -5365,7 +5360,8 @@ def _(f, n, doc, out):
                            "PerformingParty": party("37-xb", short=True)}
     return {"VersionID": V("1", "The first version."),
             "Note": V("Approved by the department's facilities officer.", "The approval."),
-            **kit.cost_centre("2-xb", "The department's programme."),
+            **kit.cost_centre("2-xb", "The department's cost centre for the job: the planning office's fit-out "
+                                      "(furniture/16#F5).", iid="installation"),
             "Signature": seal("2-xb", "PWD-SIG-26-WR", "The department's approval signature."),
             "WorkQuantityTotal": {"Quantity": qty(14, "HUR", "Fourteen hours."),
                                   "WorkTypeCode": V("INSTALL", "The kind of work."),
