@@ -126,7 +126,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C86 | Air flow: packing, consolidation and charges of the castings | flow story | 10 | 3 | 1 | 3/2/5 | owner: D39 | tools/examples_scenarios.py, air_consignment() | ready (D39 decided) |
 | C87 | Plastics flow: barge waybill and goods data | flow story | 15 | 4 | 1 | 2/4/9 | owner: D41 | tools/examples_scenarios.py, plastics() | ready (D41 decided) |
 | C88 | Plastics flow: recycled-content certificate issued by a chamber of commerce | flow story | 5 | 5 | 1 | 0/0/5 | owner: D41 | world/parties.json, world/items.json | ready (D41 decided) |
-| C89 | Wood flow: slat units and isolated slips | flow story | 10 | 5 | 1 | 1/0/9 | owner: D43 | tools/examples_scenarios.py, wood() | waits: D43 |
+| C89 | Wood flow: slat units and isolated slips | flow story | 10 | 5 | 1 | 1/0/9 | owner: D43 | tools/examples_scenarios.py, wood() | ready (D43 decided) |
 | C90 | Rail flow: container train documents | flow story | 33 | 8 | 1 | 3/6/24 | owner: D37 | tools/examples_scenarios.py, rail() | ready (D37 decided) |
 | C91 | Utility statement builder: average amount, supplier consumption, subscriber data | flow story | 30 | 6 | 2 | 3/9/18 | owner: D31 | tools/examples_scenarios.py, utility_statement() | ready (D31 decided) |
 | C92 | Utilities: the telecom statement and invoice | flow story | 15 | 3 | 1 | 4/5/6 | owner: D31 | tools/examples_scenarios.py, telecom_consumption() | ready (D31 decided) |
@@ -1397,7 +1397,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D43 (the orderable unit).
 - Depends on / blocks: none
 - Touched by: D12 (the bundle of 50 slats is the world's pack of one item; the order for 4,800 slats is 96 bundles), O10 (the two levels of the slat bundle), O66 (4,800 slats make 960 benches against about 330 benches shipped), D16 (wood/07 adds the pallet charge to the customs value).
-- State: waits for D43.
+- State: D43 decided 2026-11-17; ready to implement as decided (see `analysis/worklist-decisions.md`, D43).
 - Findings: wood: 02#F1, 02#F4, 02#F12, 02#F13, 02#F16, 03#F10, 06#F12, 08#F10, 08#F14, 11#F5
 
 ### C90 · Rail flow: container train documents
