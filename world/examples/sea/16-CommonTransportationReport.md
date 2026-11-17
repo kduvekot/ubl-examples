@@ -128,10 +128,10 @@ Inside `ReporterParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Bookings**  
-  The desk that handles this document; identity of Tidewell Ocean Lines (world/parties.json).
-- `Contact/JobTitle` = **Operations planner**  
+  The party's main desk, which handles this document; identity of Tidewell Ocean Lines (world/parties.json).
+- `Contact/JobTitle` = **Booking agent**  
   The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
-- `Contact/Department` = **Operations**  
+- `Contact/Department` = **Bookings**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2418 1918**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Tidewell Ocean Lines (world/parties.json).
@@ -201,10 +201,10 @@ Inside `AuthorityParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Contact/Name` = **Ship registry**  
-  The desk that handles this document; identity of Maritime Administration of Lisavu (world/parties.json).
-- `Contact/JobTitle` = **Public service officer**  
+  The party's main desk, which handles this document; identity of Maritime Administration of Lisavu (world/parties.json).
+- `Contact/JobTitle` = **Registrar of ships**  
   The job of the person who answers at the desk; identity of Maritime Administration of Lisavu (world/parties.json).
-- `Contact/Department` = **Public services**  
+- `Contact/Department` = **Ship registry**  
   The department the desk belongs to; identity of Maritime Administration of Lisavu (world/parties.json).
 - `Contact/Telephone` = **+999 3 720 2270**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Maritime Administration of Lisavu (world/parties.json).
@@ -333,10 +333,10 @@ Inside `Shipment`:
 - `ShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/TerminalOperatorParty/Contact/Name` = **Port control**  
-  The desk that handles this document; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
+  The party's main desk, which handles this document; identity of Port of Selanu (world/parties.json).
+- `ShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Duty port controller**  
   The job of the person who answers at the desk; identity of Port of Selanu (world/parties.json).
-- `ShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
+- `ShipmentStage/TerminalOperatorParty/Contact/Department` = **Port operations**  
   The department the desk belongs to; identity of Port of Selanu (world/parties.json).
 - `ShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 3 727 1037**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Port of Selanu (world/parties.json).
@@ -922,8 +922,8 @@ Inside `Signature`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
-      <cbc:JobTitle>Operations planner</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
+      <cbc:JobTitle>Booking agent</cbc:JobTitle>
+      <cbc:Department>Bookings</cbc:Department>
       <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -984,8 +984,8 @@ Inside `Signature`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Ship registry</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:JobTitle>Registrar of ships</cbc:JobTitle>
+      <cbc:Department>Ship registry</cbc:Department>
       <cbc:Telephone>+999 3 720 2270</cbc:Telephone>
       <cbc:ElectronicMail>ship@maritime-xl.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -1088,8 +1088,8 @@ Inside `Signature`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Port control</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
+          <cbc:JobTitle>Duty port controller</cbc:JobTitle>
+          <cbc:Department>Port operations</cbc:Department>
           <cbc:Telephone>+999 3 727 1037</cbc:Telephone>
           <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

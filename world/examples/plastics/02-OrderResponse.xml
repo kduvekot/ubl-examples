@@ -39,7 +39,7 @@
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -88,11 +88,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:Name>Sales office</cbc:Name>
+        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 1 041 836 4548</cbc:Telephone>
-        <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>sales@rinova.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:PartyAuthorization>
@@ -193,11 +193,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 2440 2740</cbc:Telephone>
-        <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>purchasing@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:FinancialAccount>

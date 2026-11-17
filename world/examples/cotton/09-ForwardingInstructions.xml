@@ -75,11 +75,11 @@
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Cotton sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
-      <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>dispatch@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -160,8 +160,8 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
-      <cbc:JobTitle>Operations planner</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
       <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -251,11 +251,11 @@
           </cac:CorporateRegistrationScheme>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Purchasing</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-          <cbc:Department>Sales</cbc:Department>
+          <cbc:Name>Goods-in</cbc:Name>
+          <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+          <cbc:Department>Warehouse</cbc:Department>
           <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
-          <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>goodsin@lumeporttextile.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
         <cac:ElectronicAddress>

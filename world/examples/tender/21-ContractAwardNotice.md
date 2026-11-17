@@ -134,8 +134,8 @@ Inside `ContractingParty`:
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `Party/PartyTaxScheme/ExemptionReason` = **Public body: buys free of the state sales tax**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
@@ -170,7 +170,7 @@ Inside `ContractingParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Procurement office**  
-  The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/JobTitle` = **Procurement officer**  
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Department` = **Procurement**  
@@ -265,10 +265,10 @@ Inside `ReceiverParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Publications and register**  
-  The desk that handles this document; identity of Bayvarra Information Service (world/parties.json).
-- `Contact/JobTitle` = **Public service officer**  
+  The party's main desk, which handles this document; identity of Bayvarra Information Service (world/parties.json).
+- `Contact/JobTitle` = **Publications officer**  
   The job of the person who answers at the desk; identity of Bayvarra Information Service (world/parties.json).
-- `Contact/Department` = **Public services**  
+- `Contact/Department` = **Publications**  
   The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2259 0959**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayvarra Information Service (world/parties.json).
@@ -342,10 +342,10 @@ Inside `TenderingTerms`:
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AppealTerms/AppealReceiverParty/Contact/Name` = **Registry**  
-  The desk that handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Procurement officer**  
+  The party's main desk, which handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
+- `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Registrar**  
   The job of the person who answers at the desk; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/Contact/Department` = **Procurement**  
+- `AppealTerms/AppealReceiverParty/Contact/Department` = **Registry**  
   The department the desk belongs to; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/Contact/Telephone` = **+999 2 38 2122 0822**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Procurement Review Board of Bayvarra (world/parties.json).
@@ -526,8 +526,8 @@ Inside `ProcurementProject`:
 - `RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Public body**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
@@ -665,8 +665,8 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Public body**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
@@ -799,8 +799,8 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Sale to a public body**  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxExemptionReason` = **Public body**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
@@ -910,7 +910,7 @@ Inside `TenderResult`:
 - `WinningParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `WinningParty/Party/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `WinningParty/Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XB`)  
@@ -923,8 +923,8 @@ Inside `TenderResult`:
   The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/PostalAddress/Region` = **Province of Ferrano**  
-  The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
+- `WinningParty/Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
+  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `WinningParty/Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -983,22 +983,18 @@ Inside `TenderResult`:
   The name of code XFER in the Trade Accord's market identifier list.
 - `WinningParty/Party/PartyLegalEntity/SecurityListing/MarketCode` = **XFER** (listID `urn:ubl-examples:world:codelist:MarketCode`)  
   The market's code. The code is from the Trade Accord's market identifier list: XFER = Ferrano Stock Exchange.
-- `WinningParty/Party/Contact/Name` = **Order desk**  
-  The desk that handles this document; identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/Contact/JobTitle` = **Customer service officer**  
+- `WinningParty/Party/Contact/Name` = **Bids office**  
+  The party's bids office desk: the desk for its role in this document (it bids); identity of Valdara Industries (world/parties.json).
+- `WinningParty/Party/Contact/JobTitle` = **Bid manager**  
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Telephone` = **+999 1 041 518 4274**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/Contact/ElectronicMail` = **order@valdara.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
+- `WinningParty/Party/Contact/ElectronicMail` = **tenders@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
-- `WinningParty/Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
-  UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
-- `WinningParty/Party/Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
-  The sales desk's mobile number, also under the reserved +999.
 - `WinningParty/Party/ServiceProviderParty/ID` = **VI-SP-2026-01**  
   The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
 - `WinningParty/Party/ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
@@ -1100,7 +1096,7 @@ Inside `TenderResult`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1225,8 +1221,8 @@ Inside `TenderResult`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:JobTitle>Publications officer</cbc:JobTitle>
+      <cbc:Department>Publications</cbc:Department>
       <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -1291,8 +1287,8 @@ Inside `TenderResult`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Registry</cbc:Name>
-          <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-          <cbc:Department>Procurement</cbc:Department>
+          <cbc:JobTitle>Registrar</cbc:JobTitle>
+          <cbc:Department>Registry</cbc:Department>
           <cbc:Telephone>+999 2 38 2122 0822</cbc:Telephone>
           <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -1427,7 +1423,7 @@ Inside `TenderResult`:
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -1555,7 +1551,7 @@ Inside `TenderResult`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
           <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
-          <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
             <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           </cac:TaxScheme>
@@ -1684,7 +1680,7 @@ Inside `TenderResult`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
           <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
-          <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
             <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           </cac:TaxScheme>
@@ -1799,7 +1795,7 @@ Inside `TenderResult`:
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cbc:PostalZone>4120</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -1855,16 +1851,12 @@ Inside `TenderResult`:
           </cac:SecurityListing>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Order desk</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Name>Bids office</cbc:Name>
+          <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-          <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>tenders@valdara.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          <cac:OtherCommunication>
-            <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-            <cbc:Value>+999 1 344 474 4274</cbc:Value>
-          </cac:OtherCommunication>
         </cac:Contact>
         <cac:ServiceProviderParty>
           <cbc:ID>VI-SP-2026-01</cbc:ID>

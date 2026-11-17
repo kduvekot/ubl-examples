@@ -146,10 +146,10 @@ Inside `SenderParty`:
 - `Contact/ID` = **BM-CT-01**  
   The desk's number in the party's own contact list.
 - `Contact/Name` = **Buying office**  
-  The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Buyer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Sales**  
+- `Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2511 0411**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
@@ -204,8 +204,6 @@ Inside `ReceiverParty`:
   The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Distribution Drive**  
   Street of the postal address. identity of Lumeway Distribution (world/parties.json).
-- `PostalAddress/AdditionalStreetName` = **Gate 3**  
-  The gate of the business park to use. identity of Lumeway Distribution (world/parties.json).
 - `PostalAddress/BlockName` = **Marrowdale Business Park**  
   The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
 - `PostalAddress/BuildingNumber` = **43**  
@@ -270,15 +268,15 @@ Inside `ReceiverParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Contact/Name` = **Customer service**  
-  The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+- `Contact/Name` = **Sales office**  
+  The party's sales office desk: the desk for its role in this document (it sells); identity of Lumeway Distribution (world/parties.json).
+- `Contact/JobTitle` = **Sales coordinator**  
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Telephone` = **+999 2 7121 474 274**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
-- `Contact/ElectronicMail` = **customer@lumeway.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
+- `Contact/ElectronicMail` = **sales@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
@@ -399,8 +397,8 @@ Inside `ReceiverParty`:
     <cac:Contact>
       <cbc:ID>BM-CT-01</cbc:ID>
       <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:JobTitle>Buyer</cbc:JobTitle>
+      <cbc:Department>Purchasing</cbc:Department>
       <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -445,7 +443,6 @@ Inside `ReceiverParty`:
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Distribution Drive</cbc:StreetName>
-      <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
       <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
       <cbc:BuildingNumber>43</cbc:BuildingNumber>
       <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
@@ -502,11 +499,11 @@ Inside `ReceiverParty`:
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Customer service</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Name>Sales office</cbc:Name>
+      <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
-      <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>sales@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>

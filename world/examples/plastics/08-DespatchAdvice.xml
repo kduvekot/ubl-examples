@@ -43,7 +43,7 @@
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4140</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -92,11 +92,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Dispatch office</cbc:Name>
+        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 1 041 836 4548</cbc:Telephone>
-        <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>dispatch@rinova.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:PartyAuthorization>
@@ -197,11 +197,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Goods-in</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 38 2440 2740</cbc:Telephone>
-        <cbc:ElectronicMail>order@rivermouth.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>goodsin@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:FinancialAccount>
@@ -295,7 +295,7 @@
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cbc:PostalZone>4170</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -345,7 +345,7 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Chartering desk</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
+          <cbc:JobTitle>Chartering manager</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 041 513 4959</cbc:Telephone>
           <cbc:ElectronicMail>chartering@fiumella.example</cbc:ElectronicMail>

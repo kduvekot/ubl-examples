@@ -59,7 +59,7 @@
             <SimpleValue>PUBLIC</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Sale to a public body</SimpleValue>
+            <SimpleValue>Public body</SimpleValue>
          </Value>
          <Value ColumnRef="description">
             <SimpleValue>A body of the federation, a state or a city buys free of sales tax.</SimpleValue>

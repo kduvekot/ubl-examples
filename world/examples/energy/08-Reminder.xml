@@ -106,11 +106,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Gas sales</cbc:Name>
-        <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
-        <cbc:Department>Commercial</cbc:Department>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38522 12877</cbc:Telephone>
-        <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -149,7 +149,7 @@
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XB">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -199,11 +199,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Energy trading</cbc:Name>
-        <cbc:JobTitle>Energy trader</cbc:JobTitle>
-        <cbc:Department>Trading</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
-        <cbc:ElectronicMail>trading@montebrio.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@montebrio.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

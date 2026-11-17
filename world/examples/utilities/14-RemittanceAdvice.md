@@ -151,15 +151,15 @@ Inside `AccountingCustomerParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Party/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Accounts payable**  
+  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Velumi Trading (world/parties.json).
+- `Party/Contact/JobTitle` = **Accounts payable clerk**  
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 729 1859**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
-- `Party/Contact/ElectronicMail` = **purchasing@velumi.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
+- `Party/Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
@@ -236,15 +236,15 @@ Inside `AccountingSupplierParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Party/Contact/Name` = **Business accounts**  
-  The desk that handles this document; identity of Selanu Telecom (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Billing**  
+  The party's billing desk: the desk for its role in this document (it is owed the payment); identity of Selanu Telecom (world/parties.json).
+- `Party/Contact/JobTitle` = **Billing officer**  
   The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Business sales**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 727 2407**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
-- `Party/Contact/ElectronicMail` = **business@selanutelecom.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
+- `Party/Contact/ElectronicMail` = **billing@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Telecom (world/parties.json).
@@ -493,11 +493,11 @@ Inside `RemittanceAdviceLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -563,11 +563,11 @@ Inside `RemittanceAdviceLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Business accounts</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Billing</cbc:Name>
+        <cbc:JobTitle>Billing officer</cbc:JobTitle>
+        <cbc:Department>Business sales</cbc:Department>
         <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
-        <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

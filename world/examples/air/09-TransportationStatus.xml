@@ -76,11 +76,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Goods-in</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -144,11 +144,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Cargo sales</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
+        <cbc:Name>Cargo operations</cbc:Name>
+        <cbc:JobTitle>Load controller</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
-        <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -223,8 +223,8 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Import desk</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
+          <cbc:JobTitle>Cargo handling agent</cbc:JobTitle>
+          <cbc:Department>Cargo handling</cbc:Department>
           <cbc:Telephone>+999 3 724 1174</cbc:Telephone>
           <cbc:ElectronicMail>import@selanu-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -338,8 +338,8 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
-      <cbc:JobTitle>Operations planner</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
       <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

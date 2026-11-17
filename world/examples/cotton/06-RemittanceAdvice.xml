@@ -70,11 +70,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Cotton sales</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
-        <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@selanuginnery.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -178,8 +178,8 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Farm office</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:JobTitle>Farm manager</cbc:JobTitle>
+        <cbc:Department>Management</cbc:Department>
         <cbc:Telephone>+999 3 724 2544</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

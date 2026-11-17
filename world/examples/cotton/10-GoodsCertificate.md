@@ -123,15 +123,15 @@ Inside `ExporterParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Cotton sales**  
-  The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+- `Contact/Name` = **Customs desk**  
+  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Contact/Department` = **Sales**  
+- `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Telephone` = **+999 3 721 2681**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Contact/ElectronicMail` = **cotton@selanuginnery.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/ElectronicMail` = **customs@selanuginnery.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
@@ -226,15 +226,15 @@ Inside `ImporterParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+- `Contact/Name` = **Customs desk**  
+  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Lumeport Textile Mill (world/parties.json).
+- `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
-- `Contact/Department` = **Sales**  
+- `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2303 2603**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
-- `Contact/ElectronicMail` = **purchasing@lumeporttextile.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
+- `Contact/ElectronicMail` = **customs@lumeporttextile.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
@@ -335,15 +335,15 @@ Inside `IssuerParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Carnet office**  
-  The desk that handles this document; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/JobTitle` = **Public service officer**  
+- `Contact/Name` = **Certificates office**  
+  The party's certificates office desk: the desk for its role in this document (a certificate); identity of Selanu Chamber of Commerce (world/parties.json).
+- `Contact/JobTitle` = **Certificates officer**  
   The job of the person who answers at the desk; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Department` = **Public services**  
+- `Contact/Department` = **Certificates**  
   The department the desk belongs to; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Telephone` = **+999 3 723 2133**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/ElectronicMail` = **carnet@chamber-selanu.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Chamber of Commerce (world/parties.json).
+- `Contact/ElectronicMail` = **certificates@chamber-selanu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Chamber of Commerce (world/parties.json).
@@ -418,8 +418,8 @@ Inside `Shipment`:
   A measured property of the item.
 - `GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
   Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `GoodsItem/Item/OriginAddress/Region` = **North coast**  
-  Where on the island the cotton was grown.
+- `GoodsItem/Item/OriginAddress/District` = **North coast**  
+  The district of the island where the cotton was grown, as the farm's address names it.
 - `GoodsItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
@@ -633,11 +633,11 @@ Inside `Signature`:
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Cotton sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
-      <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>customs@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -720,11 +720,11 @@ Inside `Signature`:
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Purchasing</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
-      <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>customs@lumeporttextile.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -814,11 +814,11 @@ Inside `Signature`:
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Carnet office</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:Name>Certificates office</cbc:Name>
+      <cbc:JobTitle>Certificates officer</cbc:JobTitle>
+      <cbc:Department>Certificates</cbc:Department>
       <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
-      <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>certificates@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -878,7 +878,7 @@ Inside `Signature`:
           <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
         </cac:AdditionalItemProperty>
         <cac:OriginAddress>
-          <cbc:Region>North coast</cbc:Region>
+          <cbc:District>North coast</cbc:District>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>

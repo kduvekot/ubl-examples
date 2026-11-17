@@ -126,10 +126,10 @@ Inside `BuyerCustomerParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Lumeport Textile Mill (world/parties.json).
+- `Party/Contact/JobTitle` = **Buyer**  
   The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 38 2303 2603**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
@@ -211,8 +211,8 @@ Inside `SellerSupplierParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Cotton sales**  
-  The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/Contact/JobTitle` = **Cotton sales manager**  
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
@@ -333,8 +333,8 @@ Inside `OrderLine`:
   A measured property of the item.
 - `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
   Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `LineItem/Item/OriginAddress/Region` = **North coast**  
-  Where on the island the cotton was grown.
+- `LineItem/Item/OriginAddress/District` = **North coast**  
+  The district of the island where the cotton was grown, as the farm's address names it.
 - `LineItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `LineItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
@@ -456,8 +456,8 @@ Inside `OrderLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -528,7 +528,7 @@ Inside `OrderLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Cotton sales</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:JobTitle>Cotton sales manager</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
         <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
@@ -624,7 +624,7 @@ Inside `OrderLine`:
           <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
         </cac:AdditionalItemProperty>
         <cac:OriginAddress>
-          <cbc:Region>North coast</cbc:Region>
+          <cbc:District>North coast</cbc:District>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>

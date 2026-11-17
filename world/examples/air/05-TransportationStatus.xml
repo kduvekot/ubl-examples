@@ -71,11 +71,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Cargo sales</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
+        <cbc:Name>Cargo operations</cbc:Name>
+        <cbc:JobTitle>Load controller</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
-        <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -173,8 +173,8 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Cargo acceptance</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
+          <cbc:JobTitle>Cargo acceptance agent</cbc:JobTitle>
+          <cbc:Department>Cargo handling</cbc:Department>
           <cbc:Telephone>+999 2 38 2555 2055</cbc:Telephone>
           <cbc:ElectronicMail>cargo@lumeport-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

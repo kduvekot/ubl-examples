@@ -128,15 +128,15 @@ Inside `DespatchSupplierParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Dispatch office**  
+  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); identity of Lumeport Textile Mill (world/parties.json).
+- `Party/Contact/JobTitle` = **Dispatch coordinator**  
   The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 38 2303 2603**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/ElectronicMail` = **purchasing@lumeporttextile.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
+- `Party/Contact/ElectronicMail` = **dispatch@lumeporttextile.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
@@ -239,17 +239,15 @@ Inside `DeliveryCustomerParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Contact/ID` = **BM-CT-01**  
-  The desk's number in the party's own contact list.
-- `Party/Contact/Name` = **Buying office**  
-  The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Goods-in, Lumeport store**  
+  The party's goods-in, lumeport store desk: the desk for its role in this document (it receives the goods); identity of Brightmarket Stores (world/parties.json).
+- `Party/Contact/JobTitle` = **Goods-in supervisor**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Store operations**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 38 2511 0411**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/ElectronicMail` = **buying@brightmarket.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+- `Party/Contact/ElectronicMail` = **goodsin@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -379,10 +377,10 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/CarrierParty/Contact/Name` = **Export desk**  
-  The desk that handles this document; identity of Bayforth Forwarding (world/parties.json).
-- `Consignment/CarrierParty/Contact/JobTitle` = **Operations planner**  
+  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+- `Consignment/CarrierParty/Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
-- `Consignment/CarrierParty/Contact/Department` = **Operations**  
+- `Consignment/CarrierParty/Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 2 38 2144 1644**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
@@ -532,11 +530,11 @@ Inside `DespatchLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Dispatch office</cbc:Name>
+        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>dispatch@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -627,12 +625,11 @@ Inside `DespatchLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:ID>BM-CT-01</cbc:ID>
-        <cbc:Name>Buying office</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Goods-in, Lumeport store</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Store operations</cbc:Department>
         <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
-        <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>goodsin@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:AdditionalWebSite>
@@ -749,8 +746,8 @@ Inside `DespatchLine`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Export desk</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
+          <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+          <cbc:Department>Export</cbc:Department>
           <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
           <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

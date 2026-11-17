@@ -35,6 +35,12 @@ sys.path.insert(0, os.path.dirname(__file__))
 import world_data  # noqa: E402
 
 
+# the functions a party's desk can have (world/parties.json identity.desks; tools/build_examples.py desk_for)
+DESK_FUNCTIONS = {"sales", "purchasing", "receivables", "payables", "goods_in", "despatch", "logistics", "customs",
+                  "tenders", "operations", "procurement", "customs_export", "customs_import", "customs_transit",
+                  "carnet", "certificates"}
+
+
 def mod11(digits):
     """Check digit for the XU tax number: weights 9..2 over 8 digits, modulus 11 (10 is not allowed)."""
     s = sum(int(d) * w for d, w in zip(digits, range(9, 1, -1))) % 11
@@ -154,14 +160,25 @@ def check(world):
             if t["currency"] != cur["code"] or len(t["amount"].partition(".")[2]) != cur["minor_units"]:
                 problems.append(f"{where}: turnover {t['amount']} {t['currency']} is not in {cur['code']} with its "
                                 f"{cur['minor_units']} decimals")
-        if not st and a.get("CountrySubentity"):
-            problems.append(f"{where}: its country has no states")
+        prov = world["countries"][p["c"]].get("province") if p["c"] else None
+        if not st and a.get("CountrySubentity") and a.get("CountrySubentity") != prov:
+            problems.append(f"{where}: its country has no states" + (f"; its province is {prov}" if prov else ""))
+        if a.get("Region"):
+            problems.append(f"{where}: Region is an informal area, not a country subdivision; a province or state "
+                            "goes in CountrySubentity (worklist C03)")
         for k in ("StreetName", "BuildingNumber"):
             if not a.get(k) and not (k == "BuildingNumber" and a.get("Description")):   # a farm has no house number
                 problems.append(f"{where}: address without {k}")
         mail = idn.get("contact", {}).get("email", "")
         if mail and not mail.endswith(".example"):
             problems.append(f"{where}: e-mail {mail} must use the reserved .example domain")
+        for fn, dk in idn.get("desks", {}).items():
+            if fn not in DESK_FUNCTIONS:
+                problems.append(f"{where}: desk {fn} is not one of the desk functions ({', '.join(sorted(DESK_FUNCTIONS))})")
+            if not all(dk.get(k) for k in ("name", "job_title", "department", "email")):
+                problems.append(f"{where}: desk {fn} needs a name, job title, department and e-mail")
+            if not dk.get("email", "").endswith(".example"):
+                problems.append(f"{where}: desk {fn} e-mail {dk.get('email')} must use the reserved .example domain")
         ep = idn.get("endpoint")
         if ep:
             if ep in seen_endpoints:

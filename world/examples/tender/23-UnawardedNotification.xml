@@ -63,7 +63,7 @@
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-      <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+      <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -191,7 +191,7 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Trade sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
       <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>

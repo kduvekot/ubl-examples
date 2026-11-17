@@ -129,7 +129,7 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `MainQualifyingParty/Party/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; Region. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `MainQualifyingParty/Party/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
@@ -142,8 +142,8 @@ Inside `TendererPartyQualification`:
   The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/PostalAddress/PostalZone` = **4120**  
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
-- `MainQualifyingParty/Party/PostalAddress/Region` = **Province of Ferrano**  
-  The province, part of an address in Urvania. identity of Valdara Industries (world/parties.json).
+- `MainQualifyingParty/Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
+  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `MainQualifyingParty/Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -204,22 +204,18 @@ Inside `TendererPartyQualification`:
   The name of code XFER in the Trade Accord's market identifier list.
 - `MainQualifyingParty/Party/PartyLegalEntity/SecurityListing/MarketCode` = **XFER** (listID `urn:ubl-examples:world:codelist:MarketCode`)  
   The market's code. The code is from the Trade Accord's market identifier list: XFER = Ferrano Stock Exchange.
-- `MainQualifyingParty/Party/Contact/Name` = **Order desk**  
-  The desk that handles this document; identity of Valdara Industries (world/parties.json).
-- `MainQualifyingParty/Party/Contact/JobTitle` = **Customer service officer**  
+- `MainQualifyingParty/Party/Contact/Name` = **Bids office**  
+  The party's bids office desk: the desk for its role in this document (it bids); identity of Valdara Industries (world/parties.json).
+- `MainQualifyingParty/Party/Contact/JobTitle` = **Bid manager**  
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/Contact/Telephone` = **+999 1 041 518 4274**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
-- `MainQualifyingParty/Party/Contact/ElectronicMail` = **order@valdara.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
+- `MainQualifyingParty/Party/Contact/ElectronicMail` = **tenders@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
-- `MainQualifyingParty/Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
-  UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
-- `MainQualifyingParty/Party/Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
-  The sales desk's mobile number, also under the reserved +999.
 - `MainQualifyingParty/Party/ServiceProviderParty/ID` = **VI-SP-2026-01**  
   The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
@@ -313,10 +309,10 @@ Inside `TendererPartyQualification`:
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AdditionalQualifyingParty/Party/Contact/Name` = **Bids office**  
-  The desk that handles this document; identity of Saltmere Engineering (world/parties.json).
-- `AdditionalQualifyingParty/Party/Contact/JobTitle` = **Procurement officer**  
+  The party's main desk, which handles this document; identity of Saltmere Engineering (world/parties.json).
+- `AdditionalQualifyingParty/Party/Contact/JobTitle` = **Bid manager**  
   The job of the person who answers at the desk; identity of Saltmere Engineering (world/parties.json).
-- `AdditionalQualifyingParty/Party/Contact/Department` = **Procurement**  
+- `AdditionalQualifyingParty/Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Saltmere Engineering (world/parties.json).
 - `AdditionalQualifyingParty/Party/Contact/Telephone` = **+999 2 7121 885 685**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Saltmere Engineering (world/parties.json).
@@ -386,8 +382,8 @@ Inside `ContractingParty`:
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `Party/PartyTaxScheme/ExemptionReason` = **Public body: buys free of the state sales tax**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
@@ -422,7 +418,7 @@ Inside `ContractingParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Procurement office**  
-  The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/JobTitle` = **Procurement officer**  
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Department` = **Procurement**  
@@ -570,7 +566,7 @@ Inside `AdditionalDocumentReference`:
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cbc:PostalZone>4120</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -627,16 +623,12 @@ Inside `AdditionalDocumentReference`:
           </cac:SecurityListing>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Order desk</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Name>Bids office</cbc:Name>
+          <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-          <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>tenders@valdara.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          <cac:OtherCommunication>
-            <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-            <cbc:Value>+999 1 344 474 4274</cbc:Value>
-          </cac:OtherCommunication>
         </cac:Contact>
         <cac:ServiceProviderParty>
           <cbc:ID>VI-SP-2026-01</cbc:ID>
@@ -734,8 +726,8 @@ Inside `AdditionalDocumentReference`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Bids office</cbc:Name>
-          <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-          <cbc:Department>Procurement</cbc:Department>
+          <cbc:JobTitle>Bid manager</cbc:JobTitle>
+          <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
           <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -789,7 +781,7 @@ Inside `AdditionalDocumentReference`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

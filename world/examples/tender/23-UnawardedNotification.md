@@ -101,8 +101,8 @@ Inside `SenderParty`:
 - `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `PartyTaxScheme/ExemptionReason` = **Public body: buys free of the state sales tax**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
@@ -137,7 +137,7 @@ Inside `SenderParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Procurement office**  
-  The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/JobTitle` = **Procurement officer**  
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/Department` = **Procurement**  
@@ -238,8 +238,8 @@ Inside `ReceiverParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Trade sales**  
-  The desk that handles this document; identity of Brackenmere Furniture (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Brackenmere Furniture (world/parties.json).
+- `Contact/JobTitle` = **Trade sales manager**  
   The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
@@ -408,7 +408,7 @@ Inside `AppealTerms`:
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
       <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-      <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+      <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -536,7 +536,7 @@ Inside `AppealTerms`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Trade sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
       <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>

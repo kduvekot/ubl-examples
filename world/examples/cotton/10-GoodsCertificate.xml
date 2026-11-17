@@ -81,11 +81,11 @@
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Cotton sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
-      <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>customs@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -168,11 +168,11 @@
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Purchasing</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
-      <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>customs@lumeporttextile.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -262,11 +262,11 @@
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Carnet office</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:Name>Certificates office</cbc:Name>
+      <cbc:JobTitle>Certificates officer</cbc:JobTitle>
+      <cbc:Department>Certificates</cbc:Department>
       <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
-      <cbc:ElectronicMail>carnet@chamber-selanu.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>certificates@chamber-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -326,7 +326,7 @@
           <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
         </cac:AdditionalItemProperty>
         <cac:OriginAddress>
-          <cbc:Region>North coast</cbc:Region>
+          <cbc:District>North coast</cbc:District>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>

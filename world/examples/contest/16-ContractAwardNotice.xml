@@ -72,7 +72,7 @@
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -179,8 +179,8 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:JobTitle>Publications officer</cbc:JobTitle>
+      <cbc:Department>Publications</cbc:Department>
       <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -321,11 +321,11 @@
           </cac:CorporateRegistrationScheme>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Trade sales</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Name>Bids office</cbc:Name>
+          <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
-          <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>tenders@brackenmere.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
         <cac:ElectronicAddress>
@@ -365,7 +365,7 @@
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cbc:PostalZone>4120</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -421,16 +421,12 @@
           </cac:SecurityListing>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Order desk</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Name>Bids office</cbc:Name>
+          <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-          <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>tenders@valdara.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          <cac:OtherCommunication>
-            <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-            <cbc:Value>+999 1 344 474 4274</cbc:Value>
-          </cac:OtherCommunication>
         </cac:Contact>
         <cac:ServiceProviderParty>
           <cbc:ID>VI-SP-2026-01</cbc:ID>

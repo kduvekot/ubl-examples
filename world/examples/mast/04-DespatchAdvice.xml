@@ -82,11 +82,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Bids office</cbc:Name>
-        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-        <cbc:Department>Procurement</cbc:Department>
+        <cbc:Name>Dispatch office</cbc:Name>
+        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
-        <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>dispatch@saltmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -151,11 +151,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Business accounts</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Network stores</cbc:Name>
+        <cbc:JobTitle>Stores supervisor</cbc:JobTitle>
+        <cbc:Department>Network operations</cbc:Department>
         <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
-        <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>stores@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -244,11 +244,11 @@
           </cac:CorporateRegistrationScheme>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Cargo sales</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
+          <cbc:Name>Cargo operations</cbc:Name>
+          <cbc:JobTitle>Load controller</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
-          <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
         <cac:ElectronicAddress>

@@ -91,11 +91,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Export desk</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
-        <cbc:Department>Operations</cbc:Department>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
-        <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@bayforth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -180,11 +180,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -292,8 +292,8 @@
           </cac:PartyLegalEntity>
           <cac:Contact>
             <cbc:Name>Bookings</cbc:Name>
-            <cbc:JobTitle>Operations planner</cbc:JobTitle>
-            <cbc:Department>Operations</cbc:Department>
+            <cbc:JobTitle>Booking agent</cbc:JobTitle>
+            <cbc:Department>Bookings</cbc:Department>
             <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
             <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
             <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

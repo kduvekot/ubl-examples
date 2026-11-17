@@ -88,11 +88,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Trade sales</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
-        <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>purchasing@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -177,7 +177,7 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
         <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>

@@ -73,7 +73,7 @@
      "BlockName PlotIdentification",
      "CitySubdivisionName",
      "PostalZone CityName",
-     "Region"
+     "CountrySubentity"
     ],
     "postal_zone": "4 digits",
     "subdivisions": null,
@@ -93,7 +93,6 @@
      "abbreviation": "SRU"
     }
    },
-   "region": "Province of Ferrano",
    "payment": {
     "terms": "30 days net; 2 % discount when paid within 10 days.",
     "due_days": 30,
@@ -207,7 +206,8 @@
      "pattern": "^XU-ENV-\\d{4}-\\d{4}$",
      "format": "XU-ENV-, the year of issue and a four-digit number"
     }
-   }
+   },
+   "province": "Province of Ferrano"
   },
   "XB": {
    "name": "Bayvarra",

@@ -83,7 +83,11 @@ street and number (street first in Urvania, number first in Bayvarra and on
 the island), additional street, block and plot, quarter, and last the town
 line (postal code before the town in Urvania; the town, state and postal code
 in Bayvarra), with the province in Urvania and the district and a
-description of the way on the island. A field the address does not have is
+description of the way on the island. The province is a subdivision of the
+country, like a Bayvarran state, so it is written in `CountrySubentity`;
+UBL's `Region` names an informal area or a group of countries, which no
+address of the world has. Where a delivery goes to a gate or a dock, that is
+a delivery location with its own identifier, not part of the postal address. A field the address does not have is
 left out with its line. A name in two languages is written on its line in
 both, the national language first, then ` / `, then English, and the number
 once: `<Urvanian street> / <English street> 12` in Urvania, `35 <Lisavan
@@ -548,8 +552,16 @@ analysis). Each party has:
 - a **role**, such as manufacturer, road carrier or contracting authority;
 - a **place** on the map, in a town or a locality;
 - an **identity**: a name, the identifiers of its country's schemes, a
-  postal address in its country's format, an electronic address, a contact,
-  and, where it is paid, an account at one of the world's banks;
+  postal address in its country's format, an electronic address, a main
+  contact and the desks it works through (sales, purchasing, accounts
+  receivable and payable, goods-in, dispatch, transport planning, customs,
+  bids; a customs service has its export, import and transit offices, a
+  chamber its certificates and carnet offices), and, where it is paid, an
+  account at one of the world's banks. The role a party plays in a document
+  picks the desk that speaks for it: the buyer's purchasing in an order, its
+  accounts payable in an invoice, its goods-in in a receipt. The desks share
+  the party's switchboard number; a small party such as the cotton farm has
+  one office for everything;
 - for a company, its **founding date, headcount and turnover**, from which
   its size class follows by the Trade Accord's limits, modelled on the EU
   definition of small and medium-sized enterprises and given in all three

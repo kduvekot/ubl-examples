@@ -107,15 +107,15 @@ Inside `AccountingSupplierParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Party/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Accounts receivable**  
+  The party's accounts receivable desk: the desk for its role in this document (it is owed the payment); identity of Velumi Trading (world/parties.json).
+- `Party/Contact/JobTitle` = **Credit controller**  
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 729 1859**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
-- `Party/Contact/ElectronicMail` = **purchasing@velumi.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
+- `Party/Contact/ElectronicMail` = **receivables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
@@ -239,10 +239,10 @@ Inside `AccountingCustomerParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Farm office**  
-  The desk that handles this document; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/Contact/JobTitle` = **Farm manager**  
   The job of the person who answers at the desk; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Management**  
   The department the desk belongs to; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 724 2544**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Lisavu Cotton Farm (world/parties.json).
@@ -648,11 +648,11 @@ Inside `PurchaseReceiptLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -756,8 +756,8 @@ Inside `PurchaseReceiptLine`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Farm office</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:JobTitle>Farm manager</cbc:JobTitle>
+        <cbc:Department>Management</cbc:Department>
         <cbc:Telephone>+999 3 724 2544</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

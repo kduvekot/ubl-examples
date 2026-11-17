@@ -26,7 +26,7 @@
      "telephone": "+999 1 0413 24137",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Sales coordinator"
     },
     "tax_id": "XU007289704",
     "address": {
@@ -34,7 +34,7 @@
      "BuildingNumber": "10",
      "CityName": "Serravona",
      "PostalZone": "4110",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4170202741471003"
     },
     "account": {
@@ -60,6 +60,20 @@
      "locode": "XUSRV",
      "description": "The mine and its rail siding",
      "conditions": "Unpaved access road; heavy vehicles only."
+    },
+    "desks": {
+     "despatch": {
+      "name": "Rail loading office",
+      "job_title": "Loading supervisor",
+      "department": "Logistics",
+      "email": "loading@serravona.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@serravona.example"
+     }
     }
    }
   },
@@ -92,7 +106,7 @@
      "telephone": "+999 1 041 518 4274",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer",
+     "job_title": "Order administrator",
      "mobile": "+999 1 344 474 4274"
     },
     "tax_id": "XU007299291",
@@ -101,7 +115,7 @@
      "BuildingNumber": "17",
      "CityName": "Ferrano",
      "PostalZone": "4120",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160200467394686"
     },
     "account": {
@@ -153,6 +167,56 @@
     "identification": {
      "convention": "ISO",
      "codana_cin": "10427"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@valdara.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@valdara.example"
+     },
+     "goods_in": {
+      "name": "Goods-in",
+      "job_title": "Goods-in supervisor",
+      "department": "Warehouse",
+      "email": "goodsin@valdara.example"
+     },
+     "logistics": {
+      "name": "Transport planning",
+      "job_title": "Logistics planner",
+      "department": "Logistics",
+      "email": "logistics@valdara.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@valdara.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@valdara.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@valdara.example"
+     },
+     "tenders": {
+      "name": "Bids office",
+      "job_title": "Bid manager",
+      "department": "Sales",
+      "email": "tenders@valdara.example"
+     }
     }
    }
   },
@@ -183,9 +247,9 @@
      "name": "Warehouse office",
      "email": "warehouse@castrano.example",
      "telephone": "+999 1 041 677 4411",
-     "department": "Sales",
+     "department": "Operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Warehouse administrator"
     },
     "tax_id": "XU007308887",
     "address": {
@@ -193,7 +257,7 @@
      "BuildingNumber": "24",
      "CityName": "Ferrano",
      "PostalZone": "4130",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160203920705699"
     },
     "account": {
@@ -225,6 +289,20 @@
     "identification": {
      "convention": "ISO",
      "codana_cin": "10441"
+    },
+    "desks": {
+     "despatch": {
+      "name": "Loading bays",
+      "job_title": "Shift supervisor",
+      "department": "Operations",
+      "email": "loading@castrano.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@castrano.example"
+     }
     }
    },
    "fleet": [
@@ -265,7 +343,7 @@
      "name": "Customer service",
      "email": "customer@rinova.example",
      "telephone": "+999 1 041 836 4548",
-     "department": "Sales",
+     "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
     },
@@ -275,7 +353,7 @@
      "BuildingNumber": "31",
      "CityName": "Ferrano",
      "PostalZone": "4140",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160202983340277"
     },
     "account": {
@@ -307,6 +385,50 @@
     "cost_centre": {
      "code": "4100",
      "name": "Freight"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@rinova.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@rinova.example"
+     },
+     "logistics": {
+      "name": "Transport planning",
+      "job_title": "Logistics planner",
+      "department": "Logistics",
+      "email": "logistics@rinova.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@rinova.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@rinova.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@rinova.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@rinova.example"
+     }
     }
    }
   },
@@ -335,7 +457,7 @@
      "telephone": "+999 1 0413 44685",
      "department": "Operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Freight planner"
     },
     "tax_id": "XU007328060",
     "address": {
@@ -343,7 +465,7 @@
      "BuildingNumber": "38",
      "CityName": "Serravona",
      "PostalZone": "4150",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4170201115930918"
     },
     "account": {
@@ -362,6 +484,20 @@
       "amount": "851000000",
       "currency": "XUF",
       "year": 2025
+     }
+    },
+    "desks": {
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@ferranorail.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@ferranorail.example"
      }
     }
    },
@@ -418,7 +554,7 @@
      "telephone": "+999 1 041 354 4822",
      "department": "Operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Transport planner"
     },
     "tax_id": "XU007337656",
     "address": {
@@ -426,7 +562,7 @@
      "BuildingNumber": "45",
      "CityName": "Ferrano",
      "PostalZone": "4160",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160203746888095"
     },
     "account": {
@@ -452,6 +588,20 @@
      "valid_until": "2030-06-30",
      "certificate": "XU-HAUL-2020-0877",
      "register": "haulage-licence"
+    },
+    "desks": {
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@trasvia.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@trasvia.example"
+     }
     }
    },
    "fleet": [
@@ -498,7 +648,7 @@
      "telephone": "+999 1 041 513 4959",
      "department": "Operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Chartering manager"
     },
     "tax_id": "XU007347248",
     "address": {
@@ -506,7 +656,7 @@
      "BuildingNumber": "52",
      "CityName": "Ferrano",
      "PostalZone": "4170",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160204198475331"
     },
     "account": {
@@ -525,6 +675,20 @@
       "amount": "540000000",
       "currency": "XUF",
       "year": 2025
+     }
+    },
+    "desks": {
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@fiumella.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@fiumella.example"
      }
     }
    },
@@ -574,7 +738,7 @@
      "telephone": "+999 1 041 672 5096",
      "department": "Operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Terminal controller"
     },
     "tax_id": "XU007356833",
     "address": {
@@ -582,7 +746,7 @@
      "BuildingNumber": "59",
      "CityName": "Ferrano",
      "PostalZone": "4180",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160200139820702"
     },
     "industry": "5221",
@@ -623,9 +787,9 @@
      "name": "Trade services",
      "email": "trade@crevalto.example",
      "telephone": "+999 1 041 831 5233",
-     "department": "Client services",
+     "department": "Trade services",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Client relationship manager"
+     "job_title": "Trade services officer"
     },
     "tax_id": "XU007366425",
     "address": {
@@ -636,7 +800,7 @@
      "BuildingName": "Palazzo Crevalto",
      "Floor": "3",
      "Room": "301",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160202566161231"
     },
     "bank_code": "CREV",
@@ -703,9 +867,9 @@
      "name": "Certificates office",
      "email": "certificates@camera-ferrano.example",
      "telephone": "+999 1 041 990 5370",
-     "department": "Public services",
+     "department": "Certificates",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Certificates officer"
     },
     "tax_id": "XU007376017",
     "address": {
@@ -713,11 +877,25 @@
      "BuildingNumber": "15",
      "CityName": "Ferrano",
      "PostalZone": "4110",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160202319527073"
     },
     "industry": "9411",
-    "language": "en"
+    "language": "en",
+    "desks": {
+     "carnet": {
+      "name": "Carnet office",
+      "job_title": "Carnet officer",
+      "department": "Carnets",
+      "email": "carnets@camera-ferrano.example"
+     },
+     "certificates": {
+      "name": "Certificates office",
+      "job_title": "Certificates officer",
+      "department": "Certificates",
+      "email": "certificates@camera-ferrano.example"
+     }
+    }
    }
   },
   {
@@ -744,10 +922,10 @@
      "name": "Border office",
      "email": "border@customs-xu.example",
      "telephone": "+999 1 041 349 5507",
-     "department": "Public services",
+     "department": "Customs",
      "hours": "Weekdays 08:00–17:00",
      "telefax": "+999 1 041 326 0018",
-     "job_title": "Public service officer"
+     "job_title": "Customs officer"
     },
     "tax_id": "XU007385602",
     "address": {
@@ -756,11 +934,31 @@
      "CityName": "Ferrano",
      "PostalZone": "4120",
      "Postbox": "PB 18",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160202968066555"
     },
     "industry": "8411",
-    "language": "en"
+    "language": "en",
+    "desks": {
+     "customs_export": {
+      "name": "Export office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "export@customs-xu.example"
+     },
+     "customs_import": {
+      "name": "Import office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "import@customs-xu.example"
+     },
+     "customs_transit": {
+      "name": "Transit office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "transit@customs-xu.example"
+     }
+    }
    }
   },
   {
@@ -787,9 +985,9 @@
      "name": "Member services",
      "email": "member@codana.example",
      "telephone": "+999 1 041 508 5644",
-     "department": "Public services",
+     "department": "Member services",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Member services officer"
     },
     "tax_id": "XU007395206",
     "address": {
@@ -797,7 +995,7 @@
      "BuildingNumber": "29",
      "CityName": "Ferrano",
      "PostalZone": "4130",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160200261972596"
     },
     "industry": "8299",
@@ -838,9 +1036,9 @@
      "name": "Border office",
      "email": "border@customs-xb.example",
      "telephone": "+999 2 7121 337 137",
-     "department": "Public services",
+     "department": "Customs",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Customs officer"
     },
     "address": {
      "StreetName": "Border Crossing Road",
@@ -852,7 +1050,21 @@
      "ID": "UL-ADR-479100"
     },
     "industry": "8411",
-    "language": "en"
+    "language": "en",
+    "desks": {
+     "customs_export": {
+      "name": "Export office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "export@customs-xb.example"
+     },
+     "customs_import": {
+      "name": "Import office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "import@customs-xb.example"
+     }
+    }
    }
   },
   {
@@ -882,7 +1094,7 @@
      "name": "Customer service",
      "email": "customer@lumeway.example",
      "telephone": "+999 2 7121 474 274",
-     "department": "Sales",
+     "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
     },
@@ -895,7 +1107,6 @@
      "PostalZone": "71214",
      "BlockName": "Marrowdale Business Park",
      "PlotIdentification": "Plot 14",
-     "AdditionalStreetName": "Gate 3",
      "CountrySubentityCode": "XB-UL",
      "ID": "UL-ADR-693911"
     },
@@ -936,7 +1147,62 @@
       "dc": {
        "gln": "9520610900022",
        "name": "Distribution centre, goods-out"
+      },
+      "goodsin": {
+       "gln": "9520610900039",
+       "name": "Distribution centre, goods-in",
+       "description": "Goods-in, dock 4 of the distribution centre, entered by gate 3 of Marrowdale Business Park"
       }
+     }
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@lumeway.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@lumeway.example"
+     },
+     "goods_in": {
+      "name": "Goods-in",
+      "job_title": "Goods-in supervisor",
+      "department": "Warehouse",
+      "email": "goodsin@lumeway.example"
+     },
+     "logistics": {
+      "name": "Transport planning",
+      "job_title": "Logistics planner",
+      "department": "Logistics",
+      "email": "logistics@lumeway.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@lumeway.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@lumeway.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@lumeway.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@lumeway.example"
      }
     }
    }
@@ -964,9 +1230,9 @@
      "name": "Buying office",
      "email": "buying@brightmarket.example",
      "telephone": "+999 2 38 2511 0411",
-     "department": "Sales",
+     "department": "Purchasing",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer",
+     "job_title": "Buyer",
      "id": "BM-CT-01"
     },
     "tax_id": "CO-1231233",
@@ -1031,6 +1297,32 @@
      "first": 0,
      "last": 4,
      "note": "The store's tills print only the last four digits of a card number."
+    },
+    "desks": {
+     "goods_in": {
+      "name": "Goods-in, Lumeport store",
+      "job_title": "Goods-in supervisor",
+      "department": "Store operations",
+      "email": "goodsin@brightmarket.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@brightmarket.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@brightmarket.example"
+     },
+     "sales": {
+      "name": "Customer service",
+      "job_title": "Customer service officer",
+      "department": "Customer service",
+      "email": "service@brightmarket.example"
+     }
     }
    },
    "fleet": [
@@ -1153,7 +1445,7 @@
     },
     "industry": "8411",
     "language": "en",
-    "tax_exemption": "Public bodies are exempt from the state sales tax",
+    "tax_exemption": "Buys free of the state sales tax",
     "tax_id": "CO-0900002",
     "customs_id": "XB-TR-410548",
     "cost_centre": {
@@ -1161,7 +1453,21 @@
      "name": "Parks renewal programme 2026"
     },
     "tax_exemption_kind": "Sale to a public body",
-    "tax_registration_office": "Lumeport"
+    "tax_registration_office": "Lumeport",
+    "desks": {
+     "goods_in": {
+      "name": "Parks depot",
+      "job_title": "Depot supervisor",
+      "department": "Parks maintenance",
+      "email": "parksdepot@publicworks-lumeport.example"
+     },
+     "payables": {
+      "name": "Finance office",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "finance@publicworks-lumeport.example"
+     }
+    }
    }
   },
   {
@@ -1188,9 +1494,9 @@
      "name": "Bids office",
      "email": "bids@saltmere.example",
      "telephone": "+999 2 7121 885 685",
-     "department": "Procurement",
+     "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Procurement officer"
+     "job_title": "Bid manager"
     },
     "tax_id": "UL-1232055",
     "address": {
@@ -1211,6 +1517,26 @@
     "language": "en",
     "identification": {
      "convention": "own"
+    },
+    "desks": {
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@saltmere.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@saltmere.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@saltmere.example"
+     }
     }
    }
   },
@@ -1238,9 +1564,9 @@
      "name": "Registry",
      "email": "registry@review-xb.example",
      "telephone": "+999 2 38 2122 0822",
-     "department": "Procurement",
+     "department": "Registry",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Procurement officer"
+     "job_title": "Registrar"
     },
     "address": {
      "StreetName": "Justice Row",
@@ -1279,9 +1605,9 @@
      "name": "Publications and register",
      "email": "publications@info-xb.example",
      "telephone": "+999 2 38 2259 0959",
-     "department": "Public services",
+     "department": "Publications",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Publications officer"
     },
     "address": {
      "StreetName": "Civic Square",
@@ -1321,9 +1647,9 @@
      "name": "Secretariat",
      "email": "secretariat@tradeaccord.example",
      "telephone": "+999 2 38 2396 1096",
-     "department": "Public services",
+     "department": "Secretariat",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Secretariat officer"
     },
     "address": {
      "StreetName": "Exchange Street",
@@ -1364,7 +1690,7 @@
      "telephone": "+999 2 38 2533 1233",
      "department": "Client services",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Client relationship manager"
+     "job_title": "Client account manager"
     },
     "tax_id": "CO-1233699",
     "address": {
@@ -1394,6 +1720,14 @@
       "currency": "XBL",
       "year": 2025
      }
+    },
+    "desks": {
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@harbourline.example"
+     }
     }
    }
   },
@@ -1420,9 +1754,9 @@
      "name": "Trade services",
      "email": "trade@bankoflumeport.example",
      "telephone": "+999 2 38 2670 1370",
-     "department": "Client services",
+     "department": "Trade services",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Client relationship manager"
+     "job_title": "Trade services officer"
     },
     "address": {
      "StreetName": "Exchange Street",
@@ -1502,9 +1836,9 @@
      "name": "Cargo claims",
      "email": "cargo@wavesure.example",
      "telephone": "+999 2 38 2807 1507",
-     "department": "Client services",
+     "department": "Claims",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Client relationship manager"
+     "job_title": "Claims handler"
     },
     "tax_id": "CO-1234521",
     "address": {
@@ -1555,9 +1889,9 @@
      "name": "Export desk",
      "email": "export@bayforth.example",
      "telephone": "+999 2 38 2144 1644",
-     "department": "Operations",
+     "department": "Export",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Export coordinator"
     },
     "tax_id": "CO-1234932",
     "address": {
@@ -1586,6 +1920,26 @@
       "amount": "6660000.00",
       "currency": "XBL",
       "year": 2025
+     }
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@bayforth.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@bayforth.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@bayforth.example"
      }
     }
    },
@@ -1641,9 +1995,9 @@
      "name": "Port control",
      "email": "port@port-lumeport.example",
      "telephone": "+999 2 38 2281 1781",
-     "department": "Operations",
+     "department": "Port operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Duty port controller"
     },
     "address": {
      "StreetName": "Harbour Road",
@@ -1698,9 +2052,9 @@
      "name": "Bookings",
      "email": "bookings@tidewell.example",
      "telephone": "+999 2 38 2418 1918",
-     "department": "Operations",
+     "department": "Bookings",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Booking agent"
     },
     "tax_id": "CO-1235754",
     "address": {
@@ -1801,9 +2155,9 @@
      "name": "Cargo acceptance",
      "email": "cargo@lumeport-cargo.example",
      "telephone": "+999 2 38 2555 2055",
-     "department": "Operations",
+     "department": "Cargo handling",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Cargo acceptance agent"
     },
     "tax_id": "CO-1236165",
     "address": {
@@ -1867,9 +2221,9 @@
      "name": "Port control",
      "email": "port@port-selanu.example",
      "telephone": "+999 3 727 1037",
-     "department": "Operations",
+     "department": "Port operations",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Duty port controller"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -1923,9 +2277,9 @@
      "name": "Import desk",
      "email": "import@selanu-cargo.example",
      "telephone": "+999 3 724 1174",
-     "department": "Operations",
+     "department": "Cargo handling",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Cargo handling agent"
     },
     "address": {
      "StreetName": "Airfield Road",
@@ -1972,9 +2326,9 @@
      "name": "Cargo sales",
      "email": "cargo@kelaro.example",
      "telephone": "+999 3 721 1311",
-     "department": "Operations",
+     "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Cargo sales agent"
     },
     "address": {
      "StreetName": "Airfield Road",
@@ -1996,7 +2350,15 @@
      }
     },
     "airline_designator": "K0",
-    "airline_icao": "KXL"
+    "airline_icao": "KXL",
+    "desks": {
+     "operations": {
+      "name": "Cargo operations",
+      "job_title": "Load controller",
+      "department": "Operations",
+      "email": "cargoops@kelaro.example"
+     }
+    }
    },
    "fleet": [
     {
@@ -2070,9 +2432,9 @@
      "name": "Import office",
      "email": "import@customs-xl.example",
      "telephone": "+999 3 728 1448",
-     "department": "Public services",
+     "department": "Customs",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Customs officer"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -2081,7 +2443,21 @@
      "ID": "65334843"
     },
     "industry": "8411",
-    "language": "en"
+    "language": "en",
+    "desks": {
+     "customs_export": {
+      "name": "Export office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "export@customs-xl.example"
+     },
+     "customs_import": {
+      "name": "Import office",
+      "job_title": "Customs officer",
+      "department": "Customs",
+      "email": "import@customs-xl.example"
+     }
+    }
    }
   },
   {
@@ -2107,9 +2483,9 @@
      "name": "Declarations",
      "email": "declarations@tevaro.example",
      "telephone": "+999 3 725 1585",
-     "department": "Operations",
+     "department": "Customs",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Operations planner"
+     "job_title": "Customs declarant"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -2164,9 +2540,9 @@
      "name": "Goods inwards",
      "email": "goods@nalevi.example",
      "telephone": "+999 3 722 1722",
-     "department": "Sales",
+     "department": "Warehouse",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Warehouse supervisor"
     },
     "address": {
      "StreetName": "Lagoon Road",
@@ -2190,6 +2566,14 @@
       "amount": "2500000.000",
       "currency": "XLC",
       "year": 2025
+     }
+    },
+    "desks": {
+     "operations": {
+      "name": "Goods inwards",
+      "job_title": "Warehouse supervisor",
+      "department": "Warehouse",
+      "email": "goodsin@nalevi.example"
      }
     }
    },
@@ -2226,9 +2610,9 @@
      "name": "Purchasing",
      "email": "purchasing@velumi.example",
      "telephone": "+999 3 729 1859",
-     "department": "Sales",
+     "department": "Purchasing",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Buyer"
     },
     "address": {
      "StreetName": "Reef Street",
@@ -2270,6 +2654,32 @@
      "first": 6,
      "last": 4,
      "note": "Velumi Trading's shop till prints the first six and the last four digits of a card number."
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@velumi.example"
+     },
+     "goods_in": {
+      "name": "Goods-in",
+      "job_title": "Goods-in supervisor",
+      "department": "Warehouse",
+      "email": "goodsin@velumi.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@velumi.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@velumi.example"
+     }
     }
    }
   },
@@ -2296,9 +2706,9 @@
      "name": "Payments",
      "email": "payments@bankofselanu.example",
      "telephone": "+999 3 726 1996",
-     "department": "Client services",
+     "department": "Payments",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Client relationship manager"
+     "job_title": "Payments officer"
     },
     "address": {
      "StreetName": "Reef Street",
@@ -2360,12 +2770,12 @@
     "registry_id": "IC42133",
     "endpoint": "XL:IC42133",
     "contact": {
-     "name": "Carnet office",
+     "name": "Members’ office",
      "email": "carnet@chamber-selanu.example",
      "telephone": "+999 3 723 2133",
-     "department": "Public services",
+     "department": "Member services",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Members’ officer"
     },
     "address": {
      "StreetName": "Reef Street",
@@ -2374,7 +2784,21 @@
      "ID": "95763809"
     },
     "industry": "9411",
-    "language": "en"
+    "language": "en",
+    "desks": {
+     "carnet": {
+      "name": "Carnet office",
+      "job_title": "Carnet officer",
+      "department": "Carnets",
+      "email": "carnets@chamber-selanu.example"
+     },
+     "certificates": {
+      "name": "Certificates office",
+      "job_title": "Certificates officer",
+      "department": "Certificates",
+      "email": "certificates@chamber-selanu.example"
+     }
+    }
    }
   },
   {
@@ -2401,9 +2825,9 @@
      "name": "Ship registry",
      "email": "ship@maritime-xl.example",
      "telephone": "+999 3 720 2270",
-     "department": "Public services",
+     "department": "Ship registry",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Public service officer"
+     "job_title": "Registrar of ships"
     },
     "address": {
      "StreetName": "Wharf Road",
@@ -2439,7 +2863,7 @@
      "name": "Customer service",
      "email": "customer@ferranoenergy.example",
      "telephone": "+999 1 041 667 5781",
-     "department": "Sales",
+     "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
     },
@@ -2449,7 +2873,7 @@
      "BuildingNumber": "9",
      "CityName": "Ferrano",
      "PostalZone": "4150",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160202777983743"
     },
     "account": {
@@ -2473,6 +2897,32 @@
     },
     "identification": {
      "convention": "own"
+    },
+    "desks": {
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@ferranoenergy.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@ferranoenergy.example"
+     },
+     "receivables": {
+      "name": "Billing",
+      "job_title": "Billing officer",
+      "department": "Customer service",
+      "email": "billing@ferranoenergy.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@ferranoenergy.example"
+     }
     }
    }
   },
@@ -2500,7 +2950,7 @@
      "name": "Customer service",
      "email": "customer@coastalwater.example",
      "telephone": "+999 2 38 2692 2192",
-     "department": "Sales",
+     "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
     },
@@ -2535,6 +2985,20 @@
     },
     "identification": {
      "convention": "own"
+    },
+    "desks": {
+     "receivables": {
+      "name": "Billing",
+      "job_title": "Billing officer",
+      "department": "Customer service",
+      "email": "billing@coastalwater.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@coastalwater.example"
+     }
     }
    }
   },
@@ -2562,9 +3026,9 @@
      "name": "Business accounts",
      "email": "business@selanutelecom.example",
      "telephone": "+999 3 727 2407",
-     "department": "Sales",
+     "department": "Business sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Account manager"
     },
     "address": {
      "StreetName": "Mast Hill Road",
@@ -2593,6 +3057,38 @@
     },
     "identification": {
      "convention": "own"
+    },
+    "desks": {
+     "goods_in": {
+      "name": "Network stores",
+      "job_title": "Stores supervisor",
+      "department": "Network operations",
+      "email": "stores@selanutelecom.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@selanutelecom.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@selanutelecom.example"
+     },
+     "receivables": {
+      "name": "Billing",
+      "job_title": "Billing officer",
+      "department": "Business sales",
+      "email": "billing@selanutelecom.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@selanutelecom.example"
+     }
     }
    }
   },
@@ -2626,7 +3122,7 @@
      "telephone": "+999 2 7121 929 329",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Sales coordinator"
     },
     "tax_id": "UL-1236987",
     "address": {
@@ -2659,6 +3155,38 @@
     "customs_id": "XB-TR-412329",
     "identification": {
      "convention": "own"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@marrowdalesawmill.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@marrowdalesawmill.example"
+     },
+     "logistics": {
+      "name": "Transport planning",
+      "job_title": "Logistics planner",
+      "department": "Logistics",
+      "email": "logistics@marrowdalesawmill.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@marrowdalesawmill.example"
+     },
+     "tenders": {
+      "name": "Bids office",
+      "job_title": "Bid manager",
+      "department": "Sales",
+      "email": "tenders@marrowdalesawmill.example"
+     }
     }
    },
    "fleet": [
@@ -2697,7 +3225,7 @@
      "telephone": "+999 2 7121 266 466",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Trade sales manager"
     },
     "tax_id": "UL-1237398",
     "address": {
@@ -2741,6 +3269,32 @@
        "name": "Factory and goods-in, Marrowdale"
       }
      }
+    },
+    "desks": {
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@brackenmere.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@brackenmere.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@brackenmere.example"
+     },
+     "tenders": {
+      "name": "Bids office",
+      "job_title": "Bid manager",
+      "department": "Sales",
+      "email": "tenders@brackenmere.example"
+     }
     }
    },
    "fleet": [
@@ -2781,9 +3335,9 @@
      "name": "Purchasing",
      "email": "purchasing@lumeporttextile.example",
      "telephone": "+999 2 38 2303 2603",
-     "department": "Sales",
+     "department": "Purchasing",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Buyer"
     },
     "tax_id": "CO-1237809",
     "address": {
@@ -2818,6 +3372,44 @@
     "cost_centre": {
      "code": "2200",
      "name": "Raw cotton"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@lumeporttextile.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@lumeporttextile.example"
+     },
+     "goods_in": {
+      "name": "Goods-in",
+      "job_title": "Goods-in supervisor",
+      "department": "Warehouse",
+      "email": "goodsin@lumeporttextile.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@lumeporttextile.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@lumeporttextile.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@lumeporttextile.example"
+     }
     }
    }
   },
@@ -2847,7 +3439,7 @@
      "telephone": "+999 2 38 2440 2740",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Order administrator"
     },
     "tax_id": "CO-1238220",
     "address": {
@@ -2887,6 +3479,44 @@
     "identification": {
      "convention": "ISO",
      "codana_cin": "20274"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@rivermouth.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@rivermouth.example"
+     },
+     "goods_in": {
+      "name": "Goods-in",
+      "job_title": "Goods-in supervisor",
+      "department": "Warehouse",
+      "email": "goodsin@rivermouth.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@rivermouth.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@rivermouth.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@rivermouth.example"
+     }
     }
    }
   },
@@ -2914,9 +3544,9 @@
      "name": "Farm office",
      "email": "farm@lisavufarm.example",
      "telephone": "+999 3 724 2544",
-     "department": "Sales",
+     "department": "Management",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Farm manager"
     },
     "address": {
      "StreetName": "Plantation Road",
@@ -2998,7 +3628,7 @@
      "telephone": "+999 3 721 2681",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Customer service officer"
+     "job_title": "Cotton sales manager"
     },
     "address": {
      "StreetName": "Gin Yard Road",
@@ -3031,6 +3661,50 @@
     },
     "identification": {
      "convention": "own"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@selanuginnery.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@selanuginnery.example"
+     },
+     "goods_in": {
+      "name": "Gin yard",
+      "job_title": "Yard foreman",
+      "department": "Ginning",
+      "email": "yard@selanuginnery.example"
+     },
+     "logistics": {
+      "name": "Transport planning",
+      "job_title": "Logistics planner",
+      "department": "Logistics",
+      "email": "logistics@selanuginnery.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@selanuginnery.example"
+     },
+     "purchasing": {
+      "name": "Seed cotton intake",
+      "job_title": "Intake manager",
+      "department": "Ginning",
+      "email": "intake@selanuginnery.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@selanuginnery.example"
+     }
     }
    }
   },
@@ -3107,6 +3781,32 @@
     "customs_id": "XB-TR-412877",
     "site": {
      "description": "Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out."
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@kelpstone.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@kelpstone.example"
+     },
+     "operations": {
+      "name": "Pipeline control",
+      "job_title": "Pipeline controller",
+      "department": "Operations",
+      "email": "pipeline@kelpstone.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@kelpstone.example"
+     }
     }
    }
   },
@@ -3148,7 +3848,7 @@
      "BuildingNumber": "44",
      "CityName": "Serravona",
      "PostalZone": "4130",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4170200397702895"
     },
     "account": {
@@ -3174,6 +3874,38 @@
     "identification": {
      "convention": "ISO",
      "codana_cin": "10591"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@montebrio.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@montebrio.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@montebrio.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@montebrio.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@montebrio.example"
+     }
     }
    }
   },
@@ -3211,7 +3943,7 @@
      "BuildingNumber": "3",
      "CityName": "Ferrano",
      "PostalZone": "4140",
-     "Region": "Province of Ferrano",
+     "CountrySubentity": "Province of Ferrano",
      "ID": "4160202321763926"
     },
     "account": {
@@ -3236,6 +3968,20 @@
     "identification": {
      "convention": "ISO",
      "codana_cin": "10605"
+    },
+    "desks": {
+     "receivables": {
+      "name": "Network billing",
+      "job_title": "Billing officer",
+      "department": "Finance",
+      "email": "billing@ferranogrid.example"
+     },
+     "sales": {
+      "name": "Network access",
+      "job_title": "Network access manager",
+      "department": "Commercial",
+      "email": "access@ferranogrid.example"
+     }
     }
    }
   }

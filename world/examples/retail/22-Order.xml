@@ -159,12 +159,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:ID>BM-CT-01</cbc:ID>
-        <cbc:Name>Buying office</cbc:Name>
+        <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Department>Customer service</cbc:Department>
         <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
-        <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:AdditionalWebSite>

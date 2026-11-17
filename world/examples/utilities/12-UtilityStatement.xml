@@ -78,11 +78,11 @@
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Business accounts</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Billing</cbc:Name>
+      <cbc:JobTitle>Billing officer</cbc:JobTitle>
+      <cbc:Department>Business sales</cbc:Department>
       <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
-      <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -149,11 +149,11 @@
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Purchasing</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Accounts payable</cbc:Name>
+      <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+      <cbc:Department>Finance</cbc:Department>
       <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-      <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>

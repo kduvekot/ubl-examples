@@ -113,15 +113,15 @@ Inside `Consignment`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `ConsigneeParty/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Velumi Trading (world/parties.json).
-- `ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
+- `ConsigneeParty/Contact/Name` = **Goods-in**  
+  The party's goods-in desk: the desk for its role in this document (it receives the goods); identity of Velumi Trading (world/parties.json).
+- `ConsigneeParty/Contact/JobTitle` = **Goods-in supervisor**  
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
-- `ConsigneeParty/Contact/Department` = **Sales**  
+- `ConsigneeParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/Contact/Telephone` = **+999 3 729 1859**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
-- `ConsigneeParty/Contact/ElectronicMail` = **purchasing@velumi.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
+- `ConsigneeParty/Contact/ElectronicMail` = **goodsin@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
@@ -193,15 +193,15 @@ Inside `Consignment`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `CarrierParty/Contact/Name` = **Cargo sales**  
-  The desk that handles this document; identity of Kelaro Air Cargo (world/parties.json).
-- `CarrierParty/Contact/JobTitle` = **Operations planner**  
+- `CarrierParty/Contact/Name` = **Cargo operations**  
+  The party's cargo operations desk: the desk for its role in this document (it carries or handles the goods); identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/Contact/JobTitle` = **Load controller**  
   The job of the person who answers at the desk; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/Contact/Telephone` = **+999 3 721 1311**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Kelaro Air Cargo (world/parties.json).
-- `CarrierParty/Contact/ElectronicMail` = **cargo@kelaro.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/Contact/ElectronicMail` = **cargoops@kelaro.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Kelaro Air Cargo (world/parties.json).
@@ -280,10 +280,10 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/HeadOfficeParty/PartyName/Name` = **Port of Selanu**  
   A party referred to from another party's details: its identifier and name are enough.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Import desk**  
-  The desk that handles this document; identity of Selanu Airport Cargo (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Operations planner**  
+  The party's main desk, which handles this document; identity of Selanu Airport Cargo (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Cargo handling agent**  
   The job of the person who answers at the desk; identity of Selanu Airport Cargo (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
+- `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Cargo handling**  
   The department the desk belongs to; identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 3 724 1174**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Airport Cargo (world/parties.json).
@@ -419,10 +419,10 @@ Inside `ReceiverParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Export desk**  
-  The desk that handles this document; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/JobTitle` = **Operations planner**  
+  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+- `Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/Department` = **Operations**  
+- `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2144 1644**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
@@ -532,11 +532,11 @@ Inside `StatusPeriod`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Goods-in</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -600,11 +600,11 @@ Inside `StatusPeriod`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Cargo sales</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
+        <cbc:Name>Cargo operations</cbc:Name>
+        <cbc:JobTitle>Load controller</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
-        <cbc:ElectronicMail>cargo@kelaro.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -679,8 +679,8 @@ Inside `StatusPeriod`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Import desk</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
+          <cbc:JobTitle>Cargo handling agent</cbc:JobTitle>
+          <cbc:Department>Cargo handling</cbc:Department>
           <cbc:Telephone>+999 3 724 1174</cbc:Telephone>
           <cbc:ElectronicMail>import@selanu-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -794,8 +794,8 @@ Inside `StatusPeriod`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
-      <cbc:JobTitle>Operations planner</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
       <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

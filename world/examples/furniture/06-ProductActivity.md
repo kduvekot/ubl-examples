@@ -155,10 +155,10 @@ Inside `SenderParty`:
 - `Contact/ID` = **BM-CT-01**  
   The desk's number in the party's own contact list.
 - `Contact/Name` = **Buying office**  
-  The desk that handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Buyer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Sales**  
+- `Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2511 0411**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
@@ -268,8 +268,8 @@ Inside `ReceiverParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Trade sales**  
-  The desk that handles this document; identity of Brackenmere Furniture (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Brackenmere Furniture (world/parties.json).
+- `Contact/JobTitle` = **Trade sales manager**  
   The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
@@ -459,8 +459,8 @@ Inside `SupplyChainActivityDataLine`:
     <cac:Contact>
       <cbc:ID>BM-CT-01</cbc:ID>
       <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:JobTitle>Buyer</cbc:JobTitle>
+      <cbc:Department>Purchasing</cbc:Department>
       <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -555,7 +555,7 @@ Inside `SupplyChainActivityDataLine`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Trade sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
       <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>

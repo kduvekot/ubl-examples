@@ -79,7 +79,7 @@
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -204,8 +204,8 @@
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:JobTitle>Publications officer</cbc:JobTitle>
+      <cbc:Department>Publications</cbc:Department>
       <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -270,8 +270,8 @@
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Registry</cbc:Name>
-          <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-          <cbc:Department>Procurement</cbc:Department>
+          <cbc:JobTitle>Registrar</cbc:JobTitle>
+          <cbc:Department>Registry</cbc:Department>
           <cbc:Telephone>+999 2 38 2122 0822</cbc:Telephone>
           <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -406,7 +406,7 @@
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -534,7 +534,7 @@
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
           <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
-          <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
             <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           </cac:TaxScheme>
@@ -663,7 +663,7 @@
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
           <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
-          <cbc:TaxExemptionReason>Sale to a public body</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
           <cac:TaxScheme>
             <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
           </cac:TaxScheme>
@@ -778,7 +778,7 @@
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
           <cbc:PostalZone>4120</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -834,16 +834,12 @@
           </cac:SecurityListing>
         </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Order desk</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+          <cbc:Name>Bids office</cbc:Name>
+          <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
           <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-          <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>tenders@valdara.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          <cac:OtherCommunication>
-            <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-            <cbc:Value>+999 1 344 474 4274</cbc:Value>
-          </cac:OtherCommunication>
         </cac:Contact>
         <cac:ServiceProviderParty>
           <cbc:ID>VI-SP-2026-01</cbc:ID>

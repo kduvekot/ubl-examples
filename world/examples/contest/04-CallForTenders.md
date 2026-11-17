@@ -118,8 +118,8 @@ Inside `ContractingParty`:
 - `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Sale to a public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Sale to a public body: public bodies are exempt from the state sales tax**  
+  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `Party/PartyTaxScheme/ExemptionReason` = **Public body: buys free of the state sales tax**  
   The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
   Where the party is registered for the tax.
@@ -154,7 +154,7 @@ Inside `ContractingParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Procurement office**  
-  The desk that handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/JobTitle` = **Procurement officer**  
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Department` = **Procurement**  
@@ -255,8 +255,8 @@ Inside `ReceiverParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Trade sales**  
-  The desk that handles this document; identity of Brackenmere Furniture (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Brackenmere Furniture (world/parties.json).
+- `Contact/JobTitle` = **Trade sales manager**  
   The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
@@ -384,10 +384,10 @@ Inside `TenderingTerms`:
 - `AppealTerms/AppealReceiverParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AppealTerms/AppealReceiverParty/Contact/Name` = **Registry**  
-  The desk that handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Procurement officer**  
+  The party's main desk, which handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
+- `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Registrar**  
   The job of the person who answers at the desk; identity of Procurement Review Board of Bayvarra (world/parties.json).
-- `AppealTerms/AppealReceiverParty/Contact/Department` = **Procurement**  
+- `AppealTerms/AppealReceiverParty/Contact/Department` = **Registry**  
   The department the desk belongs to; identity of Procurement Review Board of Bayvarra (world/parties.json).
 - `AppealTerms/AppealReceiverParty/Contact/Telephone` = **+999 2 38 2122 0822**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Procurement Review Board of Bayvarra (world/parties.json).
@@ -533,7 +533,7 @@ Inside `ProcurementProject`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Sale to a public body: public bodies are exempt from the state sales tax</cbc:ExemptionReason>
+        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -662,7 +662,7 @@ Inside `ProcurementProject`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Trade sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
       <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
@@ -770,8 +770,8 @@ Inside `ProcurementProject`:
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Registry</cbc:Name>
-          <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-          <cbc:Department>Procurement</cbc:Department>
+          <cbc:JobTitle>Registrar</cbc:JobTitle>
+          <cbc:Department>Registry</cbc:Department>
           <cbc:Telephone>+999 2 38 2122 0822</cbc:Telephone>
           <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

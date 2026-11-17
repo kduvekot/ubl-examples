@@ -170,7 +170,8 @@ def road_consignment(f, view):
                                  "What the driver must do before leaving."),
         "CustomsClearanceServiceInstructions": V("The export is declared by the 3PL in Ferrano; the import by the "
                                                  "distributor at the border.", "Who clears the goods through customs."),
-        "DeliveryInstructions": V("Unload at dock 4; report to the gatehouse first.", "Where to go on arrival."),
+        "DeliveryInstructions": V("Enter by gate 3 of the business park and report to the gatehouse; unload at "
+                                   "dock 4.", "Where to go on arrival."),
         "TotalPackagesQuantity": qty(sum(int(Decimal(str(x["ordered"]))) for x in d), "EA",
                                      "96 benches and 12 boxed frames."),
         "TotalTransportHandlingUnitQuantity": qty(25, "EA", "25 pallets."),
@@ -207,8 +208,13 @@ def road(n, doc):
                              "MinimumQuantity": qty(108, "EA", "No part deliveries: the truck is booked for all."),
                              "MaximumQuantity": qty(108, "EA", "And no more than ordered."),
                              "DeliveryAddress": address("6-xb", register=True),
+                             "DeliveryLocation": {**kit.gln_location("6-xb", "goodsin"),
+                                                  "Description": V(PARTY["6-xb"]["identity"]["identification"]
+                                                                   ["locations"]["goodsin"]["description"] + ".",
+                                                                   "Where the truck unloads; the gate belongs here, "
+                                                                   "not in the postal address (world/parties.json).")},
                              "AlternativeDeliveryLocation": {"Description": V(
-                                 "Gate B of the business park, if dock 4 is blocked.", "Where to go instead.")},
+                                 "Dock 6 of the same goods-in, if dock 4 is blocked.", "Where to go instead.")},
                              "MinimumDeliveryUnit": {"BatchQuantity": qty(4, "EA", "Benches come in pallets of "
                                                                                     "four."),
                                                      "ConsumerUnitQuantity": qty(1, "EA", "One bench.")},

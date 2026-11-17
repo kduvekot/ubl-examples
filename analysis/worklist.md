@@ -412,6 +412,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Note: Contact hours that exclude the time of an event are under C53.
 - Touched by: D27 (working days per kind of party: offices and factories Monday to Friday, shops Monday to Saturday, ports, carriers, terminals, border customs and the operations of utilities every day; their contacts say so; O78), D11 (D11 names this cause next to C01: where a contact is dropped because the document does not need one, that follows the C01 profile).
 - State: ready to fix now for contacts per function and their hours; dropping a contact altogether follows C01.
+- Fixed in part (2026-11-17, stage 1 step 1a): every party's main contact now has a name, job title and department that agree, and a party has desks by function in `world/parties.json` (`identity.desks`); the role it plays picks the desk (`desk_for()` in `tools/build_examples.py`: seller → sales, buyer → purchasing, accounting supplier → accounts receivable, accounting customer → accounts payable, delivery party and consignee → goods-in, despatch party and consignor → dispatch, exporter, importer and declarant → customs, transport user → transport planning, tenderers → bids; customs services by export, import and transit, chambers by certificates and carnets); a world check guards the desk data. Still open: dropping a contact altogether (with C01, after O88); contact hours per kind of party (D27, O78, stage 2).
 - Findings: air (11): 01#F12, 02#F10, 03#F16, 04#F19, 05#F10 …; carnet (2): 01#F13, 03#F10; contest (12): 03#F9, 04#F9, 05#F9, 06#F10, 07#F7 …; cotton (20): 01#F5, 02#F6, 03#F7, 04#F17, 05#F19 …; energy (8): 01#F7, 02#F4, 03#F3, 04#F10, 05#F7 …; furniture (15): 01#F5, 02#F5, 03#F5, 04#F4, 05#F4 …; mast (7): 01#F9, 02#F10, 03#F11, 03#F12, 04#F8 …; ore (8): 01#F2, 02#F7, 03#F12, 04#F4, 05#F8 …; packaging (10): 01#F4, 02#F4, 03#F5, 04#F6, 05#F4 …; plastics (11): 01#F4, 02#F4, 03#F8, 04#F11, 05#F7 …; rail (9): 01#F8, 02#F11, 03#F13, 06#F20, 06#F21 …; retail (22): 01#F5, 02#F11, 03#F8, 04#F11, 05#F9 …; road (17): 01#F7, 02#F7, 03#F6, 04#F9, 05#F9 …; sea (32): 01#F10, 02#F15, 02#F19, 03#F11, 04#F9 …; tender (18): 02#F30, 03#F30, 03#F31, 13#F17, 14#F14 …; utilities (10): 01#F11, 02#F10, 03#F13, 04#F7, 05#F7 …; waste (3): 01#F9, 02#F13, 03#F7; wood (11): 01#F6, 02#F10, 03#F6, 04#F7, 05#F6 …. Full list in `analysis/worklist-assignments.csv`.
 
 ### C03 · Urvanian province written into `Region`
@@ -423,6 +424,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27 (D2 changes the language tag of the same address's English renderings, not its fields).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1a): the Urvanian province is in `CountrySubentity` (`world/parties.json`, Urvania's address format and `province` in `world/countries.json`); the cotton's origin area is a `District` (`origin_district` in `world/items.json`); the world check rejects `Region` in a party's address. `Address/Region` lost its only example: O140.
 - Findings: carnet (4): 01#F4, 02#F2, 03#F3, 04#F2; contest (2): 15#F5, 16#F4; cotton (7): 02#F10, 07#F10, 08#F15, 10#F11, 11#F12 …; energy (9): 01#F3, 02#F3, 03#F2, 04#F6, 05#F2 …; ore (8): 01#F1, 02#F3, 03#F7, 04#F2, 05#F5 …; packaging (2): 01#F1, 02#F2; plastics (11): 01#F2, 02#F1, 03#F2, 04#F3, 05#F1 …; rail (11): 01#F4, 02#F4, 03#F5, 04#F1, 05#F3 …; retail (1): 02#F6; road (17): 01#F4, 02#F1, 03#F3, 04#F3, 05#F3 …; sea (1): 02#F8; tender (22): 03#F7, 12#F3, 13#F5, 14#F5, 15#F2 …; utilities (4): 01#F7, 02#F6, 03#F9, 04#F1; waste (3): 01#F3, 02#F6, 03#F3; wood (9): 01#F2, 02#F3, 03#F1, 04#F3, 05#F2 …. Full list in `analysis/worklist-assignments.csv`.
 
 ### C04 · Public bodies described as companies in a commercial register
@@ -446,6 +448,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1a): no gate in Lumeway's postal address; the road order delivers to Lumeway's goods-in location (GLN 9520610900039, "Goods-in, dock 4 of the distribution centre, entered by gate 3 of Marrowdale Business Park"), the alternative location is dock 6 of the same goods-in, and the waybill's delivery instructions name gate 3 and dock 4. `Address/AdditionalStreetName` lost its only example: O141.
 - Findings: air (8): 01#F4, 02#F3, 03#F8, 04#F9, 06#F5 …; rail (6): 01#F3, 02#F6, 03#F9, 06#F11, 08#F14 …; retail (20): 01#F4, 02#F4, 03#F5, 04#F4, 05#F4 …; road (17): 01#F3, 02#F3, 03#F2, 04#F5, 05#F7 …; sea (25): 01#F2, 02#F4, 03#F5, 04#F3, 05#F4 …. Full list in `analysis/worklist-assignments.csv`.
 
 ### C06 · References that give only an ID
@@ -468,6 +471,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D17 (a Bayvarran seller invoices the department with the Bayvarran exemption for public bodies `PUBLIC`; the party-level wording is still to be fixed).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1a): code `PUBLIC` of Bayvarra's exemption list is named "Public body" (the party's status; its definition already said so), and the department's text is "Public body: buys free of the state sales tax"; the lines of a sale keep the code, which now reads as the buyer's status there too.
 - Findings: contest: 01#F5, 02#F6, 03#F6, 04#F6, 05#F6, 06#F8, 07#F11, 08#F7, 09#F6, 10#F6, 11#F12, 12#F8, 13#F6, 14#F7, 15#F11, 16#F10; tender: 01#F17, 02#F20, 03#F20, 04#F9, 05#F8, 06#F11, 07#F9, 08#F4, 09#F7, 10#F8, 11#F6, 12#F9, 13#F18, 14#F15, 15#F9, 16#F8, 17#F9, 18#F7, 19#F9, 20#F9, 21#F22, 22#F9, 23#F9, 24#F15, 25#F15, 26#F16, 27#F13, 28#F8, 29#F20, 30#F15, 31#F9, 32#F23, 33#F23, 34#F15, 35#F14, 36#F11
 
 ### C08 · Party roles that repeat another role or do not fit their definition

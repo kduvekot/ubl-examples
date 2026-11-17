@@ -107,15 +107,15 @@ Inside `ExporterParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Cotton sales**  
-  The desk that handles this document; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Contact/JobTitle` = **Customer service officer**  
+- `Contact/Name` = **Customs desk**  
+  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Contact/Department` = **Sales**  
+- `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Telephone` = **+999 3 721 2681**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Contact/ElectronicMail` = **cotton@selanuginnery.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Contact/ElectronicMail` = **customs@selanuginnery.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
@@ -186,8 +186,8 @@ Inside `CustomsDeclaration`:
   A measured property of the item.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
   Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `Shipment/GoodsItem/Item/OriginAddress/Region` = **North coast**  
-  Where on the island the cotton was grown.
+- `Shipment/GoodsItem/Item/OriginAddress/District` = **North coast**  
+  The district of the island where the cotton was grown, as the farm's address names it.
 - `Shipment/GoodsItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Shipment/GoodsItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
@@ -302,15 +302,15 @@ Inside `CustomsDeclaration`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `ConsigneeParty/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Lumeport Textile Mill (world/parties.json).
-- `ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
+- `ConsigneeParty/Contact/Name` = **Customs desk**  
+  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Lumeport Textile Mill (world/parties.json).
+- `ConsigneeParty/Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
-- `ConsigneeParty/Contact/Department` = **Sales**  
+- `ConsigneeParty/Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
 - `ConsigneeParty/Contact/Telephone` = **+999 2 38 2303 2603**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
-- `ConsigneeParty/Contact/ElectronicMail` = **purchasing@lumeporttextile.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
+- `ConsigneeParty/Contact/ElectronicMail` = **customs@lumeporttextile.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
@@ -370,15 +370,15 @@ Inside `CustomsDeclaration`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `CustomsParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `CustomsParty/Contact/Name` = **Import office**  
-  The desk that handles this document; identity of Island Customs Service (world/parties.json).
-- `CustomsParty/Contact/JobTitle` = **Public service officer**  
+- `CustomsParty/Contact/Name` = **Export office**  
+  The party's export office desk: the desk for its role in this document (an export); identity of Island Customs Service (world/parties.json).
+- `CustomsParty/Contact/JobTitle` = **Customs officer**  
   The job of the person who answers at the desk; identity of Island Customs Service (world/parties.json).
-- `CustomsParty/Contact/Department` = **Public services**  
+- `CustomsParty/Contact/Department` = **Customs**  
   The department the desk belongs to; identity of Island Customs Service (world/parties.json).
 - `CustomsParty/Contact/Telephone` = **+999 3 728 1448**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Island Customs Service (world/parties.json).
-- `CustomsParty/Contact/ElectronicMail` = **import@customs-xl.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Island Customs Service (world/parties.json).
+- `CustomsParty/Contact/ElectronicMail` = **export@customs-xl.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Island Customs Service (world/parties.json).
 - `CustomsParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Island Customs Service (world/parties.json).
@@ -477,11 +477,11 @@ Inside `Signature`:
       </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Cotton sales</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
-      <cbc:ElectronicMail>cotton@selanuginnery.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>customs@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -541,7 +541,7 @@ Inside `Signature`:
             <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
           </cac:AdditionalItemProperty>
           <cac:OriginAddress>
-            <cbc:Region>North coast</cbc:Region>
+            <cbc:District>North coast</cbc:District>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             </cac:Country>
@@ -663,11 +663,11 @@ Inside `Signature`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Customs desk</cbc:Name>
+        <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+        <cbc:Department>Logistics</cbc:Department>
         <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@lumeporttextile.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>customs@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -725,11 +725,11 @@ Inside `Signature`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Import office</cbc:Name>
-        <cbc:JobTitle>Public service officer</cbc:JobTitle>
-        <cbc:Department>Public services</cbc:Department>
+        <cbc:Name>Export office</cbc:Name>
+        <cbc:JobTitle>Customs officer</cbc:JobTitle>
+        <cbc:Department>Customs</cbc:Department>
         <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
-        <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>export@customs-xl.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

@@ -125,10 +125,10 @@ Inside `GovernorParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Secretariat**  
-  The desk that handles this document; identity of Lumeport Trade Accord Council (world/parties.json).
-- `Contact/JobTitle` = **Public service officer**  
+  The party's main desk, which handles this document; identity of Lumeport Trade Accord Council (world/parties.json).
+- `Contact/JobTitle` = **Secretariat officer**  
   The job of the person who answers at the desk; identity of Lumeport Trade Accord Council (world/parties.json).
-- `Contact/Department` = **Public services**  
+- `Contact/Department` = **Secretariat**  
   The department the desk belongs to; identity of Lumeport Trade Accord Council (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 2396 1096**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Trade Accord Council (world/parties.json).
@@ -179,8 +179,6 @@ Inside `ParticipantParty`:
   The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Distribution Drive**  
   Street of the postal address. identity of Lumeway Distribution (world/parties.json).
-- `Party/PostalAddress/AdditionalStreetName` = **Gate 3**  
-  The gate of the business park to use. identity of Lumeway Distribution (world/parties.json).
 - `Party/PostalAddress/BlockName` = **Marrowdale Business Park**  
   The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **43**  
@@ -246,10 +244,10 @@ Inside `ParticipantParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Customer service**  
-  The desk that handles this document; identity of Lumeway Distribution (world/parties.json).
+  The party's main desk, which handles this document; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/JobTitle` = **Customer service officer**  
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 7121 474 274**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
@@ -342,10 +340,10 @@ Inside `ParticipantParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Purchasing**  
-  The desk that handles this document; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/JobTitle` = **Customer service officer**  
+  The party's main desk, which handles this document; identity of Velumi Trading (world/parties.json).
+- `Party/Contact/JobTitle` = **Buyer**  
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Telephone` = **+999 3 729 1859**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
@@ -764,8 +762,8 @@ Inside `DigitalProcess`:
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Secretariat</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:JobTitle>Secretariat officer</cbc:JobTitle>
+      <cbc:Department>Secretariat</cbc:Department>
       <cbc:Telephone>+999 2 38 2396 1096</cbc:Telephone>
       <cbc:ElectronicMail>secretariat@tradeaccord.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -805,7 +803,6 @@ Inside `DigitalProcess`:
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
-        <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
         <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
         <cbc:BuildingNumber>43</cbc:BuildingNumber>
         <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
@@ -864,7 +861,7 @@ Inside `DigitalProcess`:
       <cac:Contact>
         <cbc:Name>Customer service</cbc:Name>
         <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Department>Customer service</cbc:Department>
         <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
         <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -951,8 +948,8 @@ Inside `DigitalProcess`:
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>

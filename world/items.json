@@ -946,7 +946,6 @@
     "quantity": "1",
     "size": "227"
    },
-   "origin_region": "North coast",
    "certificate": {
     "id": "XL-CLS-2026-0042",
     "code": "COTTONCLASS",
@@ -975,7 +974,8 @@
    ],
    "buyer_ids": {
     "40-xb": "LT-RAW-COT"
-   }
+   },
+   "origin_district": "North coast"
   },
   {
    "id": "telecom-line",

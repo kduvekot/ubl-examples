@@ -88,9 +88,91 @@ def qty(value, unit, why):
 
 
 # ---------------------------------------------------------------- blocks from the world's layers
-def party(pid, short=False):
+# ---------------------------------------------------------------- which desk of a party a document names (worklist C02)
+# A party has desks by function (world/parties.json identity.desks); the role it plays in a document picks the desk.
+ROLE_DESK = {
+    "SellerSupplierParty": "sales", "ProviderParty": "sales", "BuyerCustomerParty": "purchasing",
+    "OriginatorCustomerParty": "purchasing", "RetailerCustomerParty": "purchasing",
+    "AccountingSupplierParty": "receivables", "PayeeParty": "receivables", "AccountingCustomerParty": "payables",
+    "DeliveryParty": "goods_in", "DeliveryCustomerParty": "goods_in", "ConsigneeParty": "goods_in",
+    "NotifyParty": "goods_in", "DespatchSupplierParty": "despatch", "DespatchParty": "despatch",
+    "ConsignorParty": "despatch", "ShipperParty": "despatch",
+    "ExporterParty": "customs", "ImporterParty": "customs", "TransitExporterParty": "customs",
+    "CustomsAgentParty": "customs", "HolderParty": "customs", "RepresentativeParty": "customs",
+    "CarrierParty": "operations", "TransportServiceProviderParty": "operations", "FreightForwarderParty": "operations",
+    "TerminalOperatorParty": "operations", "SubstituteCarrierParty": "operations",
+    "SendingLogisticsOperatorParty": "operations", "TransportUserParty": "logistics",
+    "TendererParty": "tenders", "EconomicOperatorParty": "tenders", "WinningParty": "tenders",
+    "MainQualifyingParty": "tenders", "AdditionalQualifyingParty": "tenders", "SubcontractorParty": "tenders",
+    "ContractingParty": "procurement", "SubscriberParty": "payables", "CustomerParty": "payables",
+}
+TRANSPORT_DOCS = {"TransportExecutionPlan", "TransportExecutionPlanRequest", "Waybill", "TransportationStatus",
+                  "TransportationStatusRequest", "TransportProgressStatus", "TransportProgressStatusRequest",
+                  "GoodsItemItinerary", "TransportServiceDescription", "TransportServiceDescriptionRequest",
+                  "CommonTransportationReport", "WeightStatement", "ForwardingInstructions", "BillOfLading"}
+BILLING_DOCS = {"UtilityStatement", "InvoiceStatusRequest", "InvoiceStatusResponse", "Statement"}
+CUSTOMS_DOCS = {"ExportCustomsDeclaration": "customs_export", "ImportCustomsDeclaration": "customs_import",
+                "TransitCustomsDeclaration": "customs_transit"}
+DESK_ROLE = {"sales": "it sells", "purchasing": "it buys", "receivables": "it is owed the payment",
+             "payables": "it pays", "goods_in": "it receives the goods", "despatch": "it sends the goods off",
+             "logistics": "it books or uses the transport", "customs": "it deals with customs",
+             "tenders": "it bids", "operations": "it carries or handles the goods", "procurement": "it buys",
+             "customs_export": "an export", "customs_import": "an import", "customs_transit": "a transit",
+             "carnet": "a carnet", "certificates": "a certificate"}
+CHAMBER_DOCS = {"GoodsItemPassport": "carnet", "ProofOfReexportation": "carnet",
+                "ProofOfReexportationRequest": "carnet", "ProofOfReexportationReminder": "carnet",
+                "CertificateOfOrigin": "certificates", "GoodsCertificate": "certificates"}
+GENERIC_ROLES = {"SenderParty", "ReceiverParty", "ReporterParty", "BusinessParty", "IssuerParty"}
+CARRIER_ROLES = {"CarrierParty", "TransportServiceProviderParty", "TerminalOperatorParty", "FreightForwarderParty"}
+
+
+def _role_index():
+    sells, carriers = set(), set()
+    for d in WORLD["documents"]:
+        ps = {k.split("/")[-1]: v for k, v in d.get("parties", {}).items() if isinstance(v, str)}
+        for s, b in (("SellerSupplierParty", "BuyerCustomerParty"), ("AccountingSupplierParty",
+                                                                     "AccountingCustomerParty")):
+            if s in ps and b in ps:
+                sells.add((ps[s], ps[b]))
+        carriers |= {v for k, v in ps.items() if k in CARRIER_ROLES}
+    return sells, carriers
+
+
+SELLS, CARRIERS = _role_index()
+
+
+def desk_for(doc, path, pid):
+    """The function of the desk that speaks for party pid in its role at path of document doc."""
+    role = path.split("/")[-1]
+    kind = doc["doc"]
+    if kind in CUSTOMS_DOCS and PARTY[pid]["kind"] == "customs":
+        return CUSTOMS_DOCS[kind]
+    if role in ROLE_DESK and not (role == "ConsigneeParty" and kind in CUSTOMS_DOCS):
+        return ROLE_DESK[role]
+    if role in ("ConsigneeParty", "ConsignorParty") and kind in CUSTOMS_DOCS:
+        return "customs"
+    if kind in CHAMBER_DOCS and PARTY[pid]["kind"] == "office" and PARTY[pid]["identity"]["kind"] == "public":
+        return CHAMBER_DOCS[kind]
+    if PARTY[pid]["identity"]["kind"] == "public" or role not in GENERIC_ROLES:
+        return None
+    other = doc.get("to") if pid == doc.get("from") else doc.get("from")
+    if kind in TRANSPORT_DOCS:
+        return "operations" if pid in CARRIERS or PARTY[pid]["kind"] in ("port", "airport", "terminal") \
+            else "logistics"
+    if kind in BILLING_DOCS:
+        return "receivables" if (pid, other) in SELLS else "payables"
+    if (pid, other) in SELLS:
+        return "sales"
+    if (other, pid) in SELLS:
+        return "purchasing"
+    return None
+
+
+def party(pid, short=False, desk=None):
     """The content of a cac:Party element, from the identity layer. short: identifier and name only, for a party
-    referred to from inside another party's block (its service provider, shareholder or agent)."""
+    referred to from inside another party's block (its service provider, shareholder or agent). desk: the function
+    of the desk the party's role in the document calls for (desk_for); without one, or if the party has no such
+    desk, its main contact."""
     if short:
         return party_again(pid, None)
     p = PARTY[pid]
@@ -193,7 +275,14 @@ def party(pid, short=False):
         out["PartyLegalEntity"] = legal_entity(pid)
     if idn.get("contact"):
         ct = idn["contact"]
-        contact = {"Name": V(ct["name"], f"The desk that handles this document; {src}.")}
+        own = idn.get("desks", {}).get(desk)
+        if own:
+            ct = {**{k: v for k, v in ct.items() if k not in ("id", "mobile", "telefax")}, **own}
+            why = (f"The party's {own['name'].lower()} desk: the desk for its role in this document "
+                   f"({DESK_ROLE[desk]}); {src}.")
+        else:
+            why = f"The party's main desk, which handles this document; {src}."
+        contact = {"Name": V(ct["name"], why)}
         if ct.get("id"):
             contact = {"ID": V(ct["id"], "The desk's number in the party's own contact list."), **contact}
         if ct.get("job_title"):
@@ -201,7 +290,8 @@ def party(pid, short=False):
         if ct.get("department"):
             contact["Department"] = V(ct["department"], f"The department the desk belongs to; {src}.")
         if ct.get("telephone"):
-            contact["Telephone"] = V(ct["telephone"], "Telephone under +999, a country code the ITU reserves for a "
+            contact["Telephone"] = V(ct["telephone"], ("The party's switchboard, which puts the caller through to "
+                                                       "the desk. " if own else "") + "Telephone under +999, a country code the ITU reserves for a "
                                                       "future global service (ITU-T E.164), so the number reaches no "
                                                       f"one; then the country digit and a number in {c['name']}'s own "
                                                       f"plan: {c['phone_plan']['note']} {src}.")
@@ -457,7 +547,6 @@ def address(pid, register=False):
            "PlotIdentification": "The plot of the distribution centre in the business park.",
            "CitySubdivisionName": "The quarter of Lumeport the party is in.",
            "CountrySubentityCode": "The state or territory as a code of Bayvarra's address scheme (world/countries.json).",
-           "Region": "The province, part of an address in Urvania.",
            "District": "The district of the island, used to find a farm off the main roads.",
            "Description": "How to find the farm, which has no house number on a street."}
     out = {}
@@ -475,8 +564,9 @@ def address(pid, register=False):
             out[k] = V(a[k], {"StreetName": "Street of the postal address.", "BuildingNumber": "Building number of "
                               "the postal address.", "CityName": "The town or locality nearest to the party's place on "
                               "the map, in its own country and state.", "PostalZone": f"Postal code in {c['name']}'s "
-                              f"format ({c['address']['postal_zone']}).", "CountrySubentity": f"The state or territory, "
-                              f"part of an address in federal {c['name']}."}.get(k, why.get(k, "")) + f" {src}.")
+                              f"format ({c['address']['postal_zone']}).", "CountrySubentity": (f"The province, part of an address in {c['name']}: a "
+                              "subdivision of the country (world/countries.json)." if c.get("province") else
+                              f"The state or territory, part of an address in federal {c['name']}.")}.get(k, why.get(k, "")) + f" {src}.")
     code = c["languages"][0]
     if code != "en" and "en" in c["languages"] and isinstance(out.get("StreetName"), V):
         lang = WORLD["languages"][code]["name"]                 # a bilingual country names its streets twice
@@ -967,8 +1057,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                         "Description": V(tc["description"], "The conditions in words."),
                                         "DocumentReference": {"ID": V(tc["doc"], "The seller's general terms of "
                                                                                  "trade.")}}
-    if maker.get("origin_region"):
-        out["OriginAddress"] = {"Region": V(maker["origin_region"], "Where on the island the cotton was grown."),
+    if maker.get("origin_district"):
+        out["OriginAddress"] = {"District": V(maker["origin_district"], "The district of the island where the cotton "
+                                                                        "was grown, as the farm's address names it."),
                                 "Country": {"IdentificationCode": V(maker["origin"], "The country of origin.")}}
     if instance:
         out["ItemInstance"] = instance
@@ -1114,8 +1205,10 @@ def tax_category(code, percent, why, scheme="VAT", country="XU"):
 
 
 # ---------------------------------------------------------------- placing the world's parties
-def place_parties(doc, content):
-    """Put every party of the world's document at its path, as cac:Party or as a wrapper around it."""
+def place_parties(doc, content, top=None):
+    """Put every party of the world's document at its path, as cac:Party or as a wrapper around it. The role at
+    the end of the path picks the party's desk (desk_for); top is the world's document when called for a part."""
+    top = top or doc
     for path, pid in doc["parties"].items():
         steps = path.split("/")
         node, abie = content, doc["doc"]
@@ -1125,20 +1218,22 @@ def place_parties(doc, content):
             last = k == len(steps) - 1
             if isinstance(node.get(step), list) and not last:     # into every repetition, e.g. each catalogue line
                 for sub in node[step]:
-                    place_parties({"doc": target, "parties": {"/".join(steps[k + 1:]): pid}}, sub)
+                    place_parties({"doc": target, "parties": {"/".join(steps[k + 1:]): pid}}, sub, top)
                 break
             if last and isinstance(pid, list):                   # several parties in one role: one element each
                 given = node.get(step) if isinstance(node.get(step), list) else []
                 node[step] = [merge(given[i] if i < len(given) else {},
-                                    party(x) if target == "Party" else {"Party": party(x)}) for i, x in enumerate(pid)]
+                                    party(x, desk=desk_for(top, path, x)) if target == "Party"
+                                    else {"Party": party(x, desk=desk_for(top, path, x))}) for i, x in enumerate(pid)]
                 break
             if last:
+                desk = desk_for(top, path, pid) if pid in PARTY else None
                 if target == "Party":
-                    block = party(pid)
+                    block = party(pid, desk=desk)
                 elif target == "FinancialInstitution":
                     block = institution(pid)
                 else:                                   # a wrapper such as SupplierParty, CustomerParty
-                    block = {"Party": party(pid)}
+                    block = {"Party": party(pid, desk=desk)}
                 node[step] = merge(node.get(step, {}), block)
             else:
                 node = node.setdefault(step, {})
