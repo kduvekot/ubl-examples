@@ -40,7 +40,7 @@ A party description is made of blocks. Each element of `cac:Party` belongs to ex
 | legal-name | `PartyLegalEntity/RegistrationName`, `CompanyID` |
 | legal | adds `CompanyLegalFormCode`, `CompanyLegalForm`, `RegistrationAddress`, `CorporateRegistrationScheme`, `SoleProprietorshipIndicator`, `RegistrationExpirationDate` |
 | legal-full | adds `RegistrationDate`, `EntitySizeCode`, `CompanyLiquidationStatusCode`, `ShareholderParty`, `HeadOfficeParty`, `SecurityListing` |
-| capital | `CorporateStockAmount`, `FullyPaidSharesIndicator` (see the open question O147) |
+| capital | `CorporateStockAmount`, `FullyPaidSharesIndicator` (O147, settled b) |
 | present | `WebsiteURI`, `LogoReferenceID`, `IndustryClassificationCode`, `AdditionalWebSite`, `SocialMediaProfile` |
 | permit | `PartyAuthorization` |
 | account | `FinancialAccount`, `Person/FinancialAccount` |
@@ -96,7 +96,7 @@ A block only appears if the party has the data. For example, `site` appears only
    - the business in a BusinessInformation (`BusinessParty`);
    - in a tender or qualification, the parties the tenderer relies on (`AdditionalQualifyingParty`, `SubcontractorParty`).
 6. **A consumer's account.** In an invoice to a consumer, the consumer's own account is given (`Person/FinancialAccount`), because the bills are collected from it.
-7. **Share capital** on the issuer's own invoices, credit and debit notes, reminders and purchase receipts. Whether this stays depends on O147 (below).
+7. **Share capital** on the issuer's own invoices, credit and debit notes, reminders and purchase receipts. **O147 settled 2026-11-17 (owner): b)**: only for an Urvanian SUA, whose company law requires it; Bayvarra and Lisavu leave it optional, and their companies do not state it.
 
 ### Example: the road order (road/01)
 
@@ -187,13 +187,13 @@ Everything else stays covered. Sometimes this needs one of the special rules:
 - Valdara's service provider: rule 5, in the business information about Valdara;
 - the consumer's account: rule 6.
 
-If O147 is answered a), share capital leaves, and coverage falls by two more pairs to 4991.
+With O147 settled as b), share capital stays on the Urvanian SUAs' own documents, so coverage keeps both pairs (4993).
 
 The same build also fixes a fault in the currency clean-up of step 1e: a remittance line that pays a document in another currency into the document's own currency now keeps its exchange rate. This is energy/09: a reminder in lume, paid in ferra. Until now the rate stayed only because the parties' share capital happened to be in lume.
 
 ## Open question for the owner
 
-**O147 · Share capital on documents.** No country of the world has a rule on it yet.
+**O147 · Share capital on documents. Settled 2026-11-17 by the owner: b).** The question was put as follows; no country of the world had a rule on it.
 
 - **The real models:**
   - The EU company-law directive (Directive (EU) 2017/1132, Art. 26) requires the register, the company's number in it, the legal form and the registered office on a company's letters and order forms. Capital is optional; if it is stated, it must be the capital subscribed and paid up.
