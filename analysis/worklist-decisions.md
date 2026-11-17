@@ -829,6 +829,12 @@ The decisions are grouped; a group is meant to be taken together. The world-leve
   - a) Record the arrival in the waybill or a status, apply or exclude the bonus in the invoice; type the order as a call-off.
 - Recommendation: a).
 - Related: none
+- **Decided (owner, 2026-11-17): a) on both points: the ore train arrives on 10 March, the first day of the window, and earns the 2 % bonus; a yearly supply agreement stands behind the monthly call-off.** The decision began with its open points (O66; O7's second candidate, waiting time, is no longer needed after D37) and its goods balance.
+- **Goods balance (O66), a plausibility check:** Serravona Mining loads 1,788.4 t of lump ore with 62 % iron into 30 wagons on 10 March; about 1,100 t of iron. At one train a month that is about 21,500 t of ore and about 13,000 t of iron a year for Valdara's steel: its street furniture as a whole (3,083 people, D14), of which the bench frames (two of 10 kg a bench, about 80 t a year at about 4,000 benches) are a small part. The yield (ore to iron to castings) is stated with the item physics (O62), not as a ledger.
+- **1. The arrival and the bonus (ore/06#F4):** the train leaves the mine siding at Serravona on the morning of 10 March and runs on the continuous line of the map correction of 2026-11-17, about 13 squares (about 180 km), to the junction at Valdara's factory and into its siding, arriving that afternoon. The waybill (05) records the arrival. Ferrano Rail Cargo's freight invoice (06), issued after it, states the delivery date and carries the plan's bonus of 2 % of the freight (2 % of 1,720,441 = 34,409 ferra) as a charge with its reason. The bonus is known before the invoice, so it belongs on the invoice, as D9 said; it is not a debit note.
+- **2. The supply agreement (ore/01#F4):** a yearly supply agreement for 2026 between Serravona Mining and Valdara sets the price basis, one train a month and a moisture clause. The order (01) is a call-off of it (UNTDID 1001 code 226) and refers to it.
+- **3. As the reviews prefer:** the request speaks of this month's quantity and names the standing plan's quantity (02#F4); its status reason goes and a note next to the reference to the standing plan explains the update (02#F5); the plan stays "as requested" and carries over what was requested, the weighing at the siding with its tariff class, the place of the service and the user's sheeting term, while the pre-arrival notice and the slot terms are the provider's (03#F3), so that the weighed 1,788.4 t of the despatch advice and the waybill rest on it; the freight invoice refers to the plan and the waybill with their types and to the framework contract `VI-FRC-FW-2026` (06#F5); the mine's invoice states the measured moisture as an item property, refers to the assay certificate with its type and grounds the deduction of 1.5 % on the agreement's moisture clause (07#F2). The carrier's invoice follows the framework's "30 days net from the consignment note" (D22).
+- **What it does to the examples:** no document is added or removed; the order's type and reference; the arrival in the waybill; the bonus in the freight invoice; the moisture data in the mine's invoice.
 
 ## Bulk confirmation (103 findings)
 
@@ -1347,6 +1353,10 @@ Marrowdale Sawmill in Upland State saws Valdara's bench slats to Valdara's drawi
 ### Gas and electricity (D44)
 
 Kelpstone Gas produces gas from a field about 80 km off Bayvarra's north coast, treats it at its plant near Gullhaven and sends it by pipeline about 200 km across the border, metered at a station on Bayvarra's side. In March it sells 36,800 MWh to Montebrio Power, a gas-fired station of about 40 MW near Serravona, and 2,400 MWh to Ferrano Energy for its gas customers; it declares the month's export in one declaration with a consignment per buyer, and each buyer declares its own import. Montebrio turns the gas into 18,400 MWh of electricity for Ferrano Energy, which also buys from Urvania's other stations; Ferrano Grid carries both to the customers.
+
+### Ore from the mine (D45)
+
+Under a supply agreement for 2026 Valdara calls off one train of iron ore a month from Serravona Mining, free carrier at the mine siding, and books Ferrano Rail Cargo's ore train under their framework contract. On 10 March, the first day of the agreed window, the mine loads 30 wagons, about 1,790 t of lump ore, weighed at the siding; the train runs about 180 km on the line past Ferrano into the factory's siding and arrives the same afternoon, which earns the carrier the bonus the plan promises, so that the factory can start the blend a day early. The mine deducts 1.5 % for moisture, as the agreement's clause says.
 
 ### Example files: numbers (D28)
 

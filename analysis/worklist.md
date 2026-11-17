@@ -118,7 +118,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C78 | Carnet flow: counterfoils, time limits and the duty claim | flow story | 20 | 4 | 1 | 2/4/14 | owner: D40 | tools/examples_scenarios.py, carnet() | ready (D40 decided) |
 | C79 | Mast flow: dangerous-goods data of the battery, detector and stripper consignment | flow story | 36 | 5 | 1 | 2/13/21 | owner: D36 | world/items.json, tools/build_examples.py | ready (D36 decided) |
 | C80 | Mast flow: the air waybill and the ULDs | flow story | 6 | 3 | 1 | 0/1/5 | owner: D36 | tools/examples_scenarios.py, mast() | ready (D36 decided) |
-| C81 | Ore flow: monthly call-off, plan "as requested", bonus and moisture | flow story | 7 | 5 | 1 | 1/0/6 | owner: D45 | tools/examples_scenarios.py, ore() | waits: D45 |
+| C81 | Ore flow: monthly call-off, plan "as requested", bonus and moisture | flow story | 7 | 5 | 1 | 1/0/6 | owner: D45 | tools/examples_scenarios.py, ore() | ready (D45 decided) |
 | C82 | Energy flow: 2400 MWh exported to Montebrio, sold to Ferrano Energy, imported by nobody | flow story | 9 | 3 | 1 | 4/4/1 | owner: D44 | tools/examples_scenarios.py | ready (D44 decided) |
 | C83 | Energy flow: isolated slips | flow story | 8 | 5 | 1 | 1/2/5 | none | tools/examples_scenarios.py, utility_statement() | ready |
 | C84 | Packaging flow: isolated slips | flow story | 5 | 4 | 1 | 0/0/5 | none | tools/examples_scenarios.py, packaging() | ready |
@@ -1309,7 +1309,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D45 (the train's arrival, bonus or penalty).
 - Depends on / blocks: none
 - Touched by: D22 (the carrier's invoices follow the framework's "30 days net from the consignment note", C51), D9 (waiting time is the second candidate for the world's real debit note, O7; the bonus is not one), D19 (the ore train runs about 154 km), O66 (ore to steel to castings).
-- State: waits for D45.
+- State: D45 decided 2026-11-17; ready to implement as decided (see `analysis/worklist-decisions.md`, D45).
 - Findings: ore: 01#F4, 02#F4, 02#F5, 03#F3, 06#F4, 06#F5, 07#F2
 
 ### C82 · Energy flow: 2400 MWh exported to Montebrio, sold to Ferrano Energy, imported by nobody
