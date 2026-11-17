@@ -25,10 +25,10 @@
    "id": "rail-x",
    "mode": "rail",
    "layer": "transport",
-   "label": "Containers to the border hub",
+   "label": "Containers from the border hub to the distributor's siding",
    "pts": [
     [
-     16,
+     19,
      18
     ],
     [
