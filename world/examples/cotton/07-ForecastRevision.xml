@@ -18,6 +18,7 @@
   </cac:ForecastPeriod>
   <cac:OriginalDocumentReference>
     <cbc:ID>LTM-FC-26-0192</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Forecast</cbc:DocumentTypeCode>
   </cac:OriginalDocumentReference>
   <cac:Signature>
     <cbc:ID>LT-SIG-26-0222</cbc:ID>

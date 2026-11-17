@@ -15,6 +15,7 @@
   <cbc:AccountingCost>Garden department</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>CSWC-TARIFF-2026</cbc:ID>

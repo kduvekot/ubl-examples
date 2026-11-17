@@ -26,8 +26,6 @@ The engineering firm announces the goods to the telecom company.
   Sent when the goods leave for the airport.
 - `IssueTime` = **13:20:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new despatch advice, not a correction. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
@@ -329,8 +327,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **Six packs: four hours of back-up power for the mast.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **6** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -381,8 +377,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **One set of ten for the equipment room.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **1** (unitCode `SET`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
@@ -437,8 +431,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **Four cans of five litres for the circuit boards.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **20** (unitCode `LTR`)  
   What was despatched.
 - `OrderLineReference/LineID` = **3**  
@@ -517,7 +509,6 @@ Inside `DespatchLine`:
   <cbc:UUID>7619027f-bad8-5009-935f-978a56d56a14</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>13:20:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -770,7 +761,6 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Six packs: four hours of back-up power for the mast.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -810,7 +800,6 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>One set of ten for the equipment room.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="SET">1</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -856,7 +845,6 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>Four cans of five litres for the circuit boards.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="LTR">20</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>

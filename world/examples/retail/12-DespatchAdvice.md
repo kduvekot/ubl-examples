@@ -26,8 +26,6 @@ The distributor announces the delivery and the truck that brings it.
   The day the truck was loaded at the distribution centre.
 - `IssueTime` = **15:34:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new despatch advice, not a correction. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
@@ -448,6 +446,8 @@ Inside `Shipment`:
   The goods on the pallet, as one goods item.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **LD-TR-26-0227**  
   The transport booking the pallet travels under.
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentTypeCode` = **TransportExecutionPlanRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-TR-26-0227 is the example retail/11, a TransportExecutionPlanRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlanRequest = Transport Execution Plan Request.
 - `TransportHandlingUnit/ID` = **095206102170000021** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -607,8 +607,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **Six pallets for the garden department's spring promotion.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **24** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -663,6 +661,8 @@ Inside `DespatchLine`:
   The conditions in words.
 - `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -837,7 +837,6 @@ Inside `DespatchLine`:
   <cbc:UUID>4b7e9055-23cd-5fbb-b498-b08f07b17c6e</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>15:34:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -1198,6 +1197,7 @@ Inside `DespatchLine`:
       </cac:GoodsItem>
       <cac:ShipmentDocumentReference>
         <cbc:ID>LD-TR-26-0227</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
@@ -1339,7 +1339,6 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Six pallets for the garden department's spring promotion.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">24</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -1392,6 +1391,7 @@ Inside `DespatchLine`:
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>

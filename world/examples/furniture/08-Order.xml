@@ -348,6 +348,7 @@
         <cbc:LineID>1</cbc:LineID>
         <cac:DocumentReference>
           <cbc:ID>BF-DOC-26-0568</cbc:ID>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Quotation</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:LineReference>
     </cac:LineItem>

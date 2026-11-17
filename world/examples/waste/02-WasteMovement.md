@@ -547,6 +547,8 @@ Inside `DocumentReference`:
 
 - `ID` = **RR-REC-26-0412**  
   The certificate of recovery to follow.
+- `DocumentType` = **Certificate of recovery**  
+  The kind of document referred to, Rinova's certificate of recovery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Document Distribution
 
@@ -1018,6 +1020,7 @@ Inside `DocumentDistribution`:
   </cac:WeightStatementDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>RR-REC-26-0412</cbc:ID>
+    <cbc:DocumentType>Certificate of recovery</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>

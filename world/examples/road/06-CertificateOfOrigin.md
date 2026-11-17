@@ -669,6 +669,8 @@ Inside `CertificateOfOriginApplication`:
   A party referred to from another party's details: its identifier and name are enough.
 - `SupportingDocumentReference/ID` = **LD-PO-26-0149**  
   The commercial document behind the goods.
+- `SupportingDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-PO-26-0149 is the example road/01, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 - `Signature/ID` = **VI-SIG-COA**  
   The sender's electronic seal.
 - `Signature/SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -1314,6 +1316,7 @@ Inside `InsuranceEndorsement`:
     </cac:DocumentDistribution>
     <cac:SupportingDocumentReference>
       <cbc:ID>LD-PO-26-0149</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:SupportingDocumentReference>
     <cac:Signature>
       <cbc:ID>VI-SIG-COA</cbc:ID>

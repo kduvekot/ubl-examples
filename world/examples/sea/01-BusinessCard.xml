@@ -204,6 +204,7 @@
   </cac:BrochureDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LD-REG-XB</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:ID>CAP-STOCK</cbc:ID>

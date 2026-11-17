@@ -360,6 +360,7 @@
           </cac:CertificateValidityPeriod>
           <cac:DocumentReference>
             <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+            <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>

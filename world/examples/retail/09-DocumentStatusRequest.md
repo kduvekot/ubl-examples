@@ -37,6 +37,8 @@ Inside `RequestedDocumentReference`:
 
 - `ID` = **BS-PO-26-0224**  
   The order asked about.
+- `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-PO-26-0224 is the example retail/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -302,6 +304,7 @@ Inside `ReceiverParty`:
   <cbc:TrackingID>BS-PO-26-0224</cbc:TrackingID>
   <cac:RequestedDocumentReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:RequestedDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-DSR</cbc:ID>

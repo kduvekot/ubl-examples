@@ -32,8 +32,6 @@ The distributor asks its forwarder to book air freight for the urgent part.
   In words.
 - `Note` = **Please confirm the booking.**  
   What the sender expects.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  New instructions. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `ShippingOrderID` = **LD-SH-26-0323**  
   The shipment to be booked.
 - `ToOrderIndicator` = **false**  
@@ -430,6 +428,8 @@ Inside `DocumentReference`:
 
 - `ID` = **VT-PO-26-0319**  
   The order the goods are for.
+- `DocumentTypeCode` = **OrderChange** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to, Velumi's order change for the frames by air (air/01), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
 
 ### Exchange Rate
 
@@ -484,7 +484,6 @@ Inside `Signature`:
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ShippingOrderID>LD-SH-26-0323</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
@@ -826,6 +825,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>VT-PO-26-0319</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

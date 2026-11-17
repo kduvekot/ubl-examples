@@ -87,13 +87,6 @@ Inside `ContractDocumentReference`:
 - `ID` = **SCG-SEASON-2026**  
   The season agreement between farm and ginnery, which allows the self-billing.
 
-### Despatch Document Reference
-
-Inside `DespatchDocumentReference`:
-
-- `ID` = **LCF-DN-26-0193**  
-  The farm's delivery note.
-
 ### Work Report Document Reference
 
 Inside `WorkReportDocumentReference`:
@@ -108,13 +101,6 @@ Inside `DeliveryNoteDocumentReference`:
 - `ID` = **LCF-DN-26-0193**  
   The farm's delivery note.
 
-### Receipt Document Reference
-
-Inside `ReceiptDocumentReference`:
-
-- `ID` = **SCG-WB-26-0311**  
-  The weighbridge ticket of the gin.
-
 ### Statement Document Reference
 
 Inside `StatementDocumentReference`:
@@ -128,13 +114,21 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **LTM-SEASON-2026**  
   The mill's season contract with the gin, for which the gin buys the seed cotton.
+- `DocumentType` = **Season agreement**  
+  The kind of document referred to, the textile mill's season agreement with the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
+- `ID` = **SCG-WB-26-0311**  
+  The weighbridge ticket of the gin, on whose weights the invoice rests.
+- `DocumentType` = **Weighbridge ticket**  
+  The kind of document referred to, the ginnery's weighbridge ticket, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `ID` = **XL-FARM-REG-0412**  
   The farm's registration, which the withholding needs.
+- `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the farm's registration in Lisavu's farm register, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
 
 ### Project Reference
 
@@ -495,7 +489,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice SCG-SBI-26-0194**  
+- `PayeeFinancialAccount/PaymentNote` = **Self-billed invoice SCG-SBI-26-0194**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **002** (schemeID `urn:ubl-examples:world:XL:bank-branch`)  
   The branch that keeps the account, by its national code: the branch number of a Lisavan bank (three digits). The account number holds it.
@@ -785,10 +779,10 @@ Inside `InvoiceLine`:
   The line of the delivery note the invoice line bills.
 - `Delivery/DeliveryNoteLineReference/UUID` = **6d32dd14-dac3-5c83-91e2-8c40cef6875b**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Delivery/DeliveryNoteLineReference/LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  The delivered line, unchanged. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `Delivery/DeliveryNoteLineReference/DocumentReference/ID` = **LCF-DN-26-0193**  
   The farm's delivery note.
+- `Delivery/DeliveryNoteLineReference/DocumentReference/DocumentTypeCode` = **DeliveryNote** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LCF-DN-26-0193 is the example cotton/03, a DeliveryNote; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DeliveryNote = Delivery Note.
 - `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.** (languageID `en-XL`)  
@@ -861,26 +855,26 @@ Inside `InvoiceLine`:
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
-  <cac:DespatchDocumentReference>
-    <cbc:ID>LCF-DN-26-0193</cbc:ID>
-  </cac:DespatchDocumentReference>
   <cac:WorkReportDocumentReference>
     <cbc:ID>SCG-OUT-26-0311</cbc:ID>
   </cac:WorkReportDocumentReference>
   <cac:DeliveryNoteDocumentReference>
     <cbc:ID>LCF-DN-26-0193</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
-  <cac:ReceiptDocumentReference>
-    <cbc:ID>SCG-WB-26-0311</cbc:ID>
-  </cac:ReceiptDocumentReference>
   <cac:StatementDocumentReference>
     <cbc:ID>SCG-ACC-LCF-26-02</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>LTM-SEASON-2026</cbc:ID>
+    <cbc:DocumentType>Season agreement</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
+    <cbc:ID>SCG-WB-26-0311</cbc:ID>
+    <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
     <cbc:ID>XL-FARM-REG-0412</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:ProjectReference>
     <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
@@ -1164,7 +1158,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice SCG-SBI-26-0194</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0194</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>
@@ -1356,9 +1350,9 @@ Inside `InvoiceLine`:
       <cac:DeliveryNoteLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cbc:UUID>6d32dd14-dac3-5c83-91e2-8c40cef6875b</cbc:UUID>
-        <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
         <cac:DocumentReference>
           <cbc:ID>LCF-DN-26-0193</cbc:ID>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DeliveryNote</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DeliveryNoteLineReference>
     </cac:Delivery>

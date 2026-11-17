@@ -56,6 +56,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **HF-FA-2026-007**  
   The factoring agreement between the distributor and the factor.
+- `DocumentType` = **Factoring agreement**  
+  The kind of document referred to, the factoring agreement between Lumeway and Harbourline, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -433,7 +435,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-INV-26-0147**  
+- `PayeeFinancialAccount/PaymentNote` = **Statement LD-INV-26-0147**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -551,6 +553,8 @@ Inside `StatementLine`:
   Its issue date.
 - `DocumentReference/ID` = **HF-ASSIGN-26-0091**  
   The notice of assignment of the invoice to the factor.
+- `DocumentReference/DocumentType` = **Notice of assignment**  
+  The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -630,6 +634,7 @@ Inside `StatementLine`:
   </cac:StatementPeriod>
   <cac:AdditionalDocumentReference>
     <cbc:ID>HF-FA-2026-007</cbc:ID>
+    <cbc:DocumentType>Factoring agreement</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>HF-SIG-26-0040</cbc:ID>
@@ -947,7 +952,7 @@ Inside `StatementLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-INV-26-0147</cbc:PaymentNote>
+      <cbc:PaymentNote>Statement LD-INV-26-0147</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -1078,6 +1083,7 @@ Inside `StatementLine`:
     </cac:BillingReference>
     <cac:DocumentReference>
       <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+      <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

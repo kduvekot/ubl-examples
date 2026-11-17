@@ -646,6 +646,8 @@ Inside `Shipment`:
   Ten to seven.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ShipmentDocumentReference/ID` = **FRC-WB-26-0334**  
   The rail consignment note.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ShipmentDocumentReference/DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FRC-WB-26-0334 is the example rail/08, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ContainedInTransportEquipment/ID` = **31 46 4521 042-3** (schemeID `urn:ubl-examples:world:XU:rail-vehicle-register`)  
   The container wagon the box rides on. The schemeID names the scheme it is from: the national vehicle register of Urvania (railway vehicles) (the UIC 12-digit wagon number: interoperability and gauge (2 digits), country 46, type (4), serial (3) and the check digit).
 - `Consignment/TransportHandlingUnit/TransportEquipment/ContainedInTransportEquipment/TransportEquipmentTypeCode` = **RR** (listID `UN/EDIFACT EDED 8053`)  
@@ -711,6 +713,8 @@ Inside `DocumentReference`:
 
 - `ID` = **FRC-TEP-26-0328**  
   The transport plan under which the carriage is performed.
+- `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FRC-TEP-26-0328 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 
 ### Document Distribution
 
@@ -1313,6 +1317,7 @@ Inside `Signature`:
           </cac:Despatch>
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>
+            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
           </cac:ShipmentDocumentReference>
           <cac:ContainedInTransportEquipment>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:rail-vehicle-register">31 46 4521 042-3</cbc:ID>
@@ -1387,6 +1392,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

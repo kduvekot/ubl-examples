@@ -724,6 +724,8 @@ Inside `CustomsDeclaration`:
   The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `AdditionalDocumentReference/ID` = **LD-PO-26-0149**  
   The order behind the export.
+- `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-PO-26-0149 is the example road/01, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -1365,6 +1367,7 @@ Inside `Signature`:
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
       <cbc:ID>LD-PO-26-0149</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

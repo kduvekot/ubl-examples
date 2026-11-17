@@ -338,6 +338,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BM-RANGE-26**  
   The store's range plan.
+- `DocumentType` = **Range plan**  
+  The kind of document referred to, the store's range plan, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Applicable Territory Address
 
@@ -680,6 +682,7 @@ Inside `CatalogueRequestLine`:
   </cac:TradingTerms>
   <cac:DocumentReference>
     <cbc:ID>BM-RANGE-26</cbc:ID>
+    <cbc:DocumentType>Range plan</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>

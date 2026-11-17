@@ -49,6 +49,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **RR-DOC-26-0207**  
   The waste movement document.
+- `DocumentTypeCode` = **WasteMovement** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: RR-DOC-26-0207 is the example waste/02, a WasteMovement; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: WasteMovement = Waste Movement.
 
 ### Accounting Supplier Party
 
@@ -486,6 +488,7 @@ Inside `InvoiceLine`:
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>RR-DOC-26-0207</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

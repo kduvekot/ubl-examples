@@ -483,6 +483,7 @@
       </cac:ContainingPackage>
       <cac:ShipmentDocumentReference>
         <cbc:ID>FB-TEP-26-0886</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
       </cac:ShipmentDocumentReference>
       <cac:EnergyConsumptionAllocation>
         <cbc:EnergySourceTypeCode listID="urn:ubl-examples:world:codelist:EnergySourceCode">DIESEL</cbc:EnergySourceTypeCode>
@@ -496,6 +497,7 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FB-TEP-26-0886</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

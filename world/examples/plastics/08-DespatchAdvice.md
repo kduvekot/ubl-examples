@@ -26,8 +26,6 @@ The waste processor announces the lot loaded on the barge.
   The day the barge was loaded.
 - `IssueTime` = **17:57:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new despatch advice, not a correction. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
@@ -441,8 +439,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **One barge load of recycled granulate in jumbo bags.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **120** (unitCode `TNE`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -513,7 +509,6 @@ Inside `DespatchLine`:
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>17:57:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
   <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -866,7 +861,6 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>One barge load of recycled granulate in jumbo bags.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="TNE">120</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

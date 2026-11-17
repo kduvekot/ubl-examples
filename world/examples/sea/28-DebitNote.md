@@ -119,6 +119,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **VT-CLAIM-26-0021**  
   The buyer's claim.
+- `DocumentType` = **Claim**  
+  The kind of document referred to, Velumi's claim, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Contract Document Reference
 
@@ -445,7 +447,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice VT-DOC-26-0153**  
+- `PayeeFinancialAccount/PaymentNote` = **Debit note VT-DOC-26-0153**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **001** (schemeID `urn:ubl-examples:world:XL:bank-branch`)  
   The branch that keeps the account, by its national code: the branch number of a Lisavan bank (three digits). The account number holds it.
@@ -632,18 +634,26 @@ Inside `DebitNoteLine`:
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0145**  
   The despatch advice.
+- `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-DA-26-0145 is the example sea/20, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `ReceiptLineReference/LineID` = **1**  
   The receipt line.
 - `ReceiptLineReference/DocumentReference/ID` = **NW-RA-26-0146**  
   The receipt advice.
+- `ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: NW-RA-26-0146 is the example sea/21, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
 - `WorkReportLineReference/LineID` = **1**  
   The inspection report's line.
 - `WorkReportLineReference/DocumentReference/ID` = **XL-CUS-INSP-26-0517**  
   Customs' inspection report.
+- `WorkReportLineReference/DocumentReference/DocumentTypeCode` = **293** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the island customs' inspection report, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 293 = Inspection report.
 - `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
   The goods' invoice.
 - `DocumentReference/ID` = **XL-CUS-RCPT-26-0517**  
   Customs' receipt for the fee.
+- `DocumentReference/DocumentTypeCode` = **917** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the island customs' receipt for the inspection fee, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 917 = Receipt (Customs).
 - `PricingReference/AlternativeConditionPrice/PriceAmount` = **51.25** (currencyID `XLC`)  
   The fee as customs set it.
 - `OriginatorParty/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -747,6 +757,7 @@ Inside `DebitNoteLine`:
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0021</cbc:ID>
+    <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
@@ -998,7 +1009,7 @@ Inside `DebitNoteLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice VT-DOC-26-0153</cbc:PaymentNote>
+      <cbc:PaymentNote>Debit note VT-DOC-26-0153</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -1122,18 +1133,21 @@ Inside `DebitNoteLine`:
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>NW-RA-26-0146</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
     <cac:WorkReportLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>XL-CUS-INSP-26-0517</cbc:ID>
+        <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">293</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:WorkReportLineReference>
     <cac:BillingReference>
@@ -1143,6 +1157,7 @@ Inside `DebitNoteLine`:
     </cac:BillingReference>
     <cac:DocumentReference>
       <cbc:ID>XL-CUS-RCPT-26-0517</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">917</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:PricingReference>
       <cac:AlternativeConditionPrice>

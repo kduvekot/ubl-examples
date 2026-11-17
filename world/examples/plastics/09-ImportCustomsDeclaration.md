@@ -531,6 +531,8 @@ Inside `Shipment`:
   The name of code BONDEDSTORE in the Trade Accord's certificate type list.
 - `GoodsItem/AdditionalDocumentReference/ID` = **FB-WB-26-0890**  
   The barge's consignment note.
+- `GoodsItem/AdditionalDocumentReference/DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FB-WB-26-0890 is the example plastics/06, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Previous Customs Declaration
 
@@ -972,6 +974,7 @@ Inside `Signature`:
       </cac:BondedWarehouseLocation>
       <cac:AdditionalDocumentReference>
         <cbc:ID>FB-WB-26-0890</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
       </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
   </cac:Shipment>

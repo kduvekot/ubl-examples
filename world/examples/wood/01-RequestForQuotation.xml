@@ -18,6 +18,7 @@
   </cac:RequestedValidityPeriod>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-DS-SL1800</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-26-RFQ</cbc:ID>
@@ -261,6 +262,7 @@
     <cbc:SecurityClassificationCode listID="urn:ubl-examples:world:codelist:SecurityClassificationCode">INTERNAL</cbc:SecurityClassificationCode>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-SL1800</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
@@ -349,6 +351,7 @@
           </cac:CertificateValidityPeriod>
           <cac:DocumentReference>
             <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+            <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>

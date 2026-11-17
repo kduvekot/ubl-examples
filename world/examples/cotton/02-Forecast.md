@@ -50,6 +50,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **SCG-SEASON-2026**  
   The season agreement.
+- `DocumentType` = **Season agreement**  
+  The kind of document referred to, the season agreement between the farm and the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -356,6 +358,7 @@ Inside `ForecastLine`:
   </cac:ForecastPeriod>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
+    <cbc:DocumentType>Season agreement</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LT-SIG-26-0202</cbc:ID>

@@ -15,6 +15,7 @@
   </cac:ExceptionObservationPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0571</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0421</cbc:ID>
@@ -255,6 +256,7 @@
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:ForecastException>
       <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>

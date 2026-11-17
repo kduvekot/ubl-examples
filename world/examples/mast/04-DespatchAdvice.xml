@@ -8,7 +8,6 @@
   <cbc:UUID>7619027f-bad8-5009-935f-978a56d56a14</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>13:20:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -261,7 +260,6 @@
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Six packs: four hours of back-up power for the mast.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -301,7 +299,6 @@
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>One set of ten for the equipment room.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="SET">1</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -347,7 +344,6 @@
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>Four cans of five litres for the circuit boards.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="LTR">20</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>

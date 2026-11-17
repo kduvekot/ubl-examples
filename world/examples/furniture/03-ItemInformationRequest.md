@@ -44,6 +44,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BF-DOC-26-0568**  
   The quotation of the line.
+- `DocumentTypeCode` = **Quotation** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-DOC-26-0568 is the example furniture/02, a Quotation; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Quotation.
 
 ### Signature
 
@@ -361,6 +363,7 @@ Inside `ItemInformationRequestLine`:
   </cac:Period>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Quotation</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0312</cbc:ID>

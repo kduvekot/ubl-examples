@@ -273,13 +273,6 @@ Inside `TransportEvent`:
 - `Location/Name` = **Port of Lumeport, container quay**  
   Where it happened.
 
-### Document Reference
-
-Inside `DocumentReference`:
-
-- `ID` = **LD-CS-26-0133**  
-  The transport document of the consignment.
-
 ### Signature
 
 Inside `Signature`:
@@ -630,9 +623,6 @@ Inside `StatusPeriod`:
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
-  <cac:DocumentReference>
-    <cbc:ID>LD-CS-26-0133</cbc:ID>
-  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>PL-SIG-TS-13</cbc:ID>
     <cac:SignatoryParty>

@@ -445,6 +445,8 @@ Inside `DocumentReference`:
 
 - `ID` = **FRC-TEP-26-0307**  
   The transport plan under which the carriage is performed.
+- `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FRC-TEP-26-0307 is the example ore/03, a TransportExecutionPlan; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 
 ### Document Distribution
 
@@ -842,6 +844,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

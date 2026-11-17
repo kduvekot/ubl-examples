@@ -58,6 +58,8 @@ Inside `DocumentReference`:
 
 - `ID` = **PWD-PARKS-PLAN-26**  
   The parks plan.
+- `DocumentType` = **Parks plan**  
+  The kind of document referred to, the department's plan for the city's parks, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -706,6 +708,8 @@ Inside `ProcurementProject`:
   The estimate.
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
+- `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
+  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-22**  
@@ -767,6 +771,7 @@ Inside `ProcurementProjectLot`:
   </cac:AdditionalNoticeLanguage>
   <cac:DocumentReference>
     <cbc:ID>PWD-PARKS-PLAN-26</cbc:ID>
+    <cbc:DocumentType>Parks plan</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-PIN</cbc:ID>
@@ -1343,6 +1348,7 @@ Inside `ProcurementProjectLot`:
       <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+        <cbc:DocumentType>Technical specification</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:DeliveryPeriod>
         <cbc:StartDate>2026-04-02</cbc:StartDate>

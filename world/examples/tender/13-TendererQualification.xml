@@ -374,5 +374,6 @@
   </cac:Evidence>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-ESPD-26</cbc:ID>
+    <cbc:DocumentType>Tenderer self-declaration</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
 </TendererQualification>

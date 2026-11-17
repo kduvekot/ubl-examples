@@ -255,6 +255,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **PWD-EVAL-SCORES-BF**  
   The furniture maker's scores.
+- `DocumentType` = **Evaluation scores**  
+  The kind of document referred to, Brackenmere's scores in the evaluation, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Tender Result
 
@@ -528,6 +530,7 @@ Inside `AppealTerms`:
   </cac:MinutesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-EVAL-SCORES-BF</cbc:ID>
+    <cbc:DocumentType>Evaluation scores</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:TenderResult>
     <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>

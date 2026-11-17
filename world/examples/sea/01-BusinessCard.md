@@ -266,6 +266,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **LD-REG-XB**  
   The distributor's registration extract.
+- `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's extract from Bayvarra's business register, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
 
 ### Business Capability
 
@@ -527,6 +529,7 @@ Inside `BusinessCapability`:
   </cac:BrochureDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LD-REG-XB</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:ID>CAP-STOCK</cbc:ID>

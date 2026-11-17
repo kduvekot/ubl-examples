@@ -275,13 +275,6 @@ Inside `TransportEvent`:
 - `Location/Name` = **Ferrano Intermodal Hub**  
   Where it happened.
 
-### Document Reference
-
-Inside `DocumentReference`:
-
-- `ID` = **VI-CS-26-0327**  
-  The transport document of the consignment.
-
 ### Signature
 
 Inside `Signature`:
@@ -554,9 +547,6 @@ Inside `StatusPeriod`:
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
-  <cac:DocumentReference>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
-  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>FIH-SIG-TS-07</cbc:ID>
     <cac:SignatoryParty>

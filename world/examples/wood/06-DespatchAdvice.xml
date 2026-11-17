@@ -8,7 +8,6 @@
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>08:31:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -342,7 +341,6 @@
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Slats for 960 benches: five per bench, 96 bundles of 50.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">4800</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -443,6 +441,7 @@
         </cac:CertificateValidityPeriod>
         <cac:DocumentReference>
           <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+          <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
         </cac:DocumentReference>
       </cac:Certificate>
       <cac:Dimension>

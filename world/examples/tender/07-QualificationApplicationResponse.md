@@ -323,6 +323,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **BF-ESPD-26**  
   The self-declaration.
+- `DocumentType` = **Tenderer self-declaration**  
+  The kind of document referred to, Brackenmere's self-declaration for the tender, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Evidence
 
@@ -346,6 +348,8 @@ Inside `Evidence`:
   A party referred to from another party's details: its identifier and name are enough.
 - `DocumentReference/ID` = **BF-ACC-2025**  
   The accounts.
+- `DocumentReference/DocumentType` = **Annual accounts**  
+  The kind of document referred to, Brackenmere's accounts for 2025, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 
@@ -601,6 +605,7 @@ Inside `Signature`:
   </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-ESPD-26</cbc:ID>
+    <cbc:DocumentType>Tenderer self-declaration</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Evidence>
     <cbc:ID>EV-ACC-BF</cbc:ID>
@@ -619,6 +624,7 @@ Inside `Signature`:
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
       <cbc:ID>BF-ACC-2025</cbc:ID>
+      <cbc:DocumentType>Annual accounts</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>

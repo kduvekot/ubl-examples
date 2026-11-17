@@ -284,6 +284,8 @@ Inside `DocumentResponse`:
   UN/EDIFACT 4343 code AP: the order is accepted and the truck is booked. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
 - `DocumentReference/ID` = **BS-PO-26-0224**  
   The order the status is about.
+- `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-PO-26-0224 is the example retail/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Additional Document Response
 
@@ -293,6 +295,8 @@ Inside `AdditionalDocumentResponse`:
   The transport booking is confirmed too. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
 - `DocumentReference/ID` = **LD-TR-26-0227**  
   The transport booking: the request that follows as the next document of the flow, numbered when the truck was booked.
+- `DocumentReference/DocumentTypeCode` = **TransportExecutionPlanRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-TR-26-0227 is the example retail/11, a TransportExecutionPlanRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlanRequest = Transport Execution Plan Request.
 
 ## The document
 
@@ -522,6 +526,7 @@ Inside `AdditionalDocumentResponse`:
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>BS-PO-26-0224</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>
   <cac:AdditionalDocumentResponse>
@@ -530,6 +535,7 @@ Inside `AdditionalDocumentResponse`:
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>LD-TR-26-0227</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:AdditionalDocumentResponse>
 </DocumentStatus>

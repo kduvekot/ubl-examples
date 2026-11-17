@@ -458,6 +458,8 @@ Inside `CreditNoteLine`:
   The installation report's line.
 - `DocumentReference/ID` = **PWD-DMG-26-0081**  
   The department's damage report.
+- `DocumentReference/DocumentTypeCode` = **DAMAGEREPORT** (listID `urn:ubl-examples:world:codelist:DocumentTypeCode`)  
+  The kind of document referred to, the public works department's damage report, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's document type list: DAMAGEREPORT = Damage report.
 - `PricingReference/AlternativeConditionPrice/PriceAmount` = **49900** (currencyID `XUF`)  
   The contract price in ferra.
 - `PurchaseReference/ID` = **PARK-HB-B17**  
@@ -1068,6 +1070,7 @@ Inside `CreditNoteLine`:
     </cac:WorkReportLineReference>
     <cac:DocumentReference>
       <cbc:ID>PWD-DMG-26-0081</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">DAMAGEREPORT</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:PricingReference>
       <cac:AlternativeConditionPrice>

@@ -20,6 +20,8 @@ The manufacturer accepts the change and confirms the charge.
   This run of the process: the same in every document of the flow.
 - `ID` = **VI-OR-26-0214**  
   The seller's number for its response.
+- `SalesOrderID` = **VI-SO-26-0058**  
+  The manufacturer's sales order for the call-off, given in its answer: the seller's number appears first in the seller's own document (tender/26#F4).
 - `UUID` = **f49b1a90-ec03-58ab-b40d-fe1765db668c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
@@ -379,6 +381,7 @@ Inside `LegalMonetaryTotal`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-OR-26-0214</cbc:ID>
+  <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
   <cbc:UUID>f49b1a90-ec03-58ab-b40d-fe1765db668c</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>16:15:00</cbc:IssueTime>

@@ -17,6 +17,7 @@
   </cac:TechnicalDocumentReference>
   <cac:ProvidedDocumentReference>
     <cbc:ID>PWD-PROM-SITE-PLAN-B</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
   </cac:ProvidedDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>

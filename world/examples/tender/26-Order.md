@@ -20,8 +20,6 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   This run of the process: the same in every document of the flow.
 - `ID` = **LPWD-PO-26-0212**  
   The buyer's order number.
-- `SalesOrderID` = **VI-SO-26-0058**  
-  The manufacturer's sales order for the framework contract, given when the contract was signed.
 - `UUID` = **9865133f-cea3-538c-ba26-54de8100727c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
@@ -30,6 +28,8 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
+- `Note` = **Release 1 under the framework contract: 40 of the 240 benches.**  
+  Which call-off this is; Delivery/ReleaseID is an access approval at the delivery place, not a call-off number (tender/26#F5).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the buyer's currency, agreed in the contract; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PricingCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -49,6 +49,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **PWD-2026-PARKS**  
   The procurement procedure the order results from.
+- `DocumentType` = **Procurement file**  
+  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Contract
 
@@ -296,8 +298,6 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ReleaseID` = **1**  
-  The first release under the contract: 40 of the 240 benches.
 - `DeliveryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeport Public Works Department**  
@@ -636,11 +636,11 @@ Inside `OrderLine`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-PO-26-0212</cbc:ID>
-  <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
   <cbc:UUID>9865133f-cea3-538c-ba26-54de8100727c</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>14:40:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
+  <cbc:Note>Release 1 under the framework contract: 40 of the 240 benches.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
@@ -649,6 +649,7 @@ Inside `OrderLine`:
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:Contract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
@@ -860,7 +861,6 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ReleaseID>1</cbc:ReleaseID>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>

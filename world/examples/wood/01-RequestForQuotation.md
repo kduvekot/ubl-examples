@@ -50,6 +50,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **VI-DS-SL1800**  
   The drawing of the slat.
+- `DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 
 ### Signature
 
@@ -342,6 +344,8 @@ Inside `RequestForQuotationLine`:
   Not for publication. The code is from the Trade Accord's security classification list: INTERNAL = Internal.
 - `DocumentReference/ID` = **VI-DS-SL1800**  
   The drawing.
+- `DocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **4800** (unitCode `EA`)  
@@ -440,6 +444,8 @@ Inside `RequestForQuotationLine`:
   The certificate is valid until then.
 - `LineItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
   The audit report the certificate is based on.
+- `LineItem/Item/Certificate/DocumentReference/DocumentType` = **Forest management audit report**  
+  The kind of document referred to, the audit report behind the forestry certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `LineItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
@@ -476,6 +482,7 @@ Inside `RequestForQuotationLine`:
   </cac:RequestedValidityPeriod>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-DS-SL1800</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-26-RFQ</cbc:ID>
@@ -719,6 +726,7 @@ Inside `RequestForQuotationLine`:
     <cbc:SecurityClassificationCode listID="urn:ubl-examples:world:codelist:SecurityClassificationCode">INTERNAL</cbc:SecurityClassificationCode>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-SL1800</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
@@ -807,6 +815,7 @@ Inside `RequestForQuotationLine`:
           </cac:CertificateValidityPeriod>
           <cac:DocumentReference>
             <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+            <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>

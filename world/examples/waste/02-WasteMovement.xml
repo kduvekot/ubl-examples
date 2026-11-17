@@ -448,6 +448,7 @@
   </cac:WeightStatementDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>RR-REC-26-0412</cbc:ID>
+    <cbc:DocumentType>Certificate of recovery</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>

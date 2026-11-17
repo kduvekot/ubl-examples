@@ -60,15 +60,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **PS-REQ-26-0031**  
   The Port of Selanu's request to the trader, which the order follows.
-
-### Contract
-
-Inside `Contract`:
-
-- `ID` = **LD-DAG-26-0125**  
-  The digital agreement the trade runs under.
-- `ContractType` = **Digital trade agreement**  
-  What it is.
+- `DocumentType` = **Request**  
+  The kind of document referred to, the Port of Selanu's request to the trader, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Seller Supplier Party
 
@@ -349,7 +342,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-SO-26-0123**  
+- `PayeeFinancialAccount/PaymentNote` = **Deposit on sales order LD-SO-26-0123**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -453,8 +446,6 @@ Inside `OrderLine`:
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
-- `LineItem/LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Unchanged against the order. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   The quantity confirmed.
 - `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
@@ -495,8 +486,6 @@ Inside `OrderLine`:
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
-- `LineItem/LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Unchanged against the order. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   The quantity confirmed.
 - `LineItem/LineExtensionAmount` = **768.00** (currencyID `XBL`)  
@@ -560,11 +549,8 @@ Inside `OrderLine`:
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:DocumentType>Request</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
-  <cac:Contract>
-    <cbc:ID>LD-DAG-26-0125</cbc:ID>
-    <cbc:ContractType>Digital trade agreement</cbc:ContractType>
-  </cac:Contract>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -799,7 +785,7 @@ Inside `OrderLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-SO-26-0123</cbc:PaymentNote>
+      <cbc:PaymentNote>Deposit on sales order LD-SO-26-0123</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -870,7 +856,6 @@ Inside `OrderLine`:
       <cbc:ID>1</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
@@ -915,7 +900,6 @@ Inside `OrderLine`:
       <cbc:ID>2</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">768.00</cbc:TaxInclusiveLineExtensionAmount>

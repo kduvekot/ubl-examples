@@ -285,6 +285,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **XU-CUS-REIMP-26-0044**  
   Urvania's customs' re-import record.
+- `DocumentType` = **Re-importation record**  
+  The kind of document referred to, Urvanian customs' record of the re-importation, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -513,6 +515,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportAttachment>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+    <cbc:DocumentType>Re-importation record</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>FCC-SIG-26-POR</cbc:ID>

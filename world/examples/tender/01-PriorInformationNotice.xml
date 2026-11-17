@@ -22,6 +22,7 @@
   </cac:AdditionalNoticeLanguage>
   <cac:DocumentReference>
     <cbc:ID>PWD-PARKS-PLAN-26</cbc:ID>
+    <cbc:DocumentType>Parks plan</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-PIN</cbc:ID>
@@ -598,6 +599,7 @@
       <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+        <cbc:DocumentType>Technical specification</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:DeliveryPeriod>
         <cbc:StartDate>2026-04-02</cbc:StartDate>

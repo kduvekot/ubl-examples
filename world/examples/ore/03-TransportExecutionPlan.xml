@@ -260,6 +260,7 @@
   </cac:TransportServiceDescriptionDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-WAGON-LIST-11</cbc:ID>
+    <cbc:DocumentType>Wagon list</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>

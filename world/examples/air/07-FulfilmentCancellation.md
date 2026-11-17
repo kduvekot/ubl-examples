@@ -52,12 +52,12 @@ Inside `OrderReference`:
   Its date.
 - `IssueTime` = **07:50:00**  
   Its time.
-- `CustomerReference` = **Harbour parks Selanu**  
-  The buyer's project.
 - `OrderTypeCode` = **230** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 230: order change. The code is from the world's copy of UN/EDIFACT 1001 Document name: 230 = Purchase order change request.
 - `DocumentReference/ID` = **VT-PO-26-0127**  
   The original sea order.
+- `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Additional Document Reference
 
@@ -65,13 +65,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **KXL-OFFLOAD-26-0513**  
   The airline's offload notice.
-
-### Contract
-
-Inside `Contract`:
-
-- `ID` = **LD-DAG-26-0125**  
-  The digital agreement.
+- `DocumentType` = **Offload notice**  
+  The kind of document referred to, the airline's offload notice, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -414,18 +409,16 @@ Inside `BeneficiaryParty`:
     <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
     <cbc:IssueDate>2026-05-11</cbc:IssueDate>
     <cbc:IssueTime>07:50:00</cbc:IssueTime>
-    <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
     <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">230</cbc:OrderTypeCode>
     <cac:DocumentReference>
       <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>KXL-OFFLOAD-26-0513</cbc:ID>
+    <cbc:DocumentType>Offload notice</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
-  <cac:Contract>
-    <cbc:ID>LD-DAG-26-0125</cbc:ID>
-  </cac:Contract>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-FC</cbc:ID>
     <cac:SignatoryParty>

@@ -242,6 +242,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **XL-CUS-ATA-26-0071**  
   The customs' notice to the chamber.
+- `DocumentType` = **Customs notice**  
+  The kind of document referred to, the island customs' notice to the chamber, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -440,6 +442,7 @@ Inside `Signature`:
   </cac:ImportingCustomsParty>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>
+    <cbc:DocumentType>Customs notice</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>SCC-SIG-26-PRQ</cbc:ID>

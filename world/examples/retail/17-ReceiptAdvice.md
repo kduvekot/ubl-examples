@@ -26,8 +26,6 @@ The shop confirms the delivery and reports a damaged carton.
   The day the goods were unloaded at the store.
 - `IssueTime` = **15:21:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A first receipt advice. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `ReceiptAdviceTypeCode` = **Actual** (listID `urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode`)  
   UBL's receipt advice type code: the goods actually received. The code is from the world's copy of UBL's Receipt advice type list, with a listID: Actual = An arrival that has passed goods inspection and is accepted (or not)..
 - `DeliveryAcceptanceCode` = **PARTIAL** (listID `urn:ubl-examples:world:codelist:DeliveryAcceptanceCode`)  
@@ -63,6 +61,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **BM-GI-PHOTO-26-0510**  
   The goods-in photographs.
+- `DocumentType` = **Photograph**  
+  The kind of document referred to, the store's goods-in photographs, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -392,8 +392,12 @@ Inside `ReceiptLine`:
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
   The despatch advice.
+- `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `DocumentReference/ID` = **BS-PHOTO-26-0118**  
   The photograph of the damaged carton.
+- `DocumentReference/DocumentType` = **Photograph**  
+  The kind of document referred to, the photograph of the damaged carton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -444,6 +448,8 @@ Inside `ReceiptLine`:
   The conditions in words.
 - `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -610,7 +616,6 @@ Inside `ReceiptLine`:
   <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>15:21:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">PARTIAL</cbc:DeliveryAcceptanceCode>
   <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
@@ -626,6 +631,7 @@ Inside `ReceiptLine`:
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BM-GI-PHOTO-26-0510</cbc:ID>
+    <cbc:DocumentType>Photograph</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-RA</cbc:ID>
@@ -903,10 +909,12 @@ Inside `ReceiptLine`:
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0229</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:DocumentReference>
       <cbc:ID>BS-PHOTO-26-0118</cbc:ID>
+      <cbc:DocumentType>Photograph</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -956,6 +964,7 @@ Inside `ReceiptLine`:
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>

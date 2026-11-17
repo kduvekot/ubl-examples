@@ -45,6 +45,8 @@ Inside `PreviousDocumentReference`:
 
 - `ID` = **LPWD-DOC-26-0634**  
   The contest notice.
+- `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0634 is the example contest/03, a ContractNotice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
 
 ### Contracting Party
 
@@ -533,6 +535,7 @@ Inside `TenderResult`:
   <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>

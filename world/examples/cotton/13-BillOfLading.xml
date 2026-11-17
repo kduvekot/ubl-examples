@@ -358,6 +358,7 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>LTM-FI-26-0199</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

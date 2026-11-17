@@ -50,6 +50,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **BM-RE-26**  
   The promotion it counts on.
+- `DocumentTypeCode` = **RetailEvent** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to, the store's retail event for the reopening (retail/06), cited before its number is known; its ID is put right with the retail flow (D34), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: RetailEvent = Retail Event.
 
 ### Signature
 
@@ -382,6 +384,8 @@ Inside `ForecastLine`:
   The conditions in words.
 - `SalesItem/Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `SalesItem/Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `SalesItem/Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `SalesItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -558,6 +562,7 @@ Inside `ForecastLine`:
   </cac:ForecastPeriod>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BM-RE-26</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">RetailEvent</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0422</cbc:ID>
@@ -843,6 +848,7 @@ Inside `ForecastLine`:
           <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
           <cac:DocumentReference>
             <cbc:ID>LD-GTC-2026</cbc:ID>
+            <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:TransactionConditions>
         <cac:AdditionalItemProperty>

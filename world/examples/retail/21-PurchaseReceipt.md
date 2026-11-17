@@ -61,6 +61,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **VI-WARRANTY-B180**  
   The maker's warranty card.
+- `DocumentType` = **Warranty card**  
+  The kind of document referred to, the maker's warranty card of the bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -728,6 +730,7 @@ Inside `PurchaseReceiptLine`:
   </cac:SalesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-WARRANTY-B180</cbc:ID>
+    <cbc:DocumentType>Warranty card</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-POS-G2</cbc:ID>

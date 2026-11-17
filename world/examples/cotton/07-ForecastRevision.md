@@ -50,6 +50,8 @@ Inside `OriginalDocumentReference`:
 
 - `ID` = **LTM-FC-26-0192**  
   The forecast revised.
+- `DocumentTypeCode` = **Forecast** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LTM-FC-26-0192 is the example cotton/02, a Forecast; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Forecast.
 
 ### Signature
 
@@ -370,6 +372,7 @@ Inside `ForecastRevisionLine`:
   </cac:ForecastPeriod>
   <cac:OriginalDocumentReference>
     <cbc:ID>LTM-FC-26-0192</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Forecast</cbc:DocumentTypeCode>
   </cac:OriginalDocumentReference>
   <cac:Signature>
     <cbc:ID>LT-SIG-26-0222</cbc:ID>

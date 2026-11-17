@@ -45,6 +45,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **PWD-PAY-AUTH-26-0412**  
   The department's payment authorisation.
+- `DocumentType` = **Payment authorisation**  
+  The kind of document referred to, the department's payment authorisation, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Accounting Customer Party
 
@@ -399,6 +401,8 @@ Inside `RemittanceAdviceLine`:
   Its date.
 - `BillingReference/AdditionalDocumentReference/ID` = **PWD-PAY-AUTH-26-0412**  
   The authorisation that covers the interest.
+- `BillingReference/AdditionalDocumentReference/DocumentType` = **Payment authorisation**  
+  The kind of document referred to, the department's payment authorisation, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ## The document
 
@@ -421,6 +425,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
+    <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -738,6 +743,7 @@ Inside `RemittanceAdviceLine`:
       </cac:ReminderDocumentReference>
       <cac:AdditionalDocumentReference>
         <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
+        <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
       </cac:AdditionalDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

@@ -8,7 +8,6 @@
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>17:22:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">PARTIAL</cbc:DeliveryAcceptanceCode>
   <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
@@ -25,6 +24,7 @@
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>NW-SIG-26-RA</cbc:ID>
@@ -297,6 +297,7 @@
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
@@ -344,6 +345,7 @@
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>
@@ -503,6 +505,7 @@
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>

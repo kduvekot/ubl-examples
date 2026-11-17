@@ -273,6 +273,8 @@ Inside `DocumentResponse`:
   UN/EDIFACT 4343 code AP: accepted; the invoice is scheduled for payment. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
 - `DocumentReference/ID` = **LD-INV-26-0147**  
   The invoice the status is about.
+- `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-INV-26-0147 is the example sea/22, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -490,6 +492,7 @@ Inside `DocumentResponse`:
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>
 </InvoiceStatusResponse>

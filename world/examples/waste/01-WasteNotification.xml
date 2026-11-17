@@ -449,5 +449,6 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>VI-WASTE-CONTRACT-26</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">315</cbc:DocumentTypeCode>
   </cac:DocumentReference>
 </WasteNotification>

@@ -215,6 +215,7 @@
   </cac:MinutesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-EVAL-REPORT-26</cbc:ID>
+    <cbc:DocumentType>Evaluation report</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:TenderResult>
     <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>

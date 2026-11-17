@@ -437,6 +437,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **VI-ESPD-26**  
   The self-declaration.
+- `DocumentType` = **Tenderer self-declaration**  
+  The kind of document referred to, Valdara's self-declaration for the tender, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ## The document
 
@@ -817,6 +819,7 @@ Inside `AdditionalDocumentReference`:
   </cac:Evidence>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-ESPD-26</cbc:ID>
+    <cbc:DocumentType>Tenderer self-declaration</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
 </TendererQualification>
 ```

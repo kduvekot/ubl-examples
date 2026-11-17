@@ -15,6 +15,7 @@
   <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>

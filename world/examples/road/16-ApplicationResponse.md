@@ -304,6 +304,8 @@ Inside `DocumentResponse`:
   In words.
 - `DocumentReference/ID` = **VI-INV-26-0166**  
   The invoice responded to.
+- `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VI-INV-26-0166 is the example road/15, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 - `IssuerParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `IssuerParty/PartyName/Name` = **Lumeway Distribution**  
@@ -571,6 +573,7 @@ Inside `DocumentResponse`:
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>VI-INV-26-0166</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:IssuerParty>
       <cac:PartyIdentification>

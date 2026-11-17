@@ -91,13 +91,6 @@ Inside `BillingReference`:
 - `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-02-07**  
   Its issue date.
 
-### Despatch Document Reference
-
-Inside `DespatchDocumentReference`:
-
-- `ID` = **LCF-DN-26-0193**  
-  The farm's delivery note.
-
 ### Delivery Note Document Reference
 
 Inside `DeliveryNoteDocumentReference`:
@@ -111,13 +104,6 @@ Inside `WorkReportDocumentReference`:
 
 - `ID` = **SCC-CLS-26-0311**  
   The chamber's classing report.
-
-### Receipt Document Reference
-
-Inside `ReceiptDocumentReference`:
-
-- `ID` = **SCG-WB-26-0311**  
-  The weighbridge ticket.
 
 ### Contract Document Reference
 
@@ -139,6 +125,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **LTM-SEASON-2026**  
   The mill's season contract with the gin, for which the gin buys the seed cotton.
+- `DocumentType` = **Season agreement**  
+  The kind of document referred to, the textile mill's season agreement with the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Additional Document Reference
 
@@ -146,6 +134,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **XL-CLS-2026-0042**  
   The classing certificate.
+- `DocumentType` = **Classing certificate**  
+  The kind of document referred to, the classing certificate of the cotton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Project Reference
 
@@ -687,18 +677,12 @@ Inside `CreditNoteLine`:
       <cbc:IssueDate>2026-02-07</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
-  <cac:DespatchDocumentReference>
-    <cbc:ID>LCF-DN-26-0193</cbc:ID>
-  </cac:DespatchDocumentReference>
   <cac:DeliveryNoteDocumentReference>
     <cbc:ID>LCF-DN-26-0193</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:WorkReportDocumentReference>
     <cbc:ID>SCC-CLS-26-0311</cbc:ID>
   </cac:WorkReportDocumentReference>
-  <cac:ReceiptDocumentReference>
-    <cbc:ID>SCG-WB-26-0311</cbc:ID>
-  </cac:ReceiptDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
@@ -707,9 +691,11 @@ Inside `CreditNoteLine`:
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>LTM-SEASON-2026</cbc:ID>
+    <cbc:DocumentType>Season agreement</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:ProjectReference>
     <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>

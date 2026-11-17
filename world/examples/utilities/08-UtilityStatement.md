@@ -39,6 +39,8 @@ Inside `ParentDocumentReference`:
 
 - `ID` = **CSWC-INV-26-0319**  
   The invoice this statement supplements: a utility statement adds the consumption behind the bill.
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: CSWC-INV-26-0319 is the example utilities/09, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Additional Document Reference
 
@@ -415,6 +417,8 @@ Inside `SubscriberConsumption`:
   The company's leaflet on saving water.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/DocumentReference/ID` = **CSW-QUALITY-2026-Q1**  
   The quarterly water quality report.
+- `Consumption/EnergyWaterSupply/ConsumptionReport/DocumentReference/DocumentType` = **Water quality report**  
+  The kind of document referred to, the water company's quarterly water quality report, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **CSW-CP-38516-57-2602**  
   The report of February.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
@@ -582,6 +586,7 @@ Inside `SubscriberConsumption`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>CSWC-TARIFF-2026</cbc:ID>
@@ -870,6 +875,7 @@ Inside `SubscriberConsumption`:
           </cac:GuidanceDocumentReference>
           <cac:DocumentReference>
             <cbc:ID>CSW-QUALITY-2026-Q1</cbc:ID>
+            <cbc:DocumentType>Water quality report</cbc:DocumentType>
           </cac:DocumentReference>
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38516-57-2602</cbc:ConsumptionReportID>

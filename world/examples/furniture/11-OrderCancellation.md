@@ -44,6 +44,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **BF-DOC-26-0573**  
   The exception notification that led to it.
+- `DocumentTypeCode` = **ExceptionNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-DOC-26-0573 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
 
 ### Additional Document Reference
 
@@ -51,6 +53,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **BS-DOC-26-0572**  
   The sales figures.
+- `DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0572 is the example furniture/06, a ProductActivity; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ProductActivity = Product Activity.
 
 ### Contract
 
@@ -334,9 +338,11 @@ Inside `BeneficiaryParty`:
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>BF-DOC-26-0573</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
   </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>BF-DOC-26-0568</cbc:ID>

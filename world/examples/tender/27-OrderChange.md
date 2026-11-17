@@ -66,6 +66,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **PWD-2026-PARKS**  
   The procurement procedure.
+- `DocumentType` = **Procurement file**  
+  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Additional Document Reference
 
@@ -73,6 +75,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **PWD-COLOUR-RAL6005**  
   The colour sample of the harbour park.
+- `DocumentType` = **Colour sample**  
+  The kind of document referred to, the colour sample of the harbour benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Contract
 
@@ -522,9 +526,11 @@ Inside `OrderLine`:
   </cac:QuotationDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-COLOUR-RAL6005</cbc:ID>
+    <cbc:DocumentType>Colour sample</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>

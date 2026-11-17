@@ -211,6 +211,7 @@
   </cac:GoodsItemPassportAttachment>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+    <cbc:DocumentType>Re-importation record</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>FCC-SIG-26-POR</cbc:ID>

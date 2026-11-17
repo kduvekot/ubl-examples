@@ -461,6 +461,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D24 and D25 (the numbers that references carry change in stage 5; the type a reference names does not), D38 (still open: which cited documents are added to the flows).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1c): every reference in a generic or role-only element (`AdditionalDocumentReference`, `DocumentReference`, supporting, evidence, originator, parent, previous, original, required, provided, requested, shipment) carries `DocumentTypeCode` or `DocumentType`: the UBL document type of the example it points to (from an index of all examples), or the kind of a document outside the examples from the new table `cited` in `world/documents.json` (UN/EDIFACT 1001 where an exact code exists, else in words; decision Q29). The build fails on an untyped reference. References inside signatures wait for the signatures stage. The two status reports no longer cite a consignment number as a document. Resolving a reference to the right example is C73 (stage 5). Coverage: O145.
 - Findings: air: 02#F5, 07#F8; carnet: 01#F21, 02#F8, 03#F11, 04#F12; cotton: 03#F4, 05#F11; ore: 02#F9, 03#F14, 05#F10; plastics: 05#F15, 06#F18, 07#F6, 09#F11; rail: 06#F16, 10#F7; retail: 01#F8; road: 02#F9, 05#F16, 06#F21, 07#F22, 09#F13, 14#F6, 16#F10; sea: 01#F11, 03#F17, 09#F9, 10#F11, 11#F17, 12#F8, 14#F17, 15#F11, 16#F23, 18#F5, 19#F12, 21#F10, 25#F12; tender: 01#F15, 15#F13, 17#F18, 19#F17, 20#F12, 21#F26, 22#F12, 23#F11, 24#F11, 27#F12, 29#F13, 30#F16, 33#F17, 36#F7; utilities: 04#F4, 07#F5, 08#F15, 14#F4; waste: 01#F15, 02#F9; wood: 05#F16
 
 ### C07 · The department's party tax exemption reason is worded as a transaction
@@ -576,6 +577,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1c): no `NoStatus` in any builder; the build rejects the value. Coverage: O145.
 - Findings: air: 03#F18, 06#F7, 08#F9; cotton: 03#F1, 04#F24, 09#F6; mast: 04#F5; plastics: 03#F5, 08#F7; rail: 02#F8; retail: 11#F8, 12#F17, 17#F7; road: 03#F4, 04#F8; sea: 06#F13, 09#F15, 12#F14, 16#F9, 20#F8, 21#F6; tender: 29#F11; wood: 04#F5, 06#F4
 
 ### C17 · Remittance advices: the invoice twice on a line, two payment-order references, header parties repeated
@@ -687,6 +689,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D9 (furniture/14 and sea/28 are not debit notes and are re-homed with their flows, O6).
 - State: ready in part: 8 findings ready; furniture/11#F1 and 14#F3 (the quotation used as a contract, which C103 also names) wait for D32; sea/28#F7 waits for D30 (O6).
+- Fixed in part (2026-11-17, stage 1 step 1c): cotton/04 and 05 do not cite the delivery note as a despatch advice; the weighbridge ticket is a typed additional reference in 04 and goes from 05; the department's budget commitment is an additional reference, given in the order (15) and quoted on the work report (16) and the invoice (17); the work report is no longer a line billing reference (17); the digital agreement is no longer the contract of the sea order response (06), the credit note (26), the air order change (01) or the cancellation (07) (D30). furniture/11#F1 and 14#F3 wait for D32, sea/28 goes with D30. Coverage: O145.
 - Findings: cotton: 04#F3, 04#F11, 05#F4, 05#F12; furniture: 11#F1, 14#F3, 16#F1, 17#F1; sea: 06#F7, 26#F5, 28#F7
 
 ### C27 · Despatch advices that do not say when the goods leave or arrive
@@ -809,6 +812,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1c): the seller's order number in `OrderReference/SalesOrderID` of the air order change; no `CustomerReference` in the cancellation's order reference; the tender's sales order number in the seller's response (28), not the buyer's order; the release number of the call-off as a note, not `Delivery/ReleaseID`; the untraceable export release `ReleaseID` of road/04 dropped (option b), to come back as the export declaration's number in stage 5. Coverage: O145.
 - Findings: air: 01#F7, 07#F4; road: 04#F12; tender: 26#F4, 26#F5
 
 ### C38 · Bayvarra's surcharge "per month" encoded as one month only
@@ -831,6 +835,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D9 (furniture/14 and sea/28 are re-homed, O6).
 - State: ready in part: 2 findings ready (furniture/13#F4, sea/06#F11); furniture/14#F6 waits for D32 and sea/28#F11 for D30 (O6).
+- Fixed (2026-11-17, stage 1 step 1c): the payment note names the document it is on (invoice, credit note, debit note, self-billed invoice, deposit on sales order, statement); the build passes the document type to `payment_means()`.
 - Findings: furniture: 13#F4, 14#F6; sea: 06#F11, 28#F11
 
 ### C40 · Pallets listed as packages contained in themselves

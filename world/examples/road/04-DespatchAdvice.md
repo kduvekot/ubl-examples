@@ -26,8 +26,6 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
   The day the 3PL loaded the truck.
 - `IssueTime` = **15:15:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new despatch advice, not a correction. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
@@ -530,8 +528,6 @@ Inside `Shipment`:
   Loaded and gone.
 - `Delivery/Despatch/ActualDespatchTime` = **16:20:00**  
   The truck left the gate.
-- `Delivery/Despatch/ReleaseID` = **XU-EX-REL-55120**  
-  The export release customs gave before the truck left.
 
 ### Despatch Line
 
@@ -541,8 +537,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **24 pallets of 4 benches: one full truck.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **96** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -759,8 +753,6 @@ Inside `DespatchLine`:
   The line number.
 - `Note` = **Spare side frames, for the distributor's service stock.**  
   The line as the order put it.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **12** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
@@ -973,7 +965,6 @@ Inside `DespatchLine`:
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
   <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -1413,14 +1404,12 @@ Inside `DespatchLine`:
         <cbc:ID>CL-OUT-26-0871</cbc:ID>
         <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
         <cbc:ActualDespatchTime>16:20:00</cbc:ActualDespatchTime>
-        <cbc:ReleaseID>XU-EX-REL-55120</cbc:ReleaseID>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>24 pallets of 4 benches: one full truck.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -1613,7 +1602,6 @@ Inside `DespatchLine`:
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Spare side frames, for the distributor's service stock.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>

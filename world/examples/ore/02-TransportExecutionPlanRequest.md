@@ -28,8 +28,6 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   The day after the order: the buyer books the train it named in its order.
 - `IssueTime` = **09:24:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new request, without a status yet. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `DocumentStatusReasonCode` = **UPDATE** (listID `urn:ubl-examples:world:codelist:DocumentStatusReasonCode`)  
   The request updates the season's standing plan. The code is from the Trade Accord's document status reason list: UPDATE = Update of a standing plan.
 - `DocumentStatusReasonDescription` = **This week's quantity of ore differs from the standing plan.**  
@@ -329,6 +327,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **SM-ASSAY-26-11**  
   The assay of the ore lot.
+- `DocumentTypeCode` = **1** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Serravona Mining's assay of the ore lot, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
 
 ### Transport Contract
 
@@ -601,7 +601,6 @@ Inside `Consignment`:
   <cbc:UUID>1136675e-5400-5624-8e01-dc21b86cbdfe</cbc:UUID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cbc:IssueTime>09:24:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">UPDATE</cbc:DocumentStatusReasonCode>
   <cbc:DocumentStatusReasonDescription>This week's quantity of ore differs from the standing plan.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek trir sezhul mir drek daz nintrek krir drek drunbaz.</cbc:Note>
@@ -848,6 +847,7 @@ Inside `Consignment`:
   </cac:TransportServiceDescriptionDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SM-ASSAY-26-11</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">1</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>

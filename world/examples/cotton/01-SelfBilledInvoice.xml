@@ -254,7 +254,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice SCG-SBI-26-0191</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0191</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>

@@ -15,9 +15,11 @@
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>BF-DOC-26-0573</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
   </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>BF-DOC-26-0568</cbc:ID>

@@ -301,6 +301,7 @@
             </cac:CertificateValidityPeriod>
             <cac:DocumentReference>
               <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+              <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
             </cac:DocumentReference>
           </cac:Certificate>
           <cac:Dimension>
@@ -495,6 +496,7 @@
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
       <cbc:ID>VI-PO-26-0627</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

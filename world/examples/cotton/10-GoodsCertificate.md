@@ -509,6 +509,8 @@ Inside `OriginalDocumentReference`:
 
 - `ID` = **XL-CLS-2026-0042**  
   The classing certificate of the cotton.
+- `DocumentType` = **Classing certificate**  
+  The kind of document referred to, the classing certificate of the cotton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Previous Document Reference
 
@@ -516,6 +518,8 @@ Inside `PreviousDocumentReference`:
 
 - `ID` = **SCC-PH-25-0198**  
   Last season's certificate.
+- `DocumentType` = **Phytosanitary certificate**  
+  The kind of document referred to, last season's phytosanitary certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Additional Document Reference
 
@@ -523,6 +527,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **LTM-PO-26-0198**  
   The mill's order.
+- `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -955,12 +961,15 @@ Inside `Signature`:
   </cac:GoodsProcessing>
   <cac:OriginalDocumentReference>
     <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
   </cac:OriginalDocumentReference>
   <cac:PreviousDocumentReference>
     <cbc:ID>SCC-PH-25-0198</cbc:ID>
+    <cbc:DocumentType>Phytosanitary certificate</cbc:DocumentType>
   </cac:PreviousDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>SCC-SIG-26-PH</cbc:ID>

@@ -48,6 +48,8 @@ Inside `DocumentReference`:
 
 - `ID` = **LPWD-DOC-26-0188**  
   The contract notice it answers.
+- `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0188 is the example tender/02, a ContractNotice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
 
 ### Signature
 
@@ -312,6 +314,7 @@ Inside `ProcurementProjectLotReference`:
   </cac:ValidityPeriod>
   <cac:DocumentReference>
     <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>HS-SIG-EOI</cbc:ID>

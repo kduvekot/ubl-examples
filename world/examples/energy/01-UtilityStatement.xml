@@ -14,6 +14,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>FG-INV-26-0150</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranogrid.example</cbc:WebsiteURI>

@@ -20,6 +20,7 @@
   </cac:Period>
   <cac:OriginalDocumentReference>
     <cbc:ID>BM-PROMO-PLAN-26</cbc:ID>
+    <cbc:DocumentType>Promotion plan</cbc:DocumentType>
   </cac:OriginalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0422E</cbc:ID>

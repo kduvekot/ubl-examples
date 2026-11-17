@@ -366,6 +366,8 @@ Inside `CustomsDeclaration`:
   The certificate is valid until then.
 - `Shipment/GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
   The audit report the certificate is based on.
+- `Shipment/GoodsItem/Item/Certificate/DocumentReference/DocumentType` = **Forest management audit report**  
+  The kind of document referred to, the audit report behind the forestry certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Shipment/GoodsItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Shipment/GoodsItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
@@ -566,6 +568,8 @@ Inside `CustomsDeclaration`:
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `AdditionalDocumentReference/ID` = **VI-PO-26-0627**  
   The order behind the export.
+- `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VI-PO-26-0627 is the example wood/03, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -884,6 +888,7 @@ Inside `Signature`:
             </cac:CertificateValidityPeriod>
             <cac:DocumentReference>
               <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+              <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
             </cac:DocumentReference>
           </cac:Certificate>
           <cac:Dimension>
@@ -1078,6 +1083,7 @@ Inside `Signature`:
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
       <cbc:ID>VI-PO-26-0627</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

@@ -21,6 +21,7 @@
   </cac:CatalogueReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BS-RE-26-0222</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">RetailEvent</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0424</cbc:ID>
@@ -383,6 +384,7 @@
           <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
           <cac:DocumentReference>
             <cbc:ID>LD-GTC-2026</cbc:ID>
+            <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:TransactionConditions>
         <cac:AdditionalItemProperty>

@@ -236,6 +236,7 @@
   </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-ESPD-26</cbc:ID>
+    <cbc:DocumentType>Tenderer self-declaration</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Evidence>
     <cbc:ID>EV-ACC-BF</cbc:ID>
@@ -254,6 +255,7 @@
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
       <cbc:ID>BF-ACC-2025</cbc:ID>
+      <cbc:DocumentType>Annual accounts</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>

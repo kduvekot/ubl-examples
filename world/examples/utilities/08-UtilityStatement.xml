@@ -13,6 +13,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>CSWC-TARIFF-2026</cbc:ID>
@@ -301,6 +302,7 @@
           </cac:GuidanceDocumentReference>
           <cac:DocumentReference>
             <cbc:ID>CSW-QUALITY-2026-Q1</cbc:ID>
+            <cbc:DocumentType>Water quality report</cbc:DocumentType>
           </cac:DocumentReference>
           <cac:ConsumptionReportReference>
             <cbc:ConsumptionReportID>CSW-CP-38516-57-2602</cbc:ConsumptionReportID>

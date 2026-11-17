@@ -23,6 +23,7 @@
   </cac:SalesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-WARRANTY-B180</cbc:ID>
+    <cbc:DocumentType>Warranty card</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-POS-G2</cbc:ID>

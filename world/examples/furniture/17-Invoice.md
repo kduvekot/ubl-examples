@@ -55,6 +55,15 @@ Inside `WorkReportDocumentReference`:
 - `ID` = **BF-DOC-26-0582**  
   The approved work report the hours come from.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **PWD-COMMIT-26-0381**  
+  The department's budget commitment the invoice is billed against.
+- `DocumentType` = **Budget commitment**  
+  The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+
 ### Project Reference
 
 Inside `ProjectReference`:
@@ -504,8 +513,8 @@ Inside `InvoiceLine`:
   The line of the approved work report.
 - `WorkReportLineReference/DocumentReference/ID` = **BF-DOC-26-0582**  
   The work report.
-- `BillingReference/AdditionalDocumentReference/ID` = **BF-DOC-26-0582**  
-  The approved work report the installation is billed on.
+- `WorkReportLineReference/DocumentReference/DocumentTypeCode` = **WorkReport** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-DOC-26-0582 is the example furniture/16, a WorkReport; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: WorkReport = Work Report.
 - `Item/Description` = **Installation of furniture on site, per hour per installer.**  
   The seller's description; item installation of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Installation work**  
@@ -555,6 +564,10 @@ Inside `InvoiceLine`:
   <cac:WorkReportDocumentReference>
     <cbc:ID>BF-DOC-26-0582</cbc:ID>
   </cac:WorkReportDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    <cbc:DocumentType>Budget commitment</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
@@ -915,13 +928,9 @@ Inside `InvoiceLine`:
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>BF-DOC-26-0582</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WorkReport</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:WorkReportLineReference>
-    <cac:BillingReference>
-      <cac:AdditionalDocumentReference>
-        <cbc:ID>BF-DOC-26-0582</cbc:ID>
-      </cac:AdditionalDocumentReference>
-    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>Installation of furniture on site, per hour per installer.</cbc:Description>
       <cbc:Name>Installation work</cbc:Name>

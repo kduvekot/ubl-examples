@@ -20,8 +20,6 @@ Part of the quantity is needed urgently: delivery by air, CPT island airport, at
   This run of the process: the same in every document of the flow.
 - `ID` = **VT-OC-26-0320**  
   The number of this change.
-- `SalesOrderID` = **LD-SO-26-0123**  
-  The distributor's sales order the change applies to.
 - `UUID` = **8d871217-f7db-5dad-9bd8-24d8c75c812d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-11**  
@@ -51,13 +49,6 @@ Inside `OrderReference`:
 
 - `ID` = **VT-PO-26-0127**  
   The order of the sea flow that this change extends.
-
-### Contract
-
-Inside `Contract`:
-
-- `ID` = **LD-DAG-26-0125**  
-  The digital agreement the order runs under.
 
 ### Buyer Customer Party
 
@@ -489,7 +480,6 @@ Inside `OrderLine`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-OC-26-0320</cbc:ID>
-  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
   <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>07:50:00</cbc:IssueTime>
@@ -504,9 +494,6 @@ Inside `OrderLine`:
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
-  <cac:Contract>
-    <cbc:ID>LD-DAG-26-0125</cbc:ID>
-  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>

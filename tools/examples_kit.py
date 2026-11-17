@@ -208,7 +208,12 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
     if border:
         out["ChargeBearerCode"] = V(WORLD["payment_cross_border"]["charge_bearer"], "ISO 20022 SHAR: each side pays "
                                                                                      "its own bank's charges.")
-    out["PayeeFinancialAccount"] = account(payee, why_account, note=f"Invoice {number}")
+    import build_examples                       # the document the note is on names its kind (worklist C39)
+    kind = {"Invoice": "Invoice", "CreditNote": "Credit note", "DebitNote": "Debit note",
+            "SelfBilledInvoice": "Self-billed invoice", "SelfBilledCreditNote": "Self-billed credit note",
+            "OrderResponse": "Deposit on sales order", "Order": "Order", "Reminder": "Invoice",
+            "Statement": "Statement"}.get(build_examples.DOC_TYPE, "Invoice")
+    out["PayeeFinancialAccount"] = account(payee, why_account, note=f"{kind} {number}")
     return out
 
 
@@ -404,7 +409,6 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
     out = {
         "ID": V(flow.number(f"despatch-{key}", doc["from"], "DespatchAdvice"), "The despatching party's number."),
         "IssueDate": V(flow.date(day), why),
-        "DocumentStatusCode": V("NoStatus", "A new despatch advice, not a correction."),
         "DespatchAdviceTypeCode": V("DELIVERY", "Advice of goods despatched for delivery."),
         "Note": V("Please check the goods on arrival and report any damage on the consignment note.", "What the "
                                                                                                       "receiver "
@@ -418,7 +422,6 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
                                              "was booked.")}},
         "DespatchLine": [{"ID": V(str(i), "The line number."),
                           "Note": V(d.get("why", "As ordered."), "The line as the order put it."),
-                          "LineStatusCode": V("NoStatus", "Despatched as ordered."),
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
                           "OrderLineReference": {"LineID": V(str(i), "The order line this line fulfils.")},
                           "Item": item(d["item"], buyer=doc["to"], instance=instances(flow, d, which, day))}
@@ -433,7 +436,6 @@ def receipt_advice(flow, n, doc, day, why):
     short = any("received" in d for d in flow.deal)
     out = {"ID": V(flow.number("receipt", doc["from"], "ReceiptAdvice"), "The receiving party's number."),
             "IssueDate": V(flow.date(day), why),
-            "DocumentStatusCode": V("NoStatus", "A first receipt advice."),
             "ReceiptAdviceTypeCode": V("Actual", "UBL's receipt advice type code: the goods actually received."),
             "DeliveryAcceptanceCode": V("PARTIAL" if short else "ACCEPTED", "Part of the goods refused." if short
                                         else "All goods accepted."),
@@ -677,7 +679,6 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
                     "The transport user's request number."),
             "VersionID": V("1", "The first version of the request."),
             "IssueDate": V(flow.date(day), why),
-            "DocumentStatusCode": V("NoStatus", "A new request, without a status yet."),
             "Note": V(leg["why"], "The transport asked for."),
             "TransportUserRemarks": V("Please confirm by return.", "The user's remark."),
             "BillToParty": party_short(doc["from"]),

@@ -28,8 +28,6 @@ Under DAP the manufacturer is the transport user; it books a container train to 
   Under DAP the manufacturer is the transport user and books the train.
 - `IssueTime` = **10:32:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new request, without a status yet. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `Note` = **Sundraz ranrek: drek kaz vuznek kazdrek rizvek drek drazkir trakran krir drek gul.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): The transport asked for.
 - `Note` = **Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.** (languageID `en-XU`)  
@@ -548,7 +546,6 @@ Inside `Consignment`:
   <cbc:UUID>163ed53d-46c6-5332-9e7b-7d0ed347699a</cbc:UUID>
   <cbc:IssueDate>2026-04-07</cbc:IssueDate>
   <cbc:IssueTime>10:32:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:Note languageID="qau">Sundraz ranrek: drek kaz vuznek kazdrek rizvek drek drazkir trakran krir drek gul.</cbc:Note>
   <cbc:Note languageID="en-XU">Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>

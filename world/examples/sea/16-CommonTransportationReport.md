@@ -26,8 +26,6 @@ Before entering Selanu the carrier reports to the island's maritime administrati
   Sent before the ship enters the port of Selanu.
 - `IssueTime` = **15:38:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A first report. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `ReportTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportReportTypeCode`)  
   The report before entering the port. The code is from the Trade Accord's transport report type list: PREARRIVAL = Pre-arrival report.
 - `ReportType` = **Pre-arrival report**  
@@ -804,6 +802,8 @@ Inside `DocumentReference`:
 
 - `ID` = **TOL-MF-26-0140**  
   The cargo manifest.
+- `DocumentTypeCode` = **Manifest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TOL-MF-26-0140 is the example sea/15, a Manifest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Manifest.
 
 ### Signature
 
@@ -829,7 +829,6 @@ Inside `Signature`:
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
   <cbc:IssueTime>15:38:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
   <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
@@ -1471,6 +1470,7 @@ Inside `Signature`:
   </cac:TransportMeans>
   <cac:DocumentReference>
     <cbc:ID>TOL-MF-26-0140</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Manifest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>TWL-SIG-CTR</cbc:ID>

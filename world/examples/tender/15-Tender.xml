@@ -21,6 +21,7 @@
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>VI-DS-B180</cbc:ID>
+    <cbc:DocumentType>Product data sheet</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-TENDER-15</cbc:ID>
@@ -349,6 +350,7 @@
     </cac:ProcurementProjectLot>
     <cac:EvidenceDocumentReference>
       <cbc:ID>VI-REF-2025</cbc:ID>
+      <cbc:DocumentType>Reference letters</cbc:DocumentType>
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -373,6 +375,7 @@
       <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
       <cac:DocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
+        <cbc:DocumentType>Product data sheet</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>

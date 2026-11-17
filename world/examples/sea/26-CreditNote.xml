@@ -32,14 +32,12 @@
   <cac:ReceiptDocumentReference>
     <cbc:ID>NW-RA-26-0146</cbc:ID>
   </cac:ReceiptDocumentReference>
-  <cac:ContractDocumentReference>
-    <cbc:ID>LD-DAG-26-0125</cbc:ID>
-  </cac:ContractDocumentReference>
   <cac:StatementDocumentReference>
     <cbc:ID>HF-ST-26-0151</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
+    <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:ProjectReference>
     <cbc:ID>VT-PRJ-26-07</cbc:ID>

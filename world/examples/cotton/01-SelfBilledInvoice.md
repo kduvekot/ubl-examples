@@ -338,7 +338,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice SCG-SBI-26-0191**  
+- `PayeeFinancialAccount/PaymentNote` = **Self-billed invoice SCG-SBI-26-0191**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **002** (schemeID `urn:ubl-examples:world:XL:bank-branch`)  
   The branch that keeps the account, by its national code: the branch number of a Lisavan bank (three digits). The account number holds it.
@@ -708,7 +708,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice SCG-SBI-26-0191</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0191</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>

@@ -211,6 +211,7 @@
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>
 </InvoiceStatusResponse>

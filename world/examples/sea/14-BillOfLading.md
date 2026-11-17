@@ -1148,6 +1148,8 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/ID` = **VGM-26-0510**  
   The signed weight declaration sent to the carrier.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/DocumentTypeCode` = **749** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the shipper's verified gross mass of the container, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 749 = Transport equipment gross mass verification message.
 - `Consignment/FirstArrivalPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/FirstArrivalPortLocation/Name` = **Port of Selanu**  
@@ -1162,6 +1164,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/DocumentReference/ID` = **LD-PL-26-0134**  
   The packing list of the container.
+- `Consignment/DocumentReference/DocumentTypeCode` = **PackingList** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-PL-26-0134 is the example sea/10, a PackingList; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: PackingList = Packing List.
 - `Consignment/InsurancePolicy/ID` = **WS-CP-26-4471**  
   The cargo policy of the insurer.
 - `Consignment/InsurancePolicy/InsuranceTypeCode` = **ALLRISKS** (listID `urn:ubl-examples:world:codelist:InsuranceCoverCode`)  
@@ -1299,6 +1303,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BF-FI-26-0137**  
   The forwarding instructions it was issued on.
+- `DocumentTypeCode` = **ForwardingInstructions** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-FI-26-0137 is the example sea/12, a ForwardingInstructions; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
 
 ### Exchange Rate
 
@@ -2297,6 +2303,7 @@ Inside `Signature`:
             </cac:ResponsibleParty>
             <cac:DocumentReference>
               <cbc:ID>VGM-26-0510</cbc:ID>
+              <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">749</cbc:DocumentTypeCode>
             </cac:DocumentReference>
           </cac:VerifiedGrossMass>
         </cac:TransportEquipment>
@@ -2321,6 +2328,7 @@ Inside `Signature`:
       </cac:LastExitPortLocation>
       <cac:DocumentReference>
         <cbc:ID>LD-PL-26-0134</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">PackingList</cbc:DocumentTypeCode>
       </cac:DocumentReference>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
@@ -2457,6 +2465,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>BF-FI-26-0137</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

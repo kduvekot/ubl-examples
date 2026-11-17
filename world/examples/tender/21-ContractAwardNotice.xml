@@ -22,6 +22,7 @@
   </cac:AdditionalNoticeLanguage>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:MinutesDocumentReference>
     <cbc:ID>PWD-MIN-AWARD-26</cbc:ID>
@@ -288,6 +289,7 @@
     </cac:NoticeDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+      <cbc:DocumentType>Technical specification</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:ProcessJustification>
       <cbc:ProcessReasonCode listID="urn:ubl-examples:world:codelist:ProcessReasonCode">STANDARD</cbc:ProcessReasonCode>
@@ -422,6 +424,7 @@
       <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+        <cbc:DocumentType>Technical specification</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:DeliveryPeriod>
         <cbc:StartDate>2026-04-02</cbc:StartDate>
@@ -455,12 +458,15 @@
     </cac:TechnicalDocumentReference>
     <cac:RequiredDocumentReference>
       <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+      <cbc:DocumentType>Price schedule template</cbc:DocumentType>
     </cac:RequiredDocumentReference>
     <cac:ProvidedDocumentReference>
       <cbc:ID>PWD-SITE-PLAN</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:ProvidedDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-QA-26</cbc:ID>
+      <cbc:DocumentType>Questions and answers</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:TenderingTerms>
       <cbc:Note>As for the procedure.</cbc:Note>
@@ -550,6 +556,7 @@
         <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
         <cac:DocumentReference>
           <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+          <cbc:DocumentType>Technical specification</cbc:DocumentType>
         </cac:DocumentReference>
         <cac:DeliveryPeriod>
           <cbc:StartDate>2026-04-02</cbc:StartDate>
@@ -584,12 +591,15 @@
     </cac:TechnicalDocumentReference>
     <cac:RequiredDocumentReference>
       <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+      <cbc:DocumentType>Price schedule template</cbc:DocumentType>
     </cac:RequiredDocumentReference>
     <cac:ProvidedDocumentReference>
       <cbc:ID>PWD-SITE-PLAN</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:ProvidedDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-QA-26</cbc:ID>
+      <cbc:DocumentType>Questions and answers</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:TenderingTerms>
       <cbc:Note>As for the procedure.</cbc:Note>

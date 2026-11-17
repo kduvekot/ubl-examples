@@ -718,6 +718,7 @@
   </cac:IssuerEndorsement>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCC-FAIR-26-INV</cbc:ID>
+    <cbc:DocumentType>Invitation to exhibit</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

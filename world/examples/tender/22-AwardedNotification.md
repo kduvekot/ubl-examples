@@ -274,6 +274,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **PWD-EVAL-REPORT-26**  
   The evaluation report.
+- `DocumentType` = **Evaluation report**  
+  The kind of document referred to, the evaluation report of the tenders, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Tender Result
 
@@ -570,6 +572,7 @@ Inside `Signature`:
   </cac:MinutesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-EVAL-REPORT-26</cbc:ID>
+    <cbc:DocumentType>Evaluation report</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:TenderResult>
     <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>

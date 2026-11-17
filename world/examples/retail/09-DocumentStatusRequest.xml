@@ -12,6 +12,7 @@
   <cbc:TrackingID>BS-PO-26-0224</cbc:TrackingID>
   <cac:RequestedDocumentReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:RequestedDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-DSR</cbc:ID>

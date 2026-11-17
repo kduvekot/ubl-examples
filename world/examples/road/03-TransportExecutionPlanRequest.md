@@ -28,8 +28,6 @@ The distributor, as transport user, books the truck: collection at the seller's 
   The distributor books the truck once the order is accepted.
 - `IssueTime` = **14:16:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new request, without a status yet. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `Note` = **The truck the distributor booked, from the 3PL's warehouse across the border.**  
   The transport asked for.
 - `TransportUserRemarks` = **Please confirm by return.**  
@@ -564,7 +562,6 @@ Inside `Consignment`:
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>14:16:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:Note>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>

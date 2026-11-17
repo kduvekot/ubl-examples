@@ -254,8 +254,7 @@ def road(n, doc):
         out["Note"] = V("Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the "
                         "same price.", "The condition in words.")
         out["OrderLine"] = [
-            {"LineItem": {"ID": V("1", "The benches."), "LineStatusCode": V("NoStatus", "Accepted as ordered."),
-                          "Quantity": qty(96, "EA", "As ordered."),
+            {"LineItem": {"ID": V("1", "The benches."), "Quantity": qty(96, "EA", "As ordered."),
                           "Item": {"Name": V(bench["name"], "Named only."),
                                    "SellersItemIdentification": {"ID": V(bench["sellers_id"], "The seller's "
                                                                                               "number.")}}},
@@ -298,9 +297,7 @@ def road(n, doc):
                                                  "Delivery": {"Despatch": {
                                                      "ID": V("CL-OUT-26-0871", "The 3PL's outbound number."),
                                                      "ActualDespatchDate": V(f.date(7), "Loaded and gone."),
-                                                     "ActualDespatchTime": V("16:20:00", "The truck left the gate."),
-                                                     "ReleaseID": V("XU-EX-REL-55120", "The export release customs "
-                                                                                       "gave before the truck left.")}}}})
+                                                     "ActualDespatchTime": V("16:20:00", "The truck left the gate.")}}}})
     if doc["doc"] == "ExportCustomsDeclaration":
         return {"ID": V(f.number("export", doc["from"], "ExportCustomsDeclaration"), "The exporter's reference."),
                 "IssueDate": V(f.date(7), "Declared the day the goods leave the warehouse for the border."),
@@ -1482,8 +1479,6 @@ def sea_order_response(f, n, doc):
         "GrossWeightMeasure": qty(w, "KGM", "The expected gross weight, for the booking."),
         "NetWeightMeasure": qty(net, "KGM", "The goods alone."),
         "GrossVolumeMeasure": V("41.5", "One 40-foot container's load.", unitCode="MTQ"),
-        "Contract": {"ID": V(f.numbers["agreement"], "The digital agreement the trade runs under."),
-                     "ContractType": V("Digital trade agreement", "What it is.")},
         "AccountingSupplierParty": {"Party": party(seller, short=True)},
         "AccountingCustomerParty": {"Party": party(buyer, short=True)},
         "DeliveryTerms": {"ID": V("CIF", "Incoterms 2020, as ordered.", schemeID="INCOTERMS"),
@@ -1505,7 +1500,6 @@ def sea_order_response(f, n, doc):
             "ID": V(str(i), "The line number, as in the order."),
             "SalesOrderID": V(f"{so}/{i}", "The distributor's line in its sales order."),
             "Note": V("Confirmed as ordered.", "The line's status in words."),
-            "LineStatusCode": V("NoStatus", "Unchanged against the order."),
             "Quantity": qty(q, ITEM[d["item"]]["unit"], "The quantity confirmed."),
             "LineExtensionAmount": amount(amt, "XBL", "As ordered."),
             "TaxInclusiveLineExtensionAmount": amount(amt, "XBL", "No tax on an export: the same amount."),
@@ -1864,8 +1858,6 @@ def sea(n, doc):
                                                                                           "advice reporting it.")},
                                "StatementDocumentReference": {"ID": V(f.numbers["statement"], "The factor's statement "
                                                                       "the invoice is on.")},
-                               "ContractDocumentReference": {"ID": V(f.numbers["agreement"], "The digital "
-                                                                                             "agreement.")},
                                "OriginatorDocumentReference": {"ID": V("VT-CLAIM-26-0019", "The buyer's claim.")},
                                "ProjectReference": {"ID": V(HARBOUR_PROJECT, "The buyer's project: the harbour "
                                                                                  "parks of Selanu.")},
@@ -1960,14 +1952,14 @@ def air(n, doc):
                                                                 "invoices.")}
         order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(sea_base + air_base, "XBL", "The order as "
                                                                       "changed; no tax on an export.")
+        order.setdefault("OrderReference", {})["SalesOrderID"] = V(
+            SEA.numbers.get("sales-order", f"LD-SO-26-{SEA.base:04d}"), "The distributor's number of the order the "
+            "change applies to: in the order reference, since the change's own SalesOrderID would be the seller's "
+            "number of the change (air/01#F7).")
         order.update({
-            "SalesOrderID": V(SEA.numbers.get("sales-order", f"LD-SO-26-{SEA.base:04d}"), "The distributor's "
-                                                                                           "sales order the "
-                                                                                           "change applies to."),
             "IssueTime": V("07:50:00", "First thing in the morning, when the shortage was noticed."),
             "Note": V("Add eight side frames by air; the rest of the order is unchanged.", "The change in words."),
             "CustomerReference": V("Harbour parks Selanu", "The buyer's project."),
-            "Contract": {"ID": V(SEA.numbers["agreement"], "The digital agreement the order runs under.")},
             "AccountingCustomerParty": {"Party": party("1-xl", short=True)},
             "AccountingSupplierParty": {"Party": party("6-xb", short=True)},
             "DestinationCountry": {"IdentificationCode": V("XL", "The island.")}})
@@ -2112,9 +2104,7 @@ def cotton(n, doc):
                                  "Item": item("seed-cotton")}}
     if doc["doc"] == "SelfBilledInvoice":
         out = kit.self_billed(f, n, doc, 5, "The ginnery bills itself for the delivery, as the self-billing agreement "
-                                            "provides.", farm_rows,
-                              {"DespatchDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery "
-                                                                                            "note.")}})
+                                            "provides.", farm_rows, {})
         out.update({
             "Note": V("Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.",
                       "The statement the self-billing agreement requires on every invoice."),
@@ -2123,7 +2113,8 @@ def cotton(n, doc):
             "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement between farm and ginnery, "
                                                                      "which allows the self-billing.")},
             "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery note.")},
-            "ReceiptDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket of the gin.")},
+            "AdditionalDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket of the gin, on whose "
+                                                                      "weights the invoice rests.")},
             "Delivery": {"ActualDeliveryDate": V(f.date(3), "The trailers were weighed at the gin."),
                          "DeliveryLocation": {"Name": V("Selanu Cotton Ginnery, weighbridge", "Where.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the gin: the farm brings the cotton with its own "
@@ -2190,7 +2181,6 @@ def cotton(n, doc):
                                 "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off.")},
                                 "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The delivery "
                                                                                                  "classed.")},
-                                "ReceiptDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket.")},
                                 "Delivery": {"ActualDeliveryDate": V(f.date(3), "The delivery classed.")},
                                 "DeliveryTerms": {"ID": V("DAP", "As on the self-billed invoice.",
                                                           schemeID="INCOTERMS")},
@@ -2319,6 +2309,7 @@ TENDER = kit.Flow("tender", "2026-01-12", [
     {"item": "bench-serra", "ordered": 40, "why": "The first call-off under the contract: forty benches for the "
                                                   "harbour park."}])
 FOLDER = "PWD-2026-PARKS"
+PWD_COMMITMENT = "PWD-COMMIT-26-0381"      # the department's budget commitment for the office furniture
 PRICING_RATE = {"SourceCurrencyCode": V("XUF", "The currency of the contract prices."),
                 "TargetCurrencyCode": V("XBL", "The currency of the order and the invoice."),
                 "CalculationRate": V("0.01", "The world's reference rate fixed in the contract."),
@@ -2418,8 +2409,9 @@ def tender(n, doc):
                          "Delivered at place, the authority's depot: the manufacturer delivers, by the carrier it "
                          "chooses; the authority clears the import.", "Public works depot, Lumeport",
                          {"Contract": {"ID": V(FOLDER, "The contract under which the call-off is made.")},
-                          "Delivery": {"ReleaseID": V("1", "The first release under the contract: 40 of the 240 "
-                                                           "benches.")},
+                          "Note": V("Release 1 under the framework contract: 40 of the 240 benches.", "Which call-off "
+                                    "this is; Delivery/ReleaseID is an access approval at the delivery place, not "
+                                    "a call-off number (tender/26#F5)."),
                           "PricingCurrencyCode": V("XUF", "The contract prices are the manufacturer's, in ferra."),
                           "PricingExchangeRate": PRICING_RATE,
                           "ProjectReference": {"ID": V("PWD-PARKS-26", "The parks renewal programme the benches "
@@ -3360,9 +3352,13 @@ def furniture(n, doc):
                                                 "The store's account, where the refund goes.")
         return out
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 30, "The public works department furnishes its new planning office.",
-                         "Delivered at place, the office: the furniture maker delivers and installs.",
-                         "Lumeport Public Works Department, Civic Square", deal=DESKS, key="order-desks")
+        out = kit.order(f, n, doc, 30, "The public works department furnishes its new planning office.",
+                        "Delivered at place, the office: the furniture maker delivers and installs.",
+                        "Lumeport Public Works Department, Civic Square", deal=DESKS, key="order-desks")
+        out["AdditionalDocumentReference"] = {"ID": V(PWD_COMMITMENT, "The department's budget commitment for the "
+                                                                      "purchase, which its rules ask the supplier to "
+                                                                      "quote on the work report and the invoice.")}
+        return out
     if doc["doc"] == "WorkReport":
         return {**collab(f, doc, "work-report", 38, "Reported when the installation was finished."),
                 "WorkReportLine": {"ID": V("1", "The installation work."),
@@ -4258,9 +4254,10 @@ def status_extras(f, n, doc, out):
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
          "StatusLocation": {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the status was recorded.")},
          "StatusPeriod": {"StartDate": V(out["IssueDate"].value, "The status holds from the report."),
-                          "EndDate": V(out["IssueDate"].value, "Until the next report.")},
-         "DocumentReference": {"ID": V(f.numbers.get("waybill", f.numbers.get("bl", f.numbers.get("consignment"))),
-                                       "The transport document of the consignment.")}}
+                          "EndDate": V(out["IssueDate"].value, "Until the next report.")}}
+    if f.numbers.get("waybill", f.numbers.get("bl")):   # only a transport document issued already (C06, C72)
+        x["DocumentReference"] = {"ID": V(f.numbers.get("waybill", f.numbers.get("bl")),
+                                          "The transport document of the consignment.")}
     if "tep" in f.numbers:
         x["TransportExecutionPlanDocumentReference"] = {"ID": V(f.numbers["tep"], "The plan the carriage follows.")}
     if "ts-request" in f.numbers:
@@ -4363,7 +4360,6 @@ def fi_extras(f, n, doc, out):
          "Description": V("Instructions for the shipment to the island." if f.id != "cotton" else
                           "Instructions for the bales to Bayvarra.", "In words."),
          "Note": V("Please confirm the booking.", "What the sender expects."),
-         "DocumentStatusCode": V("NoStatus", "New instructions."),
          "ShippingOrderID": V(f.numbers.get("shipment", ""), "The shipment to be booked."),
          "ToOrderIndicator": V("true" if f.id == "sea" else "false", "A bill of lading to order, so the buyer can "
                                                                      "transfer it." if f.id == "sea" else
@@ -4484,8 +4480,7 @@ def _(f, n, doc, out):
 
 @enrich("sea", "CommonTransportationReport")
 def _(f, n, doc, out):
-    return {"DocumentStatusCode": V("NoStatus", "A first report."),
-            "ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
+    return {"ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
             "ReportType": V("Pre-arrival report", "In words."),
             "Description": V("The ship's report before arrival at Selanu.", "What it is."),
             "Note": V("Pilot requested at the Selanu fairway buoy; the ship berths without anchoring.",
@@ -4542,8 +4537,7 @@ def _(f, n, doc, out):
 
 @enrich("cotton", "DeliveryNote")
 def _(f, n, doc, out):
-    return {"DocumentStatusCode": V("NoStatus", "A first delivery note."),
-            "Note": V("Three trailer loads, weighed at the gin.", "What was delivered."),
+    return {"Note": V("Three trailer loads, weighed at the gin.", "What was delivered."),
             **kit.cost_centre("39-xl", "The gin's cost centre for seed cotton."),
             "LineCountNumeric": V("1", "One line."),
             "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off under the season agreement.")},
@@ -5366,11 +5360,9 @@ def _(f, n, doc, out):
                                "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:air:1:OrderChange")),
                                          "Its UUID."),
                                "IssueDate": V(f.date(0), "Its date."), "IssueTime": V("07:50:00", "Its time."),
-                               "CustomerReference": V("Harbour parks Selanu", "The buyer's project."),
                                "OrderTypeCode": V("230", "UN/EDIFACT 1001 code 230: order change."),
                                "DocumentReference": {"ID": V(SEA.numbers["order"], "The original sea order.")}},
             "AdditionalDocumentReference": {"ID": V("KXL-OFFLOAD-26-0513", "The airline's offload notice.")},
-            "Contract": {"ID": V(SEA.numbers["agreement"], "The digital agreement.")},
             "Signature": seal(doc["from"], "LD-SIG-26-FC"),
             "DespatchSupplierParty": {"Party": party("6-xb", short=True)}}
 
@@ -7428,10 +7420,9 @@ def _(f, n, doc, out):
 
 @enrich("furniture", "Invoice")
 def _(f, n, doc, out):
-    if n == 17:
-        out["InvoiceLine"][1]["BillingReference"] = {
-            "AdditionalDocumentReference": {"ID": V(f.numbers["work-report"], "The approved work report the "
-                                                                               "installation is billed on.")}}
+    if n == 17:          # the department's budget commitment, as its order gave it (furniture/16#F1)
+        return {"AdditionalDocumentReference": {"ID": V(PWD_COMMITMENT, "The department's budget commitment the "
+                                                                        "invoice is billed against.")}}
     return {}
 
 
@@ -7441,8 +7432,8 @@ def _(f, n, doc, out):
         olr = ol.get("OrderLineReference")
         if isinstance(olr, dict):
             olr["UUID"] = line_uuid(FLOWS["road"], "order", i)
-            olr["LineStatusCode"] = V("NoStatus" if i == 1 else "Revised", "The line as ordered." if i == 1 else
-                                      "The line is answered with a substitute.")
+            if i != 1:
+                olr["LineStatusCode"] = V("Revised", "The line is answered with a substitute.")
         ol["DocumentReference"] = {"ID": V("VI-DS-B180" if i == 1 else "VI-DS-C180-2026", "The datasheet of the "
                                                                                           "item confirmed.")}
     return {}
@@ -7989,6 +7980,9 @@ def tender_complete(n, doc):
         out = kit.order_response(f, n, doc, 72, "The manufacturer confirms the next day.")
         bench = Decimal(40) * Decimal("499.00")
         out.update({"OrderResponseCode": V("AP", "UN/EDIFACT 4343 code AP: accepted, with the change."),
+                    "SalesOrderID": V("VI-SO-26-0058", "The manufacturer's sales order for the call-off, given in "
+                                                       "its answer: the seller's number appears first in the "
+                                                       "seller's own document (tender/26#F4)."),
                     "Note": V("Accepted: moss green, at the quoted charge.", "The answer."),
                     "DocumentCurrencyCode": kit.currency_line(cur, "the department's currency"),
                     **tender_currencies(f, 72),
@@ -8157,9 +8151,7 @@ SCENARIOS["tender"] = _with_enrichment("tender", tender_complete)
 
 @enrich("tender", "Order")
 def _(f, n, doc, out):
-    return {"SalesOrderID": V("VI-SO-26-0058", "The manufacturer's sales order for the framework contract, given "
-                                               "when the contract was signed."),
-            "TaxCurrencyCode": V("XUF", "The manufacturer accounts its value added tax in ferra."),
+    return {"TaxCurrencyCode": V("XUF", "The manufacturer accounts its value added tax in ferra."),
             "TaxExchangeRate": {**TO_FERRA(f.date(70)), "TargetCurrencyCode": V("XUF", "The tax currency.")},
             "PaymentExchangeRate": TO_FERRA(f.date(70))}
 
@@ -8273,15 +8265,14 @@ def _(f, n, doc, out):
     ln = out["InvoiceLine"] if isinstance(out["InvoiceLine"], dict) else out["InvoiceLine"][0]
     ref = ln["Delivery"]["DeliveryNoteLineReference"]
     ref["UUID"] = line_uuid(f, "delivery", 1)
-    ref["LineStatusCode"] = V("NoStatus", "The delivered line, unchanged.")
     out["CollectionInvoiceLine"] = cline
     out["LineCountNumeric"] = V("2", "The seed cotton and the collection line of the levy.")
     return {**cotton_currencies(f, 5), **cotton_refs(f),
             "WithholdingTaxTotal": wt,
             "OriginatorCustomerParty": {"Party": party("40-xb", short=True)},
             "BeneficiaryParty": party("40-xb", short=True),
-            "AdditionalDocumentReference": {"ID": V("XL-FARM-REG-0412", "The farm's registration, which the "
-                                                                        "withholding needs.")},
+            "AdditionalDocumentReference": [x for x in (out.get("AdditionalDocumentReference"),) if x] + [
+                {"ID": V("XL-FARM-REG-0412", "The farm's registration, which the withholding needs.")}],
             "BillingReference": {"SelfBilledInvoiceDocumentReference": {
                 "ID": V(f.numbers["self-billed-1"], "The prepayment self-billed invoice of the season advance, "
                                                     "deducted here as the prepaid amount."),
@@ -8311,7 +8302,6 @@ def _(f, n, doc, out):
     return {**cotton_currencies(f, 12), **cotton_refs(f),
             "InvoicePeriod": {"StartDate": V(f.date(1), "The deliveries classed, from the first"),
                               "EndDate": V(f.date(3), "to the last trailer.")},
-            "DespatchDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery note.")},
             "WorkReportDocumentReference": {"ID": V("SCC-CLS-26-0311", "The chamber's classing report.")},
             "WithholdingTaxTotal": {"TaxAmount": amount(wh, "XLC", "The withholding reversed on the credit.")},
             "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance: it lowers the credit."),
@@ -8365,10 +8355,8 @@ def _(f, n, doc, out):
                                 "AllowanceChargeReason": V("Packaging disposal", "The installers took the "
                                                                                  "packaging away."),
                                 "Amount": amount(Decimal("24.00"), "XBL", "A flat charge.")},
-            "BillingReference": {"AdditionalDocumentReference": {"ID": V("PWD-COMMIT-26-0381", "The department's "
-                                                                                               "budget commitment "
-                                                                                               "the work will be "
-                                                                                               "billed against.")}}}
+            "AdditionalDocumentReference": {"ID": V(PWD_COMMITMENT, "The department's budget commitment the work "
+                                                                    "will be billed against, as its order gave it.")}}
 
 
 @enrich("furniture", "DebitNote")

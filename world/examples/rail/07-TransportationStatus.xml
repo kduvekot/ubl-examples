@@ -215,9 +215,6 @@
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
-  <cac:DocumentReference>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
-  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>FIH-SIG-TS-07</cbc:ID>
     <cac:SignatoryParty>

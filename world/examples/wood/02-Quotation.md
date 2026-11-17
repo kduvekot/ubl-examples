@@ -53,6 +53,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **MS-GTC-2026**  
   The sawmill's terms of sale.
+- `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Marrowdale Sawmill's general terms of sale, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 
 ### Contract
 
@@ -388,6 +390,8 @@ Inside `QuotationLine`:
   The line of the request.
 - `DocumentReference/ID` = **MS-SPEC-SL1800**  
   The sawmill's specification.
+- `DocumentReference/DocumentType` = **Product specification**  
+  The kind of document referred to, Marrowdale Sawmill's specification of the slat, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **4800** (unitCode `EA`)  
@@ -492,6 +496,8 @@ Inside `QuotationLine`:
   The certificate is valid until then.
 - `LineItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
   The audit report the certificate is based on.
+- `LineItem/Item/Certificate/DocumentReference/DocumentType` = **Forest management audit report**  
+  The kind of document referred to, the audit report behind the forestry certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `LineItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
@@ -543,6 +549,7 @@ Inside `QuotationLine`:
   </cac:RequestForQuotationDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>MS-GTC-2026</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
@@ -803,6 +810,7 @@ Inside `QuotationLine`:
     <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
     <cac:DocumentReference>
       <cbc:ID>MS-SPEC-SL1800</cbc:ID>
+      <cbc:DocumentType>Product specification</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
@@ -896,6 +904,7 @@ Inside `QuotationLine`:
           </cac:CertificateValidityPeriod>
           <cac:DocumentReference>
             <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+            <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>

@@ -20,6 +20,7 @@
   </cac:StatementDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>KXL-WB-26-0325</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

@@ -46,6 +46,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BS-DOC-26-0570**  
   The replenishment policy they go with.
+- `DocumentTypeCode` = **TradeItemLocationProfile** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0570 is the example furniture/04, a TradeItemLocationProfile; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TradeItemLocationProfile = Trade Item Location Profile.
 
 ### Signature
 
@@ -394,6 +396,7 @@ Inside `ExceptionCriteriaLine`:
   </cac:ValidityPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0570</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TradeItemLocationProfile</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0314C</cbc:ID>

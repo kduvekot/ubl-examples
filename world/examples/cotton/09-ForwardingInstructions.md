@@ -32,8 +32,6 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   In words.
 - `Note` = **Please confirm the booking.**  
   What the sender expects.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  New instructions. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `ShippingOrderID` = **SCG-SH-26-0200**  
   The shipment to be booked.
 - `ToOrderIndicator` = **false**  
@@ -346,6 +344,8 @@ Inside `DocumentReference`:
 
 - `ID` = **LTM-PO-26-0198**  
   The order the goods are for.
+- `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Exchange Rate
 
@@ -400,7 +400,6 @@ Inside `Signature`:
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ShippingOrderID>SCG-SH-26-0200</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
@@ -656,6 +655,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

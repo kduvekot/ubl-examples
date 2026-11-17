@@ -26,6 +26,7 @@
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>

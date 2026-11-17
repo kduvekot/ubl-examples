@@ -57,6 +57,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **BS-RE-26-0222**  
   The promotion the benches are ordered for.
+- `DocumentTypeCode` = **RetailEvent** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-RE-26-0222 is the example retail/06, a RetailEvent; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: RetailEvent = Retail Event.
 
 ### Signature
 
@@ -501,6 +503,8 @@ Inside `OrderLine`:
   The conditions in words.
 - `LineItem/Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `LineItem/Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `LineItem/Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `LineItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -692,6 +696,7 @@ Inside `OrderLine`:
   </cac:CatalogueReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BS-RE-26-0222</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">RetailEvent</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0424</cbc:ID>
@@ -1054,6 +1059,7 @@ Inside `OrderLine`:
           <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
           <cac:DocumentReference>
             <cbc:ID>LD-GTC-2026</cbc:ID>
+            <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:TransactionConditions>
         <cac:AdditionalItemProperty>

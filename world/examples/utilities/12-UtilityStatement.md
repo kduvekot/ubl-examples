@@ -45,6 +45,8 @@ Inside `ParentDocumentReference`:
 
 - `ID` = **ST-INV-26-0323**  
   The invoice this statement supplements: a utility statement adds the consumption behind the bill.
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: ST-INV-26-0323 is the example utilities/13, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Additional Document Reference
 
@@ -817,6 +819,7 @@ Inside `SubscriberConsumption`:
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>ST-INV-26-0323</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>ST-TARIFF-2026</cbc:ID>

@@ -66,6 +66,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **PWD-2026-PARKS**  
   The procurement procedure.
+- `DocumentType` = **Procurement file**  
+  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Contract Document Reference
 
@@ -966,6 +968,7 @@ Inside `InvoiceLine`:
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>

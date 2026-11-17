@@ -338,6 +338,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **FRC-WAGON-LIST-11**  
   The list of wagons.
+- `DocumentType` = **Wagon list**  
+  The kind of document referred to, Ferrano Rail Cargo's list of the wagons, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Transport Contract
 
@@ -915,6 +917,7 @@ Inside `Consignment`:
   </cac:TransportServiceDescriptionDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-WAGON-LIST-11</cbc:ID>
+    <cbc:DocumentType>Wagon list</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:TransportContract>
     <cbc:ID>VI-FRC-FW-2026</cbc:ID>

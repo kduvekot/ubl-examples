@@ -25,6 +25,7 @@
   </cac:OrderChangeDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-QUOTE-AIR-26-0611</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">361</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-0512</cbc:ID>

@@ -365,6 +365,7 @@
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>CL-DA-26-0153</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
@@ -556,6 +557,7 @@
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>CL-DA-26-0153</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>

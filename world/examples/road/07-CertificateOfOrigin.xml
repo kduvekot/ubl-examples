@@ -587,6 +587,7 @@
     </cac:DocumentDistribution>
     <cac:SupportingDocumentReference>
       <cbc:ID>LD-PO-26-0149</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:SupportingDocumentReference>
     <cac:Signature>
       <cbc:ID>VI-SIG-COA</cbc:ID>

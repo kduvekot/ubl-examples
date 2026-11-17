@@ -945,6 +945,7 @@
             </cac:ResponsibleParty>
             <cac:DocumentReference>
               <cbc:ID>VGM-26-0510</cbc:ID>
+              <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">749</cbc:DocumentTypeCode>
             </cac:DocumentReference>
           </cac:VerifiedGrossMass>
         </cac:TransportEquipment>
@@ -969,6 +970,7 @@
       </cac:LastExitPortLocation>
       <cac:DocumentReference>
         <cbc:ID>LD-PL-26-0134</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">PackingList</cbc:DocumentTypeCode>
       </cac:DocumentReference>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
@@ -1105,6 +1107,7 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>BF-FI-26-0137</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

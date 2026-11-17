@@ -11,7 +11,6 @@
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ShippingOrderID>SCG-SH-26-0200</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
   <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
@@ -267,6 +266,7 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

@@ -28,8 +28,6 @@ Under DAP the sawmill is the transport user; it books the road carrier across th
   Under DAP the sawmill books the truck across the border.
 - `IssueTime` = **16:19:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new request, without a status yet. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `Note` = **The slats across the border to the bench factory.**  
   The transport asked for.
 - `TransportUserRemarks` = **Please confirm by return.**  
@@ -518,7 +516,6 @@ Inside `Consignment`:
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>16:19:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:Note>The slats across the border to the bench factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>

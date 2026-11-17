@@ -391,6 +391,8 @@ Inside `DocumentReference`:
 
 - `ID` = **TOL-BL-26-0139**  
   The transport document of the consignment.
+- `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TOL-BL-26-0139 is the example sea/14, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
 
 ### Signature
 
@@ -842,6 +844,7 @@ Inside `StatusPeriod`:
   </cac:TransportEvent>
   <cac:DocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>PS-SIG-TS-17</cbc:ID>

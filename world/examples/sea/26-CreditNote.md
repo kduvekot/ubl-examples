@@ -75,13 +75,6 @@ Inside `ReceiptDocumentReference`:
 - `ID` = **NW-RA-26-0146**  
   The 3PL's receipt advice reporting it.
 
-### Contract Document Reference
-
-Inside `ContractDocumentReference`:
-
-- `ID` = **LD-DAG-26-0125**  
-  The digital agreement.
-
 ### Statement Document Reference
 
 Inside `StatementDocumentReference`:
@@ -95,6 +88,8 @@ Inside `OriginatorDocumentReference`:
 
 - `ID` = **VT-CLAIM-26-0019**  
   The buyer's claim.
+- `DocumentType` = **Claim**  
+  The kind of document referred to, Velumi's claim, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Project Reference
 
@@ -484,14 +479,12 @@ Inside `CreditNoteLine`:
   <cac:ReceiptDocumentReference>
     <cbc:ID>NW-RA-26-0146</cbc:ID>
   </cac:ReceiptDocumentReference>
-  <cac:ContractDocumentReference>
-    <cbc:ID>LD-DAG-26-0125</cbc:ID>
-  </cac:ContractDocumentReference>
   <cac:StatementDocumentReference>
     <cbc:ID>HF-ST-26-0151</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
+    <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:ProjectReference>
     <cbc:ID>VT-PRJ-26-07</cbc:ID>

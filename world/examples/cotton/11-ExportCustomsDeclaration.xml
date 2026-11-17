@@ -322,6 +322,7 @@
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
       <cbc:ID>LTM-PO-26-0198</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

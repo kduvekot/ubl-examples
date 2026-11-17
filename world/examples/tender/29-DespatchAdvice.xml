@@ -8,7 +8,6 @@
   <cbc:UUID>3a152d4a-6fec-5156-a6be-f2f8f81077e0</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>17:37:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
   <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -453,7 +452,6 @@
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>bf5c479c-ae74-54ad-8a20-aa2eeba424e0</cbc:UUID>
     <cbc:Note>Forty benches in moss green, RAL 6005, as the order change asked.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
     <cbc:OutstandingQuantity unitCode="EA">200</cbc:OutstandingQuantity>
     <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
@@ -464,6 +462,7 @@
     </cac:OrderLineReference>
     <cac:DocumentReference>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
+      <cbc:DocumentType>Procurement file</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>

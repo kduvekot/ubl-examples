@@ -37,6 +37,15 @@ Furniture for the public works offices, installed. Delivery terms DAP the office
 - `LineCountNumeric` = **2**  
   The number of order lines.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **PWD-COMMIT-26-0381**  
+  The department's budget commitment for the purchase, which its rules ask the supplier to quote on the work report and the invoice.
+- `DocumentType` = **Budget commitment**  
+  The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -360,6 +369,10 @@ Inside `OrderLine`:
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    <cbc:DocumentType>Budget commitment</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>

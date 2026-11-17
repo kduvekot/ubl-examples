@@ -49,6 +49,7 @@
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0021</cbc:ID>
+    <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>LD-DAG-26-0125</cbc:ID>
@@ -300,7 +301,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice VT-DOC-26-0153</cbc:PaymentNote>
+      <cbc:PaymentNote>Debit note VT-DOC-26-0153</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -424,18 +425,21 @@
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>NW-RA-26-0146</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
     <cac:WorkReportLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>XL-CUS-INSP-26-0517</cbc:ID>
+        <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">293</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:WorkReportLineReference>
     <cac:BillingReference>
@@ -445,6 +449,7 @@
     </cac:BillingReference>
     <cac:DocumentReference>
       <cbc:ID>XL-CUS-RCPT-26-0517</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">917</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:PricingReference>
       <cac:AlternativeConditionPrice>

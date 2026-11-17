@@ -26,8 +26,6 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
   The day the truck was unloaded at the distribution centre.
 - `IssueTime` = **15:40:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A first receipt advice. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `ReceiptAdviceTypeCode` = **Actual** (listID `urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode`)  
   UBL's receipt advice type code: the goods actually received. The code is from the world's copy of UBL's Receipt advice type list, with a listID: Actual = An arrival that has passed goods inspection and is accepted (or not)..
 - `DeliveryAcceptanceCode` = **ACCEPTED** (listID `urn:ubl-examples:world:codelist:DeliveryAcceptanceCode`)  
@@ -446,6 +444,8 @@ Inside `ReceiptLine`:
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
   The despatch advice.
+- `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XB`)  
@@ -666,6 +666,8 @@ Inside `ReceiptLine`:
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
   The despatch advice.
+- `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
 - `Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.** (languageID `en-XB`)  
@@ -706,7 +708,6 @@ Inside `ReceiptLine`:
   <cbc:UUID>496ff071-d380-5baa-87d1-43a590437ea5</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>15:40:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
   <cbc:Note>Counted and checked at goods-in: one bench short, one box of side frames over.</cbc:Note>
@@ -1065,6 +1066,7 @@ Inside `ReceiptLine`:
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>CL-DA-26-0153</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
@@ -1259,6 +1261,7 @@ Inside `ReceiptLine`:
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>CL-DA-26-0153</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>

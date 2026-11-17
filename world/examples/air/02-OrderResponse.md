@@ -66,6 +66,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **BF-QUOTE-AIR-26-0611**  
   The forwarder's quotation for the flight.
+- `DocumentTypeCode` = **361** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Bayforth's quotation for the air freight, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 361 = Price quote.
 
 ### Signature
 
@@ -328,6 +330,7 @@ Inside `OrderLine`:
   </cac:OrderChangeDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-QUOTE-AIR-26-0611</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">361</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-0512</cbc:ID>

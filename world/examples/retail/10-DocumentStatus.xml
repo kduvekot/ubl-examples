@@ -223,6 +223,7 @@
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>BS-PO-26-0224</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>
   <cac:AdditionalDocumentResponse>
@@ -231,6 +232,7 @@
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>LD-TR-26-0227</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:AdditionalDocumentResponse>
 </DocumentStatus>

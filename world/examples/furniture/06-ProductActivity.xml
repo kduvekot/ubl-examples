@@ -16,6 +16,7 @@
   </cac:ActivityPeriod>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0569</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ItemInformationRequest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0420A</cbc:ID>

@@ -44,6 +44,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BS-DOC-26-0571**  
   The criteria that were met.
+- `DocumentTypeCode` = **ExceptionCriteria** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0571 is the example furniture/05, a ExceptionCriteria; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionCriteria = Exception Criteria.
 
 ### Signature
 
@@ -332,6 +334,8 @@ Inside `ExceptionNotificationLine`:
   Their end.
 - `DocumentReference/ID` = **BS-DOC-26-0572**  
   The product activity reported.
+- `DocumentReference/DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0572 is the example furniture/06, a ProductActivity; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ProductActivity = Product Activity.
 - `ForecastException/ForecastPurposeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:ForecastPurposeCode`)  
   The sales forecast compared. The code is from the Trade Accord's forecast purpose list: SALES = Sales forecast.
 - `ForecastException/ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
@@ -391,6 +395,7 @@ Inside `ExceptionNotificationLine`:
   </cac:ExceptionObservationPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0571</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0421</cbc:ID>
@@ -631,6 +636,7 @@ Inside `ExceptionNotificationLine`:
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:ForecastException>
       <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>

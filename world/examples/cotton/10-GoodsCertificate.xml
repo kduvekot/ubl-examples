@@ -415,12 +415,15 @@
   </cac:GoodsProcessing>
   <cac:OriginalDocumentReference>
     <cbc:ID>XL-CLS-2026-0042</cbc:ID>
+    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
   </cac:OriginalDocumentReference>
   <cac:PreviousDocumentReference>
     <cbc:ID>SCC-PH-25-0198</cbc:ID>
+    <cbc:DocumentType>Phytosanitary certificate</cbc:DocumentType>
   </cac:PreviousDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>SCC-SIG-26-PH</cbc:ID>

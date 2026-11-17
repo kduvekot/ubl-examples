@@ -334,6 +334,7 @@
           <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
           <cac:DocumentReference>
             <cbc:ID>LD-GTC-2026</cbc:ID>
+            <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:TransactionConditions>
         <cac:AdditionalItemProperty>
@@ -531,6 +532,7 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

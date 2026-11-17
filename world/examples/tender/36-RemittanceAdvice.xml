@@ -16,6 +16,7 @@
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
+    <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -333,6 +334,7 @@
       </cac:ReminderDocumentReference>
       <cac:AdditionalDocumentReference>
         <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
+        <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
       </cac:AdditionalDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

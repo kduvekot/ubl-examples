@@ -26,8 +26,6 @@ The farm delivers a trailer of seed cotton at the gin and confirms what it deliv
   The day the trailers were weighed at the gin.
 - `IssueTime` = **14:29:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A first delivery note. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `Note` = **Tasela vaputa tuote, fipavi momai tikesa.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): What was delivered.
 - `Note` = **Three trailer loads, weighed at the gin.** (languageID `en-XL`)  
@@ -59,6 +57,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **SCG-WB-26-0311**  
   The weighbridge ticket.
+- `DocumentType` = **Weighbridge ticket**  
+  The kind of document referred to, the ginnery's weighbridge ticket, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -376,7 +376,6 @@ Inside `DespatchLine`:
   <cbc:UUID>7a1d8c4c-64bb-5f76-ad72-a09687f8943f</cbc:UUID>
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
   <cbc:IssueTime>14:29:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa.</cbc:Note>
   <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin.</cbc:Note>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
@@ -390,6 +389,7 @@ Inside `DespatchLine`:
   </cac:ProjectReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
+    <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LCF-SIG-26-DN</cbc:ID>

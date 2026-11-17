@@ -25,9 +25,11 @@
   </cac:QuotationDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-COLOUR-RAL6005</cbc:ID>
+    <cbc:DocumentType>Colour sample</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>

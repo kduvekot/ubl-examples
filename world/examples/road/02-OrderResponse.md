@@ -319,8 +319,6 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The benches.
-- `LineItem/LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Accepted as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   As ordered.
 - `LineItem/Item/Name` = **Park bench Serra 180**  
@@ -331,10 +329,10 @@ Inside `OrderLine`:
   The order line.
 - `OrderLineReference/UUID` = **da67b26b-2501-5b9b-9b6f-d03d5ce50a97**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `OrderLineReference/LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  The line as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DocumentReference/ID` = **VI-DS-B180**  
   The datasheet of the item confirmed.
+- `DocumentReference/DocumentType` = **Product data sheet**  
+  The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `SubstitutionStatusCode` = **Substitution** (listID `urn:oasis:names:specification:ubl:codelist:gc:SubstitutionStatusCode`)  
   The line is delivered with a substitute item. The code is from the world's copy of UBL's Substitution status list, with a listID: Substitution.
 - `Note` = **Same fit and price; the old casting is no longer made.**  
@@ -383,6 +381,8 @@ Inside `OrderLine`:
   The line is answered with a substitute. The code is from the world's copy of UBL's Line status list, with a listID: Revised = Line has been revised..
 - `DocumentReference/ID` = **VI-DS-C180-2026**  
   The datasheet of the item confirmed.
+- `DocumentReference/DocumentType` = **Product data sheet**  
+  The kind of document referred to, Valdara's data sheet of the 2026 side frame, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ## The document
 
@@ -653,7 +653,6 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -665,10 +664,10 @@ Inside `OrderLine`:
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cbc:UUID>da67b26b-2501-5b9b-9b6f-d03d5ce50a97</cbc:UUID>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     </cac:OrderLineReference>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-B180</cbc:ID>
+      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
     </cac:DocumentReference>
   </cac:OrderLine>
   <cac:OrderLine>
@@ -719,6 +718,7 @@ Inside `OrderLine`:
     </cac:OrderLineReference>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-C180-2026</cbc:ID>
+      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
     </cac:DocumentReference>
   </cac:OrderLine>
 </OrderResponse>

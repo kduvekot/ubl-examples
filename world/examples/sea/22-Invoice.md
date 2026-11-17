@@ -563,6 +563,8 @@ Inside `PaymentMeans`:
   The factoring agreement.
 - `TradeFinancing/DocumentReference/ID` = **HF-ASSIGN-26-0091**  
   The notice of assignment.
+- `TradeFinancing/DocumentReference/DocumentType` = **Notice of assignment**  
+  The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TradeFinancing/FinancingParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `TradeFinancing/FinancingParty/PartyName/Name` = **Harbourline Factoring**  
@@ -866,6 +868,8 @@ Inside `InvoiceLine`:
   The conditions in words.
 - `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -1548,6 +1552,7 @@ Inside `InvoiceLine`:
       </cac:ContractDocumentReference>
       <cac:DocumentReference>
         <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+        <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:FinancingParty>
         <cac:PartyIdentification>
@@ -1789,6 +1794,7 @@ Inside `InvoiceLine`:
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:ClassifiedTaxCategory>

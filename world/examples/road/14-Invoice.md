@@ -51,6 +51,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **TH-WB-26-0159**  
   The consignment note of the carriage invoiced.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TH-WB-26-0159 is the example road/08, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Accounting Supplier Party
 
@@ -314,6 +316,8 @@ Inside `Delivery`:
   The line of the consignee's receipt advice.
 - `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/ID` = **LD-RA-26-0164**  
   The receipt advice: proof of delivery.
+- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-RA-26-0164 is the example road/13, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
 
 ### Payment Means
 
@@ -514,6 +518,7 @@ Inside `InvoiceLine`:
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -751,6 +756,7 @@ Inside `InvoiceLine`:
           <cbc:LineID>1</cbc:LineID>
           <cac:DocumentReference>
             <cbc:ID>LD-RA-26-0164</cbc:ID>
+            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:ReceiptLineReference>
       </cac:GoodsItem>

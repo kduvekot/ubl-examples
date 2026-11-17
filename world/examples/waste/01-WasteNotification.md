@@ -540,6 +540,8 @@ Inside `DocumentReference`:
 
 - `ID` = **VI-WASTE-CONTRACT-26**  
   The contract between producer and recovery facility, which the notification needs.
+- `DocumentTypeCode` = **315** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the contract between Valdara and Rinova for the waste, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
 
 ## The document
 
@@ -995,6 +997,7 @@ Inside `DocumentReference`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>VI-WASTE-CONTRACT-26</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">315</cbc:DocumentTypeCode>
   </cac:DocumentReference>
 </WasteNotification>
 ```

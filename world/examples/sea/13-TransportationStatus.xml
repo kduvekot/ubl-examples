@@ -208,9 +208,6 @@
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
-  <cac:DocumentReference>
-    <cbc:ID>LD-CS-26-0133</cbc:ID>
-  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>PL-SIG-TS-13</cbc:ID>
     <cac:SignatoryParty>

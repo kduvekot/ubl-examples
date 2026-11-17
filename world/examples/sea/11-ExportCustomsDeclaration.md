@@ -240,6 +240,8 @@ Inside `CustomsDeclaration`:
   The conditions in words.
 - `Shipment/GoodsItem/Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `Shipment/GoodsItem/Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Shipment/GoodsItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -692,6 +694,8 @@ Inside `CustomsDeclaration`:
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  
   The order behind the export.
+- `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -895,6 +899,7 @@ Inside `Signature`:
             <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
             <cac:DocumentReference>
               <cbc:ID>LD-GTC-2026</cbc:ID>
+              <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
             </cac:DocumentReference>
           </cac:TransactionConditions>
           <cac:AdditionalItemProperty>
@@ -1321,6 +1326,7 @@ Inside `Signature`:
     </cac:PreviousCustomsDeclaration>
     <cac:AdditionalDocumentReference>
       <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

@@ -1556,6 +1556,80 @@ def check_instance_rules(root, where):
             seen[key] = c
 
 
+# ---------------------------------------------------------------- the kind of every referenced document (worklist C06)
+# A reference in a generic or role-only element (AdditionalDocumentReference, DocumentReference, the supporting,
+# evidence, originator … references) says what kind of document it points to, with DocumentTypeCode or
+# DocumentType (decision Q29). Where it points to an example of the world, the build gives it the example's UBL
+# document type; any other reference must be typed in the scenario. Elements that name the kind themselves
+# (OrderReference, InvoiceDocumentReference, DespatchDocumentReference …) need no type.
+GENERIC_REFERENCES = {"AdditionalDocumentReference", "DocumentReference", "SupportingDocumentReference",
+                      "EvidenceDocumentReference", "OriginatorDocumentReference", "ParentDocumentReference",
+                      "PreviousDocumentReference", "OriginalDocumentReference", "RequiredDocumentReference",
+                      "ProvidedDocumentReference", "RequestedDocumentReference", "ShipmentDocumentReference"}
+DOC_TYPES = {}      # document ID -> (flow, file number, UBL document type) of every example of the world
+DOC_TYPE = None     # the type of the document being built (its payment note names it, worklist C39)
+INDEXING = False    # True while doc_types() runs the scenarios to collect the IDs
+UNTYPED = []        # references that are neither typed nor an example of the world: (file, element, ID)
+
+
+def doc_types():
+    """The ID and type of every example of the world, from the scenarios, so a reference to any of them, also
+    to one of another flow or a later one, can say what kind of document it is."""
+    global INDEXING
+    if not DOC_TYPES:
+        import examples_scenarios
+        INDEXING = True                 # the scenarios run out of order here: references are not checked
+        import copy
+        import examples_kit
+        flows = [v for v in vars(examples_scenarios).values() if isinstance(v, examples_kit.Flow)]
+        saved = [copy.deepcopy(fl.__dict__) for fl in flows]    # the run must leave the flows as it found them
+        for flow_id in FLOWS_WITH_EXAMPLES:
+            docs = [d for d in WORLD["documents"] if d["flow"] == flow_id]
+            for n, doc in enumerate(docs, 1):
+                content = examples_scenarios.SCENARIOS[flow_id](n, doc)
+                if isinstance(content.get("ID"), V):
+                    DOC_TYPES.setdefault(content["ID"].value, (flow_id, n, doc["doc"]))
+        for fl, state in zip(flows, saved):
+            fl.__dict__.clear()
+            fl.__dict__.update(state)
+        INDEXING = False
+    return DOC_TYPES
+
+
+def type_references(content, where):
+    """Give every untyped reference in a generic element the type of the example it points to (worklist C06)."""
+    if isinstance(content, list):
+        for x in content:
+            type_references(x, where)
+        return
+    if not isinstance(content, dict):
+        return
+    for key, val in content.items():
+        if key in GENERIC_REFERENCES:
+            for ref in val if isinstance(val, list) else [val]:
+                if not isinstance(ref, dict) or "DocumentTypeCode" in ref or "DocumentType" in ref:
+                    continue
+                rid = ref.get("ID").value if isinstance(ref.get("ID"), V) else None
+                hit = doc_types().get(rid)
+                cited = WORLD["cited"].get(rid)
+                if hit:
+                    ref["DocumentTypeCode"] = V(hit[2], f"The kind of document referred to: {rid} is the example "
+                                                        f"{hit[0]}/{hit[1]:02d}, a {hit[2]}; a generic reference names "
+                                                        "the UBL document type (decision Q29).")
+                elif cited and cited.get("type_code"):
+                    ref["DocumentTypeCode"] = V(cited["type_code"], f"The kind of document referred to, "
+                                                f"{cited['what']}, a document outside the examples (world/documents.json, "
+                                                "cited; decision Q29).")
+                elif cited:
+                    ref["DocumentType"] = V(cited["type"], f"The kind of document referred to, {cited['what']}, a "
+                                            "document outside the examples, in words: no list has an exact code for it "
+                                            "(world/documents.json, cited; decision Q29).")
+                else:
+                    UNTYPED.append((where, key, rid))
+        if key != "Signature":                  # signatures wait for their own stage (D6)
+            type_references(val, where)
+
+
 DOC_UUIDS = {}      # (flow, document ID) -> the UUID the document carries, for references to it
 
 
@@ -1566,6 +1640,8 @@ def document_uuid(flow_id, n, doc_type):
 
 def referenced_uuid(flow_id, doc_id):
     """The UUID of an earlier document of the flow, as that document states it: a reference quotes it."""
+    if INDEXING:
+        return "00000000-0000-0000-0000-000000000000"
     if (flow_id, doc_id) not in DOC_UUIDS:
         raise SystemExit(f"{flow_id}: a reference quotes the UUID of {doc_id}, which is not an earlier document "
                          "of the flow")
@@ -1782,9 +1858,12 @@ def main(flow_id, check=False):
     out = os.path.join(world_data.ROOT, "world", "examples", flow_id)
     os.makedirs(out, exist_ok=True)
     stale, roots = [], []
+    global DOC_TYPE
     for n, doc in enumerate(docs, 1):
+        DOC_TYPE = doc["doc"]
         content = scenario(n, doc)
         content = place_parties(doc, content)
+        type_references(content, f"{flow_id}/{xmlname(n, doc)}")
         bilingual_notes(doc, content)
         for path, value in doc.get("values", {}).items():   # the world's manifest values must be what the scenario says
             node = content
@@ -1823,6 +1902,10 @@ def main(flow_id, check=False):
         if "UUID" in header and isinstance(content.get("ID"), V):
             DOC_UUIDS[(flow_id, content["ID"].value)] = header["UUID"].value
         roots.append((xmlname(n, doc), root))
+        for e in root.iter():                  # a status that only says there is none is a filler (worklist C16)
+            if isinstance(e.tag, str) and e.text == "NoStatus":
+                raise SystemExit(f"{flow_id} {n} {doc['doc']}: {etree.QName(e).localname} NoStatus states nothing "
+                                 "(UBL IND5/IND6)")
         check_addresses(root, f"{flow_id} {n} {doc['doc']}")
         check_payment_means(root, f"{flow_id} {n} {doc['doc']}")
         check_dangerous_goods(root, f"{flow_id} {n} {doc['doc']}")
@@ -1876,6 +1959,11 @@ if __name__ == "__main__":
         ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)
+    if build_examples.UNTYPED:
+        print(f"references without a document type that point to no example and are not in world/documents.json "
+              f"cited ({len(build_examples.UNTYPED)}):",
+              "; ".join(f"{w} {e} {i}" for w, e, i in build_examples.UNTYPED), file=sys.stderr)
+        ok = False
     if build_examples.UNBOUND:
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",
               ", ".join(f"{e} in {p}" for e, p in sorted(build_examples.UNBOUND)), file=sys.stderr)

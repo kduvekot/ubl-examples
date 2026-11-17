@@ -16,6 +16,7 @@
   </cac:ValidityPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0570</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TradeItemLocationProfile</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0314C</cbc:ID>

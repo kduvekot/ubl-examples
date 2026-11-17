@@ -16,6 +16,7 @@
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cac:ParentDocumentReference>
     <cbc:ID>FE-INV-26-0313</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FE-TARIFF-2026</cbc:ID>

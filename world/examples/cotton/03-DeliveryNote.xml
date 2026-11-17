@@ -8,7 +8,6 @@
   <cbc:UUID>7a1d8c4c-64bb-5f76-ad72-a09687f8943f</cbc:UUID>
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
   <cbc:IssueTime>14:29:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa.</cbc:Note>
   <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin.</cbc:Note>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
@@ -22,6 +21,7 @@
   </cac:ProjectReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
+    <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LCF-SIG-26-DN</cbc:ID>

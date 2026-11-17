@@ -41,6 +41,8 @@ Inside `ParentDocumentReference`:
 
 - `ID` = **FG-INV-26-0150**  
   The network invoice this statement supplements: the metering behind the network charge for gas.
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FG-INV-26-0150 is the example energy/02, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Sender Party
 
@@ -516,6 +518,7 @@ Inside `SubscriberConsumption`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>FG-INV-26-0150</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranogrid.example</cbc:WebsiteURI>

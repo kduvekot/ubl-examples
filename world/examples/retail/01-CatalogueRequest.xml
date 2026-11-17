@@ -256,6 +256,7 @@
   </cac:TradingTerms>
   <cac:DocumentReference>
     <cbc:ID>BM-RANGE-26</cbc:ID>
+    <cbc:DocumentType>Range plan</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>

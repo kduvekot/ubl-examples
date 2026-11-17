@@ -264,7 +264,6 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -276,10 +275,10 @@
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cbc:UUID>da67b26b-2501-5b9b-9b6f-d03d5ce50a97</cbc:UUID>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     </cac:OrderLineReference>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-B180</cbc:ID>
+      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
     </cac:DocumentReference>
   </cac:OrderLine>
   <cac:OrderLine>
@@ -330,6 +329,7 @@
     </cac:OrderLineReference>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-C180-2026</cbc:ID>
+      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
     </cac:DocumentReference>
   </cac:OrderLine>
 </OrderResponse>

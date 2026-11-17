@@ -599,6 +599,8 @@ Inside `Shipment`:
   The despatch advice line of these goods.
 - `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
   The despatch advice.
+- `GoodsItem/DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `GoodsItem/ID` = **2**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
@@ -637,6 +639,8 @@ Inside `Shipment`:
   The despatch advice line of these goods.
 - `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
   The despatch advice.
+- `GoodsItem/DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 
 ### Previous Customs Declaration
 
@@ -651,6 +655,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **FCC-CO-26-0157**  
   The certificate of origin, to claim the preferential duty rate.
+- `DocumentTypeCode` = **CertificateOfOrigin** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FCC-CO-26-0157 is the example road/06, a CertificateOfOrigin; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
 
 ### Signature
 
@@ -1150,6 +1156,7 @@ Inside `Signature`:
         <cbc:LineID>1</cbc:LineID>
         <cac:DocumentReference>
           <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
     </cac:GoodsItem>
@@ -1187,6 +1194,7 @@ Inside `Signature`:
         <cbc:LineID>2</cbc:LineID>
         <cac:DocumentReference>
           <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
     </cac:GoodsItem>
@@ -1196,6 +1204,7 @@ Inside `Signature`:
   </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FCC-CO-26-0157</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CertificateOfOrigin</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-IM-road</cbc:ID>

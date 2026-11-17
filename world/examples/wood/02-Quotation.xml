@@ -19,6 +19,7 @@
   </cac:RequestForQuotationDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>MS-GTC-2026</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
@@ -279,6 +280,7 @@
     <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
     <cac:DocumentReference>
       <cbc:ID>MS-SPEC-SL1800</cbc:ID>
+      <cbc:DocumentType>Product specification</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
@@ -372,6 +374,7 @@
           </cac:CertificateValidityPeriod>
           <cac:DocumentReference>
             <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
+            <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
           </cac:DocumentReference>
         </cac:Certificate>
         <cac:Dimension>

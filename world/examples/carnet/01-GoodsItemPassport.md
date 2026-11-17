@@ -848,6 +848,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **SCC-FAIR-26-INV**  
   The fair's invitation to exhibit.
+- `DocumentType` = **Invitation to exhibit**  
+  The kind of document referred to, the fair's invitation to exhibit, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Document Distribution
 
@@ -1598,6 +1600,7 @@ Inside `Signature`:
   </cac:IssuerEndorsement>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCC-FAIR-26-INV</cbc:ID>
+    <cbc:DocumentType>Invitation to exhibit</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

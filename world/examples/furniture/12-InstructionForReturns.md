@@ -35,6 +35,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BF-DOC-26-0573**  
   The exception that led to the return.
+- `DocumentTypeCode` = **ExceptionNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-DOC-26-0573 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
 
 ### Signature
 
@@ -348,6 +350,7 @@ Inside `InstructionForReturnsLine`:
   <cbc:Note>The maker takes back six sets to free the store's shelf.</cbc:Note>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0573</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0427</cbc:ID>

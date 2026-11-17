@@ -584,6 +584,7 @@
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
       <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

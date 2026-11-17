@@ -893,13 +893,19 @@
     "version": "D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)"
    },
    "codes": {
+    "1": "",
     "9": "",
+    "101": "",
+    "174": "",
     "220": "",
     "227": "",
     "230": "",
     "261": "",
+    "293": "",
+    "315": "",
     "325": "",
     "326": "",
+    "361": "",
     "380": "",
     "381": "",
     "383": "",
@@ -907,9 +913,11 @@
     "386": "",
     "389": "",
     "393": "",
+    "749": "",
     "774": "",
     "856": "",
-    "861": ""
+    "861": "",
+    "917": ""
    }
   },
   "UNECERec28": {
@@ -8717,7 +8725,17 @@
     "DigitalDocumentMetadata",
     "DocumentDistribution",
     "RemittanceDocumentDistribution",
-    "RequiredCertificationDocumentReference"
+    "RequiredCertificationDocumentReference",
+    "SupportingDocumentReference",
+    "EvidenceDocumentReference",
+    "OriginatorDocumentReference",
+    "ParentDocumentReference",
+    "PreviousDocumentReference",
+    "OriginalDocumentReference",
+    "RequiredDocumentReference",
+    "ProvidedDocumentReference",
+    "RequestedDocumentReference",
+    "ShipmentDocumentReference"
    ]
   },
   {

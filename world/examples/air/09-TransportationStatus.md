@@ -309,6 +309,8 @@ Inside `DocumentReference`:
 
 - `ID` = **KXL-WB-26-0325**  
   The transport document of the consignment.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: KXL-WB-26-0325 is the example air/04, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Signature
 
@@ -689,6 +691,7 @@ Inside `StatusPeriod`:
   </cac:TransportEvent>
   <cac:DocumentReference>
     <cbc:ID>KXL-WB-26-0325</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>SAC-SIG-TS-09</cbc:ID>

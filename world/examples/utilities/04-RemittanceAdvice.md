@@ -69,6 +69,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **VI-BANK-26-04**  
   The payer's bank statement line.
+- `DocumentType` = **Bank statement**  
+  The kind of document referred to, the payer's bank statement line, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -500,6 +502,7 @@ Inside `RemittanceAdviceLine`:
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-BANK-26-04</cbc:ID>
+    <cbc:DocumentType>Bank statement</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-RA</cbc:ID>

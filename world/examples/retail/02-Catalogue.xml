@@ -30,6 +30,7 @@
   </cac:SourceCatalogueReference>
   <cac:DocumentReference>
     <cbc:ID>LD-GTC-2026</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
@@ -403,6 +404,7 @@
     </cac:RequiredItemLocationQuantity>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-B180</cbc:ID>
+      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -520,6 +522,7 @@
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>

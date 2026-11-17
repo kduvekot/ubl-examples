@@ -452,6 +452,7 @@
       </cac:ContractDocumentReference>
       <cac:DocumentReference>
         <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+        <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:FinancingParty>
         <cac:PartyIdentification>
@@ -693,6 +694,7 @@
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:ClassifiedTaxCategory>

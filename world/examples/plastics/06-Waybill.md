@@ -608,6 +608,8 @@ Inside `Shipment`:
   What the bags are made of.
 - `GoodsItem/ShipmentDocumentReference/ID` = **FB-TEP-26-0886**  
   The transport plan of the sailing.
+- `GoodsItem/ShipmentDocumentReference/DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FB-TEP-26-0886 is the example plastics/04, a TransportExecutionPlan; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 - `GoodsItem/EnergyConsumptionAllocation/EnergySourceTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:EnergySourceCode`)  
   The barge's engine fuel. The code is from the Trade Accord's energy source list: DIESEL = Diesel.
 - `GoodsItem/EnergyConsumptionAllocation/AllocatedEnergyMeasure` = **5400** (unitCode `KWH`)  
@@ -623,6 +625,8 @@ Inside `DocumentReference`:
 
 - `ID` = **FB-TEP-26-0886**  
   The transport plan under which the carriage is performed.
+- `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FB-TEP-26-0886 is the example plastics/04, a TransportExecutionPlan; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 
 ### Document Distribution
 
@@ -1156,6 +1160,7 @@ Inside `Signature`:
       </cac:ContainingPackage>
       <cac:ShipmentDocumentReference>
         <cbc:ID>FB-TEP-26-0886</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
       </cac:ShipmentDocumentReference>
       <cac:EnergyConsumptionAllocation>
         <cbc:EnergySourceTypeCode listID="urn:ubl-examples:world:codelist:EnergySourceCode">DIESEL</cbc:EnergySourceTypeCode>
@@ -1169,6 +1174,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FB-TEP-26-0886</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

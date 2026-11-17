@@ -376,6 +376,8 @@ Inside `CustomsDeclaration`:
   The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `AdditionalDocumentReference/ID` = **LTM-PO-26-0198**  
   The order behind the export.
+- `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -715,6 +717,7 @@ Inside `Signature`:
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
       <cbc:ID>LTM-PO-26-0198</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

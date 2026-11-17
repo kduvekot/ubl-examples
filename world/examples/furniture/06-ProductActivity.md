@@ -46,6 +46,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BF-DOC-26-0569**  
   The request the figures answer.
+- `DocumentTypeCode` = **ItemInformationRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-DOC-26-0569 is the example furniture/03, a ItemInformationRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ItemInformationRequest = Item Information Request.
 
 ### Signature
 
@@ -364,6 +366,7 @@ Inside `SupplyChainActivityDataLine`:
   </cac:ActivityPeriod>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0569</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ItemInformationRequest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0420A</cbc:ID>

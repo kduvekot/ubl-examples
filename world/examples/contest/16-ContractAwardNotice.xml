@@ -16,6 +16,7 @@
   <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>

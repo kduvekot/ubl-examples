@@ -245,6 +245,7 @@
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>VI-INV-26-0166</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:IssuerParty>
       <cac:PartyIdentification>

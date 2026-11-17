@@ -46,6 +46,8 @@ Inside `ProvidedDocumentReference`:
 
 - `ID` = **PWD-PROM-SITE-PLAN-A**  
   The site plan of the promenade, revision A.
+- `DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the site plan of the promenade, revision A, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 
 ### Contracting Party
 
@@ -453,6 +455,7 @@ Inside `ProcurementProject`:
   </cac:TechnicalDocumentReference>
   <cac:ProvidedDocumentReference>
     <cbc:ID>PWD-PROM-SITE-PLAN-A</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
   </cac:ProvidedDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>

@@ -552,6 +552,7 @@
           </cac:Despatch>
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>
+            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
           </cac:ShipmentDocumentReference>
           <cac:ContainedInTransportEquipment>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:rail-vehicle-register">31 46 4521 042-3</cbc:ID>
@@ -626,6 +627,7 @@
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

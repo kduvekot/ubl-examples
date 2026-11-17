@@ -16,6 +16,7 @@
   </cac:Period>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Quotation</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0314</cbc:ID>

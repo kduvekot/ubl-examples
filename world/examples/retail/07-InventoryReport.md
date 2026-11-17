@@ -46,6 +46,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BS-FC-26-0221**  
   The forecast the stock is compared with.
+- `DocumentTypeCode` = **Forecast** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-FC-26-0221 is the example retail/05, a Forecast; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Forecast.
 
 ### Signature
 
@@ -367,6 +369,8 @@ Inside `InventoryReportLine`:
   The conditions in words.
 - `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -543,6 +547,7 @@ Inside `InventoryReportLine`:
   </cac:InventoryPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-FC-26-0221</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Forecast</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0423</cbc:ID>
@@ -816,6 +821,7 @@ Inside `InventoryReportLine`:
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>

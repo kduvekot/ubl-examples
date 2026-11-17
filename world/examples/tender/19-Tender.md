@@ -55,6 +55,8 @@ Inside `DocumentReference`:
 
 - `ID` = **BF-DS-PARK**  
   The datasheet.
+- `DocumentType` = **Product data sheet**  
+  The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -316,6 +318,8 @@ Inside `TenderedProject`:
   Lot 2.
 - `EvidenceDocumentReference/ID` = **VI-REF-2025**  
   Reference letters.
+- `EvidenceDocumentReference/DocumentType` = **Reference letters**  
+  The kind of document referred to, Valdara's reference letters, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax for a public body.
 - `LegalMonetaryTotal/LineExtensionAmount` = **119040.00** (currencyID `XBL`)  
@@ -350,6 +354,8 @@ Inside `TenderedProject`:
   The pack level. The code is from the Trade Accord's pack level list: PALLET = Pallet.
 - `TenderLine/DocumentReference/ID` = **BF-DS-PARK**  
   The datasheet.
+- `TenderLine/DocumentReference/DocumentType` = **Product data sheet**  
+  The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TenderLine/Item/Name` = **Park bench Brackenmere PB-2**  
   The item offered.
 - `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
@@ -426,6 +432,7 @@ Inside `TenderedProject`:
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>BF-DS-PARK</cbc:ID>
+    <cbc:DocumentType>Product data sheet</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-TENDER-19</cbc:ID>
@@ -648,6 +655,7 @@ Inside `TenderedProject`:
     </cac:ProcurementProjectLot>
     <cac:EvidenceDocumentReference>
       <cbc:ID>VI-REF-2025</cbc:ID>
+      <cbc:DocumentType>Reference letters</cbc:DocumentType>
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -672,6 +680,7 @@ Inside `TenderedProject`:
       <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
       <cac:DocumentReference>
         <cbc:ID>BF-DS-PARK</cbc:ID>
+        <cbc:DocumentType>Product data sheet</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:Item>
         <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>

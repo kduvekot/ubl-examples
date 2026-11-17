@@ -78,19 +78,14 @@ Inside `ProjectReference`:
 - `ID` = **PWD-PLAN-OFFICE-26**  
   The new planning office.
 
-### Billing Reference
-
-Inside `BillingReference`:
-
-- `AdditionalDocumentReference/ID` = **PWD-COMMIT-26-0381**  
-  The department's budget commitment the work will be billed against.
-
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BF-PHOTO-26-0408**  
-  Photographs of the finished office.
+- `ID` = **PWD-COMMIT-26-0381**  
+  The department's budget commitment the work will be billed against, as its order gave it.
+- `DocumentType` = **Budget commitment**  
+  The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Seller Supplier Party
 
@@ -374,6 +369,8 @@ Inside `WorkReportLine`:
   The order.
 - `DocumentReference/ID` = **BF-CHECK-26-0408**  
   The installation checklist.
+- `DocumentReference/DocumentType` = **Installation checklist**  
+  The kind of document referred to, Brackenmere's checklist of the office installation, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Price/PriceAmount` = **48** (currencyID `XBL`)  
   Per hour.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
@@ -445,13 +442,9 @@ Inside `WorkReportLine`:
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
-  <cac:BillingReference>
-    <cac:AdditionalDocumentReference>
-      <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
-    </cac:AdditionalDocumentReference>
-  </cac:BillingReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-PHOTO-26-0408</cbc:ID>
+    <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    <cbc:DocumentType>Budget commitment</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:SellerSupplierParty>
     <cac:Party>
@@ -683,6 +676,7 @@ Inside `WorkReportLine`:
     </cac:WorkPhaseReference>
     <cac:DocumentReference>
       <cbc:ID>BF-CHECK-26-0408</cbc:ID>
+      <cbc:DocumentType>Installation checklist</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">48</cbc:PriceAmount>

@@ -58,6 +58,8 @@ Inside `PreviousDocumentReference`:
 
 - `ID` = **LPWD-DOC-26-0188**  
   The contract notice.
+- `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0188 is the example tender/02, a ContractNotice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
 
 ### Minutes Document Reference
 
@@ -376,6 +378,8 @@ Inside `TenderingProcess`:
   The prior information notice.
 - `AdditionalDocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The specification.
+- `AdditionalDocumentReference/DocumentType` = **Technical specification**  
+  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `ProcessJustification/ProcessReasonCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ProcessReasonCode`)  
   The open procedure is the rule. The code is from the Trade Accord's process reason list: STANDARD = Standard.
 - `ProcessJustification/ProcessReason` = **Value above the threshold for open procedures.**  
@@ -543,6 +547,8 @@ Inside `ProcurementProject`:
   The estimate.
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
+- `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
+  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-22**  
@@ -572,10 +578,16 @@ Inside `ProcurementProjectLot`:
   The lot's specification.
 - `RequiredDocumentReference/ID` = **PWD-PRICE-TPL**  
   The price schedule to submit.
+- `RequiredDocumentReference/DocumentType` = **Price schedule template**  
+  The kind of document referred to, the template for the tenderers' prices, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `ProvidedDocumentReference/ID` = **PWD-SITE-PLAN**  
   The parks' site plan.
+- `ProvidedDocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the public works department's site plan of the parks, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `AdditionalDocumentReference/ID` = **PWD-QA-26**  
   Questions and answers.
+- `AdditionalDocumentReference/DocumentType` = **Questions and answers**  
+  The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TenderingTerms/Note` = **As for the procedure.**  
   The lot's terms.
 - `TenderingProcess/Description` = **As for the procedure.**  
@@ -682,6 +694,8 @@ Inside `ProcurementProjectLot`:
   The estimate.
 - `ProcurementProject/RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
+- `ProcurementProject/RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
+  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `ProcurementProject/RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `ProcurementProject/RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-22**  
@@ -706,10 +720,16 @@ Inside `ProcurementProjectLot`:
   The lot's specification.
 - `RequiredDocumentReference/ID` = **PWD-PRICE-TPL**  
   The price schedule to submit.
+- `RequiredDocumentReference/DocumentType` = **Price schedule template**  
+  The kind of document referred to, the template for the tenderers' prices, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `ProvidedDocumentReference/ID` = **PWD-SITE-PLAN**  
   The parks' site plan.
+- `ProvidedDocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the public works department's site plan of the parks, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `AdditionalDocumentReference/ID` = **PWD-QA-26**  
   Questions and answers.
+- `AdditionalDocumentReference/DocumentType` = **Questions and answers**  
+  The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TenderingTerms/Note` = **As for the procedure.**  
   The lot's terms.
 - `TenderingProcess/Description` = **As for the procedure.**  
@@ -1003,6 +1023,7 @@ Inside `TenderResult`:
   </cac:AdditionalNoticeLanguage>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:MinutesDocumentReference>
     <cbc:ID>PWD-MIN-AWARD-26</cbc:ID>
@@ -1269,6 +1290,7 @@ Inside `TenderResult`:
     </cac:NoticeDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+      <cbc:DocumentType>Technical specification</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:ProcessJustification>
       <cbc:ProcessReasonCode listID="urn:ubl-examples:world:codelist:ProcessReasonCode">STANDARD</cbc:ProcessReasonCode>
@@ -1403,6 +1425,7 @@ Inside `TenderResult`:
       <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+        <cbc:DocumentType>Technical specification</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:DeliveryPeriod>
         <cbc:StartDate>2026-04-02</cbc:StartDate>
@@ -1436,12 +1459,15 @@ Inside `TenderResult`:
     </cac:TechnicalDocumentReference>
     <cac:RequiredDocumentReference>
       <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+      <cbc:DocumentType>Price schedule template</cbc:DocumentType>
     </cac:RequiredDocumentReference>
     <cac:ProvidedDocumentReference>
       <cbc:ID>PWD-SITE-PLAN</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:ProvidedDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-QA-26</cbc:ID>
+      <cbc:DocumentType>Questions and answers</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:TenderingTerms>
       <cbc:Note>As for the procedure.</cbc:Note>
@@ -1531,6 +1557,7 @@ Inside `TenderResult`:
         <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
         <cac:DocumentReference>
           <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
+          <cbc:DocumentType>Technical specification</cbc:DocumentType>
         </cac:DocumentReference>
         <cac:DeliveryPeriod>
           <cbc:StartDate>2026-04-02</cbc:StartDate>
@@ -1565,12 +1592,15 @@ Inside `TenderResult`:
     </cac:TechnicalDocumentReference>
     <cac:RequiredDocumentReference>
       <cbc:ID>PWD-PRICE-TPL</cbc:ID>
+      <cbc:DocumentType>Price schedule template</cbc:DocumentType>
     </cac:RequiredDocumentReference>
     <cac:ProvidedDocumentReference>
       <cbc:ID>PWD-SITE-PLAN</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:ProvidedDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-QA-26</cbc:ID>
+      <cbc:DocumentType>Questions and answers</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:TenderingTerms>
       <cbc:Note>As for the procedure.</cbc:Note>

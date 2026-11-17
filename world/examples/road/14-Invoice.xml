@@ -19,6 +19,7 @@
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -256,6 +257,7 @@
           <cbc:LineID>1</cbc:LineID>
           <cac:DocumentReference>
             <cbc:ID>LD-RA-26-0164</cbc:ID>
+            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
           </cac:DocumentReference>
         </cac:ReceiptLineReference>
       </cac:GoodsItem>

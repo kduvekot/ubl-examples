@@ -200,6 +200,7 @@
   </cac:Consignment>
   <cac:DocumentReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-TSR</cbc:ID>

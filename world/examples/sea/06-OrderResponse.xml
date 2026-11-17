@@ -23,11 +23,8 @@
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:DocumentType>Request</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
-  <cac:Contract>
-    <cbc:ID>LD-DAG-26-0125</cbc:ID>
-    <cbc:ContractType>Digital trade agreement</cbc:ContractType>
-  </cac:Contract>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -262,7 +259,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-SO-26-0123</cbc:PaymentNote>
+      <cbc:PaymentNote>Deposit on sales order LD-SO-26-0123</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -333,7 +330,6 @@
       <cbc:ID>1</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
@@ -378,7 +374,6 @@
       <cbc:ID>2</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">768.00</cbc:TaxInclusiveLineExtensionAmount>

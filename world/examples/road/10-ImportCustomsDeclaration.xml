@@ -482,6 +482,7 @@
         <cbc:LineID>1</cbc:LineID>
         <cac:DocumentReference>
           <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
     </cac:GoodsItem>
@@ -519,6 +520,7 @@
         <cbc:LineID>2</cbc:LineID>
         <cac:DocumentReference>
           <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
     </cac:GoodsItem>
@@ -528,6 +530,7 @@
   </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FCC-CO-26-0157</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CertificateOfOrigin</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-IM-road</cbc:ID>

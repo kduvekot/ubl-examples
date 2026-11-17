@@ -328,6 +328,7 @@
     </cac:WorkReportLineReference>
     <cac:DocumentReference>
       <cbc:ID>PWD-DMG-26-0081</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">DAMAGEREPORT</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:PricingReference>
       <cac:AlternativeConditionPrice>

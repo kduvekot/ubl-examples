@@ -367,6 +367,8 @@ Inside `AdditionalDocumentReference`:
 
 - `ID` = **VI-ISO9001-CERT**  
   Its quality certificate.
+- `DocumentType` = **Quality management certificate**  
+  The kind of document referred to, Valdara's quality management certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Business Capability
 
@@ -721,6 +723,7 @@ Inside `NoticeSubType`:
   </cac:BrochureDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-ISO9001-CERT</cbc:ID>
+    <cbc:DocumentType>Quality management certificate</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:ID>CAP-1</cbc:ID>

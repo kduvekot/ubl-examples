@@ -43,6 +43,8 @@ Inside `PreviousDocumentReference`:
 
 - `ID` = **LPWD-DOC-26-0208**  
   The award notification.
+- `DocumentTypeCode` = **AwardedNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0208 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
 
 ### Contract Document Reference
 
@@ -738,6 +740,7 @@ Inside `TenderResult`:
   <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>

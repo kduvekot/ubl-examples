@@ -26,8 +26,6 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   The day the call-off left the 3PL.
 - `IssueTime` = **17:37:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new despatch advice, not a correction. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
@@ -543,8 +541,6 @@ Inside `DespatchLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `Note` = **Forty benches in moss green, RAL 6005, as the order change asked.**  
   The line as despatched.
-- `LineStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Despatched as ordered. The code is from the world's copy of UBL's Line status list, with a listID: NoStatus = Line has no status..
 - `DeliveredQuantity` = **40** (unitCode `EA`)  
   What was despatched.
 - `OutstandingQuantity` = **200** (unitCode `EA`)  
@@ -559,6 +555,8 @@ Inside `DespatchLine`:
   The order line this line fulfils.
 - `DocumentReference/ID` = **PWD-2026-PARKS**  
   The contract.
+- `DocumentReference/DocumentType` = **Procurement file**  
+  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
@@ -803,7 +801,6 @@ Inside `DespatchLine`:
   <cbc:UUID>3a152d4a-6fec-5156-a6be-f2f8f81077e0</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>17:37:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
   <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -1248,7 +1245,6 @@ Inside `DespatchLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>bf5c479c-ae74-54ad-8a20-aa2eeba424e0</cbc:UUID>
     <cbc:Note>Forty benches in moss green, RAL 6005, as the order change asked.</cbc:Note>
-    <cbc:LineStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode">NoStatus</cbc:LineStatusCode>
     <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
     <cbc:OutstandingQuantity unitCode="EA">200</cbc:OutstandingQuantity>
     <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
@@ -1259,6 +1255,7 @@ Inside `DespatchLine`:
     </cac:OrderLineReference>
     <cac:DocumentReference>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
+      <cbc:DocumentType>Procurement file</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>

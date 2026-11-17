@@ -76,6 +76,8 @@ Inside `DocumentReference`:
 
 - `ID` = **LD-GTC-2026**  
   The general terms of trade.
+- `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 
 ### Applicable Territory Address
 
@@ -500,6 +502,8 @@ Inside `CatalogueLine`:
   The last.
 - `DocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet.
+- `DocumentReference/DocumentType` = **Product data sheet**  
+  The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/CatalogueIndicator` = **true**  
@@ -626,6 +630,8 @@ Inside `CatalogueLine`:
   The conditions in words.
 - `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
   The seller's general terms of trade.
+- `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -944,6 +950,7 @@ Inside `CatalogueLine`:
   </cac:SourceCatalogueReference>
   <cac:DocumentReference>
     <cbc:ID>LD-GTC-2026</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
@@ -1317,6 +1324,7 @@ Inside `CatalogueLine`:
     </cac:RequiredItemLocationQuantity>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-B180</cbc:ID>
+      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -1434,6 +1442,7 @@ Inside `CatalogueLine`:
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
           <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>

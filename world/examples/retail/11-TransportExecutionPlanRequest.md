@@ -28,8 +28,6 @@ Because it sold DDP, the distributor books the outgoing truck from its distribut
   Because it sold delivered duty paid, the distributor books the truck.
 - `IssueTime` = **10:28:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DocumentStatusCode` = **NoStatus** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  A new request, without a status yet. The code is from the world's copy of UBL's Document status list, with a listID: NoStatus = No status on document.
 - `Note` = **The forwarder's truck from the distribution centre to the store.**  
   The transport asked for.
 - `TransportUserRemarks` = **Please confirm by return.**  
@@ -520,7 +518,6 @@ Inside `Consignment`:
   <cbc:UUID>3486a63d-1d8e-580d-902a-948d6ff352c9</cbc:UUID>
   <cbc:IssueDate>2026-04-25</cbc:IssueDate>
   <cbc:IssueTime>10:28:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
   <cbc:Note>The forwarder's truck from the distribution centre to the store.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>

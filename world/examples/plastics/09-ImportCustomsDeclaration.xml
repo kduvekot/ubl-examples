@@ -417,6 +417,7 @@
       </cac:BondedWarehouseLocation>
       <cac:AdditionalDocumentReference>
         <cbc:ID>FB-WB-26-0890</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
       </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
   </cac:Shipment>
