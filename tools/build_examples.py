@@ -968,8 +968,6 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         out["ModelName"] = V(maker["model"], f"The model; {msrc}.")
     if maker.get("additional_info"):
         out["AdditionalInformation"] = item_texts(it, maker["additional_info"], "What comes with the item", msrc)
-    if catalogue:
-        out["CatalogueIndicator"] = V("true", "The item is described as it appears in the seller's catalogue.")
     if maker.get("warranty"):
         out["WarrantyInformation"] = item_texts(it, maker["warranty"], "The maker's warranty", msrc)
     bid, bwhy = buyer_item_id(iid, buyer) if buyer else (None, None)
@@ -1613,6 +1611,21 @@ def tax_arithmetic(content, where):
                                      "C24).", **old.attrs)
 
 
+# ---------------------------------------------------------------- items ordered from a catalogue (worklist C25)
+def catalogue_items(content, doc):
+    """An order placed from the seller's catalogue, which it cites, marks its items as ordered from it: the place
+    of CatalogueIndicator, not the catalogue itself."""
+    if doc["doc"] not in ("Order", "OrderChange"):
+        return
+    lines = content.get("OrderLine")
+    for line in lines if isinstance(lines, list) else [lines] if lines else []:
+        it = line.get("LineItem", {}).get("Item")
+        if isinstance(it, dict) and ("CatalogueDocumentReference" in it or "CatalogueReference" in line or
+                                     "CatalogueDocumentReference" in content):
+            it.setdefault("CatalogueIndicator", V("true", "The item is ordered from the seller's catalogue, which "
+                                                          "the order cites."))
+
+
 # ---------------------------------------------------------------- when an order wants its goods (worklist C28)
 def requested_delivery(content, doc, n):
     """Every order and order change states when the goods are wanted (or, ex works, when they are collected); where
@@ -2088,6 +2101,7 @@ def main(flow_id, check=False):
         content = place_parties(doc, content)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
         requested_delivery(content, doc, n)
+        catalogue_items(content, doc)
         tax_arithmetic(content, f"{flow_id} {n} {doc['doc']}")
         transport_goods(content, doc)
         identify_places(content)

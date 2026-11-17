@@ -305,8 +305,8 @@ Inside `CatalogueLine`:
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
-- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The catalogue is offered for buyers in the seller's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **49900** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -321,8 +321,8 @@ Inside `CatalogueLine`:
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **VI-PL-2026**  
   The seller's price list this price is taken from.
-- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  The price list is in force. The code is from the Trade Accord's record status list: ACTIVE = Active.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
+  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
@@ -339,8 +339,6 @@ Inside `CatalogueLine`:
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
-- `Item/CatalogueIndicator` = **true**  
-  The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
@@ -547,8 +545,8 @@ Inside `CatalogueLine`:
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
-- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The catalogue is offered for buyers in the seller's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **1800** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -563,8 +561,8 @@ Inside `CatalogueLine`:
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **VI-PL-2026**  
   The seller's price list this price is taken from.
-- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  The price list is in force. The code is from the Trade Accord's record status list: ACTIVE = Active.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
+  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A service to a business abroad is supplied where the customer is, outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
@@ -581,8 +579,6 @@ Inside `CatalogueLine`:
   The seller's description in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
-- `Item/CatalogueIndicator` = **true**  
-  The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Dreknul skul sir haz nanskir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Name` = **Installation of a park bench** (languageID `en-XU`)  
@@ -845,7 +841,7 @@ Inside `CatalogueLine`:
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
@@ -859,7 +855,7 @@ Inside `CatalogueLine`:
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
@@ -876,7 +872,6 @@ Inside `CatalogueLine`:
     <cac:Item>
       <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
       <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation languageID="qau">Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.</cbc:AdditionalInformation>
@@ -1062,7 +1057,7 @@ Inside `CatalogueLine`:
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
@@ -1076,7 +1071,7 @@ Inside `CatalogueLine`:
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
@@ -1093,7 +1088,6 @@ Inside `CatalogueLine`:
     <cac:Item>
       <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
       <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>

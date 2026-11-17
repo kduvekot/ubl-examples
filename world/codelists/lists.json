@@ -859,6 +859,14 @@
     "WITHDRAWN": [
      "Withdrawn",
      "No longer in force."
+    ],
+    "ORIGINAL": [
+     "Original",
+     "The first issue of a document or a price list."
+    ],
+    "REVISION": [
+     "Revision",
+     "A revised issue of a document or a price list, which replaces the one before."
     ]
    }
   },

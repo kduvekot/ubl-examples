@@ -839,7 +839,7 @@
     "doc": "LD-GTC-2026"
    },
    "min_order": 4,
-   "max_order": 192,
+   "max_order": 288,
    "lead_days": 3,
    "gtin": "9520610000012"
   },

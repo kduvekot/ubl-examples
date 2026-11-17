@@ -142,5 +142,39 @@
             <SimpleValue>No longer in force.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ORIGINAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Original</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Rikzhek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Folue</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The first issue of a document or a price list.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>REVISION</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Revision</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trirdir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Paatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A revised issue of a document or a price list, which replaces the one before.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

@@ -349,6 +349,7 @@
       </cac:Price>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+        <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
         <cbc:Keyword>park bench, street furniture</cbc:Keyword>

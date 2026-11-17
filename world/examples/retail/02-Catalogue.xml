@@ -350,7 +350,7 @@
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="EA">192</cbc:MaximumQuantity>
+      <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
       <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
@@ -368,7 +368,53 @@
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
+        </cac:PriceList>
+      </cac:Price>
+      <cac:DeliveryUnit>
+        <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
+        <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
+      </cac:DeliveryUnit>
+      <cac:ApplicableTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ApplicableTaxCategory>
+      <cac:Package>
+        <cbc:ID>PAL-4</cbc:ID>
+        <cbc:Quantity unitCode="EA">4</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:Package>
+      <cac:ApplicableDeliveryPeriod>
+        <cbc:StartDate>2026-04-27</cbc:StartDate>
+        <cbc:EndDate>2026-07-19</cbc:EndDate>
+      </cac:ApplicableDeliveryPeriod>
+    </cac:RequiredItemLocationQuantity>
+    <cac:RequiredItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="EA">144</cbc:MinimumQuantity>
+      <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
+      <cac:ApplicableTerritoryAddress>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:ApplicableTerritoryAddress>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
+        <cbc:PriceType>Trade price</cbc:PriceType>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2026-04-20</cbc:StartDate>
+          <cbc:EndDate>2026-07-19</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <cac:PriceList>
+          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:DeliveryUnit>
@@ -408,7 +454,6 @@
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:ItemTypeCode listID="urn:ubl-examples:world:codelist:ItemTypeCode">PRODUCT</cbc:ItemTypeCode>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
@@ -741,7 +786,7 @@
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
@@ -753,22 +798,9 @@
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
-      <cac:DependentPriceReference>
-        <cbc:Percent>12.31</cbc:Percent>
-        <cac:LocationAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:LocationAddress>
-        <cac:DependentLineReference>
-          <cbc:LineID>1</cbc:LineID>
-        </cac:DependentLineReference>
-      </cac:DependentPriceReference>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cbc:ItemTypeCode listID="urn:ubl-examples:world:codelist:ItemTypeCode">PRODUCT</cbc:ItemTypeCode>
       <cbc:BrandName>Valdara</cbc:BrandName>

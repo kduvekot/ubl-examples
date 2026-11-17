@@ -7540,10 +7540,6 @@ def _(f, n, doc, out):
 
 @enrich("retail", "Catalogue")
 def _(f, n, doc, out):
-    for d in find_dicts(out, "DependentPriceReference"):
-        d["DependentPriceReference"]["LocationAddress"] = {
-            "CountrySubentity": V("Coastal State", "The price applies to deliveries in the store's state."),
-            "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}
     for cl in lines_of(out, "CatalogueLine"):
         it = cl.get("Item")
         if isinstance(it, dict):

@@ -244,7 +244,7 @@
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
@@ -258,7 +258,7 @@
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
@@ -275,7 +275,6 @@
     <cac:Item>
       <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
       <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation languageID="qau">Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.</cbc:AdditionalInformation>
@@ -461,7 +460,7 @@
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
@@ -475,7 +474,7 @@
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
@@ -492,7 +491,6 @@
     <cac:Item>
       <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
       <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>

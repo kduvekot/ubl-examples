@@ -5363,7 +5363,9 @@
     "ACTIVE",
     "REPLACED",
     "SUSPENDED",
-    "WITHDRAWN"
+    "WITHDRAWN",
+    "ORIGINAL",
+    "REVISION"
    ]
   },
   "ProfileStatus": {

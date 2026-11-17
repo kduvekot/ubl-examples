@@ -1180,13 +1180,16 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
                            "EndDate": V(flow.date(day + validity_days), "And until the catalogue ends.")}
     p["PriceList"] = {"ID": V(f"{initials(doc['from'])}-PL-{flow.date(day)[:4]}",
                               "The seller's price list this price is taken from."),
-                      "StatusCode": V("ACTIVE", "The price list is in force.")}
+                      "StatusCode": V("ORIGINAL", "The first issue of the price list: UBL names original, copy, "
+                                                  "revision or cancellation here, not whether the list is in force "
+                                                  "(worklist C25).")}
     out = {"LeadTimeMeasure": V(it.get("lead_days", 5), "The days between order and despatch.", unitCode="DAY"),
            "MinimumQuantity": qty(it.get("min_order", 1), it["unit"], "The smallest quantity the seller accepts on an "
                                                                        "order."),
-           "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V(PARTY[doc["from"]]["c"], "The catalogue "
-                                                                              "is offered for buyers in the seller's "
-                                                                              "country.")}},
+           "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V(PARTY[doc["to"]]["c"], "The market the "
+                                                                              "price is offered for: the buyer's "
+                                                                              "country, whose sales the tax "
+                                                                              "category below treats (worklist C25).")}},
            "Price": p}
     contract = flow.id == "tender"
     p["PriceTypeCode"] = V("CON" if contract else "TRD", "The kind of price, which buyer and seller both understand: "
@@ -1199,7 +1202,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
             "BaseQuantity": qty(1, it["unit"], "Per one unit.")}
     if it.get("max_order"):
         out["MaximumQuantity"] = qty(it["max_order"], it["unit"], "The most one order can take from stock: two "
-                                                                   "containers.")
+                                                                   "full 40-foot containers.")
     if it.get("conditions"):
         out["TradingRestrictions"] = V("Not sold to consumers.", "The bench is sold through retailers.")
         out["DeliveryUnit"] = {"BatchQuantity": qty(4, it["unit"], "The benches are delivered per pallet of four."),
@@ -1207,7 +1210,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
         out["Package"] = {"ID": V("PAL-4", "The pallet the price is for."),
                           "Quantity": qty(4, it["unit"], "Four benches to a pallet."),
                           "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}
-        out["AllowanceCharge"] = {"ChargeIndicator": V("false", "A discount."),
+        full_allowance = {"ChargeIndicator": V("false", "A discount."),
                                   "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT "
                                                                        "5189, as EN 16931 uses it: a discount for the "
                                                                        "full container.",
@@ -1221,16 +1224,18 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
         out["ApplicableDeliveryPeriod"] = {"StartDate": V(flow.date(day + 7), "The first deliveries from the "
                                                                               "season's stock."),
                                            "EndDate": V(flow.date(day + validity_days), "The last.")}
-    if it.get("resale_of") and ITEM[it["resale_of"]].get("serials"):     # the spare frame, priced after the bench
-        bench = next(i for i in WORLD["items"] if i["seller"] == it["seller"] and i.get("conditions"))
-        out["DependentPriceReference"] = {"Percent": V(str(round(Decimal(str(it["price"]["amount"])) * 100 /
-                                                                 Decimal(str(bench["price"]["amount"])), 2)),
-                                                       "The spare frame costs this share of the bench's price, "
-                                                       "as the distributor's price rule sets it."),
-                                          "DependentLineReference": {"LineID": V("1", "The catalogue line of the "
-                                                                                      "bench.")}}
     out["ApplicableTaxCategory"] = tax_category(tax_rule(doc["from"], doc["to"], iid))
+    if it.get("conditions"):                  # the full-container discount applies only from a full container
+        full = {k: v for k, v in out.items() if k not in ("MinimumQuantity", "MaximumQuantity")}
+        full["MinimumQuantity"] = qty(FULL_CONTAINER, it["unit"], "A full 40-foot container: 36 pallets of four "
+                                                                  "benches in two layers (D20); a smaller order "
+                                                                  "does not qualify (worklist C25).")
+        full["AllowanceCharge"] = full_allowance
+        return [out, full]
     return out
+
+
+FULL_CONTAINER = 144          # benches in a full 40-foot container: 18 floor positions, two layers, four a pallet
 
 
 def purchase_receipt(flow, n, doc, day, why, rows_spec, cash, promotion=None):

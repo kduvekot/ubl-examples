@@ -433,6 +433,8 @@ Inside `OrderLine`:
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XB`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/CatalogueIndicator` = **true**  
+  The item is ordered from the seller's catalogue, which the order cites.
 - `LineItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Name` = **Park bench Serra 180** (languageID `en-XB`)  
@@ -953,6 +955,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
         <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+        <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation languageID="qau">Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.</cbc:AdditionalInformation>

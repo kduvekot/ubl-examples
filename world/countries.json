@@ -1716,7 +1716,8 @@
     "discharged": "skurtrir",
     "en": "zersul",
     "route": "zhuvir",
-    "stored": "ginstek"
+    "stored": "ginstek",
+    "revision": "trirdir"
    }
   },
   "qal": {
@@ -2815,7 +2816,8 @@
     "discharged": "kilulilo",
     "en": "hanesi",
     "route": "pounu",
-    "stored": "lusii"
+    "stored": "lusii",
+    "revision": "paatu"
    }
   },
   "en": {

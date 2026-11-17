@@ -687,6 +687,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D17 (a seller states its own country's tax), D14 (Valdara has a list price, 499.00 on its list `VI-PL-2026`, and a distributor price; the price type list says for each type whether it includes tax, O28), D20 (a "full container" is a kind of booking, not a statement that the hold is full).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): a catalogue price's territory is the buyer's market (the island for Velumi, Bayvarra for the store and the public works department), so it agrees with the export or domestic tax category the line carries; the price list's status is `ORIGINAL` (UBL names original, copy, revision or cancellation; `ORIGINAL` and `REVISION` added to the world's record-status list); `CatalogueIndicator` goes from the catalogues and marks the items of the orders placed from a catalogue (sea/05, retail/08); the full-container discount is a quantity range of its own from 144 benches (a 40-foot container of 36 pallets of four, D20), so the sea order's 96 do not qualify (D30); the maximum order is two full containers, 288; the frame's price is no longer a share of the bench's (D34 lowers one and not the other), so `DependentPriceReference` goes. Coverage: O145.
 - Findings: retail: 02#F15, 02#F23, 03#F11; sea: 02#F1, 02#F5, 02#F6, 02#F7, 02#F21; tender: 25#F1, 25#F7, 25#F8; consistency: conditions#F1
 
 ### C26 · Documents referenced as a kind they are not

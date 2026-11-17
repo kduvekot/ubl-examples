@@ -253,12 +253,12 @@ Inside `CatalogueLine`:
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **4** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
-- `RequiredItemLocationQuantity/MaximumQuantity` = **192** (unitCode `EA`)  
-  The most one order can take from stock: two containers.
+- `RequiredItemLocationQuantity/MaximumQuantity` = **288** (unitCode `EA`)  
+  The most one order can take from stock: two full 40-foot containers.
 - `RequiredItemLocationQuantity/TradingRestrictions` = **Not sold to consumers.**  
   The bench is sold through retailers.
-- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The catalogue is offered for buyers in the seller's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -273,8 +273,60 @@ Inside `CatalogueLine`:
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
-- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  The price list is in force. The code is from the Trade Accord's record status list: ACTIVE = Active.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
+  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **208** (currencyID `XLC`)  
+  The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `EA`)  
+  Per one unit.
+- `RequiredItemLocationQuantity/DeliveryUnit/BatchQuantity` = **4** (unitCode `EA`)  
+  The benches are delivered per pallet of four.
+- `RequiredItemLocationQuantity/DeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `EA`)  
+  One bench is one consumer unit.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `RequiredItemLocationQuantity/Package/ID` = **PAL-4**  
+  The pallet the price is for.
+- `RequiredItemLocationQuantity/Package/Quantity` = **4** (unitCode `EA`)  
+  Four benches to a pallet.
+- `RequiredItemLocationQuantity/Package/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/StartDate` = **2026-05-11**  
+  The first deliveries from the season's stock.
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-10-31**  
+  The last.
+- `RequiredItemLocationQuantity/LeadTimeMeasure` = **3** (unitCode `DAY`)  
+  The days between order and despatch.
+- `RequiredItemLocationQuantity/MinimumQuantity` = **144** (unitCode `EA`)  
+  A full 40-foot container: 36 pallets of four benches in two layers (D20); a smaller order does not qualify (worklist C25).
+- `RequiredItemLocationQuantity/TradingRestrictions` = **Not sold to consumers.**  
+  The bench is sold through retailers.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `RequiredItemLocationQuantity/Price/PriceAmount` = **520** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD** (listID `urn:ubl-examples:world:codelist:PriceTypeCode`)  
+  The kind of price, which buyer and seller both understand: a trade price. The code is from the Trade Accord's price type list: TRD = Trade price.
+- `RequiredItemLocationQuantity/Price/PriceType` = **Trade price**  
+  The name of code TRD in the Trade Accord's price type list.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-04**  
+  The price applies from the catalogue's issue date.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-10-31**  
+  And until the catalogue ends.
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+  The seller's price list this price is taken from.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
+  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
 - `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **208** (currencyID `XLC`)  
   The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
 - `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `EA`)  
@@ -317,8 +369,6 @@ Inside `CatalogueLine`:
   The last.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
-- `Item/CatalogueIndicator` = **true**  
-  The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
@@ -603,8 +653,8 @@ Inside `CatalogueLine`:
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
-- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The catalogue is offered for buyers in the seller's country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -619,8 +669,8 @@ Inside `CatalogueLine`:
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
-- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  The price list is in force. The code is from the Trade Accord's record status list: ACTIVE = Active.
+- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
+  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
 - `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **25.6** (currencyID `XLC`)  
   The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
 - `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `EA`)  
@@ -635,14 +685,8 @@ Inside `CatalogueLine`:
   The name of code EXP in Bayvarra's national sales tax exemption reason list.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `RequiredItemLocationQuantity/DependentPriceReference/Percent` = **12.31**  
-  The spare frame costs this share of the bench's price, as the distributor's price rule sets it.
-- `RequiredItemLocationQuantity/DependentPriceReference/DependentLineReference/LineID` = **1**  
-  The catalogue line of the bench.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
-- `Item/CatalogueIndicator` = **true**  
-  The item is described as it appears in the seller's catalogue.
 - `Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/BrandName` = **Valdara**  
@@ -876,11 +920,11 @@ Inside `CatalogueLine`:
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="EA">192</cbc:MaximumQuantity>
+      <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
       <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
@@ -894,7 +938,57 @@ Inside `CatalogueLine`:
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
+        </cac:PriceList>
+        <cac:AlternativeCurrencyPrice>
+          <cbc:PriceAmount currencyID="XLC">208</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:AlternativeCurrencyPrice>
+      </cac:Price>
+      <cac:DeliveryUnit>
+        <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
+        <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
+      </cac:DeliveryUnit>
+      <cac:ApplicableTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ApplicableTaxCategory>
+      <cac:Package>
+        <cbc:ID>PAL-4</cbc:ID>
+        <cbc:Quantity unitCode="EA">4</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+      </cac:Package>
+      <cac:ApplicableDeliveryPeriod>
+        <cbc:StartDate>2026-05-11</cbc:StartDate>
+        <cbc:EndDate>2026-10-31</cbc:EndDate>
+      </cac:ApplicableDeliveryPeriod>
+    </cac:RequiredItemLocationQuantity>
+    <cac:RequiredItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="EA">144</cbc:MinimumQuantity>
+      <cbc:TradingRestrictions>Not sold to consumers.</cbc:TradingRestrictions>
+      <cac:ApplicableTerritoryAddress>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:ApplicableTerritoryAddress>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
+        <cbc:PriceType>Trade price</cbc:PriceType>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2026-05-04</cbc:StartDate>
+          <cbc:EndDate>2026-10-31</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <cac:PriceList>
+          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
           <cbc:PriceAmount currencyID="XLC">208</cbc:PriceAmount>
@@ -934,7 +1028,6 @@ Inside `CatalogueLine`:
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
@@ -1205,7 +1298,7 @@ Inside `CatalogueLine`:
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
@@ -1219,7 +1312,7 @@ Inside `CatalogueLine`:
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
+          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
           <cbc:PriceAmount currencyID="XLC">25.6</cbc:PriceAmount>
@@ -1235,16 +1328,9 @@ Inside `CatalogueLine`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
-      <cac:DependentPriceReference>
-        <cbc:Percent>12.31</cbc:Percent>
-        <cac:DependentLineReference>
-          <cbc:LineID>1</cbc:LineID>
-        </cac:DependentLineReference>
-      </cac:DependentPriceReference>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
-      <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>

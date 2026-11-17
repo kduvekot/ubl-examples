@@ -469,6 +469,8 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `LineItem/Item/CatalogueIndicator` = **true**  
+  The item is ordered from the seller's catalogue, which the order cites.
 - `LineItem/Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `LineItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
@@ -1040,6 +1042,7 @@ Inside `OrderLine`:
       </cac:Price>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+        <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
         <cbc:Keyword>park bench, street furniture</cbc:Keyword>
