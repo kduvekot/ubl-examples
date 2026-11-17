@@ -383,7 +383,7 @@ Inside `CatalogueLine`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Item/StandardItemIdentification/IssuerParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/RegistrationName` = **Codana Identification Agency SRU**  
+- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/RegistrationName` = **Codana Identification Agency**  
   The name under which the party is registered for value added tax; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/CompanyID` = **XU007395206** (schemeID `urn:ubl-examples:world:XU:tax`)  
   Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Codana Identification Agency (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
@@ -395,34 +395,14 @@ Inside `CatalogueLine`:
   The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationName` = **Codana Identification Agency SRU**  
-  The name under which the party is registered, with its legal form; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
-  Number in the Commercial register of Urvania; identity of Codana Identification Agency (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SRU = Società a responsabilità urvaniana (private limited company).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)**  
-  The name of code SRU in Urvania's national company legal form list.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 13 persons and its turnover of 391000000 XUF in 2025, by the Trade Accord's limits; identity of Codana Identification Agency (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
+- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationName` = **Codana Identification Agency**  
+  The public body's official name; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
   The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
   The town's English name, inherited from the Italian. The registered office, as entered in the register.
 - `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Item/StandardItemIdentification/IssuerParty/Contact/Name` = **Member services**  
   The party's main desk, which handles this document; identity of Codana Identification Agency (world/parties.json).
 - `Item/StandardItemIdentification/IssuerParty/Contact/JobTitle` = **Member services officer**  
@@ -1004,7 +984,7 @@ Inside `CatalogueLine`:
             </cac:Country>
           </cac:PostalAddress>
           <cac:PartyTaxScheme>
-            <cbc:RegistrationName>Codana Identification Agency SRU</cbc:RegistrationName>
+            <cbc:RegistrationName>Codana Identification Agency</cbc:RegistrationName>
             <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007395206</cbc:CompanyID>
             <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
             <cac:TaxScheme>
@@ -1018,13 +998,7 @@ Inside `CatalogueLine`:
             </cac:TaxScheme>
           </cac:PartyTaxScheme>
           <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Codana Identification Agency SRU</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:CompanyID>
-            <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-            <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-            <cbc:CompanyLegalForm>Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-            <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-            <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+            <cbc:RegistrationName>Codana Identification Agency</cbc:RegistrationName>
             <cac:RegistrationAddress>
               <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
               <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
@@ -1032,16 +1006,6 @@ Inside `CatalogueLine`:
                 <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               </cac:Country>
             </cac:RegistrationAddress>
-            <cac:CorporateRegistrationScheme>
-              <cbc:ID>XU:CR</cbc:ID>
-              <cbc:Name>Commercial register of Urvania</cbc:Name>
-              <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-              <cac:JurisdictionRegionAddress>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-                </cac:Country>
-              </cac:JurisdictionRegionAddress>
-            </cac:CorporateRegistrationScheme>
           </cac:PartyLegalEntity>
           <cac:Contact>
             <cbc:Name>Member services</cbc:Name>

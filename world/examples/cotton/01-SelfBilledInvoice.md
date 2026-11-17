@@ -233,7 +233,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
+  Number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/RegistrationDate` = **2009-08-17**  
   The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
@@ -256,12 +256,12 @@ Inside `AccountingSupplierParty`:
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:FR**  
   The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Farm register of Lisavu**  
+  The register the farm is entered in: Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46).
+- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **FARM** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of farms, not the companies register. The code is from the Trade Accord's corporate registration type list: FARM = Register of farms.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Farm office**  
@@ -641,9 +641,9 @@ Inside `InvoiceLine`:
           </cac:Country>
         </cac:RegistrationAddress>
         <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+          <cbc:ID>XL:FR</cbc:ID>
+          <cbc:Name>Farm register of Lisavu</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">FARM</cbc:CorporateRegistrationTypeCode>
           <cac:JurisdictionRegionAddress>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>

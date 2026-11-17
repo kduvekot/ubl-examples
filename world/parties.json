@@ -978,7 +978,7 @@
    "how": "Everyone in the world refers to the same products and properties. An identifier issuing agency gives those items and properties stable identifiers, which UBL documents carry in their identification elements, so a catalogue line, an order line and an invoice line point to exactly the same thing.",
    "identity": {
     "name": "Codana Identification Agency",
-    "kind": "company",
+    "kind": "public",
     "registry_id": "XU-R-105644",
     "endpoint": "XU:XU-R-105644",
     "contact": {
@@ -999,17 +999,7 @@
      "ID": "4160200261972596"
     },
     "industry": "8299",
-    "language": "en",
-    "legal": {
-     "form": "SRU",
-     "founded": "1996-01-01",
-     "headcount": 13,
-     "turnover": {
-      "amount": "391000000",
-      "currency": "XUF",
-      "year": 2025
-     }
-    }
+    "language": "en"
    }
   },
   {
@@ -1988,7 +1978,7 @@
    ],
    "identity": {
     "name": "Port of Lumeport",
-    "kind": "public",
+    "kind": "company",
     "registry_id": "20411781",
     "endpoint": "XB:20411781",
     "contact": {
@@ -2214,7 +2204,7 @@
    ],
    "identity": {
     "name": "Port of Selanu",
-    "kind": "public",
+    "kind": "company",
     "registry_id": "IC41037",
     "endpoint": "XL:IC41037",
     "contact": {
@@ -2298,8 +2288,7 @@
       "amount": "1220000.000",
       "currency": "XLC",
       "year": 2025
-     },
-     "head_office": "16-xl"
+     }
     }
    }
   },

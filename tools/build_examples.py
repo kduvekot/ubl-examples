@@ -368,9 +368,12 @@ def legal_entity(pid):
     idn, c = p["identity"], WORLD["countries"][p["c"]]
     src = f"identity of {idn['name']} (world/parties.json)"
     le = idn.get("legal", {})
-    out = {"RegistrationName": V(legal_name(pid), "The name under which the party is registered, with its legal form; "
-                                                  f"{src}."),
-           "CompanyID": V(idn["registry_id"], f"Number in the {c['registry']['name']}; {src}.")}
+    public = idn["kind"] == "public"           # a public body is in no register of businesses (D46, worklist C04)
+    farm = le.get("sole_proprietor") and c.get("farm_registry")
+    out = {"RegistrationName": V(legal_name(pid), ("The name under which the party is registered, with its legal form; "
+                                                   if not public else "The public body's official name; ") + f"{src}.")}
+    if not public:                             # a public body's own identifier: open point O142
+        out["CompanyID"] = V(idn["registry_id"], f"Number in the {(farm or c['registry'])['name']}; {src}.")
     if le.get("founded"):
         out["RegistrationDate"] = V(le["founded"], f"The day the company was entered in the register; {src}.")
     if le.get("form"):
@@ -384,10 +387,10 @@ def legal_entity(pid):
     if le.get("registration_expires"):
         out["RegistrationExpirationDate"] = V(le["registration_expires"], "The island renews a farm's registration "
                                                                           "every year: it runs until this date.")
-    if not idn.get("person"):
+    if not idn.get("person") and not public:
         out["CompanyLiquidationStatusCode"] = V("ACTIVE", "The register shows the company as active, not in "
                                                           "liquidation.")
-    if le.get("headcount"):
+    if le.get("headcount") and not public:
         t = le["turnover"]
         out["EntitySizeCode"] = V(codelists.entity_size(le["headcount"], t["amount"], t["currency"]),
                                   f"The size class follows from the company's {le['headcount']} persons and its turnover "
@@ -399,13 +402,21 @@ def legal_entity(pid):
     out["RegistrationAddress"] = {"CityName": city_names(p["c"], idn["address"]["CityName"], "The registered office, "
                                                          "as entered in the register."),
                                   "Country": {"IdentificationCode": V(p["c"], "The country of registration.")}}
-    out["CorporateRegistrationScheme"] = {
-        "ID": V(c["register_scheme"], "The identifier of the register in the world (world/countries.json)."),
-        "Name": V(c["registry"]["name"], "The register the company is entered in."),
-        "CorporateRegistrationTypeCode": V("COMMERCIAL", "A register of businesses, not a register of charities or "
-                                                         "associations."),
-        "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
-                                                                                  "country.")}}}
+    if farm:
+        out["CorporateRegistrationScheme"] = {
+            "ID": V(farm["scheme"], "The identifier of the register in the world (world/countries.json)."),
+            "Name": V(farm["name"], f"The register the farm is entered in: {farm['note']}"),
+            "CorporateRegistrationTypeCode": V("FARM", "A register of farms, not the companies register."),
+            "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
+                                                                                      "country.")}}}
+    elif not public:
+        out["CorporateRegistrationScheme"] = {
+            "ID": V(c["register_scheme"], "The identifier of the register in the world (world/countries.json)."),
+            "Name": V(c["registry"]["name"], "The register the company is entered in."),
+            "CorporateRegistrationTypeCode": V("COMMERCIAL", "A register of businesses, not a register of charities or "
+                                                             "associations."),
+            "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
+                                                                                      "country.")}}}
     if le.get("shareholder"):
         sh = le["shareholder"]
         out["ShareholderParty"] = {"ParticipationPercent": V(str(sh["percent"]), "The share it holds in this company; "

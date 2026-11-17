@@ -398,6 +398,16 @@ checks that no identifier of a party repeats the digits of another, apart
 from these two. An identifier is opaque: what a thing is and who issued its
 number is said by the elements around it, not read from the number.
 
+Companies are entered in their country's register of businesses, and a
+document shows that entry: the register, its type, the company's status and
+its size class. Public bodies are not: customs services, chambers of
+commerce, the Trade Accord Council, the review board, the public works
+department, Codana and the other agencies are set up by law, so they carry no
+commercial register entry, no liquidation status and no size class. The
+ports and the island's telecom operator are companies owned by the state and
+are in the register like any company. A farmer on the island is entered in
+Lisavu's farm register, which renews a grower's registration each season.
+
 A code held in an identifier element, such as the tax category in
 `TaxCategory/ID`, the language in `Language/ID`, the hazard class or the
 Incoterms rule in `DeliveryTerms/ID`, names its code list in `schemeID`, with

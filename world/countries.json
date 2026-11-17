@@ -602,6 +602,11 @@
      "pattern": "^\\d{3}$",
      "format": "three digits"
     }
+   },
+   "farm_registry": {
+    "name": "Farm register of Lisavu",
+    "scheme": "XL:FR",
+    "note": "Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46)."
    }
   }
  },

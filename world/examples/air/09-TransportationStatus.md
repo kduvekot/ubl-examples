@@ -275,10 +275,6 @@ Inside `Consignment`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/HeadOfficeParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `MainCarriageShipmentStage/TerminalOperatorParty/PartyLegalEntity/HeadOfficeParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Import desk**  
   The party's main desk, which handles this document; identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Cargo handling agent**  
@@ -668,14 +664,6 @@ Inside `StatusPeriod`:
               </cac:Country>
             </cac:JurisdictionRegionAddress>
           </cac:CorporateRegistrationScheme>
-          <cac:HeadOfficeParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Port of Selanu</cbc:Name>
-            </cac:PartyName>
-          </cac:HeadOfficeParty>
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Import desk</cbc:Name>
