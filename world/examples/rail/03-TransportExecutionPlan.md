@@ -373,7 +373,7 @@ Inside `ValidityPeriod`:
 
 - `StartDate` = **2026-04-08**  
   From the confirmation.
-- `EndDate` = **2026-04-17**  
+- `EndDate` = **2026-04-16**  
   Until the carriage is done.
 
 ### Main Transportation Service
@@ -398,14 +398,14 @@ Inside `AdditionalTransportationService`:
 
 Inside `ServiceStartTimePeriod`:
 
-- `StartDate` = **2026-04-14**  
+- `StartDate` = **2026-04-13**  
   Collection, as requested.
 
 ### Service End Time Period
 
 Inside `ServiceEndTimePeriod`:
 
-- `EndDate` = **2026-04-17**  
+- `EndDate` = **2026-04-16**  
   Delivered within three days.
 
 ### From Location
@@ -470,13 +470,6 @@ Inside `ToLocation`:
 - `Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 
-### At Location
-
-Inside `AtLocation`:
-
-- `Name` = **Ferrano Rail Cargo**  
-  Where the carrier's planning sits.
-
 ### Transport Execution Terms
 
 Inside `TransportExecutionTerms`:
@@ -489,14 +482,10 @@ Inside `TransportExecutionTerms`:
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
   When the freight is paid.
-- `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
-  The penalty for late delivery.
-- `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
-  Per day late.
+- `PenaltyPaymentTerms/Note` = **For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.**  
+  The carrier's liability for delay, in words: PenaltySurchargePercent is a surcharge for late payment, not for late delivery (worklist C19).
 - `NotificationRequirement/NotificationTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportNotificationTypeCode`)  
   Notice before arrival. The code is from the Trade Accord's transport notification type list: PREARRIVAL = Pre-arrival notice.
-- `NotificationRequirement/PostEventNotificationDurationMeasure` = **1** (unitCode `HUR`)  
-  And an hour after delivery the proof.
 - `NotificationRequirement/PreEventNotificationDurationMeasure` = **2** (unitCode `HUR`)  
   Two hours before.
 - `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -505,8 +494,8 @@ Inside `TransportExecutionTerms`:
   A party referred to from another party's details: its identifier and name are enough.
 - `NotificationRequirement/NotificationLocation/Name` = **Ferrano Intermodal Hub**  
   Where the notice is for.
-- `ServiceChargePaymentTerms/Note` = **Waiting time 40 per hour beyond two hours.**  
-  The service charge.
+- `ServiceChargePaymentTerms/Note` = **Waiting time 4,000 ferra per hour beyond two hours.**  
+  The service charge, in the carrier's currency, at the rate of its framework terms.
 
 ### Consignment
 
@@ -1005,7 +994,7 @@ Inside `Consignment`:
   </cac:TransportUserResponseRequiredPeriod>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-08</cbc:StartDate>
-    <cbc:EndDate>2026-04-17</cbc:EndDate>
+    <cbc:EndDate>2026-04-16</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:MainTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
@@ -1016,10 +1005,10 @@ Inside `Consignment`:
     <cbc:Name>Notice two hours before arrival</cbc:Name>
   </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
-    <cbc:StartDate>2026-04-14</cbc:StartDate>
+    <cbc:StartDate>2026-04-13</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-04-17</cbc:EndDate>
+    <cbc:EndDate>2026-04-16</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:Name>Castrano Logistics</cbc:Name>
@@ -1059,9 +1048,6 @@ Inside `Consignment`:
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
-  <cac:AtLocation>
-    <cbc:Name>Ferrano Rail Cargo</cbc:Name>
-  </cac:AtLocation>
   <cac:TransportExecutionTerms>
     <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
     <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
@@ -1070,12 +1056,10 @@ Inside `Consignment`:
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
     <cac:PenaltyPaymentTerms>
-      <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
-      <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
+      <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
     </cac:PenaltyPaymentTerms>
     <cac:NotificationRequirement>
       <cbc:NotificationTypeCode listID="urn:ubl-examples:world:codelist:TransportNotificationTypeCode">PREARRIVAL</cbc:NotificationTypeCode>
-      <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
       <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
       <cac:NotifyParty>
         <cac:PartyIdentification>
@@ -1090,7 +1074,7 @@ Inside `Consignment`:
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
-      <cbc:Note>Waiting time 40 per hour beyond two hours.</cbc:Note>
+      <cbc:Note>Waiting time 4,000 ferra per hour beyond two hours.</cbc:Note>
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>

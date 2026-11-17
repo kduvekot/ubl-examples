@@ -467,13 +467,6 @@ Inside `ToLocation`:
 - `Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 
-### At Location
-
-Inside `AtLocation`:
-
-- `Name` = **Ferrano Rail Cargo**  
-  Where the carrier's planning sits.
-
 ### Transport Execution Terms
 
 Inside `TransportExecutionTerms`:
@@ -490,32 +483,28 @@ Inside `TransportExecutionTerms`:
   The buyer's terms with the mine, for the carrier's information. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `BonusPaymentTerms/Note` = **2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.**  
   The bonus the factory pays for an early train: its stockyard can use the ore at once.
-- `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
-  The penalty for late delivery.
-- `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
-  Per day late.
+- `PenaltyPaymentTerms/Note` = **For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.**  
+  The carrier's liability for delay, in words: PenaltySurchargePercent is a surcharge for late payment, not for late delivery (worklist C19).
 - `EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
   Greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `EnvironmentalEmission/ValueMeasure` = **1.9** (unitCode `TNE`)  
   Estimated for the trip, electric traction.
 - `NotificationRequirement/NotificationTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportNotificationTypeCode`)  
   Notice before arrival. The code is from the Trade Accord's transport notification type list: PREARRIVAL = Pre-arrival notice.
-- `NotificationRequirement/PostEventNotificationDurationMeasure` = **1** (unitCode `HUR`)  
-  And an hour after delivery the proof.
 - `NotificationRequirement/PreEventNotificationDurationMeasure` = **2** (unitCode `HUR`)  
   Two hours before.
 - `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `NotificationRequirement/NotifyParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
-- `NotificationRequirement/NotificationPeriod/StartDate` = **2026-03-04**  
-  Notices are given from the day of the plan
-- `NotificationRequirement/NotificationPeriod/EndDate` = **2026-03-08**  
-  until the ore is delivered.
+- `NotificationRequirement/NotificationPeriod/StartDate` = **2026-03-10**  
+  The notice is given on the day of the train
+- `NotificationRequirement/NotificationPeriod/EndDate` = **2026-03-10**  
+  before it arrives (ore/03#F2).
 - `NotificationRequirement/NotificationLocation/Name` = **Valdara Industries**  
   Where the notice is for.
-- `ServiceChargePaymentTerms/Note` = **Waiting time 40 per hour beyond two hours.**  
-  The service charge.
+- `ServiceChargePaymentTerms/Note` = **Waiting time 4,000 ferra per hour beyond two hours.**  
+  The service charge, in the carrier's currency, at the rate of its framework terms.
 
 ### Consignment
 
@@ -985,9 +974,6 @@ Inside `Consignment`:
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
-  <cac:AtLocation>
-    <cbc:Name>Ferrano Rail Cargo</cbc:Name>
-  </cac:AtLocation>
   <cac:TransportExecutionTerms>
     <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
     <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
@@ -1002,8 +988,7 @@ Inside `Consignment`:
       <cbc:Note>2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.</cbc:Note>
     </cac:BonusPaymentTerms>
     <cac:PenaltyPaymentTerms>
-      <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
-      <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
+      <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
     </cac:PenaltyPaymentTerms>
     <cac:EnvironmentalEmission>
       <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
@@ -1011,7 +996,6 @@ Inside `Consignment`:
     </cac:EnvironmentalEmission>
     <cac:NotificationRequirement>
       <cbc:NotificationTypeCode listID="urn:ubl-examples:world:codelist:TransportNotificationTypeCode">PREARRIVAL</cbc:NotificationTypeCode>
-      <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
       <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
       <cac:NotifyParty>
         <cac:PartyIdentification>
@@ -1022,15 +1006,15 @@ Inside `Consignment`:
         </cac:PartyName>
       </cac:NotifyParty>
       <cac:NotificationPeriod>
-        <cbc:StartDate>2026-03-04</cbc:StartDate>
-        <cbc:EndDate>2026-03-08</cbc:EndDate>
+        <cbc:StartDate>2026-03-10</cbc:StartDate>
+        <cbc:EndDate>2026-03-10</cbc:EndDate>
       </cac:NotificationPeriod>
       <cac:NotificationLocation>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
-      <cbc:Note>Waiting time 40 per hour beyond two hours.</cbc:Note>
+      <cbc:Note>Waiting time 4,000 ferra per hour beyond two hours.</cbc:Note>
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>

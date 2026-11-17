@@ -240,8 +240,8 @@
   </cac:BuyerCustomerParty>
   <cac:Delivery>
     <cac:PromisedDeliveryPeriod>
-      <cbc:StartDate>2026-03-02</cbc:StartDate>
-      <cbc:EndDate>2026-03-16</cbc:EndDate>
+      <cbc:StartDate>2026-02-26</cbc:StartDate>
+      <cbc:EndDate>2026-03-06</cbc:EndDate>
     </cac:PromisedDeliveryPeriod>
   </cac:Delivery>
   <cac:DeliveryTerms>

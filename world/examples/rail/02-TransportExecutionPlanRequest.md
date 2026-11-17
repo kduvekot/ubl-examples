@@ -319,14 +319,14 @@ Inside `MainTransportationService`:
 
 Inside `ServiceStartTimePeriod`:
 
-- `StartDate` = **2026-04-14**  
+- `StartDate` = **2026-04-13**  
   The day the goods should be collected.
 
 ### Service End Time Period
 
 Inside `ServiceEndTimePeriod`:
 
-- `EndDate` = **2026-04-17**  
+- `EndDate` = **2026-04-16**  
   Delivered within three days.
 
 ### From Location
@@ -802,10 +802,10 @@ Inside `Consignment`:
     <cbc:Name>Container train</cbc:Name>
   </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
-    <cbc:StartDate>2026-04-14</cbc:StartDate>
+    <cbc:StartDate>2026-04-13</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-04-17</cbc:EndDate>
+    <cbc:EndDate>2026-04-16</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:Name>Castrano Logistics</cbc:Name>

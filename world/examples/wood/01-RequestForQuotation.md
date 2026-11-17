@@ -300,10 +300,10 @@ Inside `Delivery`:
 
 - `DeliveryLocation/Name` = **Valdara Industries, goods-in, Ferrano**  
   Where the slats are wanted.
-- `RequestedDeliveryPeriod/StartDate` = **2026-03-02**  
-  From the third week.
-- `RequestedDeliveryPeriod/EndDate` = **2026-03-16**  
-  Within two weeks.
+- `RequestedDeliveryPeriod/StartDate` = **2026-02-26**  
+  From the end of the second week.
+- `RequestedDeliveryPeriod/EndDate` = **2026-03-06**  
+  Within about a week (wood/04#F1).
 
 ### Delivery Terms
 
@@ -704,8 +704,8 @@ Inside `RequestForQuotationLine`:
       <cbc:Name>Valdara Industries, goods-in, Ferrano</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-03-02</cbc:StartDate>
-      <cbc:EndDate>2026-03-16</cbc:EndDate>
+      <cbc:StartDate>2026-02-26</cbc:StartDate>
+      <cbc:EndDate>2026-03-06</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
   </cac:Delivery>
   <cac:DeliveryTerms>

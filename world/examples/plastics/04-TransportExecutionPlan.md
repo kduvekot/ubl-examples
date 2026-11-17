@@ -432,13 +432,6 @@ Inside `ToLocation`:
 - `Address/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 
-### At Location
-
-Inside `AtLocation`:
-
-- `Name` = **Fiumella Barges**  
-  Where the carrier's planning sits.
-
 ### Transport Execution Terms
 
 Inside `TransportExecutionTerms`:
@@ -451,16 +444,10 @@ Inside `TransportExecutionTerms`:
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
   When the freight is paid.
-- `CommissionPaymentTerms/Note` = **Brokerage of 1.25 % of the freight, paid by the barge operator to the barge broker that found the barge for this voyage.**  
-  The commission on the freight, as usual in inland shipping: the carrier pays the broker.
-- `PenaltyPaymentTerms/Note` = **5 % of the freight per day late, at most 25 %.**  
-  The penalty for late delivery.
-- `PenaltyPaymentTerms/PenaltySurchargePercent` = **5**  
-  Per day late.
+- `PenaltyPaymentTerms/Note` = **For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.**  
+  The carrier's liability for delay, in words: PenaltySurchargePercent is a surcharge for late payment, not for late delivery (worklist C19).
 - `NotificationRequirement/NotificationTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportNotificationTypeCode`)  
   Notice before arrival. The code is from the Trade Accord's transport notification type list: PREARRIVAL = Pre-arrival notice.
-- `NotificationRequirement/PostEventNotificationDurationMeasure` = **1** (unitCode `HUR`)  
-  And an hour after delivery the proof.
 - `NotificationRequirement/PreEventNotificationDurationMeasure` = **2** (unitCode `HUR`)  
   Two hours before.
 - `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -469,8 +456,8 @@ Inside `TransportExecutionTerms`:
   A party referred to from another party's details: its identifier and name are enough.
 - `NotificationRequirement/NotificationLocation/Name` = **Rivermouth Packaging**  
   Where the notice is for.
-- `ServiceChargePaymentTerms/Note` = **Waiting time 40 per hour beyond two hours.**  
-  The service charge.
+- `ServiceChargePaymentTerms/Note` = **Waiting time 4,000 ferra per hour beyond two hours.**  
+  The service charge, in the carrier's currency, at the rate of its framework terms.
 
 ### Consignment
 
@@ -1006,9 +993,6 @@ Inside `Consignment`:
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
-  <cac:AtLocation>
-    <cbc:Name>Fiumella Barges</cbc:Name>
-  </cac:AtLocation>
   <cac:TransportExecutionTerms>
     <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
     <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
@@ -1016,16 +1000,11 @@ Inside `Consignment`:
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
     </cac:PaymentTerms>
-    <cac:CommissionPaymentTerms>
-      <cbc:Note>Brokerage of 1.25 % of the freight, paid by the barge operator to the barge broker that found the barge for this voyage.</cbc:Note>
-    </cac:CommissionPaymentTerms>
     <cac:PenaltyPaymentTerms>
-      <cbc:Note>5 % of the freight per day late, at most 25 %.</cbc:Note>
-      <cbc:PenaltySurchargePercent>5</cbc:PenaltySurchargePercent>
+      <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
     </cac:PenaltyPaymentTerms>
     <cac:NotificationRequirement>
       <cbc:NotificationTypeCode listID="urn:ubl-examples:world:codelist:TransportNotificationTypeCode">PREARRIVAL</cbc:NotificationTypeCode>
-      <cbc:PostEventNotificationDurationMeasure unitCode="HUR">1</cbc:PostEventNotificationDurationMeasure>
       <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
       <cac:NotifyParty>
         <cac:PartyIdentification>
@@ -1040,7 +1019,7 @@ Inside `Consignment`:
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
-      <cbc:Note>Waiting time 40 per hour beyond two hours.</cbc:Note>
+      <cbc:Note>Waiting time 4,000 ferra per hour beyond two hours.</cbc:Note>
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>

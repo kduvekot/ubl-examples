@@ -306,10 +306,10 @@ Inside `BuyerCustomerParty`:
 
 Inside `Delivery`:
 
-- `PromisedDeliveryPeriod/StartDate` = **2026-03-02**  
-  From the third week.
-- `PromisedDeliveryPeriod/EndDate` = **2026-03-16**  
-  Within two weeks.
+- `PromisedDeliveryPeriod/StartDate` = **2026-02-26**  
+  From the end of the second week, as asked.
+- `PromisedDeliveryPeriod/EndDate` = **2026-03-06**  
+  Within about a week.
 
 ### Delivery Terms
 
@@ -770,8 +770,8 @@ Inside `QuotationLine`:
   </cac:BuyerCustomerParty>
   <cac:Delivery>
     <cac:PromisedDeliveryPeriod>
-      <cbc:StartDate>2026-03-02</cbc:StartDate>
-      <cbc:EndDate>2026-03-16</cbc:EndDate>
+      <cbc:StartDate>2026-02-26</cbc:StartDate>
+      <cbc:EndDate>2026-03-06</cbc:EndDate>
     </cac:PromisedDeliveryPeriod>
   </cac:Delivery>
   <cac:DeliveryTerms>

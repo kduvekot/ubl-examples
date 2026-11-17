@@ -322,8 +322,8 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Please pay within ten days by credit transfer; the next collection will be by direct debit again.**  
-  What the household is asked to do.
+- `Note` = **Please pay within ten days by credit transfer; the next collection will be by direct debit again. The surcharge for late payment is waived for this first reminder.**  
+  What the household is asked to do, and why no surcharge is charged (utilities/10#F9).
 - `PaymentDueDate` = **2026-05-11**  
   Ten days after the reminder.
 
@@ -387,8 +387,6 @@ Inside `ReminderLine`:
   The water company books the fee as other income.
 - `AccountingCost` = **Reminder fees**  
   In words.
-- `PenaltySurchargePercent` = **0**  
-  No surcharge yet: the first reminder.
 - `Amount` = **5.00** (currencyID `XBL`)  
   The fee charged.
 
@@ -642,7 +640,7 @@ Inside `ReminderLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again.</cbc:Note>
+    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again. The surcharge for late payment is waived for this first reminder.</cbc:Note>
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
@@ -687,7 +685,6 @@ Inside `ReminderLine`:
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
     <cbc:AccountingCostCode>8320</cbc:AccountingCostCode>
     <cbc:AccountingCost>Reminder fees</cbc:AccountingCost>
-    <cbc:PenaltySurchargePercent>0</cbc:PenaltySurchargePercent>
     <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>

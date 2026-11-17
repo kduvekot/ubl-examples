@@ -674,10 +674,15 @@ def address_of(pid):
 TEP_BONUS = {"ore": ("2 % of the freight when the train is delivered on the first day of the window, so that the "
                      "factory can start the blend a day early.", "The bonus the factory pays for an early train: "
                                                                  "its stockyard can use the ore at once.")}
-TEP_COMMISSION = {"plastics": ("Brokerage of 1.25 % of the freight, paid by the barge operator to the barge broker "
-                               "that found the barge for this voyage.", "The commission on the freight, as usual in "
-                                                                        "inland shipping: the carrier pays the "
-                                                                        "broker.")}
+TEP_COMMISSION = {}      # the barge is booked directly under the framework terms: no broker (plastics/04#F15)
+WAITING_LUME = 40        # the waiting-time rate of the framework terms, in lume an hour
+
+
+def waiting_rate(carrier):
+    """The waiting-time rate in the carrier's own currency, at the parities (1 lume = 100 ferra = 0.4 coral)."""
+    c = WORLD["countries"][PARTY[carrier]["c"]]["currency"]
+    per = {"XBL": Decimal(1), "XUF": Decimal(100), "XLC": Decimal("0.4")}[c["code"]]
+    return f"{WAITING_LUME * per:,.0f} {c['name'].lower()}"
 
 
 def tep_terms(flow, user, provider, days):
@@ -689,19 +694,19 @@ def tep_terms(flow, user, provider, days):
             "ChangeConditions": V("Changes up to 24 hours before collection without charge.", "When the plan may "
                                                                                               "change."),
             "PaymentTerms": {"Note": V("30 days net from the consignment note.", "When the freight is paid.")},
-            "PenaltyPaymentTerms": {"Note": V("5 % of the freight per day late, at most 25 %.", "The penalty for "
-                                                                                                "late delivery."),
-                                    "PenaltySurchargePercent": V("5", "Per day late.")},
+            "PenaltyPaymentTerms": {"Note": V("For late delivery the carrier is liable for 5 % of the freight per "
+                                              "day late, at most 25 %.", "The carrier's liability for delay, in "
+                                              "words: PenaltySurchargePercent is a surcharge for late payment, not "
+                                              "for late delivery (worklist C19).")},
             **({"BonusPaymentTerms": {"Note": V(*TEP_BONUS[flow.id])}} if flow.id in TEP_BONUS else {}),
             **({"CommissionPaymentTerms": {"Note": V(*TEP_COMMISSION[flow.id])}} if flow.id in TEP_COMMISSION
                else {}),
-            "ServiceChargePaymentTerms": {"Note": V("Waiting time 40 per hour beyond two hours.", "The service "
-                                                                                                  "charge.")},
+            "ServiceChargePaymentTerms": {"Note": V(f"Waiting time {waiting_rate(provider)} per hour beyond two "
+                                                    "hours.", "The service charge, in the carrier's currency, at "
+                                                              "the rate of its framework terms.")},
             "NotificationRequirement": {"NotificationTypeCode": V("PREARRIVAL", "Notice before arrival."),
                                         "PreEventNotificationDurationMeasure": V("2", "Two hours before.",
                                                                                  unitCode="HUR"),
-                                        "PostEventNotificationDurationMeasure": V("1", "And an hour after delivery "
-                                                                                       "the proof.", unitCode="HUR"),
                                         "NotifyParty": party_short(leg["to"]),
                                         "NotificationLocation": {"Name": V(PARTY[leg["to"]]["identity"]["name"],
                                                                            "Where the notice is for.")}}}
@@ -763,7 +768,6 @@ def tep(flow, n, doc, day, why, start_day, weight):
                                                 "Name": V("Notice two hours before arrival", "In words.")},
             "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
             **places,
-            "AtLocation": {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the carrier's planning sits.")},
             "TransportExecutionTerms": tep_terms(flow, doc["to"], doc["from"], 3),
             "TransportExecutionPlanRequestDocumentReference": {"ID": V(flow.numbers["tep-request"],
                                                                        "The request this plan answers.")},

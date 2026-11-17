@@ -683,11 +683,11 @@ def rail(n, doc):
                          "carrier).", "Rail siding of Lumeway Distribution, Marrowdale")
     if doc["doc"] == "TransportExecutionPlanRequest":
         out = kit.tep_request(f, n, doc, 1, "Under DAP the manufacturer is the transport user and books the train.",
-                              8, w, "Two containers of benches.")
+                              7, w, "Two containers of benches.")   # the service starts with the pickup (rail/02#F2)
         kit.deep_merge(out["Consignment"], rail_consignment(f, "request"))
         return out
     if doc["doc"] == "TransportExecutionPlan":
-        out = kit.tep(f, n, doc, 2, "The rail carrier confirms the slots on the container train.", 8, w)
+        out = kit.tep(f, n, doc, 2, "The rail carrier confirms the slots on the container train.", 7, w)
         kit.deep_merge(out["Consignment"], rail_consignment(f, "plan"))
         return out
     if doc["doc"] == "TransitCustomsDeclaration":
@@ -3105,7 +3105,9 @@ def utilities(n, doc):
                                                 "IssuerParty": party("25-xb", short=True)},
                 "PayeeParty": party("34-xb", short=True),
                 "PaymentTerms": {"Note": V("Please pay within ten days by credit transfer; the next collection will "
-                                           "be by direct debit again.", "What the household is asked to do."),
+                                           "be by direct debit again. The surcharge for late payment is waived for "
+                                           "this first reminder.", "What the household is asked to do, and why no "
+                                           "surcharge is charged (utilities/10#F9)."),
                                  "PaymentDueDate": V(f.date(40), "Ten days after the reminder.")},
                 "TaxTotal": {"TaxAmount": amount(0, cur, "No sales tax on a reminder fee."),
                              "TaxSubtotal": {"TaxableAmount": amount(Decimal("5.00"), cur, "The fee."),
@@ -3140,7 +3142,6 @@ def utilities(n, doc):
                                   "DebitLineAmount": amount(Decimal("5.00"), cur, "The fee for a returned direct "
                                                                                   "debit, as the terms set."),
                                   "Amount": amount(Decimal("5.00"), cur, "The fee charged."),
-                                  "PenaltySurchargePercent": V("0", "No surcharge yet: the first reminder."),
                                   "AccountingCostCode": V("8320", "The water company books the fee as other "
                                                                   "income."),
                                   "AccountingCost": V("Reminder fees", "In words.")}]}
@@ -5220,8 +5221,8 @@ def _(f, n, doc, out):
             "Signature": seal(doc["from"], "VI-SIG-26-RFQ"),
             "Delivery": {"DeliveryLocation": {"Name": V("Valdara Industries, goods-in, Ferrano", "Where the slats "
                                                                                                 "are wanted.")},
-                         "RequestedDeliveryPeriod": {"StartDate": V(f.date(14), "From the third week."),
-                                                     "EndDate": V(f.date(28), "Within two weeks.")}},
+                         "RequestedDeliveryPeriod": {"StartDate": V(f.date(10), "From the end of the second week."),
+                                                     "EndDate": V(f.date(18), "Within about a week (wood/04#F1).")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory.", schemeID="INCOTERMS")},
             "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
             "Contract": {"ID": V("VI-PUR-TERMS-2026", "The manufacturer's purchasing terms.")},
@@ -5260,8 +5261,9 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V("MS-GTC-2026", "The sawmill's terms of sale.")},
             "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, accepted.")},
             "Signature": seal(doc["from"], "MS-SIG-26-QT"),
-            "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(14), "From the third week."),
-                                                    "EndDate": V(f.date(28), "Within two weeks.")}},
+            "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(10), "From the end of the second week, "
+                                                                              "as asked."),
+                                                    "EndDate": V(f.date(18), "Within about a week.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory, as asked.", schemeID="INCOTERMS")},
             "PaymentMeans": {"PaymentMeansCode": V("30", "By credit transfer.", listID="UN/EDIFACT EDED 4461")},
             "TransactionConditions": {"Description": V("Quoted per thousand slats; minimum one truck.", "The "
@@ -7537,8 +7539,8 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     for d in find_dicts(out, "NotificationRequirement"):
         for nr in lines_of(d, "NotificationRequirement"):
-            nr["NotificationPeriod"] = {"StartDate": V(f.date(2), "Notices are given from the day of the plan"),
-                                        "EndDate": V(f.date(6), "until the ore is delivered.")}
+            nr["NotificationPeriod"] = {"StartDate": V(f.date(8), "The notice is given on the day of the train"),
+                                        "EndDate": V(f.date(8), "before it arrives (ore/03#F2).")}
     return {"TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan this plan "
                                                                                    "updates (not shown).")},
             "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The service description it "
