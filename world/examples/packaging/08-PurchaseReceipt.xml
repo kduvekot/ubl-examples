@@ -15,9 +15,6 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
-      <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4719</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
@@ -70,13 +67,8 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
-        <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -102,16 +94,6 @@
         <cbc:ElectronicMail>receivables@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:AdditionalWebSite>
-        <cbc:Name>Online shop</cbc:Name>
-        <cbc:URI>https://shop.brightmarket.example</cbc:URI>
-      </cac:AdditionalWebSite>
-      <cac:SocialMediaProfile>
-        <cbc:ID>10442197</cbc:ID>
-        <cbc:Name>brightmarket</cbc:Name>
-        <cbc:SocialMediaTypeCode listID="urn:ubl-examples:world:codelist:SocialMediaTypeCode">PHOTO</cbc:SocialMediaTypeCode>
-        <cbc:URI>https://social.example/brightmarket</cbc:URI>
-      </cac:SocialMediaProfile>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>

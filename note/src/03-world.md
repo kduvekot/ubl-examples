@@ -608,6 +608,39 @@ city.
 Lisavu's farm register renews a grower's registration each season, so a
 farm's register entry carries an expiry date.
 
+### What a document says about a party
+
+Master data is not copied from one record into every document. Each party
+is the authority on its own data, and every document stands on its own: no
+party relies on the other having kept an older document.
+
+- **The sender** describes itself in full for the kind of document. In a
+  trade, payment or transport document, that means its identifiers, name,
+  language, address, contact and electronic address. An invoice adds the
+  sender's tax registration and legal entity. A customs or cross-border
+  transport document adds the customs trader number. A tender, a catalogue
+  or a business presentation adds what presents the company: its legal
+  details, website and industry class.
+- **The receiver** is described with what the sender knows and needs. This
+  may be less than the receiver says about itself, and never contradicts
+  it. A buyer's order names the seller by number, name, address and
+  electronic address. The seller's language comes in its order response, and
+  its legal entity in its invoice. The answer completes the picture.
+- **A third party** (a carrier in a despatch advice, a bank, a party
+  collected for) gets what the receiver needs to recognise or reach it.
+
+The table per kind of document is `analysis/party-profile.md`, and the
+build checks it.
+
+**Company documents.** Urvania's company law asks every company to state
+its register, its number in it, its legal form and its registered office on
+its invoices and business letters. An SUA also states its share capital as
+paid up, as the last balance sheet shows it, as Italian law asks of
+companies limited by shares (art. 2250 codice civile). Bayvarra and Lisavu
+follow the EU company-law directive (2017/1132, Art. 26), under which
+stating the capital is optional, and their companies leave it out. So only
+an Urvanian SUA's own invoices carry its share capital.
+
 ## Items
 
 Every party that sells has items. Goods carry what the documents along

@@ -86,7 +86,8 @@
    "legal_forms": {
     "SUA": {
      "name": "Società urvaniana per azioni (public limited company)",
-     "abbreviation": "SUA"
+     "abbreviation": "SUA",
+     "capital_on_documents": true
     },
     "SRU": {
      "name": "Società a responsabilità urvaniana (private limited company)",
@@ -207,7 +208,8 @@
      "format": "XU-ENV-, the year of issue and a four-digit number"
     }
    },
-   "province": "Province of Ferrano"
+   "province": "Province of Ferrano",
+   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (decision O147, 2026-11-17, after Italy's art. 2250 codice civile). Bayvarra and Lisavu follow the model of the EU company-law directive (2017/1132, Art. 26): stating the capital is optional, and their companies do not."
   },
   "XB": {
    "name": "Bayvarra",

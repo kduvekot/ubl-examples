@@ -56,10 +56,6 @@ Inside `AdditionalDocumentReference`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/WebsiteURI` = **https://www.fiumella.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Fiumella Barges (world/parties.json).
-- `Party/IndustryClassificationCode` = **5022** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Fiumella Barges (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5022 = Inland freight water transport.
 - `Party/PartyIdentification/ID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Fiumella Barges**  
@@ -110,18 +106,12 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; identity of Fiumella Barges (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
   Number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Fiumella Barges (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SRU = Società a responsabilità urvaniana (private limited company).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)** (languageID `qau`)  
   The name of code SRU in Urvania's national company legal form list. In Urvanian, the sender's language.
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)** (languageID `en-XU`)  
   The name of code SRU in Urvania's national company legal form list. In English.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 30 persons and its turnover of 540000000 XUF in 2025, by the Trade Accord's limits; identity of Fiumella Barges (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
   The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
@@ -157,20 +147,10 @@ Inside `AccountingSupplierParty`:
 
 Inside `AccountingCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.rinova.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Rinova Recovery (world/parties.json).
-- `Party/IndustryClassificationCode` = **3830** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Rinova Recovery (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3830 = Materials recovery.
 - `Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **XU-TR-104548** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
 - `Party/PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
-- `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
 - `Party/PostalAddress/ID` = **4160202983340277** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -197,48 +177,10 @@ Inside `AccountingCustomerParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Party/PartyTaxScheme/RegistrationName` = **Rinova Recovery SRU**  
-  The name under which the party is registered for value added tax; identity of Rinova Recovery (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **XU007318479** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `Party/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/RegistrationName` = **Rinova Recovery SRU**  
   The name under which the party is registered, with its legal form; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   Number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Rinova Recovery (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SRU = Società a responsabilità urvaniana (private limited company).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)** (languageID `qau`)  
-  The name of code SRU in Urvania's national company legal form list. In Urvanian, the sender's language.
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)** (languageID `en-XU`)  
-  The name of code SRU in Urvania's national company legal form list. In English.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 47 persons and its turnover of 722000000 XUF in 2025, by the Trade Accord's limits; identity of Rinova Recovery (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/Contact/Name` = **Accounts payable**  
   The party's accounts payable desk: the desk for its role in this document (it pays); identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
@@ -251,20 +193,6 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rinova Recovery (world/parties.json).
-- `Party/PartyAuthorization/PurposeCode` = **R3** (listID `Basel Convention Annex IV`)  
-  The purpose as a code. The code is from the world's copy of Basel Convention, Annex IV: disposal and recovery operations: R3 = Recycling/reclamation of organic substances which are not used as solvents.
-- `Party/PartyAuthorization/Purpose` = **Recovery of non-hazardous plastic waste**  
-  What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
-- `Party/PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
-  The authorization expires on this date.
-- `Party/PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
-  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
-- `Party/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
-- `Party/PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `Party/PartyAuthorization/Certificate/CertificateType` = **Operating permit** (languageID `en-XU`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In English.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104548** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -476,8 +404,6 @@ Inside `InvoiceLine`:
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
       </cac:PartyIdentification>
@@ -522,12 +448,9 @@ Inside `InvoiceLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Fiumella Barges SRU</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
@@ -562,21 +485,12 @@ Inside `InvoiceLine`:
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104548</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202983340277</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -594,46 +508,9 @@ Inside `InvoiceLine`:
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007318479</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XU:CR</cbc:ID>
-          <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts payable</cbc:Name>
@@ -643,19 +520,6 @@ Inside `InvoiceLine`:
         <cbc:ElectronicMail>payables@rinova.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:PartyAuthorization>
-        <cbc:PurposeCode listID="Basel Convention Annex IV">R3</cbc:PurposeCode>
-        <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
-        <cac:ValidityPeriod>
-          <cbc:EndDate>2029-12-31</cbc:EndDate>
-        </cac:ValidityPeriod>
-        <cac:Certificate>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
-          <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
-          <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
-        </cac:Certificate>
-      </cac:PartyAuthorization>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>

@@ -55,8 +55,6 @@ Inside `DespatchDocumentReference`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/IndustryClassificationCode` = **4290** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Saltmere Engineering (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4290 = Construction of other civil engineering projects.
 - `Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Saltmere Engineering**  
@@ -109,8 +107,6 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; identity of Saltmere Engineering (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -144,18 +140,10 @@ Inside `AccountingSupplierParty`:
 
 Inside `AccountingCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.selanutelecom.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Selanu Telecom (world/parties.json).
-- `Party/IndustryClassificationCode` = **6110** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Selanu Telecom (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 6110 = Wired telecommunications activities.
 - `Party/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Selanu Telecom**  
   The trading name; identity of Selanu Telecom (world/parties.json).
-- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/ID` = **34928611** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Telecom (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -182,30 +170,6 @@ Inside `AccountingCustomerParty`:
   The name under which the party is registered, with its legal form; identity of Selanu Telecom (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
   Number in the Island companies register; identity of Selanu Telecom (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Selanu Telecom (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The name of code LTD in Lisavu's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 20 persons and its turnover of 3230000.000 XLC in 2025, by the Trade Accord's limits; identity of Selanu Telecom (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XB`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Accounts payable**  
   The party's accounts payable desk: the desk for its role in this document (it pays); identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
@@ -627,7 +591,6 @@ Inside `InvoiceLine`:
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
       </cac:PartyIdentification>
@@ -673,7 +636,6 @@ Inside `InvoiceLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
@@ -707,18 +669,12 @@ Inside `InvoiceLine`:
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">6110</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">34928611</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -737,28 +693,6 @@ Inside `InvoiceLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts payable</cbc:Name>

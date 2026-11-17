@@ -109,8 +109,6 @@ Inside `ProviderParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
   A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
-- `AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
@@ -147,38 +145,14 @@ Inside `ProviderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
-  The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
   The name of code LTD in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -212,12 +186,6 @@ Inside `ProviderParty`:
 
 Inside `ReceiverParty`:
 
-- `WebsiteURI` = **https://www.brightmarket.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
-- `LogoReferenceID` = **BM-LOGO-2024**  
-  The reference of the logo the store prints on its documents; identity of Brightmarket Stores (world/parties.json).
-- `IndustryClassificationCode` = **4719** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4719 = Other retail sale in non-specialized stores.
 - `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
@@ -258,50 +226,6 @@ Inside `ReceiverParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Brightmarket Stores Corp**  
-  The name under which the party is registered for state sales tax; identity of Brightmarket Stores (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1231233** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/RegistrationName` = **Brightmarket Stores Corp**  
-  The name under which the party is registered, with its legal form; identity of Brightmarket Stores (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1979-02-14**  
-  The day the company was entered in the register; identity of Brightmarket Stores (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
-- `PartyLegalEntity/CompanyLegalForm` = **Corporation (public)**  
-  The name of code CORP in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 2900 persons and its turnover of 671000000.00 XBL in 2025, by the Trade Accord's limits; identity of Brightmarket Stores (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/ID` = **BM-CT-01**  
   The desk's number in the party's own contact list.
 - `Contact/Name` = **Buying office**  
@@ -316,18 +240,6 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
-- `AdditionalWebSite/Name` = **Online shop**  
-  The store's second website, where consumers buy.
-- `AdditionalWebSite/URI` = **https://shop.brightmarket.example**  
-  Under the reserved .example domain.
-- `SocialMediaProfile/ID` = **10442197**  
-  The profile's number on the medium.
-- `SocialMediaProfile/Name` = **brightmarket**  
-  The store's profile name.
-- `SocialMediaProfile/SocialMediaTypeCode` = **PHOTO** (listID `urn:ubl-examples:world:codelist:SocialMediaTypeCode`)  
-  The kind of social medium. The code is from the Trade Accord's social media type list: PHOTO = Photo sharing.
-- `SocialMediaProfile/URI` = **https://social.example/brightmarket**  
-  The profile's address, under the reserved .example domain.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -576,78 +488,10 @@ Inside `CatalogueLine`:
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
 - `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `Item/StandardItemIdentification/IssuerParty/IndustryClassificationCode` = **8299** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Codana Identification Agency (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8299 = Other business support service activities n.e.c..
 - `Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Codana Identification Agency (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
   The trading name; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Item/StandardItemIdentification/IssuerParty/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/ID` = **4160200261972596** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Bek Ban Drinraz** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/StreetName` = **Via dei Codici** (languageID `en-XB`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/BuildingNumber` = **29**  
-  Building number of the postal address. identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/PostalZone` = **4130**  
-  Postal code in Urvania's format (4 digits). identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/StandardItemIdentification/IssuerParty/PostalAddress/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/RegistrationName` = **Codana Identification Agency**  
-  The name under which the party is registered for value added tax; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/CompanyID` = **XU007395206** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Codana Identification Agency (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `Item/StandardItemIdentification/IssuerParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationName` = **Codana Identification Agency**  
-  The public body's official name; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `Item/StandardItemIdentification/IssuerParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/StandardItemIdentification/IssuerParty/Contact/Name` = **Member services**  
-  The party's main desk, which handles this document; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Contact/JobTitle` = **Member services officer**  
-  The job of the person who answers at the desk; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Contact/Department` = **Member services**  
-  The department the desk belongs to; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Contact/Telephone` = **+999 1 041 508 5644**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Contact/ElectronicMail` = **member@codana.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Codana Identification Agency (world/parties.json).
-- `Item/StandardItemIdentification/IssuerParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `Item/StandardItemIdentification/IssuerParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105644** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Codana Identification Agency (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0218-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
@@ -991,9 +835,6 @@ Inside `CatalogueLine`:
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
     </cac:AdditionalPartyIdentification>
-    <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
-    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
@@ -1020,31 +861,11 @@ Inside `CatalogueLine`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-      <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
@@ -1076,9 +897,6 @@ Inside `CatalogueLine`:
     </cac:ElectronicAddress>
   </cac:ProviderParty>
   <cac:ReceiverParty>
-    <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
-    <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4719</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
     </cac:PartyIdentification>
@@ -1113,48 +931,6 @@ Inside `CatalogueLine`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1231233</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
-      <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:ID>BM-CT-01</cbc:ID>
       <cbc:Name>Buying office</cbc:Name>
@@ -1164,16 +940,6 @@ Inside `CatalogueLine`:
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
-    <cac:AdditionalWebSite>
-      <cbc:Name>Online shop</cbc:Name>
-      <cbc:URI>https://shop.brightmarket.example</cbc:URI>
-    </cac:AdditionalWebSite>
-    <cac:SocialMediaProfile>
-      <cbc:ID>10442197</cbc:ID>
-      <cbc:Name>brightmarket</cbc:Name>
-      <cbc:SocialMediaTypeCode listID="urn:ubl-examples:world:codelist:SocialMediaTypeCode">PHOTO</cbc:SocialMediaTypeCode>
-      <cbc:URI>https://social.example/brightmarket</cbc:URI>
-    </cac:SocialMediaProfile>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
@@ -1391,70 +1157,12 @@ Inside `CatalogueLine`:
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
         <cac:IssuerParty>
-          <cbc:IndustryClassificationCode listID="ISIC Rev.4">8299</cbc:IndustryClassificationCode>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
             <cbc:Name>Codana Identification Agency</cbc:Name>
           </cac:PartyName>
-          <cac:Language>
-            <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-            <cbc:Name>Urvanian</cbc:Name>
-          </cac:Language>
-          <cac:PostalAddress>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200261972596</cbc:ID>
-            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Bek Ban Drinraz</cbc:StreetName>
-            <cbc:StreetName languageID="en-XB">Via dei Codici</cbc:StreetName>
-            <cbc:BuildingNumber>29</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4130</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-            <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
-            </cac:Country>
-          </cac:PostalAddress>
-          <cac:PartyTaxScheme>
-            <cbc:RegistrationName>Codana Identification Agency</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007395206</cbc:CompanyID>
-            <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-              <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-              <cac:JurisdictionRegionAddress>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-                </cac:Country>
-              </cac:JurisdictionRegionAddress>
-            </cac:TaxScheme>
-          </cac:PartyTaxScheme>
-          <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Codana Identification Agency</cbc:RegistrationName>
-            <cac:RegistrationAddress>
-              <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-              <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:RegistrationAddress>
-          </cac:PartyLegalEntity>
-          <cac:Contact>
-            <cbc:Name>Member services</cbc:Name>
-            <cbc:JobTitle>Member services officer</cbc:JobTitle>
-            <cbc:Department>Member services</cbc:Department>
-            <cbc:Telephone>+999 1 041 508 5644</cbc:Telephone>
-            <cbc:ElectronicMail>member@codana.example</cbc:ElectronicMail>
-            <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          </cac:Contact>
-          <cac:ElectronicAddress>
-            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105644</cbc:ElectronicAddressID>
-          </cac:ElectronicAddress>
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>

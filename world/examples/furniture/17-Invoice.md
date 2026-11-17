@@ -84,10 +84,6 @@ Inside `BuyerAssignedReference`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/WebsiteURI` = **https://www.brackenmere.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Brackenmere Furniture (world/parties.json).
-- `Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brackenmere Furniture (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
@@ -142,16 +138,10 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Brackenmere Furniture (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
   The name of code LTD in Bayvarra's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 19 persons and its turnover of 6830000.00 XBL in 2025, by the Trade Accord's limits; identity of Brackenmere Furniture (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -185,20 +175,10 @@ Inside `AccountingSupplierParty`:
 
 Inside `AccountingCustomerParty`:
 
-- `Party/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Public Works Department (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **XB-TR-410548** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyName/Name` = **Lumeport Public Works Department**  
   The trading name; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `Party/PostalAddress/ID` = **LUM-ADR-000417** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
   The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -257,10 +237,6 @@ Inside `AccountingCustomerParty`:
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
   The public body's official name; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
-  The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Finance office**  
   The party's finance office desk: the desk for its role in this document (it pays); identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
@@ -582,8 +558,6 @@ Inside `InvoiceLine`:
   </cac:BuyerAssignedReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
       </cac:PartyIdentification>
@@ -632,11 +606,8 @@ Inside `InvoiceLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
@@ -670,21 +641,12 @@ Inside `InvoiceLine`:
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410548</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Public Works Department</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-000417</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -731,12 +693,6 @@ Inside `InvoiceLine`:
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Finance office</cbc:Name>

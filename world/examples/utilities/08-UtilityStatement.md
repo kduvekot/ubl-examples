@@ -11,7 +11,7 @@ The household's water consumption.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); PartyLegalEntity/EntitySizeCode first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:utility-statement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
@@ -68,10 +68,6 @@ Inside `Signature`:
 
 Inside `SenderParty`:
 
-- `WebsiteURI` = **https://www.coastalwater.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Coastal State Water Company (world/parties.json).
-- `IndustryClassificationCode` = **3600** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Coastal State Water Company (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3600 = Water collection, treatment and supply.
 - `PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Coastal State Water Company**  
@@ -108,46 +104,6 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Coastal State Water Company Ltd**  
-  The name under which the party is registered for state sales tax; identity of Coastal State Water Company (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1236576** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Coastal State Water Company (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/RegistrationName` = **Coastal State Water Company Ltd**  
-  The name under which the party is registered, with its legal form; identity of Coastal State Water Company (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Coastal State Water Company (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 17 persons and its turnover of 9470000.00 XBL in 2025, by the Trade Accord's limits; identity of Coastal State Water Company (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Billing**  
   The party's billing desk: the desk for its role in this document (it is owed the payment); identity of Coastal State Water Company (world/parties.json).
 - `Contact/JobTitle` = **Billing officer**  
@@ -201,48 +157,6 @@ Inside `ReceiverParty`:
   The consumer's first name; identity of Robin Ashdale (world/parties.json).
 - `Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
-- `Person/FinancialAccount/ID` = **XB64BLUM38010007251840** (schemeID `urn:ubl-examples:world:account`)  
-  The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `Person/FinancialAccount/Name` = **Robin Ashdale**  
-  The account holder, as the bank knows it.
-- `Person/FinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
-  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
-- `Person/FinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
-  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `Person/FinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Person/FinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
-  The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
-- `Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch, Exchange Street**  
-  The branch's name.
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BLUM, the country XB and the location LX; identity of Bank of Lumeport (world/parties.json).
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
-  The bank; identity of Bank of Lumeport (world/parties.json).
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
-  The town the branch is in.
-- `Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Person/FinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Subscriber Party
 
@@ -598,8 +512,6 @@ Inside `SubscriberConsumption`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:SenderParty>
-    <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3600</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
     </cac:PartyIdentification>
@@ -628,46 +540,6 @@ Inside `SubscriberConsumption`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1236576</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Billing</cbc:Name>
       <cbc:JobTitle>Billing officer</cbc:JobTitle>
@@ -705,43 +577,6 @@ Inside `SubscriberConsumption`:
     <cac:Person>
       <cbc:FirstName>Robin</cbc:FirstName>
       <cbc:FamilyName>Ashdale</cbc:FamilyName>
-      <cac:FinancialAccount>
-        <cbc:ID schemeID="urn:ubl-examples:world:account">XB64BLUM38010007251840</cbc:ID>
-        <cbc:Name>Robin Ashdale</cbc:Name>
-        <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-        <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:FinancialInstitutionBranch>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
-          <cbc:Name>Main branch, Exchange Street</cbc:Name>
-          <cac:FinancialInstitution>
-            <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-            <cbc:Name>Bank of Lumeport</cbc:Name>
-            <cac:Address>
-              <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-              <cbc:StreetName>Exchange Street</cbc:StreetName>
-              <cbc:BuildingNumber>48</cbc:BuildingNumber>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cbc:PostalZone>38523</cbc:PostalZone>
-              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-              <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                <cbc:Name>Bayvarra</cbc:Name>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitution>
-          <cac:Address>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitutionBranch>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:FinancialAccount>
     </cac:Person>
   </cac:ReceiverParty>
   <cac:SubscriberParty>

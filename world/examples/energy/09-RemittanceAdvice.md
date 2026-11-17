@@ -45,16 +45,10 @@ The power station pays the invoice and the surcharge, in ferra.
 
 Inside `AccountingCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.montebrio.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Montebrio Power (world/parties.json).
-- `Party/IndustryClassificationCode` = **3510** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Montebrio Power (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3510 = Electric power generation, transmission and distribution.
 - `Party/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **0990:10591** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Montebrio Power (world/parties.json).
-- `Party/AdditionalPartyIdentification/ID` = **XU-TR-105918** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
 - `Party/PartyName/Name` = **Montebrio Power**  
   The trading name; identity of Montebrio Power (world/parties.json).
 - `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
@@ -87,52 +81,6 @@ Inside `AccountingCustomerParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Party/PartyTaxScheme/RegistrationName` = **Montebrio Power SUA**  
-  The name under which the party is registered for value added tax; identity of Montebrio Power (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **XU007414377** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Montebrio Power (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `Party/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Party/PartyLegalEntity/RegistrationName` = **Montebrio Power SUA**  
-  The name under which the party is registered, with its legal form; identity of Montebrio Power (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
-  Number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1974-06-01**  
-  The day the company was entered in the register; identity of Montebrio Power (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SUA = Società urvaniana per azioni (public limited company).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)** (languageID `qau`)  
-  The name of code SUA in Urvania's national company legal form list. In Urvanian, the sender's language.
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)** (languageID `en-XU`)  
-  The name of code SUA in Urvania's national company legal form list. In English.
-- `Party/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 2935 persons and its turnover of 35700000000 XUF in 2025, by the Trade Accord's limits; identity of Montebrio Power (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/CorporateStockAmount` = **400000000** (currencyID `XUF`)  
-  The share capital, in ferra; identity of Montebrio Power (world/parties.json).
-- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/Contact/Name` = **Accounts payable**  
   The party's accounts payable desk: the desk for its role in this document (it pays); identity of Montebrio Power (world/parties.json).
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
@@ -154,22 +102,10 @@ Inside `AccountingCustomerParty`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/WebsiteURI` = **https://www.kelpstone.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Kelpstone Gas (world/parties.json).
-- `Party/IndustryClassificationCode` = **0620** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Kelpstone Gas (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 0620 = Extraction of natural gas.
 - `Party/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **XB-TR-412877** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Kelpstone Gas (world/parties.json).
 - `Party/PartyName/Name` = **Kelpstone Gas**  
   The trading name; identity of Kelpstone Gas (world/parties.json).
-- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `Party/PostalAddress/ID` = **NT-ADR-587853** (schemeID `urn:ubl-examples:world:XB:NT:address-register`)  
   The address's number in the address register of Northern Territory (NT-ADR- and six digits); identity of Kelpstone Gas (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -194,68 +130,6 @@ Inside `AccountingSupplierParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.**  
-  Where the party actually operates, apart from its postal address.
-- `Party/PhysicalLocation/InformationURI` = **https://www.kelpstone.example**  
-  Where to find more about the place.
-- `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
-  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
-- `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **52.80** (unitCode `D61`)  
-  The minutes of the latitude.
-- `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
-  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
-- `Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **18.00** (unitCode `D61`)  
-  The minutes of the longitude.
-- `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
-  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `Party/PartyTaxScheme/RegistrationName` = **Kelpstone Gas Ltd**  
-  The name under which the party is registered for state sales tax; identity of Kelpstone Gas (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **NT-1238631** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Kelpstone Gas (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Northern Territory**  
-  The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/RegistrationName` = **Kelpstone Gas Ltd**  
-  The name under which the party is registered, with its legal form; identity of Kelpstone Gas (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **2011-04-01**  
-  The day the company was entered in the register; identity of Kelpstone Gas (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 1315 persons and its turnover of 833000000.00 XBL in 2025, by the Trade Accord's limits; identity of Kelpstone Gas (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/CorporateStockAmount` = **120000000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Kelpstone Gas (world/parties.json).
-- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Gullhaven**  
-  The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Accounts receivable**  
   The party's accounts receivable desk: the desk for its role in this document (it is owed the payment); identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/JobTitle` = **Credit controller**  
@@ -419,16 +293,11 @@ Inside `RemittanceAdviceLine`:
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.montebrio.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3510</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="ISO 6523">0990:10591</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-105918</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Montebrio Power</cbc:Name>
@@ -454,49 +323,6 @@ Inside `RemittanceAdviceLine`:
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Montebrio Power SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007414377</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Montebrio Power SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:CompanyID>
-        <cbc:RegistrationDate>1974-06-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XUF">400000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XU:CR</cbc:ID>
-          <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
@@ -513,22 +339,12 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.kelpstone.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0620</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412877</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Kelpstone Gas</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:NT:address-register">NT-ADR-587853</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -545,61 +361,6 @@ Inside `RemittanceAdviceLine`:
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PhysicalLocation>
-        <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.</cbc:Description>
-        <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
-        <cac:LocationCoordinate>
-          <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
-          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
-          <cbc:LatitudeMinutesMeasure unitCode="D61">52.80</cbc:LatitudeMinutesMeasure>
-          <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
-          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-          <cbc:LongitudeMinutesMeasure unitCode="D61">18.00</cbc:LongitudeMinutesMeasure>
-          <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
-        </cac:LocationCoordinate>
-      </cac:PhysicalLocation>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">NT-1238631</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:CompanyID>
-        <cbc:RegistrationDate>2011-04-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">120000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Gullhaven</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>

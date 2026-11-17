@@ -86,22 +86,12 @@ Inside `AdditionalDocumentReference`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/WebsiteURI` = **https://www.brackenmere.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Brackenmere Furniture (world/parties.json).
-- `Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brackenmere Furniture (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
   A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brackenmere Furniture (world/parties.json).
 - `Party/PartyName/Name` = **Brackenmere Furniture**  
   The trading name; identity of Brackenmere Furniture (world/parties.json).
-- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `Party/PostalAddress/ID` = **UL-ADR-821551** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
   The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Brackenmere Furniture (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -144,28 +134,6 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Brackenmere Furniture (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 19 persons and its turnover of 6830000.00 XBL in 2025, by the Trade Accord's limits; identity of Brackenmere Furniture (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
-  The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Accounts receivable**  
   The party's accounts receivable desk: the desk for its role in this document (it is owed the payment); identity of Brackenmere Furniture (world/parties.json).
 - `Party/Contact/JobTitle` = **Credit controller**  
@@ -187,12 +155,6 @@ Inside `AccountingSupplierParty`:
 
 Inside `AccountingCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.brightmarket.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
-- `Party/LogoReferenceID` = **BM-LOGO-2024**  
-  The reference of the logo the store prints on its documents; identity of Brightmarket Stores (world/parties.json).
-- `Party/IndustryClassificationCode` = **4719** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brightmarket Stores (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4719 = Other retail sale in non-specialized stores.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
@@ -251,20 +213,10 @@ Inside `AccountingCustomerParty`:
   The name under which the party is registered, with its legal form; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1979-02-14**  
-  The day the company was entered in the register; identity of Brightmarket Stores (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Corporation (public)**  
   The name of code CORP in Bayvarra's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 2900 persons and its turnover of 671000000.00 XBL in 2025, by the Trade Accord's limits; identity of Brightmarket Stores (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/CorporateStockAmount` = **12000000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Brightmarket Stores (world/parties.json).
-- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -289,18 +241,6 @@ Inside `AccountingCustomerParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
-- `Party/AdditionalWebSite/Name` = **Online shop**  
-  The store's second website, where consumers buy.
-- `Party/AdditionalWebSite/URI` = **https://shop.brightmarket.example**  
-  Under the reserved .example domain.
-- `Party/SocialMediaProfile/ID` = **10442197**  
-  The profile's number on the medium.
-- `Party/SocialMediaProfile/Name` = **brightmarket**  
-  The store's profile name.
-- `Party/SocialMediaProfile/SocialMediaTypeCode` = **PHOTO** (listID `urn:ubl-examples:world:codelist:SocialMediaTypeCode`)  
-  The kind of social medium. The code is from the Trade Accord's social media type list: PHOTO = Photo sharing.
-- `Party/SocialMediaProfile/URI` = **https://social.example/brightmarket**  
-  The profile's address, under the reserved .example domain.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -555,8 +495,6 @@ Inside `DebitNoteLine`:
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
       </cac:PartyIdentification>
@@ -566,11 +504,6 @@ Inside `DebitNoteLine`:
       <cac:PartyName>
         <cbc:Name>Brackenmere Furniture</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-821551</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -605,27 +538,6 @@ Inside `DebitNoteLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts receivable</cbc:Name>
@@ -643,9 +555,6 @@ Inside `DebitNoteLine`:
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
-      <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4719</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
       </cac:PartyIdentification>
@@ -698,13 +607,8 @@ Inside `DebitNoteLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
-        <cbc:RegistrationDate>1979-02-14</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">12000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -730,16 +634,6 @@ Inside `DebitNoteLine`:
         <cbc:ElectronicMail>payables@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:AdditionalWebSite>
-        <cbc:Name>Online shop</cbc:Name>
-        <cbc:URI>https://shop.brightmarket.example</cbc:URI>
-      </cac:AdditionalWebSite>
-      <cac:SocialMediaProfile>
-        <cbc:ID>10442197</cbc:ID>
-        <cbc:Name>brightmarket</cbc:Name>
-        <cbc:SocialMediaTypeCode listID="urn:ubl-examples:world:codelist:SocialMediaTypeCode">PHOTO</cbc:SocialMediaTypeCode>
-        <cbc:URI>https://social.example/brightmarket</cbc:URI>
-      </cac:SocialMediaProfile>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>

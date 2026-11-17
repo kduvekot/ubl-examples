@@ -82,14 +82,9 @@
   </cac:Signature>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-042681</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
@@ -115,12 +110,9 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
@@ -155,8 +147,6 @@
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lisavufarm.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0116</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
       </cac:PartyIdentification>
@@ -220,14 +210,11 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
-        <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Fomofa nisakihi</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XL">Sole proprietorship</cbc:CompanyLegalForm>
         <cbc:SoleProprietorshipIndicator>true</cbc:SoleProprietorshipIndicator>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MICRO</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>

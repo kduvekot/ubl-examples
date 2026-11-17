@@ -31,10 +31,6 @@ The gas producer declares March's gas leaving Bayvarra by pipeline, in one month
 
 Inside `ExporterParty`:
 
-- `WebsiteURI` = **https://www.kelpstone.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Kelpstone Gas (world/parties.json).
-- `IndustryClassificationCode` = **0620** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Kelpstone Gas (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 0620 = Extraction of natural gas.
 - `PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **XB-TR-412877** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
@@ -89,50 +85,10 @@ Inside `ExporterParty`:
   The minutes of the longitude.
 - `PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `PartyTaxScheme/RegistrationName` = **Kelpstone Gas Ltd**  
-  The name under which the party is registered for state sales tax; identity of Kelpstone Gas (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **NT-1238631** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Kelpstone Gas (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Northern Territory**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Kelpstone Gas Ltd**  
   The name under which the party is registered, with its legal form; identity of Kelpstone Gas (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **2011-04-01**  
-  The day the company was entered in the register; identity of Kelpstone Gas (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 1315 persons and its turnover of 833000000.00 XBL in 2025, by the Trade Accord's limits; identity of Kelpstone Gas (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **120000000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Kelpstone Gas (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Gullhaven**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Customs desk**  
   The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Kelpstone Gas (world/parties.json).
 - `Contact/JobTitle` = **Customs specialist**  
@@ -216,10 +172,6 @@ Inside `CustomsDeclaration`:
   The minutes of the longitude.
 - `Shipment/OriginAddress/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `ConsigneeParty/WebsiteURI` = **https://www.montebrio.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/IndustryClassificationCode` = **3510** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Montebrio Power (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3510 = Electric power generation, transmission and distribution.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10591** (schemeID `ISO 6523`)  
@@ -228,10 +180,6 @@ Inside `CustomsDeclaration`:
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PartyName/Name` = **Montebrio Power**  
   The trading name; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `ConsigneeParty/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
 - `ConsigneeParty/PostalAddress/ID` = **4170200397702895** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -258,78 +206,10 @@ Inside `CustomsDeclaration`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ConsigneeParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `ConsigneeParty/PartyTaxScheme/RegistrationName` = **Montebrio Power SUA**  
-  The name under which the party is registered for value added tax; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PartyTaxScheme/CompanyID` = **XU007414377** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Montebrio Power (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `ConsigneeParty/PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `ConsigneeParty/PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `ConsigneeParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `ConsigneeParty/PartyLegalEntity/RegistrationName` = **Montebrio Power SUA**  
-  The name under which the party is registered, with its legal form; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PartyLegalEntity/CompanyID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
-  Number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `ConsigneeParty/PartyLegalEntity/RegistrationDate` = **1974-06-01**  
-  The day the company was entered in the register; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SUA = Società urvaniana per azioni (public limited company).
-- `ConsigneeParty/PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)**  
-  The name of code SUA in Urvania's national company legal form list.
-- `ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 2935 persons and its turnover of 35700000000 XUF in 2025, by the Trade Accord's limits; identity of Montebrio Power (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `ConsigneeParty/PartyLegalEntity/CorporateStockAmount` = **400000000** (currencyID `XUF`)  
-  The share capital, in ferra; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `ConsigneeParty/Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/Contact/JobTitle` = **Customs specialist**  
-  The job of the person who answers at the desk; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/Contact/Department` = **Logistics**  
-  The department the desk belongs to; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/Contact/Telephone` = **+999 1 0413 55918**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/Contact/ElectronicMail` = **customs@montebrio.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/Contact/Note` = **Weekdays 07:00–19:00**  
-  When the desk can be reached; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105918** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Montebrio Power (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `CustomsParty/IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Customs and Border Service of Bayvarra (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `CustomsParty/PartyIdentification/ID` = **20410137** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CustomsParty/PartyName/Name` = **Customs and Border Service of Bayvarra**  
   The trading name; identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `CustomsParty/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `CustomsParty/Language/Name` = **English**  
-  The language's name.
-- `CustomsParty/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `CustomsParty/PostalAddress/ID` = **UL-ADR-479100** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
   The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `CustomsParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -356,10 +236,6 @@ Inside `CustomsDeclaration`:
   The country's name, for readers of the address.
 - `CustomsParty/PartyLegalEntity/RegistrationName` = **Customs and Border Service of Bayvarra**  
   The public body's official name; identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `CustomsParty/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
-  The registered office, as entered in the register.
-- `CustomsParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `CustomsParty/Contact/Name` = **Export office**  
   The party's export office desk: the desk for its role in this document (an export); identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `CustomsParty/Contact/JobTitle` = **Customs officer**  
@@ -391,8 +267,6 @@ Inside `CustomsDeclaration`:
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:41:00</cbc:IssueTime>
   <cac:ExporterParty>
-    <cbc:WebsiteURI>https://www.kelpstone.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">0620</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
     </cac:PartyIdentification>
@@ -436,47 +310,9 @@ Inside `CustomsDeclaration`:
         <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
       </cac:LocationCoordinate>
     </cac:PhysicalLocation>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">NT-1238631</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:CompanyID>
-      <cbc:RegistrationDate>2011-04-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">120000000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Gullhaven</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customs desk</cbc:Name>
@@ -554,8 +390,6 @@ Inside `CustomsDeclaration`:
       </cac:OriginAddress>
     </cac:Shipment>
     <cac:ConsigneeParty>
-      <cbc:WebsiteURI>https://www.montebrio.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3510</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
       </cac:PartyIdentification>
@@ -568,10 +402,6 @@ Inside `CustomsDeclaration`:
       <cac:PartyName>
         <cbc:Name>Montebrio Power</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4170200397702895</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -589,74 +419,14 @@ Inside `CustomsDeclaration`:
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Montebrio Power SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007414377</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Montebrio Power SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:CompanyID>
-        <cbc:RegistrationDate>1974-06-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XUF">400000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-          <cbc:CityName languageID="en-XB">Serravona</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XU:CR</cbc:ID>
-          <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        <cbc:Name>Customs desk</cbc:Name>
-        <cbc:JobTitle>Customs specialist</cbc:JobTitle>
-        <cbc:Department>Logistics</cbc:Department>
-        <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
-        <cbc:ElectronicMail>customs@montebrio.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
-      </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105918</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
     <cac:CustomsParty>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -675,12 +445,6 @@ Inside `CustomsDeclaration`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Export office</cbc:Name>

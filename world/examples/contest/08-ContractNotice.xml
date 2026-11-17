@@ -28,13 +28,9 @@
       <cbc:RepresentationType>On its own behalf</cbc:RepresentationType>
     </cac:ContractingRepresentationType>
     <cac:Party>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410548</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Public Works Department</cbc:Name>
       </cac:PartyName>
@@ -63,38 +59,8 @@
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Procurement office</cbc:Name>
@@ -111,18 +77,12 @@
     </cac:Party>
   </cac:ContractingParty>
   <cac:ReceiverParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410959</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Bayvarra Information Service</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-634627</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -140,15 +100,6 @@
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Bayvarra Information Service</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Publications and register</cbc:Name>
       <cbc:JobTitle>Publications officer</cbc:JobTitle>
@@ -207,56 +158,12 @@
     <cac:AppealTerms>
       <cbc:Description>An appeal against the selection or the jury's ranking goes to the review board within ten days.</cbc:Description>
       <cac:AppealReceiverParty>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">8423</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410822</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
         </cac:PartyName>
-        <cac:Language>
-          <cbc:ID schemeID="ISO 639">en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-        </cac:Language>
-        <cac:PostalAddress>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-075593</cbc:ID>
-          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-          <cbc:StreetName>Justice Row</cbc:StreetName>
-          <cbc:BuildingNumber>20</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cbc:PostalZone>38519</cbc:PostalZone>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            <cbc:Name>Bayvarra</cbc:Name>
-          </cac:Country>
-        </cac:PostalAddress>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Procurement Review Board of Bayvarra</cbc:RegistrationName>
-          <cac:RegistrationAddress>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-        </cac:PartyLegalEntity>
-        <cac:Contact>
-          <cbc:Name>Registry</cbc:Name>
-          <cbc:JobTitle>Registrar</cbc:JobTitle>
-          <cbc:Department>Registry</cbc:Department>
-          <cbc:Telephone>+999 2 38 2122 0822</cbc:Telephone>
-          <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        </cac:Contact>
-        <cac:ElectronicAddress>
-          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410822</cbc:ElectronicAddressID>
-        </cac:ElectronicAddress>
       </cac:AppealReceiverParty>
     </cac:AppealTerms>
     <cac:Language>

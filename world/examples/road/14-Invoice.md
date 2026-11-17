@@ -56,10 +56,6 @@ Inside `AdditionalDocumentReference`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/WebsiteURI` = **https://www.trasvia.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Trasvia Haulage (world/parties.json).
-- `Party/IndustryClassificationCode` = **4923** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Trasvia Haulage (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4923 = Freight transport by road.
 - `Party/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Trasvia Haulage**  
@@ -110,18 +106,12 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; identity of Trasvia Haulage (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   Number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Trasvia Haulage (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SRU = Società a responsabilità urvaniana (private limited company).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)** (languageID `qau`)  
   The name of code SRU in Urvania's national company legal form list. In Urvanian, the sender's language.
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)** (languageID `en-XU`)  
   The name of code SRU in Urvania's national company legal form list. In English.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 27 persons and its turnover of 386000000 XUF in 2025, by the Trade Accord's limits; identity of Trasvia Haulage (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
   The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
@@ -148,18 +138,6 @@ Inside `AccountingSupplierParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Trasvia Haulage (world/parties.json).
-- `Party/PartyAuthorization/Purpose` = **International road haulage**  
-  What the authority has authorized the party to do; identity of Trasvia Haulage (world/parties.json).
-- `Party/PartyAuthorization/ValidityPeriod/EndDate` = **2030-06-30**  
-  The authorization expires on this date.
-- `Party/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877** (schemeID `urn:ubl-examples:world:XU:haulage-licence`)  
-  The number of the permit in the register of road haulage licences of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
-- `Party/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
-- `Party/PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `Party/PartyAuthorization/Certificate/CertificateType` = **Operating permit** (languageID `en-XU`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In English.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -169,24 +147,12 @@ Inside `AccountingSupplierParty`:
 
 Inside `AccountingCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.lumeway.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
-- `Party/IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
   A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
-- `Party/AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **English**  
-  The language's name.
-- `Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `Party/PostalAddress/ID` = **UL-ADR-693911** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
   The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Lumeway Distribution (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -233,32 +199,6 @@ Inside `AccountingCustomerParty`:
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1988-10-03**  
-  The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
-- `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
-  The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Accounts payable**  
   The party's accounts payable desk: the desk for its role in this document (it pays); identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
@@ -523,8 +463,6 @@ Inside `InvoiceLine`:
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4923</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
       </cac:PartyIdentification>
@@ -569,12 +507,9 @@ Inside `InvoiceLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Trasvia Haulage SRU</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
@@ -601,18 +536,6 @@ Inside `InvoiceLine`:
         <cbc:ElectronicMail>receivables@trasvia.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
-      <cac:PartyAuthorization>
-        <cbc:Purpose>International road haulage</cbc:Purpose>
-        <cac:ValidityPeriod>
-          <cbc:EndDate>2030-06-30</cbc:EndDate>
-        </cac:ValidityPeriod>
-        <cac:Certificate>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
-          <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
-          <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
-        </cac:Certificate>
-      </cac:PartyAuthorization>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
@@ -621,25 +544,15 @@ Inside `InvoiceLine`:
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
       </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -676,29 +589,6 @@ Inside `InvoiceLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-        <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts payable</cbc:Name>

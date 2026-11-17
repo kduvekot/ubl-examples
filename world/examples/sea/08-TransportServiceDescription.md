@@ -11,7 +11,7 @@ The ocean carrier describes its weekly service to Selanu.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); PartyLegalEntity/EntitySizeCode first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-service-description:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport service description"; the community specification "Lumeport port community". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
@@ -48,10 +48,6 @@ Inside `Signature`:
 
 Inside `SenderParty`:
 
-- `WebsiteURI` = **https://www.tidewell.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Tidewell Ocean Lines (world/parties.json).
-- `IndustryClassificationCode` = **5012** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Tidewell Ocean Lines (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5012 = Sea and coastal freight water transport.
 - `PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Tidewell Ocean Lines**  
@@ -88,50 +84,6 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Tidewell Ocean Lines Corp**  
-  The name under which the party is registered for state sales tax; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1235754** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/RegistrationName` = **Tidewell Ocean Lines Corp**  
-  The name under which the party is registered, with its legal form; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1974-03-01**  
-  The day the company was entered in the register; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
-- `PartyLegalEntity/CompanyLegalForm` = **Corporation (public)**  
-  The name of code CORP in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 776 persons and its turnover of 865000000.00 XBL in 2025, by the Trade Accord's limits; identity of Tidewell Ocean Lines (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **40000000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Tidewell Ocean Lines (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Bookings**  
   The party's main desk, which handles this document; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/JobTitle` = **Booking agent**  
@@ -153,16 +105,10 @@ Inside `SenderParty`:
 
 Inside `ReceiverParty`:
 
-- `WebsiteURI` = **https://www.lumeway.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
-- `IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
   A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
-- `AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
@@ -199,50 +145,6 @@ Inside `ReceiverParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
-  The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Transport planning**  
   The party's transport planning desk: the desk for its role in this document (it books or uses the transport); identity of Lumeway Distribution (world/parties.json).
 - `Contact/JobTitle` = **Logistics planner**  
@@ -393,8 +295,6 @@ Inside `TransportationService`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:SenderParty>
-    <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
     </cac:PartyIdentification>
@@ -423,48 +323,6 @@ Inside `TransportationService`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
-      <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Bookings</cbc:Name>
       <cbc:JobTitle>Booking agent</cbc:JobTitle>
@@ -479,16 +337,11 @@ Inside `TransportationService`:
     </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
-    <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
-    </cac:AdditionalPartyIdentification>
-    <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeway Distribution</cbc:Name>
@@ -516,48 +369,6 @@ Inside `TransportationService`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-      <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>

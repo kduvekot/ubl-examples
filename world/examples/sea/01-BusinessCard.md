@@ -56,8 +56,6 @@ Inside `SenderParty`:
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
   A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
-- `AdditionalPartyIdentification/ID` = **XB-TR-410274** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
@@ -94,20 +92,6 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
   The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -122,10 +106,6 @@ Inside `SenderParty`:
   The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -159,20 +139,10 @@ Inside `SenderParty`:
 
 Inside `ReceiverParty`:
 
-- `WebsiteURI` = **https://www.velumi.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
-- `IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Velumi Trading (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **XL-TR-041859** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -195,50 +165,6 @@ Inside `ReceiverParty`:
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
-  The name under which the party is registered, with its legal form; identity of Velumi Trading (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Velumi Trading (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
-- `PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The name of code LTD in Lisavu's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 34 persons and its turnover of 1940000.000 XLC in 2025, by the Trade Accord's limits; identity of Velumi Trading (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XB`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Purchasing**  
-  The party's main desk, which handles this document; identity of Velumi Trading (world/parties.json).
-- `Contact/JobTitle` = **Buyer**  
-  The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
-- `Contact/Department` = **Purchasing**  
-  The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Contact/Telephone` = **+999 3 729 1859**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
-- `Contact/ElectronicMail` = **purchasing@velumi.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Velumi Trading (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Business Party
 
@@ -356,9 +282,6 @@ Inside `BusinessCapability`:
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
     </cac:AdditionalPartyIdentification>
-    <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
-    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
@@ -385,21 +308,6 @@ Inside `BusinessCapability`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
@@ -408,8 +316,6 @@ Inside `BusinessCapability`:
       <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
       <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
         <cac:Country>
@@ -441,21 +347,12 @@ Inside `BusinessCapability`:
     </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
-    <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
     </cac:PartyIdentification>
-    <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-041859</cbc:ID>
-    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Velumi Trading</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -471,44 +368,6 @@ Inside `BusinessCapability`:
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XL:ICR</cbc:ID>
-        <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Purchasing</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
-      <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-      <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:BusinessParty>
     <cac:PartyIdentification>

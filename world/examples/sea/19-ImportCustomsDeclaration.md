@@ -50,20 +50,12 @@ Inside `JurisdictionRegionAddress`:
 
 Inside `ImporterParty`:
 
-- `WebsiteURI` = **https://www.velumi.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Velumi Trading (world/parties.json).
-- `IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Velumi Trading (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **XL-TR-041859** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Velumi Trading (world/parties.json).
 - `PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -86,48 +78,6 @@ Inside `ImporterParty`:
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `PartyLegalEntity/RegistrationName` = **Velumi Trading Ltd**  
-  The name under which the party is registered, with its legal form; identity of Velumi Trading (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Velumi Trading (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Velumi Trading (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
-- `PartyLegalEntity/CompanyLegalForm` = **Tivufo kilika humaki** (languageID `qal`)  
-  The name of code LTD in Lisavu's national company legal form list. In Lisavan, the sender's language.
-- `PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
-  The name of code LTD in Lisavu's national company legal form list. In English.
-- `PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 34 persons and its turnover of 1940000.000 XLC in 2025, by the Trade Accord's limits; identity of Velumi Trading (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Velumi Trading (world/parties.json).
-- `Contact/JobTitle` = **Customs specialist**  
-  The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
-- `Contact/Department` = **Logistics**  
-  The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Contact/Telephone` = **+999 3 729 1859**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
-- `Contact/ElectronicMail` = **customs@velumi.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Velumi Trading (world/parties.json).
 - `AgentParty/PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `AgentParty/PartyName/Name` = **Tevaro Customs Brokers**  
@@ -154,19 +104,11 @@ Inside `ImporterParty`:
   A party referred to from another party's details: its identifier and name are enough.
 - `PowerOfAttorney/MandateDocumentReference/ID` = **MAND-2026-014**  
   The signed mandate kept by the broker.
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Consignor Party
 
 Inside `ConsignorParty`:
 
-- `WebsiteURI` = **https://www.lumeway.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
-- `IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
@@ -175,12 +117,6 @@ Inside `ConsignorParty`:
   A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeway Distribution (world/parties.json).
 - `PartyName/Name` = **Lumeway Distribution**  
   The trading name; identity of Lumeway Distribution (world/parties.json).
-- `Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `PostalAddress/ID` = **UL-ADR-693911** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
   The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Lumeway Distribution (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -209,66 +145,6 @@ Inside `ConsignorParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered for state sales tax; identity of Lumeway Distribution (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **UL-1230822** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
-  The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 183 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **2500000** (currencyID `XBL`)  
-  The share capital, in lume; identity of Lumeway Distribution (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Contact/Name` = **Dispatch office**  
-  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); identity of Lumeway Distribution (world/parties.json).
-- `Contact/JobTitle` = **Dispatch coordinator**  
-  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Department` = **Warehouse**  
-  The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 474 274**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
-- `Contact/ElectronicMail` = **dispatch@lumeway.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Consignee Party
 
@@ -283,20 +159,10 @@ Inside `ConsigneeParty`:
 
 Inside `FreightForwarderParty`:
 
-- `WebsiteURI` = **https://www.bayforth.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Bayforth Forwarding (world/parties.json).
-- `IndustryClassificationCode` = **5229** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Bayforth Forwarding (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5229 = Other transportation support activities.
 - `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayforth Forwarding**  
   The trading name; identity of Bayforth Forwarding (world/parties.json).
-- `Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **English**  
-  The language's name.
-- `Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `PostalAddress/ID` = **LUM-ADR-953846** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
   The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -323,77 +189,15 @@ Inside `FreightForwarderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Bayforth Forwarding Ltd**  
-  The name under which the party is registered for state sales tax; identity of Bayforth Forwarding (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1234932** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/RegistrationName` = **Bayforth Forwarding Ltd**  
-  The name under which the party is registered, with its legal form; identity of Bayforth Forwarding (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Bayforth Forwarding (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 40 persons and its turnover of 6660000.00 XBL in 2025, by the Trade Accord's limits; identity of Bayforth Forwarding (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
-  The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Contact/Name` = **Export desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/JobTitle` = **Export coordinator**  
-  The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/Department` = **Export**  
-  The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2144 1644**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
-- `Contact/ElectronicMail` = **export@bayforth.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Customs Party
 
 Inside `CustomsParty`:
 
-- `IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Island Customs Service (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
-- `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/ID` = **65334843** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Island Customs Service (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -418,12 +222,6 @@ Inside `CustomsParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Island Customs Service**  
   The public body's official name; identity of Island Customs Service (world/parties.json).
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Contact/Name` = **Import office**  
   The party's import office desk: the desk for its role in this document (an import); identity of Island Customs Service (world/parties.json).
 - `Contact/JobTitle` = **Customs officer**  
@@ -728,10 +526,6 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `GoodsItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ShipmentStage/CustomsAgentParty/WebsiteURI` = **https://www.tevaro.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/IndustryClassificationCode` = **5229** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Tevaro Customs Brokers (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5229 = Other transportation support activities.
 - `ShipmentStage/CustomsAgentParty/PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ShipmentStage/CustomsAgentParty/PartyName/Name` = **Tevaro Customs Brokers**  
@@ -766,32 +560,6 @@ Inside `Shipment`:
   The name under which the party is registered, with its legal form; identity of Tevaro Customs Brokers (world/parties.json).
 - `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
   Number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyLegalForm` = **Tivufo kilika humaki** (languageID `qal`)  
-  The name of code LTD in Lisavu's national company legal form list. In Lisavan, the sender's language.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
-  The name of code LTD in Lisavu's national company legal form list. In English.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 13 persons and its turnover of 2830000.000 XLC in 2025, by the Trade Accord's limits; identity of Tevaro Customs Brokers (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/CustomsAgentParty/Contact/Name` = **Declarations**  
   The party's main desk, which handles this document; identity of Tevaro Customs Brokers (world/parties.json).
 - `ShipmentStage/CustomsAgentParty/Contact/JobTitle` = **Customs declarant**  
@@ -862,8 +630,6 @@ Inside `Signature`:
     </cac:Country>
   </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
-    <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
     </cac:PartyIdentification>
@@ -873,10 +639,6 @@ Inside `Signature`:
     <cac:PartyName>
       <cbc:Name>Velumi Trading</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -892,41 +654,6 @@ Inside `Signature`:
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XL:ICR</cbc:ID>
-        <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Customs desk</cbc:Name>
-      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
-      <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-      <cbc:ElectronicMail>customs@velumi.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
     <cac:AgentParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
@@ -968,14 +695,8 @@ Inside `Signature`:
         <cbc:ID>MAND-2026-014</cbc:ID>
       </cac:MandateDocumentReference>
     </cac:PowerOfAttorney>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:ConsignorParty>
-    <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
     </cac:PartyIdentification>
@@ -988,11 +709,6 @@ Inside `Signature`:
     <cac:PartyName>
       <cbc:Name>Lumeway Distribution</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -1011,60 +727,6 @@ Inside `Signature`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-      <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
-      <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
-      <cbc:ElectronicMail>dispatch@lumeway.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:ConsigneeParty>
     <cac:PartyIdentification>
@@ -1075,19 +737,12 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:ConsigneeParty>
   <cac:FreightForwarderParty>
-    <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -1105,71 +760,14 @@ Inside `Signature`:
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Export desk</cbc:Name>
-      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
-      <cbc:Department>Export</cbc:Department>
-      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
-      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:CustomsParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Island Customs Service</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">65334843</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -1187,13 +785,6 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Import office</cbc:Name>
@@ -1472,8 +1063,6 @@ Inside `Signature`:
     </cac:GoodsItem>
     <cac:ShipmentStage>
       <cac:CustomsAgentParty>
-        <cbc:WebsiteURI>https://www.tevaro.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
         </cac:PartyIdentification>
@@ -1502,29 +1091,6 @@ Inside `Signature`:
         <cac:PartyLegalEntity>
           <cbc:RegistrationName>Tevaro Customs Brokers Ltd</cbc:RegistrationName>
           <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:CompanyID>
-          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-          <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-          <cac:RegistrationAddress>
-            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-          <cac:CorporateRegistrationScheme>
-            <cbc:ID>XL:ICR</cbc:ID>
-            <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:CorporateRegistrationScheme>
         </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Declarations</cbc:Name>

@@ -1,12 +1,12 @@
 # What a document says about a party: the party table (O88)
 
-Prepared 2026-11-17 for the owner's approval, before cause C01 (245 findings) is fixed. It applies the story line "What a document says about a party" (O86, `analysis/worklist-decisions.md`), which says:
+Prepared 2026-11-17 for the owner's approval, before cause C01 (245 findings) is fixed. **Approved by the owner 2026-11-17 and applied the same day** (see "Applied" at the end). It applies the story line "What a document says about a party" (O86, `analysis/worklist-decisions.md`), which says:
 
 - each party is the authority on its own data;
 - every document stands on its own;
 - the answer completes the picture.
 
-The table is built into `tools/build_examples.py` (`DOC_CLASS`, `PROFILE`, `THIRD`, `party_profile()`, `apply_profile()`). It is switched off (`APPLY_PARTY_PROFILE = False`) until the owner approves it, so the published examples are unchanged. All figures below come from a build with the switch on.
+The table is built into `tools/build_examples.py` (`DOC_CLASS`, `PROFILE`, `THIRD`, `party_profile()`, `apply_profile()`). It was switched off (`APPLY_PARTY_PROFILE`) until the owner approved it; it is now on. All figures below come from a build with the switch on.
 
 ## The rule in one paragraph
 
@@ -204,11 +204,11 @@ The same build also fixes a fault in the currency clean-up of step 1e: a remitta
   - c) Every company states it voluntarily on its invoices, as now. This keeps 20 occurrences, but without a reason in law.
 - **Recommendation:** b).
 
-## After approval
+## Applied (2026-11-17)
 
-1. Switch the profile on, and add the build checks of C01 and O90:
-   - no customs trader number outside customs and cross-border documents;
-   - no share capital outside its issuer's own invoices;
-   - what A says about B is a part of what B says about itself;
-   - every party element the rule keeps appears in at least one document.
-2. Record the outcome in the decisions file, and the three lost pairs in O145.
+1. The profile is switched on. The build checks it (`check_party_profiles()` and `check_party_knowledge()` in `tools/build_examples.py`):
+   - no customs trader number outside a customs document or a cross-border transport document;
+   - share capital only in its issuer's own invoice-kind document, and only where the issuer's company law asks for it (O147: an Urvanian SUA, `capital_on_documents` in `world/countries.json`); 9 documents carry it;
+   - O90: where a document gives a value for a party at a place where the party also gives one itself (the same element, the same scheme), it is one of the party's own values. Contacts are left out, because the desk follows the role (C02).
+2. A change against the plan above: "what A says about B is a part of what B says about itself" is checked as "never contradicts", not as "never more". The stricter form fails where the receiver knows a fact that the party never states in a document of its own. For example, customs knows Velumi's customs trader number, but Velumi sends no customs document; the farm's legal entity appears only in the ginnery's self-billed invoices. In those places the party has simply sent no document of that kind. O90's second part (every party element the rule keeps appears in at least one document) is what coverage measures; the three lost pairs are in O145.
+3. Recorded in `analysis/worklist-decisions.md` (O88 settled, O147 settled, O145) and in the world story (`note/src/03-world.md`, "What a document says about a party").

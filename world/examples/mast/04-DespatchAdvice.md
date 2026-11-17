@@ -44,8 +44,6 @@ Inside `OrderReference`:
 
 Inside `DespatchSupplierParty`:
 
-- `Party/IndustryClassificationCode` = **4290** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Saltmere Engineering (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4290 = Construction of other civil engineering projects.
 - `Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Saltmere Engineering**  
@@ -80,38 +78,6 @@ Inside `DespatchSupplierParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/PartyTaxScheme/RegistrationName` = **Saltmere Engineering**  
-  The name under which the party is registered for state sales tax; identity of Saltmere Engineering (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **UL-1232055** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
-  The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/RegistrationName` = **Saltmere Engineering**  
-  The name under which the party is registered, with its legal form; identity of Saltmere Engineering (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
-  The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/Contact/Name` = **Dispatch office**  
   The party's dispatch office desk: the desk for its role in this document (it sends the goods off); identity of Saltmere Engineering (world/parties.json).
 - `Party/Contact/JobTitle` = **Dispatch coordinator**  
@@ -133,18 +99,10 @@ Inside `DespatchSupplierParty`:
 
 Inside `DeliveryCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.selanutelecom.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Selanu Telecom (world/parties.json).
-- `Party/IndustryClassificationCode` = **6110** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Selanu Telecom (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 6110 = Wired telecommunications activities.
 - `Party/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Selanu Telecom**  
   The trading name; identity of Selanu Telecom (world/parties.json).
-- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/ID` = **34928611** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Telecom (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -167,34 +125,6 @@ Inside `DeliveryCustomerParty`:
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `Party/PartyLegalEntity/RegistrationName` = **Selanu Telecom Ltd**  
-  The name under which the party is registered, with its legal form; identity of Selanu Telecom (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Selanu Telecom (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Selanu Telecom (world/parties.json).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The name of code LTD in Lisavu's national company legal form list.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 20 persons and its turnover of 3230000.000 XLC in 2025, by the Trade Accord's limits; identity of Selanu Telecom (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XB`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Network stores**  
   The party's network stores desk: the desk for its role in this document (it receives the goods); identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/JobTitle` = **Stores supervisor**  
@@ -240,18 +170,10 @@ Inside `Shipment`:
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **376** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight.
-- `Consignment/CarrierParty/WebsiteURI` = **https://www.kelaro.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/IndustryClassificationCode` = **5120** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Kelaro Air Cargo (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5120 = Freight air transport.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
   The trading name; identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/CarrierParty/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `Consignment/CarrierParty/PostalAddress/ID` = **58930746** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -274,34 +196,6 @@ Inside `Shipment`:
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/CarrierParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `Consignment/CarrierParty/PartyLegalEntity/RegistrationName` = **Kelaro Air Cargo Ltd**  
-  The name under which the party is registered, with its legal form; identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/PartyLegalEntity/CompanyID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `Consignment/CarrierParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
-- `Consignment/CarrierParty/PartyLegalEntity/CompanyLegalForm` = **Island limited company**  
-  The name of code LTD in Lisavu's national company legal form list.
-- `Consignment/CarrierParty/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 13 persons and its turnover of 2590000.000 XLC in 2025, by the Trade Accord's limits; identity of Kelaro Air Cargo (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Consignment/CarrierParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XB`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `Consignment/CarrierParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Consignment/CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
-- `Consignment/CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
-  The register the company is entered in.
-- `Consignment/CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Consignment/CarrierParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/CarrierParty/Contact/Name` = **Cargo operations**  
   The party's cargo operations desk: the desk for its role in this document (it carries or handles the goods); identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/Contact/JobTitle` = **Load controller**  
@@ -314,10 +208,6 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41311** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Kelaro Air Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-06-04**  
   Expected after the usual transit by air.
 - `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-06-04**  
@@ -523,7 +413,6 @@ Inside `DespatchLine`:
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
       </cac:PartyIdentification>
@@ -551,42 +440,6 @@ Inside `DespatchLine`:
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Dispatch office</cbc:Name>
         <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
@@ -603,18 +456,12 @@ Inside `DespatchLine`:
   </cac:DespatchSupplierParty>
   <cac:DeliveryCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">6110</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">34928611</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -630,32 +477,6 @@ Inside `DespatchLine`:
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Network stores</cbc:Name>
         <cbc:JobTitle>Stores supervisor</cbc:JobTitle>
@@ -696,18 +517,12 @@ Inside `DespatchLine`:
       <cbc:ID>SE-CS-26-0716</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
-        <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">5120</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Kelaro Air Cargo</cbc:Name>
         </cac:PartyName>
-        <cac:Language>
-          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-          <cbc:Name>Lisavan</cbc:Name>
-        </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">58930746</cbc:ID>
           <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -723,32 +538,6 @@ Inside `DespatchLine`:
             <cbc:Name>Lisavu</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Kelaro Air Cargo Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:CompanyID>
-          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-          <cac:RegistrationAddress>
-            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-            <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-          <cac:CorporateRegistrationScheme>
-            <cbc:ID>XL:ICR</cbc:ID>
-            <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:CorporateRegistrationScheme>
-        </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Cargo operations</cbc:Name>
           <cbc:JobTitle>Load controller</cbc:JobTitle>
@@ -757,10 +546,6 @@ Inside `DespatchLine`:
           <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
-        <cac:ElectronicAddress>
-          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41311</cbc:ElectronicAddressID>
-        </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
     <cac:Delivery>

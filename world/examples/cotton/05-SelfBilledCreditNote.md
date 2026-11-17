@@ -174,14 +174,8 @@ Inside `Signature`:
 
 Inside `AccountingCustomerParty`:
 
-- `Party/WebsiteURI` = **https://www.selanuginnery.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/IndustryClassificationCode` = **0163** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Selanu Cotton Ginnery (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 0163 = Post-harvest crop activities.
 - `Party/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **XL-TR-042681** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XL-TR- and 6 digits); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
   The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
@@ -214,18 +208,12 @@ Inside `AccountingCustomerParty`:
   The name under which the party is registered, with its legal form; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Tivufo kilika humaki** (languageID `qal`)  
   The name of code LTD in Lisavu's national company legal form list. In Lisavan, the sender's language.
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
   The name of code LTD in Lisavu's national company legal form list. In English.
-- `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 22 persons and its turnover of 3660000.000 XLC in 2025, by the Trade Accord's limits; identity of Selanu Cotton Ginnery (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
   The town's Lisavan name, its name on the island. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
@@ -261,10 +249,6 @@ Inside `AccountingCustomerParty`:
 
 Inside `AccountingSupplierParty`:
 
-- `Party/WebsiteURI` = **https://www.lisavufarm.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/IndustryClassificationCode` = **0116** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lisavu Cotton Farm (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 0116 = Growing of fibre crops.
 - `Party/PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
@@ -341,8 +325,6 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
   Number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **2009-08-17**  
-  The day the company was entered in the register; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
   The island renews a farm's registration every year: it runs until this date.
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **SP** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -353,10 +335,6 @@ Inside `AccountingSupplierParty`:
   The name of code SP in Lisavu's national company legal form list. In English.
 - `Party/PartyLegalEntity/SoleProprietorshipIndicator` = **true**  
   The farm belongs to one farmer, who runs it in their own name; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/EntitySizeCode` = **MICRO** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 5 persons and its turnover of 146000.000 XLC in 2025, by the Trade Accord's limits; identity of Lisavu Cotton Farm (world/parties.json). The code is from the Trade Accord's entity size list: MICRO = Micro enterprise.
-- `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
   The town's Lisavan name, its name on the island. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
@@ -657,14 +635,9 @@ Inside `CreditNoteLine`:
   </cac:Signature>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-042681</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
       </cac:PartyName>
@@ -690,12 +663,9 @@ Inside `CreditNoteLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
@@ -730,8 +700,6 @@ Inside `CreditNoteLine`:
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lisavufarm.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">0116</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
       </cac:PartyIdentification>
@@ -795,14 +763,11 @@ Inside `CreditNoteLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
-        <cbc:RegistrationDate>2009-08-17</cbc:RegistrationDate>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Fomofa nisakihi</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XL">Sole proprietorship</cbc:CompanyLegalForm>
         <cbc:SoleProprietorshipIndicator>true</cbc:SoleProprietorshipIndicator>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MICRO</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>

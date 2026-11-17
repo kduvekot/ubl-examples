@@ -54,8 +54,6 @@ Inside `ValidityPeriod`:
 
 Inside `IssuerParty`:
 
-- `IndustryClassificationCode` = **9411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Ferrano Chamber of Commerce (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 9411 = Activities of business and employers membership organizations.
 - `PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Chamber of Commerce**  
@@ -90,26 +88,8 @@ Inside `IssuerParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Ferrano Chamber of Commerce**  
-  The name under which the party is registered for value added tax; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007376017** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Ferrano Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Ferrano Chamber of Commerce**  
   The public body's official name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Contact/Name` = **Carnet office**  
   The party's carnet office desk: the desk for its role in this document (a carnet); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/JobTitle` = **Carnet officer**  
@@ -131,10 +111,6 @@ Inside `IssuerParty`:
 
 Inside `HolderParty`:
 
-- `WebsiteURI` = **https://www.valdara.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
-- `IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
@@ -143,10 +119,6 @@ Inside `HolderParty`:
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Valdara Industries (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -173,60 +145,10 @@ Inside `HolderParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
-  The name under which the party is registered for value added tax; identity of Valdara Industries (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007299291** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Valdara Industries (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
   The name under which the party is registered, with its legal form; identity of Valdara Industries (world/parties.json).
 - `PartyLegalEntity/CompanyID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   Number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `PartyLegalEntity/RegistrationDate` = **1962-04-12**  
-  The day the company was entered in the register; identity of Valdara Industries (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **SUA** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SUA = Società urvaniana per azioni (public limited company).
-- `PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)** (languageID `qau`)  
-  The name of code SUA in Urvania's national company legal form list. In Urvanian, the sender's language.
-- `PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)** (languageID `en-XU`)  
-  The name of code SUA in Urvania's national company legal form list. In English.
-- `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 3083 persons and its turnover of 23600000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/CorporateStockAmount` = **250000000** (currencyID `XUF`)  
-  The share capital, in ferra; identity of Valdara Industries (world/parties.json).
-- `PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
-  All shares are paid up.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/SecurityListing/ID` = **XU0001042501** (schemeID `ISO 6166`)  
-  The identifier of the listed shares, in the form of an ISIN with the world's country code. The schemeID names the scheme it is from: the ISO 6166 International Securities Identification Number (the issuer's country code, nine letters or digits, a check digit (Luhn)).
-- `PartyLegalEntity/SecurityListing/Description` = **Ordinary shares of Valdara Industries**  
-  What is listed.
-- `PartyLegalEntity/SecurityListing/MarketName` = **Ferrano Stock Exchange**  
-  The name of code XFER in the Trade Accord's market identifier list.
-- `PartyLegalEntity/SecurityListing/MarketCode` = **XFER** (listID `urn:ubl-examples:world:codelist:MarketCode`)  
-  The market's code. The code is from the Trade Accord's market identifier list: XFER = Ferrano Stock Exchange.
 - `Contact/Name` = **Customs desk**  
   The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Valdara Industries (world/parties.json).
 - `Contact/JobTitle` = **Customs specialist**  
@@ -239,18 +161,6 @@ Inside `HolderParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
-- `ServiceProviderParty/ID` = **VI-SP-2026-01**  
-  The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
-- `ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
-  The kind of service, as a code. The code is from the Trade Accord's service type list: LOGISTICS = Logistics service.
-- `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
-  What the service provider does for the party; identity of Valdara Industries (world/parties.json).
-- `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ServiceProviderParty/SellerContact/Name` = **Key account desk**  
-  The provider's contact for this customer.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -326,16 +236,10 @@ Inside `ExportingGuarantorParty`:
 
 Inside `ImportingGuarantorParty`:
 
-- `IndustryClassificationCode` = **9411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Selanu Chamber of Commerce (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 9411 = Activities of business and employers membership organizations.
 - `PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Chamber of Commerce**  
   The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/ID` = **95763809** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -358,45 +262,15 @@ Inside `ImportingGuarantorParty`:
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `PartyLegalEntity/RegistrationName` = **Selanu Chamber of Commerce**  
-  The public body's official name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XU`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Carnet office**  
-  The party's carnet office desk: the desk for its role in this document (a carnet); identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/JobTitle` = **Carnet officer**  
-  The job of the person who answers at the desk; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Department` = **Carnets**  
-  The department the desk belongs to; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Telephone` = **+999 3 723 2133**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/ElectronicMail` = **carnets@chamber-selanu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Selanu Chamber of Commerce (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC42133** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Exporting Customs Party
 
 Inside `ExportingCustomsParty`:
 
-- `IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Customs Administration of Urvania (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
 - `PostalAddress/ID` = **4160202968066555** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Customs Administration of Urvania (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **POSTAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -425,59 +299,15 @@ Inside `ExportingCustomsParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Customs Administration of Urvania**  
-  The name under which the party is registered for value added tax; identity of Customs Administration of Urvania (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007385602** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Customs Administration of Urvania (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/RegistrationName` = **Customs Administration of Urvania**  
-  The public body's official name; identity of Customs Administration of Urvania (world/parties.json).
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Contact/Name` = **Border office**  
-  The party's main desk, which handles this document; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/JobTitle` = **Customs officer**  
-  The job of the person who answers at the desk; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Department` = **Customs**  
-  The department the desk belongs to; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 349 5507**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Telefax` = **+999 1 041 326 0018**  
-  The customs office still lists a fax number; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/ElectronicMail` = **border@customs-xu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Customs Administration of Urvania (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Importing Customs Party
 
 Inside `ImportingCustomsParty`:
 
-- `IndustryClassificationCode` = **8411** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Island Customs Service (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 8411 = General public administration activities.
 - `PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
-- `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/ID` = **65334843** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Island Customs Service (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -500,30 +330,6 @@ Inside `ImportingCustomsParty`:
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `PartyLegalEntity/RegistrationName` = **Island Customs Service**  
-  The public body's official name; identity of Island Customs Service (world/parties.json).
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XU`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Contact/Name` = **Import office**  
-  The party's main desk, which handles this document; identity of Island Customs Service (world/parties.json).
-- `Contact/JobTitle` = **Customs officer**  
-  The job of the person who answers at the desk; identity of Island Customs Service (world/parties.json).
-- `Contact/Department` = **Customs**  
-  The department the desk belongs to; identity of Island Customs Service (world/parties.json).
-- `Contact/Telephone` = **+999 3 728 1448**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Island Customs Service (world/parties.json).
-- `Contact/ElectronicMail` = **import@customs-xl.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Island Customs Service (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Island Customs Service (world/parties.json).
-- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Shipment
 
@@ -904,7 +710,6 @@ Inside `Signature`:
     <cbc:EndDate>2027-05-25</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:IssuerParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
     </cac:PartyIdentification>
@@ -932,29 +737,8 @@ Inside `Signature`:
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007376017</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Carnet office</cbc:Name>
@@ -970,8 +754,6 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:IssuerParty>
   <cac:HolderParty>
-    <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
@@ -984,10 +766,6 @@ Inside `Signature`:
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-      <cbc:Name>Urvanian</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -1005,54 +783,9 @@ Inside `Signature`:
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
-      <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-      <cac:SecurityListing>
-        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
-        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
-        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-        <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
-      </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customs desk</cbc:Name>
@@ -1062,22 +795,6 @@ Inside `Signature`:
       <cbc:ElectronicMail>customs@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
-    <cac:ServiceProviderParty>
-      <cbc:ID>VI-SP-2026-01</cbc:ID>
-      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
-      <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Castrano Logistics</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SellerContact>
-        <cbc:Name>Key account desk</cbc:Name>
-      </cac:SellerContact>
-    </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
@@ -1142,17 +859,12 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:ExportingGuarantorParty>
   <cac:ImportingGuarantorParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">95763809</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -1168,41 +880,14 @@ Inside `Signature`:
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Port Wrenfield</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Carnet office</cbc:Name>
-      <cbc:JobTitle>Carnet officer</cbc:JobTitle>
-      <cbc:Department>Carnets</cbc:Department>
-      <cbc:Telephone>+999 3 723 2133</cbc:Telephone>
-      <cbc:ElectronicMail>carnets@chamber-selanu.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ImportingGuarantorParty>
   <cac:ExportingCustomsParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-      <cbc:Name>Urvanian</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202968066555</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">POSTAL</cbc:AddressTypeCode>
@@ -1221,56 +906,14 @@ Inside `Signature`:
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007385602</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Border office</cbc:Name>
-      <cbc:JobTitle>Customs officer</cbc:JobTitle>
-      <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
-      <cbc:Telefax>+999 1 041 326 0018</cbc:Telefax>
-      <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ExportingCustomsParty>
   <cac:ImportingCustomsParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Island Customs Service</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">65334843</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -1286,28 +929,6 @@ Inside `Signature`:
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Port Wrenfield</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Import office</cbc:Name>
-      <cbc:JobTitle>Customs officer</cbc:JobTitle>
-      <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
-      <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ImportingCustomsParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0725</cbc:ID>

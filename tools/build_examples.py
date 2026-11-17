@@ -396,9 +396,12 @@ def legal_entity(pid):
                                   f"The size class follows from the company's {le['headcount']} persons and its turnover "
                                   f"of {t['amount']} {t['currency']} in {t['year']}, by the Trade Accord's limits; {src}.")
     if le.get("capital"):
-        out["CorporateStockAmount"] = V(str(le["capital"]), f"The share capital, in {c['currency']['name'].lower()}; "
-                                                            f"{src}.", currencyID=c["currency"]["code"])
-        out["FullyPaidSharesIndicator"] = V("true", "All shares are paid up.")
+        out["CorporateStockAmount"] = V(str(le["capital"]), f"The share capital, in {c['currency']['name'].lower()}, "
+                                        f"as paid up: {c['name']}'s company law asks an {le.get('form')} to state it "
+                                        f"on its invoices and business letters (world/countries.json); {src}.",
+                                        currencyID=c["currency"]["code"])
+        out["FullyPaidSharesIndicator"] = V("true", "All shares are paid up, so the amount stated is the whole "
+                                                    "share capital.")
     out["RegistrationAddress"] = {"CityName": city_names(p["c"], idn["address"]["CityName"], "The registered office, "
                                                          "as entered in the register."),
                                   "Country": {"IdentificationCode": V(p["c"], "The country of registration.")}}
@@ -1330,12 +1333,17 @@ def party_profile(top, path, pid, content):
         blocks.add("legal-name")
     if "legal-full" in blocks:
         blocks.add("legal")
-    if PROFILE_CAPITAL is False:
-        blocks.discard("capital")
+    if "capital" in blocks and not capital_on_documents(pid):
+        blocks.discard("capital")             # only where the company's law asks for it (O147)
     return blocks
 
 
-PROFILE_CAPITAL = True
+def capital_on_documents(pid):
+    p = PARTY.get(pid)
+    if not p:
+        return False
+    form = p["identity"].get("legal", {}).get("form")
+    return bool(form and WORLD["countries"][p["c"]]["legal_forms"].get(form, {}).get("capital_on_documents"))
 
 
 def _codes(node, name):
@@ -1373,7 +1381,7 @@ def apply_profile(block, blocks, pid):
 
 
 
-APPLY_PARTY_PROFILE = False    # off until the owner approves the party table (O88, analysis/party-profile.md)
+APPLY_PARTY_PROFILE = True     # the party table, approved by the owner 2026-11-17 (O88, analysis/party-profile.md)
 
 
 def profiled(top, path, pid):
@@ -2536,6 +2544,60 @@ def check_air_uld_ids(flow_id, roots):
         raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
 
 
+PARTY_SAYS = {}        # pid -> {"self": element paths it gives about itself, "other": paths others give about it}
+
+
+def check_party_profiles(flow_id, roots, docs):
+    """The party table at work (C01, O90): a customs trader number only in a customs document or a cross-border
+    transport document; share capital only in its issuer's own invoice-kind document, and only where the issuer's
+    company law asks for it; and what each document says about each party is gathered for the check across flows."""
+    by_reg = {p["identity"].get("registry_id"): pid for pid, p in PARTY.items() if p["identity"].get("registry_id")}
+    for (name, root), doc in zip(roots, docs):
+        cls, where = DOC_CLASS[doc["doc"]], f"world/examples/{flow_id}/{name}"
+        for e in root.iter():
+            if not isinstance(e.tag, str):
+                continue
+            pid = by_reg.get(e.findtext(f"{{{NS_CAC}}}PartyIdentification/{{{NS_CBC}}}ID"))
+            if not pid or e.find(f"{{{NS_CAC}}}PartyName") is None:
+                continue
+            for x in e.iterfind(f"{{{NS_CAC}}}AdditionalPartyIdentification/{{{NS_CBC}}}ID"):
+                if "customs-trader" in x.get("schemeID", "") and not (
+                        cls == "customs" or (cls == "transport" and _cross_border(doc))):
+                    raise SystemExit(f"{where}: customs trader number of {pid} outside a customs or cross-border "
+                                     "transport document (C01)")
+            if e.find(f"{{{NS_CAC}}}PartyLegalEntity/{{{NS_CBC}}}CorporateStockAmount") is not None and not (
+                    cls == "invoice" and pid == doc["from"] and capital_on_documents(pid)):
+                raise SystemExit(f"{where}: share capital of {pid} outside its own invoice, or not asked for by its "
+                                 "company law (C01, O147)")
+            said = set()
+            for d in e.iter():                          # every leaf value, by its path below the party
+                if not isinstance(d.tag, str) or len(d) or d.text is None:
+                    continue
+                steps, x = [], d
+                while x is not e:
+                    steps.append(etree.QName(x).localname)
+                    x = x.getparent()
+                if "Contact" in steps:                  # the desk differs with the role (C02)
+                    continue
+                said.add(("/".join(reversed(steps)) + "@" + d.get("schemeID", ""), d.text))
+            side = "self" if pid == doc["from"] else "other"
+            PARTY_SAYS.setdefault(pid, {"self": set(), "other": set()})[side] |= said
+
+
+def check_party_knowledge():
+    """O90: what one party says about another may be less than what that party says about itself, but never
+    contradicts it: wherever both give a value at the same place (the same element below the party, with the same
+    scheme), the other's value is one the party gives itself. Contacts are left out: the desk follows the role."""
+    out = []
+    for pid, said in sorted(PARTY_SAYS.items()):
+        own = {}
+        for path, value in said["self"]:
+            own.setdefault(path, set()).add(value)
+        for path, value in sorted(said["other"]):
+            if path in own and value not in own[path]:
+                out.append(f"{pid}: another document gives {path} = {value!r}, the party itself {sorted(own[path])}")
+    return out
+
 def xmlname(n, doc):
     return f"{n:02d}-{doc['doc']}.xml"
 
@@ -2639,6 +2701,7 @@ def main(flow_id, check=False):
             print(f"world/examples/{flow_id}/{xmlname(n, doc)}: {len(reasons)} values")
     check_reference_uuids(flow_id, roots)
     check_air_uld_ids(flow_id, roots)
+    check_party_profiles(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
@@ -2668,6 +2731,10 @@ if __name__ == "__main__":
     if air:
         print("\n".join(air), file=sys.stderr)
         ok = False
+    if not args:
+        for problem in build_examples.check_party_knowledge():
+            print(f"party table (O90): {problem}", file=sys.stderr)
+            ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)
     if build_examples.UNTYPED:

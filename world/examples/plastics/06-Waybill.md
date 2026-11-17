@@ -11,7 +11,7 @@ The inland waterway consignment note, issued to the shipper.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); PartyLegalEntity/EntitySizeCode first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
@@ -62,10 +62,6 @@ Inside `IssueLocation`:
 
 Inside `SenderParty`:
 
-- `WebsiteURI` = **https://www.fiumella.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Fiumella Barges (world/parties.json).
-- `IndustryClassificationCode` = **5022** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Fiumella Barges (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 5022 = Inland freight water transport.
 - `PartyIdentification/ID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Fiumella Barges**  
@@ -100,48 +96,6 @@ Inside `SenderParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Fiumella Barges SRU**  
-  The name under which the party is registered for value added tax; identity of Fiumella Barges (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007347248** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Fiumella Barges (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/RegistrationName` = **Fiumella Barges SRU**  
-  The name under which the party is registered, with its legal form; identity of Fiumella Barges (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
-  Number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Fiumella Barges (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SRU = Società a responsabilità urvaniana (private limited company).
-- `PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)** (languageID `qau`)  
-  The name of code SRU in Urvania's national company legal form list. In Urvanian, the sender's language.
-- `PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)** (languageID `en-XU`)  
-  The name of code SRU in Urvania's national company legal form list. In English.
-- `PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 30 persons and its turnover of 540000000 XUF in 2025, by the Trade Accord's limits; identity of Fiumella Barges (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Contact/Name` = **Chartering desk**  
   The party's main desk, which handles this document; identity of Fiumella Barges (world/parties.json).
 - `Contact/JobTitle` = **Chartering manager**  
@@ -163,10 +117,6 @@ Inside `SenderParty`:
 
 Inside `ReceiverParty`:
 
-- `WebsiteURI` = **https://www.rinova.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Rinova Recovery (world/parties.json).
-- `IndustryClassificationCode` = **3830** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Rinova Recovery (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3830 = Materials recovery.
 - `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **XU-TR-104548** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
@@ -203,48 +153,6 @@ Inside `ReceiverParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `PartyTaxScheme/RegistrationName` = **Rinova Recovery SRU**  
-  The name under which the party is registered for value added tax; identity of Rinova Recovery (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **XU007318479** (schemeID `urn:ubl-examples:world:XU:tax`)  
-  Tax number under Urvania's value added tax (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)); identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the VAT number of Urvania (XU and 9 digits, the last a check digit (weights 9..2, modulus 11)).
-- `PartyTaxScheme/TaxLevelCode` = **NATIONAL** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Urvania's value added tax is levied by the country. The code is from the Trade Accord's tax level list: NATIONAL = Levied by the country.
-- `PartyTaxScheme/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/RegistrationName` = **Rinova Recovery SRU**  
-  The name under which the party is registered, with its legal form; identity of Rinova Recovery (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
-  Number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Rinova Recovery (world/parties.json).
-- `PartyLegalEntity/CompanyLegalFormCode` = **SRU** (listID `urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Urvania's national list: only the listID tells the forms of different countries apart. The code is from Urvania's national company legal form list: SRU = Società a responsabilità urvaniana (private limited company).
-- `PartyLegalEntity/CompanyLegalForm` = **Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)** (languageID `qau`)  
-  The name of code SRU in Urvania's national company legal form list. In Urvanian, the sender's language.
-- `PartyLegalEntity/CompanyLegalForm` = **Società a responsabilità urvaniana (private limited company)** (languageID `en-XU`)  
-  The name of code SRU in Urvania's national company legal form list. In English.
-- `PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 47 persons and its turnover of 722000000 XUF in 2025, by the Trade Accord's limits; identity of Rinova Recovery (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
-- `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
-  The identifier of the register in the world (world/countries.json).
-- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Commercial register of Urvania**  
-  The register the company is entered in.
-- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Contact/Name` = **Transport planning**  
   The party's transport planning desk: the desk for its role in this document (it books or uses the transport); identity of Rinova Recovery (world/parties.json).
 - `Contact/JobTitle` = **Logistics planner**  
@@ -257,20 +165,6 @@ Inside `ReceiverParty`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rinova Recovery (world/parties.json).
-- `PartyAuthorization/PurposeCode` = **R3** (listID `Basel Convention Annex IV`)  
-  The purpose as a code. The code is from the world's copy of Basel Convention, Annex IV: disposal and recovery operations: R3 = Recycling/reclamation of organic substances which are not used as solvents.
-- `PartyAuthorization/Purpose` = **Recovery of non-hazardous plastic waste**  
-  What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
-- `PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
-  The authorization expires on this date.
-- `PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
-  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
-- `PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
-- `PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `PartyAuthorization/Certificate/CertificateType` = **Operating permit** (languageID `en-XU`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In English.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104548** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -306,10 +200,6 @@ Inside `Shipment`:
   The barge operator's number: the second lot of the voyage.
 - `Consignment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight on board.
-- `Consignment/ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Rivermouth Packaging (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 2220 = Manufacture of plastics products.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:20274** (schemeID `ISO 6523`)  
@@ -318,12 +208,6 @@ Inside `Shipment`:
   A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/PartyName/Name` = **Rivermouth Packaging**  
   The trading name; identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/ConsigneeParty/Language/Name` = **English**  
-  The language's name.
-- `Consignment/ConsigneeParty/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
 - `Consignment/ConsigneeParty/PostalAddress/ID` = **LUM-ADR-411619** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
   The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -350,46 +234,6 @@ Inside `Shipment`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/ConsigneeParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Consignment/ConsigneeParty/PartyTaxScheme/RegistrationName` = **Rivermouth Packaging Ltd**  
-  The name under which the party is registered for state sales tax; identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/PartyTaxScheme/CompanyID` = **CO-1238220** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Rivermouth Packaging (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `Consignment/ConsigneeParty/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `Consignment/ConsigneeParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationName` = **Rivermouth Packaging Ltd**  
-  The name under which the party is registered, with its legal form; identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
-  The day the company was entered in the register; identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)**  
-  The name of code LTD in Bayvarra's national company legal form list.
-- `Consignment/ConsigneeParty/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 23 persons and its turnover of 6800000.00 XBL in 2025, by the Trade Accord's limits; identity of Rivermouth Packaging (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
-- `Consignment/ConsigneeParty/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
-  The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
-- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
-  The registered office, as entered in the register.
-- `Consignment/ConsigneeParty/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
-- `Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
-  The register the company is entered in.
-- `Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
-  A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
-- `Consignment/ConsigneeParty/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/ConsigneeParty/Contact/Name` = **Goods-in**  
   The party's goods-in desk: the desk for its role in this document (it receives the goods); identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/JobTitle` = **Goods-in supervisor**  
@@ -402,52 +246,6 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/ID` = **XB96BLUM38020504712805** (schemeID `urn:ubl-examples:world:account`)  
-  The party's account, given with its details so that payments can be sent to it. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `Consignment/ConsigneeParty/FinancialAccount/Name` = **Rivermouth Packaging Ltd**  
-  The account holder, as the bank knows it.
-- `Consignment/ConsigneeParty/FinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
-  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
-- `Consignment/ConsigneeParty/FinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
-  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `Consignment/ConsigneeParty/FinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
-  The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/Name` = **Harbour branch**  
-  The branch's name.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BLUM, the country XB and the location LX; identity of Bank of Lumeport (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
-  The bank; identity of Bank of Lumeport (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
-  The town the branch is in.
-- `Consignment/ConsigneeParty/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/ConsigneeParty/FinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/ConsigneeParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412740** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Rivermouth Packaging (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Consignment/FreightAllowanceCharge/ChargeIndicator` = **true**  
   The freight, a charge.
 - `Consignment/FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
@@ -719,8 +517,6 @@ Inside `Signature`:
     </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
-    <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5022</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
     </cac:PartyIdentification>
@@ -748,47 +544,6 @@ Inside `Signature`:
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Fiumella Barges SRU</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007347248</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Fiumella Barges SRU</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Chartering desk</cbc:Name>
       <cbc:JobTitle>Chartering manager</cbc:JobTitle>
@@ -803,8 +558,6 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
-    <cbc:WebsiteURI>https://www.rinova.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3830</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
     </cac:PartyIdentification>
@@ -835,47 +588,6 @@ Inside `Signature`:
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007318479</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Rinova Recovery SRU</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
@@ -884,19 +596,6 @@ Inside `Signature`:
       <cbc:ElectronicMail>logistics@rinova.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
-    <cac:PartyAuthorization>
-      <cbc:PurposeCode listID="Basel Convention Annex IV">R3</cbc:PurposeCode>
-      <cbc:Purpose>Recovery of non-hazardous plastic waste</cbc:Purpose>
-      <cac:ValidityPeriod>
-        <cbc:EndDate>2029-12-31</cbc:EndDate>
-      </cac:ValidityPeriod>
-      <cac:Certificate>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-permit">XU-ENV-2024-0311</cbc:ID>
-        <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
-        <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
-        <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
-      </cac:Certificate>
-    </cac:PartyAuthorization>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
@@ -925,8 +624,6 @@ Inside `Signature`:
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
-        <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
         </cac:PartyIdentification>
@@ -939,11 +636,6 @@ Inside `Signature`:
         <cac:PartyName>
           <cbc:Name>Rivermouth Packaging</cbc:Name>
         </cac:PartyName>
-        <cac:Language>
-          <cbc:ID schemeID="ISO 639">en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-        </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-411619</cbc:ID>
           <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -961,46 +653,6 @@ Inside `Signature`:
             <cbc:Name>Bayvarra</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
-        <cac:PartyTaxScheme>
-          <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1238220</cbc:CompanyID>
-          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-          <cac:TaxScheme>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-            <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-            <cac:JurisdictionRegionAddress>
-              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:TaxScheme>
-        </cac:PartyTaxScheme>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Rivermouth Packaging Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:CompanyID>
-          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-          <cac:RegistrationAddress>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-          <cac:CorporateRegistrationScheme>
-            <cbc:ID>XB:FBR</cbc:ID>
-            <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:CorporateRegistrationScheme>
-        </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Goods-in</cbc:Name>
           <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
@@ -1009,47 +661,6 @@ Inside `Signature`:
           <cbc:ElectronicMail>goodsin@rivermouth.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
-        <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB96BLUM38020504712805</cbc:ID>
-          <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>
-          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:FinancialInstitutionBranch>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
-            <cbc:Name>Harbour branch</cbc:Name>
-            <cac:FinancialInstitution>
-              <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-              <cbc:Name>Bank of Lumeport</cbc:Name>
-              <cac:Address>
-                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-                <cbc:StreetName>Exchange Street</cbc:StreetName>
-                <cbc:BuildingNumber>48</cbc:BuildingNumber>
-                <cbc:CityName>Lumeport</cbc:CityName>
-                <cbc:PostalZone>38523</cbc:PostalZone>
-                <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-                <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                  <cbc:Name>Bayvarra</cbc:Name>
-                </cac:Country>
-              </cac:Address>
-            </cac:FinancialInstitution>
-            <cac:Address>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitutionBranch>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:FinancialAccount>
-        <cac:ElectronicAddress>
-          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412740</cbc:ElectronicAddressID>
-        </cac:ElectronicAddress>
       </cac:ConsigneeParty>
       <cac:FreightAllowanceCharge>
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>

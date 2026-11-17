@@ -19,8 +19,6 @@
     </cac:Country>
   </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
-    <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
     </cac:PartyIdentification>
@@ -70,27 +68,6 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Customs desk</cbc:Name>
@@ -106,8 +83,6 @@
     </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:ConsignorParty>
-    <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
     </cac:PartyIdentification>
@@ -117,10 +92,6 @@
     <cac:PartyName>
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">23618907</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -136,44 +107,6 @@
         <cbc:Name>Lisavu</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Selanu Cotton Ginnery Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XL:ICR</cbc:ID>
-        <cbc:Name>Island companies register</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
-      <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
-      <cbc:ElectronicMail>dispatch@selanuginnery.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42681</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:ConsigneeParty>
     <cac:PartyIdentification>
@@ -184,18 +117,12 @@
     </cac:PartyName>
   </cac:ConsigneeParty>
   <cac:CustomsParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410137</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -214,12 +141,6 @@
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Import office</cbc:Name>

@@ -21,8 +21,6 @@
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
       </cac:PartyIdentification>
@@ -69,11 +67,8 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -107,22 +102,12 @@
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lumeporttextile.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">1312</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412603</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Textile Mill</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-933254</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -158,27 +143,6 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Textile Mill Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Accounts payable</cbc:Name>
@@ -219,36 +183,12 @@
       <cac:Consignment>
         <cbc:ID>LTM-CS-26-0201</cbc:ID>
         <cac:CarrierParty>
-          <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
-          <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
             <cbc:Name>Tidewell Ocean Lines</cbc:Name>
           </cac:PartyName>
-          <cac:Language>
-            <cbc:ID schemeID="ISO 639">en</cbc:ID>
-            <cbc:Name>English</cbc:Name>
-            <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-          </cac:Language>
-          <cac:PostalAddress>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-547539</cbc:ID>
-            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-            <cbc:StreetName>Harbour Road</cbc:StreetName>
-            <cbc:BuildingNumber>18</cbc:BuildingNumber>
-            <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cbc:PostalZone>38527</cbc:PostalZone>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-            <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              <cbc:Name>Bayvarra</cbc:Name>
-            </cac:Country>
-          </cac:PostalAddress>
           <cac:PartyTaxScheme>
             <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
             <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
@@ -264,45 +204,6 @@
               </cac:JurisdictionRegionAddress>
             </cac:TaxScheme>
           </cac:PartyTaxScheme>
-          <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
-            <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
-            <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
-            <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-            <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-            <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-            <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
-            <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-            <cac:RegistrationAddress>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:RegistrationAddress>
-            <cac:CorporateRegistrationScheme>
-              <cbc:ID>XB:FBR</cbc:ID>
-              <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-              <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-              <cac:JurisdictionRegionAddress>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                </cac:Country>
-              </cac:JurisdictionRegionAddress>
-            </cac:CorporateRegistrationScheme>
-          </cac:PartyLegalEntity>
-          <cac:Contact>
-            <cbc:Name>Bookings</cbc:Name>
-            <cbc:JobTitle>Booking agent</cbc:JobTitle>
-            <cbc:Department>Bookings</cbc:Department>
-            <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
-            <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
-            <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          </cac:Contact>
-          <cac:ElectronicAddress>
-            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
-          </cac:ElectronicAddress>
         </cac:CarrierParty>
       </cac:Consignment>
     </cac:Shipment>
