@@ -1,16 +1,15 @@
 """Writes report.md from results.json and parameters.json (called by build_bench.py)."""
 import json
+import math
 from pathlib import Path
 
-# Figures of the previous run (run 1, 2026-11-17, oak slats and hot-dip galvanised carbon-steel fixings;
-# snapshot in commit 41c8c98). Kept here only to show what changed in this run.
-PREV = dict(slat=4.45, frame=13.42, boltset=0.74, net=49.86, carton1=14.5, carton2=15.3, bundle=22.9, gross=52.69,
-            steel_in_product=26.8, poured=48.9, pallet_goods=210.8, pallet_gross=238.9, load_t=5.94, util=0.95, sag=17.0,
-            sag3=9.4, n_items=17)
-# Figures of run 2 (thermally modified ash 38 mm main case, stainless fixings).
-PREV2 = dict(slat=3.58, wood=17.9, boltset=0.72, frame=13.42, net=45.45, carton1=14.5, carton2=15.3, bundle=18.5, gross=48.29,
-             pallet_goods=193.2, pallet_gross=221.3, load_t=5.51, steel=26.1, stainless=0.70, poured=48.9, util=0.88, sag=14.4,
-             sag3=7.9, util30=1.02, n_items=20, pallet_h=716)
+# Figures of earlier runs, quoted only to show what changed (run 1: commit 41c8c98).
+RUN1 = dict(slat="4.45 kg (oak 38)", wood=22.2, boltset="0.74 kg (galvanised, M8 x 60)", frame=13.42, net=49.86, parcels="14.5 / 15.3 / 22.9",
+            bundle="1,810 x 295 x 86", gross=52.69, pallet="716 mm; 210.8 / 238.9 kg", load=5.94, steel="26.8 (with fasteners)", stainless="–",
+            poured=48.9, util="0.95", util30="–", sag=17.0, sag3=9.4, n_items=17)
+RUN2 = dict(slat="3.58 kg (modified ash 38)", wood=17.9, boltset="0.72 kg (A2, M8 x 60)", frame=13.42, net=45.45, parcels="14.5 / 15.3 / 18.5",
+            bundle="1,810 x 295 x 86", gross=48.29, pallet="716 mm; 193.2 / 221.3 kg", load=5.51, steel="26.1", stainless="0.70",
+            poured=48.9, util="0.88", util30="1.02", sag=14.4, sag3=7.9, n_items=20)
 
 
 def n(x, nd=1):
@@ -19,516 +18,443 @@ def n(x, nd=1):
 
 def write(r, here):
     here = Path(here)
+    r = json.loads(json.dumps(r))          # same key types as results.json
     P = json.load(open(here / "parameters.json", encoding="utf-8"))
     W = P["world_figures"]
-    WD = P["woods"]
-    KA, KO = r["main_wood"], r["comparison_wood"]
-    wa, wo = WD[KA], WD[KO]
-    RA, RO = r["woods"][KA], r["woods"][KO]
-    m, d, fr, c = r["mass"], r["dims"], r["frame"], r["casting"]
-    pk = r["packaging"]
+    wa = P["woods"][r["main_wood"]]
+    m, d, fr, c, sl = r["mass"], r["dims"], r["frame"], r["casting"], r["slats"]
+    pk, pa, ta = r["packaging"], r["parcels"], r["transport"]
     f = P["frame"]
+    FMk = r["frame_material"]
+    FM = P["materials"]["frame_materials"][FMk]
+    MC = r["material_comparison"]
+    T = P["slats"]["thickness"] if False else wa["slat_thickness"]
+    bolt_len = wa["bolt_length"]
     cast_bench = 2 * (m["frame_bare"] + m["frame_draft"])
     melt_loss = c["poured"] * P["casting"]["melt_loss_pct"] / 100
     fettle = 2 * P["casting"]["fettling_loss_kg_per_frame"]
     net_liquid = cast_bench + melt_loss + fettle
-    blank_l = 1830 * 101 * (wa["slat_thickness"] + 6) / 1e6
-    blank_lo = 1830 * 101 * (wo["slat_thickness"] + 6) / 1e6
-    TA, TO = wa["slat_thickness"], wo["slat_thickness"]
-    pka, pko = RA["packaging"], RO["packaging"]
-    import math as _m
-    beta = _m.radians(d["beta"])
-    up_rear_clear = (d["P"][1] + P["slats"]["back_slat_u"][1] * _m.cos(beta) - TA * _m.sin(beta)) - (d["seat_front"] + P["ergonomics"]["armrest_above_seat"])
-    trk, trko = r["sawmill_truck"], r["sawmill_truck_oak"]
+    blank_l = 1830 * 101 * (T + 6) / 1e6
     fcases = fr["cases"]
-    co, ci = pk["carton_outer"], pk["carton_inner"]
-    bu = pk["bundle"]
-    fb = pk["frame_bbox"]
+    co, ci, bu, fb = pk["carton_outer"], pk["carton_inner"], pk["bundle"], pk["frame_bbox"]
     wall = r["frame_mass_by_wall"]
-    arm_extra = (f["x_centre"] - f["armrest"]["flange_width"] / 2) * f["t_flange"] * 547 * P["materials"]["steel_density"] / 1e9
+    arm_extra = (f["x_centre"] - f["armrest"]["flange_width"] / 2) * f["t_flange"] * 547 * FM["density"] / 1e9
     world_net_check = 2 * W["frame_mass"] + 5 * W["slat_mass"] + W["bolt_set_mass"]
-    URK = "UR-SF-0450 (450 kg over the seat)"
-    SVK = "Three adults of 80 kg, one per seat (service)"
-    ENC = "EN 581-2 contract, 2000 N on the centre seat"
-
-    def case(R, k):
-        return R["slats"]["cases"][k]
-    ua, uo = case(RA, URK), case(RO, URK)
-    sa, so = RA["slats"], RO["slats"]
-    # thermally modified ash: sensitivity of the utilisation
-    util_sc2 = 1.5 * ua["sigma"] / sa["f_md_sc2"]
-    f_mk_split = wa["f_mk_base"] * 0.70
-    util_split = 1.5 * ua["sigma"] / (f_mk_split * wa["k_mod_short"] * sa["k_h"] / wa["gamma_M"])
-    pa, po = RA["parcels"], RO["parcels"]
-    ta, to = RA["transport"], RO["transport"]
-    ma, mo = RA["mass"], RO["mass"]
-    mc_out_mass = {k: WD[k]["density"] * (1 + sum(WD[k]["mc_outdoor"]) / 200) / (1 + WD[k]["mc_delivery"] / 100) / WD[k]["density"]
-                   for k in (KA, KO)}
+    URK, SVK, ENC = ("UR-SF-0450 (450 kg over the seat)", "Three adults of 80 kg, one per seat (service)",
+                     "EN 581-2 contract, 2000 N on the centre seat")
+    ua, sv, en = sl["cases"][URK], sl["cases"][SVK], sl["cases"][ENC]
+    util_sc2 = 1.5 * ua["sigma"] / sl["f_md_sc2"]
+    f_mk30 = wa["f_mk_base"] * 0.70
+    util30 = 1.5 * ua["sigma"] / (f_mk30 * wa["k_mod_short"] * sl["k_h"] / wa["gamma_M"])
+    trk = r["sawmill_truck"]
+    beta = math.radians(d["beta"])
+    up_rear_clear = (d["P"][1] + P["slats"]["back_slat_u"][1] * math.cos(beta) - T * math.sin(beta)) - (d["seat_front"] + P["ergonomics"]["armrest_above_seat"])
+    mc_out = (1 + sum(wa["mc_outdoor"]) / 200) / (1 + wa["mc_delivery"] / 100) - 1
 
     L = []
     A = L.append
     A("# Serra 180 park bench: parametric model, drawings and check of the world's figures")
     A("")
-    A("*Valdara Industries, Ferrano (Urvania), item VI-B180, datasheet VI-DS-B180. Open point O149 (feeds O25 and C69). Run 3 of 2026-11-17: "
-      "slats of thermally modified ash 1,800 x 95 x 45 mm from May 2026 on frame revision B (main case), and the benches already made with oak "
-      "1,800 x 95 x 38 mm on frame revision A (comparison); stainless fixings. Generated by `build_bench.py` "
-      "from `parameters.json`; every number below is computed, none is typed in, except the figures of runs 1 and 2 quoted for comparison.*")
+    A(f"*Valdara Industries, Ferrano (Urvania), item VI-B180, datasheet VI-DS-B180. Open point O149 (feeds O25 and C69). Run 3 of 2026-11-17: one design "
+      f"in every lot, with slats of thermally modified ash 1,800 x 95 x {T} mm, stainless fixings and a frame of {FM['name']} (frame material is a parameter). "
+      "Generated by `build_bench.py` from `parameters.json`; every number below is computed, except the figures of runs 1 and 2 quoted for comparison.*")
     A("")
     A("## 1. Summary")
     A("")
-    A("- **What was made:** a parametric solid model of the bench (two identical cast-steel side frames, five slats, 20 M8 carriage bolts in stainless "
-      "steel), STEP files of the assembly and each part, GLB files for the web, eight dimensioned SVG drawings (VI-DWG-B180-001 to 008), six PNG renders, "
-      "the mould with gating and risers, the parcels and the pallet, and this report with all figures in `results.json`.")
+    A("- **What was made:** a parametric solid model (two identical side frames, five slats, 20 stainless M8 carriage bolts), STEP files of the assembly and "
+      "each part, GLB files, eight dimensioned SVG drawings (VI-DWG-B180-001 to 008, revision B), five PNG renders, the mould with gating and risers, the "
+      "parcels and the pallet, and this report; all figures are in `results.json`.")
     A(f"- **The bench:** {n(d['length'], 0)} mm over the slats, **{n(d['over_armrests'], 0)} mm over the armrests**, {n(d['depth'], 0)} mm deep, "
-      f"{n(d['height'], 0)} mm high; seat {n(d['seat_front'], 0)} mm (440 to 460 on levelling nuts); 3 seat slats and 2 back slats; seat tilt "
-      f"{P['ergonomics']['seat_tilt_deg']}°, seat to back {P['ergonomics']['seat_back_angle_deg']}°; armrests 200 mm above the seat. Two side frames, no centre leg.")
-    A(f"- **Key figures (thermally modified ash {TA} mm / oak {TO} mm):** slat {n(ma['slat'], 2)} / {n(mo['slat'], 2)} kg; bench **net {n(ma['net'], 1)} / {n(mo['net'], 1)} kg** "
-      f"(world 43.5), **gross {n(pa['gross'], 1)} / {n(po['gross'], 1)} kg** (world 44.4); parcels {n(pa['carton1'], 1)}, {n(pa['carton2'], 1)} and "
-      f"{n(pa['bundle'], 1)} / {n(po['bundle'], 1)} kg; pallet of four {n(ta['pallet_gross_kg'], 0)} / {n(to['pallet_gross_kg'], 0)} kg (world 200). "
-      f"Side frame {n(m['frame_bare'], 1)} kg cast, {n(m['frame'], 1)} kg finished (world 10.0 + 0.2); metal poured {n(c['poured'], 1)} kg per bench at "
-      f"{n(100 * c['yield_'], 0)} % (world 34 kg at 60 %).")
-    A(f"- **Slats under the 450 kg test (UR-SF-0450):** thermally modified ash {TA} mm: σ = {n(ua['sigma'], 1)} MPa, sag "
-      f"**{n(ua['w_span'], 1)} mm**, Eurocode 5 utilisation **{n(ua['util_d'], 2)}**, or **{n(util_split, 2)}** if the modification costs 30 % of the graded "
-      f"strength instead of 19 %; three adults: {n(case(RA, SVK)['w_span'], 1)} mm. Oak {TO} mm: σ = {n(uo['sigma'], 1)} MPa, sag **{n(uo['w_span'], 1)} mm**, "
-      f"utilisation **{n(uo['util_d'], 2)}**; three adults {n(case(RO, SVK)['w_span'], 1)} mm. The frame is lightly stressed (at most {n(max(v['sigma_max'] for v in fcases.values()), 0)} MPa against 240 MPa).")
-    A("- **Inconsistencies:** @@N_ITEMS@@ listed in section 7 (run 1: " + str(PREV['n_items']) + ", run 2: " + str(PREV2['n_items']) + "). The thicker "
-      "slats resolve the slats' lack of margin for new benches; they bring two frame and bolt revisions (A for the benches already made, B from May) "
-      "and a new slat size in the world's data.")
-    A(f"- **Sawmill truck:** 4,800 slats of {TA} mm on 24 pallets: {n(trk['total_kg'] / 1000, 1)} t against a payload of {n(trk['payload_kg'] / 1000, 1)} t, "
-      f"{trk['floor']} floor positions x 2 layers for 24 pallets: it fits.")
+      f"{n(d['height'], 0)} mm high; seat {n(d['seat_front'], 0)} mm at the front edge (440–460 on the anchors' levelling nuts); 3 seat and 2 back slats; "
+      f"seat tilt {P['ergonomics']['seat_tilt_deg']}°, seat to back {P['ergonomics']['seat_back_angle_deg']}°; armrests 200 mm above the seat; two side frames.")
+    A(f"- **Key figures:** slat {n(m['slat'], 2)} kg; side frame {n(m['frame_bare'], 1)} kg cast, {n(m['frame'], 1)} kg finished; bench **net {n(m['net'], 1)} kg** "
+      f"(world 43.5), **gross {n(pa['gross'], 1)} kg** (world 44.4) in parcels of {n(pa['carton1'], 1)}, {n(pa['carton2'], 1)} and {n(pa['bundle'], 1)} kg; "
+      f"pallet of four {n(ta['pallet_dims'][0], 0)} x {n(ta['pallet_dims'][1], 0)} x {n(ta['pallet_dims'][2], 0)} mm, {n(ta['pallet_gross_kg'], 0)} kg (world 200); "
+      f"24 + 1 pallets {n(ta['load_kg'] / 1000, 2)} t; metal poured {n(c['poured'], 1)} kg per bench at {n(100 * c['yield_'], 0)} % (world 34 kg at 60 %).")
+    A(f"- **Slats under the 450 kg test (UR-SF-0450):** σ = {n(ua['sigma'], 1)} MPa, Eurocode 5 utilisation **{n(ua['util_d'], 2)}** "
+      f"(**{n(util30, 2)}** if the modification costs 30 % of the graded strength instead of 19 %), sag **{n(ua['w_span'], 1)} mm**; with three adults "
+      f"{n(sv['w_span'], 1)} mm. The frame is lightly stressed (at most {n(max(v['sigma_max'] for v in fcases.values()), 0)} MPa).")
+    A(f"- **Sawmill truck:** 4,800 slats on 24 pallets weigh {n(trk['total_kg'] / 1000, 1)} t against about {n(trk['payload_kg'] / 1000, 1)} t of payload, "
+      f"and fit in {trk['floor']} floor positions, two high.")
+    A("- **Inconsistencies:** @@N@@ listed in section 8 (run 1: 17, run 2: 20). Section 9 compares cast steel, ductile iron and cast aluminium for "
+      "this frame, without choosing.")
     A("")
     A("## 2. Changes in this run")
     A("")
-    A("**Owner's decisions (run 3):** slats of thermally modified ash 1,800 x 95 x **45 mm** from May 2026; the benches already made keep oak "
-      "1,800 x 95 x 38 mm (comparison case); two side frames, the 3 + 2 layout and the overall design kept. Earlier decisions stay: stainless fixings, "
-      "no centre leg, the name 'thermally modified ash' only.")
+    A("**Owner's decisions:** one bench design throughout the world: slats of thermally modified ash 1,800 x 95 x 45 mm and stainless fixings in every lot "
+      "(the oak comparison of run 2 and the 'oak until May' story are dropped); two side frames, the 3 + 2 layout and the overall design kept; the frame "
+      "material stays cast steel for now and is a parameter (`materials.frame_material`), because the owner is deciding between cast steel, ductile iron "
+      "and aluminium.")
     A("")
-    A("**What the thicker slats changed in the design (frame revision B), and why:**")
+    A("**What the 45 mm slats changed in the design (revision B), and why:**")
     A("")
-    A(f"- **Slat seats:** the seat-rail and back-rail flanges are the slat seats; their positions follow the slat thickness. To keep the seat surface "
-      f"at {n(d['seat_front'], 0)} mm at the front edge with the levelling gap of {P['overall']['levelling_gap_nominal']} mm (so that the range 440–460 mm stays), "
-      f"the seat rail moves {TA - TO} mm down (normal to the seat) and the back rail {TA - TO} mm back (normal to the back). Flange widths "
-      f"({f['seat_rail']['flange_width']} mm), sections and the slat span (1,600 mm) are unchanged.")
-    A("- **Seat height:** kept at 450 mm, 440–460 mm. With the revision-A frame the seat would be at 457 mm and the range 447–467 mm.")
-    A(f"- **Back:** the back surface, its angle and the slat positions are unchanged, so the top of the back stays at {n(d['height'], 0)} mm. Because the back rail moved "
-      f"back, its top is shortened from 360 to {f['back_rail']['u_top']} mm along the back to keep the depth at 620 mm (top of the back rail at "
-      f"{n(d['back_rail_top_y'], 0)} mm); it still carries the upper slat's bolts. The armrest still passes between the back slats: {n(d['arm_clear_lower'], 0)} mm "
-      f"above the lower slat; below the upper slat {n(d['arm_clear_upper'], 0)} mm at its front face and {n(up_rear_clear, 0)} mm at its rear edge, above the 25 mm finger-trap limit.")
-    A(f"- **Bolts:** stack 45 + 8 + 1.6 + 6.8 mm plus at least 2.5 mm beyond the nut → carriage bolt **M8 x {wa['bolt_length']}** (stainless A2-70) "
-      f"for revision B; M8 x {wo['bolt_length']} stays on revision A. End distance 80 mm (10 d) and edge distance 47.5 mm (5.9 d) are unchanged; they meet EN 1995-1-1's "
-      "minima with margin and suit the more brittle wood. The thicker slat helps: the neck's 5 mm square seat is a smaller part of 45 mm than of 38 mm.")
-    A(f"- **Packaging:** the 3 + 2 bundle grows to {n(pka['bundle'][0], 0)} x {n(pka['bundle'][1], 0)} x {n(pka['bundle'][2], 0)} mm; the pallet of four to "
-      f"{n(pka['load_dims'][0], 0)} x {n(pka['load_dims'][1], 0)} x {n(pka['load_dims'][2], 0)} mm (run 2: {PREV2['pallet_h']}); still three layers by height in the trailer "
-      f"and both containers, 21 / 18 / 21 floor positions. The frame carton is slightly shorter ({n(co[0], 0)} mm) because the back rail is shorter.")
-    A("- **Drawings, BOM, STEP and GLB** show revision B (45 mm slats, M8 x 65); the BOM lists the revision-A slat and bolt too. The oak render shows the "
-      "revision-A bench.")
+    A(f"- **Slat seats and supports:** the seat-rail and back-rail flanges are the slat seats; their positions follow the slat thickness. To keep the seat "
+      f"surface at {n(d['seat_front'], 0)} mm with the {P['overall']['levelling_gap_nominal']} mm levelling gap (range 440–460 mm), the seat rail moves 7 mm down "
+      f"(normal to the seat) and the back rail 7 mm back (normal to the back). Flange widths, sections and the 1,600 mm slat span are unchanged.")
+    A("- **Seat height:** 450 mm at the front edge, 440–460 mm, kept. With the run-2 frame it would have been 457 mm (447–467 mm).")
+    A(f"- **Back:** surface, angle and slat positions unchanged; the top of the back stays at {n(d['height'], 0)} mm. The back rail's top is shortened from 360 "
+      f"to {f['back_rail']['u_top']} mm along the back so that the depth stays 620 mm (top of the back rail at {n(d['back_rail_top_y'], 0)} mm); it still carries the "
+      f"upper slat's bolts. Clearances around the armrest: {n(d['arm_clear_lower'], 0)} mm above the lower back slat, {n(d['arm_clear_upper'], 0)} mm below the upper "
+      f"one at its front face and {n(up_rear_clear, 0)} mm at its rear edge, all above the 25 mm finger-trap limit.")
+    A(f"- **Bolts:** stack {T} + 8 + 1.6 + 6.8 mm plus at least 2.5 mm beyond the nut → **M8 x {bolt_len}** carriage bolts (stainless A2-70; ISO 8677 length "
+      "series from general knowledge). End distance 80 mm (10 d) and edge distance 47.5 mm (5.9 d) unchanged; with the brittle wood the square neck's seat "
+      "stays pre-formed, and its 5 mm depth is a smaller part of a 45 mm slat.")
+    A(f"- **Packaging:** bundle {n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)} mm; pallet of four {n(ta['pallet_dims'][2], 0)} mm high (run 2: 716); still three "
+      f"layers by height in the trailer and both containers, 21 / 18 / 21 floor positions. Frame carton {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} mm "
+      "(slightly shorter: shorter back rail).")
+    A("- **Model:** the oak case is removed from the model, the drawings, the renders and the report; the frame material is selected in `parameters.json`.")
     A("")
-    A("| Figure | World now | Run 1 (oak 38, galvanised bolts) | Run 2 (modified ash 38) | Run 3, modified ash 45 (rev. B) | Run 3, oak 38 (rev. A) |")
-    A("|---|---|---|---|---|---|")
+    A("| Figure | World now | Run 1 (oak 38) | Run 2 (modified ash 38) | Run 3 (modified ash 45) |")
+    A("|---|---|---|---|---|")
     rows = [
-        ("Slat", "4.5 kg (1,800 x 95 x 38)", f"{PREV['slat']} kg", f"{PREV2['slat']} kg", f"{n(ma['slat'], 2)} kg (95 x {TA})", f"{n(mo['slat'], 2)} kg (95 x {TO})"),
-        ("Wood per bench (5 slats)", "22.5 kg", f"{n(5 * PREV['slat'], 1)} kg", f"{PREV2['wood']} kg", f"{n(ma['wood_bench'], 1)} kg", f"{n(mo['wood_bench'], 1)} kg"),
-        ("Bolt set (20 sets, bag)", "1.0 kg", f"{PREV['boltset']} kg (galvanised)", f"{PREV2['boltset']} kg (A2)", f"{n(ma['boltset'], 2)} kg (M8 x {wa['bolt_length']})", f"{n(mo['boltset'], 2)} kg (M8 x {wo['bolt_length']})"),
-        ("Side frame, finished", "10.2 kg", f"{PREV['frame']} kg", f"{PREV2['frame']} kg", f"{n(ma['frame'], 2)} kg", f"{n(mo['frame'], 2)} kg"),
-        ("Bench net", "43.5 kg", f"{PREV['net']} kg", f"{PREV2['net']} kg", f"{n(ma['net'], 2)} kg", f"{n(mo['net'], 2)} kg"),
-        ("Parcels 1 / 2 / 3", "10.2 / 11.2 / 23.0 kg", f"{PREV['carton1']} / {PREV['carton2']} / {PREV['bundle']} kg", f"{PREV2['carton1']} / {PREV2['carton2']} / {PREV2['bundle']} kg",
-         f"{n(pa['carton1'], 1)} / {n(pa['carton2'], 1)} / {n(pa['bundle'], 1)} kg", f"{n(po['carton1'], 1)} / {n(po['carton2'], 1)} / {n(po['bundle'], 1)} kg"),
-        ("Slat bundle (mm)", "1,800 x 200 x 120", "1,810 x 295 x 86", "1,810 x 295 x 86", f"{n(pka['bundle'][0], 0)} x {n(pka['bundle'][1], 0)} x {n(pka['bundle'][2], 0)}", f"{n(pko['bundle'][0], 0)} x {n(pko['bundle'][1], 0)} x {n(pko['bundle'][2], 0)}"),
-        ("Bench gross", "44.4 kg", f"{PREV['gross']} kg", f"{PREV2['gross']} kg", f"{n(pa['gross'], 2)} kg", f"{n(po['gross'], 2)} kg"),
-        ("Pallet of four: height; goods / gross", "750 mm; 178 / 200 kg", f"716 mm; {PREV['pallet_goods']} / {PREV['pallet_gross']} kg", f"716 mm; {PREV2['pallet_goods']} / {PREV2['pallet_gross']} kg",
-         f"{n(pka['load_dims'][2], 0)} mm; {n(ta['pallet_goods_kg'], 1)} / {n(ta['pallet_gross_kg'], 1)} kg", f"{n(pko['load_dims'][2], 0)} mm; {n(to['pallet_goods_kg'], 1)} / {n(to['pallet_gross_kg'], 1)} kg"),
-        ("24 bench pallets + castings pallet", "about 4.3 t + 0.5 t", f"{PREV['load_t']} t", f"{PREV2['load_t']} t", f"{n(ta['load_kg'] / 1000, 2)} t", f"{n(to['load_kg'] / 1000, 2)} t"),
-        ("Steel in the product (carbon steel)", "about 21 kg", f"{PREV['steel_in_product']} kg (with fasteners)", f"{PREV2['steel']} kg", f"{n(ma['steel_in_product'], 1)} kg", f"{n(mo['steel_in_product'], 1)} kg"),
-        ("Stainless steel (fixings)", "–", "–", f"{PREV2['stainless']} kg", f"{n(ma['stainless_fixings'], 2)} kg", f"{n(mo['stainless_fixings'], 2)} kg"),
-        ("Metal poured per bench", "34 kg", f"{PREV['poured']} kg", f"{PREV2['poured']} kg", f"{n(c['poured'], 1)} kg", f"{PREV2['poured']} kg (rev. A, run 2)"),
-        ("Slat utilisation, 450 kg test", "–", f"{PREV['util']}", f"{PREV2['util']}", f"{n(ua['util_d'], 2)}", f"{n(uo['util_d'], 2)}"),
-        ("Same, if modification costs 30 %", "–", "–", f"{PREV2['util30']}", f"{n(util_split, 2)}", "–"),
-        ("Slat sag, 450 kg test", "–", f"{PREV['sag']} mm", f"{PREV2['sag']} mm", f"{n(ua['w_span'], 1)} mm", f"{n(uo['w_span'], 1)} mm"),
-        ("Slat sag, three adults of 80 kg", "–", f"{PREV['sag3']} mm", f"{PREV2['sag3']} mm", f"{n(case(RA, SVK)['w_span'], 1)} mm", f"{n(case(RO, SVK)['w_span'], 1)} mm"),
-        ("Sawmill truck, 4,800 slats + 24 pallets", "21.6 t of slats (4.5 kg)", "–", "–", f"{n(trk['total_kg'] / 1000, 2)} t", f"{n(trko['total_kg'] / 1000, 2)} t"),
+        ("Slat", "4.5 kg (1,800 x 95 x 38)", RUN1["slat"], RUN2["slat"], f"{n(m['slat'], 2)} kg (1,800 x 95 x {T})"),
+        ("Wood per bench", "22.5 kg", f"{RUN1['wood']} kg", f"{RUN2['wood']} kg", f"{n(m['wood_bench'], 1)} kg"),
+        ("Bolt set (20 sets, bag)", "1.0 kg", RUN1["boltset"], RUN2["boltset"], f"{n(m['boltset'], 2)} kg (A2, M8 x {bolt_len})"),
+        ("Side frame, finished", "10.2 kg", f"{RUN1['frame']} kg", f"{RUN2['frame']} kg", f"{n(m['frame'], 2)} kg"),
+        ("Bench net", "43.5 kg", f"{RUN1['net']} kg", f"{RUN2['net']} kg", f"{n(m['net'], 2)} kg"),
+        ("Parcels 1 / 2 / 3", "10.2 / 11.2 / 23.0 kg", f"{RUN1['parcels']} kg", f"{RUN2['parcels']} kg", f"{n(pa['carton1'], 1)} / {n(pa['carton2'], 1)} / {n(pa['bundle'], 1)} kg"),
+        ("Slat bundle (mm)", "1,800 x 200 x 120", RUN1["bundle"], RUN2["bundle"], f"{n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)}"),
+        ("Bench gross", "44.4 kg", f"{RUN1['gross']} kg", f"{RUN2['gross']} kg", f"{n(pa['gross'], 2)} kg"),
+        ("Pallet of four: height; goods / gross", "750 mm; 178 / 200 kg", RUN1["pallet"], RUN2["pallet"], f"{n(ta['pallet_dims'][2], 0)} mm; {n(ta['pallet_goods_kg'], 1)} / {n(ta['pallet_gross_kg'], 1)} kg"),
+        ("24 bench pallets + castings pallet", "about 4.3 t + 0.5 t", f"{RUN1['load']} t", f"{RUN2['load']} t", f"{n(ta['load_kg'] / 1000, 2)} t"),
+        ("Steel in the product (carbon steel)", "about 21 kg", f"{RUN1['steel']} kg", f"{RUN2['steel']} kg", f"{n(m['steel_in_product'], 1)} kg"),
+        ("Stainless steel (fixings)", "–", RUN1["stainless"], f"{RUN2['stainless']} kg", f"{n(m['stainless_fixings'], 2)} kg"),
+        ("Metal poured per bench", "34 kg", f"{RUN1['poured']} kg", f"{RUN2['poured']} kg", f"{n(c['poured'], 1)} kg"),
+        ("Slat utilisation, 450 kg test", "–", RUN1["util"], RUN2["util"], f"{n(ua['util_d'], 2)}"),
+        ("Same, if modification costs 30 %", "–", RUN1["util30"], RUN2["util30"], f"{n(util30, 2)}"),
+        ("Slat sag, 450 kg test / three adults", "–", f"{RUN1['sag']} / {RUN1['sag3']} mm", f"{RUN2['sag']} / {RUN2['sag3']} mm", f"{n(ua['w_span'], 1)} / {n(sv['w_span'], 1)} mm"),
+        ("Sawmill truck (4,800 slats + 24 pallets)", "21.6 t of slats", "–", "–", f"{n(trk['total_kg'] / 1000, 2)} t"),
     ]
     for row in rows:
         A("| " + " | ".join(row) + " |")
     A("")
-    A("The oak column is the bench already made (frame revision A); it equals run 2's oak case. The revision-B frame differs slightly in mass "
-      "(moved rails, shorter back rail).")
-    A("")
-    A(f"**Sawmill truck (decision O66).** 4,800 slats of {TA} mm at {n(ma['slat'], 2)} kg = {n(4800 * ma['slat'] / 1000, 2)} t, strapping {n(trk['goods_kg'] / 1000 - 4800 * ma['slat'] / 1000, 2)} t, "
-      f"24 heat-treated pallets of {P['sawmill_truck']['pallet_kg']} kg (assumed): **{n(trk['total_kg'] / 1000, 2)} t against about {n(trk['payload_kg'] / 1000, 1)} t**, within the payload. "
-      f"Each pallet carries four bundles of 50 slats (5 wide x 10 high, assumed), about {n(trk['pallet_size'][0], 0)} x {n(trk['pallet_size'][1], 0)} x {n(trk['pallet_size'][2], 0)} mm and "
-      f"{n(trk['pallet_kg'], 0)} kg; a 13.6 m trailer takes {trk['floor']} on the floor, two high: {trk['capacity']} places for 24 pallets. With 38 mm oak the load was "
-      f"{n(trko['total_kg'] / 1000, 2)} t. The decision text's 21.6 t (4,800 x 4.5 kg) fits oak and is about {n(21.6 - 4800 * ma['slat'] / 1000, 1)} t high for the new slats.")
+    A(f"**Sawmill truck (decision O66).** 4,800 slats of {T} mm at {n(m['slat'], 2)} kg = {n(4800 * m['slat'] / 1000, 2)} t, strapping "
+      f"{n(trk['goods_kg'] / 1000 - 4800 * m['slat'] / 1000, 2)} t, 24 heat-treated pallets of {P['sawmill_truck']['pallet_kg']} kg (assumed): "
+      f"**{n(trk['total_kg'] / 1000, 2)} t against about {n(trk['payload_kg'] / 1000, 1)} t**, within the payload. Four bundles of 50 slats per pallet "
+      f"(5 wide x 10 high, assumed) make a pallet of about {n(trk['pallet_size'][0], 0)} x {n(trk['pallet_size'][1], 0)} x {n(trk['pallet_size'][2], 0)} mm and "
+      f"{n(trk['pallet_kg'], 0)} kg; a 13.6 m trailer takes {trk['floor']} on the floor, two high: {trk['capacity']} places for 24. The decision text's 21.6 t "
+      f"(4,800 x 4.5 kg) is about {n(21.6 - 4800 * m['slat'] / 1000, 1)} t high.")
     A("")
     A("## 3. Files")
     A("")
     A("| Path | Content |")
     A("|---|---|")
-    A("| `parameters.json` | the single source of truth (dimensions, materials, the two slat woods under `woods`, loads, packaging, the world's figures) |")
-    A("| `build_bench.py`, `report.py`, `render.js` | generator (geometry, analysis for both woods, STEP/GLB/SVG), this report, the renders; see `README.md` |")
-    A("| `results.json` | every derived figure; per-wood masses, slat checks, parcels and pallet under `woods` |")
-    A("| `step/` | `VI-B180_assembly.step`, parts `VI-C180_side_frame.step`, `VI-B180-03_slat.step`, `VI-B180-04_fixing_M8.step`; `VI-C180_mould_cluster.step`; `VI-B180_pallet.step` |")
-    A("| `glb/` | `serra180_GRY.glb`, `serra180_GRN.glb`, `serra180_parcels.glb`, `serra180_pallet.glb` (metres, Y up; the wood is chosen in the viewer) |")
-    A("| `drawings/` | 001 general arrangement, 002 side frame, 003 slat (both woods), 004 exploded assembly, 005 bill of materials, 006 parcels, 007 pallet and loading, 008 casting method |")
-    A("| `renders/` | thermally modified ash in Ferro grey and in Moss green, oak in Ferro grey (comparison), detail of frame and slats, the three parcels, the pallet of four |")
+    A("| `parameters.json` | single source of truth: dimensions, frame materials (`frame_material` selects one), the slat wood, loads, packaging, the world's figures |")
+    A("| `build_bench.py`, `report.py`, `render.js` | generator (geometry, analysis, STEP/GLB/SVG, material comparison), this report, the renders; see `README.md` |")
+    A("| `results.json` | every derived figure, including `material_comparison` and `sawmill_truck` |")
+    A("| `step/` | `VI-B180_assembly.step`, `VI-C180_side_frame.step`, `VI-B180-03_slat.step`, `VI-B180-04_fixing_M8.step`, `VI-C180_mould_cluster.step`, `VI-B180_pallet.step` |")
+    A("| `glb/` | `serra180_GRY.glb`, `serra180_GRN.glb`, `serra180_parcels.glb`, `serra180_pallet.glb` (metres, Y up) |")
+    A("| `drawings/` | 001 general arrangement, 002 side frame, 003 slat, 004 exploded assembly, 005 bill of materials, 006 parcels, 007 pallet and loading, 008 casting method |")
+    A("| `renders/` | modified ash in Ferro grey and Moss green, frame and slat detail, the three parcels, the pallet of four |")
     A("")
-    A("Colours in the renders are approximations: Ferro grey as RAL 7011 (sRGB about #555D61), Moss green as RAL 6005 (about #114232); the dark brown of "
-      f"the modified ash ({wa['colour']}) and the oak ({wo['colour']}) are approximations of fresh wood; both grey outdoors without a surface finish.")
+    A(f"Render colours are approximations: Ferro grey as RAL 7011 (about #555D61), Moss green as RAL 6005 (about #114232), the modified ash dark brown "
+      f"({wa['colour']}); the wood greys outdoors without a finish.")
     A("")
     A("## 4. The design and the reasons for it")
     A("")
-    A("### 4.1 Ergonomics and overall form (unchanged)")
+    A("### 4.1 Ergonomics and overall form")
     A("")
-    A(f"- **Seat height {n(d['seat_front'], 0)} mm** at the front edge, frames {P['overall']['levelling_gap_nominal']} mm above the plinth on the anchors' levelling "
-      "nuts (0 to 20 mm gives 440 to 460 mm), grouted after levelling. Inclusive Mobility (2021, p. 102) asks 470–480 mm for most seats; the 2010 ADA Standards "
-      "(903.5) allow 430–485 mm.")
-    A(f"- **Armrests 200 mm above the seat** (Inclusive Mobility); seat width between the armrests {n(d['between_armrests'], 0)} mm = 3 x "
-      f"{n(d['seat_width_per_person'], 0)} mm (at least 500 per person).")
-    A(f"- **Seat tilt {P['ergonomics']['seat_tilt_deg']}°, seat-to-back {P['ergonomics']['seat_back_angle_deg']}°** (back {n(d['beta'], 0)}° from vertical), "
-      "within the usual 0–5° and 100–110° of seating handbooks (Pheasant and Haslegrave, *Bodyspace*, from general knowledge).")
-    A(f"- **Seat depth {P['ergonomics']['seat_depth']} mm**: three slats and two {P['slats']['seat_gap']} mm gaps give {n(d['seat_surface_depth'], 0)} mm of slat "
-      f"surface and a {n(d['throat'], 0)} mm open throat. **Back:** two slats at {n(d['back_rel_P'][0], 0)}–{n(d['back_rel_P'][1], 0)} and "
-      f"{n(d['back_rel_P'][2], 0)}–{n(d['back_rel_P'][3], 0)} mm above the seat-back junction; top {n(d['back_height_above_seat'], 0)} mm above the seat front.")
-    A(f"- **Depth {n(d['depth'], 0)} mm**: rear feet at 620 mm, top of the back rail at {n(d['back_rail_top_y'], 0)} mm. Gaps around the armrest "
-      f"{n(d['arm_clear_lower'], 0)} and {n(d['arm_clear_upper'], 0)} mm, outside the 8–25 mm finger-trap range (EN 1176-1 as a reference, from general knowledge).")
+    A("- **Seat height 450 mm** at the front edge, frames 10 mm above the plinth on the anchors' levelling nuts (0–20 mm gives 440–460 mm), grouted after "
+      "levelling. Inclusive Mobility (2021, p. 102) asks 470–480 mm for most seats; the 2010 ADA Standards (903.5) allow 430–485 mm.")
+    A(f"- **Armrests 200 mm above the seat** (Inclusive Mobility); seat width between the armrests {n(d['between_armrests'], 0)} mm = 3 x {n(d['seat_width_per_person'], 0)} mm.")
+    A(f"- **Seat tilt {P['ergonomics']['seat_tilt_deg']}°, seat-to-back {P['ergonomics']['seat_back_angle_deg']}°** (back {n(d['beta'], 0)}° from vertical), within the "
+      "usual 0–5° and 100–110° (Pheasant and Haslegrave, *Bodyspace*, from general knowledge).")
+    A(f"- **Seat depth {P['ergonomics']['seat_depth']} mm**: {n(d['seat_surface_depth'], 0)} mm of slat surface and a {n(d['throat'], 0)} mm open throat. **Back:** "
+      f"slats at {n(d['back_rel_P'][0], 0)}–{n(d['back_rel_P'][1], 0)} and {n(d['back_rel_P'][2], 0)}–{n(d['back_rel_P'][3], 0)} mm above the seat-back junction; "
+      f"top {n(d['back_height_above_seat'], 0)} mm above the seat front.")
     A("")
-    A("### 4.2 Side frame (revision B: rails moved for 45 mm slats, back rail shortened)")
+    A("### 4.2 Side frame")
     A("")
-    A(f"- One symmetric casting for both sides (VI-C180), T-sections with the flange centred on the web, parting at the web mid-plane, no cores. "
-      f"Members: front post ({f['front_post']['depth']} mm, flange {f['front_post']['flange_width']}), armrest ({f['armrest']['depth']}, pad {f['armrest']['flange_width']}), "
+    A(f"- One symmetric casting for both sides (VI-C180), T-sections with the flange centred on the web, parting at the web mid-plane, no cores. Members: "
+      f"front post ({f['front_post']['depth']} mm, flange {f['front_post']['flange_width']}), armrest ({f['armrest']['depth']}, pad {f['armrest']['flange_width']}), "
       f"seat rail ({f['seat_rail']['depth']}, flange {f['seat_rail']['flange_width']}), back rail ({f['back_rail']['depth']}, flange {f['back_rail']['flange_width']}), "
-      f"rear leg ({f['rear_leg']['depth']}, flange {f['rear_leg']['flange_width']}); two feet {f['feet']['width']} x 120 x {f['feet']['thickness']} mm with one "
-      f"Ø{f['feet']['hole_diameter']} anchor hole each. Walls {f['t_web']} mm (SFSA: 6 mm minimum for sand-cast steel, plus a margin for flow length); at 6 mm the "
-      f"frame would weigh {n(wall['6'], 1)} kg, at 8 mm {n(wall['8'], 1)} kg (bare).")
-    A(f"- GE240+N to EN 10293 (Rp0.2 ≥ 240 MPa). Hot-dip galvanised to EN ISO 1461 (castings ≥ 6 mm: at least 575 g/m², {n(m['zinc_min'], 2)} kg; typical "
-      f"{n(m['zinc_typ'], 2)} kg per frame), designed to ISO 14713-2 (open sections, hung from the anchor holes); duplex powder coat "
-      f"{P['materials']['powder_coat']['thickness_um']} µm ({n(m['powder'], 2)} kg). Melt number cast in per casting day; serial number hard-stamped after fettling.")
+      f"rear leg ({f['rear_leg']['depth']}, flange {f['rear_leg']['flange_width']}); feet {f['feet']['width']} x 120 x {f['feet']['thickness']} mm with one "
+      f"Ø{f['feet']['hole_diameter']} anchor hole each. Walls {f['t_web']} mm.")
+    A(f"- Material for this run: **{FM['grade']}** (Rp0.2 ≥ {FM['Rp02']} MPa). Hot-dip galvanised to EN ISO 1461 (castings ≥ 6 mm: at least 575 g/m²; "
+      f"{n(m['zinc_min'], 2)} kg minimum, {n(m['zinc_typ'], 2)} kg typical per frame), designed to ISO 14713-2 (open sections); duplex powder coat "
+      f"{P['materials']['powder_coat']['thickness_um']} µm ({n(m['powder'], 2)} kg).")
     A("")
-    A("### 4.3 Fixings: stainless steel")
+    A("### 4.3 Fixings")
     A("")
-    A("- **Why stainless:** thermally modified timber is more acidic than untreated wood (pH about 4 against 4.5–5 for the untreated wood, per the producers' "
-      "handbook, which also states that fasteners must be stainless A2 or acid-resistant A4, indoors and outdoors). Oak is acidic too and rich in tannins, "
-      "which corrode zinc and stain black around plain or galvanised steel (general knowledge). Stainless therefore serves both woods. "
-      f"Lengths: M8 x {wa['bolt_length']} for 45 mm slats, M8 x {wo['bolt_length']} for 38 mm (ISO 8677 length series from general knowledge).")
-    A(f"- **Grade:** A2-70 bolts and nuts, A2 washers (EN 1.4301). **A4 (EN 1.4401) is needed** where chlorides reach the bench: within roughly 1 km of the "
-      "sea or where de-icing salt is used (the corrosion-resistance approach of EN 1993-1-4 Annex A; quoted from general knowledge). In the world that "
-      "means benches on the island of Lisavu's coast and in harbour towns such as Lumeport, and every bench on roads that are salted (owner question Q2).")
-    A("- **Stainless bolts on a galvanised frame:** a bimetallic contact. The zinc is the large anode and the stainless bolt the small cathode, an "
-      "arrangement that is normally acceptable in rural and urban air; in coastal air the zinc around the hole corrodes faster. Recommendation: "
-      "a nylon or EPDM isolating washer between the stainless washer and the coated flange at coastal sites (general knowledge; not checked against a standard).")
-    A(f"- **Holes and distances:** all holes are pre-drilled, Ø9 in the slats and Ø10 in the flanges. End distance 80 mm = 10 d from the slat end and edge "
-      f"distance 47.5 mm = 5.9 d (bolts on the centre line of the width), against EN 1995-1-1's minima of max(7d; 80 mm) and 3d (from general knowledge). "
-      "Bolts loaded across the grain are not the issue (the seat load goes through bearing on the flange); splitting is, and thermally modified wood "
-      "splits 30–40 % more easily (handbook). The distances are kept; what changes is that the bolt's square neck must not be wedged into the wood: in "
-      "thermally modified ash its seat is pre-formed, and the torque is limited.")
-    A(f"- **Masses:** bolt {n(1000 * m['bolt'], 1)} g, washer {n(1000 * m['washer'], 1)} g, nut {n(1000 * m['nut'], 1)} g (stainless, 7,930 kg/m³, the bolt's "
-      f"thread taken as {P['bolts']['thread_mass_factor']} of a full shank); 20 sets {n(m['stainless_fixings'], 2)} kg, with the bag {n(m['boltset'], 2)} kg.")
+    A(f"- Stainless A2-70 carriage bolts **M8 x {bolt_len}** (ISO 8677), A2-70 nuts, A2 washers. Thermally modified timber is acidic (pH about 4) and the "
+      "producers' handbook requires stainless A2 or acid-resistant A4 fasteners. **A4 is needed** where chlorides reach the bench, within roughly 1 km of the "
+      "sea or on salted roads (EN 1993-1-4 Annex A approach, from general knowledge): in the world, on Lisavu's coast and in harbour towns.")
+    A("- Stainless bolts on a galvanised frame form a bimetallic contact; acceptable in rural and urban air, with isolating washers at the coast "
+      "(general knowledge).")
+    A(f"- Holes pre-drilled (Ø9 in the slats, Ø10 in the flanges); end distance 80 mm = 10 d, edge distance 47.5 mm = 5.9 d (EN 1995-1-1 minima max(7d; 80 mm) "
+      f"and 3d, from general knowledge); square neck seat pre-formed (8.2 mm, 5 mm deep); torque {P['bolts']['torque_Nm']['tm_ash']} N m. Masses: bolt "
+      f"{n(1000 * m['bolt'], 1)} g, washer {n(1000 * m['washer'], 1)} g, nut {n(1000 * m['nut'], 1)} g; 20 sets {n(m['stainless_fixings'], 2)} kg, with the bag {n(m['boltset'], 2)} kg.")
     A("")
-    A("### 4.4 Slats: two woods and two thicknesses")
+    A("### 4.4 Slats: thermally modified ash, 45 mm")
     A("")
-    A("| Property | Thermally modified ash (from May) | Oak heartwood (until April) |")
+    A("| Property | Value | Source / basis |")
     A("|---|---|---|")
-    A(f"| Grade, basis of the design values | ash graded LS13 to DIN 4074-5 before modification, which EN 1912 assigns to EN 338 D40 (f_m,k 40 MPa) | EN 338 D30 (f_m,k 30 MPa) |")
-    A(f"| Effect of modification on bending strength | x {wa['strength_ratio']} (small clear specimens, untreated 112.0 → modified 90.6 MPa) → f_m,k taken as {n(sa['f_mk'], 1)} MPa | – |")
-    A(f"| Modulus of elasticity used | {n(sa['E_d'], 0)} MPa (D40 value, recalled as 13,000 for EN 338:2016; no credit for the +10 % of small clears, 12,056 → 13,320 MPa) | {n(so['E_d'], 0)} MPa |")
-    A(f"| Density, delivered | {wa['density']} kg/m³ at 20 °C / 65 % RH (untreated ash {wa['untreated_density']}) | {wo['density']} kg/m³ at 12 % (world figure) |")
-    A(f"| Moisture content, delivered | about {wa['mc_delivery']} % (handbook: 4–7 % after the process) | 12 % (10–14 %) |")
-    A(f"| Moisture content outdoors (judged) | about {wa['mc_outdoor'][0]}–{wa['mc_outdoor'][1]} %: equilibrium moisture roughly halved and 'significantly below 20 %' at any humidity (handbook) | about {wo['mc_outdoor'][0]}–{wo['mc_outdoor'][1]} %, above 20 % when wet for long |")
-    A(f"| Mass outdoors against delivery | about +{n(100 * (mc_out_mass[KA] - 1), 0)} % | about +{n(100 * (mc_out_mass[KO] - 1), 0)} % |")
-    A(f"| Swelling across the 95 mm width, delivery → outdoors (judged) | about {wa['swelling_12_to_outdoor_mm']} mm | about {wo['swelling_12_to_outdoor_mm']} mm |")
-    A(f"| Durability against fungi | {wa['durability']} | {wo['durability']} |")
-    A("| Other | more brittle: impact strength about 25 % lower and splitting strength 30–40 % lower (handbook, mostly softwood data); colour dark brown, greys under UV unless finished; producers do not strength-grade it and state it 'must not be used for load-bearing structures' | tannins: stains on steel, stable outdoors |")
-    A(f"| Slat size | 1,800 x 95 x {TA} mm (from May; frame rev. B) | 1,800 x 95 x {TO} mm (benches already made; frame rev. A) |")
-    A(f"| Section modulus, depth factor k_h | {n(sa['W'], 0)} mm³, {n(sa['k_h'], 2)} | {n(so['W'], 0)} mm³, {n(so['k_h'], 2)} |")
-    A(f"| Slat mass (model, holes and chamfers) | **{n(ma['slat'], 2)} kg** | **{n(mo['slat'], 2)} kg** |")
+    A(f"| Size | 1,800 x 95 x {T} mm, planed, chamfers 3 mm, four Ø9 holes | owner's decision |")
+    A(f"| Grade before modification | European ash LS13 (DIN 4074-5) → EN 338 D40 via EN 1912 | TU München; EN 1912 covers ash from Germany, Austria, Switzerland |")
+    A(f"| Bending strength used | f_m,k = 40 x {wa['strength_ratio']} = {n(sl['f_mk'], 1)} MPa | handbook small clears 112.0 → 90.6 MPa (an assumption that the ratio applies to graded timber) |")
+    A(f"| Stiffness used | E = {n(sl['E_d'], 0)} MPa | D40 (EN 338:2016, from general knowledge); handbook small clears show +10 % |")
+    A(f"| Density, delivered | {wa['density']} kg/m³ (untreated ash {wa['untreated_density']}) | handbook Table 4, 20 °C / 65 % RH |")
+    A(f"| Moisture | about {wa['mc_delivery']} % delivered (4–7 %), about {wa['mc_outdoor'][0]}–{wa['mc_outdoor'][1]} % outdoors (judged; about +{n(100 * mc_out, 0)} % in mass) | handbook: equilibrium moisture 'significantly below 20 %' |")
+    A(f"| Durability, use | {wa['durability']} | handbook Table 9 |")
+    A("| Other | more brittle: impact strength about −25 %, splitting strength −30 to −40 %; not strength-graded by its producers, who say it 'must not be used for load-bearing structures' | handbook 4.5.2, 4.5.6, 4.5.8 |")
+    A(f"| Section, depth factor | W = {n(sl['W'], 0)} mm³, I = {n(sl['I'], 0)} mm⁴, k_h = {n(sl['k_h'], 2)} | |")
+    A(f"| **Slat mass** | **{n(m['slat'], 2)} kg** (modelled with holes and chamfers) | |")
     A("")
-    A("European ash untreated weighs about 625–690 kg/m³ depending on the source (handbook reference 625; LS13 ash in a glulam study 690); the modified ash "
-      f"at {wa['density']} kg/m³ is about 11–20 % lighter. The world's 690 kg/m³ for 'oak, ash or beech' (D20) fits oak and untreated ash but not the modified ash.")
+    A("### 4.5 Casting method")
     A("")
-    A("### 4.5 Casting method (unchanged)")
+    A(f"- One mould per bench, two mirrored frames, one ingate into each main junction; choke Ø{n(c['d_sprue'], 0)} mm; risers Ø{n(c['D'], 0)} x {n(c['H'], 0)} mm by the "
+      f"modulus method; feeding distance {n(c['FD'], 0)} mm (SFSA bar rule) → {c['n_risers']} risers per frame. Poured **{n(c['poured'], 1)} kg, yield "
+      f"{n(100 * c['yield_'], 0)} %**; with junction risers only {n(c['poured_j'], 1)} kg, {n(100 * c['yield_j'], 0)} %. (These figures are for cast steel; see section 9.)")
     A("")
-    A(f"- One mould per bench, two mirrored frames, one ingate into each main junction; pour {n(c['W_guess'], 0)} kg in about {n(c['t_pour'], 0)} s; choke "
-      f"Ø{n(c['d_sprue'], 0)} mm; runner {n(c['run_w'], 0)} x {n(c['run_h'], 0)} mm. Risers by the modulus method: Ø{n(c['D'], 0)} x {n(c['H'], 0)} mm; "
-      f"feeding distance {n(c['FD'], 0)} mm (SFSA bar rule) → {c['n_risers']} risers per frame. Poured **{n(c['poured'], 1)} kg, yield {n(100 * c['yield_'], 0)} %**; "
-      f"with junction risers only {n(c['poured_j'], 1)} kg, {n(100 * c['yield_j'], 0)} %.")
-    A("")
-    A("### 4.6 Packaging")
+    A("### 4.6 Packaging and transport")
     A("")
     A(f"- Frame carton {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} mm (frame {n(fb[2], 0)} x {n(fb[1], 0)} x {n(fb[0], 0)} mm), tray and lid, {n(pk['carton_kg'], 2)} kg. "
-      f"Slat bundle 3 + 2: {n(pka['bundle'][0], 0)} x {n(pka['bundle'][1], 0)} x {n(pka['bundle'][2], 0)} mm, **{n(pa['bundle'], 1)} kg** in thermally "
-      f"modified ash 45 mm; {n(pko['bundle'][0], 0)} x {n(pko['bundle'][1], 0)} x {n(pko['bundle'][2], 0)} mm, {n(po['bundle'], 1)} kg in oak 38 mm; packing {n(pk['bundle_pack_kg'], 2)} kg. Pallet {P['packaging']['pallet']['length']} x {P['packaging']['pallet']['width']} x {n(pk['pallet_h'], 0)} mm, "
-      f"{n(pk['pallet_kg'], 1)} kg; loaded {n(ta['pallet_dims'][0], 0)} x {n(ta['pallet_dims'][1], 0)} x {n(ta['pallet_dims'][2], 0)} mm. 21 / 18 / 21 floor "
-      f"positions in the trailer, the 40-foot and the 45-foot container; 25 pallets need {ta['floor_needed']} in two layers.")
+      f"Slat bundle 3 + 2, {n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)} mm, packing {n(pk['bundle_pack_kg'], 2)} kg. Pallet {P['packaging']['pallet']['length']} x "
+      f"{P['packaging']['pallet']['width']} x {n(pk['pallet_h'], 0)} mm, {n(pk['pallet_kg'], 1)} kg; loaded {n(ta['pallet_dims'][0], 0)} x {n(ta['pallet_dims'][1], 0)} x "
+      f"{n(ta['pallet_dims'][2], 0)} mm. Trailer / 40-foot / 45-foot: {ta['trailer']['floor']} / {ta['container_40']['floor']} / {ta['container_45']['floor']} floor positions, "
+      f"{ta['trailer']['layers_fit']} / {ta['container_40']['layers_fit']} / {ta['container_45']['layers_fit']} layers by height; 25 pallets need {ta['floor_needed']} positions in two layers; "
+      f"load {n(ta['load_kg'] / 1000, 2)} t, within every payload.")
     A("")
-    A("## 5. Derived figures")
+    A("## 5. Figures for the footprint (O25), per bench")
     A("")
-    A("### 5.1 Figures for the footprint (O25), per bench")
-    A("")
-    A("| Figure | Thermally modified ash | Oak | Note |")
-    A("|---|---|---|---|")
-    A(f"| Steel in the product (carbon steel: 2 castings with draft allowance, without zinc) | {n(ma['steel_in_product'], 2)} kg (rev. B) | {n(mo['steel_in_product'], 2)} kg (rev. A) | modelled volume x 7,850 kg/m³ + 2 % draft |")
-    A(f"| Metal poured (liquid steel into the mould) | {n(c['poured'], 1)} kg | {PREV2['poured']} kg (rev. A, run 2) | yield {n(100 * c['yield_'], 0)} %; returns {n(c['poured'] - 2 * c['casting_kg'], 1)} kg remelted |")
-    A(f"| Liquid steel consumed net | {n(net_liquid, 1)} kg | about {n(2 * (mo['frame_bare'] + mo['frame_draft']) + PREV2['poured'] * P['casting']['melt_loss_pct'] / 100 + fettle, 1)} kg | castings + melt loss {P['casting']['melt_loss_pct']} % of poured + fettling (assumed rates) |")
-    A(f"| Zinc (2 frames) | {n(m['zinc_bench'], 2)} kg | same | typical; EN ISO 1461 minimum {n(m['zinc_bench_min'], 2)} kg |")
-    A(f"| Powder coat (2 frames) | {n(m['powder_bench'], 2)} kg | same | {P['materials']['powder_coat']['thickness_um']} µm polyester |")
-    A(f"| Stainless steel A2 (20 bolts, nuts, washers) | {n(ma['stainless_fixings'], 2)} kg (M8 x {wa['bolt_length']}) | {n(mo['stainless_fixings'], 2)} kg (M8 x {wo['bolt_length']}) | A4 at coastal sites, same mass |")
-    A(f"| Wood in the product (5 slats, delivered) | {n(ma['wood_bench'], 2)} kg at about {wa['mc_delivery']} % | {n(mo['wood_bench'], 2)} kg at 12 % | |")
-    A(f"| Wood input, rough-sawn blanks 1,830 x 101 x 44 mm (assumed allowances) | {n(5 * blank_l * wa['untreated_density'] / 1000, 1)} kg of untreated ash before modification (at {wa['untreated_density']} kg/m³) | {n(5 * blank_lo * wo['density'] / 1000, 1)} kg | blanks 6 mm thicker than the slat; modification loses mass; logs about 1.8 m³ per m³ sawn ({n(5 * blank_l / 1000 * 1.8, 3)} m³), assumed |")
-    A(f"| Packaging per bench | {n(pa['packaging'], 2)} kg | {n(po['packaging'], 2)} kg | 2 cartons {n(2 * pk['carton_kg'], 2)} kg (corrugated board and pads), bundle {n(pk['bundle_pack_kg'], 2)} kg (PET straps, corrugated protectors, PE film), bolt bag {P['bolts']['bag_mass']} kg (PE, inside the net) |")
-    A(f"| Pallet share per bench | {n((pk['pallet_kg'] + ta['pallet_extra_kg']) / 4, 2)} kg | same | block pallet {n(pk['pallet_kg'], 1)} kg (heat-treated softwood) + slip sheet, top cap, film {n(ta['pallet_extra_kg'], 1)} kg, per 4 benches |")
-    A("")
-    A("The carbon footprint itself is not computed here (the main session does it).")
-    A("")
-    A("### 5.2 Masses")
-    A("")
-    A("| Part | Thermally modified ash | Oak |")
+    A("| Figure | Value | Note |")
     A("|---|---|---|")
-    A(f"| Side frame, cast (modelled {n(m['frame_volume_l'], 3)} l) + draft | {n(m['frame_bare'] + m['frame_draft'], 2)} kg | same |")
-    A(f"| Zinc, typical / powder coat, per frame | {n(m['zinc_typ'], 2)} / {n(m['powder'], 2)} kg | same |")
-    A(f"| Side frame, finished (each) | {n(m['frame'], 2)} kg | same |")
-    A(f"| Slat (each) | {n(ma['slat'], 2)} kg | {n(mo['slat'], 2)} kg |")
-    A(f"| Bolt set (stainless, bag) | {n(m['boltset'], 2)} kg | same |")
-    A(f"| **Bench net** | **{n(ma['net'], 2)} kg** | **{n(mo['net'], 2)} kg** |")
-    A(f"| Centre of gravity (x, y, z) | {', '.join(n(v, 0) for v in ma['bench_cg'])} mm | {', '.join(n(v, 0) for v in mo['bench_cg'])} mm |")
+    A(f"| Steel in the product (carbon steel: 2 castings with draft allowance, without zinc) | {n(m['steel_in_product'], 2)} kg | volume x {FM['density']} kg/m³ + 2 % |")
+    A(f"| Metal poured | {n(c['poured'], 1)} kg | yield {n(100 * c['yield_'], 0)} %; returns {n(c['poured'] - 2 * c['casting_kg'], 1)} kg remelted |")
+    A(f"| Liquid steel consumed net | {n(net_liquid, 1)} kg | castings + melt loss {P['casting']['melt_loss_pct']} % of poured + fettling (assumed rates) |")
+    A(f"| Zinc (2 frames) | {n(m['zinc_bench'], 2)} kg | typical; EN ISO 1461 minimum {n(m['zinc_bench_min'], 2)} kg |")
+    A(f"| Powder coat (2 frames) | {n(m['powder_bench'], 2)} kg | {P['materials']['powder_coat']['thickness_um']} µm polyester |")
+    A(f"| Stainless steel A2 (20 bolts, nuts, washers) | {n(m['stainless_fixings'], 2)} kg | A4 at the coast, same mass |")
+    A(f"| Wood in the product (5 slats, delivered) | {n(m['wood_bench'], 2)} kg | thermally modified ash, about {wa['mc_delivery']} % moisture |")
+    A(f"| Wood input before modification | {n(5 * blank_l * wa['untreated_density'] / 1000, 1)} kg | rough blanks 1,830 x 101 x {T + 6} mm of untreated ash at {wa['untreated_density']} kg/m³ (assumed allowances); logs about {n(5 * blank_l / 1000 * 1.8, 3)} m³ at 1.8 m³ per m³ sawn (assumed) |")
+    A(f"| Packaging | {n(pa['packaging'], 2)} kg | 2 cartons {n(2 * pk['carton_kg'], 2)} kg (corrugated board, pads); bundle {n(pk['bundle_pack_kg'], 2)} kg (PET straps, corrugated protectors, PE film); the bolt bag ({P['bolts']['bag_mass']} kg PE) is in the net |")
+    A(f"| Pallet share | {n((pk['pallet_kg'] + ta['pallet_extra_kg']) / 4, 2)} kg | block pallet {n(pk['pallet_kg'], 1)} kg (heat-treated softwood) + slip sheet, top cap, film {n(ta['pallet_extra_kg'], 1)} kg, per 4 benches |")
     A("")
-    A("### 5.3 Parcels and pallet")
+    A("The carbon footprint itself is not computed here. If the frame material changes (section 9), the steel lines change with it.")
     A("")
-    A("| Unit | Size (mm) | Thermally modified ash | Oak | Handling |")
+    A("## 6. Derived figures")
+    A("")
+    A("### 6.1 Masses")
+    A("")
+    A("| Part | Mass |")
+    A("|---|---|")
+    A(f"| Side frame, cast ({n(m['frame_volume_l'], 3)} l) + draft {f['draft_mass_allowance_pct']} % | {n(m['frame_bare'] + m['frame_draft'], 2)} kg |")
+    A(f"| Zinc typical / powder coat, per frame | {n(m['zinc_typ'], 2)} / {n(m['powder'], 2)} kg |")
+    A(f"| **Side frame, finished (each)** | **{n(m['frame'], 2)} kg** |")
+    A(f"| Slat (each) | {n(m['slat'], 2)} kg |")
+    A(f"| Bolt set | {n(m['boltset'], 2)} kg |")
+    A(f"| **Bench net** | **{n(m['net'], 2)} kg** |")
+    A(f"| Centre of gravity (x, y, z) | {', '.join(n(v, 0) for v in m['bench_cg'])} mm |")
+    A("")
+    A("### 6.2 Parcels and pallet")
+    A("")
+    A("| Unit | Size (mm) | Gross | Handling |")
+    A("|---|---|---|---|")
+    A(f"| Parcel 1: frame carton | {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} | {n(pa['carton1'], 1)} kg | one person |")
+    A(f"| Parcel 2: frame carton with bolt set | same | {n(pa['carton2'], 1)} kg | one person |")
+    A(f"| Parcel 3: slat bundle | {n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)} | {n(pa['bundle'], 1)} kg | two people (length) |")
+    A(f"| Bench gross | | **{n(pa['gross'], 1)} kg** | |")
+    A(f"| Pallet of four (goods / gross) | {n(ta['pallet_dims'][0], 0)} x {n(ta['pallet_dims'][1], 0)} x {n(ta['pallet_dims'][2], 0)} | {n(ta['pallet_goods_kg'], 1)} / {n(ta['pallet_gross_kg'], 1)} kg | fork-lift |")
+    A(f"| Castings pallet (12 frame cartons) | 1,850 x 700 x {n(ta['castings_pallet_h'], 0)} | {n(ta['castings_pallet_kg'], 1)} kg | fork-lift |")
+    A(f"| 24 bench pallets + castings pallet | | {n(ta['load_kg'] / 1000, 2)} t | |")
+    A("")
+    A("### 6.3 Strength and deflection")
+    A("")
+    A("**Load cases.** UR-SF-0450: 450 kg over the seat between the armrests, equal on the three seat slats, one hour. EN 581-2 contract use (preview values; "
+      "methods in EN 1728): seat 2,000 N with 750 N on the other seats, back 560 N, arm 900 N, front edge 1,300 N; seat pad 300 mm long (assumption).")
+    A("")
+    A(f"**Safety factors.** γQ = 1.5 (EN 1990); f_m,d = f_m,k · k_mod · k_h / γM = {n(sl['f_mk'], 1)} x 0.70 x {n(sl['k_h'], 2)} / 1.3 = {n(sl['f_md'], 1)} MPa "
+      "(EN 1995-1-1, short-term, service class 3; from general knowledge). Eurocode 5 has no values for thermally modified timber; the design value is the "
+      f"model's assumption. Frame against Rp0.2 / γM = {FM['Rp02']} / {FM['gamma_M']} MPa.")
+    A("")
+    A(f"**Slats** (span 1,600 mm, overhangs 100 mm):")
+    A("")
+    A("| Load case | σ (MPa) | 1.5σ / f_m,d | Sag (mm) | span / sag |")
     A("|---|---|---|---|---|")
-    A(f"| Parcel 1: frame carton | {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} | {n(pa['carton1'], 1)} kg | same | one person |")
-    A(f"| Parcel 2: frame carton with bolt set | same | {n(pa['carton2'], 1)} kg | same | one person |")
-    A(f"| Parcel 3: slat bundle | {n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)} | {n(pa['bundle'], 1)} kg | {n(po['bundle'], 1)} kg | two people (length) |")
-    A(f"| Bench gross | | **{n(pa['gross'], 1)} kg** | **{n(po['gross'], 1)} kg** | |")
-    A(f"| Pallet of four (goods / gross) | {n(ta['pallet_dims'][0], 0)} x {n(ta['pallet_dims'][1], 0)} x {n(ta['pallet_dims'][2], 0)} | {n(ta['pallet_goods_kg'], 1)} / {n(ta['pallet_gross_kg'], 1)} kg | {n(to['pallet_goods_kg'], 1)} / {n(to['pallet_gross_kg'], 1)} kg | fork-lift |")
-    A(f"| Castings pallet, 12 frame cartons | 1,850 x 700 x {n(ta['castings_pallet_h'], 0)} | {n(ta['castings_pallet_kg'], 1)} kg | same | fork-lift |")
-    A(f"| 24 bench pallets + castings pallet | | {n(ta['load_kg'] / 1000, 2)} t | {n(to['load_kg'] / 1000, 2)} t | |")
+    for k, v in sl["cases"].items():
+        A(f"| {k} | {n(v['sigma'], 1)} | {n(v['util_d'], 2)} | {n(v['w_span'], 1)} | {n(v['L_over_w'], 0)} |")
     A("")
-    A("### 5.4 Strength and deflection")
+    A(f"**Sensitivity (450 kg test):** modification costing 30 % of the graded strength (f_m,k {n(f_mk30, 0)} MPa): utilisation **{n(util30, 2)}**; "
+      f"service class 2 (k_mod 0.90, arguable because the wood stays below 20 % moisture): {n(util_sc2, 2)}.")
     A("")
-    A("**Load cases.** UR-SF-0450: 450 kg over the seat between the armrests, equal on the three seat slats, one hour. EN 581-2 (contract use, values from "
-      "the published preview; methods in EN 1728): seat 2,000 N on one seat with 750 N on each other seat, back 560 N, arm 900 N, front edge 1,300 N; "
-      "seat pad taken as 300 mm long, shared by the three seat slats (assumption).")
+    A("**Side frame** (plane-frame model, pinned feet):")
     A("")
-    A(f"**Safety factors.** Design check: γQ = 1.5 (EN 1990); timber f_m,d = f_m,k · k_mod · k_h / γM with k_mod = 0.70 (short-term load, service class 3), "
-      f"k_h = {n(sa['k_h'], 2)} (38 mm), γM = 1.3 (EN 1995-1-1, from general knowledge): **thermally modified ash {n(sa['f_md'], 1)} MPa, oak {n(so['f_md'], 1)} MPa**. "
-      "Eurocode 5 has no values for thermally modified timber; using it with the grade of the wood before modification, reduced by the clear-wood "
-      "ratio, is an assumption of this model. Steel against Rp0.2 = 240 MPa, γM0 = 1.0.")
-    A("")
-    A(f"**Slats** (span {n(sa['span'], 0)} mm between frame centres, overhangs {f['x_centre']} mm, I = {n(sa['I'], 0)} mm⁴, W = {n(sa['W'], 0)} mm³):")
-    A("")
-    A("| Load case | σ (MPa) | ash: 1.5σ / f_m,d | ash: sag (mm) | oak: 1.5σ / f_m,d | oak: sag (mm) |")
-    A("|---|---|---|---|---|---|")
-    for k in sa["cases"]:
-        va, vo = sa["cases"][k], so["cases"][k]
-        A(f"| {k} | {n(va['sigma'], 1)} | {n(va['util_d'], 2)} | {n(va['w_span'], 1)} | {n(vo['util_d'], 2)} | {n(vo['w_span'], 1)} |")
-    A("")
-    A(f"'E from clear-wood data': thermally modified ash {n(sa['E_wh'], 0)} MPa (D40 value x the small-clear ratio 1.105), oak {n(so['E_wh'], 0)} MPa "
-      "(Wood Handbook white oak + 10 % for shear).")
-    A("")
-    A(f"**Sensitivity, thermally modified ash, UR-SF-0450:** with service class 2 (k_mod 0.90, arguable because the modified wood stays below 20 % moisture) "
-      f"the utilisation is {n(util_sc2, 2)}; if the modification costs 30 % of the graded strength rather than 19 % (f_m,k {n(f_mk_split, 0)} MPa, the size of "
-      f"the loss in splitting strength), it is **{n(util_split, 2)}**, above 1. The slat's margin therefore rests on the design value assumed for a timber "
-      "nobody grades.")
-    A("")
-    A(f"**Side frame** (plane-frame model, pinned feet; {n(100 * fr['fractions']['end'], 0)} % of an end seat's load to the nearer frame; the same for both woods):")
-    A("")
-    A("| Load case | σ max (MPa) | in | test σ / Rp0.2 | 1.5 σ / Rp0.2 | foot reactions front / rear (N) |")
-    A("|---|---|---|---|---|---|")
+    A("| Load case | σ max (MPa) | in | 1.5 σ / (Rp0.2/γM) | foot reactions front / rear (N) |")
+    A("|---|---|---|---|---|")
     for k, v in fcases.items():
-        A(f"| {k} | {n(v['sigma_max'], 1)} | {v['member']} | {n(v['util_test'], 2)} | {n(v['util_uls'], 2)} | {n(v['R_front'], 0)} / {n(v['R_rear'], 0)} |")
-    sd = fr["side_load"]
-    A(f"| Sideways 400 N at the armrest front (hand check, force assumed) | {n(sd['sigma'], 1)} | front post | {n(sd['sigma'] / 240, 2)} | {n(sd['util_uls'], 2)} | |")
+        A(f"| {k} | {n(v['sigma_max'], 1)} | {v['member']} | {n(v['util_uls'], 2)} | {n(v['R_front'], 0)} / {n(v['R_rear'], 0)} |")
     A("")
-    A("## 6. The world's figures against the model")
+    A("## 7. The world's figures against the model")
     A("")
-    A("| Figure | World now | Model (thermally modified ash / oak) | If adopted |")
+    A("| Figure | World now | Model | If adopted |")
     A("|---|---|---|---|")
     rows = [
-        ("Length over the armrests", "1,800 mm", f"{n(d['over_armrests'], 0)} mm (1,800 over the slats)", "LENGTH qualified 'over the slats'; a second dimension over the armrests"),
+        ("Length over the armrests", "1,800 mm", f"{n(d['over_armrests'], 0)} mm (1,800 over the slats)", "LENGTH qualified 'over the slats'"),
         ("Depth / height / seat height", "620 / 780 / 450 (440–460)", f"{n(d['depth'], 0)} / {n(d['height'], 0)} / {n(d['seat_front'], 0)} (440–460)", "no change"),
-        ("Slat", "4.5 kg, 690 kg/m³, kiln-dried 12 %", f"{n(ma['slat'], 2)} kg, {wa['density']} kg/m³, about 5 % / {n(mo['slat'], 2)} kg, 690, 12 %", "slat item, sawmill delivery (truck weight), bench weights; split by delivery date"),
+        ("Slats", "5 hardwood, 1,800 x 95 x 38, kiln-dried 12 %, 4.5 kg", f"5 thermally modified ash, 1,800 x 95 x {T}, about 5 %, {n(m['slat'], 2)} kg", "slat item, sawmill delivery, bench weights"),
         ("Side frame", "10.0 + 0.2 kg", f"{n(m['frame'], 2)} kg finished", "frame weights; spare frame"),
-        ("Bolt set", "1.0 kg (steel)", f"{n(m['boltset'], 2)} kg stainless A2", "material of the bolt set"),
-        ("Bench net", "43.5 kg", f"{n(ma['net'], 1)} / {n(mo['net'], 1)} kg", "net weight in about 50 documents"),
-        ("Parcels", "10.2 / 11.2 / 23.0 kg", f"{n(pa['carton1'], 1)} / {n(pa['carton2'], 1)} / {n(pa['bundle'], 1)} (oak {n(po['bundle'], 1)}) kg", "parcel weights"),
+        ("Bolt set", "1.0 kg", f"{n(m['boltset'], 2)} kg stainless A2, M8 x {bolt_len}", "material and length"),
+        ("Bench net / gross", "43.5 / 44.4 kg", f"{n(m['net'], 1)} / {n(pa['gross'], 1)} kg", "weights in about 50 documents"),
+        ("Parcels", "10.2 / 11.2 / 23.0 kg", f"{n(pa['carton1'], 1)} / {n(pa['carton2'], 1)} / {n(pa['bundle'], 1)} kg", "parcel weights"),
         ("Frame carton", "820 x 620 x 80", f"{n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)}", "parcel size"),
-        ("Bench gross", "44.4 kg", f"{n(pa['gross'], 1)} / {n(po['gross'], 1)} kg", "gross weights and totals in seven flows"),
-        ("Pallet of four", "1,850 x 650 x 750; 178 / 200 kg", f"1,850 x 700 x {n(ta['pallet_dims'][2], 0)}; {n(ta['pallet_goods_kg'], 0)} / {n(ta['pallet_gross_kg'], 0)} kg (oak {n(to['pallet_goods_kg'], 0)} / {n(to['pallet_gross_kg'], 0)})", "pallet size and weights"),
-        ("Floor positions", "21 / 18 / (45')", "21 / 18 / 21", "no change"),
+        ("Pallet of four", "1,850 x 650 x 750; 178 / 200 kg", f"1,850 x 700 x {n(ta['pallet_dims'][2], 0)}; {n(ta['pallet_goods_kg'], 0)} / {n(ta['pallet_gross_kg'], 0)} kg", "pallet size and weights"),
+        ("Floor positions", "21 / 18 / (45')", f"{ta['trailer']['floor']} / {ta['container_40']['floor']} / {ta['container_45']['floor']}", "no change"),
         ("Metal poured / yield", "34 kg / 60 %", f"{n(c['poured'], 1)} kg / {n(100 * c['yield_'], 0)} %", "O25"),
-        ("Steel in the product", "about 21 kg", f"{n(m['steel_in_product'], 1)} kg carbon steel + {n(m['stainless_fixings'], 2)} kg stainless", "O25"),
-        ("Hardwood consumption", "22.5 kg", f"{n(ma['wood_bench'], 1)} / {n(mo['wood_bench'], 1)} kg in the product", "O25, per delivery"),
-        ("Carbon footprint", "96 kg CO2e", "not computed", "O25 (main session)"),
+        ("Steel in the product", "about 21 kg", f"{n(m['steel_in_product'], 1)} kg + {n(m['stainless_fixings'], 2)} kg stainless", "O25"),
+        ("Hardwood consumption", "22.5 kg", f"{n(m['wood_bench'], 1)} kg in the product", "O25"),
+        ("Sawmill truck", "21.6 t of slats", f"{n(trk['total_kg'] / 1000, 1)} t with pallets", "O66 text"),
+        ("Carbon footprint", "96 kg CO2e", "not computed", "O25"),
     ]
-    for a_, b_, c_, d_ in rows:
-        A(f"| {a_} | {b_} | {c_} | {d_} |")
+    for row in rows:
+        A("| " + " | ".join(row) + " |")
     A("")
-    A("## 7. Inconsistencies found")
+    A("## 8. Inconsistencies found")
     A("")
-    A("**Resolved since run 1:** run 1's item 14 (ash and beech not durable outdoors; the ash is now thermally modified) and the centre-support "
-      "question (rejected). **Resolved by run 3's thicker slats, for benches from May:** run 2's item 16 (slats at their limit) and most of run 2's item 15 "
-      "(the slat's margin resting on an assumed design value): with 45 mm the utilisation is "
-      f"{n(ua['util_d'], 2)}, and {n(util_split, 2)} even if the modification costs 30 %. Both remain for the oak benches already made (item 16).")
+    A("**Resolved since run 2:** the slats' lack of margin (run 2 items 15 and 16): with 45 mm the utilisation is "
+      f"{n(ua['util_d'], 2)}, {n(util30, 2)} in the 30 % case; and the oak benches already made (the owner's single design removes them from the world). "
+      "Earlier: ash and beech not durable outdoors (run 1), the centre support (rejected).")
     A("")
-    items = []
-    items.append(("Length 1,800 mm 'over the armrests' with slats of 1,800 mm",
-                  f"The bolts sit 80 mm from the slat ends (EN 1995-1-1 end distance max(7d; 80 mm)); with the two bolts either side of the web at ±20 mm the frame "
-                  f"centre is 100 mm from each end, and the 60 mm armrest pads end 70 mm in from the slat ends: 1,800 − 2 x 70 = **{n(d['over_armrests'], 0)} mm**. "
-                  "Moving the bolts nearer the end grain is less acceptable than before, because the modified ash splits more easily.",
-                  f"(a) 1,800 mm over the slats, {n(d['over_armrests'], 0)} mm over the armrests; (b) armrest pads widened outward (+{n(arm_extra, 1)} kg per frame); "
-                  "(c) longer slats (excluded).", "(a)."))
-    items.append(("Side frame 10.0 kg",
-                  f"At castable 8 mm walls the frame is **{n(m['frame_bare'], 2)} kg** cast; about 10 kg only at 6 mm walls ({n(wall['6'], 1)} kg bare), "
-                  "too thin for 0.5 m members of steel fed from one end. Strength does not set the walls.",
-                  "(a) about 13.1 kg cast, 13.4 kg finished; (b) 6 mm walls with misrun risk; (c) ductile iron.", "(a)."))
-    items.append(("Zinc 0.2 kg per frame, no coating mass",
-                  f"EN ISO 1461 gives at least 575 g/m² on castings; on {n(m['frame_area_m2'], 3)} m² that is {n(m['zinc_min'], 2)} kg, typically {n(m['zinc_typ'], 2)} kg; "
-                  f"the powder coat adds {n(m['powder'], 2)} kg.", "(a) 0.3 + 0.05 kg per frame; (b) keep 0.2 as rounded.", "(a)."))
-    items.append(("Net 43.5 kg leaves out the zinc, and the parcels have weightless cartons",
-                  f"D20: 2 x 10.0 + 5 x 4.5 + 1.0 = {n(world_net_check, 1)} kg net without zinc; the 10.2 kg frame carton is frame plus zinc, the carton weighing nothing. "
-                  f"A tray-and-lid carton weighs {n(pk['carton_kg'], 1)} kg.",
-                  f"(a) net {n(ma['net'], 1)} kg (oak {n(mo['net'], 1)}), gross {n(pa['gross'], 1)} kg (oak {n(po['gross'], 1)}); (b) D20 parts plus zinc and packaging.",
-                  "(a)."))
-    items.append(("Frame carton 820 x 620 x 80 mm",
-                  f"The frame itself is {n(fb[2], 0)} x {n(fb[1], 0)} x {n(fb[0], 0)} mm; with clearance the carton is {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} mm.",
-                  "(a) about 800 x 680 x 100 mm.", "(a)."))
-    items.append(("Pallet of four 1,850 x 650 x 750 mm",
-                  f"A {n(co[1], 0)} mm carton does not fit a 650 mm pallet; on a 700 mm pallet the load is {n(ta['pallet_dims'][2], 0)} mm high. The vehicle counts hold.",
-                  "(a) 1,850 x 700 x about 720 mm; (b) cartons on edge (not stackable).", "(a)."))
-    items.append(("Pallet weights 178 / 200 kg and 4.3 t for 96 benches",
-                  f"Thermally modified ash: {n(ta['pallet_goods_kg'], 1)} / {n(ta['pallet_gross_kg'], 1)} kg, {n(ta['load_kg'] / 1000, 2)} t for 24 + 1 pallets; "
-                  f"oak: {n(to['pallet_goods_kg'], 1)} / {n(to['pallet_gross_kg'], 1)} kg, {n(to['load_kg'] / 1000, 2)} t.",
-                  "(a) adopt per delivery; (b) keep 'about 200 kg'.", "(a)."))
-    items.append(("Metal poured 34 kg per bench at about 60 %",
-                  f"The castings weigh {n(2 * c['casting_kg'], 1)} kg; 34 kg would be a {n(100 * 2 * c['casting_kg'] / 34, 0)} % yield. Model: {n(c['poured'], 1)} kg at "
-                  f"{n(100 * c['yield_'], 0)} % ({c['n_risers']} risers per frame by the SFSA rule), or {n(c['poured_j'], 1)} kg at {n(100 * c['yield_j'], 0)} % with junction risers only.",
-                  "(a) 49 kg, 52 %; (b) 37 kg, 70 % with centre-line porosity; (c) 34 kg (impossible).",
-                  f"(a); net liquid steel about {n(net_liquid, 0)} kg per bench."))
-    items.append(("Steel in the product about 21 kg; steel consumption 34 kg",
-                  f"Carbon steel in the product {n(m['steel_in_product'], 1)} kg (castings); the fixings are now {n(m['stainless_fixings'], 2)} kg of stainless steel, a "
-                  f"separate material. 34 kg is neither the poured metal ({n(c['poured'], 1)} kg) nor the net consumption (about {n(net_liquid, 0)} kg).",
-                  "(a) state carbon steel, stainless steel and liquid steel separately (table 5.1).", "(a), for O25."))
-    items.append(("Spare frame VI-C180: 9.5 / 10.2 kg (items.json)",
-                  f"Finished frame {n(m['frame'], 2)} kg, boxed {n(pa['carton1'], 1)} kg; one part for both sides thanks to the symmetric T-sections.",
-                  "(a) 13.4 / 14.5 kg.", "(a)."))
-    items.append(("items.json 38.0 / 41.5 kg (known; D20 supersedes)",
-                  f"Neither matches the model: {n(ma['net'], 1)} / {n(pa['gross'], 1)} kg with thermally modified ash, {n(mo['net'], 1)} / {n(po['gross'], 1)} kg with oak.",
-                  "update once, with the figures of the delivery each document's lot comes from.", "as planned."))
-    items.append(("Slat bundle 1,800 x 200 x 120 mm",
-                  "With end protection a bundle is about 1,810 mm long; 200 x 120 holds five slats only as 2 x 3 with a hole.",
-                  f"(a) 3 + 2 pattern, {n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)} mm.", "(a)."))
-    items.append(("Seat height 450 mm against the UK's 470–480 mm",
-                  "Below Inclusive Mobility's range for most seats; inside the ADA's 430–485 mm.",
-                  "(a) keep 450; (b) 470 with an 800 mm back.", "(a)."))
-    items.append(("Slats '1,800 x 95 x 38, kiln-dried to 12 % (10–14 %), 4.5 kg' for both deliveries",
-                  f"From May the slat is 1,800 x 95 x {TA} mm, at about 4–7 % moisture and {wa['density']} kg/m³: **{n(ma['slat'], 2)} kg**, not 4.5 kg, not 38 mm and "
-                  f"not 'kiln-dried to 12 %'. Bench net from May {n(ma['net'], 1)} kg against {n(mo['net'], 1)} kg; the slat bundle {n(pa['bundle'], 1)} against {n(po['bundle'], 1)} kg. "
-                  f"The sawmill's truck (O66) carries {n(trk['total_kg'] / 1000, 1)} t with pallets ({n(4800 * ma['slat'] / 1000, 1)} t of slats; the decision text says "
-                  "21.6 t of slats at 4.5 kg). The world's description 'fixed by the sawmill' now has two sizes. The decision of O119 says 'kiln-dried ash and oak weigh about the same (D20: about 690)': true for "
-                  "untreated ash, not for the modified ash. Outdoors the oak settles at about 15–20 % (about 5 % heavier, 2–3 mm wider); the modified ash at "
-                  "about 8–12 % (about 5 % heavier than delivered, about 1 mm wider).",
-                  "(a) the item description says 'five hardwood slats' without size or moisture, and size and weights follow the delivery (lot) of each document; "
-                  "(b) one average figure for both (wrong for both).", "(a); weights stated 'as delivered'."))
-    items.append(("Thermally modified ash is not strength-graded, and Eurocode 5 does not cover it (margin now restored)",
-                  "The producers' handbook states that thermally modified products are not available as strength-graded timber and 'must not be used for "
-                  "load-bearing structures'. A bench slat is a load-bearing furniture part, not a building structure, but its design value is still unknown. "
-                  f"The model grades the ash before modification (LS13, D40) and reduces it by the clear-wood ratio: with 45 mm slats the utilisation is "
-                  f"{n(ua['util_d'], 2)} under the 450 kg test, and {n(util_split, 2)} with a 30 % loss instead of 19 % (run 2 with 38 mm: {PREV2['util']} and {PREV2['util30']}). The wood is also more brittle (impact strength about 25 % lower), which "
-                  "matters for misuse (people standing or jumping on the seat) more than for the static test. A batch from Upland State is not an EN 1912 "
-                  "assignment either: EN 1912 covers ash from Germany, Austria and Switzerland, and the world's ash would need its own assignment.",
-                  "(a) grade LS13 before modification and prove the type once by the 450 kg test (UR-SF-0450) on a bench, then sample tests per year; "
-                  "(b) a proof test per modification batch (as recommended in run 2, now more than the margin needs).",
-                  "(a)."))
-    items.append(("The oak benches already made: slats at their limit (resolved for benches from May)",
-                  f"Oak 38 mm: σ = {n(uo['sigma'], 1)} MPa, utilisation {n(uo['util_d'], 2)} (EN 581-2 centre seat {n(case(RO, ENC)['util_d'], 2)}), sag {n(uo['w_span'], 0)} mm under "
-                  f"the test and {n(case(RO, SVK)['w_span'], 0)} mm under three adults. Modified ash 45 mm: {n(ua['util_d'], 2)} ({n(case(RA, ENC)['util_d'], 2)}), sag "
-                  f"{n(ua['w_span'], 1)} and {n(case(RA, SVK)['w_span'], 1)} mm.",
-                  "(a) accept for the benches already made (they pass the test); (b) replace their slats with 45 mm slats on revision-B frames (not possible on revision-A "
-                  "frames without changing the seat height by 7 mm).", "(a)."))
-    items.append(("Frame revision B and the spare part VI-C180 (new)",
-                  f"Revision B (45 mm slats) has its seat and back rails {TA - TO} mm lower and further back than revision A. 'The spare part is one frame' no longer "
-                  "holds for both kinds of bench. A revision-B frame fitted to an old bench with 38 mm slats puts that side's slats 7 mm low; raising that side "
-                  f"by 7 mm on the levelling nuts (gap {P['overall']['levelling_gap_nominal']} → {P['overall']['levelling_gap_nominal'] + TA - TO} mm, within 0–20) brings the slats level again; the "
-                  "back slats then sit 7 mm further back on that side, which a 1,800 mm slat absorbs.",
-                  "(a) one spare part, revision B, with a fitting note for old benches (raise 7 mm on the levelling nuts); (b) two spare parts, VI-C180 rev. A and "
-                  "rev. B; (c) keep revision A for both (seat 457 mm, range 447–467, outside the stated 440–460).", "(a); owner question Q5."))
-    items.append(("Two bolt lengths and two slat items (new)",
-                  f"Revision B needs M8 x {wa['bolt_length']}, revision A M8 x {wo['bolt_length']}: the bolt set (in the second frame carton) differs by bench. A single "
-                  f"M8 x {wa['bolt_length']} set would leave {n(wo['bolt_length'] + 5 - (TO + 8 + 1.6 + 6.8), 1)} mm of thread beyond the nut on old benches (snag under "
-                  "the seat). The slat item and the sawmill's delivery also get a second size.",
-                  f"(a) bolt sets per revision (M8 x {wa['bolt_length']} from May; M8 x {wo['bolt_length']} as a spare set for old benches); (b) one set of M8 x "
-                  f"{wa['bolt_length']} with dome nuts on old benches.", "(a); owner question Q6."))
-    items.append(("The carriage bolt's square neck in brittle wood (since run 2)",
-                  "A cup-square-neck bolt is normally pulled into a round hole, its neck cutting its own square seat; in wood whose splitting strength is "
-                  "30–40 % lower this can crack the slat at the bolt, 80 mm from the end.",
-                  "(a) pre-form the square seat (8.2 mm, 5 mm deep) and limit the torque to 10 N m in modified ash; (b) hexagon bolts with large washers on "
-                  "top (a protruding head on the seat).", "(a); shown on drawings 003 and 004."))
-    items.append(("Stainless bolts on galvanised frames, and A2 at the coast (since run 2)",
-                  "A2 resists the acid wood but pits in chloride-laden air; part of the world's benches stand on Lisavu and in harbour towns. The stainless "
-                  "bolt also forms a bimetallic contact with the zinc of the frame.",
-                  "(a) A4 for coastal sites and salted roads, A2 elsewhere, with isolating washers at the coast; (b) A4 for every bench (one bolt set, "
-                  "slightly dearer).", "(b), or (a) if the owner wants two variants; owner question Q2."))
-    items.append(("Maintenance 'tighten the slat bolts and touch up the coating once a year' (since run 2)",
-                  "Both woods grey under UV; the producers recommend a surface treatment for thermally modified timber exposed to the weather. Oak also "
-                  "checks at the ends without a finish. The yearly maintenance does not mention the wood.",
-                  "(a) add 'oil the slats' to the yearly maintenance; (b) accept greying (silver-grey slats are common on park benches) and say so.",
-                  "(b), with an end-grain sealer at the factory."))
-    items.append(("Cast steel for a bench frame; handling by a shopper",
-                  "Cast bench ends are usually iron or aluminium; steel needs many risers (item 8). ISO 11228-1's 25 kg is for the adult working population; "
-                  f"for the general domestic population it gives 10 kg, below the parcels of {n(pa['carton1'], 0)}, {n(pa['carton2'], 0)} and {n(pa['bundle'], 0)} kg. "
-                  "The 'two thirds of combined capacity' rule for two people was not found in the accessible parts of ISO 11228-1.",
-                  "(a) keep; parcels for shoppers carried to the car or delivered; (b) ductile iron.", "(a)."))
-    # the summary was written before the list: patch the count in
-    L[:] = [x.replace("@@N_ITEMS@@", str(len(items))) for x in L]
+    items = [
+        ("Length 1,800 mm 'over the armrests' with slats of 1,800 mm",
+         f"The bolts sit 80 mm from the slat ends (EN 1995-1-1); with two bolts either side of the web at ±20 mm the frame centre is 100 mm in, and the 60 mm "
+         f"armrest pads end 70 mm in from the slat ends: **{n(d['over_armrests'], 0)} mm** over the armrests.",
+         f"(a) 1,800 mm over the slats, {n(d['over_armrests'], 0)} over the armrests; (b) wider armrest pads (+{n(arm_extra, 1)} kg per frame); (c) longer slats.", "(a)."),
+        ("Side frame 10.0 kg",
+         f"At 8 mm walls the cast-steel frame is **{n(m['frame_bare'], 2)} kg**; about 10 kg only at 6 mm ({n(wall['6'], 1)} kg bare), thin for long steel members. "
+         "Section 9 shows what other materials would weigh.", "(a) about 13 kg; (b) 6 mm walls; (c) another material (section 9).", "(a) for cast steel; the owner decides the material."),
+        ("Zinc 0.2 kg per frame, no coating mass",
+         f"EN ISO 1461 gives at least {n(m['zinc_min'], 2)} kg on this frame, typically {n(m['zinc_typ'], 2)} kg; the powder coat adds {n(m['powder'], 2)} kg.",
+         "(a) 0.3 + 0.05 kg; (b) keep 0.2 rounded.", "(a)."),
+        ("Net 43.5 kg leaves out the zinc, and the parcels have weightless cartons",
+         f"D20: 2 x 10.0 + 5 x 4.5 + 1.0 = {n(world_net_check, 1)} kg without zinc; the 10.2 kg frame carton is frame plus zinc. A tray-and-lid carton weighs {n(pk['carton_kg'], 1)} kg.",
+         f"(a) net {n(m['net'], 1)}, gross {n(pa['gross'], 1)} kg.", "(a)."),
+        ("Frame carton 820 x 620 x 80 mm", f"The frame is {n(fb[2], 0)} x {n(fb[1], 0)} x {n(fb[0], 0)} mm; the carton {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} mm.",
+         "(a) about 790 x 680 x 100 mm.", "(a)."),
+        ("Pallet of four 1,850 x 650 x 750 mm",
+         f"A {n(co[1], 0)} mm carton does not fit a 650 mm pallet; on 700 mm the load is {n(ta['pallet_dims'][2], 0)} mm high (close to the world's 750). Vehicle counts hold.",
+         "(a) 1,850 x 700 x about 745 mm.", "(a)."),
+        ("Pallet weights 178 / 200 kg and 4.3 t for 96 benches",
+         f"Model: {n(ta['pallet_goods_kg'], 1)} / {n(ta['pallet_gross_kg'], 1)} kg; 24 + 1 pallets {n(ta['load_kg'] / 1000, 2)} t.", "(a) adopt; (b) 'about 200 kg'.", "(a)."),
+        ("Metal poured 34 kg per bench at about 60 %",
+         f"Castings {n(2 * c['casting_kg'], 1)} kg: 34 kg would be a {n(100 * 2 * c['casting_kg'] / 34, 0)} % yield. Model: {n(c['poured'], 1)} kg at {n(100 * c['yield_'], 0)} % "
+         f"({c['n_risers']} risers per frame), or {n(c['poured_j'], 1)} kg at {n(100 * c['yield_j'], 0)} % with junction risers only.",
+         "(a) 48 kg, 54 %; (b) 37 kg, 70 % with centre-line porosity.", f"(a); net liquid steel about {n(net_liquid, 0)} kg."),
+        ("Steel in the product about 21 kg; consumption 34 kg",
+         f"Carbon steel {n(m['steel_in_product'], 1)} kg, stainless {n(m['stainless_fixings'], 2)} kg; 34 kg is neither the poured metal nor the net consumption.",
+         "(a) the separate figures of section 5.", "(a)."),
+        ("Spare frame VI-C180: 9.5 / 10.2 kg (items.json)", f"Finished {n(m['frame'], 2)} kg, boxed {n(pa['carton1'], 1)} kg; one part for both sides.",
+         "(a) 13.4 / 14.5 kg.", "(a)."),
+        ("items.json 38.0 / 41.5 kg (known; D20 supersedes)", f"Model {n(m['net'], 1)} / {n(pa['gross'], 1)} kg.", "update once.", "as planned."),
+        ("Slat bundle 1,800 x 200 x 120 mm", "200 x 120 holds five slats only with a hole; 1,800 mm leaves no end protection.",
+         f"(a) 3 + 2, {n(bu[0], 0)} x {n(bu[1], 0)} x {n(bu[2], 0)} mm.", "(a)."),
+        ("Seat height 450 mm against the UK's 470–480 mm", "Below Inclusive Mobility's range; inside the ADA's 430–485 mm.", "(a) keep; (b) 470 with an 800 mm back.", "(a)."),
+        ("The world's slats: '1,800 x 95 x 38, hardwood, kiln-dried 12 %, 4.5 kg', oak or ash",
+         f"Every lot now has thermally modified ash 1,800 x 95 x {T} mm at about 5 %, {n(m['slat'], 2)} kg. The bench description ('five hardwood slats'), "
+         "the slat item, the sawmill's delivery (O66, 21.6 t of slats) and decision O119 (oak now, ash from May, 'kiln-dried ash and oak weigh about the same') "
+         "all change. The sawmill (Marrowdale) must also modify the wood at about 212 °C, or have it done: a step the world's story does not have yet.",
+         "(a) rewrite the slat item, the sawmill delivery and O119 for thermally modified ash 45 mm; (b) keep the old texts (contradicts the bench).", "(a)."),
+        ("Thermally modified ash is not strength-graded, and Eurocode 5 does not cover it",
+         f"The producers say it is not strength-graded and 'must not be used for load-bearing structures'. The model's design value is an assumption; even "
+         f"with a 30 % loss the 45 mm slat is at {n(util30, 2)}. It is more brittle (impact strength about −25 %), which matters for misuse more than for the static test.",
+         "(a) grade LS13 before modification, a type test by UR-SF-0450 and yearly samples; (b) a test per batch.", "(a)."),
+        ("The carriage bolt's square neck in brittle wood",
+         "A square neck pulled into a round hole cuts its own seat and can split wood whose splitting strength is 30–40 % lower.",
+         "(a) pre-formed seat and 10 N m; (b) hexagon bolts on top.", "(a)."),
+        ("Stainless bolts on galvanised frames, A2 at the coast",
+         "A2 pits in chloride-laden air (Lisavu, harbour towns); stainless and zinc form a bimetallic contact.",
+         "(a) A4 at coastal sites and on salted roads, isolating washers at the coast; (b) A4 for every bench.", "(b) for one bolt set; owner question Q2."),
+        ("Maintenance does not mention the wood", "The wood greys under UV; the producers recommend a surface treatment outdoors.",
+         "(a) oil yearly; (b) accept silver-grey and say so.", "(b), with an end-grain sealer at the factory."),
+        ("Cast steel for a bench frame; handling by a shopper",
+         "Cast bench ends are usually iron or aluminium (section 9). ISO 11228-1's 25 kg is for the adult working population; for the general domestic "
+         f"population it gives 10 kg, below the parcels of {n(pa['carton1'], 0)}, {n(pa['carton2'], 0)} and {n(pa['bundle'], 0)} kg.",
+         "(a) keep and say shoppers' parcels are carried to the car or delivered; (b) another frame material (section 9).", "(a), pending the owner's material decision."),
+    ]
+    L[:] = [x.replace("@@N@@", str(len(items))) for x in L]
     for i, (title, why, opts, rec) in enumerate(items, 1):
         A(f"**{i}. {title}.** {why}")
         A(f"*Options:* {opts} *Recommendation:* {rec}")
         A("")
-    A("Figures that **hold**: depth 620, height 780, seat height 450 (440–460) on both revisions; four anchors; 20 bolts; the load test UR-SF-0450 "
-      "(frame comfortably; 45 mm slats with margin, 38 mm oak slats just); repairability; 21 / 18 floor positions and two layers; the parcels within the handling limits; "
-      "the four-bench pallet by fork-lift, stacking two or three high (by height).")
+    A("Figures that **hold**: depth 620, height 780, seat height 450 (440–460); four anchors; 20 bolts; the load test UR-SF-0450 (frame and slats with margin); "
+      "repairability; 21 / 18 floor positions and two layers; the parcels within the handling limits; fork-lift pallets stacking two or three high (by height).")
     A("")
-    A("## 8. Questions for the owner")
+    A("## 9. Frame material: cast steel, ductile iron or cast aluminium (for this geometry)")
     A("")
-    A("- **Q1 – Proof of the modified slats (item 15).** Options: one type test by UR-SF-0450 plus yearly samples; a test per batch. Recommendation: "
-      "the type test and yearly samples (the 45 mm slat has margin).")
-    A("- **Q2 – A2 or A4 (item 20).** Recommendation: A4 for every bench (one bolt set; the world sells the same bench inland and on the island).")
-    A("- **Q3 – Weights per delivery (item 14).** Recommendation: documents for lots made from May use the modified-ash figures, earlier lots the oak figures.")
-    A(f"- **Q4 – Steel figure for O25 (items 8, 9).** Recommendation: net liquid steel about {n(net_liquid, 0)} kg, plus {n(m['stainless_fixings'], 2)} kg "
-      "of stainless steel as a separate material.")
-    A("- **Q5 – Spare frame (item 17).** Recommendation: one spare part, revision B, with the note to raise an old bench's side 7 mm on the levelling nuts.")
-    A(f"- **Q6 – Bolt sets (item 18).** Recommendation: two bolt sets, M8 x {wa['bolt_length']} for benches from May and M8 x {wo['bolt_length']} for the old ones.")
+    A("The owner is deciding the frame material. This compares the three for the present frame geometry, without choosing. Masses are computed from the "
+      "solid model at each wall thickness (with the 2 % draft allowance); stresses are the model's worst case scaled by the seat rail's section modulus; "
+      "deflections scaled by stiffness. `materials.frame_material` in `parameters.json` switches the whole model to another material (its castings, "
+      "risers and gating would then need rework, see the yield row).")
     A("")
-    A("## 9. Limits of the model")
+    rowsM = []
+    mats = MC["materials"]
+    for k in ("cast_steel", "ductile_iron", "aluminium"):
+        x = mats[k]
+        mw = P["materials"]["frame_materials"][k]
+        for t, v in sorted(x["walls"].items(), key=lambda kv: int(kv[0])):
+            rowsM.append((x["name"], f"{t} mm", n(v["mass"], 1), n(v["zinc"], 2) if v["zinc"] else "–", n(v["sigma"], 0), n(v["util"], 2), n(v["disp"], 2)))
+    A("| Material | Wall | Frame mass (kg) | Zinc (kg) | σ max (MPa) | 1.5 σ / (Rp0.2/γM) | max. deflection (mm) |")
+    A("|---|---|---|---|---|---|---|")
+    for row in rowsM:
+        A("| " + " | ".join(row) + " |")
     A("")
-    A("- The design values of the thermally modified ash are an assumption (item 15); everything else about the slats follows from them.")
-    A("- Frame: plane-frame model, in-plane bending of T-sections; casting rules of thumb; draft as a mass allowance.")
-    A("- Standards read in previews or summaries only: EN 581-2, EN 10293, EN 338, EN 350, EN 1912, ISO 14713-2, ISO 11228-1. From general knowledge: "
-      "EN 1995-1-1 (spacings, k_mod, k_h, γM), EN 1990, EN 1993-1-4 (A2/A4 selection), EN 1176-1, the EN 338:2016 value E0,mean = 13,000 MPa for D40, "
-      "fastener dimensions, FEFCO 0320, ISPM 15, ISO 668, *Bodyspace*.")
-    A("- The handbook's strength and density data for modified ash are for small clear specimens (20 x 20 x 360 mm); graded slats with knots may lose more.")
+    cs, di, al = mats["cast_steel"], mats["ductile_iron"], mats["aluminium"]
+    A("| Aspect | Cast steel GE240+N | Ductile iron EN-GJS-400-15 | Cast aluminium EN AC-42100 T6 (sand) |")
+    A("|---|---|---|---|")
+    A(f"| Strength (minimum) | Rp0.2 240, Rm 450–600 MPa, A 22 % (EN 10293) | Rp0.2 250, Rm 400 MPa, A 15 % for walls ≤ 30 mm (EN 1563) | Rp0.2 190, Rm 230 MPa, A 2 % (EN 1706, separately cast bars) |")
+    A(f"| Density, stiffness | 7,850 kg/m³, 210 GPa | about 7,100 kg/m³ (sources give 7,100–7,300), about 169 GPa | about 2,680 kg/m³, about 70 GPa (general knowledge) |")
+    A(f"| Castable minimum wall (sand) | 6 mm by SFSA, more for long flow lengths; 8 mm used | about 3–5 mm for small parts; 5–6 mm judged for 0.5 m members (general knowledge) | about 4–5 mm (general knowledge) |")
+    A(f"| Frame mass at the walls judged | {n(cs['walls']['8']['mass'], 1)} kg at 8 mm | {n(di['walls']['6']['mass'], 1)} kg at 6 mm, {n(di['walls']['5']['mass'], 1)} kg at 5 mm | {n(al['walls']['8']['mass'], 1)} kg at 8 mm, {n(al['walls']['5']['mass'], 1)} kg at 5 mm |")
+    A(f"| Strength against the load (EN 581-2 / UR-SF-0450 worst case) | utilisation {n(cs['walls']['8']['util'], 2)} | {n(di['walls']['6']['util'], 2)} at 6 mm | {n(al['walls']['8']['util'], 2)} at 8 mm, {n(al['walls']['5']['util'], 2)} at 5 mm (γM 1.1); low elongation (2 %): brittle under impact and vandalism |")
+    A(f"| Casting yield | {n(100 * c['yield_'], 0)} % modelled (many risers: steel shrinks about 2 % on solidifying) | higher: graphite expansion offsets shrinkage, so thin ductile-iron castings often need few or no risers; about 65–80 % judged (general knowledge) | about 45–60 % judged: aluminium shrinks 6–7 % on solidifying and needs risers (general knowledge) |")
+    A("| Corrosion protection | hot-dip galvanising (EN ISO 1461, castings), blast first; duplex paint | hot-dip galvanising is possible (galvanizers list cast and ductile iron); the high silicon (2–3 %) makes the zinc grow fast and thick, so the galvanizer must be consulted; or paint only (the traditional finish) | no zinc: powder coat on a conversion layer, or anodising, or bare; stainless bolts need isolating washers (galvanic contact) |")
+    A("| How usual for park bench ends | rare (judged) | the classic material for cast bench ends (grey iron historically, ductile iron today) (general knowledge) | common in modern street furniture: light, does not rust, recyclable (general knowledge) |")
+    A("| What changes in the world | nothing (current) | Valdara's own steel works would cast iron instead of steel (a cupola or induction furnace on iron and scrap); the Serravona ore story fits iron as well | aluminium is bought in (no ore story), or a new supplier; the 'made from Serravona ore' claim goes; weights drop by about 18 kg per bench |")
     A("")
-    A("## 10. Sources")
+    A(f"**Assessment (not a choice):** for this geometry all three carry the load with margin. Ductile iron gives the most ordinary bench end: about "
+      f"{n(di['walls']['6']['mass'], 0)} kg per frame at 6 mm, a better casting yield, galvanising possible with care. Cast aluminium makes the lightest bench "
+      f"(frames of about {n(al['walls']['8']['mass'], 1)} kg; the bench about {n(m['net'] - 2 * (m['frame'] - al['walls']['8']['mass']), 0)} kg net with the same slats), "
+      "with no zinc but a brittle alloy at 2 % elongation and a galvanic contact to the stainless bolts. Cast steel is the strongest and toughest "
+      "but the heaviest and hardest to cast thin, and it is the least usual. The figures for minimum walls and yields of iron and aluminium are judgements.")
+    A("")
+    A("## 10. Questions for the owner")
+    A("")
+    A("- **Q1 – Frame material (section 9).** Cast steel, ductile iron or cast aluminium; the model switches with one parameter.")
+    A("- **Q2 – A2 or A4 (item 17).** Recommendation: A4 for every bench.")
+    A("- **Q3 – Slat story (item 14).** Recommendation: rewrite the slat item, the sawmill delivery (O66) and O119 for thermally modified ash 45 mm, and give "
+      "Marrowdale a modification kiln or a subcontractor.")
+    A(f"- **Q4 – Steel figure for O25 (items 8, 9).** Recommendation: net liquid steel about {n(net_liquid, 0)} kg, stainless {n(m['stainless_fixings'], 2)} kg separately.")
+    A("- **Q5 – Proof of the modified slats (item 15).** Recommendation: a type test by UR-SF-0450 and yearly samples.")
+    A("")
+    A("## 11. Limits of the model")
+    A("")
+    A("- The design values of the thermally modified ash are an assumption (handbook data are small clear specimens).")
+    A("- Frame: plane-frame model, in-plane bending of T-sections; casting rules of thumb; draft as a mass allowance. Section 9 scales stresses and "
+      "deflections; it does not re-run the frame model per material.")
+    A("- Read in previews or summaries only: EN 581-2, EN 10293, EN 338, EN 350, EN 1912, EN 1563, EN 1706, ISO 14713-2, ISO 11228-1. From general knowledge: "
+      "EN 1995-1-1, EN 1990, EN 1993-1-4, EN 1999 (γM 1.1), EN 1176-1, D40's E0,mean, fastener dimensions, FEFCO 0320, ISPM 15, ISO 668, *Bodyspace*, "
+      "the castable walls and yields of iron and aluminium.")
+    A("")
+    A("## 12. Sources")
     A("")
     src = [
-        ("Producers' handbook on thermal modification, 2025 edition (VTT data): ash modified at 212 °C, density 625 → 554 kg/m³ (Table 4), bending strength 112.0 → 90.6 MPa and MOE 12,056 → 13,320 MPa on 20 x 20 x 360 mm specimens (Table 5), moisture 4–7 % after the process, pH about 4, stainless A2 or A4 fasteners (9.1, Table 10), impact strength −25 %, splitting strength −30 to −40 %, not strength-graded and not for load-bearing structures (4.5.2), use class 3 (Table 9)", "https://thermowood.fi/dataflow/thermowood/files/media/thermowood_handbook_2025_web_17.pdf"),
-        ("Ehrhart, Strength grading of hardwoods (TU München): DIN 4074-5 LS13 ash in D40 under EN 1912", "https://mediatum.ub.tum.de/doc/1695273/1695273.pdf"),
-        ("Shear tests on full-scale European ash glulam beams (LS13 ash = D40; LS13+ density 690 kg/m³, MOE 14,800 MPa)", "https://www.researchgate.net/publication/371558301_Shear_tests_on_full-scale_European_ash_glued_laminated_timber_beams"),
-        ("CEN/TC 124, visual grading assignments for FprEN 1912 (2024)", "https://www.ogm.gov.tr/marmaraarastirma/haber-sitesi/PublishingImages/yerli-igne-yaprakli-agac-turlerimizden-karacam-goknar-saricam-kizilcam-sedir-ve-ladin-agac-turlerimize-uluslararasi-standart-alinmasi-38/AGR-VISUAL-2024-02-13.pdf"),
-        ("Moisture-dependent strength of thermally modified ash in compression (brittleness)", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7178349/"),
-        ("Thermal modification and bending creep of Fraxinus excelsior (Materials, MDPI)", "https://www.mdpi.com/1996-1944/19/18/3892"),
-        ("EN 581-2 (iTeh preview)", "https://standards.iteh.ai/catalog/standards/cen/4e5b88c8-55b8-4998-b61f-25b235ae9b71/en-581-2-2015"),
-        ("SIST EN 581-2:2016 sample (Table 2)", "https://cdn.standards.iteh.ai/samples/40324/2427b153643540bf81ea9c3c997ea884/SIST-EN-581-2-2016.pdf"),
+        ("Producers' handbook on thermal modification (2025): ash at 212 °C, density 625 → 554 kg/m³, bending 112.0 → 90.6 MPa, MOE 12,056 → 13,320 MPa, 4–7 % moisture, pH about 4, A2/A4 fasteners, impact −25 %, splitting −30 to −40 %, not for load-bearing structures, use class 3", "https://thermowood.fi/dataflow/thermowood/files/media/thermowood_handbook_2025_web_17.pdf"),
+        ("Ehrhart, Strength grading of hardwoods (TU München): ash LS13 in D40 under EN 1912", "https://mediatum.ub.tum.de/doc/1695273/1695273.pdf"),
+        ("Shear tests on European ash glulam (LS13 = D40)", "https://www.researchgate.net/publication/371558301_Shear_tests_on_full-scale_European_ash_glued_laminated_timber_beams"),
+        ("Moisture-dependent strength of thermally modified ash (brittleness)", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7178349/"),
+        ("EN 1563 EN-GJS-400-15 properties (H2ABC, citing EN 1563:2018)", "https://www.h2abc.com/material/detail.php?mid=azhlNWIxMjY4MjQ%3D"),
+        ("EN 1563 summary (SteelNumber)", "http://www.steelnumber.com/en/steel_composition_eu.php?name_id=1520"),
+        ("EN AC-42100 datasheet citing EN 1706:2020 (Raffmetal)", "https://www.raffmetal.com/wp-content/uploads/sites/4/EN-42100-AlSi7Mg03-1.pdf"),
+        ("EN AC-42100 (SteelNumber, citing EN 1706)", "http://www.steelnumber.com/en/steel_alloy_composition_eu.php?name_id=1225"),
+        ("American Galvanizers Association, design guide (cast and ductile iron can be galvanized)", "https://galvanizeit.org/uploads/publications/Design-Guide-AGA-2023-reduced-size_2024-09-10-171216_zgwg.pdf"),
+        ("Galvanizers Association datasheet 4a (2024): EN ISO 1461 castings, silicon and reactivity, grit blasting", "https://www.wedge-galv.co.uk/wp-content/uploads/2024/10/4a-Specifying-Hot-Dip-Galvanized-steel-2024.pdf"),
+        ("EN 581-2 (iTeh preview) and SIST EN 581-2:2016 sample", "https://cdn.standards.iteh.ai/samples/40324/2427b153643540bf81ea9c3c997ea884/SIST-EN-581-2-2016.pdf"),
         ("Department for Transport, Inclusive Mobility (2021), p. 102", "https://assets.publishing.service.gov.uk/media/61d32bb7d3bf7f1f72b5ffd2/inclusive-mobility-a-guide-to-best-practice-on-access-to-pedestrian-and-transport-infrastructure.pdf"),
         ("U.S. Access Board, 2010 ADA Standards, 903 Benches", "https://www.access-board.gov/ada/#ada-903"),
         ("EN 10293 property table (Olbersdorfer Guss)", "http://www.olbersdorfer-guss.de/en/werkstoffe/stahlguss-din-en-10293.html"),
         ("SFSA, Ordering Steel Castings (6 mm minimum section)", "https://www.sfsa.org/subject-areas/education/ordering-steel-castings/"),
-        ("SFSA, Steel Castings Handbook Supplement 2", "https://www.sfsa.org/wp-content/uploads/2021/10/s2.pdf"),
-        ("Carlson and Beckermann, new feeding rules for steel castings", "https://beckermann.lab.uiowa.edu/sites/beckermann.lab.uiowa.edu/files/2023-10/2000-2.1%20Application%20of%20New%20Feeding%20Rules.pdf"),
+        ("Carlson and Beckermann, feeding rules for steel castings", "https://beckermann.lab.uiowa.edu/sites/beckermann.lab.uiowa.edu/files/2023-10/2000-2.1%20Application%20of%20New%20Feeding%20Rules.pdf"),
         ("Galvanizers Association, EN ISO 1461", "https://galvanizing.org.uk/galvanizing-standards/iso-1461/"),
-        ("American Galvanizers Association, design guide (2023)", "https://galvanizeit.org/uploads/publications/Design-Guide-AGA-2023-reduced-size_2024-09-10-171216_zgwg.pdf"),
-        ("USDA FPL, Wood Handbook FPL-GTR-282, chapter 5 (Table 5-3a)", "https://research.fs.usda.gov/download/treesearch/62244.pdf"),
-        ("Allocation of Central European hardwoods into EN 1912 (oak LS10 in D30)", "https://www.irbnet.de/daten/iconda/CIB_DC34403.pdf"),
-        ("Swedish Wood, durability classes (EN 350)", "https://www.swedishwood.com/wood-facts/about-wood/from-log-to-plank/durability-and-resistance/"),
+        ("USDA FPL, Wood Handbook FPL-GTR-282, chapter 5", "https://research.fs.usda.gov/download/treesearch/62244.pdf"),
         ("ISO 11228-1:2021 sample (reference masses)", "https://cdn.standards.iteh.ai/samples/76820/f0ddadd06e294d45838da9dce4820fa5/ISO-11228-1-2021.pdf"),
     ]
     for a_, b_ in src:
@@ -537,4 +463,3 @@ def write(r, here):
     A("The handbook is published by the producers' association of thermally modified timber; its trade and class names are not used in the world.")
     A("")
     (here / "report.md").write_text("\n".join(L), encoding="utf-8")
-

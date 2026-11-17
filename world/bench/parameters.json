@@ -145,10 +145,17 @@
     "wood_density": 690,
     "pine_density_pallet": 500,
     "cast_steel": {
+      "name": "cast steel",
       "grade": "GE240+N (EN 10293, 1.0446)",
+      "density": 7850,
       "Rp02": 240,
       "Rm_min": 450,
-      "E": 210000
+      "elongation_pct": 22,
+      "E": 210000,
+      "gamma_M": 1.0,
+      "min_wall_mm": 6,
+      "design_wall_mm": 8,
+      "galvanise": true
     },
     "galvanising": {
       "standard": "EN ISO 1461, castings >= 6 mm",
@@ -194,6 +201,49 @@
         "SG": 0.64,
         "MOR": 103,
         "MOE": 11900
+      }
+    },
+    "frame_material": "cast_steel",
+    "frame_materials": {
+      "_note": "frame_material selects one; the frame geometry stays. Values: EN 10293 (cast steel), EN 1563 (ductile iron), EN 1706 (aluminium, sand cast T6). min_wall, yield and usage are judgements, see report section 9.",
+      "cast_steel": {
+        "name": "cast steel",
+        "grade": "GE240+N (EN 10293, 1.0446)",
+        "density": 7850,
+        "Rp02": 240,
+        "Rm_min": 450,
+        "elongation_pct": 22,
+        "E": 210000,
+        "gamma_M": 1.0,
+        "min_wall_mm": 6,
+        "design_wall_mm": 8,
+        "galvanise": true
+      },
+      "ductile_iron": {
+        "name": "ductile cast iron",
+        "grade": "EN-GJS-400-15 (EN 1563, 5.3106)",
+        "density": 7100,
+        "Rp02": 250,
+        "Rm_min": 400,
+        "elongation_pct": 15,
+        "E": 169000,
+        "gamma_M": 1.0,
+        "min_wall_mm": 5,
+        "design_wall_mm": 6,
+        "galvanise": true
+      },
+      "aluminium": {
+        "name": "cast aluminium",
+        "grade": "EN AC-42100 (AlSi7Mg0.3) sand cast T6 (EN 1706)",
+        "density": 2680,
+        "Rp02": 190,
+        "Rm_min": 230,
+        "elongation_pct": 2,
+        "E": 70000,
+        "gamma_M": 1.1,
+        "min_wall_mm": 5,
+        "design_wall_mm": 8,
+        "galvanise": false
       }
     }
   },
@@ -363,9 +413,8 @@
     "manual_two_person": 33
   },
   "woods": {
-    "_note": "main_wood: slats from May 2026 (frame revision B); comparison_wood: the benches already made (frame revision A). Each wood carries its own slat thickness, back-rail length and bolt length. Never use trade names for the modified wood.",
+    "_note": "One bench design in every lot: slats of thermally modified ash 1,800 x 95 x 45 mm. Never use trade names for the modified wood.",
     "main_wood": "tm_ash",
-    "comparison_wood": "oak",
     "tm_ash": {
       "name": "thermally modified European ash",
       "short": "thermally modified ash",
@@ -396,34 +445,6 @@
       "back_rail_u_top": 350,
       "bolt_length": 65,
       "frame_revision": "B"
-    },
-    "oak": {
-      "name": "European oak heartwood",
-      "short": "oak",
-      "process": "kiln-dried",
-      "density": 690,
-      "density_basis": "at 12 % moisture content (world figure)",
-      "mc_delivery": 12,
-      "mc_outdoor": [
-        15,
-        20
-      ],
-      "base_class": "EN 338 D30 (visually graded European oak)",
-      "f_mk_base": 30,
-      "strength_ratio": 1.0,
-      "E0_mean": 11000,
-      "service_class": 3,
-      "k_mod_short": 0.7,
-      "gamma_M": 1.3,
-      "durability": "class 2-4 (EN 350:2016), heartwood",
-      "swelling_12_to_outdoor_mm": 2.5,
-      "colour": "#b48a58",
-      "grain_dark": "90,58,30",
-      "grain_light": "225,190,140",
-      "slat_thickness": 38,
-      "back_rail_u_top": 360,
-      "bolt_length": 60,
-      "frame_revision": "A"
     }
   },
   "sawmill_truck": {

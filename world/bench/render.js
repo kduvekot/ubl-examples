@@ -195,11 +195,10 @@ function serve() {
   // three.js coordinates after rotation: x = bench length, y = up, z = -depth (front of the bench at z = 0)
   const W = P.woods;
   for (const f of fs.readdirSync(OUT)) if (f.endsWith('.png')) fs.unlinkSync(path.join(OUT, f));
-  const ash = W[W.main_wood], oak = W[W.comparison_wood];
+  const ash = W[W.main_wood];
   const jobs = [
     { out: 'serra180_GRY_tm-ash_three-quarter.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, wood: ash, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
     { out: 'serra180_GRN_tm-ash_three-quarter.png', glb: '/glb/serra180_GRN.glb', frame: col.GRN.srgb_approx, wood: ash, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
-    { out: 'serra180_GRY_oak_three-quarter.png', glb: '/glb/serra180_GRY_oak38.glb', frame: col.GRY.srgb_approx, wood: oak, cam: [-0.95, 1.25, 2.55], target: [0.85, 0.36, -0.33] },
     { out: 'serra180_detail_frame_and_slats_tm-ash.png', glb: '/glb/serra180_GRY.glb', frame: col.GRY.srgb_approx, wood: ash, cam: [-0.42, 0.86, 0.62], target: [0.12, 0.47, -0.30], fov: 34 },
     { out: 'serra180_parcels_knocked_down.png', glb: '/glb/serra180_parcels.glb', wood: ash, cam: [-0.75, 1.55, 1.75], target: [0.9, 0.03, -0.15], fov: 34, labels: true },
     { out: 'serra180_pallet_of_four.png', glb: '/glb/serra180_pallet.glb', wood: ash, cam: [-1.35, 1.75, 2.6], target: [0.92, 0.33, -0.35], fov: 32 },

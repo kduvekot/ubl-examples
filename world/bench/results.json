@@ -296,44 +296,6 @@
    "W_edge": 3733.3333
   }
  },
- "dims_case": {
-  "length": 1800.0,
-  "depth": 620.0,
-  "height": 780.004,
-  "z_min": 10.0,
-  "over_armrests": 1660.0,
-  "between_armrests": 1540.0,
-  "seat_width_per_person": 513.3333,
-  "seat_front": 450,
-  "P": [
-   440.0256,
-   422.0974
-  ],
-  "F": [
-   41.0,
-   450.0
-  ],
-  "back_top": [
-   556.6177,
-   780.931
-  ],
-  "back_rel_P": [
-   71.3292,
-   161.6796,
-   268.4833,
-   358.8336
-  ],
-  "seat_surface_depth": 329.0,
-  "throat": 71.0,
-  "arm_clear_lower": 36.223,
-  "arm_clear_upper": 40.5807,
-  "back_height_above_seat": 330.931,
-  "beta": 18.0,
-  "slat_span": 1600,
-  "overhang": 100,
-  "slat_overhang_beyond_frame": 66.0,
-  "back_rail_top_y": 619.5108
- },
  "parcels": {
   "carton1": 14.5464,
   "carton2": 15.3075,
@@ -387,22 +349,6 @@
   },
   "stack_max": 3,
   "world_pallet_width_ok": false
- },
- "woods_mass": {
-  "oak": 4.4546,
-  "tm_ash": 4.2387
- },
- "woods_net": {
-  "oak": 49.8443,
-  "tm_ash": 48.8294
- },
- "woods_bundle": {
-  "oak": 22.8674,
-  "tm_ash": 21.7881
- },
- "woods_gross": {
-  "oak": 52.6797,
-  "tm_ash": 51.642
  },
  "casting": {
   "M_wall": 4.0,
@@ -541,520 +487,7 @@
   "8": 12.8135,
   "10": 15.2665
  },
- "woods": {
-  "oak": {
-   "mass": {
-    "frame_volume_l": 1.6306,
-    "frame_area_m2": 0.4457,
-    "frame_bare": 12.8005,
-    "frame_draft": 0.256,
-    "zinc_min": 0.2563,
-    "zinc_typ": 0.3203,
-    "powder": 0.0468,
-    "frame": 13.4236,
-    "frame_cg": [
-     100.0,
-     302.305,
-     407.7823
-    ],
-    "slat_volume_l": 6.4559,
-    "slat": 4.4546,
-    "slat_box_volume_l": 6.498,
-    "bolt": 0.0282,
-    "washer": 0.0018,
-    "nut": 0.0052,
-    "fixing": 0.0352,
-    "boltset": 0.7241,
-    "net": 49.8443,
-    "steel_in_product": 26.113,
-    "stainless_fixings": 0.7041,
-    "zinc_bench": 0.6407,
-    "zinc_bench_min": 0.5126,
-    "powder_bench": 0.0936,
-    "wood_bench": 22.273,
-    "wood_key": "oak",
-    "bench_cg": [
-     900.0,
-     316.4302,
-     451.5316
-    ],
-    "breakdown_l": {
-     "web (all members)": 0.6233,
-     "flange seat_rail": 0.2389,
-     "flange back_rail": 0.2042,
-     "flange front_post": 0.1125,
-     "flange armrest": 0.2429,
-     "flange rear_leg": 0.0735,
-     "feet (2)": 0.168
-    },
-    "breakdown_kg": {
-     "web (all members)": 4.8927,
-     "flange seat_rail": 1.8756,
-     "flange back_rail": 1.6029,
-     "flange front_post": 0.883,
-     "flange armrest": 1.9066,
-     "flange rear_leg": 0.5767,
-     "feet (2)": 1.3188
-    },
-    "bolt_length": 60
-   },
-   "slats": {
-    "I": 434403.3333,
-    "W": 22863.3333,
-    "span": 1600,
-    "q_ur": 0.9555,
-    "seat_len": 1540.0,
-    "k_h": 1.3,
-    "f_md": 21.0,
-    "f_md_sc2": 21.0,
-    "f_mk": 30.0,
-    "E_d": 11000,
-    "E_wh": 13530.0,
-    "cases": {
-     "UR-SF-0450 (450 kg over the seat)": {
-      "Ra": 735.98887987013,
-      "Rb": 735.98887987013,
-      "Mmax": 305343.4164,
-      "sigma": 13.3552,
-      "w_span": 17.0353,
-      "w_end": -3.4015,
-      "sigma_d": 20.0327,
-      "util_d": 0.9539,
-      "ratio_fmk": 0.4452,
-      "L_over_w": 93.9224
-     },
-     "UR-SF-0450, E from clear-wood data": {
-      "Ra": 735.98887987013,
-      "Rb": 735.98887987013,
-      "Mmax": 305343.4164,
-      "sigma": 13.3552,
-      "w_span": 13.8499,
-      "w_end": -2.7654,
-      "sigma_d": 20.0327,
-      "util_d": 0.9539,
-      "ratio_fmk": 0.4452,
-      "L_over_w": 115.5246
-     },
-     "EN 581-2 contract, 2000 N on the centre seat": {
-      "Ra": 583.8888888888888,
-      "Rb": 583.8888888888888,
-      "Mmax": 313715.2778,
-      "sigma": 13.7213,
-      "w_span": 16.2636,
-      "w_end": -3.1712,
-      "sigma_d": 20.582,
-      "util_d": 0.9801,
-      "ratio_fmk": 0.4574,
-      "L_over_w": 98.3793
-     },
-     "EN 581-2 contract, 2000 N on an end seat": {
-      "Ra": 717.2005208333333,
-      "Rb": 449.8828125,
-      "Mmax": 225533.2617,
-      "sigma": 9.8644,
-      "w_span": 12.7363,
-      "w_end": -2.4303,
-      "sigma_d": 14.7966,
-      "util_d": 0.7046,
-      "ratio_fmk": 0.3288,
-      "L_over_w": 125.6257
-     },
-     "EN 581-2 back 560 N, all on the upper back slat, centre seat": {
-      "Ra": 280.4666666666667,
-      "Rb": 280.4666666666667,
-      "Mmax": 203303.3333,
-      "sigma": 8.8921,
-      "w_span": 9.8488,
-      "w_end": -1.8538,
-      "sigma_d": 13.3382,
-      "util_d": 0.6352,
-      "ratio_fmk": 0.2964,
-      "L_over_w": 162.457
-     },
-     "Three adults of 80 kg, one per seat (service)": {
-      "Ra": 392.61800000000005,
-      "Rb": 392.61800000000005,
-      "Mmax": 169985.5,
-      "sigma": 7.4349,
-      "w_span": 9.3503,
-      "w_end": -1.875,
-      "sigma_d": 11.1523,
-      "util_d": 0.5311,
-      "ratio_fmk": 0.2478,
-      "L_over_w": 171.1184
-     }
-    }
-   },
-   "parcels": {
-    "carton1": 14.5441,
-    "carton2": 15.2682,
-    "bundle": 22.8674,
-    "gross": 52.6797,
-    "packaging": 2.8354
-   },
-   "transport": {
-    "pallet_goods_kg": 210.7188,
-    "pallet_gross_kg": 238.8888,
-    "pallet_extra_kg": 2.0,
-    "castings_pallet_kg": 202.6995,
-    "castings_pallet_h": 737.0,
-    "pallet_dims": [
-     1850,
-     700,
-     716.0
-    ],
-    "load_kg": 5936.0296,
-    "n_pallets": 25,
-    "floor_needed": 13,
-    "trailer": {
-     "floor": 21,
-     "rows": 7,
-     "across": 3,
-     "layers_fit": 3,
-     "capacity": 63,
-     "floor_needed": 13,
-     "fits": true,
-     "payload_ok": true
-    },
-    "container_40": {
-     "floor": 18,
-     "rows": 6,
-     "across": 3,
-     "layers_fit": 3,
-     "capacity": 54,
-     "floor_needed": 13,
-     "fits": true,
-     "payload_ok": true
-    },
-    "container_45": {
-     "floor": 21,
-     "rows": 7,
-     "across": 3,
-     "layers_fit": 3,
-     "capacity": 63,
-     "floor_needed": 13,
-     "fits": true,
-     "payload_ok": true
-    },
-    "stack_max": 3,
-    "world_pallet_width_ok": false
-   },
-   "dims": {
-    "length": 1800.0,
-    "depth": 620.0,
-    "height": 780.004,
-    "z_min": 10.0,
-    "over_armrests": 1660.0,
-    "between_armrests": 1540.0,
-    "seat_width_per_person": 513.3333,
-    "seat_front": 450,
-    "P": [
-     440.0256,
-     422.0974
-    ],
-    "F": [
-     41.0,
-     450.0
-    ],
-    "back_top": [
-     556.6177,
-     780.931
-    ],
-    "back_rel_P": [
-     71.3292,
-     161.6796,
-     268.4833,
-     358.8336
-    ],
-    "seat_surface_depth": 329.0,
-    "throat": 71.0,
-    "arm_clear_lower": 36.223,
-    "arm_clear_upper": 40.5807,
-    "back_height_above_seat": 330.931,
-    "beta": 18.0,
-    "slat_span": 1600,
-    "overhang": 100,
-    "slat_overhang_beyond_frame": 66.0,
-    "back_rail_top_y": 615.9436
-   },
-   "packaging": {
-    "bundle": [
-     1810,
-     295,
-     86
-    ],
-    "carton_outer": [
-     797.6948,
-     676.0,
-     98.0
-    ],
-    "load_dims": [
-     1850,
-     700,
-     716.0
-    ],
-    "pallet_h": 144
-   },
-   "frame_volume_l": 1.6306
-  },
-  "tm_ash": {
-   "mass": {
-    "frame_volume_l": 1.6323,
-    "frame_area_m2": 0.4461,
-    "frame_bare": 12.8135,
-    "frame_draft": 0.2563,
-    "zinc_min": 0.2565,
-    "zinc_typ": 0.3206,
-    "powder": 0.0468,
-    "frame": 13.4373,
-    "frame_cg": [
-     100.0,
-     303.577,
-     404.9697
-    ],
-    "slat_volume_l": 7.6511,
-    "slat": 4.2387,
-    "slat_box_volume_l": 7.695,
-    "bolt": 0.03,
-    "washer": 0.0018,
-    "nut": 0.0052,
-    "fixing": 0.0371,
-    "boltset": 0.7612,
-    "net": 48.8294,
-    "steel_in_product": 26.1396,
-    "stainless_fixings": 0.7412,
-    "zinc_bench": 0.6413,
-    "zinc_bench_min": 0.513,
-    "powder_bench": 0.0937,
-    "wood_bench": 21.1937,
-    "wood_key": "tm_ash",
-    "bench_cg": [
-     900.0,
-     317.2735,
-     447.6357
-    ],
-    "breakdown_l": {
-     "web (all members)": 0.623,
-     "flange seat_rail": 0.2413,
-     "flange back_rail": 0.202,
-     "flange front_post": 0.1125,
-     "flange armrest": 0.2459,
-     "flange rear_leg": 0.0721,
-     "feet (2)": 0.168
-    },
-    "breakdown_kg": {
-     "web (all members)": 4.8906,
-     "flange seat_rail": 1.8944,
-     "flange back_rail": 1.5861,
-     "flange front_post": 0.883,
-     "flange armrest": 1.9306,
-     "flange rear_leg": 0.5661,
-     "feet (2)": 1.3188
-    },
-    "bolt_length": 65
-   },
-   "slats": {
-    "I": 721406.25,
-    "W": 32062.5,
-    "span": 1600,
-    "q_ur": 0.9555,
-    "seat_len": 1540.0,
-    "k_h": 1.2723,
-    "f_md": 22.1686,
-    "f_md_sc2": 28.5025,
-    "f_mk": 32.36,
-    "E_d": 13000,
-    "E_wh": 14365.0,
-    "cases": {
-     "UR-SF-0450 (450 kg over the seat)": {
-      "Ra": 735.98887987013,
-      "Rb": 735.98887987013,
-      "Mmax": 305343.4164,
-      "sigma": 9.5234,
-      "w_span": 8.6799,
-      "w_end": -1.7331,
-      "sigma_d": 14.2851,
-      "util_d": 0.6444,
-      "ratio_fmk": 0.2943,
-      "L_over_w": 184.3346
-     },
-     "UR-SF-0450, E from clear-wood data": {
-      "Ra": 735.98887987013,
-      "Rb": 735.98887987013,
-      "Mmax": 305343.4164,
-      "sigma": 9.5234,
-      "w_span": 7.8551,
-      "w_end": -1.5684,
-      "sigma_d": 14.2851,
-      "util_d": 0.6444,
-      "ratio_fmk": 0.2943,
-      "L_over_w": 203.6897
-     },
-     "EN 581-2 contract, 2000 N on the centre seat": {
-      "Ra": 583.8888888888888,
-      "Rb": 583.8888888888888,
-      "Mmax": 313715.2778,
-      "sigma": 9.7845,
-      "w_span": 8.2866,
-      "w_end": -1.6158,
-      "sigma_d": 14.6767,
-      "util_d": 0.662,
-      "ratio_fmk": 0.3024,
-      "L_over_w": 193.0817
-     },
-     "EN 581-2 contract, 2000 N on an end seat": {
-      "Ra": 717.2005208333333,
-      "Rb": 449.8828125,
-      "Mmax": 225533.2617,
-      "sigma": 7.0342,
-      "w_span": 6.4894,
-      "w_end": -1.2383,
-      "sigma_d": 10.5513,
-      "util_d": 0.476,
-      "ratio_fmk": 0.2174,
-      "L_over_w": 246.5561
-     },
-     "EN 581-2 back 560 N, all on the upper back slat, centre seat": {
-      "Ra": 280.4666666666667,
-      "Rb": 280.4666666666667,
-      "Mmax": 203303.3333,
-      "sigma": 6.3408,
-      "w_span": 5.0182,
-      "w_end": -0.9446,
-      "sigma_d": 9.5113,
-      "util_d": 0.429,
-      "ratio_fmk": 0.1959,
-      "L_over_w": 318.8423
-     },
-     "Three adults of 80 kg, one per seat (service)": {
-      "Ra": 392.61800000000005,
-      "Rb": 392.61800000000005,
-      "Mmax": 169985.5,
-      "sigma": 5.3017,
-      "w_span": 4.7642,
-      "w_end": -0.9554,
-      "sigma_d": 7.9525,
-      "util_d": 0.3587,
-      "ratio_fmk": 0.1638,
-      "L_over_w": 335.8412
-     }
-    }
-   },
-   "parcels": {
-    "carton1": 14.5464,
-    "carton2": 15.3075,
-    "bundle": 21.7881,
-    "gross": 51.642,
-    "packaging": 2.8126
-   },
-   "transport": {
-    "pallet_goods_kg": 206.568,
-    "pallet_gross_kg": 234.738,
-    "pallet_extra_kg": 2.0,
-    "castings_pallet_kg": 202.7266,
-    "castings_pallet_h": 737.0,
-    "pallet_dims": [
-     1850,
-     700,
-     744.0
-    ],
-    "load_kg": 5836.4391,
-    "n_pallets": 25,
-    "floor_needed": 13,
-    "trailer": {
-     "floor": 21,
-     "rows": 7,
-     "across": 3,
-     "layers_fit": 3,
-     "capacity": 63,
-     "floor_needed": 13,
-     "fits": true,
-     "payload_ok": true
-    },
-    "container_40": {
-     "floor": 18,
-     "rows": 6,
-     "across": 3,
-     "layers_fit": 3,
-     "capacity": 54,
-     "floor_needed": 13,
-     "fits": true,
-     "payload_ok": true
-    },
-    "container_45": {
-     "floor": 21,
-     "rows": 7,
-     "across": 3,
-     "layers_fit": 3,
-     "capacity": 63,
-     "floor_needed": 13,
-     "fits": true,
-     "payload_ok": true
-    },
-    "stack_max": 3,
-    "world_pallet_width_ok": false
-   },
-   "dims": {
-    "length": 1800.0,
-    "depth": 620.0,
-    "height": 780.004,
-    "z_min": 10.0,
-    "over_armrests": 1660.0,
-    "between_armrests": 1540.0,
-    "seat_width_per_person": 513.3333,
-    "seat_front": 450,
-    "P": [
-     440.0256,
-     422.0974
-    ],
-    "F": [
-     41.0,
-     450.0
-    ],
-    "back_top": [
-     556.6177,
-     780.931
-    ],
-    "back_rel_P": [
-     71.3292,
-     161.6796,
-     268.4833,
-     358.8336
-    ],
-    "seat_surface_depth": 329.0,
-    "throat": 71.0,
-    "arm_clear_lower": 36.223,
-    "arm_clear_upper": 40.5807,
-    "back_height_above_seat": 330.931,
-    "beta": 18.0,
-    "slat_span": 1600,
-    "overhang": 100,
-    "slat_overhang_beyond_frame": 66.0,
-    "back_rail_top_y": 619.5108
-   },
-   "packaging": {
-    "bundle": [
-     1810,
-     295,
-     100
-    ],
-    "carton_outer": [
-     786.0211,
-     676.0,
-     98.0
-    ],
-    "load_dims": [
-     1850,
-     700,
-     744.0
-    ],
-    "pallet_h": 144
-   },
-   "frame_volume_l": 1.6323
-  }
- },
  "main_wood": "tm_ash",
- "comparison_wood": "oak",
  "sawmill_truck": {
   "goods_kg": 20393.9351,
   "total_kg": 21017.9351,
@@ -1070,19 +503,91 @@
   "layers": 2,
   "capacity": 28
  },
- "sawmill_truck_oak": {
-  "goods_kg": 21430.0407,
-  "total_kg": 22054.0407,
-  "payload_kg": 24700,
-  "ok": true,
-  "pallet_kg": 918.9184,
-  "pallet_size": [
-   1850,
-   970,
-   882
-  ],
-  "floor": 14,
-  "layers": 2,
-  "capacity": 28
- }
+ "material_comparison": {
+  "case": "seat rail",
+  "sigma8": 52.06284472054276,
+  "materials": {
+   "cast_steel": {
+    "name": "cast steel",
+    "grade": "GE240+N (EN 10293, 1.0446)",
+    "density": 7850,
+    "Rp02": 240,
+    "E": 210000,
+    "gamma_M": 1.0,
+    "walls": {
+     "6": {
+      "mass": 10.397,
+      "zinc": 0.3217,
+      "sigma": 66.83246712945517,
+      "util": 0.41770291955909483,
+      "disp": 0.5031
+     },
+     "8": {
+      "mass": 13.0698,
+      "zinc": 0.3206,
+      "sigma": 52.06284472054276,
+      "util": 0.3253927795033923,
+      "disp": 0.4031
+     }
+    }
+   },
+   "ductile_iron": {
+    "name": "ductile cast iron",
+    "grade": "EN-GJS-400-15 (EN 1563, 5.3106)",
+    "density": 7100,
+    "Rp02": 250,
+    "E": 169000,
+    "gamma_M": 1.0,
+    "walls": {
+     "5": {
+      "mass": 8.1359,
+      "zinc": 0.3223,
+      "sigma": 78.49991857183679,
+      "util": 0.4709995114310207,
+      "disp": 0.7241
+     },
+     "6": {
+      "mass": 9.4036,
+      "zinc": 0.3217,
+      "sigma": 66.83246712945517,
+      "util": 0.40099480277673105,
+      "disp": 0.6251
+     },
+     "8": {
+      "mass": 11.8211,
+      "zinc": 0.3206,
+      "sigma": 52.06284472054276,
+      "util": 0.31237706832325657,
+      "disp": 0.5009
+     }
+    }
+   },
+   "aluminium": {
+    "name": "cast aluminium",
+    "grade": "EN AC-42100 (AlSi7Mg0.3) sand cast T6 (EN 1706)",
+    "density": 2680,
+    "Rp02": 190,
+    "E": 70000,
+    "gamma_M": 1.1,
+    "walls": {
+     "5": {
+      "mass": 3.071,
+      "zinc": 0.0,
+      "sigma": 78.49991857183679,
+      "util": 0.6817098191764774,
+      "disp": 1.7482
+     },
+     "8": {
+      "mass": 4.4621,
+      "zinc": 0.0,
+      "sigma": 52.06284472054276,
+      "util": 0.45212470415208195,
+      "disp": 1.2092
+     }
+    }
+   }
+  },
+  "selected": "cast_steel"
+ },
+ "frame_material": "cast_steel"
 }

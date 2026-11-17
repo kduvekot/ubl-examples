@@ -491,7 +491,7 @@ def build_casting(B, M):
     pr, keys = B["pr"], B["keys"]
     f, c = P["frame"], P["casting"]
     x_c, tw = f["x_centre"], f["t_web"]
-    rho = P["materials"]["steel_density"]
+    rho = FM()["density"]
     sec_wall = t_section(f["seat_rail"]["depth"], f["seat_rail"]["flange_width"], tw, f["t_flange"])
     M_wall = sec_wall["A"] / sec_wall["perimeter"]                 # mm, 2D modulus of the bar
     M_j = c["wall_modulus_factor_junction"] * M_wall
@@ -609,6 +609,12 @@ def build_casting(B, M):
 # --------------------------------------------------------------------------
 # 6. Masses, loads, checks
 # --------------------------------------------------------------------------
+def FM():
+    """The selected frame material (parameters.json materials.frame_material)."""
+    m = P["materials"]
+    return m["frame_materials"][m["frame_material"]]
+
+
 def set_wood(key):
     """Put the properties of one slat wood (parameters.json 'woods') into P['materials'] for analyse()."""
     w = P["woods"][key]
@@ -624,8 +630,7 @@ def set_wood(key):
     P["product"]["revision"] = w["frame_revision"]
     m["wood_density"] = w["density"]
     f_mk = w["f_mk_base"] * w["strength_ratio"]
-    E_alt = (P["materials"]["wood"]["clear_wood_oak_12pct"]["MOE"] * 1.1 if key == "oak"
-             else w["E0_mean"] * w.get("E_ratio_clear", 1.0))
+    E_alt = w["E0_mean"] * w.get("E_ratio_clear", 1.0)
     m["wood"].update(dict(cls=w["base_class"], f_mk=f_mk, E0_mean=w["E0_mean"], k_mod_short_sc3=w["k_mod_short"],
                           k_mod_short_sc2=w.get("k_mod_short_sc2", w["k_mod_short"]), gamma_M=w["gamma_M"], E_alt=E_alt))
     return w
@@ -634,7 +639,7 @@ def set_wood(key):
 def analyse(B):
     pr = B["pr"]
     mat = P["materials"]
-    rho_s, rho_w = mat["steel_density"], mat["wood_density"]
+    rho_s, rho_w = FM()["density"], mat["wood_density"]
     R = {}
     fr = B["frame_L"]
     V_fr = fr.volume
@@ -642,7 +647,7 @@ def analyse(B):
     m_fr_bare = V_fr / 1e9 * rho_s
     m_draft = m_fr_bare * P["frame"]["draft_mass_allowance_pct"] / 100
     g = mat["galvanising"]
-    zinc_min = A_fr / 1e6 * g["mean_min_gm2"] / 1000
+    zinc_min = A_fr / 1e6 * g["mean_min_gm2"] / 1000 if FM()["galvanise"] else 0.0
     zinc_typ = zinc_min * g["typical_factor"]
     pc = mat["powder_coat"]
     powder = A_fr / 1e6 * pc["thickness_um"] * 1e-6 * pc["density"]
@@ -822,7 +827,7 @@ def analyse(B):
     lc_f["EN 581-2 contract, seat 2000 N (end seat) + 750 N + 750 N, back 560 N"] = frame_case([near / per] * per, back_F=lo["en581_back"] * frac_end)
     lc_f["EN 581-2 contract, arm downward 900 N"] = frame_case([0, 0, 0], arm_F=lo["en581_arm_down"])
     lc_f["EN 581-2 contract, seat front edge 1300 N (end seat)"] = frame_case([0, 0, 0], front_F=lo["en581_front_edge"] * frac_end)
-    Rp = mat["cast_steel"]["Rp02"]
+    Rp = FM()["Rp02"] / FM()["gamma_M"]
     R["frame"] = dict(fractions=dict(end=frac_end, mid=frac_mid, far=frac_far), cases={})
     for k, r in lc_f.items():
         R["frame"]["cases"][k] = dict(sigma_max=r["sigma_max"], member=r["member"], disp_max=r["disp_max"],
@@ -847,7 +852,7 @@ def frame_variant_mass(t):
     try:
         pr = Profile(P)
         fr, _ = frame_solid(pr, P["frame"]["x_centre"])
-        return fr.volume / 1e9 * P["materials"]["steel_density"]
+        return fr.volume / 1e9 * FM()["density"]
     finally:
         P["frame"]["t_web"], P["frame"]["t_flange"] = saved
 
@@ -1266,9 +1271,9 @@ def make_drawings(B, R, C, K):
         f"   {P['overall']['seat_height_range'][0]} to {P['overall']['seat_height_range'][1]} mm (gap 0 to 20 mm, grouted after levelling).",
         "2  Fixed to the ground by four M12 ground anchors (separate item),",
         "   two per side frame, through the Ø14 holes in the feet.",
-        f"3  Slats: 5, {fmt(P['slats']['length'])} x {fmt(P['slats']['width'])} x {fmt(P['slats']['thickness'])}, thermally modified ash (benches",
-        f"   until April: oak 38 mm, frame rev. A); 3 on the seat (gaps {fmt(P['slats']['seat_gap'])}), 2 on the",
-        f"   back; 20 carriage bolts M8 x {fmt(P['bolts']['length'])}, nuts, washers, stainless A2 (A4 at the coast).",
+        f"3  Slats: 5, {fmt(P['slats']['length'])} x {fmt(P['slats']['width'])} x {fmt(P['slats']['thickness'])}, thermally modified ash;",
+        f"   3 on the seat (gaps {fmt(P['slats']['seat_gap'])}), 2 on the back; 20 carriage",
+        f"   bolts M8 x {fmt(P['bolts']['length'])}, nuts, washers in stainless A2 (A4 at the coast).",
         f"4  Overall: {fmt(L)} long over the slats, {fmt(D['over_armrests'])} over the armrests,",
         f"   {fmt(D['depth'])} deep, {fmt(D['height'])} high. Seat width between the",
         f"   armrests {fmt(D['between_armrests'])} = 3 x {fmt(D['seat_width_per_person'])}.",
@@ -1351,7 +1356,7 @@ def make_drawings(B, R, C, K):
     for i, r in enumerate(rows):
         s.text(tx, ty + 9.5 + i * 3.6, f"{r[0]:<5}  {r[1]:<5}  {r[2]:6.1f}   {r[3]:6.1f}       normal to rail", 2.2)
     s.notes(232, 205, [
-        f"1  Material {P['materials']['cast_steel']['grade']}, Rp0.2 ≥ {P['materials']['cast_steel']['Rp02']} MPa.",
+        f"1  Material {FM()['grade']}, Rp0.2 ≥ {FM()['Rp02']} MPa.",
         f"2  Walls {f['t_web']} mm (web and flanges); concave radii R{f['fillet_concave']}, edges R{f['round_convex']}.",
         f"3  Draft {f['draft_deg']}° on faces normal to the parting plane (web mid-plane).",
         "4  Symmetric about the web mid-plane: one casting for both sides.",
@@ -1363,10 +1368,10 @@ def make_drawings(B, R, C, K):
         "8  Melt number cast in (loose letters, per casting day); serial number",
         "   hard-stamped on the inside of the rear leg after fettling.",
     ], size=2.2)
-    s.title_block(mass=f"{mass['frame_bare']:.1f} kg cast, {mass['frame']:.1f} kg coated", material=P["materials"]["cast_steel"]["grade"])
+    s.title_block(mass=f"{mass['frame_bare']:.1f} kg cast, {mass['frame']:.1f} kg coated", material=FM()["grade"])
     s.save(dd / "VI-DWG-B180-002_side_frame.svg")
     # ---------------- 003 slat ----------------
-    s = Sheet("003", "Slat, thermally modified ash or oak", "1:5, 1:2, 1:1")
+    s = Sheet("003", "Slat, thermally modified ash", "1:5, 1:2, 1:1")
     sl = B["slat"]
     k = 0.2
     tvw = project(sl, (0, 0, -1), (0, 1, 0))
@@ -1409,10 +1414,9 @@ def make_drawings(B, R, C, K):
     s.leader(v5(xs_[1] + 3.2, Wd / 2 - 3.2), (v5(150, -25)[0], v5(150, -25)[1]), f"4 x Ø{fmt(hd)} through")
     s.text(*v5(162, Wd + 4), "break", 2.0)
     s.notes(232, 205, [
-        f"1  From May 2026: 1800 x 95 x {P['woods']['tm_ash']['slat_thickness']}, European ash graded LS13 (EN 338 D40)",
-        "   before thermal modification at about 212 °C; delivered at about 5 %",
-        f"   moisture, {P['woods']['tm_ash']['density']} kg/m³, mass {R['woods_mass']['tm_ash']:.2f} kg. Benches until April: 1800 x 95",
-        f"   x {P['woods']['oak']['slat_thickness']} oak heartwood, kiln-dried 12 %, D30, {P['woods']['oak']['density']} kg/m³, {R['woods_mass']['oak']:.2f} kg.",
+        f"1  1800 x 95 x {P['slats']['thickness']}, European ash graded LS13 (EN 338 D40) before",
+        "   thermal modification at about 212 °C; delivered at about 5 %",
+        f"   moisture, {P['woods']['tm_ash']['density']} kg/m³; mass {mass['slat']:.2f} kg. Planed four sides.",
         "2  Holes pre-drilled Ø9; in thermally modified ash the square seat",
         "   of the bolt neck is pre-formed (8.2 mm square, 5 mm deep).",
         "3  Grain parallel to the length; no knots over 20 mm within",
@@ -1421,7 +1425,7 @@ def make_drawings(B, R, C, K):
         "   each end (end distance a3,t = max(7d; 80 mm), EN 1995-1-1).",
         "5  Same slat for seat and back; 5 per bench.",
     ], size=2.2)
-    s.title_block(mass=f"{R['woods_mass']['tm_ash']:.2f} kg (oak 38: {R['woods_mass']['oak']:.2f} kg)", material="thermally modified ash / oak")
+    s.title_block(mass=f"{mass['slat']:.2f} kg", material="thermally modified ash")
     s.save(dd / "VI-DWG-B180-003_slat.svg")
     # ---------------- 004 exploded assembly ----------------
     s = Sheet("004", "Exploded assembly", "not to scale")
@@ -1450,8 +1454,7 @@ def make_drawings(B, R, C, K):
         "2  Level on the anchor nuts to the seat height; tighten the anchors.",
         "3  Lay the three seat slats and two back slats; push the carriage",
         "   bolts (3, stainless A2) through slat and flange; washer (4) and",
-        f"   nut (5) under the flange; tighten to {P['bolts']['torque_Nm']['tm_ash']} N m in thermally modified",
-        f"   ash, {P['bolts']['torque_Nm']['oak']} N m in oak. Grout under the feet.",
+        f"   nut (5) under the flange; tighten to {P['bolts']['torque_Nm']['tm_ash']} N m. Grout under the feet.",
         "4  Yearly: retighten the slat bolts; touch up the coating.",
     ], size=2.2)
     s.title_block(material="see BOM, drawing 005")
@@ -1475,10 +1478,10 @@ def make_drawings(B, R, C, K):
             xx += w
         s.line([(x0, yy + 2.5), (x0 + tw_, yy + 2.5)], "ext")
     yy = y0 + 8 + len(bom) * 7 + 4
-    s.text(x0 + tw_ - 2, yy, f"Bench net mass {mass['net']:.2f} kg with thermally modified ash ({R['woods_net']['oak']:.2f} kg with oak)", 3.2, anchor="end", weight="bold")
+    s.text(x0 + tw_ - 2, yy, f"Bench net mass {mass['net']:.2f} kg", 3.2, anchor="end", weight="bold")
     s.notes(20, yy + 14, [
         "Not part of the bench: ground anchor set (4 x M12 with levelling nuts and washers), a separate item, supplied with it.",
-        f"Masses computed from the solid model: cast steel 7850 kg/m³, stainless A2 {P['bolts']['density']} kg/m³; thermally modified ash {P['woods']['tm_ash']['density']} kg/m³ (about 5 %), oak {P['woods']['oak']['density']} kg/m³ (12 %); zinc per EN ISO 1461 for castings",
+        f"Masses computed from the solid model: {FM()['name']} {FM()['density']} kg/m³, stainless A2 {P['bolts']['density']} kg/m³; thermally modified ash {P['woods']['tm_ash']['density']} kg/m³ (about 5 %); zinc per EN ISO 1461 for castings",
         f"(≥ 575 g/m² mean, taken x {P['materials']['galvanising']['typical_factor']} as typical); powder {P['materials']['powder_coat']['thickness_um']} µm at {P['materials']['powder_coat']['density']} kg/m³; draft allowance {f['draft_mass_allowance_pct']} % of the casting.",
     ], size=2.4)
     s.title_block(mass=f"{mass['net']:.1f} kg net")
@@ -1538,7 +1541,7 @@ def make_drawings(B, R, C, K):
         f"Bundle: five slats 3 + 2, corrugated edge protectors {e} mm, end caps, 4 PET straps, film; packing {K['bundle_pack_kg']:.2f} kg.",
         "Marks on every parcel: \"Serra 180  VI-B180  parcel n of 3\", the lot number and the GTIN; on the bundle \"two-person lift\".",
         f"Handling (ISO 11228-1): one person up to 25 kg, two people up to about 33 kg; parcels {W_['carton1']:.1f} / {W_['carton2']:.1f} / {W_['bundle']:.1f} kg; bench gross {W_['gross']:.1f} kg.",
-        f"Slats of thermally modified ash (from May 2026). With oak slats (until April): bundle {R['woods_bundle']['oak']:.1f} kg, bench gross {R['woods_gross']['oak']:.1f} kg.",
+        f"Slats of thermally modified ash, 45 mm, {mass['slat']:.2f} kg each.",
     ], size=2.4)
     s.title_block(mass=f"{W_['gross']:.1f} kg gross per bench", material="corrugated board, PET straps, PE film")
     s.save(dd / "VI-DWG-B180-006_parcels.svg")
@@ -1609,7 +1612,7 @@ def make_drawings(B, R, C, K):
         f"Poured {C['poured']:.1f} kg for {2 * C['casting_kg']:.1f} kg of castings: yield {100 * C['yield_']:.0f} %.",
         f"Junction risers only: {C['poured_j']:.1f} kg, yield {100 * C['yield_j']:.0f} % (centre-line porosity).",
     ], size=2.3)
-    s.title_block(mass=f"{C['poured']:.1f} kg poured per mould", material=P["materials"]["cast_steel"]["grade"])
+    s.title_block(mass=f"{C['poured']:.1f} kg poured per mould", material=FM()["grade"])
     s.save(dd / "VI-DWG-B180-008_casting_method.svg")
     return sorted(p.name for p in dd.glob("*.svg"))
 
@@ -1618,10 +1621,9 @@ def bom_rows(R):
     m = R["mass"]
     b = P["bolts"]
     rows = [
-        ("1", "VI-C180", "Side frame, cast steel, hot-dip galvanised, powder coated", "2", P["materials"]["cast_steel"]["grade"], f"{m['frame']:.2f}", f"{2 * m['frame']:.2f}"),
-        ("2", "VI-B180-03", f"Slat {P['slats']['length']} x {P['slats']['width']} x {P['slats']['thickness']}, planed, 4 holes (from May 2026)", "5", "thermally modified ash, about 5 %", f"{R['woods_mass']['tm_ash']:.2f}", f"{5 * R['woods_mass']['tm_ash']:.2f}"),
-        ("2a", "VI-B180-03A", f"Slat {P['slats']['length']} x {P['slats']['width']} x {P['woods']['oak']['slat_thickness']} (benches until April 2026, frame rev. A)", "(5)", "oak heartwood, kiln-dried 12 %", f"{R['woods_mass']['oak']:.2f}", f"({5 * R['woods_mass']['oak']:.2f})"),
-        ("3", "VI-B180-04", f"Cup square neck bolt M8 x {P['bolts']['length']}, ISO 8677 (M8 x {P['woods']['oak']['bolt_length']} on rev. A)", str(b["count"]), "stainless A2-70 (A4-70 coastal)", f"{m['bolt']:.3f}", f"{b['count'] * m['bolt']:.2f}"),
+        ("1", "VI-C180", f"Side frame, {FM()['name']}, " + ("hot-dip galvanised, " if FM()["galvanise"] else "") + "powder coated", "2", FM()["grade"], f"{m['frame']:.2f}", f"{2 * m['frame']:.2f}"),
+        ("2", "VI-B180-03", f"Slat {P['slats']['length']} x {P['slats']['width']} x {P['slats']['thickness']}, planed, 4 holes ", "5", "thermally modified ash, about 5 %", f"{m['slat']:.2f}", f"{5 * m['slat']:.2f}"),
+        ("3", "VI-B180-04", f"Cup square neck bolt M8 x {P['bolts']['length']}, ISO 8677", str(b["count"]), "stainless A2-70 (A4-70 coastal)", f"{m['bolt']:.3f}", f"{b['count'] * m['bolt']:.2f}"),
         ("4", "VI-B180-05", "Washer 8, ISO 7089", str(b["count"]), "stainless A2 (A4 coastal)", f"{m['washer']:.4f}", f"{b['count'] * m['washer']:.3f}"),
         ("5", "VI-B180-06", "Hex nut M8, ISO 4032", str(b["count"]), "stainless A2-70 (A4-70 coastal)", f"{m['nut']:.4f}", f"{b['count'] * m['nut']:.3f}"),
         ("6", "VI-B180-07", "Bag for the bolt set", "1", "PE", f"{b['bag_mass']:.2f}", f"{b['bag_mass']:.2f}"),
@@ -1697,41 +1699,51 @@ def write_results(R, C, K, extra):
     return clean(out)
 
 
+def material_comparison(B, R, C):
+    """Frame materials for this geometry: mass, strength, stiffness, corrosion protection (report section 9)."""
+    f = P["frame"]
+    saved = (f["t_web"], f["t_flange"])
+    vols, areas = {}, {}
+    for t in sorted({4, 5, 6, 8} | {m["min_wall_mm"] for k, m in P["materials"]["frame_materials"].items() if not k.startswith("_")}):
+        f["t_web"], f["t_flange"] = t, t
+        fr, _ = frame_solid(Profile(P), f["x_centre"])
+        vols[t], areas[t] = fr.volume / 1e6, fr.area / 1e6
+    f["t_web"], f["t_flange"] = saved
+    case = max(R["frame"]["cases"].values(), key=lambda v: v["sigma_max"])
+    sig8, disp8 = case["sigma_max"], case["disp_max"]
+    sec8 = t_section(f["seat_rail"]["depth"], f["seat_rail"]["flange_width"], 8, 8)
+    out = {}
+    for k, m in P["materials"]["frame_materials"].items():
+        if k.startswith("_"):
+            continue
+        row = dict(name=m["name"], grade=m["grade"], density=m["density"], Rp02=m["Rp02"], E=m["E"], gamma_M=m["gamma_M"], walls={})
+        for t in sorted({8, m["design_wall_mm"], m["min_wall_mm"]}):
+            sec = t_section(f["seat_rail"]["depth"], f["seat_rail"]["flange_width"], t, t)
+            sig = sig8 * sec8["W"] / sec["W"]
+            row["walls"][t] = dict(mass=vols[t] * m["density"] / 1000 * (1 + f["draft_mass_allowance_pct"] / 100),
+                                   zinc=areas[t] * P["materials"]["galvanising"]["mean_min_gm2"] / 1000 * P["materials"]["galvanising"]["typical_factor"] if m["galvanise"] else 0.0,
+                                   sigma=sig, util=P["loads"]["gamma_Q"] * sig / (m["Rp02"] / m["gamma_M"]),
+                                   disp=disp8 * (210000 / m["E"]) * sec8["I"] / sec["I"])
+        out[k] = row
+    return dict(case=case["member"], sigma8=sig8, materials=out, selected=P["materials"]["frame_material"])
+
+
 def main():
     W = P["woods"]
-    per_wood = {}
-    benches = {}
-    for key in (W["comparison_wood"], W["main_wood"]):        # main wood last: it stays in P for the drawings
-        set_wood(key)
-        B = build_bench()
-        benches[key] = B
-        Rk = analyse(B)
-        Rk["mass"]["bolt_length"] = P["bolts"]["length"]
-        Rk["dims_case"] = Rk["dims"]
-        Kk = build_packaging(B, Rk)
-        logistics(Rk, Kk)
-        per_wood[key] = {k: Rk[k] for k in ("mass", "slats", "parcels", "transport", "dims")}
-        per_wood[key]["packaging"] = {k: Kk[k] for k in ("bundle", "carton_outer", "load_dims", "pallet_h")}
-        per_wood[key]["frame_volume_l"] = Rk["mass"]["frame_volume_l"]
-    R, K = Rk, Kk
-    R["woods_mass"] = {k: v["mass"]["slat"] for k, v in per_wood.items()}
-    R["woods_net"] = {k: v["mass"]["net"] for k, v in per_wood.items()}
-    R["woods_bundle"] = {k: v["parcels"]["bundle"] for k, v in per_wood.items()}
-    R["woods_gross"] = {k: v["parcels"]["gross"] for k, v in per_wood.items()}
+    set_wood(W["main_wood"])
+    B = build_bench()
+    R = analyse(B)
+    R["mass"]["bolt_length"] = P["bolts"]["length"]
+    K = build_packaging(B, R)
+    logistics(R, K)
     C = build_casting(B, R)
-    extra = dict(frame_mass_by_wall={str(t): frame_variant_mass(t) for t in (6, 7, 8, 10)}, woods=per_wood,
-                 main_wood=W["main_wood"], comparison_wood=W["comparison_wood"],
-                 sawmill_truck=sawmill_truck(per_wood[W["main_wood"]]["mass"]["slat"]),
-                 sawmill_truck_oak=sawmill_truck(per_wood[W["comparison_wood"]]["mass"]["slat"], P["woods"][W["comparison_wood"]]["slat_thickness"]))
+    extra = dict(frame_mass_by_wall={str(t): frame_variant_mass(t) for t in (6, 7, 8, 10)}, main_wood=W["main_wood"],
+                 sawmill_truck=sawmill_truck(R["mass"]["slat"]), material_comparison=material_comparison(B, R, C),
+                 frame_material=P["materials"]["frame_material"])
     res = write_results(R, C, K, extra)
     print("frame %.2f kg (bare %.2f), net %.2f kg, gross %.2f kg, poured %.1f kg per bench, yield %.0f %%" % (
         R["mass"]["frame"], R["mass"]["frame_bare"], R["mass"]["net"], R["parcels"]["gross"], C["poured"], 100 * C["yield_"]))
     export_all(B, C, K)
-    # the benches already made (comparison wood, frame revision A), for the comparison render
-    set_wood(W["comparison_wood"])
-    export_gltf(assembly(benches[W["comparison_wood"]], "GRY"), HERE / "glb" / "serra180_GRY_oak38.glb", binary=True,
-                linear_deflection=0.4, angular_deflection=0.35)
-    set_wood(W["main_wood"])
     if "--no-drawings" not in ARGS:
         print("drawings:", make_drawings(B, R, C, K))
     if "--no-render" not in ARGS:
