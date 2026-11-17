@@ -214,6 +214,10 @@
     <cac:DeliveryLocation>
       <cbc:Description>Lanoro warehouse, Selanu</cbc:Description>
     </cac:DeliveryLocation>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-18</cbc:StartDate>
+      <cbc:EndDate>2026-05-21</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>

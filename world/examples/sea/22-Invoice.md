@@ -675,9 +675,7 @@ Inside `PaymentTerms`:
 - `InvoicingPartyReference` = **RF20LDINV260147**  
   The reference to quote with the payment.
 - `PenaltyPeriod/StartDate` = **2026-06-29**  
-  From the day after the due date.
-- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
-  Per month.
+  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 - `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -1651,7 +1649,6 @@ Inside `InvoiceLine`:
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-29</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

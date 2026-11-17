@@ -292,7 +292,6 @@
     <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-04-22</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

@@ -301,6 +301,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-04-20**  
+  The granulate is wanted at the river quay from 20 to 24 April.
+- `RequestedDeliveryPeriod/EndDate` = **2026-04-24**  
+  The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Rivermouth Packaging**  
@@ -646,6 +650,10 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
+      <cbc:EndDate>2026-04-24</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>

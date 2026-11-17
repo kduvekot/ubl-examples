@@ -259,6 +259,10 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-04-30</cbc:StartDate>
+      <cbc:EndDate>2026-05-02</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:Despatch>
       <cac:DespatchParty>
         <cac:PartyIdentification>

@@ -226,6 +226,10 @@
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-14</cbc:StartDate>
+      <cbc:EndDate>2026-05-14</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

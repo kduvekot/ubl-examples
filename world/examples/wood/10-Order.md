@@ -243,6 +243,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-03-09**  
+  The timber is wanted in the week of 9 March.
+- `RequestedDeliveryPeriod/EndDate` = **2026-03-13**  
+  The last day it is wanted.
 - `Despatch/DespatchParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at SellerSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Despatch/DespatchParty/PartyName/Name` = **Marrowdale Sawmill**  
@@ -509,6 +513,10 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-03-09</cbc:StartDate>
+      <cbc:EndDate>2026-03-13</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:Despatch>
       <cac:DespatchParty>
         <cac:PartyIdentification>

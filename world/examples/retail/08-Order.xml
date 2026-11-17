@@ -270,6 +270,10 @@
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
       <cbc:Description>Goods-in, garden department</cbc:Description>
     </cac:DeliveryLocation>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-04-30</cbc:StartDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>

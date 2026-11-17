@@ -351,6 +351,10 @@ Inside `Delivery`:
   The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Description` = **Goods-in, garden department**  
   Where the truck unloads.
+- `RequestedDeliveryPeriod/StartDate` = **2026-04-30**  
+  The benches are wanted on 30 April, in a delivery slot.
+- `RequestedDeliveryPeriod/EndDate` = **2026-04-30**  
+  The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Brightmarket Stores**  
@@ -947,6 +951,10 @@ Inside `OrderLine`:
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
       <cbc:Description>Goods-in, garden department</cbc:Description>
     </cac:DeliveryLocation>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-04-30</cbc:StartDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>

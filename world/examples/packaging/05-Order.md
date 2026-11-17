@@ -269,6 +269,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-05-12**  
+  The shirts are wanted on 12 or 13 May.
+- `RequestedDeliveryPeriod/EndDate` = **2026-05-13**  
+  The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Brightmarket Stores**  
@@ -570,6 +574,10 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-12</cbc:StartDate>
+      <cbc:EndDate>2026-05-13</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>

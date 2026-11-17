@@ -378,15 +378,13 @@ Inside `PaymentTerms`:
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
 - `PenaltyAmount` = **129600** (currencyID `XUF`)  
-  The surcharge for the first month late.
+  The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.kelpstone.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-05-03**  
   The day the amount is due.
 - `PenaltyPeriod/StartDate` = **2026-05-04**  
-  From the day after the due date.
-- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
-  Per month.
+  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
 
@@ -788,7 +786,6 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-05-04</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

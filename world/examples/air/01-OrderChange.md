@@ -288,6 +288,10 @@ Inside `AccountingSupplierParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-05-14**  
+  The frames are wanted at Selanu airport on 14 May, before the ship arrives.
+- `RequestedDeliveryPeriod/EndDate` = **2026-05-14**  
+  The last day it is wanted.
 - `CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
@@ -703,6 +707,10 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-14</cbc:StartDate>
+      <cbc:EndDate>2026-05-14</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

@@ -283,6 +283,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-04-15**  
+  The containers are wanted at the siding on 15 or 16 April.
+- `RequestedDeliveryPeriod/EndDate` = **2026-04-16**  
+  The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeway Distribution**  
@@ -777,6 +781,10 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-04-15</cbc:StartDate>
+      <cbc:EndDate>2026-04-16</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

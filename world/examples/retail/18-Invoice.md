@@ -499,9 +499,7 @@ Inside `PaymentTerms`:
 - `PaymentDueDate` = **2026-05-30**  
   The day the amount is due.
 - `PenaltyPeriod/StartDate` = **2026-05-31**  
-  From the day after the due date.
-- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
-  Per month.
+  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Allowance Charge
 
@@ -1212,7 +1210,6 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-05-31</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>

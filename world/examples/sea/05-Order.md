@@ -270,6 +270,10 @@ Inside `Delivery`:
 
 - `DeliveryLocation/Description` = **Lanoro warehouse, Selanu**  
   The buyer's 3PL, where the goods go after customs clearance.
+- `RequestedDeliveryPeriod/StartDate` = **2026-05-18**  
+  The benches are wanted at Selanu from 18 to 21 May.
+- `RequestedDeliveryPeriod/EndDate` = **2026-05-21**  
+  The last day it is wanted.
 - `DeliveryParty/WebsiteURI` = **https://www.nalevi.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Nalevi Warehousing (world/parties.json).
 - `DeliveryParty/IndustryClassificationCode` = **5210** (listID `ISIC Rev.4`)  
@@ -902,6 +906,10 @@ Inside `OrderLine`:
     <cac:DeliveryLocation>
       <cbc:Description>Lanoro warehouse, Selanu</cbc:Description>
     </cac:DeliveryLocation>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-05-18</cbc:StartDate>
+      <cbc:EndDate>2026-05-21</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>

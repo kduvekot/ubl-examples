@@ -720,6 +720,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): every order and order change states when the goods are wanted: where the scenario states nothing, the build gives the requested delivery period from the flow's table (`REQUESTED_DELIVERY` in `tools/examples_scenarios.py`, days from the flow's start, so that a flow that moves in stage 6 keeps it), and fails on an order without one; free-carrier orders state their collection instead. The rule covers all twenty orders, not only the ten the findings name.
 - Findings: air: 01#F9; furniture: 10#F6; packaging: 01#F6, 03#F6, 05#F6; plastics: 01#F9; rail: 01#F12; retail: 08#F10; wood: 03#F8, 10#F4
 
 ### C29 · Urvania's national tariff subheading in other countries' documents
@@ -755,6 +756,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D15 (the levy's tax category `O` with `LEVY` goes to D31, O16; dropping the supply type on the levy does not depend on it).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): electricity, wholesale electricity, gas and drinking water are supplies of goods (`supply` in `world/items.json`, `kit.supply_kind()`), whatever their tax treatment, which keeps following `kind`; network use and telephony stay services; the city's sewage levy, collected for someone else, carries no supply type.
 - Findings: energy: 03#F1; furniture: 09#F8; utilities: 02#F4, 06#F2, 06#F6, 09#F5, 09#F11, 11#F2, 11#F9
 
 ### C32 · Invoices not linked to the delivery they bill
@@ -836,6 +838,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D22 (Bayvarra's standard terms are the second layer: a surcharge per month late on 30 days net).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): Bayvarra's surcharge per month late is a penalty period from the day after the due date with no end and no one-month duration, and the penalty amount is the surcharge for each month late (`kit.payment_terms()`; all invoices under `XB-STD` at once).
 - Findings: packaging: 02#F7, 04#F7, 07#F7; utilities: 06#F7; consistency: conditions#F9
 
 ### C39 · Payment notes that call every document an invoice

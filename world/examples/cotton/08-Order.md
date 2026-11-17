@@ -240,6 +240,10 @@ Inside `FreightForwarderParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-03-02**  
+  Free on board Selanu: the bales are wanted on board the ship of 2 March.
+- `RequestedDeliveryPeriod/EndDate` = **2026-03-02**  
+  The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeport Textile Mill**  
@@ -551,6 +555,10 @@ Inside `OrderLine`:
     </cac:PartyName>
   </cac:FreightForwarderParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-03-02</cbc:StartDate>
+      <cbc:EndDate>2026-03-02</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>

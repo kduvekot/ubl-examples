@@ -392,7 +392,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FE-KWH",
-   "description": "Electricity supply, per kilowatt hour, network charges included."
+   "description": "Electricity supply, per kilowatt hour, network charges included.",
+   "supply": "goods"
   },
   {
    "id": "slat-1800",
@@ -764,7 +765,8 @@
     "currency": "XBL"
    },
    "sellers_id": "CW-M3",
-   "description": "Drinking water supply, per cubic metre."
+   "description": "Drinking water supply, per cubic metre.",
+   "supply": "goods"
   },
   {
    "id": "sea-freight",
@@ -1055,7 +1057,8 @@
    },
    "sellers_id": "CSW-LEVY",
    "levy": "2-xb",
-   "description": "The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city."
+   "description": "The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.",
+   "supply": "none"
   },
   {
    "id": "bench-installation",
@@ -1204,7 +1207,8 @@
     "currency": "XUF"
    },
    "sellers_id": "MB-MWH",
-   "description": "Electricity fed into the grid at the power station, sold by the megawatt hour."
+   "description": "Electricity fed into the grid at the power station, sold by the megawatt hour.",
+   "supply": "goods"
   },
   {
    "id": "network-electricity",
@@ -1243,7 +1247,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FE-GAS",
-   "description": "Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included."
+   "description": "Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.",
+   "supply": "goods"
   }
  ]
 }

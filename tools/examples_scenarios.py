@@ -488,6 +488,27 @@ RAIL = kit.Flow("rail", "2026-04-06", [
 
 RAIL_BOXES = [kit.container_number("FRX", 104417), kit.container_number("FRX", 104418)]
 RAIL_SEALS = ["XU-VI-30411", "XU-VI-30412"]
+# when each order wants its goods (worklist C28): (first day, last day) from the flow's start, and why
+REQUESTED_DELIVERY = {
+    ("air", 1): (3, 3, "The frames are wanted at Selanu airport on 14 May, before the ship arrives."),
+    ("cotton", 8): (28, 28, "Free on board Selanu: the bales are wanted on board the ship of 2 March."),
+    ("furniture", 8): (21, 21, "The opening stock is wanted on 23 March, for the launch of the range."),
+    ("furniture", 10): (84, 88, "The repeat order for the winter is wanted in the last week of May."),
+    ("furniture", 15): (37, 37, "The desks are wanted on 8 April, when the installers come."),
+    ("mast", 1): (3, 4, "The equipment is wanted at the mast site on 4 or 5 June."),
+    ("packaging", 1): (3, 5, "The film is wanted from 30 April to 2 May, before the next packing run."),
+    ("packaging", 3): (4, 6, "The bags are wanted from 1 to 3 May."),
+    ("packaging", 5): (15, 16, "The shirts are wanted on 12 or 13 May."),
+    ("plastics", 1): (7, 11, "The granulate is wanted at the river quay from 20 to 24 April."),
+    ("rail", 1): (9, 10, "The containers are wanted at the siding on 15 or 16 April."),
+    ("retail", 8): (10, 10, "The benches are wanted on 30 April, in a delivery slot."),
+    ("sea", 5): (14, 17, "The benches are wanted at Selanu from 18 to 21 May."),
+    ("tender", 26): (78, 78, "The first release is wanted at the depot on 31 March."),
+    ("tender", 27): (78, 78, "The change keeps the delivery of 31 March."),
+    ("wood", 3): (10, 18, "The slats are wanted at the factory from 26 February to 6 March."),
+    ("wood", 10): (21, 25, "The timber is wanted in the week of 9 March."),
+}
+
 # where the rail flow's events happen (worklist C18): every event names its place
 LUMEWAY_GOODS_IN = {**kit.gln_location("6-xb", "goodsin"), "Name": V("Lumeway goods-in, Marrowdale", "Where the "
                                                                       "goods are unloaded.")}

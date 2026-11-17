@@ -317,6 +317,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `RequestedDeliveryPeriod/StartDate` = **2026-04-30**  
+  The film is wanted from 30 April to 2 May, before the next packing run.
+- `RequestedDeliveryPeriod/EndDate` = **2026-05-02**  
+  The last day it is wanted.
 - `Despatch/DespatchParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at SellerSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Despatch/DespatchParty/PartyName/Name` = **Rivermouth Packaging**  
@@ -782,6 +786,10 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-04-30</cbc:StartDate>
+      <cbc:EndDate>2026-05-02</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:Despatch>
       <cac:DespatchParty>
         <cac:PartyIdentification>

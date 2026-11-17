@@ -333,6 +333,15 @@ Inside `FreightForwarderParty`:
 - `PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `RequestedDeliveryPeriod/StartDate` = **2026-03-31**  
+  The change keeps the delivery of 31 March.
+- `RequestedDeliveryPeriod/EndDate` = **2026-03-31**  
+  The last day it is wanted.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -757,6 +766,12 @@ Inside `OrderLine`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:FreightForwarderParty>
+  <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-03-31</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cac:PayeeFinancialAccount>

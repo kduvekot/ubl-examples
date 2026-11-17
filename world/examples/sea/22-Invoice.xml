@@ -551,7 +551,6 @@
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-29</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

@@ -112,6 +112,14 @@ def tax_rule(seller, buyer, iid):
     return ("O", 0, None, "Lisavu has no sales tax or value added tax: no tax applies (category O).", None)
 
 
+def supply_kind(iid):
+    """Whether a line is a supply of goods or of services for SupplyTypeCode (worklist C31): electricity, gas and
+    water are goods, whatever their tax treatment; a levy collected for someone else is no supply (None)."""
+    it = ITEM[iid]
+    kind = it.get("supply", it["kind"])
+    return None if kind == "none" else kind
+
+
 def tax_category(rule, kind=None):
     code, percent, scheme, why, exemption = rule
     out = {"ID": V(code, why), "Percent": V(str(percent), "The rate for this category." if percent else
@@ -165,10 +173,11 @@ def payment_terms(flow, seller, buyer, day, due_days, total, cur, number):
     if pay.get("penalty_surcharge"):
         pen = pay["penalty_surcharge"]
         out["PenaltySurchargePercent"] = V(pen["percent"], f"The surcharge per {pen['per']} of late payment.")
-        out["PenaltyAmount"] = amount(total * Decimal(pen["percent"]) / 100, cur, "The surcharge for the first month "
+        out["PenaltyAmount"] = amount(total * Decimal(pen["percent"]) / 100, cur, "The surcharge for each month "
                                                                                   "late.")
-        out["PenaltyPeriod"] = {"StartDate": V(flow.date(day + due_days + 1), "From the day after the due date."),
-                                "DurationMeasure": V("1", "Per month.", unitCode="MON")}
+        out["PenaltyPeriod"] = {"StartDate": V(flow.date(day + due_days + 1), "From the day after the due date, with "
+                                               "no end: the surcharge runs per month for as long as the amount is "
+                                               "late (worklist C38).")}
     if pay.get("penalty_interest"):
         pi = pay["penalty_interest"]
         out["PenaltyInterestRate"] = {"InterestRatePercent": V(pi["percent"], "The interest on late payment."),
@@ -542,7 +551,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
             "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], d.get("invoice_why", "The quantity delivered.")),
             "LineExtensionAmount": amount(amt, cur, f"{q} × {unit_price(d['item'], cur)}, rounded to the minor unit of "
                                                     "the currency."),
-            "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
+            "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
             "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     line_features(rows, out["InvoiceLine"], cur, gross)
@@ -1058,7 +1067,7 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs, currency=None):
             "CreditNoteLine": [{"ID": V(str(i), "The line number."),
                                 "CreditedQuantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
                                 "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-                                "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
+                                "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
                                 "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     line_features(rows, out["CreditNoteLine"], cur, gross)
     return out
@@ -1238,7 +1247,7 @@ def purchase_receipt(flow, n, doc, day, why, rows_spec, cash, promotion=None):
                                      "Quantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
                                      "LineExtensionAmount": amount(amt, cur, "Quantity times the price paid, before "
                                                                              "the sales tax."),
-                                     "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
+                                     "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
                                      "Price": line_price(d["item"], rule)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
 
 
@@ -1266,7 +1275,7 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
            line: [{"ID": V(str(i), "The line number."),
                    qname: qty(q, ITEM[d["item"]]["unit"], d["why"]),
                    "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-                   "Item": item(d["item"], tax_category(rule, ITEM[d["item"]]["kind"])),
+                   "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
                    "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     if not credit:
         out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389, \"An invoice the invoicee is producing instead "

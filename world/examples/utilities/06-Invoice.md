@@ -383,15 +383,13 @@ Inside `PaymentTerms`:
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
 - `PenaltyAmount` = **3.57** (currencyID `XBL`)  
-  The surcharge for the first month late.
+  The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.coastalwater.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-04-23**  
   The day the amount is due.
 - `PenaltyPeriod/StartDate` = **2026-04-24**  
-  From the day after the due date.
-- `PenaltyPeriod/DurationMeasure` = **1** (unitCode `MON`)  
-  Per month.
+  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
 
@@ -485,8 +483,6 @@ Inside `CollectionInvoiceLine`:
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: LEVY = Levy collected for a public body.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Levy collected for a public body**  
   The name of code LEVY in Bayvarra's national sales tax exemption reason list.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **0.42** (currencyID `XBL`)  
@@ -532,8 +528,8 @@ Inside `InvoiceLine`:
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: WATER = Drinking water.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Drinking water**  
   The name of code WATER in Bayvarra's national sales tax exemption reason list.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **2.35** (currencyID `XBL`)  
@@ -840,7 +836,6 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-04-24</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
@@ -917,7 +912,6 @@ Inside `InvoiceLine`:
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -954,7 +948,7 @@ Inside `InvoiceLine`:
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>

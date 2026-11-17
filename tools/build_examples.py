@@ -1556,6 +1556,35 @@ def check_instance_rules(root, where):
             seen[key] = c
 
 
+# ---------------------------------------------------------------- when an order wants its goods (worklist C28)
+def requested_delivery(content, doc, n):
+    """Every order and order change states when the goods are wanted (or, ex works, when they are collected); where
+    the scenario states nothing, the flow's table gives the period."""
+    if doc["doc"] not in ("Order", "OrderChange"):
+        return
+    deliveries = content.get("Delivery")
+    for d in deliveries if isinstance(deliveries, list) else [deliveries] if deliveries else []:
+        if any(k in d for k in ("RequestedDeliveryPeriod", "LatestDeliveryDate", "PromisedDeliveryPeriod")) or \
+                any(k in d.get("Despatch", {}) for k in ("RequestedDespatchDate", "RequestedDespatchPeriod")):
+            return
+    import examples_kit
+    import examples_scenarios
+    hit = examples_scenarios.REQUESTED_DELIVERY.get((doc["flow"], n))
+    if not hit:
+        raise SystemExit(f"{doc['flow']} {n} {doc['doc']}: the order does not say when the goods are wanted "
+                         "(worklist C28; REQUESTED_DELIVERY in tools/examples_scenarios.py)")
+    flow = next(v for v in vars(examples_scenarios).values()
+                if isinstance(v, examples_kit.Flow) and v.id == doc["flow"])
+    period = {"RequestedDeliveryPeriod": {"StartDate": V(flow.date(hit[0]), hit[2]),
+                                          "EndDate": V(flow.date(hit[1]), "The last day it is wanted.")}}
+    if isinstance(deliveries, list):
+        deliveries[0].update(period)
+    elif isinstance(deliveries, dict):
+        deliveries.update(period)
+    else:
+        content["Delivery"] = period
+
+
 # ---------------------------------------------------------------- places with their identifiers (worklist C23)
 def known_places():
     """Every place the world identifies, by its name: the UN/LOCODE-form towns, ports and airports, and the named
@@ -2001,6 +2030,7 @@ def main(flow_id, check=False):
         content = scenario(n, doc)
         content = place_parties(doc, content)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
+        requested_delivery(content, doc, n)
         transport_goods(content, doc)
         identify_places(content)
         shipment_weights(content, flow_id)
