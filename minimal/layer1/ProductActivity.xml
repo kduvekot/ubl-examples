@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProductActivity xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProductActivity-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>ProductActivity-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:ActivityPeriod>
+    <cbc:StartDate>2026-07-15</cbc:StartDate>
+    <cbc:EndDate>2026-08-11</cbc:EndDate>
+  </cac:ActivityPeriod>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">9520000005719</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Sender 571</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="0088">9520000005726</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name languageID="en">Example Receiver 572</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:SupplyChainActivityDataLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:SupplyChainActivityTypeCode>SALES</cbc:SupplyChainActivityTypeCode>
+    <cac:ActivityOriginLocation>
+      <cbc:Name languageID="en">Example Store 1</cbc:Name>
+    </cac:ActivityOriginLocation>
+    <cac:SalesItem>
+      <cbc:Quantity unitCode="H87">10</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+      </cac:Item>
+    </cac:SalesItem>
+  </cac:SupplyChainActivityDataLine>
+</ProductActivity>

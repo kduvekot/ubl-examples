@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SelfBilledCreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:SelfBilledCreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>SelfBilledCreditNote-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="pt-BR">Cliente Exemplo 701</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyLegalEntity>
+        <cbc:CompanyID>ZZ000701000198</cbc:CompanyID>
+        <cac:CorporateRegistrationScheme>
+          <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>BR</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="pt-BR">Fornecedor Exemplo 702</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyLegalEntity>
+        <cbc:CompanyID>ZZ000702000132</cbc:CompanyID>
+        <cac:CorporateRegistrationScheme>
+          <cbc:Name languageID="pt-BR">Cadastro Nacional da Pessoa Jurídica</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>BR</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:LegalMonetaryTotal>
+    <cbc:PayableAmount currencyID="BRL">75.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:CreditNoteLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:CreditedQuantity unitCode="H87">10</cbc:CreditedQuantity>
+    <cac:Item>
+      <cbc:Description languageID="pt-BR">Caneta esferográfica, azul</cbc:Description>
+    </cac:Item>
+  </cac:CreditNoteLine>
+</SelfBilledCreditNote>

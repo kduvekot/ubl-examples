@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InvoiceStatusRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:InvoiceStatusRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>InvoiceStatusRequest-1</cbc:ID>
+  <cbc:RequestDate>2026-08-12</cbc:RequestDate>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sōshinsha 441</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>T5999900000441</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="ja-Latn-hepburn">Shōhizei</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>JP</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Jushinsha 442</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>T4999900000442</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="ja-Latn-hepburn">Shōhizei</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>JP</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:ReceiverParty>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>InvoiceDocumentReference-441</cbc:ID>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+</InvoiceStatusRequest>

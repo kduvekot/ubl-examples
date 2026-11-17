@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WasteNotification xmlns="urn:oasis:names:specification:ubl:schema:xsd:WasteNotification-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>WasteNotification-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:SenderParty>
+    <cac:PartyName>
+      <cbc:Name languageID="de">Beispielabsender 971</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DE990009712</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name languageID="de">Beispielempfänger 972</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DE990009729</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:ReceiverParty>
+  <cac:NotifierParty>
+    <cac:PartyName>
+      <cbc:Name languageID="de">Beispielnotifizierender 973</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DE990009737</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:NotifierParty>
+  <cac:CustomsParty>
+    <cac:PartyName>
+      <cbc:Name languageID="de">Beispielzollbehörde 974</cbc:Name>
+    </cac:PartyName>
+  </cac:CustomsParty>
+  <cac:WasteProducerParty>
+    <cac:PartyName>
+      <cbc:Name languageID="de">Beispielabfallerzeuger 975</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:CompanyID>DE990009753</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:Name languageID="de">Umsatzsteuer</cbc:Name>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:WasteProducerParty>
+  <cac:Shipment>
+    <cbc:ID>Shipment-971</cbc:ID>
+    <cac:GoodsItem>
+      <cac:Item>
+        <cbc:Description languageID="de">Gebrauchte Blei-Säure-Batterien</cbc:Description>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Shipment>
+</WasteNotification>

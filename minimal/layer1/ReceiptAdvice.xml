@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>ReceiptAdvice-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:DeliveryCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0088">9520000006518</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Consignee 651</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DeliveryCustomerParty>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0088">9520000006525</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Shipper 652</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
+  <cac:ReceiptLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ReceivedQuantity unitCode="H87">10</cbc:ReceivedQuantity>
+    <cac:Item>
+      <cbc:Description languageID="en">Ballpoint pen, blue</cbc:Description>
+    </cac:Item>
+  </cac:ReceiptLine>
+</ReceiptAdvice>

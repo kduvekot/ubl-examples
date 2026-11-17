@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalAgreement xmlns="urn:oasis:names:specification:ubl:schema:xsd:DigitalAgreement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>DigitalAgreement-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ParticipantParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0188">6999900000201</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sankasha 201</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ParticipantParty>
+  <cac:ParticipantParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0188">5999900000202</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name languageID="ja-Latn-hepburn">Sanpuru Sankasha 202</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:ParticipantParty>
+  <cac:DigitalProcess>
+    <cbc:Description languageID="ja-Latn-hepburn">Hatchū</cbc:Description>
+  </cac:DigitalProcess>
+</DigitalAgreement>

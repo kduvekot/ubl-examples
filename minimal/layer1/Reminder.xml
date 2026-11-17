@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Reminder xmlns="urn:oasis:names:specification:ubl:schema:xsd:Reminder-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ID>Reminder-1</cbc:ID>
+  <cbc:IssueDate>2026-08-12</cbc:IssueDate>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Supplier 661</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>000000661</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:Name languageID="en">Federal Income Tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>US</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name languageID="en">Example Customer 662</cbc:Name>
+      </cac:PartyName>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>000000662</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:Name languageID="en">Federal Income Tax</cbc:Name>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode>US</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:LegalMonetaryTotal>
+    <cbc:PayableAmount currencyID="USD">16.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:ReminderLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DebitLineAmount currencyID="USD">16.00</cbc:DebitLineAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>InvoiceDocumentReference-661</cbc:ID>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+  </cac:ReminderLine>
+</Reminder>
