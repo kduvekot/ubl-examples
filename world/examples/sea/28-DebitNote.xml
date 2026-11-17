@@ -7,7 +7,7 @@
   <cbc:ID>VT-DOC-26-0153</cbc:ID>
   <cbc:UUID>4ac9595a-73a2-5f50-8296-73f9fae827e7</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
-  <cbc:IssueTime>10:30:00</cbc:IssueTime>
+  <cbc:IssueTime>10:30:00+00:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-21</cbc:DueDate>
   <cbc:Note>The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
@@ -102,7 +102,7 @@
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -148,7 +148,7 @@
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -184,7 +184,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

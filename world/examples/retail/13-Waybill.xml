@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>08:56:00</cbc:IssueTime>
+  <cbc:IssueTime>08:56:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the national road carriage law</cbc:Name>
   <cbc:Description>The forwarder's truck from the distribution centre to the store.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
@@ -44,7 +44,7 @@
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -90,7 +90,7 @@
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -154,7 +154,7 @@
           <cbc:PostalZone>38515</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             <cbc:Name>Bayvarra</cbc:Name>
@@ -166,7 +166,7 @@
           <cbc:Department>Store operations</cbc:Department>
           <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
           <cbc:ElectronicMail>goodsin@brightmarket.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
     </cac:Consignment>

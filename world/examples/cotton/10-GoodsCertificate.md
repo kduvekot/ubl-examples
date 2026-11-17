@@ -24,8 +24,8 @@ The island's chamber of commerce certifies the bales for export, at the ginnery'
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-28**  
   Issued before shipment, at the ginnery's application.
-- `IssueTime` = **14:43:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **14:43:00+00:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **PHYTO** (listID `urn:ubl-examples:world:codelist:GoodsCertificateTypeCode`)  
   A plant health certificate for the cotton. The code is from the Trade Accord's goods certificate type list: PHYTO = Phytosanitary certificate.
 - `Description` = **The ginned cotton is free of the pests named by Bayvarra's plant health rules.**  
@@ -79,8 +79,8 @@ Inside `ExporterParty`:
   The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
@@ -136,8 +136,8 @@ Inside `ImporterParty`:
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Textile Mill (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
@@ -207,8 +207,8 @@ Inside `IssuerParty`:
   The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Chamber of Commerce (world/parties.json).
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
@@ -445,7 +445,7 @@ Inside `Signature`:
   <cbc:ID>SCC-GC-26-0202</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
-  <cbc:IssueTime>14:43:00</cbc:IssueTime>
+  <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
   <cbc:Note languageID="qal">Helatasa momai kelalahu filumuve.</cbc:Note>
@@ -479,7 +479,7 @@ Inside `Signature`:
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -523,7 +523,7 @@ Inside `Signature`:
       <cbc:PostalZone>38504</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -582,7 +582,7 @@ Inside `Signature`:
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>

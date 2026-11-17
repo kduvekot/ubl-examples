@@ -8,7 +8,7 @@
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
   <cbc:IssueDate>2026-03-21</cbc:IssueDate>
-  <cbc:IssueTime>10:18:00</cbc:IssueTime>
+  <cbc:IssueTime>10:18:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-03-21</cbc:StartDate>
     <cbc:EndDate>2028-03-20</cbc:EndDate>
@@ -45,7 +45,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -118,7 +118,7 @@
       <cbc:PostalZone>38517</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>

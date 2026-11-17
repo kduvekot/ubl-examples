@@ -7,7 +7,7 @@
   <cbc:ID>VT-DOC-26-0149</cbc:ID>
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
-  <cbc:IssueTime>13:49:00</cbc:IssueTime>
+  <cbc:IssueTime>13:49:00+00:00</cbc:IssueTime>
   <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
@@ -39,7 +39,7 @@
       <cbc:Department>Finance</cbc:Department>
       <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
       <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

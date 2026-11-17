@@ -7,7 +7,7 @@
   <cbc:ID>FCC-DOC-26-0728</cbc:ID>
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
-  <cbc:IssueTime>13:19:00</cbc:IssueTime>
+  <cbc:IssueTime>13:19:00-01:00</cbc:IssueTime>
   <cbc:Note>The samples came home on the date stamped.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExportingCustomsParty>
@@ -29,7 +29,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -52,7 +52,7 @@
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -97,7 +97,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>

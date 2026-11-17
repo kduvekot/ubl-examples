@@ -24,8 +24,8 @@ The goods qualify for preferential duty in Bayvarra; the manufacturer applies to
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-20**  
   The day the exporter applies, before the goods leave.
-- `IssueTime` = **12:39:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **12:39:00-01:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
 - `Note` = **Drakhan dranan karul drek rizir denskek.** (languageID `qau`)  
@@ -82,8 +82,8 @@ Inside `ExporterParty`:
   Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Valdara Industries (world/parties.json).
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
@@ -143,8 +143,8 @@ Inside `ImporterParty`:
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
@@ -182,8 +182,8 @@ Inside `EndorserParty`:
   Postal code in Urvania's format (4 digits). identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
@@ -576,7 +576,7 @@ Inside `InsuranceEndorsement`:
   <cbc:ID>FCC-CO-26-0157</cbc:ID>
   <cbc:UUID>a46337e2-176c-5866-9871-158007b21756</cbc:UUID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
-  <cbc:IssueTime>12:39:00</cbc:IssueTime>
+  <cbc:IssueTime>12:39:00-01:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
   <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
   <cbc:Note languageID="en-XU">Preferential origin under the trade accord.</cbc:Note>
@@ -620,7 +620,7 @@ Inside `InsuranceEndorsement`:
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -668,7 +668,7 @@ Inside `InsuranceEndorsement`:
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -696,7 +696,7 @@ Inside `InsuranceEndorsement`:
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>

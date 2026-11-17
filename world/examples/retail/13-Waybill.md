@@ -30,8 +30,8 @@ The outgoing consignment note goes to the distributor, who contracted the carria
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-04-29**  
   Issued when the carrier collects at the distribution centre.
-- `IssueTime` = **08:56:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **08:56:00-01:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Consignment note under the national road carriage law**  
   The kind of transport document.
 - `Description` = **The forwarder's truck from the distribution centre to the store.**  
@@ -88,8 +88,8 @@ Inside `SenderParty`:
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bayforth Forwarding (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
@@ -149,8 +149,8 @@ Inside `ReceiverParty`:
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
@@ -228,8 +228,8 @@ Inside `Shipment`:
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Consignment/ConsigneeParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/ConsigneeParty/PostalAddress/Country/Name` = **Bayvarra**  
@@ -244,7 +244,7 @@ Inside `Shipment`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **goodsin@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
-- `Consignment/ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
+- `Consignment/ConsigneeParty/Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -302,7 +302,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>08:56:00</cbc:IssueTime>
+  <cbc:IssueTime>08:56:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the national road carriage law</cbc:Name>
   <cbc:Description>The forwarder's truck from the distribution centre to the store.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
@@ -336,7 +336,7 @@ Inside `Signature`:
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -382,7 +382,7 @@ Inside `Signature`:
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -446,7 +446,7 @@ Inside `Signature`:
           <cbc:PostalZone>38515</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
           <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             <cbc:Name>Bayvarra</cbc:Name>
@@ -458,7 +458,7 @@ Inside `Signature`:
           <cbc:Department>Store operations</cbc:Department>
           <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
           <cbc:ElectronicMail>goodsin@brightmarket.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
     </cac:Consignment>

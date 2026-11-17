@@ -26,8 +26,8 @@ The guarantor notifies the authority of the bid bond deposited for the manufactu
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   Issued before the tender deadline.
-- `IssueTime` = **08:23:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **08:23:00-01:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `GuaranteeTypeCode` = **TENDER** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
   A tender guarantee. The code is from the Trade Accord's financial guarantee type list: TENDER = Tender guarantee.
 - `Purpose` = **Guarantee of the tender for the bench procedure.**  
@@ -138,8 +138,8 @@ Inside `GuarantorParty`:
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
@@ -210,8 +210,8 @@ Inside `BeneficiaryParty`:
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
   The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
@@ -246,7 +246,7 @@ Inside `BeneficiaryParty`:
   <cbc:UUID>1f0c3218-ba4e-54bc-868e-8554b9039fee</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
-  <cbc:IssueTime>08:23:00</cbc:IssueTime>
+  <cbc:IssueTime>08:23:00-01:00</cbc:IssueTime>
   <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
   <cbc:Purpose>Guarantee of the tender for the bench procedure.</cbc:Purpose>
   <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
@@ -317,7 +317,7 @@ Inside `BeneficiaryParty`:
       <cbc:PostalZone>38523</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -372,7 +372,7 @@ Inside `BeneficiaryParty`:
       <cbc:PostalZone>38517</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>

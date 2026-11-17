@@ -7,7 +7,7 @@
   <cbc:ID>FG-DOC-26-0149</cbc:ID>
   <cbc:UUID>4dda14a2-d50d-5ef3-84d8-980f6cc7eedb</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:42:00</cbc:IssueTime>
+  <cbc:IssueTime>17:42:00-01:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">GAS</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qau">Bazbaz binmaz gan drek stekraz nalbaz sidir; drek zhek trizhul trul stan huldan drek geltaz.</cbc:Note>
   <cbc:Note languageID="en-XU">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
@@ -41,7 +41,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4140</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -53,7 +53,7 @@
       <cbc:Department>Finance</cbc:Department>
       <cbc:Telephone>+999 1 041 985 6055</cbc:Telephone>
       <cbc:ElectronicMail>billing@ferranogrid.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -78,7 +78,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -90,7 +90,7 @@
       <cbc:Department>Finance</cbc:Department>
       <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
       <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -130,7 +130,7 @@
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>

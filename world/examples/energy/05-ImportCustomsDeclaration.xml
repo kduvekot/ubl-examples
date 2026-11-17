@@ -7,7 +7,7 @@
   <cbc:ID>MP-IM-26-0156</cbc:ID>
   <cbc:UUID>588c4166-cc9d-5604-8074-7a2b5bb9884a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>16:55:00</cbc:IssueTime>
+  <cbc:IssueTime>16:55:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 132,480,000 tezhul, 26,496,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
   <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 132,480,000 ferra, 26,496,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cac:ImporterParty>
@@ -38,7 +38,7 @@
       <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
       <cbc:PostalZone>4130</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -68,7 +68,7 @@
       <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
       <cbc:ElectronicMail>customs@montebrio.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -95,7 +95,7 @@
       <cbc:PostalZone>38540</cbc:PostalZone>
       <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-NT</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -129,7 +129,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -144,7 +144,7 @@
       <cbc:Department>Customs</cbc:Department>
       <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xu.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

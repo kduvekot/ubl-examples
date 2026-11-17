@@ -7,7 +7,7 @@
   <cbc:ID>MP-INV-26-0151</cbc:ID>
   <cbc:UUID>f2bffa54-247a-500b-9993-16f7d9a166d9</cbc:UUID>
   <cbc:IssueDate>2026-04-03</cbc:IssueDate>
-  <cbc:IssueTime>16:42:00</cbc:IssueTime>
+  <cbc:IssueTime>16:42:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-03</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-03</cbc:TaxPointDate>
@@ -46,7 +46,7 @@
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -98,7 +98,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
         <cbc:ElectronicMail>receivables@montebrio.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -125,7 +125,7 @@
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -141,7 +141,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
         <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

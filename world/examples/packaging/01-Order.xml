@@ -7,7 +7,7 @@
   <cbc:ID>VI-PO-26-0521</cbc:ID>
   <cbc:UUID>bb51160f-cb33-5e41-a695-75ac4b4523df</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
-  <cbc:IssueTime>08:44:00</cbc:IssueTime>
+  <cbc:IssueTime>08:44:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3150</cbc:AccountingCostCode>
@@ -40,7 +40,7 @@
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -82,7 +82,7 @@
         <cbc:PostalZone>38505</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -134,7 +134,7 @@
           <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cbc:PostalZone>4160</cbc:PostalZone>
           <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             <cbc:Name>Urvania</cbc:Name>
@@ -146,7 +146,7 @@
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
           <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
     </cac:Despatch>

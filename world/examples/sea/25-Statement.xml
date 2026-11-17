@@ -7,7 +7,7 @@
   <cbc:ID>HF-ST-26-0151</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
-  <cbc:IssueTime>08:43:00</cbc:IssueTime>
+  <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">53778.00</cbc:TotalDebitAmount>
@@ -64,7 +64,7 @@
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -76,7 +76,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -127,7 +127,7 @@
       <cbc:PostalZone>38522</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>

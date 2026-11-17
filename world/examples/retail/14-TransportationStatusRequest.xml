@@ -8,7 +8,7 @@
   <cbc:CarrierAssignedID>BF-WB-26-0231</cbc:CarrierAssignedID>
   <cbc:UUID>05570b50-9875-5f68-94e9-eb597fa0f1b7</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>10:59:00</cbc:IssueTime>
+  <cbc:IssueTime>10:59:00-01:00</cbc:IssueTime>
   <cbc:Name>Status request</cbc:Name>
   <cbc:Description>When will the benches arrive?</cbc:Description>
   <cbc:Note>The promotion starts soon.</cbc:Note>
@@ -41,7 +41,7 @@
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -78,7 +78,7 @@
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>

@@ -7,7 +7,7 @@
   <cbc:ID>TOL-DOC-26-0130</cbc:ID>
   <cbc:UUID>bee924a8-76e1-5c8f-be45-927bde1567a4</cbc:UUID>
   <cbc:IssueDate>2026-05-09</cbc:IssueDate>
-  <cbc:IssueTime>12:03:00</cbc:IssueTime>
+  <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
   <cbc:Note>Our island service.</cbc:Note>
   <cbc:ServiceName>Island feeder</cbc:ServiceName>
   <cbc:ResponseCode listID="urn:ubl-examples:world:codelist:ServiceOfferResponseCode">OFFERED</cbc:ResponseCode>
@@ -45,7 +45,7 @@
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -57,7 +57,7 @@
       <cbc:Department>Bookings</cbc:Department>
       <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -91,7 +91,7 @@
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>

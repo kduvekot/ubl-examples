@@ -7,7 +7,7 @@
   <cbc:ID>SCC-GC-26-0202</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
-  <cbc:IssueTime>14:43:00</cbc:IssueTime>
+  <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
   <cbc:Note languageID="qal">Helatasa momai kelalahu filumuve.</cbc:Note>
@@ -41,7 +41,7 @@
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -85,7 +85,7 @@
       <cbc:PostalZone>38504</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -144,7 +144,7 @@
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>

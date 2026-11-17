@@ -7,7 +7,7 @@
   <cbc:ID>LD-FI-26-0322</cbc:ID>
   <cbc:UUID>8a0ceec7-aa03-5c38-8c5d-9f93d07709aa</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
-  <cbc:IssueTime>13:44:00</cbc:IssueTime>
+  <cbc:IssueTime>13:44:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
@@ -42,7 +42,7 @@
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -79,7 +79,7 @@
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -129,7 +129,7 @@
           <cbc:BuildingNumber>16</cbc:BuildingNumber>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
@@ -141,7 +141,7 @@
           <cbc:Department>Warehouse</cbc:Department>
           <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
           <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
       <cac:FreightForwarderParty>

@@ -7,8 +7,8 @@
   <cbc:ID>BS-IR-26-0223</cbc:ID>
   <cbc:UUID>fad19e90-681e-50c2-8501-5068414c15a8</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
-  <cbc:IssueTime>17:43:00</cbc:IssueTime>
-  <cbc:Note>Counted on Sunday evening.</cbc:Note>
+  <cbc:IssueTime>17:43:00-01:00</cbc:IssueTime>
+  <cbc:Note>Counted on Thursday afternoon, before the report.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:InventoryPeriod>
     <cbc:StartDate>2026-04-16</cbc:StartDate>
@@ -59,7 +59,7 @@
         <cbc:PostalZone>38515</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -72,7 +72,7 @@
         <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -111,7 +111,7 @@
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>

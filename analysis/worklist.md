@@ -1033,6 +1033,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Add the holidays and the time zones to countries.json and the working days per kind of party to parties.json; move or reassign the 48 weekend documents and the few on holidays, each with its flow (O78); build check O79.
 - Depends on / blocks: none
 - State: ready in part: 9 findings ready; tender/05#F5, 09#F4 and 10#F4 wait for D28 (the tender's dates move with its procedure periods, C125).
+- Fixed in part (2026-11-17, stage 2): the calendar is in the world data (holidays per country, state and town; legal times and offsets; a working week per party) and the build checks it (O79, `check_calendar()`); contacts of ports, terminals, carriers, border customs and utilities say every day, those of shops Monday to Saturday (cotton/14#F5, rail/07#F7, road/05#F15, road/10#F14, sea/15#F9); road/07 is issued on Monday morning (road/07#F11); retail/21's delivery is on the Saturday its note names (retail/21#F2); retail/07's note matches its dates (retail/07#F2); issue times carry the issuer's offset. The other weekend and holiday documents of conditions#F7 move with their flows, listed in `CALENDAR_WAITS` (O78).
 - Findings: cotton: 14#F5; rail: 07#F7; retail: 07#F2, 21#F2; road: 05#F15, 07#F11, 10#F14; sea: 15#F9; tender: 05#F5, 09#F4, 10#F4; consistency: conditions#F7
 
 ### C54 · Bayvarran withholding tax and tax representative only in the tender, and Urvania's "service to a business abroad" for a public body

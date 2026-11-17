@@ -7,7 +7,7 @@
   <cbc:ID>SAC-TS-26-0330</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>17:58:00</cbc:IssueTime>
+  <cbc:IssueTime>17:58:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
@@ -35,7 +35,7 @@
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -47,7 +47,7 @@
         <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
     </cac:ConsigneeParty>
     <cac:CarrierParty>
@@ -66,7 +66,7 @@
         <cbc:BuildingNumber>46</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -78,7 +78,7 @@
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
         <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
@@ -104,7 +104,7 @@
           <cbc:BuildingNumber>39</cbc:BuildingNumber>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
@@ -116,7 +116,7 @@
           <cbc:Department>Cargo handling</cbc:Department>
           <cbc:Telephone>+999 3 724 1174</cbc:Telephone>
           <cbc:ElectronicMail>import@selanu-cargo.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
         <cac:ElectronicAddress>
           <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -180,7 +180,7 @@
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>

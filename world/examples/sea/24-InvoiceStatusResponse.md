@@ -24,8 +24,8 @@ The buyer answers: accepted and scheduled for payment.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-30**  
   Answered the next day.
-- `IssueTime` = **13:49:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **13:49:00+00:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Approved; the balance will be paid to the factor.**  
   The answer.
 - `VersionID` = **1**  
@@ -66,7 +66,7 @@ Inside `SenderParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
+- `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -134,7 +134,7 @@ Inside `DocumentResponse`:
   <cbc:ID>VT-DOC-26-0149</cbc:ID>
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
-  <cbc:IssueTime>13:49:00</cbc:IssueTime>
+  <cbc:IssueTime>13:49:00+00:00</cbc:IssueTime>
   <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
@@ -166,7 +166,7 @@ Inside `DocumentResponse`:
       <cbc:Department>Finance</cbc:Department>
       <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
       <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

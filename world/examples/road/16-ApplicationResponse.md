@@ -24,8 +24,8 @@ The distributor's system confirms the invoice was received and accepted.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-25**  
   Sent automatically when the invoice was processed.
-- `IssueTime` = **12:55:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **12:55:00-01:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ResponseDate` = **2026-03-25**  
   The day the invoice was processed.
 - `ResponseTime` = **06:12:00**  
@@ -147,7 +147,7 @@ Inside `DocumentResponse`:
   <cbc:ID>LD-DOC-26-0167</cbc:ID>
   <cbc:UUID>cd4b74a4-2123-5d02-8f6a-c5422a5e7d12</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
-  <cbc:IssueTime>12:55:00</cbc:IssueTime>
+  <cbc:IssueTime>12:55:00-01:00</cbc:IssueTime>
   <cbc:ResponseDate>2026-03-25</cbc:ResponseDate>
   <cbc:ResponseTime>06:12:00</cbc:ResponseTime>
   <cbc:Note>Accepted for payment; line 2 matched the substituted casting.</cbc:Note>

@@ -7,7 +7,7 @@
   <cbc:ID>SE-DA-26-0718</cbc:ID>
   <cbc:UUID>7619027f-bad8-5009-935f-978a56d56a14</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
-  <cbc:IssueTime>13:20:00</cbc:IssueTime>
+  <cbc:IssueTime>13:20:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -37,7 +37,7 @@
         <cbc:PostalZone>71218</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -74,7 +74,7 @@
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -86,7 +86,7 @@
         <cbc:Department>Network operations</cbc:Department>
         <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
         <cbc:ElectronicMail>stores@selanutelecom.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -135,7 +135,7 @@
           <cbc:BuildingNumber>46</cbc:BuildingNumber>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
@@ -147,7 +147,7 @@
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
           <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
     </cac:Consignment>

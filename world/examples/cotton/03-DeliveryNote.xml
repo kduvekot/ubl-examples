@@ -7,7 +7,7 @@
   <cbc:ID>LCF-DN-26-0193</cbc:ID>
   <cbc:UUID>7a1d8c4c-64bb-5f76-ad72-a09687f8943f</cbc:UUID>
   <cbc:IssueDate>2026-02-05</cbc:IssueDate>
-  <cbc:IssueTime>14:29:00</cbc:IssueTime>
+  <cbc:IssueTime>14:29:00+00:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa.</cbc:Note>
   <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -54,7 +54,7 @@
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:AddressLine>
           <cbc:Line>Sifatofu Natii / Plantation Road</cbc:Line>
         </cac:AddressLine>
@@ -125,7 +125,7 @@
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>

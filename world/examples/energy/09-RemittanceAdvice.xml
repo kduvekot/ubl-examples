@@ -7,7 +7,7 @@
   <cbc:ID>MP-RM-26-0160</cbc:ID>
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-06</cbc:IssueDate>
-  <cbc:IssueTime>16:36:00</cbc:IssueTime>
+  <cbc:IssueTime>16:36:00-01:00</cbc:IssueTime>
   <cbc:Note>The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">134467200</cbc:TotalDebitAmount>
@@ -41,7 +41,7 @@
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
         <cbc:PostalZone>4130</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -53,7 +53,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
         <cbc:ElectronicMail>payables@montebrio.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -79,7 +79,7 @@
         <cbc:PostalZone>38540</cbc:PostalZone>
         <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-NT</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -91,7 +91,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38522 12877</cbc:Telephone>
         <cbc:ElectronicMail>receivables@kelpstone.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

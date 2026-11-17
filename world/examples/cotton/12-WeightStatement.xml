@@ -7,7 +7,7 @@
   <cbc:ID>SCG-WS-26-0205</cbc:ID>
   <cbc:UUID>43b82e91-f4de-52c1-ac47-945443cd1b55</cbc:UUID>
   <cbc:IssueDate>2026-03-01</cbc:IssueDate>
-  <cbc:IssueTime>15:19:00</cbc:IssueTime>
+  <cbc:IssueTime>15:19:00+00:00</cbc:IssueTime>
   <cbc:WeightStatementTypeCode listID="urn:ubl-examples:world:codelist:WeightStatementTypeCode">VGM</cbc:WeightStatementTypeCode>
   <cac:Signature>
     <cbc:ID>SCG-SIG-VGM</cbc:ID>
@@ -44,7 +44,7 @@
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -81,7 +81,7 @@
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -93,7 +93,7 @@
       <cbc:Department>Bookings</cbc:Department>
       <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -116,7 +116,7 @@
       <cbc:BuildingNumber>32</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -128,7 +128,7 @@
       <cbc:Department>Port operations</cbc:Department>
       <cbc:Telephone>+999 3 727 1037</cbc:Telephone>
       <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
   </cac:WeighingParty>
   <cac:ShipperParty>

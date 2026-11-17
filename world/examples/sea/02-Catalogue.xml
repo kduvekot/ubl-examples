@@ -8,7 +8,7 @@
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-05-04</cbc:IssueDate>
-  <cbc:IssueTime>09:17:00</cbc:IssueTime>
+  <cbc:IssueTime>09:17:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>
     <cbc:EndDate>2026-10-31</cbc:EndDate>
@@ -42,7 +42,7 @@
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -104,7 +104,7 @@
       <cbc:BuildingNumber>16</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -116,7 +116,7 @@
       <cbc:Department>Purchasing</cbc:Department>
       <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
       <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

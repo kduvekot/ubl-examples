@@ -7,7 +7,7 @@
   <cbc:ID>SM-INV-26-0312</cbc:ID>
   <cbc:UUID>b47d9e09-122e-55a3-a2d2-dde5a4947c4f</cbc:UUID>
   <cbc:IssueDate>2026-03-11</cbc:IssueDate>
-  <cbc:IssueTime>14:59:00</cbc:IssueTime>
+  <cbc:IssueTime>14:59:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-10</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-11</cbc:TaxPointDate>
@@ -45,7 +45,7 @@
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
         <cbc:PostalZone>4110</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -142,7 +142,7 @@
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>

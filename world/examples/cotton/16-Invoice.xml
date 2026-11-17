@@ -7,7 +7,7 @@
   <cbc:ID>SCG-INV-26-0210</cbc:ID>
   <cbc:UUID>2f034562-199a-5d23-88a9-248b9fdf7727</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
-  <cbc:IssueTime>12:38:00</cbc:IssueTime>
+  <cbc:IssueTime>12:38:00+00:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-16</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).</cbc:Note>
@@ -45,7 +45,7 @@
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -108,7 +108,7 @@
         <cbc:PostalZone>38504</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>

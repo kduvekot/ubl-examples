@@ -6,9 +6,9 @@
   <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RP-INV-26-0524</cbc:ID>
   <cbc:UUID>fbaa64ee-50ae-575a-92d4-0d0537b86349</cbc:UUID>
-  <cbc:IssueDate>2026-05-03</cbc:IssueDate>
-  <cbc:IssueTime>08:11:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-02</cbc:DueDate>
+  <cbc:IssueDate>2026-05-01</cbc:IssueDate>
+  <cbc:IssueTime>08:11:00-01:00</cbc:IssueTime>
+  <cbc:DueDate>2026-05-31</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2300</cbc:AccountingCostCode>
@@ -45,7 +45,7 @@
         <cbc:PostalZone>38505</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -158,7 +158,7 @@
         <cbc:PostalZone>38504</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -226,7 +226,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-02</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-31</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF72RPINV260524</cbc:InstructionNote>
@@ -277,9 +277,9 @@
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">24.00</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.rivermouth.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-06-02</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-31</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-06-03</cbc:StartDate>
+      <cbc:StartDate>2026-06-01</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

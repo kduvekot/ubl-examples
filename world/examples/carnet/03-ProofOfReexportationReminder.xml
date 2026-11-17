@@ -7,7 +7,7 @@
   <cbc:ID>SCC-DOC-26-0727</cbc:ID>
   <cbc:UUID>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</cbc:UUID>
   <cbc:IssueDate>2026-08-23</cbc:IssueDate>
-  <cbc:IssueTime>12:04:00</cbc:IssueTime>
+  <cbc:IssueTime>12:04:00+00:00</cbc:IssueTime>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:CustomsProcedureCode">2000</cbc:ProcedureCode>
   <cbc:Note>Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
@@ -36,7 +36,7 @@
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>
@@ -76,7 +76,7 @@
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -114,7 +114,7 @@
       <cbc:BuildingNumber>53</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>

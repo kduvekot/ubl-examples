@@ -74,7 +74,8 @@
       "department": "Finance",
       "email": "receivables@serravona.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -235,7 +236,8 @@
       "code": "6400",
       "name": "Waste disposal and other services"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -266,7 +268,7 @@
      "email": "warehouse@castrano.example",
      "telephone": "+999 1 041 677 4411",
      "department": "Operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day 06:00–22:00",
      "job_title": "Warehouse administrator"
     },
     "tax_id": "XU007308887",
@@ -327,7 +329,8 @@
       "code": "6300",
       "name": "Energy and water"
      }
-    }
+    },
+    "week": "always"
    },
    "fleet": [
     {
@@ -453,7 +456,8 @@
       "department": "Sales",
       "email": "sales@rinova.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -480,7 +484,7 @@
      "email": "freight@ferranorail.example",
      "telephone": "+999 1 0413 44685",
      "department": "Operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day 06:00–22:00",
      "job_title": "Freight planner"
     },
     "tax_id": "XU007328060",
@@ -523,7 +527,8 @@
       "department": "Sales",
       "email": "sales@ferranorail.example"
      }
-    }
+    },
+    "week": "always"
    },
    "fleet": [
     {
@@ -577,7 +582,7 @@
      "email": "planning@trasvia.example",
      "telephone": "+999 1 041 354 4822",
      "department": "Operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day 06:00–22:00",
      "job_title": "Transport planner"
     },
     "tax_id": "XU007337656",
@@ -626,7 +631,8 @@
       "department": "Sales",
       "email": "sales@trasvia.example"
      }
-    }
+    },
+    "week": "always"
    },
    "fleet": [
     {
@@ -671,7 +677,7 @@
      "email": "chartering@fiumella.example",
      "telephone": "+999 1 041 513 4959",
      "department": "Operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day 06:00–22:00",
      "job_title": "Chartering manager"
     },
     "tax_id": "XU007347248",
@@ -714,7 +720,8 @@
       "department": "Sales",
       "email": "sales@fiumella.example"
      }
-    }
+    },
+    "week": "always"
    },
    "fleet": [
     {
@@ -761,7 +768,7 @@
      "email": "terminal@ferranohub.example",
      "telephone": "+999 1 041 672 5096",
      "department": "Operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Terminal controller"
     },
     "tax_id": "XU007356833",
@@ -785,7 +792,8 @@
       "currency": "XUF",
       "year": 2025
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -865,7 +873,8 @@
       "name": "Serravona branch",
       "city": "Serravona"
      }
-    ]
+    ],
+    "week": "office"
    }
   },
   {
@@ -919,7 +928,8 @@
       "department": "Certificates",
       "email": "certificates@camera-ferrano.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -947,7 +957,7 @@
      "email": "border@customs-xu.example",
      "telephone": "+999 1 041 349 5507",
      "department": "Customs",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "telefax": "+999 1 041 326 0018",
      "job_title": "Customs officer"
     },
@@ -982,7 +992,8 @@
       "department": "Customs",
       "email": "transit@customs-xu.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -1023,7 +1034,8 @@
      "ID": "4160200261972596"
     },
     "industry": "8299",
-    "language": "en"
+    "language": "en",
+    "week": "office"
    }
   },
   {
@@ -1051,7 +1063,7 @@
      "email": "border@customs-xb.example",
      "telephone": "+999 2 7121 337 137",
      "department": "Customs",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Customs officer"
     },
     "address": {
@@ -1078,7 +1090,8 @@
       "department": "Customs",
       "email": "import@customs-xb.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -1228,7 +1241,8 @@
       "code": "4700",
       "name": "Services"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -1255,7 +1269,7 @@
      "email": "buying@brightmarket.example",
      "telephone": "+999 2 38 2511 0411",
      "department": "Purchasing",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Monday to Saturday 09:00–18:00",
      "job_title": "Buyer",
      "id": "BM-CT-01"
     },
@@ -1371,7 +1385,8 @@
        "name": "Clothing department"
       }
      }
-    }
+    },
+    "week": "shop"
    },
    "fleet": [
     {
@@ -1443,7 +1458,8 @@
      "valid_from": "2025-03",
      "expires": "2029-02",
      "cv2": "731"
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -1527,7 +1543,8 @@
        "name": "Planning office fit-out 2026"
       }
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -1597,7 +1614,8 @@
       "department": "Sales",
       "email": "sales@saltmere.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -1639,7 +1657,8 @@
      "ID": "LUM-ADR-075593"
     },
     "industry": "8423",
-    "language": "en"
+    "language": "en",
+    "week": "office"
    }
   },
   {
@@ -1680,7 +1699,8 @@
      "ID": "LUM-ADR-634627"
     },
     "industry": "8411",
-    "language": "en"
+    "language": "en",
+    "week": "office"
    }
   },
   {
@@ -1722,7 +1742,8 @@
      "ID": "LUM-ADR-268189"
     },
     "industry": "9411",
-    "language": "en"
+    "language": "en",
+    "week": "office"
    }
   },
   {
@@ -1788,7 +1809,8 @@
       "department": "Finance",
       "email": "receivables@harbourline.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -1869,7 +1891,8 @@
       "city": "Gullhaven"
      }
     ],
-    "card_issuer_digits": "38"
+    "card_issuer_digits": "38",
+    "week": "office"
    }
   },
   {
@@ -1923,7 +1946,8 @@
       "currency": "XBL",
       "year": 2025
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -2001,7 +2025,8 @@
       "department": "Sales",
       "email": "sales@bayforth.example"
      }
-    }
+    },
+    "week": "office"
    },
    "fleet": [
     {
@@ -2056,7 +2081,7 @@
      "email": "port@port-lumeport.example",
      "telephone": "+999 2 38 2281 1781",
      "department": "Port operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Duty port controller"
     },
     "address": {
@@ -2086,7 +2111,8 @@
      "locode": "XBLMP",
      "description": "Port of Lumeport",
      "subsidiary": "Container quay"
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -2113,7 +2139,7 @@
      "email": "bookings@tidewell.example",
      "telephone": "+999 2 38 2418 1918",
      "department": "Bookings",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day 06:00–22:00",
      "job_title": "Booking agent"
     },
     "tax_id": "CO-1235754",
@@ -2140,7 +2166,8 @@
       "year": 2025
      },
      "capital": 40000000
-    }
+    },
+    "week": "always"
    },
    "fleet": [
     {
@@ -2216,7 +2243,7 @@
      "email": "cargo@lumeport-cargo.example",
      "telephone": "+999 2 38 2555 2055",
      "department": "Cargo handling",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Cargo acceptance agent"
     },
     "tax_id": "CO-1236165",
@@ -2247,7 +2274,8 @@
      "locode": "XBLMA",
      "description": "Lumeport airport",
      "altitude": 14
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -2282,7 +2310,7 @@
      "email": "port@port-selanu.example",
      "telephone": "+999 3 727 1037",
      "department": "Port operations",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Duty port controller"
     },
     "address": {
@@ -2307,7 +2335,8 @@
     "site": {
      "locode": "XLSEL",
      "description": "Port of Selanu"
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -2338,7 +2367,7 @@
      "email": "import@selanu-cargo.example",
      "telephone": "+999 3 724 1174",
      "department": "Cargo handling",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Cargo handling agent"
     },
     "address": {
@@ -2359,7 +2388,8 @@
       "currency": "XLC",
       "year": 2025
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -2386,7 +2416,7 @@
      "email": "cargo@kelaro.example",
      "telephone": "+999 3 721 1311",
      "department": "Sales",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day 06:00–22:00",
      "job_title": "Cargo sales agent"
     },
     "address": {
@@ -2417,7 +2447,8 @@
       "department": "Operations",
       "email": "cargoops@kelaro.example"
      }
-    }
+    },
+    "week": "always"
    },
    "fleet": [
     {
@@ -2492,7 +2523,7 @@
      "email": "import@customs-xl.example",
      "telephone": "+999 3 728 1448",
      "department": "Customs",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Customs officer"
     },
     "address": {
@@ -2516,7 +2547,8 @@
       "department": "Customs",
       "email": "import@customs-xl.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -2569,7 +2601,8 @@
       "currency": "XLC",
       "year": 2025
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -2600,7 +2633,7 @@
      "email": "goods@nalevi.example",
      "telephone": "+999 3 722 1722",
      "department": "Warehouse",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Monday to Saturday 07:00–18:00",
      "job_title": "Warehouse supervisor"
     },
     "address": {
@@ -2634,7 +2667,8 @@
       "department": "Warehouse",
       "email": "goodsin@nalevi.example"
      }
-    }
+    },
+    "week": "shop"
    },
    "fleet": [
     {
@@ -2670,7 +2704,7 @@
      "email": "purchasing@velumi.example",
      "telephone": "+999 3 729 1859",
      "department": "Purchasing",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Monday to Saturday 09:00–18:00",
      "job_title": "Buyer"
     },
     "address": {
@@ -2753,7 +2787,8 @@
       "code": "800",
       "name": "Services"
      }
-    }
+    },
+    "week": "shop"
    }
   },
   {
@@ -2820,7 +2855,8 @@
       "city": "Selanu"
      }
     ],
-    "card_issuer_digits": "51"
+    "card_issuer_digits": "51",
+    "week": "office"
    }
   },
   {
@@ -2871,7 +2907,8 @@
       "department": "Certificates",
       "email": "certificates@chamber-selanu.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -2909,7 +2946,8 @@
      "ID": "44886737"
     },
     "industry": "8413",
-    "language": "en"
+    "language": "en",
+    "week": "office"
    }
   },
   {
@@ -2937,7 +2975,7 @@
      "email": "customer@ferranoenergy.example",
      "telephone": "+999 1 041 667 5781",
      "department": "Customer service",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Customer service officer"
     },
     "tax_id": "XU007404785",
@@ -2996,7 +3034,8 @@
       "department": "Sales",
       "email": "sales@ferranoenergy.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -3024,7 +3063,7 @@
      "email": "customer@coastalwater.example",
      "telephone": "+999 2 38 2692 2192",
      "department": "Customer service",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Customer service officer"
     },
     "tax_id": "CO-1236576",
@@ -3072,7 +3111,8 @@
       "department": "Sales",
       "email": "sales@coastalwater.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -3100,7 +3140,7 @@
      "email": "business@selanutelecom.example",
      "telephone": "+999 3 727 2407",
      "department": "Business sales",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Account manager"
     },
     "address": {
@@ -3162,7 +3202,8 @@
       "department": "Sales",
       "email": "sales@selanutelecom.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -3260,7 +3301,8 @@
       "department": "Sales",
       "email": "tenders@marrowdalesawmill.example"
      }
-    }
+    },
+    "week": "office"
    },
    "fleet": [
     {
@@ -3368,7 +3410,8 @@
       "department": "Sales",
       "email": "tenders@brackenmere.example"
      }
-    }
+    },
+    "week": "office"
    },
    "fleet": [
     {
@@ -3493,7 +3536,8 @@
       "code": "2400",
       "name": "Freight and forwarding"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -3606,7 +3650,8 @@
       "code": "1400",
       "name": "Freight"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -3679,7 +3724,8 @@
      "issuer": "22-xl",
      "aid": "D9030000011010",
      "holder": "LISAVU COTTON FARM"
-    }
+    },
+    "week": "office"
    },
    "fleet": [
     {
@@ -3794,7 +3840,8 @@
       "department": "Finance",
       "email": "receivables@selanuginnery.example"
      }
-    }
+    },
+    "week": "office"
    }
   },
   {
@@ -3835,7 +3882,7 @@
      "email": "gas@kelpstone.example",
      "telephone": "+999 2 38522 12877",
      "department": "Commercial",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Gas sales manager"
     },
     "tax_id": "NT-1238631",
@@ -3896,7 +3943,8 @@
       "department": "Finance",
       "email": "receivables@kelpstone.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -3928,7 +3976,7 @@
      "email": "trading@montebrio.example",
      "telephone": "+999 1 0413 55918",
      "department": "Trading",
-     "hours": "Weekdays 07:00–19:00",
+     "hours": "Every day, around the clock",
      "job_title": "Energy trader"
     },
     "tax_id": "XU007414377",
@@ -3995,7 +4043,8 @@
       "department": "Sales",
       "email": "sales@montebrio.example"
      }
-    }
+    },
+    "week": "always"
    }
   },
   {
@@ -4023,7 +4072,7 @@
      "email": "metering@ferranogrid.example",
      "telephone": "+999 1 041 985 6055",
      "department": "Metering",
-     "hours": "Weekdays 08:00–17:00",
+     "hours": "Every day, around the clock",
      "job_title": "Metering officer"
     },
     "tax_id": "XU007423962",
@@ -4071,7 +4120,8 @@
       "department": "Commercial",
       "email": "access@ferranogrid.example"
      }
-    }
+    },
+    "week": "always"
    }
   }
  ],

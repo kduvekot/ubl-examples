@@ -7,7 +7,7 @@
   <cbc:ID>FRC-INV-26-0336</cbc:ID>
   <cbc:UUID>f02614a5-c969-547f-8808-35c583fe56d6</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
-  <cbc:IssueTime>12:04:00</cbc:IssueTime>
+  <cbc:IssueTime>12:04:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-14</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
@@ -43,7 +43,7 @@
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
         <cbc:PostalZone>4150</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -93,7 +93,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
         <cbc:ElectronicMail>receivables@ferranorail.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -123,7 +123,7 @@
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>

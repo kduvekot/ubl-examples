@@ -7,7 +7,7 @@
   <cbc:ID>SE-FI-26-0714</cbc:ID>
   <cbc:UUID>a587c22d-2b9a-58c7-a95e-3c142f8b615c</cbc:UUID>
   <cbc:IssueDate>2026-06-03</cbc:IssueDate>
-  <cbc:IssueTime>11:57:00</cbc:IssueTime>
+  <cbc:IssueTime>11:57:00-01:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
@@ -30,7 +30,7 @@
       <cbc:PostalZone>71218</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -67,7 +67,7 @@
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -108,7 +108,7 @@
           <cbc:BuildingNumber>58</cbc:BuildingNumber>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
@@ -120,7 +120,7 @@
           <cbc:Department>Network operations</cbc:Department>
           <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
           <cbc:ElectronicMail>stores@selanutelecom.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
       <cac:HazardousItemNotificationParty>

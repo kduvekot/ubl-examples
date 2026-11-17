@@ -7,7 +7,7 @@
   <cbc:ID>SCG-RM-26-0196</cbc:ID>
   <cbc:UUID>f198db4b-7402-5c2b-b4c8-d6f8869c6440</cbc:UUID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
-  <cbc:IssueTime>13:06:00</cbc:IssueTime>
+  <cbc:IssueTime>13:06:00+00:00</cbc:IssueTime>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:TotalPaymentAmount currencyID="XLC">3141.070</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
@@ -31,7 +31,7 @@
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -69,7 +69,7 @@
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:AddressLine>
           <cbc:Line>Sifatofu Natii / Plantation Road</cbc:Line>
         </cac:AddressLine>

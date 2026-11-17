@@ -7,7 +7,7 @@
   <cbc:ID>SCG-SBI-26-0191</cbc:ID>
   <cbc:UUID>5ceb591c-0271-54b9-ac09-ed5298739803</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
-  <cbc:IssueTime>09:45:00</cbc:IssueTime>
+  <cbc:IssueTime>09:45:00+00:00</cbc:IssueTime>
   <cbc:DueDate>2026-01-13</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">386</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee sinekeli tilala kimii mitavema: takane mafute letini lesama kasefa lakau-votee tohala mutaki kimii.</cbc:Note>
@@ -52,7 +52,7 @@
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -118,7 +118,7 @@
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:AddressLine>
           <cbc:Line>Sifatofu Natii / Plantation Road</cbc:Line>
         </cac:AddressLine>

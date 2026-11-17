@@ -322,7 +322,8 @@ def road(n, doc):
             "EndorserParty": {k: v for k, v in signer.items() if k != "Party"},
             "ID": V(f.number("certificate", chamber, "CertificateOfOrigin"), "The number of the certificate, given by "
                                                                             "the chamber."),
-            "IssueDate": V(f.date(6 if endorsed else 4), "The day the chamber endorsed the certificate." if endorsed
+            "IssueDate": V(f.date(7 if endorsed else 4), "The day the chamber endorsed the certificate: Monday "
+                           "morning, before the export declaration (road/07#F11)." if endorsed
                            else "The day the exporter applies, before the goods leave."),
             "Description": V("Certificate of origin for park benches and castings made in Urvania.",
                              "What the certificate is for."),
@@ -1176,7 +1177,9 @@ def retail(n, doc):
         card_payment(out, f, 25, "11:42:00")
         out["Note"] = V("Home delivery booked for Saturday.", "Printed on the receipt.")
         out["Delivery"] = {"DeliveryAddress": address("c-xb", register=True),
-                           "RequestedDeliveryPeriod": {"StartDate": V(f.date(27), "Saturday."),
+                           "RequestedDeliveryPeriod": {"StartDate": V(f.date(26), "Saturday, the day the note "
+                                                                                    "names: the store delivers "
+                                                                                    "Monday to Saturday."),
                                                        "StartTime": V("09:00:00", "Morning."),
                                                        "EndTime": V("12:00:00", "Until noon.")},
                            "CarrierParty": party("26-xb", short=True)}
@@ -3483,7 +3486,8 @@ def packaging(n, doc):
                          "Free carrier at the packaging maker: the buyer books the road carrier that collects.",
                          "Rivermouth Packaging, dispatch, Lumeport")
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
-        return kit.invoice(f, n, doc, 5, "Issued when the film was collected.",
+        return kit.invoice(f, n, doc, 4, "Issued when the film was collected, on Friday 1 May, a working day in "
+                                         "Bayvarra (D27).",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
                            [{"item": "film-pe", "qty": 480, "invoice_why": "The kilograms collected."}])
     if doc["doc"] == "Order" and doc["from"] == "40-xb":
@@ -3491,7 +3495,7 @@ def packaging(n, doc):
                          "Delivered at place, the mill: the packaging maker delivers.", "Lumeport Textile Mill, goods-in",
                          deal=BAGS, key="order-bags")
     if doc["doc"] == "Invoice" and doc["to"] == "40-xb":
-        return kit.invoice(f, n, doc, 6, "Issued on delivery.", {"OrderReference": ref(f, "order-bags",
+        return kit.invoice(f, n, doc, 4, "Issued on delivery, on Friday 1 May.", {"OrderReference": ref(f, "order-bags",
                                                                                            "The mill's order.")},
                            [{"item": "garment-bag", "qty": 20000, "invoice_why": "The bags delivered."}],
                            key="invoice-bags")
@@ -4140,7 +4144,8 @@ def _(f, n, doc, out):
 
 @enrich("retail", "InventoryReport")
 def _(f, n, doc, out):
-    return {"Note": V("Counted on Sunday evening.", "When."),
+    return {"Note": V("Counted on Thursday afternoon, before the report.", "When: at the end of the period the "
+                                                                          "report covers (retail/07#F2)."),
             "DocumentCurrencyCode": kit.currency_line("XBL", "the store's currency"),
             "InventoryPeriod": {"StartDate": V(f.date(-4), "The week."), "EndDate": V(f.date(3), "Its end.")},
             "DocumentReference": {"ID": V(f.numbers.get("forecast", ""), "The forecast the stock is compared "

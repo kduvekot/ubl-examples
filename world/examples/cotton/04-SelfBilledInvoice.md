@@ -24,8 +24,8 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-07**  
   The ginnery bills itself for the delivery, as the self-billing agreement provides.
-- `IssueTime` = **15:50:00**  
-  The time the sender's system issued the document, in the sender's local time.
+- `IssueTime` = **15:50:00+00:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `DueDate` = **2026-03-24**  
   The supplier's usual term, which the customer applies to itself.
 - `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
@@ -189,8 +189,8 @@ Inside `AccountingCustomerParty`:
   The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
@@ -266,8 +266,8 @@ Inside `AccountingSupplierParty`:
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/District` = **North coast**  
   The district of the island, used to find a farm off the main roads. identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
+- `Party/PostalAddress/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Party/PostalAddress/AddressLine/Line` = **Sifatofu Natii / Plantation Road**  
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/AddressLine/Line` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
@@ -699,7 +699,7 @@ Inside `InvoiceLine`:
   <cbc:ID>SCG-SBI-26-0194</cbc:ID>
   <cbc:UUID>6d8069bb-fe8b-5c9f-bd12-45c38c2363b6</cbc:UUID>
   <cbc:IssueDate>2026-02-07</cbc:IssueDate>
-  <cbc:IssueTime>15:50:00</cbc:IssueTime>
+  <cbc:IssueTime>15:50:00+00:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-24</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">389</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
@@ -791,7 +791,7 @@ Inside `InvoiceLine`:
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -857,7 +857,7 @@ Inside `InvoiceLine`:
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
         <cbc:District>North coast</cbc:District>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:AddressLine>
           <cbc:Line>Sifatofu Natii / Plantation Road</cbc:Line>
         </cac:AddressLine>

@@ -80,7 +80,7 @@
     "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "phone_prefix": "+999 1",
-   "timezone": "-1",
+   "timezone": "-01:00",
    "register_scheme": "XU:CR",
    "customs_trader_format": "XU-TR- and 6 digits",
    "legal_forms": {
@@ -214,7 +214,31 @@
     }
    },
    "province": "Province of Ferrano",
-   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (decision O147, 2026-11-17, after Italy's art. 2250 codice civile). Bayvarra and Lisavu follow the model of the EU company-law directive (2017/1132, Art. 26): stating the capital is optional, and their companies do not."
+   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (decision O147, 2026-11-17, after Italy's art. 2250 codice civile). Bayvarra and Lisavu follow the model of the EU company-law directive (2017/1132, Art. 26): stating the capital is optional, and their companies do not.",
+   "legal_time": "Urvanian Time",
+   "holidays": {
+    "rule": "Fixed dates, in the Italian manner; a holiday on a weekend is not made up for.",
+    "2026": {
+     "2026-01-01": "New Year and Accord Day",
+     "2026-01-06": "Children's Day",
+     "2026-03-09": "Independence Day",
+     "2026-05-01": "Labour Day",
+     "2026-06-17": "Language Day",
+     "2026-08-15": "Ferragosto",
+     "2026-10-14": "Constitution Day",
+     "2026-11-02": "Remembrance Day",
+     "2026-12-25": "Family Day",
+     "2026-12-26": "Day of Rest"
+    },
+    "towns": {
+     "Ferrano": {
+      "2026-09-04": "Founders' Day of Ferrano"
+     },
+     "Serravona": {
+      "2026-12-04": "Miners' Day, Founders' Day of Serravona"
+     }
+    }
+   }
   },
   "XB": {
    "name": "Bayvarra",
@@ -304,7 +328,7 @@
     "note": "Bayvarran land north of map row 15 (row < 15) is the Northern Territory, a federal territory on the thinly populated north coast with Gullhaven, the gas plant and, offshore, the gas field. South of it the state border runs north-south at map column 29: the border region and the distributor are in Upland State (column < 29), Lumeport and the coast in Coastal State."
    },
    "phone_prefix": "+999 2",
-   "timezone": "-1",
+   "timezone": "-01:00",
    "register_scheme": "XB:FBR",
    "customs_trader_format": "XB-TR- and 6 digits",
    "legal_forms": {
@@ -436,6 +460,27 @@
      "pattern": "^XB-BOND-LIC-\\d{4}$",
      "format": "XB-BOND-LIC- and a four-digit number"
     }
+   },
+   "legal_time": "Bayvarran Time",
+   "holidays": {
+    "rule": "Bank holidays, mostly Mondays, in the British manner; a holiday on a weekend is given on the next working day.",
+    "2026": {
+     "2026-01-01": "New Year and Accord Day",
+     "2026-02-16": "Settlers' Day",
+     "2026-05-04": "Labour Day",
+     "2026-08-03": "Winter Bank Holiday",
+     "2026-10-19": "Federation Day",
+     "2026-12-25": "Family Day",
+     "2026-12-28": "Boxing Day, observed"
+    },
+    "states": {
+     "Upland State": {
+      "2026-04-13": "Upland State Day"
+     },
+     "Coastal State": {
+      "2026-11-30": "Coastal State Day"
+     }
+    }
    }
   },
   "XL": {
@@ -513,7 +558,7 @@
     "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "phone_prefix": "+999 3",
-   "timezone": "-1",
+   "timezone": "+00:00",
    "register_scheme": "XL:ICR",
    "customs_trader_format": "XL-TR- and 6 digits",
    "legal_forms": {
@@ -614,6 +659,21 @@
     "name": "Farm register of Lisavu",
     "scheme": "XL:FR",
     "note": "Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46)."
+   },
+   "legal_time": "Lisavu Time",
+   "holidays": {
+    "rule": "Around the sea and the cotton.",
+    "2026": {
+     "2026-01-01": "New Year and Accord Day",
+     "2026-02-06": "Seafarers' Day",
+     "2026-03-18": "Agreement Day",
+     "2026-05-01": "Labour Day",
+     "2026-05-15": "Harvest Festival",
+     "2026-07-07": "Island Day",
+     "2026-09-21": "Elders' Day",
+     "2026-12-25": "Family Day",
+     "2026-12-26": "Day of Rest"
+    }
    }
   }
  },
@@ -2973,5 +3033,43 @@
    "note": "The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day (decision D23)."
   }
  },
- "payment_terms_note": "Which payment terms an invoice applies, in three layers (decision D22): what the parties agreed in a contract or framework agreement; where they agreed nothing, the seller's standard terms (XU-STD, XB-STD, XL-STD); where neither says anything about late payment, the statutory interest of the seller's country, where it has one. A cross-border sale follows the seller's country unless the contract chooses otherwise. Utility bills follow the Trade Accord's own term TA-UTIL (decision D23)."
+ "payment_terms_note": "Which payment terms an invoice applies, in three layers (decision D22): what the parties agreed in a contract or framework agreement; where they agreed nothing, the seller's standard terms (XU-STD, XB-STD, XL-STD); where neither says anything about late payment, the statutory interest of the seller's country, where it has one. A cross-border sale follows the seller's country unless the contract chooses otherwise. Utility bills follow the Trade Accord's own term TA-UTIL (decision D23).",
+ "working_weeks": {
+  "office": {
+   "days": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "name": "Monday to Friday",
+   "note": "Offices and factories."
+  },
+  "shop": {
+   "days": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "name": "Monday to Saturday",
+   "note": "Shops and warehouses that serve them."
+  },
+  "always": {
+   "days": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "name": "every day",
+   "note": "Ports, carriers, terminals, border customs and the operations of utilities; they work through the public holidays (D27)."
+  }
+ }
 }

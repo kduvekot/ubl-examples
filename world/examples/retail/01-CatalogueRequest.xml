@@ -8,7 +8,7 @@
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
   <cbc:Name>Spring catalogue 2026</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>08:42:00</cbc:IssueTime>
+  <cbc:IssueTime>08:42:00-01:00</cbc:IssueTime>
   <cbc:Note>For the garden department.</cbc:Note>
   <cbc:Description>Benches and spare parts.</cbc:Description>
   <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>
@@ -51,7 +51,7 @@
       <cbc:PostalZone>71214</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -102,7 +102,7 @@
       <cbc:PostalZone>38515</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -136,7 +136,7 @@
       <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
       <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:AdditionalWebSite>
       <cbc:Name>Online shop</cbc:Name>

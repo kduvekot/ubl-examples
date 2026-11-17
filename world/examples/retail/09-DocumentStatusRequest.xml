@@ -7,7 +7,7 @@
   <cbc:ID>BS-DOC-26-0225</cbc:ID>
   <cbc:UUID>44994824-762c-5e0e-a7c5-0010d1f4141f</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
-  <cbc:IssueTime>11:52:00</cbc:IssueTime>
+  <cbc:IssueTime>11:52:00-01:00</cbc:IssueTime>
   <cbc:Note>Has the order been accepted?</cbc:Note>
   <cbc:TrackingID>BS-PO-26-0224</cbc:TrackingID>
   <cac:RequestedDocumentReference>
@@ -50,7 +50,7 @@
       <cbc:Department>Purchasing</cbc:Department>
       <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

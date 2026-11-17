@@ -7,7 +7,7 @@
   <cbc:ID>LTM-FR-26-0197</cbc:ID>
   <cbc:UUID>1680348b-7683-52e2-b21d-f88ff92b0f43</cbc:UUID>
   <cbc:IssueDate>2026-02-22</cbc:IssueDate>
-  <cbc:IssueTime>11:08:00</cbc:IssueTime>
+  <cbc:IssueTime>11:08:00-01:00</cbc:IssueTime>
   <cbc:Note>Demand for clothing has risen.</cbc:Note>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:RevisionStatusCode listID="urn:ubl-examples:world:codelist:RevisionStatusCode">REVISED</cbc:RevisionStatusCode>
@@ -54,7 +54,7 @@
       <cbc:PostalZone>38504</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
@@ -89,7 +89,7 @@
       <cbc:BuildingNumber>42</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         <cbc:Name>Lisavu</cbc:Name>

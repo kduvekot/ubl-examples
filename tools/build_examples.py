@@ -600,8 +600,8 @@ def address(pid, register=False):
     if a.get("CityName"):
         out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
-    out["TimezoneOffset"] = V(c["timezone"], "The party's time zone, one hour behind UTC, where the world lies "
-                                             "(world/countries.json).")
+    out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, {c['name']}'s legal time, "
+                                             "all year: there is no summer time (D27, world/countries.json).")
     if idn.get("address_lines"):
         fields = {k: [x.value for x in v] if isinstance(v, list) else [v.value] for k, v in out.items()}
         out["AddressLine"] = [{"Line": V(line, f"One line of the address as the farm writes it, made from the fields "
@@ -2730,6 +2730,90 @@ def check_payment_terms(root, where):
                 raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due} (O70)")
 
 
+# ---------------------------------------------------------------- the calendar (C53, D27, O79)
+def working_day(pid, day):
+    """Whether party pid works on `day` (an ISO date): its working week (office, shop or every day) and, unless it
+    works every day, the public holidays of its country, its state and its town."""
+    import datetime as _dt
+    p = PARTY[pid]
+    week = WORLD["working_weeks"][p["identity"].get("week", "office")]
+    d = _dt.date.fromisoformat(day)
+    if d.weekday() not in week["days"]:
+        return False
+    if len(week["days"]) == 7:
+        return True
+    hol = WORLD["countries"][p["c"]].get("holidays", {})
+    addr = p["identity"]["address"]
+    days = dict(hol.get(str(d.year), {}))
+    days.update(hol.get("states", {}).get(addr.get("CountrySubentity"), {}))
+    days.update(hol.get("towns", {}).get(addr.get("CityName"), {}))
+    return day not in days
+
+
+CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
+    ('contest', '12-TendererQualification.xml'): 'D29',
+    ('contest', '11-QualificationApplicationResponse.xml'): 'D29',
+    ('retail', '09-DocumentStatusRequest.xml'): 'D34',
+    ('retail', '10-DocumentStatus.xml'): 'D34',
+    ('retail', '11-TransportExecutionPlanRequest.xml'): 'D34',
+    ('retail', '19-CreditNote.xml'): 'D34',
+    ('sea', '01-BusinessCard.xml'): 'D30',
+    ('sea', '02-Catalogue.xml'): 'D30',
+    ('sea', '09-ForwardingInstructions.xml'): 'D30',
+    ('sea', '12-ForwardingInstructions.xml'): 'D30',
+    ('sea', '25-Statement.xml'): 'D30',
+    ('tender', '04-ExpressionOfInterestRequest.xml'): 'D28',
+    ('tender', '05-ExpressionOfInterestResponse.xml'): 'D28',
+    ('tender', '09-ProcurementStatus.xml'): 'D28',
+    ('tender', '10-UnsubscribeFromProcedureRequest.xml'): 'D28',
+    ('tender', '25-Catalogue.xml'): 'D28',
+    ('tender', '33-CreditNote.xml'): 'D28',
+    ('carnet', '03-ProofOfReexportationReminder.xml'): 'D40',
+    ('waste', '03-Invoice.xml'): 'D42',
+    ('utilities', '04-RemittanceAdvice.xml'): 'D31',
+    ('utilities', '07-RemittanceAdvice.xml'): 'D31',
+    ('utilities', '14-RemittanceAdvice.xml'): 'D31',
+    ('plastics', '05-ExportCustomsDeclaration.xml'): 'D41',
+    ('plastics', '08-DespatchAdvice.xml'): 'D41',
+    ('wood', '03-Order.xml'): 'D43',
+    ('wood', '10-Order.xml'): 'D43',
+    ('furniture', '09-Invoice.xml'): 'D32',
+    ('furniture', '13-CreditNote.xml'): 'D32',
+    ('furniture', '14-DebitNote.xml'): 'D32',
+    ('cotton', '04-SelfBilledInvoice.xml'): 'D33',
+    ('cotton', '05-SelfBilledCreditNote.xml'): 'D33',
+    ('cotton', '07-ForecastRevision.xml'): 'D33',
+    ('cotton', '10-GoodsCertificate.xml'): 'D33',
+    ('cotton', '11-ExportCustomsDeclaration.xml'): 'D33',
+    ('cotton', '12-WeightStatement.xml'): 'D33',
+    ('cotton', '18-RemittanceAdvice.xml'): 'D33',
+    ('contest', '08-ContractNotice.xml'): 'D29',
+    ('contest', '09-CallForTenders.xml'): 'D29',
+    ('contest', '10-QualificationApplicationRequest.xml'): 'D29',
+    ('contest', '14-BusinessInformation.xml'): 'D29',
+    ('contest', '16-ContractAwardNotice.xml'): 'D29',
+}
+
+
+def check_calendar(flow_id, roots, docs):
+    """O79: a document is dated on a day its issuer works, unless it waits for its flow's dates (CALENDAR_WAITS)."""
+    for (name, root), doc in zip(roots, docs):
+        day = root.findtext(f"{{{NS_CBC}}}IssueDate")
+        if day and doc["from"] in PARTY and not working_day(doc["from"], day) and \
+                (flow_id, name) not in CALENDAR_WAITS:
+            raise SystemExit(f"world/examples/{flow_id}/{name}: issued on {day}, a day its issuer "
+                             f"{PARTY[doc['from']]['identity']['name']} does not work (D27, O79)")
+
+
+def issue_time_offset(content, doc):
+    """The issue time is the issuer's local time, written with its offset from UTC (D27)."""
+    t = content.get("IssueTime")
+    if isinstance(t, V) and re.fullmatch(r"\d\d:\d\d:\d\d", str(t.value)):
+        tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
+        content["IssueTime"] = V(f"{t.value}{tz}", f"{t.why.rstrip('.')}; in the issuer's local time, with its "
+                                                   "offset from UTC (D27).", **t.attrs)
+
+
 PARTY_SAYS = {}        # pid -> {"self": element paths it gives about itself, "other": paths others give about it}
 
 
@@ -2854,7 +2938,9 @@ def main(flow_id, check=False):
                                "(UUID version 5), so it stays the same on every build.")
         global SENDER, INTERNATIONAL
         SENDER, INTERNATIONAL = doc["from"], international(doc)
-        root, reasons = build(doc["doc"], merge(header, content))
+        full = merge(header, content)
+        issue_time_offset(full, doc)
+        root, reasons = build(doc["doc"], full)
         set_ubl_version(root, reasons)
         check_specifications(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         if "UUID" in header and isinstance(content.get("ID"), V):
@@ -2895,6 +2981,7 @@ def main(flow_id, check=False):
     check_reference_uuids(flow_id, roots)
     check_air_uld_ids(flow_id, roots)
     check_party_profiles(flow_id, roots, docs)
+    check_calendar(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}

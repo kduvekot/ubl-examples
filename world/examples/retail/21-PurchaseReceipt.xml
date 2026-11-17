@@ -7,7 +7,7 @@
   <cbc:ID>BS-PR-26-0239</cbc:ID>
   <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
-  <cbc:IssueTime>11:42:00</cbc:IssueTime>
+  <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
   <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
@@ -66,7 +66,7 @@
         <cbc:PostalZone>38515</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -115,7 +115,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
         <cbc:ElectronicMail>receivables@brightmarket.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -139,7 +139,7 @@
         <cbc:PostalZone>38516</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -214,14 +214,14 @@
       <cbc:PostalZone>38516</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:DeliveryAddress>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-05-17</cbc:StartDate>
+      <cbc:StartDate>2026-05-16</cbc:StartDate>
       <cbc:StartTime>09:00:00</cbc:StartTime>
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:RequestedDeliveryPeriod>
