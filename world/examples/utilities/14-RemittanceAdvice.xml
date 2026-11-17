@@ -15,7 +15,6 @@
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
-  <cbc:PayerReference>VT-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
@@ -269,28 +268,8 @@
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
-    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Selanu Telecom</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -301,10 +280,5 @@
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>ST-INV-26-0323</cbc:ID>
-      <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

@@ -1137,7 +1137,6 @@ def retail(n, doc):
                                  "line_extra": {
                                      "AccountingCostCode": V("6120", "The store's garden department."),
                                      "AccountingCost": V("Garden department", "In words."),
-                                     "PaymentPurposeCode": V("GDDS", "ISO 20022 purpose code GDDS: goods."),
                                      "Delivery": {"ActualDeliveryDate": V(f.date(10), "The delivery the bench "
                                                                                       "was refused at.")},
                                      "DespatchLineReference": {"LineID": V("1", "The despatch line."),
@@ -3120,10 +3119,13 @@ def utilities(n, doc):
                                             "How the household pays.")
         return out
     if doc["doc"] == "RemittanceAdvice":
+        purpose = {"33-xu": ("ELEC", "an electricity bill, the larger part of the bill paid"),
+                   "35-xl": ("PHON", "a telephone bill")}.get(bill_key(doc), ("WTER", "a water bill"))
         if bill_key(doc) == "33-xu":
             return kit.remittance(f, n, doc, 9, "Paid within ten days, to take the cash discount of the invoice's "
-                                                "terms.", key="invoice-33-xu", discount="2")
-        return kit.remittance(f, n, doc, 18, "Paid before the due date.", key=f"invoice-{bill_key(doc)}")
+                                                "terms.", key="invoice-33-xu", discount="2", purpose=purpose)
+        return kit.remittance(f, n, doc, 18, "Paid before the due date.", key=f"invoice-{bill_key(doc)}",
+                              purpose=purpose)
     if doc["doc"] == "Reminder":
         key, cur = bill_key(doc), "XBL"
         due = f.numbers[f"invoice-{key}-amount"]
@@ -7460,9 +7462,7 @@ def _(f, n, doc, out):
     li["UUID"] = line_uuid(f, "order", 1)
     li["ItemPriceExtension"] = {"Amount": amount(ext, "XBL", "The price times the quantity, before any allowance.")}
     li["TaxTotal"] = {"TaxAmount": amount(0, "XBL", "No sales tax: the store buys for resale.")}
-    li["LineReference"] = {"LineID": V("1", "The line of the quotation the order line takes up."),
-                           "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation.")}}
-    return {}
+    return {}      # the quotation line is referenced once, by the order line (furniture/08#F11)
 
 
 @enrich("furniture", "OrderCancellation")

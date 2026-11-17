@@ -390,7 +390,6 @@
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">520.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
     <cbc:AccountingCost>Garden department</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

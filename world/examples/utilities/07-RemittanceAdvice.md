@@ -38,8 +38,6 @@ The shop pays its water bill and says which invoice the transfer settles.
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **BS-PAY-26-0313**  
   The payment order the payer gave its bank.
-- `PayerReference` = **BS-0313**  
-  The payer's own reference for this payment run.
 - `InvoicingPartyReference` = **RF03CSWCINV260317**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
@@ -410,18 +408,10 @@ Inside `RemittanceAdviceLine`:
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
-- `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
-  ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
+- `PaymentPurposeCode` = **WTER** (listID `ISO 20022 ExternalPurpose1Code`)  
+  ISO 20022 purpose code WTER: a water bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: WTER = WaterBill.
 - `InvoicingPartyReference` = **RF03CSWCINV260317**  
   The reference the invoicing party asked to quote.
-- `AccountingSupplierParty/Party/PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingSupplierParty/Party/PartyName/Name` = **Coastal State Water Company**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
@@ -430,12 +420,6 @@ Inside `RemittanceAdviceLine`:
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date, so the reference is unambiguous.
-- `DocumentReference/ID` = **CSWC-INV-26-0317**  
-  The invoice paid, as a document reference.
-- `DocumentReference/IssueDate` = **2026-04-02**  
-  Its issue date.
-- `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -456,7 +440,6 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">238.22</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>BS-PAY-26-0313</cbc:PaymentOrderReference>
-  <cbc:PayerReference>BS-0313</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
@@ -757,28 +740,8 @@ Inside `RemittanceAdviceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XBL">238.22</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
-    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">WTER</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Coastal State Water Company</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -789,11 +752,6 @@ Inside `RemittanceAdviceLine`:
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>CSWC-INV-26-0317</cbc:ID>
-      <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

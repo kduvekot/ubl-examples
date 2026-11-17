@@ -607,8 +607,10 @@ def invoice_delivery(flow, out, buyer, day):
         out["Delivery"] = delivery
 
 
-def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None):
-    """credit: (number, date, amount) of a credit note the payer deducts."""
+def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None,
+               purpose=("SUPP", "payment to a supplier")):
+    """credit: (number, date, amount) of a credit note the payer deducts. purpose: the ISO 20022 purpose of the
+    payment, which names what the invoice paid is for (worklist C17)."""
     payer, payee = doc["from"], doc["to"]
     cur, total = flow.numbers[f"{key}-currency"], flow.numbers[f"{key}-amount"]
     paid = money(total * (1 - Decimal(discount) / 100), cur) if discount else total
@@ -624,7 +626,6 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
                                     "The credit note deducted." if credit else "No credits taken."),
         "PaymentOrderReference": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payment order the payer gave "
                                                                                 "its bank."),
-        "PayerReference": V(f"{initials(payer)}-{flow.base:04d}", "The payer's own reference for this payment run."),
         "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked to "
                                                                       "quote."),
         "LineCountNumeric": V("2" if credit else "1", "The invoice paid" + (" and the credit note deducted."
@@ -643,15 +644,10 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
             "PayeeFinancialAccount": account(doc["parties"].get("PayeeParty", payee), "The account stated on the invoice.")},
         "RemittanceAdviceLine": {
             "ID": V("1", "One invoice paid."),
-            "PaymentPurposeCode": V("SUPP", "ISO 20022 purpose code SUPP: payment to a supplier."),
+            "PaymentPurposeCode": V(purpose[0], f"ISO 20022 purpose code {purpose[0]}: {purpose[1]}."),
             "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked "
                                                                           "to quote."),
             "BalanceAmount": amount(0, cur, "Nothing remains open on the invoice after this payment."),
-            "AccountingSupplierParty": {"Party": party_short(payee)},
-            "AccountingCustomerParty": {"Party": party_short(payer)},
-            "DocumentReference": {"ID": V(flow.numbers[key], "The invoice paid, as a document reference."),
-                                  "DocumentTypeCode": V("Invoice", "UN/EDIFACT 1001 code 380: commercial invoice."),
-                                  "IssueDate": V(flow.numbers[f"{key}-date"], "Its issue date.")},
             "DebitLineAmount": amount(total, cur, "The amount of the invoice this payment settles: the whole payable "
                                                   "amount. Paid invoices are debits on a remittance advice, as in the "
                                                   "OASIS example UBL-RemittanceAdvice-2.0-Example."),

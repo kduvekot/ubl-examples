@@ -40,8 +40,6 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The amount transferred: the invoice less the credit note.
 - `PaymentOrderReference` = **VT-PAY-26-0123**  
   The payment order the payer gave its bank.
-- `PayerReference` = **VT-0123**  
-  The payer's own reference for this payment run.
 - `InvoicingPartyReference` = **RF20LDINV260147**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **2**  
@@ -457,14 +455,6 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
 - `InvoicingPartyReference` = **RF20LDINV260147**  
   The reference the invoicing party asked to quote.
-- `AccountingSupplierParty/Party/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingSupplierParty/Party/PartyName/Name` = **Harbourline Factoring**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `BuyerCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `BuyerCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
@@ -489,12 +479,6 @@ Inside `RemittanceAdviceLine`:
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date, so the reference is unambiguous.
-- `DocumentReference/ID` = **LD-INV-26-0147**  
-  The invoice paid, as a document reference.
-- `DocumentReference/IssueDate` = **2026-05-14**  
-  Its issue date.
-- `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's UBL document type list: Invoice.
 - `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -540,7 +524,6 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalCreditAmount currencyID="XBL">64.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">43714.00</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
-  <cbc:PayerReference>VT-0123</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
@@ -881,26 +864,6 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Harbourline Factoring</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
     <cac:BuyerCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -953,11 +916,6 @@ Inside `RemittanceAdviceLine`:
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>LD-INV-26-0147</cbc:ID>
-      <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>

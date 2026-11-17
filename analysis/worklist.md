@@ -591,6 +591,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D23 (the utility invoices these remittances pay become due 21 days after the bill under one Accord code, O73), D24 (the remittance number shared by three payers goes with C74).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1e): the remittance builder references each paid invoice once per line (its billing reference), gives the payment order once (no second `PayerReference`), leaves out the line's parties that repeat the header's, and names the purpose of the payment (`purpose`: `ELEC`, `WTER` and `PHON` for the utility bills, `SUPP` otherwise); the store's credit note settled by set-off carries no payment purpose; the furniture order refers to its quotation line once. Coverage: O145.
 - Findings: cotton: 18#F2, 18#F3, 18#F4; furniture: 08#F11; ore: 08#F2, 08#F3, 08#F4; plastics: 11#F3, 11#F4; retail: 19#F11; road: 17#F9, 17#F10; utilities: 04#F3, 04#F5, 04#F8, 07#F4, 07#F6, 14#F9, 14#F10; wood: 09#F7, 09#F8
 
 ### C18 · Transport events without type or place, or as generic events where a dedicated one exists

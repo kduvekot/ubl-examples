@@ -420,12 +420,6 @@ Inside `OrderLine`:
   No sales tax: the store buys for resale.
 - `LineItem/ItemPriceExtension/Amount` = **12200.00** (currencyID `XBL`)  
   The price times the quantity, before any allowance.
-- `LineItem/LineReference/LineID` = **1**  
-  The line of the quotation the order line takes up.
-- `LineItem/LineReference/DocumentReference/ID` = **BF-DOC-26-0568**  
-  The quotation.
-- `LineItem/LineReference/DocumentReference/DocumentTypeCode` = **Quotation** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-DOC-26-0568 is the example furniture/02, a Quotation; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Quotation.
 - `QuotationLineReference/LineID` = **1**  
   The quotation line accepted.
 
@@ -783,13 +777,6 @@ Inside `OrderLine`:
       <cac:ItemPriceExtension>
         <cbc:Amount currencyID="XBL">12200.00</cbc:Amount>
       </cac:ItemPriceExtension>
-      <cac:LineReference>
-        <cbc:LineID>1</cbc:LineID>
-        <cac:DocumentReference>
-          <cbc:ID>BF-DOC-26-0568</cbc:ID>
-          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Quotation</cbc:DocumentTypeCode>
-        </cac:DocumentReference>
-      </cac:LineReference>
     </cac:LineItem>
     <cac:QuotationLineReference>
       <cbc:LineID>1</cbc:LineID>

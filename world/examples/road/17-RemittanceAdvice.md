@@ -38,8 +38,6 @@ The distributor announces the cross-border payment and which invoices it settles
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **LD-PAY-26-0149**  
   The payment order the payer gave its bank.
-- `PayerReference` = **LD-0149**  
-  The payer's own reference for this payment run.
 - `InvoicingPartyReference` = **RF78VIINV260166**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
@@ -398,24 +396,10 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
 - `InvoicingPartyReference` = **RF78VIINV260166**  
   The reference the invoicing party asked to quote.
-- `AccountingSupplierParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingSupplierParty/Party/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyName/Name` = **Lumeway Distribution**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0166**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-24**  
   Its issue date, so the reference is unambiguous.
-- `DocumentReference/ID` = **VI-INV-26-0166**  
-  The invoice paid, as a document reference.
-- `DocumentReference/IssueDate` = **2026-03-24**  
-  Its issue date.
-- `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -436,7 +420,6 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
-  <cbc:PayerReference>LD-0149</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
@@ -737,37 +720,12 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0166</cbc:ID>
         <cbc:IssueDate>2026-03-24</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>VI-INV-26-0166</cbc:ID>
-      <cbc:IssueDate>2026-03-24</cbc:IssueDate>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

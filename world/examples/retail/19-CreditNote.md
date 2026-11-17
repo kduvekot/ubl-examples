@@ -523,8 +523,6 @@ Inside `CreditNoteLine`:
   The store's garden department.
 - `AccountingCost` = **Garden department**  
   In words.
-- `PaymentPurposeCode` = **GDDS** (listID `ISO 20022 ExternalPurpose1Code`)  
-  ISO 20022 purpose code GDDS: goods. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: GDDS = PurchaseSaleOfGoods.
 - `OrderLineReference/LineID` = **1**  
   The order line.
 - `DiscrepancyResponse/ReferenceID` = **1**  
@@ -1167,7 +1165,6 @@ Inside `CreditNoteLine`:
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">520.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
     <cbc:AccountingCost>Garden department</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

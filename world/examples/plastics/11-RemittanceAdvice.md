@@ -38,8 +38,6 @@ The packaging maker pays from Bayvarra to the waste processor's account in Urvan
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **RP-PAY-26-0882**  
   The payment order the payer gave its bank.
-- `PayerReference` = **RP-0882**  
-  The payer's own reference for this payment run.
 - `InvoicingPartyReference` = **RF89RRINV260894**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
@@ -418,24 +416,10 @@ Inside `RemittanceAdviceLine`:
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
 - `InvoicingPartyReference` = **RF89RRINV260894**  
   The reference the invoicing party asked to quote.
-- `AccountingSupplierParty/Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingSupplierParty/Party/PartyName/Name` = **Rinova Recovery**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AccountingCustomerParty/Party/PartyName/Name` = **Rivermouth Packaging**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `BillingReference/InvoiceDocumentReference/ID` = **RR-INV-26-0894**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-20**  
   Its issue date, so the reference is unambiguous.
-- `DocumentReference/ID` = **RR-INV-26-0894**  
-  The invoice paid, as a document reference.
-- `DocumentReference/IssueDate` = **2026-04-20**  
-  Its issue date.
-- `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  UN/EDIFACT 1001 code 380: commercial invoice. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -456,7 +440,6 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">9984000</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>RP-PAY-26-0882</cbc:PaymentOrderReference>
-  <cbc:PayerReference>RP-0882</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF89RRINV260894</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
@@ -775,37 +758,12 @@ Inside `RemittanceAdviceLine`:
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF89RRINV260894</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Rinova Recovery</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Rivermouth Packaging</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>RR-INV-26-0894</cbc:ID>
         <cbc:IssueDate>2026-04-20</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>RR-INV-26-0894</cbc:ID>
-      <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```
