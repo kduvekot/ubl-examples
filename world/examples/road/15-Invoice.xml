@@ -12,7 +12,6 @@
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-24</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -340,13 +339,6 @@
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-24</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>

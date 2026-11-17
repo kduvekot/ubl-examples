@@ -28,8 +28,6 @@ Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the
   The time the sender's system issued the document, in the sender's local time.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `RequestedInvoiceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The mill asks to be invoiced in coral, the ginnery's currency, and pays the exchange itself. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the seller's currency, in which the seller's prices are; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **2200**  
@@ -380,7 +378,6 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>10:37:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:RequestedInvoiceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:RequestedInvoiceCurrencyCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>

@@ -418,11 +418,6 @@
     <cbc:ID>VT-PO-26-0127</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
-  <cac:ExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-  </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>

@@ -34,8 +34,6 @@ The gas producer invoices March's gas to the power station, in ferra as the supp
   Why ferra.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the buyer's currency, agreed in the contract; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
@@ -487,20 +485,6 @@ Inside `InvoiceLine`:
   The seller's price of 36.0 XBL, converted to the buyer's currency at the world's reference rate, as the contract provides.
 - `Price/BaseQuantity` = **1** (unitCode `MWH`)  
   The price is per one unit.
-- `Price/PricingExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the seller's price list. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Price/PricingExchangeRate/SourceCurrencyBaseRate` = **1**  
-  The rate is for one unit of the seller's currency.
-- `Price/PricingExchangeRate/TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency of the order. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
-  Given in single units of the order's currency.
-- `Price/PricingExchangeRate/CalculationRate` = **100**  
-  The world's reference rate (world/countries.json).
-- `Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  The seller's price times the rate gives the order price. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Price/PricingExchangeRate/Date` = **2026-01-02**  
-  The reference rate of the first working day of the year, fixed in the contract.
 
 ## The document
 
@@ -519,7 +503,6 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Priced in ferra as the supply contract says: the buyer's own currency.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
@@ -878,15 +861,6 @@ Inside `InvoiceLine`:
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">3600</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MWH">1</cbc:BaseQuantity>
-      <cac:PricingExchangeRate>
-        <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
-        <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:CalculationRate>100</cbc:CalculationRate>
-        <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-        <cbc:Date>2026-01-02</cbc:Date>
-      </cac:PricingExchangeRate>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

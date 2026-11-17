@@ -32,8 +32,6 @@ Goods and carriage to the site; an export, so no sales tax.
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PaymentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **3**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
@@ -619,7 +617,6 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-07-19</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>

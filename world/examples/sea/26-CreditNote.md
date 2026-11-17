@@ -32,8 +32,6 @@ One boxed side frame arrived crushed; the distributor credits it, and the buyer 
   Why a credit under CIF.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PaymentAlternativeCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The buyer's currency, shown too. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, as on the invoice credited.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -340,17 +338,6 @@ Inside `PaymentTerms`:
 - `Note` = **Settled against the next payment to the seller, unless refunded.**  
   How a credit note is settled in the world.
 
-### Payment Alternative Exchange Rate
-
-Inside `PaymentAlternativeExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The credit's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The buyer's. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **0.4**  
-  The reference rate.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -458,7 +445,6 @@ Inside `CreditNoteLine`:
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:Note>Under CIF the risk was the buyer's on board; the distributor credits the frame as a goodwill gesture and claims from the insurer.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -682,11 +668,6 @@ Inside `CreditNoteLine`:
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
   </cac:PaymentTerms>
-  <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

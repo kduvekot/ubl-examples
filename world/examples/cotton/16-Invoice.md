@@ -32,8 +32,6 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the seller's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PaymentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **2200**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Raw cotton**  
@@ -495,7 +493,6 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-04-01</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

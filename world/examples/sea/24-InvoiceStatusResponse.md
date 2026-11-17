@@ -254,12 +254,6 @@ Inside `Payment`:
   The planned payment day.
 - `InstructionID` = **VT-PAY-26-0199**  
   The buyer's payment order.
-- `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The buyer's. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `ExchangeRate/CalculationRate` = **0.4**  
-  The reference rate.
 - `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
   The invoice.
 - `RemittanceDocumentReference/ID` = **VT-RM-26-0150**  
@@ -472,11 +466,6 @@ Inside `DocumentResponse`:
     <cbc:PaidAmount currencyID="XBL">43778.00</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-25</cbc:PaidDate>
     <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    </cac:ExchangeRate>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>LD-INV-26-0147</cbc:ID>

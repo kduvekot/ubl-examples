@@ -38,8 +38,6 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **1300**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Raw materials**  
@@ -580,7 +578,6 @@ Inside `InvoiceLine`:
   <cbc:Note languageID="en-XU">Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

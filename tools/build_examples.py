@@ -1611,6 +1611,77 @@ def tax_arithmetic(content, where):
                                      "C24).", **old.attrs)
 
 
+# ---------------------------------------------------------------- currencies with something to convert (worklist C11)
+CURRENCY_PAIRS = {"PricingCurrencyCode": "PricingExchangeRate", "TaxCurrencyCode": "TaxExchangeRate",
+                  "PaymentCurrencyCode": "PaymentExchangeRate",
+                  "PaymentAlternativeCurrencyCode": "PaymentAlternativeExchangeRate",
+                  "RequestedInvoiceCurrencyCode": None}
+RATE_FREE_DOCS = {"ForwardingInstructions", "Waybill", "BillOfLading", "Statement", "RemittanceAdvice",
+                  "InvoiceStatusResponse", "UtilityStatement"}
+
+
+def _currencies(node, out, prices=None):
+    if isinstance(node, list):
+        for x in node:
+            _currencies(x, out, prices)
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            if k.endswith("ExchangeRate") or k == "ExchangeRate":
+                continue
+            if isinstance(v, V) and v.attrs.get("currencyID"):
+                out.add(v.attrs["currencyID"])
+                if prices is not None and k == "PriceAmount":
+                    prices.add(v.attrs["currencyID"])
+            _currencies(v, out, prices)
+
+
+def currency_cleanup(content, doc):
+    """Every currency code and exchange rate converts something the document states (worklist C11): no currency
+    equal to the document's, no rate from a currency to itself, no pricing currency the prices are not in, no
+    alternative payment currency without an amount in it, and no free-standing rate in a transport document, a
+    statement, a remittance or a status response when no amount is in the other currency."""
+    dc = content.get("DocumentCurrencyCode")
+    dc = dc.value if isinstance(dc, V) else None
+    used, prices = set(), set()
+    _currencies(content, used, prices)
+    for code, rate in CURRENCY_PAIRS.items():
+        v = content.get(code)
+        if not isinstance(v, V):
+            continue
+        drop = v.value == dc
+        if code == "PricingCurrencyCode" and prices and v.value not in prices:
+            drop = True
+        if code == "PaymentAlternativeCurrencyCode" and "PayableAlternativeAmount" not in str(content.get(
+                "LegalMonetaryTotal", "")):
+            drop = True
+        if drop:
+            del content[code]
+            if rate:
+                content.pop(rate, None)
+    if "PricingExchangeRate" in content and "PricingCurrencyCode" not in content:
+        del content["PricingExchangeRate"]
+
+    def walk(node, free):
+        if isinstance(node, list):
+            for x in node:
+                walk(x, free)
+            return
+        if not isinstance(node, dict):
+            return
+        for k in list(node):
+            v = node[k]
+            if (k == "ExchangeRate" or k.endswith("ExchangeRate")) and isinstance(v, dict):
+                src, tgt = v.get("SourceCurrencyCode"), v.get("TargetCurrencyCode")
+                src, tgt = (src.value if isinstance(src, V) else None), (tgt.value if isinstance(tgt, V) else None)
+                other = {src, tgt} - {dc, None}
+                idle = not (other & used) if dc else not ({src, tgt} <= used)   # no amount in the other currency
+                if src == tgt or (free and k == "ExchangeRate" and idle):
+                    del node[k]
+                    continue
+            walk(v, free)
+    walk(content, doc["doc"] in RATE_FREE_DOCS)
+
+
 # ---------------------------------------------------------------- items ordered from a catalogue (worklist C25)
 def catalogue_items(content, doc):
     """An order placed from the seller's catalogue, which it cites, marks its items as ordered from it: the place
@@ -2102,6 +2173,7 @@ def main(flow_id, check=False):
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
         requested_delivery(content, doc, n)
         catalogue_items(content, doc)
+        currency_cleanup(content, doc)
         tax_arithmetic(content, f"{flow_id} {n} {doc['doc']}")
         transport_goods(content, doc)
         identify_places(content)

@@ -11,7 +11,6 @@
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:Note>Release 1 under the framework contract: 40 of the 240 benches.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
@@ -256,20 +255,6 @@
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-03-23</cbc:Date>
   </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:ExchangeMarketID schemeID="urn:ubl-examples:world:codelist:MarketCode">XLMX</cbc:ExchangeMarketID>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-    <cac:ForeignExchangeContract>
-      <cbc:ID>BL-FX-26-0091</cbc:ID>
-      <cbc:IssueDate>2026-01-02</cbc:IssueDate>
-      <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:FXContractTypeCode">FORWARD</cbc:ContractTypeCode>
-      <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
-    </cac:ForeignExchangeContract>
-  </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>

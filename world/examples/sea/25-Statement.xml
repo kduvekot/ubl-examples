@@ -469,11 +469,6 @@
       <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
       <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
     </cac:DocumentReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    </cac:ExchangeRate>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>

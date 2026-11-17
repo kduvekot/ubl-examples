@@ -38,14 +38,6 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The same note in English, the working language between the countries: The statement the self-billing agreement requires on every invoice.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the supplier's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TaxCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The presumptive tax is paid to the island's tax office in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  Seed cotton is priced from the trade accord's lint reference price, published in lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PaymentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The farm is paid in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PaymentAlternativeCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The farm may ask to be paid in lume, to its account in Bayvarra, where it buys its machinery. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **200**  
   The customer's own cost centre: it books what it billed itself.
 - `AccountingCost` = **Seed cotton purchases**  
@@ -595,66 +587,6 @@ Inside `AllowanceCharge`:
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Credit transfer, with the invoice. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The tax currency, coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **1**  
-  The same currency: no conversion.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Coral times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-02-07**  
-  Of the document's date.
-
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The reference price's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The document's. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **0.4**  
-  The reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives coral. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-02-07**  
-  Of the document's date.
-
-### Payment Exchange Rate
-
-Inside `PaymentExchangeRate`:
-
-- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The payment currency, coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **1**  
-  The same currency: no conversion.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Coral times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-02-07**  
-  Of the document's date.
-
-### Payment Alternative Exchange Rate
-
-Inside `PaymentAlternativeExchangeRate`:
-
-- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  Lume, the alternative. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `CalculationRate` = **2.5**  
-  The reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Coral times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-02-07**  
-  Of the document's date.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -831,10 +763,6 @@ Inside `InvoiceLine`:
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -1235,34 +1163,6 @@ Inside `InvoiceLine`:
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-07</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-07</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-07</cbc:Date>
-  </cac:PaymentExchangeRate>
-  <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>2.5</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-07</cbc:Date>
-  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

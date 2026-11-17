@@ -11,7 +11,6 @@
   <cbc:DueDate>2026-04-01</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

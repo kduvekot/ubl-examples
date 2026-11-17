@@ -14,10 +14,6 @@
   <cbc:Note languageID="qal">Lakau-votee tetela tamasu tilala kimii mitavema.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed credit note under the season agreement.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Seed cotton purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -325,34 +321,6 @@
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-14</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-14</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-14</cbc:Date>
-  </cac:PaymentExchangeRate>
-  <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>2.5</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-02-14</cbc:Date>
-  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

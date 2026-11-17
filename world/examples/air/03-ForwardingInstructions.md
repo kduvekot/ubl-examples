@@ -445,17 +445,6 @@ Inside `DocumentReference`:
 - `DocumentTypeCode` = **OrderChange** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to, Velumi's order change for the frames by air (air/01), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
 
-### Exchange Rate
-
-Inside `ExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The freight's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The island's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **0.4**  
-  The reference rate.
-
 ### Document Distribution
 
 Inside `DocumentDistribution`:
@@ -860,11 +849,6 @@ Inside `Signature`:
     <cbc:ID>VT-PO-26-0319</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
-  <cac:ExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-  </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>

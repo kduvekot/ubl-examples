@@ -407,11 +407,6 @@
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    </cac:ExchangeRate>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>

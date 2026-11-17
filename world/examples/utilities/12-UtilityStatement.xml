@@ -230,13 +230,6 @@
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:ExchangeRate>
-            <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-            <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-            <cbc:CalculationRate>0.4</cbc:CalculationRate>
-            <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-            <cbc:Date>2026-03-31</cbc:Date>
-          </cac:ExchangeRate>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
             <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
@@ -311,11 +304,6 @@
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
             <cbc:Quantity unitCode="E34">35</cbc:Quantity>
-            <cac:ExchangeRate>
-              <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-              <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-              <cbc:CalculationRate>0.4</cbc:CalculationRate>
-            </cac:ExchangeRate>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>

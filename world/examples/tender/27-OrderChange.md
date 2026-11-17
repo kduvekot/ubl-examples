@@ -30,8 +30,6 @@ The department wants the benches of this release in the harbour park's moss gree
   The first change of the call-off.
 - `Note` = **Please deliver the benches of this release in moss green, RAL 6005.**  
   The change.
-- `RequestedInvoiceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The department wants its invoices in lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the department's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PricingCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -445,22 +443,12 @@ Inside `PricingExchangeRate`:
   The currency of the contract prices. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The currency of the order and the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `ExchangeMarketID` = **XLMX** (schemeID `urn:ubl-examples:world:codelist:MarketCode`)  
-  The market the rate comes from: the contract fixes the rate at the Lumeport Exchange's noon fixing of the ferra on the first working day of the year, and the bank struck the department's forward purchase at it. The code is from the Trade Accord's market identifier list: XLMX = Lumeport Exchange. An identifier that holds a code names the code's list in its schemeID.
 - `CalculationRate` = **0.01**  
   The world's reference rate fixed in the contract.
 - `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-01-02**  
   The rate of the first working day of the year, as the contract says.
-- `ForeignExchangeContract/ID` = **BL-FX-26-0091**  
-  The department's forward contract with the Bank of Lumeport, which fixes the rate for the year.
-- `ForeignExchangeContract/IssueDate` = **2026-01-02**  
-  Concluded on the rate date.
-- `ForeignExchangeContract/ContractTypeCode` = **FORWARD** (listID `urn:ubl-examples:world:codelist:FXContractTypeCode`)  
-  A currency forward. The code is from the Trade Accord's foreign exchange contract type list: FORWARD = Forward.
-- `ForeignExchangeContract/ContractType` = **Forward purchase of ferra**  
-  In words.
 
 ### Payment Exchange Rate
 
@@ -520,7 +508,6 @@ Inside `OrderLine`:
   <cbc:IssueTime>08:06:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:Note>Please deliver the benches of this release in moss green, RAL 6005.</cbc:Note>
-  <cbc:RequestedInvoiceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:RequestedInvoiceCurrencyCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
@@ -836,16 +823,9 @@ Inside `OrderLine`:
   <cac:PricingExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:ExchangeMarketID schemeID="urn:ubl-examples:world:codelist:MarketCode">XLMX</cbc:ExchangeMarketID>
     <cbc:CalculationRate>0.01</cbc:CalculationRate>
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-01-02</cbc:Date>
-    <cac:ForeignExchangeContract>
-      <cbc:ID>BL-FX-26-0091</cbc:ID>
-      <cbc:IssueDate>2026-01-02</cbc:IssueDate>
-      <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:FXContractTypeCode">FORWARD</cbc:ContractTypeCode>
-      <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
-    </cac:ForeignExchangeContract>
   </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

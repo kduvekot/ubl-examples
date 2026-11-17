@@ -38,14 +38,8 @@ One pallet's heat-treatment mark was illegible, so customs inspected the contain
   The day the fee was charged.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the buyer's currency, in which customs charged; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TaxCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  No tax, but stated in the island's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PricingCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The fee is priced in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `PaymentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The distributor pays in lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PaymentAlternativeCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The amount in coral, for comparison. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -489,36 +483,6 @@ Inside `PaymentTerms`:
 - `Note` = **30 days net.**  
   The terms.
 
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  No conversion: the tax currency is coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **1**  
-  The same currency.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-22**  
-  The rate of the issue date.
-
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  Priced in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **1**  
-  The same currency.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-22**  
-  The rate of the issue date.
-
 ### Payment Exchange Rate
 
 Inside `PaymentExchangeRate`:
@@ -529,21 +493,6 @@ Inside `PaymentExchangeRate`:
   The distributor's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `CalculationRate` = **2.5**  
   1 coral = 2.5 lume, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-22**  
-  The rate of the issue date.
-
-### Payment Alternative Exchange Rate
-
-Inside `PaymentAlternativeExchangeRate`:
-
-- `SourceCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The debit note's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The coral equivalent. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **1**  
-  The same.
 - `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   Coral times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `Date` = **2026-05-22**  
@@ -722,10 +671,7 @@ Inside `DebitNoteLine`:
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PricingCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
-  <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -1045,20 +991,6 @@ Inside `DebitNoteLine`:
   <cac:PaymentTerms>
     <cbc:Note>30 days net.</cbc:Note>
   </cac:PaymentTerms>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-22</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-22</cbc:Date>
-  </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
@@ -1066,13 +998,6 @@ Inside `DebitNoteLine`:
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-22</cbc:Date>
   </cac:PaymentExchangeRate>
-  <cac:PaymentAlternativeExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>1</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-22</cbc:Date>
-  </cac:PaymentAlternativeExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
     <cac:TaxSubtotal>

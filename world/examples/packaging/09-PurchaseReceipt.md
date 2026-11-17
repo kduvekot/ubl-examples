@@ -320,21 +320,6 @@ Inside `TaxExchangeRate`:
 - `Date` = **2026-05-23**  
   The day of the sale.
 
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The shelf prices are in lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The receipt is in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **0.4**  
-  The world's reference rate, which the till applies.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives coral. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-23**  
-  The day of the sale.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -655,13 +640,6 @@ Inside `PurchaseReceiptLine`:
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-23</cbc:Date>
   </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-23</cbc:Date>
-  </cac:PricingExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XLC">2.336</cbc:TaxAmount>
     <cac:TaxSubtotal>

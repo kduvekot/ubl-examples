@@ -14,7 +14,6 @@
   <cbc:Note languageID="en-XU">Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

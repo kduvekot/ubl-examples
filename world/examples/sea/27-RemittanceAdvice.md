@@ -479,12 +479,6 @@ Inside `RemittanceAdviceLine`:
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date, so the reference is unambiguous.
-- `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The buyer's currency it paid from. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `ExchangeRate/CalculationRate` = **0.4**  
-  The rate the buyer's bank applied.
 - `ID` = **2**  
   The credit note deducted.
 - `UUID` = **87f012c8-f767-5ff8-9aa8-8bc8a6a1076a**  
@@ -916,11 +910,6 @@ Inside `RemittanceAdviceLine`:
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    </cac:ExchangeRate>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>

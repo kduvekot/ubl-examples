@@ -1360,17 +1360,6 @@ Inside `DocumentReference`:
 - `DocumentTypeCode` = **ForwardingInstructions** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BF-FI-26-0137 is the example sea/12, a ForwardingInstructions; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
 
-### Exchange Rate
-
-Inside `ExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The freight's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The island's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **0.4**  
-  The reference rate.
-
 ### Document Distribution
 
 Inside `DocumentDistribution`:
@@ -2588,11 +2577,6 @@ Inside `Signature`:
     <cbc:ID>BF-FI-26-0137</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
-  <cac:ExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-  </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>

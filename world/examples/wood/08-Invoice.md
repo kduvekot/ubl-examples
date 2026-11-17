@@ -32,8 +32,6 @@ Slats and delivery. An export from Bayvarra: no sales tax, with the exemption st
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PaymentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **3100**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Raw materials and parts**  
@@ -614,7 +612,6 @@ Inside `InvoiceLine`:
   <cbc:DueDate>2026-03-28</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

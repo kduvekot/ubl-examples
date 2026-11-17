@@ -9,7 +9,6 @@
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>10:37:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:RequestedInvoiceCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:RequestedInvoiceCurrencyCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2200</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw cotton</cbc:AccountingCost>

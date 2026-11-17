@@ -630,21 +630,6 @@ Inside `Shipment`:
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 
-### Exchange Rate
-
-Inside `ExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the freight charges. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The island's currency: its customs adds the freight to the customs value in coral. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `CalculationRate` = **0.4**  
-  The world's reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives coral. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-20**  
-  The rate of the day the waybill is issued.
-
 ### Document Distribution
 
 Inside `DocumentDistribution`:
@@ -1224,13 +1209,6 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
-  <cac:ExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-20</cbc:Date>
-  </cac:ExchangeRate>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

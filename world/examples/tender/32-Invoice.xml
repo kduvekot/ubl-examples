@@ -15,7 +15,6 @@
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
@@ -384,20 +383,6 @@
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-03-31</cbc:Date>
   </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:ExchangeMarketID schemeID="urn:ubl-examples:world:codelist:MarketCode">XLMX</cbc:ExchangeMarketID>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-    <cac:ForeignExchangeContract>
-      <cbc:ID>BL-FX-26-0091</cbc:ID>
-      <cbc:IssueDate>2026-01-02</cbc:IssueDate>
-      <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:FXContractTypeCode">FORWARD</cbc:ContractTypeCode>
-      <cbc:ContractType>Forward purchase of ferra</cbc:ContractType>
-    </cac:ForeignExchangeContract>
-  </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>

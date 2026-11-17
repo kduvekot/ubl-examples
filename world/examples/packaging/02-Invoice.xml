@@ -11,7 +11,6 @@
   <cbc:DueDate>2026-06-01</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

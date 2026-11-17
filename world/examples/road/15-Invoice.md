@@ -34,8 +34,6 @@ The manufacturer invoices the goods only (no freight under FCA) and asks for pay
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **4410**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Stock purchases**  
@@ -432,21 +430,6 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
   Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
-### Payment Exchange Rate
-
-Inside `PaymentExchangeRate`:
-
-- `SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The buyer's currency, from which it pays. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `CalculationRate` = **0.01**  
-  The world's reference rate, for the buyer's information: its bank converts at the day's rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-03-24**  
-  The invoice date.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -779,7 +762,6 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-03-24</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -1107,13 +1089,6 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-24</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>

@@ -11,7 +11,6 @@
   <cbc:DueDate>2026-07-19</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>

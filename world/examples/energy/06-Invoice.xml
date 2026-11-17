@@ -12,7 +12,6 @@
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Priced in ferra as the supply contract says: the buyer's own currency.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
@@ -371,15 +370,6 @@
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">3600</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="MWH">1</cbc:BaseQuantity>
-      <cac:PricingExchangeRate>
-        <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
-        <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:CalculationRate>100</cbc:CalculationRate>
-        <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-        <cbc:Date>2026-01-02</cbc:Date>
-      </cac:PricingExchangeRate>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

@@ -34,8 +34,6 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   The notice of assignment the factoring agreement requires.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PaymentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  Payment is asked in the invoice currency, also from abroad. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PaymentAlternativeCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The buyer's own currency, in which the amount is shown too. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **500**  
@@ -1110,7 +1108,6 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">393</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
   <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>

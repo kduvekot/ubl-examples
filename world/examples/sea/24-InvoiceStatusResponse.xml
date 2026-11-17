@@ -191,11 +191,6 @@
     <cbc:PaidAmount currencyID="XBL">43778.00</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-25</cbc:PaidDate>
     <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    </cac:ExchangeRate>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>LD-INV-26-0147</cbc:ID>

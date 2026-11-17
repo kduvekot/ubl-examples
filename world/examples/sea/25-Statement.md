@@ -548,12 +548,6 @@ Inside `StatementLine`:
   The notice of assignment of the invoice to the factor.
 - `DocumentReference/DocumentType` = **Notice of assignment**  
   The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The buyer's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `ExchangeRate/CalculationRate` = **0.4**  
-  For the buyer's information.
 - `AllowanceCharge/ChargeIndicator` = **true**  
   A charge in the invoice of the line.
 - `AllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
@@ -1075,11 +1069,6 @@ Inside `StatementLine`:
       <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
       <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
     </cac:DocumentReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.4</cbc:CalculationRate>
-    </cac:ExchangeRate>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>

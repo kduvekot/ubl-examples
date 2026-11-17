@@ -14,7 +14,6 @@
   <cbc:Note languageID="en-XU">Delivered at place: the price includes the carriage to the siding.</cbc:Note>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

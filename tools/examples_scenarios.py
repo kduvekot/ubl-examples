@@ -7301,17 +7301,7 @@ def _(f, n, doc, out):
 
 @enrich("tender", "Order")
 def _(f, n, doc, out):
-    return {"PricingExchangeRate": {**PRICING_RATE, "ExchangeMarketID": V("XLMX", "The market the rate comes from: the "
-                                                                    "contract fixes the rate at the Lumeport "
-                                                                    "Exchange's noon fixing of the ferra on the first "
-                                                                    "working day of the year, and the bank struck "
-                                                                    "the department's forward purchase at it."),
-                                    "ForeignExchangeContract": {
-        "ID": V("BL-FX-26-0091", "The department's forward contract with the Bank of Lumeport, which fixes the rate "
-                                 "for the year."),
-        "IssueDate": V("2026-01-02", "Concluded on the rate date."),
-        "ContractTypeCode": V("FORWARD", "A currency forward."),
-        "ContractType": V("Forward purchase of ferra", "In words.")}}}
+    return {}      # no forward contract in a tender document: the hedge is Valdara's, in the story only (D28, O50)
 
 
 @enrich("utilities", "RemittanceAdvice")
@@ -8854,6 +8844,7 @@ def energy(n, doc):
         out["Note"] = V("Priced in ferra as the supply contract says: the buyer's own currency.", "Why ferra.")
         ln = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
         ln["Item"]["OriginAddress"] = platform_location("Where the gas comes from: the field's platform.")
+        ln["Price"].pop("PricingExchangeRate", None)   # the contract price is in ferra: nothing converted (energy/06#F1)
         return out
     if d == "Reminder":
         inv = f.numbers["gas-invoice-amount"]

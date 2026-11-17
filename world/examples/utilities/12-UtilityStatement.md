@@ -325,16 +325,6 @@ Inside `SubscriberConsumption`:
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
   No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency the roaming partner charged in. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The bill's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/CalculationRate` = **0.4**  
-  The reference rate.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ExchangeRate/Date` = **2026-03-31**  
-  The rate at the end of the month.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
   An allowance: it lowers the amount.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
@@ -433,12 +423,6 @@ Inside `SubscriberConsumption`:
   The network used in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **35** (unitCode `E34`)  
   35 gigabytes beyond the subscriptions, at the trade fair in Lumeport.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The partner network's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
-  The bill's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ExchangeRate/CalculationRate` = **0.4**  
-  The reference rate.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **2**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1851**  
@@ -1033,13 +1017,6 @@ Inside `SubscriberConsumption`:
           <cbc:Description>Business line with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:ExchangeRate>
-            <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-            <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-            <cbc:CalculationRate>0.4</cbc:CalculationRate>
-            <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-            <cbc:Date>2026-03-31</cbc:Date>
-          </cac:ExchangeRate>
           <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
             <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
@@ -1114,11 +1091,6 @@ Inside `SubscriberConsumption`:
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
             <cbc:Quantity unitCode="E34">35</cbc:Quantity>
-            <cac:ExchangeRate>
-              <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-              <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
-              <cbc:CalculationRate>0.4</cbc:CalculationRate>
-            </cac:ExchangeRate>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
