@@ -36,18 +36,14 @@ The rail consignment note goes to the transport user, now the seller.
   The kind of transport document.
 - `Description` = **Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.**  
   The carriage in words.
-- `Note` = **Gurbul mizstan: dadrek, miran, sundraz.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): As the convention prescribes.
-- `Note` = **Three originals: consignor, consignee, carrier.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: As the convention prescribes.
-- `ShippingOrderID` = **VI-CS-26-0327**  
-  The shipper's booking the carriage fulfils.
+- `Note` = **Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
+- `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.** (languageID `en-XU`)  
+  The same note in English, the working language between the countries: The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
 - `WaybillTypeCode` = **CMR** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
   The convention the document follows. The code is from the Trade Accord's waybill type list: CMR = Road consignment note (CMR).
 - `ConsolidatedIndicator` = **false**  
   One consignment, not a consolidation.
-- `AdValoremIndicator` = **false**  
-  No value declared to raise the carrier's liability.
 - `OtherInstruction` = **Deliver against signature of the consignee.**  
   What the carrier must do at delivery.
 
@@ -721,6 +717,16 @@ Inside `DocumentReference`:
 Inside `DocumentDistribution`:
 
 - `ID` = **1**  
+  The original for the consignor.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
+- `Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
   The original for the consignee.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
@@ -734,7 +740,7 @@ Inside `DocumentDistribution`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Ferrano Intermodal Hub**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **2**  
+- `ID` = **3**  
   The electronic copy.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
@@ -778,12 +784,10 @@ Inside `Signature`:
   <cbc:IssueTime>13:10:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
-  <cbc:Note languageID="qau">Gurbul mizstan: dadrek, miran, sundraz.</cbc:Note>
-  <cbc:Note languageID="en-XU">Three originals: consignor, consignee, carrier.</cbc:Note>
-  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
+  <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
+  <cbc:Note languageID="en-XU">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CMR</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
     <cbc:Name>Castrano Logistics</cbc:Name>
@@ -1397,6 +1401,19 @@ Inside `Signature`:
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Castrano Logistics</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
     <cbc:DistributionType languageID="qau">Rikzhek, vek drek valnir: drek trelgir rikzhek</cbc:DistributionType>
     <cbc:DistributionType languageID="en-XU">Original, with the goods: the consignee's original</cbc:DistributionType>
@@ -1410,7 +1427,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:DocumentDistribution>
-    <cbc:ID>2</cbc:ID>
+    <cbc:ID>3</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
     <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>

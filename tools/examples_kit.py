@@ -745,6 +745,12 @@ WAYBILL_KIND = {"road": ("CMR", "Consignment note under the road convention, the
                 "air": ("AWB", "Air waybill under the Montreal Convention")}
 
 
+def shipping_order(flow):
+    """The ShippingOrderID of a shipment: the number of the forwarding instructions it is booked under, to the
+    carrier where there are two (worklist C20); None where the flow has no forwarding instructions."""
+    return flow.numbers.get("instructions-carrier") or flow.numbers.get("instructions")
+
+
 def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     carrier = doc["from"]
     leg = flow_leg(flow, carrier)
@@ -757,26 +763,33 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "StatusCode": V("ISSUED", "The note is issued and in force."),
            "IssueDate": V(flow.date(day), why),
            "Name": V(kind_name, "The kind of transport document."),
-           "ShippingOrderID": V(flow.numbers.get("consignment", number), "The shipper's booking the carriage "
-                                                                         "fulfils."),
+           **({"ShippingOrderID": V(shipping_order(flow), "The forwarding instructions the carriage is booked "
+                                                          "under.")} if shipping_order(flow) else {}),
            "Description": V(leg["why"], "The carriage in words."),
-           "Note": V("Three originals: consignor, consignee, carrier.", "As the convention prescribes."),
+           "Note": V("Three originals: the consignor's, handed over when the carrier took over the goods; the "
+                     "consignee's, with the goods; the carrier's, kept by the carrier.", "The originals the convention "
+                     "prescribes, as the distribution below lists them; the carrier's own is not distributed "
+                     "(worklist C33)."),
            "WaybillTypeCode": V(kind, "The convention the document follows."),
            "ConsolidatedIndicator": V("false", "One consignment, not a consolidation."),
-           "AdValoremIndicator": V("false", "No value declared to raise the carrier's liability."),
            "OtherInstruction": V("Deliver against signature of the consignee.", "What the carrier must do at "
                                                                                "delivery."),
            "IssueLocation": {"Name": V(PARTY[leg["from"]]["identity"]["name"], "Where the carrier took over the "
                                                                              "goods and issued the note.")},
            "DocumentDistribution": [
-               {"ID": V("1", "The original for the consignee."),
+               {"ID": V("1", "The original for the consignor."),
+                "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
+                "DistributionTypeCode": V("ORIGINALHANDED", "The consignor's original, handed over when the carrier "
+                                                            "took over the goods, as the convention prescribes."),
+                "Party": party_short(leg["from"])},
+               {"ID": V("2", "The original for the consignee."),
                 "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
                 "DistributionTypeCode": V("ORIGINALWITHGOODS", "One of the three originals travels with the goods to "
                                                                "the consignee, as the convention prescribes."),
                 "DistributionType": Detail("the consignee's original", "the original the consignee signs on "
                                                                          "delivery."),
                 "Party": party_short(leg["to"])},
-               {"ID": V("2", "The electronic copy."),
+               {"ID": V("3", "The electronic copy."),
                 "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
                 "DistributionTypeCode": V("ELECTRONICCOPY", "The receiver of this message gets a copy, for its "
                                                             "records; the originals are on paper."),

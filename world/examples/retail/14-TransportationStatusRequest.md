@@ -34,8 +34,6 @@ The distributor, as transport user, asks the carrier for the truck's arrival tim
   The question.
 - `Note` = **The promotion starts soon.**  
   Why the store asks.
-- `ShippingOrderID` = **LD-CS-26-0228**  
-  The booking asked about.
 - `OtherInstruction` = **Answer with the expected delivery time.**  
   What the answer should hold.
 - `TransportationStatusTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
@@ -320,7 +318,6 @@ Inside `RequestedStatusPeriod`:
   <cbc:Name>Status request</cbc:Name>
   <cbc:Description>When will the benches arrive?</cbc:Description>
   <cbc:Note>The promotion starts soon.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0228</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Answer with the expected delivery time.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">DELIVERY</cbc:TransportationStatusTypeCode>
   <cac:SenderParty>

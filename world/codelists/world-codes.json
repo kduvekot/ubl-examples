@@ -7656,6 +7656,7 @@
    "location": "world/codelists/gc/DistributionTypeCode.gc",
    "codes": [
     "ORIGINALCOURIER",
+    "ORIGINALHANDED",
     "ORIGINALWITHGOODS",
     "COLLECT",
     "SCANNEDCOPY",

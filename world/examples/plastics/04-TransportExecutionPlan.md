@@ -626,8 +626,6 @@ Inside `Consignment`:
   Down the river, from the recovery plant's quay to the river quay in Lumeport.
 - `MainCarriageShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   UN/ECE Recommendation 19 code 8: inland water transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 8 = Inland water transport.
-- `MainCarriageShipmentStage/TransportMeans/JourneyID` = **FB4-26-031**  
-  The barge operator's voyage number.
 - `MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
 - `MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
@@ -1163,7 +1161,6 @@ Inside `Consignment`:
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
       <cac:TransportMeans>
-        <cbc:JourneyID>FB4-26-031</cbc:JourneyID>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
         <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">DS</cbc:DirectionCode>

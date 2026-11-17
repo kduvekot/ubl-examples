@@ -119,8 +119,7 @@ def road_stage(f, actual):
              "TransitPeriod": {"StartDate": V(f.date(7), "Collected in the afternoon."),
                                "EndDate": V(f.date(9), "Delivered in the morning, after the night rest of the "
                                                        "driver and the border.")},
-             "TransportMeans": kit.means("13-xu", "T-07", ROAD_JOB, "The carrier's job number, the same on every "
-                                                                   "document of this truck.", "WB"),
+             "TransportMeans": kit.means("13-xu", "T-07", direction="WB"),   # a one-off trip: no JourneyID (C41, D35)
              "DriverPerson": kit.person("Ilario", "Bencetti", "The driver of the truck.", "XU-DL-0417722"),
              "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Ferrano."),
              "UnloadingPortLocation": kit.place("XBMRW", "Unloaded at the distributor's distribution centre."),
@@ -735,8 +734,7 @@ def barge_stage(f, actual):
     out = {"ID": V("1", "Down the river, from the recovery plant's quay to the river quay in Lumeport."),
            "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
-           "TransportMeans": kit.means("15-xu", "FB-4", BARGE_VOYAGE, "The barge operator's voyage number.",
-                                       "DS"),
+           "TransportMeans": kit.means("15-xu", "FB-4", direction="DS"),   # a booked voyage, not a schedule (C41)
            "MasterPerson": kit.person("Tomaso", "Riverra", "The skipper of the barge.", job="Skipper"),
            "LoadingPortLocation": {"Name": V("Quay of Rinova Recovery, Ferrano", "Where the bags are loaded.")},
            "UnloadingPortLocation": {"Name": V("River quay, Lumeport", "The place named in the CPT terms.")},
@@ -1264,7 +1262,7 @@ def sea_consignment(f, view):
         "OriginalDespatchParty": party("6-xb", short=True),
         "FinalDeliveryParty": party("1-xl", short=True),
         "LogisticsOperatorParty": party("9-xl", short=True),
-        "BillOfLadingHolderParty": party("1-xl", short=True),
+        **({"BillOfLadingHolderParty": party("10-xb", short=True)} if view == "bl" else {}),   # sea/14#F11 (b)
         "OriginalDepartureCountry": {"IdentificationCode": V("XB", "From Bayvarra.")},
         "FinalDestinationCountry": {"IdentificationCode": V("XL", "To the island.")},
         "FirstArrivalPortLocation": kit.place("XLSEL", "The first port of call after Lumeport."),
@@ -1635,7 +1633,6 @@ def sea(n, doc):
                 "IssueDate": V(f.date(10), "Issued when the goods are shipped on board."),
                 "CarrierAssignedID": V(SEA_BOOKING, "The booking the bill of lading is issued under."),
                 "ToOrderIndicator": V("true", "Made out to order: the buyer can transfer it by endorsement."),
-                "AdValoremIndicator": V("false", "No value declared to the carrier: its liability stays limited."),
                 "ShippingOrderID": V(f.numbers["instructions-carrier"], "The forwarder's booking with the carrier."),
                 "OtherInstruction": V("Three originals issued.", "How many originals there are."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
@@ -1651,7 +1648,6 @@ def sea(n, doc):
         return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
                 "IssueDate": V(f.date(11), "Sent to the island's customs before arrival."),
                 "ManifestTypeCode": V("CARGO", "A cargo manifest, of what the ship carries for Selanu."),
-                "AdValoremIndicator": V("false", "No value declared for the carriage."),
                 "CrewPerson": [kit.person("Corin", "Halvard", "The master of the ship.", role="MASTER"),
                                kit.person("Elsbeth", "Marrin", "The chief officer.", role="CHIEFOFFICER")],
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment on the manifest."),
@@ -2008,7 +2004,6 @@ def air(n, doc):
     if doc["doc"] == "Waybill":
         out = kit.waybill(f, n, doc, 2, "The air waybill, issued when the airline accepts the cargo.", w,
                           "The gross weight of the cargo.")
-        out["AdValoremIndicator"] = V("true", "A value is declared to the airline, which raises its liability.")
         out["DeclaredCarriageValueAmount"] = amount(Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]
                                                                              ["amount"])), "XBL",
                                                     "The value declared for carriage.")
@@ -4248,7 +4243,8 @@ def status_extras(f, n, doc, out):
          "Description": V(out["TransportEvent"]["Description"].value if isinstance(out.get("TransportEvent"), dict)
                           and "Description" in out["TransportEvent"] else "Status of the consignment.", "In words."),
          "Note": V("Automatic report from the sender's tracking system.", "How it was made."),
-         "ShippingOrderID": V(f.numbers.get("consignment", ""), "The shipper's booking it reports on."),
+         **({"ShippingOrderID": V(kit.shipping_order(f), "The forwarding instructions of the shipment it "
+                                                          "reports on.")} if kit.shipping_order(f) else {}),
          "OtherInstruction": V("Reply only if the delivery slot must change.", "What the receiver should do."),
          "TransportExecutionStatusCode": V("INPROGRESS", "The carriage is under way."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
@@ -4279,7 +4275,8 @@ def _(f, n, doc, out):
             "Name": V("Status request", "What it is."),
             "Description": V("When will the benches arrive?", "The question."),
             "Note": V("The promotion starts soon.", "Why the store asks."),
-            "ShippingOrderID": V(f.numbers["consignment"], "The booking asked about."),
+            **({"ShippingOrderID": V(kit.shipping_order(f), "The forwarding instructions of the shipment asked "
+                                                             "about.")} if kit.shipping_order(f) else {}),
             "OtherInstruction": V("Answer with the expected delivery time.", "What the answer should hold."),
             "TransportationStatusTypeCode": V("DELIVERY", "The status of the delivery is asked."),
             "DocumentReference": {"ID": V(f.numbers["order"], "The store's order.")},
@@ -4360,12 +4357,9 @@ def fi_extras(f, n, doc, out):
          "Description": V("Instructions for the shipment to the island." if f.id != "cotton" else
                           "Instructions for the bales to Bayvarra.", "In words."),
          "Note": V("Please confirm the booking.", "What the sender expects."),
-         "ShippingOrderID": V(f.numbers.get("shipment", ""), "The shipment to be booked."),
          "ToOrderIndicator": V("true" if f.id == "sea" else "false", "A bill of lading to order, so the buyer can "
                                                                      "transfer it." if f.id == "sea" else
                                "A straight bill: the consignee is named."),
-         **(cotton_declared_value(f) if f.id == "cotton" else
-            {"AdValoremIndicator": V("false", "No value declared for the carriage.")}),
          "OtherInstruction": V("Send the bill of lading to the forwarder.", "Where the documents go."),
          "DocumentReference": {"ID": V(f.numbers.get("order", ""), "The order the goods are for.")},
          "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
@@ -4386,28 +4380,11 @@ for _fid in ("sea", "air", "cotton"):
     enrich(_fid, "ForwardingInstructions")(fi_extras)
 
 
-def cotton_declared_value(f):
-    """The bales' value declared to the carrier, at the request of the Bank of Selanu, which holds a mortgage on the
-    bales: the carrier is then liable for their full value, not only up to the limit per kilogram. Only the cotton
-    shipment declares a value; the sea flow's goods are insured by the seller under CIF."""
-    if f.id != "cotton":
-        return {}
-    cur = {ITEM[d["item"]]["price"]["currency"] for d in f.deal}
-    assert len(cur) == 1, cur
-    value = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
-    return {"AdValoremIndicator": V("true", "A value is declared to the carrier, which raises its liability."),
-            "DeclaredCarriageValueAmount": amount(value, cur.pop(), "The bales' value, declared at the request of the "
-                                                                    "Bank of Selanu: it holds a mortgage on the bales "
-                                                                    "and wants the carrier liable for their full "
-                                                                    "value.")}
-
-
 def bl_extras(f, n, doc, out):
     return {"Name": V("Bill of lading", "What it is."),
             "Description": V("Shipped on board.", "The kind of bill."),
             "Note": V("Freight prepaid." if f.id == "sea" else "Freight collect.", "Who has paid the freight."),
             "DocumentStatusCode": V("Confirmed", "Issued."),
-            **cotton_declared_value(f),
             "DocumentReference": {"ID": V(f.numbers.get("instructions-carrier", f.numbers.get("instructions", "")),
                                           "The forwarding instructions it was issued on.")},
             "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
@@ -8688,8 +8665,7 @@ def pipeline_stage(why):
     return {"ID": V("1", "The only stage."),
             "TransportModeCode": V("7", "UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline.",
                                    listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
-            "TransportMeans": {"TransportMeansTypeCode": V(kit.fleet("42-xb", "KG-P1")["type"], why),
-                               "JourneyID": V("KG-P1-2603", "The month's flow through the pipeline.")}}
+            "TransportMeans": {"TransportMeansTypeCode": V(kit.fleet("42-xb", "KG-P1")["type"], why)}}
 
 
 def energy(n, doc):

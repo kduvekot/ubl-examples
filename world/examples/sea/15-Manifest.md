@@ -36,8 +36,6 @@ Before arrival the carrier lists the cargo on board for the island's customs.
   The cargo.
 - `VersionID` = **1**  
   The first version.
-- `AdValoremIndicator` = **false**  
-  No value declared for the carriage.
 
 ### Sending Logistics Operator Party
 
@@ -571,7 +569,6 @@ Inside `Signature`:
   <cbc:Description>Cargo for Selanu.</cbc:Description>
   <cbc:Note>One container for Selanu.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>

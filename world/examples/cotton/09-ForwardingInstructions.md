@@ -32,14 +32,8 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   In words.
 - `Note` = **Please confirm the booking.**  
   What the sender expects.
-- `ShippingOrderID` = **SCG-SH-26-0200**  
-  The shipment to be booked.
 - `ToOrderIndicator` = **false**  
   A straight bill: the consignee is named.
-- `AdValoremIndicator` = **true**  
-  A value is declared to the carrier, which raises its liability.
-- `DeclaredCarriageValueAmount` = **6055.452** (currencyID `XLC`)  
-  The bales' value, declared at the request of the Bank of Selanu: it holds a mortgage on the bales and wants the carrier liable for their full value.
 - `OtherInstruction` = **Send the bill of lading to the forwarder.**  
   Where the documents go.
 
@@ -400,10 +394,7 @@ Inside `Signature`:
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:ShippingOrderID>SCG-SH-26-0200</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
-  <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XLC">6055.452</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>

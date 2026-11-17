@@ -1705,7 +1705,11 @@
     "tolls": "starek",
     "tonne": "zhurkaz",
     "years": "stezskir",
-    "banca": "rikbul"
+    "banca": "rikbul",
+    "consignor's": "starzhek",
+    "handed": "ginrul",
+    "kept": "zhiztrek",
+    "took": "hangaz"
    }
   },
   "qal": {
@@ -2793,7 +2797,11 @@
     "four": "nakofe",
     "supplied": "vahita",
     "them": "maalu",
-    "years": "selemu"
+    "years": "selemu",
+    "consignor's": "ketinuki",
+    "handed": "lefeta",
+    "kept": "sifipe",
+    "took": "kakena"
    }
   },
   "en": {

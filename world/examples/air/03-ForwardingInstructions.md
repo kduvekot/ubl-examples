@@ -32,12 +32,8 @@ The distributor asks its forwarder to book air freight for the urgent part.
   In words.
 - `Note` = **Please confirm the booking.**  
   What the sender expects.
-- `ShippingOrderID` = **LD-SH-26-0323**  
-  The shipment to be booked.
 - `ToOrderIndicator` = **false**  
   A straight bill: the consignee is named.
-- `AdValoremIndicator` = **false**  
-  No value declared for the carriage.
 - `OtherInstruction` = **Send the bill of lading to the forwarder.**  
   Where the documents go.
 
@@ -484,9 +480,7 @@ Inside `Signature`:
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:ShippingOrderID>LD-SH-26-0323</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

@@ -32,8 +32,8 @@ The port of loading reports the container loaded on board.
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
-- `ShippingOrderID` = **LD-CS-26-0133**  
-  The shipper's booking it reports on.
+- `ShippingOrderID` = **BF-FI-26-0137**  
+  The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
   What the receiver should do.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
@@ -426,7 +426,7 @@ Inside `StatusPeriod`:
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>

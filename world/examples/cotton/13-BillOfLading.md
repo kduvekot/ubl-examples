@@ -34,10 +34,6 @@ The bill of lading goes to the forwarder that booked the freight for the mill; t
   Who has paid the freight.
 - `DocumentStatusCode` = **Confirmed** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
   Issued. The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
-- `AdValoremIndicator` = **true**  
-  A value is declared to the carrier, which raises its liability.
-- `DeclaredCarriageValueAmount` = **6055.452** (currencyID `XLC`)  
-  The bales' value, declared at the request of the Bank of Selanu: it holds a mortgage on the bales and wants the carrier liable for their full value.
 
 ### Consignor Party
 
@@ -516,8 +512,6 @@ Inside `Signature`:
   <cbc:Description>Shipped on board.</cbc:Description>
   <cbc:Note>Freight collect.</cbc:Note>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-  <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XLC">6055.452</cbc:DeclaredCarriageValueAmount>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">0163</cbc:IndustryClassificationCode>

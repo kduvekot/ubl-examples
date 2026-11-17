@@ -34,8 +34,6 @@ The carrier reports that the truck has cleared the border and gives the expected
   The note in Urvanian, the sender's language (world/countries.json): How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: How it was made.
-- `ShippingOrderID` = **LD-CS-26-0152**  
-  The shipper's booking it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
   What the receiver should do.
 - `TransportationStatusTypeCode` = **PROGRESS** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
@@ -444,7 +442,6 @@ Inside `StatusPeriod`:
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en-XU">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0152</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">PROGRESS</cbc:TransportationStatusTypeCode>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>

@@ -11,10 +11,7 @@
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:ShippingOrderID>SCG-SH-26-0200</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
-  <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
-  <cbc:DeclaredCarriageValueAmount currencyID="XLC">6055.452</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.selanuginnery.example</cbc:WebsiteURI>

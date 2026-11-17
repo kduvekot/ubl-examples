@@ -40,8 +40,6 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
   The forwarder's booking with the carrier.
 - `ToOrderIndicator` = **true**  
   Made out to order: the buyer can transfer it by endorsement.
-- `AdValoremIndicator` = **false**  
-  No value declared to the carrier: its liability stays limited.
 - `OtherInstruction` = **Three originals issued.**  
   How many originals there are.
 
@@ -576,9 +574,9 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/LogisticsOperatorParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/BillOfLadingHolderParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Consignment/BillOfLadingHolderParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/BillOfLadingHolderParty/PartyName/Name` = **Velumi Trading**  
+- `Consignment/BillOfLadingHolderParty/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OriginalDepartureCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   From Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
@@ -1373,7 +1371,6 @@ Inside `Signature`:
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1823,10 +1820,10 @@ Inside `Signature`:
       </cac:LogisticsOperatorParty>
       <cac:BillOfLadingHolderParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
+          <cbc:Name>Bayforth Forwarding</cbc:Name>
         </cac:PartyName>
       </cac:BillOfLadingHolderParty>
       <cac:OriginalDepartureCountry>

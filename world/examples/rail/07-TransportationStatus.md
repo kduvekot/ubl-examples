@@ -34,8 +34,6 @@ The intermodal terminal reports to the rail carrier that the containers are load
   The note in Urvanian, the sender's language (world/countries.json): How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: How it was made.
-- `ShippingOrderID` = **VI-CS-26-0327**  
-  The shipper's booking it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
   What the receiver should do.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
@@ -344,7 +342,6 @@ Inside `StatusPeriod`:
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en-XU">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>

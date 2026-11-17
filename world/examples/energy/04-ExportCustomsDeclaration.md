@@ -198,8 +198,6 @@ Inside `CustomsDeclaration`:
   The only stage.
 - `Shipment/ShipmentStage/TransportModeCode` = **7** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 7 = Fixed transport installations.
-- `Shipment/ShipmentStage/TransportMeans/JourneyID` = **KG-P1-2603**  
-  The month's flow through the pipeline.
 - `Shipment/ShipmentStage/TransportMeans/TransportMeansTypeCode` = **71** (listID `UNECE Recommendation 28`)  
   The gas leaves by pipeline. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 71 = Pipeline.
 - `Shipment/OriginAddress/ID` = **33/03** (schemeID `urn:ubl-examples:world:grid`)  
@@ -539,7 +537,6 @@ Inside `CustomsDeclaration`:
         <cbc:ID>1</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">7</cbc:TransportModeCode>
         <cac:TransportMeans>
-          <cbc:JourneyID>KG-P1-2603</cbc:JourneyID>
           <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">71</cbc:TransportMeansTypeCode>
         </cac:TransportMeans>
       </cac:ShipmentStage>

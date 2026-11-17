@@ -623,6 +623,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): `ShippingOrderID` is the number of the forwarding instructions the shipment is booked under (to the carrier where there are two: `kit.shipping_order()`), the same in the waybill, the bill of lading and the status messages of a flow; absent where the flow has no forwarding instructions, and in the forwarding instructions themselves. Coverage: O145.
 - Findings: air: 03#F10, 04#F1, 05#F2, 09#F1; cotton: 09#F2; mast: 03#F1; ore: 05#F1; plastics: 06#F4; rail: 07#F2, 08#F7; retail: 13#F4, 14#F3; road: 08#F6, 09#F2; sea: 09#F3, 12#F1, 13#F2, 17#F1
 
 ### C21 · Transport requests, instructions, waybills and manifests that do not say what, from where, to where or when
@@ -768,6 +769,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): the waybill's distribution lists the consignor's original (handed over, the new world code `ORIGINALHANDED`), the consignee's original with the goods and the electronic copy; the note names the three originals as the distribution lists them, the carrier keeping its own. sea/14#F11: the holder of the bill of lading is Bayforth, which receives the originals (option b, which avoids losing `BillOfLadingHolderParty`; the merge preferred dropping it).
 - Findings: air: 04#F16; mast: 03#F8; ore: 05#F6; plastics: 06#F3; rail: 08#F6; retail: 13#F1; road: 08#F19; sea: 14#F11
 
 ### C34 · Line IDs reused for another line
@@ -801,6 +803,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): no `AdValoremIndicator` in any transport document (UBL defines it by ad valorem duties; no shipment pays duty, D18); cotton declares no carriage value (nothing was charged for it, and the Bank of Selanu's role goes with D33). The air frames and the granulate keep their declared value; the valuation charge the findings ask for comes with their flows (D39, D41). Coverage: O145.
 - Findings: air: 03#F3, 04#F3; cotton: 09#F7, 13#F6; plastics: 06#F12
 
 ### C37 · Order references in the wrong element
@@ -858,6 +861,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): `JourneyID` only for a scheduled service (the container train in the hub's timetable, the airline's flights, the shipping line's voyages); not for the truck's one-off job (D35), the barge's booked voyage (its number stays in the carrier-assigned ID) or the pipeline's month.
 - Findings: energy: 04#F12; plastics: 04#F21, 06#F19
 
 ### C42 · A line marked both confidential and internal

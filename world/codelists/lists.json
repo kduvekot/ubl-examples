@@ -5154,6 +5154,10 @@
      "Original, sent by courier",
      "An original on paper, sent to the party by courier."
     ],
+    "ORIGINALHANDED": [
+     "Original, handed over",
+     "An original on paper handed to the party when the document is issued, as the consignor receives its original of a consignment note when the carrier takes over the goods."
+    ],
     "ORIGINALWITHGOODS": [
      "Original, with the goods",
      "An original on paper that travels with the goods to the party, as the transport conventions prescribe for one original of a consignment note."

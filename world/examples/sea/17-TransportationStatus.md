@@ -34,8 +34,8 @@ The port of discharge reports the container discharged and available.
   The note in Lisavan, the sender's language (world/countries.json): How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: How it was made.
-- `ShippingOrderID` = **LD-CS-26-0133**  
-  The shipper's booking it reports on.
+- `ShippingOrderID` = **BF-FI-26-0137**  
+  The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
   What the receiver should do.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
@@ -548,7 +548,7 @@ Inside `StatusPeriod`:
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
   <cbc:Note languageID="qal">Keavate tafese lesama kanela temati kalale.</cbc:Note>
   <cbc:Note languageID="en-XL">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>

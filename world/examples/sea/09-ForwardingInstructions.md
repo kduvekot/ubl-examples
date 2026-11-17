@@ -32,12 +32,8 @@ The distributor instructs its forwarder: book the sea freight to the island and 
   In words.
 - `Note` = **Please confirm the booking.**  
   What the sender expects.
-- `ShippingOrderID` = **LD-SH-26-0132**  
-  The shipment to be booked.
 - `ToOrderIndicator` = **true**  
   A bill of lading to order, so the buyer can transfer it.
-- `AdValoremIndicator` = **false**  
-  No value declared for the carriage.
 - `OtherInstruction` = **Send the bill of lading to the forwarder.**  
   Where the documents go.
 
@@ -532,9 +528,7 @@ Inside `Signature`:
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
-  <cbc:ShippingOrderID>LD-SH-26-0132</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>

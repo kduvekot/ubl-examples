@@ -12,7 +12,6 @@
   <cbc:Name>Status request</cbc:Name>
   <cbc:Description>When will the benches arrive?</cbc:Description>
   <cbc:Note>The promotion starts soon.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0228</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Answer with the expected delivery time.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">DELIVERY</cbc:TransportationStatusTypeCode>
   <cac:SenderParty>

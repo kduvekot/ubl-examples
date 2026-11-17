@@ -36,18 +36,16 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
   The kind of transport document.
 - `Description` = **The flight to the island.**  
   The carriage in words.
-- `Note` = **Tasela kukohane: titoluva, hivokefi, topatu.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): As the convention prescribes.
-- `Note` = **Three originals: consignor, consignee, carrier.** (languageID `en-XL`)  
-  The same note in English, the working language between the countries: As the convention prescribes.
-- `ShippingOrderID` = **LD-CS-26-0324**  
-  The shipper's booking the carriage fulfils.
+- `Note` = **Tasela kukohane: ketinuki, lefeta semiu siseu topatu kakena semiu liape; vamomoli, tofuta liape; kefapute, sifipe ninote topatu.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
+- `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.** (languageID `en-XL`)  
+  The same note in English, the working language between the countries: The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
+- `ShippingOrderID` = **LD-FI-26-0322**  
+  The forwarding instructions the carriage is booked under.
 - `WaybillTypeCode` = **AWB** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
   The convention the document follows. The code is from the Trade Accord's waybill type list: AWB = Air waybill.
 - `ConsolidatedIndicator` = **false**  
   One consignment, not a consolidation.
-- `AdValoremIndicator` = **true**  
-  A value is declared to the airline, which raises its liability.
 - `DeclaredCarriageValueAmount` = **512.00** (currencyID `XBL`)  
   The value declared for carriage.
 - `OtherInstruction` = **Deliver against signature of the consignee.**  
@@ -624,6 +622,16 @@ Inside `ExchangeRate`:
 Inside `DocumentDistribution`:
 
 - `ID` = **1**  
+  The original for the consignor.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
+- `Party/PartyIdentification/ID` = **20412055** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeport Airport Cargo Terminal**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ID` = **2**  
   The original for the consignee.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
@@ -637,7 +645,7 @@ Inside `DocumentDistribution`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Selanu Airport Cargo**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **2**  
+- `ID` = **3**  
   The electronic copy.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
@@ -681,12 +689,11 @@ Inside `Signature`:
   <cbc:IssueTime>10:43:00</cbc:IssueTime>
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>The flight to the island.</cbc:Description>
-  <cbc:Note languageID="qal">Tasela kukohane: titoluva, hivokefi, topatu.</cbc:Note>
-  <cbc:Note languageID="en-XL">Three originals: consignor, consignee, carrier.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0324</cbc:ShippingOrderID>
+  <cbc:Note languageID="qal">Tasela kukohane: ketinuki, lefeta semiu siseu topatu kakena semiu liape; vamomoli, tofuta liape; kefapute, sifipe ninote topatu.</cbc:Note>
+  <cbc:Note languageID="en-XL">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
+  <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">AWB</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
-  <cbc:AdValoremIndicator>true</cbc:AdValoremIndicator>
   <cbc:DeclaredCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
@@ -1163,6 +1170,19 @@ Inside `Signature`:
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
     <cbc:DistributionType languageID="qal">Folue, tofuta liape: vamomoli folue</cbc:DistributionType>
     <cbc:DistributionType languageID="en-XL">Original, with the goods: the consignee's original</cbc:DistributionType>
@@ -1176,7 +1196,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:DocumentDistribution>
-    <cbc:ID>2</cbc:ID>
+    <cbc:ID>3</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
     <cbc:DistributionType languageID="qal">Tihetaki tiveto</cbc:DistributionType>

@@ -13,7 +13,6 @@
   <cbc:Description>Cargo for Selanu.</cbc:Description>
   <cbc:Note>One container for Selanu.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cac:SendingLogisticsOperatorParty>
     <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>

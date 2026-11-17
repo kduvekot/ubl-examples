@@ -32,8 +32,8 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
-- `ShippingOrderID` = **LD-CS-26-0324**  
-  The shipper's booking it reports on.
+- `ShippingOrderID` = **LD-FI-26-0322**  
+  The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
   What the receiver should do.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
@@ -325,7 +325,7 @@ Inside `StatusPeriod`:
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0324</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
