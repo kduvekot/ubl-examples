@@ -82,10 +82,10 @@
 <polygon class="arr" points="396.00,56.00 396.55,58.60 395.45,58.60"/>
 <text class="txt" x="395.10" y="65.50" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 395.10 65.50)">95</text>
 <polyline class="ctr" points="28.40,65.50 391.60,65.50"/>
-<polyline class="vis" points="48.00,175.00 137.00,175.00 140.00,172.00 140.00,140.00 137.00,137.00 48.00,137.00 45.00,140.00 45.00,172.00 48.00,175.00"/>
-<polyline class="hid" points="88.00,175.00 88.00,137.00"/>
-<polyline class="hid" points="97.00,175.00 97.00,137.00"/>
-<polyline class="ctr" points="92.50,180.00 92.50,132.00"/>
+<polyline class="vis" points="48.00,175.00 137.00,175.00 140.00,172.00 140.00,133.00 137.00,130.00 48.00,130.00 45.00,133.00 45.00,172.00 48.00,175.00"/>
+<polyline class="hid" points="88.00,175.00 88.00,130.00"/>
+<polyline class="hid" points="97.00,175.00 97.00,130.00"/>
+<polyline class="ctr" points="92.50,180.00 92.50,125.00"/>
 <text class="txt" x="92.50" y="112.00" font-size="3.5" text-anchor="middle" font-weight="bold">END VIEW 1:1</text>
 <polyline class="ext" points="45.00,175.80 45.00,184.20"/>
 <polyline class="ext" points="140.00,175.80 140.00,184.20"/>
@@ -94,14 +94,14 @@
 <polygon class="arr" points="140.00,183.00 137.40,183.55 137.40,182.45"/>
 <text class="txt" x="92.50" y="182.10" font-size="2.5" text-anchor="middle" font-weight="normal">95</text>
 <polyline class="ext" points="140.80,175.00 148.20,175.00"/>
-<polyline class="ext" points="140.80,137.00 148.20,137.00"/>
-<polyline class="dimln" points="147.00,175.00 147.00,137.00"/>
+<polyline class="ext" points="140.80,130.00 148.20,130.00"/>
+<polyline class="dimln" points="147.00,175.00 147.00,130.00"/>
 <polygon class="arr" points="147.00,175.00 146.45,172.40 147.55,172.40"/>
-<polygon class="arr" points="147.00,137.00 147.55,139.60 146.45,139.60"/>
-<text class="txt" x="146.10" y="156.00" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 146.10 156.00)">38</text>
-<polyline class="dimln" points="46.50,138.50 85.00,121.00 93.00,121.00"/>
-<polygon class="arr" points="46.50,138.50 48.64,136.92 49.09,137.92"/>
-<text class="txt" x="94.00" y="120.40" font-size="2.5" text-anchor="start" font-weight="normal">3 x 45°, 4 long edges</text>
+<polygon class="arr" points="147.00,130.00 147.55,132.60 146.45,132.60"/>
+<text class="txt" x="146.10" y="152.50" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 146.10 152.50)">45</text>
+<polyline class="dimln" points="46.50,131.50 85.00,114.00 93.00,114.00"/>
+<polygon class="arr" points="46.50,131.50 48.64,129.92 49.09,130.92"/>
+<text class="txt" x="94.00" y="113.40" font-size="2.5" text-anchor="start" font-weight="normal">3 x 45°, 4 long edges</text>
 <polyline class="vis" points="175.00,137.50 175.00,139.00"/>
 <polyline class="vis" points="175.00,139.00 175.00,183.50"/>
 <polyline class="vis" points="175.00,183.50 175.00,185.00"/>
@@ -139,10 +139,10 @@
 <text class="txt" x="259.00" y="196.90" font-size="2.5" text-anchor="start" font-weight="normal">4 x Ø9 through</text>
 <text class="txt" x="256.00" y="135.50" font-size="2.0" text-anchor="start" font-weight="normal">break</text>
 <text class="txt" x="232.00" y="205.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
-<text class="txt" x="232.00" y="209.50" font-size="2.2" text-anchor="start" font-weight="normal">1  From May 2026: European ash, graded LS13 (EN 338 D40) before</text>
-<text class="txt" x="232.00" y="213.10" font-size="2.2" text-anchor="start" font-weight="normal">   thermal modification at about 212 °C; delivered at about 5 %</text>
-<text class="txt" x="232.00" y="216.70" font-size="2.2" text-anchor="start" font-weight="normal">   moisture, 554 kg/m³, mass 3.58 kg. Until April: oak heartwood,</text>
-<text class="txt" x="232.00" y="220.30" font-size="2.2" text-anchor="start" font-weight="normal">   kiln-dried 12 %, EN 338 D30, 690 kg/m³, mass 4.45 kg. Planed four sides.</text>
+<text class="txt" x="232.00" y="209.50" font-size="2.2" text-anchor="start" font-weight="normal">1  From May 2026: 1800 x 95 x 45, European ash graded LS13 (EN 338 D40)</text>
+<text class="txt" x="232.00" y="213.10" font-size="2.2" text-anchor="start" font-weight="normal">   before thermal modification at about 212 °C; delivered at about 5 %</text>
+<text class="txt" x="232.00" y="216.70" font-size="2.2" text-anchor="start" font-weight="normal">   moisture, 554 kg/m³, mass 4.24 kg. Benches until April: 1800 x 95</text>
+<text class="txt" x="232.00" y="220.30" font-size="2.2" text-anchor="start" font-weight="normal">   x 38 oak heartwood, kiln-dried 12 %, D30, 690 kg/m³, 4.45 kg.</text>
 <text class="txt" x="232.00" y="223.90" font-size="2.2" text-anchor="start" font-weight="normal">2  Holes pre-drilled Ø9; in thermally modified ash the square seat</text>
 <text class="txt" x="232.00" y="227.50" font-size="2.2" text-anchor="start" font-weight="normal">   of the bolt neck is pre-formed (8.2 mm square, 5 mm deep).</text>
 <text class="txt" x="232.00" y="231.10" font-size="2.2" text-anchor="start" font-weight="normal">3  Grain parallel to the length; no knots over 20 mm within</text>
@@ -161,7 +161,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-003</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">B</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">1:5, 1:2, 1:1</text>
@@ -180,6 +180,6 @@
 <text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
 <polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
 <text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
-<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">thermally modified ash / oak   mass 3.58 kg (oak 4.45 kg)</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">thermally modified ash / oak   mass 4.24 kg (oak 38: 4.45 kg)</text>
 <text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
 <text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>

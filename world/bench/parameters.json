@@ -10,7 +10,7 @@
     "drawing_prefix": "VI-DWG-B180",
     "drawing_date": "2026-11-17",
     "drawn_by": "model (world/bench)",
-    "revision": "A"
+    "revision": "B"
   },
   "overall": {
     "slat_length_overall": 1800,
@@ -108,7 +108,7 @@
   },
   "bolts": {
     "count": 20,
-    "type": "Cup square neck (carriage) bolt ISO 8677 M8 x 60, hex nut ISO 4032 M8, washer ISO 7089 8; stainless steel A2-70 / A2 (1.4301); A4 (1.4401) for coastal sites",
+    "type": "Cup square neck (carriage) bolt ISO 8677 M8 (60 mm with 38 mm slats, 65 mm with 45 mm slats), hex nut ISO 4032 M8, washer ISO 7089 8; stainless steel A2-70 / A2 (1.4301); A4 (1.4401) for coastal sites",
     "d": 8,
     "length": 60,
     "head_diameter": 20,
@@ -128,7 +128,16 @@
     "torque_Nm": {
       "tm_ash": 10,
       "oak": 15
-    }
+    },
+    "standard_lengths": [
+      50,
+      55,
+      60,
+      65,
+      70,
+      80
+    ],
+    "min_protrusion_mm": 2.5
   },
   "materials": {
     "steel_density": 7850,
@@ -354,7 +363,7 @@
     "manual_two_person": 33
   },
   "woods": {
-    "_note": "main_wood is the slat wood from May 2026; the other is the comparison case (the current delivery). Names: never use trade names for the modified wood.",
+    "_note": "main_wood: slats from May 2026 (frame revision B); comparison_wood: the benches already made (frame revision A). Each wood carries its own slat thickness, back-rail length and bolt length. Never use trade names for the modified wood.",
     "main_wood": "tm_ash",
     "comparison_wood": "oak",
     "tm_ash": {
@@ -382,7 +391,11 @@
       "swelling_12_to_outdoor_mm": 1.0,
       "colour": "#3b2516",
       "grain_dark": "24,14,8",
-      "grain_light": "92,60,38"
+      "grain_light": "92,60,38",
+      "slat_thickness": 45,
+      "back_rail_u_top": 350,
+      "bolt_length": 65,
+      "frame_revision": "B"
     },
     "oak": {
       "name": "European oak heartwood",
@@ -406,7 +419,30 @@
       "swelling_12_to_outdoor_mm": 2.5,
       "colour": "#b48a58",
       "grain_dark": "90,58,30",
-      "grain_light": "225,190,140"
+      "grain_light": "225,190,140",
+      "slat_thickness": 38,
+      "back_rail_u_top": 360,
+      "bolt_length": 60,
+      "frame_revision": "A"
     }
+  },
+  "sawmill_truck": {
+    "_note": "check of the sawmill's delivery (decision O66): 4,800 slats on 24 heat-treated pallets of four bundles of 50 slats; pallet and bundle layout assumed",
+    "slats": 4800,
+    "pallets": 24,
+    "bundles_per_pallet": 4,
+    "slats_per_bundle": 50,
+    "bundle_rows": [
+      5,
+      10
+    ],
+    "pallet_kg": 26.0,
+    "strapping_kg_per_bundle": 0.5,
+    "payload_kg": 24700,
+    "trailer_inside": [
+      13600,
+      2480,
+      2700
+    ]
   }
 }

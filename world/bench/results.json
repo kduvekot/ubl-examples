@@ -35,77 +35,78 @@
   "slat_span": 1600,
   "overhang": 100,
   "slat_overhang_beyond_frame": 66.0,
-  "back_rail_top_y": 615.9436
+  "back_rail_top_y": 619.5108
  },
  "mass": {
-  "frame_volume_l": 1.6306,
-  "frame_area_m2": 0.4457,
-  "frame_bare": 12.8005,
-  "frame_draft": 0.256,
-  "zinc_min": 0.2563,
-  "zinc_typ": 0.3203,
+  "frame_volume_l": 1.6323,
+  "frame_area_m2": 0.4461,
+  "frame_bare": 12.8135,
+  "frame_draft": 0.2563,
+  "zinc_min": 0.2565,
+  "zinc_typ": 0.3206,
   "powder": 0.0468,
-  "frame": 13.4236,
+  "frame": 13.4373,
   "frame_cg": [
    100.0,
-   302.305,
-   407.7823
+   303.577,
+   404.9697
   ],
-  "slat_volume_l": 6.4559,
-  "slat": 3.5766,
-  "slat_box_volume_l": 6.498,
-  "bolt": 0.0282,
+  "slat_volume_l": 7.6511,
+  "slat": 4.2387,
+  "slat_box_volume_l": 7.695,
+  "bolt": 0.03,
   "washer": 0.0018,
   "nut": 0.0052,
-  "fixing": 0.0352,
-  "boltset": 0.7241,
-  "net": 45.4543,
-  "steel_in_product": 26.113,
-  "stainless_fixings": 0.7041,
-  "zinc_bench": 0.6407,
-  "zinc_bench_min": 0.5126,
-  "powder_bench": 0.0936,
-  "wood_bench": 17.8829,
+  "fixing": 0.0371,
+  "boltset": 0.7612,
+  "net": 48.8294,
+  "steel_in_product": 26.1396,
+  "stainless_fixings": 0.7412,
+  "zinc_bench": 0.6413,
+  "zinc_bench_min": 0.513,
+  "powder_bench": 0.0937,
+  "wood_bench": 21.1937,
   "wood_key": "tm_ash",
   "bench_cg": [
    900.0,
-   314.7592,
-   446.356
+   317.2735,
+   447.6357
   ],
   "breakdown_l": {
-   "web (all members)": 0.6233,
-   "flange seat_rail": 0.2389,
-   "flange back_rail": 0.2042,
+   "web (all members)": 0.623,
+   "flange seat_rail": 0.2413,
+   "flange back_rail": 0.202,
    "flange front_post": 0.1125,
-   "flange armrest": 0.2429,
-   "flange rear_leg": 0.0735,
+   "flange armrest": 0.2459,
+   "flange rear_leg": 0.0721,
    "feet (2)": 0.168
   },
   "breakdown_kg": {
-   "web (all members)": 4.8927,
-   "flange seat_rail": 1.8756,
-   "flange back_rail": 1.6029,
+   "web (all members)": 4.8906,
+   "flange seat_rail": 1.8944,
+   "flange back_rail": 1.5861,
    "flange front_post": 0.883,
-   "flange armrest": 1.9066,
-   "flange rear_leg": 0.5767,
+   "flange armrest": 1.9306,
+   "flange rear_leg": 0.5661,
    "feet (2)": 1.3188
-  }
+  },
+  "bolt_length": 65
  },
  "interference_cm3": {
-  "frame/seat slat 1": 0.005,
+  "frame/seat slat 1": 0.008,
   "frame/seat slat 3": 0.0,
   "frame/back slat 1": 0.0,
   "frame/back slat 2": 0.0
  },
  "slats": {
-  "I": 434403.3333,
-  "W": 22863.3333,
+  "I": 721406.25,
+  "W": 32062.5,
   "span": 1600,
   "q_ur": 0.9555,
   "seat_len": 1540.0,
-  "k_h": 1.3,
-  "f_md": 22.652,
-  "f_md_sc2": 29.124,
+  "k_h": 1.2723,
+  "f_md": 22.1686,
+  "f_md_sc2": 28.5025,
   "f_mk": 32.36,
   "E_d": 13000,
   "E_wh": 14365.0,
@@ -114,73 +115,73 @@
     "Ra": 735.98887987013,
     "Rb": 735.98887987013,
     "Mmax": 305343.4164,
-    "sigma": 13.3552,
-    "w_span": 14.4145,
-    "w_end": -2.8782,
-    "sigma_d": 20.0327,
-    "util_d": 0.8844,
-    "ratio_fmk": 0.4127,
-    "L_over_w": 110.9992
+    "sigma": 9.5234,
+    "w_span": 8.6799,
+    "w_end": -1.7331,
+    "sigma_d": 14.2851,
+    "util_d": 0.6444,
+    "ratio_fmk": 0.2943,
+    "L_over_w": 184.3346
    },
    "UR-SF-0450, E from clear-wood data": {
     "Ra": 735.98887987013,
     "Rb": 735.98887987013,
     "Mmax": 305343.4164,
-    "sigma": 13.3552,
-    "w_span": 13.0448,
-    "w_end": -2.6047,
-    "sigma_d": 20.0327,
-    "util_d": 0.8844,
-    "ratio_fmk": 0.4127,
-    "L_over_w": 122.6542
+    "sigma": 9.5234,
+    "w_span": 7.8551,
+    "w_end": -1.5684,
+    "sigma_d": 14.2851,
+    "util_d": 0.6444,
+    "ratio_fmk": 0.2943,
+    "L_over_w": 203.6897
    },
    "EN 581-2 contract, 2000 N on the centre seat": {
     "Ra": 583.8888888888888,
     "Rb": 583.8888888888888,
     "Mmax": 313715.2778,
-    "sigma": 13.7213,
-    "w_span": 13.7615,
-    "w_end": -2.6833,
-    "sigma_d": 20.582,
-    "util_d": 0.9086,
-    "ratio_fmk": 0.424,
-    "L_over_w": 116.2664
+    "sigma": 9.7845,
+    "w_span": 8.2866,
+    "w_end": -1.6158,
+    "sigma_d": 14.6767,
+    "util_d": 0.662,
+    "ratio_fmk": 0.3024,
+    "L_over_w": 193.0817
    },
    "EN 581-2 contract, 2000 N on an end seat": {
     "Ra": 717.2005208333333,
     "Rb": 449.8828125,
     "Mmax": 225533.2617,
-    "sigma": 9.8644,
-    "w_span": 10.7768,
-    "w_end": -2.0564,
-    "sigma_d": 14.7966,
-    "util_d": 0.6532,
-    "ratio_fmk": 0.3048,
-    "L_over_w": 148.4667
+    "sigma": 7.0342,
+    "w_span": 6.4894,
+    "w_end": -1.2383,
+    "sigma_d": 10.5513,
+    "util_d": 0.476,
+    "ratio_fmk": 0.2174,
+    "L_over_w": 246.5561
    },
    "EN 581-2 back 560 N, all on the upper back slat, centre seat": {
     "Ra": 280.4666666666667,
     "Rb": 280.4666666666667,
     "Mmax": 203303.3333,
-    "sigma": 8.8921,
-    "w_span": 8.3336,
-    "w_end": -1.5686,
-    "sigma_d": 13.3382,
-    "util_d": 0.5888,
-    "ratio_fmk": 0.2748,
-    "L_over_w": 191.9947
+    "sigma": 6.3408,
+    "w_span": 5.0182,
+    "w_end": -0.9446,
+    "sigma_d": 9.5113,
+    "util_d": 0.429,
+    "ratio_fmk": 0.1959,
+    "L_over_w": 318.8423
    },
    "Three adults of 80 kg, one per seat (service)": {
     "Ra": 392.61800000000005,
     "Rb": 392.61800000000005,
     "Mmax": 169985.5,
-    "sigma": 7.4349,
-    "w_span": 7.9118,
-    "w_end": -1.5865,
-    "sigma_d": 11.1523,
-    "util_d": 0.4923,
-    "ratio_fmk": 0.2298,
-    "L_over_w": 202.2308
+    "sigma": 5.3017,
+    "w_span": 4.7642,
+    "w_end": -0.9554,
+    "sigma_d": 7.9525,
+    "util_d": 0.3587,
+    "ratio_fmk": 0.1638,
+    "L_over_w": 335.8412
    }
   }
  },
@@ -239,55 +240,55 @@
   },
   "cases": {
    "UR-SF-0450, 450 kg over the seat": {
-    "sigma_max": 45.550365296254164,
+    "sigma_max": 45.27034162511175,
     "member": "seat rail",
-    "disp_max": 0.2261,
-    "util_test": 0.18979318873439235,
-    "util_uls": 0.2846897831015885,
-    "R_front": 1473.2533,
-    "R_rear": 733.9967,
-    "H_front": 175.5059,
-    "H_rear": -175.5059
+    "disp_max": 0.2141,
+    "util_test": 0.18862642343796562,
+    "util_uls": 0.2829396351569484,
+    "R_front": 1475.204,
+    "R_rear": 732.046,
+    "H_front": 177.2978,
+    "H_rear": -177.2978
    },
    "EN 581-2 contract, seat 2000 N (end seat) + 750 N + 750 N, back 560 N": {
-    "sigma_max": 50.563671580808354,
+    "sigma_max": 52.06284472054276,
     "member": "seat rail",
-    "disp_max": 0.3802,
-    "util_test": 0.2106819649200348,
-    "util_uls": 0.3160229473800522,
-    "R_front": 868.6919,
-    "R_rear": 1424.3946,
-    "H_front": 76.2349,
-    "H_rear": -513.4039
+    "disp_max": 0.4031,
+    "util_test": 0.21692851966892818,
+    "util_uls": 0.3253927795033923,
+    "R_front": 870.593,
+    "R_rear": 1422.4935,
+    "H_front": 76.4767,
+    "H_rear": -513.6457
    },
    "EN 581-2 contract, arm downward 900 N": {
-    "sigma_max": 42.21434338117564,
+    "sigma_max": 42.85226152919241,
     "member": "armrest",
-    "disp_max": 0.1767,
-    "util_test": 0.17589309742156517,
-    "util_uls": 0.2638396461323477,
-    "R_front": 454.1299,
-    "R_rear": 445.8701,
-    "H_front": 34.4453,
-    "H_rear": -34.4453
+    "disp_max": 0.1804,
+    "util_test": 0.17855108970496839,
+    "util_uls": 0.26782663455745254,
+    "R_front": 448.1352,
+    "R_rear": 451.8648,
+    "H_front": 32.0778,
+    "H_rear": -32.0778
    },
    "EN 581-2 contract, seat front edge 1300 N (end seat)": {
-    "sigma_max": 13.158722608916664,
+    "sigma_max": 13.12421111784741,
     "member": "seat rail",
-    "disp_max": 0.0282,
-    "util_test": 0.054828010870486096,
-    "util_uls": 0.08224201630572915,
-    "R_front": 937.6566,
-    "R_rear": 129.4267,
-    "H_front": 43.0391,
-    "H_rear": -43.0391
+    "disp_max": 0.0277,
+    "util_test": 0.05468421299103088,
+    "util_uls": 0.08202631948654632,
+    "R_front": 938.5997,
+    "R_rear": 128.4836,
+    "H_front": 43.5934,
+    "H_rear": -43.5934
    }
   },
   "side_load": {
    "F": 400,
-   "lever": 238.9922,
-   "sigma": 74.8723,
-   "util_uls": 0.468
+   "lever": 246.0093,
+   "sigma": 77.0706,
+   "util_uls": 0.4817
   },
   "world_check": {
    "section": "40 x 14",
@@ -295,25 +296,63 @@
    "W_edge": 3733.3333
   }
  },
+ "dims_case": {
+  "length": 1800.0,
+  "depth": 620.0,
+  "height": 780.004,
+  "z_min": 10.0,
+  "over_armrests": 1660.0,
+  "between_armrests": 1540.0,
+  "seat_width_per_person": 513.3333,
+  "seat_front": 450,
+  "P": [
+   440.0256,
+   422.0974
+  ],
+  "F": [
+   41.0,
+   450.0
+  ],
+  "back_top": [
+   556.6177,
+   780.931
+  ],
+  "back_rel_P": [
+   71.3292,
+   161.6796,
+   268.4833,
+   358.8336
+  ],
+  "seat_surface_depth": 329.0,
+  "throat": 71.0,
+  "arm_clear_lower": 36.223,
+  "arm_clear_upper": 40.5807,
+  "back_height_above_seat": 330.931,
+  "beta": 18.0,
+  "slat_span": 1600,
+  "overhang": 100,
+  "slat_overhang_beyond_frame": 66.0,
+  "back_rail_top_y": 619.5108
+ },
  "parcels": {
-  "carton1": 14.5441,
-  "carton2": 15.2682,
-  "bundle": 18.4773,
-  "gross": 48.2897,
-  "packaging": 2.8354
+  "carton1": 14.5464,
+  "carton2": 15.3075,
+  "bundle": 21.7881,
+  "gross": 51.642,
+  "packaging": 2.8126
  },
  "transport": {
-  "pallet_goods_kg": 193.1586,
-  "pallet_gross_kg": 221.3286,
+  "pallet_goods_kg": 206.568,
+  "pallet_gross_kg": 234.738,
   "pallet_extra_kg": 2.0,
-  "castings_pallet_kg": 202.6995,
+  "castings_pallet_kg": 202.7266,
   "castings_pallet_h": 737.0,
   "pallet_dims": [
    1850,
    700,
-   716.0
+   744.0
   ],
-  "load_kg": 5514.5864,
+  "load_kg": 5836.4391,
   "n_pallets": 25,
   "floor_needed": 13,
   "trailer": {
@@ -351,19 +390,19 @@
  },
  "woods_mass": {
   "oak": 4.4546,
-  "tm_ash": 3.5766
+  "tm_ash": 4.2387
  },
  "woods_net": {
   "oak": 49.8443,
-  "tm_ash": 45.4543
+  "tm_ash": 48.8294
  },
  "woods_bundle": {
   "oak": 22.8674,
-  "tm_ash": 18.4773
+  "tm_ash": 21.7881
  },
  "woods_gross": {
   "oak": 52.6797,
-  "tm_ash": 48.2897
+  "tm_ash": 51.642
  },
  "casting": {
   "M_wall": 4.0,
@@ -373,83 +412,83 @@
   "D": 34,
   "H": 51.0,
   "FD": 85.5289,
-  "n_risers": 17,
+  "n_risers": 16,
   "n_risers_junction": 6,
   "runs": [
    {
     "run": "front post, foot to seat rail",
-    "length": 376,
+    "length": 369,
     "intermediate_risers": 2
    },
    {
     "run": "front post, seat rail to armrest",
-    "length": 239,
+    "length": 246,
     "intermediate_risers": 1
    },
    {
     "run": "seat rail",
-    "length": 460,
+    "length": 465,
     "intermediate_risers": 2
    },
    {
     "run": "back rail, seat to armrest",
-    "length": 285,
+    "length": 293,
     "intermediate_risers": 1
    },
    {
     "run": "back rail, armrest to top",
-    "length": 109,
+    "length": 97,
     "intermediate_risers": 0
    },
    {
     "run": "armrest",
-    "length": 547,
+    "length": 555,
     "intermediate_risers": 3
    },
    {
     "run": "rear leg",
-    "length": 347,
-    "intermediate_risers": 2
+    "length": 338,
+    "intermediate_risers": 1
    }
   ],
-  "V_risers": 1157301.0241,
-  "V_risers_j": 387836.1207,
-  "riser_kg": 9.0848,
+  "V_risers": 1085801.9515,
+  "V_risers_j": 387829.2727,
+  "riser_kg": 8.5235,
   "riser_kg_j": 3.0445,
-  "W_guess": 49.0231,
-  "t_pour": 9.8023,
+  "W_guess": 47.7951,
+  "t_pour": 9.6788,
   "vel": 1.7718,
-  "A_choke": 403.241,
-  "d_sprue": 22.6588,
-  "A_run": 806.4819,
-  "run_w": 31.1091,
-  "run_h": 25.9243,
-  "gate_t": 20.162,
+  "A_choke": 398.1586,
+  "d_sprue": 22.5156,
+  "A_run": 796.3171,
+  "run_w": 30.9125,
+  "run_h": 25.7604,
+  "gate_t": 19.9079,
   "gate_w": 20.0,
   "n_gates": 2,
-  "gating_kg": 5.0876,
-  "casting_kg": 12.8005,
-  "poured": 48.8582,
-  "yield_": 0.524,
-  "poured_j": 36.7776,
-  "yield_j": 0.6961,
-  "runner_len": 196.3208,
+  "gating_kg": 4.989,
+  "casting_kg": 12.8135,
+  "poured": 47.6632,
+  "yield_": 0.5377,
+  "poured_j": 36.7051,
+  "yield_j": 0.6982,
+  "runner_len": 186.386,
   "y_m": 650,
   "junctions": {
    "post_seat": [
     17.5,
-    396.0078
+    388.9907
    ],
    "post_arm": [
     17.5,
     635.0
    ],
    "J": [
-    476.8396,
-    363.8876
+    481.807,
+    356.5232
    ],
    "arm_back": [
-    564.9294,
+    572.2896,
     635.0
    ],
    "foot_front": [
@@ -466,24 +505,24 @@
   "frame_bbox": [
    70.0,
    620.0,
-   741.6948
+   730.0211
   ],
   "carton_inner": [
-   781.6948,
+   770.0211,
    660.0,
    90.0
   ],
   "carton_outer": [
-   797.6948,
+   786.0211,
    676.0,
    98.0
   ],
-  "carton_kg": 1.1205,
-  "carton_blank_m2": 0.8665,
+  "carton_kg": 1.1091,
+  "carton_blank_m2": 0.8563,
   "bundle": [
    1810,
    295,
-   86
+   100
   ],
   "bundle_pack_kg": 0.5944,
   "pallet_h": 144,
@@ -491,16 +530,16 @@
   "load_dims": [
    1850,
    700,
-   716.0
+   744.0
   ],
   "cartons_fit": true,
   "bundles_fit": true
  },
  "frame_mass_by_wall": {
-  "6": 10.1833,
-  "7": 11.5131,
-  "8": 12.8005,
-  "10": 15.2501
+  "6": 10.1931,
+  "7": 11.5245,
+  "8": 12.8135,
+  "10": 15.2665
  },
  "woods": {
   "oak": {
@@ -556,7 +595,8 @@
      "flange armrest": 1.9066,
      "flange rear_leg": 0.5767,
      "feet (2)": 1.3188
-    }
+    },
+    "bolt_length": 60
    },
    "slats": {
     "I": 434403.3333,
@@ -698,72 +738,130 @@
     },
     "stack_max": 3,
     "world_pallet_width_ok": false
-   }
+   },
+   "dims": {
+    "length": 1800.0,
+    "depth": 620.0,
+    "height": 780.004,
+    "z_min": 10.0,
+    "over_armrests": 1660.0,
+    "between_armrests": 1540.0,
+    "seat_width_per_person": 513.3333,
+    "seat_front": 450,
+    "P": [
+     440.0256,
+     422.0974
+    ],
+    "F": [
+     41.0,
+     450.0
+    ],
+    "back_top": [
+     556.6177,
+     780.931
+    ],
+    "back_rel_P": [
+     71.3292,
+     161.6796,
+     268.4833,
+     358.8336
+    ],
+    "seat_surface_depth": 329.0,
+    "throat": 71.0,
+    "arm_clear_lower": 36.223,
+    "arm_clear_upper": 40.5807,
+    "back_height_above_seat": 330.931,
+    "beta": 18.0,
+    "slat_span": 1600,
+    "overhang": 100,
+    "slat_overhang_beyond_frame": 66.0,
+    "back_rail_top_y": 615.9436
+   },
+   "packaging": {
+    "bundle": [
+     1810,
+     295,
+     86
+    ],
+    "carton_outer": [
+     797.6948,
+     676.0,
+     98.0
+    ],
+    "load_dims": [
+     1850,
+     700,
+     716.0
+    ],
+    "pallet_h": 144
+   },
+   "frame_volume_l": 1.6306
   },
   "tm_ash": {
    "mass": {
-    "frame_volume_l": 1.6306,
-    "frame_area_m2": 0.4457,
-    "frame_bare": 12.8005,
-    "frame_draft": 0.256,
-    "zinc_min": 0.2563,
-    "zinc_typ": 0.3203,
+    "frame_volume_l": 1.6323,
+    "frame_area_m2": 0.4461,
+    "frame_bare": 12.8135,
+    "frame_draft": 0.2563,
+    "zinc_min": 0.2565,
+    "zinc_typ": 0.3206,
     "powder": 0.0468,
-    "frame": 13.4236,
+    "frame": 13.4373,
     "frame_cg": [
      100.0,
-     302.305,
-     407.7823
+     303.577,
+     404.9697
     ],
-    "slat_volume_l": 6.4559,
-    "slat": 3.5766,
-    "slat_box_volume_l": 6.498,
-    "bolt": 0.0282,
+    "slat_volume_l": 7.6511,
+    "slat": 4.2387,
+    "slat_box_volume_l": 7.695,
+    "bolt": 0.03,
     "washer": 0.0018,
     "nut": 0.0052,
-    "fixing": 0.0352,
-    "boltset": 0.7241,
-    "net": 45.4543,
-    "steel_in_product": 26.113,
-    "stainless_fixings": 0.7041,
-    "zinc_bench": 0.6407,
-    "zinc_bench_min": 0.5126,
-    "powder_bench": 0.0936,
-    "wood_bench": 17.8829,
+    "fixing": 0.0371,
+    "boltset": 0.7612,
+    "net": 48.8294,
+    "steel_in_product": 26.1396,
+    "stainless_fixings": 0.7412,
+    "zinc_bench": 0.6413,
+    "zinc_bench_min": 0.513,
+    "powder_bench": 0.0937,
+    "wood_bench": 21.1937,
     "wood_key": "tm_ash",
     "bench_cg": [
      900.0,
-     314.7592,
-     446.356
+     317.2735,
+     447.6357
     ],
     "breakdown_l": {
-     "web (all members)": 0.6233,
-     "flange seat_rail": 0.2389,
-     "flange back_rail": 0.2042,
+     "web (all members)": 0.623,
+     "flange seat_rail": 0.2413,
+     "flange back_rail": 0.202,
      "flange front_post": 0.1125,
-     "flange armrest": 0.2429,
-     "flange rear_leg": 0.0735,
+     "flange armrest": 0.2459,
+     "flange rear_leg": 0.0721,
      "feet (2)": 0.168
     },
     "breakdown_kg": {
-     "web (all members)": 4.8927,
-     "flange seat_rail": 1.8756,
-     "flange back_rail": 1.6029,
+     "web (all members)": 4.8906,
+     "flange seat_rail": 1.8944,
+     "flange back_rail": 1.5861,
      "flange front_post": 0.883,
-     "flange armrest": 1.9066,
-     "flange rear_leg": 0.5767,
+     "flange armrest": 1.9306,
+     "flange rear_leg": 0.5661,
      "feet (2)": 1.3188
-    }
+    },
+    "bolt_length": 65
    },
    "slats": {
-    "I": 434403.3333,
-    "W": 22863.3333,
+    "I": 721406.25,
+    "W": 32062.5,
     "span": 1600,
     "q_ur": 0.9555,
     "seat_len": 1540.0,
-    "k_h": 1.3,
-    "f_md": 22.652,
-    "f_md_sc2": 29.124,
+    "k_h": 1.2723,
+    "f_md": 22.1686,
+    "f_md_sc2": 28.5025,
     "f_mk": 32.36,
     "E_d": 13000,
     "E_wh": 14365.0,
@@ -772,95 +870,95 @@
       "Ra": 735.98887987013,
       "Rb": 735.98887987013,
       "Mmax": 305343.4164,
-      "sigma": 13.3552,
-      "w_span": 14.4145,
-      "w_end": -2.8782,
-      "sigma_d": 20.0327,
-      "util_d": 0.8844,
-      "ratio_fmk": 0.4127,
-      "L_over_w": 110.9992
+      "sigma": 9.5234,
+      "w_span": 8.6799,
+      "w_end": -1.7331,
+      "sigma_d": 14.2851,
+      "util_d": 0.6444,
+      "ratio_fmk": 0.2943,
+      "L_over_w": 184.3346
      },
      "UR-SF-0450, E from clear-wood data": {
       "Ra": 735.98887987013,
       "Rb": 735.98887987013,
       "Mmax": 305343.4164,
-      "sigma": 13.3552,
-      "w_span": 13.0448,
-      "w_end": -2.6047,
-      "sigma_d": 20.0327,
-      "util_d": 0.8844,
-      "ratio_fmk": 0.4127,
-      "L_over_w": 122.6542
+      "sigma": 9.5234,
+      "w_span": 7.8551,
+      "w_end": -1.5684,
+      "sigma_d": 14.2851,
+      "util_d": 0.6444,
+      "ratio_fmk": 0.2943,
+      "L_over_w": 203.6897
      },
      "EN 581-2 contract, 2000 N on the centre seat": {
       "Ra": 583.8888888888888,
       "Rb": 583.8888888888888,
       "Mmax": 313715.2778,
-      "sigma": 13.7213,
-      "w_span": 13.7615,
-      "w_end": -2.6833,
-      "sigma_d": 20.582,
-      "util_d": 0.9086,
-      "ratio_fmk": 0.424,
-      "L_over_w": 116.2664
+      "sigma": 9.7845,
+      "w_span": 8.2866,
+      "w_end": -1.6158,
+      "sigma_d": 14.6767,
+      "util_d": 0.662,
+      "ratio_fmk": 0.3024,
+      "L_over_w": 193.0817
      },
      "EN 581-2 contract, 2000 N on an end seat": {
       "Ra": 717.2005208333333,
       "Rb": 449.8828125,
       "Mmax": 225533.2617,
-      "sigma": 9.8644,
-      "w_span": 10.7768,
-      "w_end": -2.0564,
-      "sigma_d": 14.7966,
-      "util_d": 0.6532,
-      "ratio_fmk": 0.3048,
-      "L_over_w": 148.4667
+      "sigma": 7.0342,
+      "w_span": 6.4894,
+      "w_end": -1.2383,
+      "sigma_d": 10.5513,
+      "util_d": 0.476,
+      "ratio_fmk": 0.2174,
+      "L_over_w": 246.5561
      },
      "EN 581-2 back 560 N, all on the upper back slat, centre seat": {
       "Ra": 280.4666666666667,
       "Rb": 280.4666666666667,
       "Mmax": 203303.3333,
-      "sigma": 8.8921,
-      "w_span": 8.3336,
-      "w_end": -1.5686,
-      "sigma_d": 13.3382,
-      "util_d": 0.5888,
-      "ratio_fmk": 0.2748,
-      "L_over_w": 191.9947
+      "sigma": 6.3408,
+      "w_span": 5.0182,
+      "w_end": -0.9446,
+      "sigma_d": 9.5113,
+      "util_d": 0.429,
+      "ratio_fmk": 0.1959,
+      "L_over_w": 318.8423
      },
      "Three adults of 80 kg, one per seat (service)": {
       "Ra": 392.61800000000005,
       "Rb": 392.61800000000005,
       "Mmax": 169985.5,
-      "sigma": 7.4349,
-      "w_span": 7.9118,
-      "w_end": -1.5865,
-      "sigma_d": 11.1523,
-      "util_d": 0.4923,
-      "ratio_fmk": 0.2298,
-      "L_over_w": 202.2308
+      "sigma": 5.3017,
+      "w_span": 4.7642,
+      "w_end": -0.9554,
+      "sigma_d": 7.9525,
+      "util_d": 0.3587,
+      "ratio_fmk": 0.1638,
+      "L_over_w": 335.8412
      }
     }
    },
    "parcels": {
-    "carton1": 14.5441,
-    "carton2": 15.2682,
-    "bundle": 18.4773,
-    "gross": 48.2897,
-    "packaging": 2.8354
+    "carton1": 14.5464,
+    "carton2": 15.3075,
+    "bundle": 21.7881,
+    "gross": 51.642,
+    "packaging": 2.8126
    },
    "transport": {
-    "pallet_goods_kg": 193.1586,
-    "pallet_gross_kg": 221.3286,
+    "pallet_goods_kg": 206.568,
+    "pallet_gross_kg": 234.738,
     "pallet_extra_kg": 2.0,
-    "castings_pallet_kg": 202.6995,
+    "castings_pallet_kg": 202.7266,
     "castings_pallet_h": 737.0,
     "pallet_dims": [
      1850,
      700,
-     716.0
+     744.0
     ],
-    "load_kg": 5514.5864,
+    "load_kg": 5836.4391,
     "n_pallets": 25,
     "floor_needed": 13,
     "trailer": {
@@ -895,9 +993,96 @@
     },
     "stack_max": 3,
     "world_pallet_width_ok": false
-   }
+   },
+   "dims": {
+    "length": 1800.0,
+    "depth": 620.0,
+    "height": 780.004,
+    "z_min": 10.0,
+    "over_armrests": 1660.0,
+    "between_armrests": 1540.0,
+    "seat_width_per_person": 513.3333,
+    "seat_front": 450,
+    "P": [
+     440.0256,
+     422.0974
+    ],
+    "F": [
+     41.0,
+     450.0
+    ],
+    "back_top": [
+     556.6177,
+     780.931
+    ],
+    "back_rel_P": [
+     71.3292,
+     161.6796,
+     268.4833,
+     358.8336
+    ],
+    "seat_surface_depth": 329.0,
+    "throat": 71.0,
+    "arm_clear_lower": 36.223,
+    "arm_clear_upper": 40.5807,
+    "back_height_above_seat": 330.931,
+    "beta": 18.0,
+    "slat_span": 1600,
+    "overhang": 100,
+    "slat_overhang_beyond_frame": 66.0,
+    "back_rail_top_y": 619.5108
+   },
+   "packaging": {
+    "bundle": [
+     1810,
+     295,
+     100
+    ],
+    "carton_outer": [
+     786.0211,
+     676.0,
+     98.0
+    ],
+    "load_dims": [
+     1850,
+     700,
+     744.0
+    ],
+    "pallet_h": 144
+   },
+   "frame_volume_l": 1.6323
   }
  },
  "main_wood": "tm_ash",
- "comparison_wood": "oak"
+ "comparison_wood": "oak",
+ "sawmill_truck": {
+  "goods_kg": 20393.9351,
+  "total_kg": 21017.9351,
+  "payload_kg": 24700,
+  "ok": true,
+  "pallet_kg": 875.7473,
+  "pallet_size": [
+   1850,
+   970,
+   1022
+  ],
+  "floor": 14,
+  "layers": 2,
+  "capacity": 28
+ },
+ "sawmill_truck_oak": {
+  "goods_kg": 21430.0407,
+  "total_kg": 22054.0407,
+  "payload_kg": 24700,
+  "ok": true,
+  "pallet_kg": 918.9184,
+  "pallet_size": [
+   1850,
+   970,
+   882
+  ],
+  "floor": 14,
+  "layers": 2,
+  "capacity": 28
+ }
 }

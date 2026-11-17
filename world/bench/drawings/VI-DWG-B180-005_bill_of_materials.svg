@@ -29,20 +29,20 @@
 <text class="txt" x="67.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">Side frame, cast steel, hot-dip galvanised, powder coated</text>
 <text class="txt" x="187.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">2</text>
 <text class="txt" x="199.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">GE240+N (EN 10293, 1.0446)</text>
-<text class="txt" x="279.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">13.42</text>
-<text class="txt" x="299.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">26.85</text>
+<text class="txt" x="279.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">13.44</text>
+<text class="txt" x="299.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">26.87</text>
 <polyline class="ext" points="20.00,40.50 320.00,40.50"/>
 <text class="txt" x="21.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">2</text>
 <text class="txt" x="33.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-03</text>
-<text class="txt" x="67.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">Slat 1800 x 95 x 38, planed, 4 holes (from May 2026)</text>
+<text class="txt" x="67.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">Slat 1800 x 95 x 45, planed, 4 holes (from May 2026)</text>
 <text class="txt" x="187.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">5</text>
 <text class="txt" x="199.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">thermally modified ash, about 5 %</text>
-<text class="txt" x="279.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">3.58</text>
-<text class="txt" x="299.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">17.88</text>
+<text class="txt" x="279.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">4.24</text>
+<text class="txt" x="299.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">21.19</text>
 <polyline class="ext" points="20.00,47.50 320.00,47.50"/>
 <text class="txt" x="21.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">2a</text>
-<text class="txt" x="33.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-03</text>
-<text class="txt" x="67.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">Slat, as item 2 (deliveries until April 2026)</text>
+<text class="txt" x="33.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-03A</text>
+<text class="txt" x="67.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">Slat 1800 x 95 x 38 (benches until April 2026, frame rev. A)</text>
 <text class="txt" x="187.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">(5)</text>
 <text class="txt" x="199.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">oak heartwood, kiln-dried 12 %</text>
 <text class="txt" x="279.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">4.45</text>
@@ -50,11 +50,11 @@
 <polyline class="ext" points="20.00,54.50 320.00,54.50"/>
 <text class="txt" x="21.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">3</text>
 <text class="txt" x="33.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-04</text>
-<text class="txt" x="67.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">Cup square neck bolt M8 x 60, ISO 8677</text>
+<text class="txt" x="67.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">Cup square neck bolt M8 x 65, ISO 8677 (M8 x 60 on rev. A)</text>
 <text class="txt" x="187.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">20</text>
 <text class="txt" x="199.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">stainless A2-70 (A4-70 coastal)</text>
-<text class="txt" x="279.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">0.028</text>
-<text class="txt" x="299.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">0.56</text>
+<text class="txt" x="279.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">0.030</text>
+<text class="txt" x="299.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">0.60</text>
 <polyline class="ext" points="20.00,61.50 320.00,61.50"/>
 <text class="txt" x="21.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">4</text>
 <text class="txt" x="33.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-05</text>
@@ -80,7 +80,7 @@
 <text class="txt" x="279.50" y="80.00" font-size="2.6" text-anchor="start" font-weight="normal">0.02</text>
 <text class="txt" x="299.50" y="80.00" font-size="2.6" text-anchor="start" font-weight="normal">0.02</text>
 <polyline class="ext" points="20.00,82.50 320.00,82.50"/>
-<text class="txt" x="318.00" y="91.00" font-size="3.2" text-anchor="end" font-weight="bold">Bench net mass 45.45 kg with thermally modified ash (49.84 kg with oak)</text>
+<text class="txt" x="318.00" y="91.00" font-size="3.2" text-anchor="end" font-weight="bold">Bench net mass 48.83 kg with thermally modified ash (49.84 kg with oak)</text>
 <text class="txt" x="20.00" y="105.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
 <text class="txt" x="20.00" y="109.50" font-size="2.4" text-anchor="start" font-weight="normal">Not part of the bench: ground anchor set (4 x M12 with levelling nuts and washers), a separate item, supplied with it.</text>
 <text class="txt" x="20.00" y="113.30" font-size="2.4" text-anchor="start" font-weight="normal">Masses computed from the solid model: cast steel 7850 kg/m³, stainless A2 7930 kg/m³; thermally modified ash 554 kg/m³ (about 5 %), oak 690 kg/m³ (12 %); zinc per EN ISO 1461 for castings</text>
@@ -96,7 +96,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-005</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">B</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">–</text>
@@ -115,6 +115,6 @@
 <text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
 <polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
 <text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
-<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see bill of materials   mass 45.5 kg net</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see bill of materials   mass 48.8 kg net</text>
 <text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
 <text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>
