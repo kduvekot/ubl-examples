@@ -136,10 +136,6 @@ Inside `CustomsDeclaration`:
   The seller's description; item natural-gas of Kelpstone Gas (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Natural gas**  
   The item's short name; item natural-gas of Kelpstone Gas (world/items.json).
-- `Shipment/GoodsItem/Item/SellersItemIdentification/ID` = **KG-NG**  
-  The seller's own item number; item natural-gas of Kelpstone Gas (world/items.json).
-- `Shipment/GoodsItem/Item/StandardItemIdentification/ID` = **772060000015** (schemeID `urn:ubl-examples:world:item`)  
-  The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item natural-gas of Kelpstone Gas (world/items.json).
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **V** (listID `WCO HS 2022 Sections`)  
@@ -352,12 +348,6 @@ Inside `CustomsDeclaration`:
         <cac:Item>
           <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
           <cbc:Name>Natural gas</cbc:Name>
-          <cac:SellersItemIdentification>
-            <cbc:ID>KG-NG</cbc:ID>
-          </cac:SellersItemIdentification>
-          <cac:StandardItemIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:item">772060000015</cbc:ID>
-          </cac:StandardItemIdentification>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:OriginCountry>

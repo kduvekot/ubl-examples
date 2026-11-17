@@ -157,32 +157,12 @@
       <cac:Item>
         <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
         <cbc:Name>Office desk</cbc:Name>
-        <cbc:BrandName>Brackenmere</cbc:BrandName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-DK-16</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9523710000029</cbc:ID>
         </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">940330</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38122</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1600</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">800</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">740</cbc:Measure>
-        </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

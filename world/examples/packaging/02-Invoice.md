@@ -411,12 +411,6 @@ Inside `InvoiceLine`:
   The seller's own item number; item film-pe of Rivermouth Packaging (world/items.json).
 - `Item/StandardItemIdentification/ID` = **772040000103** (schemeID `urn:ubl-examples:world:item`)  
   The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item film-pe of Rivermouth Packaging (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item film-pe of Rivermouth Packaging (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **392010** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item film-pe of Rivermouth Packaging (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 392010 = Other plates, sheets, film, foil and strip, of polymers of ethylene.
-- `Item/CommodityClassification/ItemClassificationCode` = **36330** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item film-pe of Rivermouth Packaging (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 36330 = Plates, sheets, film, foil and strip, of plastics, not self-adhesive, non-cellular and not reinforced, laminated, supported or similarly combined with other materials.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -429,26 +423,6 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/AdditionalItemProperty/Name` = **Thickness**  
-  A measured property of the item.
-- `Item/AdditionalItemProperty/ValueQuantity` = **23** (unitCode `4H`)  
-  Its measured value; item film-pe of Rivermouth Packaging (world/items.json).
-- `Item/CircularityProfile/CircularityTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CircularityTypeCode`)  
-  The circular strategy behind the item. The code is from the Trade Accord's circularity type list: RECYCLED = Recycled material.
-- `Item/CircularityProfile/RecycledContentPercent` = **100**  
-  The share of recycled material: the film is made from the recycled granulate.
-- `Item/CircularityProfile/RecyclabilityPercent` = **100**  
-  The share that can be recycled again.
-- `Item/CircularityProfile/EndOfLifeTreatment/TreatmentPathwayCode` = **MECHRECYCLE** (listID `urn:ubl-examples:world:codelist:TreatmentPathwayCode`)  
-  What happens to the item after use. The code is from the Trade Accord's treatment pathway list: MECHRECYCLE = Mechanical recycling.
-- `Item/CircularityProfile/EndOfLifeTreatment/ProcessingTypeCode` = **MECHANICAL** (listID `urn:ubl-examples:world:codelist:EndOfLifeProcessingCode`)  
-  How the used item is processed. The code is from the Trade Accord's end-of-life processing list: MECHANICAL = Mechanical processing.
-- `Item/CircularityProfile/EndOfLifeTreatment/ImpactCode` = **LOW** (listID `urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode`)  
-  The environmental impact of that end of life: the film becomes granulate again. The code is from the Trade Accord's environmental impact level list: LOW = Low impact.
-- `Item/CircularityProfile/EndOfLifeTreatment/TreatmentLocation/Name` = **Rinova Recovery's plant, Ferrano**  
-  Where it is treated.
-- `Item/CircularityProfile/EndOfLifeTreatment/TreatmentLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Price/PriceAmount` = **3.1** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
@@ -772,13 +746,6 @@ Inside `InvoiceLine`:
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">772040000103</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">392010</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">36330</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -789,28 +756,6 @@ Inside `InvoiceLine`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Thickness</cbc:Name>
-        <cbc:ValueQuantity unitCode="4H">23</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
-      <cac:CircularityProfile>
-        <cbc:CircularityTypeCode listID="urn:ubl-examples:world:codelist:CircularityTypeCode">RECYCLED</cbc:CircularityTypeCode>
-        <cbc:RecycledContentPercent>100</cbc:RecycledContentPercent>
-        <cbc:RecyclabilityPercent>100</cbc:RecyclabilityPercent>
-        <cac:EndOfLifeTreatment>
-          <cbc:TreatmentPathwayCode listID="urn:ubl-examples:world:codelist:TreatmentPathwayCode">MECHRECYCLE</cbc:TreatmentPathwayCode>
-          <cbc:ProcessingTypeCode listID="urn:ubl-examples:world:codelist:EndOfLifeProcessingCode">MECHANICAL</cbc:ProcessingTypeCode>
-          <cbc:ImpactCode listID="urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode">LOW</cbc:ImpactCode>
-          <cac:TreatmentLocation>
-            <cbc:Name>Rinova Recovery's plant, Ferrano</cbc:Name>
-            <cac:Address>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:TreatmentLocation>
-        </cac:EndOfLifeTreatment>
-      </cac:CircularityProfile>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">3.1</cbc:PriceAmount>

@@ -313,13 +313,6 @@
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">772040000103</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">392010</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">36330</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -330,28 +323,6 @@
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Thickness</cbc:Name>
-        <cbc:ValueQuantity unitCode="4H">23</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
-      <cac:CircularityProfile>
-        <cbc:CircularityTypeCode listID="urn:ubl-examples:world:codelist:CircularityTypeCode">RECYCLED</cbc:CircularityTypeCode>
-        <cbc:RecycledContentPercent>100</cbc:RecycledContentPercent>
-        <cbc:RecyclabilityPercent>100</cbc:RecyclabilityPercent>
-        <cac:EndOfLifeTreatment>
-          <cbc:TreatmentPathwayCode listID="urn:ubl-examples:world:codelist:TreatmentPathwayCode">MECHRECYCLE</cbc:TreatmentPathwayCode>
-          <cbc:ProcessingTypeCode listID="urn:ubl-examples:world:codelist:EndOfLifeProcessingCode">MECHANICAL</cbc:ProcessingTypeCode>
-          <cbc:ImpactCode listID="urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode">LOW</cbc:ImpactCode>
-          <cac:TreatmentLocation>
-            <cbc:Name>Rinova Recovery's plant, Ferrano</cbc:Name>
-            <cac:Address>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:TreatmentLocation>
-        </cac:EndOfLifeTreatment>
-      </cac:CircularityProfile>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">3.1</cbc:PriceAmount>

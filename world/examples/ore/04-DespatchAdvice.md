@@ -273,16 +273,6 @@ Inside `DespatchLine`:
   The seller's own item number; item ore-lump of Serravona Mining (world/items.json).
 - `Item/StandardItemIdentification/ID` = **771010000013** (schemeID `urn:ubl-examples:world:item`)  
   The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item ore-lump of Serravona Mining (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Where the item was produced; item ore-lump of Serravona Mining (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/CommodityClassification/CommodityCode` = **260111** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item ore-lump of Serravona Mining (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 260111 = Iron ores and concentrates, non-agglomerated.
-- `Item/CommodityClassification/ItemClassificationCode` = **14100** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item ore-lump of Serravona Mining (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 14100 = Iron ores and concentrates, other than roasted iron pyrites.
-- `Item/AdditionalItemProperty/Name` = **Iron content**  
-  A measured property of the item.
-- `Item/AdditionalItemProperty/ValueQuantity` = **62** (unitCode `P1`)  
-  Its measured value; item ore-lump of Serravona Mining (world/items.json).
 
 ## The document
 
@@ -491,17 +481,6 @@ Inside `DespatchLine`:
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771010000013</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">260111</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">14100</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Iron content</cbc:Name>
-        <cbc:ValueQuantity unitCode="P1">62</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>

@@ -192,13 +192,8 @@
       <cac:Item>
         <cbc:Description languageID="qal">Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.</cbc:Description>
         <cbc:Description languageID="en-XL">Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
-        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
-        <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
         <cbc:Name languageID="en-XL">Cotton lint, compressed bale</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SCG-LINT</cbc:ID>
-        </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -208,14 +203,6 @@
           <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Grade</cbc:Name>
-          <cbc:Value>Middling</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Staple length</cbc:Name>
-          <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
-        </cac:AdditionalItemProperty>
         <cac:OriginAddress>
           <cbc:District>North coast</cbc:District>
           <cac:Country>

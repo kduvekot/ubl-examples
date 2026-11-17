@@ -369,12 +369,6 @@ Inside `InvoiceLine`:
   The item's short name; item timber-beam of Marrowdale Sawmill (world/items.json).
 - `Item/SellersItemIdentification/ID` = **MS-TB**  
   The seller's own item number; item timber-beam of Marrowdale Sawmill (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item timber-beam of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **440799** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item timber-beam of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 440799 = Wood sawn or chipped lengthwise, of a thickness exceeding 6 mm: other.
-- `Item/CommodityClassification/ItemClassificationCode` = **31102** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item timber-beam of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood .
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -673,13 +667,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>MS-TB</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>

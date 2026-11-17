@@ -338,10 +338,6 @@ Inside `CreditNoteLine`:
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting-b of Lumeway Distribution (world/items.json).
-- `Item/BrandName` = **Valdara**  
-  The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
-- `Item/ModelName` = **Serra 180 side frame**  
-  The model; item bench-casting of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LD-10443**  
   The seller's own item number; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
@@ -350,12 +346,6 @@ Inside `CreditNoteLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
   The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-casting of Valdara Industries (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Where the item was produced; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
-- `Item/CommodityClassification/ItemClassificationCode` = **42999** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -368,10 +358,6 @@ Inside `CreditNoteLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -605,8 +591,6 @@ Inside `CreditNoteLine`:
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
-      <cbc:BrandName>Valdara</cbc:BrandName>
-      <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
         <cbc:ID>LD-10443</cbc:ID>
       </cac:SellersItemIdentification>
@@ -619,13 +603,6 @@ Inside `CreditNoteLine`:
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
       </cac:AdditionalItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -636,14 +613,6 @@ Inside `CreditNoteLine`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
-      <cac:ManufacturerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:ManufacturerParty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>

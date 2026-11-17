@@ -221,12 +221,6 @@ Inside `OrderLine`:
   The seller's own item number; item garment-bag of Rivermouth Packaging (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **772040000110** (schemeID `urn:ubl-examples:world:item`)  
   The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item garment-bag of Rivermouth Packaging (world/items.json).
-- `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item garment-bag of Rivermouth Packaging (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **392321** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item garment-bag of Rivermouth Packaging (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 392321 = Sacks and bags (including cones), of polymers of ethylene.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **36410** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item garment-bag of Rivermouth Packaging (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 36410 = Sacks and bags, of plastics.
 
 ## The document
 
@@ -390,13 +384,6 @@ Inside `OrderLine`:
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">772040000110</cbc:ID>
         </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">392321</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">36410</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

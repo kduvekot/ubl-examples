@@ -94,12 +94,6 @@
         <cac:Item>
           <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
           <cbc:Name>Natural gas</cbc:Name>
-          <cac:SellersItemIdentification>
-            <cbc:ID>KG-NG</cbc:ID>
-          </cac:SellersItemIdentification>
-          <cac:StandardItemIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:item">772060000015</cbc:ID>
-          </cac:StandardItemIdentification>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:OriginCountry>

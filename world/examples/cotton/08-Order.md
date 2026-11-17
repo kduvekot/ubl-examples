@@ -220,46 +220,6 @@ Inside `OrderLine`:
   The number the buyer keeps for this item in its own system (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `LineItem/Item/OriginCountry/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Where the item was produced; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **520100** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `LineItem/Item/AdditionalItemProperty/Name` = **Grade**  
-  A property buyers ask about.
-- `LineItem/Item/AdditionalItemProperty/Value` = **Middling**  
-  Its value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `LineItem/Item/AdditionalItemProperty/Name` = **Staple length**  
-  A measured property of the item.
-- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
-  Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `LineItem/Item/OriginAddress/District` = **North coast**  
-  The district of the island where the cotton was grown, as the farm's address names it.
-- `LineItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `LineItem/Item/Certificate/ID` = **XL-CLS-2026-0042**  
-  The number of the certificate, unique only with its issuer, who is named below (decision ID-Q10).
-- `LineItem/Item/Certificate/CertificateTypeCode` = **COTTONCLASS** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: COTTONCLASS = Cotton classing.
-- `LineItem/Item/Certificate/CertificateType` = **Cotton classing**  
-  The name of code COTTONCLASS in the Trade Accord's certificate type list.
-- `LineItem/Item/Certificate/Remarks` = **Grade Middling, staple 1-1/8 inch, micronaire 4.2.**  
-  What the certificate states about the goods.
-- `LineItem/Item/Certificate/IssuerParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/Item/Certificate/IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/Item/Certificate/Signature/ID` = **SCC-SIG-2026-0042**  
-  The signature's identifier.
-- `LineItem/Item/Certificate/Signature/Note` = **Signed by the cotton classer of the chamber.**  
-  Who signed.
-- `LineItem/Item/Certificate/Signature/ValidationDate` = **2026-02-20**  
-  The day the signature was placed.
-- `LineItem/Item/Certificate/Signature/SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -418,54 +378,6 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Grade</cbc:Name>
-          <cbc:Value>Middling</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Staple length</cbc:Name>
-          <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
-        </cac:AdditionalItemProperty>
-        <cac:OriginAddress>
-          <cbc:District>North coast</cbc:District>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:OriginAddress>
-        <cac:Certificate>
-          <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>
-          <cbc:CertificateType>Cotton classing</cbc:CertificateType>
-          <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
-          <cac:IssuerParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
-            </cac:PartyName>
-          </cac:IssuerParty>
-          <cac:Signature>
-            <cbc:ID>SCC-SIG-2026-0042</cbc:ID>
-            <cbc:Note>Signed by the cotton classer of the chamber.</cbc:Note>
-            <cbc:ValidationDate>2026-02-20</cbc:ValidationDate>
-            <cac:SignatoryParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
-              </cac:PartyName>
-            </cac:SignatoryParty>
-          </cac:Signature>
-        </cac:Certificate>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

@@ -209,40 +209,6 @@ Inside `OrderLine`:
   The item is dangerous goods.
 - `LineItem/Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
-- `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **850760** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 850760 = Lithium-ion accumulators.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **46420** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 46420 = Electric accumulators.
-- `LineItem/Item/HazardousItem/ID` = **SE-BAT-48100-DG**  
-  The seller's dangerous goods record of the item.
-- `LineItem/Item/HazardousItem/PlacardNotation` = **9**  
-  The class shown on the placard.
-- `LineItem/Item/HazardousItem/PlacardEndorsement` = **9A**  
-  The hazard label on the package.
-- `LineItem/Item/HazardousItem/AdditionalInformation` = **State of charge below 30 %, as the air rules require.**  
-  What the shipper adds.
-- `LineItem/Item/HazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations Dangerous Goods List`)  
-  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
-- `LineItem/Item/HazardousItem/UNPackingGroupCode` = **NA** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
-  The packing group of the UN entry; NA where the entry has no packing group, as for lithium batteries and radioactive material. The code is from the Trade Accord's packing group list: NA = No packing group assigned.
-- `LineItem/Item/HazardousItem/UNPackingGroup` = **No packing group assigned**  
-  The name of code NA in the Trade Accord's packing group list.
-- `LineItem/Item/HazardousItem/EmergencyProceduresCode` = **F-A,S-I** (listID `IMO IMDG EmS`)  
-  The emergency schedules for ships (EmS) of the IMDG Code for this UN entry: the fire schedule and the spillage schedule. The code is from the world's copy of IMO IMDG Code emergency schedules (EmS): F-A,S-I = Fire schedule Alpha, spillage schedule India.
-- `LineItem/Item/HazardousItem/MedicalFirstAidGuideCode` = **147** (listID `ERG 2024`)  
-  The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 147 = Lithium Ion and Sodium Ion Batteries.
-- `LineItem/Item/HazardousItem/TunnelRestrictionCode` = **E** (listID `UNECE ADR tunnel restriction code`)  
-  The tunnel restriction code for road transport. The code is from the world's copy of ADR tunnel restriction code: E.
-- `LineItem/Item/HazardousItem/ProperShippingName` = **Lithium ion batteries**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
-- `LineItem/Item/HazardousItem/HazardousCategoryCode` = **9** (listID `UN Model Regulations hazard class`)  
-  The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles.
-- `LineItem/Item/HazardousItem/MarkingID` = **UN3480**  
-  The UN number marked on each package.
-- `LineItem/Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
-  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **1** (unitCode `SET`)  
@@ -261,44 +227,6 @@ Inside `OrderLine`:
   The item is dangerous goods.
 - `LineItem/Item/SellersItemIdentification/ID` = **SE-SMK-10**  
   The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
-- `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **853110** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 853110 = Burglar or fire alarms and similar apparatus.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **46921** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 46921 = Burglar or fire alarms and similar apparatus.
-- `LineItem/Item/HazardousItem/ID` = **SE-SMK-10-DG**  
-  The seller's dangerous goods record of the item.
-- `LineItem/Item/HazardousItem/PlacardNotation` = **7**  
-  The class shown on the placard.
-- `LineItem/Item/HazardousItem/AdditionalInformation` = **Excepted package: no radioactive label, the UN number on the package.**  
-  What the shipper adds.
-- `LineItem/Item/HazardousItem/UNDGCode` = **2911** (listID `UN Model Regulations Dangerous Goods List`)  
-  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2911 = Radioactive material, excepted package – instruments or articles.
-- `LineItem/Item/HazardousItem/UNPackingGroupCode` = **NA** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
-  The packing group of the UN entry; NA where the entry has no packing group, as for lithium batteries and radioactive material. The code is from the Trade Accord's packing group list: NA = No packing group assigned.
-- `LineItem/Item/HazardousItem/UNPackingGroup` = **No packing group assigned**  
-  The name of code NA in the Trade Accord's packing group list.
-- `LineItem/Item/HazardousItem/EmergencyProceduresCode` = **F-I,S-S** (listID `IMO IMDG EmS`)  
-  The emergency schedules for ships (EmS) of the IMDG Code for this UN entry: the fire schedule and the spillage schedule. The code is from the world's copy of IMO IMDG Code emergency schedules (EmS): F-I,S-S = Fire schedule India, spillage schedule Sierra.
-- `LineItem/Item/HazardousItem/MedicalFirstAidGuideCode` = **161** (listID `ERG 2024`)  
-  The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 161 = Radioactive Materials (Low Level Radiation).
-- `LineItem/Item/HazardousItem/ProperShippingName` = **Radioactive material, excepted package - instruments or articles**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
-- `LineItem/Item/HazardousItem/HazardousCategoryCode` = **7** (listID `UN Model Regulations hazard class`)  
-  The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material.
-- `LineItem/Item/HazardousItem/MarkingID` = **UN2911**  
-  The UN number marked on each package.
-- `LineItem/Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
-  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/HazardousItem/RadioactiveMaterial/Name` = **Americium-241 sources in smoke detectors**  
-  The material.
-- `LineItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Sealed source, not special form.**  
-  Its form.
-- `LineItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/Name` = **Americium-241**  
-  The isotope.
-- `LineItem/Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/ActivityLevelMeasure` = **37** (unitCode `2Q`)  
-  Per detector.
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **20** (unitCode `LTR`)  
@@ -317,58 +245,6 @@ Inside `OrderLine`:
   The item is dangerous goods.
 - `LineItem/Item/SellersItemIdentification/ID` = **SE-CS-05**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
-- `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **381400** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 381400 = Organic composite solvents and thinners, n.e.s.; prepared paint or varnish removers.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **35110** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 35110 = Paints and varnishes and related products.
-- `LineItem/Item/HazardousItem/ID` = **SE-CS-05-DG**  
-  The seller's dangerous goods record of the item.
-- `LineItem/Item/HazardousItem/PlacardNotation` = **8**  
-  The class shown on the placard.
-- `LineItem/Item/HazardousItem/PlacardEndorsement` = **8**  
-  The hazard label on the package.
-- `LineItem/Item/HazardousItem/AdditionalInformation` = **Packed as the rules require.**  
-  What the shipper adds.
-- `LineItem/Item/HazardousItem/UNDGCode` = **2920** (listID `UN Model Regulations Dangerous Goods List`)  
-  The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2920 = Corrosive liquid, flammable, n.o.s..
-- `LineItem/Item/HazardousItem/UNPackingGroupCode` = **II** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
-  The packing group of the UN entry; NA where the entry has no packing group, as for lithium batteries and radioactive material. The code is from the Trade Accord's packing group list: II = Medium danger.
-- `LineItem/Item/HazardousItem/UNPackingGroup` = **Medium danger**  
-  The name of code II in the Trade Accord's packing group list.
-- `LineItem/Item/HazardousItem/EmergencyProceduresCode` = **F-E,S-C** (listID `IMO IMDG EmS`)  
-  The emergency schedules for ships (EmS) of the IMDG Code for this UN entry: the fire schedule and the spillage schedule. The code is from the world's copy of IMO IMDG Code emergency schedules (EmS): F-E,S-C = Fire schedule Echo, spillage schedule Charlie.
-- `LineItem/Item/HazardousItem/MedicalFirstAidGuideCode` = **132** (listID `ERG 2024`)  
-  The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 132 = Flammable Liquids - Corrosive.
-- `LineItem/Item/HazardousItem/TunnelRestrictionCode` = **D/E** (listID `UNECE ADR tunnel restriction code`)  
-  The tunnel restriction code for road transport. The code is from the world's copy of ADR tunnel restriction code: D/E.
-- `LineItem/Item/HazardousItem/MaritimePollutantCode` = **N** (listID `urn:ubl-examples:world:codelist:MarinePollutantCode`)  
-  Not a marine pollutant. The code is from the Trade Accord's marine pollutant list: N = Not a marine pollutant.
-- `LineItem/Item/HazardousItem/TechnicalName` = **ethanolamine, propanol**  
-  The technical name, needed with an n.o.s. entry.
-- `LineItem/Item/HazardousItem/ProperShippingName` = **Corrosive liquid, flammable, n.o.s.**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
-- `LineItem/Item/HazardousItem/HazardousCategoryCode` = **8** (listID `UN Model Regulations hazard class`)  
-  The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances.
-- `LineItem/Item/HazardousItem/MarkingID` = **UN2920**  
-  The UN number marked on each package.
-- `LineItem/Item/HazardousItem/HazardClassID` = **8** (schemeID `UN Model Regulations hazard class`)  
-  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/HazardousItem/SecondaryHazard/ID` = **3** (schemeID `UN Model Regulations hazard class`)  
-  The subsidiary hazard: flammable. The code is from the world's copy of UN Model Regulations hazard class and division: 3 = Flammable liquids. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/HazardousItem/SecondaryHazard/PlacardNotation` = **3**  
-  Shown on a second label.
-- `LineItem/Item/HazardousItem/SecondaryHazard/PlacardEndorsement` = **3**  
-  The flammable liquid label.
-- `LineItem/Item/HazardousItem/SecondaryHazard/EmergencyProceduresCode` = **TEC3** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
-  UBL defines it as "A code signifying the emergency procedures for this secondary hazard": the Trade Accord's emergency card for class 3. The IMDG Code gives one pair of emergency schedules for the whole UN entry (on the item above), not one per hazard; the instructions in writing of road transport (ADR 5.4.3), which the Accord's cards follow, give the actions per danger label, the subsidiary hazard's label included. The code is from the Trade Accord's transport emergency card list: TEC3 = Emergency card for class 3.
-- `LineItem/Item/HazardousItem/SecondaryHazard/Extension` = **Subsidiary risk 3**  
-  In words.
-- `LineItem/Item/HazardousItem/FlashpointTemperature/AttributeID` = **FLASHPOINT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Closed cup. The code is from the Trade Accord's temperature attribute list: FLASHPOINT = Flashpoint. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/HazardousItem/FlashpointTemperature/Measure` = **28** (unitCode `CEL`)  
-  The flashpoint.
 
 ## The document
 
@@ -522,29 +398,6 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-48100</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-          <cbc:PlacardNotation>9</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
-          <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN3480</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -564,35 +417,6 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-SMK-10-DG</cbc:ID>
-          <cbc:PlacardNotation>7</cbc:PlacardNotation>
-          <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
-          <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN2911</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
-          <cac:RadioactiveMaterial>
-            <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
-            <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-            <cac:ApplicableRadioactiveIsotope>
-              <cbc:Name>Americium-241</cbc:Name>
-              <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>
-            </cac:ApplicableRadioactiveIsotope>
-          </cac:RadioactiveMaterial>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -612,42 +436,6 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-05</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-CS-05-DG</cbc:ID>
-          <cbc:PlacardNotation>8</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
-          <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
-          <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
-          <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN2920</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
-          <cac:SecondaryHazard>
-            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
-            <cbc:PlacardNotation>3</cbc:PlacardNotation>
-            <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
-            <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
-            <cbc:Extension>Subsidiary risk 3</cbc:Extension>
-          </cac:SecondaryHazard>
-          <cac:FlashpointTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">28</cbc:Measure>
-          </cac:FlashpointTemperature>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

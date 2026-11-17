@@ -166,10 +166,6 @@ Inside `CustomsDeclaration`:
   The item's name in Urvanian, the seller's language; item granulate-pe of Rinova Recovery (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Recycled PE granulate** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item granulate-pe of Rinova Recovery (world/items.json).
-- `Shipment/GoodsItem/Item/SellersItemIdentification/ID` = **RR-PE-R1**  
-  The seller's own item number; item granulate-pe of Rinova Recovery (world/items.json).
-- `Shipment/GoodsItem/Item/StandardItemIdentification/ID` = **771030000048** (schemeID `urn:ubl-examples:world:item`)  
-  The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item granulate-pe of Rinova Recovery (world/items.json).
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Where the item was produced; item granulate-pe of Rinova Recovery (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **VII** (listID `WCO HS 2022 Sections`)  
@@ -180,28 +176,6 @@ Inside `CustomsDeclaration`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item granulate-pe of Rinova Recovery (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 390110 = Polyethylene having a specific gravity of less than 0.94, in primary forms.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **34710** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item granulate-pe of Rinova Recovery (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 34710 = Polymers of ethylene, in primary forms.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Density**  
-  A measured property of the item.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **0.92** (unitCode `23`)  
-  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/Name` = **Recycled content**  
-  A measured property of the item.
-- `Shipment/GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
-  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
-  The number of the environmental certificate, unique only with its issuer, who is named with it (decision ID-Q10).
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  The kind of claim, as a code. The code is from the Trade Accord's certificate type list: RECYCLED = Recycled content.
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateType` = **Ranstan nelsek** (languageID `qau`)  
-  The name of code RECYCLED in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/CertificateType` = **Recycled content** (languageID `en-XU`)  
-  The name of code RECYCLED in the Trade Accord's certificate type list. In English.
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
-  What the certificate states.
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Shipment/GoodsItem/Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Shipment/ShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by river (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 8 = Inland water transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the river border**  
@@ -430,12 +404,6 @@ Inside `Signature`:
           <cbc:Description languageID="en-XU">Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
           <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
           <cbc:Name languageID="en-XU">Recycled PE granulate</cbc:Name>
-          <cac:SellersItemIdentification>
-            <cbc:ID>RR-PE-R1</cbc:ID>
-          </cac:SellersItemIdentification>
-          <cac:StandardItemIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:item">771030000048</cbc:ID>
-          </cac:StandardItemIdentification>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:OriginCountry>
@@ -445,29 +413,6 @@ Inside `Signature`:
             <cbc:CommodityCode listID="WCO HS 2022">390110</cbc:CommodityCode>
             <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">34710</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
-          <cac:AdditionalItemProperty>
-            <cbc:Name>Density</cbc:Name>
-            <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
-          </cac:AdditionalItemProperty>
-          <cac:AdditionalItemProperty>
-            <cbc:Name>Recycled content</cbc:Name>
-            <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
-          </cac:AdditionalItemProperty>
-          <cac:EnvironmentalCertificate>
-            <cbc:ID>XU-RC-2026-007</cbc:ID>
-            <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
-            <cbc:CertificateType languageID="qau">Ranstan nelsek</cbc:CertificateType>
-            <cbc:CertificateType languageID="en-XU">Recycled content</cbc:CertificateType>
-            <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
-            <cac:IssuerParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
-              </cac:PartyName>
-            </cac:IssuerParty>
-          </cac:EnvironmentalCertificate>
         </cac:Item>
       </cac:GoodsItem>
       <cac:ShipmentStage>

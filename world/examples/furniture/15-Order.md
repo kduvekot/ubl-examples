@@ -230,30 +230,10 @@ Inside `OrderLine`:
   The seller's description; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/Name` = **Office desk**  
   The item's short name; item office-desk of Brackenmere Furniture (world/items.json).
-- `LineItem/Item/BrandName` = **Brackenmere**  
-  The brand the maker sells the item under; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **BF-DK-16**  
   The seller's own item number; item office-desk of Brackenmere Furniture (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **9523710000029** (schemeID `GS1 GTIN`)  
   The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product (world/items.json).
-- `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item office-desk of Brackenmere Furniture (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **940330** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item office-desk of Brackenmere Furniture (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940330 = Wooden furniture of a kind used in offices.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **38122** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item office-desk of Brackenmere Furniture (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38122 = Other wooden furniture, of a kind used in offices.
-- `LineItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/Dimension/Measure` = **1600** (unitCode `MMT`)  
-  Its size.
-- `LineItem/Item/Dimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/Dimension/Measure` = **800** (unitCode `MMT`)  
-  Its size.
-- `LineItem/Item/Dimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/Dimension/Measure` = **740** (unitCode `MMT`)  
-  Its size.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **14** (unitCode `HUR`)  
@@ -433,32 +413,12 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
         <cbc:Name>Office desk</cbc:Name>
-        <cbc:BrandName>Brackenmere</cbc:BrandName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-DK-16</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9523710000029</cbc:ID>
         </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">940330</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38122</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1600</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">800</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">740</cbc:Measure>
-        </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

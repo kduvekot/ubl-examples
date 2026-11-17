@@ -244,9 +244,6 @@
       <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
       <cbc:Name languageID="qau">Tuzskaz stan balman skul huntaz drunvir</cbc:Name>
       <cbc:Name languageID="en-XU">Collection and recovery of production waste</cbc:Name>
-      <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">ENDOFLIFE</cbc:LifecycleStageCode>
-      <cbc:LifecycleStageDescription languageID="qau">Drek vekrir skadek drek huntaz drunvir hir drek temul skul nakskek drekvir, dizek skukstek dir ranstan.</cbc:LifecycleStageDescription>
-      <cbc:LifecycleStageDescription languageID="en-XU">The service handles the production waste at the end of its life, before it is recycled.</cbc:LifecycleStageDescription>
       <cac:SellersItemIdentification>
         <cbc:ID>RR-SVC-01</cbc:ID>
       </cac:SellersItemIdentification>

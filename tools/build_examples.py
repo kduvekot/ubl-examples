@@ -1985,7 +1985,7 @@ ITEM_PROFILE = {
     "notice": {"name", "desc", "class"},
     "message": {"name", "desc", "id"},
 }
-APPLY_ITEM_PROFILE = False    # off until the owner approves the item table (O20, analysis/item-profile.md)
+APPLY_ITEM_PROFILE = True     # the item table, approved by the owner 2026-11-17 (O20, analysis/item-profile.md)
 
 
 def item_profiles(content, doc):

@@ -156,7 +156,6 @@
       <cac:Item>
         <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>
         <cbc:Name>Cotton shirt</cbc:Name>
-        <cbc:BrandName>Lumeport</cbc:BrandName>
         <cac:BuyersItemIdentification>
           <cbc:ID>BM-778120</cbc:ID>
         </cac:BuyersItemIdentification>
@@ -166,21 +165,6 @@
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">772030000090</cbc:ID>
         </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">620520</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">28232</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Material</cbc:Name>
-          <cbc:Value>100 % cotton grown on Lisavu</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Sizes</cbc:Name>
-          <cbc:Value>S to XL</cbc:Value>
-        </cac:AdditionalItemProperty>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

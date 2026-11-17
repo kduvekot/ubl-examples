@@ -316,13 +316,6 @@
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771010000013</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">260111</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">14100</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -331,10 +324,6 @@
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Iron content</cbc:Name>
-        <cbc:ValueQuantity unitCode="P1">62</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">8060</cbc:PriceAmount>

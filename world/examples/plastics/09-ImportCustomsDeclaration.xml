@@ -182,12 +182,6 @@
         <cbc:Description languageID="en-XB">Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.</cbc:Description>
         <cbc:Name languageID="qau">Ranstan PE skalsir</cbc:Name>
         <cbc:Name languageID="en-XB">Recycled PE granulate</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>RR-PE-R1</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771030000048</cbc:ID>
-        </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -197,28 +191,6 @@
           <cbc:CommodityCode listID="WCO HS 2022">390110</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">34710</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Density</cbc:Name>
-          <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Recycled content</cbc:Name>
-          <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
-        </cac:AdditionalItemProperty>
-        <cac:EnvironmentalCertificate>
-          <cbc:ID>XU-RC-2026-007</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
-          <cbc:CertificateType>Recycled content</cbc:CertificateType>
-          <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
-          <cac:IssuerParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
-            </cac:PartyName>
-          </cac:IssuerParty>
-        </cac:EnvironmentalCertificate>
       </cac:Item>
       <cac:BondedWarehouseLocation>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

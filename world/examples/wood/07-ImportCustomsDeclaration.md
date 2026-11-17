@@ -240,14 +240,8 @@ Inside `Shipment`:
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
 - `GoodsItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
   The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/PackQuantity` = **1** (unitCode `EA`)  
-  One pack of this item.
-- `GoodsItem/Item/PackSizeNumeric` = **50**  
-  The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `GoodsItem/Item/Name` = **Hardwood bench slat 1800**  
   The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/SellersItemIdentification/ID` = **MS-SL-1800**  
-  The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item slat-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/NatureCode` = **IX** (listID `WCO HS 2022 Sections`)  
@@ -264,92 +258,6 @@ Inside `Shipment`:
   The standard rate.
 - `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/AdditionalItemProperty/ID` = **MC**  
-  The maker's identifier for the property.
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Moisture content**  
-  The name of code MC in the Trade Accord's item property name list.
-- `GoodsItem/Item/AdditionalItemProperty/NameCode` = **MC** (listID `urn:ubl-examples:world:codelist:ItemPropertyNameCode`)  
-  The property's name as a code. The code is from the Trade Accord's item property name list: MC = Moisture content.
-- `GoodsItem/Item/AdditionalItemProperty/TestMethod` = **Oven-dry method on samples from each kiln charge**  
-  How the value is tested.
-- `GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **12** (unitCode `P1`)  
-  Its measured value; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/ValueQualifier` = **Average of the kiln charge**  
-  What the value stands for.
-- `GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
-  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **QUA**  
-  The group of properties this one belongs to.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Wood quality**  
-  The group's name.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
-  How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyRange/MinimumValue` = **10**  
-  The lowest value accepted.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyRange/MaximumValue` = **14**  
-  The highest value accepted.
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-WD-0012** (schemeID `urn:ubl-examples:world:XU:property`)  
-  The property's number in the property standard of the identification agency. The schemeID names the scheme it is from: the property standard of the Codana Identification Agency (UR-, two letters for the part of the standard (SF street furniture, WD wood), four digits).
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **WD**  
-  The part of the agency's property standard it is taken from (SF street furniture, WD wood), as the number itself shows.
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/AdditionalItemProperty/SubItemProperty/Name` = **Moisture at the core**  
-  Measured at the centre of the slat.
-- `GoodsItem/Item/AdditionalItemProperty/SubItemProperty/ValueQuantity` = **13** (unitCode `P1`)  
-  Its measured value; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Thickness tolerance**  
-  How far a slat may be off its thickness.
-- `GoodsItem/Item/AdditionalItemProperty/RangeDimension/AttributeID` = **THICKNESS** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  The dimension the tolerance is for. The code is from the Trade Accord's dimension attribute list: THICKNESS = Thickness. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/AdditionalItemProperty/RangeDimension/Measure` = **38** (unitCode `MMT`)  
-  Its nominal size.
-- `GoodsItem/Item/AdditionalItemProperty/RangeDimension/MinimumMeasure` = **37.5** (unitCode `MMT`)  
-  The smallest size accepted.
-- `GoodsItem/Item/AdditionalItemProperty/RangeDimension/MaximumMeasure` = **38.5** (unitCode `MMT`)  
-  The largest size accepted.
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Surface**  
-  A property buyers ask about.
-- `GoodsItem/Item/AdditionalItemProperty/Value` = **Planed on four sides**  
-  Its value; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
-  The number of the certificate, in the forestry register of Bayvarra, which keeps the certificates issued under each registration; the schemeID names the register and its authority, so no issuer party is needed (decision ID-Q10).
-- `GoodsItem/Item/Certificate/CertificateTypeCode` = **SUSTFOREST** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: SUSTFOREST = Sustainable forestry.
-- `GoodsItem/Item/Certificate/CertificateType` = **Zhazdran zakrek** (languageID `qau`)  
-  The name of code SUSTFOREST in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `GoodsItem/Item/Certificate/CertificateType` = **Sustainable forestry** (languageID `en-XU`)  
-  The name of code SUSTFOREST in the Trade Accord's certificate type list. In English.
-- `GoodsItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
-  The registration the certificate is issued under: the sawmill's own number in the same register, which the certificate's number repeats after its year.
-- `GoodsItem/Item/Certificate/ApplicableCategoryCode` = **HW** (listID `urn:ubl-examples:world:codelist:CategoryCode`)  
-  The category of goods the certificate covers. The code is from the Trade Accord's certified product category list: HW = Hardwood sawn timber.
-- `GoodsItem/Item/Certificate/ApplicableCategory` = **Hardwood sawn timber**  
-  The name of code HW in the Trade Accord's certified product category list.
-- `GoodsItem/Item/Certificate/CertificateURI` = **https://forestry.xb.example/certificates/XB-FOR-2025-0118**  
-  Where the certificate can be checked.
-- `GoodsItem/Item/Certificate/Remarks` = **The timber comes from forests in Upland State managed for regrowth.**  
-  What the certificate states about the goods.
-- `GoodsItem/Item/Certificate/CertificateValidityPeriod/EndDate` = **2027-12-31**  
-  The certificate is valid until then.
-- `GoodsItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
-  The audit report the certificate is based on.
-- `GoodsItem/Item/Certificate/DocumentReference/DocumentType` = **Forest management audit report**  
-  The kind of document referred to, the audit report behind the forestry certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `GoodsItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
-  Its size.
-- `GoodsItem/Item/Dimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **95** (unitCode `MMT`)  
-  Its size.
-- `GoodsItem/Item/Dimension/AttributeID` = **THICKNESS** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: THICKNESS = Thickness. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **38** (unitCode `MMT`)  
-  Its size.
 - `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 
@@ -553,12 +461,7 @@ Inside `Signature`:
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
-        <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800</cbc:ID>
-        </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -575,83 +478,6 @@ Inside `Signature`:
             <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
           </cac:TaxScheme>
         </cac:ClassifiedTaxCategory>
-        <cac:AdditionalItemProperty>
-          <cbc:ID>MC</cbc:ID>
-          <cbc:Name>Moisture content</cbc:Name>
-          <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">MC</cbc:NameCode>
-          <cbc:TestMethod>Oven-dry method on samples from each kiln charge</cbc:TestMethod>
-          <cbc:ValueQuantity unitCode="P1">12</cbc:ValueQuantity>
-          <cbc:ValueQualifier>Average of the kiln charge</cbc:ValueQualifier>
-          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-          <cac:ItemPropertyGroup>
-            <cbc:ID>QUA</cbc:ID>
-            <cbc:Name>Wood quality</cbc:Name>
-            <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-          </cac:ItemPropertyGroup>
-          <cac:ItemPropertyRange>
-            <cbc:MinimumValue>10</cbc:MinimumValue>
-            <cbc:MaximumValue>14</cbc:MaximumValue>
-          </cac:ItemPropertyRange>
-          <cac:StandardPropertyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-WD-0012</cbc:ID>
-            <cbc:IssuerScopeID>WD</cbc:IssuerScopeID>
-            <cac:IssuerParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Codana Identification Agency</cbc:Name>
-              </cac:PartyName>
-            </cac:IssuerParty>
-          </cac:StandardPropertyIdentification>
-          <cac:SubItemProperty>
-            <cbc:Name>Moisture at the core</cbc:Name>
-            <cbc:ValueQuantity unitCode="P1">13</cbc:ValueQuantity>
-          </cac:SubItemProperty>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Thickness tolerance</cbc:Name>
-          <cac:RangeDimension>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">38</cbc:Measure>
-            <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
-            <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
-          </cac:RangeDimension>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Surface</cbc:Name>
-          <cbc:Value>Planed on four sides</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:Certificate>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">SUSTFOREST</cbc:CertificateTypeCode>
-          <cbc:CertificateType languageID="qau">Zhazdran zakrek</cbc:CertificateType>
-          <cbc:CertificateType languageID="en-XU">Sustainable forestry</cbc:CertificateType>
-          <cbc:CertificateReferenceID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-REG-0118</cbc:CertificateReferenceID>
-          <cbc:ApplicableCategoryCode listID="urn:ubl-examples:world:codelist:CategoryCode">HW</cbc:ApplicableCategoryCode>
-          <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
-          <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-0118</cbc:CertificateURI>
-          <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
-          <cac:CertificateValidityPeriod>
-            <cbc:EndDate>2027-12-31</cbc:EndDate>
-          </cac:CertificateValidityPeriod>
-          <cac:DocumentReference>
-            <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
-            <cbc:DocumentType>Forest management audit report</cbc:DocumentType>
-          </cac:DocumentReference>
-        </cac:Certificate>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">95</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">38</cbc:Measure>
-        </cac:Dimension>
       </cac:Item>
     </cac:GoodsItem>
     <cac:ShipmentStage>

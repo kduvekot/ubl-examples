@@ -477,13 +477,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>

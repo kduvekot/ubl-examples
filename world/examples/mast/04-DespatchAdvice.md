@@ -235,12 +235,6 @@ Inside `DespatchLine`:
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **850760** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 850760 = Lithium-ion accumulators.
-- `Item/CommodityClassification/ItemClassificationCode` = **46420** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 46420 = Electric accumulators.
 - `Item/HazardousItem/ID` = **SE-BAT-48100-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/PlacardNotation` = **9**  
@@ -285,12 +279,6 @@ Inside `DespatchLine`:
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-SMK-10**  
   The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **853110** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 853110 = Burglar or fire alarms and similar apparatus.
-- `Item/CommodityClassification/ItemClassificationCode` = **46921** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 46921 = Burglar or fire alarms and similar apparatus.
 - `Item/HazardousItem/ID` = **SE-SMK-10-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/PlacardNotation` = **7**  
@@ -339,12 +327,6 @@ Inside `DespatchLine`:
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-CS-05**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **381400** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 381400 = Organic composite solvents and thinners, n.e.s.; prepared paint or varnish removers.
-- `Item/CommodityClassification/ItemClassificationCode` = **35110** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 35110 = Paints and varnishes and related products.
 - `Item/HazardousItem/ID` = **SE-CS-05-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/PlacardNotation` = **8**  
@@ -572,13 +554,6 @@ Inside `DespatchLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SE-BAT-48100</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:HazardousItem>
         <cbc:ID>SE-BAT-48100-DG</cbc:ID>
         <cbc:PlacardNotation>9</cbc:PlacardNotation>
@@ -611,13 +586,6 @@ Inside `DespatchLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SE-SMK-10</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:HazardousItem>
         <cbc:ID>SE-SMK-10-DG</cbc:ID>
         <cbc:PlacardNotation>7</cbc:PlacardNotation>
@@ -656,13 +624,6 @@ Inside `DespatchLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SE-CS-05</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:HazardousItem>
         <cbc:ID>SE-CS-05-DG</cbc:ID>
         <cbc:PlacardNotation>8</cbc:PlacardNotation>

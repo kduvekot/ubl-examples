@@ -339,34 +339,12 @@ Inside `InvoiceLine`:
   The seller's description in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.** (languageID `en-XL`)  
   The seller's description in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `Item/PackQuantity` = **1** (unitCode `EA`)  
-  One pack of this item.
-- `Item/PackSizeNumeric` = **227**  
-  The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/Name` = **Tekapa suhema, lafatite senehu** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/Name` = **Cotton lint, compressed bale** (languageID `en-XL`)  
   The item's name in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Where the item was produced; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Item/CommodityClassification/CommodityCode` = **520100** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
-- `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `Item/AdditionalItemProperty/Name` = **Grade**  
-  A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **Middling**  
-  Its value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `Item/AdditionalItemProperty/Name` = **Staple length**  
-  A measured property of the item.
-- `Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
-  Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `Item/OriginAddress/District` = **North coast**  
-  The district of the island where the cotton was grown, as the farm's address names it.
-- `Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Item/Certificate/ID` = **XL-CLS-2026-0042**  
   The number of the certificate, unique only with its issuer, who is named below (decision ID-Q10).
 - `Item/Certificate/CertificateTypeCode` = **COTTONCLASS** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
@@ -640,34 +618,11 @@ Inside `InvoiceLine`:
     <cac:Item>
       <cbc:Description languageID="qal">Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.</cbc:Description>
       <cbc:Description languageID="en-XL">Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
-      <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
-      <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
       <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
       <cbc:Name languageID="en-XL">Cotton lint, compressed bale</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>SCG-LINT</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Grade</cbc:Name>
-        <cbc:Value>Middling</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Staple length</cbc:Name>
-        <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
-      <cac:OriginAddress>
-        <cbc:District>North coast</cbc:District>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:OriginAddress>
       <cac:Certificate>
         <cbc:ID>XL-CLS-2026-0042</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>

@@ -147,29 +147,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-48100</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-          <cbc:PlacardNotation>9</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
-          <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN3480</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -189,35 +166,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-SMK-10-DG</cbc:ID>
-          <cbc:PlacardNotation>7</cbc:PlacardNotation>
-          <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
-          <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN2911</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
-          <cac:RadioactiveMaterial>
-            <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
-            <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-            <cac:ApplicableRadioactiveIsotope>
-              <cbc:Name>Americium-241</cbc:Name>
-              <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>
-            </cac:ApplicableRadioactiveIsotope>
-          </cac:RadioactiveMaterial>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -237,42 +185,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-05</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-CS-05-DG</cbc:ID>
-          <cbc:PlacardNotation>8</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
-          <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
-          <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
-          <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN2920</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
-          <cac:SecondaryHazard>
-            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
-            <cbc:PlacardNotation>3</cbc:PlacardNotation>
-            <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
-            <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
-            <cbc:Extension>Subsidiary risk 3</cbc:Extension>
-          </cac:SecondaryHazard>
-          <cac:FlashpointTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">28</cbc:Measure>
-          </cac:FlashpointTemperature>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

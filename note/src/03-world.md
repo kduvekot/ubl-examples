@@ -697,9 +697,13 @@ a value at the border. A catalogue line adds the seller's terms (lead time,
 minimum and maximum quantity, the price list and its validity); a despatch
 advice names the production lot, or the serial number of every casting,
 which stays the same when a cancelled despatch advice is replaced; and a
-till receipt during a promotion shows the discount on the shelf price. How
-much each document type carries is worked out as a profile per document type
-and is not yet settled in detail.
+till receipt during a promotion shows the discount on the shelf price. What
+each kind of document carries is fixed in the item table
+(`analysis/item-profile.md`): a catalogue or an offer everything about the
+type; an order the identification and the variant chosen; a despatch advice
+the lots, serials and dangerous goods; an invoice the identification and
+what tax needs; a customs declaration the description, commodity code and
+origin; a shopper's receipt the name, the brand and the warranty.
 
 The colours an item comes in are facts of its type, listed in the catalogue
 as variants; an order names the variant it wants by its identifier and

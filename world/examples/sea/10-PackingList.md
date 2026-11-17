@@ -240,16 +240,6 @@ Inside `Shipment`:
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
-- `GoodsItem/Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
-  What comes with the item; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/Keyword` = **park bench, street furniture**  
-  The search string buyers find the item by, the maker's keywords in one element; item bench-serra of Valdara Industries (world/items.json). A second Keyword would have to be in another language (UBL rule IND7).
-- `GoodsItem/Item/BrandName` = **Valdara**  
-  The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/ModelName` = **Serra 180**  
-  The model; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
-  The maker's warranty; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `GoodsItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
@@ -268,178 +258,6 @@ Inside `Shipment`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `GoodsItem/Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
   The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
-  The maker's datasheet with drawings and assembly instructions.
-- `GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Where the item was produced; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
-  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XX = Miscellaneous manufactured articles.
-- `GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
-  The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
-- `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `GoodsItem/Item/TransactionConditions/ID` = **LD-TC-01**  
-  The seller's number for these conditions of sale.
-- `GoodsItem/Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
-  The conditions in words.
-- `GoodsItem/Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
-  The seller's general terms of trade.
-- `GoodsItem/Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Frame material**  
-  A property buyers ask about.
-- `GoodsItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
-  Its value; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Slat wood**  
-  A property buyers ask about.
-- `GoodsItem/Item/AdditionalItemProperty/Value` = **Kiln-dried hardwood**  
-  Its value; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Seats**  
-  A property buyers ask about.
-- `GoodsItem/Item/AdditionalItemProperty/Value` = **3**  
-  Its value; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/ID` = **COL**  
-  The maker's identifier for the property.
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Frame colour**  
-  The colour of the frame, one of the colours it is offered in.
-- `GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
-  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
-- `GoodsItem/Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  The property's value, taken from the maker's list of values (Ferro grey, Moss green; item bench-serra of Valdara Industries (world/items.json)). One ListValue only: UBL rule IND7 allows a second one only in another language.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
-  The group of properties this one belongs to.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
-  The group's name.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
-  How much the group matters. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
-- `GoodsItem/Item/AdditionalItemProperty/ID` = **LOAD**  
-  The maker's identifier for the property.
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Load capacity**  
-  The name of code LOAD in the Trade Accord's item property name list.
-- `GoodsItem/Item/AdditionalItemProperty/NameCode` = **LOAD** (listID `urn:ubl-examples:world:codelist:ItemPropertyNameCode`)  
-  The property's name as a code. The code is from the Trade Accord's item property name list: LOAD = Load capacity.
-- `GoodsItem/Item/AdditionalItemProperty/TestMethod` = **Static load on the seat for one hour, three seats loaded evenly, no lasting deformation**  
-  How the value is tested.
-- `GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **450** (unitCode `KGM`)  
-  Its measured value; item bench-serra of Valdara Industries (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/ValueQualifier` = **Distributed over the seat**  
-  What the value stands for.
-- `GoodsItem/Item/AdditionalItemProperty/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
-  How much the property matters in describing the item. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **SAF**  
-  The group of properties this one belongs to.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Safety**  
-  The group's name.
-- `GoodsItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
-  How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-SF-0450** (schemeID `urn:ubl-examples:world:XU:property`)  
-  The property's number in the property standard of the identification agency. The schemeID names the scheme it is from: the property standard of the Codana Identification Agency (UR-, two letters for the part of the standard (SF street furniture, WD wood), four digits).
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerScopeID` = **SF**  
-  The part of the agency's property standard it is taken from (SF street furniture, WD wood), as the number itself shows.
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyIdentification/ID` = **XU-R-105644** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/AdditionalItemProperty/StandardPropertyIdentification/IssuerParty/PartyName/Name` = **Codana Identification Agency**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
-  Its size.
-- `GoodsItem/Item/Dimension/Description` = **Over the armrests**  
-  Where it is measured.
-- `GoodsItem/Item/Dimension/AttributeID` = **DEPTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: DEPTH = Depth. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **620** (unitCode `MMT`)  
-  Its size.
-- `GoodsItem/Item/Dimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **780** (unitCode `MMT`)  
-  Its size.
-- `GoodsItem/Item/Dimension/Description` = **Seat back at its highest point**  
-  Where it is measured.
-- `GoodsItem/Item/Dimension/AttributeID` = **SEATHEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: SEATHEIGHT = Seat height. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/Dimension/Measure` = **450** (unitCode `MMT`)  
-  Its size.
-- `GoodsItem/Item/Dimension/Description` = **Above the ground when anchored**  
-  Where it is measured.
-- `GoodsItem/Item/Dimension/MinimumMeasure` = **440** (unitCode `MMT`)  
-  The lowest it can be set to.
-- `GoodsItem/Item/Dimension/MaximumMeasure` = **460** (unitCode `MMT`)  
-  The highest it can be set to.
-- `GoodsItem/Item/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
-  The emission reported: greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
-- `GoodsItem/Item/EnvironmentalEmission/ValueMeasure` = **96** (unitCode `KGM`)  
-  The emission of one item.
-- `GoodsItem/Item/EnvironmentalEmission/ValueFactorNumeric` = **0.82**  
-  The share of the footprint the steel frame accounts for.
-- `GoodsItem/Item/EnvironmentalEmission/ValueBaseMeasure` = **1** (unitCode `EA`)  
-  The emission is per one bench.
-- `GoodsItem/Item/EnvironmentalEmission/EmissionStandardReference` = **Greenhouse Gas Protocol Product Standard**  
-  The standard the footprint is calculated by.
-- `GoodsItem/Item/EnvironmentalEmission/LifecycleStageCode` = **MANUFACTURING** (listID `urn:ubl-examples:world:codelist:LifecycleStageCode`)  
-  The part of the bench's life the figure covers. The code is from the Trade Accord's life cycle stage list: MANUFACTURING = Manufacturing.
-- `GoodsItem/Item/EnvironmentalEmission/LifecycleStageDescription` = **From the ore at the mine to the bench leaving the factory gate.**  
-  That part in words.
-- `GoodsItem/Item/EnvironmentalEmission/Description` = **Mining, steel making, casting, galvanising, sawing and the transport between them.**  
-  What the figure includes.
-- `GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **CALCULATED** (listID `urn:ubl-examples:world:codelist:EmissionCalculationMethodCode`)  
-  Calculated, not measured. The code is from the Trade Accord's emission calculation method list: CALCULATED = Calculated.
-- `GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/FullnessIndicationCode` = **CRADLETOGATE** (listID `urn:ubl-examples:world:codelist:EmissionBoundaryCode`)  
-  How much of the chain is included. The code is from the Trade Accord's emission boundary list: CRADLETOGATE = Cradle to gate.
-- `GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource` = **The steelworks' and sawmill's measured energy use of 2025**  
-  Where the factors come from.
-- `GoodsItem/Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID` = **VI-LCA-2025**  
-  The report with the emission factors.
-- `GoodsItem/Item/EnvironmentalEmission/MeasurementPeriod/StartDate` = **2025-01-01**  
-  The year the figures are from.
-- `GoodsItem/Item/EnvironmentalEmission/MeasurementPeriod/EndDate` = **2025-12-31**  
-  Its last day.
-- `GoodsItem/Item/CircularityProfile/MaintenanceFrequencyCode` = **YEARLY** (listID `urn:ubl-examples:world:codelist:MaintenanceFrequencyCode`)  
-  How often the item needs maintenance. The code is from the Trade Accord's maintenance frequency list: YEARLY = Once a year.
-- `GoodsItem/Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
-  What the maintenance is.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **STEEL** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
-  A material the item is made of. The code is from the Trade Accord's material resource list: STEEL = Steel.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **34** (unitCode `KGM`)  
-  How much of it one item uses.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Steel made from Serravona ore in Urvania**  
-  Where the material comes from.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
-  Measured over the production of 2025.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
-  Its last day.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **HARDWOOD** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
-  A material the item is made of. The code is from the Trade Accord's material resource list: HARDWOOD = Hardwood.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure` = **22.5** (unitCode `KGM`)  
-  How much of it one item uses.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription` = **Slats from Upland State, Bayvarra**  
-  Where the material comes from.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate` = **2025-01-01**  
-  Measured over the production of 2025.
-- `GoodsItem/Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate` = **2025-12-31**  
-  Its last day.
-- `GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **PACKAGING** (listID `urn:ubl-examples:world:codelist:WasteTypeCode`)  
-  The kind of waste the item leaves. The code is from the Trade Accord's waste type list: PACKAGING = Packaging.
-- `GoodsItem/Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
-  The waste in words.
-- `GoodsItem/Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
-  How much of it per item.
-- `GoodsItem/Item/CircularityProfile/WasteGenerated/MeasurementPeriod/StartDate` = **2025-01-01**  
-  Measured over the deliveries of 2025.
-- `GoodsItem/Item/CircularityProfile/WasteGenerated/MeasurementPeriod/EndDate` = **2025-12-31**  
-  Its last day.
-- `GoodsItem/Item/CircularityProfile/RepairabilityScore/ScoreNumeric` = **8**  
-  Side frames and slats can be replaced one by one, which is why the spare side frame exists.
-- `GoodsItem/Item/CircularityProfile/RepairabilityScore/ScoringSystemCode` = **REPAIR10** (listID `urn:ubl-examples:world:codelist:ScoringSystemCode`)  
-  The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
-- `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
-  The repair and maintenance manual.
 - `GoodsItem/ID` = **2**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
@@ -454,10 +272,6 @@ Inside `Shipment`:
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `GoodsItem/Item/Name` = **Bench side frame casting**  
   The item's short name; item bench-casting-b of Lumeway Distribution (world/items.json).
-- `GoodsItem/Item/BrandName` = **Valdara**  
-  The brand the maker sells the item under; item bench-casting of Valdara Industries (world/items.json).
-- `GoodsItem/Item/ModelName` = **Serra 180 side frame**  
-  The model; item bench-casting of Valdara Industries (world/items.json).
 - `GoodsItem/Item/SellersItemIdentification/ID` = **LD-10443**  
   The seller's own item number; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `GoodsItem/Item/ManufacturersItemIdentification/ID` = **VI-C180**  
@@ -466,20 +280,6 @@ Inside `Shipment`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `GoodsItem/Item/AdditionalItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
   The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-casting of Valdara Industries (world/items.json).
-- `GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Where the item was produced; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `GoodsItem/Item/CommodityClassification/NatureCode` = **XV** (listID `WCO HS 2022 Sections`)  
-  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XV = Base metals and articles of base metal.
-- `GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
-  The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
-- `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **42999** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
-- `GoodsItem/Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `GoodsItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container's number: the owner code of the ocean carrier, U for a freight container, six digits and the ISO 6346 check digit.
 - `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7856.4** (unitCode `KGM`)  
@@ -691,11 +491,6 @@ Inside `Signature`:
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
-        <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-        <cbc:Keyword>park bench, street furniture</cbc:Keyword>
-        <cbc:BrandName>Valdara</cbc:BrandName>
-        <cbc:ModelName>Serra 180</cbc:ModelName>
-        <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>
@@ -715,164 +510,6 @@ Inside `Signature`:
         <cac:AdditionalItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
         </cac:AdditionalItemIdentification>
-        <cac:ItemSpecificationDocumentReference>
-          <cbc:ID>VI-DS-B180</cbc:ID>
-        </cac:ItemSpecificationDocumentReference>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
-          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
-          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:TransactionConditions>
-          <cbc:ID>LD-TC-01</cbc:ID>
-          <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
-          <cac:DocumentReference>
-            <cbc:ID>LD-GTC-2026</cbc:ID>
-            <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
-          </cac:DocumentReference>
-        </cac:TransactionConditions>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Frame material</cbc:Name>
-          <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Slat wood</cbc:Name>
-          <cbc:Value>Kiln-dried hardwood</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Seats</cbc:Name>
-          <cbc:Value>3</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:ID>COL</cbc:ID>
-          <cbc:Name>Frame colour</cbc:Name>
-          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
-          <cbc:ListValue>Ferro grey</cbc:ListValue>
-          <cac:ItemPropertyGroup>
-            <cbc:ID>APP</cbc:ID>
-            <cbc:Name>Appearance</cbc:Name>
-            <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
-          </cac:ItemPropertyGroup>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:ID>LOAD</cbc:ID>
-          <cbc:Name>Load capacity</cbc:Name>
-          <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">LOAD</cbc:NameCode>
-          <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
-          <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
-          <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
-          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-          <cac:ItemPropertyGroup>
-            <cbc:ID>SAF</cbc:ID>
-            <cbc:Name>Safety</cbc:Name>
-            <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-          </cac:ItemPropertyGroup>
-          <cac:StandardPropertyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
-            <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
-            <cac:IssuerParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Codana Identification Agency</cbc:Name>
-              </cac:PartyName>
-            </cac:IssuerParty>
-          </cac:StandardPropertyIdentification>
-        </cac:AdditionalItemProperty>
-        <cac:ManufacturerParty>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Valdara Industries</cbc:Name>
-          </cac:PartyName>
-        </cac:ManufacturerParty>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-          <cbc:Description>Over the armrests</cbc:Description>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">620</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">780</cbc:Measure>
-          <cbc:Description>Seat back at its highest point</cbc:Description>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">450</cbc:Measure>
-          <cbc:Description>Above the ground when anchored</cbc:Description>
-          <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>
-          <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
-        </cac:Dimension>
-        <cac:EnvironmentalEmission>
-          <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
-          <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
-          <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-          <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
-          <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
-          <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">MANUFACTURING</cbc:LifecycleStageCode>
-          <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
-          <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
-          <cac:EmissionCalculationMethod>
-            <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
-            <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:EmissionBoundaryCode">CRADLETOGATE</cbc:FullnessIndicationCode>
-            <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
-            <cac:EmissionFactorDocumentReference>
-              <cbc:ID>VI-LCA-2025</cbc:ID>
-            </cac:EmissionFactorDocumentReference>
-          </cac:EmissionCalculationMethod>
-          <cac:MeasurementPeriod>
-            <cbc:StartDate>2025-01-01</cbc:StartDate>
-            <cbc:EndDate>2025-12-31</cbc:EndDate>
-          </cac:MeasurementPeriod>
-        </cac:EnvironmentalEmission>
-        <cac:CircularityProfile>
-          <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
-          <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
-          <cac:ResourceConsumption>
-            <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
-            <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
-            <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
-            <cac:MeasurementPeriod>
-              <cbc:StartDate>2025-01-01</cbc:StartDate>
-              <cbc:EndDate>2025-12-31</cbc:EndDate>
-            </cac:MeasurementPeriod>
-          </cac:ResourceConsumption>
-          <cac:ResourceConsumption>
-            <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">HARDWOOD</cbc:ResourceTypeCode>
-            <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
-            <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
-            <cac:MeasurementPeriod>
-              <cbc:StartDate>2025-01-01</cbc:StartDate>
-              <cbc:EndDate>2025-12-31</cbc:EndDate>
-            </cac:MeasurementPeriod>
-          </cac:ResourceConsumption>
-          <cac:WasteGenerated>
-            <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
-            <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
-            <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
-            <cac:MeasurementPeriod>
-              <cbc:StartDate>2025-01-01</cbc:StartDate>
-              <cbc:EndDate>2025-12-31</cbc:EndDate>
-            </cac:MeasurementPeriod>
-          </cac:WasteGenerated>
-          <cac:RepairabilityScore>
-            <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
-            <cbc:ScoringSystemCode listID="urn:ubl-examples:world:codelist:ScoringSystemCode">REPAIR10</cbc:ScoringSystemCode>
-          </cac:RepairabilityScore>
-          <cac:ProductDocumentationDocumentReference>
-            <cbc:ID>VI-RM-B180</cbc:ID>
-          </cac:ProductDocumentationDocumentReference>
-        </cac:CircularityProfile>
       </cac:Item>
     </cac:GoodsItem>
     <cac:GoodsItem>
@@ -884,8 +521,6 @@ Inside `Signature`:
       <cac:Item>
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
-        <cbc:BrandName>Valdara</cbc:BrandName>
-        <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>LD-10443</cbc:ID>
         </cac:SellersItemIdentification>
@@ -898,23 +533,6 @@ Inside `Signature`:
         <cac:AdditionalItemIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
         </cac:AdditionalItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:NatureCode listID="WCO HS 2022 Sections">XV</cbc:NatureCode>
-          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
-          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:ManufacturerParty>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Valdara Industries</cbc:Name>
-          </cac:PartyName>
-        </cac:ManufacturerParty>
       </cac:Item>
     </cac:GoodsItem>
     <cac:TransportHandlingUnit>

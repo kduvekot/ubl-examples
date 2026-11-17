@@ -268,16 +268,10 @@ Inside `Shipment`:
   The seller's description in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `GoodsItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.** (languageID `en-XL`)  
   The seller's description in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `GoodsItem/Item/PackQuantity` = **1** (unitCode `EA`)  
-  One pack of this item.
-- `GoodsItem/Item/PackSizeNumeric` = **227**  
-  The units in one pack: 227 kg in a bale; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `GoodsItem/Item/Name` = **Tekapa suhema, lafatite senehu** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `GoodsItem/Item/Name` = **Cotton lint, compressed bale** (languageID `en-XL`)  
   The item's name in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `GoodsItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
-  The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Where the item was produced; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/Item/CommodityClassification/NatureCode` = **XI** (listID `WCO HS 2022 Sections`)  
@@ -288,14 +282,6 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item cotton-bale of Selanu Cotton Ginnery (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Grade**  
-  A property buyers ask about.
-- `GoodsItem/Item/AdditionalItemProperty/Value` = **Middling**  
-  Its value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/Name` = **Staple length**  
-  A measured property of the item.
-- `GoodsItem/Item/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
-  Its measured value; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `GoodsItem/Item/OriginAddress/District` = **North coast**  
   The district of the island where the cotton was grown, as the farm's address names it.
 - `GoodsItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -604,13 +590,8 @@ Inside `Signature`:
       <cac:Item>
         <cbc:Description languageID="qal">Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.</cbc:Description>
         <cbc:Description languageID="en-XL">Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>
-        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
-        <cbc:PackSizeNumeric>227</cbc:PackSizeNumeric>
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
         <cbc:Name languageID="en-XL">Cotton lint, compressed bale</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SCG-LINT</cbc:ID>
-        </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -620,14 +601,6 @@ Inside `Signature`:
           <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Grade</cbc:Name>
-          <cbc:Value>Middling</cbc:Value>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Staple length</cbc:Name>
-          <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
-        </cac:AdditionalItemProperty>
         <cac:OriginAddress>
           <cbc:District>North coast</cbc:District>
           <cac:Country>

@@ -351,13 +351,6 @@
       <cac:Item>
         <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
         <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SE-BAT-48100</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
@@ -397,13 +390,6 @@
       <cac:Item>
         <cbc:Description>Ten ionisation smoke detectors for the mast's equipment room, each with a small americium-241 source.</cbc:Description>
         <cbc:Name>Ionisation smoke detector set</cbc:Name>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SE-SMK-10</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
@@ -449,13 +435,6 @@
       <cac:Item>
         <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SE-CS-05</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>

@@ -214,24 +214,10 @@ Inside `SupplyChainActivityDataLine`:
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Garden bench set Marrow**  
   The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `SalesItem/Item/BrandName` = **Brackenmere**  
-  The brand the maker sells the item under; item garden-set of Brackenmere Furniture (world/items.json).
-- `SalesItem/Item/ModelName` = **Marrow**  
-  The model; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/SellersItemIdentification/ID` = **BF-GS-01**  
   The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
   The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product (world/items.json).
-- `SalesItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item garden-set of Brackenmere Furniture (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `SalesItem/Item/CommodityClassification/CommodityCode` = **940169** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item garden-set of Brackenmere Furniture (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940169 = Other seats, with wooden frames: other.
-- `SalesItem/Item/CommodityClassification/ItemClassificationCode` = **38112** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item garden-set of Brackenmere Furniture (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38112 = Seats, primarily with wooden frames.
-- `SalesItem/Item/Dimension/AttributeID` = **BENCHLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Which dimension. The code is from the Trade Accord's dimension attribute list: BENCHLENGTH = Bench length. An identifier that holds a code names the code's list in its schemeID.
-- `SalesItem/Item/Dimension/Measure` = **1400** (unitCode `MMT`)  
-  Its size.
 
 ## The document
 
@@ -404,25 +390,12 @@ Inside `SupplyChainActivityDataLine`:
       <cac:Item>
         <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
         <cbc:Name>Garden bench set Marrow</cbc:Name>
-        <cbc:BrandName>Brackenmere</cbc:BrandName>
-        <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-GS-01</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
         </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">940169</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38112</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">BENCHLENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1400</cbc:Measure>
-        </cac:Dimension>
       </cac:Item>
     </cac:SalesItem>
   </cac:SupplyChainActivityDataLine>

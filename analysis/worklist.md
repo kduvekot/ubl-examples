@@ -975,6 +975,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The conflict with the world story is settled: the sentence of `note/src/03-world.md` is replaced by D11.
 - State: waits for O20 (the profile per document type, as a table for the owner).
+- Fixed (2026-11-17, stage 2, after the owner approved the item table O20): every item carries the blocks of its kind of document (`ITEM_KIND`, `ITEM_PROFILE`, `item_profiles()` in `tools/build_examples.py`; the table in `analysis/item-profile.md`): catalogue and offer everything about the type, order the identification with the variant, despatch the lots and dangerous goods, invoice the identification and tax (and the cotton's classing certificate, a lot fact), shopper's receipt the brand and warranty, customs the description, commodity code and origin; what a scenario adds for its transaction stays. 9,179 item elements become 3,508; coverage 4982 → 4971 (O145). The story sentence of `note/src/03-world.md` is rewritten.
 - Findings: carnet: 01#F19; packaging: 09#F7; rail: 01#F14, 06#F24, 11#F8; retail: 05#F11, 07#F11, 08#F13, 12#F13, 17#F17, 18#F16, 19#F10, 19#F14, 21#F15; road: 01#F13, 04#F14, 05#F13, 06#F18, 06#F20, 07#F19, 07#F20, 10#F16, 11#F11, 13#F16, 15#F11; sea: 05#F16, 10#F9, 11#F12, 19#F17, 20#F13, 21#F13, 22#F15, 29#F5; tender: 26#F17, 29#F16, 30#F13, 31#F16, 32#F24, 33#F24; wood: 10#F5, 11#F6
 
 ### C49 · Signature aggregates with only an ID and a signatory

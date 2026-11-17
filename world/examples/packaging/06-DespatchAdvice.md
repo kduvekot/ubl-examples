@@ -245,28 +245,12 @@ Inside `DespatchLine`:
   The seller's description; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/Name` = **Cotton shirt**  
   The item's short name; item shirt of Lumeport Textile Mill (world/items.json).
-- `Item/BrandName` = **Lumeport**  
-  The brand the maker sells the item under; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/BuyersItemIdentification/ID` = **BM-778120**  
   The buyer's own item number: it resells this item as its item shirt-r.
 - `Item/SellersItemIdentification/ID` = **LT-SH-01**  
   The seller's own item number; item shirt of Lumeport Textile Mill (world/items.json).
 - `Item/StandardItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
   The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item shirt of Lumeport Textile Mill (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item shirt of Lumeport Textile Mill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **620520** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item shirt of Lumeport Textile Mill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 620520 = Men's or boys' shirts, of cotton.
-- `Item/CommodityClassification/ItemClassificationCode` = **28232** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item shirt of Lumeport Textile Mill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 28232 = Men's or boys' shirts, singlets, underpants, pyjamas, dressing gowns and similar articles, of textile fabric, not knitted or crocheted.
-- `Item/AdditionalItemProperty/Name` = **Material**  
-  A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **100 % cotton grown on Lisavu**  
-  Its value; item shirt of Lumeport Textile Mill (world/items.json).
-- `Item/AdditionalItemProperty/Name` = **Sizes**  
-  A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **S to XL**  
-  Its value; item shirt of Lumeport Textile Mill (world/items.json).
 
 ## The document
 
@@ -455,7 +439,6 @@ Inside `DespatchLine`:
     <cac:Item>
       <cbc:Description>Men's shirt, woven cotton from Lisavu, in a garment bag.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
-      <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:BuyersItemIdentification>
         <cbc:ID>BM-778120</cbc:ID>
       </cac:BuyersItemIdentification>
@@ -465,21 +448,6 @@ Inside `DespatchLine`:
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">772030000090</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">620520</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">28232</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Material</cbc:Name>
-        <cbc:Value>100 % cotton grown on Lisavu</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Sizes</cbc:Name>
-        <cbc:Value>S to XL</cbc:Value>
-      </cac:AdditionalItemProperty>
     </cac:Item>
   </cac:DespatchLine>
 </DespatchAdvice>

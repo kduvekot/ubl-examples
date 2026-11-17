@@ -391,12 +391,6 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Where the item was produced; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Item/CommodityClassification/CommodityCode` = **520100** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
-- `Item/CommodityClassification/ItemClassificationCode` = **01921** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item seed-cotton of Lisavu Cotton Farm (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 01921 = Cotton, whether or not ginned.
 - `Price/PriceAmount` = **0.226** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
@@ -702,13 +696,6 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>LCF-SC</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01921</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>

@@ -175,13 +175,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SE-BAT-48100</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:HazardousItem>
         <cbc:ID>SE-BAT-48100-DG</cbc:ID>
         <cbc:PlacardNotation>9</cbc:PlacardNotation>
@@ -214,13 +207,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SE-SMK-10</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:HazardousItem>
         <cbc:ID>SE-SMK-10-DG</cbc:ID>
         <cbc:PlacardNotation>7</cbc:PlacardNotation>
@@ -259,13 +245,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SE-CS-05</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:HazardousItem>
         <cbc:ID>SE-CS-05-DG</cbc:ID>
         <cbc:PlacardNotation>8</cbc:PlacardNotation>

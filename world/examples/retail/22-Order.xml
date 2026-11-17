@@ -151,8 +151,6 @@
       <cac:Item>
         <cbc:Description>The store's own garden bench set.</cbc:Description>
         <cbc:Name>Garden bench set Marrow</cbc:Name>
-        <cbc:BrandName>Brackenmere</cbc:BrandName>
-        <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>BM-551004</cbc:ID>
         </cac:SellersItemIdentification>
@@ -162,25 +160,6 @@
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
         </cac:StandardItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">940169</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38112</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:ManufacturerParty>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Brackenmere Furniture</cbc:Name>
-          </cac:PartyName>
-        </cac:ManufacturerParty>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">BENCHLENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1400</cbc:Measure>
-        </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

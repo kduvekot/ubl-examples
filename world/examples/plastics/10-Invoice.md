@@ -394,12 +394,6 @@ Inside `InvoiceLine`:
   The seller's own item number; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/StandardItemIdentification/ID` = **771030000048** (schemeID `urn:ubl-examples:world:item`)  
   The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item granulate-pe of Rinova Recovery (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Where the item was produced; item granulate-pe of Rinova Recovery (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Item/CommodityClassification/CommodityCode` = **390110** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item granulate-pe of Rinova Recovery (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 390110 = Polyethylene having a specific gravity of less than 0.94, in primary forms.
-- `Item/CommodityClassification/ItemClassificationCode` = **34710** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item granulate-pe of Rinova Recovery (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 34710 = Polymers of ethylene, in primary forms.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -412,26 +406,6 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/AdditionalItemProperty/Name` = **Density**  
-  A measured property of the item.
-- `Item/AdditionalItemProperty/ValueQuantity` = **0.92** (unitCode `23`)  
-  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
-- `Item/AdditionalItemProperty/Name` = **Recycled content**  
-  A measured property of the item.
-- `Item/AdditionalItemProperty/ValueQuantity` = **100** (unitCode `P1`)  
-  Its measured value; item granulate-pe of Rinova Recovery (world/items.json).
-- `Item/EnvironmentalCertificate/ID` = **XU-RC-2026-007**  
-  The number of the environmental certificate, unique only with its issuer, who is named with it (decision ID-Q10).
-- `Item/EnvironmentalCertificate/CertificateTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  The kind of claim, as a code. The code is from the Trade Accord's certificate type list: RECYCLED = Recycled content.
-- `Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
-  The name of code RECYCLED in the Trade Accord's certificate type list.
-- `Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
-  What the certificate states.
-- `Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **83200** (currencyID `XUF`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `TNE`)  
@@ -730,13 +704,6 @@ Inside `InvoiceLine`:
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771030000048</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">390110</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">34710</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -747,28 +714,6 @@ Inside `InvoiceLine`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Density</cbc:Name>
-        <cbc:ValueQuantity unitCode="23">0.92</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Recycled content</cbc:Name>
-        <cbc:ValueQuantity unitCode="P1">100</cbc:ValueQuantity>
-      </cac:AdditionalItemProperty>
-      <cac:EnvironmentalCertificate>
-        <cbc:ID>XU-RC-2026-007</cbc:ID>
-        <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
-        <cbc:CertificateType>Recycled content</cbc:CertificateType>
-        <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
-        <cac:IssuerParty>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
-          </cac:PartyName>
-        </cac:IssuerParty>
-      </cac:EnvironmentalCertificate>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">83200</cbc:PriceAmount>

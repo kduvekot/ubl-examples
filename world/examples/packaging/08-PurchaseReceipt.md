@@ -331,12 +331,6 @@ Inside `PurchaseReceiptLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
   The maker's own number for the item, its Codana item number, which travels along with the GTIN; item shirt of Lumeport Textile Mill (world/items.json).
-- `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item shirt of Lumeport Textile Mill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Item/CommodityClassification/CommodityCode` = **620520** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item shirt of Lumeport Textile Mill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 620520 = Men's or boys' shirts, of cotton.
-- `Item/CommodityClassification/ItemClassificationCode` = **28232** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item shirt of Lumeport Textile Mill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 28232 = Men's or boys' shirts, singlets, underpants, pyjamas, dressing gowns and similar articles, of textile fabric, not knitted or crocheted.
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **6.5**  
@@ -345,18 +339,6 @@ Inside `PurchaseReceiptLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/AdditionalItemProperty/Name` = **Material**  
-  A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **100 % cotton grown on Lisavu**  
-  Its value; item shirt of Lumeport Textile Mill (world/items.json).
-- `Item/AdditionalItemProperty/Name` = **Sizes**  
-  A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **S to XL**  
-  Its value; item shirt of Lumeport Textile Mill (world/items.json).
-- `Item/ManufacturerParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Item/ManufacturerParty/PartyName/Name` = **Lumeport Textile Mill**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Price/PriceAmount` = **29.95** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/TaxInclusivePriceAmount` = **31.9** (currencyID `XBL`)  
@@ -606,13 +588,6 @@ Inside `PurchaseReceiptLine`:
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">772030000090</cbc:ID>
       </cac:AdditionalItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">620520</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">28232</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>
@@ -621,22 +596,6 @@ Inside `PurchaseReceiptLine`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Material</cbc:Name>
-        <cbc:Value>100 % cotton grown on Lisavu</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Sizes</cbc:Name>
-        <cbc:Value>S to XL</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:ManufacturerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeport Textile Mill</cbc:Name>
-        </cac:PartyName>
-      </cac:ManufacturerParty>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">29.95</cbc:PriceAmount>

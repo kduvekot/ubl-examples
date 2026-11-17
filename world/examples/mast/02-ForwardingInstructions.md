@@ -461,12 +461,6 @@ Inside `Shipment`:
   The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/Name` = **Lithium-ion battery pack 48 V 100 Ah**  
   The item's short name; item battery-pack of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/HazardousRiskIndicator` = **true**  
-  The item is dangerous goods.
-- `GoodsItem/Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
-  The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **850760** (listID `WCO HS 2022`)  
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item battery-pack of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 850760 = Lithium-ion accumulators.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **46420** (listID `UN CPC Ver.2.1`)  
@@ -517,12 +511,6 @@ Inside `Shipment`:
   The seller's description; item smoke-detector of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/Name` = **Ionisation smoke detector set**  
   The item's short name; item smoke-detector of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/HazardousRiskIndicator` = **true**  
-  The item is dangerous goods.
-- `GoodsItem/Item/SellersItemIdentification/ID` = **SE-SMK-10**  
-  The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **853110** (listID `WCO HS 2022`)  
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item smoke-detector of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 853110 = Burglar or fire alarms and similar apparatus.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **46921** (listID `UN CPC Ver.2.1`)  
@@ -577,12 +565,6 @@ Inside `Shipment`:
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/HazardousRiskIndicator` = **true**  
-  The item is dangerous goods.
-- `GoodsItem/Item/SellersItemIdentification/ID` = **SE-CS-05**  
-  The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
-- `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Where the item was produced; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **381400** (listID `WCO HS 2022`)  
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item coating-stripper of Saltmere Engineering (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 381400 = Organic composite solvents and thinners, n.e.s.; prepared paint or varnish removers.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **35110** (listID `UN CPC Ver.2.1`)  
@@ -1000,13 +982,6 @@ Inside `Shipment`:
       <cac:Item>
         <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
         <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SE-BAT-48100</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
@@ -1046,13 +1021,6 @@ Inside `Shipment`:
       <cac:Item>
         <cbc:Description>Ten ionisation smoke detectors for the mast's equipment room, each with a small americium-241 source.</cbc:Description>
         <cbc:Name>Ionisation smoke detector set</cbc:Name>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SE-SMK-10</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
@@ -1098,13 +1066,6 @@ Inside `Shipment`:
       <cac:Item>
         <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:SellersItemIdentification>
-          <cbc:ID>SE-CS-05</cbc:ID>
-        </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
