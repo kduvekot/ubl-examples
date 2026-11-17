@@ -291,40 +291,20 @@
     <cbc:EndDate>2026-03-13</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Serravona Mining</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+    <cbc:Name>Serravona mine siding</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Strada della Miniera</cbc:StreetName>
-      <cbc:BuildingNumber>10</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-      <cbc:PostalZone>4110</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Valdara Industries</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
-      <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
@@ -364,7 +344,13 @@
         <cbc:EndDate>2026-03-10</cbc:EndDate>
       </cac:NotificationPeriod>
       <cac:NotificationLocation>
-        <cbc:Name>Valdara Industries</cbc:Name>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
@@ -373,7 +359,9 @@
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
+    <cbc:SummaryDescription>1788.4 t of Iron ore, lump</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

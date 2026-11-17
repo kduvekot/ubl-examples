@@ -13,7 +13,15 @@
      "carrier": "14-xu",
      "why": "The ore train from the mine siding to the factory.",
      "service": "RAILWAGON",
-     "transit_days": 0
+     "transit_days": 0,
+     "from_place": {
+      "name": "Serravona mine siding",
+      "locode": "XUSRV"
+     },
+     "to_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     }
     }
    ]
   },
@@ -27,7 +35,15 @@
      "from": "8-xu",
      "to": "6-xb",
      "carrier": "13-xu",
-     "why": "The truck the distributor booked, from the 3PL's warehouse across the border."
+     "why": "The truck the distributor booked, from the 3PL's warehouse across the border.",
+     "from_place": {
+      "name": "Castrano Logistics warehouse, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Lumeway distribution centre, goods-in, Marrowdale",
+      "gln": "6-xb:goodsin"
+     }
     }
    ]
   },
@@ -41,14 +57,30 @@
      "from": "8-xu",
      "to": "18-xu",
      "carrier": "14-xu",
-     "why": "Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub."
+     "why": "Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.",
+     "from_place": {
+      "name": "Castrano Logistics warehouse, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Ferrano Intermodal Hub",
+      "locode": "XUFER"
+     }
     },
     {
      "mode": "rail",
      "from": "18-xu",
      "to": "6-xb",
      "carrier": "14-xu",
-     "why": "The container train to the distributor's siding."
+     "why": "The container train to the distributor's siding.",
+     "from_place": {
+      "name": "Ferrano Intermodal Hub",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Lumeway rail siding, Marrowdale",
+      "gln": "6-xb:siding"
+     }
     }
    ]
   },
@@ -62,7 +94,14 @@
      "from": "15-xu",
      "to": "41-xb",
      "carrier": "15-xu",
-     "why": "The barge from the quay next to the recovery plant down the river to the packaging maker."
+     "why": "The barge from the quay next to the recovery plant down the river to the packaging maker.",
+     "from_place": {
+      "name": "Quay of Rinova Recovery, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "River quay of Rivermouth Packaging, Lumeport"
+     }
     }
    ]
   },
@@ -76,14 +115,28 @@
      "from": "6-xb",
      "to": "26-xb",
      "carrier": "10-xb",
-     "why": "The forwarder's truck from the distribution centre to the store."
+     "why": "The forwarder's truck from the distribution centre to the store.",
+     "from_place": {
+      "name": "Lumeway distribution centre, goods-out, Marrowdale",
+      "gln": "6-xb:dc"
+     },
+     "to_place": {
+      "name": "Goods-in of the Lumeport store",
+      "gln": "26-xb:goods-in"
+     }
     },
     {
      "mode": "road",
      "from": "26-xb",
      "to": "c-xb",
      "carrier": "26-xb",
-     "why": "The store delivers the bench to the customer's home with its van."
+     "why": "The store delivers the bench to the customer's home with its van.",
+     "from_place": {
+      "name": "Brightmarket store, Market Street, Lumeport"
+     },
+     "to_place": {
+      "name": "The shopper's home, Lumeport"
+     }
     }
    ]
   },
@@ -97,21 +150,44 @@
      "from": "6-xb",
      "to": "16-xb",
      "carrier": "10-xb",
-     "why": "Pre-carriage: the forwarder's truck takes the container to the port."
+     "why": "Pre-carriage: the forwarder's truck takes the container to the port.",
+     "from_place": {
+      "name": "Lumeway distribution centre, goods-out, Marrowdale",
+      "gln": "6-xb:dc"
+     },
+     "to_place": {
+      "name": "Port of Lumeport, container quay",
+      "locode": "XBLMP"
+     }
     },
     {
      "mode": "sea",
      "from": "16-xb",
      "to": "16-xl",
      "carrier": "11-xb",
-     "why": "The feeder ship to the island."
+     "why": "The feeder ship to the island.",
+     "from_place": {
+      "name": "Port of Lumeport, container quay",
+      "locode": "XBLMP"
+     },
+     "to_place": {
+      "name": "Port of Selanu",
+      "locode": "XLSEL"
+     }
     },
     {
      "mode": "road",
      "from": "16-xl",
      "to": "9-xl",
      "carrier": "9-xl",
-     "why": "On-carriage: the 3PL collects the container at the port."
+     "why": "On-carriage: the 3PL collects the container at the port.",
+     "from_place": {
+      "name": "Port of Selanu",
+      "locode": "XLSEL"
+     },
+     "to_place": {
+      "name": "Nalevi Warehousing, Selanu"
+     }
     }
    ]
   },
@@ -125,7 +201,15 @@
      "from": "6-xb",
      "to": "17-xb",
      "carrier": "10-xb",
-     "why": "The forwarder picks up the boxes and takes them to the cargo terminal."
+     "why": "The forwarder picks up the boxes and takes them to the cargo terminal.",
+     "from_place": {
+      "name": "Lumeway distribution centre, goods-out, Marrowdale",
+      "gln": "6-xb:dc"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
     },
     {
      "mode": "air",
@@ -139,6 +223,14 @@
        "bench-casting-b"
       ],
       "why": "One skid of eight boxed side frames, lashed in the aft bulk compartment."
+     },
+     "from_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     },
+     "to_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
      }
     },
     {
@@ -146,7 +238,14 @@
      "from": "17-xl",
      "to": "9-xl",
      "carrier": "9-xl",
-     "why": "The 3PL collects the boxes at the airport."
+     "why": "The 3PL collects the boxes at the airport.",
+     "from_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "to_place": {
+      "name": "Nalevi Warehousing, Selanu"
+     }
     }
    ]
   },
@@ -160,7 +259,14 @@
      "from": "8-xu",
      "to": "2-xb",
      "carrier": "13-xu",
-     "why": "The call-off, from the 3PL across the border to the public works depot."
+     "why": "The call-off, from the 3PL across the border to the public works depot.",
+     "from_place": {
+      "name": "Castrano Logistics warehouse, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Public works depot, Lumeport"
+     }
     }
    ]
   },
@@ -180,7 +286,15 @@
      "from": "5-xu",
      "to": "17-xb",
      "carrier": "13-xu",
-     "why": "The samples by truck to the airport of Lumeport."
+     "why": "The samples by truck to the airport of Lumeport.",
+     "from_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
     },
     {
      "mode": "air",
@@ -194,6 +308,14 @@
        "bench-serra"
       ],
       "why": "The two sample benches, wrapped and lashed in the aft bulk compartment: at 1.8 m they do not fit an LD3 container."
+     },
+     "from_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     },
+     "to_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
      }
     },
     {
@@ -201,14 +323,28 @@
      "from": "17-xl",
      "to": "20-xl",
      "carrier": "9-xl",
-     "why": "From the airport to the fair at the chamber of commerce."
+     "why": "From the airport to the fair at the chamber of commerce.",
+     "from_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "to_place": {
+      "name": "Trade fair of the Selanu Chamber of Commerce, Selanu"
+     }
     },
     {
      "mode": "road",
      "from": "20-xl",
      "to": "17-xl",
      "carrier": "9-xl",
-     "why": "Back to the airport after the fair."
+     "why": "Back to the airport after the fair.",
+     "from_place": {
+      "name": "Trade fair of the Selanu Chamber of Commerce, Selanu"
+     },
+     "to_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     }
     },
     {
      "mode": "air",
@@ -222,6 +358,14 @@
        "bench-serra"
       ],
       "why": "The two sample benches, wrapped and lashed in the aft bulk compartment: at 1.8 m they do not fit an LD3 container."
+     },
+     "from_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
      }
     },
     {
@@ -229,7 +373,15 @@
      "from": "17-xb",
      "to": "5-xu",
      "carrier": "13-xu",
-     "why": "And home to the factory, through Urvania's customs."
+     "why": "And home to the factory, through Urvania's customs.",
+     "from_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     },
+     "to_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     }
     }
    ]
   },
@@ -243,7 +395,15 @@
      "from": "5-xu",
      "to": "7-xu",
      "carrier": "13-xu",
-     "why": "Production waste from the factory to the recovery plant."
+     "why": "Production waste from the factory to the recovery plant.",
+     "from_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Rinova Recovery plant, Ferrano",
+      "locode": "XUFER"
+     }
     }
    ]
   },
@@ -263,14 +423,27 @@
      "to": "5-xu",
      "carrier": "13-xu",
      "why": "The slats across the border to the bench factory.",
-     "transit_days": 0
+     "transit_days": 0,
+     "from_place": {
+      "name": "Marrowdale Sawmill yard, Marrowdale"
+     },
+     "to_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     }
     },
     {
      "mode": "road",
      "from": "36-xb",
      "to": "37-xb",
      "carrier": "36-xb",
-     "why": "Timber to the furniture maker, on the sawmill's own truck."
+     "why": "Timber to the furniture maker, on the sawmill's own truck.",
+     "from_place": {
+      "name": "Marrowdale Sawmill yard, Marrowdale"
+     },
+     "to_place": {
+      "name": "Brackenmere Furniture workshop, Marrowdale"
+     }
     }
    ]
   },
@@ -284,21 +457,41 @@
      "from": "37-xb",
      "to": "26-xb",
      "carrier": "37-xb",
-     "why": "The furniture maker delivers the store with its own van."
+     "why": "The furniture maker delivers the store with its own van.",
+     "from_place": {
+      "name": "Brackenmere Furniture workshop, Marrowdale"
+     },
+     "to_place": {
+      "name": "Goods-in of the Lumeport store",
+      "gln": "26-xb:goods-in"
+     }
     },
     {
      "mode": "road",
      "from": "26-xb",
      "to": "37-xb",
      "carrier": "26-xb",
-     "why": "The store takes the unsold sets back with its own van."
+     "why": "The store takes the unsold sets back with its own van.",
+     "from_place": {
+      "name": "Goods-in of the Lumeport store",
+      "gln": "26-xb:goods-in"
+     },
+     "to_place": {
+      "name": "Brackenmere Furniture workshop, Marrowdale"
+     }
     },
     {
      "mode": "road",
      "from": "37-xb",
      "to": "2-xb",
      "carrier": "37-xb",
-     "why": "Furniture for the public works offices, with the installers."
+     "why": "Furniture for the public works offices, with the installers.",
+     "from_place": {
+      "name": "Brackenmere Furniture workshop, Marrowdale"
+     },
+     "to_place": {
+      "name": "Lumeport Public Works Department, Civic Square"
+     }
     }
    ]
   },
@@ -312,28 +505,56 @@
      "from": "38-xl",
      "to": "39-xl",
      "carrier": "38-xl",
-     "why": "The farm's tractor and trailers bring the seed cotton to the gin."
+     "why": "The farm's tractor and trailers bring the seed cotton to the gin.",
+     "from_place": {
+      "name": "Lisavu Cotton Farm, north coast"
+     },
+     "to_place": {
+      "name": "Selanu Cotton Ginnery, weighbridge"
+     }
     },
     {
      "mode": "road",
      "from": "39-xl",
      "to": "16-xl",
      "carrier": "9-xl",
-     "why": "The 3PL trucks the bales to the port."
+     "why": "The 3PL trucks the bales to the port.",
+     "from_place": {
+      "name": "Selanu Cotton Ginnery, weighbridge"
+     },
+     "to_place": {
+      "name": "Port of Selanu",
+      "locode": "XLSEL"
+     }
     },
     {
      "mode": "sea",
      "from": "16-xl",
      "to": "16-xb",
      "carrier": "11-xb",
-     "why": "The ship to Bayvarra."
+     "why": "The ship to Bayvarra.",
+     "from_place": {
+      "name": "Port of Selanu",
+      "locode": "XLSEL"
+     },
+     "to_place": {
+      "name": "Port of Lumeport, container quay",
+      "locode": "XBLMP"
+     }
     },
     {
      "mode": "road",
      "from": "16-xb",
      "to": "40-xb",
      "carrier": "10-xb",
-     "why": "The forwarder's truck from the port to the textile mill."
+     "why": "The forwarder's truck from the port to the textile mill.",
+     "from_place": {
+      "name": "Port of Lumeport, container quay",
+      "locode": "XBLMP"
+     },
+     "to_place": {
+      "name": "Lumeport Textile Mill, goods-in"
+     }
     }
    ]
   },
@@ -347,21 +568,41 @@
      "from": "41-xb",
      "to": "5-xu",
      "carrier": "13-xu",
-     "why": "Stretch film to the bench factory."
+     "why": "Stretch film to the bench factory.",
+     "from_place": {
+      "name": "Rivermouth Packaging works, Lumeport"
+     },
+     "to_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     }
     },
     {
      "mode": "road",
      "from": "41-xb",
      "to": "40-xb",
      "carrier": "10-xb",
-     "why": "Garment bags to the textile mill."
+     "why": "Garment bags to the textile mill.",
+     "from_place": {
+      "name": "Rivermouth Packaging works, Lumeport"
+     },
+     "to_place": {
+      "name": "Lumeport Textile Mill, goods-in"
+     }
     },
     {
      "mode": "road",
      "from": "40-xb",
      "to": "26-xb",
      "carrier": "10-xb",
-     "why": "Shirts to the store."
+     "why": "Shirts to the store.",
+     "from_place": {
+      "name": "Lumeport Textile Mill, despatch"
+     },
+     "to_place": {
+      "name": "Goods-in of the Lumeport store",
+      "gln": "26-xb:goods-in"
+     }
     }
    ]
   },
@@ -375,7 +616,14 @@
      "from": "27-xb",
      "to": "17-xb",
      "carrier": "10-xb",
-     "why": "The forwarder collects the dangerous goods and brings them to the cargo terminal."
+     "why": "The forwarder collects the dangerous goods and brings them to the cargo terminal.",
+     "from_place": {
+      "name": "Saltmere Engineering works"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
     },
     {
      "mode": "air",
@@ -406,6 +654,14 @@
        }
       ],
       "bulk": []
+     },
+     "from_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     },
+     "to_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
      }
     },
     {
@@ -413,7 +669,14 @@
      "from": "17-xl",
      "to": "35-xl",
      "carrier": "9-xl",
-     "why": "The 3PL trucks them to the telecom company."
+     "why": "The 3PL trucks them to the telecom company.",
+     "from_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "to_place": {
+      "name": "Selanu Telecom mast site"
+     }
     }
    ]
   },
@@ -427,14 +690,26 @@
      "from": "42-xb",
      "to": "43-xu",
      "carrier": "42-xb",
-     "why": "The gas producer's pipeline delivers the gas from its plant across the border to the power station."
+     "why": "The gas producer's pipeline delivers the gas from its plant across the border to the power station.",
+     "from_place": {
+      "name": "Kelpstone gas plant, north coast"
+     },
+     "to_place": {
+      "name": "Montebrio power station, Serravona"
+     }
     },
     {
      "mode": "pipeline",
      "from": "42-xb",
      "to": "44-xu",
      "carrier": "42-xb",
-     "why": "A branch of the pipeline feeds the grid operator's city gate station, for the retail company's customers."
+     "why": "A branch of the pipeline feeds the grid operator's city gate station, for the retail company's customers.",
+     "from_place": {
+      "name": "Kelpstone gas plant, north coast"
+     },
+     "to_place": {
+      "name": "Ferrano Grid city gate, Ferrano"
+     }
     }
    ]
   }

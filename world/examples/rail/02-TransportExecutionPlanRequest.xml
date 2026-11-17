@@ -251,40 +251,20 @@
     <cbc:EndDate>2026-04-16</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
-      <cbc:BuildingNumber>24</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4130</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
     <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Han Krazhul</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Via del Terminal</cbc:StreetName>
-      <cbc:BuildingNumber>59</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4180</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>

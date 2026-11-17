@@ -267,42 +267,16 @@
     <cbc:EndDate>2026-04-22</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Fiumella Barges</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Skikzek Han Nestan</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Banchina del Fiume</cbc:StreetName>
-      <cbc:BuildingNumber>52</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4170</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Rivermouth Packaging</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Estuary Road</cbc:StreetName>
-      <cbc:BuildingNumber>28</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-      <cbc:CityName>Lumeport</cbc:CityName>
-      <cbc:PostalZone>38505</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
   </cac:ToLocation>
   <cac:TransportExecutionTerms>
     <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
@@ -326,7 +300,7 @@
         </cac:PartyName>
       </cac:NotifyParty>
       <cac:NotificationLocation>
-        <cbc:Name>Rivermouth Packaging</cbc:Name>
+        <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
@@ -335,7 +309,9 @@
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>RR-CS-26-0885</cbc:ID>
+    <cbc:SummaryDescription>120 t of Recycled PE granulate</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
@@ -480,11 +456,13 @@
           <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
           <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">DRYBARGE</cbc:ShipConfigurationCode>
           <cac:RegistryPortLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano</cbc:Name>
           </cac:RegistryPortLocation>
         </cac:MaritimeTransport>
       </cac:TransportMeans>
       <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
       </cac:LoadingPortLocation>
       <cac:UnloadingPortLocation>

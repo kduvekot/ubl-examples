@@ -296,6 +296,8 @@ Inside `TransportEvent`:
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: LOADING = Loaded.
 - `Description` = **Two containers loaded on the container train.**  
   What happened, in words.
+- `Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Location/Name` = **Ferrano Intermodal Hub**  
   Where it happened.
 
@@ -339,8 +341,10 @@ Inside `TransportExecutionPlanDocumentReference`:
 
 Inside `StatusLocation`:
 
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Name` = **Ferrano Intermodal Hub**  
-  Where the status was recorded.
+  Where it happened.
 
 ### Status Period
 
@@ -600,6 +604,7 @@ Inside `StatusPeriod`:
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Two containers loaded on the container train.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -634,6 +639,7 @@ Inside `StatusPeriod`:
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
     <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>

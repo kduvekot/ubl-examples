@@ -233,6 +233,7 @@
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
       <cbc:Name>Selanu airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -344,7 +345,8 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
-    <cbc:Name>Selanu Airport Cargo</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+    <cbc:Name>Selanu airport, cargo terminal</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-05-14</cbc:StartDate>

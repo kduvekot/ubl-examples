@@ -240,6 +240,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
       <cbc:Description>Rail siding of Lumeway Distribution, Marrowdale</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

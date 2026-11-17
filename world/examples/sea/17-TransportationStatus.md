@@ -416,6 +416,8 @@ Inside `TransportEvent`:
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: DISCHARGE = Discharged.
 - `Description` = **Container TWLU4120872 discharged and available for customs clearance.**  
   What happened, in words.
+- `Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Location/Name` = **Port of Selanu**  
   Where it happened.
 
@@ -553,8 +555,10 @@ Inside `ReceiverParty`:
 
 Inside `StatusLocation`:
 
+- `ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Name` = **Port of Selanu**  
-  Where the status was recorded.
+  Where it happened.
 
 ### Status Period
 
@@ -920,6 +924,7 @@ Inside `StatusPeriod`:
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Name>Port of Selanu</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -1031,6 +1036,7 @@ Inside `StatusPeriod`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
     <cbc:Name>Port of Selanu</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>

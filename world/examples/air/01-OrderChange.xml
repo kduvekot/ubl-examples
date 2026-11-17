@@ -318,6 +318,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
       <cbc:Description>Selanu airport, cargo terminal</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

@@ -278,6 +278,8 @@ Inside `TransportEvent`:
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: LOADING = Loaded.
 - `Description` = **Container TWLU4120872 loaded on board.**  
   What happened, in words.
+- `Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Location/Name` = **Port of Lumeport, container quay**  
   Where it happened.
 
@@ -406,8 +408,10 @@ Inside `ReceiverParty`:
 
 Inside `StatusLocation`:
 
-- `Name` = **Port of Lumeport**  
-  Where the status was recorded.
+- `ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `Name` = **Port of Lumeport, container quay**  
+  Where it happened.
 
 ### Status Period
 
@@ -638,6 +642,7 @@ Inside `StatusPeriod`:
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -745,7 +750,8 @@ Inside `StatusPeriod`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
-    <cbc:Name>Port of Lumeport</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+    <cbc:Name>Port of Lumeport, container quay</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-05-14</cbc:StartDate>

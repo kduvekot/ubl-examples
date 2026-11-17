@@ -1556,6 +1556,80 @@ def check_instance_rules(root, where):
             seen[key] = c
 
 
+# ---------------------------------------------------------------- places with their identifiers (worklist C23)
+def known_places():
+    """Every place the world identifies, by its name: the UN/LOCODE-form towns, ports and airports, and the named
+    places at the ends of the transport legs (world/documents.json) with their GLN or code."""
+    import examples_kit
+    out = {name: ("UN/LOCODE", code) for code, (name, _) in examples_kit.PLACES.items()}
+    for fl in WORLD["flows"]:
+        for leg in fl.get("legs", []):
+            for end in ("from_place", "to_place"):
+                pl = leg.get(end) or {}
+                if pl.get("gln"):
+                    pid, key = pl["gln"].split(":")
+                    out[pl["name"]] = ("GS1 GLN", PARTY[pid]["identity"]["identification"]["locations"][key]["gln"])
+                elif pl.get("locode"):
+                    out.setdefault(pl["name"], ("UN/LOCODE", pl["locode"]))
+    for p in WORLD["parties"]:                  # the GS1 parties' own places, by the names they give them
+        for loc in p["identity"].get("identification", {}).get("locations", {}).values():
+            out.setdefault(loc["name"], ("GS1 GLN", loc["gln"]))
+    for alias, name in PLACE_ALIASES.items():   # the same places under the names the documents use
+        out.setdefault(alias, out[name])
+    return out
+
+
+# names the documents give places the world identifies under another name
+PLACE_ALIASES = {"Lumeport": "Port of Lumeport", "Selanu": "Port of Selanu", "Mine siding, Serravona": "Serravona",
+                 "Serravona mine siding": "Serravona",
+                 "Rail siding of Lumeway Distribution, Marrowdale": "Rail siding of the distribution centre, Marrowdale",
+                 "Brightmarket Stores, goods-in": "Goods-in of the Lumeport store",
+                 "Brightmarket Stores, goods-in, Lumeport": "Goods-in of the Lumeport store",
+                 "Valdara Industries, goods-in, Ferrano": "Valdara Industries works, Ferrano",
+                 "Selanu airport": "Selanu airport, cargo terminal", "Lumeport airport": "Lumeport airport, cargo terminal"}
+
+
+def identify_places(content):
+    """A location the world identifies elsewhere carries its identifier wherever it is given by name only."""
+    places = known_places()
+
+    def walk(node):
+        if isinstance(node, list):
+            for x in node:
+                walk(x)
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                text = v.get("Name") if isinstance(v, dict) else None
+                if not isinstance(text, V) and isinstance(v, dict):
+                    text = v.get("Description")
+                if k.endswith("Location") and isinstance(v, dict) and "ID" not in v and isinstance(text, V):
+                    hit = places.get(text.value.rstrip("."))
+                    if hit:
+                        node[k] = {"ID": V(hit[1], "The place's identifier, as the world gives it wherever the "
+                                                   f"place appears ({'a GLN' if hit[0] == 'GS1 GLN' else 'a code in the form of a UN/LOCODE'}; "
+                                                   "worklist C23).", schemeID=hit[0]), **v}
+                walk(v)
+    walk(content)
+
+
+# ---------------------------------------------------------------- what a transport document carries (worklist C21)
+TRANSPORT_GOODS_DOCS = {"TransportExecutionPlanRequest", "TransportExecutionPlan", "Waybill",
+                        "ForwardingInstructions", "BillOfLading"}
+
+
+def transport_goods(content, doc):
+    """A transport request, plan, consignment note, forwarding instruction or bill of lading says what it carries:
+    its consignment gets the goods items of the flow's deal where the scenario gives none."""
+    if doc["doc"] not in TRANSPORT_GOODS_DOCS:
+        return
+    import examples_kit
+    import examples_scenarios
+    flow = next((v for v in vars(examples_scenarios).values()
+                 if isinstance(v, examples_kit.Flow) and v.id == doc["flow"]), None)
+    if flow and flow.deal:
+        examples_kit.with_transport_goods(flow, shipment=content.get("Shipment"), consignment=content.get("Consignment"))
+
+
 # ---------------------------------------------------------------- shipment weights (worklist C15)
 def _equipment(node, out):
     """The transport equipment of a shipment, as (tare, gross) pairs: each piece once, not again where a goods item
@@ -1927,6 +2001,8 @@ def main(flow_id, check=False):
         content = scenario(n, doc)
         content = place_parties(doc, content)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
+        transport_goods(content, doc)
+        identify_places(content)
         shipment_weights(content, flow_id)
         bilingual_notes(doc, content)
         for path, value in doc.get("values", {}).items():   # the world's manifest values must be what the scenario says

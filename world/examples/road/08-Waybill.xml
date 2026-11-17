@@ -19,7 +19,13 @@
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
@@ -1613,6 +1619,30 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
     <cac:Delivery>
       <cbc:LatestDeliveryDate>2026-03-25</cbc:LatestDeliveryDate>
       <cbc:LatestDeliveryTime>12:00:00</cbc:LatestDeliveryTime>

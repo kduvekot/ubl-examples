@@ -193,6 +193,7 @@
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
   </cac:TransportMeans>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
     <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
   </cac:StatusLocation>
 </TransportProgressStatusRequest>

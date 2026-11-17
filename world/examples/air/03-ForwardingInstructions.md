@@ -423,6 +423,18 @@ Inside `Shipment`:
   Packed and labelled. The code is from the Trade Accord's status condition list: READY = Ready.
 - `Consignment/TransportHandlingUnit/Package/Status/Description` = **Waiting at the distributor's dispatch area.**  
   Where they are.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Bench side frame casting**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **8** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Bench side frame casting**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 
 ### Document Reference
 
@@ -831,6 +843,18 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>VT-PO-26-0319</cbc:ID>

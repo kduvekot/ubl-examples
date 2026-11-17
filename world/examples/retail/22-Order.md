@@ -258,6 +258,8 @@ Inside `DeliveryTerms`:
 
 - `ID` = **EXW** (schemeID `INCOTERMS`)  
   Ex works the store: the customer collects the set; there is no transport to arrange. The code is from the world's copy of Incoterms 2020: EXW = Ex Works. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
+  The place's identifier, as the world gives it wherever the place appears (a GLN; worklist C23).
 - `DeliveryLocation/Description` = **Garden department of the Lumeport store**  
   Where the delivery terms place the handover of the goods.
 
@@ -560,6 +562,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">EXW</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
       <cbc:Description>Garden department of the Lumeport store</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

@@ -53,8 +53,12 @@ The air waybill for cargo aircraft only, with the dangerous goods on it.
 
 Inside `IssueLocation`:
 
-- `Name` = **Lumeport Airport Cargo Terminal**  
+- `ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Lumeport airport, cargo terminal**  
   Where the carrier took over the goods and issued the note.
+- `Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Sender Party
 
@@ -727,6 +731,42 @@ Inside `Shipment`:
   One can of five litres.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CA** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CA: can. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CA = Can, rectangular.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Lithium-ion battery pack 48 V 100 Ah**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **348** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **6** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Lithium-ion battery pack 48 V 100 Ah**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **850760** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 850760 = Lithium-ion accumulators.
+- `GoodsItem/ID` = **2**  
+  The goods item number.
+- `GoodsItem/Description` = **Ionisation smoke detector set**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **3** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **1** (unitCode `SET`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Ionisation smoke detector set**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **853110** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 853110 = Burglar or fire alarms and similar apparatus.
+- `GoodsItem/ID` = **3**  
+  The goods item number.
+- `GoodsItem/Description` = **Coating stripper for electronics**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **25** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **20** (unitCode `LTR`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Coating stripper for electronics**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **381400** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 381400 = Organic composite solvents and thinners, n.e.s.; prepared paint or varnish removers.
 
 ### Document Distribution
 
@@ -807,7 +847,13 @@ Inside `Signature`:
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+    <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
@@ -1365,6 +1411,42 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Lithium-ion battery pack 48 V 100 Ah</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Ionisation smoke detector set</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">3</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Ionisation smoke detector set</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Description>Coating stripper for electronics</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">25</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Coating stripper for electronics</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

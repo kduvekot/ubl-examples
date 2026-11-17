@@ -783,6 +783,8 @@ Inside `TransportMeans`:
   Where the AIS antenna is.
 - `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
   The ship's certificate of registry.
+- `MaritimeTransport/RegistryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
 - `MaritimeTransport/VesselDynamics/NavigationStatusCode` = **0** (listID `ITU-R M.1371 Navigational status`)  
@@ -1457,6 +1459,7 @@ Inside `Signature`:
         <cbc:ID>REG-XB-S-20117</cbc:ID>
       </cac:RegistryCertificateDocumentReference>
       <cac:RegistryPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
         <cbc:Name>Lumeport</cbc:Name>
       </cac:RegistryPortLocation>
       <cac:VesselDynamics>

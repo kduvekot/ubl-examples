@@ -416,6 +416,8 @@ Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
   Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning (UBL rule IND6). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `DeliveryLocation/Description` = **Mine siding, Serravona**  
   Where the delivery terms place the handover of the goods.
 
@@ -832,6 +834,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
       <cbc:Description>Mine siding, Serravona</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

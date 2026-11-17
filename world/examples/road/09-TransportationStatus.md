@@ -423,8 +423,8 @@ Inside `UpdatedDeliveryTransportEvent`:
 
 Inside `StatusLocation`:
 
-- `Name` = **Trasvia Haulage**  
-  Where the status was recorded.
+- `Name` = **Land border crossing Urvania–Bayvarra**  
+  The road border crossing between the customs posts of both countries.
 
 ### Status Period
 
@@ -781,7 +781,7 @@ Inside `StatusPeriod`:
     </cac:Location>
   </cac:UpdatedDeliveryTransportEvent>
   <cac:StatusLocation>
-    <cbc:Name>Trasvia Haulage</cbc:Name>
+    <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-03-24</cbc:StartDate>

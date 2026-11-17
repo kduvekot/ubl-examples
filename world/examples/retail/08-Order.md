@@ -362,6 +362,8 @@ Inside `DeliveryTerms`:
 
 - `ID` = **DDP** (schemeID `INCOTERMS`)  
   Delivered duty paid at the store: the distributor arranges and pays the transport and every cost, so the order names only where to deliver. The code is from the world's copy of Incoterms 2020: DDP = Delivered Duty Paid. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The place's identifier, as the world gives it wherever the place appears (a GLN; worklist C23).
 - `DeliveryLocation/Description` = **Brightmarket Stores, goods-in, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
@@ -957,6 +959,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">DDP</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
       <cbc:Description>Brightmarket Stores, goods-in, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

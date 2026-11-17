@@ -674,6 +674,8 @@ Inside `Shipment`:
   The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
   The ship's certificate of registry.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
 - `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
@@ -1220,6 +1222,30 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/InsurancePolicy/PolicyDocumentReference/ID` = **WS-CERT-26-0884**  
   The insurance certificate that goes with the documents.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Park bench Serra 180**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Park bench Serra 180**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `GoodsItem/ID` = **2**  
+  The goods item number.
+- `GoodsItem/Description` = **Bench side frame casting**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **12** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Bench side frame casting**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
   The insured value, 110 % of the CIF value.
 - `InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
@@ -1940,6 +1966,7 @@ Inside `Signature`:
               <cbc:ID>REG-XB-S-20117</cbc:ID>
             </cac:RegistryCertificateDocumentReference>
             <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
               <cbc:Name>Lumeport</cbc:Name>
             </cac:RegistryPortLocation>
           </cac:MaritimeTransport>
@@ -2436,6 +2463,30 @@ Inside `Signature`:
         </cac:PolicyDocumentReference>
       </cac:InsurancePolicy>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
     <cac:InsurancePolicy>
       <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
       <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>

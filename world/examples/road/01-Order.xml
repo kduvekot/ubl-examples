@@ -501,6 +501,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Description>Castrano Logistics warehouse, Ferrano</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

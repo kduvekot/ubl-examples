@@ -19,7 +19,13 @@
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
@@ -407,6 +413,7 @@
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
           <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
           </cac:Location>
         </cac:ActualDepartureTransportEvent>
@@ -614,6 +621,7 @@
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
             <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
             </cac:PickupLocation>
           </cac:Pickup>
@@ -684,9 +692,11 @@
         <cac:EmissionCalculationMethod>
           <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
           <cac:MeasurementFromLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
           </cac:MeasurementFromLocation>
           <cac:MeasurementToLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
             <cbc:Name>Marrowdale</cbc:Name>
           </cac:MeasurementToLocation>
           <cac:EmissionCalculationLocation>
@@ -695,6 +705,18 @@
         </cac:EmissionCalculationMethod>
       </cac:EnvironmentalEmission>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">192</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>

@@ -19,7 +19,13 @@
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Fiumella Barges</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
@@ -378,11 +384,13 @@
             <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">DRYBARGE</cbc:ShipConfigurationCode>
             <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano</cbc:Name>
             </cac:RegistryPortLocation>
           </cac:MaritimeTransport>
         </cac:TransportMeans>
         <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
         </cac:LoadingPortLocation>
         <cac:UnloadingPortLocation>

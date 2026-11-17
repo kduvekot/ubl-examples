@@ -289,6 +289,8 @@ Inside `Signature`:
 
 Inside `RequestedStatusLocation`:
 
+- `ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The place's identifier, as the world gives it wherever the place appears (a GLN; worklist C23).
 - `Name` = **Brightmarket Stores, goods-in**  
   Status at the store.
 
@@ -519,6 +521,7 @@ Inside `RequestedStatusPeriod`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:RequestedStatusLocation>
+    <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
     <cbc:Name>Brightmarket Stores, goods-in</cbc:Name>
   </cac:RequestedStatusLocation>
   <cac:RequestedStatusPeriod>

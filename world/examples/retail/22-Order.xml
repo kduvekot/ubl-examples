@@ -200,6 +200,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">EXW</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
       <cbc:Description>Garden department of the Lumeport store</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

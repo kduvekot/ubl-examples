@@ -55,8 +55,12 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
 
 Inside `IssueLocation`:
 
-- `Name` = **Lumeport Airport Cargo Terminal**  
+- `ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Lumeport airport, cargo terminal**  
   Where the carrier took over the goods and issued the note.
+- `Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Sender Party
 
@@ -613,6 +617,18 @@ Inside `Shipment`:
   The airport of destination.
 - `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Bench side frame casting**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **8** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Bench side frame casting**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 
 ### Exchange Rate
 
@@ -709,7 +725,13 @@ Inside `Signature`:
   <cbc:DeclaredCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredCarriageValueAmount>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+    <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
@@ -1189,6 +1211,18 @@ Inside `Signature`:
         </cac:RequestedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:ExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

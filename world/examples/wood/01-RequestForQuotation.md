@@ -298,6 +298,8 @@ Inside `BuyerCustomerParty`:
 
 Inside `Delivery`:
 
+- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `DeliveryLocation/Name` = **Valdara Industries, goods-in, Ferrano**  
   Where the slats are wanted.
 - `RequestedDeliveryPeriod/StartDate` = **2026-02-26**  
@@ -701,6 +703,7 @@ Inside `RequestForQuotationLine`:
   </cac:BuyerCustomerParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Valdara Industries, goods-in, Ferrano</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>

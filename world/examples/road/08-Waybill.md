@@ -51,8 +51,12 @@ The road consignment note goes to the party that booked the truck, the distribut
 
 Inside `IssueLocation`:
 
-- `Name` = **Castrano Logistics**  
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Castrano Logistics warehouse, Ferrano**  
   Where the carrier took over the goods and issued the note.
+- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Sender Party
 
@@ -2032,6 +2036,30 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Corrugated cardboard**  
   What the packaging is made of.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Park bench Serra 180**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Park bench Serra 180**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `GoodsItem/ID` = **2**  
+  The goods item number.
+- `GoodsItem/Description` = **Bench side frame casting**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **12** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Bench side frame casting**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `Delivery/LatestDeliveryDate` = **2026-03-25**  
   The goods-in slot cannot move.
 - `Delivery/LatestDeliveryTime` = **12:00:00**  
@@ -2179,7 +2207,13 @@ Inside `Signature`:
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.trasvia.example</cbc:WebsiteURI>
@@ -3773,6 +3807,30 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
     <cac:Delivery>
       <cbc:LatestDeliveryDate>2026-03-25</cbc:LatestDeliveryDate>
       <cbc:LatestDeliveryTime>12:00:00</cbc:LatestDeliveryTime>

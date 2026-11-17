@@ -331,6 +331,18 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Textile Mill (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Cotton lint, compressed bale**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **6129** (unitCode `KGM`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Cotton lint, compressed bale**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **520100** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 
 ### Document Reference
 
@@ -643,6 +655,18 @@ Inside `Signature`:
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Cotton lint, compressed bale</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="KGM">6129</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Cotton lint, compressed bale</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>

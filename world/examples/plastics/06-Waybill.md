@@ -51,8 +51,12 @@ The inland waterway consignment note, issued to the shipper.
 
 Inside `IssueLocation`:
 
-- `Name` = **Fiumella Barges**  
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Quay of Rinova Recovery, Ferrano**  
   Where the carrier took over the goods and issued the note.
+- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Sender Party
 
@@ -480,8 +484,12 @@ Inside `Shipment`:
   Its net tonnage, also without a unit.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **DRYBARGE** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel. The code is from the Trade Accord's ship configuration list: DRYBARGE = Dry cargo barge.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Ferrano**  
   The port the vessel is registered in.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Quay of Rinova Recovery, Ferrano**  
   Where the bags are loaded.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **River quay, Lumeport**  
@@ -716,7 +724,13 @@ Inside `Signature`:
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Fiumella Barges</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.fiumella.example</cbc:WebsiteURI>
@@ -1075,11 +1089,13 @@ Inside `Signature`:
             <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">DRYBARGE</cbc:ShipConfigurationCode>
             <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano</cbc:Name>
             </cac:RegistryPortLocation>
           </cac:MaritimeTransport>
         </cac:TransportMeans>
         <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
         </cac:LoadingPortLocation>
         <cac:UnloadingPortLocation>

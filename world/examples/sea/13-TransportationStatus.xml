@@ -215,6 +215,7 @@
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
       <cbc:Name>Port of Lumeport, container quay</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -322,7 +323,8 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
-    <cbc:Name>Port of Lumeport</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+    <cbc:Name>Port of Lumeport, container quay</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-05-14</cbc:StartDate>

@@ -345,6 +345,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
       <cbc:Description>Mine siding, Serravona</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

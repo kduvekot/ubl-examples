@@ -244,6 +244,7 @@
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Two containers loaded on the container train.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -278,6 +279,7 @@
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
     <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>

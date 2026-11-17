@@ -4275,7 +4275,9 @@ def status_extras(f, n, doc, out):
          "OtherInstruction": V("Reply only if the delivery slot must change.", "What the receiver should do."),
          "TransportExecutionStatusCode": V("INPROGRESS", "The carriage is under way."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
-         "StatusLocation": {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the status was recorded.")},
+         "StatusLocation": (out["TransportEvent"]["Location"] if isinstance(out.get("TransportEvent"), dict) and
+                            "Location" in out["TransportEvent"] else
+                            {"Name": V(PARTY[doc["from"]]["identity"]["name"], "Where the status was recorded.")}),
          "StatusPeriod": {"StartDate": V(out["IssueDate"].value, "The status holds from the report."),
                           "EndDate": V(out["IssueDate"].value, "Until the next report.")}}
     if f.numbers.get("waybill", f.numbers.get("bl")):   # only a transport document issued already (C06, C72)

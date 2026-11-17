@@ -357,6 +357,8 @@ Inside `DeliveryTerms`:
 
 - `ID` = **CIF** (schemeID `INCOTERMS`)  
   Cost, insurance and freight to the port of Selanu: the seller pays the sea freight and insures the cargo; the risk passes when the goods are on board in Lumeport. The code is from the world's copy of Incoterms 2020: CIF = Cost, Insurance and Freight. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `DeliveryLocation/Description` = **Port of Selanu**  
   Where the delivery terms place the handover of the goods.
 
@@ -972,6 +974,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Description>Port of Selanu</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

@@ -191,6 +191,7 @@
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -226,7 +227,8 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:StatusLocation>
-    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+    <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-05-13</cbc:StartDate>

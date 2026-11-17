@@ -508,6 +508,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D19 (positions follow the map at 14 km a square; O82 may redraw towns, ports and airports), D21 (the urgent air frames pass through Lumeway's dispatch area, a place of its own), D5 (site codes for Urvanian places only where a document uses one, O24).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): each transport leg in `world/documents.json` names the place at both ends (`from_place`, `to_place`: the warehouse, siding, quay, goods-in, port or airport, with its GLN or UN/LOCODE-form code where the world has one), and the transport locations, the waybill's place of issue and the plans' notification place are built from them (`kit.leg_location()`), not from the company's name and office address; a status report's location is the place of the event it reports. The barge leg stays on Fiumella's tile until the map is redrawn with Rinova on the river (O92), its place named Rinova's quay as D41 says.
 - Findings: air: 04#F15, 05#F5, 09#F10; mast: 03#F10; ore: 02#F6, 03#F8, 03#F10, 05#F7; plastics: 03#F1, 03#F10, 04#F14, 04#F18, 06#F15, 06#F17; rail: 02#F14, 03#F6, 03#F16, 04#F8, 05#F10, 07#F9, 08#F9, 08#F20; retail: 06#F12, 08#F11, 11#F4, 13#F8, 21#F11; road: 03#F8, 08#F10, 08#F20, 09#F6; sea: 29#F8; tender: 02#F31, 03#F32; utilities: 02#F11; wood: 04#F12
 
 ### C11 · Currencies and exchange rates with nothing to convert, or the wrong currency
@@ -638,6 +639,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D20 (the cargo to state is the bench in three parcels on pallets, O61).
 - State: ready to fix now.
+- Fixed in part (2026-11-17, stage 1 step 1d): every waybill, forwarding instruction and bill of lading says what it carries: a goods item per line of the deal (description, quantity, gross weight, Harmonized System subheading; `kit.transport_goods()`), added by the build where the scenario gives none; every transport plan and request carries a summary of the goods on its consignment (UBL has no goods item under a consignment). Still to come: the handling units with their parcels, with D20 in stage 4 (sea/10#F3, retail/11#F1, wood/04#F4, the plastics bags); the places, stages, equipment requests and dates of the cotton, sea, air and mast transport documents (cotton/09#F4, 13#F2, 14#F1, sea/07#F4, 12#F2, 15#F3, air/03#F4, mast/02#F3), with their flows in stage 6, whose decisions move those dates (D30, D33, D36, D39); the freight charge in the plastics plan (plastics/04#F16) with D41.
 - Findings: air: 03#F4, 04#F5; contest: 08#F4; cotton: 09#F4, 13#F2, 14#F1; mast: 02#F3; ore: 02#F2, 03#F6, 05#F2; plastics: 04#F6; retail: 13#F3; sea: 07#F4, 09#F2, 10#F3, 12#F2, 15#F3; wood: 04#F4
 
 ### C22 · Item properties of the slat: validity periods, repeated length, full specification
@@ -660,6 +662,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D5 (site codes for Urvanian places only where a document uses one, O24), D19 (place positions at 14 km a square).
 - State: ready to fix now.
+- Fixed in part (2026-11-17, stage 1 step 1d): the build gives every location named like a place the world identifies (the UN/LOCODE-form towns, ports and airports, the legs' named places, every GS1 party's own locations, and a short list of the names the documents use for them) its identifier, also where the place is given only in `Description` (`identify_places()` in `tools/build_examples.py`). The customs offices have no identifier anywhere in the world yet: they get one with the place list (O91).
 - Findings: air: 01#F8; cotton: 08#F10, 11#F7; ore: 01#F5; rail: 01#F13, 06#F13; retail: 14#F7, 22#F6; road: 05#F14; sea: 05#F11, 11#F15, 13#F9, 14#F19, 15#F12, 16#F22; wood: 03#F9
 
 ### C24 · Tax totals and taxable amounts that ignore the document's own charges, or state an empty zero

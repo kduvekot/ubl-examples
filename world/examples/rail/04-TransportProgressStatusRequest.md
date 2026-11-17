@@ -255,6 +255,8 @@ Inside `TransportMeans`:
 
 Inside `StatusLocation`:
 
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Name` = **Ferrano Intermodal Hub**  
   Where the status is asked for.
 
@@ -456,6 +458,7 @@ Inside `StatusLocation`:
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
   </cac:TransportMeans>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
     <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
   </cac:StatusLocation>
 </TransportProgressStatusRequest>

@@ -254,6 +254,8 @@ Inside `TransportEvent`:
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
 - `Description` = **Cargo accepted and built up for the flight.**  
   What happened, in words.
+- `Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Location/Name` = **Lumeport airport, cargo terminal**  
   Where it happened.
 
@@ -299,8 +301,10 @@ Inside `ReceiverParty`:
 
 Inside `StatusLocation`:
 
-- `Name` = **Lumeport Airport Cargo Terminal**  
-  Where the status was recorded.
+- `ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `Name` = **Lumeport airport, cargo terminal**  
+  Where it happened.
 
 ### Status Period
 
@@ -507,6 +511,7 @@ Inside `StatusPeriod`:
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -542,7 +547,8 @@ Inside `StatusPeriod`:
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:StatusLocation>
-    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+    <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-05-13</cbc:StartDate>

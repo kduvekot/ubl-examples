@@ -354,6 +354,8 @@ Inside `TransportMeans`:
   The kind of vessel, for about 700 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20231**  
   The ship's certificate of registry.
+- `MaritimeTransport/RegistryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
 
@@ -630,6 +632,7 @@ Inside `TransportMeans`:
         <cbc:ID>REG-XB-S-20231</cbc:ID>
       </cac:RegistryCertificateDocumentReference>
       <cac:RegistryPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
         <cbc:Name>Lumeport</cbc:Name>
       </cac:RegistryPortLocation>
     </cac:MaritimeTransport>

@@ -374,63 +374,19 @@ Inside `ServiceEndTimePeriod`:
 
 Inside `FromLocation`:
 
-- `Name` = **Fiumella Barges**  
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Quay of Rinova Recovery, Ferrano**  
   Where the goods are taken over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `Address/StreetName` = **Skikzek Han Nestan** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Fiumella Barges (world/parties.json).
-- `Address/StreetName` = **Banchina del Fiume** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Fiumella Barges (world/parties.json).
-- `Address/BuildingNumber` = **52**  
-  Building number of the postal address. identity of Fiumella Barges (world/parties.json).
-- `Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Fiumella Barges (world/parties.json).
-- `Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Fiumella Barges (world/parties.json).
-- `Address/PostalZone` = **4170**  
-  Postal code in Urvania's format (4 digits). identity of Fiumella Barges (world/parties.json).
-- `Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Fiumella Barges (world/parties.json).
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Address/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### To Location
 
 Inside `ToLocation`:
 
-- `Name` = **Rivermouth Packaging**  
+- `Name` = **River quay of Rivermouth Packaging, Lumeport**  
   Where the goods are handed over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Address/StreetName` = **Estuary Road**  
-  Street of the postal address. identity of Rivermouth Packaging (world/parties.json).
-- `Address/BuildingNumber` = **28**  
-  Building number of the postal address. identity of Rivermouth Packaging (world/parties.json).
-- `Address/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Rivermouth Packaging (world/parties.json).
-- `Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Rivermouth Packaging (world/parties.json).
-- `Address/PostalZone` = **38505**  
-  Postal code in Bayvarra's format (5 digits). identity of Rivermouth Packaging (world/parties.json).
-- `Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Rivermouth Packaging (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
 
 ### Transport Execution Terms
 
@@ -454,8 +410,8 @@ Inside `TransportExecutionTerms`:
   A party referred to from another party's details: its identifier and name are enough.
 - `NotificationRequirement/NotifyParty/PartyName/Name` = **Rivermouth Packaging**  
   A party referred to from another party's details: its identifier and name are enough.
-- `NotificationRequirement/NotificationLocation/Name` = **Rivermouth Packaging**  
-  Where the notice is for.
+- `NotificationRequirement/NotificationLocation/Name` = **River quay of Rivermouth Packaging, Lumeport**  
+  The place the notice is for: where the goods arrive.
 - `ServiceChargePaymentTerms/Note` = **Waiting time 4,000 ferra per hour beyond two hours.**  
   The service charge, in the carrier's currency, at the rate of its framework terms.
 
@@ -465,8 +421,12 @@ Inside `Consignment`:
 
 - `ID` = **RR-CS-26-0885**  
   The seller's consignment number.
+- `SummaryDescription` = **120 t of Recycled PE granulate**  
+  What is to be carried, in a few words (worklist C21).
 - `GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The weight the plan is made for.
+- `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
+  The number of goods items.
 - `ConsigneeParty/WebsiteURI` = **https://www.rivermouth.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Rivermouth Packaging (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **2220** (listID `ISIC Rev.4`)  
@@ -635,8 +595,12 @@ Inside `Consignment`:
   Its net tonnage, also without a unit.
 - `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **DRYBARGE** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel. The code is from the Trade Accord's ship configuration list: DRYBARGE = Dry cargo barge.
+- `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Ferrano**  
   The port the vessel is registered in.
+- `MainCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `MainCarriageShipmentStage/LoadingPortLocation/Name` = **Quay of Rinova Recovery, Ferrano**  
   Where the bags are loaded.
 - `MainCarriageShipmentStage/UnloadingPortLocation/Name` = **River quay, Lumeport**  
@@ -956,42 +920,16 @@ Inside `Consignment`:
     <cbc:EndDate>2026-04-22</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Fiumella Barges</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Skikzek Han Nestan</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Banchina del Fiume</cbc:StreetName>
-      <cbc:BuildingNumber>52</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4170</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Rivermouth Packaging</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Estuary Road</cbc:StreetName>
-      <cbc:BuildingNumber>28</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-      <cbc:CityName>Lumeport</cbc:CityName>
-      <cbc:PostalZone>38505</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
   </cac:ToLocation>
   <cac:TransportExecutionTerms>
     <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
@@ -1015,7 +953,7 @@ Inside `Consignment`:
         </cac:PartyName>
       </cac:NotifyParty>
       <cac:NotificationLocation>
-        <cbc:Name>Rivermouth Packaging</cbc:Name>
+        <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
@@ -1024,7 +962,9 @@ Inside `Consignment`:
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>RR-CS-26-0885</cbc:ID>
+    <cbc:SummaryDescription>120 t of Recycled PE granulate</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.rivermouth.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">2220</cbc:IndustryClassificationCode>
@@ -1169,11 +1109,13 @@ Inside `Consignment`:
           <cbc:NetTonnageMeasure unitCode="C62">860</cbc:NetTonnageMeasure>
           <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">DRYBARGE</cbc:ShipConfigurationCode>
           <cac:RegistryPortLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano</cbc:Name>
           </cac:RegistryPortLocation>
         </cac:MaritimeTransport>
       </cac:TransportMeans>
       <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
       </cac:LoadingPortLocation>
       <cac:UnloadingPortLocation>

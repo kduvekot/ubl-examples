@@ -354,6 +354,7 @@
             <cbc:ID>REG-XB-S-20117</cbc:ID>
           </cac:RegistryCertificateDocumentReference>
           <cac:RegistryPortLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Lumeport</cbc:Name>
           </cac:RegistryPortLocation>
         </cac:MaritimeTransport>

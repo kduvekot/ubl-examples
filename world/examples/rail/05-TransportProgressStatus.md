@@ -283,6 +283,8 @@ Inside `TransportSchedule`:
   How sure the schedule is.
 - `Remarks` = **On time.**  
   The status.
+- `StatusLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `StatusLocation/Name` = **Ferrano Intermodal Hub**  
   The stop.
 - `ActualArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
@@ -558,6 +560,7 @@ Inside `TransportSchedule`:
     <cbc:ReliabilityPercent>95</cbc:ReliabilityPercent>
     <cbc:Remarks>On time.</cbc:Remarks>
     <cac:StatusLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:StatusLocation>
     <cac:ActualArrivalTransportEvent>

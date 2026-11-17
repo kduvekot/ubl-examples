@@ -213,6 +213,7 @@
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:RequestedStatusLocation>
+    <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
     <cbc:Name>Brightmarket Stores, goods-in</cbc:Name>
   </cac:RequestedStatusLocation>
   <cac:RequestedStatusPeriod>

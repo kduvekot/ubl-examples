@@ -237,6 +237,7 @@
   </cac:BuyerCustomerParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Valdara Industries, goods-in, Ferrano</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>

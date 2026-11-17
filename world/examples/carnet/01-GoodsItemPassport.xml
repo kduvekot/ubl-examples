@@ -221,6 +221,7 @@
       <cbc:BirthplaceName>Ferrano</cbc:BirthplaceName>
       <cbc:OrganizationDepartment>Export sales</cbc:OrganizationDepartment>
       <cac:BirthplaceLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano</cbc:Name>
         <cac:Address>
           <cac:Country>

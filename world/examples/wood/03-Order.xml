@@ -233,6 +233,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Description>Valdara Industries, goods-in, Ferrano</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

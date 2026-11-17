@@ -229,47 +229,18 @@
     <cbc:EndDate>2026-05-02</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Lumeway Distribution</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Distribution Drive</cbc:StreetName>
-      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
-      <cbc:BuildingNumber>43</cbc:BuildingNumber>
-      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
-      <cbc:CityName>Marrowdale</cbc:CityName>
-      <cbc:PostalZone>71214</cbc:PostalZone>
-      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+    <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Brightmarket Stores</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Market Street</cbc:StreetName>
-      <cbc:BuildingNumber>50</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-      <cbc:CityName>Lumeport</cbc:CityName>
-      <cbc:PostalZone>38515</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+    <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
+    <cbc:SummaryDescription>24 × Park bench Serra 180</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>

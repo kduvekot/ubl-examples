@@ -285,6 +285,8 @@ Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
   Delivered at place, the store: the furniture maker delivers with its own van. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The place's identifier, as the world gives it wherever the place appears (a GLN; worklist C23).
 - `DeliveryLocation/Description` = **Brightmarket Stores, goods-in, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
@@ -651,6 +653,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
       <cbc:Description>Brightmarket Stores, goods-in, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

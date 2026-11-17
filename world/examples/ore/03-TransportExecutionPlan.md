@@ -409,63 +409,23 @@ Inside `ServiceEndTimePeriod`:
 
 Inside `FromLocation`:
 
-- `Name` = **Serravona Mining**  
+- `ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Serravona mine siding**  
   Where the goods are taken over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `Address/StreetName` = **Zalsul Hekrul Varman** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Serravona Mining (world/parties.json).
-- `Address/StreetName` = **Strada della Miniera** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Serravona Mining (world/parties.json).
-- `Address/BuildingNumber` = **10**  
-  Building number of the postal address. identity of Serravona Mining (world/parties.json).
-- `Address/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
-- `Address/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
-- `Address/PostalZone` = **4110**  
-  Postal code in Urvania's format (4 digits). identity of Serravona Mining (world/parties.json).
-- `Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Serravona Mining (world/parties.json).
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Address/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### To Location
 
 Inside `ToLocation`:
 
-- `Name` = **Valdara Industries**  
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Valdara Industries works, Ferrano**  
   Where the goods are handed over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `Address/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
-- `Address/StreetName` = **Via delle Officine** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
-- `Address/BuildingNumber` = **17**  
-  Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
-- `Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
-- `Address/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
-- `Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Valdara Industries (world/parties.json).
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Address/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Transport Execution Terms
 
@@ -501,8 +461,12 @@ Inside `TransportExecutionTerms`:
   The notice is given on the day of the train
 - `NotificationRequirement/NotificationPeriod/EndDate` = **2026-03-10**  
   before it arrives (ore/03#F2).
-- `NotificationRequirement/NotificationLocation/Name` = **Valdara Industries**  
-  Where the notice is for.
+- `NotificationRequirement/NotificationLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `NotificationRequirement/NotificationLocation/Name` = **Valdara Industries works, Ferrano**  
+  The place the notice is for: where the goods arrive.
+- `NotificationRequirement/NotificationLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ServiceChargePaymentTerms/Note` = **Waiting time 4,000 ferra per hour beyond two hours.**  
   The service charge, in the carrier's currency, at the rate of its framework terms.
 
@@ -512,8 +476,12 @@ Inside `Consignment`:
 
 - `ID` = **VI-CS-26-0306**  
   The consignment of the request.
+- `SummaryDescription` = **1788.4 t of Iron ore, lump**  
+  What is to be carried, in a few words (worklist C21).
 - `GrossWeightMeasure` = **1800000** (unitCode `KGM`)  
   The weight the plan is made for.
+- `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
+  The number of goods items.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `ConsigneeParty/PartyName/Name` = **Valdara Industries**  
@@ -937,40 +905,20 @@ Inside `Consignment`:
     <cbc:EndDate>2026-03-13</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Serravona Mining</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+    <cbc:Name>Serravona mine siding</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Strada della Miniera</cbc:StreetName>
-      <cbc:BuildingNumber>10</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-      <cbc:PostalZone>4110</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Valdara Industries</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
-      <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
@@ -1010,7 +958,13 @@ Inside `Consignment`:
         <cbc:EndDate>2026-03-10</cbc:EndDate>
       </cac:NotificationPeriod>
       <cac:NotificationLocation>
-        <cbc:Name>Valdara Industries</cbc:Name>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:NotificationLocation>
     </cac:NotificationRequirement>
     <cac:ServiceChargePaymentTerms>
@@ -1019,7 +973,9 @@ Inside `Consignment`:
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
+    <cbc:SummaryDescription>1788.4 t of Iron ore, lump</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

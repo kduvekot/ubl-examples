@@ -211,6 +211,7 @@
     <cbc:ReliabilityPercent>95</cbc:ReliabilityPercent>
     <cbc:Remarks>On time.</cbc:Remarks>
     <cac:StatusLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:StatusLocation>
     <cac:ActualArrivalTransportEvent>

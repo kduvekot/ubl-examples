@@ -51,8 +51,12 @@ The rail consignment note goes to the transport user, now the seller.
 
 Inside `IssueLocation`:
 
-- `Name` = **Castrano Logistics**  
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Castrano Logistics warehouse, Ferrano**  
   Where the carrier took over the goods and issued the note.
+- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Sender Party
 
@@ -500,6 +504,8 @@ Inside `Shipment`:
   The train left the hub.
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **06:52:00**  
   The local time.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
   Where.
 - `Consignment/MainCarriageShipmentStage/ActualWaypointTransportEvent/OccurrenceDate` = **2026-04-14**  
@@ -688,6 +694,8 @@ Inside `Shipment`:
   Collected.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupTime` = **15:00:00**  
   At three.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/Name` = **Castrano Logistics warehouse, Ferrano**  
   Where.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/ActualDespatchDate` = **2026-04-14**  
@@ -750,12 +758,28 @@ Inside `Shipment`:
   For the two containers over the route.
 - `Consignment/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **CALCULATED** (listID `urn:ubl-examples:world:codelist:EmissionCalculationMethodCode`)  
   From the electric train's energy use. The code is from the Trade Accord's emission calculation method list: CALCULATED = Calculated.
+- `Consignment/EnvironmentalEmission/EmissionCalculationMethod/MeasurementFromLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/EnvironmentalEmission/EmissionCalculationMethod/MeasurementFromLocation/Name` = **Ferrano Intermodal Hub**  
   From.
+- `Consignment/EnvironmentalEmission/EmissionCalculationMethod/MeasurementToLocation/ID` = **XBMRW** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/EnvironmentalEmission/EmissionCalculationMethod/MeasurementToLocation/Name` = **Marrowdale**  
   To.
 - `Consignment/EnvironmentalEmission/EmissionCalculationMethod/EmissionCalculationLocation/Name` = **Ferrano Rail Cargo, energy office**  
   Where the figure was calculated.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Park bench Serra 180**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **192** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Park bench Serra 180**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 
 ### Document Reference
 
@@ -844,7 +868,13 @@ Inside `Signature`:
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
@@ -1232,6 +1262,7 @@ Inside `Signature`:
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
           <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
           </cac:Location>
         </cac:ActualDepartureTransportEvent>
@@ -1439,6 +1470,7 @@ Inside `Signature`:
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
             <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
             </cac:PickupLocation>
           </cac:Pickup>
@@ -1509,9 +1541,11 @@ Inside `Signature`:
         <cac:EmissionCalculationMethod>
           <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
           <cac:MeasurementFromLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
           </cac:MeasurementFromLocation>
           <cac:MeasurementToLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
             <cbc:Name>Marrowdale</cbc:Name>
           </cac:MeasurementToLocation>
           <cac:EmissionCalculationLocation>
@@ -1520,6 +1554,18 @@ Inside `Signature`:
         </cac:EmissionCalculationMethod>
       </cac:EnvironmentalEmission>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">192</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>

@@ -465,6 +465,7 @@
     </cac:OriginatorParty>
     <cac:Delivery>
       <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Description>Castrano Logistics warehouse, Ferrano</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>

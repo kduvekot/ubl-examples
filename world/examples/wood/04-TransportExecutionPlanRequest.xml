@@ -232,45 +232,22 @@
     <cbc:EndDate>2026-03-01</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Marrowdale Sawmill</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Timber Lane</cbc:StreetName>
-      <cbc:BuildingNumber>7</cbc:BuildingNumber>
-      <cbc:CityName>Marrowdale</cbc:CityName>
-      <cbc:PostalZone>71202</cbc:PostalZone>
-      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:Name>Marrowdale Sawmill yard, Marrowdale</cbc:Name>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Valdara Industries</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en-XB">Via delle Officine</cbc:StreetName>
-      <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>MS-CS-26-0629</cbc:ID>
+    <cbc:SummaryDescription>4800 × Hardwood bench slat 1800</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

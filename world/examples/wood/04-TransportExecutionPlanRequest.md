@@ -311,61 +311,19 @@ Inside `ServiceEndTimePeriod`:
 
 Inside `FromLocation`:
 
-- `Name` = **Marrowdale Sawmill**  
+- `Name` = **Marrowdale Sawmill yard, Marrowdale**  
   Where the goods are taken over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Address/StreetName` = **Timber Lane**  
-  Street of the postal address. identity of Marrowdale Sawmill (world/parties.json).
-- `Address/BuildingNumber` = **7**  
-  Building number of the postal address. identity of Marrowdale Sawmill (world/parties.json).
-- `Address/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Marrowdale Sawmill (world/parties.json).
-- `Address/PostalZone` = **71202**  
-  Postal code in Bayvarra's format (5 digits). identity of Marrowdale Sawmill (world/parties.json).
-- `Address/CountrySubentity` = **Upland State**  
-  The name of code XB-UL in Bayvarra's national state or territory list.
-- `Address/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Marrowdale Sawmill (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
 
 ### To Location
 
 Inside `ToLocation`:
 
-- `Name` = **Valdara Industries**  
+- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Valdara Industries works, Ferrano**  
   Where the goods are handed over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `Address/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
-- `Address/StreetName` = **Via delle Officine** (languageID `en-XB`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
-- `Address/BuildingNumber` = **17**  
-  Building number of the postal address. identity of Valdara Industries (world/parties.json).
-- `Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
-- `Address/CityName` = **Ferrano** (languageID `en-XB`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
-- `Address/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
-- `Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Valdara Industries (world/parties.json).
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Address/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Consignment
 
@@ -373,8 +331,12 @@ Inside `Consignment`:
 
 - `ID` = **MS-CS-26-0629**  
   The transport user's number for this consignment, quoted along the chain.
+- `SummaryDescription` = **4800 × Hardwood bench slat 1800**  
+  What is to be carried, in a few words (worklist C21).
 - `GrossWeightMeasure` = **21600** (unitCode `KGM`)  
   96 bundles of slats.
+- `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
+  The number of goods items.
 - `ConsigneeParty/WebsiteURI` = **https://www.valdara.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
@@ -739,45 +701,22 @@ Inside `Consignment`:
     <cbc:EndDate>2026-03-01</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Marrowdale Sawmill</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Timber Lane</cbc:StreetName>
-      <cbc:BuildingNumber>7</cbc:BuildingNumber>
-      <cbc:CityName>Marrowdale</cbc:CityName>
-      <cbc:PostalZone>71202</cbc:PostalZone>
-      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:Name>Marrowdale Sawmill yard, Marrowdale</cbc:Name>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Valdara Industries</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
     <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-      <cbc:StreetName languageID="en-XB">Via delle Officine</cbc:StreetName>
-      <cbc:BuildingNumber>17</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>MS-CS-26-0629</cbc:ID>
+    <cbc:SummaryDescription>4800 × Hardwood bench slat 1800</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

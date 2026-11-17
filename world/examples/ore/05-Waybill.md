@@ -51,8 +51,12 @@ The rail consignment note goes to the party that contracted the carriage, the ma
 
 Inside `IssueLocation`:
 
-- `Name` = **Serravona Mining**  
+- `ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Serravona mine siding**  
   Where the carrier took over the goods and issued the note.
+- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Sender Party
 
@@ -434,6 +438,18 @@ Inside `Shipment`:
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Valdara Industries**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Iron ore, lump**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **1788.4** (unitCode `TNE`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Iron ore, lump**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **260111** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 260111 = Iron ores and concentrates, non-agglomerated.
 
 ### Document Reference
 
@@ -522,7 +538,13 @@ Inside `Signature`:
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Serravona Mining</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+    <cbc:Name>Serravona mine siding</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
@@ -845,6 +867,18 @@ Inside `Signature`:
         </cac:PartyName>
       </cac:ConsigneeParty>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Iron ore, lump</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="TNE">1788.4</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Iron ore, lump</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">260111</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>

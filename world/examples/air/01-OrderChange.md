@@ -387,6 +387,8 @@ Inside `DeliveryTerms`:
 
 - `ID` = **CPT** (schemeID `INCOTERMS`)  
   Carriage paid to the island's airport for the urgent frames: the distributor pays the air freight; the rest of the order stays CIF by sea. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `DeliveryLocation/Description` = **Selanu airport, cargo terminal**  
   Where the delivery terms place the handover of the goods.
 
@@ -793,6 +795,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
       <cbc:Description>Selanu airport, cargo terminal</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

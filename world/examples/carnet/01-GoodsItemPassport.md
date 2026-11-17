@@ -290,6 +290,8 @@ Inside `RepresentativeParty`:
   The place of birth, as in the passport.
 - `Person/OrganizationDepartment` = **Export sales**  
   The department the employee works in; identity of Valdara Industries (world/parties.json).
+- `Person/BirthplaceLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Person/BirthplaceLocation/Name` = **Ferrano**  
   The place of birth.
 - `Person/BirthplaceLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -1103,6 +1105,7 @@ Inside `Signature`:
       <cbc:BirthplaceName>Ferrano</cbc:BirthplaceName>
       <cbc:OrganizationDepartment>Export sales</cbc:OrganizationDepartment>
       <cac:BirthplaceLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano</cbc:Name>
         <cac:Address>
           <cac:Country>

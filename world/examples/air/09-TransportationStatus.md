@@ -302,6 +302,8 @@ Inside `TransportEvent`:
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ARRIVAL = Arrival.
 - `Description` = **Cargo arrived and ready for customs clearance.**  
   What happened, in words.
+- `Location/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Location/Name` = **Selanu airport, cargo terminal**  
   Where it happened.
 
@@ -439,8 +441,10 @@ Inside `ReceiverParty`:
 
 Inside `StatusLocation`:
 
-- `Name` = **Selanu Airport Cargo**  
-  Where the status was recorded.
+- `ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `Name` = **Selanu airport, cargo terminal**  
+  Where it happened.
 
 ### Status Period
 
@@ -689,6 +693,7 @@ Inside `StatusPeriod`:
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
       <cbc:Name>Selanu airport, cargo terminal</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -800,7 +805,8 @@ Inside `StatusPeriod`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
-    <cbc:Name>Selanu Airport Cargo</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+    <cbc:Name>Selanu airport, cargo terminal</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
     <cbc:StartDate>2026-05-14</cbc:StartDate>

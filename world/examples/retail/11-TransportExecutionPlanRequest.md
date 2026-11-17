@@ -313,65 +313,19 @@ Inside `ServiceEndTimePeriod`:
 
 Inside `FromLocation`:
 
-- `Name` = **Lumeway Distribution**  
+- `ID` = **9520610900022** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-out: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Name` = **Lumeway distribution centre, goods-out, Marrowdale**  
   Where the goods are taken over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Address/StreetName` = **Distribution Drive**  
-  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
-- `Address/BlockName` = **Marrowdale Business Park**  
-  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
-- `Address/BuildingNumber` = **43**  
-  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
-- `Address/PlotIdentification` = **Plot 14**  
-  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
-- `Address/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
-- `Address/PostalZone` = **71214**  
-  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
-- `Address/CountrySubentity` = **Upland State**  
-  The name of code XB-UL in Bayvarra's national state or territory list.
-- `Address/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
 
 ### To Location
 
 Inside `ToLocation`:
 
-- `Name` = **Brightmarket Stores**  
+- `ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Name` = **Goods-in of the Lumeport store**  
   Where the goods are handed over.
-- `Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Address/StreetName` = **Market Street**  
-  Street of the postal address. identity of Brightmarket Stores (world/parties.json).
-- `Address/BuildingNumber` = **50**  
-  Building number of the postal address. identity of Brightmarket Stores (world/parties.json).
-- `Address/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Brightmarket Stores (world/parties.json).
-- `Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brightmarket Stores (world/parties.json).
-- `Address/PostalZone` = **38515**  
-  Postal code in Bayvarra's format (5 digits). identity of Brightmarket Stores (world/parties.json).
-- `Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Address/TimezoneOffset` = **-1**  
-  The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
-- `Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
 
 ### Consignment
 
@@ -379,8 +333,12 @@ Inside `Consignment`:
 
 - `ID` = **LD-CS-26-0228**  
   The transport user's number for this consignment, quoted along the chain.
+- `SummaryDescription` = **24 × Park bench Serra 180**  
+  What is to be carried, in a few words (worklist C21).
 - `GrossWeightMeasure` = **996** (unitCode `KGM`)  
   Six pallets of benches.
+- `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
+  The number of goods items.
 - `ConsigneeParty/WebsiteURI` = **https://www.brightmarket.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brightmarket Stores (world/parties.json).
 - `ConsigneeParty/LogoReferenceID` = **BM-LOGO-2024**  
@@ -738,47 +696,18 @@ Inside `Consignment`:
     <cbc:EndDate>2026-05-02</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Lumeway Distribution</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Distribution Drive</cbc:StreetName>
-      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
-      <cbc:BuildingNumber>43</cbc:BuildingNumber>
-      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
-      <cbc:CityName>Marrowdale</cbc:CityName>
-      <cbc:PostalZone>71214</cbc:PostalZone>
-      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+    <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:Name>Brightmarket Stores</cbc:Name>
-    <cac:Address>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Market Street</cbc:StreetName>
-      <cbc:BuildingNumber>50</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
-      <cbc:CityName>Lumeport</cbc:CityName>
-      <cbc:PostalZone>38515</cbc:PostalZone>
-      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        <cbc:Name>Bayvarra</cbc:Name>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+    <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
+    <cbc:SummaryDescription>24 × Park bench Serra 180</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cbc:WebsiteURI>https://www.brightmarket.example</cbc:WebsiteURI>
       <cbc:LogoReferenceID>BM-LOGO-2024</cbc:LogoReferenceID>

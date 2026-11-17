@@ -350,6 +350,7 @@
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Name>Port of Selanu</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
@@ -461,6 +462,7 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
     <cbc:Name>Port of Selanu</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>

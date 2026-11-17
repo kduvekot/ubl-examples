@@ -49,7 +49,9 @@ The outgoing consignment note goes to the distributor, who contracted the carria
 
 Inside `IssueLocation`:
 
-- `Name` = **Lumeway Distribution**  
+- `ID` = **9520610900022** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-out: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Name` = **Lumeway distribution centre, goods-out, Marrowdale**  
   Where the carrier took over the goods and issued the note.
 
 ### Sender Party
@@ -410,6 +412,18 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Park bench Serra 180**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **996** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/Quantity` = **24** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Park bench Serra 180**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 
 ### Document Distribution
 
@@ -484,7 +498,8 @@ Inside `Signature`:
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Lumeway Distribution</cbc:Name>
+    <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+    <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
@@ -788,6 +803,18 @@ Inside `Signature`:
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

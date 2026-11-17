@@ -196,6 +196,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FOB</cbc:ID>
     <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Description>Port of Selanu</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>

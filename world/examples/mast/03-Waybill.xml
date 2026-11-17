@@ -20,7 +20,13 @@
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+    <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
     <cbc:WebsiteURI>https://www.kelaro.example</cbc:WebsiteURI>
@@ -578,6 +584,42 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Lithium-ion battery pack 48 V 100 Ah</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Ionisation smoke detector set</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">3</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Ionisation smoke detector set</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Description>Coating stripper for electronics</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">25</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Coating stripper for electronics</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

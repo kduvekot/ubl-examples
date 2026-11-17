@@ -658,11 +658,23 @@ MODE_SERVICE = {"road": "Full truck load", "rail": "Container train", "river": "
                 "air": "Air cargo"}
 
 
+def leg_location(leg, end, why):
+    """The place at one end of a transport leg (world/documents.json, from_place and to_place): where the goods are
+    taken over or handed over, by its name and, where the world has one, its GLN or UN/LOCODE-form code; not the
+    company's name and office address (worklist C10)."""
+    pl = leg[f"{end}_place"]
+    if pl.get("gln"):
+        pid, key = pl["gln"].split(":")
+        return {**gln_location(pid, key), "Name": V(pl["name"], why)}
+    if pl.get("locode"):
+        return place(pl["locode"], why, name=pl["name"])
+    return {"Name": V(pl["name"], why)}
+
+
 def leg_places(flow, carrier):
     leg = flow_leg(flow, carrier)
-    loc = lambda pid, why: {"Name": V(PARTY[pid]["identity"]["name"], why), "Address": address_of(pid)}
-    return leg, {"FromLocation": loc(leg["from"], "Where the goods are taken over."),
-                 "ToLocation": loc(leg["to"], "Where the goods are handed over.")}
+    return leg, {"FromLocation": leg_location(leg, "from", "Where the goods are taken over."),
+                 "ToLocation": leg_location(leg, "to", "Where the goods are handed over.")}
 
 
 def address_of(pid):
@@ -708,8 +720,9 @@ def tep_terms(flow, user, provider, days):
                                         "PreEventNotificationDurationMeasure": V("2", "Two hours before.",
                                                                                  unitCode="HUR"),
                                         "NotifyParty": party_short(leg["to"]),
-                                        "NotificationLocation": {"Name": V(PARTY[leg["to"]]["identity"]["name"],
-                                                                           "Where the notice is for.")}}}
+                                        "NotificationLocation": leg_location(main_leg(flow, provider), "to",
+                                                                             "The place the notice is for: where "
+                                                                             "the goods arrive.")}}
 
 
 def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
@@ -835,8 +848,7 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "ConsolidatedIndicator": V("false", "One consignment, not a consolidation."),
            "OtherInstruction": V("Deliver against signature of the consignee.", "What the carrier must do at "
                                                                                "delivery."),
-           "IssueLocation": {"Name": V(PARTY[leg["from"]]["identity"]["name"], "Where the carrier took over the "
-                                                                             "goods and issued the note.")},
+           "IssueLocation": leg_location(leg, "from", "Where the carrier took over the goods and issued the note."),
            "DocumentDistribution": [
                {"ID": V("1", "The original for the consignor."),
                 "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
@@ -934,6 +946,47 @@ def goods_items(flow, currency, value_why, deal=None):
                     "Quantity": qty(q, it["unit"], "The quantity declared."),
                     "Item": customs_item(d["item"])})
     return out
+
+
+def transport_goods(flow, deal=None):
+    """GoodsItem per line of the deal for a transport document (worklist C21): what is carried, how much, its gross
+    weight and its commodity code, without the customs value, which a carrier does not need."""
+    deal = deal or flow.deal
+    which = "delivered" if any("delivered" in d for d in deal) else "ordered"
+    out = []
+    for i, d in enumerate(deal, 1):
+        it = ITEM[d["item"]]
+        if it.get("kind") == "service":
+            continue
+        q = Decimal(str(d[which]))
+        hs = maker(d["item"]).get("hs")
+        out.append({"ID": V(str(i), "The goods item number."),
+                    "Description": V(it["name"], "What is carried, in words."),
+                    "GrossWeightMeasure": qty(q * Decimal(str(maker(d["item"]).get("gross_kg", 0))), "KGM",
+                                              "The gross weight of the goods of this item, with their packaging."),
+                    "Quantity": qty(q, it["unit"], "How much is carried."),
+                    **({"Item": {"Name": V(it["name"], "The goods."),
+                                 "CommodityClassification": {"CommodityCode": V(hs, "Its Harmonized System "
+                                                                                    "subheading, which carriers use "
+                                                                                    "to describe the cargo.")}}}
+                       if hs else {})})
+    return out
+
+
+def with_transport_goods(flow, shipment=None, consignment=None, deal=None):
+    """A transport document says what it carries (worklist C21): a shipment gets the goods items of the deal; a
+    consignment without a shipment (a transport plan or request) a summary of them. A scenario's own goods stay."""
+    goods = transport_goods(flow, deal)
+    if not goods:
+        return
+    if isinstance(shipment, dict) and "GoodsItem" not in shipment:
+        shipment["GoodsItem"] = goods
+    elif shipment is None and isinstance(consignment, dict) and "SummaryDescription" not in consignment:
+        unit = {"TNE": " t of", "KGM": " kg of", "MTQ": " m³ of", "MWH": " MWh of"}
+        consignment["SummaryDescription"] = V("; ".join(
+            f"{g['Quantity'].value}{unit.get(g['Quantity'].attrs.get('unitCode'), ' ×')} {g['Description'].value}"
+            for g in goods), "What is to be carried, in a few words (worklist C21).")
+        consignment.setdefault("TotalGoodsItemQuantity", qty(len(goods), "EA", "The number of goods items."))
 
 
 def export_declaration(flow, n, doc, day, why, value_why, deal=None):
