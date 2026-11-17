@@ -304,15 +304,6 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Notifier Party
-
-Inside `NotifierParty`:
-
-- `PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Lumeport Textile Mill**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -657,14 +648,6 @@ Inside `Signature`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
-  <cac:NotifierParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Textile Mill</cbc:Name>
-    </cac:PartyName>
-  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
     <cac:GoodsItem>

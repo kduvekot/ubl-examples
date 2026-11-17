@@ -556,21 +556,6 @@
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>3</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XU">Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Rinova Recovery</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
   <cac:Signature>
     <cbc:ID>FB-SIG-FB-WB-26-0890</cbc:ID>
     <cac:SignatoryParty>

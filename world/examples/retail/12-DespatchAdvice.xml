@@ -334,12 +334,12 @@
       </cac:Despatch>
     </cac:Delivery>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000014</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000014</cbc:TraceID>
+      <cbc:TraceID>095206100003729019</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-1</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -381,12 +381,12 @@
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000021</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000021</cbc:TraceID>
+      <cbc:TraceID>095206100003729026</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-2</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -408,12 +408,12 @@
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000038</cbc:TraceID>
+      <cbc:TraceID>095206100003729033</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-3</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -435,12 +435,12 @@
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000045</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000045</cbc:TraceID>
+      <cbc:TraceID>095206100003729040</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-4</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -462,12 +462,12 @@
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000052</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000052</cbc:TraceID>
+      <cbc:TraceID>095206100003729057</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-5</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -489,12 +489,12 @@
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000069</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000069</cbc:TraceID>
+      <cbc:TraceID>095206100003729064</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-6</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>

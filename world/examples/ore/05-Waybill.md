@@ -474,34 +474,6 @@ Inside `DocumentDistribution`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Serravona Mining**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **2**  
-  The original for the consignee.
-- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
-- `DistributionTypeCode` = **ORIGINALWITHGOODS** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
-- `DistributionType` = **Rikzhek, vek drek valnir: drek trelgir rikzhek** (languageID `qau`)  
-  The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In Urvanian, the sender's language.
-- `DistributionType` = **Original, with the goods: the consignee's original** (languageID `en-XU`)  
-  The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In English.
-- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **3**  
-  The electronic copy.
-- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
-- `DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  The receiver of this message gets a copy, for its records; the originals are on paper. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
-- `DistributionType` = **Viskir zuzzir** (languageID `qau`)  
-  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In Urvanian, the sender's language.
-- `DistributionType` = **Electronic copy** (languageID `en-XU`)  
-  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In English.
-- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
 
@@ -894,36 +866,6 @@ Inside `Signature`:
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Serravona Mining</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>2</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qau">Rikzhek, vek drek valnir: drek trelgir rikzhek</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XU">Original, with the goods: the consignee's original</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>3</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XU">Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

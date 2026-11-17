@@ -383,10 +383,6 @@ Inside `WorkReportLine`:
   The work.
 - `SubWorkReportLine/Quantity` = **7** (unitCode `HUR`)  
   Seven hours.
-- `SubWorkReportLine/PerformingParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SubWorkReportLine/PerformingParty/PartyName/Name` = **Brackenmere Furniture**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `SubWorkReportLine/ID` = **1.2**  
   One installer's part.
 - `SubWorkReportLine/WorkItemID` = **INST-2**  
@@ -395,10 +391,6 @@ Inside `WorkReportLine`:
   The work.
 - `SubWorkReportLine/Quantity` = **7** (unitCode `HUR`)  
   Seven hours.
-- `SubWorkReportLine/PerformingParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SubWorkReportLine/PerformingParty/PartyName/Name` = **Brackenmere Furniture**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
 
@@ -689,28 +681,12 @@ Inside `WorkReportLine`:
       <cbc:WorkItemID>INST-1</cbc:WorkItemID>
       <cbc:WorkItemDescription>Installer 1: seven hours.</cbc:WorkItemDescription>
       <cbc:Quantity unitCode="HUR">7</cbc:Quantity>
-      <cac:PerformingParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brackenmere Furniture</cbc:Name>
-        </cac:PartyName>
-      </cac:PerformingParty>
     </cac:SubWorkReportLine>
     <cac:SubWorkReportLine>
       <cbc:ID>1.2</cbc:ID>
       <cbc:WorkItemID>INST-2</cbc:WorkItemID>
       <cbc:WorkItemDescription>Installer 2: seven hours.</cbc:WorkItemDescription>
       <cbc:Quantity unitCode="HUR">7</cbc:Quantity>
-      <cac:PerformingParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brackenmere Furniture</cbc:Name>
-        </cac:PartyName>
-      </cac:PerformingParty>
     </cac:SubWorkReportLine>
   </cac:WorkReportLine>
 </WorkReport>

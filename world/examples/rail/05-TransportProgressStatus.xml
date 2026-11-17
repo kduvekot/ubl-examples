@@ -190,14 +190,6 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
-  <cac:SourceIssuerParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-    </cac:PartyName>
-  </cac:SourceIssuerParty>
   <cac:TransportProgressStatusRequestDocumentReference>
     <cbc:ID>FRC-DOC-26-0329</cbc:ID>
   </cac:TransportProgressStatusRequestDocumentReference>

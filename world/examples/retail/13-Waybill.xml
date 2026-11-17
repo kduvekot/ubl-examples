@@ -337,19 +337,6 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentDistribution>
-    <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeway Distribution</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
@@ -360,20 +347,6 @@
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Brightmarket Stores</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>3</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType>Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

@@ -404,7 +404,7 @@ Inside `Shipment`:
   The same day.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-04-29**  
   The goods left on the day of this advice.
-- `TransportHandlingUnit/ID` = **095206102170000014** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729019** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -414,7 +414,7 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 001 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **095206102170000014**  
+- `TransportHandlingUnit/TraceID` = **095206100003729019**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-1**  
   The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
@@ -454,7 +454,7 @@ Inside `Shipment`:
   The transport booking the pallet travels under.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentTypeCode` = **TransportExecutionPlanRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LD-TR-26-0227 is the example retail/11, a TransportExecutionPlanRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlanRequest = Transport Execution Plan Request.
-- `TransportHandlingUnit/ID` = **095206102170000021** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729026** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -464,7 +464,7 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 002 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **095206102170000021**  
+- `TransportHandlingUnit/TraceID` = **095206100003729026**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-2**  
   The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
@@ -484,7 +484,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/ID` = **095206102170000038** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -494,7 +494,7 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 003 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **095206102170000038**  
+- `TransportHandlingUnit/TraceID` = **095206100003729033**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-3**  
   The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
@@ -514,7 +514,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/ID` = **095206102170000045** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729040** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -524,7 +524,7 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 004 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **095206102170000045**  
+- `TransportHandlingUnit/TraceID` = **095206100003729040**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-4**  
   The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
@@ -544,7 +544,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/ID` = **095206102170000052** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729057** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -554,7 +554,7 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 005 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **095206102170000052**  
+- `TransportHandlingUnit/TraceID` = **095206100003729057**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-5**  
   The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
@@ -574,7 +574,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/ID` = **095206102170000069** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729064** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -584,7 +584,7 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 006 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `TransportHandlingUnit/TraceID` = **095206102170000069**  
+- `TransportHandlingUnit/TraceID` = **095206100003729064**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-6**  
   The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
@@ -1167,12 +1167,12 @@ Inside `DespatchLine`:
       </cac:Despatch>
     </cac:Delivery>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000014</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000014</cbc:TraceID>
+      <cbc:TraceID>095206100003729019</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-1</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1214,12 +1214,12 @@ Inside `DespatchLine`:
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000021</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000021</cbc:TraceID>
+      <cbc:TraceID>095206100003729026</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-2</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1241,12 +1241,12 @@ Inside `DespatchLine`:
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000038</cbc:TraceID>
+      <cbc:TraceID>095206100003729033</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-3</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1268,12 +1268,12 @@ Inside `DespatchLine`:
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000045</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000045</cbc:TraceID>
+      <cbc:TraceID>095206100003729040</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-4</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1295,12 +1295,12 @@ Inside `DespatchLine`:
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000052</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000052</cbc:TraceID>
+      <cbc:TraceID>095206100003729057</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-5</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>
@@ -1322,12 +1322,12 @@ Inside `DespatchLine`:
       </cac:ActualPackage>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000069</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
-      <cbc:TraceID>095206102170000069</cbc:TraceID>
+      <cbc:TraceID>095206100003729064</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
         <cbc:ID>1-6</cbc:ID>
         <cbc:DeliveredQuantity unitCode="EA">4</cbc:DeliveredQuantity>

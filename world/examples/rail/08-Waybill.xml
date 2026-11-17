@@ -247,7 +247,6 @@
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
-      <cbc:PerformingCarrierAssignedID>FRC-J-26-3318</cbc:PerformingCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
@@ -346,14 +345,6 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
-      <cac:PerformingCarrierParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Ferrano Rail Cargo</cbc:Name>
-        </cac:PartyName>
-      </cac:PerformingCarrierParty>
       <cac:TransportContract>
         <cbc:ID>FRC-CON-2026-005</cbc:ID>
         <cbc:IssueDate>2026-01-05</cbc:IssueDate>
@@ -747,21 +738,6 @@
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>3</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XU">Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

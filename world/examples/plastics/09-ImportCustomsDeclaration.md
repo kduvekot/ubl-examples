@@ -376,15 +376,6 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410137** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Notifier Party
-
-Inside `NotifierParty`:
-
-- `PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Rivermouth Packaging**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -497,8 +488,6 @@ Inside `Shipment`:
   The temperature of the hall. The code is from the Trade Accord's temperature attribute list: AMBIENT = Ambient temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
   At least 5 °C.
-- `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/MeasureCode` = **MIN** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
-  The lowest. The code is from the Trade Accord's temperature qualifier list: MIN = Minimum.
 - `GoodsItem/BondedWarehouseLocation/Storage/MinimumTemperature/Description` = **Kept frost-free.**  
   Why.
 - `GoodsItem/BondedWarehouseLocation/Storage/MaximumTemperature/AttributeID` = **AMBIENT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
@@ -849,14 +838,6 @@ Inside `Signature`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
-  <cac:NotifierParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Rivermouth Packaging</cbc:Name>
-    </cac:PartyName>
-  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>
     <cac:GoodsItem>
@@ -940,7 +921,6 @@ Inside `Signature`:
           <cac:MinimumTemperature>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">AMBIENT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
-            <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">MIN</cbc:MeasureCode>
             <cbc:Description>Kept frost-free.</cbc:Description>
           </cac:MinimumTemperature>
           <cac:MaximumTemperature>

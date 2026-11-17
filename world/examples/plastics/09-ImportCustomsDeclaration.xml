@@ -302,14 +302,6 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410137</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
-  <cac:NotifierParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Rivermouth Packaging</cbc:Name>
-    </cac:PartyName>
-  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>RR-SH-26-0889</cbc:ID>
     <cac:GoodsItem>
@@ -393,7 +385,6 @@
           <cac:MinimumTemperature>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">AMBIENT</cbc:AttributeID>
             <cbc:Measure unitCode="CEL">5</cbc:Measure>
-            <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">MIN</cbc:MeasureCode>
             <cbc:Description>Kept frost-free.</cbc:Description>
           </cac:MinimumTemperature>
           <cac:MaximumTemperature>

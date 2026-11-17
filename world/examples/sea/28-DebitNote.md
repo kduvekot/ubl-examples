@@ -62,7 +62,7 @@ Inside `DiscrepancyResponse`:
 
 - `ResponseCode` = **2** (listID `UN/EDIFACT EDED 4465`)  
   A packaging fault. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 2 = Below specification goods.
-- `Description` = **Heat-treatment mark illegible on pallet 095206101230000070.**  
+- `Description` = **Heat-treatment mark illegible on pallet 095206100003729132.**  
   The fault, with the pallet's SSCC.
 
 ### Order Reference
@@ -609,10 +609,6 @@ Inside `DebitNoteLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `OriginatorParty/PartyName/Name` = **Island Customs Service**  
   A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Velumi Trading**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyName/Name` = **Island Customs Service**  
@@ -681,7 +677,7 @@ Inside `DebitNoteLine`:
   </cac:InvoicePeriod>
   <cac:DiscrepancyResponse>
     <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">2</cbc:ResponseCode>
-    <cbc:Description>Heat-treatment mark illegible on pallet 095206101230000070.</cbc:Description>
+    <cbc:Description>Heat-treatment mark illegible on pallet 095206100003729132.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -1097,14 +1093,6 @@ Inside `DebitNoteLine`:
         <cbc:Name>Island Customs Service</cbc:Name>
       </cac:PartyName>
     </cac:OriginatorParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Velumi Trading</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>

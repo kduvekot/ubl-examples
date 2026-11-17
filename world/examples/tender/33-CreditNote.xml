@@ -331,22 +331,6 @@
     <cac:PurchaseReference>
       <cbc:ID>PARK-HB-B17</cbc:ID>
     </cac:PurchaseReference>
-    <cac:OriginatorParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:OriginatorParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:PaymentTerms>
       <cbc:Note>Set off against the next release's invoice.</cbc:Note>
     </cac:PaymentTerms>

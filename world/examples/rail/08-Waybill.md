@@ -318,8 +318,6 @@ Inside `Shipment`:
   The manufacturer's consignment number.
 - `Consignment/ContractedCarrierAssignedID` = **FRC-CON-2026-005/88**  
   The call-off under the framework contract.
-- `Consignment/PerformingCarrierAssignedID` = **FRC-J-26-3318**  
-  The rail carrier's job number.
 - `Consignment/SummaryDescription` = **192 park benches in two 40-foot containers.**  
   The goods in a few words.
 - `Consignment/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
@@ -436,10 +434,6 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `Consignment/PerformingCarrierParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/PerformingCarrierParty/PartyName/Name` = **Ferrano Rail Cargo**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportContract/ID` = **FRC-CON-2026-005**  
   The framework contract for container slots.
 - `Consignment/TransportContract/IssueDate` = **2026-01-05**  
@@ -818,20 +812,6 @@ Inside `DocumentDistribution`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Ferrano Intermodal Hub**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **3**  
-  The electronic copy.
-- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
-- `DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  The receiver of this message gets a copy, for its records; the originals are on paper. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
-- `DistributionType` = **Viskir zuzzir** (languageID `qau`)  
-  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In Urvanian, the sender's language.
-- `DistributionType` = **Electronic copy** (languageID `en-XU`)  
-  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In English.
-- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
 
@@ -1096,7 +1076,6 @@ Inside `Signature`:
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
-      <cbc:PerformingCarrierAssignedID>FRC-J-26-3318</cbc:PerformingCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
@@ -1195,14 +1174,6 @@ Inside `Signature`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
-      <cac:PerformingCarrierParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Ferrano Rail Cargo</cbc:Name>
-        </cac:PartyName>
-      </cac:PerformingCarrierParty>
       <cac:TransportContract>
         <cbc:ID>FRC-CON-2026-005</cbc:ID>
         <cbc:IssueDate>2026-01-05</cbc:IssueDate>
@@ -1596,21 +1567,6 @@ Inside `Signature`:
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>3</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XU">Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

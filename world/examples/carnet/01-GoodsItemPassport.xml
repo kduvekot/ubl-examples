@@ -428,7 +428,7 @@
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0725</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-CARNET-26</cbc:ID>
+      <cbc:ID>VI-CS-26-0241</cbc:ID>
       <cac:TransportAdvisorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>

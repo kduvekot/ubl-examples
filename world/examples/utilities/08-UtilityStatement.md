@@ -244,13 +244,6 @@ Inside `ReceiverParty`:
 - `Person/FinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
-### Customer Party
-
-Inside `CustomerParty`:
-
-- `Party/PartyName/Name` = **Robin Ashdale**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Subscriber Party
 
 Inside `SubscriberParty`:
@@ -751,13 +744,6 @@ Inside `SubscriberConsumption`:
       </cac:FinancialAccount>
     </cac:Person>
   </cac:ReceiverParty>
-  <cac:CustomerParty>
-    <cac:Party>
-      <cac:PartyName>
-        <cbc:Name>Robin Ashdale</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:CustomerParty>
   <cac:SubscriberParty>
     <cac:PartyName>
       <cbc:Name>Robin Ashdale</cbc:Name>

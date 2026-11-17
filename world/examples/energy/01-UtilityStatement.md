@@ -256,15 +256,6 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105781** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Ferrano Energy (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Customer Party
-
-Inside `CustomerParty`:
-
-- `Party/PartyIdentification/ID` = **XU-R-105781** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
-- `Party/PartyName/Name` = **Ferrano Energy**  
-  The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
-
 ### Subscriber Party
 
 Inside `SubscriberParty`:
@@ -695,16 +686,6 @@ Inside `SubscriberConsumption`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105781</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
-  <cac:CustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Ferrano Energy</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:CustomerParty>
   <cac:SubscriberParty>
     <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>

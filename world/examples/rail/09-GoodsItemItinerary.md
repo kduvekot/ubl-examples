@@ -294,7 +294,7 @@ Inside `ReferencedTransportEquipment`:
 
 Inside `ReferencedPackage`:
 
-- `ID` = **KXU104413250000013** (schemeID `ISO 15459`)  
+- `ID` = **KXU104410004506265** (schemeID `ISO 15459`)  
   The first pallet in it, made up by the 3PL: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 
 ### Referenced Goods Item
@@ -558,7 +558,7 @@ Inside `TransportationSegment`:
     <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
   </cac:ReferencedTransportEquipment>
   <cac:ReferencedPackage>
-    <cbc:ID schemeID="ISO 15459">KXU104413250000013</cbc:ID>
+    <cbc:ID schemeID="ISO 15459">KXU104410004506265</cbc:ID>
   </cac:ReferencedPackage>
   <cac:ReferencedGoodsItem>
     <cbc:ID>1</cbc:ID>

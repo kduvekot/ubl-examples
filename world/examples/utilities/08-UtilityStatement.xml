@@ -178,13 +178,6 @@
       </cac:FinancialAccount>
     </cac:Person>
   </cac:ReceiverParty>
-  <cac:CustomerParty>
-    <cac:Party>
-      <cac:PartyName>
-        <cbc:Name>Robin Ashdale</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:CustomerParty>
   <cac:SubscriberParty>
     <cac:PartyName>
       <cbc:Name>Robin Ashdale</cbc:Name>

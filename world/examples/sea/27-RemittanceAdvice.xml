@@ -375,24 +375,6 @@
         </cac:PartyName>
       </cac:Party>
     </cac:SellerSupplierParty>
-    <cac:OriginatorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:OriginatorCustomerParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:PayeeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
@@ -412,24 +394,6 @@
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>87f012c8-f767-5ff8-9aa8-8bc8a6a1076a</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">64.00</cbc:CreditLineAmount>
-    <cac:OriginatorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:OriginatorCustomerParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
         <cbc:ID>LD-CN-26-0152</cbc:ID>

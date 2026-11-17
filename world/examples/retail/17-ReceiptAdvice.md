@@ -333,7 +333,7 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0230**  
   The shipment received.
-- `TransportHandlingUnit/ID` = **095206102170000038** (schemeID `GS1 SSCC`)  
+- `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
   The pallet with the damaged carton: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/DamageRemarks` = **One carton torn, the bench's armrest bent.**  
   What the goods-in found.
@@ -865,7 +865,7 @@ Inside `ReceiptLine`:
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0230</cbc:ID>
     <cac:TransportHandlingUnit>
-      <cbc:ID schemeID="GS1 SSCC">095206102170000038</cbc:ID>
+      <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
       <cac:ReceivedHandlingUnitReceiptLine>
         <cbc:ID>1-3</cbc:ID>

@@ -29,24 +29,6 @@
       </cac:PartyName>
     </cac:SignatoryParty>
   </cac:Signature>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brightmarket Stores</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Brightmarket Stores</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -260,7 +242,6 @@
     <cbc:Note>Optional: seat cushions to match.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
     <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">CONFIDENTIAL</cbc:PrivacyCode>
-    <cbc:SecurityClassificationCode listID="urn:ubl-examples:world:codelist:SecurityClassificationCode">INTERNAL</cbc:SecurityClassificationCode>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>

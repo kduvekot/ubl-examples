@@ -221,22 +221,6 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
-  <cac:DocumentProviderParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Public Works Department</cbc:Name>
-    </cac:PartyName>
-  </cac:DocumentProviderParty>
-  <cac:TenderRecipientParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Public Works Department</cbc:Name>
-    </cac:PartyName>
-  </cac:TenderRecipientParty>
   <cac:ProcurementProject>
     <cbc:Name>Park benches for the city parks</cbc:Name>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>

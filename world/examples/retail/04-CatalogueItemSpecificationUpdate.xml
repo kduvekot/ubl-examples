@@ -271,26 +271,6 @@
   </cac:DefaultLanguage>
   <cac:CatalogueItemSpecificationUpdateLine>
     <cbc:ID>1</cbc:ID>
-    <cac:ContractorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:ContractorCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

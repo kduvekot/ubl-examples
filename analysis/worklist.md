@@ -486,6 +486,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Note: The findings marked "yes" (forwarder role, consignor notified of its own goods) are confirmed in bulk (D46).
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1g): a party role that only names a party the document already gives in a role that covers it is left out (`redundant_roles()` in `tools/build_examples.py`): originator and beneficiary equal to the buyer, contracting party or accounting customer, at the header and on lines; the customer equal to the receiver in the utility statements; the importer as its own notifier; the sender as source issuer; the contracted carrier as performing carrier (with its assigned ID) and the consignment's carrier as freight forwarder; the contracting party repeated in the tendering roles (a role with a contact of its own stays); a line's contract parties, manufacturer or performing party equal to the header's or the line's above; a distribution copy to the addressee (the receiver, or the forwarder of forwarding instructions). The order's originator and beneficiary are dropped from the fulfilment cancellation, the factor's statement and the remittance advice. The city's levy on the water credit note names the city as `CollectedForParty`, as the invoice does. The six findings for D46 (cotton/03#F10, 04#F4, mast/02#F11, #F15, mast/03#F16, #F17) go with the flow stories of stage 6.
 - Findings: air: 03#F12, 07#F14; cotton: 03#F10, 04#F4, 09#F14; energy: 01#F2; furniture: 01#F3, 02#F7, 11#F5, 12#F4, 16#F9; mast: 02#F11, 02#F15, 03#F16, 03#F17; plastics: 09#F12; rail: 05#F9, 06#F3, 08#F23; retail: 02#F12, 03#F10, 04#F13; sea: 05#F15, 25#F8, 27#F6; tender: 01#F18, 02#F21, 03#F21, 09#F9, 15#F10, 17#F10, 19#F10, 21#F23, 31#F12, 33#F19; utilities: 01#F4, 05#F2, 08#F3, 09#F10, 12#F5; wood: 07#F9
 
 ### C09 · Bench emission: 96 kg with factor 0.82 per 1 EA
@@ -547,6 +548,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D6 (deferred: no signature is removed or added before the signatures stage, and the signature identifiers of this cause wait for it), D25 (signature identifiers then take the company's one code), D24 (the remittance ID shared by three payers goes with C74), D5 (no identifier of a party repeats the digits of another; Codana licence plates carry the issuing company's number, O22, O32).
 - State: ready in part: 2 findings ready (energy/05#F13, and identifiers#F4 for the pallet SSCC and the other derived identifiers); the 26 findings on signature IDs wait for the signatures stage.
+- Fixed (2026-11-17, stage 1 step 1g): pallet SSCCs and Codana licence plates take their serial from a running series of the packer (`unit_serial()` in `tools/examples_kit.py`), no longer from the flow's number or the castings' serials; the carnet consignment is `VI-CS-26-0241` in Valdara's series; the forwarder's transport plan in the retail status request is `BF-TEP-26-0262`, no longer the distributor's request number. energy/05#F13 was done by C41 in step 1d. The other derived values of identifiers#F4 go with C61 (new Codana company numbers in order of registration, so the ISO 6523 values no longer cut the register numbers, and telephone numbers without relation to an identifier, O22) and the bank accounts with the master data of stage 3; the issuer prefixes with C75.
 - Findings: cotton: 09#F15, 11#F14, 13#F14, 15#F17; energy: 05#F13; plastics: 04#F13, 05#F16, 06#F24, 09#F16; road: 05#F17, 06#F10, 07#F12, 09#F12, 10#F18, 16#F5; sea: 09#F16, 11#F25, 12#F15, 13#F12, 14#F25; tender: 15#F20, 17#F19, 19#F18, 30#F17, 31#F17; wood: 05#F17, 07#F16; consistency: identifiers#F4
 
 ### C14 · The buyer's cost centre does not fit what is bought
@@ -655,6 +657,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D11 (decided: a customs declaration carries the description, commodity code, origin and weights; an invoice the identification, the name and what tax needs; the full specification stays in the documents of the item type), D12 (the bundle of 50 slats, `PackSizeNumeric` 50, stays as the world's pack of one item).
 - State: ready in part: 14 findings ready (validity and repeated length); wood/05#F13, 07#F14 and 08#F12 (the specification in customs declarations and the invoice) wait for O20, with C48.
+- Fixed (2026-11-17, stage 1 step 1g): the slat's surface property no longer carries a twelve-month usability period, and its seller's item number no longer repeats the length as a measurement dimension; the length is in the item's dimensions only (`world/items.json`, slat-1800).
 - Findings: wood: 01#F8, 01#F9, 02#F14, 02#F15, 03#F11, 03#F12, 05#F12, 05#F13, 05#F14, 06#F13, 06#F14, 07#F13, 07#F14, 07#F15, 08#F11, 08#F12, 08#F13
 
 ### C23 · Places and offices given only by name or text, without the identifier they have elsewhere
@@ -894,6 +897,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1g): `SecurityClassificationCode` removed from the RFQ lines of the wood and furniture flows (`tools/examples_scenarios.py`).
 - Findings: furniture: 01#F10; wood: 01#F7
 
 ### C43 · Temperature code given next to a measured value
@@ -905,6 +909,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1g): `MeasureCode` is left out wherever a temperature value is given (`tools/examples_scenarios.py`).
 - Findings: mast: 02#F7; plastics: 09#F4
 
 ### C44 · `VI-C180-2026` replaces a frame in one catalogue and a bench in a tender
@@ -916,6 +921,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D5 (the company's own number `VI-C180` stays the seller's identification; the globally unique form is the Codana prefix plus that number).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1g): the retail catalogue's frame line names only the item it replaces (`VI-C180`, the side frame of the 2025 casting) as `ReplacedRelatedItem`; the `ReplacementRelatedItem` of the catalogue and of the tender line are gone (`tools/examples_scenarios.py`).
 - Findings: consistency: items#F4
 
 ### C45 · `Language/LocaleCode` = `en`

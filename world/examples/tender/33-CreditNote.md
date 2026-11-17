@@ -454,14 +454,6 @@ Inside `CreditNoteLine`:
   The contract price in ferra.
 - `PurchaseReference/ID` = **PARK-HB-B17**  
   The bench's place in the harbour park.
-- `OriginatorParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `OriginatorParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `PaymentTerms/Note` = **Set off against the next release's invoice.**  
   How the credit is settled.
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
@@ -1063,22 +1055,6 @@ Inside `CreditNoteLine`:
     <cac:PurchaseReference>
       <cbc:ID>PARK-HB-B17</cbc:ID>
     </cac:PurchaseReference>
-    <cac:OriginatorParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:OriginatorParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:PaymentTerms>
       <cbc:Note>Set off against the next release's invoice.</cbc:Note>
     </cac:PaymentTerms>

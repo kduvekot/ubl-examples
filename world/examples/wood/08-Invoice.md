@@ -481,10 +481,6 @@ Inside `InvoiceLine`:
   The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `Item/SellersItemIdentification/ID` = **MS-SL-1800**  
   The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `Item/SellersItemIdentification/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  The seller numbers its slats by length: this number is for one length. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `Item/SellersItemIdentification/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  The length the number stands for.
 - `Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item slat-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Item/CommodityClassification/CommodityCode` = **440799** (listID `WCO HS 2022`)  
@@ -553,8 +549,6 @@ Inside `InvoiceLine`:
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Planed on four sides**  
   Its value; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `Item/AdditionalItemProperty/UsabilityPeriod/DurationMeasure` = **12** (unitCode `MON`)  
-  Oiled within twelve months of planing, before the surface greys
 - `Item/Certificate/ID` = **XB-FOR-2025-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
   The number of the certificate, in the forestry register of Bayvarra, which keeps the certificates issued under each registration; the schemeID names the register and its authority, so no issuer party is needed (decision ID-Q10).
 - `Item/Certificate/CertificateTypeCode` = **SUSTFOREST** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
@@ -967,10 +961,6 @@ Inside `InvoiceLine`:
       <cbc:Name>Hardwood bench slat 1800</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>MS-SL-1800</cbc:ID>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        </cac:MeasurementDimension>
       </cac:SellersItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -1035,9 +1025,6 @@ Inside `InvoiceLine`:
       <cac:AdditionalItemProperty>
         <cbc:Name>Surface</cbc:Name>
         <cbc:Value>Planed on four sides</cbc:Value>
-        <cac:UsabilityPeriod>
-          <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
-        </cac:UsabilityPeriod>
       </cac:AdditionalItemProperty>
       <cac:Certificate>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>

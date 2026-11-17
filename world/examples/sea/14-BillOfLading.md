@@ -820,7 +820,7 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/TransportEquipment/SupplierParty/Party/PartyName/Name` = **Tidewell Ocean Lines**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000018** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729071** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -830,9 +830,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 001 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000018**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729071**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000025** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729088** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -842,9 +842,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 002 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729088**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000032** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729095** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -854,9 +854,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 003 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000032**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729095**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000049** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729101** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -866,9 +866,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 004 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000049**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729101**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000056** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729118** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -878,9 +878,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 005 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000056**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729118**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000063** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729125** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -890,9 +890,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 006 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000063**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729125**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000070** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729132** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -902,9 +902,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 007 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000070**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729132**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000087** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729149** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -914,9 +914,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 008 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000087**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729149**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000094** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729156** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -926,9 +926,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 009 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000094**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729156**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000100** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729163** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -938,9 +938,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 010 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000100**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729163**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000117** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729170** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -950,9 +950,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 011 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000117**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729170**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000124** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729187** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -962,9 +962,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 012 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000124**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729187**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000131** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729194** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -974,9 +974,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 013 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000131**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729194**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000148** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729200** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -986,9 +986,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 014 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000148**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729200**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000155** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729217** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -998,9 +998,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 015 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000155**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729217**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000162** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729224** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1010,9 +1010,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 016 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000162**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729224**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000179** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729231** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1022,9 +1022,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 017 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000179**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729231**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000186** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729248** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1034,9 +1034,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 018 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000186**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729248**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000193** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729255** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1046,9 +1046,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 019 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000193**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729255**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000209** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729262** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1058,9 +1058,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 020 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000209**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729262**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000216** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729279** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1070,9 +1070,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 021 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000216**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729279**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000223** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729286** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1082,9 +1082,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 022 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000223**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729286**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000230** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729293** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1094,9 +1094,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 023 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000230**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729293**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000247** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729309** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1106,9 +1106,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 024 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000247**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729309**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206101230000254** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729316** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1118,13 +1118,13 @@ Inside `Shipment`:
   12 boxed side frames on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 025 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206101230000254**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729316**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
   The forwarder's chassis the container rode on to the port. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code TE: trailer. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: TE = Trailer.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **095206101230000254** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **095206100003729316** (schemeID `GS1 SSCC`)  
   The pallet of boxed castings, packed last at the doors: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `EA`)  
   Twelve boxes.
@@ -2125,211 +2125,211 @@ Inside `Signature`:
             </cac:Party>
           </cac:SupplierParty>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000018</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729071</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000018</cbc:TraceID>
+            <cbc:TraceID>095206100003729071</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000025</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729088</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000025</cbc:TraceID>
+            <cbc:TraceID>095206100003729088</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000032</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729095</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000032</cbc:TraceID>
+            <cbc:TraceID>095206100003729095</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000049</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729101</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000049</cbc:TraceID>
+            <cbc:TraceID>095206100003729101</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000056</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729118</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000056</cbc:TraceID>
+            <cbc:TraceID>095206100003729118</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000063</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729125</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000063</cbc:TraceID>
+            <cbc:TraceID>095206100003729125</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000070</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729132</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000070</cbc:TraceID>
+            <cbc:TraceID>095206100003729132</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000087</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729149</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000087</cbc:TraceID>
+            <cbc:TraceID>095206100003729149</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000094</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729156</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000094</cbc:TraceID>
+            <cbc:TraceID>095206100003729156</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000100</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729163</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000100</cbc:TraceID>
+            <cbc:TraceID>095206100003729163</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000117</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729170</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000117</cbc:TraceID>
+            <cbc:TraceID>095206100003729170</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000124</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729187</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000124</cbc:TraceID>
+            <cbc:TraceID>095206100003729187</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000131</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729194</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000131</cbc:TraceID>
+            <cbc:TraceID>095206100003729194</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000148</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729200</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000148</cbc:TraceID>
+            <cbc:TraceID>095206100003729200</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000155</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729217</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000155</cbc:TraceID>
+            <cbc:TraceID>095206100003729217</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000162</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729224</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000162</cbc:TraceID>
+            <cbc:TraceID>095206100003729224</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000179</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729231</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000179</cbc:TraceID>
+            <cbc:TraceID>095206100003729231</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000186</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729248</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000186</cbc:TraceID>
+            <cbc:TraceID>095206100003729248</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000193</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729255</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000193</cbc:TraceID>
+            <cbc:TraceID>095206100003729255</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000209</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729262</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000209</cbc:TraceID>
+            <cbc:TraceID>095206100003729262</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000216</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729279</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000216</cbc:TraceID>
+            <cbc:TraceID>095206100003729279</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000223</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729286</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000223</cbc:TraceID>
+            <cbc:TraceID>095206100003729286</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000230</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729293</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000230</cbc:TraceID>
+            <cbc:TraceID>095206100003729293</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000247</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729309</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000247</cbc:TraceID>
+            <cbc:TraceID>095206100003729309</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000254</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729316</cbc:ID>
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
             <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
-            <cbc:TraceID>095206101230000254</cbc:TraceID>
+            <cbc:TraceID>095206100003729316</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206101230000254</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729316</cbc:ID>
             <cbc:Quantity unitCode="EA">12</cbc:Quantity>
             <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
             <cac:ContainingTransportEquipment>

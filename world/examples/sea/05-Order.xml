@@ -320,22 +320,6 @@
       <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
-      <cac:OriginatorParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:OriginatorParty>
-      <cac:BeneficiaryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:BeneficiaryParty>
       <cac:OrderedShipment>
         <cac:Shipment>
           <cbc:ID>VT-SH-PLAN-1</cbc:ID>
@@ -550,22 +534,6 @@
       <cbc:UUID>6c15f781-fb79-59c5-b7b2-bbd9c564ae2b</cbc:UUID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
-      <cac:OriginatorParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:OriginatorParty>
-      <cac:BeneficiaryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:BeneficiaryParty>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>

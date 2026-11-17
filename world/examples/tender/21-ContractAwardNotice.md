@@ -176,24 +176,6 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Receiver Party
 
 Inside `ReceiverParty`:
@@ -1123,24 +1105,6 @@ Inside `TenderResult`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Public Works Department</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:ReceiverParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

@@ -364,15 +364,6 @@ Inside `CustomsParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105507** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Notifier Party
-
-Inside `NotifierParty`:
-
-- `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -399,10 +390,6 @@ Inside `Shipment`:
   The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
 - `GoodsItem/Item/SellersItemIdentification/ID` = **MS-SL-1800**  
   The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/SellersItemIdentification/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  The seller numbers its slats by length: this number is for one length. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/SellersItemIdentification/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  The length the number stands for.
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item slat-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/NatureCode` = **IX** (listID `WCO HS 2022 Sections`)  
@@ -463,8 +450,6 @@ Inside `Shipment`:
   A property buyers ask about.
 - `GoodsItem/Item/AdditionalItemProperty/Value` = **Planed on four sides**  
   Its value; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `GoodsItem/Item/AdditionalItemProperty/UsabilityPeriod/DurationMeasure` = **12** (unitCode `MON`)  
-  Oiled within twelve months of planing, before the surface greys
 - `GoodsItem/Item/Certificate/ID` = **XB-FOR-2025-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
   The number of the certificate, in the forestry register of Bayvarra, which keeps the certificates issued under each registration; the schemeID names the register and its authority, so no issuer party is needed (decision ID-Q10).
 - `GoodsItem/Item/Certificate/CertificateTypeCode` = **SUSTFOREST** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
@@ -827,14 +812,6 @@ Inside `Signature`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
-  <cac:NotifierParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Valdara Industries</cbc:Name>
-    </cac:PartyName>
-  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>MS-SH-26-0632</cbc:ID>
     <cac:GoodsItem>
@@ -850,10 +827,6 @@ Inside `Signature`:
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>MS-SL-1800</cbc:ID>
-          <cac:MeasurementDimension>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-          </cac:MeasurementDimension>
         </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -910,9 +883,6 @@ Inside `Signature`:
         <cac:AdditionalItemProperty>
           <cbc:Name>Surface</cbc:Name>
           <cbc:Value>Planed on four sides</cbc:Value>
-          <cac:UsabilityPeriod>
-            <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
-          </cac:UsabilityPeriod>
         </cac:AdditionalItemProperty>
         <cac:Certificate>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>

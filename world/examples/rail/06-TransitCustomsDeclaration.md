@@ -311,15 +311,6 @@ Inside `ConsigneeParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Freight Forwarder Party
-
-Inside `FreightForwarderParty`:
-
-- `PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Ferrano Rail Cargo**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Customs Party
 
 Inside `CustomsParty`:
@@ -1055,14 +1046,6 @@ Inside `Signature`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ConsigneeParty>
-  <cac:FreightForwarderParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Ferrano Rail Cargo</cbc:Name>
-    </cac:PartyName>
-  </cac:FreightForwarderParty>
   <cac:CustomsParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>

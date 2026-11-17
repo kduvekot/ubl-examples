@@ -547,30 +547,6 @@ Inside `TenderingTerms`:
   The family name.
 - `AwardingTerms/TechnicalCommitteePerson/JobTitle` = **Head of parks**  
   The person's position.
-- `AdditionalInformationParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AdditionalInformationParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `DocumentProviderParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `DocumentProviderParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `TenderRecipientParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `TenderRecipientParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ContractResponsibleParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ContractResponsibleParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `TenderEvaluationParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `TenderEvaluationParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `QualificationRequestRecipientParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `QualificationRequestRecipientParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `TenderValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
   Tenders hold for 90 days.
 - `ContractAcceptancePeriod/DurationMeasure` = **10** (unitCode `DAY`)  
@@ -1169,54 +1145,6 @@ Inside `TenderResult`:
         <cbc:JobTitle>Head of parks</cbc:JobTitle>
       </cac:TechnicalCommitteePerson>
     </cac:AwardingTerms>
-    <cac:AdditionalInformationParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:AdditionalInformationParty>
-    <cac:DocumentProviderParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:DocumentProviderParty>
-    <cac:TenderRecipientParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:TenderRecipientParty>
-    <cac:ContractResponsibleParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:ContractResponsibleParty>
-    <cac:TenderEvaluationParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:TenderEvaluationParty>
-    <cac:QualificationRequestRecipientParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:QualificationRequestRecipientParty>
     <cac:TenderValidityPeriod>
       <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
     </cac:TenderValidityPeriod>

@@ -812,10 +812,6 @@ Inside `InvoiceLine`:
   96 × 520.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
-- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -1040,10 +1036,6 @@ Inside `InvoiceLine`:
   12 × 64.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The order line this invoice line bills.
-- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -1731,14 +1723,6 @@ Inside `InvoiceLine`:
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1945,14 +1929,6 @@ Inside `InvoiceLine`:
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>

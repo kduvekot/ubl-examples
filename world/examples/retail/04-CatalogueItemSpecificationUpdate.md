@@ -369,14 +369,6 @@ Inside `CatalogueItemSpecificationUpdateLine`:
 
 - `ID` = **1**  
   The line of the bench.
-- `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ContractorCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.**  
   The new description: the slats are now of a different hardwood.
 - `Item/Name` = **Park bench Serra 180**  
@@ -854,26 +846,6 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   </cac:DefaultLanguage>
   <cac:CatalogueItemSpecificationUpdateLine>
     <cbc:ID>1</cbc:ID>
-    <cac:ContractorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:ContractorCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:Item>
       <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

@@ -461,10 +461,6 @@ Inside `CollectionInvoiceLine`:
   A monthly bill. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
-- `BeneficiaryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
@@ -885,14 +881,6 @@ Inside `InvoiceLine`:
       <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:PeriodDescriptionCode">MONTH</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>

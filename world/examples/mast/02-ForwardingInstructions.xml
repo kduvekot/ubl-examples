@@ -502,7 +502,6 @@
       <cac:Temperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>
@@ -555,7 +554,6 @@
       <cac:Temperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>
@@ -615,7 +613,6 @@
       <cac:Temperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>

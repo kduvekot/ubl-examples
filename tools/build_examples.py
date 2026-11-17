@@ -1721,6 +1721,127 @@ def _currencies(node, out, prices=None):
             _currencies(v, out, prices)
 
 
+# ---------------------------------------------------------------- party roles that only repeat another (worklist C08)
+def _party_key(node):
+    """Who a party element names: its first identifier, else its name. A wrapper (CustomerParty and the like) is
+    looked into."""
+    if not isinstance(node, dict):
+        return None
+    if "Party" in node and isinstance(node["Party"], dict):
+        node = node["Party"]
+    ids = node.get("PartyIdentification")
+    ids = ids[0] if isinstance(ids, list) and ids else ids
+    if isinstance(ids, dict) and isinstance(ids.get("ID"), V):
+        return ids["ID"].value
+    name = node.get("PartyName")
+    name = name[0] if isinstance(name, list) and name else name
+    if isinstance(name, dict) and isinstance(name.get("Name"), V):
+        return name["Name"].value
+    return None
+
+
+def _own_contact(node, base):
+    """A role that repeats a party but gives it a contact of its own (a helpdesk, a tender box) says something."""
+    def contact(n):
+        n = n.get("Party", n) if isinstance(n, dict) else {}
+        return str(n.get("Contact", "")) + str(n.get("EndpointID", ""))
+    return contact(node) and contact(node) != contact(base)
+
+
+ROLE_EQUALS = {      # a role that adds nothing when it names the same party as one of these
+    "OriginatorCustomerParty": ("BuyerCustomerParty", "ContractingParty", "AccountingCustomerParty"),
+    "BeneficiaryParty": ("BuyerCustomerParty", "ContractingParty", "AccountingCustomerParty", "CollectedForParty"),
+    "OriginatorParty": ("OriginatorCustomerParty", "BuyerCustomerParty", "ContractingParty",
+                        "AccountingCustomerParty"),
+    "CustomerParty": ("ReceiverParty",),
+    "NotifierParty": ("ImporterParty", "ExporterParty", "DeclarantParty"),
+    "SourceIssuerParty": ("SenderParty",),
+    "PerformingCarrierParty": ("CarrierParty",),
+    "FreightForwarderParty": ("CarrierParty",),
+    "AdditionalInformationParty": ("ContractingParty",),
+    "DocumentProviderParty": ("ContractingParty",),
+    "TenderRecipientParty": ("ContractingParty",),
+    "ContractResponsibleParty": ("ContractingParty",),
+    "TenderEvaluationParty": ("ContractingParty",),
+    "QualificationRequestRecipientParty": ("ContractingParty",),
+}
+TENDER_ROLES = {"AdditionalInformationParty", "DocumentProviderParty", "TenderRecipientParty",
+                "ContractResponsibleParty", "TenderEvaluationParty", "QualificationRequestRecipientParty"}
+
+
+def _consignments(node):
+    """The node itself, its consignments and its shipment's consignments: where the carrier of the goods is."""
+    out = [node]
+    for holder in (node, node.get("Shipment", {})):
+        for c in (holder.get("Consignment", []) if isinstance(holder, dict) else []):
+            out.append(c)
+        if isinstance(holder, dict) and isinstance(holder.get("Consignment"), dict):
+            out.append(holder["Consignment"])
+    return [x for x in out if isinstance(x, dict)]
+
+
+LINE_REPEATS = {        # roles a line repeats needlessly when the header or the line above names the same party
+    "OriginatorParty", "OriginatorCustomerParty", "BeneficiaryParty", "ContractorCustomerParty",
+    "SellerSupplierParty", "ManufacturerParty", "PerformingParty"}
+NOT_THEIR_PARTIES = {   # documents whose subject is not the order: its originator and beneficiary do not belong
+    "FulfilmentCancellation", "Statement", "RemittanceAdvice"}
+
+
+def redundant_roles(content, doc):
+    """Drop every party role that only names a party the document already gives in a role that covers it (worklist
+    C08): originator and beneficiary equal to the buyer or contracting party, the customer equal to the receiver, the
+    importer as its own notifier, the sender as source issuer, the carrier as performing carrier or forwarder, the
+    contracting party repeated in each tendering role, a line party equal to the same party of the header or of the
+    line above, and a distribution copy to the document's own addressee."""
+    def walk(node, scope):
+        if isinstance(node, list):
+            for x in node:
+                walk(x, scope)
+            return
+        if not isinstance(node, dict):
+            return
+        here = dict(scope)
+        for k, v in node.items():
+            key = _party_key(v) if k.endswith("Party") else None
+            if key:
+                here.setdefault(k, (key, v))
+        if "FreightForwarderParty" in node and "FreightForwarderParty" not in scope:   # the consignment's carrier
+            carriers = {_party_key(c.get("CarrierParty")) for c in _consignments(node)}
+            if _party_key(node["FreightForwarderParty"]) in carriers:
+                del node["FreightForwarderParty"]
+        for k in list(node):
+            v = node[k]
+            if not k.endswith("Party") or not isinstance(v, dict):
+                continue
+            key = _party_key(v)
+            if not key:
+                continue
+            if doc["doc"] in NOT_THEIR_PARTIES and k in ("OriginatorCustomerParty", "BeneficiaryParty",
+                                                         "OriginatorParty"):
+                del node[k]
+                continue
+            same = [scope[k]] if k in scope and k in LINE_REPEATS else []   # the same role higher up
+            same += [here[b] for b in ROLE_EQUALS.get(k, ()) if b in here and b != k]
+            if any(b[0] == key and not (k in TENDER_ROLES and _own_contact(v, b[1])) for b in same):
+                del node[k]
+                if k == "PerformingCarrierParty":
+                    node.pop("PerformingCarrierAssignedID", None)
+        if "DocumentDistribution" in node:
+            roles = ("ReceiverParty", "FreightForwarderParty") if doc["doc"] == "ForwardingInstructions" \
+                else ("ReceiverParty",)                        # forwarding instructions go to the forwarder
+            addressees = {here[r][0] for r in roles if r in here}
+            dd = node["DocumentDistribution"]
+            keep = [x for x in (dd if isinstance(dd, list) else [dd]) if _party_key(x) not in addressees]
+            if keep:
+                node["DocumentDistribution"] = keep if isinstance(dd, list) else keep[0]
+            else:
+                del node["DocumentDistribution"]
+        for k, v in node.items():
+            if isinstance(v, (dict, list)) and not k.endswith("Party"):
+                walk(v, {r: x for r, x in here.items()})
+    walk(content, {})
+
+
 def currency_cleanup(content, doc):
     """Every currency code and exchange rate converts something the document states (worklist C11): no currency
     equal to the document's, no rate from a currency to itself, no pricing currency the prices are not in, no
@@ -2259,6 +2380,7 @@ def main(flow_id, check=False):
         DOC_TYPE = doc["doc"]
         content = scenario(n, doc)
         content = place_parties(doc, content)
+        redundant_roles(content, doc)
         declaration_invoices(content, doc)
         border_transport(content, doc)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")

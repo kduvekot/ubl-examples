@@ -796,20 +796,6 @@ Inside `DocumentDistribution`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Selanu Airport Cargo**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **3**  
-  The electronic copy.
-- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
-- `DistributionTypeCode` = **ELECTRONICCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  The receiver of this message gets a copy, for its records; the originals are on paper. The code is from the Trade Accord's distribution type list: ELECTRONICCOPY = Electronic copy.
-- `DistributionType` = **Tihetaki tiveto** (languageID `qal`)  
-  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In Lisavan, the sender's language.
-- `DistributionType` = **Electronic copy** (languageID `en-XL`)  
-  The name of code ELECTRONICCOPY in the Trade Accord's distribution type list. In English.
-- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
 
@@ -1473,21 +1459,6 @@ Inside `Signature`:
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Airport Cargo</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>3</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qal">Tihetaki tiveto</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XL">Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Bayforth Forwarding</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

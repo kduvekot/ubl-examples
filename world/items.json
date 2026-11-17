@@ -516,23 +516,11 @@
     },
     {
      "name": "Surface",
-     "value": "Planed on four sides",
-     "usable": [
-      "12",
-      "MON",
-      "Oiled within twelve months of planing, before the surface greys"
-     ]
+     "value": "Planed on four sides"
     }
    ],
    "buyer_ids": {
     "5-xu": "VI-R-SL1800"
-   },
-   "variant": {
-    "measure": [
-     "LENGTH",
-     "1800",
-     "MMT"
-    ]
    },
    "lot_props": [
     [

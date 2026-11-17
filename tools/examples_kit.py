@@ -1526,13 +1526,28 @@ def gln_location(pid, key):
                                 "prefix (952, reserved for examples); world/parties.json.", schemeID="GS1 GLN")}
 
 
+UNIT_SERIALS = {}       # (owner, flow, unit) -> serial in the packer's own running series
+
+
+def unit_serial(owner, flow, k):
+    """The next number in the running series of the party that makes the unit up (identifiers#F4): independent of
+    the flow, its file numbers and the serials of the goods on the unit. The same unit keeps its number when it is
+    asked for again."""
+    key = (owner, flow.id, k)
+    if key not in UNIT_SERIALS:
+        used = sum(1 for o, _, _ in UNIT_SERIALS if o == owner)
+        start = 1000 + sum(ord(c) for c in owner) * 37 % 9000
+        UNIT_SERIALS[key] = start * 100 + used + 1
+    return UNIT_SERIALS[key]
+
+
 def unit_id(owner, flow, k, what="The number on the pallet label"):
     """The identifier of logistic unit k of a flow, in the identification convention of the party that makes the
     unit up (decision ID-Q7): an SSCC for a GS1 party, an ISO/IEC 15459 licence plate of the Codana Identification
     Agency for an ISO party, else the party's own number. The same unit has the same identifier in every document of
     the flow."""
     conv = PARTY[owner]["identity"].get("identification", {})
-    serial = f"{flow.base:03d}{k:06d}"
+    serial = f"{unit_serial(owner, flow, k):09d}"
     name = PARTY[owner]["identity"]["name"]
     if conv.get("convention") == "GS1":
         return V(world_ids.sscc(conv["company_prefix"], serial), f"{what}: the unit's SSCC, which {name} gives every "

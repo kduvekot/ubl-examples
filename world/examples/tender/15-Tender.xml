@@ -313,24 +313,6 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Public Works Department</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
     <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
@@ -383,10 +365,6 @@
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
       </cac:OfferedItemLocationQuantity>
-      <cac:ReplacementRelatedItem>
-        <cbc:ID>VI-C180-2026</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-      </cac:ReplacementRelatedItem>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

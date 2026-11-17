@@ -293,9 +293,9 @@ Inside `CollectionCreditNoteLine`:
   The city's levy on them.
 - `LineExtensionAmount` = **0.84** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `BeneficiaryParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `CollectedForParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Lumeport Public Works Department**  
+- `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.**  
   The seller's description; item sewage-levy of Coastal State Water Company (world/items.json).
@@ -569,14 +569,14 @@ Inside `CreditNoteLine`:
     <cbc:Note>The city's levy, credited for the city.</cbc:Note>
     <cbc:CreditedQuantity unitCode="MTQ">2</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">0.84</cbc:LineExtensionAmount>
-    <cac:BeneficiaryParty>
+    <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Public Works Department</cbc:Name>
       </cac:PartyName>
-    </cac:BeneficiaryParty>
+    </cac:CollectedForParty>
     <cac:Item>
       <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
       <cbc:Name>Sewage levy of the city of Lumeport</cbc:Name>

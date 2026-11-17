@@ -255,8 +255,8 @@ Inside `ReceiverParty`:
 
 Inside `TransportExecutionPlanDocumentReference`:
 
-- `ID` = **BF-TEP-26-0227**  
-  The forwarder's confirmation of the booking requested by the distributor: its transport execution plan (not shown in this flow).
+- `ID` = **BF-TEP-26-0262**  
+  The forwarder's confirmation of the booking requested by the distributor: its transport execution plan (not shown in this flow), numbered in the forwarder's own series.
 
 ### Consignment
 
@@ -500,7 +500,7 @@ Inside `RequestedStatusPeriod`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportExecutionPlanDocumentReference>
-    <cbc:ID>BF-TEP-26-0227</cbc:ID>
+    <cbc:ID>BF-TEP-26-0262</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>

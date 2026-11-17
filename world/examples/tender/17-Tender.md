@@ -274,24 +274,6 @@ Inside `ContractingParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410548** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Lumeport Public Works Department**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Tendered Project
 
 Inside `TenderedProject`:
@@ -360,10 +342,6 @@ Inside `TenderedProject`:
   The item offered.
 - `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
   Seven days per release.
-- `TenderLine/ReplacementRelatedItem/ID` = **BF-SLAT-PB2**  
-  Spare slat sets available.
-- `TenderLine/ReplacementRelatedItem/Quantity` = **1** (unitCode `EA`)  
-  One for one.
 - `TenderLine/WarrantyParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `TenderLine/WarrantyParty/PartyName/Name` = **Brackenmere Furniture**  
@@ -618,24 +596,6 @@ Inside `TenderedProject`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:ContractingParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Public Works Department</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
     <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
@@ -688,10 +648,6 @@ Inside `TenderedProject`:
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
       </cac:OfferedItemLocationQuantity>
-      <cac:ReplacementRelatedItem>
-        <cbc:ID>BF-SLAT-PB2</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-      </cac:ReplacementRelatedItem>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>

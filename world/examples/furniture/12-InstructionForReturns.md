@@ -307,10 +307,6 @@ Inside `InstructionForReturnsLine`:
   How they are to be returned.
 - `Quantity` = **6** (unitCode `SET`)  
   Six of the remaining sets, to free shelf space.
-- `ManufacturerParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ManufacturerParty/PartyName/Name` = **Brackenmere Furniture**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
   The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
 - `Item/Name` = **Garden bench set Marrow**  
@@ -579,14 +575,6 @@ Inside `InstructionForReturnsLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>In their original cartons.</cbc:Note>
     <cbc:Quantity unitCode="SET">6</cbc:Quantity>
-    <cac:ManufacturerParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brackenmere Furniture</cbc:Name>
-      </cac:PartyName>
-    </cac:ManufacturerParty>
     <cac:Item>
       <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
       <cbc:Name>Garden bench set Marrow</cbc:Name>

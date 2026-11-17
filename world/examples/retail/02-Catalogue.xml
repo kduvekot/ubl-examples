@@ -288,26 +288,6 @@
     <cbc:MaximumOrderQuantity unitCode="EA">192</cbc:MaximumOrderQuantity>
     <cbc:WarrantyInformation>Five years on the frame, from the maker.</cbc:WarrantyInformation>
     <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
-    <cac:ContractorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:ContractorCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:WarrantyParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -727,26 +707,6 @@
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Box</cbc:OrderableUnit>
     <cbc:MinimumOrderQuantity unitCode="EA">1</cbc:MinimumOrderQuantity>
-    <cac:ContractorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:ContractorCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:LineValidityPeriod>
       <cbc:StartDate>2026-04-20</cbc:StartDate>
       <cbc:EndDate>2026-07-19</cbc:EndDate>
@@ -756,13 +716,10 @@
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cbc:Description>Park bench Serra 180</cbc:Description>
     </cac:RequiredRelatedItem>
-    <cac:ReplacementRelatedItem>
-      <cbc:ID>VI-C180-2026</cbc:ID>
-      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-    </cac:ReplacementRelatedItem>
     <cac:ReplacedRelatedItem>
-      <cbc:ID>VI-C180-2024</cbc:ID>
+      <cbc:ID>VI-C180</cbc:ID>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cbc:Description>Side frame, 2025 casting</cbc:Description>
     </cac:ReplacedRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">2</cbc:LeadTimeMeasure>

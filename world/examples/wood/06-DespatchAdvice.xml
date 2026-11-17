@@ -364,10 +364,6 @@
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>MS-SL-1800</cbc:ID>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        </cac:MeasurementDimension>
       </cac:SellersItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -422,9 +418,6 @@
       <cac:AdditionalItemProperty>
         <cbc:Name>Surface</cbc:Name>
         <cbc:Value>Planed on four sides</cbc:Value>
-        <cac:UsabilityPeriod>
-          <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
-        </cac:UsabilityPeriod>
       </cac:AdditionalItemProperty>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-02-23</cbc:ManufactureDate>

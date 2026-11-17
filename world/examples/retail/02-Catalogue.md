@@ -392,14 +392,6 @@ Inside `CatalogueLine`:
   The warranty.
 - `PackLevelCode` = **PALLET** (listID `urn:ubl-examples:world:codelist:PackLevelCode`)  
   The pack level the line is for. The code is from the Trade Accord's pack level list: PALLET = Pallet.
-- `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ContractorCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `WarrantyParty/PartyName/Name` = **Valdara Industries**  
@@ -850,14 +842,6 @@ Inside `CatalogueLine`:
   One frame per box.
 - `MinimumOrderQuantity` = **1** (unitCode `EA`)  
   Any quantity.
-- `ContractorCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ContractorCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `LineValidityPeriod/StartDate` = **2026-04-20**  
   From the issue.
 - `LineValidityPeriod/EndDate` = **2026-07-19**  
@@ -868,14 +852,12 @@ Inside `CatalogueLine`:
   Fits only the Serra 180.
 - `RequiredRelatedItem/Description` = **Park bench Serra 180**  
   In words.
-- `ReplacementRelatedItem/ID` = **VI-C180-2026**  
-  The 2026 casting replaces it from May.
-- `ReplacementRelatedItem/Quantity` = **1** (unitCode `EA`)  
-  One for one.
-- `ReplacedRelatedItem/ID` = **VI-C180-2024**  
-  The casting this one replaced.
+- `ReplacedRelatedItem/ID` = **VI-C180**  
+  The casting this one replaced, the same part number: Valdara tells its versions apart by the year (worklist C44, D35).
 - `ReplacedRelatedItem/Quantity` = **1** (unitCode `EA`)  
   One for one.
+- `ReplacedRelatedItem/Description` = **Side frame, 2025 casting**  
+  Which version: the 2025 casting, which the 2026 casting with the reinforced foot replaced.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **2** (unitCode `DAY`)  
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
@@ -1240,26 +1222,6 @@ Inside `CatalogueLine`:
     <cbc:MaximumOrderQuantity unitCode="EA">192</cbc:MaximumOrderQuantity>
     <cbc:WarrantyInformation>Five years on the frame, from the maker.</cbc:WarrantyInformation>
     <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
-    <cac:ContractorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:ContractorCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:WarrantyParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -1679,26 +1641,6 @@ Inside `CatalogueLine`:
     <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
     <cbc:OrderableUnit>Box</cbc:OrderableUnit>
     <cbc:MinimumOrderQuantity unitCode="EA">1</cbc:MinimumOrderQuantity>
-    <cac:ContractorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:ContractorCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:LineValidityPeriod>
       <cbc:StartDate>2026-04-20</cbc:StartDate>
       <cbc:EndDate>2026-07-19</cbc:EndDate>
@@ -1708,13 +1650,10 @@ Inside `CatalogueLine`:
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cbc:Description>Park bench Serra 180</cbc:Description>
     </cac:RequiredRelatedItem>
-    <cac:ReplacementRelatedItem>
-      <cbc:ID>VI-C180-2026</cbc:ID>
-      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-    </cac:ReplacementRelatedItem>
     <cac:ReplacedRelatedItem>
-      <cbc:ID>VI-C180-2024</cbc:ID>
+      <cbc:ID>VI-C180</cbc:ID>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cbc:Description>Side frame, 2025 casting</cbc:Description>
     </cac:ReplacedRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">2</cbc:LeadTimeMeasure>

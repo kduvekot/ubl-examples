@@ -246,15 +246,6 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Source Issuer Party
-
-Inside `SourceIssuerParty`:
-
-- `PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Ferrano Intermodal Hub**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Transport Progress Status Request Document Reference
 
 Inside `TransportProgressStatusRequestDocumentReference`:
@@ -539,14 +530,6 @@ Inside `TransportSchedule`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104685</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
-  <cac:SourceIssuerParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-    </cac:PartyName>
-  </cac:SourceIssuerParty>
   <cac:TransportProgressStatusRequestDocumentReference>
     <cbc:ID>FRC-DOC-26-0329</cbc:ID>
   </cac:TransportProgressStatusRequestDocumentReference>

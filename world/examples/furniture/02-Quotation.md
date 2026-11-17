@@ -284,24 +284,6 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Quoted Monetary Total
 
 Inside `QuotedMonetaryTotal`:
@@ -575,24 +557,6 @@ Inside `QuotationLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brightmarket Stores</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Brightmarket Stores</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>

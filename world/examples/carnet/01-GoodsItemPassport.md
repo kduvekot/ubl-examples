@@ -531,8 +531,8 @@ Inside `Shipment`:
 
 - `ID` = **VI-SH-26-0725**  
   The samples travelling under the carnet.
-- `Consignment/ID` = **VI-CS-CARNET-26**  
-  The consignment of the samples.
+- `Consignment/ID` = **VI-CS-26-0241**  
+  The consignment of the samples, in Valdara's series of consignment numbers.
 - `Consignment/TransportAdvisorParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportAdvisorParty/PartyName/Name` = **Bayforth Forwarding**  
@@ -1312,7 +1312,7 @@ Inside `Signature`:
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0725</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-CARNET-26</cbc:ID>
+      <cbc:ID>VI-CS-26-0241</cbc:ID>
       <cac:TransportAdvisorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>

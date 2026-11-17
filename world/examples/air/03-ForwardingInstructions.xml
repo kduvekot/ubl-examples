@@ -295,7 +295,7 @@
         </cac:Location>
       </cac:TransportEvent>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="GS1 SSCC">095206103190000015</cbc:ID>
+        <cbc:ID schemeID="GS1 SSCC">095206100003729323</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SI</cbc:TransportHandlingUnitTypeCode>
         <cac:ReferencedShipment>
           <cbc:ID>LD-SH-26-0323</cbc:ID>
@@ -373,19 +373,6 @@
     <cbc:ID>VT-PO-26-0319</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
-  <cac:DocumentDistribution>
-    <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Bayforth Forwarding</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
   <cac:Signature>
     <cbc:ID>LD-SIG-FI-03</cbc:ID>
     <cac:SignatoryParty>

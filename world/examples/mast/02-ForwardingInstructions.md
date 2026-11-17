@@ -627,8 +627,6 @@ Inside `Shipment`:
   The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
-- `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
-  The target. The code is from the Trade Accord's temperature qualifier list: TARGET = Target.
 - `GoodsItem/Temperature/Description` = **Keep away from heat.**  
   Why.
 - `GoodsItem/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
@@ -689,8 +687,6 @@ Inside `Shipment`:
   The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
-- `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
-  The target. The code is from the Trade Accord's temperature qualifier list: TARGET = Target.
 - `GoodsItem/Temperature/Description` = **Keep away from heat.**  
   Why.
 - `GoodsItem/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
@@ -765,8 +761,6 @@ Inside `Shipment`:
   The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
   Around 20 °C.
-- `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
-  The target. The code is from the Trade Accord's temperature qualifier list: TARGET = Target.
 - `GoodsItem/Temperature/Description` = **Keep away from heat.**  
   Why.
 - `GoodsItem/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
@@ -1281,7 +1275,6 @@ Inside `Shipment`:
       <cac:Temperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>
@@ -1334,7 +1327,6 @@ Inside `Shipment`:
       <cac:Temperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>
@@ -1394,7 +1386,6 @@ Inside `Shipment`:
       <cac:Temperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
         <cbc:Description>Keep away from heat.</cbc:Description>
       </cac:Temperature>
       <cac:MinimumTemperature>

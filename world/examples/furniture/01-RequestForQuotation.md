@@ -11,7 +11,7 @@ The store wants its own garden furniture line and asks for a quotation.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); RequestForQuotation/BeneficiaryParty first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:request-for-quotation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Request for quotation". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:sourcing:1.0**  
@@ -58,24 +58,6 @@ Inside `Signature`:
 - `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SignatoryParty/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Seller Supplier Party
@@ -344,8 +326,6 @@ Inside `RequestForQuotationLine`:
   The set itself is required.
 - `PrivacyCode` = **CONFIDENTIAL** (listID `urn:ubl-examples:world:codelist:PrivacyCode`)  
   The store's own design. The code is from the Trade Accord's privacy list: CONFIDENTIAL = Confidential.
-- `SecurityClassificationCode` = **INTERNAL** (listID `urn:ubl-examples:world:codelist:SecurityClassificationCode`)  
-  Not for publication. The code is from the Trade Accord's security classification list: INTERNAL = Internal.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **20** (unitCode `SET`)  
@@ -407,24 +387,6 @@ Inside `RequestForQuotationLine`:
       </cac:PartyName>
     </cac:SignatoryParty>
   </cac:Signature>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brightmarket Stores</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Brightmarket Stores</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:SellerSupplierParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
@@ -638,7 +600,6 @@ Inside `RequestForQuotationLine`:
     <cbc:Note>Optional: seat cushions to match.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
     <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">CONFIDENTIAL</cbc:PrivacyCode>
-    <cbc:SecurityClassificationCode listID="urn:ubl-examples:world:codelist:SecurityClassificationCode">INTERNAL</cbc:SecurityClassificationCode>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="SET">20</cbc:Quantity>

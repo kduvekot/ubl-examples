@@ -353,21 +353,6 @@ Inside `DocumentReference`:
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
-### Document Distribution
-
-Inside `DocumentDistribution`:
-
-- `ID` = **1**  
-  The instructions to the forwarder.
-- `DocumentTypeCode` = **ForwardingInstructions** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The document distributed: these instructions. The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
-- `DistributionTypeCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  Sent as this UBL document. The code is from the Trade Accord's distribution type list: ELECTRONIC = Electronic.
-- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Signature
 
 Inside `Signature`:
@@ -661,19 +646,6 @@ Inside `Signature`:
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
-  <cac:DocumentDistribution>
-    <cbc:ID>1</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONIC</cbc:DistributionTypeCode>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Bayforth Forwarding</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
   <cac:Signature>
     <cbc:ID>LTM-SIG-FI-09</cbc:ID>
     <cac:SignatoryParty>

@@ -284,24 +284,6 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Payee Party
 
 Inside `PayeeParty`:
@@ -516,18 +498,6 @@ Inside `StatementLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `BuyerCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyName/Name` = **Lumeway Distribution**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `OriginatorCustomerParty/Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `OriginatorCustomerParty/Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `AccountingCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
@@ -576,14 +546,6 @@ Inside `StatementLine`:
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `OriginatorCustomerParty/Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `OriginatorCustomerParty/Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `InvoicePeriod/StartDate` = **2026-05-08**  
   The order's deposit period.
 - `InvoicePeriod/EndDate` = **2026-05-09**  
@@ -821,24 +783,6 @@ Inside `StatementLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:PayeeParty>
     <cbc:WebsiteURI>https://www.harbourline.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">6499</cbc:IndustryClassificationCode>
@@ -1003,34 +947,6 @@ Inside `StatementLine`:
         </cac:PartyName>
       </cac:Party>
     </cac:BuyerCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
-    <cac:OriginatorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:OriginatorCustomerParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:AccountingCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -1091,24 +1007,6 @@ Inside `StatementLine`:
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
-    <cac:OriginatorCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:OriginatorCustomerParty>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-05-08</cbc:StartDate>
       <cbc:EndDate>2026-05-09</cbc:EndDate>

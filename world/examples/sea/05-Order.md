@@ -408,14 +408,6 @@ Inside `OrderLine`:
   One 40-foot container: 24 pallets of 4 benches.
 - `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/OriginatorParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/OrderedShipment/Shipment/ID` = **VT-SH-PLAN-1**  
   The shipment the buyer plans for this line: one container.
 - `LineItem/OrderedShipment/Shipment/ShippingPriorityLevelCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ShippingPriorityCode`)  
@@ -644,14 +636,6 @@ Inside `OrderLine`:
   Spare side frames for the buyer's own service stock.
 - `LineItem/LineExtensionAmount` = **768.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/OriginatorParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `LineItem/BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -1012,22 +996,6 @@ Inside `OrderLine`:
       <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
-      <cac:OriginatorParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:OriginatorParty>
-      <cac:BeneficiaryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:BeneficiaryParty>
       <cac:OrderedShipment>
         <cac:Shipment>
           <cbc:ID>VT-SH-PLAN-1</cbc:ID>
@@ -1242,22 +1210,6 @@ Inside `OrderLine`:
       <cbc:UUID>6c15f781-fb79-59c5-b7b2-bbd9c564ae2b</cbc:UUID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
-      <cac:OriginatorParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:OriginatorParty>
-      <cac:BeneficiaryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Port of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:BeneficiaryParty>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>

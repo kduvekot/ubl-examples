@@ -3948,11 +3948,13 @@ def _(f, n, doc, out):
                            "OrderableUnit": V("Box", "One frame per box."),
                            "MinimumOrderQuantity": qty(1, "EA", "Any quantity."),
                            "RequiredRelatedItem": related("bench-serra-b", 1, "Fits only the Serra 180."),
-                           "ReplacementRelatedItem": {"ID": V("VI-C180-2026", "The 2026 casting replaces it from "
-                                                                              "May."),
-                                                      "Quantity": qty(1, "EA", "One for one.")},
-                           "ReplacedRelatedItem": {"ID": V("VI-C180-2024", "The casting this one replaced."),
-                                                   "Quantity": qty(1, "EA", "One for one.")}})
+                           "ReplacedRelatedItem": {"ID": V("VI-C180", "The casting this one replaced, the same part "
+                                                                         "number: Valdara tells its versions apart by "
+                                                                         "the year (worklist C44, D35)."),
+                                                   "Quantity": qty(1, "EA", "One for one."),
+                                                   "Description": V("Side frame, 2025 casting", "Which version: the "
+                                                                    "2025 casting, which the 2026 casting with "
+                                                                    "the reinforced foot replaced.")}})
     return {"ActionCode": V("NEW", "A new catalogue."),
             "RevisionDate": V(f.date(0), "Not revised yet: the issue date."),
             "RevisionTime": V("09:00:00", "The issue time."),
@@ -5274,7 +5276,6 @@ def _(f, n, doc, out):
                                         "Note": V("Kiln-dried hardwood, planed on four sides.", "The requirement."),
                                         "OptionalLineItemIndicator": V("false", "A required line."),
                                         "PrivacyCode": V("CONFIDENTIAL", "The drawing is the manufacturer's own."),
-                                        "SecurityClassificationCode": V("INTERNAL", "Not for publication."),
                                         "DocumentReference": {"ID": V("VI-DS-SL1800", "The drawing.")}}]}
 
 
@@ -5333,8 +5334,7 @@ def _(f, n, doc, out):
             "RequestForQuotationLine": [{**out["RequestForQuotationLine"][0],
                                          "Note": V("Optional: seat cushions to match.", "An option."),
                                         "OptionalLineItemIndicator": V("false", "The set itself is required."),
-                                        "PrivacyCode": V("CONFIDENTIAL", "The store's own design."),
-                                        "SecurityClassificationCode": V("INTERNAL", "Not for publication.")}]}
+                                        "PrivacyCode": V("CONFIDENTIAL", "The store's own design.")}]}
 
 
 @enrich("furniture", "Quotation")
@@ -5440,7 +5440,6 @@ def _(f, n, doc, out):
                     "PowerIndicator": V("true", "Power for the forklifts and lighting."),
                     "MinimumTemperature": {"AttributeID": V("AMBIENT", "The temperature of the hall."),
                                            "Measure": V("5", "At least 5 °C.", unitCode="CEL"),
-                                           "MeasureCode": V("MIN", "The lowest."),
                                            "Description": V("Kept frost-free.", "Why.")},
                     "MaximumTemperature": {"AttributeID": V("AMBIENT", "The temperature of the hall."),
                                            "Measure": V("35", "At most 35 °C.", unitCode="CEL")},
@@ -5927,7 +5926,6 @@ def mast(n, doc):
                                             "Temperature": {"AttributeID": V("TRANSPORT", "The temperature in "
                                                                                           "transport."),
                                                             "Measure": V("20", "Around 20 °C.", unitCode="CEL"),
-                                                            "MeasureCode": V("TARGET", "The target."),
                                                             "Description": V("Keep away from heat.", "Why.")},
                                             "MinimumTemperature": {"Measure": V("5", "At least.", unitCode="CEL")},
                                             "MaximumTemperature": {"Measure": V("35", "At most.", unitCode="CEL")},
@@ -6625,8 +6623,6 @@ def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
          "DocumentReference": {"ID": V(t["sheet"], "The datasheet.")},
          "Item": {"Name": V(t["name"], "The item offered.")},
          "OfferedItemLocationQuantity": {"LeadTimeMeasure": V("7", "Seven days per release.", unitCode="DAY")},
-         "ReplacementRelatedItem": {"ID": V(t["spare"], t["spare_why"]),
-                                    "Quantity": qty(1, "EA", "One for one.")},
          "WarrantyParty": party(tenderer, short=True),
          "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
          "SubTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One set per bench."),
@@ -7269,8 +7265,9 @@ def _(f, n, doc, out):
 @enrich("retail", "TransportationStatusRequest")
 def _(f, n, doc, out):
     return {"TransportExecutionPlanDocumentReference": {
-        "ID": V("BF-TEP-26-0227", "The forwarder's confirmation of the booking requested by the distributor: its "
-                                  "transport execution plan (not shown in this flow).")}}
+        "ID": V("BF-TEP-26-0262", "The forwarder's confirmation of the booking requested by the distributor: its "
+                                  "transport execution plan (not shown in this flow), numbered in the "
+                                  "forwarder's own series.")}}
 
 
 @enrich("retail", "CreditNote")
@@ -7659,8 +7656,8 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     sh = out["Shipment"]
     cons = sh.get("Consignment") if isinstance(sh.get("Consignment"), dict) else {}
-    cons.update({"ID": V(cons["ID"].value if "ID" in cons else "VI-CS-CARNET-26", "The consignment of the "
-                                                                                  "samples."),
+    cons.update({"ID": V(cons["ID"].value if "ID" in cons else "VI-CS-26-0241", "The consignment of the "
+                                                                                 "samples, in Valdara's series of consignment numbers."),
                  "TransitCountry": [{"IdentificationCode": V("XB", "The samples cross Bayvarra by road to "
                                                                    "Lumeport airport: a transit country between "
                                                                    "Urvania and the island.")}],
@@ -8601,7 +8598,7 @@ def utilities_complete(n, doc):
                                   "IssueDate": V(f.numbers["invoice-34-xb:c-xb-date"], "Its issue date.")}},
                                "Note": V("The meter test found the meter over-reading by two cubic metres.", "Why.")})
         levy = out["CreditNoteLine"].pop(1)
-        levy["BeneficiaryParty"] = party("2-xb", short=True)
+        levy["CollectedForParty"] = party("2-xb", short=True)
         levy["Note"] = V("The city's levy, credited for the city.", "Why it is a collection line.")
         out["CollectionCreditNoteLine"] = levy
         out["LineCountNumeric"] = V("2", "The water and the collection line of the levy; the totals include both.")
