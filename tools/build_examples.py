@@ -1212,6 +1212,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                   "EndDate": V(em["period"][1], "Its last day.")}}
     if it.get("origin") or maker.get("origin"):
         out["OriginCountry"] = {"IdentificationCode": V(maker["origin"], f"Where the item was produced; {msrc}.")}
+    out["_master"] = {k: id(v) for k, v in out.items()}     # the item's master data, for the item table (O20)
+    if maker.get("certificate", {}).get("layer") == "lot":   # a certificate of the lot, not of the item type (D11)
+        out["_lot"] = {"Certificate"}
     return out
 
 
@@ -1919,6 +1922,99 @@ def _currencies(node, out, prices=None):
                 if prices is not None and k == "PriceAmount":
                     prices.add(v.attrs["currencyID"])
             _currencies(v, out, prices)
+
+
+# ---------------------------------------------------------------- what a document says about an item (C48, D11, O20)
+ITEM_BLOCK = {      # each element of cac:Item that the item's master data gives, by block
+    "Name": "name", "Description": "desc",
+    "SellersItemIdentification": "id", "BuyersItemIdentification": "id", "StandardItemIdentification": "id",
+    "ManufacturersItemIdentification": "id", "AdditionalItemIdentification": "id",
+    "CatalogueItemIdentification": "id", "CatalogueDocumentReference": "id",
+    "ClassifiedTaxCategory": "tax", "CommodityClassification": "class",
+    "OriginCountry": "origin", "OriginAddress": "origin", "ItemInstance": "instance",
+    "HazardousItem": "dg", "BrandName": "brand", "WarrantyInformation": "warranty",
+    "PackQuantity": "pack", "PackSizeNumeric": "pack",
+    "Keyword": "type", "ModelName": "type", "AdditionalInformation": "type", "Dimension": "type",
+    "AdditionalItemProperty": "type", "ItemSpecificationDocumentReference": "type", "LifecycleStageCode": "type",
+    "LifecycleStageDescription": "type", "Certificate": "type", "EnvironmentalCertificate": "type",
+    "CircularityProfile": "type", "EnvironmentalEmission": "type", "ManufacturerParty": "type",
+    "InformationContentProviderParty": "type", "TransactionConditions": "type",
+}
+ITEM_KIND = {}
+for _kind, _docs in {
+    "catalogue": "Catalogue CatalogueItemSpecificationUpdate",
+    "offer": "Tender Quotation",
+    "order": "Order OrderResponse OrderChange OrderCancellation RequestForQuotation Forecast ForecastRevision "
+             "InventoryReport ProductActivity RetailEvent TradeItemLocationProfile ItemInformationRequest "
+             "CataloguePricingUpdate CatalogueDeletion CatalogueRequest ExceptionCriteria ExceptionNotification "
+             "InstructionForReturns WorkReport DigitalAgreement TenderContract",
+    "despatch": "DespatchAdvice ReceiptAdvice DeliveryNote PackingList FulfilmentCancellation",
+    "invoice": "Invoice CreditNote DebitNote SelfBilledInvoice SelfBilledCreditNote Reminder Statement "
+               "UtilityStatement RemittanceAdvice",
+    "receipt": "PurchaseReceipt",
+    "customs": "ImportCustomsDeclaration ExportCustomsDeclaration TransitCustomsDeclaration CertificateOfOrigin "
+               "GoodsCertificate",
+    "carnet": "GoodsItemPassport ProofOfReexportation ProofOfReexportationRequest ProofOfReexportationReminder",
+    "transport": "Waybill BillOfLading ForwardingInstructions TransportExecutionPlan TransportExecutionPlanRequest "
+                 "TransportationStatus TransportationStatusRequest TransportProgressStatus "
+                 "TransportProgressStatusRequest Manifest CommonTransportationReport WeightStatement "
+                 "GoodsItemItinerary TransportServiceDescription TransportServiceDescriptionRequest",
+    "waste": "WasteMovement WasteNotification",
+    "notice": "PriorInformationNotice ContractNotice CallForTenders ContractAwardNotice AwardedNotification "
+              "UnawardedNotification ProcurementStatus ProcurementStatusRequest ExpressionOfInterestRequest "
+              "ExpressionOfInterestResponse UnsubscribeFromProcedureRequest UnsubscribeFromProcedureResponse "
+              "TenderReceipt TenderWithdrawal TendererQualification TendererQualificationResponse "
+              "QualificationApplicationRequest QualificationApplicationResponse GuaranteeCertificate",
+    "message": "ApplicationResponse DocumentStatus DocumentStatusRequest InvoiceStatusRequest InvoiceStatusResponse "
+               "BusinessCard BusinessInformation DigitalCapability",
+}.items():
+    for _d in _docs.split():
+        ITEM_KIND[_d] = _kind
+_TYPE = {"name", "desc", "id", "class", "origin", "brand", "warranty", "pack", "type", "dg", "tax"}
+ITEM_PROFILE = {
+    "catalogue": _TYPE,             # a lot's certificate is no fact of the type: not in the catalogue
+    "offer": _TYPE - {"tax"},
+    "order": {"name", "desc", "id", "pack", "tax"},
+    "despatch": {"name", "desc", "id", "instance", "lot", "dg", "pack"},
+    "invoice": {"name", "desc", "id", "lot", "tax"},
+    "receipt": {"name", "desc", "id", "brand", "warranty", "tax"},
+    "customs": {"name", "desc", "class", "origin", "dg"},
+    "carnet": {"name", "desc", "id", "class", "origin", "instance"},
+    "transport": {"name", "desc", "class", "dg"},
+    "waste": {"name", "desc", "class", "dg"},
+    "notice": {"name", "desc", "class"},
+    "message": {"name", "desc", "id"},
+}
+APPLY_ITEM_PROFILE = False    # off until the owner approves the item table (O20, analysis/item-profile.md)
+
+
+def item_profiles(content, doc):
+    """Every item in a document carries the facts of its kind of document (D11): a fact is stated first in the
+    document of the moment it becomes known, and a later document repeats it only if its own transaction uses it.
+    Only the item's master data is filtered; what the scenario adds for this transaction (a variant chosen, a
+    colour made to order, a lot) stays."""
+    kind = ITEM_KIND.get(doc["doc"])
+    if kind is None:
+        raise SystemExit(f"{doc['doc']}: no item profile kind (item_profiles)")
+    keep = ITEM_PROFILE[kind]
+
+    def walk(node):
+        if isinstance(node, list):
+            for x in node:
+                walk(x)
+            return
+        if not isinstance(node, dict):
+            return
+        master = node.pop("_master", None)
+        lot = node.pop("_lot", set())
+        if master is not None and APPLY_ITEM_PROFILE:
+            for k in list(node):
+                block = "lot" if k in lot else ITEM_BLOCK.get(k, "id")
+                if k in master and master[k] == id(node[k]) and block not in keep:
+                    del node[k]
+        for v in node.values():
+            walk(v)
+    walk(content)
 
 
 # ---------------------------------------------------------------- customs value on each country's basis (C52, D16)
@@ -2947,6 +3043,7 @@ def main(flow_id, check=False):
         global CONTENT
         CONTENT = content
         content = place_parties(doc, content)
+        item_profiles(content, doc)
         redundant_roles(content, doc)
         untaxed_sales(content, doc)
         declaration_invoices(content, doc)
