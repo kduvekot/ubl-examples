@@ -119,7 +119,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C79 | Mast flow: dangerous-goods data of the battery, detector and stripper consignment | flow story | 36 | 5 | 1 | 2/13/21 | owner: D36 | world/items.json, tools/build_examples.py | ready (D36 decided) |
 | C80 | Mast flow: the air waybill and the ULDs | flow story | 6 | 3 | 1 | 0/1/5 | owner: D36 | tools/examples_scenarios.py, mast() | ready (D36 decided) |
 | C81 | Ore flow: monthly call-off, plan "as requested", bonus and moisture | flow story | 7 | 5 | 1 | 1/0/6 | owner: D45 | tools/examples_scenarios.py, ore() | waits: D45 |
-| C82 | Energy flow: 2400 MWh exported to Montebrio, sold to Ferrano Energy, imported by nobody | flow story | 9 | 3 | 1 | 4/4/1 | owner: D44 | tools/examples_scenarios.py | waits: D44 |
+| C82 | Energy flow: 2400 MWh exported to Montebrio, sold to Ferrano Energy, imported by nobody | flow story | 9 | 3 | 1 | 4/4/1 | owner: D44 | tools/examples_scenarios.py | ready (D44 decided) |
 | C83 | Energy flow: isolated slips | flow story | 8 | 5 | 1 | 1/2/5 | none | tools/examples_scenarios.py, utility_statement() | ready |
 | C84 | Packaging flow: isolated slips | flow story | 5 | 4 | 1 | 0/0/5 | none | tools/examples_scenarios.py, packaging() | ready |
 | C85 | Air flow: the missed-flight story and the CPT order change | flow story | 13 | 8 | 1 | 2/0/11 | owner: D39 | tools/examples_scenarios.py, air() | ready (D39 decided) |
@@ -1320,7 +1320,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D44 (split by buyer; Ferrano Energy's import).
 - Depends on / blocks: none
 - Touched by: D19 (O54: the "four kilometres" to the gas field are derived from the map; C56's energy findings go with this flow), D16 (energy/05 stays as it is), O83 (whether the energy protocol's separation of networks from supply applies to Bayvarra and the island).
-- State: waits for D44.
+- State: D44 decided 2026-11-17; ready to implement as decided (see `analysis/worklist-decisions.md`, D44); the coordinates with O55.
 - Findings: energy: 04#F1, 04#F2, 04#F4, 04#F5, 05#F1, 05#F5, 05#F6, 05#F12, 07#F1
 
 ### C83 · Energy flow: isolated slips
