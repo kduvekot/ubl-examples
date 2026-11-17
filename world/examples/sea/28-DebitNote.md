@@ -28,10 +28,8 @@ One pallet's heat-treatment mark was illegible, so customs inspected the contain
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-21**  
   Thirty days.
-- `Note` = **Lapetato vivuse mafute sopule nalahiki tilala mitavema.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): Why the seller pays.
-- `Note` = **The illegible mark is the packer's responsibility under the agreement.** (languageID `en-XL`)  
-  The same note in English, the working language between the countries: Why the seller pays.
+- `Note` = **The illegible mark is the packer's responsibility under the agreement.**  
+  Why the seller pays.
 - `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 383: debit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 383 = Debit note.
 - `TaxPointDate` = **2026-05-20**  
@@ -237,10 +235,12 @@ Inside `AccountingCustomerParty`:
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Velumi Trading**  
   The trading name; identity of Velumi Trading (world/parties.json).
-- `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **en-XL** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Lisavu, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XL = Lisavan English.
 - `Party/PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -598,8 +598,7 @@ Inside `DebitNoteLine`:
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>10:30:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-21</cbc:DueDate>
-  <cbc:Note languageID="qal">Lapetato vivuse mafute sopule nalahiki tilala mitavema.</cbc:Note>
-  <cbc:Note languageID="en-XL">The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
+  <cbc:Note>The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -725,8 +724,9 @@ Inside `DebitNoteLine`:
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>

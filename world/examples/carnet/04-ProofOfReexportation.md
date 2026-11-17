@@ -26,10 +26,8 @@ Urvania's chamber proves the samples were re-exported: they came home through Ur
   Urvania's chamber answers with the proof.
 - `IssueTime` = **13:19:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **Drek barhek tan hek rek drek san sturvan.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): The proof.
-- `Note` = **The samples came home on the date stamped.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: The proof.
+- `Note` = **The samples came home on the date stamped.**  
+  The proof.
 - `VersionID` = **1**  
   The first version.
 
@@ -86,13 +84,13 @@ Inside `ImportingGuarantorParty`:
   The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Chamber of Commerce (world/parties.json).
-- `PostalAddress/StreetName` = **Reef Street** (languageID `en-XU`)  
+- `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/BuildingNumber` = **30**  
   Building number of the postal address. identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
   The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Chamber of Commerce (world/parties.json).
-- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XU`)  
+- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Chamber of Commerce (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-1**  
   The party's time zone, one hour behind UTC, where the world lies (world/countries.json).
@@ -127,10 +125,12 @@ Inside `ExportingGuarantorParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Language/Name` = **English**  
+  The language's name.
+- `Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `PostalAddress/ID` = **4160202319527073** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -236,8 +236,7 @@ Inside `Signature`:
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cbc:IssueTime>13:19:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Drek barhek tan hek rek drek san sturvan.</cbc:Note>
-  <cbc:Note languageID="en-XU">The samples came home on the date stamped.</cbc:Note>
+  <cbc:Note>The samples came home on the date stamped.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExportingCustomsParty>
     <cac:PartyIdentification>
@@ -277,10 +276,10 @@ Inside `Signature`:
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Reef Street</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
       <cbc:BuildingNumber>30</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Port Wrenfield</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -311,8 +310,9 @@ Inside `Signature`:
       <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-      <cbc:Name>Urvanian</cbc:Name>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202319527073</cbc:ID>

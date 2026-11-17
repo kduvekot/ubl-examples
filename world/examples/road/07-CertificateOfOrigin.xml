@@ -9,8 +9,7 @@
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
   <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note>Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>
@@ -113,8 +112,9 @@
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202319527073</cbc:ID>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: locale. The varieties of English written in the Trade Accord, as language tags with the country as the region (BCP 47; RFC 5646 reserves the region subtags XA to XZ for private use). Only English has locales: it is the one language used in all three countries. Urvanian and Lisavan are each used in one country, so their plain ISO 639 code says all (decision O19, 2026-11-17). Documents between the countries are in English, in the sender's variety. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>LocaleCode</ShortName>
+      <LongName xml:lang="en">Locale (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:LocaleCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:codelist:LocaleCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:LocaleCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/LocaleCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Lumeport Trade Accord</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="name-qal" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qal" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>en-XU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Urvanian English</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Urvanian English</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Urvanian English</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The English of Urvania, beside Urvanian: it keeps the Italian place and street names the British kept (Ferrano, Via del Riciclo), where Urvanian text uses the Urvanian ones.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>en-XB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bayvarran English</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Traktan English</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vupelepi English</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The settlers' English of Bayvarra, the working language between the three countries; Bayvarra speaks no other language.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>en-XL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lisavan English</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Lisavan English</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lisavan English</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The English of Lisavu, beside Lisavan: it uses the Lisavan names of places (Selanu rather than the official Port Wrenfield) in running text.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

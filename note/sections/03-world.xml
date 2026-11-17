@@ -432,9 +432,12 @@
       their codes come from the range ISO 639 reserves for local use,
       <literal>qaa</literal> to <literal>qtz</literal>:
       <literal>qau</literal> for Urvanian and <literal>qal</literal> for
-      Lisavan. A sender from Urvania or the island gives its notes in
-      its own language and in English, each with its
-      <literal>languageID</literal>, and a seller there names and
+      Lisavan. A document between the countries, whose sender and
+      receiver are in different countries, is in English, the working
+      language of the Trade Accord. A sender from Urvania or the island
+      gives the notes of its domestic documents in its own language and
+      in English, each with its <literal>languageID</literal>, and those
+      across a border in English only. A seller there names and
       describes its items in both (its name, description, warranty and
       what comes with it); a seller in Bayvarra does so in English only.
       Both countries name their streets and towns in both official
@@ -461,12 +464,15 @@
       stands beside Lisavan on the island and uses the Lisavan names for
       places. The three varieties are written <literal>en-XU</literal>,
       <literal>en-XB</literal> and <literal>en-XL</literal>. A party
-      whose language is English states which English it writes in
-      <literal>LocaleCode</literal>, from the world's list of locales,
-      while <literal>Language/ID</literal> stays the plain language
-      <literal>en</literal>; whether a party whose first language is
-      Urvanian or Lisavan also states its English locale is not yet
-      settled.
+      states the language of the exchange. In English it says which
+      English it writes, in <literal>LocaleCode</literal>, from the
+      world's list of locales, while <literal>Language/ID</literal>
+      stays the plain language <literal>en</literal>. Only English has a
+      locale, because it is the one language used in all three
+      countries; Urvanian and Lisavan are each used in one country, and
+      their plain codes say all. So an Urvanian company states
+      <literal>qau</literal> at home and <literal>en</literal> with
+      <literal>en-XU</literal> in a document to Bayvarra or the island.
     </para>
     <para>
       A text keeps the English it was written in when it travels. A

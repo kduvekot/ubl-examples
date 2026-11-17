@@ -8,8 +8,7 @@
   <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
   <cbc:IssueTime>08:50:00</cbc:IssueTime>
-  <cbc:Note languageID="qal">Lutea viope falolu lelaha kefila-hafaso nimale.</cbc:Note>
-  <cbc:Note languageID="en-XL">The island's customs found no re-export stamp.</cbc:Note>
+  <cbc:Note>The island's customs found no re-export stamp.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cbc:GoodsItemPassportCounterfoilID>IMP-1</cbc:GoodsItemPassportCounterfoilID>
@@ -21,8 +20,9 @@
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">95763809</cbc:ID>
@@ -67,10 +67,10 @@
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
-      <cbc:StreetName languageID="en-XL">Piazza del Mercato</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XL">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

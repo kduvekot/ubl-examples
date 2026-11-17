@@ -9,8 +9,7 @@
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir trek taz rezkir hurgir.</cbc:Note>
-  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
+  <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -27,8 +26,9 @@
         <cbc:Name>Castrano Logistics</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160203920705699</cbc:ID>

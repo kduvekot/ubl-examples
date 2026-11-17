@@ -9,8 +9,7 @@
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>17:57:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
@@ -24,8 +23,9 @@
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202983340277</cbc:ID>
@@ -217,8 +217,7 @@
       <cac:EnvironmentalCertificate>
         <cbc:ID>XU-RC-2026-007</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
-        <cbc:CertificateType languageID="qau">Ranstan nelsek</cbc:CertificateType>
-        <cbc:CertificateType languageID="en-XU">Recycled content</cbc:CertificateType>
+        <cbc:CertificateType>Recycled content</cbc:CertificateType>
         <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>

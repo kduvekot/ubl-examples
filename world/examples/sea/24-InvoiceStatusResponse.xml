@@ -8,8 +8,7 @@
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>13:49:00</cbc:IssueTime>
-  <cbc:Note languageID="qal">Hekii; likolo vonema lakaho nopeto vevisi vofefe.</cbc:Note>
-  <cbc:Note languageID="en-XL">Approved; the balance will be paid to the factor.</cbc:Note>
+  <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>VT-SIG-26-ISP</cbc:ID>
@@ -30,8 +29,9 @@
       <cbc:Name>Velumi Trading</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
     </cac:Language>
     <cac:Contact>
       <cbc:Name>Accounts payable</cbc:Name>
@@ -59,7 +59,7 @@
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     </cac:Language>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

@@ -9,8 +9,7 @@
   <cbc:IssueDate>2026-08-23</cbc:IssueDate>
   <cbc:IssueTime>12:04:00</cbc:IssueTime>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:CustomsProcedureCode">2000</cbc:ProcedureCode>
-  <cbc:Note languageID="qal">Vekafa lalipu, musaka seviva vonema lakaho takefa lesama sakavefe.</cbc:Note>
-  <cbc:Note languageID="en-XL">Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
+  <cbc:Note>Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>
@@ -24,8 +23,9 @@
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
     </cac:PartyName>
     <cac:Language>
-      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-      <cbc:Name>Lisavan</cbc:Name>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">95763809</cbc:ID>
@@ -70,10 +70,10 @@
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qau">Trazhek Han Zhatrir</cbc:StreetName>
-      <cbc:StreetName languageID="en-XL">Piazza del Mercato</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Piazza del Mercato</cbc:StreetName>
       <cbc:BuildingNumber>15</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XL">Ferrano</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4110</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>

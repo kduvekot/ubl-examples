@@ -30,10 +30,8 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
   The kind of report.
 - `Description` = **Cargo arrived and ready for customs clearance.**  
   In words.
-- `Note` = **Keavate tafese lesama kanela temati kalale.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): How it was made.
-- `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XL`)  
-  The same note in English, the working language between the countries: How it was made.
+- `Note` = **Automatic report from the sender's tracking system.**  
+  How it was made.
 - `ShippingOrderID` = **LD-FI-26-0322**  
   The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
@@ -131,10 +129,12 @@ Inside `Consignment`:
   The party's preferred identifier: its number in the Island companies register; identity of Selanu Airport Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyName/Name` = **Selanu Airport Cargo**  
   The trading name; identity of Selanu Airport Cargo (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **English**  
+  The language's name.
+- `MainCarriageShipmentStage/TerminalOperatorParty/Language/LocaleCode` = **en-XL** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Lisavu, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XL = Lisavan English.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/ID` = **78560776** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Airport Cargo (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -227,11 +227,11 @@ Inside `ReceiverParty`:
 - `PartyName/Name` = **Bayforth Forwarding**  
   The trading name; identity of Bayforth Forwarding (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+  English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
-- `Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **LUM-ADR-953846** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
   The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -308,8 +308,7 @@ Inside `StatusPeriod`:
   <cbc:IssueTime>17:58:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
-  <cbc:Note languageID="qal">Keavate tafese lesama kanela temati kalale.</cbc:Note>
-  <cbc:Note languageID="en-XL">Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
@@ -390,8 +389,9 @@ Inside `StatusPeriod`:
           <cbc:Name>Selanu Airport Cargo</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-          <cbc:Name>Lisavan</cbc:Name>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">78560776</cbc:ID>
@@ -465,7 +465,7 @@ Inside `StatusPeriod`:
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>

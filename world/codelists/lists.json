@@ -7517,6 +7517,25 @@
      "The international credit card scheme of the banks of all three countries of the Trade Accord; chip application provider D902000002."
     ]
    }
+  },
+  "Locale": {
+   "scope": "regional",
+   "name": "Locale",
+   "description": "The varieties of English written in the Trade Accord, as language tags with the country as the region (BCP 47; RFC 5646 reserves the region subtags XA to XZ for private use). Only English has locales: it is the one language used in all three countries. Urvanian and Lisavan are each used in one country, so their plain ISO 639 code says all (decision O19, 2026-11-17). Documents between the countries are in English, in the sender's variety.",
+   "codes": {
+    "en-XU": [
+     "Urvanian English",
+     "The English of Urvania, beside Urvanian: it keeps the Italian place and street names the British kept (Ferrano, Via del Riciclo), where Urvanian text uses the Urvanian ones."
+    ],
+    "en-XB": [
+     "Bayvarran English",
+     "The settlers' English of Bayvarra, the working language between the three countries; Bayvarra speaks no other language."
+    ],
+    "en-XL": [
+     "Lisavan English",
+     "The English of Lisavu, beside Lisavan: it uses the Lisavan names of places (Selanu rather than the official Port Wrenfield) in running text."
+    ]
+   }
   }
  },
  "bindings": [
@@ -9034,7 +9053,7 @@
   },
   {
    "element": "LocaleCode",
-   "list": "Language"
+   "list": "Locale"
   },
   {
    "element": "NoticeLanguageCode",
@@ -9042,7 +9061,7 @@
   },
   {
    "element": "PreferredLanguageLocaleCode",
-   "list": "Language"
+   "list": "Locale"
   },
   {
    "element": "TenderLanguageLocaleCode",

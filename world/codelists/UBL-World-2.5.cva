@@ -314,6 +314,7 @@
       <ValueList xml:id="TemperatureAttribute" uri="gc/TemperatureAttributeCode.gc" />
       <ValueList xml:id="OtherAttribute" uri="gc/OtherAttributeCode.gc" />
       <ValueList xml:id="CardScheme" uri="gc/CardSchemeCode.gc" />
+      <ValueList xml:id="Locale" uri="gc/LocaleCode.gc" />
    </ValueLists>
    <InstanceMetadataSets>
       <InstanceMetadataSet xml:id="code">
@@ -649,9 +650,9 @@
       <Context address="cbc:AddressTypeCode" values="AddressType" metadata="code" />
       <Context address="cbc:CompanyLiquidationStatusCode" values="CompanyLiquidationStatus" metadata="code" />
       <Context address="cbc:CorporateRegistrationTypeCode" values="CorporateRegistrationType" metadata="code" />
-      <Context address="cbc:LocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:LocaleCode" values="Locale" metadata="code" />
       <Context address="cbc:NoticeLanguageCode" values="Language" metadata="code" />
-      <Context address="cbc:PreferredLanguageLocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:PreferredLanguageLocaleCode" values="Locale" metadata="code" />
       <Context address="cbc:TenderLanguageLocaleCode" values="Language" metadata="code" />
       <Context address="cbc:DefaultLanguageCode" values="Language" metadata="code" />
       <Context address="cbc:AddressFormatCode" values="AddressFormat" metadata="code" />

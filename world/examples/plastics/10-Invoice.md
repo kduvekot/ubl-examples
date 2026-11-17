@@ -30,10 +30,8 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   30 days after the issue date, the agreed payment term.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `Note` = **Steskan zhan krir: drek mustek trerzhir drek bikrek krir drek gakzaz nir.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): Why the invoice has no separate freight line.
-- `Note` = **Carriage paid to: the price includes the barge to the river quay.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: Why the invoice has no separate freight line.
+- `Note` = **Carriage paid to: the price includes the barge to the river quay.**  
+  Why the invoice has no separate freight line.
 - `TaxPointDate` = **2026-04-20**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -69,10 +67,12 @@ Inside `AccountingSupplierParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
-- `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `Party/PostalAddress/ID` = **4160202983340277** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -352,10 +352,8 @@ Inside `TaxTotal`:
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXP = Export of goods outside Urvania.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Zikman skul valnir treskek Urvania** (languageID `qau`)  
-  The name of code EXP in Urvania's national value added tax exemption reason list. In Urvanian, the sender's language.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania** (languageID `en-XU`)  
-  The name of code EXP in Urvania's national value added tax exemption reason list. In English.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  The name of code EXP in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -408,10 +406,8 @@ Inside `InvoiceLine`:
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXP = Export of goods outside Urvania.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Zikman skul valnir treskek Urvania** (languageID `qau`)  
-  The name of code EXP in Urvania's national value added tax exemption reason list. In Urvanian, the sender's language.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export of goods outside Urvania** (languageID `en-XU`)  
-  The name of code EXP in Urvania's national value added tax exemption reason list. In English.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  The name of code EXP in Urvania's national value added tax exemption reason list.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -428,10 +424,8 @@ Inside `InvoiceLine`:
   The number of the environmental certificate, unique only with its issuer, who is named with it (decision ID-Q10).
 - `Item/EnvironmentalCertificate/CertificateTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of claim, as a code. The code is from the Trade Accord's certificate type list: RECYCLED = Recycled content.
-- `Item/EnvironmentalCertificate/CertificateType` = **Ranstan nelsek** (languageID `qau`)  
-  The name of code RECYCLED in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `Item/EnvironmentalCertificate/CertificateType` = **Recycled content** (languageID `en-XU`)  
-  The name of code RECYCLED in the Trade Accord's certificate type list. In English.
+- `Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
+  The name of code RECYCLED in the Trade Accord's certificate type list.
 - `Item/EnvironmentalCertificate/Remarks` = **Made entirely from sorted production waste recovered in Urvania.**  
   What the certificate states.
 - `Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -458,8 +452,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>11:20:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note languageID="qau">Steskan zhan krir: drek mustek trerzhir drek bikrek krir drek gakzaz nir.</cbc:Note>
-  <cbc:Note languageID="en-XU">Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
+  <cbc:Note>Carriage paid to: the price includes the barge to the river quay.</cbc:Note>
   <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
@@ -481,8 +474,9 @@ Inside `InvoiceLine`:
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202983340277</cbc:ID>
@@ -705,8 +699,7 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason languageID="qau">Zikman skul valnir treskek Urvania</cbc:TaxExemptionReason>
-        <cbc:TaxExemptionReason languageID="en-XU">Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -748,8 +741,7 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason languageID="qau">Zikman skul valnir treskek Urvania</cbc:TaxExemptionReason>
-        <cbc:TaxExemptionReason languageID="en-XU">Export of goods outside Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
@@ -766,8 +758,7 @@ Inside `InvoiceLine`:
       <cac:EnvironmentalCertificate>
         <cbc:ID>XU-RC-2026-007</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
-        <cbc:CertificateType languageID="qau">Ranstan nelsek</cbc:CertificateType>
-        <cbc:CertificateType languageID="en-XU">Recycled content</cbc:CertificateType>
+        <cbc:CertificateType>Recycled content</cbc:CertificateType>
         <cbc:Remarks>Made entirely from sorted production waste recovered in Urvania.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>

@@ -10,8 +10,7 @@
   <cbc:IssueTime>17:58:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
-  <cbc:Note languageID="qal">Keavate tafese lesama kanela temati kalale.</cbc:Note>
-  <cbc:Note languageID="en-XL">Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
@@ -92,8 +91,9 @@
           <cbc:Name>Selanu Airport Cargo</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-          <cbc:Name>Lisavan</cbc:Name>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">78560776</cbc:ID>
@@ -167,7 +167,7 @@
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>

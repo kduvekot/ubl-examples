@@ -237,9 +237,12 @@ address gives both, as in Brussels. The island is officially bilingual, as
 many Pacific islands are, in Lisavan and English, Lisavan having a
 Polynesian sound like the island's names. Both languages are invented, and
 their codes come from the range ISO 639 reserves for local use, `qaa` to
-`qtz`: `qau` for Urvanian and `qal` for Lisavan. A sender from Urvania or the
-island gives its notes in its own language and in English, each with its
-`languageID`, and a seller there names and describes its items in both
+`qtz`: `qau` for Urvanian and `qal` for Lisavan. A document between the
+countries, whose sender and receiver are in different countries, is in
+English, the working language of the Trade Accord. A sender from Urvania or
+the island gives the notes of its domestic documents in its own language and
+in English, each with its `languageID`, and those across a border in English
+only. A seller there names and describes its items in both
 (its name, description, warranty and what comes with it); a seller in
 Bayvarra does so in English only. Both countries
 name their streets and towns in both official languages, as Brussels and Canada do: UBL 2.5
@@ -259,11 +262,14 @@ Italian place and street names the British kept, and stands beside
 Urvanian; **Bayvarran English** is the settlers' English and the working
 language between the three countries; **Lisavan English** stands beside
 Lisavan on the island and uses the Lisavan names for places. The three
-varieties are written `en-XU`, `en-XB` and `en-XL`. A party whose language
-is English states which English it writes in `LocaleCode`, from the world's
-list of locales, while `Language/ID` stays the plain language `en`; whether
-a party whose first language is Urvanian or Lisavan also states its English
-locale is not yet settled.
+varieties are written `en-XU`, `en-XB` and `en-XL`. A party states the
+language of the exchange. In English it says which English it writes, in
+`LocaleCode`, from the world's list of locales, while `Language/ID` stays
+the plain language `en`. Only English has a locale, because it is the one
+language used in all three countries; Urvanian and Lisavan are each used in
+one country, and their plain codes say all. So an Urvanian company states
+`qau` at home and `en` with `en-XU` in a document to Bayvarra or the
+island.
 
 A text keeps the English it was written in when it travels. A party's
 address, legal form and other master data are written by that party or its

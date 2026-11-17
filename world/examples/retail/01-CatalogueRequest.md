@@ -133,11 +133,11 @@ Inside `ProviderParty`:
 - `TradePartyName/Name` = **Brightmarket**  
   The name the shops trade under, shorter than the company's name; identity of Brightmarket Stores (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+  English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
-- `Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **LUM-ADR-579130** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
   The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Brightmarket Stores (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -170,7 +170,7 @@ Inside `ProviderParty`:
   Number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
-- `PartyLegalEntity/CompanyLegalForm` = **Corporation (public)**  
+- `PartyLegalEntity/CompanyLegalForm` = **Corporation (public)** (languageID `en-XB`)  
   The name of code CORP in Bayvarra's national company legal form list.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
@@ -276,8 +276,8 @@ Inside `RequestedLanguage`:
   English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Name` = **English**  
   In words.
-- `LocaleCode` = **en** (listID `ISO 639`)  
-  The locale, as a lower-case ISO 639 code of the world's language list. The code is from the world's copy of ISO 639 Language: en = English.
+- `LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  Bayvarran English, the store's and the distributor's. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 
 ### Requested Classification Scheme
 
@@ -435,7 +435,7 @@ Inside `CatalogueRequestLine`:
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-579130</cbc:ID>
@@ -458,7 +458,7 @@ Inside `CatalogueRequestLine`:
       <cbc:RegistrationName>Brightmarket Stores Corp</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:CompanyID>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm languageID="en-XB">Corporation (public)</cbc:CompanyLegalForm>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
@@ -540,7 +540,7 @@ Inside `CatalogueRequestLine`:
   <cac:RequestedLanguage>
     <cbc:ID schemeID="ISO 639">en</cbc:ID>
     <cbc:Name>English</cbc:Name>
-    <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+    <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
   </cac:RequestedLanguage>
   <cac:RequestedClassificationScheme>
     <cbc:ID>HS</cbc:ID>

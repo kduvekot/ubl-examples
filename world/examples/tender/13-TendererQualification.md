@@ -28,10 +28,8 @@ The manufacturer declares its qualifications and those of its consortium partner
   Submitted with the tender.
 - `IssueTime` = **08:52:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **Drek mundran vek Saltmere dek zheksir gan drek dreknul.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): Who.
-- `Note` = **The manufacturer with Saltmere as subcontractor for the installation.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: Who.
+- `Note` = **The manufacturer with Saltmere as subcontractor for the installation.**  
+  Who.
 - `VersionID` = **1**  
   The first version.
 
@@ -118,10 +116,12 @@ Inside `TendererPartyQualification`:
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `MainQualifyingParty/Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `MainQualifyingParty/Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `MainQualifyingParty/Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `MainQualifyingParty/Party/Language/Name` = **English**  
+  The language's name.
+- `MainQualifyingParty/Party/Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `MainQualifyingParty/Party/PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Valdara Industries (world/parties.json).
 - `MainQualifyingParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -229,11 +229,11 @@ Inside `TendererPartyQualification`:
 - `AdditionalQualifyingParty/Party/PartyName/Name` = **Saltmere Engineering**  
   The trading name; identity of Saltmere Engineering (world/parties.json).
 - `AdditionalQualifyingParty/Party/Language/ID` = **en** (schemeID `ISO 639`)  
-  English, the language the party does business in. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+  English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `AdditionalQualifyingParty/Party/Language/Name` = **English**  
   The language's name.
-- `AdditionalQualifyingParty/Party/Language/LocaleCode` = **en** (listID `ISO 639`)  
-  The language as a lower-case code of the world's ISO 639 list (ISO 639). The code is from the world's copy of ISO 639 Language: en = English.
+- `AdditionalQualifyingParty/Party/Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `AdditionalQualifyingParty/Party/PostalAddress/ID` = **UL-ADR-587295** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
   The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Saltmere Engineering (world/parties.json).
 - `AdditionalQualifyingParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -384,8 +384,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-25</cbc:IssueDate>
   <cbc:IssueTime>08:52:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Drek mundran vek Saltmere dek zheksir gan drek dreknul.</cbc:Note>
-  <cbc:Note languageID="en-XU">The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>VI-SIG-TQ</cbc:ID>
@@ -470,8 +469,9 @@ Inside `AdditionalDocumentReference`:
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-          <cbc:Name>Urvanian</cbc:Name>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
@@ -569,7 +569,7 @@ Inside `AdditionalDocumentReference`:
         <cac:Language>
           <cbc:ID schemeID="ISO 639">en</cbc:ID>
           <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+          <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-587295</cbc:ID>

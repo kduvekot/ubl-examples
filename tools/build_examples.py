@@ -168,7 +168,7 @@ def desk_for(doc, path, pid):
     return None
 
 
-def party(pid, short=False, desk=None):
+def party(pid, short=False, desk=None, lang=None):
     """The content of a cac:Party element, from the identity layer. short: identifier and name only, for a party
     referred to from inside another party's block (its service provider, shareholder or agent). desk: the function
     of the desk the party's role in the document calls for (desk_for); without one, or if the party has no such
@@ -215,12 +215,17 @@ def party(pid, short=False, desk=None):
         out["TradePartyName"] = {"Name": V(idn["trade_name"], f"The name the shops trade under, shorter than the company's "
                                                              f"name; {src}.")}
     if idn.get("language"):
-        code = WORLD["countries"][p["c"]]["languages"][0]
+        first = WORLD["countries"][p["c"]]["languages"][0]
+        code = "en" if lang == "english" else first
         if code == "en":
-            out["Language"] = {"ID": V("en", "English, the language the party does business in."),
+            out["Language"] = {"ID": V("en", "English, the language the party writes in this document" + (
+                                   ": documents between the countries of the Trade Accord are in English (O19)."
+                                   if first != "en" else ".")),
                                "Name": V("English", "The language's name."),
-                               "LocaleCode": V(idn["language"], "The language as a lower-case code of the world's ISO 639 list "
-                                                                "(ISO 639).")}
+                               "LocaleCode": V(f"en-{p['c']}", f"The English the party writes: the variety of "
+                                                               f"{c['name']}, with the country as the region; English is "
+                                                               "used in all three countries, so its locale says which "
+                                                               "(decision D1).")}
         else:
             lang = WORLD["languages"][code]
             out["Language"] = {"ID": V(code, f"{lang['name']}, the language of {c['name']} and of the party; the code is "
@@ -380,7 +385,8 @@ def legal_entity(pid):
         out["CompanyLegalFormCode"] = V(le["form"], f"The legal form, as a code of {c['name']}'s national list: "
                                                     "only the listID tells the forms of different countries apart.",
                                         listID=codelists.NATIONAL.format(p["c"], "CompanyLegalForm"))
-        out["CompanyLegalForm"] = V(c["legal_forms"][le["form"]]["name"], "The legal form, in words.")
+        out["CompanyLegalForm"] = V(c["legal_forms"][le["form"]]["name"], "The legal form, in words, as the "
+                                    "party's register writes it.", languageID=f"en-{p['c']}")
     if le.get("sole_proprietor"):
         out["SoleProprietorshipIndicator"] = V("true", f"The farm belongs to one farmer, who runs it in their own name; "
                                                        f"{src}.")
@@ -532,12 +538,12 @@ def city_names(country, city, why):
     if lang.get("place_names", {}).get(city):
         return [V(lang["place_names"][city], f"The town's {lang['name']} name, which its people have always used. "
                                              f"{why}", languageID=code),
-                V(city, f"The town's English name, inherited from the Italian. {why}", languageID="en")]
+                V(city, f"The town's English name, inherited from the Italian. {why}", languageID=f"en-{country}")]
     if lang.get("english_place_names", {}).get(city):
         return [V(city, f"The town's {lang['name']} name, its name on the island. {why}", languageID=code),
                 V(lang["english_place_names"][city], f"The town's English name, which its English-speaking settlers "
                                                      f"gave it, official beside the {lang['name']} one "
-                                                     f"(world/countries.json). {why}", languageID="en")]
+                                                     f"(world/countries.json). {why}", languageID=f"en-{country}")]
     return V(city, why)
 
 
@@ -590,7 +596,7 @@ def address(pid, register=False):
                                f"(world/countries.json); {src}.", languageID=code),
                              V(st.value, "The street's name in English, the country's other official language"
                                          + ("; the Italian names the British kept are part of English now"
-                                            if p["c"] == "XU" else "") + f"; {src}.", languageID="en")]
+                                            if p["c"] == "XU" else "") + f"; {src}.", languageID=f"en-{p['c']}")]
     if a.get("CityName"):
         out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
@@ -1384,9 +1390,18 @@ def apply_profile(block, blocks, pid):
 APPLY_PARTY_PROFILE = True     # the party table, approved by the owner 2026-11-17 (O88, analysis/party-profile.md)
 
 
+def international(doc):
+    """A document between the countries: its sender and its receiver are in different countries (O19). Such a
+    document is in English, the working language of the Trade Accord."""
+    to = doc.get("to")
+    return to in PARTY and PARTY[to]["c"] != PARTY[doc["from"]]["c"]
+
+
 def profiled(top, path, pid):
-    """A party at its role in a document: in full, or, with the party table applied, with its profile's blocks."""
-    full = party(pid, desk=desk_for(top, path, pid) if pid in PARTY else None)
+    """A party at its role in a document: in full, or, with the party table applied, with its profile's blocks.
+    A party states the language of the exchange: English across a border, its own language at home (O19)."""
+    full = party(pid, desk=desk_for(top, path, pid) if pid in PARTY else None,
+                 lang="english" if international(top) else None)
     if not APPLY_PARTY_PROFILE:
         return full
     return apply_profile(full, party_profile(top, path, pid, CONTENT), pid)
@@ -1503,6 +1518,7 @@ def language_tag(code):
 
 
 # ---------------------------------------------------------------- code lists
+INTERNATIONAL = False  # the document being built goes between the countries: English only (O19)
 SENDER = None          # the sender of the document being built: its country decides the languages of code names
 UNBOUND = {}           # code elements no binding covers yet: (element, parent) -> first place
 
@@ -1555,8 +1571,12 @@ def with_code_lists(content, path, bbies):
             case = given.why[0].lower() + given.why[1:] if given.why[1:2].islower() else given.why
             why = f"The name of code {val.value} in {codelists.describe(lst)}" + (
                 f", followed by the detail of this case: {case.rstrip('.')}." if detail else ".")
-            langs = [l for l in WORLD["countries"][PARTY[SENDER]["c"]]["languages"] if l != "en"] \
-                if SENDER and bbies[text][1].endswith("n") else []
+            own = given.attrs.get("languageID", "") if isinstance(given, V) else ""
+            if own.startswith("en-"):      # a party's master data: in its own country's languages (D2)
+                langs = [l for l in WORLD["countries"][own[3:]]["languages"] if l != "en"]
+            else:                          # the issuer's text: at home in its languages, across a border English
+                langs = [l for l in WORLD["countries"][PARTY[SENDER]["c"]]["languages"] if l != "en"] \
+                    if SENDER and bbies[text][1].endswith("n") and not INTERNATIONAL else []
             langs = [l for l in langs if l in codelists.LANGS.get(lst["scope"], [])]
 
             def words(lang):
@@ -1568,9 +1588,9 @@ def with_code_lists(content, path, bbies):
             if langs:
                 out[text] = [V(words(l), f"{why} In {WORLD['languages'][l]['name']}, the sender's language.",
                                languageID=l) for l in langs] + \
-                            [V(words("en"), f"{why} In English.", languageID="en")]
+                            [V(words("en"), f"{why} In English.", languageID=own or "en")]
             else:
-                out[text] = V(words("en"), why)
+                out[text] = V(words("en"), why, **({"languageID": own} if own else {}))
     return out
 
 
@@ -1681,7 +1701,7 @@ def bilingual_notes(doc, content):
     """Documents from Urvania and the island give their notes in the country's language and in English, the working
     language between the countries: one cbc:Note per language, each with its languageID."""
     code = WORLD["countries"][PARTY[doc["from"]]["c"]]["languages"][0]
-    if code == "en" or "Note" not in content:
+    if code == "en" or "Note" not in content or international(doc):   # across a border: English only (O19)
         return
     notes = content["Note"] if isinstance(content["Note"], list) else [content["Note"]]
     name = WORLD["languages"][code]["name"]
@@ -2660,8 +2680,8 @@ def main(flow_id, check=False):
             header["UUID"] = V(document_uuid(flow_id, n, doc["doc"]),
                                "A universally unique identifier of the document, derived from its place in the world "
                                "(UUID version 5), so it stays the same on every build.")
-        global SENDER
-        SENDER = doc["from"]
+        global SENDER, INTERNATIONAL
+        SENDER, INTERNATIONAL = doc["from"], international(doc)
         root, reasons = build(doc["doc"], merge(header, content))
         set_ubl_version(root, reasons)
         check_specifications(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")

@@ -9,8 +9,7 @@
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>07:50:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Note languageID="qal">Saluva kutava feteke paavo ninote tilifo; tetuko mutaki luela mafute letelilo.</cbc:Note>
-  <cbc:Note languageID="en-XL">Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
+  <cbc:Note>Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
@@ -28,8 +27,9 @@
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>

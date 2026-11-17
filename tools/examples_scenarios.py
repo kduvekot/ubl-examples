@@ -3994,7 +3994,7 @@ def _(f, n, doc, out):
             "DocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan.")},
             "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XB", "For the store in Bayvarra.")}},
             "RequestedLanguage": {"ID": V("en", "English."), "Name": V("English", "In words."),
-                                  "LocaleCode": V("en", "The locale, as a lower-case ISO 639 code of the world's language list.")},
+                                  "LocaleCode": V("en-XB", "Bayvarran English, the store's and the distributor's.")},
             "RequestedClassificationScheme": {"ID": V("HS", "Items classified by the Harmonized System."),
                                               "Name": V("Harmonized System", "In words."),
                                               "AgencyID": V("WCO", "The World Customs Organization."),
@@ -4899,7 +4899,7 @@ def full_reference(f, rid, why, day):
                                                                   "explains."),
             "ReferencedDocumentInternalAddress": V("section-2", "The section of the referenced document meant."),
             "LanguageID": V("en", "In English."),
-            "LocaleCode": V("en", "The locale, as a lower-case ISO 639 code of the world's language list."),
+            "LocaleCode": V("en-XB", "The terms are written in Bayvarran English, by the distributor."),
             "VersionID": V("1.0", "The version referred to."),
             "DocumentStatusCode": V("Confirmed", "The version both sides confirmed."),
             "Attachment": {"EmbeddedDocumentBinaryObject": V(text, "A short text, Base64-encoded.",
@@ -5033,8 +5033,11 @@ def _(f, n, doc, out):
 @enrich("sea", "BusinessCard")
 def _(f, n, doc, out):
     return {"VersionID": V("2", "The card as updated this year."), "PreviousVersionID": V("1", "Last year's card."),
-            "BriefDescription": V("Distributor of street and garden furniture for Bayvarra and the islands.",
-                                  "The business in a sentence."),
+            "BriefDescription": V("Distributor of street and garden furniture for Bayvarra and the islands, "
+                                  "with a weekly sailing to Selanu (Port Wrenfield in the island's address "
+                                  "register).", "The business in a sentence. The town is Selanu in running text, "
+                                  "also in English; Port Wrenfield is its official English name, which addresses "
+                                  "carry (decision D3)."),
             "Signature": seal(doc["from"], "LD-SIG-26-BC"),
             "BrochureDocumentReference": {"ID": V("LD-BROCHURE-2026", "The distributor's brochure."),
                                           "Attachment": {"ExternalReference": {
@@ -6481,7 +6484,7 @@ def tendering_terms(f):
                             "PresentationPeriod": {"DurationMeasure": V("10", "Ten days.", unitCode="DAY")},
                             "AppealInformationParty": party(BOARD, short=True)},
             "Language": {"ID": V("en", "English."), "Name": V("English", "In words."),
-                         "LocaleCode": V("en", "As an ISO 639 code.")},
+                         "LocaleCode": V("en-XB", "Bayvarran English, the city's.")},
             "BudgetAccountLine": {"ID": V("BL-PARKS-26", "The budget line."),
                                   "TotalAmount": amount(EST_BENCHES + EST_INSTALL, "XBL", "Its amount."),
                                   "BudgetAccount": {"ID": V("4.2.110", "The city's budget account."),
@@ -6983,8 +6986,9 @@ def tender_result(f, full=True):
 
 @enrich("tender", "ExpressionOfInterestRequest")
 def _(f, n, doc, out):
-    return {"ContractName": contract_name(), "PreferredLanguageLocaleCode": V("en", "The sawmill wants the "
-                                                                                    "documents in English."),
+    return {"ContractName": contract_name(), "PreferredLanguageLocaleCode": V("en-XB", "The sawmill wants the "
+                                                                                       "documents in English, as the "
+                                                                                       "city writes it."),
             "Note": V("The sawmill considers a tender for lot 1 with a bench maker and asks to follow the "
                       "procedure.", "Why it registers."),
             "ValidityPeriod": {"EndDate": V(f.date(45), "Its interest lasts until the tender deadline.")},

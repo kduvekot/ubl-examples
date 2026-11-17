@@ -28,10 +28,8 @@ Slats to the manufacturer's own dimensions and wood species: it asks the sawmill
   The time of the request; quotations refer to it.
 - `SubmissionDueDate` = **2026-02-21**  
   Quotations are wanted within five days.
-- `Note` = **Kalnan krir zek hatul VI-DS-SL1800.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What is asked.
-- `Note` = **Slats to our drawing VI-DS-SL1800.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What is asked.
+- `Note` = **Slats to our drawing VI-DS-SL1800.**  
+  What is asked.
 - `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   Prices in lume, the sawmill's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **1**  
@@ -123,10 +121,12 @@ Inside `BuyerCustomerParty`:
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
-- `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `Party/PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Valdara Industries (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -296,10 +296,8 @@ Inside `RequestForQuotationLine`:
   The number of the certificate, in the forestry register of Bayvarra, which keeps the certificates issued under each registration; the schemeID names the register and its authority, so no issuer party is needed (decision ID-Q10).
 - `LineItem/Item/Certificate/CertificateTypeCode` = **SUSTFOREST** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: SUSTFOREST = Sustainable forestry.
-- `LineItem/Item/Certificate/CertificateType` = **Zhazdran zakrek** (languageID `qau`)  
-  The name of code SUSTFOREST in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `LineItem/Item/Certificate/CertificateType` = **Sustainable forestry** (languageID `en-XU`)  
-  The name of code SUSTFOREST in the Trade Accord's certificate type list. In English.
+- `LineItem/Item/Certificate/CertificateType` = **Sustainable forestry**  
+  The name of code SUSTFOREST in the Trade Accord's certificate type list.
 - `LineItem/Item/Certificate/CertificateReferenceID` = **XB-FOR-REG-0118** (schemeID `urn:ubl-examples:world:XB:forestry-register`)  
   The registration the certificate is issued under: the sawmill's own number in the same register, which the certificate's number repeats after its year.
 - `LineItem/Item/Certificate/ApplicableCategoryCode` = **HW** (listID `urn:ubl-examples:world:codelist:CategoryCode`)  
@@ -343,8 +341,7 @@ Inside `RequestForQuotationLine`:
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00</cbc:IssueTime>
   <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
-  <cbc:Note languageID="qau">Kalnan krir zek hatul VI-DS-SL1800.</cbc:Note>
-  <cbc:Note languageID="en-XU">Slats to our drawing VI-DS-SL1800.</cbc:Note>
+  <cbc:Note>Slats to our drawing VI-DS-SL1800.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:RequestedValidityPeriod>
@@ -415,8 +412,9 @@ Inside `RequestForQuotationLine`:
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
@@ -546,8 +544,7 @@ Inside `RequestForQuotationLine`:
         <cac:Certificate>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>
           <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">SUSTFOREST</cbc:CertificateTypeCode>
-          <cbc:CertificateType languageID="qau">Zhazdran zakrek</cbc:CertificateType>
-          <cbc:CertificateType languageID="en-XU">Sustainable forestry</cbc:CertificateType>
+          <cbc:CertificateType>Sustainable forestry</cbc:CertificateType>
           <cbc:CertificateReferenceID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-REG-0118</cbc:CertificateReferenceID>
           <cbc:ApplicableCategoryCode listID="urn:ubl-examples:world:codelist:CategoryCode">HW</cbc:ApplicableCategoryCode>
           <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>

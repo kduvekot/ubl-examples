@@ -2545,7 +2545,7 @@
    "element": "LocaleCode",
    "address": "cbc:LocaleCode",
    "lists": [
-    "Language"
+    "Locale"
    ]
   },
   {
@@ -2559,7 +2559,7 @@
    "element": "PreferredLanguageLocaleCode",
    "address": "cbc:PreferredLanguageLocaleCode",
    "lists": [
-    "Language"
+    "Locale"
    ]
   },
   {
@@ -8773,6 +8773,17 @@
     "LUMECARD",
     "CORALCARD",
     "TRESSACARD"
+   ]
+  },
+  "Locale": {
+   "listID": "urn:ubl-examples:world:codelist:LocaleCode",
+   "scope": "regional",
+   "name": "Locale",
+   "location": "world/codelists/gc/LocaleCode.gc",
+   "codes": [
+    "en-XU",
+    "en-XB",
+    "en-XL"
    ]
   }
  }

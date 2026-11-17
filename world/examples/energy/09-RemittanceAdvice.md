@@ -26,10 +26,8 @@ The power station pays the invoice and the surcharge, in ferra.
   Paid three days after the reminder.
 - `IssueTime` = **16:36:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Note` = **Drek March zhul tirnan, vek drek drastaz skul drek guzzhir.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What it settles.
-- `Note` = **The March gas invoice, with the surcharge of the reminder.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What it settles.
+- `Note` = **The March gas invoice, with the surcharge of the reminder.**  
+  What it settles.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the currency of the invoice paid; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `TotalDebitAmount` = **134467200** (currencyID `XUF`)  
@@ -51,10 +49,12 @@ Inside `AccountingCustomerParty`:
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Montebrio Power (world/parties.json).
 - `Party/PartyName/Name` = **Montebrio Power**  
   The trading name; identity of Montebrio Power (world/parties.json).
-- `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `Party/PostalAddress/ID` = **4170200397702895** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Montebrio Power (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -284,8 +284,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-06</cbc:IssueDate>
   <cbc:IssueTime>16:36:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Drek March zhul tirnan, vek drek drastaz skul drek guzzhir.</cbc:Note>
-  <cbc:Note languageID="en-XU">The March gas invoice, with the surcharge of the reminder.</cbc:Note>
+  <cbc:Note>The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">134467200</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
@@ -303,8 +302,9 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Montebrio Power</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4170200397702895</cbc:ID>

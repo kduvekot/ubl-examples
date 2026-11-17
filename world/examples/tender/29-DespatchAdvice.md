@@ -28,10 +28,8 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   The time the sender's system issued the document, in the sender's local time.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
-- `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do; the note names the transport document the flow uses (worklist C30).
-- `Note` = **Please check the goods on arrival and report any damage on the consignment note.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What the receiver should do; the note names the transport document the flow uses (worklist C30).
+- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+  What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `AccountingCostCode` = **PWD-PARKS-26**  
   The department's cost centre.
 - `AccountingCost` = **Parks renewal programme 2026**  
@@ -74,10 +72,12 @@ Inside `DespatchSupplierParty`:
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Castrano Logistics (world/parties.json).
 - `Party/PartyName/Name` = **Castrano Logistics**  
   The trading name; identity of Castrano Logistics (world/parties.json).
-- `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `Party/PostalAddress/ID` = **4160203920705699** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Castrano Logistics (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -570,8 +570,7 @@ Inside `DespatchLine`:
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>17:37:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -604,8 +603,9 @@ Inside `DespatchLine`:
         <cbc:Name>Castrano Logistics</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160203920705699</cbc:ID>

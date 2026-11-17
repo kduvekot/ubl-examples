@@ -10,7 +10,7 @@
   <cbc:IssueDate>2026-02-14</cbc:IssueDate>
   <cbc:IssueTime>14:05:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:PreferredLanguageLocaleCode listID="ISO 639">en</cbc:PreferredLanguageLocaleCode>
+  <cbc:PreferredLanguageLocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:PreferredLanguageLocaleCode>
   <cbc:Note>The sawmill considers a tender for lot 1 with a bench maker and asks to follow the procedure.</cbc:Note>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-02-26</cbc:EndDate>
@@ -59,7 +59,7 @@
       <cac:Language>
         <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-296778</cbc:ID>

@@ -28,10 +28,8 @@ The chamber endorses the certificate and makes it available to the importer, who
   The time the sender's system issued the document, in the sender's local time.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the certificate is for.
-- `Note` = **Drakhan dranan karul drek rizir denskek.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What the certificate is for.
-- `Note` = **Preferential origin under the trade accord.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What the certificate is for.
+- `Note` = **Preferential origin under the trade accord.**  
+  What the certificate is for.
 - `VersionID` = **1**  
   The first version.
 
@@ -158,10 +156,12 @@ Inside `EndorserParty`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Party/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Party/Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+- `Party/Language/ID` = **en** (schemeID `ISO 639`)  
+  English, the language the party writes in this document: documents between the countries of the Trade Accord are in English (O19). The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `Party/Language/Name` = **English**  
+  The language's name.
+- `Party/Language/LocaleCode` = **en-XU** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
+  The English the party writes: the variety of Urvania, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XU = Urvanian English.
 - `Party/PostalAddress/ID` = **4160202319527073** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -613,8 +613,7 @@ Inside `InsuranceEndorsement`:
   <cbc:IssueDate>2026-03-22</cbc:IssueDate>
   <cbc:IssueTime>08:41:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note>Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>
@@ -717,8 +716,9 @@ Inside `InsuranceEndorsement`:
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202319527073</cbc:ID>

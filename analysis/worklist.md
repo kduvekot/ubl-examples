@@ -936,6 +936,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Note: The conflict with decision 6b is settled: 6b is revised for `LocaleCode` (`analysis/codelist-decisions.md`, "Revisions of 2026-11-16").
 - Not settled by D1 and D11: whether every party description keeps `Language` (see C01).
 - State: ready to fix now (213 findings, resolved by the new value).
+- Fixed (2026-11-17, stage 2): `LocaleCode` holds the party's English, `en-XU`, `en-XB` or `en-XL`, from the new regional list `Locale` (O19); Urvanian and Lisavan stay plain `qau` and `qal` without a locale. Documents between the countries are in English, so an Urvanian or Lisavan party states English with its own locale there (`party(lang=)`, `international()` in `tools/build_examples.py`); the other `LocaleCode` values of the catalogue request, the digital agreement's reference, the call for tenders and the expression of interest are `en-XB`.
 - Findings: air (10): 01#F3, 02#F2, 03#F7, 04#F8, 05#F4 …; contest (16): 01#F1, 02#F1, 03#F2, 04#F1, 05#F1 …; cotton (13): 02#F3, 07#F2, 08#F1, 09#F3, 10#F5 …; energy (6): 04#F3, 05#F3, 06#F2, 07#F3, 08#F2 …; furniture (17): 01#F1, 02#F1, 03#F2, 04#F3, 05#F3 …; mast (5): 01#F2, 02#F2, 03#F3, 04#F1, 05#F2; packaging (9): 01#F2, 02#F1, 03#F1, 04#F1, 05#F1 …; plastics (10): 01#F1, 02#F2, 03#F4, 04#F7, 05#F3 …; rail (6): 01#F2, 02#F5, 03#F8, 06#F10, 08#F13 …; retail (22): 01#F2, 02#F3, 03#F4, 04#F3, 05#F3 …; road (17): 01#F2, 02#F2, 03#F1, 04#F4, 05#F6 …; sea (28): 01#F1, 02#F3, 03#F3, 04#F1, 05#F3 …; tender (36): 01#F5, 02#F6, 03#F6, 04#F2, 05#F2 …; utilities (7): 05#F4, 06#F3, 07#F2, 08#F2, 09#F2 …; wood (11): 01#F1, 02#F2, 03#F2, 04#F2, 05#F1 …. Full list in `analysis/worklist-assignments.csv`.
 
 ### C46 · English renderings tagged with the issuer's country, Italian names tagged as English, legal form untagged
@@ -949,6 +950,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The conflict with decision 6b and `note/src/03-world.md` is settled: both are revised by D2.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 2): a party's English master data carries that party's region in every document: the English street and town names of Urvanian and Lisavan addresses (`address()`, `city_names()`) and the legal form, now tagged in every rendering and given in both languages of the party's country (`legal_entity()` and the code-name rendering in `fill()`); free text keeps the issuer's region. Item texts wait for O5.
 - Findings: air (14): 02#F7, 02#F8, 03#F13, 03#F14, 05#F7 …; carnet (8): 01#F9, 01#F15, 02#F5, 02#F7, 03#F5 …; contest (2): 15#F14, 16#F14; cotton (14): 02#F7, 02#F8, 07#F6, 07#F7, 08#F7 …; energy (4): 04#F13, 06#F6, 07#F9, 08#F6; mast (4): 02#F14, 03#F14, 04#F11, 05#F7; packaging (2): 02#F5, 09#F4; plastics (12): 01#F6, 01#F7, 02#F6, 03#F6, 04#F9 …; rail (13): 01#F9, 01#F10, 01#F11, 02#F9, 03#F10 …; retail (1): 02#F19; road (25): 01#F14, 01#F15, 02#F10, 03#F11, 03#F12 …; sea (25): 01#F8, 02#F12, 02#F18, 03#F9, 04#F6 …; tender (32): 03#F42, 03#F43, 12#F10, 12#F11, 13#F15 …; utilities (4): 01#F16, 02#F12, 03#F16, 04#F10; wood (19): 01#F4, 02#F6, 02#F7, 02#F8, 03#F4 …. Full list in `analysis/worklist-assignments.csv`.
 
 ### C47 · `FullnessIndicationCode` CRADLETOGATE and `LifecycleStageCode` MANUFACTURING for a cradle-to-gate footprint
@@ -1099,6 +1101,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The story is kept (D3); parties#F1 option (a) is not followed.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 2): the distributor's business card (sea/01) names Selanu and, in brackets, Port Wrenfield as its name in the island's address register; the rule is in `note/src/03-world.md` (Languages).
 - Findings: consistency: parties#F1
 
 ### C60 · Default founding date 1996-01-01 and size classes that do not fit the parties

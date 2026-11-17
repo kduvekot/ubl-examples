@@ -1719,7 +1719,8 @@
     "en": "zersul",
     "route": "zhuvir",
     "stored": "ginstek",
-    "revision": "trirdir"
+    "revision": "trirdir",
+    "bayvarran": "traktan"
    }
   },
   "qal": {
@@ -2819,7 +2820,8 @@
     "en": "hanesi",
     "route": "pounu",
     "stored": "lusii",
-    "revision": "paatu"
+    "revision": "paatu",
+    "bayvarran": "vupelepi"
    }
   },
   "en": {
@@ -2941,5 +2943,6 @@
    "name": "Tressa"
   }
  },
- "card_schemes_note": "Card numbers follow ISO/IEC 7812: the major industry identifier 9 (national assignment) and the ISO 3166 numeric code of the issuer's country (901 Urvania, 902 Bayvarra, 903 Lisavu), then the issuer's two digits, the account and a Luhn check digit. A chip application identifier (ISO/IEC 7816-5) starts with the registered application provider identifier (RID) of the card scheme, from the national registration category D followed by the country code. A receipt shows the card number masked as the merchant's till does, at most the first six and the last four digits (PCI DSS), and never the security code or the card's dates."
+ "card_schemes_note": "Card numbers follow ISO/IEC 7812: the major industry identifier 9 (national assignment) and the ISO 3166 numeric code of the issuer's country (901 Urvania, 902 Bayvarra, 903 Lisavu), then the issuer's two digits, the account and a Luhn check digit. A chip application identifier (ISO/IEC 7816-5) starts with the registered application provider identifier (RID) of the card scheme, from the national registration category D followed by the country code. A receipt shows the card number masked as the merchant's till does, at most the first six and the last four digits (PCI DSS), and never the security code or the card's dates.",
+ "documents_between_countries": "Documents between the countries of the Trade Accord (sender and receiver in different countries, wherever the goods go) are in English, in the sender's variety (en-XU, en-XB, en-XL): a party states English with its own country's locale, and notes and code names come in English only. At home an Urvanian or Lisavan party states its own language (qau, qal), and its documents give their notes in both languages. A party's master data (address, legal form) is written as its register writes it, in both official languages of a bilingual country, in every document (decisions O19, D1, D2, 2026-11-17)."
 }
