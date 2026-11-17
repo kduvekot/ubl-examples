@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def n(x, nd=1):
-    return f"{x:,.{nd}f}".replace(",", " ") if isinstance(x, (int, float)) else str(x)
+    return f"{x:,.{nd}f}" if isinstance(x, (int, float)) else str(x)
 
 
 def write(r, here):
@@ -224,7 +224,7 @@ def write(r, here):
     A(f"| Bench, three parcels | | **{n(pa['gross'], 1)} kg** (packaging {n(pa['packaging'], 2)} kg) | |")
     A(f"| Spare frame VI-C180 in its carton | {n(co[0], 0)} x {n(co[1], 0)} x {n(co[2], 0)} | {n(pa['carton1'], 1)} kg | one person |")
     A(f"| Pallet of four benches | {n(t['pallet_dims'][0], 0)} x {n(t['pallet_dims'][1], 0)} x {n(t['pallet_dims'][2], 0)} | {n(t['pallet_gross_kg'], 1)} kg (goods {n(t['pallet_goods_kg'], 1)}) | fork-lift |")
-    A(f"| Castings pallet, 12 frame cartons | {P['packaging']['pallet']['length']} x {P['packaging']['pallet']['width']} x {n(t['castings_pallet_h'], 0)} | {n(t['castings_pallet_kg'], 1)} kg | fork-lift |")
+    A(f"| Castings pallet, 12 frame cartons | {n(P['packaging']['pallet']['length'], 0)} x {n(P['packaging']['pallet']['width'], 0)} x {n(t['castings_pallet_h'], 0)} | {n(t['castings_pallet_kg'], 1)} kg | fork-lift |")
     A(f"| 24 bench pallets + 1 castings pallet | | {n(t['load_kg'] / 1000, 2)} t | |")
     A("")
     A("### 4.4 Strength and deflection")
@@ -280,6 +280,7 @@ def write(r, here):
         ("Metal poured per bench / yield", "34 kg / 60 %", f"{n(c['poured'], 1)} kg / {n(100 * c['yield_'], 0)} % (junction risers only {n(c['poured_j'], 1)} / {n(100 * c['yield_j'], 0)} %)", "STEEL resource figure (O25); footprint"),
         ("Steel in the product", "about 21 kg", f"{n(m['steel_in_product'], 1)} kg", "O25"),
         ("Hardwood consumption", "22.5 kg", f"{n(5 * m['slat'], 1)} kg in the product; {n(rough_bench, 1)} kg rough-sawn input", "O25: say which one the figure is"),
+        ("Carbon footprint, cradle to gate", "96 kg CO2e", "not recomputed", "O25: the steel figures it rests on change (net liquid steel about " + n(net_liquid, 0) + " kg, poured " + n(c["poured"], 0) + " kg)"),
         ("Strength check in D20", "40 x 14 bar, about 100 MPa, factor 2.5", f"max. {n(fcases['UR-SF-0450, 450 kg over the seat']['sigma_max'], 0)} MPa under UR-SF-0450, factor {n(240 / fcases['UR-SF-0450, 450 kg over the seat']['sigma_max'], 1)} on Rp0.2 = 240", "story text only"),
     ]
     for a, b, cc, dd in rows:
@@ -368,12 +369,13 @@ def write(r, here):
                   "where water stands at the bolts and end grain); oak heartwood is class 2–4. Untreated ash or beech slats are not fit for an outdoor bench with a "
                   "five-year frame warranty and yearly maintenance. The density figure itself is plausible: Wood Handbook values at 12 % give about 760 kg/m³ for "
                   "white oak, 670 for white ash and 720 for American beech (specific gravity x 1.12); 690 kg/m³ fits European oak and ash.",
-                  "(a) oak only, including the May delivery (sawmill story changes); (b) ash, thermally modified (durability class 2–3 after modification; "
-                  "density falls by roughly 10 %, slat about 4.0 kg, so the weights change); (c) ash or beech with preservative treatment.",
+                  "(a) oak only, including the May delivery (sawmill story changes); (b) ash, thermally modified (producers claim durability class 1–3 after "
+                  "modification and a density roughly 10 % lower, so a slat of about 4.0 kg and new weights; from general knowledge, not checked); "
+                  "(c) ash or beech with preservative treatment.",
                   "(a); owner question Q1."))
     items.append(("Slats at 12 % moisture, outdoors",
                   "Kiln-dried 12 % is the delivery state. Outdoors (service class 3) the slats settle at about 15–20 %: about 3–7 % heavier and 2–3 mm wider, and weaker "
-                  "(the Wood Handbook's green values are 40–45 % below the 12 % values for MOR). The design check uses k_mod for service class 3; the masses are at 12 %.",
+                  "(in the Wood Handbook the green MOR is 38–46 % below the 12 % value for these three species). The design check uses k_mod for service class 3; the masses are at 12 %.",
                   "(a) state the weights 'at delivery, 12 % moisture'; (b) give in-service weights.", "(a)."))
     items.append(("Slats under the 450 kg test",
                   f"σ = {n(ur['sigma'], 1)} MPa, {n(100 * ur['ratio_fmk'], 0)} % of f_m,k; deflection {n(ur['w_span'], 0)} mm (E = 11,000) or {n(urw['w_span'], 0)} mm "
@@ -423,7 +425,8 @@ def write(r, here):
     A("- Several standards could only be read in previews or secondary summaries (EN 581-2, EN 10293, EN 338, EN 350, ISO 14713-2, ISO 11228-1); EN 1995-1-1's "
       "spacing table, EN 1176-1's finger-trap range and the ergonomic angles from *Bodyspace* are quoted from general knowledge. The SFSA's own pages refused "
       "automated access.")
-    A("- Container inside dimensions are typical values for ISO 668 boxes, not taken from a source.")
+    A("- Container inside dimensions are typical values for ISO 668 boxes, not taken from a source. Stacking 'two or three high' is checked "
+      "by height only; the compression strength of the cartons under two pallets above is not calculated (the steel frames inside carry most of it).")
     A("")
     A("## 9. Sources")
     A("")

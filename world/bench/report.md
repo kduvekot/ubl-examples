@@ -5,8 +5,8 @@
 ## 1. Summary
 
 - **What was made:** a parametric solid model of the bench (two identical cast-steel side frames, five hardwood slats, 20 M8 carriage bolts), STEP files of the assembly and each part, GLB files for the web, eight dimensioned SVG drawings (drawing numbers VI-DWG-B180-001 to 008), five PNG renders, the mould with gating and risers, the parcels and the pallet, and this report with all figures in `results.json`.
-- **The bench as designed:** 1 800 mm over the slats, **1 660 mm over the armrests**, 620 mm deep, 780 mm high; seat 450 mm (440 to 460 on levelling nuts); 3 seat slats and 2 back slats; seat tilt 4°, seat to back 104°; armrests 200 mm above the seat.
-- **Key figures against the world:** side frame **12.8 kg cast, 13.4 kg galvanised and coated** (world 10.0 + 0.2); bench **net 49.9 kg** (world 43.5), **gross 52.7 kg** in three parcels of 14.5, 15.3 and 22.9 kg (world 10.2 / 11.2 / 23.0 = 44.4); frame carton 798 x 676 x 98 mm (world 820 x 620 x 80); pallet of four 1 850 x 700 x 716 mm, 211 kg of goods, 239 kg gross (world 1850 x 650 x 750, 178 / 200 kg); metal poured **48.9 kg per bench at 52 % yield** (world 34 kg at 60 %); steel in the product 26.8 kg (world about 21).
+- **The bench as designed:** 1,800 mm over the slats, **1,660 mm over the armrests**, 620 mm deep, 780 mm high; seat 450 mm (440 to 460 on levelling nuts); 3 seat slats and 2 back slats; seat tilt 4°, seat to back 104°; armrests 200 mm above the seat.
+- **Key figures against the world:** side frame **12.8 kg cast, 13.4 kg galvanised and coated** (world 10.0 + 0.2); bench **net 49.9 kg** (world 43.5), **gross 52.7 kg** in three parcels of 14.5, 15.3 and 22.9 kg (world 10.2 / 11.2 / 23.0 = 44.4); frame carton 798 x 676 x 98 mm (world 820 x 620 x 80); pallet of four 1,850 x 700 x 716 mm, 211 kg of goods, 239 kg gross (world 1850 x 650 x 750, 178 / 200 kg); metal poured **48.9 kg per bench at 52 % yield** (world 34 kg at 60 %); steel in the product 26.8 kg (world about 21).
 - **Strength:** the frame is lightly stressed (at most 51 MPa against Rp0.2 = 240 MPa); its walls are set by castability, not by the load. The slats are the critical part: 13.4 MPa and 17 mm deflection under the 450 kg test (Eurocode 5 utilisation 0.95).
 - **Inconsistencies:** 17 are listed in section 6; the largest are the length over the armrests, the frame mass, the zero-mass cartons, the carton and pallet widths, the metal poured, and ash and beech as outdoor slat woods.
 
@@ -29,7 +29,7 @@ Colours in the renders are approximations: Ferro grey as RAL 7011 (sRGB about #5
 ### 3.1 Ergonomics and overall form
 
 - **Seat height 450 mm** at the front edge (fixed by the owner), with the frames standing 10 mm above the plinth on the levelling nuts of the ground anchors; 0 to 20 mm of gap gives the 440 to 460 mm range, and the gap is grouted after levelling. UK guidance (Inclusive Mobility, 2021, p. 102) asks for 470 to 480 mm for most seats; the US 2010 ADA Standards (903.5) allow 430 to 485 mm for benches. 450 is below the UK range (inconsistency 13).
-- **Armrests 200 mm above the seat** (650 mm above the ground), as Inclusive Mobility recommends; seat width between the armrests 1 540 mm = 3 x 513 mm, above its 500 mm per person.
+- **Armrests 200 mm above the seat** (650 mm above the ground), as Inclusive Mobility recommends; seat width between the armrests 1,540 mm = 3 x 513 mm, above its 500 mm per person.
 - **Seat tilt 4° and seat-to-back angle 104°** (back 18° from vertical): within the usual 0–5° seat tilt and 100–110° seat-to-back angle of seating handbooks (Pheasant and Haslegrave, *Bodyspace*, quoted from general knowledge, not checked here). Water runs off the tilted seat and through the gaps, as Inclusive Mobility asks for outdoor seats.
 - **Seat depth 400 mm** from the front edge to the line of the back. Three slats and two gaps of 22 mm give 329 mm of slat surface; the remaining 71 mm is an open throat between seat and back (room for the buttocks, debris falls through). ADA 903.3 asks 510–610 mm for benches used for transfer; that is a building-code rule for benches in rooms and is not applied here.
 - **Back:** two slats, at 71–162 mm (lumbar) and 268–359 mm above the seat-back junction; top of the back 331 mm above the seat front, at the 780 mm of the brief. UK design guides ask at least 300 mm of back above the seat; ADA 903.4 would ask 455 mm (not applied).
@@ -61,8 +61,8 @@ Colours in the renders are approximations: Ferro grey as RAL 7011 (sRGB about #5
 ### 3.5 Packaging (drawings 006 and 007)
 
 - **Frame carton:** the frame is 742 x 620 x 70 mm (height x depth x thickness). Lying flat with 20 / 20 / 10 mm of clearance for corner pads, the inside is 782 x 660 x 90 mm; a FEFCO 0320 tray and lid in single-wall C flute (560 g/m²) gives **798 x 676 x 98 mm** outside and weighs 1.12 kg with pads.
-- **Slat bundle:** five slats in a 3 + 2 pattern (broad faces down, top row centred), corrugated edge protectors, end caps, four PET straps and film: **1 810 x 295 x 86 mm**, packing 0.59 kg. Two bundles side by side make a 590 mm wide, flat bed for the cartons.
-- **Pallet of four benches:** a four-way block pallet 1850 x 700 x 144 mm of heat-treated softwood (ISPM 15), 26.2 kg; four bundles (2 x 2) at the bottom, a slip sheet, eight cartons in two columns of four, a top cap, corner boards and film: **1 850 x 700 x 716 mm**, goods 210.8 kg, **gross 238.9 kg**. Fork-lift; stacks up to 3 high by height in all three vehicles.
+- **Slat bundle:** five slats in a 3 + 2 pattern (broad faces down, top row centred), corrugated edge protectors, end caps, four PET straps and film: **1,810 x 295 x 86 mm**, packing 0.59 kg. Two bundles side by side make a 590 mm wide, flat bed for the cartons.
+- **Pallet of four benches:** a four-way block pallet 1850 x 700 x 144 mm of heat-treated softwood (ISPM 15), 26.2 kg; four bundles (2 x 2) at the bottom, a slip sheet, eight cartons in two columns of four, a top cap, corner boards and film: **1,850 x 700 x 716 mm**, goods 210.8 kg, **gross 238.9 kg**. Fork-lift; stacks up to 3 high by height in all three vehicles.
 - **Vehicles:** with the pallet 1,850 long and 700 wide, three fit across and seven (trailer, 45-foot) or six (40-foot) along: 21, 18 and 21 floor positions, as the world says. 24 bench pallets and the castings pallet (203 kg, 12 cartons) need 13 positions in two layers; load 5.94 t, well within every payload.
 
 ## 4. Derived figures
@@ -111,11 +111,11 @@ Centre of gravity of the bench (frames and slats): x = 900, y = 316 mm behind th
 |---|---|---|---|
 | Parcel 1: frame carton | 798 x 676 x 98 | 14.5 kg | one person (≤ 25 kg) |
 | Parcel 2: frame carton with bolt set | 798 x 676 x 98 | 15.3 kg | one person |
-| Parcel 3: slat bundle | 1 810 x 295 x 86 | 22.9 kg | two people (length) |
+| Parcel 3: slat bundle | 1,810 x 295 x 86 | 22.9 kg | two people (length) |
 | Bench, three parcels | | **52.7 kg** (packaging 2.84 kg) | |
 | Spare frame VI-C180 in its carton | 798 x 676 x 98 | 14.5 kg | one person |
-| Pallet of four benches | 1 850 x 700 x 716 | 238.9 kg (goods 210.8) | fork-lift |
-| Castings pallet, 12 frame cartons | 1850 x 700 x 737 | 202.7 kg | fork-lift |
+| Pallet of four benches | 1,850 x 700 x 716 | 238.9 kg (goods 210.8) | fork-lift |
+| Castings pallet, 12 frame cartons | 1,850 x 700 x 737 | 202.7 kg | fork-lift |
 | 24 bench pallets + 1 castings pallet | | 5.94 t | |
 
 ### 4.4 Strength and deflection
@@ -124,7 +124,7 @@ Centre of gravity of the bench (frames and slats): x = 900, y = 316 mm behind th
 
 **Safety factors.** Test check: stress at the test load against the strength that must not be exceeded (no lasting deformation). Design check: γQ = 1.5 on the load (EN 1990); steel against Rp0.2 with γM0 = 1.0 (EN 1993 style); timber against f_m,d = f_m,k · k_mod · k_h / γM = 30 x 0.70 x 1.30 / 1.3 = 21.0 MPa (EN 1995-1-1: short-term load, service class 3, depth factor for a 38 mm member).
 
-**Slats** (span between frame centres 1 600 mm, overhangs 100 mm, I = 434 403 mm⁴, W = 22 863 mm³, E = 11,000 MPa):
+**Slats** (span between frame centres 1,600 mm, overhangs 100 mm, I = 434,403 mm⁴, W = 22,863 mm³, E = 11,000 MPa):
 
 | Load case | M max (N m) | σ (MPa) | σ / f_m,k | 1.5 σ / f_m,d | Deflection (mm) | span / deflection |
 |---|---|---|---|---|---|---|
@@ -139,8 +139,8 @@ Centre of gravity of the bench (frames and slats): x = 900, y = 316 mm behind th
 
 | Load case | σ max (MPa) | in | test σ / Rp0.2 | 1.5 σ / Rp0.2 | max. displacement (mm) | foot reactions front / rear (N) |
 |---|---|---|---|---|---|---|
-| UR-SF-0450, 450 kg over the seat | 45.6 | seat rail | 0.19 | 0.28 | 0.23 | 1 473 / 734 |
-| EN 581-2 contract, seat 2000 N (end seat) + 750 N + 750 N, back 560 N | 50.6 | seat rail | 0.21 | 0.32 | 0.38 | 869 / 1 424 |
+| UR-SF-0450, 450 kg over the seat | 45.6 | seat rail | 0.19 | 0.28 | 0.23 | 1,473 / 734 |
+| EN 581-2 contract, seat 2000 N (end seat) + 750 N + 750 N, back 560 N | 50.6 | seat rail | 0.21 | 0.32 | 0.38 | 869 / 1,424 |
 | EN 581-2 contract, arm downward 900 N | 42.2 | armrest | 0.18 | 0.26 | 0.18 | 454 / 446 |
 | EN 581-2 contract, seat front edge 1300 N (end seat) | 13.2 | seat rail | 0.05 | 0.08 | 0.03 | 938 / 129 |
 | Sideways 400 N at the armrest front, post as a cantilever over 239 mm (hand check, out of plane; force assumed) | 74.9 | front post | 0.31 | 0.47 | | |
@@ -151,7 +151,7 @@ No case lifts a foot off its anchor; the anchors carry shear from the back load 
 
 | Figure | World now | Model | If adopted |
 |---|---|---|---|
-| Length over the armrests | 1,800 mm | 1 660 mm (1,800 over the slats) | dimension LENGTH qualified 'over the slats', and a second dimension 1 660 over the armrests (items.json `dimensions`) |
+| Length over the armrests | 1,800 mm | 1,660 mm (1,800 over the slats) | dimension LENGTH qualified 'over the slats', and a second dimension 1,660 over the armrests (items.json `dimensions`) |
 | Depth / height / seat height | 620 / 780 / 450 (440–460) | 620 / 780 / 450 (440–460) | no change |
 | Slat | 4.5 kg, 690 kg/m³ | 4.45 kg (holes, chamfers) | none needed (rounding) |
 | Side frame, cast | 10.0 kg | 13.06 kg | frame weights in every flow; the spare frame's net weight |
@@ -161,21 +161,22 @@ No case lifts a foot off its anchor; the anchors carry shear from the back load 
 | Bench net | 43.5 kg (items.json 38.0) | 49.9 kg | net weight in about 50 documents |
 | Frame carton | 820 x 620 x 80, 10.2 kg | 798 x 676 x 98, 14.5 kg | parcel sizes and weights; spare-frame gross (items.json 10.2) |
 | Frame carton with bolts | 11.2 kg | 15.3 kg | parcel weights |
-| Slat bundle | 1,800 x 200 x 120, 23.0 kg | 1 810 x 295 x 86, 22.9 kg | bundle size; weight unchanged in effect |
+| Slat bundle | 1,800 x 200 x 120, 23.0 kg | 1,810 x 295 x 86, 22.9 kg | bundle size; weight unchanged in effect |
 | Bench gross | 44.4 kg (items.json 41.5) | 52.7 kg | gross weights and consignment totals in road, sea, rail, tender, retail, air, carnet |
-| Pallet of four | 1,850 x 650 x 750; 178 / 200 kg | 1 850 x 700 x 716; 211 / 239 kg | pallet size (road/08) and weights |
+| Pallet of four | 1,850 x 650 x 750; 178 / 200 kg | 1,850 x 700 x 716; 211 / 239 kg | pallet size (road/08) and weights |
 | Floor positions trailer / 40' / 45' | 21 / 18 / (45') | 21 / 18 / 21 | no change |
 | 96 benches by road (24 + 1 pallets) | about 4.3 t + 0.5 t of pallets | 5.94 t with pallets | consignment and container weights |
 | Metal poured per bench / yield | 34 kg / 60 % | 48.9 kg / 52 % (junction risers only 36.8 / 70 %) | STEEL resource figure (O25); footprint |
 | Steel in the product | about 21 kg | 26.8 kg | O25 |
 | Hardwood consumption | 22.5 kg | 22.3 kg in the product; 28.1 kg rough-sawn input | O25: say which one the figure is |
+| Carbon footprint, cradle to gate | 96 kg CO2e | not recomputed | O25: the steel figures it rests on change (net liquid steel about 28 kg, poured 49 kg) |
 | Strength check in D20 | 40 x 14 bar, about 100 MPa, factor 2.5 | max. 46 MPa under UR-SF-0450, factor 5.3 on Rp0.2 = 240 | story text only |
 
 ## 6. Inconsistencies found
 
 Each item: the figure, why it fails (with the calculation), the options, and the recommendation the model continues with.
 
-**1. Length 1,800 mm 'over the armrests' with slats of 1,800 mm.** The slats are 1,800 mm long and fixed. The bolts must sit at least 80 mm from the slat ends (EN 1995-1-1, loaded end, max(7d; 80 mm)); with two bolts either side of the web at ±20 mm, the frame centre is 100 mm from each end, so the armrest pads (60 mm wide) end 70 mm in from the slat ends: 1,800 − 2 x 70 = **1 660 mm over the armrests**. For 1,800 over the armrests with 1,800 mm slats the armrests' outer faces would have to be flush with the slat ends, and the bolts would then be 20–40 mm from the end grain, where slats split.
+**1. Length 1,800 mm 'over the armrests' with slats of 1,800 mm.** The slats are 1,800 mm long and fixed. The bolts must sit at least 80 mm from the slat ends (EN 1995-1-1, loaded end, max(7d; 80 mm)); with two bolts either side of the web at ±20 mm, the frame centre is 100 mm from each end, so the armrest pads (60 mm wide) end 70 mm in from the slat ends: 1,800 − 2 x 70 = **1,660 mm over the armrests**. For 1,800 over the armrests with 1,800 mm slats the armrests' outer faces would have to be flush with the slat ends, and the bolts would then be 20–40 mm from the end grain, where slats split.
 *Options:* (a) state 1,800 mm as the length over the slats and give 1,660 mm over the armrests; (b) widen the armrest pads outward to the slat ends (asymmetric pad 130 mm wide, about +2.4 kg per frame, a heavy, odd-looking arm); (c) longer slats (excluded: fixed by the sawmill). *Recommendation:* (a).
 
 **2. Side frame 10.0 kg (1.27 l, about 2.3 m of 40 x 14 mm).** The D20 estimate is a single bar; a real frame also has feet with anchor holes, junctions and fillets, flanges wide enough for two M8 bolts and their washers (68 mm on the rails), and an armrest pad. At castable walls of 8 mm the model's frame is **12.80 kg** cast (1.631 l), 13.06 kg with draft. About 10 kg is reached only at 6 mm walls (10.2 kg bare), SFSA's bare minimum for sand-cast steel, too thin for 0.5 m long members fed from one end. Strength does not set the walls (stress ≤ 51 MPa).
@@ -209,18 +210,18 @@ Each item: the figure, why it fails (with the calculation), the options, and the
 *Options:* update items.json once, to the model's figures, in the stage that implements C69. *Recommendation:* as the owner planned, with the model's figures.
 
 **12. Slat bundle 1,800 x 200 x 120 mm.** The slats are 1,800 mm long, so a bundle with end protection is about 1,810 mm. A cross-section of 200 x 120 holds five 95 x 38 slats only as 2 x 3 with one empty place, which is unstable when strapped.
-*Options:* (a) 3 + 2 pattern, 1 810 x 295 x 86 mm; (b) five slats stacked flat, about 1,810 x 105 x 200 mm (narrow, rolls over). *Recommendation:* (a); it also makes a flat bed on the pallet.
+*Options:* (a) 3 + 2 pattern, 1,810 x 295 x 86 mm; (b) five slats stacked flat, about 1,810 x 105 x 200 mm (narrow, rolls over). *Recommendation:* (a); it also makes a flat bed on the pallet.
 
 **13. Seat height 450 mm against the UK guidance of 470–480 mm.** Inclusive Mobility (2021) asks most seats to be 470–480 mm high; 450 mm (440–460) is below it. It is inside the ADA's 430–485 mm and typical of park benches. Raising the seat to 470 would raise the top of the back to 800 mm unless the back is shortened.
 *Options:* (a) keep 450 and note the difference; (b) 470 mm with the height 800 mm; (c) 470 mm with a lower back (less support). *Recommendation:* (a).
 
 **14. Slat woods 'oak, ash or beech' and the change to ash from May (O119).** EN 350:2016 puts European ash and beech in durability class 5 (not durable, under five years in ground contact; above ground longer, but they rot where water stands at the bolts and end grain); oak heartwood is class 2–4. Untreated ash or beech slats are not fit for an outdoor bench with a five-year frame warranty and yearly maintenance. The density figure itself is plausible: Wood Handbook values at 12 % give about 760 kg/m³ for white oak, 670 for white ash and 720 for American beech (specific gravity x 1.12); 690 kg/m³ fits European oak and ash.
-*Options:* (a) oak only, including the May delivery (sawmill story changes); (b) ash, thermally modified (durability class 2–3 after modification; density falls by roughly 10 %, slat about 4.0 kg, so the weights change); (c) ash or beech with preservative treatment. *Recommendation:* (a); owner question Q1.
+*Options:* (a) oak only, including the May delivery (sawmill story changes); (b) ash, thermally modified (producers claim durability class 1–3 after modification and a density roughly 10 % lower, so a slat of about 4.0 kg and new weights; from general knowledge, not checked); (c) ash or beech with preservative treatment. *Recommendation:* (a); owner question Q1.
 
-**15. Slats at 12 % moisture, outdoors.** Kiln-dried 12 % is the delivery state. Outdoors (service class 3) the slats settle at about 15–20 %: about 3–7 % heavier and 2–3 mm wider, and weaker (the Wood Handbook's green values are 40–45 % below the 12 % values for MOR). The design check uses k_mod for service class 3; the masses are at 12 %.
+**15. Slats at 12 % moisture, outdoors.** Kiln-dried 12 % is the delivery state. Outdoors (service class 3) the slats settle at about 15–20 %: about 3–7 % heavier and 2–3 mm wider, and weaker (in the Wood Handbook the green MOR is 38–46 % below the 12 % value for these three species). The design check uses k_mod for service class 3; the masses are at 12 %.
 *Options:* (a) state the weights 'at delivery, 12 % moisture'; (b) give in-service weights. *Recommendation:* (a).
 
-**16. Slats under the 450 kg test.** σ = 13.4 MPa, 45 % of f_m,k; deflection 17 mm (E = 11,000) or 14 mm (Wood Handbook oak) over 1 600 mm, span/94. The test 'no lasting deformation' is plausible for oak at this stress, but the Eurocode 5 design check is at 0.95 (EN 581-2 centre seat 0.98), so there is no margin, and the bench visibly sags (9 mm with three adults of 80 kg). Two frames and 38 mm slats over 1.6 m are at their limit.
+**16. Slats under the 450 kg test.** σ = 13.4 MPa, 45 % of f_m,k; deflection 17 mm (E = 11,000) or 14 mm (Wood Handbook oak) over 1,600 mm, span/94. The test 'no lasting deformation' is plausible for oak at this stress, but the Eurocode 5 design check is at 0.95 (EN 581-2 centre seat 0.98), so there is no margin, and the bench visibly sags (9 mm with three adults of 80 kg). Two frames and 38 mm slats over 1.6 m are at their limit.
 *Options:* (a) accept and state it; (b) slats 45 mm thick (not available: fixed by the sawmill); (c) a third, middle support (contradicts 'two side frames'). *Recommendation:* (a); owner question Q2 if more margin is wanted.
 
 **17. Cast steel for a bench frame; handling by a shopper.** Cast bench ends are usually grey or ductile iron or aluminium: steel shrinks more, flows less well in thin sections and needs many risers (see 8). Cast steel is possible and fits Valdara's integrated works, but it is the less likely choice. Separately: ISO 11228-1's reference mass of 25 kg is for the adult working population; for the general domestic population it gives 10 kg. A shopper who 'takes home three parcels' of 15, 15 and 23 kg is above that. The two-person rule of 'two thirds of the combined capacity' could not be found in the parts of ISO 11228-1 accessible here.
@@ -233,7 +234,7 @@ Figures that **hold**: depth 620, height 780, seat height 450 (440–460, by the
 - **Q1 – Slat wood (item 14).** Options: oak only; thermally modified ash with lighter slats; treated ash or beech. Recommendation: oak only, and the May delivery stays oak.
 - **Q2 – Slat margin (item 16).** Options: accept 38 mm slats at the limit; ask for 45 mm slats; add a middle support. Recommendation: accept, and say in the datasheet that the slats deflect about 9 mm under three adults.
 - **Q3 – Which steel figure is 'consumption' (items 8, 9).** Options: poured metal (49 kg), net liquid steel (about 28 kg), steel in the product (27 kg). Recommendation: the net figure for the STEEL resource, the poured metal in the story of the foundry, and the footprint (O25) from the net figure.
-- **Q4 – Length qualifier (item 1).** Recommendation: 'Length 1,800 mm over the slats'; 'Length over the armrests 1 660 mm' and 'width between the armrests 1 540 mm' as further dimensions if wanted.
+- **Q4 – Length qualifier (item 1).** Recommendation: 'Length 1,800 mm over the slats'; 'Length over the armrests 1,660 mm' and 'width between the armrests 1,540 mm' as further dimensions if wanted.
 
 ## 8. Limits of the model
 
@@ -241,7 +242,7 @@ Figures that **hold**: depth 620, height 780, seat height 450 (440–460, by the
 - Draft is allowed for as a mass percentage; the 3D flange-to-web fillets are not modelled (a few tens of grams).
 - Casting: modulus method and the SFSA bar rule are rules of thumb; a foundry would confirm with solidification simulation. Pour time, melt loss and fettling losses are assumptions, marked as such in `parameters.json`.
 - Several standards could only be read in previews or secondary summaries (EN 581-2, EN 10293, EN 338, EN 350, ISO 14713-2, ISO 11228-1); EN 1995-1-1's spacing table, EN 1176-1's finger-trap range and the ergonomic angles from *Bodyspace* are quoted from general knowledge. The SFSA's own pages refused automated access.
-- Container inside dimensions are typical values for ISO 668 boxes, not taken from a source.
+- Container inside dimensions are typical values for ISO 668 boxes, not taken from a source. Stacking 'two or three high' is checked by height only; the compression strength of the cartons under two pallets above is not calculated (the steel frames inside carry most of it).
 
 ## 9. Sources
 

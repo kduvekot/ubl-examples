@@ -1365,10 +1365,10 @@ def make_drawings(B, R, C, K):
     for yy in (Wd / 2 - hd / 2, Wd / 2 + hd / 2):
         s.line([e0(yy, 0), e0(yy, Th)], "hid")
     s.line([e0(Wd / 2, -5), e0(Wd / 2, Th + 5)], "ctr")
-    s.text(45 + Wd / 2, 125, "END VIEW 1:1", 3.5, anchor="middle", weight="bold")
+    s.text(45 + Wd / 2, 112, "END VIEW 1:1", 3.5, anchor="middle", weight="bold")
     s.dim(e0(0, 0), e0(Wd, 0), 8, fmt(Wd))
     s.dim(e0(Wd, 0), e0(Wd, Th), 7, fmt(Th), "v")
-    s.leader(e0(ch / 2, Th - ch / 2), (e0(25, Th + 12)[0], e0(25, Th + 12)[1]), f"{ch} x 45°, 4 long edges")
+    s.leader(e0(ch / 2, Th - ch / 2), (e0(40, Th + 16)[0], e0(40, Th + 16)[1]), f"{ch} x 45°, 4 long edges")
     # detail of an end 1:2 in plan
     k5 = 0.5
     dv = project(sl & (Pos(80, Wd / 2, -Th / 2) * Box(160, Wd + 2, Th + 2)), (0, 0, -1), (0, 1, 0), hidden=False)
@@ -1564,7 +1564,7 @@ def make_drawings(B, R, C, K):
     kk = 0.2
     vc = ViewMap(25 - kk * mn[0], 40 + kk * mx[1], kk)
     draw_proj(s, vc, cv[0], [])
-    s.text(30 + (mx[0] - mn[0]) * kk / 2, 32, "PLAN OF THE DRAG AT THE PARTING PLANE (web mid-plane), risers shown in section", 2.8, anchor="middle", weight="bold")
+    s.text(30 + (mx[0] - mn[0]) * kk / 2, 32, "PLAN OF THE MOULD, COPE REMOVED: two castings, top risers (circles), sprue, runner, ingates", 2.8, anchor="middle", weight="bold")
     s.notes(25, 212, [
         f"Two frames per mould (one bench), mirrored; sprue between them,",
         f"runner {fmt(C['run_w'])} x {fmt(C['run_h'])} mm, {fmt(C['runner_len'])} mm long; one ingate into each main",

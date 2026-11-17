@@ -236,7 +236,7 @@
 <polyline class="vis" points="155.00,119.83 155.30,119.81 155.59,119.75 155.87,119.65 156.13,119.52 156.38,119.36 156.60,119.16 156.80,118.94 156.96,118.69 157.09,118.43 157.19,118.15 157.25,117.86 157.27,117.56 157.25,117.27 157.19,116.97 157.09,116.69 156.96,116.43 156.80,116.18 156.60,115.96 156.38,115.76 156.13,115.60 155.87,115.47 155.59,115.37 155.30,115.31 155.00,115.30 154.70,115.31 154.41,115.37 154.13,115.47 153.87,115.60 153.62,115.76 153.40,115.96 153.20,116.18 153.04,116.43 152.91,116.69 152.81,116.97 152.75,117.27 152.73,117.56 152.75,117.86 152.81,118.15 152.91,118.43 153.04,118.69 153.20,118.94 153.40,119.16 153.62,119.36 153.87,119.52 154.13,119.65 154.41,119.75 154.70,119.81 155.00,119.83"/>
 <polyline class="vis" points="174.63,115.56 185.83,115.56"/>
 <polyline class="vis" points="174.63,119.56 185.49,119.56"/>
-<text class="txt" x="160.00" y="32.00" font-size="2.8" text-anchor="middle" font-weight="bold">PLAN OF THE DRAG AT THE PARTING PLANE (web mid-plane), risers shown in section</text>
+<text class="txt" x="160.00" y="32.00" font-size="2.8" text-anchor="middle" font-weight="bold">PLAN OF THE MOULD, COPE REMOVED: two castings, top risers (circles), sprue, runner, ingates</text>
 <text class="txt" x="25.00" y="212.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
 <text class="txt" x="25.00" y="216.50" font-size="2.3" text-anchor="start" font-weight="normal">Two frames per mould (one bench), mirrored; sprue between them,</text>
 <text class="txt" x="25.00" y="220.20" font-size="2.3" text-anchor="start" font-weight="normal">runner 31 x 26 mm, 196 mm long; one ingate into each main</text>
