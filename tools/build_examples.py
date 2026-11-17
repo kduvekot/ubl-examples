@@ -1214,6 +1214,178 @@ def tax_category(code, percent, why, scheme="VAT", country="XU"):
 
 
 # ---------------------------------------------------------------- placing the world's parties
+# ---------------------------------------------------------------- what a document says about a party (O86, O88)
+DOC_CLASS = {}
+for _cls, _docs in {
+    "trade": "Order OrderResponse OrderChange OrderCancellation RequestForQuotation Quotation DespatchAdvice "
+             "ReceiptAdvice DeliveryNote InstructionForReturns FulfilmentCancellation Forecast ForecastRevision "
+             "InventoryReport ProductActivity RetailEvent TradeItemLocationProfile ItemInformationRequest "
+             "ExceptionCriteria ExceptionNotification WorkReport",
+    "catalogue": "Catalogue CataloguePricingUpdate CatalogueItemSpecificationUpdate CatalogueDeletion CatalogueRequest",
+    "invoice": "Invoice CreditNote DebitNote SelfBilledInvoice SelfBilledCreditNote Reminder PurchaseReceipt",
+    "payment": "RemittanceAdvice Statement UtilityStatement",
+    "transport": "Waybill BillOfLading ForwardingInstructions TransportExecutionPlan TransportExecutionPlanRequest "
+                 "TransportationStatus TransportationStatusRequest TransportProgressStatus "
+                 "TransportProgressStatusRequest PackingList Manifest CommonTransportationReport WeightStatement "
+                 "GoodsItemItinerary TransportServiceDescription TransportServiceDescriptionRequest",
+    "customs": "ImportCustomsDeclaration ExportCustomsDeclaration TransitCustomsDeclaration CertificateOfOrigin "
+               "GoodsItemPassport GoodsCertificate ProofOfReexportation ProofOfReexportationRequest "
+               "ProofOfReexportationReminder",
+    "waste": "WasteMovement WasteNotification",
+    "notice": "PriorInformationNotice ContractNotice CallForTenders ContractAwardNotice AwardedNotification "
+              "UnawardedNotification ProcurementStatus ProcurementStatusRequest ExpressionOfInterestRequest "
+              "ExpressionOfInterestResponse UnsubscribeFromProcedureRequest UnsubscribeFromProcedureResponse "
+              "TenderReceipt TenderWithdrawal TendererQualificationResponse GuaranteeCertificate "
+              "QualificationApplicationRequest",
+    "qualification": "Tender TendererQualification QualificationApplicationResponse",
+    "contract": "TenderContract DigitalAgreement",
+    "presentation": "BusinessCard BusinessInformation DigitalCapability",
+    "message": "ApplicationResponse DocumentStatus DocumentStatusRequest InvoiceStatusRequest InvoiceStatusResponse",
+}.items():
+    for _d in _docs.split():
+        DOC_CLASS[_d] = _cls
+
+RESPONSES = set("OrderResponse Quotation TransportExecutionPlan Waybill BillOfLading Tender "
+                "QualificationApplicationResponse Catalogue ReceiptAdvice ApplicationResponse DocumentStatus "
+                "InvoiceStatusResponse ExpressionOfInterestResponse UnsubscribeFromProcedureResponse TenderReceipt "
+                "TendererQualificationResponse ProcurementStatus TransportationStatus TransportProgressStatus "
+                "TransportServiceDescription".split())
+
+_TRADE = {"id", "lang", "addr", "site", "eaddr", "contact"}
+PROFILE = {     # class -> (about yourself, about the other)
+    "trade": (_TRADE, _TRADE - {"lang"}),
+    "catalogue": (_TRADE | {"legal", "present"}, _TRADE - {"lang"}),
+    "invoice": (_TRADE | {"tax", "legal", "capital", "account"}, _TRADE - {"lang", "site"} | {"legal-name"}),
+    "payment": (_TRADE - {"site"}, _TRADE - {"lang", "site"}),
+    "transport": (_TRADE | {"customs"}, _TRADE - {"lang"} | {"customs"}),
+    "customs": (_TRADE | {"customs", "legal-name"}, {"id", "customs", "addr", "eaddr", "contact", "legal-name"}),
+    "waste": (_TRADE | {"permit"}, _TRADE - {"lang"} | {"permit"}),
+    "notice": (_TRADE - {"site"} | {"legal-name"}, {"id", "addr", "eaddr", "contact"}),
+    "qualification": (_TRADE - {"site"} | {"legal", "legal-full", "present", "tax"},
+                      {"id", "addr", "eaddr", "contact", "legal-name"}),
+    "contract": (_TRADE - {"site"} | {"legal"}, _TRADE - {"lang", "site"} | {"legal"}),
+    "presentation": (_TRADE | {"legal", "legal-full", "present", "service"}, {"id", "addr"}),
+    "message": ({"id", "lang", "eaddr", "contact"}, {"id", "eaddr"}),
+}
+THIRD = {"trade": {"id", "addr", "contact"}, "transport": {"id", "addr", "contact", "customs"},
+         "customs": {"id", "addr", "customs"}, "waste": {"id", "addr", "contact", "permit"}}
+
+BLOCK_OF = {"_pid": None, "_keys": None,
+            "PartyIdentification": "id", "PartyName": "id", "TradePartyName": "id", "Person": "id",
+            "Language": "lang", "PostalAddress": "addr", "PhysicalLocation": "site", "ElectronicAddress": "eaddr",
+            "Contact": "contact", "PartyTaxScheme": "tax", "PartyLegalEntity": "legal-name",
+            "WebsiteURI": "present", "LogoReferenceID": "present", "IndustryClassificationCode": "present",
+            "AdditionalWebSite": "present", "SocialMediaProfile": "present", "FinancialAccount": "account",
+            "ServiceProviderParty": "service", "PartyAuthorization": "permit"}
+LEGAL_OF = {"RegistrationName": "legal-name", "CompanyID": "legal-name",
+            "CompanyLegalFormCode": "legal", "CompanyLegalForm": "legal", "RegistrationAddress": "legal",
+            "CorporateRegistrationScheme": "legal", "SoleProprietorshipIndicator": "legal",
+            "RegistrationExpirationDate": "legal",
+            "RegistrationDate": "legal-full", "EntitySizeCode": "legal-full",
+            "CompanyLiquidationStatusCode": "legal-full", "ShareholderParty": "legal-full",
+            "HeadOfficeParty": "legal-full", "SecurityListing": "legal-full",
+            "CorporateStockAmount": "capital", "FullyPaidSharesIndicator": "capital"}
+CUSTOMER_TAX_CODES = {"RESALE", "PUBLIC", "SVCB2B", "SVCABROAD"}   # exemptions that rest on who the customer is
+
+
+def _cross_border(doc):
+    cs = {PARTY[x]["c"] for k, x in doc["parties"].items() if isinstance(x, str) and x in PARTY and
+          any(r in k.split("/")[-1] for r in ("Consignor", "Consignee", "Exporter", "Importer", "Shipper"))}
+    if len(cs) < 2:
+        cs = {PARTY[doc["from"]]["c"], PARTY[doc["to"]]["c"]} if doc.get("to") in PARTY else cs
+    return len(cs) > 1
+
+
+def party_profile(top, path, pid, content):
+    """The blocks of a party's description in this document (the story line "What a document says about a
+    party"): the sender describes itself in full for the kind of document, the receiver is described with what the
+    sender knows and needs, a third party with what the receiver needs to recognise or reach it."""
+    kind = top["doc"]
+    cls = DOC_CLASS.get(kind)
+    if cls is None:
+        raise SystemExit(f"{kind}: no party profile class (party_profile)")
+    own, other = PROFILE[cls]
+    if pid == top.get("from"):
+        blocks = set(own)
+    elif pid == top.get("to"):
+        blocks = set(other) | ({"lang"} if kind in RESPONSES else set())
+    else:
+        blocks = set(THIRD.get(cls, {"id"}))
+    role = path.split("/")[-1]
+    if kind.startswith("SelfBilled") and role == "AccountingSupplierParty":
+        blocks = set(own)                     # the buyer issues the seller's invoice: the seller's own data in it
+    if cls == "qualification" and role in ("MainQualifyingParty", "AdditionalQualifyingParty", "SubcontractorParty"):
+        blocks = set(own) - {"tax"} if pid != top.get("from") else blocks   # the parties the tender relies on
+    if cls == "presentation" and role == "BusinessParty":
+        blocks = set(own)                     # the business the document presents
+    if cls == "invoice" and pid != top.get("from") and PARTY.get(pid, {}).get("identity", {}).get("person"):
+        blocks.add("account")                 # the consumer's account the bills are collected from
+    if "customs" in blocks and cls == "transport" and not _cross_border(top):
+        blocks.discard("customs")
+    if cls == "invoice" and pid != top.get("from") and set(_codes(content, "TaxExemptionReasonCode")) & CUSTOMER_TAX_CODES:
+        blocks.add("tax")                     # the customer's registration that the exemption rests on
+    if cls == "customs" and kind == "ImportCustomsDeclaration" and "Importer" in path:
+        blocks.add("tax")                     # the import tax is accounted for under the importer's registration
+    if "legal" in blocks or "legal-full" in blocks or "capital" in blocks:
+        blocks.add("legal-name")
+    if "legal-full" in blocks:
+        blocks.add("legal")
+    if PROFILE_CAPITAL is False:
+        blocks.discard("capital")
+    return blocks
+
+
+PROFILE_CAPITAL = True
+
+
+def _codes(node, name):
+    if isinstance(node, list):
+        for x in node:
+            yield from _codes(x, name)
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            if k == name and isinstance(v, V):
+                yield v.value
+            else:
+                yield from _codes(v, name)
+
+
+def apply_profile(block, blocks, pid):
+    """Keep of a full party description only the blocks of its profile."""
+    out = {}
+    for k, v in block.items():
+        b = BLOCK_OF.get(k, "?")
+        if b is None or b in blocks:
+            out[k] = v
+        elif k == "AdditionalPartyIdentification":
+            keep = [x for x in v if ("customs" in blocks) or "customs-trader" not in str(x["ID"].attrs.get("schemeID"))]
+            if keep:
+                out[k] = keep
+        elif b == "?":
+            raise SystemExit(f"{pid}: party element {k} has no profile block")
+    if "PartyLegalEntity" in out:
+        out["PartyLegalEntity"] = {k: v for k, v in out["PartyLegalEntity"].items() if LEGAL_OF.get(k, "?") in blocks}
+        if not out["PartyLegalEntity"]:
+            del out["PartyLegalEntity"]
+    if "Person" in out and "account" not in blocks:
+        out["Person"] = {k: v for k, v in out["Person"].items() if k != "FinancialAccount"}
+    return out
+
+
+
+APPLY_PARTY_PROFILE = False    # off until the owner approves the party table (O88, analysis/party-profile.md)
+
+
+def profiled(top, path, pid):
+    """A party at its role in a document: in full, or, with the party table applied, with its profile's blocks."""
+    full = party(pid, desk=desk_for(top, path, pid) if pid in PARTY else None)
+    if not APPLY_PARTY_PROFILE:
+        return full
+    return apply_profile(full, party_profile(top, path, pid, CONTENT), pid)
+
+
+CONTENT = {}
+
 def place_parties(doc, content, top=None):
     """Put every party of the world's document at its path, as cac:Party or as a wrapper around it. The role at
     the end of the path picks the party's desk (desk_for); top is the world's document when called for a part."""
@@ -1232,17 +1404,17 @@ def place_parties(doc, content, top=None):
             if last and isinstance(pid, list):                   # several parties in one role: one element each
                 given = node.get(step) if isinstance(node.get(step), list) else []
                 node[step] = [merge(given[i] if i < len(given) else {},
-                                    party(x, desk=desk_for(top, path, x)) if target == "Party"
-                                    else {"Party": party(x, desk=desk_for(top, path, x))}) for i, x in enumerate(pid)]
+                                    profiled(top, path, x) if target == "Party"
+                                    else {"Party": profiled(top, path, x)}) for i, x in enumerate(pid)]
                 break
             if last:
                 desk = desk_for(top, path, pid) if pid in PARTY else None
                 if target == "Party":
-                    block = party(pid, desk=desk)
+                    block = profiled(top, path, pid)
                 elif target == "FinancialInstitution":
                     block = institution(pid)
                 else:                                   # a wrapper such as SupplierParty, CustomerParty
-                    block = {"Party": party(pid, desk=desk)}
+                    block = {"Party": profiled(top, path, pid)}
                 node[step] = merge(node.get(step, {}), block)
             else:
                 node = node.setdefault(step, {})
@@ -1882,7 +2054,9 @@ def currency_cleanup(content, doc):
                 src, tgt = (src.value if isinstance(src, V) else None), (tgt.value if isinstance(tgt, V) else None)
                 other = {src, tgt} - {dc, None}
                 idle = not (other & used) if dc else not ({src, tgt} <= used)   # no amount in the other currency
-                if src == tgt or (free and k == "ExchangeRate" and idle):
+                cites = "BillingReference" in node and src not in (dc, None) and tgt == dc   # paying a document
+                #                                                         in another currency, into this one
+                if src == tgt or (free and k == "ExchangeRate" and idle and not cites):
                     del node[k]
                     continue
             walk(v, free)
@@ -2379,6 +2553,8 @@ def main(flow_id, check=False):
     for n, doc in enumerate(docs, 1):
         DOC_TYPE = doc["doc"]
         content = scenario(n, doc)
+        global CONTENT
+        CONTENT = content
         content = place_parties(doc, content)
         redundant_roles(content, doc)
         declaration_invoices(content, doc)
