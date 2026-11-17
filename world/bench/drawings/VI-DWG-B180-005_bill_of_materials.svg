@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><title>Valdara Industries, Serra 180 – Bill of materials (VI-DWG-B180-005)</title><defs><style>
+        .vis{fill:none;stroke:#000;stroke-width:0.45;stroke-linejoin:round;stroke-linecap:round}
+        .thin{fill:none;stroke:#000;stroke-width:0.25}
+        .hid{fill:none;stroke:#000;stroke-width:0.22;stroke-dasharray:1.6,0.9}
+        .ctr{fill:none;stroke:#000;stroke-width:0.18;stroke-dasharray:6,1,1,1}
+        .ext{fill:none;stroke:#000;stroke-width:0.16}
+        .dimln{fill:none;stroke:#000;stroke-width:0.18}
+        .arr{fill:#000;stroke:none}
+        .dot{fill:#000}
+        .frame{fill:none;stroke:#000;stroke-width:0.7}
+        .tb{fill:none;stroke:#000;stroke-width:0.6}
+        .tbl{fill:none;stroke:#000;stroke-width:0.3}
+        .sec{fill:url(#hatch);stroke:#000;stroke-width:0.45;fill-rule:evenodd}
+        .txt{font-family:'DejaVu Sans','Liberation Sans',Arial,Helvetica,sans-serif;fill:#000}
+        .lbl{font-family:'DejaVu Sans','Liberation Sans',Arial,Helvetica,sans-serif;fill:#555}
+        .cut{fill:none;stroke:#000;stroke-width:0.7}
+        .box{fill:none;stroke:#000;stroke-width:0.3}
+        .fillg{fill:#e8e8e8;stroke:#000;stroke-width:0.3}
+        </style><pattern id="hatch" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="#000" stroke-width="0.18"/></pattern></defs><rect x="0" y="0" width="420" height="297" fill="#fff"/><rect class="frame" x="10" y="10" width="400" height="277"/><text class="txt" x="21.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Item</text>
+<text class="txt" x="33.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Part number</text>
+<text class="txt" x="67.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Description</text>
+<text class="txt" x="187.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Qty</text>
+<text class="txt" x="199.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Material</text>
+<text class="txt" x="279.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Unit kg</text>
+<text class="txt" x="299.50" y="30.00" font-size="2.8" text-anchor="start" font-weight="bold">Total kg</text>
+<polyline class="thin" points="20.00,32.00 320.00,32.00"/>
+<text class="txt" x="21.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">1</text>
+<text class="txt" x="33.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-C180</text>
+<text class="txt" x="67.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">Side frame, cast steel, hot-dip galvanised, powder coated</text>
+<text class="txt" x="187.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">2</text>
+<text class="txt" x="199.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">GE240+N (EN 10293, 1.0446)</text>
+<text class="txt" x="279.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">13.42</text>
+<text class="txt" x="299.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">26.85</text>
+<polyline class="ext" points="20.00,40.50 320.00,40.50"/>
+<text class="txt" x="21.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">2</text>
+<text class="txt" x="33.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-03</text>
+<text class="txt" x="67.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">Slat 1800 x 95 x 38, planed, 4 holes</text>
+<text class="txt" x="187.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">5</text>
+<text class="txt" x="199.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">hardwood (oak), kiln-dried 12 %</text>
+<text class="txt" x="279.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">4.45</text>
+<text class="txt" x="299.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">22.27</text>
+<polyline class="ext" points="20.00,47.50 320.00,47.50"/>
+<text class="txt" x="21.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">3</text>
+<text class="txt" x="33.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-04</text>
+<text class="txt" x="67.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">Cup square neck bolt M8 x 60, ISO 8677, HDG</text>
+<text class="txt" x="187.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">20</text>
+<text class="txt" x="199.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">steel, property class 4.6</text>
+<text class="txt" x="279.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">0.029</text>
+<text class="txt" x="299.50" y="52.00" font-size="2.6" text-anchor="start" font-weight="normal">0.57</text>
+<polyline class="ext" points="20.00,54.50 320.00,54.50"/>
+<text class="txt" x="21.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">4</text>
+<text class="txt" x="33.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-05</text>
+<text class="txt" x="67.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">Washer 8, ISO 7089, HDG</text>
+<text class="txt" x="187.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">20</text>
+<text class="txt" x="199.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">steel</text>
+<text class="txt" x="279.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">0.0019</text>
+<text class="txt" x="299.50" y="59.00" font-size="2.6" text-anchor="start" font-weight="normal">0.038</text>
+<polyline class="ext" points="20.00,61.50 320.00,61.50"/>
+<text class="txt" x="21.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">5</text>
+<text class="txt" x="33.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-06</text>
+<text class="txt" x="67.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">Hex nut M8, ISO 4032, HDG</text>
+<text class="txt" x="187.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">20</text>
+<text class="txt" x="199.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">steel, class 5</text>
+<text class="txt" x="279.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">0.0053</text>
+<text class="txt" x="299.50" y="66.00" font-size="2.6" text-anchor="start" font-weight="normal">0.106</text>
+<polyline class="ext" points="20.00,68.50 320.00,68.50"/>
+<text class="txt" x="21.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">6</text>
+<text class="txt" x="33.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-07</text>
+<text class="txt" x="67.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">Bag for the bolt set</text>
+<text class="txt" x="187.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">1</text>
+<text class="txt" x="199.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">PE</text>
+<text class="txt" x="279.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">0.02</text>
+<text class="txt" x="299.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">0.02</text>
+<polyline class="ext" points="20.00,75.50 320.00,75.50"/>
+<text class="txt" x="318.00" y="84.00" font-size="3.2" text-anchor="end" font-weight="bold">Bench net mass 49.86 kg</text>
+<text class="txt" x="20.00" y="98.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
+<text class="txt" x="20.00" y="102.50" font-size="2.4" text-anchor="start" font-weight="normal">Not part of the bench: ground anchor set (4 x M12 with levelling nuts and washers), a separate item, supplied with it.</text>
+<text class="txt" x="20.00" y="106.30" font-size="2.4" text-anchor="start" font-weight="normal">Masses computed from the solid model: steel 7850 kg/m³; wood 690 kg/m³ at 12 %; zinc per EN ISO 1461 for castings</text>
+<text class="txt" x="20.00" y="110.10" font-size="2.4" text-anchor="start" font-weight="normal">(≥ 575 g/m² mean, taken x 1.25 as typical); powder 70 µm at 1500 kg/m³; draft allowance 2.0 % of the casting.</text>
+<rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
+<polyline class="tbl" points="230.00,258.00 410.00,258.00"/>
+<text class="txt" x="233.00" y="255.20" font-size="5" text-anchor="start" font-weight="bold">Valdara Industries</text>
+<text class="txt" x="407.00" y="255.20" font-size="2.5" text-anchor="end" font-weight="normal">Ferrano, Urvania</text>
+<polyline class="tbl" points="230.00,270.00 410.00,270.00"/>
+<text class="lbl" x="233.00" y="261.50" font-size="1.8" text-anchor="start" font-weight="normal">Title</text>
+<text class="txt" x="233.00" y="267.40" font-size="4.2" text-anchor="start" font-weight="bold">Serra 180 – Bill of materials</text>
+<text class="lbl" x="231.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Drawing no.</text>
+<text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-005</text>
+<polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
+<text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A</text>
+<polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
+<text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
+<text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">–</text>
+<polyline class="tbl" points="316.00,270.00 316.00,279.50"/>
+<text class="lbl" x="317.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Size</text>
+<text class="txt" x="317.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A3</text>
+<polyline class="tbl" points="330.00,270.00 330.00,279.50"/>
+<text class="lbl" x="331.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Date</text>
+<text class="txt" x="331.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">2026-11-17</text>
+<polyline class="tbl" points="356.00,270.00 356.00,279.50"/>
+<text class="lbl" x="357.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Units</text>
+<text class="txt" x="357.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">mm</text>
+<polyline class="tbl" points="370.00,270.00 370.00,279.50"/>
+<polyline class="tbl" points="370.00,270.00 370.00,287.00"/>
+<text class="lbl" x="371.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Item</text>
+<text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
+<polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
+<text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see bill of materials   mass 49.9 kg net</text>
+<text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
+<text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>

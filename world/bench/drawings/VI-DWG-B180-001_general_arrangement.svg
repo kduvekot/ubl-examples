@@ -1,0 +1,1005 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><title>Valdara Industries, Serra 180 – General arrangement (VI-DWG-B180-001)</title><defs><style>
+        .vis{fill:none;stroke:#000;stroke-width:0.45;stroke-linejoin:round;stroke-linecap:round}
+        .thin{fill:none;stroke:#000;stroke-width:0.25}
+        .hid{fill:none;stroke:#000;stroke-width:0.22;stroke-dasharray:1.6,0.9}
+        .ctr{fill:none;stroke:#000;stroke-width:0.18;stroke-dasharray:6,1,1,1}
+        .ext{fill:none;stroke:#000;stroke-width:0.16}
+        .dimln{fill:none;stroke:#000;stroke-width:0.18}
+        .arr{fill:#000;stroke:none}
+        .dot{fill:#000}
+        .frame{fill:none;stroke:#000;stroke-width:0.7}
+        .tb{fill:none;stroke:#000;stroke-width:0.6}
+        .tbl{fill:none;stroke:#000;stroke-width:0.3}
+        .sec{fill:url(#hatch);stroke:#000;stroke-width:0.45;fill-rule:evenodd}
+        .txt{font-family:'DejaVu Sans','Liberation Sans',Arial,Helvetica,sans-serif;fill:#000}
+        .lbl{font-family:'DejaVu Sans','Liberation Sans',Arial,Helvetica,sans-serif;fill:#555}
+        .cut{fill:none;stroke:#000;stroke-width:0.7}
+        .box{fill:none;stroke:#000;stroke-width:0.3}
+        .fillg{fill:#e8e8e8;stroke:#000;stroke-width:0.3}
+        </style><pattern id="hatch" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="#000" stroke-width="0.18"/></pattern></defs><rect x="0" y="0" width="420" height="297" fill="#fff"/><rect class="frame" x="10" y="10" width="400" height="277"/><polyline class="vis" points="37.00,47.40 37.00,47.27 37.00,47.13 37.00,47.00"/>
+<polyline class="vis" points="37.00,47.40 43.00,47.40"/>
+<polyline class="vis" points="43.00,47.40 43.00,47.27 43.00,47.13 43.00,47.00"/>
+<polyline class="vis" points="43.00,47.00 37.00,47.00"/>
+<polyline class="vis" points="37.00,47.40 37.00,47.80"/>
+<polyline class="vis" points="43.00,47.40 43.00,47.80"/>
+<polyline class="vis" points="41.50,47.80 43.00,47.80"/>
+<polyline class="vis" points="41.50,47.80 41.50,70.52"/>
+<polyline class="vis" points="41.50,70.52 43.40,70.52"/>
+<polyline class="vis" points="43.40,70.52 43.40,71.32"/>
+<polyline class="vis" points="41.50,71.32 43.40,71.32"/>
+<polyline class="vis" points="41.50,71.32 41.50,110.00"/>
+<polyline class="vis" points="41.50,110.00 43.50,110.00"/>
+<polyline class="vis" points="43.50,111.00 43.50,110.00"/>
+<polyline class="vis" points="36.50,111.00 43.50,111.00"/>
+<polyline class="vis" points="36.50,111.00 36.50,110.00"/>
+<polyline class="vis" points="36.50,110.00 38.50,110.00"/>
+<polyline class="vis" points="38.50,71.32 38.50,110.00"/>
+<polyline class="vis" points="36.60,71.32 38.50,71.32"/>
+<polyline class="vis" points="36.60,70.52 36.60,71.32"/>
+<polyline class="vis" points="36.60,70.52 38.50,70.52"/>
+<polyline class="vis" points="38.50,47.80 38.50,70.52"/>
+<polyline class="vis" points="37.00,47.80 38.50,47.80"/>
+<polyline class="vis" points="36.60,44.02 36.60,53.72"/>
+<polyline class="vis" points="36.60,63.74 36.60,67.02"/>
+<polyline class="vis" points="43.40,44.02 43.40,53.72"/>
+<polyline class="vis" points="43.40,63.74 43.40,67.02"/>
+<polyline class="vis" points="37.00,47.80 38.50,47.80"/>
+<polyline class="vis" points="41.50,47.80 43.00,47.80"/>
+<polyline class="vis" points="39.60,46.31 40.40,46.31"/>
+<polyline class="vis" points="43.40,71.32 43.40,74.57"/>
+<polyline class="vis" points="43.40,74.57 43.40,77.22"/>
+<polyline class="vis" points="43.40,77.22 43.40,77.22"/>
+<polyline class="vis" points="43.40,77.22 43.40,77.34 43.40,77.47 43.40,77.59"/>
+<polyline class="vis" points="43.40,74.57 42.40,74.57"/>
+<polyline class="vis" points="41.60,74.57 41.50,74.57"/>
+<polyline class="vis" points="36.60,71.32 36.60,74.57"/>
+<polyline class="vis" points="38.50,74.57 38.40,74.57"/>
+<polyline class="vis" points="37.60,74.57 36.60,74.57"/>
+<polyline class="vis" points="36.60,74.57 36.60,77.22"/>
+<polyline class="vis" points="36.60,77.22 36.60,77.22"/>
+<polyline class="vis" points="36.60,77.22 36.60,77.34 36.60,77.47 36.60,77.59"/>
+<polyline class="vis" points="39.60,46.31 39.60,46.45 39.60,46.59 39.60,46.72 39.60,46.86 39.60,47.00"/>
+<polyline class="vis" points="40.40,46.31 40.40,46.45 40.40,46.59 40.40,46.72 40.40,46.86 40.40,47.00"/>
+<polyline class="vis" points="41.50,77.22 43.40,77.22"/>
+<polyline class="vis" points="36.60,77.22 38.50,77.22"/>
+<polyline class="vis" points="41.50,77.22 43.40,77.22"/>
+<polyline class="vis" points="36.60,77.22 38.50,77.22"/>
+<polyline class="vis" points="41.50,77.59 43.40,77.59"/>
+<polyline class="vis" points="36.60,77.59 38.50,77.59"/>
+<polyline class="vis" points="41.50,77.59 41.50,110.00"/>
+<polyline class="vis" points="38.50,77.59 38.50,110.00"/>
+<polyline class="vis" points="197.00,47.40 197.00,47.27 197.00,47.13 197.00,47.00"/>
+<polyline class="vis" points="197.00,47.40 203.00,47.40"/>
+<polyline class="vis" points="203.00,47.40 203.00,47.27 203.00,47.13 203.00,47.00"/>
+<polyline class="vis" points="203.00,47.00 197.00,47.00"/>
+<polyline class="vis" points="197.00,47.40 197.00,47.80"/>
+<polyline class="vis" points="203.00,47.40 203.00,47.80"/>
+<polyline class="vis" points="201.50,47.80 203.00,47.80"/>
+<polyline class="vis" points="201.50,47.80 201.50,70.52"/>
+<polyline class="vis" points="201.50,70.52 203.40,70.52"/>
+<polyline class="vis" points="203.40,70.52 203.40,71.32"/>
+<polyline class="vis" points="201.50,71.32 203.40,71.32"/>
+<polyline class="vis" points="201.50,71.32 201.50,110.00"/>
+<polyline class="vis" points="201.50,110.00 203.50,110.00"/>
+<polyline class="vis" points="203.50,111.00 203.50,110.00"/>
+<polyline class="vis" points="196.50,111.00 203.50,111.00"/>
+<polyline class="vis" points="196.50,111.00 196.50,110.00"/>
+<polyline class="vis" points="196.50,110.00 198.50,110.00"/>
+<polyline class="vis" points="198.50,71.32 198.50,110.00"/>
+<polyline class="vis" points="196.60,71.32 198.50,71.32"/>
+<polyline class="vis" points="196.60,70.52 196.60,71.32"/>
+<polyline class="vis" points="196.60,70.52 198.50,70.52"/>
+<polyline class="vis" points="198.50,47.80 198.50,70.52"/>
+<polyline class="vis" points="197.00,47.80 198.50,47.80"/>
+<polyline class="vis" points="196.60,44.02 196.60,53.72"/>
+<polyline class="vis" points="196.60,63.74 196.60,67.02"/>
+<polyline class="vis" points="203.40,44.02 203.40,53.72"/>
+<polyline class="vis" points="203.40,63.74 203.40,67.02"/>
+<polyline class="vis" points="197.00,47.80 198.50,47.80"/>
+<polyline class="vis" points="201.50,47.80 203.00,47.80"/>
+<polyline class="vis" points="199.60,46.31 200.40,46.31"/>
+<polyline class="vis" points="203.40,71.32 203.40,74.57"/>
+<polyline class="vis" points="203.40,74.57 203.40,77.22"/>
+<polyline class="vis" points="203.40,77.22 203.40,77.22"/>
+<polyline class="vis" points="203.40,77.22 203.40,77.34 203.40,77.47 203.40,77.59"/>
+<polyline class="vis" points="203.40,74.57 202.40,74.57"/>
+<polyline class="vis" points="201.60,74.57 201.50,74.57"/>
+<polyline class="vis" points="196.60,71.32 196.60,74.57"/>
+<polyline class="vis" points="198.50,74.57 198.40,74.57"/>
+<polyline class="vis" points="197.60,74.57 196.60,74.57"/>
+<polyline class="vis" points="196.60,74.57 196.60,77.22"/>
+<polyline class="vis" points="196.60,77.22 196.60,77.22"/>
+<polyline class="vis" points="196.60,77.22 196.60,77.34 196.60,77.47 196.60,77.59"/>
+<polyline class="vis" points="199.60,46.31 199.60,46.45 199.60,46.59 199.60,46.72 199.60,46.86 199.60,47.00"/>
+<polyline class="vis" points="200.40,46.31 200.40,46.45 200.40,46.59 200.40,46.72 200.40,46.86 200.40,47.00"/>
+<polyline class="vis" points="201.50,77.22 203.40,77.22"/>
+<polyline class="vis" points="196.60,77.22 198.50,77.22"/>
+<polyline class="vis" points="201.50,77.22 203.40,77.22"/>
+<polyline class="vis" points="196.60,77.22 198.50,77.22"/>
+<polyline class="vis" points="201.50,77.59 203.40,77.59"/>
+<polyline class="vis" points="196.60,77.59 198.50,77.59"/>
+<polyline class="vis" points="201.50,77.59 201.50,110.00"/>
+<polyline class="vis" points="198.50,77.59 198.50,110.00"/>
+<polyline class="vis" points="30.00,70.81 36.60,70.81"/>
+<polyline class="vis" points="43.40,70.81 196.60,70.81"/>
+<polyline class="vis" points="203.40,70.81 210.00,70.81"/>
+<polyline class="vis" points="30.00,70.81 30.00,71.43"/>
+<polyline class="vis" points="210.00,70.81 210.00,71.43"/>
+<polyline class="vis" points="30.00,71.43 36.60,71.43"/>
+<polyline class="vis" points="43.40,71.43 196.60,71.43"/>
+<polyline class="vis" points="203.40,71.43 210.00,71.43"/>
+<polyline class="vis" points="30.00,70.49 38.50,70.49"/>
+<polyline class="vis" points="41.50,70.49 198.50,70.49"/>
+<polyline class="vis" points="201.50,70.49 210.00,70.49"/>
+<polyline class="vis" points="30.00,70.49 30.00,70.81"/>
+<polyline class="vis" points="210.00,70.49 210.00,70.81"/>
+<polyline class="vis" points="30.00,67.02 30.00,67.30"/>
+<polyline class="vis" points="30.00,67.30 30.00,70.49"/>
+<polyline class="vis" points="210.00,67.02 210.00,67.30"/>
+<polyline class="vis" points="210.00,67.30 210.00,70.49"/>
+<polyline class="vis" points="30.00,67.30 38.50,67.30"/>
+<polyline class="vis" points="41.50,67.30 198.50,67.30"/>
+<polyline class="vis" points="201.50,67.30 210.00,67.30"/>
+<polyline class="vis" points="30.00,67.02 38.50,67.02"/>
+<polyline class="vis" points="41.50,67.02 198.50,67.02"/>
+<polyline class="vis" points="201.50,67.02 210.00,67.02"/>
+<polyline class="vis" points="30.00,71.63 36.60,71.63"/>
+<polyline class="vis" points="43.40,71.63 196.60,71.63"/>
+<polyline class="vis" points="203.40,71.63 210.00,71.63"/>
+<polyline class="vis" points="30.00,71.63 30.00,72.25"/>
+<polyline class="vis" points="210.00,71.63 210.00,72.25"/>
+<polyline class="vis" points="30.00,72.25 36.60,72.25"/>
+<polyline class="vis" points="43.40,72.25 196.60,72.25"/>
+<polyline class="vis" points="203.40,72.25 210.00,72.25"/>
+<polyline class="vis" points="30.00,71.43 30.00,71.63"/>
+<polyline class="vis" points="210.00,71.43 210.00,71.63"/>
+<polyline class="vis" points="30.00,72.44 36.60,72.44"/>
+<polyline class="vis" points="43.40,72.44 196.60,72.44"/>
+<polyline class="vis" points="203.40,72.44 210.00,72.44"/>
+<polyline class="vis" points="30.00,72.44 30.00,73.06"/>
+<polyline class="vis" points="210.00,72.44 210.00,73.06"/>
+<polyline class="vis" points="30.00,73.06 36.60,73.06"/>
+<polyline class="vis" points="43.40,73.06 196.60,73.06"/>
+<polyline class="vis" points="203.40,73.06 210.00,73.06"/>
+<polyline class="vis" points="30.00,72.25 30.00,72.44"/>
+<polyline class="vis" points="210.00,72.25 210.00,72.44"/>
+<polyline class="vis" points="30.00,63.74 38.50,63.74"/>
+<polyline class="vis" points="41.50,63.74 198.50,63.74"/>
+<polyline class="vis" points="201.50,63.74 210.00,63.74"/>
+<polyline class="vis" points="30.00,53.72 30.00,53.91"/>
+<polyline class="vis" points="30.00,53.91 30.00,62.37"/>
+<polyline class="vis" points="30.00,62.37 30.00,62.75"/>
+<polyline class="vis" points="30.00,62.75 30.00,63.74"/>
+<polyline class="vis" points="210.00,53.72 210.00,53.91"/>
+<polyline class="vis" points="210.00,53.91 210.00,62.37"/>
+<polyline class="vis" points="210.00,62.37 210.00,62.75"/>
+<polyline class="vis" points="210.00,62.75 210.00,63.74"/>
+<polyline class="vis" points="30.00,62.75 38.50,62.75"/>
+<polyline class="vis" points="41.50,62.75 198.50,62.75"/>
+<polyline class="vis" points="201.50,62.75 210.00,62.75"/>
+<polyline class="vis" points="30.00,53.72 38.50,53.72"/>
+<polyline class="vis" points="41.50,53.72 198.50,53.72"/>
+<polyline class="vis" points="201.50,53.72 210.00,53.72"/>
+<polyline class="vis" points="30.00,53.91 38.50,53.91"/>
+<polyline class="vis" points="41.50,53.91 198.50,53.91"/>
+<polyline class="vis" points="201.50,53.91 210.00,53.91"/>
+<polyline class="vis" points="30.00,62.37 38.50,62.37"/>
+<polyline class="vis" points="41.50,62.37 198.50,62.37"/>
+<polyline class="vis" points="201.50,62.37 210.00,62.37"/>
+<polyline class="vis" points="30.00,44.02 210.00,44.02"/>
+<polyline class="vis" points="30.00,34.00 30.00,34.19"/>
+<polyline class="vis" points="30.00,34.19 30.00,42.66"/>
+<polyline class="vis" points="30.00,42.66 30.00,43.03"/>
+<polyline class="vis" points="30.00,43.03 30.00,44.02"/>
+<polyline class="vis" points="210.00,34.00 210.00,34.19"/>
+<polyline class="vis" points="210.00,34.19 210.00,42.66"/>
+<polyline class="vis" points="210.00,42.66 210.00,43.03"/>
+<polyline class="vis" points="210.00,43.03 210.00,44.02"/>
+<polyline class="vis" points="30.00,43.03 210.00,43.03"/>
+<polyline class="vis" points="30.00,34.00 210.00,34.00"/>
+<polyline class="vis" points="30.00,34.19 210.00,34.19"/>
+<polyline class="vis" points="30.00,42.66 210.00,42.66"/>
+<polyline class="vis" points="38.40,73.32 38.40,72.76"/>
+<polyline class="vis" points="38.40,73.32 38.27,73.34 38.13,73.34 38.00,73.34 37.87,73.34 37.73,73.34 37.60,73.32"/>
+<polyline class="vis" points="37.60,73.32 37.73,73.30 37.87,73.29 38.00,73.29 38.13,73.29 38.27,73.30 38.40,73.32"/>
+<polyline class="vis" points="38.40,74.13 38.40,73.57"/>
+<polyline class="vis" points="38.40,74.13 38.27,74.15 38.13,74.16 38.00,74.16 37.87,74.16 37.73,74.15 37.60,74.13"/>
+<polyline class="vis" points="37.60,74.13 37.73,74.11 37.87,74.11 38.00,74.10 38.13,74.11 38.27,74.11 38.40,74.13"/>
+<polyline class="vis" points="38.40,74.95 38.40,74.39"/>
+<polyline class="vis" points="38.40,74.95 38.27,74.97 38.13,74.98 38.00,74.98 37.87,74.98 37.73,74.97 37.60,74.95"/>
+<polyline class="vis" points="37.60,74.95 37.73,74.93 37.87,74.92 38.00,74.92 38.13,74.92 38.27,74.93 38.40,74.95"/>
+<polyline class="vis" points="38.50,57.32 38.37,57.26 38.23,57.21 38.08,57.19 37.93,57.19 37.79,57.21 37.65,57.25 37.51,57.31 37.39,57.39 37.28,57.48 37.18,57.59 37.10,57.72 37.05,57.85 37.01,57.99 37.00,58.14 37.01,58.29 37.05,58.43 37.10,58.56 37.18,58.69 37.28,58.80 37.39,58.89 37.51,58.97 37.65,59.03 37.79,59.07 37.93,59.09 38.08,59.09 38.23,59.07 38.37,59.02 38.50,58.96"/>
+<polyline class="vis" points="39.00,38.42 38.99,38.28 38.95,38.13 38.89,37.99 38.81,37.87 38.71,37.76 38.60,37.66 38.47,37.58 38.33,37.53 38.19,37.49 38.04,37.47 37.89,37.48 37.74,37.51 37.60,37.55 37.47,37.62 37.34,37.71 37.24,37.81 37.15,37.93 37.08,38.06 37.03,38.20 37.00,38.35 37.00,38.50 37.03,38.65 37.08,38.79 37.15,38.92 37.24,39.04 37.34,39.14 37.47,39.23 37.60,39.30 37.74,39.34 37.89,39.37 38.04,39.37 38.19,39.36 38.33,39.32 38.47,39.26 38.60,39.19 38.71,39.09 38.81,38.98 38.89,38.86 38.95,38.72 38.99,38.57 39.00,38.42"/>
+<polyline class="vis" points="42.40,73.32 42.40,72.76"/>
+<polyline class="vis" points="42.40,73.32 42.27,73.34 42.13,73.34 42.00,73.34 41.87,73.34 41.73,73.34 41.60,73.32"/>
+<polyline class="vis" points="41.60,73.32 41.73,73.30 41.87,73.29 42.00,73.29 42.13,73.29 42.27,73.30 42.40,73.32"/>
+<polyline class="vis" points="42.40,74.13 42.40,73.57"/>
+<polyline class="vis" points="42.40,74.13 42.27,74.15 42.13,74.16 42.00,74.16 41.87,74.16 41.73,74.15 41.60,74.13"/>
+<polyline class="vis" points="41.60,74.13 41.73,74.11 41.87,74.11 42.00,74.10 42.13,74.11 42.27,74.11 42.40,74.13"/>
+<polyline class="vis" points="42.40,74.95 42.40,74.39"/>
+<polyline class="vis" points="42.40,74.95 42.27,74.97 42.13,74.98 42.00,74.98 41.87,74.98 41.73,74.97 41.60,74.95"/>
+<polyline class="vis" points="41.60,74.95 41.73,74.93 41.87,74.92 42.00,74.92 42.13,74.92 42.27,74.93 42.40,74.95"/>
+<polyline class="vis" points="43.00,58.14 42.99,57.99 42.95,57.85 42.90,57.72 42.82,57.59 42.72,57.48 42.61,57.39 42.49,57.31 42.35,57.25 42.21,57.21 42.07,57.19 41.92,57.19 41.77,57.21 41.63,57.26 41.50,57.32"/>
+<polyline class="vis" points="41.50,58.96 41.63,59.02 41.77,59.07 41.92,59.09 42.07,59.09 42.21,59.07 42.35,59.03 42.49,58.97 42.61,58.89 42.72,58.80 42.82,58.69 42.90,58.56 42.95,58.43 42.99,58.29 43.00,58.14"/>
+<polyline class="vis" points="43.00,38.42 42.99,38.28 42.95,38.13 42.89,37.99 42.81,37.87 42.71,37.76 42.60,37.66 42.47,37.58 42.33,37.53 42.19,37.49 42.04,37.47 41.89,37.48 41.74,37.51 41.60,37.55 41.47,37.62 41.34,37.71 41.24,37.81 41.15,37.93 41.08,38.06 41.03,38.20 41.00,38.35 41.00,38.50 41.03,38.65 41.08,38.79 41.15,38.92 41.24,39.04 41.34,39.14 41.47,39.23 41.60,39.30 41.74,39.34 41.89,39.37 42.04,39.37 42.19,39.36 42.33,39.32 42.47,39.26 42.60,39.19 42.71,39.09 42.81,38.98 42.89,38.86 42.95,38.72 42.99,38.57 43.00,38.42"/>
+<polyline class="vis" points="202.40,73.32 202.40,72.76"/>
+<polyline class="vis" points="202.40,73.32 202.27,73.34 202.13,73.34 202.00,73.34 201.87,73.34 201.73,73.34 201.60,73.32"/>
+<polyline class="vis" points="201.60,73.32 201.73,73.30 201.87,73.29 202.00,73.29 202.13,73.29 202.27,73.30 202.40,73.32"/>
+<polyline class="vis" points="202.40,74.13 202.40,73.57"/>
+<polyline class="vis" points="202.40,74.13 202.27,74.15 202.13,74.16 202.00,74.16 201.87,74.16 201.73,74.15 201.60,74.13"/>
+<polyline class="vis" points="201.60,74.13 201.73,74.11 201.87,74.11 202.00,74.10 202.13,74.11 202.27,74.11 202.40,74.13"/>
+<polyline class="vis" points="202.40,74.95 202.27,74.97 202.13,74.98 202.00,74.98 201.87,74.98 201.73,74.97 201.60,74.95"/>
+<polyline class="vis" points="201.60,74.95 201.73,74.93 201.87,74.92 202.00,74.92 202.13,74.92 202.27,74.93 202.40,74.95"/>
+<polyline class="vis" points="203.00,58.14 202.99,57.99 202.95,57.85 202.90,57.72 202.82,57.59 202.72,57.48 202.61,57.39 202.49,57.31 202.35,57.25 202.21,57.21 202.07,57.19 201.92,57.19 201.77,57.21 201.63,57.26 201.50,57.32"/>
+<polyline class="vis" points="201.50,58.96 201.63,59.02 201.77,59.07 201.92,59.09 202.07,59.09 202.21,59.07 202.35,59.03 202.49,58.97 202.61,58.89 202.72,58.80 202.82,58.69 202.90,58.56 202.95,58.43 202.99,58.29 203.00,58.14"/>
+<polyline class="vis" points="203.00,38.42 202.99,38.28 202.95,38.13 202.89,37.99 202.81,37.87 202.71,37.76 202.60,37.66 202.47,37.58 202.33,37.53 202.19,37.49 202.04,37.47 201.89,37.48 201.74,37.51 201.60,37.55 201.47,37.62 201.34,37.71 201.24,37.81 201.15,37.93 201.08,38.06 201.03,38.20 201.00,38.35 201.00,38.50 201.03,38.65 201.08,38.79 201.15,38.92 201.24,39.04 201.34,39.14 201.47,39.23 201.60,39.30 201.74,39.34 201.89,39.37 202.04,39.37 202.19,39.36 202.33,39.32 202.47,39.26 202.60,39.19 202.71,39.09 202.81,38.98 202.89,38.86 202.95,38.72 202.99,38.57 203.00,38.42"/>
+<polyline class="vis" points="198.40,73.32 198.40,72.76"/>
+<polyline class="vis" points="198.40,73.32 198.27,73.34 198.13,73.34 198.00,73.34 197.87,73.34 197.73,73.34 197.60,73.32"/>
+<polyline class="vis" points="197.60,73.32 197.73,73.30 197.87,73.29 198.00,73.29 198.13,73.29 198.27,73.30 198.40,73.32"/>
+<polyline class="vis" points="198.40,74.13 198.40,73.57"/>
+<polyline class="vis" points="198.40,74.13 198.27,74.15 198.13,74.16 198.00,74.16 197.87,74.16 197.73,74.15 197.60,74.13"/>
+<polyline class="vis" points="197.60,74.13 197.73,74.11 197.87,74.11 198.00,74.10 198.13,74.11 198.27,74.11 198.40,74.13"/>
+<polyline class="vis" points="198.40,74.95 198.27,74.97 198.13,74.98 198.00,74.98 197.87,74.98 197.73,74.97 197.60,74.95"/>
+<polyline class="vis" points="197.60,74.95 197.73,74.93 197.87,74.92 198.00,74.92 198.13,74.92 198.27,74.93 198.40,74.95"/>
+<polyline class="vis" points="198.50,57.32 198.37,57.26 198.23,57.21 198.08,57.19 197.93,57.19 197.79,57.21 197.65,57.25 197.51,57.31 197.39,57.39 197.28,57.48 197.18,57.59 197.10,57.72 197.05,57.85 197.01,57.99 197.00,58.14 197.01,58.29 197.05,58.43 197.10,58.56 197.18,58.69 197.28,58.80 197.39,58.89 197.51,58.97 197.65,59.03 197.79,59.07 197.93,59.09 198.08,59.09 198.23,59.07 198.37,59.02 198.50,58.96"/>
+<polyline class="vis" points="199.00,38.42 198.99,38.28 198.95,38.13 198.89,37.99 198.81,37.87 198.71,37.76 198.60,37.66 198.47,37.58 198.33,37.53 198.19,37.49 198.04,37.47 197.89,37.48 197.74,37.51 197.60,37.55 197.47,37.62 197.34,37.71 197.24,37.81 197.15,37.93 197.08,38.06 197.03,38.20 197.00,38.35 197.00,38.50 197.03,38.65 197.08,38.79 197.15,38.92 197.24,39.04 197.34,39.14 197.47,39.23 197.60,39.30 197.74,39.34 197.89,39.37 198.04,39.37 198.19,39.36 198.33,39.32 198.47,39.26 198.60,39.19 198.71,39.09 198.81,38.98 198.89,38.86 198.95,38.72 198.99,38.57 199.00,38.42"/>
+<polyline class="vis" points="37.20,71.92 37.34,71.89 37.48,71.88 37.63,71.87 37.77,71.87 37.92,71.86 38.06,71.86 38.21,71.87 38.35,71.87 38.50,71.88"/>
+<polyline class="vis" points="37.25,72.10 37.22,72.09 37.20,72.08"/>
+<polyline class="vis" points="37.20,72.08 37.34,72.05 37.48,72.04 37.63,72.03 37.77,72.03 37.92,72.02 38.06,72.02 38.21,72.03 38.35,72.03 38.50,72.04"/>
+<polyline class="vis" points="37.20,72.74 37.22,72.72 37.25,72.72"/>
+<polyline class="vis" points="37.25,72.92 37.22,72.91 37.20,72.90"/>
+<polyline class="vis" points="37.20,72.90 37.33,72.87 37.46,72.85 37.60,72.85"/>
+<polyline class="vis" points="38.40,72.85 38.45,72.85 38.50,72.85"/>
+<polyline class="vis" points="37.20,73.55 37.22,73.54 37.25,73.53"/>
+<polyline class="vis" points="37.25,73.73 37.22,73.73 37.20,73.71"/>
+<polyline class="vis" points="37.20,73.71 37.33,73.68 37.46,73.67 37.60,73.66"/>
+<polyline class="vis" points="38.40,73.66 38.45,73.67 38.50,73.67"/>
+<polyline class="vis" points="41.50,71.88 41.65,71.87 41.79,71.87 41.94,71.86 42.08,71.86 42.23,71.87 42.37,71.87 42.52,71.88 42.66,71.89 42.80,71.92"/>
+<polyline class="vis" points="42.80,72.08 42.80,71.92"/>
+<polyline class="vis" points="42.80,72.08 42.78,72.09 42.75,72.10"/>
+<polyline class="vis" points="41.50,72.04 41.65,72.03 41.79,72.03 41.94,72.02 42.08,72.02 42.23,72.03 42.37,72.03 42.52,72.04 42.66,72.05 42.80,72.08"/>
+<polyline class="vis" points="42.75,72.72 42.78,72.72 42.80,72.74"/>
+<polyline class="vis" points="42.80,72.90 42.80,72.74"/>
+<polyline class="vis" points="42.80,72.90 42.78,72.91 42.75,72.92"/>
+<polyline class="vis" points="41.50,72.85 41.55,72.85 41.60,72.85"/>
+<polyline class="vis" points="42.40,72.85 42.54,72.85 42.67,72.87 42.80,72.90"/>
+<polyline class="vis" points="42.75,73.53 42.78,73.54 42.80,73.55"/>
+<polyline class="vis" points="42.80,73.71 42.80,73.55"/>
+<polyline class="vis" points="42.80,73.71 42.78,73.73 42.75,73.73"/>
+<polyline class="vis" points="41.50,73.67 41.55,73.67 41.60,73.66"/>
+<polyline class="vis" points="42.40,73.66 42.54,73.67 42.67,73.68 42.80,73.71"/>
+<polyline class="vis" points="201.50,71.88 201.65,71.87 201.79,71.87 201.94,71.86 202.08,71.86 202.23,71.87 202.37,71.87 202.52,71.88 202.66,71.89 202.80,71.92"/>
+<polyline class="vis" points="202.80,72.08 202.80,71.92"/>
+<polyline class="vis" points="202.80,72.08 202.78,72.09 202.75,72.10"/>
+<polyline class="vis" points="201.50,72.04 201.65,72.03 201.79,72.03 201.94,72.02 202.08,72.02 202.23,72.03 202.37,72.03 202.52,72.04 202.66,72.05 202.80,72.08"/>
+<polyline class="vis" points="202.75,72.72 202.78,72.72 202.80,72.74"/>
+<polyline class="vis" points="202.80,72.90 202.80,72.74"/>
+<polyline class="vis" points="202.80,72.90 202.78,72.91 202.75,72.92"/>
+<polyline class="vis" points="201.50,72.85 201.55,72.85 201.60,72.85"/>
+<polyline class="vis" points="202.40,72.85 202.54,72.85 202.67,72.87 202.80,72.90"/>
+<polyline class="vis" points="202.75,73.53 202.78,73.54 202.80,73.55"/>
+<polyline class="vis" points="202.80,73.71 202.80,73.55"/>
+<polyline class="vis" points="202.80,73.71 202.78,73.73 202.75,73.73"/>
+<polyline class="vis" points="201.50,73.67 201.55,73.67 201.60,73.66"/>
+<polyline class="vis" points="202.40,73.66 202.54,73.67 202.67,73.68 202.80,73.71"/>
+<polyline class="vis" points="197.20,71.92 197.34,71.89 197.48,71.88 197.63,71.87 197.77,71.87 197.92,71.86 198.06,71.86 198.21,71.87 198.35,71.87 198.50,71.88"/>
+<polyline class="vis" points="197.25,72.10 197.22,72.09 197.20,72.08"/>
+<polyline class="vis" points="197.20,72.08 197.34,72.05 197.48,72.04 197.63,72.03 197.77,72.03 197.92,72.02 198.06,72.02 198.21,72.03 198.35,72.03 198.50,72.04"/>
+<polyline class="vis" points="197.20,72.74 197.22,72.72 197.25,72.72"/>
+<polyline class="vis" points="197.25,72.92 197.22,72.91 197.20,72.90"/>
+<polyline class="vis" points="197.20,72.90 197.33,72.87 197.46,72.85 197.60,72.85"/>
+<polyline class="vis" points="198.40,72.85 198.45,72.85 198.50,72.85"/>
+<polyline class="vis" points="197.20,73.55 197.22,73.54 197.25,73.53"/>
+<polyline class="vis" points="197.25,73.73 197.22,73.73 197.20,73.71"/>
+<polyline class="vis" points="197.20,73.71 197.33,73.68 197.46,73.67 197.60,73.66"/>
+<polyline class="vis" points="198.40,73.66 198.45,73.67 198.50,73.67"/>
+<polyline class="vis" points="38.50,72.79 38.40,72.80"/>
+<polyline class="vis" points="38.38,72.71 38.38,72.03"/>
+<polyline class="vis" points="38.38,72.71 38.50,72.73"/>
+<polyline class="vis" points="38.38,72.03 38.50,72.05"/>
+<polyline class="vis" points="37.62,72.71 38.38,72.71"/>
+<polyline class="vis" points="37.60,72.80 37.25,72.76"/>
+<polyline class="vis" points="37.25,72.76 37.62,72.71"/>
+<polyline class="vis" points="38.40,72.76 38.27,72.78 38.13,72.78 38.00,72.79 37.87,72.78 37.73,72.78 37.60,72.76"/>
+<polyline class="vis" points="37.60,72.76 37.73,72.74 37.87,72.73 38.00,72.73 38.13,72.73 38.27,72.74 38.40,72.76"/>
+<polyline class="vis" points="37.62,72.03 38.38,72.03"/>
+<polyline class="vis" points="37.25,72.08 37.62,72.03"/>
+<polyline class="vis" points="37.62,72.71 37.62,72.03"/>
+<polyline class="vis" points="37.25,72.76 37.25,72.08"/>
+<polyline class="vis" points="38.50,73.60 38.40,73.62"/>
+<polyline class="vis" points="38.38,73.53 38.38,73.33"/>
+<polyline class="vis" points="38.38,73.53 38.50,73.54"/>
+<polyline class="vis" points="38.40,72.85 38.50,72.87"/>
+<polyline class="vis" points="37.62,73.53 38.38,73.53"/>
+<polyline class="vis" points="37.60,73.62 37.25,73.57"/>
+<polyline class="vis" points="37.25,73.57 37.62,73.53"/>
+<polyline class="vis" points="38.40,73.57 38.27,73.59 38.13,73.60 38.00,73.60 37.87,73.60 37.73,73.59 37.60,73.57"/>
+<polyline class="vis" points="37.60,73.57 37.73,73.55 37.87,73.55 38.00,73.55 38.13,73.55 38.27,73.55 38.40,73.57"/>
+<polyline class="vis" points="37.25,72.90 37.60,72.85"/>
+<polyline class="vis" points="37.62,73.53 37.62,73.33"/>
+<polyline class="vis" points="37.25,73.57 37.25,72.90"/>
+<polyline class="vis" points="38.50,74.42 38.40,74.43"/>
+<polyline class="vis" points="38.38,74.35 38.38,74.14"/>
+<polyline class="vis" points="38.38,74.35 38.50,74.36"/>
+<polyline class="vis" points="38.40,73.67 38.50,73.68"/>
+<polyline class="vis" points="37.62,74.35 38.38,74.35"/>
+<polyline class="vis" points="37.60,74.43 37.25,74.39"/>
+<polyline class="vis" points="37.25,74.39 37.62,74.35"/>
+<polyline class="vis" points="38.40,74.39 38.27,74.41 38.13,74.42 38.00,74.42 37.87,74.42 37.73,74.41 37.60,74.39"/>
+<polyline class="vis" points="37.60,74.39 37.73,74.37 37.87,74.36 38.00,74.36 38.13,74.36 38.27,74.37 38.40,74.39"/>
+<polyline class="vis" points="37.25,73.71 37.60,73.67"/>
+<polyline class="vis" points="37.62,74.35 37.62,74.14"/>
+<polyline class="vis" points="37.25,74.39 37.25,73.71"/>
+<polyline class="vis" points="42.75,72.76 42.75,72.08"/>
+<polyline class="vis" points="42.75,72.76 42.40,72.80"/>
+<polyline class="vis" points="42.38,72.71 42.38,72.03"/>
+<polyline class="vis" points="42.38,72.71 42.75,72.76"/>
+<polyline class="vis" points="42.38,72.03 42.75,72.08"/>
+<polyline class="vis" points="41.62,72.71 42.38,72.71"/>
+<polyline class="vis" points="41.60,72.80 41.50,72.79"/>
+<polyline class="vis" points="41.50,72.73 41.62,72.71"/>
+<polyline class="vis" points="42.40,72.76 42.27,72.78 42.13,72.78 42.00,72.79 41.87,72.78 41.73,72.78 41.60,72.76"/>
+<polyline class="vis" points="41.60,72.76 41.73,72.74 41.87,72.73 42.00,72.73 42.13,72.73 42.27,72.74 42.40,72.76"/>
+<polyline class="vis" points="41.62,72.03 42.38,72.03"/>
+<polyline class="vis" points="41.50,72.05 41.62,72.03"/>
+<polyline class="vis" points="41.62,72.71 41.62,72.03"/>
+<polyline class="vis" points="42.75,73.57 42.75,72.90"/>
+<polyline class="vis" points="42.75,73.57 42.40,73.62"/>
+<polyline class="vis" points="42.38,73.53 42.38,73.33"/>
+<polyline class="vis" points="42.38,73.53 42.75,73.57"/>
+<polyline class="vis" points="42.40,72.85 42.75,72.90"/>
+<polyline class="vis" points="41.62,73.53 42.38,73.53"/>
+<polyline class="vis" points="41.60,73.62 41.50,73.60"/>
+<polyline class="vis" points="41.50,73.54 41.62,73.53"/>
+<polyline class="vis" points="42.40,73.57 42.27,73.59 42.13,73.60 42.00,73.60 41.87,73.60 41.73,73.59 41.60,73.57"/>
+<polyline class="vis" points="41.60,73.57 41.73,73.55 41.87,73.55 42.00,73.55 42.13,73.55 42.27,73.55 42.40,73.57"/>
+<polyline class="vis" points="41.50,72.87 41.60,72.85"/>
+<polyline class="vis" points="41.62,73.53 41.62,73.33"/>
+<polyline class="vis" points="42.75,74.39 42.75,73.71"/>
+<polyline class="vis" points="42.75,74.39 42.40,74.43"/>
+<polyline class="vis" points="42.38,74.35 42.38,74.14"/>
+<polyline class="vis" points="42.38,74.35 42.75,74.39"/>
+<polyline class="vis" points="42.40,73.67 42.75,73.71"/>
+<polyline class="vis" points="41.62,74.35 42.38,74.35"/>
+<polyline class="vis" points="41.60,74.43 41.50,74.42"/>
+<polyline class="vis" points="41.50,74.36 41.62,74.35"/>
+<polyline class="vis" points="42.40,74.39 42.27,74.41 42.13,74.42 42.00,74.42 41.87,74.42 41.73,74.41 41.60,74.39"/>
+<polyline class="vis" points="41.60,74.39 41.73,74.37 41.87,74.36 42.00,74.36 42.13,74.36 42.27,74.37 42.40,74.39"/>
+<polyline class="vis" points="41.50,73.68 41.60,73.67"/>
+<polyline class="vis" points="41.62,74.35 41.62,74.14"/>
+<polyline class="vis" points="202.75,72.76 202.75,72.08"/>
+<polyline class="vis" points="202.75,72.76 202.40,72.80"/>
+<polyline class="vis" points="202.38,72.71 202.38,72.03"/>
+<polyline class="vis" points="202.38,72.71 202.75,72.76"/>
+<polyline class="vis" points="202.38,72.03 202.75,72.08"/>
+<polyline class="vis" points="201.62,72.71 202.38,72.71"/>
+<polyline class="vis" points="201.60,72.80 201.50,72.79"/>
+<polyline class="vis" points="201.50,72.73 201.62,72.71"/>
+<polyline class="vis" points="202.40,72.76 202.27,72.78 202.13,72.78 202.00,72.79 201.87,72.78 201.73,72.78 201.60,72.76"/>
+<polyline class="vis" points="201.60,72.76 201.73,72.74 201.87,72.73 202.00,72.73 202.13,72.73 202.27,72.74 202.40,72.76"/>
+<polyline class="vis" points="201.62,72.03 202.38,72.03"/>
+<polyline class="vis" points="201.50,72.05 201.62,72.03"/>
+<polyline class="vis" points="201.62,72.71 201.62,72.03"/>
+<polyline class="vis" points="202.75,73.57 202.75,72.90"/>
+<polyline class="vis" points="202.75,73.57 202.40,73.62"/>
+<polyline class="vis" points="202.38,73.53 202.38,73.33"/>
+<polyline class="vis" points="202.38,73.53 202.75,73.57"/>
+<polyline class="vis" points="202.40,72.85 202.75,72.90"/>
+<polyline class="vis" points="201.62,73.53 202.38,73.53"/>
+<polyline class="vis" points="201.60,73.62 201.50,73.60"/>
+<polyline class="vis" points="201.50,73.54 201.62,73.53"/>
+<polyline class="vis" points="202.40,73.57 202.27,73.59 202.13,73.60 202.00,73.60 201.87,73.60 201.73,73.59 201.60,73.57"/>
+<polyline class="vis" points="201.60,73.57 201.73,73.55 201.87,73.55 202.00,73.55 202.13,73.55 202.27,73.55 202.40,73.57"/>
+<polyline class="vis" points="201.50,72.87 201.60,72.85"/>
+<polyline class="vis" points="201.62,73.53 201.62,73.33"/>
+<polyline class="vis" points="202.75,74.39 202.75,73.71"/>
+<polyline class="vis" points="202.75,74.39 202.40,74.43"/>
+<polyline class="vis" points="202.38,74.35 202.38,74.14"/>
+<polyline class="vis" points="202.38,74.35 202.75,74.39"/>
+<polyline class="vis" points="202.40,73.67 202.75,73.71"/>
+<polyline class="vis" points="201.62,74.35 202.38,74.35"/>
+<polyline class="vis" points="201.60,74.43 201.50,74.42"/>
+<polyline class="vis" points="201.50,74.36 201.62,74.35"/>
+<polyline class="vis" points="202.40,74.39 202.27,74.41 202.13,74.42 202.00,74.42 201.87,74.42 201.73,74.41 201.60,74.39"/>
+<polyline class="vis" points="201.60,74.39 201.73,74.37 201.87,74.36 202.00,74.36 202.13,74.36 202.27,74.37 202.40,74.39"/>
+<polyline class="vis" points="201.50,73.68 201.60,73.67"/>
+<polyline class="vis" points="201.62,74.35 201.62,74.14"/>
+<polyline class="vis" points="198.50,72.79 198.40,72.80"/>
+<polyline class="vis" points="198.38,72.71 198.38,72.03"/>
+<polyline class="vis" points="198.38,72.71 198.50,72.73"/>
+<polyline class="vis" points="198.38,72.03 198.50,72.05"/>
+<polyline class="vis" points="197.62,72.71 198.38,72.71"/>
+<polyline class="vis" points="197.60,72.80 197.25,72.76"/>
+<polyline class="vis" points="197.25,72.76 197.62,72.71"/>
+<polyline class="vis" points="198.40,72.76 198.27,72.78 198.13,72.78 198.00,72.79 197.87,72.78 197.73,72.78 197.60,72.76"/>
+<polyline class="vis" points="197.60,72.76 197.73,72.74 197.87,72.73 198.00,72.73 198.13,72.73 198.27,72.74 198.40,72.76"/>
+<polyline class="vis" points="197.62,72.03 198.38,72.03"/>
+<polyline class="vis" points="197.25,72.08 197.62,72.03"/>
+<polyline class="vis" points="197.62,72.71 197.62,72.03"/>
+<polyline class="vis" points="197.25,72.76 197.25,72.08"/>
+<polyline class="vis" points="198.50,73.60 198.40,73.62"/>
+<polyline class="vis" points="198.38,73.53 198.38,73.33"/>
+<polyline class="vis" points="198.38,73.53 198.50,73.54"/>
+<polyline class="vis" points="198.40,72.85 198.50,72.87"/>
+<polyline class="vis" points="197.62,73.53 198.38,73.53"/>
+<polyline class="vis" points="197.60,73.62 197.25,73.57"/>
+<polyline class="vis" points="197.25,73.57 197.62,73.53"/>
+<polyline class="vis" points="198.40,73.57 198.27,73.59 198.13,73.60 198.00,73.60 197.87,73.60 197.73,73.59 197.60,73.57"/>
+<polyline class="vis" points="197.60,73.57 197.73,73.55 197.87,73.55 198.00,73.55 198.13,73.55 198.27,73.55 198.40,73.57"/>
+<polyline class="vis" points="197.25,72.90 197.60,72.85"/>
+<polyline class="vis" points="197.62,73.53 197.62,73.33"/>
+<polyline class="vis" points="197.25,73.57 197.25,72.90"/>
+<polyline class="vis" points="198.50,74.42 198.40,74.43"/>
+<polyline class="vis" points="198.38,74.35 198.38,74.14"/>
+<polyline class="vis" points="198.38,74.35 198.50,74.36"/>
+<polyline class="vis" points="198.40,73.67 198.50,73.68"/>
+<polyline class="vis" points="197.62,74.35 198.38,74.35"/>
+<polyline class="vis" points="197.60,74.43 197.25,74.39"/>
+<polyline class="vis" points="197.25,74.39 197.62,74.35"/>
+<polyline class="vis" points="198.40,74.39 198.27,74.41 198.13,74.42 198.00,74.42 197.87,74.42 197.73,74.41 197.60,74.39"/>
+<polyline class="vis" points="197.60,74.39 197.73,74.37 197.87,74.36 198.00,74.36 198.13,74.36 198.27,74.37 198.40,74.39"/>
+<polyline class="vis" points="197.25,73.71 197.60,73.67"/>
+<polyline class="vis" points="197.62,74.35 197.62,74.14"/>
+<polyline class="vis" points="197.25,74.39 197.25,73.71"/>
+<polyline class="vis" points="38.50,66.98 38.37,66.94 38.23,66.91 38.09,66.89 37.95,66.89 37.82,66.90 37.68,66.93 37.55,66.97 37.42,67.02"/>
+<polyline class="vis" points="37.60,73.32 37.60,72.76"/>
+<polyline class="vis" points="37.60,74.13 37.60,73.57"/>
+<polyline class="vis" points="37.60,74.95 37.60,74.39"/>
+<polyline class="vis" points="42.58,67.02 42.45,66.97 42.32,66.93 42.18,66.90 42.05,66.89 41.91,66.89 41.77,66.91 41.63,66.94 41.50,66.98"/>
+<polyline class="vis" points="41.60,73.32 41.60,72.76"/>
+<polyline class="vis" points="41.60,74.13 41.60,73.57"/>
+<polyline class="vis" points="41.60,74.95 41.60,74.39"/>
+<polyline class="vis" points="202.58,67.02 202.45,66.97 202.32,66.93 202.18,66.90 202.05,66.89 201.91,66.89 201.77,66.91 201.63,66.94 201.50,66.98"/>
+<polyline class="vis" points="201.60,73.32 201.60,72.76"/>
+<polyline class="vis" points="201.60,74.13 201.60,73.57"/>
+<polyline class="vis" points="198.50,66.98 198.37,66.94 198.23,66.91 198.09,66.89 197.95,66.89 197.82,66.90 197.68,66.93 197.55,66.97 197.42,67.02"/>
+<polyline class="vis" points="197.60,73.32 197.60,72.76"/>
+<polyline class="vis" points="197.60,74.13 197.60,73.57"/>
+<polyline class="vis" points="37.20,72.08 37.20,71.92"/>
+<polyline class="vis" points="37.20,72.90 37.20,72.74"/>
+<polyline class="vis" points="37.20,73.71 37.20,73.55"/>
+<polyline class="vis" points="197.20,72.08 197.20,71.92"/>
+<polyline class="vis" points="197.20,72.90 197.20,72.74"/>
+<polyline class="vis" points="197.20,73.71 197.20,73.55"/>
+<polyline class="vis" points="320.00,47.40 319.98,47.28 319.92,47.16 319.84,47.08 319.72,47.02 319.60,47.00"/>
+<polyline class="vis" points="264.60,47.00 319.60,47.00"/>
+<polyline class="vis" points="320.00,47.80 264.86,47.80"/>
+<polyline class="vis" points="320.00,47.40 320.00,47.80"/>
+<polyline class="vis" points="320.00,111.00 320.00,110.00"/>
+<polyline class="vis" points="320.00,71.32 320.00,110.00"/>
+<polyline class="vis" points="320.00,70.52 320.00,71.32"/>
+<polyline class="vis" points="320.00,47.80 320.00,70.52"/>
+<polyline class="vis" points="263.57,43.83 267.22,55.08"/>
+<polyline class="vis" points="269.97,63.55 273.30,73.79"/>
+<polyline class="vis" points="273.30,73.79 283.64,73.06"/>
+<polyline class="vis" points="292.52,72.44 295.32,72.25"/>
+<polyline class="vis" points="304.19,71.63 306.99,71.43"/>
+<polyline class="vis" points="315.87,70.81 320.00,70.52"/>
+<polyline class="vis" points="320.00,110.00 308.00,110.00"/>
+<polyline class="vis" points="320.00,111.00 308.00,111.00"/>
+<polyline class="vis" points="308.00,111.00 308.00,110.00"/>
+<polyline class="vis" points="319.20,110.00 319.20,71.38"/>
+<polyline class="vis" points="320.00,71.32 273.56,74.57"/>
+<polyline class="vis" points="273.56,74.57 274.42,77.22"/>
+<polyline class="vis" points="274.42,77.22 274.40,77.22"/>
+<polyline class="vis" points="274.40,77.22 274.27,77.24 274.14,77.28 274.01,77.33 273.89,77.40 273.79,77.49 273.69,77.59"/>
+<polyline class="vis" points="273.69,77.59 272.73,74.63"/>
+<polyline class="vis" points="272.73,74.63 270.47,74.79"/>
+<polyline class="vis" points="270.47,74.79 270.22,74.00"/>
+<polyline class="vis" points="270.22,74.00 272.48,73.85"/>
+<polyline class="vis" points="272.48,73.85 260.50,36.97"/>
+<polyline class="vis" points="260.50,36.97 260.88,36.85"/>
+<polyline class="vis" points="261.38,37.11 261.33,37.00 261.24,36.91 261.13,36.85 261.00,36.83 260.88,36.85"/>
+<polyline class="vis" points="319.20,70.58 319.20,47.80"/>
+<polyline class="vis" points="264.37,46.31 264.42,46.44 264.49,46.56 264.58,46.67 264.68,46.77 264.79,46.85 264.92,46.91 265.05,46.96 265.18,46.99 265.32,47.00"/>
+<polyline class="vis" points="274.97,73.67 274.86,73.67 274.75,73.66 274.65,73.64"/>
+<polyline class="vis" points="274.64,73.64 274.64,73.64 274.65,73.64"/>
+<polyline class="vis" points="273.65,73.38 274.64,73.64"/>
+<polyline class="vis" points="273.65,73.38 273.52,73.33 273.39,73.27 273.27,73.18 273.17,73.09 273.08,72.97 273.01,72.85 272.95,72.72"/>
+<polyline class="vis" points="266.00,51.31 265.96,51.17 265.95,51.02 265.96,50.88 265.98,50.74 266.03,50.60 266.10,50.47 266.18,50.36 266.28,50.25 266.40,50.16 266.53,50.09 266.66,50.04 266.80,50.01 266.95,50.00"/>
+<polyline class="vis" points="315.50,50.00 266.95,50.00"/>
+<polyline class="vis" points="315.50,50.00 315.64,50.01 315.78,50.04 315.92,50.09 316.04,50.16 316.15,50.24 316.26,50.35 316.34,50.46 316.41,50.58 316.46,50.72 316.49,50.86 316.50,51.00"/>
+<polyline class="vis" points="316.50,69.83 316.50,51.00"/>
+<polyline class="vis" points="316.50,69.83 316.49,69.98 316.46,70.11 316.41,70.24 316.35,70.37 316.26,70.48 316.16,70.58 316.05,70.67 315.93,70.74"/>
+<polyline class="vis" points="315.43,74.35 274.42,77.22"/>
+<polyline class="vis" points="273.69,77.59 273.61,77.70 273.55,77.83 273.51,77.96"/>
+<polyline class="vis" points="270.22,74.00 261.70,47.80"/>
+<polyline class="vis" points="270.52,74.94 270.47,74.79"/>
+<polyline class="vis" points="261.44,47.00 258.53,38.03"/>
+<polyline class="vis" points="261.70,47.80 261.44,47.00"/>
+<polyline class="vis" points="258.79,37.53 260.50,36.97"/>
+<polyline class="vis" points="316.50,75.35 316.49,75.20 316.46,75.05 316.40,74.92 316.33,74.79 316.23,74.67 316.13,74.57 316.00,74.48 315.87,74.42 315.73,74.37 315.58,74.35 315.43,74.35"/>
+<polyline class="vis" points="316.50,110.00 316.50,75.35"/>
+<polyline class="vis" points="273.51,77.96 265.07,110.00"/>
+<polyline class="vis" points="261.45,110.00 270.73,74.77"/>
+<polyline class="vis" points="270.54,75.50 270.56,75.36 270.57,75.22 270.55,75.08 270.52,74.94"/>
+<polyline class="vis" points="258.79,37.53 258.67,37.59 258.59,37.68 258.53,37.79 258.51,37.91 258.53,38.03"/>
+<polyline class="vis" points="261.44,47.00 263.76,47.00"/>
+<polyline class="vis" points="264.02,47.80 261.70,47.80"/>
+<polyline class="vis" points="271.57,74.71 262.28,110.00"/>
+<polyline class="vis" points="272.10,72.69 271.79,73.89"/>
+<polyline class="vis" points="270.94,73.95 271.65,71.28"/>
+<polyline class="vis" points="270.00,110.00 258.00,110.00"/>
+<polyline class="vis" points="270.00,111.00 270.00,110.00"/>
+<polyline class="vis" points="258.00,111.00 258.00,110.00"/>
+<polyline class="vis" points="270.00,111.00 258.00,111.00"/>
+<polyline class="vis" points="264.60,47.00 319.60,47.00"/>
+<polyline class="vis" points="263.57,43.83 264.60,47.00"/>
+<polyline class="vis" points="264.86,47.80 267.22,55.08"/>
+<polyline class="vis" points="269.97,63.55 273.30,73.79"/>
+<polyline class="vis" points="260.50,36.97 260.88,36.85"/>
+<polyline class="vis" points="273.65,73.38 274.64,73.64"/>
+<polyline class="vis" points="266.00,51.31 265.96,51.17 265.95,51.02 265.96,50.88 265.98,50.74 266.03,50.60 266.10,50.47 266.18,50.36 266.28,50.25 266.40,50.16 266.53,50.09 266.66,50.04 266.80,50.01 266.95,50.00"/>
+<polyline class="vis" points="315.50,50.00 315.64,50.01 315.78,50.04 315.92,50.09 316.04,50.16 316.15,50.24 316.26,50.35 316.34,50.46 316.41,50.58 316.46,50.72 316.49,50.86 316.50,51.00"/>
+<polyline class="vis" points="273.69,77.59 273.61,77.70 273.55,77.83 273.51,77.96"/>
+<polyline class="vis" points="261.44,47.00 258.53,38.03"/>
+<polyline class="vis" points="316.50,75.35 316.49,75.20 316.46,75.05 316.40,74.92 316.33,74.79 316.23,74.67 316.13,74.57 316.00,74.48 315.87,74.42 315.73,74.37 315.58,74.35 315.43,74.35"/>
+<polyline class="vis" points="315.87,70.81 306.99,71.43"/>
+<polyline class="vis" points="316.14,70.49 315.87,70.81"/>
+<polyline class="vis" points="306.99,71.43 306.67,71.15"/>
+<polyline class="vis" points="306.67,71.15 306.44,67.96"/>
+<polyline class="vis" points="306.44,67.96 306.72,67.64"/>
+<polyline class="vis" points="306.72,67.64 315.60,67.02"/>
+<polyline class="vis" points="315.60,67.02 315.92,67.30"/>
+<polyline class="vis" points="315.92,67.30 316.14,70.49"/>
+<polyline class="vis" points="304.19,71.63 295.32,72.25"/>
+<polyline class="vis" points="304.47,71.31 304.19,71.63"/>
+<polyline class="vis" points="295.32,72.25 295.00,71.97"/>
+<polyline class="vis" points="295.00,71.97 294.77,68.78"/>
+<polyline class="vis" points="294.77,68.78 295.05,68.46"/>
+<polyline class="vis" points="295.05,68.46 303.93,67.84"/>
+<polyline class="vis" points="303.93,67.84 304.25,68.12"/>
+<polyline class="vis" points="304.25,68.12 304.47,71.31"/>
+<polyline class="vis" points="292.52,72.44 283.64,73.06"/>
+<polyline class="vis" points="292.80,72.12 292.52,72.44"/>
+<polyline class="vis" points="283.64,73.06 283.32,72.79"/>
+<polyline class="vis" points="283.32,72.79 283.10,69.59"/>
+<polyline class="vis" points="283.10,69.59 283.38,69.27"/>
+<polyline class="vis" points="283.38,69.27 292.26,68.65"/>
+<polyline class="vis" points="292.26,68.65 292.58,68.93"/>
+<polyline class="vis" points="292.58,68.93 292.80,72.12"/>
+<polyline class="vis" points="269.97,63.55 267.22,55.08"/>
+<polyline class="vis" points="270.35,63.74 269.97,63.55"/>
+<polyline class="vis" points="267.22,55.08 267.42,54.70"/>
+<polyline class="vis" points="267.42,54.70 270.46,53.72"/>
+<polyline class="vis" points="270.46,53.72 270.84,53.91"/>
+<polyline class="vis" points="270.84,53.91 273.59,62.37"/>
+<polyline class="vis" points="273.59,62.37 273.39,62.75"/>
+<polyline class="vis" points="273.39,62.75 270.35,63.74"/>
+<polyline class="vis" points="263.57,43.83 260.82,35.37"/>
+<polyline class="vis" points="263.95,44.02 263.57,43.83"/>
+<polyline class="vis" points="260.82,35.37 261.01,34.99"/>
+<polyline class="vis" points="261.01,34.99 264.05,34.00"/>
+<polyline class="vis" points="264.05,34.00 264.43,34.19"/>
+<polyline class="vis" points="264.43,34.19 267.18,42.66"/>
+<polyline class="vis" points="267.18,42.66 266.99,43.03"/>
+<polyline class="vis" points="266.99,43.03 263.95,44.02"/>
+<polyline class="vis" points="311.18,73.34 311.31,73.34 311.45,73.33 311.58,73.32 311.71,73.31 311.85,73.30 311.98,73.29"/>
+<polyline class="vis" points="299.51,74.16 299.64,74.15 299.78,74.14 299.91,74.13 300.04,74.12 300.17,74.11 300.31,74.10"/>
+<polyline class="vis" points="287.84,74.98 287.97,74.97 288.10,74.96 288.24,74.95 288.37,74.94 288.50,74.93 288.64,74.92"/>
+<polyline class="vis" points="266.38,59.61 266.42,59.74 266.46,59.87 266.51,59.99 266.55,60.12 266.59,60.25 266.63,60.37"/>
+<polyline class="vis" points="259.98,39.90 260.02,40.02 260.06,40.15 260.10,40.28 260.14,40.41 260.18,40.53 260.22,40.66"/>
+<polyline class="vis" points="310.70,72.14 310.84,72.13 310.99,72.12 311.13,72.11 311.28,72.09 311.42,72.08 311.57,72.07 311.71,72.06 311.86,72.05 312.00,72.04 312.15,72.03 312.29,72.02"/>
+<polyline class="vis" points="299.02,72.95 299.17,72.94 299.31,72.93 299.46,72.92 299.60,72.91 299.75,72.90 299.89,72.89 300.04,72.88 300.18,72.87 300.33,72.86 300.48,72.85 300.62,72.84"/>
+<polyline class="vis" points="287.35,73.77 287.50,73.76 287.64,73.75 287.79,73.74 287.93,73.73 288.08,73.72 288.22,73.71 288.37,73.70 288.51,73.69 288.66,73.68 288.80,73.67 288.95,73.66"/>
+<polyline class="vis" points="267.44,58.85 267.48,58.99 267.53,59.13 267.57,59.26 267.62,59.40 267.66,59.54 267.71,59.68 267.75,59.82 267.80,59.96 267.84,60.09 267.89,60.23 267.93,60.37"/>
+<polyline class="vis" points="261.03,39.13 261.08,39.27 261.12,39.41 261.17,39.55 261.21,39.69 261.26,39.83 261.30,39.96 261.35,40.10 261.39,40.24 261.44,40.38 261.48,40.52 261.53,40.66"/>
+<polyline class="vis" points="310.89,72.80 310.85,72.13"/>
+<polyline class="vis" points="310.89,72.80 311.54,72.76"/>
+<polyline class="vis" points="311.54,72.76 312.19,72.71"/>
+<polyline class="vis" points="312.19,72.71 312.14,72.03"/>
+<polyline class="vis" points="311.54,72.76 311.49,72.08"/>
+<polyline class="vis" points="299.22,73.62 299.17,72.94"/>
+<polyline class="vis" points="299.22,73.62 299.87,73.57"/>
+<polyline class="vis" points="299.87,73.57 300.52,73.53"/>
+<polyline class="vis" points="300.52,73.53 300.47,72.85"/>
+<polyline class="vis" points="299.87,73.57 299.82,72.90"/>
+<polyline class="vis" points="287.55,74.44 287.50,73.76"/>
+<polyline class="vis" points="287.55,74.44 288.20,74.39"/>
+<polyline class="vis" points="288.20,74.39 288.85,74.35"/>
+<polyline class="vis" points="288.85,74.35 288.80,73.67"/>
+<polyline class="vis" points="288.20,74.39 288.15,73.71"/>
+<polyline class="vis" points="266.84,59.20 267.48,58.99"/>
+<polyline class="vis" points="266.84,59.20 267.04,59.82"/>
+<polyline class="vis" points="267.04,59.82 267.24,60.44"/>
+<polyline class="vis" points="267.24,60.44 267.89,60.23"/>
+<polyline class="vis" points="267.04,59.82 267.68,59.61"/>
+<polyline class="vis" points="260.43,39.49 261.08,39.28"/>
+<polyline class="vis" points="260.43,39.49 260.63,40.11"/>
+<polyline class="vis" points="260.63,40.11 260.83,40.72"/>
+<polyline class="vis" points="260.83,40.72 261.48,40.51"/>
+<polyline class="vis" points="260.63,40.11 261.28,39.90"/>
+<polyline class="vis" points="312.16,67.26 312.05,67.17 311.94,67.09 311.81,67.02 311.68,66.97 311.55,66.93 311.41,66.90 311.27,66.89 311.13,66.89"/>
+<polyline class="vis" points="311.13,66.89 310.99,66.91 310.85,66.94 310.72,66.99 310.59,67.05 310.47,67.12 310.36,67.20 310.26,67.30 310.16,67.40"/>
+<polyline class="vis" points="311.98,73.29 311.94,72.73"/>
+<polyline class="vis" points="311.18,73.34 311.14,72.79"/>
+<polyline class="vis" points="300.49,68.08 300.38,67.99 300.27,67.91 300.14,67.84 300.01,67.79 299.88,67.74 299.74,67.72 299.60,67.71 299.46,67.71"/>
+<polyline class="vis" points="299.46,67.71 299.32,67.73 299.18,67.76 299.05,67.80 298.92,67.86 298.80,67.93 298.69,68.02 298.59,68.11 298.49,68.22"/>
+<polyline class="vis" points="300.31,74.10 300.27,73.55"/>
+<polyline class="vis" points="299.51,74.16 299.47,73.60"/>
+<polyline class="vis" points="288.82,68.89 288.71,68.80 288.59,68.72 288.47,68.66 288.34,68.60 288.21,68.56 288.07,68.53 287.93,68.52 287.79,68.52"/>
+<polyline class="vis" points="287.79,68.52 287.65,68.54 287.51,68.57 287.38,68.62 287.25,68.68 287.13,68.75 287.02,68.83 286.91,68.93 286.82,69.03"/>
+<polyline class="vis" points="288.64,74.92 288.60,74.36"/>
+<polyline class="vis" points="287.84,74.98 287.80,74.42"/>
+<polyline class="vis" points="272.52,59.09 272.58,58.97 272.63,58.83 272.67,58.70 272.69,58.56 272.70,58.42 272.69,58.28 272.67,58.14 272.63,58.00"/>
+<polyline class="vis" points="272.63,58.00 272.58,57.87 272.52,57.75 272.44,57.63 272.35,57.52 272.25,57.42 272.14,57.33 272.03,57.25 271.90,57.19"/>
+<polyline class="vis" points="266.63,60.37 267.16,60.20"/>
+<polyline class="vis" points="266.38,59.61 266.91,59.44"/>
+<polyline class="vis" points="266.12,39.38 266.18,39.25 266.23,39.12 266.26,38.98 266.28,38.84 266.29,38.70 266.28,38.56 266.26,38.42 266.22,38.29"/>
+<polyline class="vis" points="266.22,38.29 266.17,38.16 266.11,38.03 266.03,37.91 265.95,37.80 265.85,37.70 265.74,37.62 265.62,37.54 265.50,37.47"/>
+<polyline class="vis" points="260.22,40.66 260.76,40.49"/>
+<polyline class="vis" points="259.98,39.90 260.51,39.73"/>
+<polyline class="vis" points="287.79,68.52 287.65,68.54 287.51,68.57 287.38,68.62 287.25,68.68 287.13,68.75 287.02,68.83 286.91,68.93 286.82,69.03"/>
+<polyline class="vis" points="287.79,68.52 287.65,68.54 287.51,68.57 287.38,68.62 287.25,68.68 287.13,68.75 287.02,68.83 286.91,68.93 286.82,69.03"/>
+<polyline class="vis" points="312.29,72.02 312.28,71.86"/>
+<polyline class="vis" points="310.70,72.14 310.68,71.98"/>
+<polyline class="vis" points="300.62,72.84 300.61,72.68"/>
+<polyline class="vis" points="299.02,72.95 299.01,72.79"/>
+<polyline class="vis" points="288.95,73.66 288.94,73.50"/>
+<polyline class="vis" points="287.35,73.77 287.34,73.61"/>
+<polyline class="vis" points="267.93,60.37 268.08,60.32"/>
+<polyline class="vis" points="267.44,58.85 267.59,58.80"/>
+<polyline class="vis" points="261.53,40.66 261.68,40.61"/>
+<polyline class="vis" points="261.03,39.13 261.18,39.09"/>
+<polyline class="vis" points="37.00,205.00 37.00,204.87 37.00,204.73 37.00,204.60"/>
+<polyline class="vis" points="37.00,205.00 43.00,205.00"/>
+<polyline class="vis" points="43.00,205.00 43.00,204.87 43.00,204.73 43.00,204.60"/>
+<polyline class="vis" points="43.00,204.60 37.00,204.60"/>
+<polyline class="vis" points="37.00,152.18 37.00,204.60"/>
+<polyline class="vis" points="43.00,205.00 43.40,205.00"/>
+<polyline class="vis" points="43.40,205.00 43.50,205.00"/>
+<polyline class="vis" points="36.50,205.00 36.60,205.00"/>
+<polyline class="vis" points="36.60,205.00 37.00,205.00"/>
+<polyline class="vis" points="43.00,152.18 43.00,204.60"/>
+<polyline class="vis" points="36.60,152.18 36.60,152.22"/>
+<polyline class="vis" points="43.40,152.18 43.40,152.22"/>
+<polyline class="vis" points="36.60,158.59 36.60,168.10"/>
+<polyline class="vis" points="36.60,177.80 36.60,179.77"/>
+<polyline class="vis" points="36.60,189.47 36.60,191.44"/>
+<polyline class="vis" points="36.60,201.14 36.60,205.00"/>
+<polyline class="vis" points="43.40,158.59 43.40,168.10"/>
+<polyline class="vis" points="43.40,177.80 43.40,179.77"/>
+<polyline class="vis" points="43.40,189.47 43.40,191.44"/>
+<polyline class="vis" points="43.40,201.14 43.40,205.00"/>
+<polyline class="vis" points="43.40,145.50 43.40,145.82"/>
+<polyline class="vis" points="43.50,205.00 43.50,201.14"/>
+<polyline class="vis" points="36.50,205.00 36.50,201.14"/>
+<polyline class="vis" points="36.60,145.50 36.60,145.82"/>
+<polyline class="vis" points="40.40,145.50 43.40,145.50"/>
+<polyline class="vis" points="36.60,145.50 39.60,145.50"/>
+<polyline class="vis" points="39.60,143.79 39.60,145.50"/>
+<polyline class="vis" points="39.60,143.79 40.40,143.79"/>
+<polyline class="vis" points="40.40,143.79 40.40,145.50"/>
+<polyline class="vis" points="40.40,143.79 40.40,143.65 40.40,143.51"/>
+<polyline class="vis" points="40.40,143.51 40.40,143.52 40.40,143.53"/>
+<polyline class="vis" points="39.60,143.79 39.60,143.65 39.60,143.51"/>
+<polyline class="vis" points="39.60,143.51 39.60,143.52 39.60,143.53"/>
+<polyline class="vis" points="36.50,152.22 36.50,152.18"/>
+<polyline class="vis" points="36.50,145.82 36.50,143.00"/>
+<polyline class="vis" points="36.50,143.00 43.50,143.00"/>
+<polyline class="vis" points="43.50,152.22 43.50,152.18"/>
+<polyline class="vis" points="43.50,145.82 43.50,143.00"/>
+<polyline class="vis" points="197.00,205.00 197.00,204.87 197.00,204.73 197.00,204.60"/>
+<polyline class="vis" points="197.00,205.00 203.00,205.00"/>
+<polyline class="vis" points="203.00,205.00 203.00,204.87 203.00,204.73 203.00,204.60"/>
+<polyline class="vis" points="203.00,204.60 197.00,204.60"/>
+<polyline class="vis" points="197.00,152.18 197.00,204.60"/>
+<polyline class="vis" points="203.00,205.00 203.40,205.00"/>
+<polyline class="vis" points="203.40,205.00 203.50,205.00"/>
+<polyline class="vis" points="196.50,205.00 196.60,205.00"/>
+<polyline class="vis" points="196.60,205.00 197.00,205.00"/>
+<polyline class="vis" points="203.00,152.18 203.00,204.60"/>
+<polyline class="vis" points="196.60,152.18 196.60,152.22"/>
+<polyline class="vis" points="203.40,152.18 203.40,152.22"/>
+<polyline class="vis" points="196.60,158.59 196.60,168.10"/>
+<polyline class="vis" points="196.60,177.80 196.60,179.77"/>
+<polyline class="vis" points="196.60,189.47 196.60,191.44"/>
+<polyline class="vis" points="196.60,201.14 196.60,205.00"/>
+<polyline class="vis" points="203.40,158.59 203.40,168.10"/>
+<polyline class="vis" points="203.40,177.80 203.40,179.77"/>
+<polyline class="vis" points="203.40,189.47 203.40,191.44"/>
+<polyline class="vis" points="203.40,201.14 203.40,205.00"/>
+<polyline class="vis" points="203.40,145.50 203.40,145.82"/>
+<polyline class="vis" points="203.50,205.00 203.50,201.14"/>
+<polyline class="vis" points="196.50,205.00 196.50,201.14"/>
+<polyline class="vis" points="196.60,145.50 196.60,145.82"/>
+<polyline class="vis" points="200.40,145.50 203.40,145.50"/>
+<polyline class="vis" points="196.60,145.50 199.60,145.50"/>
+<polyline class="vis" points="199.60,143.79 199.60,145.50"/>
+<polyline class="vis" points="199.60,143.79 200.40,143.79"/>
+<polyline class="vis" points="200.40,143.79 200.40,145.50"/>
+<polyline class="vis" points="200.40,143.79 200.40,143.65 200.40,143.51"/>
+<polyline class="vis" points="200.40,143.51 200.40,143.52 200.40,143.53"/>
+<polyline class="vis" points="199.60,143.79 199.60,143.65 199.60,143.51"/>
+<polyline class="vis" points="199.60,143.51 199.60,143.52 199.60,143.53"/>
+<polyline class="vis" points="196.50,152.22 196.50,152.18"/>
+<polyline class="vis" points="196.50,145.82 196.50,143.00"/>
+<polyline class="vis" points="196.50,143.00 203.50,143.00"/>
+<polyline class="vis" points="203.50,152.22 203.50,152.18"/>
+<polyline class="vis" points="203.50,145.82 203.50,143.00"/>
+<polyline class="vis" points="30.00,201.14 37.00,201.14"/>
+<polyline class="vis" points="43.00,201.14 197.00,201.14"/>
+<polyline class="vis" points="203.00,201.14 210.00,201.14"/>
+<polyline class="vis" points="30.00,191.44 30.00,191.72"/>
+<polyline class="vis" points="30.00,191.72 30.00,200.60"/>
+<polyline class="vis" points="30.00,200.60 30.00,200.92"/>
+<polyline class="vis" points="30.00,200.92 30.00,201.14"/>
+<polyline class="vis" points="210.00,191.44 210.00,191.72"/>
+<polyline class="vis" points="210.00,191.72 210.00,200.60"/>
+<polyline class="vis" points="210.00,200.60 210.00,200.92"/>
+<polyline class="vis" points="210.00,200.92 210.00,201.14"/>
+<polyline class="vis" points="30.00,200.92 37.00,200.92"/>
+<polyline class="vis" points="43.00,200.92 197.00,200.92"/>
+<polyline class="vis" points="203.00,200.92 210.00,200.92"/>
+<polyline class="vis" points="30.00,191.44 37.00,191.44"/>
+<polyline class="vis" points="43.00,191.44 197.00,191.44"/>
+<polyline class="vis" points="203.00,191.44 210.00,191.44"/>
+<polyline class="vis" points="30.00,191.72 37.00,191.72"/>
+<polyline class="vis" points="43.00,191.72 197.00,191.72"/>
+<polyline class="vis" points="203.00,191.72 210.00,191.72"/>
+<polyline class="vis" points="30.00,200.60 37.00,200.60"/>
+<polyline class="vis" points="43.00,200.60 197.00,200.60"/>
+<polyline class="vis" points="203.00,200.60 210.00,200.60"/>
+<polyline class="vis" points="30.00,189.47 37.00,189.47"/>
+<polyline class="vis" points="43.00,189.47 197.00,189.47"/>
+<polyline class="vis" points="203.00,189.47 210.00,189.47"/>
+<polyline class="vis" points="30.00,179.77 30.00,180.05"/>
+<polyline class="vis" points="30.00,180.05 30.00,188.93"/>
+<polyline class="vis" points="30.00,188.93 30.00,189.25"/>
+<polyline class="vis" points="30.00,189.25 30.00,189.47"/>
+<polyline class="vis" points="210.00,179.77 210.00,180.05"/>
+<polyline class="vis" points="210.00,180.05 210.00,188.93"/>
+<polyline class="vis" points="210.00,188.93 210.00,189.25"/>
+<polyline class="vis" points="210.00,189.25 210.00,189.47"/>
+<polyline class="vis" points="30.00,189.25 37.00,189.25"/>
+<polyline class="vis" points="43.00,189.25 197.00,189.25"/>
+<polyline class="vis" points="203.00,189.25 210.00,189.25"/>
+<polyline class="vis" points="30.00,179.77 37.00,179.77"/>
+<polyline class="vis" points="43.00,179.77 197.00,179.77"/>
+<polyline class="vis" points="203.00,179.77 210.00,179.77"/>
+<polyline class="vis" points="30.00,180.05 37.00,180.05"/>
+<polyline class="vis" points="43.00,180.05 197.00,180.05"/>
+<polyline class="vis" points="203.00,180.05 210.00,180.05"/>
+<polyline class="vis" points="30.00,188.93 37.00,188.93"/>
+<polyline class="vis" points="43.00,188.93 197.00,188.93"/>
+<polyline class="vis" points="203.00,188.93 210.00,188.93"/>
+<polyline class="vis" points="30.00,177.80 37.00,177.80"/>
+<polyline class="vis" points="43.00,177.80 197.00,177.80"/>
+<polyline class="vis" points="203.00,177.80 210.00,177.80"/>
+<polyline class="vis" points="30.00,168.10 30.00,168.38"/>
+<polyline class="vis" points="30.00,168.38 30.00,177.26"/>
+<polyline class="vis" points="30.00,177.26 30.00,177.58"/>
+<polyline class="vis" points="30.00,177.58 30.00,177.80"/>
+<polyline class="vis" points="210.00,168.10 210.00,168.38"/>
+<polyline class="vis" points="210.00,168.38 210.00,177.26"/>
+<polyline class="vis" points="210.00,177.26 210.00,177.58"/>
+<polyline class="vis" points="210.00,177.58 210.00,177.80"/>
+<polyline class="vis" points="30.00,177.58 37.00,177.58"/>
+<polyline class="vis" points="43.00,177.58 197.00,177.58"/>
+<polyline class="vis" points="203.00,177.58 210.00,177.58"/>
+<polyline class="vis" points="30.00,168.10 37.00,168.10"/>
+<polyline class="vis" points="43.00,168.10 197.00,168.10"/>
+<polyline class="vis" points="203.00,168.10 210.00,168.10"/>
+<polyline class="vis" points="30.00,168.38 37.00,168.38"/>
+<polyline class="vis" points="43.00,168.38 197.00,168.38"/>
+<polyline class="vis" points="203.00,168.38 210.00,168.38"/>
+<polyline class="vis" points="30.00,177.26 37.00,177.26"/>
+<polyline class="vis" points="43.00,177.26 197.00,177.26"/>
+<polyline class="vis" points="203.00,177.26 210.00,177.26"/>
+<polyline class="vis" points="30.00,152.22 37.00,152.22"/>
+<polyline class="vis" points="43.00,152.22 197.00,152.22"/>
+<polyline class="vis" points="203.00,152.22 210.00,152.22"/>
+<polyline class="vis" points="30.00,152.22 30.00,152.42"/>
+<polyline class="vis" points="30.00,152.42 30.00,155.46"/>
+<polyline class="vis" points="30.00,155.46 30.00,155.84"/>
+<polyline class="vis" points="30.00,155.84 30.00,158.59"/>
+<polyline class="vis" points="210.00,152.22 210.00,152.42"/>
+<polyline class="vis" points="210.00,152.42 210.00,155.46"/>
+<polyline class="vis" points="210.00,155.46 210.00,155.84"/>
+<polyline class="vis" points="210.00,155.84 210.00,158.59"/>
+<polyline class="vis" points="30.00,152.42 37.00,152.42"/>
+<polyline class="vis" points="43.00,152.42 197.00,152.42"/>
+<polyline class="vis" points="203.00,152.42 210.00,152.42"/>
+<polyline class="vis" points="30.00,155.46 37.00,155.46"/>
+<polyline class="vis" points="43.00,155.46 197.00,155.46"/>
+<polyline class="vis" points="203.00,155.46 210.00,155.46"/>
+<polyline class="vis" points="30.00,155.84 37.00,155.84"/>
+<polyline class="vis" points="43.00,155.84 197.00,155.84"/>
+<polyline class="vis" points="203.00,155.84 210.00,155.84"/>
+<polyline class="vis" points="30.00,158.59 37.00,158.59"/>
+<polyline class="vis" points="43.00,158.59 197.00,158.59"/>
+<polyline class="vis" points="203.00,158.59 210.00,158.59"/>
+<polyline class="vis" points="30.00,145.82 210.00,145.82"/>
+<polyline class="vis" points="30.00,145.82 30.00,146.01"/>
+<polyline class="vis" points="30.00,146.01 30.00,149.05"/>
+<polyline class="vis" points="30.00,149.05 30.00,149.43"/>
+<polyline class="vis" points="30.00,149.43 30.00,152.18"/>
+<polyline class="vis" points="210.00,145.82 210.00,146.01"/>
+<polyline class="vis" points="210.00,146.01 210.00,149.05"/>
+<polyline class="vis" points="210.00,149.05 210.00,149.43"/>
+<polyline class="vis" points="210.00,149.43 210.00,152.18"/>
+<polyline class="vis" points="30.00,146.01 210.00,146.01"/>
+<polyline class="vis" points="30.00,149.05 210.00,149.05"/>
+<polyline class="vis" points="30.00,149.43 210.00,149.43"/>
+<polyline class="vis" points="30.00,152.18 210.00,152.18"/>
+<polyline class="vis" points="39.00,150.81 38.93,150.69 38.80,150.62 38.66,150.57 38.52,150.54 38.38,150.52 38.24,150.51 38.09,150.50 37.95,150.50 37.80,150.50 37.66,150.52 37.52,150.54 37.38,150.56 37.24,150.61 37.11,150.67 37.01,150.77 37.05,150.90"/>
+<polyline class="vis" points="38.95,150.90 38.99,150.86 39.00,150.81"/>
+<polyline class="vis" points="38.40,145.10 38.40,145.44"/>
+<polyline class="vis" points="38.40,145.10 38.29,145.01 38.15,144.98 38.00,144.98 37.85,144.98 37.71,145.01 37.60,145.10"/>
+<polyline class="vis" points="43.00,150.81 42.93,150.69 42.80,150.62 42.66,150.57 42.52,150.54 42.38,150.52 42.24,150.51 42.09,150.50 41.95,150.50 41.80,150.50 41.66,150.52 41.52,150.54 41.38,150.56 41.24,150.61 41.11,150.67 41.01,150.77 41.05,150.90"/>
+<polyline class="vis" points="42.95,150.90 42.99,150.86 43.00,150.81"/>
+<polyline class="vis" points="42.40,145.10 42.40,145.44"/>
+<polyline class="vis" points="42.40,145.10 42.29,145.01 42.15,144.98 42.00,144.98 41.85,144.98 41.71,145.01 41.60,145.10"/>
+<polyline class="vis" points="203.00,150.81 202.93,150.69 202.80,150.62 202.66,150.57 202.52,150.54 202.38,150.52 202.24,150.51 202.09,150.50 201.95,150.50 201.80,150.50 201.66,150.52 201.52,150.54 201.38,150.56 201.24,150.61 201.11,150.67 201.01,150.77 201.05,150.90"/>
+<polyline class="vis" points="202.95,150.90 202.99,150.86 203.00,150.81"/>
+<polyline class="vis" points="202.40,145.10 202.40,145.44"/>
+<polyline class="vis" points="202.40,145.10 202.29,145.01 202.15,144.98 202.00,144.98 201.85,144.98 201.71,145.01 201.60,145.10"/>
+<polyline class="vis" points="199.00,150.81 198.93,150.69 198.80,150.62 198.66,150.57 198.52,150.54 198.38,150.52 198.24,150.51 198.09,150.50 197.95,150.50 197.80,150.50 197.66,150.52 197.52,150.54 197.38,150.56 197.24,150.61 197.11,150.67 197.01,150.77 197.05,150.90"/>
+<polyline class="vis" points="198.95,150.90 198.99,150.86 199.00,150.81"/>
+<polyline class="vis" points="198.40,145.10 198.40,145.44"/>
+<polyline class="vis" points="198.40,145.10 198.29,145.01 198.15,144.98 198.00,144.98 197.85,144.98 197.71,145.01 197.60,145.10"/>
+<polyline class="vis" points="38.38,145.43 38.38,145.50"/>
+<polyline class="vis" points="38.50,145.50 38.38,145.43"/>
+<polyline class="vis" points="37.62,145.43 37.62,145.50"/>
+<polyline class="vis" points="38.38,145.43 37.62,145.43"/>
+<polyline class="vis" points="37.62,145.43 37.50,145.50"/>
+<polyline class="vis" points="42.38,145.43 42.38,145.50"/>
+<polyline class="vis" points="42.50,145.50 42.38,145.43"/>
+<polyline class="vis" points="41.62,145.43 41.62,145.50"/>
+<polyline class="vis" points="42.38,145.43 41.62,145.43"/>
+<polyline class="vis" points="41.62,145.43 41.50,145.50"/>
+<polyline class="vis" points="202.38,145.43 202.38,145.50"/>
+<polyline class="vis" points="202.50,145.50 202.38,145.43"/>
+<polyline class="vis" points="201.62,145.43 201.62,145.50"/>
+<polyline class="vis" points="202.38,145.43 201.62,145.43"/>
+<polyline class="vis" points="201.62,145.43 201.50,145.50"/>
+<polyline class="vis" points="198.38,145.43 198.38,145.50"/>
+<polyline class="vis" points="198.50,145.50 198.38,145.43"/>
+<polyline class="vis" points="197.62,145.43 197.62,145.50"/>
+<polyline class="vis" points="198.38,145.43 197.62,145.43"/>
+<polyline class="vis" points="197.62,145.43 197.50,145.50"/>
+<polyline class="vis" points="40.40,143.51 39.60,143.51"/>
+<polyline class="vis" points="200.40,143.51 199.60,143.51"/>
+<polyline class="vis" points="37.05,150.90 37.15,150.99 37.27,151.07 37.39,151.14 37.52,151.20 37.65,151.25 37.79,151.27 37.93,151.29 38.07,151.29 38.21,151.27 38.35,151.25 38.48,151.20 38.61,151.14 38.73,151.07 38.85,150.99 38.95,150.90"/>
+<polyline class="vis" points="37.60,145.10 37.60,145.44"/>
+<polyline class="vis" points="41.05,150.90 41.15,150.99 41.27,151.07 41.39,151.14 41.52,151.20 41.65,151.25 41.79,151.27 41.93,151.29 42.07,151.29 42.21,151.27 42.35,151.25 42.48,151.20 42.61,151.14 42.73,151.07 42.85,150.99 42.95,150.90"/>
+<polyline class="vis" points="41.60,145.10 41.60,145.44"/>
+<polyline class="vis" points="201.05,150.90 201.15,150.99 201.27,151.07 201.39,151.14 201.52,151.20 201.65,151.25 201.79,151.27 201.93,151.29 202.07,151.29 202.21,151.27 202.35,151.25 202.48,151.20 202.61,151.14 202.73,151.07 202.85,150.99 202.95,150.90"/>
+<polyline class="vis" points="201.60,145.10 201.60,145.44"/>
+<polyline class="vis" points="197.05,150.90 197.15,150.99 197.27,151.07 197.39,151.14 197.52,151.20 197.65,151.25 197.79,151.27 197.93,151.29 198.07,151.29 198.21,151.27 198.35,151.25 198.48,151.20 198.61,151.14 198.73,151.07 198.85,150.99 198.95,150.90"/>
+<polyline class="vis" points="197.60,145.10 197.60,145.44"/>
+<text class="txt" x="120.00" y="132.00" font-size="3.5" text-anchor="middle" font-weight="bold">FRONT VIEW</text>
+<text class="txt" x="289.00" y="132.00" font-size="3.5" text-anchor="middle" font-weight="bold">VIEW FROM THE LEFT</text>
+<text class="txt" x="120.00" y="222.00" font-size="3.5" text-anchor="middle" font-weight="bold">TOP VIEW</text>
+<polyline class="ext" points="30.00,33.20 30.00,26.80"/>
+<polyline class="ext" points="210.00,33.20 210.00,26.80"/>
+<polyline class="dimln" points="30.00,28.00 210.00,28.00"/>
+<polygon class="arr" points="30.00,28.00 32.60,27.45 32.60,28.55"/>
+<polygon class="arr" points="210.00,28.00 207.40,28.55 207.40,27.45"/>
+<text class="txt" x="120.00" y="27.10" font-size="2.5" text-anchor="middle" font-weight="normal">1800 over the slats</text>
+<polyline class="ext" points="37.00,33.20 37.00,19.80"/>
+<polyline class="ext" points="203.00,33.20 203.00,19.80"/>
+<polyline class="dimln" points="37.00,21.00 203.00,21.00"/>
+<polygon class="arr" points="37.00,21.00 39.60,20.45 39.60,21.55"/>
+<polygon class="arr" points="203.00,21.00 200.40,21.55 200.40,20.45"/>
+<text class="txt" x="120.00" y="20.10" font-size="2.5" text-anchor="middle" font-weight="normal">1660 over the armrests</text>
+<polyline class="ext" points="40.00,112.80 40.00,121.20"/>
+<polyline class="ext" points="200.00,112.80 200.00,121.20"/>
+<polyline class="dimln" points="40.00,120.00 200.00,120.00"/>
+<polygon class="arr" points="40.00,120.00 42.60,119.45 42.60,120.55"/>
+<polygon class="arr" points="200.00,120.00 197.40,120.55 197.40,119.45"/>
+<text class="txt" x="120.00" y="119.10" font-size="2.5" text-anchor="middle" font-weight="normal">1600 frame centres</text>
+<polyline class="ext" points="29.20,112.00 22.80,112.00"/>
+<polyline class="ext" points="29.20,34.00 22.80,34.00"/>
+<polyline class="dimln" points="24.00,112.00 24.00,34.00"/>
+<polygon class="arr" points="24.00,112.00 23.45,109.40 24.55,109.40"/>
+<polygon class="arr" points="24.00,34.00 24.55,36.60 23.45,36.60"/>
+<text class="txt" x="23.10" y="73.00" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 23.10 73.00)">780</text>
+<polyline class="ext" points="210.80,112.00 217.20,112.00"/>
+<polyline class="ext" points="210.80,67.00 217.20,67.00"/>
+<polyline class="dimln" points="216.00,112.00 216.00,67.00"/>
+<polygon class="arr" points="216.00,112.00 215.45,109.40 216.55,109.40"/>
+<polygon class="arr" points="216.00,67.00 216.55,69.60 215.45,69.60"/>
+<text class="txt" x="215.10" y="89.50" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 215.10 89.50)">450 (440–460)</text>
+<polyline class="ext" points="210.80,112.00 227.20,112.00"/>
+<polyline class="ext" points="210.80,47.00 227.20,47.00"/>
+<polyline class="dimln" points="226.00,112.00 226.00,47.00"/>
+<polygon class="arr" points="226.00,112.00 225.45,109.40 226.55,109.40"/>
+<polygon class="arr" points="226.00,47.00 226.55,49.60 225.45,49.60"/>
+<text class="txt" x="225.10" y="79.50" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 225.10 79.50)">650</text>
+<polyline class="thin" points="29.00,112.00 213.00,112.00"/>
+<text class="txt" x="213.50" y="111.80" font-size="2.2" text-anchor="start" font-weight="normal">ground</text>
+<polyline class="ext" points="258.00,112.80 258.00,121.20"/>
+<polyline class="ext" points="320.00,112.80 320.00,121.20"/>
+<polyline class="dimln" points="258.00,120.00 320.00,120.00"/>
+<polygon class="arr" points="258.00,120.00 260.60,119.45 260.60,120.55"/>
+<polygon class="arr" points="320.00,120.00 317.40,120.55 317.40,119.45"/>
+<text class="txt" x="289.00" y="119.10" font-size="2.5" text-anchor="middle" font-weight="normal">620</text>
+<polyline class="ext" points="315.84,66.20 315.26,57.82"/>
+<polyline class="ext" points="275.94,68.99 275.36,60.61"/>
+<polyline class="dimln" points="315.34,59.02 275.44,61.81"/>
+<polygon class="arr" points="315.34,59.02 312.79,59.75 312.71,58.65"/>
+<polygon class="arr" points="275.44,61.81 277.99,61.08 278.07,62.18"/>
+<text class="txt" x="295.33" y="59.52" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(356.00 295.33 59.52)">seat depth 400</text>
+<polyline class="ext" points="264.34,33.11 264.34,28.71"/>
+<polyline class="ext" points="320.00,33.11 320.00,28.71"/>
+<polyline class="dimln" points="264.34,29.91 320.00,29.91"/>
+<polygon class="arr" points="264.34,29.91 266.94,29.36 266.94,30.46"/>
+<polygon class="arr" points="320.00,29.91 317.40,30.46 317.40,29.36"/>
+<text class="txt" x="292.17" y="29.01" font-size="2.5" text-anchor="middle" font-weight="normal">557 front to top of back</text>
+<polyline class="dimln" points="300.90,68.00 334.00,60.00 342.00,60.00"/>
+<polygon class="arr" points="300.90,68.00 303.30,66.85 303.56,67.92"/>
+<text class="txt" x="343.00" y="59.40" font-size="2.5" text-anchor="start" font-weight="normal">seat tilt 4°</text>
+<polyline class="dimln" points="274.14,49.79 334.00,52.00 342.00,52.00"/>
+<polygon class="arr" points="274.14,49.79 276.76,49.34 276.72,50.44"/>
+<text class="txt" x="343.00" y="51.40" font-size="2.5" text-anchor="start" font-weight="normal">seat to back 104°</text>
+<polyline class="dimln" points="315.00,47.00 334.00,43.00 342.00,43.00"/>
+<polygon class="arr" points="315.00,47.00 317.43,45.93 317.66,47.00"/>
+<text class="txt" x="343.00" y="42.40" font-size="2.5" text-anchor="start" font-weight="normal">armrest 200 above seat</text>
+<polyline class="ext" points="257.20,112.00 250.80,112.00"/>
+<polyline class="ext" points="257.20,34.00 250.80,34.00"/>
+<polyline class="dimln" points="252.00,112.00 252.00,34.00"/>
+<polygon class="arr" points="252.00,112.00 251.45,109.40 252.55,109.40"/>
+<polygon class="arr" points="252.00,34.00 252.55,36.60 251.45,36.60"/>
+<text class="txt" x="251.10" y="73.00" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 251.10 73.00)">780</text>
+<polyline class="ext" points="29.20,205.00 22.80,205.00"/>
+<polyline class="ext" points="29.20,143.00 22.80,143.00"/>
+<polyline class="dimln" points="24.00,205.00 24.00,143.00"/>
+<polygon class="arr" points="24.00,205.00 23.45,202.40 24.55,202.40"/>
+<polygon class="arr" points="24.00,143.00 24.55,145.60 23.45,145.60"/>
+<text class="txt" x="23.10" y="174.00" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 23.10 174.00)">620</text>
+<polyline class="ext" points="210.80,205.00 217.20,205.00"/>
+<polyline class="ext" points="210.80,200.90 217.20,200.90"/>
+<polyline class="dimln" points="216.00,205.00 216.00,200.90"/>
+<polygon class="arr" points="216.00,205.00 216.55,207.60 215.45,207.60"/>
+<polygon class="arr" points="216.00,200.90 215.45,198.30 216.55,198.30"/>
+<text class="txt" x="215.10" y="195.10" font-size="2.5" text-anchor="middle" font-weight="normal" transform="rotate(90.00 215.10 195.10)">41</text>
+<polyline class="ctr" points="40.00,206.50 40.00,141.50"/>
+<polyline class="ctr" points="200.00,206.50 200.00,141.50"/>
+<text class="txt" x="232.00" y="150.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
+<text class="txt" x="232.00" y="154.50" font-size="2.3" text-anchor="start" font-weight="normal">1  Seat height 450 mm at the front edge of the seat when anchored, with the</text>
+<text class="txt" x="232.00" y="158.20" font-size="2.3" text-anchor="start" font-weight="normal">   frames 10 mm above the plinth on levelling nuts; adjustable</text>
+<text class="txt" x="232.00" y="161.90" font-size="2.3" text-anchor="start" font-weight="normal">   440 to 460 mm (gap 0 to 20 mm, grouted after levelling).</text>
+<text class="txt" x="232.00" y="165.60" font-size="2.3" text-anchor="start" font-weight="normal">2  Fixed to the ground by four M12 ground anchors (separate item),</text>
+<text class="txt" x="232.00" y="169.30" font-size="2.3" text-anchor="start" font-weight="normal">   two per side frame, through the Ø14 holes in the feet.</text>
+<text class="txt" x="232.00" y="173.00" font-size="2.3" text-anchor="start" font-weight="normal">3  Slats: 5 hardwood, 1800 x 95 x 38; 3 on the seat</text>
+<text class="txt" x="232.00" y="176.70" font-size="2.3" text-anchor="start" font-weight="normal">   (gaps 22), 2 on the back; 20 carriage bolts M8 x 60.</text>
+<text class="txt" x="232.00" y="180.40" font-size="2.3" text-anchor="start" font-weight="normal">4  Overall: 1800 long over the slats, 1660 over the armrests,</text>
+<text class="txt" x="232.00" y="184.10" font-size="2.3" text-anchor="start" font-weight="normal">   620 deep, 780 high. Seat width between the</text>
+<text class="txt" x="232.00" y="187.80" font-size="2.3" text-anchor="start" font-weight="normal">   armrests 1540 = 3 x 513.</text>
+<text class="txt" x="232.00" y="191.50" font-size="2.3" text-anchor="start" font-weight="normal">5  Bench net mass 49.9 kg (frames galvanised and coated).</text>
+<text class="txt" x="232.00" y="195.20" font-size="2.3" text-anchor="start" font-weight="normal">6  Load: UR-SF-0450, 450 kg on the seat, 1 h, no lasting</text>
+<text class="txt" x="232.00" y="198.90" font-size="2.3" text-anchor="start" font-weight="normal">   deformation; checked also against EN 581-2 (contract use).</text>
+<rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
+<polyline class="tbl" points="230.00,258.00 410.00,258.00"/>
+<text class="txt" x="233.00" y="255.20" font-size="5" text-anchor="start" font-weight="bold">Valdara Industries</text>
+<text class="txt" x="407.00" y="255.20" font-size="2.5" text-anchor="end" font-weight="normal">Ferrano, Urvania</text>
+<polyline class="tbl" points="230.00,270.00 410.00,270.00"/>
+<text class="lbl" x="233.00" y="261.50" font-size="1.8" text-anchor="start" font-weight="normal">Title</text>
+<text class="txt" x="233.00" y="267.40" font-size="4.2" text-anchor="start" font-weight="bold">Serra 180 – General arrangement</text>
+<text class="lbl" x="231.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Drawing no.</text>
+<text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-001</text>
+<polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
+<text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A</text>
+<polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
+<text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
+<text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">1:10</text>
+<polyline class="tbl" points="316.00,270.00 316.00,279.50"/>
+<text class="lbl" x="317.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Size</text>
+<text class="txt" x="317.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A3</text>
+<polyline class="tbl" points="330.00,270.00 330.00,279.50"/>
+<text class="lbl" x="331.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Date</text>
+<text class="txt" x="331.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">2026-11-17</text>
+<polyline class="tbl" points="356.00,270.00 356.00,279.50"/>
+<text class="lbl" x="357.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Units</text>
+<text class="txt" x="357.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">mm</text>
+<polyline class="tbl" points="370.00,270.00 370.00,279.50"/>
+<polyline class="tbl" points="370.00,270.00 370.00,287.00"/>
+<text class="lbl" x="371.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Item</text>
+<text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
+<polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
+<text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see BOM, drawing 005   mass 49.9 kg net</text>
+<text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
+<text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>

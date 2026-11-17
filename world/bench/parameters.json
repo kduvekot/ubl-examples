@@ -1,0 +1,349 @@
+{
+  "_about": "Single source of truth for the Serra 180 park bench model (world/bench). All lengths in mm, masses in kg, forces in N, angles in degrees. build_bench.py reads only this file. Each value has a 'why' in the report (report.md, section 'Design choices').",
+  "product": {
+    "maker": "Valdara Industries",
+    "maker_place": "Ferrano, Urvania",
+    "name": "Park bench Serra 180",
+    "item_number": "VI-B180",
+    "datasheet": "VI-DS-B180",
+    "spare_frame_item": "VI-C180",
+    "drawing_prefix": "VI-DWG-B180",
+    "drawing_date": "2026-11-17",
+    "drawn_by": "model (world/bench)",
+    "revision": "A"
+  },
+  "overall": {
+    "slat_length_overall": 1800,
+    "depth": 620,
+    "height": 780,
+    "seat_height_nominal": 450,
+    "seat_height_range": [
+      440,
+      460
+    ],
+    "levelling_gap_nominal": 10,
+    "levelling_gap_range": [
+      0,
+      20
+    ]
+  },
+  "ergonomics": {
+    "seat_tilt_deg": 4,
+    "seat_back_angle_deg": 104,
+    "seat_depth": 400,
+    "armrest_above_seat": 200,
+    "seats": 3
+  },
+  "slats": {
+    "count": 5,
+    "seat_count": 3,
+    "back_count": 2,
+    "length": 1800,
+    "width": 95,
+    "thickness": 38,
+    "edge_chamfer": 3,
+    "seat_gap": 22,
+    "post_to_slat_gap": 6,
+    "back_slat_u": [
+      75,
+      282.3
+    ],
+    "hole_diameter": 9,
+    "bolt_x_from_end": [
+      80,
+      120
+    ],
+    "moisture_content_pct": 12,
+    "density_world": 690,
+    "mass_world": 4.5
+  },
+  "frame": {
+    "x_centre": 100,
+    "t_web": 8,
+    "t_flange": 8,
+    "round_convex": 4,
+    "fillet_concave": 10,
+    "front_post": {
+      "depth": 35,
+      "flange_width": 30
+    },
+    "armrest": {
+      "depth": 30,
+      "flange_width": 60,
+      "front_end_radius": 15
+    },
+    "seat_rail": {
+      "depth": 35,
+      "flange_width": 68
+    },
+    "back_rail": {
+      "depth": 30,
+      "flange_width": 68,
+      "u_top": 360
+    },
+    "rear_leg": {
+      "depth": 35,
+      "flange_width": 30,
+      "foot_y": 570
+    },
+    "feet": {
+      "thickness": 10,
+      "width": 70,
+      "front": {
+        "y0": 0,
+        "y1": 120,
+        "hole_y": 90
+      },
+      "rear": {
+        "y0": 500,
+        "y1": 620,
+        "hole_y": 525
+      },
+      "hole_diameter": 14,
+      "anchor": "M12 ground anchor with levelling nut (separate item)"
+    },
+    "steel_hole_diameter": 10,
+    "draft_deg": 1.5,
+    "draft_mass_allowance_pct": 2.0
+  },
+  "bolts": {
+    "count": 20,
+    "type": "Cup square neck (carriage) bolt ISO 8677 M8 x 60, hex nut ISO 4032 M8, washer ISO 7089 8, hot-dip galvanised",
+    "d": 8,
+    "length": 60,
+    "head_diameter": 20,
+    "head_height": 4.4,
+    "neck_square": 8,
+    "neck_length": 5,
+    "thread_mass_factor": 0.93,
+    "nut_af": 13,
+    "nut_height": 6.8,
+    "washer_od": 16,
+    "washer_id": 8.4,
+    "washer_t": 1.6,
+    "bag_mass": 0.02
+  },
+  "materials": {
+    "steel_density": 7850,
+    "zinc_density": 7140,
+    "wood_density": 690,
+    "pine_density_pallet": 500,
+    "cast_steel": {
+      "grade": "GE240+N (EN 10293, 1.0446)",
+      "Rp02": 240,
+      "Rm_min": 450,
+      "E": 210000
+    },
+    "galvanising": {
+      "standard": "EN ISO 1461, castings >= 6 mm",
+      "mean_min_um": 80,
+      "mean_min_gm2": 575,
+      "typical_factor": 1.25
+    },
+    "powder_coat": {
+      "standard": "duplex system, polyester powder over hot-dip galvanising (EN 13438 / EN 15773)",
+      "thickness_um": 70,
+      "density": 1500
+    },
+    "colours": {
+      "GRY": {
+        "name": "Ferro grey",
+        "ral_approx": "RAL 7011",
+        "srgb_approx": "#555D61"
+      },
+      "GRN": {
+        "name": "Moss green",
+        "ral_approx": "RAL 6005",
+        "srgb_approx": "#114232"
+      }
+    },
+    "wood": {
+      "class": "EN 338 D30 (visually graded European oak)",
+      "f_mk": 30,
+      "E0_mean": 11000,
+      "k_mod_short_sc3": 0.7,
+      "gamma_M": 1.3,
+      "k_h_max": 1.3,
+      "clear_wood_oak_12pct": {
+        "SG": 0.68,
+        "MOR": 105,
+        "MOE": 12300
+      },
+      "clear_wood_ash_12pct": {
+        "SG": 0.6,
+        "MOR": 106,
+        "MOE": 12000
+      },
+      "clear_wood_beech_12pct": {
+        "SG": 0.64,
+        "MOR": 103,
+        "MOE": 11900
+      }
+    }
+  },
+  "loads": {
+    "g": 9.81,
+    "ur_sf_0450_mass": 450,
+    "en581_contract_seat": 2000,
+    "en581_other_seats": 750,
+    "en581_back": 560,
+    "en581_arm_down": 900,
+    "en581_front_edge": 1300,
+    "seat_pad_length": 300,
+    "gamma_Q": 1.5,
+    "gamma_M0_steel": 1.0,
+    "back_force_height_above_seat": 300
+  },
+  "casting": {
+    "frames_per_mould": 2,
+    "liquid_density": 7000,
+    "wall_modulus_factor_junction": 1.5,
+    "riser_modulus_factor": 1.2,
+    "riser_h_over_d": 1.5,
+    "riser_min_diameter": 34,
+    "feeding_rule": "SFSA bar rule FD = 6*sqrt(T) inch (each side of a riser)",
+    "pour_head": 250,
+    "discharge_coefficient": 0.8,
+    "pour_time_k": 1.4,
+    "gating_ratio": [
+      1,
+      2,
+      2
+    ],
+    "basin_volume_cm3": 300,
+    "melt_loss_pct": 4,
+    "scrap_rate_pct": 3,
+    "fettling_loss_kg_per_frame": 0.15
+  },
+  "packaging": {
+    "frame_carton": {
+      "style": "FEFCO 0320 tray and lid, single-wall C flute",
+      "board_gm2": 560,
+      "board_thickness": 4,
+      "clearance": [
+        20,
+        20,
+        10
+      ],
+      "pads_kg": 0.15,
+      "label": "Serra 180  parcel {n} of 3"
+    },
+    "slat_bundle": {
+      "pattern": "3 + 2, broad faces down, top row centred",
+      "edge_protector_thickness": 5,
+      "end_cap_thickness": 5,
+      "straps": 4,
+      "strap_kg": 0.02,
+      "protector_kg_per_m": 0.06,
+      "film_kg": 0.08
+    },
+    "pallet": {
+      "type": "four-way block pallet, heat-treated softwood (ISPM 15)",
+      "length": 1850,
+      "width": 700,
+      "deck_board": [
+        100,
+        22
+      ],
+      "deck_boards_top": 7,
+      "bottom_boards": 3,
+      "bottom_board": [
+        100,
+        22
+      ],
+      "block": [
+        100,
+        100,
+        78
+      ],
+      "blocks": 9,
+      "stringer_board": [
+        100,
+        22
+      ],
+      "slip_sheet_kg": 0.6,
+      "top_cap_kg": 1.0,
+      "stretch_film_kg": 0.4,
+      "benches": 4
+    }
+  },
+  "transport": {
+    "trailer": {
+      "name": "13.6 m curtain-side semi-trailer",
+      "length": 13600,
+      "width": 2480,
+      "height": 2700,
+      "payload_kg": 24700
+    },
+    "container_40": {
+      "name": "40-foot dry container (ISO 668, 1AA)",
+      "length": 12032,
+      "width": 2352,
+      "height": 2393,
+      "payload_kg": 26500
+    },
+    "container_45": {
+      "name": "45-foot pallet-wide rail container",
+      "length": 13556,
+      "width": 2440,
+      "height": 2585,
+      "payload_kg": 27500
+    },
+    "bench_pallets": 24,
+    "castings_pallets": 1,
+    "castings_per_pallet": 12,
+    "layers": 2
+  },
+  "world_figures": {
+    "length_over_armrests": 1800,
+    "depth": 620,
+    "height": 780,
+    "seat_height": 450,
+    "slat_mass": 4.5,
+    "slat_density": 690,
+    "frame_mass": 10.0,
+    "frame_zinc": 0.2,
+    "frame_member_length_m": 2.3,
+    "frame_section_mm": [
+      40,
+      14
+    ],
+    "frame_seat_bar_stress_mpa": 100,
+    "bolt_set_mass": 1.0,
+    "net": 43.5,
+    "gross": 44.4,
+    "items_json_net": 38.0,
+    "items_json_gross": 41.5,
+    "items_json_spare_net": 9.5,
+    "items_json_spare_gross": 10.2,
+    "frame_carton": [
+      820,
+      620,
+      80
+    ],
+    "frame_carton_kg": 10.2,
+    "frame_carton_bolts_kg": 11.2,
+    "slat_bundle": [
+      1800,
+      200,
+      120
+    ],
+    "slat_bundle_kg": 23.0,
+    "pallet_goods_kg": 178,
+    "pallet_gross_kg": 200,
+    "pallet_size": [
+      1850,
+      650,
+      750
+    ],
+    "trailer_positions": 21,
+    "container_40_positions": 18,
+    "metal_poured_per_bench": 34,
+    "casting_yield": 0.6,
+    "hardwood_consumption": 22.5,
+    "steel_in_product": 21,
+    "co2e_cradle_to_gate": 96,
+    "manual_one_person": 25,
+    "manual_two_person": 33
+  }
+}
