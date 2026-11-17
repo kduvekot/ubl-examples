@@ -450,6 +450,9 @@
           </cac:CommodityClassification>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>

@@ -536,6 +536,8 @@ Inside `CustomsDeclaration`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
 - `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **73259990** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
   The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-casting of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 73259990 = Other cast articles of iron or steel.
+- `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -1193,6 +1195,9 @@ Inside `Signature`:
           </cac:CommodityClassification>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>

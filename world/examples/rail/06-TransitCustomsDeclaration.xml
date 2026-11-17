@@ -21,12 +21,6 @@
   <cac:ExportCustomsExitOfficeLocation>
     <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
   </cac:ExportCustomsExitOfficeLocation>
-  <cac:TransitCustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
-  </cac:TransitCustomsExitOfficeLocation>
-  <cac:ImportCustomsExitOfficeLocation>
-    <cbc:Name>Customs office Marrowdale</cbc:Name>
-  </cac:ImportCustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -454,9 +448,6 @@
           </cac:TransportEquipmentSeal>
         </cac:TransportEquipment>
       </cac:TransportHandlingUnit>
-      <cac:OfficeOfEntryLocation>
-        <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
-      </cac:OfficeOfEntryLocation>
       <cac:OfficeOfExitLocation>
         <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
       </cac:OfficeOfExitLocation>
@@ -653,14 +644,17 @@
         </cac:CircularityProfile>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-CD-26-0330E</cbc:ID>
-    <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">EXPORT</cbc:FunctionCode>
-  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-CD-26-0330E</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-TD</cbc:ID>

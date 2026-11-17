@@ -382,9 +382,6 @@
           <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

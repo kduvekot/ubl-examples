@@ -318,6 +318,9 @@
           </cac:Dimension>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
@@ -497,6 +500,10 @@
     <cac:AdditionalDocumentReference>
       <cbc:ID>VI-PO-26-0627</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>MS-INV-26-0635</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

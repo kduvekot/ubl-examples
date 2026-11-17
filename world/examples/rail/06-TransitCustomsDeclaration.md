@@ -55,20 +55,6 @@ Inside `ExportCustomsExitOfficeLocation`:
 - `Name` = **Customs post at the rail border station, Urvanian side**  
   Where the goods leave Urvania.
 
-### Transit Customs Exit Office Location
-
-Inside `TransitCustomsExitOfficeLocation`:
-
-- `Name` = **Customs post at the rail border station, Bayvarran side**  
-  Where the transit is checked.
-
-### Import Customs Exit Office Location
-
-Inside `ImportCustomsExitOfficeLocation`:
-
-- `Name` = **Customs office Marrowdale**  
-  Where the transit ends.
-
 ### Jurisdiction Region Address
 
 Inside `JurisdictionRegionAddress`:
@@ -574,8 +560,6 @@ Inside `Shipment`:
   The seal is in place. The code is from the Trade Accord's seal status list: APPLIED = Applied.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
   And put on by the shipper when it packed the container.
-- `Consignment/OfficeOfEntryLocation/Name` = **Customs post at the rail border station, Bayvarran side**  
-  Where the goods enter Bayvarra.
 - `Consignment/OfficeOfExitLocation/Name` = **Customs post at the rail border station, Urvanian side**  
   Where the goods leave Urvania.
 - `Consignment/OfficeOfDepartureLocation/Name` = **Customs office Ferrano Intermodal Hub**  
@@ -798,15 +782,8 @@ Inside `Shipment`:
   The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
-
-### Previous Customs Declaration
-
-Inside `PreviousCustomsDeclaration`:
-
-- `ID` = **VI-CD-26-0330E**  
-  The export declaration lodged in Urvania at the office of departure (not shown in this flow), which the transit continues.
-- `FunctionCode` = **EXPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
-  The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: EXPORT = Export declaration.
+- `ShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by rail (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 2 = Rail transport.
 
 ### Additional Document Reference
 
@@ -816,6 +793,10 @@ Inside `AdditionalDocumentReference`:
   The transport plan.
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: FRC-TEP-26-0328 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
+- `ID` = **VI-CD-26-0330E**  
+  The export declaration lodged in Urvania at the office of departure, which the transit continues; a document outside the examples (rail/06#F5).
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to, Valdara's export declaration lodged in Urvania at the office of departure of the rail transit, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 
 ### Signature
 
@@ -854,12 +835,6 @@ Inside `Signature`:
   <cac:ExportCustomsExitOfficeLocation>
     <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
   </cac:ExportCustomsExitOfficeLocation>
-  <cac:TransitCustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
-  </cac:TransitCustomsExitOfficeLocation>
-  <cac:ImportCustomsExitOfficeLocation>
-    <cbc:Name>Customs office Marrowdale</cbc:Name>
-  </cac:ImportCustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -1287,9 +1262,6 @@ Inside `Signature`:
           </cac:TransportEquipmentSeal>
         </cac:TransportEquipment>
       </cac:TransportHandlingUnit>
-      <cac:OfficeOfEntryLocation>
-        <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
-      </cac:OfficeOfEntryLocation>
       <cac:OfficeOfExitLocation>
         <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
       </cac:OfficeOfExitLocation>
@@ -1486,14 +1458,17 @@ Inside `Signature`:
         </cac:CircularityProfile>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-CD-26-0330E</cbc:ID>
-    <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">EXPORT</cbc:FunctionCode>
-  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-CD-26-0330E</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-TD</cbc:ID>

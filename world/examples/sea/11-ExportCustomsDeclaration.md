@@ -164,10 +164,6 @@ Inside `CustomsDeclaration`:
   The shipment declared.
 - `Shipment/InsuranceValueAmount` = **59155.80** (currencyID `XBL`)  
   The cargo insurance the seller took out under CIF.
-- `Shipment/DeclaredCustomsValueAmount` = **50688.00** (currencyID `XBL`)  
-  The export value: the goods on board, FOB.
-- `Shipment/DeclaredStatisticsValueAmount` = **50688.00** (currencyID `XBL`)  
-  The same value for the trade statistics.
 - `Shipment/FreeOnBoardValueAmount` = **50688.00** (currencyID `XBL`)  
   On board in Lumeport.
 - `Shipment/Consignment/ID` = **LD-CS-26-0133**  
@@ -232,8 +228,6 @@ Inside `CustomsDeclaration`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
-  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `Shipment/GoodsItem/Item/TransactionConditions/ID` = **LD-TC-01**  
   The seller's number for these conditions of sale.
 - `Shipment/GoodsItem/Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
@@ -430,8 +424,6 @@ Inside `CustomsDeclaration`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **42999** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
-- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **73259990** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
-  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-casting of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 73259990 = Other cast articles of iron or steel.
 - `Shipment/GoodsItem/Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Shipment/GoodsItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
@@ -833,8 +825,6 @@ Inside `Signature`:
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">50688.00</cbc:DeclaredCustomsValueAmount>
-      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">50688.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">50688.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
@@ -890,9 +880,6 @@ Inside `Signature`:
             <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
             <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
             <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
-          </cac:CommodityClassification>
-          <cac:CommodityClassification>
-            <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
           </cac:CommodityClassification>
           <cac:TransactionConditions>
             <cbc:ID>LD-TC-01</cbc:ID>
@@ -1073,9 +1060,6 @@ Inside `Signature`:
             <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
             <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
             <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
-          </cac:CommodityClassification>
-          <cac:CommodityClassification>
-            <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
           </cac:CommodityClassification>
           <cac:ManufacturerParty>
             <cac:PartyIdentification>

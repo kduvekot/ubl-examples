@@ -464,7 +464,7 @@ Inside `Shipment`:
   Packed goods on pallets.
 - `Consignment/ThirdPartyPayerIndicator` = **false**  
   The consignee, who booked the truck, pays the freight.
-- `Consignment/CustomsClearanceServiceInstructions` = **The export is declared by the 3PL in Ferrano; the import by the distributor at the border.**  
+- `Consignment/CustomsClearanceServiceInstructions` = **The export is declared by the seller in Ferrano; the import by the distributor at the border.**  
   Who clears the goods through customs.
 - `Consignment/TotalTransportHandlingUnitQuantity` = **25** (unitCode `EA`)  
   25 pallets.
@@ -476,9 +476,9 @@ Inside `Shipment`:
   96 benches and 12 boxed frames.
 - `Consignment/CustomsDeclaration/ID` = **VI-CD-26-0156**  
   The export declaration the goods travel under.
-- `Consignment/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Consignment/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/CustomsDeclaration/IssuerParty/PartyName/Name` = **Customs Administration of Urvania**  
+- `Consignment/CustomsDeclaration/IssuerParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/ActualPickupTransportEvent/OccurrenceDate` = **2026-03-23**  
   When the carrier took over the goods.
@@ -2548,7 +2548,7 @@ Inside `Signature`:
       <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
       <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
       <cbc:ThirdPartyPayerIndicator>false</cbc:ThirdPartyPayerIndicator>
-      <cbc:CustomsClearanceServiceInstructions>The export is declared by the 3PL in Ferrano; the import by the distributor at the border.</cbc:CustomsClearanceServiceInstructions>
+      <cbc:CustomsClearanceServiceInstructions>The export is declared by the seller in Ferrano; the import by the distributor at the border.</cbc:CustomsClearanceServiceInstructions>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:DeliveryInstructions>Enter by gate 3 of the business park and report to the gatehouse; unload at dock 4.</cbc:DeliveryInstructions>
       <cbc:HaulageInstructions>Wait at the warehouse until customs has released the export declaration.</cbc:HaulageInstructions>
@@ -2557,10 +2557,10 @@ Inside `Signature`:
         <cbc:ID>VI-CD-26-0156</cbc:ID>
         <cac:IssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
-            <cbc:Name>Customs Administration of Urvania</cbc:Name>
+            <cbc:Name>Valdara Industries</cbc:Name>
           </cac:PartyName>
         </cac:IssuerParty>
       </cac:CustomsDeclaration>

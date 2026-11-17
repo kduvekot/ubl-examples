@@ -506,6 +506,8 @@ Inside `CustomsDeclaration`:
   The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
 - `Shipment/GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -1120,6 +1122,9 @@ Inside `Signature`:
           </cac:CircularityProfile>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>

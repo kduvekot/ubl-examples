@@ -39,22 +39,6 @@ The manufacturer declares the import into Urvania, where import VAT is due.
 - `VersionID` = **1**  
   The first version.
 
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `StartDate` = **2026-02-27**  
-  From the declaration.
-- `DurationMeasure` = **30** (unitCode `DAY`)  
-  Valid for clearance within 30 days.
-
-### Customs Exit Office Location
-
-Inside `CustomsExitOfficeLocation`:
-
-- `Name` = **Customs post at the land border, Bayvarran side**  
-  Where the goods leave the country.
-
 ### Jurisdiction Region Address
 
 Inside `JurisdictionRegionAddress`:
@@ -517,13 +501,21 @@ Inside `Shipment`:
   Which dimension. The code is from the Trade Accord's dimension attribute list: THICKNESS = Thickness. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/Dimension/Measure` = **38** (unitCode `MMT`)  
   Its size.
+- `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 
-### Previous Customs Declaration
+### Additional Document Reference
 
-Inside `PreviousCustomsDeclaration`:
+Inside `AdditionalDocumentReference`:
 
-- `ID` = **MS-CD-26-0631**  
-  The export declaration in the country of departure.
+- `ID` = **MS-EX-26-0630**  
+  The export declaration of the goods in the country of departure, for information.
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: MS-EX-26-0630 is the example wood/05, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **MS-INV-26-0635**  
+  The commercial invoice the customs value rests on (worklist C12).
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: MS-INV-26-0635 is the example wood/08, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -555,13 +547,6 @@ Inside `Signature`:
   <cbc:Note languageID="qau">Tralbek zhan man drek sisir gakkaz hir garsul.</cbc:Note>
   <cbc:Note languageID="en-XU">Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-02-27</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -961,10 +946,18 @@ Inside `Signature`:
         </cac:Dimension>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>MS-CD-26-0631</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>MS-EX-26-0630</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>MS-INV-26-0635</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-IM-wood</cbc:ID>
     <cac:SignatoryParty>

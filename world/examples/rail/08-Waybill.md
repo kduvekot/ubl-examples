@@ -712,9 +712,9 @@ Inside `Shipment`:
   UN/EDIFACT 8053 code RR: rail car. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: RR = Rail car.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **VI-TD-26-0331**  
   The transit declaration the box travels under.
-- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyName/Name` = **Customs Administration of Urvania**  
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/EnergyConsumptionAllocation/EnergySourceTypeCode` = **ELECTRICITY** (listID `urn:ubl-examples:world:codelist:EnergySourceCode`)  
   The train runs on electricity. The code is from the Trade Accord's energy source list: ELECTRICITY = Electricity.
@@ -744,9 +744,9 @@ Inside `Shipment`:
   And put on by the shipper when it packed the container.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **VI-TD-26-0331**  
   The transit declaration the box travels under.
-- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-105507** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyName/Name` = **Customs Administration of Urvania**  
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/EnergyConsumptionAllocation/EnergySourceTypeCode` = **ELECTRICITY** (listID `urn:ubl-examples:world:codelist:EnergySourceCode`)  
   The train runs on electricity. The code is from the Trade Accord's energy source list: ELECTRICITY = Electricity.
@@ -1491,10 +1491,10 @@ Inside `Signature`:
           <cbc:ID>VI-TD-26-0331</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+              <cbc:Name>Valdara Industries</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:CustomsDeclaration>
@@ -1523,10 +1523,10 @@ Inside `Signature`:
           <cbc:ID>VI-TD-26-0331</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+              <cbc:Name>Valdara Industries</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:CustomsDeclaration>

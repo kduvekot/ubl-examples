@@ -324,6 +324,8 @@ Inside `CustomsDeclaration`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Shipment/GoodsItem/Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
+- `Shipment/ShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by river (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 8 = Inland water transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the river border**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -833,6 +835,9 @@ Inside `Signature`:
           </cac:EnvironmentalCertificate>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs post at the river border</cbc:Name>

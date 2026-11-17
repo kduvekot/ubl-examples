@@ -1611,6 +1611,92 @@ def tax_arithmetic(content, where):
                                      "C24).", **old.attrs)
 
 
+# ---------------------------------------------------------------- the invoice behind a customs value (worklist C12)
+def declaration_invoices(content, doc):
+    """A customs declaration refers to the commercial invoice its value rests on: an invoice of the same flow
+    from the exporter to the importer, issued on or before the declaration."""
+    if doc["doc"] not in ("ExportCustomsDeclaration", "ImportCustomsDeclaration"):
+        return
+    ps = doc.get("parties", {})
+    exporter = ps.get("ExporterParty") or ps.get("CustomsDeclaration/ExporterParty")
+    importer = ps.get("ImporterParty") or ps.get("CustomsDeclaration/ImporterParty")
+    day = content.get("IssueDate").value if isinstance(content.get("IssueDate"), V) else None
+    doc_types()
+    legs = [leg for fl in WORLD["flows"] if fl["id"] == doc["flow"] for leg in fl.get("legs", [])]
+    carriers = {leg["carrier"] for leg in legs} - {leg["from"] for leg in legs}   # a seller may carry its own goods
+    hits = [i for i, (d, w) in DOC_DATES.items()
+            if w["flow"] == doc["flow"] and w["doc"] == "Invoice" and day and d <= day and w["from"] not in carriers
+            and (w["from"] == exporter if exporter else w["to"] == importer)]
+    if not hits:
+        return
+    holder = content["CustomsDeclaration"] if doc["doc"] == "ExportCustomsDeclaration" and \
+        isinstance(content.get("CustomsDeclaration"), dict) else content
+    refs = holder.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    have = {r["ID"].value for r in refs if isinstance(r.get("ID"), V)}
+    refs += [{"ID": V(i, "The commercial invoice the customs value rests on (worklist C12).")}
+             for i in sorted(hits) if i not in have]
+    holder["AdditionalDocumentReference"] = refs
+
+
+# ---------------------------------------------------------------- the transport at the border (worklist C12)
+MODE_CODES = {"sea": "1", "rail": "2", "road": "3", "air": "4", "pipeline": "7", "river": "8"}
+
+
+def border_transport(content, doc):
+    """A customs declaration says how the goods cross the border: the mode of the flow's leg that crosses it."""
+    if not doc["doc"].endswith("CustomsDeclaration"):
+        return
+    ship = content.get("CustomsDeclaration", {}).get("Shipment") if doc["doc"] == "ExportCustomsDeclaration" \
+        else content.get("Shipment")
+    if not isinstance(ship, dict) or "ShipmentStage" in ship:
+        return
+    legs = next(fl for fl in WORLD["flows"] if fl["id"] == doc["flow"]).get("legs", [])
+    cross = [leg for leg in legs if PARTY[leg["from"]]["c"] != PARTY[leg["to"]]["c"]]
+    if not cross:
+        return
+    mode = cross[0]["mode"]
+    ship["ShipmentStage"] = {"TransportModeCode": V(MODE_CODES[mode], f"The goods cross the border by {mode} "
+                                                    "(worklist C12).",
+                                                    listID="UNECE Recommendation 19 - Codes for Modes of Transport")}
+
+
+# ---------------------------------------------------------------- a national tariff in its own country (worklist C29)
+SELLER_ROLES = ("SellerSupplierParty", "AccountingSupplierParty", "DespatchSupplierParty", "ProviderParty")
+
+
+def document_country(doc):
+    """The country whose national rules a document follows: the declaring country of a customs declaration (the
+    declarant, its sender), else the seller's (decision Q24: tariffs stay national)."""
+    if doc["doc"].endswith("CustomsDeclaration"):
+        return PARTY[doc["from"]]["c"]
+    for role in SELLER_ROLES:
+        pid = doc.get("parties", {}).get(role)
+        if isinstance(pid, str) and pid in PARTY:
+            return PARTY[pid]["c"]
+    return PARTY[doc["from"]]["c"] if doc["from"] in PARTY else None
+
+
+def national_tariffs(content, doc):
+    """A national tariff subheading appears only in documents of the country whose tariff it is."""
+    country = document_country(doc)
+
+    def walk(node):
+        if isinstance(node, list):
+            for x in node:
+                walk(x)
+        elif isinstance(node, dict):
+            ccs = node.get("CommodityClassification")
+            if isinstance(ccs, list):
+                keep = [cc for cc in ccs if not (isinstance(cc.get("CommodityCode"), V) and any(
+                    cc["CommodityCode"].attrs.get("listID") == codelists.NATIONAL.format(c, "CustomsTariff")
+                    for c in WORLD["countries"] if c != country))]
+                node["CommodityClassification"] = keep if len(keep) > 1 else keep[0] if keep else ccs
+            for v in node.values():
+                walk(v)
+    walk(content)
+
+
 # ---------------------------------------------------------------- currencies with something to convert (worklist C11)
 CURRENCY_PAIRS = {"PricingCurrencyCode": "PricingExchangeRate", "TaxCurrencyCode": "TaxExchangeRate",
                   "PaymentCurrencyCode": "PaymentExchangeRate",
@@ -1873,6 +1959,7 @@ GENERIC_REFERENCES = {"AdditionalDocumentReference", "DocumentReference", "Suppo
                       "EvidenceDocumentReference", "OriginatorDocumentReference", "ParentDocumentReference",
                       "PreviousDocumentReference", "OriginalDocumentReference", "RequiredDocumentReference",
                       "ProvidedDocumentReference", "RequestedDocumentReference", "ShipmentDocumentReference"}
+DOC_DATES = {}      # document ID -> (issue date, world document) of every example
 DOC_TYPES = {}      # document ID -> (flow, file number, UBL document type) of every example of the world
 DOC_TYPE = None     # the type of the document being built (its payment note names it, worklist C39)
 INDEXING = False    # True while doc_types() runs the scenarios to collect the IDs
@@ -1896,6 +1983,8 @@ def doc_types():
                 content = examples_scenarios.SCENARIOS[flow_id](n, doc)
                 if isinstance(content.get("ID"), V):
                     DOC_TYPES.setdefault(content["ID"].value, (flow_id, n, doc["doc"]))
+                    if isinstance(content.get("IssueDate"), V):
+                        DOC_DATES[content["ID"].value] = (content["IssueDate"].value, doc)
         for fl, state in zip(flows, saved):
             fl.__dict__.clear()
             fl.__dict__.update(state)
@@ -2170,10 +2259,13 @@ def main(flow_id, check=False):
         DOC_TYPE = doc["doc"]
         content = scenario(n, doc)
         content = place_parties(doc, content)
+        declaration_invoices(content, doc)
+        border_transport(content, doc)
         type_references(content, f"{flow_id}/{xmlname(n, doc)}")
         requested_delivery(content, doc, n)
         catalogue_items(content, doc)
         currency_cleanup(content, doc)
+        national_tariffs(content, doc)
         tax_arithmetic(content, f"{flow_id} {n} {doc['doc']}")
         transport_goods(content, doc)
         identify_places(content)

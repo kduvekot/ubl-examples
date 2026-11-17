@@ -37,22 +37,6 @@ The mill declares the bales in Bayvarra.
 - `VersionID` = **1**  
   The first version.
 
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `StartDate` = **2026-03-06**  
-  From the declaration.
-- `DurationMeasure` = **30** (unitCode `DAY`)  
-  Valid for clearance within 30 days.
-
-### Customs Exit Office Location
-
-Inside `CustomsExitOfficeLocation`:
-
-- `Name` = **Customs office, port of Selanu**  
-  Where the goods leave the country.
-
 ### Jurisdiction Region Address
 
 Inside `JurisdictionRegionAddress`:
@@ -403,13 +387,8 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
-
-### Previous Customs Declaration
-
-Inside `PreviousCustomsDeclaration`:
-
-- `ID` = **SCG-CD-26-0204**  
-  The export declaration in the country of departure.
+- `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by sea (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
 
 ### Additional Document Reference
 
@@ -419,6 +398,14 @@ Inside `AdditionalDocumentReference`:
   The bill of lading.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: TOL-BL-26-0206 is the example cotton/13, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `ID` = **SCG-EX-26-0203**  
+  The export declaration of the goods in the country of departure, for information.
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: SCG-EX-26-0203 is the example cotton/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **SCG-INV-26-0210**  
+  The commercial invoice the customs value rests on (worklist C12).
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: SCG-INV-26-0210 is the example cotton/16, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -449,13 +436,6 @@ Inside `Signature`:
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
   <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-06</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs office, port of Selanu</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -755,13 +735,21 @@ Inside `Signature`:
         </cac:Certificate>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>SCG-CD-26-0204</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0206</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCG-EX-26-0203</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCG-INV-26-0210</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LTM-SIG-IM-cotton</cbc:ID>

@@ -4128,6 +4128,10 @@
    "what": "the payer's bank statement line",
    "type": "Bank statement"
   },
+  "VI-CD-26-0330E": {
+   "what": "Valdara's export declaration lodged in Urvania at the office of departure of the rail transit",
+   "type_code": "ExportCustomsDeclaration"
+  },
   "VI-DS-B180": {
    "what": "Valdara's data sheet of the Serra bench",
    "type": "Product data sheet"

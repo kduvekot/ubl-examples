@@ -380,6 +380,8 @@ Inside `CustomsDeclaration`:
   Which dimension. The code is from the Trade Accord's dimension attribute list: THICKNESS = Thickness. An identifier that holds a code names the code's list in its schemeID.
 - `Shipment/GoodsItem/Item/Dimension/Measure` = **38** (unitCode `MMT`)  
   Its size.
+- `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Bayvarran side**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -570,6 +572,10 @@ Inside `CustomsDeclaration`:
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: VI-PO-26-0627 is the example wood/03, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **MS-INV-26-0635**  
+  The commercial invoice the customs value rests on (worklist C12).
+- `AdditionalDocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: MS-INV-26-0635 is the example wood/08, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -905,6 +911,9 @@ Inside `Signature`:
           </cac:Dimension>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
@@ -1084,6 +1093,10 @@ Inside `Signature`:
     <cac:AdditionalDocumentReference>
       <cbc:ID>VI-PO-26-0627</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>MS-INV-26-0635</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

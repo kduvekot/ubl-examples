@@ -337,9 +337,6 @@
         <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
-      </cac:CommodityClassification>
       <cac:TransactionConditions>
         <cbc:ID>LD-TC-01</cbc:ID>
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
@@ -531,9 +528,6 @@
       <cac:CommodityClassification>
         <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
       </cac:CommodityClassification>
       <cac:ManufacturerParty>
         <cac:PartyIdentification>

@@ -13,13 +13,6 @@
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
   <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-31</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -334,9 +327,6 @@
           <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:AdditionalItemProperty>
           <cbc:Name>Frame material</cbc:Name>
           <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
@@ -469,10 +459,18 @@
         </cac:CircularityProfile>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-CD-26-0219</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-EX-26-0218</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-INV-26-0221</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LPWD-SIG-IM-tender</cbc:ID>
     <cac:SignatoryParty>

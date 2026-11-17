@@ -214,6 +214,8 @@ Inside `CustomsDeclaration`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Shipment/GoodsItem/Item/Certificate/Signature/SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
+- `Shipment/ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by sea (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
 - `CustomsExitOfficeLocation/Name` = **Customs office, port of Selanu**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -566,6 +568,9 @@ Inside `Signature`:
           </cac:Certificate>
         </cac:Item>
       </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs office, port of Selanu</cbc:Name>

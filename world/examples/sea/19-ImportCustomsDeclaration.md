@@ -39,22 +39,6 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
 - `VersionID` = **1**  
   The first version.
 
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `StartDate` = **2026-05-19**  
-  From the declaration.
-- `DurationMeasure` = **30** (unitCode `DAY`)  
-  Valid for clearance within 30 days.
-
-### Customs Exit Office Location
-
-Inside `CustomsExitOfficeLocation`:
-
-- `Name` = **Customs office, port of Lumeport**  
-  Where the goods leave the country.
-
 ### Jurisdiction Region Address
 
 Inside `JurisdictionRegionAddress`:
@@ -526,8 +510,6 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
-  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `GoodsItem/Item/TransactionConditions/ID` = **LD-TC-01**  
   The seller's number for these conditions of sale.
 - `GoodsItem/Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
@@ -742,8 +724,6 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **42999** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **73259990** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
-  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-casting of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 73259990 = Other cast articles of iron or steel.
 - `GoodsItem/Item/ManufacturerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `GoodsItem/Item/ManufacturerParty/PartyName/Name` = **Valdara Industries**  
@@ -829,13 +809,6 @@ Inside `Shipment`:
 - `ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41585** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Tevaro Customs Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Previous Customs Declaration
-
-Inside `PreviousCustomsDeclaration`:
-
-- `ID` = **BF-CD-26-0136**  
-  The export declaration in the country of departure.
-
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -844,6 +817,14 @@ Inside `AdditionalDocumentReference`:
   The bill of lading of the goods.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: TOL-BL-26-0139 is the example sea/14, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `ID` = **BF-EX-26-0135**  
+  The export declaration of the goods in the country of departure, for information.
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-EX-26-0135 is the example sea/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **LD-INV-26-0147**  
+  The commercial invoice the customs value rests on (worklist C12).
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-INV-26-0147 is the example sea/22, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -875,13 +856,6 @@ Inside `Signature`:
   <cbc:Note languageID="qal">Seviva nopeto ninote leninivi haime momai viope.</cbc:Note>
   <cbc:Note languageID="en-XL">Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-05-19</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs office, port of Lumeport</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -1289,9 +1263,6 @@ Inside `Signature`:
           <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:TransactionConditions>
           <cbc:ID>LD-TC-01</cbc:ID>
           <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
@@ -1489,9 +1460,6 @@ Inside `Signature`:
           <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -1573,12 +1541,17 @@ Inside `Signature`:
       </cac:CustomsAgentParty>
     </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>BF-CD-26-0136</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-EX-26-0135</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-INV-26-0147</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>TCB-SIG-IM-sea</cbc:ID>

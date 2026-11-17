@@ -14,13 +14,6 @@
   <cbc:Note languageID="qal">Seviva nopeto ninote leninivi haime momai viope.</cbc:Note>
   <cbc:Note languageID="en-XL">Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-05-19</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs office, port of Lumeport</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -428,9 +421,6 @@
           <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:TransactionConditions>
           <cbc:ID>LD-TC-01</cbc:ID>
           <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
@@ -628,9 +618,6 @@
           <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -712,12 +699,17 @@
       </cac:CustomsAgentParty>
     </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>BF-CD-26-0136</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>BF-EX-26-0135</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-INV-26-0147</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>TCB-SIG-IM-sea</cbc:ID>

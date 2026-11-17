@@ -37,22 +37,6 @@ Under DAP the buyer clears the import, so the contracting authority declares the
 - `VersionID` = **1**  
   The first version.
 
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `StartDate` = **2026-03-31**  
-  From the declaration.
-- `DurationMeasure` = **30** (unitCode `DAY`)  
-  Valid for clearance within 30 days.
-
-### Customs Exit Office Location
-
-Inside `CustomsExitOfficeLocation`:
-
-- `Name` = **Customs post at the land border, Urvanian side**  
-  Where the goods leave the country.
-
 ### Jurisdiction Region Address
 
 Inside `JurisdictionRegionAddress`:
@@ -433,8 +417,6 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
-  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `GoodsItem/Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `GoodsItem/Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
@@ -583,13 +565,21 @@ Inside `Shipment`:
   The scale of the score. The code is from the Trade Accord's scoring system list: REPAIR10 = Repairability index, 0 to 10.
 - `GoodsItem/Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
+- `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 
-### Previous Customs Declaration
+### Additional Document Reference
 
-Inside `PreviousCustomsDeclaration`:
+Inside `AdditionalDocumentReference`:
 
-- `ID` = **VI-CD-26-0219**  
-  The export declaration in the country of departure.
+- `ID` = **VI-EX-26-0218**  
+  The export declaration of the goods in the country of departure, for information.
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VI-EX-26-0218 is the example tender/30, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **VI-INV-26-0221**  
+  The commercial invoice the customs value rests on (worklist C12).
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VI-INV-26-0221 is the example tender/32, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -620,13 +610,6 @@ Inside `Signature`:
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
   <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-31</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -941,9 +924,6 @@ Inside `Signature`:
           <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
-        </cac:CommodityClassification>
         <cac:AdditionalItemProperty>
           <cbc:Name>Frame material</cbc:Name>
           <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
@@ -1076,10 +1056,18 @@ Inside `Signature`:
         </cac:CircularityProfile>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-CD-26-0219</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-EX-26-0218</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-INV-26-0221</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LPWD-SIG-IM-tender</cbc:ID>
     <cac:SignatoryParty>

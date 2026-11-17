@@ -37,22 +37,6 @@ The packaging maker declares the import in Bayvarra.
 - `VersionID` = **1**  
   The first version.
 
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `StartDate` = **2026-04-22**  
-  From the declaration.
-- `DurationMeasure` = **30** (unitCode `DAY`)  
-  Valid for clearance within 30 days.
-
-### Customs Exit Office Location
-
-Inside `CustomsExitOfficeLocation`:
-
-- `Name` = **Customs post at the river border**  
-  Where the goods leave the country.
-
 ### Jurisdiction Region Address
 
 Inside `JurisdictionRegionAddress`:
@@ -531,13 +515,21 @@ Inside `Shipment`:
   The barge's consignment note.
 - `GoodsItem/AdditionalDocumentReference/DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: FB-WB-26-0890 is the example plastics/06, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
+- `ShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by river (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 8 = Inland water transport.
 
-### Previous Customs Declaration
+### Additional Document Reference
 
-Inside `PreviousCustomsDeclaration`:
+Inside `AdditionalDocumentReference`:
 
-- `ID` = **RR-CD-26-0888**  
-  The export declaration in the country of departure.
+- `ID` = **RR-EX-26-0887**  
+  The export declaration of the goods in the country of departure, for information.
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: RR-EX-26-0887 is the example plastics/05, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **RR-INV-26-0894**  
+  The commercial invoice the customs value rests on (worklist C12).
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: RR-INV-26-0894 is the example plastics/10, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -568,13 +560,6 @@ Inside `Signature`:
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
   <cbc:Note>Duties paid by the importer's account at customs.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-04-22</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the river border</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -974,10 +959,18 @@ Inside `Signature`:
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
       </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>RR-CD-26-0888</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>RR-EX-26-0887</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>RR-INV-26-0894</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>RP-SIG-IM-plastics</cbc:ID>
     <cac:SignatoryParty>

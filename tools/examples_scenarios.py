@@ -169,7 +169,7 @@ def road_consignment(f, view):
         "ThirdPartyPayerIndicator": V("false", "The consignee, who booked the truck, pays the freight."),
         "HaulageInstructions": V("Wait at the warehouse until customs has released the export declaration.",
                                  "What the driver must do before leaving."),
-        "CustomsClearanceServiceInstructions": V("The export is declared by the 3PL in Ferrano; the import by the "
+        "CustomsClearanceServiceInstructions": V("The export is declared by the seller in Ferrano; the import by the "
                                                  "distributor at the border.", "Who clears the goods through customs."),
         "DeliveryInstructions": V("Enter by gate 3 of the business park and report to the gatehouse; unload at "
                                    "dock 4.", "Where to go on arrival."),
@@ -188,7 +188,7 @@ def road_consignment(f, view):
                                           "Freight collect: the consignee pays.")},
         "CustomsDeclaration": {"ID": V(f.numbers["export-declaration"], "The export declaration the goods travel "
                                                                         "under."),
-                               "IssuerParty": party("19-xu", short=True)},
+                               "IssuerParty": party("5-xu", short=True)},     # the declarant (road/08#F5, D46)
         "MainCarriageShipmentStage": road_stage(f, True),
         "TransportHandlingUnit": kit.handling_units(f, d, "8-xu", "LD MARROWDALE", detail=True)})
     return out
@@ -631,8 +631,6 @@ def rail_offices():
                                            "Where the goods leave Urvania."),
             "OfficeOfTransitLocation": office("Customs post at the rail border station, Bayvarran side",
                                               "Where the transit is checked on entering Bayvarra."),
-            "OfficeOfEntryLocation": office("Customs post at the rail border station, Bayvarran side",
-                                            "Where the goods enter Bayvarra."),
             "OfficeOfDestinationLocation": office("Customs office Marrowdale", "Where the transit ends and the "
                                                                                "goods are declared for import."),
             "OfficeOfImportLocation": office("Customs office Marrowdale", "Where the import is declared.")}
@@ -685,7 +683,7 @@ def rail_consignment(f, view):
         "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, k == 0),
                                    "CustomsDeclaration": {"ID": V(f.numbers["transit"], "The transit declaration "
                                                                                        "the box travels under."),
-                                                          "IssuerParty": party("19-xu", short=True)},
+                                                          "IssuerParty": party("5-xu", short=True)},   # rail/08#F4
                                    "EnergyConsumptionAllocation": {
                                        "EnergySourceTypeCode": V("ELECTRICITY", "The train runs on electricity."),
                                        "AllocatedEnergyMeasure": V("610", "This box's share of the train's energy, "
@@ -1648,8 +1646,6 @@ def sea(n, doc):
                                                    "seaport.", "The value of the goods at export, in lume.")
         goods = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
         kit.deep_merge(out["CustomsDeclaration"]["Shipment"], {
-            "DeclaredCustomsValueAmount": amount(goods, "XBL", "The export value: the goods on board, FOB."),
-            "DeclaredStatisticsValueAmount": amount(goods, "XBL", "The same value for the trade statistics."),
             "FreeOnBoardValueAmount": amount(goods, "XBL", "On board in Lumeport."),
             "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "The cargo insurance the seller "
                                                                                  "took out under CIF."),
@@ -4649,15 +4645,19 @@ def import_extras(f, n, doc, out):
          "NatureOfTransactionCode": V("PURCHASE", "The goods were bought."),
          "Note": V("Duties paid by the importer's account at customs.", "How duties are settled."),
          "VersionID": V("1", "The first version."),
-         "ValidityPeriod": {"StartDate": V(out["IssueDate"].value, "From the declaration."),
-                            "DurationMeasure": V("30", "Valid for clearance within 30 days.", unitCode="DAY")},
-         "CustomsExitOfficeLocation": exit_office(f, origin),
          "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(c, "The customs territory of import.")}},
          "NotifierParty": party(doc["from"], short=True),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-IM-{f.id}")}
-    if "export-declaration" in f.numbers:
-        x["PreviousCustomsDeclaration"] = {"ID": V(f.numbers["export-declaration"], "The export declaration in the "
-                                                                                     "country of departure.")}
+    refs = out.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    if "export" in f.numbers:        # another country's declaration is no previous declaration of this one (C12)
+        refs.append({"ID": V(f.numbers["export"], "The export declaration of the goods in the country of "
+                                                  "departure, for information.")})
+    inv = next((f.numbers[k] for k in ("invoice", "goods-invoice") if k in f.numbers), None)
+    if inv:
+        refs.append({"ID": V(inv, "The commercial invoice the customs value rests on.")})
+    if refs:
+        x["AdditionalDocumentReference"] = refs
     return x
 
 
@@ -4678,9 +4678,6 @@ def _(f, n, doc, out):
                                                         "three days.")},
             "ExportCustomsExitOfficeLocation": {"Name": V("Customs post at the rail border station, Urvanian side",
                                                           "Where the goods leave Urvania.")},
-            "TransitCustomsExitOfficeLocation": {"Name": V("Customs post at the rail border station, Bayvarran side",
-                                                           "Where the transit is checked.")},
-            "ImportCustomsExitOfficeLocation": {"Name": V("Customs office Marrowdale", "Where the transit ends.")},
             "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V("XU", "Declared under Urvania's "
                                                                                     "customs.")}},
             "FreightForwarderParty": party("14-xu", short=True),
@@ -7250,10 +7247,11 @@ def _(f, n, doc, out):
 
 @enrich("rail", "TransitCustomsDeclaration")
 def _(f, n, doc, out):
-    return {"PreviousCustomsDeclaration": {
-        "ID": V("VI-CD-26-0330E", "The export declaration lodged in Urvania at the office of departure (not shown in "
-                                  "this flow), which the transit continues."),
-        "FunctionCode": V("EXPORT", "The kind of the previous declaration.")}}
+    return {"AdditionalDocumentReference": [
+        *([out["AdditionalDocumentReference"]] if isinstance(out.get("AdditionalDocumentReference"), dict)
+          else out.get("AdditionalDocumentReference", [])),
+        {"ID": V("VI-CD-26-0330E", "The export declaration lodged in Urvania at the office of departure, which the "
+                                   "transit continues; a document outside the examples (rail/06#F5).")}]}
 
 
 @enrich("sea", "ExportCustomsDeclaration")
