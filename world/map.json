@@ -16,8 +16,12 @@
      18
     ],
     [
-     13,
+     15,
      18
+    ],
+    [
+     15,
+     19
     ]
    ]
   },
@@ -25,10 +29,10 @@
    "id": "rail-x",
    "mode": "rail",
    "layer": "transport",
-   "label": "Containers from the border hub to the distributor's siding",
+   "label": "Containers from Ferrano past the border hub to the distributor's siding",
    "pts": [
     [
-     19,
+     15,
      18
     ],
     [
@@ -42,6 +46,22 @@
     [
      30,
      26
+    ]
+   ]
+  },
+  {
+   "id": "factory-siding",
+   "mode": "rail",
+   "layer": "transport",
+   "label": "The factory's second siding, for outgoing loads",
+   "pts": [
+    [
+     16,
+     18
+    ],
+    [
+     16,
+     19
     ]
    ]
   },
