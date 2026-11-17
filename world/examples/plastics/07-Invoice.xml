@@ -8,7 +8,7 @@
   <cbc:UUID>948156f2-1939-56f7-915d-221e02660acd</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>14:20:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-22</cbc:DueDate>
+  <cbc:DueDate>2026-05-19</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-22</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -168,7 +168,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-22</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF45FBINV260891</cbc:InstructionNote>
@@ -215,17 +215,9 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XU-STD</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
-    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">4306</cbc:SettlementDiscountAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.fiumella.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-22</cbc:PaymentDueDate>
-    <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-22</cbc:StartDate>
-      <cbc:EndDate>2026-05-02</cbc:EndDate>
-    </cac:SettlementPeriod>
+    <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

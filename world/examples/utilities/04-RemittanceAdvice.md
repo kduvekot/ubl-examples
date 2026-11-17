@@ -22,8 +22,8 @@ The manufacturer pays both electricity bills in one transfer.
   The payer's remittance number.
 - `UUID` = **2d5c6916-4910-521a-8f1e-a8eed2f264ea**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-10**  
-  Paid within ten days, to take the cash discount of the invoice's terms.
+- `IssueDate` = **2026-04-19**  
+  Paid before the due date.
 - `IssueTime` = **13:33:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `Note` = **Rikrir skul drek tirnan krirstul.** (languageID `qau`)  
@@ -34,10 +34,10 @@ The manufacturer pays both electricity bills in one transfer.
   The ferra, the currency of the invoice paid; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `TotalDebitAmount` = **15096168** (currencyID `XUF`)  
   The invoices paid.
-- `TotalCreditAmount` = **301923** (currencyID `XUF`)  
-  Credits taken: the settlement discount.
-- `TotalPaymentAmount` = **14794245** (currencyID `XUF`)  
-  The amount transferred: the payable amount less the 2 % discount for payment within the discount period.
+- `TotalCreditAmount` = **0** (currencyID `XUF`)  
+  No credits taken.
+- `TotalPaymentAmount` = **15096168** (currencyID `XUF`)  
+  The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **VI-PAY-26-0313**  
   The payment order the payer gave its bank.
 - `InvoicingPartyReference` = **RF58FEINV260313**  
@@ -305,12 +305,8 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `Note` = **2 % discount taken: paid within the discount period of the invoice's terms.**  
-  Why less is paid than invoiced.
 - `DebitLineAmount` = **15096168** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
-- `CreditLineAmount` = **301923** (currencyID `XUF`)  
-  The settlement discount taken, a credit against the invoice.
 - `BalanceAmount` = **0** (currencyID `XUF`)  
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **ELEC** (listID `ISO 20022 ExternalPurpose1Code`)  
@@ -337,14 +333,14 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
-  <cbc:IssueDate>2026-04-10</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>13:33:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Rikrir skul drek tirnan krirstul.</cbc:Note>
   <cbc:Note languageID="en-XU">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">15096168</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XUF">301923</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XUF">14794245</cbc:TotalPaymentAmount>
+  <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">15096168</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VI-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -545,9 +541,7 @@ Inside `RemittanceAdviceLine`:
   </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
     <cbc:DebitLineAmount currencyID="XUF">15096168</cbc:DebitLineAmount>
-    <cbc:CreditLineAmount currencyID="XUF">301923</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>

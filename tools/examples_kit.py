@@ -155,35 +155,68 @@ def cross_border(a, b):
     return PARTY[a]["c"] != PARTY[b]["c"]
 
 
-def payment_terms(flow, seller, buyer, day, due_days, total, cur, number):
-    """The seller country's payment practice (world/countries.json) applied to this invoice."""
+PLAN_PAYMENT = ("30 days net from the consignment note.", 30)    # the freight term of the framework transport plans
+
+
+def terms_of(flow, seller, day, kind=None):
+    """The payment terms an invoice issued on `day` applies, in the three layers of D22: the contract's (kind
+    "plan": the transport plan's freight term, counted from the consignment note), the Trade Accord's utility
+    term (kind "utility", D23), or else the seller's standard terms; late payment, where the terms say nothing,
+    under the statutory interest of the seller's country. Returns the terms with the day counting starts and the
+    due day, so that every due date follows from the terms the document cites (O70)."""
+    pay = WORLD["countries"][PARTY[seller]["c"]]["payment"]
+    if isinstance(kind, tuple) and kind[0] == "until-O72":   # sea/22: its balance term is settled with the sea flow
+        t = terms_of(flow, seller, day)
+        return {**t, "due": day + kind[1]}
+    if kind == "plan":
+        text, days = PLAN_PAYMENT
+        start = flow.numbers[f"waybill-day-{seller}"]
+        return {"id": None, "text": text, "why": "The payment term of the transport plan this freight is carried "
+                "under: the contract wins over the carrier's standard terms (D22).", "start": start,
+                "start_why": "From the consignment note's date.", "due": start + days, "discount": None,
+                "surcharge": None, "interest": pay.get("statutory_interest")}
+    if kind == "utility":
+        t = WORLD["payment_terms_accord"]["TA-UTIL"]
+        return {"id": "TA-UTIL", "id_why": "The Trade Accord's term for utility bills.", "text": t["terms"],
+                "why": t["note"], "start": day, "start_why": "From the bill's date.", "due": day + t["due_days"],
+                "discount": None, "surcharge": None, "interest": pay.get("statutory_interest")}
     c = WORLD["countries"][PARTY[seller]["c"]]
-    pay = c["payment"]
-    out = {"ID": V(f"{PARTY[seller]['c']}-STD", f"The standard terms of {c['name']}."),
-           "Note": V(pay["terms"], pay["note"]),
-           "PaymentDueDate": V(flow.date(day + due_days), "The day the amount is due."),
+    return {"id": f"{PARTY[seller]['c']}-STD", "id_why": f"The standard terms of {c['name']}.", "text": pay["terms"],
+            "why": pay["note"], "start": day, "start_why": "From the invoice date.", "due": day + pay["due_days"],
+            "discount": pay.get("discount"), "surcharge": pay.get("penalty_surcharge"),
+            "interest": pay.get("penalty_interest") or pay.get("statutory_interest")}
+
+
+def payment_terms(flow, seller, buyer, t, total, cur, number):
+    """The payment terms t (terms_of) as cac:PaymentTerms of an invoice."""
+    out = {**({"ID": V(t["id"], t["id_why"])} if t["id"] else {}),
+           "Note": V(t["text"], t["why"]),
+           "PaymentDueDate": V(flow.date(t["due"]), "The day the amount is due, as the terms count it."),
            "PaymentMeansID": V("1", "The payment means these terms apply to: the credit transfer below.")}
-    if pay.get("discount"):
-        dsc = pay["discount"]
+    if t["discount"]:
+        dsc = t["discount"]
         out["SettlementDiscountPercent"] = V(dsc["percent"], "The cash discount for early payment.")
         out["SettlementDiscountAmount"] = amount(total * Decimal(dsc["percent"]) / 100, cur, "The discount on the "
                                                  "amount payable, if paid in time.")
-        out["SettlementPeriod"] = {"StartDate": V(flow.date(day), "From the invoice date."),
-                                   "EndDate": V(flow.date(day + dsc["days"]), f"For {dsc['days']} days.")}
-    if pay.get("penalty_surcharge"):
-        pen = pay["penalty_surcharge"]
+        out["SettlementPeriod"] = {"StartDate": V(flow.date(t["start"]), t["start_why"]),
+                                   "EndDate": V(flow.date(t["start"] + dsc["days"]), f"For {dsc['days']} days.")}
+    if t["surcharge"]:
+        pen = t["surcharge"]
         out["PenaltySurchargePercent"] = V(pen["percent"], f"The surcharge per {pen['per']} of late payment.")
         out["PenaltyAmount"] = amount(total * Decimal(pen["percent"]) / 100, cur, "The surcharge for each month "
                                                                                   "late.")
-        out["PenaltyPeriod"] = {"StartDate": V(flow.date(day + due_days + 1), "From the day after the due date, with "
+        out["PenaltyPeriod"] = {"StartDate": V(flow.date(t["due"] + 1), "From the day after the due date, with "
                                                "no end: the surcharge runs per month for as long as the amount is "
                                                "late (worklist C38).")}
-    if pay.get("penalty_interest"):
-        pi = pay["penalty_interest"]
-        out["PenaltyInterestRate"] = {"InterestRatePercent": V(pi["percent"], "The interest on late payment."),
+    if t["interest"]:
+        pi = t["interest"]
+        out["PenaltyInterestRate"] = {"InterestRatePercent": V(pi["percent"], "The interest on late payment" + (
+                                          ": the statutory rate, as the terms say nothing on late payment (D22)."
+                                          if t["id"] != f"{PARTY[seller]['c']}-STD" or not WORLD["countries"][
+                                              PARTY[seller]["c"]]["payment"].get("penalty_interest") else ".")),
                                       "TimeBasisCode": V(pi["basis"], "A yearly rate."),
                                       "CalculationMethodCode": V("SIMPLE", "Simple interest, per day late.")}
-    if PARTY[seller]["identity"].get("website"):
+    if t["id"] and t["id"].endswith("-STD") and PARTY[seller]["identity"].get("website"):
         out["PaymentTermsDetailsURI"] = V(PARTY[seller]["identity"]["website"] + "/terms", "The seller's general "
                                                                                            "terms of payment.")
     return out
@@ -510,10 +543,14 @@ def gross_weight(flow, which, deal=None):
     return sum(Decimal(str(d[which])) * Decimal(str(maker(d["item"]).get("gross_kg", 0))) for d in (deal or flow.deal))
 
 
-def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None,
-            currency=None):
-    """A commercial invoice from the seller (doc['from']) to the buyer; rows_spec overrides the deal."""
+def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None,
+            currency=None, terms=None):
+    """A commercial invoice from the seller (doc['from']) to the buyer; rows_spec overrides the deal. terms: the
+    kind of payment terms (terms_of): "plan", "utility", or the seller's standard terms."""
     seller, buyer = doc["from"], doc["to"]
+    t = terms_of(flow, seller, day, terms)
+    due_days = t["due"] - day
+    flow.numbers[f"{key}-terms"] = t
     cur = currency or currency_of(seller)
     if rows_spec is None:
         which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
@@ -529,7 +566,7 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
     out = {
         "ID": V(flow.number(key, seller, "Invoice"), "The seller's invoice number."),
         "IssueDate": V(flow.date(day), why_date),
-        "DueDate": V(flow.date(day + due_days), f"{due_days} days after the issue date, the agreed payment term."),
+        "DueDate": V(flow.date(t["due"]), f"As the payment terms below count it: {t['text'][0].lower()}{t['text'][1:]}"),
         "InvoiceTypeCode": V("393", "The invoice is assigned to the factor, who collects it: a factored invoice, a "
                                     "subtype UN/EDIFACT 1001 has its own code for.")
         if PARTY.get(doc["parties"].get("PayeeParty"), {}).get("name") == "Factor" else
@@ -553,8 +590,8 @@ def invoice(flow, n, doc, day, due_days, why_date, refs, rows_spec=None, key="in
            if is_public(buyer) and PARTY[buyer]["identity"].get("cost_centre") else {}),
         "PaymentMeans": payment_means(flow, seller, buyer, doc["parties"].get("PayeeParty", seller), day, due_days,
                                       flow.number(key, seller, "Invoice"), "The account to pay to."),
-        "PaymentTerms": payment_terms(flow, seller, buyer, day, due_days, base + tax +
-                                      sum(r[2] for r in charge_rows), cur, flow.number(key, seller, "Invoice")),
+        "PaymentTerms": payment_terms(flow, seller, buyer, t, base + tax + sum(r[2] for r in charge_rows), cur,
+                                      flow.number(key, seller, "Invoice")),
         "TaxTotal": total,
         "LegalMonetaryTotal": monetary_total(base, tax, cur, sum(r[2] for r in charge_rows)),
         "InvoiceLine": [{
@@ -751,7 +788,8 @@ def tep_terms(flow, user, provider, days):
             "TransportServiceProviderSpecialTerms": V("Waiting time beyond two hours is charged.", "The carrier's."),
             "ChangeConditions": V("Changes up to 24 hours before collection without charge.", "When the plan may "
                                                                                               "change."),
-            "PaymentTerms": {"Note": V("30 days net from the consignment note.", "When the freight is paid.")},
+            "PaymentTerms": {"Note": V(PLAN_PAYMENT[0], "When the freight is paid: the term the carrier's "
+                                                        "invoices under this plan apply (D22).")},
             "PenaltyPaymentTerms": {"Note": V("For late delivery the carrier is liable for 5 % of the freight per "
                                               "day late, at most 25 %.", "The carrier's liability for delay, in "
                                               "words: PenaltySurchargePercent is a surcharge for late payment, not "
@@ -876,6 +914,7 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     leg = flow_leg(flow, carrier)
     kind, kind_name = waybill_kind(flow, carrier)
     number = flow.number("waybill", doc["from"], "Waybill")
+    flow.numbers[f"waybill-day-{carrier}"] = day          # a freight term may count from it (PLAN_PAYMENT)
     out = {"ID": V(number, "The consignment note number."),
            "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "
                                                                                     "the carriage."),
@@ -1327,11 +1366,12 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
                                           "\"claiming payment\", and the customer claims nothing here, it settles "
                                           "what it owes.")
         number = flow.numbers[f"self-billed-{n}"]
-        due = WORLD["countries"][PARTY[supplier]["c"]]["payment"]["due_days"]
-        out["DueDate"] = V(flow.date(day + due), "The supplier's usual term, which the customer applies to itself.")
-        out["PaymentMeans"] = payment_means(flow, supplier, customer, supplier, day, due, number,
+        t = terms_of(flow, supplier, day)
+        flow.numbers[f"self-billed-{n}-terms"] = t
+        out["DueDate"] = V(flow.date(t["due"]), "The supplier's usual term, which the customer applies to itself.")
+        out["PaymentMeans"] = payment_means(flow, supplier, customer, supplier, day, t["due"] - day, number,
                                             "The supplier's account, where the customer pays what it billed itself.")
-        out["PaymentTerms"] = payment_terms(flow, supplier, customer, day, due, base + tax, cur, number)
+        out["PaymentTerms"] = payment_terms(flow, supplier, customer, t, base + tax, cur, number)
     else:
         out["CreditNoteTypeCode"] = V("261", "UN/EDIFACT 1001 code 261, \"A document which indicates that the "
                                              "customer is claiming credit in a self billing environment\": the "

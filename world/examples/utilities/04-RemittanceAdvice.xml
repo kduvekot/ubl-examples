@@ -6,14 +6,14 @@
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
-  <cbc:IssueDate>2026-04-10</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
   <cbc:IssueTime>13:33:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Rikrir skul drek tirnan krirstul.</cbc:Note>
   <cbc:Note languageID="en-XU">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">15096168</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XUF">301923</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XUF">14794245</cbc:TotalPaymentAmount>
+  <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">15096168</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VI-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -214,9 +214,7 @@
   </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
     <cbc:DebitLineAmount currencyID="XUF">15096168</cbc:DebitLineAmount>
-    <cbc:CreditLineAmount currencyID="XUF">301923</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>

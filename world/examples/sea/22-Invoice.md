@@ -27,7 +27,7 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
 - `IssueTime` = **12:32:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-06-28**  
-  45 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **393** (listID `UN/EDIFACT EDED 1001`)  
   The invoice is assigned to the factor, who collects it: a factored invoice, a subtype UN/EDIFACT 1001 has its own code for. The code is from the world's copy of UN/EDIFACT 1001 Document name: 393 = Factored invoice.
 - `Note` = **This receivable has been assigned to Harbourline Factoring; pay only to the account stated.**  

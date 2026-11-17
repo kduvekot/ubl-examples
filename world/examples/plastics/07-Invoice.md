@@ -26,8 +26,8 @@ Under CPT the seller pays the carriage: the barge operator invoices the river fr
   Issued after the sailing.
 - `IssueTime` = **14:20:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `DueDate` = **2026-05-22**  
-  30 days after the issue date, the agreed payment term.
+- `DueDate` = **2026-05-19**  
+  As the payment terms below count it: 30 days net from the consignment note.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `TaxPointDate` = **2026-04-22**  
@@ -226,7 +226,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-22**  
+- `PaymentDueDate` = **2026-05-19**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -289,26 +289,14 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `ID` = **XU-STD**  
-  The standard terms of Urvania.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **30 days net; 2 % discount when paid within 10 days.**  
-  Urvanian practice: a cash discount for early payment, statutory interest on late payment.
-- `SettlementDiscountPercent` = **2**  
-  The cash discount for early payment.
-- `SettlementDiscountAmount` = **4306** (currencyID `XUF`)  
-  The discount on the amount payable, if paid in time.
-- `PaymentTermsDetailsURI` = **https://www.fiumella.example/terms**  
-  The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-22**  
-  The day the amount is due.
-- `SettlementPeriod/StartDate` = **2026-04-22**  
-  From the invoice date.
-- `SettlementPeriod/EndDate` = **2026-05-02**  
-  For 10 days.
+- `Note` = **30 days net from the consignment note.**  
+  The payment term of the transport plan this freight is carried under: the contract wins over the carrier's standard terms (D22).
+- `PaymentDueDate` = **2026-05-19**  
+  The day the amount is due, as the terms count it.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
-  The interest on late payment.
+  The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
 - `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
   A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
 - `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
@@ -390,7 +378,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>948156f2-1939-56f7-915d-221e02660acd</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>14:20:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-22</cbc:DueDate>
+  <cbc:DueDate>2026-05-19</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-22</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -550,7 +538,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-22</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF45FBINV260891</cbc:InstructionNote>
@@ -597,17 +585,9 @@ Inside `InvoiceLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XU-STD</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
-    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">4306</cbc:SettlementDiscountAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.fiumella.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-22</cbc:PaymentDueDate>
-    <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-22</cbc:StartDate>
-      <cbc:EndDate>2026-05-02</cbc:EndDate>
-    </cac:SettlementPeriod>
+    <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

@@ -235,17 +235,11 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
-    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:Note>21 days net from the bill.</cbc:Note>
     <cbc:SettlementDiscountAmount currencyID="XUF">301923</cbc:SettlementDiscountAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.ferranoenergy.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-02</cbc:StartDate>
-      <cbc:EndDate>2026-04-12</cbc:EndDate>
-    </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

@@ -27,7 +27,7 @@ The household's water bill, exempt from sales tax like every water bill.
 - `IssueTime` = **15:44:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
-  21 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 21 days net from the bill.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -350,22 +350,14 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `ID` = **XB-STD**  
-  The standard terms of Bayvarra.
+- `ID` = **TA-UTIL**  
+  The Trade Accord's term for utility bills.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **Collected by direct debit 21 days after the invoice date.**  
-  How the household pays.
-- `PenaltySurchargePercent` = **1.5**  
-  The surcharge per month of late payment.
-- `PenaltyAmount` = **0.58** (currencyID `XBL`)  
-  The surcharge for each month late.
-- `PaymentTermsDetailsURI` = **https://www.coastalwater.example/terms**  
-  The seller's general terms of payment.
+- `Note` = **21 days net from the bill. Collected by direct debit on that day.**  
+  The Trade Accord's utility term, and how the household pays: by the direct debit of its mandate.
 - `PaymentDueDate` = **2026-04-23**  
-  The day the amount is due.
-- `PenaltyPeriod/StartDate` = **2026-04-24**  
-  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
+  The day the amount is due, as the terms count it.
 
 ### Tax Total
 
@@ -786,16 +778,10 @@ Inside `InvoiceLine`:
     </cac:PaymentMandate>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>Collected by direct debit 21 days after the invoice date.</cbc:Note>
-    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">0.58</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.coastalwater.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:Note>21 days net from the bill. Collected by direct debit on that day.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-24</cbc:StartDate>
-    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>

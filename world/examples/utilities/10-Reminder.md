@@ -308,8 +308,8 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Please pay within ten days by credit transfer; the next collection will be by direct debit again. The surcharge for late payment is waived for this first reminder.**  
-  What the household is asked to do, and why no surcharge is charged (utilities/10#F9).
+- `Note` = **Please pay within ten days by credit transfer; the next collection will be by direct debit again.**  
+  What the household is asked to do. No interest is charged: the Trade Accord's utility term says nothing on late payment, and Bayvarra has no statutory rate (O148); the company charges only the bank's fee (utilities/10#F9).
 - `PaymentDueDate` = **2026-05-11**  
   Ten days after the reminder.
 
@@ -615,7 +615,7 @@ Inside `ReminderLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again. The surcharge for late payment is waived for this first reminder.</cbc:Note>
+    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again.</cbc:Note>
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>

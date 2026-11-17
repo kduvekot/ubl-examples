@@ -27,7 +27,7 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
 - `IssueTime` = **11:19:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
-  21 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 21 days net from the bill.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -278,22 +278,14 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `ID` = **XL-STD**  
-  The standard terms of Lisavu.
+- `ID` = **TA-UTIL**  
+  The Trade Accord's term for utility bills.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **45 days net.**  
-  Island practice: longer terms, simple interest on late payment.
-- `PaymentTermsDetailsURI` = **https://www.selanutelecom.example/terms**  
-  The seller's general terms of payment.
+- `Note` = **21 days net from the bill.**  
+  The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day (decision D23).
 - `PaymentDueDate` = **2026-04-23**  
-  The day the amount is due.
-- `PenaltyInterestRate/InterestRatePercent` = **6**  
-  The interest on late payment.
-- `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
-  A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
-- `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
-  Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
+  The day the amount is due, as the terms count it.
 
 ### Allowance Charge
 
@@ -631,16 +623,10 @@ Inside `InvoiceLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XL-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>45 days net.</cbc:Note>
-    <cbc:PaymentTermsDetailsURI>https://www.selanutelecom.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:Note>21 days net from the bill.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:PenaltyInterestRate>
-      <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
-      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
-      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
-    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>

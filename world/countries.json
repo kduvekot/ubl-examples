@@ -112,7 +112,12 @@
       "RTGS"
      ]
     },
-    "note": "Urvanian practice: a cash discount for early payment, statutory interest on late payment."
+    "note": "Urvanian practice: a cash discount for early payment, statutory interest on late payment.",
+    "statutory_interest": {
+     "percent": "8",
+     "basis": "ANN",
+     "note": "Urvania's statutory interest on late payment between businesses, which applies wherever the parties agreed nothing on late payment (D22)."
+    }
    },
    "history": "An Italian territory, then under British rule, independent since 1962 as a bilingual country: Urvanian and English are its official languages. Its place and street names are the Italian ones the British kept, now part of English; Urvanian gives every place its own name too, and addresses carry both.",
    "phone_plan": {
@@ -2944,5 +2949,13 @@
   }
  },
  "card_schemes_note": "Card numbers follow ISO/IEC 7812: the major industry identifier 9 (national assignment) and the ISO 3166 numeric code of the issuer's country (901 Urvania, 902 Bayvarra, 903 Lisavu), then the issuer's two digits, the account and a Luhn check digit. A chip application identifier (ISO/IEC 7816-5) starts with the registered application provider identifier (RID) of the card scheme, from the national registration category D followed by the country code. A receipt shows the card number masked as the merchant's till does, at most the first six and the last four digits (PCI DSS), and never the security code or the card's dates.",
- "documents_between_countries": "Documents between the countries of the Trade Accord (sender and receiver in different countries, wherever the goods go) are in English, in the sender's variety (en-XU, en-XB, en-XL): a party states English with its own country's locale, and notes and code names come in English only. At home an Urvanian or Lisavan party states its own language (qau, qal), and its documents give their notes in both languages. A party's master data (address, legal form) is written as its register writes it, in both official languages of a bilingual country, in every document (decisions O19, D1, D2, 2026-11-17)."
+ "documents_between_countries": "Documents between the countries of the Trade Accord (sender and receiver in different countries, wherever the goods go) are in English, in the sender's variety (en-XU, en-XB, en-XL): a party states English with its own country's locale, and notes and code names come in English only. At home an Urvanian or Lisavan party states its own language (qau, qal), and its documents give their notes in both languages. A party's master data (address, legal form) is written as its register writes it, in both official languages of a bilingual country, in every document (decisions O19, D1, D2, 2026-11-17).",
+ "payment_terms_accord": {
+  "TA-UTIL": {
+   "terms": "21 days net from the bill.",
+   "due_days": 21,
+   "note": "The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day (decision D23)."
+  }
+ },
+ "payment_terms_note": "Which payment terms an invoice applies, in three layers (decision D22): what the parties agreed in a contract or framework agreement; where they agreed nothing, the seller's standard terms (XU-STD, XB-STD, XL-STD); where neither says anything about late payment, the statutory interest of the seller's country, where it has one. A cross-border sale follows the seller's country unless the contract chooses otherwise. Utility bills follow the Trade Accord's own term TA-UTIL (decision D23)."
 }

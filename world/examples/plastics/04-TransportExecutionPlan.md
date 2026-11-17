@@ -291,7 +291,7 @@ Inside `TransportExecutionTerms`:
 - `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
-  When the freight is paid.
+  When the freight is paid: the term the carrier's invoices under this plan apply (D22).
 - `PenaltyPaymentTerms/Note` = **For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.**  
   The carrier's liability for delay, in words: PenaltySurchargePercent is a surcharge for late payment, not for late delivery (worklist C19).
 - `NotificationRequirement/NotificationTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportNotificationTypeCode`)  

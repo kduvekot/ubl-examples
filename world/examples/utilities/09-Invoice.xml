@@ -272,16 +272,10 @@
     </cac:PaymentMandate>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>Collected by direct debit 21 days after the invoice date.</cbc:Note>
-    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">0.58</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.coastalwater.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:Note>21 days net from the bill. Collected by direct debit on that day.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-24</cbc:StartDate>
-    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>

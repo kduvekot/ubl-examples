@@ -320,7 +320,7 @@ Inside `TransportExecutionTerms`:
 - `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
-  When the freight is paid.
+  When the freight is paid: the term the carrier's invoices under this plan apply (D22).
 - `DeliveryTerms/ID` = **FCA** (schemeID `INCOTERMS`)  
   The buyer's terms with the mine, for the carrier's information. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `BonusPaymentTerms/Note` = **2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.**  

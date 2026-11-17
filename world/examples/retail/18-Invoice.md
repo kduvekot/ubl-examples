@@ -27,7 +27,7 @@ The distributor has sold its receivables to the factor, so the invoice names the
 - `IssueTime` = **15:52:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-30**  
-  30 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **393** (listID `UN/EDIFACT EDED 1001`)  
   The invoice is assigned to the factor, who collects it: a factored invoice, a subtype UN/EDIFACT 1001 has its own code for. The code is from the world's copy of UN/EDIFACT 1001 Document name: 393 = Factored invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -364,7 +364,7 @@ Inside `PaymentTerms`:
 - `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-05-30**  
-  The day the amount is due.
+  The day the amount is due, as the terms count it.
 - `PenaltyPeriod/StartDate` = **2026-05-31**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 

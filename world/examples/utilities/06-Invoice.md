@@ -27,7 +27,7 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
 - `IssueTime` = **09:13:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
-  21 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 21 days net from the bill.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -300,22 +300,14 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `ID` = **XB-STD**  
-  The standard terms of Bayvarra.
+- `ID` = **TA-UTIL**  
+  The Trade Accord's term for utility bills.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **30 days net; 1.5 % surcharge per month late.**  
-  Bayvarran practice: a surcharge per month of late payment, no discount.
-- `PenaltySurchargePercent` = **1.5**  
-  The surcharge per month of late payment.
-- `PenaltyAmount` = **3.57** (currencyID `XBL`)  
-  The surcharge for each month late.
-- `PaymentTermsDetailsURI` = **https://www.coastalwater.example/terms**  
-  The seller's general terms of payment.
+- `Note` = **21 days net from the bill.**  
+  The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day (decision D23).
 - `PaymentDueDate` = **2026-04-23**  
-  The day the amount is due.
-- `PenaltyPeriod/StartDate` = **2026-04-24**  
-  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
+  The day the amount is due, as the terms count it.
 
 ### Tax Total
 
@@ -688,16 +680,10 @@ Inside `InvoiceLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
-    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">3.57</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.coastalwater.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:Note>21 days net from the bill.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-24</cbc:StartDate>
-    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>

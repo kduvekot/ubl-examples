@@ -60,15 +60,15 @@ def ore(n, doc):
         return kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the loaded train.", weighed_kg,
                            "The weight the carrier takes over, from the weighbridge.")
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
-        return kit.invoice(f, n, doc, 10, 30, "Issued after the carriage was performed.",
+        return kit.invoice(f, n, doc, 10, "Issued after the carriage was performed.",
                            {"AdditionalDocumentReference": [
                                {"ID": V(f.numbers["tep"], "The transport plan with the agreed price.")},
                                {"ID": V(f.numbers["waybill"], "The consignment note of the carriage invoiced.")}]},
                            [{"item": "rail-ore", "qty": "1788.4",
                              "invoice_why": "The weight carried, from the consignment note: the freight is per tonne."}],
-                           key="freight-invoice")
+                           key="freight-invoice", terms="plan")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 9, 30, "Issued the day after the goods were despatched and weighed.",
+        return kit.invoice(f, n, doc, 9, "Issued the day after the goods were despatched and weighed.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"],
                                                                   "The despatch advice of the goods invoiced.")}})
@@ -444,7 +444,7 @@ def road(n, doc):
                                            "receipt: a transport document, not a delivery note (road/11#F2).")}]
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "13-xu":
-        return kit.invoice(f, n, doc, 9, 30, "Issued after delivery.",
+        return kit.invoice(f, n, doc, 9, "Issued after delivery.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note of the "
                                                                                           "carriage invoiced.")}},
                            [{"item": "road-transport", "qty": DISTANCE_KM,
@@ -462,7 +462,7 @@ def road(n, doc):
                                                  "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt "
                                                                                "advice: proof of delivery.")}}}}}})
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 8, 30, "Issued when the goods have left the warehouse.",
+        return kit.invoice(f, n, doc, 8, "Issued when the goods have left the warehouse.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
                                                                                          "goods invoiced.")},
@@ -744,12 +744,12 @@ def rail(n, doc):
         kit.deep_merge(out["Shipment"]["Consignment"], rail_consignment(f, "note"))
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
-        return kit.invoice(f, n, doc, 11, 30, "Issued after delivery at the siding.",
+        return kit.invoice(f, n, doc, 11, "Issued after delivery at the siding.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
                            [{"item": "rail-container", "qty": 2, "invoice_why": "Two container slots."}],
-                           key="freight-invoice")
+                           key="freight-invoice", terms="plan")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 11, 30, "Issued on delivery at the distributor's siding.",
+        return kit.invoice(f, n, doc, 11, "Issued on delivery at the distributor's siding.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "AdditionalDocumentReference": [
                                 {"ID": V(f.numbers["transit"], "The transit declaration the benches left Urvania "
@@ -897,10 +897,10 @@ def plastics(n, doc):
         out["Shipment"]["GoodsItem"] = {k: v for k, v in g.items() if v is not None}
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "15-xu":
-        return kit.invoice(f, n, doc, 9, 30, "Issued after the sailing.",
+        return kit.invoice(f, n, doc, 9, "Issued after the sailing.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
                            [{"item": "barge-freight", "qty": 120, "invoice_why": "The tonnes carried."}],
-                           key="freight-invoice")
+                           key="freight-invoice", terms="plan")
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 6, "The day the barge was loaded.", "The gross weight loaded.")
     if doc["doc"] == "ImportCustomsDeclaration":
@@ -926,7 +926,7 @@ def plastics(n, doc):
             "AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The barge's consignment note.")}})
         return out
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 7, 30, "Issued once the granulate is on board.",
+        return kit.invoice(f, n, doc, 7, "Issued once the granulate is on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
                            extra={"Note": V("Carriage paid to: the price includes the barge to the river quay.",
@@ -1088,7 +1088,7 @@ def retail(n, doc):
         return kit.waybill(f, n, doc, 9, "Issued when the carrier collects at the distribution centre.", w,
                            "The gross weight taken over.")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
-        return kit.invoice(f, n, doc, 10, 30, "Issued after delivery.",
+        return kit.invoice(f, n, doc, 10, "Issued after delivery.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
                            [{"item": "road-transport-b", "qty": 38, "invoice_why": "The kilometres from Marrowdale to the "
                                                                                  "store in Lumeport."}],
@@ -1116,7 +1116,7 @@ def retail(n, doc):
                                    "RejectReason": V("Damaged in transit.", "Why.")}}}
         return out
     if doc["doc"] == "Invoice":
-        out = kit.invoice(f, n, doc, 10, 30, "Issued on delivery.",
+        out = kit.invoice(f, n, doc, 10, "Issued on delivery.",
                           {"OrderReference": {"ID": V(f.numbers["order"], "The store's order.")},
                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")},
                            "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The store's receipt "
@@ -1764,7 +1764,7 @@ def sea(n, doc):
                                                  "TransportEvent": kit.event(f, 14, "11:40:00", "Stacked in the "
                                                                                                 "import yard.", location=SEA_SELANU, type_code="STORAGE")}}}}, event_type="DISCHARGE")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
-        return kit.invoice(f, n, doc, 15, 30, "Issued after the sailing.",
+        return kit.invoice(f, n, doc, 15, "Issued after the sailing.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
                            [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container."},
                             {"item": "export-clearance", "qty": 1, "invoice_why": "One export declaration."},
@@ -1811,7 +1811,7 @@ def sea(n, doc):
     if doc["doc"] == "ReceiptAdvice":
         return kit.receipt_advice(f, n, doc, 17, "The buyer's 3PL confirms what arrived.")
     if doc["doc"] == "Invoice":
-        out = kit.invoice(f, n, doc, 10, 45, "Issued when the goods are on board.",
+        out = kit.invoice(f, n, doc, 10, "Issued when the goods are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
                            charges=[{"like": "bench-serra-b", "reason": "Sea freight", "amount": SEA_FREIGHT, "code": "FC", "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
                                      "why": "Under CIF the seller pays the sea freight and charges it on the invoice.",
@@ -1819,7 +1819,8 @@ def sea(n, doc):
                                     {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE, "code": "96",
                                      "code_why": "UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID.",
                                      "why": "Under CIF the seller insures the cargo and charges the insurance.",
-                                     "amount_why": "The premium of the cargo insurance."}])
+                                     "amount_why": "The premium of the cargo insurance."}],
+                           terms=("until-O72", 45))    # the balance term is settled with the sea flow (O72)
         return sea_invoice_terms(f, out)
     if doc["doc"] == "Statement":
         cur, total = "XBL", f.numbers["invoice-amount"]
@@ -2103,7 +2104,7 @@ def air(n, doc):
                                                                                           "terminal",
                                          {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}}, event_type="ARRIVAL")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 4, 30, "Issued after the flight.",
+        return kit.invoice(f, n, doc, 4, "Issued after the flight.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The air waybill.")}},
                            [{"item": "air-freight", "qty": w, "invoice_why": "The chargeable weight: the gross weight "
                                                                              "of the boxed frames."}],
@@ -2326,7 +2327,7 @@ def cotton(n, doc):
                                       "(1 lume = 0.4 coral, so 1 coral = 2.5 lume).",
                                       {"ID": V(f.numbers["bl"], "The bill of lading.")})
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
-        return kit.invoice(f, n, doc, 30, 30, "Issued after the sailing.",
+        return kit.invoice(f, n, doc, 30, "Issued after the sailing.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
                            [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container, booked for the "
                                                                              "mill under FOB."}],
@@ -2334,7 +2335,7 @@ def cotton(n, doc):
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment shipped.")}}}})
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 28, 30, "Issued when the bales are on board.",
+        return kit.invoice(f, n, doc, 28, "Issued when the bales are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")},
                             "AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading: the bales "
                                                                                      "are on board, which is the "
@@ -2484,7 +2485,7 @@ def tender(n, doc):
         return kit.import_declaration(f, n, doc, 78, "Under DAP the buyer clears the import: the authority declares "
                                                      "the benches.", "The customs value in lume, at the reference rate.")
     if doc["doc"] == "Invoice":
-        out = kit.invoice(f, n, doc, 78, 30, "Issued on delivery.",
+        out = kit.invoice(f, n, doc, 78, "Issued on delivery.",
                           {"OrderReference": ref(f, "order", "The authority's call-off order."),
                            "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")},
                            "ProjectReference": {"ID": V("PWD-PARKS-26", "The programme the department books it on.")},
@@ -2574,7 +2575,7 @@ def waste(n, doc):
                 "IssueDate": V(f.date(10), "Reported when the waste has been received."),
                 "Shipment": waste_shipment(f, "38.2", "Weighed on arrival at the recovery facility.")}
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 12, 30, "Issued after the waste was collected and recovered.",
+        return kit.invoice(f, n, doc, 12, "Issued after the waste was collected and recovered.",
                            {"AdditionalDocumentReference": ref(f, "movement", "The waste movement document.")},
                            [{"item": "waste-recovery", "qty": "38.2", "invoice_why": "The tonnes received, from the "
                                                                                      "waste movement document."}])
@@ -3064,8 +3065,8 @@ def utilities(n, doc):
                 **utility_statement(f, n, doc, key, invoice_no)}
     if doc["doc"] == "Invoice":
         key = bill_key(doc)
-        out = kit.invoice(f, n, doc, 1, 21, "The monthly bill, issued on the first day of the next month.", {},
-                          BILLS[key], key=f"invoice-{key}", extra=MARCH)
+        out = kit.invoice(f, n, doc, 1, "The monthly bill, issued on the first day of the next month.", {},
+                          BILLS[key], key=f"invoice-{key}", extra=MARCH, terms="utility")
         purpose = {"33-xu": ("ELEC", "an electricity bill"), "35-xl": ("PHON", "a telephone bill")}.get(
             key, ("WTER", "a water bill"))
         meters = METERS[key]
@@ -3110,15 +3111,13 @@ def utilities(n, doc):
                                "Content": V("The company announces each collection at least five days before.",
                                             "What the clause says.")}},
                 "PayeeFinancialAccount": kit.account("34-xb", "The water company's account the collection goes to.")}
-            out["PaymentTerms"]["Note"] = V("Collected by direct debit 21 days after the invoice date.",
-                                            "How the household pays.")
+            out["PaymentTerms"]["Note"] = V("21 days net from the bill. Collected by direct debit on that day.",
+                                            "The Trade Accord's utility term, and how the household pays: by the "
+                                            "direct debit of its mandate.")
         return out
     if doc["doc"] == "RemittanceAdvice":
         purpose = {"33-xu": ("ELEC", "an electricity bill, the larger part of the bill paid"),
                    "35-xl": ("PHON", "a telephone bill")}.get(bill_key(doc), ("WTER", "a water bill"))
-        if bill_key(doc) == "33-xu":
-            return kit.remittance(f, n, doc, 9, "Paid within ten days, to take the cash discount of the invoice's "
-                                                "terms.", key="invoice-33-xu", discount="2", purpose=purpose)
         return kit.remittance(f, n, doc, 18, "Paid before the due date.", key=f"invoice-{bill_key(doc)}",
                               purpose=purpose)
     if doc["doc"] == "Reminder":
@@ -3143,9 +3142,10 @@ def utilities(n, doc):
                                                 "IssuerParty": party("25-xb", short=True)},
                 "PayeeParty": party("34-xb", short=True),
                 "PaymentTerms": {"Note": V("Please pay within ten days by credit transfer; the next collection will "
-                                           "be by direct debit again. The surcharge for late payment is waived for "
-                                           "this first reminder.", "What the household is asked to do, and why no "
-                                           "surcharge is charged (utilities/10#F9)."),
+                                           "be by direct debit again.", "What the household is asked to do. No "
+                                           "interest is charged: the Trade Accord's utility term says nothing on "
+                                           "late payment, and Bayvarra has no statutory rate (O148); the company "
+                                           "charges only the bank's fee (utilities/10#F9)."),
                                  "PaymentDueDate": V(f.date(40), "Ten days after the reminder.")},
                 "TaxTotal": {"TaxAmount": amount(0, cur, "No sales tax on a reminder fee."),
                              "TaxSubtotal": {"TaxableAmount": amount(Decimal("5.00"), cur, "The fee."),
@@ -3252,7 +3252,7 @@ def wood(n, doc):
                                       "The customs value in ferra: the value in lume at the reference rate (1 lume = 100 "
                                       "ferra).")
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
-        return kit.invoice(f, n, doc, 10, 30, "Issued when the slats leave.",
+        return kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
                            [{"item": "slat-1800", "qty": 4800, "invoice_why": "The slats despatched."}],
                            charges=[PALLETS_CHARGE])
@@ -3263,7 +3263,7 @@ def wood(n, doc):
                          "Ex works the sawmill: the buyer collects the timber and bears every cost from the sawmill's "
                          "yard.", "Marrowdale Sawmill, timber yard", deal=TIMBER, key="order-timber")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 21, 30, "Issued when the timber was collected.",
+        return kit.invoice(f, n, doc, 21, "Issued when the timber was collected.",
                            {"OrderReference": ref(f, "order-timber", "The furniture maker's order.")},
                            [{"item": "timber-beam", "qty": 12, "invoice_why": "The cubic metres collected."}],
                            key="invoice-timber",
@@ -3377,7 +3377,7 @@ def furniture(n, doc):
                          "Brightmarket Stores, goods-in, Lumeport",
                          {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
     if doc["doc"] == "Invoice" and doc["to"] == "26-xb":
-        return kit.invoice(f, n, doc, 20, 30, "Issued on delivery.", {"OrderReference": ref(f, "order", "The store's "
+        return kit.invoice(f, n, doc, 20, "Issued on delivery.", {"OrderReference": ref(f, "order", "The store's "
                                                                                                        "order."),
                                                                       "DeliveryNoteDocumentReference": {
                                                                           "ID": V("BF-DN-26-0320", "The delivery "
@@ -3426,7 +3426,7 @@ def furniture(n, doc):
                                    "Quantity": qty(14, "HUR", "Two installers for seven hours, approved by the "
                                                               "department.")}}
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 38, 30, "Issued once the work report was approved.",
+        return kit.invoice(f, n, doc, 38, "Issued once the work report was approved.",
                            {"OrderReference": ref(f, "order-desks", "The department's order.")},
                            [{"item": "office-desk", "qty": 6, "invoice_why": "The desks delivered."},
                             {"item": "installation", "qty": 14, "invoice_why": "The hours of the approved work report.",
@@ -3463,7 +3463,7 @@ def packaging(n, doc):
                          "Free carrier at the packaging maker: the buyer books the road carrier that collects.",
                          "Rivermouth Packaging, dispatch, Lumeport")
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
-        return kit.invoice(f, n, doc, 5, 30, "Issued when the film was collected.",
+        return kit.invoice(f, n, doc, 5, "Issued when the film was collected.",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
                            [{"item": "film-pe", "qty": 480, "invoice_why": "The kilograms collected."}])
     if doc["doc"] == "Order" and doc["from"] == "40-xb":
@@ -3471,7 +3471,7 @@ def packaging(n, doc):
                          "Delivered at place, the mill: the packaging maker delivers.", "Lumeport Textile Mill, goods-in",
                          deal=BAGS, key="order-bags")
     if doc["doc"] == "Invoice" and doc["to"] == "40-xb":
-        return kit.invoice(f, n, doc, 6, 30, "Issued on delivery.", {"OrderReference": ref(f, "order-bags",
+        return kit.invoice(f, n, doc, 6, "Issued on delivery.", {"OrderReference": ref(f, "order-bags",
                                                                                            "The mill's order.")},
                            [{"item": "garment-bag", "qty": 20000, "invoice_why": "The bags delivered."}],
                            key="invoice-bags")
@@ -3483,7 +3483,7 @@ def packaging(n, doc):
         return kit.despatch_advice(f, n, doc, 15, "The day the shirts left the mill.", "The gross weight of the cartons.",
                                    deal=SHIRTS, key="order-shirts")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 15, 30, "Issued on delivery.",
+        return kit.invoice(f, n, doc, 15, "Issued on delivery.",
                            {"OrderReference": ref(f, "order-shirts", "The store's order.")},
                            [{"item": "shirt", "qty": 600, "invoice_why": "The shirts delivered."}], key="invoice-shirts")
     if doc["doc"] == "PurchaseReceipt":
@@ -5942,7 +5942,7 @@ def mast(n, doc):
     if d == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 3, "Sent when the goods leave for the airport.", "The gross weight.")
     if d == "Invoice":
-        return kit.invoice(f, n, doc, 3, 45, "Issued on despatch.",
+        return kit.invoice(f, n, doc, 3, "Issued on despatch.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The telecom company's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
     raise SystemExit(f"mast scenario: no document {n} {doc['doc']}")
@@ -8800,7 +8800,7 @@ def energy(n, doc):
                                                                                  "The element is required, so it "
                                                                                  "is 0.")}}}}
     if d == "Invoice" and doc["from"] == "44-xu":
-        return kit.invoice(f, n, doc, 2, 30, "The month's network charges.", {},
+        return kit.invoice(f, n, doc, 2, "The month's network charges.", {},
                            [{"item": "network-electricity", "qty": 412800, "invoice_why": "The factory's electricity "
                                                                                           "connection, March."},
                             {"item": "network-electricity", "qty": 18600, "invoice_why": "The warehouse's electricity "
@@ -8809,7 +8809,7 @@ def energy(n, doc):
                                                                                               "connection, March."}],
                            key="network-invoice", extra=MARCH)
     if d == "Invoice" and doc["from"] == "43-xu":
-        return kit.invoice(f, n, doc, 2, 30, "The month's electricity.", {},
+        return kit.invoice(f, n, doc, 2, "The month's electricity.", {},
                            [{"item": "power-wholesale", "qty": POWER_MWH, "invoice_why": "Fed into the grid for the "
                                                                                          "retail company in March."}],
                            key="power-invoice", extra=MARCH)
@@ -8830,7 +8830,7 @@ def energy(n, doc):
     if d == "Invoice" and doc["from"] == "42-xb":
         to_power = doc["to"] == "43-xu"
         key = "gas-invoice" if to_power else "gas-invoice-retail"
-        out = kit.invoice(f, n, doc, 2, 30, "The month's gas.", {},
+        out = kit.invoice(f, n, doc, 2, "The month's gas.", {},
                           [{"item": "natural-gas", "qty": GAS_TO_POWER if to_power else GAS_TO_RETAIL,
                             "invoice_why": "Measured at the border station in March" +
                                            (": delivered to the power station." if to_power else
@@ -9444,6 +9444,9 @@ def cotton_advance(n, doc):
         "PayeeParty": party("38-xl", short=True),
         "Signature": {"ID": V("SCG-SIG-26-0001", "The ginnery's seal on the self-billed prepayment invoice."),
                       "SignatoryParty": party("39-xl", short=True)}})
+    out["PaymentMeans"]["PaymentDueDate"] = V(f.date(day), "Paid on issue, as the season agreement says for the "
+                                                           "advance: the contract's term, not the island's 45 days "
+                                                           "(D22).")
     lmt = out["LegalMonetaryTotal"]
     if Decimal(lmt["PayableAmount"].value) != ADVANCE:
         raise SystemExit(f"cotton: the advance is {lmt['PayableAmount'].value}, not {ADVANCE}")

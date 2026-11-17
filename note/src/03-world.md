@@ -879,7 +879,7 @@ one period wherever it is used.
 Utility bills are due 21 days after they are issued, in all three
 countries, by a rule of the Accord, part of the common minimum it sets for
 the customers of the national utilities. They carry terms of their own, an
-Accord code, not a country's standard terms; a bill collected by direct
+Accord code, `TA-UTIL`, not a country's standard terms; a bill collected by direct
 debit says so and is collected on the due date.
 
 Bayvarra rounds cash payments to 5 cents, its smallest coin. A transfer

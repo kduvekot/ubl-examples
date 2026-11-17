@@ -507,7 +507,7 @@ Inside `PaymentTerms`:
 - `PaymentTermsDetailsURI` = **https://www.lisavufarm.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-03-24**  
-  The day the amount is due.
+  The day the amount is due, as the terms count it.
 - `PenaltyInterestRate/InterestRatePercent` = **6**  
   The interest on late payment.
 - `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  

@@ -2564,6 +2564,38 @@ def check_air_uld_ids(flow_id, roots):
         raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
 
 
+DUE_DATE_WAITS = {"sea/22-Invoice.xml": "O72"}   # due dates settled with a later decision
+
+
+def check_payment_terms(root, where):
+    """O70: one terms ID means one text and one period everywhere (D23); the due dates of a document agree with each
+    other, and where it cites standard or Accord terms, with the period those terms give from the issue date."""
+    import datetime as _dt
+    short = "/".join(where.split("/")[-2:])
+    q = lambda e, p: [x.text for x in e.iterfind(p, {"cac": NS_CAC, "cbc": NS_CBC})]
+    dues = set(q(root, "cbc:DueDate") + q(root, "cac:PaymentMeans/cbc:PaymentDueDate") +
+               [d for t in root.iterfind(f"{{{NS_CAC}}}PaymentTerms") if t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None
+                for d in q(t, "cbc:PaymentDueDate")])
+    if len(dues) > 1 and short not in DUE_DATE_WAITS:
+        raise SystemExit(f"{where}: due dates {sorted(dues)} disagree (O70)")
+    known = {f"{k}-STD": (c["payment"]["terms"], c["payment"]["due_days"]) for k, c in WORLD["countries"].items()}
+    known.update({k: (t["terms"], t["due_days"]) for k, t in WORLD.get("payment_terms_accord", {}).items()})
+    issue = root.findtext(f"{{{NS_CBC}}}IssueDate")
+    for t in root.iterfind(f"{{{NS_CAC}}}PaymentTerms"):
+        tid = t.findtext(f"{{{NS_CBC}}}ID")
+        if tid not in known:
+            continue
+        text, days = known[tid]
+        note = t.findtext(f"{{{NS_CBC}}}Note") or ""
+        if not note.startswith(text):
+            raise SystemExit(f"{where}: terms {tid} with the text {note!r}, not {text!r} (O70)")
+        due = t.findtext(f"{{{NS_CBC}}}PaymentDueDate")
+        if due and issue and short not in DUE_DATE_WAITS and t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None:
+            want = (_dt.date.fromisoformat(issue) + _dt.timedelta(days=days)).isoformat()
+            if due != want:
+                raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due} (O70)")
+
+
 PARTY_SAYS = {}        # pid -> {"self": element paths it gives about itself, "other": paths others give about it}
 
 
@@ -2707,6 +2739,7 @@ def main(flow_id, check=False):
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():

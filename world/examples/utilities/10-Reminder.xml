@@ -238,7 +238,7 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again. The surcharge for late payment is waived for this first reminder.</cbc:Note>
+    <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again.</cbc:Note>
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>

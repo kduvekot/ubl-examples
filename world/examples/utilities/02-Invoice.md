@@ -27,7 +27,7 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
 - `IssueTime` = **13:20:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-23**  
-  21 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 21 days net from the bill.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `TaxPointDate` = **2026-04-02**  
@@ -319,26 +319,18 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `ID` = **XU-STD**  
-  The standard terms of Urvania.
+- `ID` = **TA-UTIL**  
+  The Trade Accord's term for utility bills.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **30 days net; 2 % discount when paid within 10 days.**  
-  Urvanian practice: a cash discount for early payment, statutory interest on late payment.
-- `SettlementDiscountPercent` = **2**  
-  The cash discount for early payment.
+- `Note` = **21 days net from the bill.**  
+  The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day (decision D23).
 - `SettlementDiscountAmount` = **301923** (currencyID `XUF`)  
   The 2 % discount on the amount payable, if paid in time.
-- `PaymentTermsDetailsURI` = **https://www.ferranoenergy.example/terms**  
-  The seller's general terms of payment.
 - `PaymentDueDate` = **2026-04-23**  
-  The day the amount is due.
-- `SettlementPeriod/StartDate` = **2026-04-02**  
-  From the invoice date.
-- `SettlementPeriod/EndDate` = **2026-04-12**  
-  For 10 days.
+  The day the amount is due, as the terms count it.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
-  The interest on late payment.
+  The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
 - `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
   A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
 - `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
@@ -831,17 +823,11 @@ Inside `InvoiceLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XU-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
-    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
+    <cbc:Note>21 days net from the bill.</cbc:Note>
     <cbc:SettlementDiscountAmount currencyID="XUF">301923</cbc:SettlementDiscountAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.ferranoenergy.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-02</cbc:StartDate>
-      <cbc:EndDate>2026-04-12</cbc:EndDate>
-    </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

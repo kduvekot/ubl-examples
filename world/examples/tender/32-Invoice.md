@@ -27,7 +27,7 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
 - `IssueTime` = **09:28:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-04-30**  
-  30 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra.**  
@@ -425,7 +425,7 @@ Inside `PaymentTerms`:
 - `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-04-30**  
-  The day the amount is due.
+  The day the amount is due, as the terms count it.
 - `SettlementPeriod/StartDate` = **2026-03-31**  
   From the invoice date.
 - `SettlementPeriod/EndDate` = **2026-04-10**  

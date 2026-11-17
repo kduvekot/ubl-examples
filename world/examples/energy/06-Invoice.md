@@ -27,7 +27,7 @@ The gas producer invoices March's gas to the power station, in ferra as the supp
 - `IssueTime` = **11:25:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-03**  
-  30 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Priced in ferra as the supply contract says: the buyer's own currency.**  
@@ -325,7 +325,7 @@ Inside `PaymentTerms`:
 - `PaymentTermsDetailsURI` = **https://www.kelpstone.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-05-03**  
-  The day the amount is due.
+  The day the amount is due, as the terms count it.
 - `PenaltyPeriod/StartDate` = **2026-05-04**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 

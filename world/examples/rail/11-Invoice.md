@@ -27,7 +27,7 @@ Under DAP the price includes the transport, so the invoice covers goods and frei
 - `IssueTime` = **11:14:00**  
   The time the sender's system issued the document, in the sender's local time.
 - `DueDate` = **2026-05-17**  
-  30 days after the issue date, the agreed payment term.
+  As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Delivered at place: the price includes the carriage to the siding.**  
@@ -340,7 +340,7 @@ Inside `PaymentTerms`:
 - `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
   The seller's general terms of payment.
 - `PaymentDueDate` = **2026-05-17**  
-  The day the amount is due.
+  The day the amount is due, as the terms count it.
 - `SettlementPeriod/StartDate` = **2026-04-17**  
   From the invoice date.
 - `SettlementPeriod/EndDate` = **2026-04-27**  

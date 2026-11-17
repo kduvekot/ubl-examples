@@ -1009,6 +1009,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The conflict with the world story is settled: the sentence of `note/src/03-world.md` is rewritten (D22).
 - State: ready in part: 9 findings ready (ore, rail, plastics and conditions#F3); tender/27#F1, 32#F5 and 35#F1 wait for D28 (O69: the release needs an acceptance with a date before "30 days after each accepted release" gives a due date).
+- Fixed (2026-11-17, stage 2, 9 findings): the carriers' invoices under the ore, rail and plastics plans apply the plan's term, "30 days net from the consignment note" (`PLAN_PAYMENT`, `terms_of()` in `tools/examples_kit.py`), with no settlement discount and Urvania's statutory interest for late payment: due 2026-04-09 (ore/06), 2026-05-14 (rail/10) and 2026-05-19 (plastics/07); the farm's advance (cotton/01) is due on issue in all its dates, as the season agreement says. Build check O70. tender/27, 32 and 35 wait for D28 (O69).
 - Findings: ore: 03#F4, 06#F1; plastics: 04#F2, 07#F1, 07#F4; rail: 03#F4, 10#F1, 10#F3; tender: 27#F1, 32#F5, 35#F1; consistency: conditions#F3
 
 ### C52 · Customs value on a different basis in each flow
@@ -1054,6 +1055,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Derive `due_days` from the terms, not from the caller; add the Accord's utility code and text (O73); build check O70.
 - Depends on / blocks: none
 - State: ready in part: 7 findings ready; sea/22#F1 waits for D30 (O72).
+- Fixed (2026-11-17, stage 2, 7 findings): every due date follows from the terms the invoice cites (`terms_of()`); the utility bills carry the Accord's `TA-UTIL`, 21 days net from the bill (O73); cotton/16 is due 2026-04-16 (45 days, the ginnery's terms) and mast/05 2026-07-04 (30 days); the electricity remittance no longer takes a discount the utility term does not give. Build check O70 (`check_payment_terms()`). sea/22 keeps its date until O72 (`DUE_DATE_WAITS`).
 - Findings: cotton: 01#F1, 16#F1; mast: 05#F1; sea: 22#F1; utilities: 02#F2, 06#F1, 13#F1; consistency: conditions#F2
 
 ### C56 · The map scale: all coordinates inside 35 km, against distances and times of hours and days
