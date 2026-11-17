@@ -291,7 +291,7 @@ Inside `TransportServiceProviderResponseDeadlinePeriod`:
 Inside `MainTransportationService`:
 
 - `TransportServiceCode` = **FTL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The main service: road. The code is from the Trade Accord's transport service list: FTL = Full truck load.
+  The main service, by the carrier's main leg (road) and what it carries. The code is from the Trade Accord's transport service list: FTL = Full truck load.
 - `Name` = **Full truck load**  
   In words.
 

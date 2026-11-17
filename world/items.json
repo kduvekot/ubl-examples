@@ -371,7 +371,7 @@
   {
    "id": "barge-freight",
    "seller": "15-xu",
-   "name": "River freight, bulk",
+   "name": "River freight, bagged cargo",
    "kind": "service",
    "unit": "TNE",
    "price": {
@@ -379,7 +379,7 @@
     "currency": "XUF"
    },
    "sellers_id": "FB-BULK",
-   "description": "Bulk cargo down the river to the coast of Bayvarra, per tonne."
+   "description": "Bagged cargo in jumbo bags down the river to the coast of Bayvarra, per tonne."
   },
   {
    "id": "electricity",

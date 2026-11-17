@@ -9,8 +9,8 @@
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir trek taz rezkir hurgir.</cbc:Note>
+  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>

@@ -447,6 +447,15 @@
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-03-31</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-03-30</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

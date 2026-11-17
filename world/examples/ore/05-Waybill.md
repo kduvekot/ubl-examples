@@ -20,7 +20,7 @@ The rail consignment note goes to the party that contracted the carriage, the ma
   This run of the process: the same in every document of the flow.
 - `ID` = **FRC-WB-26-0310**  
   The consignment note number.
-- `CarrierAssignedID` = **FRC-CIM-26-0304**  
+- `CarrierAssignedID` = **FRC-NATRAIL-26-0304**  
   The carrier's own number for the carriage.
 - `UUID` = **04bf0219-eb96-5f58-b434-f608b27f5387**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,7 +32,7 @@ The rail consignment note goes to the party that contracted the carriage, the ma
   Issued when the carrier takes over the loaded train.
 - `IssueTime` = **11:35:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Name` = **Rail consignment note under the CIM uniform rules**  
+- `Name` = **Consignment note under the national rail carriage law**  
   The kind of transport document.
 - `Description` = **The ore train from the mine siding to the factory.**  
   The carriage in words.
@@ -40,8 +40,8 @@ The rail consignment note goes to the party that contracted the carriage, the ma
   The note in Urvanian, the sender's language (world/countries.json): The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
-- `WaybillTypeCode` = **CIM** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
-  The convention the document follows. The code is from the Trade Accord's waybill type list: CIM = Rail consignment note (CIM).
+- `WaybillTypeCode` = **NATRAIL** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
+  The convention the document follows. The code is from the Trade Accord's waybill type list: NATRAIL = Domestic rail consignment note.
 - `ConsolidatedIndicator` = **false**  
   One consignment, not a consolidation.
 - `OtherInstruction` = **Deliver against signature of the consignee.**  
@@ -508,17 +508,17 @@ Inside `Signature`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-WB-26-0310</cbc:ID>
-  <cbc:CarrierAssignedID>FRC-CIM-26-0304</cbc:CarrierAssignedID>
+  <cbc:CarrierAssignedID>FRC-NATRAIL-26-0304</cbc:CarrierAssignedID>
   <cbc:UUID>04bf0219-eb96-5f58-b434-f608b27f5387</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>11:35:00</cbc:IssueTime>
-  <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
+  <cbc:Name>Consignment note under the national rail carriage law</cbc:Name>
   <cbc:Description>The ore train from the mine siding to the factory.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
   <cbc:Note languageID="en-XU">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
-  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CIM</cbc:WaybillTypeCode>
+  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">NATRAIL</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>

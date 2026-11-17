@@ -29,9 +29,9 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do.
+  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What the receiver should do.
+  The same note in English, the working language between the countries: What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `AccountingCostCode` = **PWD-PARKS-26**  
   The department's cost centre.
 - `AccountingCost` = **Parks renewal programme 2026**  
@@ -530,6 +530,12 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-03-31**  
+  Expected after the usual transit by road.
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-03-31**  
+  The same day.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-03-30**  
+  The goods left on the day of this advice.
 
 ### Despatch Line
 
@@ -1240,6 +1246,15 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-03-31</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-03-30</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

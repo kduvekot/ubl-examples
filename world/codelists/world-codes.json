@@ -5689,7 +5689,9 @@
     "CIM",
     "AWB",
     "CMNI",
-    "SEA"
+    "SEA",
+    "NATROAD",
+    "NATRAIL"
    ]
   },
   "WeightStatementType": {

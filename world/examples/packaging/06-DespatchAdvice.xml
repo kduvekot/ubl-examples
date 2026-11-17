@@ -318,6 +318,15 @@
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-05-13</cbc:StartDate>
+        <cbc:EndDate>2026-05-13</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-05-12</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

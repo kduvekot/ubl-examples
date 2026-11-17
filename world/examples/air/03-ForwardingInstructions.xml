@@ -12,7 +12,6 @@
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
-  <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

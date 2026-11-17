@@ -29,7 +29,7 @@ The mill announces the delivery with the road carrier it booked.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
-  What the receiver should do.
+  What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `LineCountNumeric` = **1**  
   The number of lines.
 
@@ -390,6 +390,12 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-05-13**  
+  Expected after the usual transit by road.
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-05-13**  
+  The same day.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-05-12**  
+  The goods left on the day of this advice.
 
 ### Despatch Line
 
@@ -753,6 +759,15 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-05-13</cbc:StartDate>
+        <cbc:EndDate>2026-05-13</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-05-12</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

@@ -702,6 +702,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: D27 (dates on the issuer's working days, times with offsets, O78).
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): every despatch advice states its actual despatch date and an estimated delivery period (`kit.despatch_delivery()`), from the transit of the flow's main mode or the leg's own `transit_days` in `world/documents.json` (the ore train and the sawmill's truck arrive the same day, D45, D43); flows that state their own delivery keep it. The durations follow the place list (O91) in stage 2; air/06's waybill and handling unit with the air flow (D39).
 - Findings: air: 06#F6, 08#F7; mast: 04#F7; ore: 04#F3; packaging: 06#F2; plastics: 08#F1; retail: 12#F3; sea: 20#F5; tender: 29#F4; wood: 06#F3
 
 ### C28 · Orders without a requested delivery date
@@ -736,6 +737,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27.
 - State: ready in part: 9 findings ready; rail/08#F1 (a road consignment note for an international rail carriage) waits for D37 (which consignment note the rail leg has).
+- Fixed (2026-11-17, stage 1 step 1d): the waybill type follows the convention of the carrier's main leg and its scope (`kit.waybill_kind()`): CMR, CIM, CMNI and the air waybill between two countries, and the new world codes `NATROAD` and `NATRAIL` within one (the store's truck in Bayvarra and the ore train in Urvania, D46); the rail flow's waybill is a CIM note (D37); the receipt advices cite the road waybill as a typed transport document, not as a delivery note; a despatch advice asks for damage to be reported in the receipt advice where the flow has one, else on its transport document by name; the air forwarding instructions no longer ask for a bill of lading. Coverage: O145.
 - Findings: air: 03#F5, 06#F8, 08#F10; mast: 04#F6; ore: 05#F4; rail: 08#F1; retail: 13#F7; road: 11#F2, 13#F5; sea: 20#F9
 
 ### C31 · Electricity, gas, water and levies classified as services
@@ -792,6 +794,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Touched by: none of D1 to D27; the rail findings meet D37 (open: CIM for the rail leg with a road pre-carriage stage), which leaves the service code to this cause.
 - State: ready to fix now.
+- Fixed (2026-11-17, stage 1 step 1d): the main transport service is chosen by the carrier's main leg and its cargo (`kit.main_service()`): a leg names its service in `world/documents.json` where the mode does not tell it (the ore train `RAILWAGON`); the rail flow's main service is the container train, not its road pre-carriage; the barge freight is bagged cargo (`world/items.json`).
 - Findings: ore: 02#F1, 03#F1, 06#F2; plastics: 07#F2; rail: 02#F1, 03#F1, 09#F2
 
 ### C36 · Ad valorem indicator and declared carriage value without a valuation

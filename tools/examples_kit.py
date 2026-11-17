@@ -403,6 +403,21 @@ def instances(flow, d, which, day):
     return None
 
 
+TRANSIT_DAYS = {"air": 0, "road": 1, "rail": 2, "river": 2, "sea": 3}   # door to door, until the place list (O91)
+
+
+def despatch_delivery(flow, day):
+    """When the goods leave and when they are expected (worklist C27): despatched on the day of the advice, expected
+    after the usual transit of the flow's main mode."""
+    legs = next(x for x in WORLD["flows"] if x["id"] == flow.id).get("legs", [])
+    leg = next((x for x in legs if x["mode"] != "road"), legs[0] if legs else {"mode": "road"})
+    mode = leg["mode"]
+    arrive = flow.date(day + leg.get("transit_days", TRANSIT_DAYS[mode]))   # a leg may state its own transit
+    return {"Despatch": {"ActualDespatchDate": V(flow.date(day), "The goods left on the day of this advice.")},
+            "EstimatedDeliveryPeriod": {"StartDate": V(arrive, f"Expected after the usual transit by {mode}."),
+                                        "EndDate": V(arrive, "The same day.")}}
+
+
 def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None, key="order"):
     deal = deal or flow.deal
     which = "delivered" if any("delivered" in d for d in deal) else "ordered"
@@ -410,16 +425,19 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
         "ID": V(flow.number(f"despatch-{key}", doc["from"], "DespatchAdvice"), "The despatching party's number."),
         "IssueDate": V(flow.date(day), why),
         "DespatchAdviceTypeCode": V("DELIVERY", "Advice of goods despatched for delivery."),
-        "Note": V("Please check the goods on arrival and report any damage on the consignment note.", "What the "
-                                                                                                      "receiver "
-                                                                                                      "should do."),
+        "Note": V("Please check the goods on arrival and report any damage " + (
+                      "in your receipt advice." if any(d["flow"] == flow.id and d["doc"] == "ReceiptAdvice"
+                                                       for d in WORLD["documents"])
+                      else f"on the {transport_document_name(flow)}."),
+                  "What the receiver should do; the note names the transport document the flow uses (worklist C30)."),
         "LineCountNumeric": V(str(len(deal)), "The number of lines."),
         "OrderReference": {"ID": V(flow.numbers[key], "The order this despatch fulfils.")},
         "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The despatching party's shipment number."),
                      "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", shipment_why),
                      "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                              "The consignment the goods travel in, as numbered when the transport "
-                                             "was booked.")}},
+                                             "was booked.")},
+                     "Delivery": despatch_delivery(flow, day)},
         "DespatchLine": [{"ID": V(str(i), "The line number."),
                           "Note": V(d.get("why", "As ordered."), "The line as the order put it."),
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
@@ -618,6 +636,23 @@ def flow_leg(flow, carrier):
     return next(leg for leg in f["legs"] if leg["carrier"] == carrier)
 
 
+def main_leg(flow, carrier):
+    """The carrier's main carriage: of several legs, the one that is not the road pre- or on-carriage."""
+    f = next(x for x in WORLD["flows"] if x["id"] == flow.id)
+    legs = [leg for leg in f["legs"] if leg["carrier"] == carrier]
+    return next((leg for leg in legs if leg["mode"] != "road"), legs[0])
+
+
+def main_service(flow, carrier):
+    """The main transport service of a carrier's carriage, chosen by its main leg and its cargo, not by the mode
+    alone (worklist C35): a leg names its service in world/documents.json where the mode does not tell it."""
+    leg = main_leg(flow, carrier)
+    code = leg.get("service") or MODE_SERVICE_CODE[leg["mode"]]
+    name = codelists.load()["lists"]["TransportService"]["codes"][code]["name"]
+    return {"TransportServiceCode": V(code, f"The main service, by the carrier's main leg ({leg['mode']}) and what "
+                                            "it carries."), "Name": V(name, "In words.")}
+
+
 MODE_SERVICE_CODE = {"road": "FTL", "rail": "RAILCONT", "river": "RIVERBARGE", "sea": "OCEANCONT", "air": "AIRCARGO"}
 MODE_SERVICE = {"road": "Full truck load", "rail": "Container train", "river": "River barge", "sea": "Liner service",
                 "air": "Air cargo"}
@@ -688,8 +723,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
             "TransportServiceProviderResponseDeadlinePeriod": {"EndDate": V(flow.date(day + 1), "An answer is "
                                                                                                  "needed by the "
                                                                                                  "next day.")},
-            "MainTransportationService": {"TransportServiceCode": V(MODE_SERVICE_CODE[mode], f"The main service: {mode}."),
-                                          "Name": V(MODE_SERVICE[mode], "In words.")},
+            "MainTransportationService": main_service(flow, doc["to"]),
             "ServiceStartTimePeriod": {"StartDate": V(flow.date(start_day), "The day the goods should be collected.")},
             "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
             **places,
@@ -724,8 +758,7 @@ def tep(flow, n, doc, day, why, start_day, weight):
                                                                                             "the same day.")},
             "ValidityPeriod": {"StartDate": V(flow.date(day), "From the confirmation."),
                                "EndDate": V(flow.date(start_day + 3), "Until the carriage is done.")},
-            "MainTransportationService": {"TransportServiceCode": V(MODE_SERVICE_CODE[mode], f"The main service: {mode}."),
-                                          "Name": V(MODE_SERVICE[mode], "In words.")},
+            "MainTransportationService": main_service(flow, doc["from"]),
             "AdditionalTransportationService": {"TransportServiceCode": V("NOTIFY", "Pre-arrival notice."),
                                                 "Name": V("Notice two hours before arrival", "In words.")},
             "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
@@ -745,6 +778,30 @@ WAYBILL_KIND = {"road": ("CMR", "Consignment note under the road convention, the
                 "air": ("AWB", "Air waybill under the Montreal Convention")}
 
 
+DOMESTIC_KIND = {"road": ("NATROAD", "Consignment note under the national road carriage law"),
+                 "rail": ("NATRAIL", "Consignment note under the national rail carriage law")}
+
+
+def waybill_kind(flow, carrier):
+    """The convention a consignment note follows, by the mode of the carrier's main leg and its scope: the
+    international conventions only for carriage between two countries, national law within one (worklist C30,
+    D46)."""
+    leg = main_leg(flow, carrier)
+    start = next(x for x in WORLD["flows"] if x["id"] == flow.id)["legs"]
+    first = next(x for x in start if x["carrier"] == carrier)
+    domestic = PARTY[first["from"]]["c"] == PARTY[leg["to"]]["c"]
+    if domestic and leg["mode"] in DOMESTIC_KIND:
+        return DOMESTIC_KIND[leg["mode"]]
+    return WAYBILL_KIND[leg["mode"]]
+
+
+def transport_document_name(flow):
+    """What the flow's main transport document is called, for texts that name it."""
+    legs = next(x for x in WORLD["flows"] if x["id"] == flow.id).get("legs", [])
+    modes = {leg["mode"] for leg in legs}
+    return ("bill of lading" if "sea" in modes else "air waybill" if "air" in modes else "consignment note")
+
+
 def shipping_order(flow):
     """The ShippingOrderID of a shipment: the number of the forwarding instructions it is booked under, to the
     carrier where there are two (worklist C20); None where the flow has no forwarding instructions."""
@@ -754,7 +811,7 @@ def shipping_order(flow):
 def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     carrier = doc["from"]
     leg = flow_leg(flow, carrier)
-    kind, kind_name = WAYBILL_KIND[leg["mode"]]
+    kind, kind_name = waybill_kind(flow, carrier)
     number = flow.number("waybill", doc["from"], "Waybill")
     out = {"ID": V(number, "The consignment note number."),
            "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "

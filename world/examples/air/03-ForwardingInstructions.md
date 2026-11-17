@@ -34,8 +34,6 @@ The distributor asks its forwarder to book air freight for the urgent part.
   What the sender expects.
 - `ToOrderIndicator` = **false**  
   A straight bill: the consignee is named.
-- `OtherInstruction` = **Send the bill of lading to the forwarder.**  
-  Where the documents go.
 
 ### Consignor Party
 
@@ -481,7 +479,6 @@ Inside `Signature`:
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
-  <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>

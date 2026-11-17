@@ -264,8 +264,8 @@
     <cbc:EndDate>2026-03-04</cbc:EndDate>
   </cac:TransportServiceProviderResponseDeadlinePeriod>
   <cac:MainTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
-    <cbc:Name>Container train</cbc:Name>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILWAGON</cbc:TransportServiceCode>
+    <cbc:Name>Rail wagon load</cbc:Name>
   </cac:MainTransportationService>
   <cac:AdditionalTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">WEIGH</cbc:TransportServiceCode>

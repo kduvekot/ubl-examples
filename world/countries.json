@@ -1709,7 +1709,10 @@
     "consignor's": "starzhek",
     "handed": "ginrul",
     "kept": "zhiztrek",
-    "took": "hangaz"
+    "took": "hangaz",
+    "bagged": "hadrek",
+    "domestic": "tehaz",
+    "advice": "hurgir"
    }
   },
   "qal": {
@@ -2801,7 +2804,10 @@
     "consignor's": "ketinuki",
     "handed": "lefeta",
     "kept": "sifipe",
-    "took": "kakena"
+    "took": "kakena",
+    "bagged": "kufeke",
+    "domestic": "nalesa",
+    "advice": "lakika"
    }
   },
   "en": {

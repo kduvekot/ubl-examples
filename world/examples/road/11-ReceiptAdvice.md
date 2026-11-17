@@ -49,6 +49,15 @@ Inside `DespatchDocumentReference`:
 - `ID` = **CL-DA-26-0153**  
   The despatch advice this receipt answers.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **TH-WB-26-0159**  
+  The consignment note signed on delivery, the consignee's proof of receipt: a transport document, not a delivery note (road/11#F2).
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TH-WB-26-0159 is the example road/08, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
+
 ### Delivery Customer Party
 
 Inside `DeliveryCustomerParty`:
@@ -417,8 +426,6 @@ Inside `Shipment`:
   Unloaded at dock 4.
 - `Delivery/ActualDeliveryTime` = **09:40:00**  
   Within the slot.
-- `Delivery/DeliveryNoteDocumentReference/ID` = **TH-WB-26-0159**  
-  The consignment note signed on delivery.
 
 ### Receipt Line
 
@@ -718,6 +725,10 @@ Inside `ReceiptLine`:
   <cac:DespatchDocumentReference>
     <cbc:ID>CL-DA-26-0153</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
       <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -1046,9 +1057,6 @@ Inside `ReceiptLine`:
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-03-25</cbc:ActualDeliveryDate>
       <cbc:ActualDeliveryTime>09:40:00</cbc:ActualDeliveryTime>
-      <cac:DeliveryNoteDocumentReference>
-        <cbc:ID>TH-WB-26-0159</cbc:ID>
-      </cac:DeliveryNoteDocumentReference>
     </cac:Delivery>
   </cac:Shipment>
   <cac:ReceiptLine>

@@ -377,9 +377,9 @@ Inside `ValidityPeriod`:
 
 Inside `MainTransportationService`:
 
-- `TransportServiceCode` = **RAILCONT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The main service: rail. The code is from the Trade Accord's transport service list: RAILCONT = Container train.
-- `Name` = **Container train**  
+- `TransportServiceCode` = **RAILWAGON** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
+  The main service, by the carrier's main leg (rail) and what it carries. The code is from the Trade Accord's transport service list: RAILWAGON = Rail wagon load.
+- `Name` = **Rail wagon load**  
   In words.
 
 ### Additional Transportation Service
@@ -934,8 +934,8 @@ Inside `Consignment`:
     <cbc:EndDate>2026-03-13</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:MainTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
-    <cbc:Name>Container train</cbc:Name>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILWAGON</cbc:TransportServiceCode>
+    <cbc:Name>Rail wagon load</cbc:Name>
   </cac:MainTransportationService>
   <cac:AdditionalTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">NOTIFY</cbc:TransportServiceCode>

@@ -28,10 +28,10 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
   The time the sender's system issued the document, in the sender's local time.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
-- `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do.
-- `Note` = **Please check the goods on arrival and report any damage on the consignment note.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What the receiver should do.
+- `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir trek taz rezkir hurgir.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do; the note names the transport document the flow uses (worklist C30).
+- `Note` = **Please check the goods on arrival and report any damage in your receipt advice.** (languageID `en-XU`)  
+  The same note in English, the working language between the countries: What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `LineCountNumeric` = **2**  
   The number of lines.
 
@@ -966,8 +966,8 @@ Inside `DespatchLine`:
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir trek taz rezkir hurgir.</cbc:Note>
+  <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>

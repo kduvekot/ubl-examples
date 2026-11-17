@@ -426,13 +426,13 @@ Inside `InvoiceLine`:
   The tonnes carried.
 - `LineExtensionAmount` = **179400** (currencyID `XUF`)  
   120 × 1495, rounded to the minor unit of the currency.
-- `Item/Description` = **Vir nirrir zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.** (languageID `qau`)  
+- `Item/Description` = **Hadrek nirrir trek sazdran nihan zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item barge-freight of Fiumella Barges (world/items.json).
-- `Item/Description` = **Bulk cargo down the river to the coast of Bayvarra, per tonne.** (languageID `en-XU`)  
+- `Item/Description` = **Bagged cargo in jumbo bags down the river to the coast of Bayvarra, per tonne.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item barge-freight of Fiumella Barges (world/items.json).
-- `Item/Name` = **Gakzaz musaz, vir** (languageID `qau`)  
+- `Item/Name` = **Gakzaz musaz, hadrek nirrir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item barge-freight of Fiumella Barges (world/items.json).
-- `Item/Name` = **River freight, bulk** (languageID `en-XU`)  
+- `Item/Name` = **River freight, bagged cargo** (languageID `en-XU`)  
   The item's name in English, the working language between the countries; item barge-freight of Fiumella Barges (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FB-BULK**  
   The seller's own item number; item barge-freight of Fiumella Barges (world/items.json).
@@ -775,10 +775,10 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="TNE">120</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qau">Vir nirrir zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.</cbc:Description>
-      <cbc:Description languageID="en-XU">Bulk cargo down the river to the coast of Bayvarra, per tonne.</cbc:Description>
-      <cbc:Name languageID="qau">Gakzaz musaz, vir</cbc:Name>
-      <cbc:Name languageID="en-XU">River freight, bulk</cbc:Name>
+      <cbc:Description languageID="qau">Hadrek nirrir trek sazdran nihan zir drek gakzaz krir drek nerstaz skul Bayvarra, ginek zhurkaz.</cbc:Description>
+      <cbc:Description languageID="en-XU">Bagged cargo in jumbo bags down the river to the coast of Bayvarra, per tonne.</cbc:Description>
+      <cbc:Name languageID="qau">Gakzaz musaz, hadrek nirrir</cbc:Name>
+      <cbc:Name languageID="en-XU">River freight, bagged cargo</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FB-BULK</cbc:ID>
       </cac:SellersItemIdentification>

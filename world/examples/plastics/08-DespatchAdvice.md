@@ -29,9 +29,9 @@ The waste processor announces the lot loaded on the barge.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do.
+  The note in Urvanian, the sender's language (world/countries.json): What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: What the receiver should do.
+  The same note in English, the working language between the countries: What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `LineCountNumeric` = **1**  
   The number of lines.
 
@@ -430,6 +430,12 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104959** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Fiumella Barges (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-21**  
+  Expected after the usual transit by river.
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-21**  
+  The same day.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-04-19**  
+  The goods left on the day of this advice.
 
 ### Despatch Line
 
@@ -857,6 +863,15 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-04-21</cbc:StartDate>
+        <cbc:EndDate>2026-04-21</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

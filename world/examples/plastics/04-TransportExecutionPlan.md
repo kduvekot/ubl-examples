@@ -343,7 +343,7 @@ Inside `ValidityPeriod`:
 Inside `MainTransportationService`:
 
 - `TransportServiceCode` = **RIVERBARGE** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The main service: river. The code is from the Trade Accord's transport service list: RIVERBARGE = River barge.
+  The main service, by the carrier's main leg (river) and what it carries. The code is from the Trade Accord's transport service list: RIVERBARGE = River barge.
 - `Name` = **River barge**  
   In words.
 

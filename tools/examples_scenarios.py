@@ -435,10 +435,11 @@ def road(n, doc):
         out = kit.receipt_advice(f, n, doc, 9, "The day the truck was unloaded at the distribution centre.")
         out["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment received."),
                            "Delivery": {"ActualDeliveryDate": V(f.date(9), "Unloaded at dock 4."),
-                                        "ActualDeliveryTime": V("09:40:00", "Within the slot."),
-                                        "DeliveryNoteDocumentReference": {"ID": V(f.numbers["waybill"], "The "
-                                                                                  "consignment note signed on "
-                                                                                  "delivery.")}}}
+                                        "ActualDeliveryTime": V("09:40:00", "Within the slot.")}}
+        given = out.get("AdditionalDocumentReference")
+        out["AdditionalDocumentReference"] = ([given] if isinstance(given, dict) else given or []) + [
+            {"ID": V(f.numbers["waybill"], "The consignment note signed on delivery, the consignee's proof of "
+                                           "receipt: a transport document, not a delivery note (road/11#F2).")}]
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "13-xu":
         return kit.invoice(f, n, doc, 9, 30, "Issued after delivery.",
@@ -4360,7 +4361,8 @@ def fi_extras(f, n, doc, out):
          "ToOrderIndicator": V("true" if f.id == "sea" else "false", "A bill of lading to order, so the buyer can "
                                                                      "transfer it." if f.id == "sea" else
                                "A straight bill: the consignee is named."),
-         "OtherInstruction": V("Send the bill of lading to the forwarder.", "Where the documents go."),
+         **({"OtherInstruction": V("Send the bill of lading to the forwarder.", "Where the documents go.")}
+            if f.id in ("sea", "cotton") else {}),
          "DocumentReference": {"ID": V(f.numbers.get("order", ""), "The order the goods are for.")},
          "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
                           "TargetCurrencyCode": V("XLC", "The island's currency."),

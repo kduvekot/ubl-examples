@@ -310,9 +310,9 @@ Inside `TransportServiceProviderResponseDeadlinePeriod`:
 
 Inside `MainTransportationService`:
 
-- `TransportServiceCode` = **FTL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The main service: road. The code is from the Trade Accord's transport service list: FTL = Full truck load.
-- `Name` = **Full truck load**  
+- `TransportServiceCode` = **RAILCONT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
+  The main service, by the carrier's main leg (rail) and what it carries. The code is from the Trade Accord's transport service list: RAILCONT = Container train.
+- `Name` = **Container train**  
   In words.
 
 ### Service Start Time Period
@@ -778,8 +778,8 @@ Inside `Consignment`:
     <cbc:EndDate>2026-04-08</cbc:EndDate>
   </cac:TransportServiceProviderResponseDeadlinePeriod>
   <cac:MainTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">FTL</cbc:TransportServiceCode>
-    <cbc:Name>Full truck load</cbc:Name>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
+    <cbc:Name>Container train</cbc:Name>
   </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-14</cbc:StartDate>

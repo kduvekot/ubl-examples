@@ -28,8 +28,8 @@ The engineering firm announces the goods to the telecom company.
   The time the sender's system issued the document, in the sender's local time.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
-- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
-  What the receiver should do.
+- `Note` = **Please check the goods on arrival and report any damage on the air waybill.**  
+  What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `LineCountNumeric` = **3**  
   The number of lines.
 
@@ -318,6 +318,12 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41311** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Kelaro Air Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-06-04**  
+  Expected after the usual transit by air.
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-06-04**  
+  The same day.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-06-04**  
+  The goods left on the day of this advice.
 
 ### Despatch Line
 
@@ -510,7 +516,7 @@ Inside `DespatchLine`:
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>13:20:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>ST-PO-26-0713</cbc:ID>
@@ -757,6 +763,15 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-06-04</cbc:StartDate>
+        <cbc:EndDate>2026-06-04</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-06-04</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>

@@ -28,8 +28,8 @@ The distributor announces the delivery and the truck that brings it.
   The time the sender's system issued the document, in the sender's local time.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
-- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
-  What the receiver should do.
+- `Note` = **Please check the goods on arrival and report any damage in your receipt advice.**  
+  What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `LineCountNumeric` = **1**  
   The number of lines.
 
@@ -398,6 +398,12 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/CarrierParty/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-30**  
+  Expected after the usual transit by road.
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-30**  
+  The same day.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-04-29**  
+  The goods left on the day of this advice.
 - `TransportHandlingUnit/ID` = **095206102170000014** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -838,7 +844,7 @@ Inside `DespatchLine`:
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>15:34:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0224</cbc:ID>
@@ -1153,6 +1159,15 @@ Inside `DespatchLine`:
         </cac:ElectronicAddress>
       </cac:CarrierParty>
     </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-04-30</cbc:StartDate>
+        <cbc:EndDate>2026-04-30</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-04-29</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206102170000014</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>

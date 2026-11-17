@@ -20,7 +20,7 @@ The outgoing consignment note goes to the distributor, who contracted the carria
   This run of the process: the same in every document of the flow.
 - `ID` = **BF-WB-26-0231**  
   The consignment note number.
-- `CarrierAssignedID` = **BF-CMR-26-0217**  
+- `CarrierAssignedID` = **BF-NATROAD-26-0217**  
   The carrier's own number for the carriage.
 - `UUID` = **e32f4317-c5ee-5095-aa3a-8afa0c5b9ab2**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,14 +32,14 @@ The outgoing consignment note goes to the distributor, who contracted the carria
   Issued when the carrier collects at the distribution centre.
 - `IssueTime` = **08:56:00**  
   The time the sender's system issued the document, in the sender's local time.
-- `Name` = **Consignment note under the road convention, the CMR**  
+- `Name` = **Consignment note under the national road carriage law**  
   The kind of transport document.
 - `Description` = **The forwarder's truck from the distribution centre to the store.**  
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
   The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
-- `WaybillTypeCode` = **CMR** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
-  The convention the document follows. The code is from the Trade Accord's waybill type list: CMR = Road consignment note (CMR).
+- `WaybillTypeCode` = **NATROAD** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
+  The convention the document follows. The code is from the Trade Accord's waybill type list: NATROAD = Domestic road consignment note.
 - `ConsolidatedIndicator` = **false**  
   One consignment, not a consolidation.
 - `OtherInstruction` = **Deliver against signature of the consignee.**  
@@ -471,16 +471,16 @@ Inside `Signature`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-WB-26-0231</cbc:ID>
-  <cbc:CarrierAssignedID>BF-CMR-26-0217</cbc:CarrierAssignedID>
+  <cbc:CarrierAssignedID>BF-NATROAD-26-0217</cbc:CarrierAssignedID>
   <cbc:UUID>e32f4317-c5ee-5095-aa3a-8afa0c5b9ab2</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>08:56:00</cbc:IssueTime>
-  <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
+  <cbc:Name>Consignment note under the national road carriage law</cbc:Name>
   <cbc:Description>The forwarder's truck from the distribution centre to the store.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
-  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CMR</cbc:WaybillTypeCode>
+  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">NATROAD</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>

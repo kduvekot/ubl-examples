@@ -11,7 +11,9 @@
      "from": "4-xu",
      "to": "5-xu",
      "carrier": "14-xu",
-     "why": "The ore train from the mine siding to the factory."
+     "why": "The ore train from the mine siding to the factory.",
+     "service": "RAILWAGON",
+     "transit_days": 0
     }
    ]
   },
@@ -260,7 +262,8 @@
      "from": "36-xb",
      "to": "5-xu",
      "carrier": "13-xu",
-     "why": "The slats across the border to the bench factory."
+     "why": "The slats across the border to the bench factory.",
+     "transit_days": 0
     },
     {
      "mode": "road",

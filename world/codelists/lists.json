@@ -1478,6 +1478,14 @@
     "SEA": [
      "Sea waybill",
      "A non-negotiable transport document for carriage by sea (UN/EDIFACT 1001: 700)."
+    ],
+    "NATROAD": [
+     "Domestic road consignment note",
+     "A consignment note for carriage by road within one country, under the national road carriage law of that country, not the CMR, which covers only carriage between two countries."
+    ],
+    "NATRAIL": [
+     "Domestic rail consignment note",
+     "A consignment note for carriage by rail within one country, under the national rail carriage law of that country, not the CIM uniform rules, which cover only carriage between two countries."
     ]
    }
   },
