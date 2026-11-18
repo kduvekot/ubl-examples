@@ -55,7 +55,7 @@ Inside `ExporterParty`:
   Building number of the postal address. identity of Kelpstone Gas (world/parties.json).
 - `PostalAddress/CityName` = **Gullhaven**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelpstone Gas (world/parties.json).
-- `PostalAddress/PostalZone` = **38540**  
+- `PostalAddress/PostalZone` = **90540**  
   Postal code in Bayvarra's format (5 digits). identity of Kelpstone Gas (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Northern Territory**  
   The name of code XB-NT in Bayvarra's national state or territory list.
@@ -67,8 +67,8 @@ Inside `ExporterParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.**  
-  Where the party actually operates, apart from its postal address.
+- `PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.**  
+  Where the party actually operates, apart from its postal address. The distance is the length of the map's route gas-field, rounded to 10 km.
 - `PhysicalLocation/InformationURI` = **https://www.kelpstone.example**  
   Where to find more about the place.
 - `PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
@@ -192,7 +192,7 @@ Inside `CustomsDeclaration`:
   The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
   The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/PostalZone` = **4130**  
+- `ConsigneeParty/PostalAddress/PostalZone` = **4310**  
   Postal code in Urvania's format (4 digits). identity of Montebrio Power (world/parties.json).
 - `ConsigneeParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Montebrio Power (world/parties.json).
@@ -212,13 +212,13 @@ Inside `CustomsDeclaration`:
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `CustomsParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `CustomsParty/PostalAddress/StreetName` = **Border Crossing Road**  
+- `CustomsParty/PostalAddress/StreetName` = **Border Road**  
   Street of the postal address. identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `CustomsParty/PostalAddress/BuildingNumber` = **36**  
   Building number of the postal address. identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `CustomsParty/PostalAddress/CityName` = **Marrowdale**  
+- `CustomsParty/PostalAddress/CityName` = **Euridice Crossing**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `CustomsParty/PostalAddress/PostalZone` = **71213**  
+- `CustomsParty/PostalAddress/PostalZone` = **71950**  
   Postal code in Bayvarra's format (5 digits). identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `CustomsParty/PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
@@ -284,7 +284,7 @@ Inside `CustomsDeclaration`:
       <cbc:StreetName>Shoreline Road</cbc:StreetName>
       <cbc:BuildingNumber>2</cbc:BuildingNumber>
       <cbc:CityName>Gullhaven</cbc:CityName>
-      <cbc:PostalZone>38540</cbc:PostalZone>
+      <cbc:PostalZone>90540</cbc:PostalZone>
       <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-NT</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
@@ -294,7 +294,7 @@ Inside `CustomsDeclaration`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:PhysicalLocation>
-      <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.</cbc:Description>
+      <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.</cbc:Description>
       <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
       <cac:LocationCoordinate>
         <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
@@ -401,7 +401,7 @@ Inside `CustomsDeclaration`:
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:PostalZone>4310</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -421,10 +421,10 @@ Inside `CustomsDeclaration`:
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Border Crossing Road</cbc:StreetName>
+        <cbc:StreetName>Border Road</cbc:StreetName>
         <cbc:BuildingNumber>36</cbc:BuildingNumber>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cbc:PostalZone>71213</cbc:PostalZone>
+        <cbc:CityName>Euridice Crossing</cbc:CityName>
+        <cbc:PostalZone>71950</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>

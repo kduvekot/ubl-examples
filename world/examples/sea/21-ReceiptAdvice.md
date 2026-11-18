@@ -22,7 +22,7 @@ The buyer's 3PL confirms what arrived, for the buyer.
   The receiving party's number.
 - `UUID` = **5c11e38e-6191-5e5e-892a-38c6eedf1df0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-21**  
+- `IssueDate` = **2026-05-20**  
   The buyer's 3PL confirms what arrived.
 - `IssueTime` = **17:22:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -251,7 +251,7 @@ Inside `ReceiptLine`:
   The line in words.
 - `ReceivedQuantity` = **96** (unitCode `EA`)  
   Counted at the goods-in and found as announced.
-- `ReceivedDate` = **2026-05-21**  
+- `ReceivedDate` = **2026-05-20**  
   Unloaded.
 - `OrderLineReference/LineID` = **1**  
   The order line.
@@ -299,7 +299,7 @@ Inside `ReceiptLine`:
   The receiver asks for a credit, not a replacement. The code is from the Trade Accord's reject action list: CREDIT = Credit requested.
 - `QuantityDiscrepancyCode` = **DAMAGED** (listID `urn:ubl-examples:world:codelist:QuantityDiscrepancyCode`)  
   Why the quantity differs from the despatch. The code is from the Trade Accord's quantity discrepancy list: DAMAGED = Damaged.
-- `ReceivedDate` = **2026-05-21**  
+- `ReceivedDate` = **2026-05-20**  
   Unloaded.
 - `OrderLineReference/LineID` = **2**  
   The order line.
@@ -333,7 +333,7 @@ Inside `ReceiptLine`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>NW-RA-26-0146</cbc:ID>
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
-  <cbc:IssueDate>2026-05-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cbc:IssueTime>17:22:00+00:00</cbc:IssueTime>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">PARTIAL</cbc:DeliveryAcceptanceCode>
@@ -500,7 +500,7 @@ Inside `ReceiptLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
-    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -544,7 +544,7 @@ Inside `ReceiptLine`:
     <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
-    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>

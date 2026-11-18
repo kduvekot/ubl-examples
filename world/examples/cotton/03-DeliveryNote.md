@@ -91,10 +91,10 @@ Inside `DespatchSupplierParty`:
   The street's name in English, the country's other official language; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
   How to find the farm, which has no house number on a street. identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
+  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
+- `Party/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/District` = **North coast**  
   The district of the island, used to find a farm off the main roads. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
@@ -105,7 +105,7 @@ Inside `DespatchSupplierParty`:
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/AddressLine/Line` = **North coast**  
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
-- `Party/PostalAddress/AddressLine/Line` = **Selanu / Port Wrenfield**  
+- `Party/PostalAddress/AddressLine/Line` = **Kefalasa / Lintwell**  
   One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
@@ -180,10 +180,10 @@ Inside `DeliveryCustomerParty`:
   The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/CityName` = **Pakesa** (languageID `qal`)  
+  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/CityName` = **Bollworth** (languageID `en-XL`)  
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -331,8 +331,8 @@ Inside `DespatchLine`:
         <cbc:StreetName languageID="qal">Sifatofu Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Plantation Road</cbc:StreetName>
         <cbc:Description>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Description>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:CityName languageID="qal">Kefalasa</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Lintwell</cbc:CityName>
         <cbc:District>North coast</cbc:District>
         <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:AddressLine>
@@ -345,7 +345,7 @@ Inside `DespatchLine`:
           <cbc:Line>North coast</cbc:Line>
         </cac:AddressLine>
         <cac:AddressLine>
-          <cbc:Line>Selanu / Port Wrenfield</cbc:Line>
+          <cbc:Line>Kefalasa / Lintwell</cbc:Line>
         </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -403,8 +403,8 @@ Inside `DespatchLine`:
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:CityName languageID="qal">Pakesa</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Bollworth</cbc:CityName>
         <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>

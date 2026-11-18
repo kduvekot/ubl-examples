@@ -32,8 +32,8 @@
     "address": {
      "StreetName": "Strada della Miniera",
      "BuildingNumber": "10",
-     "CityName": "Serravona",
-     "PostalZone": "4110",
+     "CityName": "Fucinalta",
+     "PostalZone": "4320",
      "CountrySubentity": "Province of Ferrano",
      "ID": "4170202741471003"
     },
@@ -271,8 +271,8 @@
     "address": {
      "StreetName": "Via del Magazzino",
      "BuildingNumber": "24",
-     "CityName": "Ferrano",
-     "PostalZone": "4130",
+     "CityName": "Conciaro",
+     "PostalZone": "4190",
      "CountrySubentity": "Province of Ferrano",
      "ID": "4160203920705699"
     },
@@ -488,7 +488,7 @@
      "StreetName": "Viale della Stazione",
      "BuildingNumber": "38",
      "CityName": "Serravona",
-     "PostalZone": "4150",
+     "PostalZone": "4310",
      "CountrySubentity": "Province of Ferrano",
      "ID": "4170201115930918"
     },
@@ -959,13 +959,13 @@
     },
     "tax_id": "XU007385602",
     "address": {
-     "StreetName": "Valico di Confine",
+     "StreetName": "Strada del Confine",
      "BuildingNumber": "22",
-     "CityName": "Ferrano",
-     "PostalZone": "4120",
+     "CityName": "Valico Euridice",
+     "PostalZone": "4530",
      "Postbox": "PB 18",
      "CountrySubentity": "Province of Ferrano",
-     "ID": "4160202968066555"
+     "ID": "4180202968066555"
     },
     "industry": "8411",
     "language": "en",
@@ -1063,11 +1063,11 @@
      "job_title": "Customs officer"
     },
     "address": {
-     "StreetName": "Border Crossing Road",
+     "StreetName": "Border Road",
      "BuildingNumber": "36",
-     "CityName": "Marrowdale",
+     "CityName": "Euridice Crossing",
      "CountrySubentity": "Upland State",
-     "PostalZone": "71213",
+     "PostalZone": "71950",
      "CountrySubentityCode": "XB-UL",
      "ID": "UL-ADR-479100"
     },
@@ -1276,7 +1276,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38515",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Old Town",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-579130"
     },
@@ -1418,7 +1418,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38516",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Riverside",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-934215"
     },
@@ -1494,7 +1494,7 @@
      "Department": "Procurement office",
      "MarkAttention": "Head of procurement",
      "InhouseMail": "Room 2.14",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Government Hill",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-000417"
     },
@@ -1648,7 +1648,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38519",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Government Hill",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-075593"
     },
@@ -1690,7 +1690,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38520",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Government Hill",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-634627"
     },
@@ -1733,7 +1733,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38521",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Old Town",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-268189"
     },
@@ -1776,7 +1776,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38522",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Old Town",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-891505"
     },
@@ -1845,7 +1845,7 @@
      "BuildingName": "Exchange House",
      "Floor": "3",
      "Room": "301",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Old Town",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-190996"
     },
@@ -1926,7 +1926,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38524",
-     "CitySubdivisionName": "Old town",
+     "CitySubdivisionName": "Dockside",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-308716"
     },
@@ -1980,7 +1980,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38525",
-     "CitySubdivisionName": "Harbour quarter",
+     "CitySubdivisionName": "Dockside",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-953846"
     },
@@ -2086,7 +2086,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38526",
-     "CitySubdivisionName": "Harbour quarter",
+     "CitySubdivisionName": "Dockside",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-030762"
     },
@@ -2145,7 +2145,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38527",
-     "CitySubdivisionName": "Harbour quarter",
+     "CitySubdivisionName": "Dockside",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-547539"
     },
@@ -2249,7 +2249,6 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38528",
-     "CitySubdivisionName": "Old town",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-060495"
     },
@@ -2269,7 +2268,7 @@
     "site": {
      "locode": "XBLMA",
      "description": "Lumeport airport",
-     "altitude": 14
+     "altitude": "map"
     },
     "week": "always"
    }
@@ -2418,7 +2417,7 @@
     "address": {
      "StreetName": "Airfield Road",
      "BuildingNumber": "46",
-     "CityName": "Selanu",
+     "CityName": "Lintwell",
      "ID": "58930746"
     },
     "industry": "5120",
@@ -3065,7 +3064,6 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38500",
-     "CitySubdivisionName": "Harbour quarter",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-782593"
     },
@@ -3450,7 +3448,7 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38504",
-     "CitySubdivisionName": "Harbour quarter",
+     "CitySubdivisionName": "Mill Quarter",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-933254"
     },
@@ -3563,7 +3561,6 @@
      "CityName": "Lumeport",
      "CountrySubentity": "Coastal State",
      "PostalZone": "38505",
-     "CitySubdivisionName": "Old town",
      "CountrySubentityCode": "XB-CO",
      "ID": "LUM-ADR-411619"
     },
@@ -3672,7 +3669,7 @@
     },
     "address": {
      "StreetName": "Plantation Road",
-     "CityName": "Selanu",
+     "CityName": "Lintwell",
      "District": "North coast",
      "Description": "Farm track off Plantation Road at kilometre 4, past the cotton fields.",
      "ID": "85779006"
@@ -3756,7 +3753,7 @@
     "address": {
      "StreetName": "Gin Yard Road",
      "BuildingNumber": "42",
-     "CityName": "Selanu",
+     "CityName": "Bollworth",
      "ID": "23618907"
     },
     "account": {
@@ -3879,7 +3876,7 @@
      "BuildingNumber": "2",
      "CityName": "Gullhaven",
      "CountrySubentity": "Northern Territory",
-     "PostalZone": "38540",
+     "PostalZone": "90540",
      "CountrySubentityCode": "XB-NT",
      "ID": "NT-ADR-587853"
     },
@@ -3904,7 +3901,11 @@
     },
     "customs_id": "XB-TR-412877",
     "site": {
-     "description": "Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out."
+     "description": "Gas treatment plant on the north coast; the platform of the offshore field lies about {km} kilometres out.",
+     "distance": {
+      "route": "gas-field",
+      "about": 10
+     }
     },
     "desks": {
      "customs": {
@@ -3972,7 +3973,7 @@
      "StreetName": "Via della Centrale",
      "BuildingNumber": "44",
      "CityName": "Serravona",
-     "PostalZone": "4130",
+     "PostalZone": "4310",
      "CountrySubentity": "Province of Ferrano",
      "ID": "4170200397702895"
     },

@@ -81,11 +81,11 @@ Inside `AccountingSupplierParty`:
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
-- `Party/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
-- `Party/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **4110**  
+- `Party/PostalAddress/CityName` = **Trazvul** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/CityName` = **Fucinalta** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **4320**  
   Postal code in Urvania's format (4 digits). identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Serravona Mining (world/parties.json).
@@ -143,10 +143,10 @@ Inside `AccountingSupplierParty`:
   The share capital, in ferra, as paid up: Urvania's company law asks an SUA to state it on its invoices and business letters (world/countries.json); identity of Serravona Mining (world/parties.json).
 - `Party/PartyLegalEntity/FullyPaidSharesIndicator` = **true**  
   All shares are paid up, so the amount stated is the whole share capital.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Trazvul** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Fucinalta** (languageID `en-XU`)  
+  The place's English name, the Italian one. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XU:CR**  
@@ -495,9 +495,9 @@ Inside `InvoiceLine`:
         <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
         <cbc:StreetName languageID="en-XU">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4110</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Trazvul</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Fucinalta</cbc:CityName>
+        <cbc:PostalZone>4320</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -543,8 +543,8 @@ Inside `InvoiceLine`:
         <cbc:CorporateStockAmount currencyID="XUF">120000000</cbc:CorporateStockAmount>
         <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
         <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
+          <cbc:CityName languageID="qau">Trazvul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Fucinalta</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>

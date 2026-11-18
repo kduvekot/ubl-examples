@@ -266,8 +266,8 @@ Inside `Shipment`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `Consignment/CarrierParty/PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/PostalZone` = **38527**  
@@ -294,9 +294,9 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; identity of Tidewell Ocean Lines (world/parties.json).
-- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-05-16**  
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-05-17**  
   Expected after the usual transit by sea.
-- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-05-16**  
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-05-17**  
   The same day.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-05-13**  
   The goods left on the day of this advice.
@@ -732,7 +732,7 @@ Inside `DespatchLine`:
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Harbour Road</cbc:StreetName>
           <cbc:BuildingNumber>18</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38527</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -755,8 +755,8 @@ Inside `DespatchLine`:
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-05-16</cbc:StartDate>
-        <cbc:EndDate>2026-05-16</cbc:EndDate>
+        <cbc:StartDate>2026-05-17</cbc:StartDate>
+        <cbc:EndDate>2026-05-17</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-05-13</cbc:ActualDespatchDate>

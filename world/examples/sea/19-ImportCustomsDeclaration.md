@@ -22,8 +22,8 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
   The importer's declaration number.
 - `UUID` = **d81b799d-e60d-59b3-a10e-91af358a3d84**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-19**  
-  The customs broker declares the import for the buyer.
+- `IssueDate` = **2026-05-18**  
+  The customs broker declares the import for the buyer, on the first working day after the ship berthed.
 - `IssueTime` = **09:07:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
@@ -173,8 +173,8 @@ Inside `FreightForwarderParty`:
   Street of the postal address. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/BuildingNumber` = **4**  
   Building number of the postal address. identity of Bayforth Forwarding (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Bayforth Forwarding (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/PostalZone` = **38525**  
@@ -430,7 +430,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TCB-IM-26-0144</cbc:ID>
   <cbc:UUID>d81b799d-e60d-59b3-a10e-91af358a3d84</cbc:UUID>
-  <cbc:IssueDate>2026-05-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-18</cbc:IssueDate>
   <cbc:IssueTime>09:07:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
@@ -563,7 +563,7 @@ Inside `Signature`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

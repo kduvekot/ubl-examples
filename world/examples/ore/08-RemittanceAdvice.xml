@@ -78,9 +78,9 @@
         <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
         <cbc:StreetName languageID="en-XU">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4110</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Trazvul</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Fucinalta</cbc:CityName>
+        <cbc:PostalZone>4320</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>

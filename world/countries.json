@@ -77,7 +77,16 @@
     ],
     "postal_zone": "4 digits",
     "subdivisions": null,
-    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
+    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.",
+    "postal_codes": {
+     "Ferrano": "41[0-8]0",
+     "Conciaro": "4190",
+     "Serravona": "4310",
+     "Fucinalta": "4320",
+     "Forte Euridice": "4520",
+     "Valico Euridice": "4530"
+    },
+    "postal_codes_note": "The post office's codes: the capital by its quarters (4100 to 4180), every other place one code of its own (O152 stage 2 B)."
    },
    "phone_prefix": "+999 1",
    "timezone": "-01:00",
@@ -194,8 +203,15 @@
      "format": "16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number",
      "municipalities": {
       "Ferrano": "4160",
-      "Serravona": "4170"
-     }
+      "Serravona": "4170",
+      "Forte Euridice": "4180"
+     },
+     "localities": {
+      "Conciaro": "Ferrano",
+      "Fucinalta": "Serravona",
+      "Valico Euridice": "Forte Euridice"
+     },
+     "localities_note": "An address in a locality (a village or hamlet within a municipality) carries its municipality's code (O152 stage 2 B)."
     },
     "bank-branch": {
      "name": "ABI and CAB code of an Urvanian bank branch",
@@ -327,7 +343,14 @@
      "XB-CO": "Coastal State",
      "XB-NT": "Northern Territory"
     },
-    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
+    "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines.",
+    "postal_codes": {
+     "Lumeport": "385[0-2]\\d",
+     "Marrowdale": "712\\d\\d",
+     "Euridice Crossing": "71950",
+     "Gullhaven": "90540"
+    },
+    "postal_codes_note": "The first digit gives the state or territory (3 Coastal State, 7 Upland State, 9 the Northern Territory), then the place; Lumeport and Marrowdale by their delivery districts (O152 stage 2 B)."
    },
    "subdivision_rule": {
     "north_of_row": 60,

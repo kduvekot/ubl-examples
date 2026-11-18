@@ -51,7 +51,7 @@ Inside `IssueLocation`:
 
 - `ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Name` = **Castrano Logistics warehouse, Ferrano**  
+- `Name` = **Castrano Logistics warehouse, Conciaro**  
   Where the carrier took over the goods and issued the note.
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
@@ -345,7 +345,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TransitPeriod/StartDate` = **2026-03-23**  
   Collected in the afternoon.
 - `Consignment/MainCarriageShipmentStage/TransitPeriod/EndDate` = **2026-03-25**  
-  Delivered in the morning, after the night rest of the driver and the border.
+  Delivered in the goods-in slot of the third day. The leg is 179 km, about three hours' driving, but the truck reaches the border about 17:25, after the distributor's customs desk has closed, so the driver takes his night rest at the border and the import is declared in the morning; the distribution centre takes full loads in morning slots only, and the slot booked a week ahead is the next morning's.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
@@ -369,7 +369,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Ferrano**  
-  Loaded at the 3PL's warehouse in Ferrano.
+  Loaded at the 3PL's warehouse in Conciaro.
 - `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XBMRW** (schemeID `UN/LOCODE`)  
@@ -379,7 +379,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceDate` = **2026-03-24**  
-  Customs looked at the seals at the border.
+  Customs looked at the seals at the border, the morning after the truck arrived there.
 - `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceTime` = **07:45:00**  
   The local time.
 - `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Description` = **Seal check, no inspection of the goods.**  
@@ -387,7 +387,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Location/Name` = **Road border crossing Urvania–Bayvarra**  
   Where customs checked the seals.
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
-  The truck left the warehouse.
+  The truck left the warehouse; the land border is 70 km ahead.
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
   The local time.
 - `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
@@ -1892,8 +1892,8 @@ Inside `Shipment`:
   The fuel of this delivery.
 - `Delivery/FuelConsumption/FuelTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
   The truck runs on diesel. The code is from the Trade Accord's fuel type list: DIESEL = Diesel.
-- `Delivery/FuelConsumption/FuelConsumptionMeasure` = **61** (unitCode `LTR`)  
-  About 33 litres per 100 km over 186 km.
+- `Delivery/FuelConsumption/FuelConsumptionMeasure` = **59** (unitCode `LTR`)  
+  About 33 litres per 100 km over 179 km.
 - `ReturnAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `ReturnAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
@@ -1904,11 +1904,11 @@ Inside `Shipment`:
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Castrano Logistics (world/parties.json).
 - `ReturnAddress/BuildingNumber` = **24**  
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
-- `ReturnAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `ReturnAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `ReturnAddress/PostalZone` = **4130**  
+- `ReturnAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `ReturnAddress/PostalZone` = **4190**  
   Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
 - `ReturnAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Castrano Logistics (world/parties.json).
@@ -1928,11 +1928,11 @@ Inside `Shipment`:
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Castrano Logistics (world/parties.json).
 - `OriginAddress/BuildingNumber` = **24**  
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
-- `OriginAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `OriginAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `OriginAddress/PostalZone` = **4130**  
+- `OriginAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `OriginAddress/PostalZone` = **4190**  
   Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
 - `OriginAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Castrano Logistics (world/parties.json).
@@ -1995,7 +1995,7 @@ Inside `Signature`:
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
     <cac:Address>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -3457,7 +3457,7 @@ Inside `Signature`:
       <cac:FuelConsumption>
         <cbc:ID>TH-FC-26-0159</cbc:ID>
         <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
-        <cbc:FuelConsumptionMeasure unitCode="LTR">61</cbc:FuelConsumptionMeasure>
+        <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
       </cac:FuelConsumption>
     </cac:Delivery>
     <cac:ReturnAddress>
@@ -3466,9 +3466,9 @@ Inside `Signature`:
       <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
       <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+      <cbc:PostalZone>4190</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
@@ -3482,9 +3482,9 @@ Inside `Signature`:
       <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
       <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
       <cbc:BuildingNumber>24</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4130</cbc:PostalZone>
+      <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+      <cbc:PostalZone>4190</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>

@@ -226,7 +226,6 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Estuary Road</cbc:StreetName>
         <cbc:BuildingNumber>28</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38505</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -290,7 +289,7 @@
       </cac:LoadingTransportEvent>
       <cac:ExportationTransportEvent>
         <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
         </cac:Location>

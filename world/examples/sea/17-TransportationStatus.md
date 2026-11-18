@@ -22,7 +22,7 @@ The port of discharge reports the container discharged and available.
   The sender's status report number.
 - `UUID` = **1713d8c6-6d60-56cc-af96-b2eb848695b4**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-18**  
+- `IssueDate` = **2026-05-17**  
   Reported when the container is discharged.
 - `IssueTime` = **16:36:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -99,8 +99,8 @@ Inside `Consignment`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `CarrierParty/PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `CarrierParty/PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `CarrierParty/PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `CarrierParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `CarrierParty/PostalAddress/PostalZone` = **38527**  
@@ -129,7 +129,7 @@ Inside `Consignment`:
   When the desk can be reached; identity of Tidewell Ocean Lines (world/parties.json).
 - `MainCarriageShipmentStage/ID` = **2**  
   The sea leg, stage 2 as on the bill of lading.
-- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-05-18**  
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-05-17**  
   The container came off the ship.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **11:20:00**  
   The local time.
@@ -209,7 +209,7 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41037** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and registry number; identity of Port of Selanu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceDate` = **2026-05-18**  
+- `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceDate` = **2026-05-17**  
   Held by customs for a check of the pallets.
 - `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceTime` = **12:00:00**  
   The local time.
@@ -221,8 +221,8 @@ Inside `Consignment`:
   At the Port of Selanu.
 - `MainCarriageShipmentStage/DetentionTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-05-18**  
-  The ship berthed at Selanu.
+- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-05-17**  
+  The ship berthed at Selanu: its pilot boarded at first light; it had been off the port, under way, since the evening.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:30:00**  
   The local time.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
@@ -239,7 +239,7 @@ Inside `Consignment`:
   The person's position.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container.
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceDate` = **2026-05-18**  
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceDate` = **2026-05-17**  
   Released from the quarantine check: all pallets heat-treated.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **15:00:00**  
   The local time.
@@ -251,7 +251,7 @@ Inside `Consignment`:
   At the Port of Selanu.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceDate` = **2026-05-18**  
+- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceDate` = **2026-05-17**  
   Stacked in the import yard.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime` = **11:40:00**  
   The local time.
@@ -276,7 +276,7 @@ Inside `Consignment`:
 
 Inside `TransportEvent`:
 
-- `OccurrenceDate` = **2026-05-18**  
+- `OccurrenceDate` = **2026-05-17**  
   The day the event took place.
 - `TransportEventTypeCode` = **DISCHARGE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: DISCHARGE = Discharged.
@@ -340,8 +340,8 @@ Inside `ReceiverParty`:
   Street of the postal address. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/BuildingNumber` = **4**  
   Building number of the postal address. identity of Bayforth Forwarding (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Bayforth Forwarding (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/PostalZone` = **38525**  
@@ -386,9 +386,9 @@ Inside `StatusLocation`:
 
 Inside `StatusPeriod`:
 
-- `StartDate` = **2026-05-18**  
+- `StartDate` = **2026-05-17**  
   The status holds from the report.
-- `EndDate` = **2026-05-18**  
+- `EndDate` = **2026-05-17**  
   Until the next report.
 
 ## The document
@@ -402,7 +402,7 @@ Inside `StatusPeriod`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>PS-TS-26-0142</cbc:ID>
   <cbc:UUID>1713d8c6-6d60-56cc-af96-b2eb848695b4</cbc:UUID>
-  <cbc:IssueDate>2026-05-18</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-17</cbc:IssueDate>
   <cbc:IssueTime>16:36:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
@@ -459,7 +459,7 @@ Inside `StatusPeriod`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Harbour Road</cbc:StreetName>
         <cbc:BuildingNumber>18</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38527</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -482,7 +482,7 @@ Inside `StatusPeriod`:
     <cac:MainCarriageShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cac:DischargeTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>11:20:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
         <cac:Location>
@@ -550,7 +550,7 @@ Inside `StatusPeriod`:
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
       <cac:DetentionTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
         <cbc:Description>Wooden pallets must carry the heat-treatment mark.</cbc:Description>
         <cac:Location>
@@ -564,7 +564,7 @@ Inside `StatusPeriod`:
         </cac:Location>
       </cac:DetentionTransportEvent>
       <cac:ActualArrivalTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -586,7 +586,7 @@ Inside `StatusPeriod`:
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cac:QuarantineTransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
           <cac:Location>
@@ -600,7 +600,7 @@ Inside `StatusPeriod`:
           </cac:Location>
         </cac:QuarantineTransportEvent>
         <cac:TransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>11:40:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
           <cac:Location>
@@ -623,7 +623,7 @@ Inside `StatusPeriod`:
     </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
-    <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+    <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
     <cac:Location>
@@ -672,7 +672,7 @@ Inside `StatusPeriod`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -701,8 +701,8 @@ Inside `StatusPeriod`:
     <cbc:Name>Port of Selanu</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
-    <cbc:StartDate>2026-05-18</cbc:StartDate>
-    <cbc:EndDate>2026-05-18</cbc:EndDate>
+    <cbc:StartDate>2026-05-17</cbc:StartDate>
+    <cbc:EndDate>2026-05-17</cbc:EndDate>
   </cac:StatusPeriod>
 </TransportationStatus>
 ```

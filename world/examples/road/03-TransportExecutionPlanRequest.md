@@ -217,7 +217,7 @@ Inside `FromLocation`:
 
 - `ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Name` = **Castrano Logistics warehouse, Ferrano**  
+- `Name` = **Castrano Logistics warehouse, Conciaro**  
   Where the goods are taken over.
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
@@ -466,7 +466,7 @@ Inside `Consignment`:
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
     <cac:Address>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

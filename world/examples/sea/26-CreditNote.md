@@ -271,7 +271,7 @@ Inside `AccountingCustomerParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-05-21**  
+- `ActualDeliveryDate` = **2026-05-20**  
   The goods arrived at the 3PL.
 
 ### Delivery Terms
@@ -553,7 +553,7 @@ Inside `CreditNoteLine`:
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-05-21</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-05-20</cbc:ActualDeliveryDate>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>

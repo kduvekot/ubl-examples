@@ -514,7 +514,7 @@ Inside `InvoiceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
-- `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Ferrano**  
+- `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  
   Where the power was used.
 - `Item/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
@@ -973,7 +973,7 @@ Inside `InvoiceLine`:
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-        <cbc:Description>Castrano Logistics warehouse, Ferrano</cbc:Description>
+        <cbc:Description>Castrano Logistics warehouse, Conciaro</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
     <cac:Item>

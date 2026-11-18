@@ -186,10 +186,10 @@ Inside `Shipment`:
   The street's name in English, the country's other official language; identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **46**  
   Building number of the postal address. identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
+  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+- `Consignment/CarrierParty/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -512,8 +512,8 @@ Inside `DespatchLine`:
           <cbc:StreetName languageID="qal">Lupela Natii</cbc:StreetName>
           <cbc:StreetName languageID="en-XL">Airfield Road</cbc:StreetName>
           <cbc:BuildingNumber>46</cbc:BuildingNumber>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+          <cbc:CityName languageID="qal">Kefalasa</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Lintwell</cbc:CityName>
           <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>

@@ -24,7 +24,7 @@ The carrier reports that the truck has cleared the border and gives the expected
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-24**  
   The morning after collection, when the truck has crossed the border.
-- `IssueTime` = **09:10:00-01:00**  
+- `IssueTime` = **10:55:00-01:00**  
   Sent as soon as the truck was through; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Transportation status**  
   The kind of report.
@@ -170,7 +170,7 @@ Inside `TransportEvent`:
   The reporting party's number for this event.
 - `OccurrenceDate` = **2026-03-24**  
   The day and time the truck crossed the land border.
-- `OccurrenceTime` = **08:55:00**  
+- `OccurrenceTime` = **10:40:00**  
   The local time.
 - `TransportEventTypeCode` = **BORDERCROSS** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: BORDERCROSS = Border crossing.
@@ -194,12 +194,12 @@ Inside `TransportEvent`:
   In words.
 - `CurrentStatus/SequenceID` = **3**  
   The third report on this truck: collection, departure, border.
-- `CurrentStatus/Text` = **Driver resting in Marrowdale tonight under the driving-time rules.**  
+- `CurrentStatus/Text` = **Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.**  
   A note for the consignee.
 - `CurrentStatus/IndicationIndicator` = **true**  
   The status applies: the truck is on time.
-- `CurrentStatus/Percent` = **70**  
-  The share of the route driven.
+- `CurrentStatus/Percent` = **39**  
+  The share of the route driven: 70 of 179 km.
 - `CurrentStatus/ReliabilityPercent` = **90**  
   How sure the carrier is of the arrival time.
 - `CurrentStatus/DocumentationAttachment/ExternalReference/URI` = **https://www.trasvia.example/tracking/TH-26-04471/seal.jpg**  
@@ -243,9 +243,9 @@ Inside `TransportEvent`:
 - `Signature/SignatoryParty/PartyName/Name` = **Customs and Border Service of Bayvarra**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Period/StartTime` = **07:30:00**  
-  The truck joined the queue at the border.
-- `Period/EndTime` = **08:55:00**  
-  And left the customs post.
+  The truck joined the queue at the border, after the driver's night rest in the border truck park: it arrived about 17:25 the evening before, when the importer's customs desk was closed.
+- `Period/EndTime` = **10:40:00**  
+  And left the customs post, once the import declaration, lodged when the importer's desk opened, was accepted.
 
 ### Document Reference
 
@@ -295,8 +295,8 @@ Inside `UpdatedPickupTransportEvent`:
   The local time.
 - `Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Location/Name` = **Castrano Logistics warehouse, Ferrano**  
-  At the 3PL's warehouse in Ferrano, where the boxes are packed.
+- `Location/Name` = **Castrano Logistics warehouse, Conciaro**  
+  At the 3PL's warehouse in Conciaro, where the boxes are packed.
 - `Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
@@ -341,7 +341,7 @@ Inside `StatusPeriod`:
   <cbc:ID>TH-TS-26-0160</cbc:ID>
   <cbc:UUID>bef60481-e21d-568c-918b-caeb273b9ce0</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
-  <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>10:55:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
@@ -450,7 +450,7 @@ Inside `StatusPeriod`:
   <cac:TransportEvent>
     <cbc:IdentificationID>TH-26-04471-E03</cbc:IdentificationID>
     <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>08:55:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">BORDERCROSS</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
@@ -465,9 +465,9 @@ Inside `StatusPeriod`:
       <cbc:StatusReasonCode listID="urn:ubl-examples:world:codelist:StatusReasonCode">CLEARED</cbc:StatusReasonCode>
       <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
       <cbc:SequenceID>3</cbc:SequenceID>
-      <cbc:Text>Driver resting in Marrowdale tonight under the driving-time rules.</cbc:Text>
+      <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.</cbc:Text>
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
-      <cbc:Percent>70</cbc:Percent>
+      <cbc:Percent>39</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
       <cac:DocumentationAttachment>
         <cac:ExternalReference>
@@ -520,7 +520,7 @@ Inside `StatusPeriod`:
     </cac:Signature>
     <cac:Period>
       <cbc:StartTime>07:30:00</cbc:StartTime>
-      <cbc:EndTime>08:55:00</cbc:EndTime>
+      <cbc:EndTime>10:40:00</cbc:EndTime>
     </cac:Period>
   </cac:TransportEvent>
   <cac:DocumentReference>
@@ -559,7 +559,7 @@ Inside `StatusPeriod`:
     <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+      <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
       <cac:Address>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

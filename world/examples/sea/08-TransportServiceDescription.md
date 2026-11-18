@@ -68,8 +68,8 @@ Inside `SenderParty`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/PostalZone` = **38527**  
@@ -206,7 +206,7 @@ Inside `TransportationService`:
   The normal service.
 - `FreightRateClassCode` = **BOX** (listID `urn:ubl-examples:world:codelist:FreightRateClassCode`)  
   The rate is per container. The code is from the Trade Accord's freight rate class list: BOX = Rate per container.
-- `TransportationServiceDescription` = **A weekly feeder sailing from Lumeport to Selanu, two days at sea.**  
+- `TransportationServiceDescription` = **A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.**  
   The service in words.
 - `TransportationServiceDetailsURI` = **https://www.tidewell.example/services/island**  
   Where the schedule is.
@@ -263,9 +263,9 @@ Inside `TransportationService`:
 - `EnvironmentalEmission/ValueMeasure` = **380** (unitCode `KGM`)  
   Per 40-foot container on the crossing.
 - `EstimatedDurationPeriod/DurationMeasure` = **2** (unitCode `DAY`)  
-  Two days at sea.
-- `ScheduledServiceFrequency/WeekDayCode` = **5** (listID `urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode`)  
-  Every Friday (ISO 8601: 5 is Friday). The code is from the world's copy of UBL's Week day list, with a listID: 5 = Friday.
+  Two days at sea: 1,200 km (650 nautical miles) at 13.5 knots, about 48 hours.
+- `ScheduledServiceFrequency/WeekDayCode` = **4** (listID `urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode`)  
+  Every Thursday, the day of this sailing (ISO 8601 numbers the days from 1, Monday). The code is from the world's copy of UBL's Week day list, with a listID: 4 = Thursday.
 
 ## The document
 
@@ -312,7 +312,7 @@ Inside `TransportationService`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -405,7 +405,7 @@ Inside `TransportationService`:
     <cbc:TariffClassCode listID="urn:ubl-examples:world:codelist:TariffClassCode">FAK</cbc:TariffClassCode>
     <cbc:Priority>Standard</cbc:Priority>
     <cbc:FreightRateClassCode listID="urn:ubl-examples:world:codelist:FreightRateClassCode">BOX</cbc:FreightRateClassCode>
-    <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, two days at sea.</cbc:TransportationServiceDescription>
+    <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.</cbc:TransportationServiceDescription>
     <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
     <cbc:NominationDate>2026-05-09</cbc:NominationDate>
     <cbc:NominationTime>10:00:00</cbc:NominationTime>
@@ -471,7 +471,7 @@ Inside `TransportationService`:
       <cbc:DurationMeasure unitCode="DAY">2</cbc:DurationMeasure>
     </cac:EstimatedDurationPeriod>
     <cac:ScheduledServiceFrequency>
-      <cbc:WeekDayCode listID="urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode">5</cbc:WeekDayCode>
+      <cbc:WeekDayCode listID="urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode">4</cbc:WeekDayCode>
     </cac:ScheduledServiceFrequency>
   </cac:TransportationService>
 </TransportServiceDescription>

@@ -192,11 +192,11 @@ Inside `DespatchSupplierParty`:
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Castrano Logistics (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **24**  
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **4130**  
+- `Party/PostalAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Party/PostalAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **4190**  
   Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Castrano Logistics (world/parties.json).
@@ -355,9 +355,9 @@ Inside `DespatchSupplierParty`:
         <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
         <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
         <cbc:BuildingNumber>24</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>

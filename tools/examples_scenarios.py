@@ -13,6 +13,7 @@ from decimal import Decimal
 import build_examples
 import examples_kit as kit
 import world_ids
+import world_map as wmap
 from build_examples import ITEM, PARTY, WORLD, V, Detail, address, amount, coordinate, item, money, party, price, qty
 
 
@@ -41,7 +42,7 @@ def ore(n, doc):
         return kit.order(f, n, doc, 0, "The first working day of the month: the monthly ore call-off.",
                          "Free carrier at the mine: the buyer arranges and pays the main transport, so the order names "
                          "the carrier the buyer has booked. Stated, because leaving it out would carry no meaning "
-                         "(UBL rule IND6).", "Mine siding, Serravona",
+                         "(UBL rule IND6).", "Serravona mine siding",
                          {"Note": V("Monthly call-off, one train.", "Says in words what the order is for."),
                           "Delivery": {"RequestedDeliveryPeriod": {
                               "StartDate": V(f.date(7), "The week in which the factory wants the ore."),
@@ -81,7 +82,16 @@ def ore(n, doc):
 ROAD = kit.Flow("road", "2026-03-16", [
     {"item": "bench-serra", "ordered": 96, "why": "24 pallets of 4 benches: one full truck."},
     {"item": "bench-casting", "ordered": 12, "why": "Spare side frames, for the distributor's service stock."}])
-DISTANCE_KM = 186     # the carrier's route from the 3PL in Ferrano to the distributor in Marrowdale
+# the truck's leg on the map, from the 3PL in Conciaro to the distributor in Marrowdale (O152: the kilometres stated
+# are those driven on the leg), and how far along it the land border is
+ROAD_LEG_KM = wmap.leg_km("road", "8-xu", "6-xb")
+ROAD_BORDER_KM = wmap.border_km("road", "8-xu", "6-xb")
+DISTANCE_KM = wmap.whole(ROAD_LEG_KM)
+TRUCK_KMH = 65        # a loaded truck's average on the main road, with its stops
+ROAD_DEPARTS = "16:20"
+ROAD_AT_BORDER = wmap.after(wmap.at("2026-03-23", ROAD_DEPARTS), ROAD_BORDER_KM / TRUCK_KMH)
+ROAD_CLEARED = "10:40"   # the truck leaves the Bayvarran post once the import declaration is accepted
+ROAD_IN_MARROWDALE = wmap.after(wmap.at("2026-03-24", ROAD_CLEARED), (ROAD_LEG_KM - ROAD_BORDER_KM) / TRUCK_KMH)
 
 
 def goods_items(f, currency, value_why, convert=None):
@@ -117,20 +127,28 @@ def road_stage(f, actual):
              "TransitDirectionCode": V("EXPORT", "The goods leave Urvania by this stage."),
              "CabotageIndicator": V("false", "A carriage between two countries, not within a foreign one."),
              "TransitPeriod": {"StartDate": V(f.date(7), "Collected in the afternoon."),
-                               "EndDate": V(f.date(9), "Delivered in the morning, after the night rest of the "
-                                                       "driver and the border.")},
+                               "EndDate": V(f.date(9), f"Delivered in the goods-in slot of the third day. The leg is "
+                                                       f"{DISTANCE_KM} km, about three hours' driving, but the truck "
+                                                       f"reaches the border about {wmap.about(ROAD_AT_BORDER)}, after "
+                                                       "the distributor's customs desk has closed, so the driver takes "
+                                                       "his night rest at the border and the import is declared in "
+                                                       "the morning; the distribution centre takes full loads in "
+                                                       "morning slots only, and the slot booked a week ahead is the "
+                                                       "next morning's.")},
              "TransportMeans": kit.means("13-xu", "T-07", direction="WB"),   # a one-off trip: no JourneyID (C41, D35)
              "DriverPerson": kit.person("Ilario", "Bencetti", "The driver of the truck.", "XU-DL-0417722"),
-             "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Ferrano."),
+             "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Conciaro."),
              "UnloadingPortLocation": kit.place("XBMRW", "Unloaded at the distributor's distribution centre."),
              "EstimatedDeliveryDate": V(f.date(9), "The carrier's estimate when it takes over the goods."),
              "EstimatedDeliveryTime": V("09:00:00", "Early in the working day."),
              "RequiredDeliveryDate": V(f.date(9), "The distributor's goods-in slot."),
              "RequiredDeliveryTime": V("10:00:00", "The slot starts at ten.")}
     if actual:
-        stage["ActualDepartureTransportEvent"] = kit.event(f, 7, "16:20:00", "The truck left the warehouse.",
+        stage["ActualDepartureTransportEvent"] = kit.event(f, 7, ROAD_DEPARTS + ":00", "The truck left the warehouse; "
+                                                           f"the land border is {wmap.whole(ROAD_BORDER_KM)} km ahead.",
                                                            kit.place("XUFER", "Castrano Logistics warehouse."))
-        stage["ExaminationTransportEvent"] = kit.event(f, 8, "07:45:00", "Customs looked at the seals at the border.",
+        stage["ExaminationTransportEvent"] = kit.event(f, 8, "07:45:00", "Customs looked at the seals at the border, "
+                                                       "the morning after the truck arrived there.",
                                                        description="Seal check, no inspection of the goods.",
                                                        location={"Name": V("Road border crossing Urvania–Bayvarra",
                                                                            "Where customs checked the seals.")})
@@ -202,7 +220,7 @@ def road(n, doc):
                          "Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the "
                          "order names the warehouse where the goods are collected and the carrier that collects them "
                          "(UBL rule IND6: the delivery terms are stated, not implied).",
-                         "Castrano Logistics warehouse, Ferrano",
+                         "Castrano Logistics warehouse, Conciaro",
                          {"Delivery": {
                              "ID": V("LD-DL-26-0412", "The distributor's number for this delivery."),
                              "Quantity": qty(108, "EA", "All 108 pieces in one delivery."),
@@ -376,14 +394,20 @@ def road(n, doc):
                             "The road border crossing between the customs posts of both countries.")}
         return {"ID": V(f.number("status", doc["from"], "TransportationStatus"), "The carrier's status report number."),
                 "IssueDate": V(f.date(8), "The morning after collection, when the truck has crossed the border."),
-                "IssueTime": V("09:10:00", "Sent as soon as the truck was through."),
+                "IssueTime": V(wmap.hm(wmap.after(wmap.at(f.date(8), ROAD_CLEARED), .25)), "Sent as soon as the truck "
+                                                                                         "was through."),
                 "TransportationStatusTypeCode": V("PROGRESS", "A report on the progress of the carriage."),
                 "TransportEvent": kit.event(
-                    f, 8, "08:55:00", "The day and time the truck crossed the land border.", border,
+                    f, 8, ROAD_CLEARED + ":00", "The day and time the truck crossed the land border.", border,
                     type_code="BORDERCROSS", ident=f"{ROAD_JOB}-E03",
                     description="Border crossing passed; customs cleared on both sides.", done=True,
-                    Period={"StartTime": V("07:30:00", "The truck joined the queue at the border."),
-                            "EndTime": V("08:55:00", "And left the customs post.")},
+                    Period={"StartTime": V("07:30:00", "The truck joined the queue at the border, after the driver's "
+                                                       "night rest in the border truck park: it arrived about "
+                                                       f"{wmap.about(ROAD_AT_BORDER)} the evening before, when the "
+                                                       "importer's customs desk was closed."),
+                            "EndTime": V(ROAD_CLEARED + ":00", "And left the customs post, once the import "
+                                                              "declaration, lodged when the importer's desk opened, "
+                                                              "was accepted.")},
                     ResponsibleParty=party("13-xu", short=True),
                     ReportedShipment={"ID": V(f.numbers["shipment"], "The shipment the event concerns.")},
                     Signature={"ID": V("XB-CUS-SIG-0884", "The border customs' release stamp, as an electronic "
@@ -402,10 +426,13 @@ def road(n, doc):
                         "StatusReasonCode": V("CLEARED", "Why: the border is behind it."),
                         "StatusReason": V("Customs released the goods at the border.", "In words."),
                         "SequenceID": V("3", "The third report on this truck: collection, departure, border."),
-                        "Text": V("Driver resting in Marrowdale tonight under the driving-time rules.",
-                                  "A note for the consignee."),
+                        "Text": V(f"Expected in Marrowdale about {wmap.about(ROAD_IN_MARROWDALE)}, after the morning "
+                                  "goods-in slots; the truck waits at the business park for its slot tomorrow at "
+                                  "10:00, and the driver takes his rest there.", "A note for the consignee."),
                         "IndicationIndicator": V("true", "The status applies: the truck is on time."),
-                        "Percent": V("70", "The share of the route driven."),
+                        "Percent": V(str(wmap.whole(100 * ROAD_BORDER_KM / ROAD_LEG_KM)),
+                                     f"The share of the route driven: {wmap.whole(ROAD_BORDER_KM)} of "
+                                     f"{DISTANCE_KM} km."),
                         "ReliabilityPercent": V("90", "How sure the carrier is of the arrival time."),
                         "Condition": {"AttributeID": V("SEAL", "The condition checked."),
                                       "Description": V("Intact, as checked by customs.", "Its state.")},
@@ -449,7 +476,9 @@ def road(n, doc):
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note of the "
                                                                                           "carriage invoiced.")}},
                            [{"item": "road-transport", "qty": DISTANCE_KM,
-                             "invoice_why": "The kilometres driven loaded, from Ferrano to Marrowdale."}],
+                             "invoice_why": "The kilometres driven loaded, from the 3PL's warehouse in Conciaro "
+                                            "to the distribution centre in Marrowdale: the truck's leg on the map "
+                                            f"({ROAD_LEG_KM:.1f} km, O152)."}],
                            key="freight-invoice",
                            extra={"Delivery": {"Shipment": {"Consignment": {
                                "ID": V(f.numbers["consignment"], "The consignment carried, as the distributor numbered "
@@ -513,12 +542,25 @@ REQUESTED_DELIVERY = {
 # where the rail flow's events happen (worklist C18): every event names its place
 LUMEWAY_GOODS_IN = {**kit.gln_location("6-xb", "goodsin"), "Name": V("Lumeway goods-in, Marrowdale", "Where the "
                                                                       "goods are unloaded.")}
-RAIL_WAREHOUSE = kit.place("XUFER", "At the 3PL's warehouse in Ferrano, where the boxes are packed.",
-                           name="Castrano Logistics warehouse, Ferrano")
+RAIL_WAREHOUSE = kit.place("XUFER", "At the 3PL's warehouse in Conciaro, where the boxes are packed.",
+                           name="Castrano Logistics warehouse, Conciaro")
 RAIL_HUB = kit.place("XUFER", "At the intermodal hub, where the boxes go on the train.", name="Ferrano Intermodal Hub")
 RAIL_BORDER = {"Name": V("Rail border station Urvania–Bayvarra", "Where the train crosses the border.")}
 RAIL_SIDING = {**kit.gln_location("6-xb", "siding"), "Name": V("Lumeway rail siding, Marrowdale", "Where the boxes "
                                                                  "are placed for unloading.")}
+
+
+# the train on the map (O152): the rail leg from the hub to Lumeway's siding, and the border station on it; a container
+# train averages about 50 km/h. It stops at the border station for the crew change, the brake test and the customs'
+# check of the seals, and leaves on its timetabled path into Bayvarra; in Marrowdale the boxes are placed on the
+# siding by the next morning's shunting trip, in Lumeway's working hours.
+RAIL_KM = wmap.leg_km("rail", "18-xu", "6-xb", "rail")
+RAIL_BORDER_KM = wmap.border_km("rail", "18-xu", "6-xb", "rail")
+TRAIN_KMH = 50
+RAIL_AT_BORDER = wmap.after(wmap.at("2026-04-14", "06:52"), RAIL_BORDER_KM / TRAIN_KMH)
+RAIL_IN_MARROWDALE = wmap.after(wmap.at("2026-04-14", "13:20"), (RAIL_KM - RAIL_BORDER_KM) / TRAIN_KMH)
+if not (RAIL_AT_BORDER.hour < 13 and RAIL_IN_MARROWDALE.date().isoformat() == "2026-04-14"):
+    raise SystemExit("rail: the train's times no longer fit the leg on the map (O152)")
 
 
 def rail_container(f, k, full):
@@ -564,7 +606,7 @@ def rail_container(f, k, full):
         "OperatingParty": party("18-xu", short=True),
         "ProviderParty": party("14-xu", short=True),
         "LoadingProofParty": party("8-xu", short=True),
-        "LoadingLocation": kit.place("XUFER", "Packed at the 3PL's warehouse in Ferrano."),
+        "LoadingLocation": kit.place("XUFER", "Packed at the 3PL's warehouse in Conciaro."),
         "UnloadingLocation": kit.place("XBMRW", "Unpacked at the distributor's siding."),
         "StorageLocation": {"Name": V("Ferrano Intermodal Hub, stack C", "Where the box waited for the train.")},
         "PositioningTransportEvent": kit.event(f, 6, "08:00:00", "The empty box was delivered to the warehouse "
@@ -588,7 +630,7 @@ def rail_container(f, k, full):
                                                  "and back.", "Who moves the empty box."),
                                 "Reference": V("FRC-HT-2026", "The carrier's haulage terms.")},
         "Pickup": {"ActualPickupDate": V(f.date(7), "Collected."), "ActualPickupTime": V("15:00:00", "At three."),
-                   "PickupLocation": {"Name": V("Castrano Logistics warehouse, Ferrano", "Where.")}},
+                   "PickupLocation": {"Name": V("Castrano Logistics warehouse, Conciaro", "Where.")}},
         "Despatch": {"ActualDespatchDate": V(f.date(8), "The train left the hub."),
                      "ActualDespatchTime": V("06:50:00", "Ten to seven.")},
         "Delivery": {"LatestDeliveryDate": V(f.date(10), "At the latest."),
@@ -613,13 +655,23 @@ def rail_stage(f, actual):
            "CrewQuantity": qty(2, "IE", "Two persons: a driver and a train manager."),
            "PassengerQuantity": qty(0, "IE", "No persons: a freight train carries no passengers."),
            "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub.", location=RAIL_HUB),
-           "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival in Marrowdale.", location=RAIL_SIDING),
+           "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival at the siding in "
+                                                     f"Marrowdale: the train reaches Marrowdale yard about "
+                                                     f"{wmap.about(RAIL_IN_MARROWDALE)} the day before, "
+                                                     f"{wmap.whole(RAIL_KM)} km from the hub, and the next morning's "
+                                                     "shunting trip places the boxes on Lumeway's siding.",
+                                                     location=RAIL_SIDING),
            "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning.", location=RAIL_HUB),
            "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "The arrival as expected.", location=RAIL_SIDING)}
     if actual:
         out["ActualDepartureTransportEvent"] = kit.event(f, 8, "06:52:00", "The train left the hub.",
                                                          {"Name": V("Ferrano Intermodal Hub", "Where.")})
-        out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned passage of the border station.", location=RAIL_BORDER)
+        out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned departure from the border "
+                                                         f"station, {wmap.whole(RAIL_BORDER_KM)} km from the hub: "
+                                                         f"the train stops there from about "
+                                                         f"{wmap.about(RAIL_AT_BORDER)} for the crew change, the "
+                                                         "brake test and the customs' check of the seals, and leaves "
+                                                         "on its timetabled path into Bayvarra.", location=RAIL_BORDER)
         out["ActualWaypointTransportEvent"] = kit.event(f, 8, "13:20:00", "The train passed the border station.", location=RAIL_BORDER)
     return out
 
@@ -776,9 +828,24 @@ PLASTICS = kit.Flow("plastics", "2026-04-13", [
 
 
 BARGE_VOYAGE = "FB4-26-031"
+# the voyage on the map (O152): the river leg from Rinova's quay to Rivermouth's, with no locks (the river runs free
+# below the rapids above Ferrano); the barge sails by day, downstream at about 11 km/h, and moors at night
+BARGE_KM = wmap.leg_km("plastics", "7-xu", "41-xb")
+BARGE_BORDER_KM = wmap.border_km("plastics", "7-xu", "41-xb")
+BARGE_KMH, BARGE_DAY = 11, ("06:30", "17:30")     # sunrise and sunset in April at 31 degrees South, legal time
+BARGE_SAILS = "15:10"
+
+
+def barge_time(f, km):
+    """When the barge, sailing at day 6 BARGE_SAILS, has made km: to the quarter hour."""
+    t = wmap.sail_by_day(wmap.at(f.date(6), BARGE_SAILS), km, BARGE_KMH, *BARGE_DAY)
+    q = round((t.hour * 60 + t.minute) / 15) * 15
+    return (t.date() - datetime.date.fromisoformat(f.date(0))).days, f"{q // 60:02d}:{q % 60:02d}:00"
 
 
 def barge_stage(f, actual):
+    if barge_time(f, BARGE_KM)[0] != 8:
+        raise SystemExit("plastics: the barge no longer arrives the day before its discharge (O152); set the dates")
     out = {"ID": V("1", "Down the river, from the recovery plant's quay to the river quay in Lumeport."),
            "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
@@ -786,14 +853,20 @@ def barge_stage(f, actual):
            "MasterPerson": kit.person("Tomaso", "Riverra", "The skipper of the barge.", job="Skipper"),
            "LoadingPortLocation": {"Name": V("Quay of Rinova Recovery, Ferrano", "Where the bags are loaded.")},
            "UnloadingPortLocation": {"Name": V("River quay, Lumeport", "The place named in the CPT terms.")},
-           "EstimatedTransitPeriod": {"DurationMeasure": V("3", "Three days downstream, with the locks.",
-                                                           unitCode="DAY")},
+           "EstimatedTransitPeriod": {"DurationMeasure": V("3", f"Three days from takeover to discharge: about "
+                                                                f"{wmap.nearest(BARGE_KM, 10)} km downstream, with "
+                                                                "no locks, sailing by day.", unitCode="DAY")},
            "TakeoverTransportEvent": kit.event(f, 6, "09:00:00", "The barge operator takes over the bags at the "
                                                                  "quay.", location=BARGE_QUAY),
            "LoadingTransportEvent": kit.event(f, 6, "13:30:00", "Loading finished: 120 bags in the hold.", location=BARGE_QUAY),
-           "ExportationTransportEvent": kit.event(f, 7, "16:00:00", "The barge leaves Urvania at the river border.", location=BARGE_BORDER),
-           "DischargeTransportEvent": kit.event(f, 9, "08:00:00", "Planned unloading at the Lumeport quay.",
-                                                done=False, location=BARGE_UNLOADING)}
+           "ExportationTransportEvent": kit.event(f, *barge_time(f, BARGE_BORDER_KM), "The barge leaves Urvania at "
+                                                  f"the river border, {wmap.whole(BARGE_BORDER_KM)} km below the "
+                                                  "quay: sailing from the afternoon of loading and through the "
+                                                  "next day from first light.", location=BARGE_BORDER),
+           "DischargeTransportEvent": kit.event(f, 9, "08:00:00", "Planned unloading at the Lumeport quay, with the "
+                                                "consignee's morning shift: the barge arrives about "
+                                                f"{barge_time(f, BARGE_KM)[1][:5]} the day before and moors at the "
+                                                "quay overnight.", done=False, location=BARGE_UNLOADING)}
     return out
 
 
@@ -831,7 +904,7 @@ def barge_goods(f, w):
                        "LatestPickupDate": V(f.date(6), "They must go the same day."),
                        "LatestPickupTime": V("16:00:00", "Before the quay closes.")},
             "Despatch": {"ActualDespatchDate": V(f.date(6), "The barge cast off."),
-                         "ActualDespatchTime": V("15:10:00", "In the afternoon.")},
+                         "ActualDespatchTime": V(BARGE_SAILS + ":00", "In the afternoon.")},
             "Delivery": {"LatestDeliveryDate": V(f.date(10), "The packaging maker's production starts the day "
                                                              "after.")},
             "OrderLineReference": {"LineID": V("1", "The order line."),
@@ -1089,8 +1162,10 @@ def retail(n, doc):
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return kit.invoice(f, n, doc, 10, "Issued after delivery.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
-                           [{"item": "road-transport-b", "qty": 38, "invoice_why": "The kilometres from Marrowdale to the "
-                                                                                 "store in Lumeport."}],
+                           [{"item": "road-transport-b", "qty": wmap.whole(wmap.leg_km("retail", "6-xb", "26-xb")),
+                             "invoice_why": "The kilometres driven loaded, from the distribution centre in "
+                                            "Marrowdale to the store in Lumeport: the truck's leg on the map "
+                                            "(O152)."}],
                            key="freight-invoice",
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment carried.")}}}})
@@ -1194,6 +1269,34 @@ SCENARIOS.update({"rail": rail, "plastics": plastics, "retail": retail})
 # where the sea flow's events happen (worklist C18)
 SEA_LUMEPORT = kit.place("XBLMP", "At the container quay of the Port of Lumeport.")
 SEA_SELANU = kit.place("XLSEL", "At the Port of Selanu.")
+# the voyage on the map (O152, O53, D30): one passage time from the place list, the sea route measured on the real
+# ocean at the ship's 13.5 knots; the island's clocks are an hour ahead of Lumeport's (D27). The ship sails on the
+# evening of day 10 and is off Selanu on the evening of day 12, after dark: Selanu's pilots take ships in by
+# daylight only and the ship does not anchor, so it waits off the port and berths at first light on day 13.
+SEA_KM = wmap.sea_km()
+SEA_HOURS = wmap.sea_hours()
+SEA_SAILS, SEA_SAILED = "18:00", "18:10"        # the timetable's departure, and the actual one (Lumeport time)
+SEA_OFF_SELANU = wmap.after(wmap.at("2026-05-14", SEA_SAILS), SEA_HOURS + 1)          # island time
+SEA_ARRIVES = 13                                # the day the ship berths, at first light
+if SEA_OFF_SELANU.date().isoformat() != "2026-05-16" or SEA_OFF_SELANU.hour < 18:
+    raise SystemExit("sea: the passage no longer brings the ship off Selanu on the evening of day 12 (O152, O53)")
+
+
+SEA_REPORTS = "15:40"     # the pre-arrival report, in Lumeport's time (the carrier's), on day 12
+
+
+def sea_report_nm(f):
+    """The ship's distance to go to Selanu when it sends its pre-arrival report, rounded to 5 nautical miles."""
+    off = wmap.after(wmap.at(f.date(10), SEA_SAILED), SEA_HOURS)               # Lumeport time
+    left = (off - wmap.at(f.date(12), SEA_REPORTS)).total_seconds() / 3600 * wmap.KNOTS
+    return wmap.nearest(left, 5)
+
+
+def sea_quarter(t):
+    q = round((t.hour * 60 + t.minute) / 15) * 15
+    return f"{q // 60:02d}:{q % 60:02d}:00"
+
+
 SEA_3PL = {"Name": V("Nalevi Warehousing, Selanu", "The 3PL's warehouse on the island, where the goods are received "
                                                    "and stored.")}
 SEA = kit.Flow("sea", "2026-05-04", [
@@ -1376,7 +1479,7 @@ def sea_consignment(f, view):
             "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
             "UnloadingPortLocation": kit.place("XLSEL", "The port of discharge."),
             "AcceptanceTransportEvent": kit.event(f, 9, "10:15:00", "The terminal accepted the container.", location=SEA_LUMEPORT),
-            "AvailabilityTransportEvent": kit.event(f, 14, "14:00:00", "The container is available at Selanu.",
+            "AvailabilityTransportEvent": kit.event(f, SEA_ARRIVES, "14:00:00", "The container is available at Selanu.",
                                                     done=False, location=SEA_SELANU),
             "StorageTransportEvent": kit.event(f, 9, "10:30:00", "Stacked at the quay until loading.", location=SEA_LUMEPORT),
             "FreightChargeLocation": kit.place("XBLMP", "The freight is payable in Lumeport.")},
@@ -1386,8 +1489,8 @@ def sea_consignment(f, view):
                                                                  "Transport"),
             "OnCarriageIndicator": V("true", "After the main carriage."),
             "CarrierParty": party("9-xl", short=True),
-            "ReceiptTransportEvent": kit.event(f, 15, None, "Planned receipt at the 3PL.", done=False, location=SEA_3PL),
-            "WarehousingTransportEvent": kit.event(f, 15, None, "Stored at the 3PL until called off.", done=False, location=SEA_3PL)},
+            "ReceiptTransportEvent": kit.event(f, SEA_ARRIVES + 1, None, "Planned receipt at the 3PL.", done=False, location=SEA_3PL),
+            "WarehousingTransportEvent": kit.event(f, SEA_ARRIVES + 1, None, "Stored at the 3PL until called off.", done=False, location=SEA_3PL)},
         "InsurancePolicy": {"ID": V("WS-CP-26-4471", "The cargo policy of the insurer."),
                             "InsuranceTypeCode": V("ALLRISKS", "Cover against all risks."),
                             "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "110 % of the CIF "
@@ -1557,7 +1660,7 @@ def sea_order_response(f, n, doc):
             "PartialDeliveryIndicator": V("false", "All in one container."),
             "BackOrderAllowedIndicator": V("false", "Nothing is back-ordered: all is in stock."),
             "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(10), "Shipped on the sailing of day 10."),
-                                                    "EndDate": V(f.date(14), "Arriving at Selanu.")}},
+                                                    "EndDate": V(f.date(SEA_ARRIVES), "Arriving at Selanu.")}},
             "WarrantyInformation": V(bench["warranty"], "The maker's warranty passes to the buyer."),
             "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
             "WarrantyParty": party(bench["seller"], short=True),
@@ -1672,7 +1775,7 @@ def sea(n, doc):
                                          f"Container {CONTAINER} loaded on board.", "Port of Lumeport, container quay",
                                          {"Consignment": {"MainCarriageShipmentStage": {
                                              "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
-                                             "ActualDepartureTransportEvent": kit.event(f, 10, "18:10:00", "The ship "
+                                             "ActualDepartureTransportEvent": kit.event(f, 10, SEA_SAILED + ":00", "The ship "
                                                                                         "sailed.", location=SEA_LUMEPORT),
                                              "SecurityOfficerPerson": kit.person("Tamsin", "Orrel", "The port "
                                                                                  "facility security officer who "
@@ -1714,15 +1817,19 @@ def sea(n, doc):
                                  "CrewQuantity": qty(14, "IE", "The crew on board: 14 persons."),
                                  "MasterPerson": kit.person("Corin", "Halvard", "The master, who signs the manifest.",
                                                             role="MASTER"),
-                                 "EstimatedArrivalTransportEvent": kit.event(f, 13, "22:00:00", "Expected off Selanu "
-                                                                                                "in the evening.", location=SEA_SELANU),
-                                 "EstimatedDepartureTransportEvent": kit.event(f, 11, "06:00:00", "The planned "
-                                                                                                  "departure from "
-                                                                                                  "Lumeport.", location=SEA_LUMEPORT)},
+                                 "EstimatedArrivalTransportEvent": kit.event(
+                                     f, 12, sea_quarter(SEA_OFF_SELANU), f"Expected off Selanu in the evening, in "
+                                     f"island time, an hour ahead of Lumeport's: {wmap.nearest(SEA_KM, 10):,} km at "
+                                     f"{wmap.KNOTS} knots, about {wmap.whole(SEA_HOURS)} hours at sea. The ship "
+                                     "berths the next morning at first light.", location=SEA_SELANU),
+                                 "EstimatedDepartureTransportEvent": kit.event(f, 10, SEA_SAILS + ":00", "The "
+                                                                               "timetable departure from Lumeport, "
+                                                                               "in Lumeport's time.", location=SEA_LUMEPORT)},
                              "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, False)}}}
     if doc["doc"] == "CommonTransportationReport":
         return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
                 "IssueDate": V(f.date(12), "Sent before the ship enters the port of Selanu."),
+                "IssueTime": V(SEA_REPORTS + ":00", "Sent a few hours before the ship comes off the port."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment the report is for."),
                              "ShipmentStage": {"ID": V("1", "The sea leg to Selanu."),
                                                "ISPSRequirements": {
@@ -1736,16 +1843,19 @@ def sea(n, doc):
                                                    "CurrentOperatingSecurityLevelCode": V("1", "Security level 1, the "
                                                                                               "normal level.")}}}}
     if doc["doc"] == "TransportationStatus":
-        return kit.transportation_status(f, n, doc, 14, "Reported when the container is discharged.",
+        return kit.transportation_status(f, n, doc, SEA_ARRIVES, "Reported when the container is discharged.",
                                          f"Container {CONTAINER} discharged and available for customs clearance.",
                                          "Port of Selanu", {"Consignment": {"MainCarriageShipmentStage": {
                                              "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
-                                             "ActualArrivalTransportEvent": kit.event(f, 14, "06:30:00", "The ship "
-                                                                                      "berthed at Selanu.", location=SEA_SELANU),
-                                             "DischargeTransportEvent": kit.event(f, 14, "11:20:00", "The container "
+                                             "ActualArrivalTransportEvent": kit.event(f, SEA_ARRIVES, "06:30:00", "The ship "
+                                                                                      "berthed at Selanu: its pilot "
+                                                                                      "boarded at first light; it "
+                                                                                      "had been off the port, under "
+                                                                                      "way, since the evening.", location=SEA_SELANU),
+                                             "DischargeTransportEvent": kit.event(f, SEA_ARRIVES, "11:20:00", "The container "
                                                                                   "came off the ship.", done=True, location=SEA_SELANU),
                                              "DetentionTransportEvent": kit.event(
-                                                 f, 14, "12:00:00", "Held by customs for a check of the pallets.",
+                                                 f, SEA_ARRIVES, "12:00:00", "Held by customs for a check of the pallets.",
                                                  description="Wooden pallets must carry the heat-treatment mark.", location=SEA_SELANU),
                                              "ReportingPerson": kit.person("Ama", "Kelune", "The terminal's duty "
                                                                            "officer who reports.", job="Duty "
@@ -1753,7 +1863,7 @@ def sea(n, doc):
                                              "TransportHandlingUnit": {"TransportEquipment": {
                                                  "ID": V(CONTAINER, "The container.", schemeID="ISO6346"),
                                                  "QuarantineTransportEvent": kit.event(
-                                                     f, 14, "15:00:00", "Released from the quarantine check: all "
+                                                     f, SEA_ARRIVES, "15:00:00", "Released from the quarantine check: all "
                                                      "pallets heat-treated.", done=True, location=SEA_SELANU),
                                                  "ServiceAllowanceCharge": {
                                                      "ChargeIndicator": V("true", "A service charge."),
@@ -1762,7 +1872,7 @@ def sea(n, doc):
                                                                                 "For unloading the box."),
                                                      "Amount": amount(Decimal("185.00"), "XBL", "As in the carrier's "
                                                                                                 "tariff.")},
-                                                 "TransportEvent": kit.event(f, 14, "11:40:00", "Stacked in the "
+                                                 "TransportEvent": kit.event(f, SEA_ARRIVES, "11:40:00", "Stacked in the "
                                                                                                 "import yard.", location=SEA_SELANU, type_code="STORAGE")}}}}, event_type="DISCHARGE")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return kit.invoice(f, n, doc, 15, "Issued after the sailing.",
@@ -1774,7 +1884,8 @@ def sea(n, doc):
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment shipped.")}}}})
     if doc["doc"] == "ImportCustomsDeclaration":
-        out = kit.import_declaration(f, n, doc, 15, "The customs broker declares the import for the buyer.",
+        out = kit.import_declaration(f, n, doc, SEA_ARRIVES + 1, "The customs broker declares the import for the "
+                                     "buyer, on the first working day after the ship berthed.",
                                       "The customs value in coral: the goods' value in lume at the world's reference "
                                       "rate (1 lume = 0.4 coral).",
                                       {"ID": V(f.numbers["bl"], "The bill of lading of the goods.")})
@@ -1810,7 +1921,7 @@ def sea(n, doc):
         return kit.despatch_advice(f, n, doc, 9, "Sent to the delivery party named in the order when the container "
                                                  "leaves.", "The gross weight of the goods.")
     if doc["doc"] == "ReceiptAdvice":
-        return kit.receipt_advice(f, n, doc, 17, "The buyer's 3PL confirms what arrived.")
+        return kit.receipt_advice(f, n, doc, SEA_ARRIVES + 3, "The buyer's 3PL confirms what arrived.")
     if doc["doc"] == "Invoice":
         out = kit.invoice(f, n, doc, 10, "Issued when the goods are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
@@ -1910,7 +2021,7 @@ def sea(n, doc):
                                                                                  "parks of Selanu.")},
                                "BuyerAssignedReference": {"BuyerReferenceCode": V("VT-CLAIMS", "The buyer's claims "
                                                                                                "desk.")},
-                               "Delivery": {"ActualDeliveryDate": V(f.date(17), "The goods arrived at the 3PL.")},
+                               "Delivery": {"ActualDeliveryDate": V(f.date(SEA_ARRIVES + 3), "The goods arrived at the 3PL.")},
                                "DeliveryTerms": {"ID": V("CIF", "As sold.", schemeID="INCOTERMS")},
                                "PaymentAlternativeCurrencyCode": V("XLC", "The buyer's currency, shown too."),
                                "PaymentAlternativeExchangeRate": {
@@ -1933,6 +2044,15 @@ def sea(n, doc):
 AIR = kit.Flow("air", "2026-05-11", [
     {"item": "bench-casting-b", "ordered": 8, "why": "Eight side frames, needed before the ship arrives.",
      "line": "3"}])     # added by the order change to the sea order's lines 1 and 2 (air/01#F1)
+
+
+# the morning flight Lumeport - Selanu (D19 as corrected with D36, O123): the ATR's block time eastbound is 2 h 45,
+# a margin over the flight the great circle between the airports needs in still air (taxiing 10 minutes, climb and
+# descent 20, the rest at 500 km/h); the island's clocks are an hour ahead
+FLIGHT_BLOCK_EAST = 2.75
+if (10 + 20) / 60 + max(0.0, wmap.air_km() - 100) / 500 > FLIGHT_BLOCK_EAST:
+    raise SystemExit("air: the flight no longer fits its block time of 2 h 45 (O152, O123)")
+FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", "07:00"), FLIGHT_BLOCK_EAST + 1)
 
 
 def air_consignment(f, doc):
@@ -2089,7 +2209,10 @@ def air(n, doc):
                 "UnloadingPortLocation": kit.place("XLSLA", "The airport of destination."),
                 "RequestedDepartureTransportEvent": kit.event(f, 3, "07:00:00", "The forwarder asked for the morning "
                                                                                 "flight.", location=kit.place("XBLMA", "The airport of departure.")),
-                "RequestedArrivalTransportEvent": kit.event(f, 3, "10:00:00", "Arriving before the 3PL's cut-off.", location=kit.place("XLSLA", "The airport of destination."))}})
+                "RequestedArrivalTransportEvent": kit.event(f, 3, wmap.hm(FLIGHT_ARRIVES), "The timetable's arrival, "
+                                                            "in island time, an hour ahead of Lumeport's: a block "
+                                                            "time of 2 h 45 eastbound (D19, D36), before the 3PL's "
+                                                            "cut-off.", location=kit.place("XLSLA", "The airport of destination."))}})
         return out
     if doc["doc"] == "TransportationStatus" and doc["from"] == "17-xb":
         return kit.transportation_status(f, n, doc, 2, "Reported when the cargo is built up for the flight.",
@@ -2629,7 +2752,7 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
                                                                             "power on its transport cost centre."),
                                    "AccountingCost": V("Warehouse, Castrano Logistics", "In words."),
                                    "Delivery": {"DeliveryLocation": {"Description": V(
-                                       "Castrano Logistics warehouse, Ferrano", "Where the power was used.")}}}},
+                                       "Castrano Logistics warehouse, Conciaro", "Where the power was used.")}}}},
                    {"item": "gas", "qty": 61200, "invoice_why": "The gas of the coating ovens in March, as the grid "
                                                                "operator metered and converted it.",
                     "line_extra": {**MARCH, "Note": V("1,350 m³ at 4 bar, converted to 61,200 kWh by the grid "
@@ -3652,7 +3775,8 @@ def sea(n, doc):
             "TariffClassCode": V("FAK", "Freight all kinds: one rate whatever the goods."),
             "Priority": V("Standard", "The normal service."),
             "FreightRateClassCode": V("BOX", "The rate is per container."),
-            "TransportationServiceDescription": V("A weekly feeder sailing from Lumeport to Selanu, two days at sea.",
+            "TransportationServiceDescription": V(f"A weekly feeder sailing from Lumeport to Selanu, about "
+                                                  f"{wmap.whole(SEA_HOURS)} hours at sea.",
                                                   "The service in words."),
             "TransportationServiceDetailsURI": V("https://www.tidewell.example/services/island", "Where the "
                                                                                                  "schedule is."),
@@ -3677,15 +3801,22 @@ def sea(n, doc):
                               "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
                                                                                         "Codes for Modes of "
                                                                                         "Transport")},
-            "TransportEvent": kit.event(f, 10, "18:00:00", "The next departure from Lumeport.", done=False,
+            "TransportEvent": kit.event(f, 10, SEA_SAILS + ":00", "The next departure from Lumeport.", done=False,
                                       location=kit.place("XBLMP", "The port the service sails from."),
                                       type_code="DEPARTURE"),
             "ResponsibleTransportServiceProviderParty": party("11-xb", short=True),
             "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases."),
                                       "ValueMeasure": V("380", "Per 40-foot container on the crossing.",
                                                         unitCode="KGM")},
-            "EstimatedDurationPeriod": {"DurationMeasure": V("2", "Two days at sea.", unitCode="DAY")},
-            "ScheduledServiceFrequency": {"WeekDayCode": V("5", "Every Friday (ISO 8601: 5 is Friday).")}}}
+            "EstimatedDurationPeriod": {"DurationMeasure": V(str(wmap.whole(SEA_HOURS / 24)), f"Two days at sea: "
+                                                             f"{wmap.nearest(SEA_KM, 10):,} km "
+                                                             f"({wmap.nearest(SEA_KM / 1.852, 10)} nautical miles) "
+                                                             f"at {wmap.KNOTS} knots, about "
+                                                             f"{wmap.whole(SEA_HOURS)} hours.", unitCode="DAY")},
+            "ScheduledServiceFrequency": {"WeekDayCode": V(str(datetime.date.fromisoformat(f.date(10)).isoweekday()),
+                                                           f"Every {datetime.date.fromisoformat(f.date(10)):%A}, the "
+                                                           "day of this sailing (ISO 8601 numbers the days from 1, "
+                                                           "Monday).")}}}
     if d == "InvoiceStatusRequest":
         return {"ID": V(f.number("invoice-status-request", doc["from"], d), "The distributor's request number."),
                 "RequestDate": V(f.date(25), "Two weeks after the invoice, without news from the buyer."),
@@ -4560,9 +4691,12 @@ def _(f, n, doc, out):
     return {"ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
             "ReportType": V("Pre-arrival report", "In words."),
             "Description": V("The ship's report before arrival at Selanu.", "What it is."),
-            "Note": V("Pilot requested at the Selanu fairway buoy; the ship berths without anchoring.",
+            "Note": V("Pilot requested at the Selanu fairway buoy at first light; the ship waits off the port under "
+                      "way overnight and berths without anchoring.",
                       "The master's note on the arrival."), "VersionID": V("1", "The first version."),
-            "ReportingLocation": {"Name": V("At sea, 40 nautical miles off Selanu", "Where the report was made.")},
+            "ReportingLocation": {"Name": V(f"At sea, {sea_report_nm(f)} nautical miles off Selanu",
+                                            "Where the report was made: the ship's distance to go at the time of "
+                                            "the report.")},
             "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "EB"),
             "DocumentReference": {"ID": V(f.numbers["manifest"], "The cargo manifest.")},
             "Signature": seal(doc["from"], "TWL-SIG-CTR", "The master's signature.")}
@@ -5591,7 +5725,11 @@ def _(f, n, doc, out):
     crew = [kit.person("Corin", "Halvard", "The master.", role="MASTER"),
             kit.person("Elsbeth", "Marrin", "The chief officer, also the ship's medical officer.", role="CHIEFOFFICER"),
             kit.person("Rafe", "Dunmore", "The chief engineer.", role="CHIEFENG")]
-    sea_place = {"Name": V("At sea, 120 nautical miles west of Selanu", "Where.")}
+    sea_place = {"Name": V(f"At sea, about {wmap.nearest(SEA_KM / 1.852 / 2, 10)} nautical miles from Selanu, "
+                           "in mid-ocean", "Where: half way, far from any land.")}
+    report_place = {"Name": V(f"At sea, {sea_report_nm(f)} nautical miles off Selanu", "Where the report is made, "
+                                                                                        "as the report's own "
+                                                                                        "reporting location.")}
     stage = out["Shipment"]["ShipmentStage"]
     stage.update({
         "PassengerPerson": listed(kit.person("Ines", "Tavari", "The one passenger, a supercargo.",
@@ -5618,8 +5756,10 @@ def _(f, n, doc, out):
             "AdditionalPortCallPurpose": {"PurposeTypeCode": V("WATER", "Taking on water."),
                                           "PurposeType": V("Bunkering of fresh water", "In words.")},
             "RequestedArrivalEvent": {"IdentificationID": V("ARR-XLSEL-0517", "The requested arrival."),
-                                      "OccurrenceDate": V(f.date(14), "The day."),
-                                      "OccurrenceTime": V("06:00:00", "At first light."),
+                                      "OccurrenceDate": V(f.date(SEA_ARRIVES), "The morning after the ship comes off "
+                                                                               "the port: Selanu's pilots take "
+                                                                               "ships in by daylight only."),
+                                      "OccurrenceTime": V("06:00:00", "At first light, in island time."),
                                       "TypeCode": V("ARRIVAL", "An arrival."),
                                       "Description": V("Pilot on board at the fairway buoy.", "What is asked."),
                                       "CompletionIndicator": V("false", "Not yet."),
@@ -5685,13 +5825,13 @@ def _(f, n, doc, out):
                                                 "VolumeMeasure": V("310", "Exchanged: the same 310 cubic metres (a volume, so in cubic "
                                                                    "metres; a tonne of water is about a cubic metre).",
                                                    unitCode="MTQ"),
-                                                "TransactionDate": V(f.date(12), "At sea."),
+                                                "TransactionDate": V(f.date(11), "At sea, half way across."),
                                                 "Location": sea_place},
             "DischargeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
                                                  "VolumeMeasure": V("120", "To be discharged at Selanu: 120 cubic metres "
                                                                     "(a volume; a tonne of water is about a cubic "
                                                                     "metre, so the number stays).", unitCode="MTQ"),
-                                                 "TransactionDate": V(f.date(14), "In port.")},
+                                                 "TransactionDate": V(f.date(SEA_ARRIVES), "In port.")},
             "ResponsibleOfficerPerson": crew[1]},
         "MaritimeHealthDeclaration": {
             "ID": V("MDH-26-0517", "The maritime declaration of health."),
@@ -5726,7 +5866,7 @@ def _(f, n, doc, out):
                                         "Person": crew[2]},
             "SanitaryMeasure": {"SanitaryMeasureTypeCode": V("DISINFECT", "The galley was disinfected."),
                                 "ApplicationDate": V(f.date(11), "When.")},
-            "PlaceOfReportLocation": sea_place,
+            "PlaceOfReportLocation": report_place,
             "MedicalCertificate": {"ID": V("MC-TH-2026", "The ship's medicine chest certificate, unique only with "
                                                          "its issuer, the port health office of its home port "
                                                          "(decision ID-Q10)."),
@@ -5759,7 +5899,7 @@ def _(f, n, doc, out):
     stage["ISPSRequirements"].update({
         "SSPOnBoardIndicator": V("true", "The security plan is on board."),
         "SSPSecurityMeasuresAppliedIndicator": V("true", "Its measures were applied."),
-        "ReportLocation": sea_place,
+        "ReportLocation": report_place,
         "ISSCIssuerParty": party("ma-xb", short=True),
         "SecurityOfficerPerson": crew[1],
         "ShipToShipActivityRecord": {
@@ -7722,7 +7862,7 @@ def _(f, n, doc, out):
         for dl in lines_of(d, "Delivery"):
             dl["FuelConsumption"] = {"ID": V("TH-FC-26-0159", "The fuel of this delivery."),
                                      "FuelTypeCode": V("DIESEL", "The truck runs on diesel."),
-                                     "FuelConsumptionMeasure": V("61", f"About 33 litres per 100 km over "
+                                     "FuelConsumptionMeasure": V(str(wmap.whole(33 * DISTANCE_KM / 100)), f"About 33 litres per 100 km over "
                                                                        f"{DISTANCE_KM} km.", unitCode="LTR")}
         break
     return {}

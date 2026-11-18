@@ -7,11 +7,11 @@
   <cbc:ID>TOL-CTR-26-0141</cbc:ID>
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
-  <cbc:IssueTime>15:38:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:40:00-01:00</cbc:IssueTime>
   <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
   <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
-  <cbc:Note>Pilot requested at the Selanu fairway buoy; the ship berths without anchoring.</cbc:Note>
+  <cbc:Note>Pilot requested at the Selanu fairway buoy at first light; the ship waits off the port under way overnight and berths without anchoring.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ReporterParty>
     <cac:PartyIdentification>
@@ -31,7 +31,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -107,7 +107,7 @@
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ReportingLocation>
-    <cbc:Name>At sea, 40 nautical miles off Selanu</cbc:Name>
+    <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
   </cac:ReportingLocation>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
@@ -206,7 +206,7 @@
         </cac:AdditionalPortCallPurpose>
         <cac:RequestedArrivalEvent>
           <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
           <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TypeCode>
           <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
@@ -309,15 +309,15 @@
           <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
           <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
           <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
-          <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
+          <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
           <cac:Location>
-            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+            <cbc:Name>At sea, about 320 nautical miles from Selanu, in mid-ocean</cbc:Name>
           </cac:Location>
         </cac:ExchangeBallastWaterTransaction>
         <cac:DischargeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:VolumeMeasure unitCode="MTQ">120</cbc:VolumeMeasure>
-          <cbc:TransactionDate>2026-05-18</cbc:TransactionDate>
+          <cbc:TransactionDate>2026-05-17</cbc:TransactionDate>
         </cac:DischargeBallastWaterTransaction>
         <cac:ResponsibleOfficerPerson>
           <cbc:FirstName>Elsbeth</cbc:FirstName>
@@ -383,7 +383,7 @@
           </cac:Location>
         </cac:ShipToShipActivityRecord>
         <cac:ReportLocation>
-          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
         </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
@@ -450,7 +450,7 @@
           <cbc:ApplicationDate>2026-05-15</cbc:ApplicationDate>
         </cac:SanitaryMeasure>
         <cac:PlaceOfReportLocation>
-          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
         </cac:PlaceOfReportLocation>
         <cac:MedicalCertificate>
           <cbc:ID>MC-TH-2026</cbc:ID>

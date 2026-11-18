@@ -12,8 +12,10 @@ something to put in it, and these checks keep it consistent:
 
   * every party has a name; every organisation an identifier;
   * tax numbers and account numbers carry valid check digits;
-  * the city is the nearest town or locality in the party's own country
-    and state, and in a country with states the state (name and code)
+  * the city is the nearest named place of the map (town, locality or named
+    village) in the party's own country and state; its postal code is one of
+    that place's, a quarter is one of its town's districts on the map, and in
+    a country with states the state (name and code)
     follows the country's rule, and so does the state code a sales tax
     permit starts with;
   * every account is held at a bank of the world in the same country;
@@ -95,11 +97,55 @@ def tax_id_valid(country, tax_id, state_code=None):
     return False
 
 
+def named_places(world):
+    """The places an address can name: every town, locality and named village of the map."""
+    return world["towns"] + world.get("localities", []) + [v for v in world.get("villages", []) if v.get("names")]
+
+
+def own_places(world, p):
+    return [t for t in named_places(world)
+            if t["country"] == p["c"] and state_of(world, {"c": t["country"], "at": t["c"]}) == state_of(world, p)]
+
+
 def nearest_town(world, p):
-    """The nearest town or locality in the party's own country and, where there are states, its own state."""
-    places = [t for t in world["towns"] + world.get("localities", [])
-              if t["country"] == p["c"] and state_of(world, {"c": t["country"], "at": t["c"]}) == state_of(world, p)]
+    """The nearest named place (town, locality or named village of the map) in the party's own country and, where
+    there are states, its own state: the place of its address (O152 stage 2 B, as the place list measures it)."""
+    places = own_places(world, p)
     return min(places, key=lambda t: math.dist(t["c"], p["at"]))["name"] if places else None
+
+
+def city_fits(world, p, city):
+    """The address's place is the nearest named place, or no more than a square (3.5 km) farther than it, as the
+    place list (tools/place_list.py) allows: the map is a diagram inside the towns (O82)."""
+    places = {t["name"]: t for t in own_places(world, p)}
+    if city not in places:
+        return False
+    d = lambda t: math.dist(t["c"], p["at"])
+    return d(places[city]) <= min(map(d, places.values())) + 1
+
+
+def postal_problems(world, p, a):
+    """The postal code is one of its place's (world/countries.json, address "postal_codes")."""
+    import re
+    codes = world["countries"][p["c"]]["address"].get("postal_codes")
+    if not codes:
+        return []
+    pat = codes.get(a.get("CityName"))
+    if not pat:
+        return [f"party {p['id']}: no postal codes for {a.get('CityName')} (world/countries.json)"]
+    if not re.fullmatch(pat, a.get("PostalZone") or ""):
+        return [f"party {p['id']}: postal code {a.get('PostalZone')} is not one of {a.get('CityName')}'s ({pat})"]
+    return []
+
+
+def quarter_problems(world, p, a):
+    """A quarter named in an address is a district of its town on the map (world/map.json, "districts")."""
+    q = a.get("CitySubdivisionName")
+    if not q:
+        return []
+    town = next((t for t in world["towns"] if t["name"] == a.get("CityName")), None)
+    names = [d["name"] for d in (town or {}).get("districts", [])]
+    return [] if q in names else [f"party {p['id']}: quarter {q} is not a district of {a.get('CityName')} on the map"]
 
 
 def state_of(world, p):
@@ -143,8 +189,9 @@ def check(world):
                             + (f" (the permit of {state_of(world, p)} starts with {state})" if state_of(world, p) else ""))
         a = idn.get("address", {})
         town = nearest_town(world, p)
-        if a.get("CityName") != town:
+        if not city_fits(world, p, a.get("CityName")):
             problems.append(f"{where}: city {a.get('CityName')} but the nearest town of its country is {town}")
+        problems += postal_problems(world, p, a) + quarter_problems(world, p, a)
         st = state_of(world, p)
         if st and a.get("CountrySubentity") != st:
             problems.append(f"{where}: state {a.get('CountrySubentity')} but its place is in {st}")
@@ -315,8 +362,10 @@ def address_register_problems(world, p, a):
     why = world_ids.problem(spec, a["ID"])
     if why:
         return [f"{where}: address {why}"]
-    if spec.get("municipalities") and a["ID"][:4] != spec["municipalities"].get(a.get("CityName")):
-        return [f"{where}: address number {a['ID']} is not from the municipality of {a.get('CityName')}"]
+    if spec.get("municipalities"):
+        town = spec.get("localities", {}).get(a.get("CityName"), a.get("CityName"))   # a locality's municipality
+        if a["ID"][:4] != spec["municipalities"].get(town):
+            return [f"{where}: address number {a['ID']} is not from the municipality of {town}"]
     return []
 
 

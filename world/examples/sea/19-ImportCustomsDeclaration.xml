@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TCB-IM-26-0144</cbc:ID>
   <cbc:UUID>d81b799d-e60d-59b3-a10e-91af358a3d84</cbc:UUID>
-  <cbc:IssueDate>2026-05-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-18</cbc:IssueDate>
   <cbc:IssueTime>09:07:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
@@ -139,7 +139,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

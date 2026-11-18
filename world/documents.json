@@ -37,7 +37,7 @@
      "carrier": "13-xu",
      "why": "The truck the distributor booked, from the 3PL's warehouse across the border.",
      "from_place": {
-      "name": "Castrano Logistics warehouse, Ferrano",
+      "name": "Castrano Logistics warehouse, Conciaro",
       "locode": "XUFER"
      },
      "to_place": {
@@ -60,7 +60,7 @@
      "carrier": "14-xu",
      "why": "Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.",
      "from_place": {
-      "name": "Castrano Logistics warehouse, Ferrano",
+      "name": "Castrano Logistics warehouse, Conciaro",
       "locode": "XUFER"
      },
      "to_place": {
@@ -174,7 +174,8 @@
      "to_place": {
       "name": "Port of Selanu",
       "locode": "XLSEL"
-     }
+     },
+     "transit_days": 4
     },
     {
      "mode": "road",
@@ -262,7 +263,7 @@
      "carrier": "13-xu",
      "why": "The call-off, from the 3PL across the border to the public works depot.",
      "from_place": {
-      "name": "Castrano Logistics warehouse, Ferrano",
+      "name": "Castrano Logistics warehouse, Conciaro",
       "locode": "XUFER"
      },
      "to_place": {

@@ -76,8 +76,12 @@ Structural rules (the build stops when one is broken):
   * the terrain comes from world/terrain.json (tools/terrain.py, O152): the kind and the country of every
     square, the height of every square corner in metres (model "v"), with no limit between neighbouring corners;
     0 at the sea and in the estuary;
-  * what is built is fitted to the land: buildings, houses, yards, stations, junctions, ends and bends of 90 degrees
-    between two sides stand on a platform (four corners level); a road or rail square a way passes straight through,
+  * what is built is fitted to the land: a port, a quay, a party a barge loads at, a metering station, a level crossing and a
+    town's harbour stand on a platform (four corners level, at the water where they touch it); buildings, houses,
+    yards, junctions, ends and bends of 90 degrees between two sides, and an airport's approach squares, stand on a
+    terrace that follows the land in a small step (their corners within TERRACE_M = 80 m of each other, 2.3 %; a
+    runway within RUNWAY_M = 20 m), so that a town sits near its natural ground and not at the level of the
+    water its edge touches (O152 stage 2 B); a road or rail square a way passes straight through,
     or bends 45 degrees in, is a ramp, level across, rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
     (a main road, 7 %) or ROAD_RISE_MINOR = 350 m (a minor road, 10 %) along its direction; on a diagonal the
     ramp runs from corner to corner, level across the other two corners;
@@ -169,6 +173,9 @@ ROAD_RISE_MINOR = 350                             # metres a minor road square m
 BRIDGE_FREE = 25                                  # metres the ground may stand above a bridge deck's line (its abutments)
 TUNNEL_COVER = 20                                 # metres of ground at least above a tunnel's line
 FLAT_TOL = 1                                      # metres: a platform's corners may differ by this much (rounding)
+TERRACE_M = 80                                    # metres a built square's corners may differ (2.3 %, O152 stage 2 B):
+                                                  # a town, a party's buildings and yards follow their ground in small steps
+RUNWAY_M = 20                                     # metres an airport's corners may differ (0.6 %; a runway may slope 1 %)
 TERRAIN = os.path.join(ROOT, "world", "terrain.json")
 
 
@@ -892,9 +899,11 @@ def build(world):
     # 9. height: a height per tile corner (vertex) in metres, from the terrain (world/terrain.json), with no limit
     #    between neighbouring corners (the land has hills, valleys and cliffs). 0 at the sea and in the estuary; the
     #    river at its own level, never rising downstream, its banks not below it. What is built is fitted to the land:
-    #    a building, a house square, a yard, a station, a junction or a bend of a road or rail, a level crossing and
-    #    an airport's approach square stand on a platform (their four corners level); a straight road or rail square
-    #    is a ramp, level across and rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its direction.
+    #    a port, a quay, a metering station, a level crossing and a harbour stand on a platform (their four corners level); a
+    #    building, a house square, a yard, a junction, an end or a bend of a road or rail and an airport's approach
+    #    square on a terrace (corners within TERRACE_M of each other; a runway RUNWAY_M); a straight road or rail
+    #    square is a ramp, level across and rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its
+    #    direction.
     V = [[float(E[vi][vj]) for vj in range(H + 1)] for vi in range(W + 1)]
     fixed = [[False] * (H + 1) for _ in range(W + 1)]        # corners at the water keep their height
     touches = lambda vi, vj: [tile(vi - a2, vj - b2) for a2 in (0, 1) for b2 in (0, 1) if tile(vi - a2, vj - b2)]
@@ -957,6 +966,17 @@ def build(world):
         v = (b2[0] - a2[0], b2[1] - a2[1])               # two diagonals at right angles: along their chord
         return "ramp-i" if v[1] == 0 else "ramp-j"
 
+    # the parties that stand on one level: a port and a quay, and a party a barge loads or unloads at (its own quay
+    # on the river): their quays stay at the water; an airport's runway stays nearly level (RUNWAY_M)
+    level_party, runway = set(), set()
+    at_quay = {x for f in world.get("flows", []) for leg in f.get("legs", []) if leg["mode"] == "river"
+               for x in (leg["from"], leg["to"])}
+    for p in world["parties"]:
+        if p["kind"] == "airport":
+            runway |= set(footprint(p))
+        elif p["kind"] in ("port", "quay") or p.get("water") or p["id"] in at_quay:
+            level_party |= set(footprint(p))
+
     def ground_rule(q):
         """(shape, rise limit in metres for a whole square) or None (free terrain) for the tile at q. Shapes: 'flat'
         (four corners level), 'ramp-i', 'ramp-j', 'ramp-d', 'ramp-a' (see shape())."""
@@ -971,15 +991,26 @@ def build(world):
                 return None                                 # a bridge spans the ground, a tunnel runs under it
             ls = links(q, under)                            # an overpass: the ground fitted to the way below
             return (shape(ls), RAIL_RISE if under == "rail" else road_rise.get(q, ROAD_RISE_MINOR)) if len(ls) == 2 else ("flat", 0)
-        if t["k"] in ("s", "w") or "b" in t or "hs" in t or "yd" in t or "ms" in t or "hb" in t or (q in approach and t["k"] != "s"):
+        if t["k"] in ("s", "w") or "ms" in t or "hb" in t:
             return ("flat", 0)
+        if q in approach and t["k"] != "s":
+            return ("terrace", TERRACE_M)                   # below the approach surface (it climbs about 2 %)
+        if "b" in t and q in level_party:
+            return ("flat", 0)                              # a quay, a port: one level, at the water
+        if "b" in t and q in runway:
+            return ("terrace", RUNWAY_M)                    # a runway: nearly level
+        if "b" in t or "hs" in t or "yd" in t:
+            return ("terrace", TERRACE_M)                   # built-up ground follows the land in small steps
         if q in road and q in rails:
             return ("flat", 0)                              # level crossing
         if q in road or q in rails:
             ls = links(q)
             if len(ls) != 2 or len(rails.get(q, ())) > 1:
-                return ("flat", 0)                          # an end, a junction, a siding's points
-            return (shape(ls), road_rise.get(q, ROAD_RISE_MINOR) if q in road else RAIL_RISE)
+                return ("terrace", TERRACE_M)               # an end, a junction, a siding's points: near level
+            sh = shape(ls)
+            if sh == "flat":
+                return ("terrace", TERRACE_M)               # a bend of 90 degrees
+            return (sh, road_rise.get(q, ROAD_RISE_MINOR) if q in road else RAIL_RISE)
         return None
 
     def corner_groups(q, rule):
@@ -988,6 +1019,9 @@ def build(world):
         i, j = q
         if rule == "flat":
             return [[(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]], []
+        if rule == "terrace":                               # each corner on its own, all within the step of each other
+            cs = [(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]
+            return [[c2] for c2 in cs], [(x, y, 1.0) for x in range(4) for y in range(x + 1, 4)]
         if rule == "ramp-i":                                # level across the road, along each of its ends
             return [[(i, j), (i, j + 1)], [(i + 1, j), (i + 1, j + 1)]], [(0, 1, 1.0)]
         if rule == "ramp-j":
@@ -1111,6 +1145,30 @@ def build(world):
                 moved += over
             if moved < 0.5:
                 break
+        # then bring each group back towards its own ground as far as its ramps allow (the closing above pulls both
+        # ends of a ramp, and so whole towns, towards the water a few of their corners are held at): a group moves
+        # within the range its neighbours leave it, so every ramp stays within its limit
+        target = {root: max(sum(E[a2][b2] for a2, b2 in cs) / len(cs), low[root]) for root, cs in members.items()}
+        nbr = {}
+        for x, y, limit in ramps:
+            rx, ry = find(x), find(y)
+            if rx != ry:
+                nbr.setdefault(rx, []).append((ry, limit))
+                nbr.setdefault(ry, []).append((rx, limit))
+        for _ in range(500):
+            moved = 0.0
+            for root, ns in nbr.items():
+                if root in pinned:
+                    continue
+                lo_ = max([level[r_] - lim for r_, lim in ns] + [low[root]])
+                hi_ = min(level[r_] + lim for r_, lim in ns)
+                if lo_ > hi_ or not (lo_ - 1e-6 <= level[root] <= hi_ + 1e-6):
+                    continue                                # no room, or already squeezed: leave it
+                new = min(max(target[root], lo_), hi_)
+                moved = max(moved, abs(new - level[root]))
+                level[root] = new
+            if moved < 0.5:
+                break
         for root, cs in members.items():
             for a2, b2 in cs:
                 fitted[0] += abs(V[a2][b2] - level[root])
@@ -1193,7 +1251,12 @@ def build(world):
                     problems.append(f"{'something built on a slope' if rule[0] == 'flat' else 'a ramp that is not level across'} at {(i, j)}")
                 else:
                     for x, y, share in pairs:
-                        if abs(lv[x][0] - lv[y][0]) > rule[1] * share + FLAT_TOL:
+                        cx, cy = groups[x][0], groups[y][0]
+                        if rule[0] == "terrace" and abs(lv[x][0] - lv[y][0]) > rule[1] + FLAT_TOL and \
+                                not (cx in at_water and cy in at_water):    # both held at the water: the river's fall
+                            problems.append(f"a built square rises {abs(lv[x][0] - lv[y][0])} m (at most {rule[1]} m) at {(i, j)}")
+                            break
+                        if rule[0] != "terrace" and abs(lv[x][0] - lv[y][0]) > rule[1] * share + FLAT_TOL:
                             problems.append(f"a {'rail' if rule[1] == RAIL_RISE else 'road'} square rises {abs(lv[x][0] - lv[y][0])} m "
                                             f"(at most {round(rule[1] * share)} m) at {(i, j)}")
             if (i, j) in approach and ("hs" in t or "tr" in t or "yd" in t or t["k"] in ("f", "r")):

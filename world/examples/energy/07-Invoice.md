@@ -78,7 +78,7 @@ Inside `AccountingSupplierParty`:
   Building number of the postal address. identity of Kelpstone Gas (world/parties.json).
 - `Party/PostalAddress/CityName` = **Gullhaven**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelpstone Gas (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **38540**  
+- `Party/PostalAddress/PostalZone` = **90540**  
   Postal code in Bayvarra's format (5 digits). identity of Kelpstone Gas (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Northern Territory**  
   The name of code XB-NT in Bayvarra's national state or territory list.
@@ -90,8 +90,8 @@ Inside `AccountingSupplierParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.**  
-  Where the party actually operates, apart from its postal address.
+- `Party/PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.**  
+  Where the party actually operates, apart from its postal address. The distance is the length of the map's route gas-field, rounded to 10 km.
 - `Party/PhysicalLocation/InformationURI` = **https://www.kelpstone.example**  
   Where to find more about the place.
 - `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
@@ -450,7 +450,7 @@ Inside `InvoiceLine`:
         <cbc:StreetName>Shoreline Road</cbc:StreetName>
         <cbc:BuildingNumber>2</cbc:BuildingNumber>
         <cbc:CityName>Gullhaven</cbc:CityName>
-        <cbc:PostalZone>38540</cbc:PostalZone>
+        <cbc:PostalZone>90540</cbc:PostalZone>
         <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-NT</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
@@ -460,7 +460,7 @@ Inside `InvoiceLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:PhysicalLocation>
-        <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.</cbc:Description>
+        <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.</cbc:Description>
         <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>

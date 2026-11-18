@@ -84,16 +84,16 @@
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202968066555</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4180202968066555</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">POSTAL</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Birran Stir Trurdrek</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Valico di Confine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Zalsul Han Trurdrek</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Strada del Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cbc:CityName languageID="qau">Menbaz</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Valico Euridice</cbc:CityName>
+      <cbc:PostalZone>4530</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>

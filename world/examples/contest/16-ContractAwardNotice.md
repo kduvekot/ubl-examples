@@ -92,8 +92,8 @@ Inside `ContractingParty`:
   The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/MarkAttention` = **Head of procurement**  
   For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Lumeport Public Works Department (world/parties.json).
+- `Party/PostalAddress/CitySubdivisionName` = **Government Hill**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38517**  
@@ -145,8 +145,8 @@ Inside `ReceiverParty`:
   Street of the postal address. identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/BuildingNumber` = **27**  
   Building number of the postal address. identity of Bayvarra Information Service (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Bayvarra Information Service (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Government Hill**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayvarra Information Service (world/parties.json).
 - `PostalAddress/PostalZone` = **38520**  
@@ -320,7 +320,7 @@ Inside `TenderResult`:
         <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
         <cbc:Department>Procurement office</cbc:Department>
         <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38517</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -361,7 +361,7 @@ Inside `TenderResult`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Civic Square</cbc:StreetName>
       <cbc:BuildingNumber>27</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38520</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

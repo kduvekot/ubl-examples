@@ -273,7 +273,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">895</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">861</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.trasvia.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-24</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -289,7 +289,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">44733</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">43050</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
@@ -302,15 +302,15 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">44733</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">44733</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">44733</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">44733</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">43050</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">43050</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">43050</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">43050</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KMT">186</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">44733</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KMT">179</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">43050</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qau">Dan stindrul staz, mustek ginek zumul virskek dinskan, starek kritrir.</cbc:Description>
       <cbc:Description languageID="en-XU">Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>

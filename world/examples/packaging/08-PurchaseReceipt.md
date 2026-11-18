@@ -65,8 +65,8 @@ Inside `AccountingSupplierParty`:
   Street of the postal address. identity of Brightmarket Stores (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **50**  
   Building number of the postal address. identity of Brightmarket Stores (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Brightmarket Stores (world/parties.json).
+- `Party/PostalAddress/CitySubdivisionName` = **Old Town**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Brightmarket Stores (world/parties.json).
 - `Party/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Brightmarket Stores (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38515**  
@@ -148,8 +148,8 @@ Inside `AccountingCustomerParty`:
   Street of the postal address. identity of Robin Ashdale (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **57**  
   Building number of the postal address. identity of Robin Ashdale (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Robin Ashdale (world/parties.json).
+- `Party/PostalAddress/CitySubdivisionName` = **Riverside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Robin Ashdale (world/parties.json).
 - `Party/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38516**  
@@ -389,7 +389,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Market Street</cbc:StreetName>
         <cbc:BuildingNumber>50</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Old Town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38515</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -462,7 +462,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Riverside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38516</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

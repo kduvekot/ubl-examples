@@ -67,10 +67,10 @@ Inside `Consignment`:
   The street's name in English, the country's other official language; identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/BuildingNumber` = **46**  
   Building number of the postal address. identity of Kelaro Air Cargo (world/parties.json).
-- `CarrierParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
-- `CarrierParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
+  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+- `CarrierParty/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
 - `CarrierParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `CarrierParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -115,8 +115,6 @@ Inside `Consignment`:
   Street of the postal address. identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **25**  
   Building number of the postal address. identity of Lumeport Airport Cargo Terminal (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/PostalZone` = **38528**  
@@ -151,8 +149,8 @@ Inside `Consignment`:
   The minutes of the longitude.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/AltitudeMeasure` = **14** (unitCode `MTR`)  
-  The height of the place above sea level.
+- `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/AltitudeMeasure` = **23** (unitCode `MTR`)  
+  The height of the place above sea level: the level its ground stands at on the world's map.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Cargo acceptance**  
   The party's main desk, which handles this document; identity of Lumeport Airport Cargo Terminal (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Cargo acceptance agent**  
@@ -281,8 +279,8 @@ Inside `StatusPeriod`:
         <cbc:StreetName languageID="qal">Lupela Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Airfield Road</cbc:StreetName>
         <cbc:BuildingNumber>46</cbc:BuildingNumber>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:CityName languageID="qal">Kefalasa</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Lintwell</cbc:CityName>
         <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -322,7 +320,6 @@ Inside `StatusPeriod`:
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Airport Road</cbc:StreetName>
           <cbc:BuildingNumber>25</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38528</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -345,7 +342,7 @@ Inside `StatusPeriod`:
             <cbc:LongitudeDegreesMeasure unitCode="DD">13</cbc:LongitudeDegreesMeasure>
             <cbc:LongitudeMinutesMeasure unitCode="D61">23.07</cbc:LongitudeMinutesMeasure>
             <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
-            <cbc:AltitudeMeasure unitCode="MTR">14</cbc:AltitudeMeasure>
+            <cbc:AltitudeMeasure unitCode="MTR">23</cbc:AltitudeMeasure>
           </cac:LocationCoordinate>
         </cac:PhysicalLocation>
         <cac:Contact>

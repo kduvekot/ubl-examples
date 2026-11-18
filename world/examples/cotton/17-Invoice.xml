@@ -38,7 +38,7 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Dockside Way</cbc:StreetName>
         <cbc:BuildingNumber>4</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38525</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -114,7 +114,7 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Mill Street</cbc:StreetName>
         <cbc:BuildingNumber>21</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Mill Quarter</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38504</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

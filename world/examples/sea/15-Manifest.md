@@ -61,8 +61,8 @@ Inside `SendingLogisticsOperatorParty`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/PostalZone` = **38527**  
@@ -315,9 +315,9 @@ Inside `Shipment`:
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `ShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
   The port the vessel is registered in.
-- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-05-15**  
-  The planned departure from Lumeport.
-- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:00:00**  
+- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The timetable departure from Lumeport, in Lumeport's time.
+- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **18:00:00**  
   The local time.
 - `ShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -325,9 +325,9 @@ Inside `Shipment`:
   At the container quay of the Port of Lumeport.
 - `ShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-05-17**  
-  Expected off Selanu in the evening.
-- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **22:00:00**  
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-05-16**  
+  Expected off Selanu in the evening, in island time, an hour ahead of Lumeport's: 1,200 km at 13.5 knots, about 48 hours at sea. The ship berths the next morning at first light.
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **18:45:00**  
   The local time.
 - `ShipmentStage/EstimatedArrivalTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -441,7 +441,7 @@ Inside `Signature`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -622,8 +622,8 @@ Inside `Signature`:
         </cac:MaritimeTransport>
       </cac:TransportMeans>
       <cac:EstimatedDepartureTransportEvent>
-        <cbc:OccurrenceDate>2026-05-15</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
           <cbc:Name>Port of Lumeport</cbc:Name>
@@ -635,8 +635,8 @@ Inside `Signature`:
         </cac:Location>
       </cac:EstimatedDepartureTransportEvent>
       <cac:EstimatedArrivalTransportEvent>
-        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>22:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceDate>2026-05-16</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>18:45:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>

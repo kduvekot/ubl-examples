@@ -75,7 +75,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -214,7 +214,7 @@
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Beacon Avenue</cbc:StreetName>
           <cbc:BuildingNumber>55</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38524</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

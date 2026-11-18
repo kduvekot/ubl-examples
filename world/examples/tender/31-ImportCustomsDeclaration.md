@@ -76,8 +76,8 @@ Inside `ImporterParty`:
   The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
 - `PostalAddress/MarkAttention` = **Head of procurement**  
   For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Lumeport Public Works Department (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Government Hill**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
 - `PostalAddress/PostalZone` = **38517**  
@@ -197,13 +197,13 @@ Inside `CustomsParty`:
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `PostalAddress/StreetName` = **Border Crossing Road**  
+- `PostalAddress/StreetName` = **Border Road**  
   Street of the postal address. identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `PostalAddress/BuildingNumber` = **36**  
   Building number of the postal address. identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `PostalAddress/CityName` = **Marrowdale**  
+- `PostalAddress/CityName` = **Euridice Crossing**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs and Border Service of Bayvarra (world/parties.json).
-- `PostalAddress/PostalZone` = **71213**  
+- `PostalAddress/PostalZone` = **71950**  
   Postal code in Bayvarra's format (5 digits). identity of Customs and Border Service of Bayvarra (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
@@ -344,7 +344,7 @@ Inside `Signature`:
       <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
       <cbc:Department>Procurement office</cbc:Department>
       <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
-      <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38517</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -445,10 +445,10 @@ Inside `Signature`:
       <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-      <cbc:StreetName>Border Crossing Road</cbc:StreetName>
+      <cbc:StreetName>Border Road</cbc:StreetName>
       <cbc:BuildingNumber>36</cbc:BuildingNumber>
-      <cbc:CityName>Marrowdale</cbc:CityName>
-      <cbc:PostalZone>71213</cbc:PostalZone>
+      <cbc:CityName>Euridice Crossing</cbc:CityName>
+      <cbc:PostalZone>71950</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>

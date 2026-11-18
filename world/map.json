@@ -16369,6 +16369,46 @@
    "built_km": 1,
    "note": "A fishing village on Bayvarra's north coast, by the gas plant.",
    "farming": "fishing"
+  },
+  {
+   "name": "Valico Euridice",
+   "names": {
+    "en": "Valico Euridice",
+    "qau": "Menbaz"
+   },
+   "name_from": {
+    "qau": "crossing"
+   },
+   "c": [
+    96,
+    120
+   ],
+   "country": "XU",
+   "population": [
+    100,
+    500
+   ],
+   "built_km": 0.5,
+   "note": "The Urvanian side of the road border crossing, named after Forte Euridice, the town 8 km down the road: the customs post, its truck park and a few houses of customs officers and forwarding agents (O152 stage 2 B). In the municipality of Forte Euridice.",
+   "farming": "valley"
+  },
+  {
+   "name": "Euridice Crossing",
+   "names": {
+    "en": "Euridice Crossing"
+   },
+   "c": [
+    97,
+    120
+   ],
+   "country": "XB",
+   "population": [
+    100,
+    500
+   ],
+   "built_km": 0.5,
+   "note": "The Bayvarran side of the road border crossing, known like the Urvanian side by the fort town across the border, as the crossing has been since the boundary convention: the customs post, its truck park and a few houses (O152 stage 2 B).",
+   "farming": "wheat-sheep"
   }
  ],
  "platforms": [

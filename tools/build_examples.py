@@ -535,6 +535,17 @@ def city_names(country, city, why):
     if code == "en":
         return V(city, why)
     lang = WORLD["languages"][code]
+    names = next((t.get("names", {}) for t in WORLD.get("localities", []) + WORLD.get("villages", [])
+                  if t["name"] == city and t["country"] == country), {})
+    if names.get(code) and code == "qau":        # a village or locality of the map, with its Urvanian name
+        return [V(names[code], f"The place's {lang['name']} name, as the map gives it (world/map.json). {why}",
+                  languageID=code),
+                V(city, f"The place's English name, the Italian one. {why}", languageID=f"en-{country}")]
+    if names.get(code):                           # a village of the island, with its Lisavan name
+        return [V(names[code], f"The place's {lang['name']} name, as the map gives it (world/map.json). {why}",
+                  languageID=code),
+                V(city, f"The place's English name, which its English settlers gave it, official beside the "
+                        f"{lang['name']} one. {why}", languageID=f"en-{country}")]
     if lang.get("place_names", {}).get(city):
         return [V(lang["place_names"][city], f"The town's {lang['name']} name, which its people have always used. "
                                              f"{why}", languageID=code),
@@ -565,7 +576,8 @@ def address(pid, register=False):
            "Department": "The department the post is for.",
            "MarkAttention": "For the attention of the head of procurement.",
            "PlotIdentification": "The plot of the distribution centre in the business park.",
-           "CitySubdivisionName": "The quarter of Lumeport the party is in.",
+           "CitySubdivisionName": "The quarter of Lumeport the party is in: one of the town's districts on the "
+                                  "map (world/map.json).",
            "CountrySubentityCode": "The state or territory as a code of Bayvarra's address scheme (world/countries.json).",
            "District": "The district of the island, used to find a farm off the main roads.",
            "Description": "How to find the farm, which has no house number on a street."}
@@ -652,13 +664,24 @@ def location(pid):
     if site.get("locode"):
         out["ID"] = V(site["locode"], "The place's code in the form of a UN/LOCODE, with the world's country code.",
                       schemeID="UN/LOCODE")
-    out["Description"] = V(site["description"], "Where the party actually operates, apart from its postal address.")
+    text, why = site["description"], "Where the party actually operates, apart from its postal address."
+    if site.get("distance"):                    # a distance the text states, from the map (O152 stage 2 B)
+        import world_map
+        d = site["distance"]
+        text = text.format(km=world_map.nearest(world_map.route_km(d["route"]), d.get("about", 1)))
+        why += f" The distance is the length of the map's route {d['route']}, rounded to {d.get('about', 1)} km."
+    out["Description"] = V(text, why)
     if site.get("conditions"):
         out["Conditions"] = V(site["conditions"], "What a visitor must know about getting there.")
     if p["identity"].get("website"):
         out["InformationURI"] = V(p["identity"]["website"], "Where to find more about the place.")
     out["LocationCoordinate"] = coordinate(p["at"])
-    if site.get("altitude"):
+    if site.get("altitude") == "map":           # the level the 3D map gives the party's ground (O152 stage 2 B)
+        import world_map
+        out["LocationCoordinate"]["AltitudeMeasure"] = V(str(world_map.whole(world_map.fitted_height(pid))),
+                                                         "The height of the place above sea level: the level its "
+                                                         "ground stands at on the world's map.", unitCode="MTR")
+    elif site.get("altitude"):
         out["LocationCoordinate"]["AltitudeMeasure"] = V(str(site["altitude"]), "The height of the place above sea "
                                                                                "level.", unitCode="MTR")
     if site.get("subsidiary"):

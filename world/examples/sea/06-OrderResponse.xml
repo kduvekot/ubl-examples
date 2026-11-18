@@ -263,7 +263,7 @@
       <cac:Delivery>
         <cac:PromisedDeliveryPeriod>
           <cbc:StartDate>2026-05-14</cbc:StartDate>
-          <cbc:EndDate>2026-05-18</cbc:EndDate>
+          <cbc:EndDate>2026-05-17</cbc:EndDate>
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>
@@ -307,7 +307,7 @@
       <cac:Delivery>
         <cac:PromisedDeliveryPeriod>
           <cbc:StartDate>2026-05-14</cbc:StartDate>
-          <cbc:EndDate>2026-05-18</cbc:EndDate>
+          <cbc:EndDate>2026-05-17</cbc:EndDate>
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>

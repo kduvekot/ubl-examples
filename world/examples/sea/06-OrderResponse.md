@@ -380,7 +380,7 @@ Inside `OrderLine`:
   The maker's warranty passes to the buyer.
 - `LineItem/Delivery/PromisedDeliveryPeriod/StartDate` = **2026-05-14**  
   Shipped on the sailing of day 10.
-- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-18**  
+- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-17**  
   Arriving at Selanu.
 - `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
@@ -420,7 +420,7 @@ Inside `OrderLine`:
   The maker's warranty passes to the buyer.
 - `LineItem/Delivery/PromisedDeliveryPeriod/StartDate` = **2026-05-14**  
   Shipped on the sailing of day 10.
-- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-18**  
+- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-17**  
   Arriving at Selanu.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
@@ -707,7 +707,7 @@ Inside `OrderLine`:
       <cac:Delivery>
         <cac:PromisedDeliveryPeriod>
           <cbc:StartDate>2026-05-14</cbc:StartDate>
-          <cbc:EndDate>2026-05-18</cbc:EndDate>
+          <cbc:EndDate>2026-05-17</cbc:EndDate>
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>
@@ -751,7 +751,7 @@ Inside `OrderLine`:
       <cac:Delivery>
         <cac:PromisedDeliveryPeriod>
           <cbc:StartDate>2026-05-14</cbc:StartDate>
-          <cbc:EndDate>2026-05-18</cbc:EndDate>
+          <cbc:EndDate>2026-05-17</cbc:EndDate>
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>

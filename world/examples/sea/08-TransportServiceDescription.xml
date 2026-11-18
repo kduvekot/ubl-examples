@@ -40,7 +40,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -133,7 +133,7 @@
     <cbc:TariffClassCode listID="urn:ubl-examples:world:codelist:TariffClassCode">FAK</cbc:TariffClassCode>
     <cbc:Priority>Standard</cbc:Priority>
     <cbc:FreightRateClassCode listID="urn:ubl-examples:world:codelist:FreightRateClassCode">BOX</cbc:FreightRateClassCode>
-    <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, two days at sea.</cbc:TransportationServiceDescription>
+    <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.</cbc:TransportationServiceDescription>
     <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
     <cbc:NominationDate>2026-05-09</cbc:NominationDate>
     <cbc:NominationTime>10:00:00</cbc:NominationTime>
@@ -199,7 +199,7 @@
       <cbc:DurationMeasure unitCode="DAY">2</cbc:DurationMeasure>
     </cac:EstimatedDurationPeriod>
     <cac:ScheduledServiceFrequency>
-      <cbc:WeekDayCode listID="urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode">5</cbc:WeekDayCode>
+      <cbc:WeekDayCode listID="urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode">4</cbc:WeekDayCode>
     </cac:ScheduledServiceFrequency>
   </cac:TransportationService>
 </TransportServiceDescription>

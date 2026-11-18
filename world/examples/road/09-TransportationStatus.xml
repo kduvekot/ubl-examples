@@ -7,7 +7,7 @@
   <cbc:ID>TH-TS-26-0160</cbc:ID>
   <cbc:UUID>bef60481-e21d-568c-918b-caeb273b9ce0</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
-  <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>10:55:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
@@ -116,7 +116,7 @@
   <cac:TransportEvent>
     <cbc:IdentificationID>TH-26-04471-E03</cbc:IdentificationID>
     <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>08:55:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">BORDERCROSS</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
@@ -131,9 +131,9 @@
       <cbc:StatusReasonCode listID="urn:ubl-examples:world:codelist:StatusReasonCode">CLEARED</cbc:StatusReasonCode>
       <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
       <cbc:SequenceID>3</cbc:SequenceID>
-      <cbc:Text>Driver resting in Marrowdale tonight under the driving-time rules.</cbc:Text>
+      <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.</cbc:Text>
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
-      <cbc:Percent>70</cbc:Percent>
+      <cbc:Percent>39</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
       <cac:DocumentationAttachment>
         <cac:ExternalReference>
@@ -186,7 +186,7 @@
     </cac:Signature>
     <cac:Period>
       <cbc:StartTime>07:30:00</cbc:StartTime>
-      <cbc:EndTime>08:55:00</cbc:EndTime>
+      <cbc:EndTime>10:40:00</cbc:EndTime>
     </cac:Period>
   </cac:TransportEvent>
   <cac:DocumentReference>
@@ -225,7 +225,7 @@
     <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+      <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
       <cac:Address>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

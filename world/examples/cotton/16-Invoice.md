@@ -85,10 +85,10 @@ Inside `AccountingSupplierParty`:
   The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **42**  
   Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/CityName` = **Pakesa** (languageID `qal`)  
+  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+- `Party/PostalAddress/CityName` = **Bollworth** (languageID `en-XL`)  
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -105,10 +105,10 @@ Inside `AccountingSupplierParty`:
   The name of code LTD in Lisavu's national company legal form list. In Lisavan, the sender's language.
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
   The name of code LTD in Lisavu's national company legal form list. In English.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The registered office, as entered in the register.
-- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Pakesa** (languageID `qal`)  
+  The place's Lisavan name, as the map gives it (world/map.json). The registered office, as entered in the register.
+- `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Bollworth** (languageID `en-XL`)  
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
@@ -154,8 +154,8 @@ Inside `AccountingCustomerParty`:
   Street of the postal address. identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **21**  
   Building number of the postal address. identity of Lumeport Textile Mill (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Lumeport Textile Mill (world/parties.json).
+- `Party/PostalAddress/CitySubdivisionName` = **Mill Quarter**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38504**  
@@ -420,8 +420,8 @@ Inside `InvoiceLine`:
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:CityName languageID="qal">Pakesa</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Bollworth</cbc:CityName>
         <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
@@ -435,8 +435,8 @@ Inside `InvoiceLine`:
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
         <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+          <cbc:CityName languageID="qal">Pakesa</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Bollworth</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           </cac:Country>
@@ -480,7 +480,7 @@ Inside `InvoiceLine`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Mill Street</cbc:StreetName>
         <cbc:BuildingNumber>21</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Mill Quarter</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38504</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

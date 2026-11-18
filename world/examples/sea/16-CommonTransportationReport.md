@@ -24,15 +24,15 @@ Before entering Selanu the carrier reports to the island's maritime administrati
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-16**  
   Sent before the ship enters the port of Selanu.
-- `IssueTime` = **15:38:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **15:40:00-01:00**  
+  Sent a few hours before the ship comes off the port; in the issuer's local time, with its offset from UTC (D27).
 - `ReportTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportReportTypeCode`)  
   The report before entering the port. The code is from the Trade Accord's transport report type list: PREARRIVAL = Pre-arrival report.
 - `ReportType` = **Pre-arrival report**  
   The name of code PREARRIVAL in the Trade Accord's transport report type list.
 - `Description` = **The ship's report before arrival at Selanu.**  
   What it is.
-- `Note` = **Pilot requested at the Selanu fairway buoy; the ship berths without anchoring.**  
+- `Note` = **Pilot requested at the Selanu fairway buoy at first light; the ship waits off the port under way overnight and berths without anchoring.**  
   The master's note on the arrival.
 - `VersionID` = **1**  
   The first version.
@@ -61,8 +61,8 @@ Inside `ReporterParty`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/PostalZone` = **38527**  
@@ -163,8 +163,8 @@ Inside `ReceiverParty`:
 
 Inside `ReportingLocation`:
 
-- `Name` = **At sea, 40 nautical miles off Selanu**  
-  Where the report was made.
+- `Name` = **At sea, 30 nautical miles off Selanu**  
+  Where the report was made: the ship's distance to go at the time of the report.
 
 ### Shipment
 
@@ -292,10 +292,10 @@ Inside `Shipment`:
   The name of code WATER in the Trade Accord's port call purpose list.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/IdentificationID` = **ARR-XLSEL-0517**  
   The requested arrival.
-- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceDate` = **2026-05-18**  
-  The day.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceDate` = **2026-05-17**  
+  The morning after the ship comes off the port: Selanu's pilots take ships in by daylight only.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceTime` = **06:00:00**  
-  At first light.
+  At first light, in island time.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/TypeCode` = **ARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   An arrival. The code is from the Trade Accord's transport event type list: ARRIVAL = Arrival.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Description` = **Pilot on board at the fairway buoy.**  
@@ -418,15 +418,15 @@ Inside `Shipment`:
   Of the volume.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
   Exchanged: the same 310 cubic metres (a volume, so in cubic metres; a tonne of water is about a cubic metre).
-- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-16**  
-  At sea.
-- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, 120 nautical miles west of Selanu**  
-  Where.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-15**  
+  At sea, half way across.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, about 320 nautical miles from Selanu, in mid-ocean**  
+  Where: half way, far from any land.
 - `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TankID` = **BT-3**  
   The tank.
 - `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/VolumeMeasure` = **120** (unitCode `MTQ`)  
   To be discharged at Selanu: 120 cubic metres (a volume; a tonne of water is about a cubic metre, so the number stays).
-- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TransactionDate` = **2026-05-18**  
+- `ShipmentStage/BallastWaterSummary/DischargeBallastWaterTransaction/TransactionDate` = **2026-05-17**  
   In port.
 - `ShipmentStage/BallastWaterSummary/ResponsibleOfficerPerson/FirstName` = **Elsbeth**  
   The chief officer, also the ship's medical officer.
@@ -498,8 +498,8 @@ Inside `Shipment`:
   The minutes of the longitude.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `ShipmentStage/ISPSRequirements/ReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
-  Where.
+- `ShipmentStage/ISPSRequirements/ReportLocation/Name` = **At sea, 30 nautical miles off Selanu**  
+  Where the report is made, as the report's own reporting location.
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **20413014** (schemeID `urn:ubl-examples:world:XB:register`)  
   Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Bayvarra**  
@@ -580,8 +580,8 @@ Inside `Shipment`:
   The galley was disinfected. The code is from the Trade Accord's sanitary measure list: DISINFECT = Disinfection.
 - `ShipmentStage/MaritimeHealthDeclaration/SanitaryMeasure/ApplicationDate` = **2026-05-15**  
   When.
-- `ShipmentStage/MaritimeHealthDeclaration/PlaceOfReportLocation/Name` = **At sea, 120 nautical miles west of Selanu**  
-  Where.
+- `ShipmentStage/MaritimeHealthDeclaration/PlaceOfReportLocation/Name` = **At sea, 30 nautical miles off Selanu**  
+  Where the report is made, as the report's own reporting location.
 - `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/ID` = **MC-TH-2026**  
   The ship's medicine chest certificate, unique only with its issuer, the port health office of its home port (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/CertificateType` = **Medicine chest**  
@@ -708,11 +708,11 @@ Inside `Signature`:
   <cbc:ID>TOL-CTR-26-0141</cbc:ID>
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
-  <cbc:IssueTime>15:38:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:40:00-01:00</cbc:IssueTime>
   <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
   <cbc:Description>The ship's report before arrival at Selanu.</cbc:Description>
-  <cbc:Note>Pilot requested at the Selanu fairway buoy; the ship berths without anchoring.</cbc:Note>
+  <cbc:Note>Pilot requested at the Selanu fairway buoy at first light; the ship waits off the port under way overnight and berths without anchoring.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ReporterParty>
     <cac:PartyIdentification>
@@ -732,7 +732,7 @@ Inside `Signature`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -808,7 +808,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:ReportingLocation>
-    <cbc:Name>At sea, 40 nautical miles off Selanu</cbc:Name>
+    <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
   </cac:ReportingLocation>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
@@ -907,7 +907,7 @@ Inside `Signature`:
         </cac:AdditionalPortCallPurpose>
         <cac:RequestedArrivalEvent>
           <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
           <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TypeCode>
           <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
@@ -1010,15 +1010,15 @@ Inside `Signature`:
           <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
           <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
           <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
-          <cbc:TransactionDate>2026-05-16</cbc:TransactionDate>
+          <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
           <cac:Location>
-            <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+            <cbc:Name>At sea, about 320 nautical miles from Selanu, in mid-ocean</cbc:Name>
           </cac:Location>
         </cac:ExchangeBallastWaterTransaction>
         <cac:DischargeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:VolumeMeasure unitCode="MTQ">120</cbc:VolumeMeasure>
-          <cbc:TransactionDate>2026-05-18</cbc:TransactionDate>
+          <cbc:TransactionDate>2026-05-17</cbc:TransactionDate>
         </cac:DischargeBallastWaterTransaction>
         <cac:ResponsibleOfficerPerson>
           <cbc:FirstName>Elsbeth</cbc:FirstName>
@@ -1084,7 +1084,7 @@ Inside `Signature`:
           </cac:Location>
         </cac:ShipToShipActivityRecord>
         <cac:ReportLocation>
-          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
         </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
@@ -1151,7 +1151,7 @@ Inside `Signature`:
           <cbc:ApplicationDate>2026-05-15</cbc:ApplicationDate>
         </cac:SanitaryMeasure>
         <cac:PlaceOfReportLocation>
-          <cbc:Name>At sea, 120 nautical miles west of Selanu</cbc:Name>
+          <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
         </cac:PlaceOfReportLocation>
         <cac:MedicalCertificate>
           <cbc:ID>MC-TH-2026</cbc:ID>

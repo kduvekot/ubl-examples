@@ -223,11 +223,11 @@ Inside `Delivery`:
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
 - `Despatch/DespatchAddress/MarkCare` = **Valdara Industries c/o Castrano Logistics**  
   The goods are the manufacturer's, kept by its 3PL.
-- `Despatch/DespatchAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `Despatch/DespatchAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `Despatch/DespatchAddress/PostalZone` = **4130**  
+- `Despatch/DespatchAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchAddress/PostalZone` = **4190**  
   Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
 - `Despatch/DespatchAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Castrano Logistics (world/parties.json).
@@ -257,11 +257,11 @@ Inside `Delivery`:
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Castrano Logistics (world/parties.json).
 - `Despatch/DespatchParty/PostalAddress/BuildingNumber` = **24**  
   Building number of the postal address. identity of Castrano Logistics (world/parties.json).
-- `Despatch/DespatchParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `Despatch/DespatchParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
-- `Despatch/DespatchParty/PostalAddress/PostalZone` = **4130**  
+- `Despatch/DespatchParty/PostalAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchParty/PostalAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Castrano Logistics (world/parties.json).
+- `Despatch/DespatchParty/PostalAddress/PostalZone` = **4190**  
   Postal code in Urvania's format (4 digits). identity of Castrano Logistics (world/parties.json).
 - `Despatch/DespatchParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Castrano Logistics (world/parties.json).
@@ -350,7 +350,7 @@ Inside `DeliveryTerms`:
   Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the order names the warehouse where the goods are collected and the carrier that collects them (UBL rule IND6: the delivery terms are stated, not implied). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
-- `DeliveryLocation/Description` = **Castrano Logistics warehouse, Ferrano**  
+- `DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  
   Where the delivery terms place the handover of the goods.
 
 ### Tax Total
@@ -611,9 +611,9 @@ Inside `OrderLine`:
         <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
         <cbc:BuildingNumber>24</cbc:BuildingNumber>
         <cbc:MarkCare>Valdara Industries c/o Castrano Logistics</cbc:MarkCare>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -641,9 +641,9 @@ Inside `OrderLine`:
           <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
           <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
           <cbc:BuildingNumber>24</cbc:BuildingNumber>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-          <cbc:PostalZone>4130</cbc:PostalZone>
+          <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+          <cbc:PostalZone>4190</cbc:PostalZone>
           <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>
@@ -715,7 +715,7 @@ Inside `OrderLine`:
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Description>Castrano Logistics warehouse, Ferrano</cbc:Description>
+      <cbc:Description>Castrano Logistics warehouse, Conciaro</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>

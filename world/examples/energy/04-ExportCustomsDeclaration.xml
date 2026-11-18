@@ -30,7 +30,7 @@
       <cbc:StreetName>Shoreline Road</cbc:StreetName>
       <cbc:BuildingNumber>2</cbc:BuildingNumber>
       <cbc:CityName>Gullhaven</cbc:CityName>
-      <cbc:PostalZone>38540</cbc:PostalZone>
+      <cbc:PostalZone>90540</cbc:PostalZone>
       <cbc:CountrySubentity>Northern Territory</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-NT</cbc:CountrySubentityCode>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
@@ -40,7 +40,7 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:PhysicalLocation>
-      <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies four kilometres out.</cbc:Description>
+      <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.</cbc:Description>
       <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
       <cac:LocationCoordinate>
         <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
@@ -147,7 +147,7 @@
         <cbc:BuildingNumber>44</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:PostalZone>4310</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -167,10 +167,10 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Border Crossing Road</cbc:StreetName>
+        <cbc:StreetName>Border Road</cbc:StreetName>
         <cbc:BuildingNumber>36</cbc:BuildingNumber>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cbc:PostalZone>71213</cbc:PostalZone>
+        <cbc:CityName>Euridice Crossing</cbc:CityName>
+        <cbc:PostalZone>71950</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>

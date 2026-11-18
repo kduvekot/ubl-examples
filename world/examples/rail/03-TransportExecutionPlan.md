@@ -71,7 +71,7 @@ Inside `SenderParty`:
   The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
   The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
-- `PostalAddress/PostalZone` = **4150**  
+- `PostalAddress/PostalZone` = **4310**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Rail Cargo (world/parties.json).
@@ -296,7 +296,7 @@ Inside `FromLocation`:
 
 - `ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Name` = **Castrano Logistics warehouse, Ferrano**  
+- `Name` = **Castrano Logistics warehouse, Conciaro**  
   Where the goods are taken over.
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
@@ -359,8 +359,8 @@ Inside `Consignment`:
   The local time.
 - `PlannedPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `PlannedPickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Ferrano**  
-  At the 3PL's warehouse in Ferrano, where the boxes are packed.
+- `PlannedPickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
+  At the 3PL's warehouse in Conciaro, where the boxes are packed.
 - `PlannedPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PlannedDeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
@@ -464,7 +464,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
-  The timetable arrival in Marrowdale.
+  The timetable arrival at the siding in Marrowdale: the train reaches Marrowdale yard about 15:30 the day before, 173 km from the hub, and the next morning's shunting trip places the boxes on Lumeway's siding.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
   The local time.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
@@ -531,7 +531,7 @@ Inside `Consignment`:
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
       <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-      <cbc:PostalZone>4150</cbc:PostalZone>
+      <cbc:PostalZone>4310</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
@@ -683,7 +683,7 @@ Inside `Consignment`:
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-    <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+    <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
     <cac:Address>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -739,7 +739,7 @@ Inside `Consignment`:
       <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-        <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+        <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
         <cac:Address>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

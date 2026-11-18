@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>PS-TS-26-0142</cbc:ID>
   <cbc:UUID>1713d8c6-6d60-56cc-af96-b2eb848695b4</cbc:UUID>
-  <cbc:IssueDate>2026-05-18</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-17</cbc:IssueDate>
   <cbc:IssueTime>16:36:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
@@ -63,7 +63,7 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Harbour Road</cbc:StreetName>
         <cbc:BuildingNumber>18</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38527</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -86,7 +86,7 @@
     <cac:MainCarriageShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cac:DischargeTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>11:20:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
         <cac:Location>
@@ -154,7 +154,7 @@
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
       <cac:DetentionTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
         <cbc:Description>Wooden pallets must carry the heat-treatment mark.</cbc:Description>
         <cac:Location>
@@ -168,7 +168,7 @@
         </cac:Location>
       </cac:DetentionTransportEvent>
       <cac:ActualArrivalTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -190,7 +190,7 @@
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cac:QuarantineTransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
           <cac:Location>
@@ -204,7 +204,7 @@
           </cac:Location>
         </cac:QuarantineTransportEvent>
         <cac:TransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>11:40:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
           <cac:Location>
@@ -227,7 +227,7 @@
     </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
-    <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+    <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
     <cac:Location>
@@ -276,7 +276,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -305,7 +305,7 @@
     <cbc:Name>Port of Selanu</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
-    <cbc:StartDate>2026-05-18</cbc:StartDate>
-    <cbc:EndDate>2026-05-18</cbc:EndDate>
+    <cbc:StartDate>2026-05-17</cbc:StartDate>
+    <cbc:EndDate>2026-05-17</cbc:EndDate>
   </cac:StatusPeriod>
 </TransportationStatus>

@@ -84,7 +84,7 @@ Inside `AccountingSupplierParty`:
   The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
   The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **4150**  
+- `Party/PostalAddress/PostalZone` = **4310**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Rail Cargo (world/parties.json).
@@ -421,7 +421,7 @@ Inside `InvoiceLine`:
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4150</cbc:PostalZone>
+        <cbc:PostalZone>4310</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>

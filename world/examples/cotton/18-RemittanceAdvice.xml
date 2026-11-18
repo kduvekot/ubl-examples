@@ -35,7 +35,7 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Mill Street</cbc:StreetName>
         <cbc:BuildingNumber>21</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Mill Quarter</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38504</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -75,8 +75,8 @@
         <cbc:StreetName languageID="qal">Tikesa Luhate Natii</cbc:StreetName>
         <cbc:StreetName languageID="en-XL">Gin Yard Road</cbc:StreetName>
         <cbc:BuildingNumber>42</cbc:BuildingNumber>
-        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:CityName languageID="qal">Pakesa</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Bollworth</cbc:CityName>
         <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>

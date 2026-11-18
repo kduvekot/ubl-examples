@@ -93,9 +93,9 @@
         <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
         <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
         <cbc:BuildingNumber>24</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cbc:PostalZone>4130</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>

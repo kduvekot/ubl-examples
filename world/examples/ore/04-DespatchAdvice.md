@@ -66,11 +66,11 @@ Inside `DespatchSupplierParty`:
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **10**  
   Building number of the postal address. identity of Serravona Mining (world/parties.json).
-- `Party/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
-- `Party/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **4110**  
+- `Party/PostalAddress/CityName` = **Trazvul** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/CityName` = **Fucinalta** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Serravona Mining (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **4320**  
   Postal code in Urvania's format (4 digits). identity of Serravona Mining (world/parties.json).
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Serravona Mining (world/parties.json).
@@ -220,7 +220,7 @@ Inside `Shipment`:
   The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
   The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
-- `Consignment/CarrierParty/PostalAddress/PostalZone` = **4150**  
+- `Consignment/CarrierParty/PostalAddress/PostalZone` = **4310**  
   Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/CarrierParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Rail Cargo (world/parties.json).
@@ -313,9 +313,9 @@ Inside `DespatchLine`:
         <cbc:StreetName languageID="qau">Zalsul Hekrul Varman</cbc:StreetName>
         <cbc:StreetName languageID="en-XU">Strada della Miniera</cbc:StreetName>
         <cbc:BuildingNumber>10</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4110</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Trazvul</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Fucinalta</cbc:CityName>
+        <cbc:PostalZone>4320</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -435,7 +435,7 @@ Inside `DespatchLine`:
           <cbc:BuildingNumber>38</cbc:BuildingNumber>
           <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
           <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-          <cbc:PostalZone>4150</cbc:PostalZone>
+          <cbc:PostalZone>4310</cbc:PostalZone>
           <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
           <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>

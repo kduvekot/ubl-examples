@@ -218,8 +218,6 @@ Inside `Shipment`:
   Street of the postal address. identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **28**  
   Building number of the postal address. identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/PostalAddress/PostalZone` = **38505**  
@@ -303,13 +301,13 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-20**  
-  The barge leaves Urvania at the river border.
-- `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **16:00:00**  
+  The barge leaves Urvania at the river border, 105 km below the quay: sailing from the afternoon of loading and through the next day from first light.
+- `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **13:45:00**  
   The local time.
 - `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/Location/Name` = **River border Urvania–Bayvarra**  
   Where the barge leaves Urvania.
 - `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-22**  
-  Planned unloading at the Lumeport quay.
+  Planned unloading at the Lumeport quay, with the consignee's morning shift: the barge arrives about 16:15 the day before and moors at the quay overnight.
 - `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
   The local time.
 - `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **false**  
@@ -327,7 +325,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/MainCarriageShipmentStage/EstimatedTransitPeriod/DurationMeasure` = **3** (unitCode `DAY`)  
-  Three days downstream, with the locks.
+  Three days from takeover to discharge: about 250 km downstream, with no locks, sailing by day.
 - `Consignment/MainCarriageShipmentStage/MasterPerson/FirstName` = **Tomaso**  
   The skipper of the barge.
 - `Consignment/MainCarriageShipmentStage/MasterPerson/FamilyName` = **Riverra**  
@@ -632,7 +630,6 @@ Inside `Signature`:
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Estuary Road</cbc:StreetName>
           <cbc:BuildingNumber>28</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38505</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -703,7 +700,7 @@ Inside `Signature`:
         </cac:LoadingTransportEvent>
         <cac:ExportationTransportEvent>
           <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
           </cac:Location>

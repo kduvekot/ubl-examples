@@ -210,8 +210,8 @@ Inside `CustomsDeclaration`:
   The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PostalAddress/MarkAttention` = **Head of procurement**  
   For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
-- `ConsigneeParty/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Lumeport Public Works Department (world/parties.json).
+- `ConsigneeParty/PostalAddress/CitySubdivisionName` = **Government Hill**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PostalAddress/PostalZone` = **38517**  
@@ -230,7 +230,7 @@ Inside `CustomsDeclaration`:
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CustomsParty/PartyName/Name` = **Customs Administration of Urvania**  
   The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/PostalAddress/ID` = **4160202968066555** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+- `CustomsParty/PostalAddress/ID` = **4180202968066555** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/PostalAddress/AddressTypeCode` = **POSTAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: POSTAL = Postal address.
@@ -238,17 +238,17 @@ Inside `CustomsDeclaration`:
   The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `CustomsParty/PostalAddress/Postbox` = **PB 18**  
   The customs office receives its post in a post box. identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/PostalAddress/StreetName` = **Birran Stir Trurdrek** (languageID `qau`)  
+- `CustomsParty/PostalAddress/StreetName` = **Zalsul Han Trurdrek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/PostalAddress/StreetName` = **Valico di Confine** (languageID `en-XU`)  
+- `CustomsParty/PostalAddress/StreetName` = **Strada del Confine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/PostalAddress/BuildingNumber` = **22**  
   Building number of the postal address. identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
-- `CustomsParty/PostalAddress/PostalZone` = **4120**  
+- `CustomsParty/PostalAddress/CityName` = **Menbaz** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
+- `CustomsParty/PostalAddress/CityName` = **Valico Euridice** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
+- `CustomsParty/PostalAddress/PostalZone` = **4530**  
   Postal code in Urvania's format (4 digits). identity of Customs Administration of Urvania (world/parties.json).
 - `CustomsParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Customs Administration of Urvania (world/parties.json).
@@ -463,7 +463,7 @@ Inside `Signature`:
         <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
         <cbc:Department>Procurement office</cbc:Department>
         <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38517</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -483,16 +483,16 @@ Inside `Signature`:
         <cbc:Name>Customs Administration of Urvania</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202968066555</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4180202968066555</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">POSTAL</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
         <cbc:Postbox>PB 18</cbc:Postbox>
-        <cbc:StreetName languageID="qau">Birran Stir Trurdrek</cbc:StreetName>
-        <cbc:StreetName languageID="en-XU">Valico di Confine</cbc:StreetName>
+        <cbc:StreetName languageID="qau">Zalsul Han Trurdrek</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Strada del Confine</cbc:StreetName>
         <cbc:BuildingNumber>22</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:CityName languageID="qau">Menbaz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Valico Euridice</cbc:CityName>
+        <cbc:PostalZone>4530</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>

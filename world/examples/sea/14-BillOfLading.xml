@@ -74,7 +74,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -116,7 +116,7 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -367,7 +367,7 @@
           </cac:Address>
         </cac:UnloadingPortLocation>
         <cac:AvailabilityTransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
@@ -473,14 +473,14 @@
           </cac:PartyName>
         </cac:CarrierParty>
         <cac:WarehousingTransportEvent>
-          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>Nalevi Warehousing, Selanu</cbc:Name>
           </cac:Location>
         </cac:WarehousingTransportEvent>
         <cac:ReceiptTransportEvent>
-          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>Nalevi Warehousing, Selanu</cbc:Name>
@@ -880,7 +880,7 @@
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Beacon Avenue</cbc:StreetName>
           <cbc:BuildingNumber>55</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38524</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

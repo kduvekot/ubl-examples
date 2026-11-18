@@ -120,8 +120,8 @@ Inside `CarrierParty`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `PostalAddress/PostalZone` = **38527**  
@@ -177,8 +177,8 @@ Inside `FreightForwarderParty`:
   Street of the postal address. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/BuildingNumber` = **4**  
   Building number of the postal address. identity of Bayforth Forwarding (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Bayforth Forwarding (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/PostalZone` = **38525**  
@@ -460,7 +460,7 @@ Inside `Shipment`:
   The port of discharge.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceDate` = **2026-05-18**  
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceDate` = **2026-05-17**  
   The container is available at Selanu.
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceTime` = **14:00:00**  
   The local time.
@@ -552,13 +552,13 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OnCarriageShipmentStage/CarrierParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/OccurrenceDate` = **2026-05-19**  
+- `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/OccurrenceDate` = **2026-05-18**  
   Stored at the 3PL until called off.
 - `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  
   The 3PL's warehouse on the island, where the goods are received and stored.
-- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-05-19**  
+- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-05-18**  
   Planned receipt at the 3PL.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
@@ -1034,8 +1034,8 @@ Inside `Shipment`:
   Street of the postal address. identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/PostalAddress/BuildingNumber` = **55**  
   Building number of the postal address. identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Wavesure Cargo Insurance (world/parties.json).
+- `InsurancePolicy/InsurerParty/PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/PostalAddress/PostalZone` = **38524**  
@@ -1191,7 +1191,7 @@ Inside `Signature`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Harbour Road</cbc:StreetName>
       <cbc:BuildingNumber>18</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38527</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1233,7 +1233,7 @@ Inside `Signature`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -1484,7 +1484,7 @@ Inside `Signature`:
           </cac:Address>
         </cac:UnloadingPortLocation>
         <cac:AvailabilityTransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
@@ -1590,14 +1590,14 @@ Inside `Signature`:
           </cac:PartyName>
         </cac:CarrierParty>
         <cac:WarehousingTransportEvent>
-          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>Nalevi Warehousing, Selanu</cbc:Name>
           </cac:Location>
         </cac:WarehousingTransportEvent>
         <cac:ReceiptTransportEvent>
-          <cbc:OccurrenceDate>2026-05-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>Nalevi Warehousing, Selanu</cbc:Name>
@@ -1997,7 +1997,7 @@ Inside `Signature`:
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Beacon Avenue</cbc:StreetName>
           <cbc:BuildingNumber>55</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38524</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

@@ -217,7 +217,9 @@ def places(world):
                     "districts": tw.get("districts", [])})
     for lo in world["localities"]:
         p = lo["population"]
-        out.append({"name": lo["name"], "kind": "village (locality)", "c": lo["country"], "at": lo["c"],
+        other = [n for k, n in sorted(lo.get("names", {}).items()) if n != lo["name"]]
+        out.append({"name": lo["name"] + (f" ({', '.join(other)})" if other else ""), "key": lo["name"],
+                    "kind": "village (locality)", "c": lo["country"], "at": lo["c"],
                     "people": f"{n0(p[0])}–{n0(p[1])}" if isinstance(p, list) else n0(p), "why": first_clause(lo.get("note")),
                     "built_km": lo["built_km"], "districts": []})
     for v in world["villages"]:
@@ -265,7 +267,9 @@ def write(world, model, built):
     w("- **Straight lines** on land are measured on the map (squares × 3.5 km); between the mainland and Lisavu they "
       "are great-circle distances between the stated positions, since the inset is not at its true distance.")
     w("- **Heights** are the natural ground of the square (`world/terrain.json`, the mean of its four corners, "
-      "metres above the sea); the 3D map levels built squares, so it may show a town lower (section 6).")
+      "metres above the sea); the 3D map fits what is built to the land, a built "
+      f"square's corners within {wm.TERRACE_M} m of each other and quays at the water, so it may show a town "
+      "lower (section 6).")
     w("- **The map is a diagram inside the towns** (O82): a party takes a whole 3.5 km square, so the parties of "
       "a town spread over two to five times its built-up width (O92, open). Distances inside and around a town "
       "are therefore longer on the map than on the ground; section 3 flags them.")
@@ -274,7 +278,8 @@ def write(world, model, built):
     # 1. places ---------------------------------------------------------
     w("## 1. Places")
     w("")
-    w("Every town, the two villages that are localities of parties, and every named village of the map "
+    w(f"Every town, the {len(world['localities'])} localities of parties (villages and the two sides of the road "
+      "border crossing), and every named village of the map "
       f"({len(pl)} places). Names in brackets are the place's name in the national language. Population: the "
       "decided figure, or the band for a locality.")
     w("")
@@ -573,7 +578,8 @@ def write(world, model, built):
     lev = [f"{p['key']} {height(model, p['at'], True)} m (ground {height(model, p['at'])} m)" for p in towns
            if abs(height(model, p["at"], True) - height(model, p["at"])) > 50]
     if lev:
-        w("- The 3D map levels these places' centre squares well below their natural ground: " + "; ".join(lev) + ".")
+        w("- The 3D map sets these places' centre squares more than 50 m below their natural ground (a centre "
+          "square beside a quay, the river or the sea, whose corners are held at the water): " + "; ".join(lev) + ".")
     km_g = shortest(adj, {near_road(by_name["Ferrano"]["at"]): 0.0}, {near_road(by_name["Gullhaven"]["at"]): 0.0})[0]
     w(f"- Gullhaven (Kelpstone Gas) is reached by road only from Larkmouth (`road-north`): Ferrano – Gullhaven is "
       f"{n0(km_g)} km by road against {n0(grid_km(by_name['Ferrano']['at'], by_name['Gullhaven']['at']))} km in a "
@@ -581,8 +587,8 @@ def write(world, model, built):
     for a, b in (("Ferrano", "Marrowdale"),):
         km_leg = next(path_km([tuple(q) for q in x["path"]]) for x in legs if x["flow"] == "road" and x["mode"] == "road")
         w(f"- {a} – {b}: the decided figure is the route `road` centre to centre, {n1(rlen['road'])} km; the road "
-          f"flow's truck leg from Castrano Logistics to Lumeway is {n1(km_leg)} km on the map. Which one the "
-          f"waybill invoices is a choice (O54, O60).")
+          f"flow's truck leg from Castrano Logistics to Lumeway is {n1(km_leg)} km on the map. The waybill and "
+          f"the freight invoice state the leg's {round(km_leg)} km, the kilometres driven (owner, 2026-11-18, O152).")
     w("")
     return "\n".join(L) + "\n"
 

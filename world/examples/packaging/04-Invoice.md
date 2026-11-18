@@ -74,8 +74,6 @@ Inside `AccountingSupplierParty`:
   Street of the postal address. identity of Rivermouth Packaging (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **28**  
   Building number of the postal address. identity of Rivermouth Packaging (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Old town**  
-  The quarter of Lumeport the party is in. identity of Rivermouth Packaging (world/parties.json).
 - `Party/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Rivermouth Packaging (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38505**  
@@ -201,8 +199,8 @@ Inside `AccountingCustomerParty`:
   Street of the postal address. identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/BuildingNumber` = **21**  
   Building number of the postal address. identity of Lumeport Textile Mill (world/parties.json).
-- `Party/PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Lumeport Textile Mill (world/parties.json).
+- `Party/PostalAddress/CitySubdivisionName` = **Mill Quarter**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/PostalZone` = **38504**  
@@ -477,7 +475,6 @@ Inside `InvoiceLine`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Estuary Road</cbc:StreetName>
         <cbc:BuildingNumber>28</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38505</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -590,7 +587,7 @@ Inside `InvoiceLine`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Mill Street</cbc:StreetName>
         <cbc:BuildingNumber>21</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Mill Quarter</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38504</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

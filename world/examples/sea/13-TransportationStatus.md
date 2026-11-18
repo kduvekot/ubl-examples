@@ -59,8 +59,8 @@ Inside `Consignment`:
   Street of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
 - `CarrierParty/PostalAddress/BuildingNumber` = **18**  
   Building number of the postal address. identity of Tidewell Ocean Lines (world/parties.json).
-- `CarrierParty/PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Tidewell Ocean Lines (world/parties.json).
+- `CarrierParty/PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Tidewell Ocean Lines (world/parties.json).
 - `CarrierParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Tidewell Ocean Lines (world/parties.json).
 - `CarrierParty/PostalAddress/PostalZone` = **38527**  
@@ -109,8 +109,8 @@ Inside `Consignment`:
   Street of the postal address. identity of Port of Lumeport (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **11**  
   Building number of the postal address. identity of Port of Lumeport (world/parties.json).
-- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Port of Lumeport (world/parties.json).
+- `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Port of Lumeport (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Port of Lumeport (world/parties.json).
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/PostalZone` = **38526**  
@@ -239,8 +239,8 @@ Inside `ReceiverParty`:
   Street of the postal address. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/BuildingNumber` = **4**  
   Building number of the postal address. identity of Bayforth Forwarding (world/parties.json).
-- `PostalAddress/CitySubdivisionName` = **Harbour quarter**  
-  The quarter of Lumeport the party is in. identity of Bayforth Forwarding (world/parties.json).
+- `PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/CityName` = **Lumeport**  
   The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayforth Forwarding (world/parties.json).
 - `PostalAddress/PostalZone` = **38525**  
@@ -324,7 +324,7 @@ Inside `StatusPeriod`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Harbour Road</cbc:StreetName>
         <cbc:BuildingNumber>18</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38527</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -364,7 +364,7 @@ Inside `StatusPeriod`:
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Harbour Road</cbc:StreetName>
           <cbc:BuildingNumber>11</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cbc:PostalZone>38526</cbc:PostalZone>
           <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
@@ -471,7 +471,7 @@ Inside `StatusPeriod`:
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>

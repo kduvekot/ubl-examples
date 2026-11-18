@@ -36,7 +36,7 @@
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4150</cbc:PostalZone>
+        <cbc:PostalZone>4310</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -78,7 +78,7 @@
         <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-          <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
           <cac:Address>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
