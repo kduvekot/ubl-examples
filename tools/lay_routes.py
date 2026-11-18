@@ -34,12 +34,18 @@ import world_model as wm  # noqa: E402
 NETWORK = [
     # the railways: the ore line down the valley from the mine to the works; the works' second siding; the
     # container line from the hub along the rift, past the border, to the distributor's siding at Marrowdale; the
-    # wool line from Marrowdale down to Larkmouth's harbour (O153: the old capital's port for the dry east)
+    # wool line from Marrowdale down to Larkmouth's harbour (O153: the old capital's port for the dry east); the
+    # port line from Marrowdale down to the Port of Lumeport
     ("ore", "rail", ["p:4-xu", "p:5-xu"]),
     ("factory-siding", "rail", ["p:5-xu", "p:18-xu"]),
     ("rail-x", "rail", ["p:18-xu", "p:6-xb"]),
     ("rail-lark", "rail", ["r:rail-x@6-xb", "h:Larkmouth"],
      {"mode": "rail", "layer": "transport", "label": "The wool line from Marrowdale down to Larkmouth's harbour"}),
+    # the port line: the Ferrano-Marrowdale line goes on down to the quays of the Port of Lumeport (the capital's
+    # container and bulk port)
+    ("rail-port", "rail", ["r:rail-x@6-xb", "p:16-xb"],
+     {"mode": "rail", "layer": "transport", "label": "The port line from Marrowdale down to the quays of the Port of Lumeport"},
+     {"keep_off": ["41-xb", "34-xb", "c-xb"]}),
     # the main roads, from town to town (the parties on them are reached from their streets, or by an access
     # road), the settlers' roads first: Larkmouth down the coast to Lumeport and inland to Marrowdale (O153: the
     # first landing and capital), Marrowdale to Lumeport, Ferrano through the customs posts to Marrowdale (the
@@ -178,6 +184,9 @@ def lay(world, terrain, land, log=print, upto=None):
                 avoid = town_zone - starts - goals
             if path:
                 avoid |= set(path[:-1])
+            if len(extra) > 1 and extra[1].get("keep_off"):
+                # through a town: not beside these buildings, so that a street can still reach them
+                avoid |= {(q[0] + d[0], q[1] + d[1]) for pid in extra[1]["keep_off"] for q in fp[pid] for d in wm.DIRS8} - goals - starts
             sdir = (path[-1][0] - path[-2][0], path[-1][1] - path[-2][1]) if len(path) > 1 and path[-1] not in all_fp else None
             got = routing.route(land, built, cls, sorted(starts), goals, allow_cross=cross_pairs, orth_ends=orth,
                                 sea_ok=(a == "platform"), avoid=avoid, start_dir=sdir)
@@ -190,7 +199,7 @@ def lay(world, terrain, land, log=print, upto=None):
         built.add(mode if mode != "road" else "road", path, sts)
         if mode == "road":
             pass
-        laid[rid] = (path, sts, cls, extra[0] if extra else None)
+        laid[rid] = (path, sts, cls, extra[0] if extra and extra[0] else None)
         log(f"  laid {rid} ({cls}): {len(path)} squares, {routing.length_km(path):.0f} km, "
             f"{sum(1 for v in sts.values() if v == 'bridge')} bridge and {sum(1 for v in sts.values() if v == 'tunnel')} tunnel squares")
     # the routes on the map: the laid ways in place of the old points
@@ -334,7 +343,7 @@ def distances(world, model):
         km = road_km(a, b)
         print(f"  {a}-{b} by road: {km:.0f} km" + (f" (decided about {want}, {100 * (km / want - 1):+.0f} %)" if want else ""))
     for rid, want, what in (("ore", 154, "mine-works by rail"), ("rail-x", None, "hub-Lumeway by rail"),
-                            ("rail-lark", None, "Marrowdale-Larkmouth by rail"), ("gas", 196, "the gas pipeline"),
+                            ("rail-lark", None, "Marrowdale-Larkmouth by rail"), ("rail-port", None, "Marrowdale-port of Lumeport by rail"), ("gas", 196, "the gas pipeline"),
                             ("gas-grid", 98, "its branch"), ("gas-field", 80, "the field line")):
         km = routing.length_km([tuple(q) for q in r[rid]["pts"]])
         print(f"  {what}: {km:.0f} km" + (f" (decided about {want}, {100 * (km / want - 1):+.0f} %)" if want else ""))
