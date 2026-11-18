@@ -45,8 +45,50 @@ MIN_GAP = {"valley": 1.4, "west": 1.4, "hills": 1.9, "wheat": 2.8, "pastoral": 4
            "windward": 2.0}
 FARMING = {"valley": "valley", "west": "mixed", "hills": "dryland", "wheat": "wheat-sheep", "pastoral": "pastoral",
            "forest": "forestry", "lee": "cotton", "windward": "gardens"}
-BANDS = {"hamlet": ([40, 200], .45), "village": ([200, 1000], .7), "large": ([1000, 2500], 1.0),
-         "town": ([2500, 7000], 1.6)}                       # population band: people, width of the built-up area (km)
+# the population (owner, 2026-11-18): per country the total, the rural population outside the towns of the map
+# (villages, hamlets and the dispersed farms and homesteads, which are too small to draw and have no dot), the part
+# of it living dispersed, and the number of places to draw. The towns of the map ("towns", "localities") and the
+# country towns and small towns below (PEOPLE) come on top of the rural population.
+POPULATION = {
+    "XU": {"total": 1_200_000, "rural": 450_000, "dispersed": 160_000, "places": 430},
+    "XB": {"total": 800_000, "rural": 210_000, "dispersed": 80_000, "places": 160},
+    "XL": {"total": 60_000, "rural": 30_000, "dispersed": 8_000, "places": 17},
+}
+# the population bands (people): the band's range and its name
+BANDS = [("hamlet", 0, 200), ("village", 200, 1000), ("large village", 1000, 3000), ("small town", 3000, 10000),
+         ("country town", 10000, 50000)]
+DENSITY = {"hamlet": 1200, "village": 1500, "large village": 1800, "small town": 2000, "country town": 2000}   # people a km2 built up
+# the country towns of Urvania (10,000 to 30,000 people, about 150,000 together) and the railway and coast towns of
+# Bayvarra (3,000 to 15,000, about 70,000): their people (the other named places get theirs from their site)
+PEOPLE = {(68, 116): 28000, (87, 110): 26000, (92, 146): 25000, (29, 106): 22000, (61, 46): 20000, (74, 105): 15000,
+          (94, 121): 14000,
+          (108, 120): 12000, (139, 116): 9000, (130, 117): 8000, (145, 107): 7000, (152, 89): 6000, (103, 51): 6000,
+          (115, 85): 6000, (85, 44): 6000, (96, 105): 5000, (148, 98): 5000}
+# the growth of the country towns: districts as the towns' (map "towns", "districts"): name, period, years,
+# character, offset from the centre (squares), relative size (km), note
+GROWTH = {
+    (68, 116): [("Borgo del Porto", "urvanian", "before 1600", "core", (0, 0), .9, "The Urvanian carters' and boatmen's village at the head of the rapids, round the landing."),
+                ("Via Nuova", "italian", "1850s to 1930s", "residential", (.45, -.35), .9, "The Italian street to Ferrano along the portage road, with the church and the school."),
+                ("Quartiere della Diga", "independence", "after 1962", "suburb", (-.4, .4), 1.1, "Housing and workshops by the weir built across the tributary after independence.")],
+    (87, 110): [("La Fiera", "urvanian", "before 1600", "core", (0, 0), .9, "The old fair ground at the confluence and the lanes round it."),
+                ("Borgo Stazione", "italian", "1880s to 1930s", "residential", (-.45, .3), .9, "The Italian quarter towards Ferrano: the cattle market's offices and the inns."),
+                ("Fieravecchia Nuova", "independence", "after 1962", "suburb", (.45, -.4), 1.2, "Housing and the meat works on the terrace above the confluence.")],
+    (92, 146): [("Marina", "urvanian", "before 1600", "port", (0, 0), .9, "The fishermen's quarter round the old landing in the bay."),
+                ("Il Faro", "italian", "1890s to 1930s", "administration", (.4, .3), .8, "The Italian harbour works: the light, the jetty, the customs house and the promenade."),
+                ("Lanternino Alta", "independence", "after 1962", "suburb", (-.35, -.45), 1.2, "Housing on the slope above the bay and the fish cannery.")],
+    (29, 106): [("Ponte Vecchio", "urvanian", "before 1600", "core", (0, 0), .9, "The old town at the bridge where the two rivers meet."),
+                ("Corso Sardo", "italian", "1840s to 1900", "administration", (.4, -.3), .9, "The Sardinian and Italian main street with the court and the barracks."),
+                ("Duefiumi Mare", "independence", "after 1962", "suburb", (-.45, .35), 1.1, "Housing and the dairy works down the valley towards the coast.")],
+    (61, 46): [("Il Molo", "urvanian", "before 1600", "port", (0, 0), .9, "The fishermen's town round the harbour at the head of the inlet."),
+               ("Riparo Italiano", "italian", "1860s to 1930s", "administration", (.4, .35), .8, "The Italian naval station's quarter: quays, stores and the harbour office."),
+               ("Riparo Alto", "independence", "after 1962", "suburb", (-.4, .4), 1.1, "Housing on the hill above the harbour, the fish processing.")],
+    (74, 105): [("Pietramiglia Vecchia", "urvanian", "before 1600", "core", (0, 0), .8, "The Urvanian village on the valley road."),
+                ("La Stazione", "italian", "1880s to 1930s", "industry", (.4, .3), .8, "The station, the carters' yards and the brick works by the railway."),
+                ("Pietramiglia Nuova", "independence", "after 1962", "suburb", (-.35, -.4), 1.1, "Houses for Ferrano's commuters along the valley road.")],
+    (94, 121): [("Il Forte", "italian", "about 1842", "core", (0, 0), .8, "The Sardinian fort in the angle of the two rivers and the garrison village round it."),
+                ("Borgo della Dogana", "italian", "1857 to 1941", "administration", (-.4, -.3), .8, "The customs house and the traders' street that grew after the boundary convention."),
+                ("Forte Nuovo", "independence", "after 1962", "industry", (-.45, .1), 1.1, "Warehouses, the hauliers and housing of the Accord's border trade.")],
+}
 
 # The named villages: square -> name (English; the Italian name in Urvania), the word(s) of its name in Urvanian
 # or Lisavan (made by tools/lexicon.py; the name is the word, capitalised), founded, why, lives on, band, farming.
@@ -419,7 +461,10 @@ def main():
     #    their region's distance (a square apart in the farmland, 15 km between the stations of the dry east). The
     #    chance is high along the rivers, the valley floors, the spring lines, the coves and the old roads, low on
     #    dry or steep land: strings of villages along the valleys, close pairs, isolated hamlets, empty country.
-    cands = []
+    #    The chance is scaled per country (SCALE, found by bisection) so that each country gets its number of places
+    #    (POPULATION "places").
+    base = list(acc)
+    pool = []
     for q in F:
         if q in NAMED or q in stations or not free(q):
             continue
@@ -427,15 +472,54 @@ def main():
         if not reg:
             continue
         ft = feats(q)
-        lam = pull(q, ft, reg)
-        if hsh(q[0], q[1], 7) < min(.95, lam):
-            cands.append((lam * (.6 + .8 * hsh(q[0], q[1], 8)), q, reg, ft))
-    cands.sort(key=lambda c: (-c[0], c[1]))
-    for c in cands:
-        if all(math.dist(c[1], a[1]) >= max(MIN_GAP[c[2]], MIN_GAP[a[2]]) for a in acc):
-            acc.append(c)
-    rest = sorted(s for s, q, *_ in acc if q not in NAMED)
-    cut = rest[int(len(rest) * .55)] if rest else 0
+        pool.append((pull(q, ft, reg), q, reg, ft, CTY[terr["country"][q[1]][q[0]]]))
+
+    def place(SCALE):
+        cands = [(lam * SCALE[c] * (.6 + .8 * hsh(q[0], q[1], 8)), q, reg, ft) for lam, q, reg, ft, c in pool
+                 if hsh(q[0], q[1], 7) < min(.95, lam * SCALE[c])]
+        cands.sort(key=lambda c: (-c[0], c[1]))
+        got = list(base)
+        for c in cands:
+            if all(math.dist(c[1], a[1]) >= max(MIN_GAP[c[2]], MIN_GAP[a[2]]) for a in got):
+                got.append(c)
+        return got
+
+    SCALE = {"XU": 1.0, "XB": 1.0, "XL": 1.0}
+    count = lambda got, c: sum(1 for a in got if CTY[terr["country"][a[1][1]][a[1][0]]] == c)
+    for c in ("XU", "XB", "XL"):
+        lo, hi = -4.0, 4.0                                # log2 of the scale
+        for _ in range(16):
+            SCALE[c] = 2 ** ((lo + hi) / 2)
+            if count(place(SCALE), c) < POPULATION[c]["places"]:
+                lo = (lo + hi) / 2
+            else:
+                hi = (lo + hi) / 2
+        SCALE[c] = 2 ** hi
+    acc = place(SCALE)
+    print("scale of the chance per country:", {c: round(v, 3) for c, v in SCALE.items()},
+          {c: count(acc, c) for c in SCALE})
+    # 3. the people: the fixed towns (PEOPLE); the rest of each country's rural population living in places (not
+    #    dispersed, not in the localities) shared out by the strength of the site, a named place's three times, with
+    #    a fixed noise; a named place has at least 1,000, no village more than 4,500
+    people = {}
+    for c in ("XU", "XB", "XL"):
+        mine = [(s_, q, reg, ft) for s_, q, reg, ft in acc if CTY[terr["country"][q[1]][q[0]]] == c and q not in PEOPLE]
+        local = sum(2000 for t in world["localities"] if t["country"] == c)
+        share = POPULATION[c]["rural"] - POPULATION[c]["dispersed"] - local
+        wt = {q: (pull(q, ft, reg) + .05) ** 1.2 * (.15 + 1.7 * hsh(q[0], q[1], 9) ** 2) * (3 if q in NAMED else 1.5 if "station" in ft else 1)
+              for s_, q, reg, ft in mine}
+        fixed = {}
+        for _ in range(20):
+            k = (share - sum(fixed.values())) / sum(w for q, w in wt.items() if q not in fixed)
+            low = {q for q in wt if q in NAMED and q not in fixed and wt[q] * k < 1000}
+            high = {q for q in wt if q not in fixed and wt[q] * k > 4500}
+            if not low and not high:
+                break
+            fixed.update({q: 1000 for q in low})
+            fixed.update({q: 4500 for q in high})
+        for q, w in wt.items():
+            people[q] = fixed.get(q) or max(30, int(round(w * k / 10) * 10))
+    people.update(PEOPLE)
     out = []
     for s, q, reg, ft in acc:
         c = CTY[terr["country"][q[1]][q[0]]]
@@ -456,16 +540,39 @@ def main():
             else:
                 v["names"] = {"en": name}
         else:
-            band = "village" if "station" in ft or s >= cut else "hamlet"
             farming = "fishing" if "coast" in ft and ft["coast"] < .5 and reg not in ("lee",) else FARMING[reg]
             founded, why, lives = story(c, reg, ft, F[q])
             v = {"name": None}
+        n = people[q]
+        band, lo, hi = next(b for b in BANDS if b[1] <= n < b[2])
         v.update({"c": list(q), "country": c, "region": reg, "founded": founded, "why": why, "lives_on": lives,
-                  "population": BANDS[band][0], "band": band, "built_km": BANDS[band][1], "farming": farming})
+                  "people": n, "population": [lo, hi], "band": band,
+                  "built_km": round(max(.45, 2 * math.sqrt(n / DENSITY[band] / math.pi)), 2), "farming": farming})
+        if q in GROWTH:
+            v["districts"] = [{"name": dn, "period": pe, "years": ye, "character": ch,
+                               "at": [round(q[0] + o[0], 2), round(q[1] + o[1], 2)], "r_km": rk, "note": no}
+                              for dn, pe, ye, ch, o, rk, no in GROWTH[q]]
         out.append(v)
     out.sort(key=lambda v: (v["name"] is None, v["country"], v["c"]))
     mp["villages"] = out
     world_data.save("map", mp)
+    # the population per country, with its parts, into world/countries.json
+    cj = json.load(open(world_data.path("countries"), encoding="utf-8"))
+    for c, P in POPULATION.items():
+        towns_ = sum(t["population"] for t in world["towns"] if t["country"] == c)
+        loc = sum(2000 for t in world["localities"] if t["country"] == c)
+        mine = [v for v in out if v["country"] == c]
+        ct = sum(v["people"] for v in mine if tuple(v["c"]) in PEOPLE)
+        vil = sum(v["people"] for v in mine if tuple(v["c"]) not in PEOPLE) + loc
+        cj["countries"][c]["population"] = {
+            "total": towns_ + ct + vil + P["dispersed"], "towns": towns_, "country_towns": ct, "villages": vil,
+            "largest_village": max(v["people"] for v in mine if tuple(v["c"]) not in PEOPLE),
+            "dispersed": P["dispersed"], "places_drawn": len(mine),
+            "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and "
+                    "the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the "
+                    "dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."}
+        print(c, cj["countries"][c]["population"])
+    world_data.save("countries", cj)
     from collections import Counter
     print(len(out), "villages:", dict(Counter((v["country"], v["name"] is not None) for v in out)))
 

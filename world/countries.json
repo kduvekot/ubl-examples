@@ -238,6 +238,16 @@
       "2026-12-04": "Miners' Day, Founders' Day of Serravona"
      }
     }
+   },
+   "population": {
+    "total": 1200230,
+    "towns": 600000,
+    "country_towns": 150000,
+    "villages": 290230,
+    "largest_village": 4500,
+    "dispersed": 160000,
+    "places_drawn": 430,
+    "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."
    }
   },
   "XB": {
@@ -481,6 +491,16 @@
       "2026-11-30": "Coastal State Day"
      }
     }
+   },
+   "population": {
+    "total": 800040,
+    "towns": 520000,
+    "country_towns": 70000,
+    "villages": 130040,
+    "largest_village": 4500,
+    "dispersed": 80000,
+    "places_drawn": 160,
+    "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."
    }
   },
   "XL": {
@@ -674,6 +694,16 @@
      "2026-12-25": "Family Day",
      "2026-12-26": "Day of Rest"
     }
+   },
+   "population": {
+    "total": 60010,
+    "towns": 30000,
+    "country_towns": 0,
+    "villages": 22010,
+    "largest_village": 4050,
+    "dispersed": 8000,
+    "places_drawn": 17,
+    "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."
    }
   }
  },

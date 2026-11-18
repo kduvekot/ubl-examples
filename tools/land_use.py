@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
-"""The land use of the world (O152, owner 2026-11-18): who farms the land, and how, from the towns and villages of
-the map. Standard library only (Pillow, when present, only reads the rasters faster); tools/world_model.py calls
-it, and the model's tiles carry the result ("lu", "k"), which the 3D map and the printed sheet both draw.
+"""The land use of the world (O152, owner 2026-11-18): which land is farmed, and how. Standard library only (Pillow,
+when present, only reads the rasters faster); tools/world_model.py calls it, and the model's tiles carry the result
+("lu", "k"), which the 3D map and the printed sheet both draw.
 
-The terrain (tools/terrain.py) gives the natural cover of every cell of 875 m (437.5 m on Lisavu): forest, grass,
-scrub and heath, rock, marsh, and "field" for open, level, well-watered land that could be ploughed. Nobody farms
-it there unless a settlement does:
+Farmland is a property of the land, not of each village. The terrain (tools/terrain.py) gives every cell of 875 m
+(437.5 m on Lisavu) its natural cover (forest, grass, scrub and heath, rock, marsh, and "field" for open, level,
+well-drained land that could be ploughed), its height and its yearly rain. Each cell is farmed in the way of its
+region, by its own soil, slope, rain and aspect (in the southern hemisphere a slope facing north gets the sun):
 
-  * every town and village of the map (world/map.json "towns", "localities", "villages") farms the land within its
-    reach, in its way of farming ("farming"); a cell belongs to the settlement whose reach it lies deepest in (the
-    distance divided by the reach), so neighbouring villages share the land between them;
-  * within a settlement's reach, the farming decides each cell from its slope, its height, the side it faces (in
-    the southern hemisphere a slope facing north gets the sun) and how far it lies from the settlement (FARMING
-    below): fields ("d"), pasture and hay meadows with hedges ("p"), orchards, olive groves and vineyards ("o"),
-    woodland kept for fuel and timber ("f"), and open grazing ("g") where the stock runs on the natural grass;
-  * rock, marsh, water, land above 1,000 m and the managed forests keep their natural cover;
-  * outside every reach the natural cover stays, and land the terrain marks as "field" is open grassland ("g"):
-    no one ploughs it.
-
-The density of the villages (dense in the wet west and the valley, far apart on the dry east and the plateau) is
-the map's; the reach of each way of farming follows it: small fields and woods close round the old Urvanian
-villages, big wheat paddocks and open runs round the British-era stations. Deterministic: the only noise is a hash
-of the cell.
+  * Urvania: the river valley (within about 9 km of the main river, below 400 m): fields on the terraces and the
+    valley floor, flood meadows beside the river, vineyards and orchards on the slopes facing the sun; the wet west
+    (over 880 mm): a mosaic of small fields, hay meadows, orchards and woodlots; the drier hills: wheat and barley
+    on the level, olives and vines on the sunny slopes, sheep;
+  * Bayvarra: wheat land (over 540 mm) in large paddocks on the level open land, sheep runs on the rougher ground;
+    the dry east: open sheep and cattle runs, with home paddocks near the homesteads;
+  * Lisavu: cotton on the dry lee side's level land, gardens and fruit in the wet windward valleys;
+  * a cell is farmed only within reach of the people who farm it (REACH: the distance, km, to the nearest town,
+    village or road; the dispersed farmsteads lie along the roads; the edge is ragged, paddock by paddock, and
+    the reach is wider than the gaps between the villages, so it seldom shows); further out the land keeps its natural
+    cover, and the terrain's "field" there is open grassland ("g"): no one ploughs it;
+  * rock, marsh, water, land above 1,000 m and the managed forests are never farmed.
+So the farmland's edges follow the land (the level ground, the forest's edge, the river, the rain), and villages
+lie within it. The classes: d field, p pasture or hay meadow, o orchard, olive grove or vineyard, f wood, g open
+grass or grazing, h scrub or heath, r rock, m marsh, s and w water. Deterministic: the only noise is a hash of the
+cell (or of a block of 2 x 2 cells: a paddock).
 """
 import math
 import os
@@ -29,113 +31,76 @@ import struct
 import zlib
 
 CLASSES = "swdfghrm"           # the terrain's cover classes (tools/terrain_lib.py), by number
-# What a cell can become: d field, p pasture or hay meadow, o orchard, olive grove or vineyard, f woodland, g open
-# grazing; "keep" leaves the natural cover. Per way of farming: reach (km, for a village of the middle band), and
-# the rule, a function of (slope, sunny, dist_km, reach_km, h1, h2, natural class) -> class or None (keep the
-# natural cover); h1 and h2 are hashes of the cell (0..1), for the mix of uses.
+MAX_FARM_M = 1000              # nothing is farmed above this height
+# how far from a town, a village or a road the land of each way of farming is worked (km)
+REACH = {"valley": 9.0, "mixed": 8.0, "dryland": 10.0, "wheat": 14.0, "pastoral": 22.0, "cotton": 7.0, "gardens": 3.0}
 
 
-def _mixed(s, sun, d, r, h1, h2, c):
-    """The old Urvanian villages of the wet west: small fields on the level, hay meadows and pasture on the slopes,
-    orchards by the village, chestnut and oak woods on the steep ground and in scattered woodlots."""
-    if s >= .16 or h1 < .14 or (c == "f" and h1 < .5):
-        return "f"
-    if d < 1.6 and s < .12 and h2 < .35:
-        return "o"
-    if s < .06:
-        return "d" if h2 < .72 else "p"
-    return "p"
-
-
-def _valley(s, sun, d, r, h1, h2, c):
-    """The river valley: fields and market gardens on the valley floor, vineyards and orchards on the slopes that
-    face the sun, meadows on the others, woods on the steep sides."""
-    if s >= .2 or (c == "f" and h1 < .35):
-        return "f"
-    if s < .045:
-        return "d" if h2 < .85 else "p"
-    if sun and s < .18:
-        return "o" if h2 < .8 else "p"
-    return "p" if h1 > .1 else "f"
-
-
-def _dryland(s, sun, d, r, h1, h2, c):
-    """The drier Urvanian hills: wheat and barley on the level, olives and vines on the sunny slopes, enclosed
-    pasture near the village and open sheep grazing further out; the steep ground left as it is."""
-    if s >= .18 or (c == "f" and h1 < .4):
-        return None
-    if s < .06:
-        return "d" if h2 < .8 else "g"
-    if sun and s < .16 and h2 < .6:
-        return "o"
-    return "p" if d < .7 * r else "g"
-
-
-def _wheat_sheep(s, sun, d, r, h1, h2, c):
-    """Bayvarra's wheat-and-sheep land: big wheat paddocks on the level land near the village and the railway,
-    sheep on open runs beyond; woods left standing away from the village."""
-    if s < .05 and d < .65 * r and h1 < .78:
-        return "d"
-    if s >= .14 or (c == "f" and d > 2.5):
-        return None
-    return "g"
-
-
-def _pastoral(s, sun, d, r, h1, h2, c):
-    """The dry east's sheep and cattle stations: the home paddocks (hay, lucerne, the garden) by the homestead,
-    open runs fenced into big paddocks beyond, where the stock grazes the natural grass and scrub."""
-    if d < 2.2 and s < .05:
-        return "d" if h2 < .7 else "p"
-    return "g" if s < .12 and c != "f" else None
-
-
-def _forestry(s, sun, d, r, h1, h2, c):
-    """A forest village: clearings with meadows and gardens round it; the forest round them stays."""
-    return "p" if d < .6 * r and s < .12 else None
-
-
-def _cotton(s, sun, d, r, h1, h2, c):
-    """Lisavu's lee side: cotton fields on the level dry land, gardens and pasture on the slopes."""
-    if s < .07:
-        return "d"
-    if s < .16:
-        return "p" if h2 < .7 else "o"
+def region(cty, z, rain, river_km):
+    """The way of farming of a cell, from its country, height, rain and distance to the main river (km)."""
+    if cty == "U":
+        if river_km < 9 and z < 400:
+            return "valley"
+        return "mixed" if rain >= 880 else "dryland"
+    if cty == "B":
+        return "wheat" if rain >= 540 else "pastoral"
+    if cty == "L":
+        return "cotton" if rain < 1150 else "gardens"
     return None
 
 
-def _gardens(s, sun, d, r, h1, h2, c):
-    """Lisavu's wet windward valleys: fruit and vegetable gardens close round the village, pasture beyond, the
-    forest on the slopes."""
-    if s >= .22:
-        return None
-    if d < 1.4:
-        return "o"
-    return "p" if s < .15 else None
-
-
-def _fishing(s, sun, d, r, h1, h2, c):
-    """A fishing village: gardens and a few small fields and paddocks behind the shore."""
-    if s >= .15 or (c == "f" and d > 1.5):
-        return None
-    return "d" if s < .05 and h2 < .5 else "p"
-
-
-def _market(s, sun, d, r, h1, h2, c):
-    """A town's own hinterland: market gardens and dairy pasture that feed it."""
-    if s >= .16:
-        return None
-    if s < .05:
-        return "d" if h2 < .7 else "p"
-    return "o" if sun and h2 < .4 else "p"
-
-
-FARMING = {
-    "mixed": (6.5, _mixed), "valley": (6.0, _valley), "dryland": (7.5, _dryland), "wheat-sheep": (11.0, _wheat_sheep),
-    "pastoral": (16.0, _pastoral), "forestry": (3.0, _forestry), "cotton": (6.0, _cotton), "gardens": (3.5, _gardens),
-    "fishing": (4.0, _fishing), "market": (8.0, _market),
-}
-BAND_REACH = {"hamlet": .7, "village": .9, "large": 1.1, "town": 1.3}   # a village's reach by its population band
-MAX_FARM_M = 1000                                          # nothing is farmed above this height
+def use(reg, c, s, sun, d, r, h1, h2, hb, flood):
+    """The use of a cell: its region, natural class c, slope s, whether it faces the sun, the distance d (km) to
+    the nearest town, village or road and the region's reach r, hashes h1, h2 of the cell and hb of its paddock (a
+    block of 2 x 2 cells), whether it lies on the river's flood plain. None keeps the natural cover."""
+    near = d < .5 * r
+    if reg == "valley":
+        if flood:
+            return "p"                                   # flood meadows: the villages stand on the terraces above
+        if s >= .2 or (c == "f" and h1 < .4):
+            return "f"
+        if s < .045:
+            return "d" if h2 < .82 else "p"
+        if sun and s < .18:
+            return "o" if h2 < .75 else "p"
+        return "p" if s < .15 else "f"
+    if reg == "mixed":
+        if c == "f" and not (near and s < .08 and h1 < .35):
+            return "f"
+        if s >= .17:
+            return "f"
+        if s < .06:
+            return "d" if h2 < .6 else "p" if h2 < .88 else "o"
+        return "o" if near and h2 < .12 else "p"
+    if reg == "dryland":
+        if s >= .18 or c == "f":
+            return None
+        if s < .06:
+            return "d" if h2 < .78 else "g"
+        if sun and s < .16 and h2 < .5:
+            return "o"
+        return "p" if near and s < .12 else "g"
+    if reg == "wheat":
+        if c == "f" or s >= .14:
+            return None
+        if s < .045 and c in "dg" and hb < (.85 if c == "d" else .35):
+            return "d"                                   # wheat paddocks of 2 x 2 cells (1.75 km)
+        return "g"
+    if reg == "pastoral":
+        if c == "f" or s >= .12:
+            return None
+        if d < 2.5 and s < .04 and hb < .5:
+            return "d"                                   # the home paddocks: hay, lucerne, the garden
+        return "g"
+    if reg == "cotton":
+        if s < .07 and c in "dg":
+            return "d"
+        return "p" if s < .16 and c != "f" else None
+    if reg == "gardens":
+        if s >= .22 or (c == "f" and d > 1.5):
+            return None
+        return "o" if h2 < .5 else "p"
+    return None
 
 
 def hsh(x, y, salt=0):
@@ -197,41 +162,76 @@ def read_png(path):
     return w, h, out
 
 
-def settlements(world):
-    """The places that farm, with their way of farming and their reach in km."""
-    out = []
+def access(terrain, world, W, H):
+    """The distance (km) from every square's centre to the nearest town or village (its built-up area) or road
+    square, over the squares (a chamfer distance: 3.5 km a side step, 4.95 km a diagonal one)."""
+    INF = 1e9
+    D = [[INF] * H for _ in range(W)]
+    for r in world.get("routes", []):
+        if r["mode"] == "road":
+            for i, j in r["pts"]:
+                D[i][j] = 0.0
     for t in world.get("towns", []) + world.get("localities", []) + world.get("villages", []):
-        far = t.get("farming")
-        if not far:
-            continue
-        reach = t.get("farm_km") or FARMING[far][0] * BAND_REACH.get(t.get("band", "village"), 1.0)
-        out.append((t["c"][0] + .5, t["c"][1] + .5, far, reach))
-    return out
+        i, j = t["c"]
+        D[i][j] = 0.0
+        rr = int(t["built_km"] / 7)
+        for a in range(-rr, rr + 1):
+            for b in range(-rr, rr + 1):
+                if 0 <= i + a < W and 0 <= j + b < H and math.hypot(a, b) <= rr:
+                    D[i + a][j + b] = 0.0
+    k1, k2 = 3.5, 3.5 * math.sqrt(2)
+    for i in range(W):
+        for j in range(H):
+            v = D[i][j]
+            if i:
+                v = min(v, D[i - 1][j] + k1, D[i - 1][j - 1] + k2 if j else INF, D[i - 1][j + 1] + k2 if j + 1 < H else INF)
+            if j:
+                v = min(v, D[i][j - 1] + k1)
+            D[i][j] = v
+    for i in range(W - 1, -1, -1):
+        for j in range(H - 1, -1, -1):
+            v = D[i][j]
+            if i + 1 < W:
+                v = min(v, D[i + 1][j] + k1, D[i + 1][j + 1] + k2 if j + 1 < H else INF, D[i + 1][j - 1] + k2 if j else INF)
+            if j + 1 < H:
+                v = min(v, D[i][j + 1] + k1)
+            D[i][j] = v
+    return D
 
 
-def land_use(root, terrain, world, keep_squares=()):
+def land_use(root, terrain, world, keep_squares=(), W=256, H=192):
     """The land use per cell of each of the terrain's cover rasters: {raster name: (x0, y0, cells per square,
     width, height, list of rows of class letters "swdfghrmpo")}. keep_squares: squares whose cover stays as it is
     (the managed forests)."""
-    places = settlements(world)
     keep = set(map(tuple, keep_squares))
+    D = access(terrain, world, W, H)
+    river = {}
+    for x, y, lv in terrain["river"]:
+        river[(x, y)] = min(lv, river.get((x, y), 1e9))
+    # the distance from every square to the main river (squares), for the valley
+    RD = {}
+    frontier = list(river)
+    for q in frontier:
+        RD[q] = 0
+    k = 0
+    while k < len(frontier):
+        q = frontier[k]
+        k += 1
+        if RD[q] >= 4:
+            continue
+        for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            y = (q[0] + a, q[1] + b)
+            if y not in RD:
+                RD[y] = RD[q] + 1
+                frontier.append(y)
+    country = terrain["country"]
     result = {}
     for name, r in terrain["rasters"].items():
         w, h, cov = read_png(os.path.join(root, r["cover"]))
         _, _, hgt = read_png(os.path.join(root, r["height"]))
+        _, _, rain = read_png(os.path.join(root, r["rain"]))
         S, x0, y0, cell = r["cells_per_square"], r["x0"], r["y0"], r["cell_m"]
         off = r["offset_m"]
-        km = cell / 1000
-        # the places that can reach this raster, by the squares they reach
-        near = {}
-        for p in places:
-            px, py = (p[0] - x0) * S, (p[1] - y0) * S          # in cells
-            rc = p[3] / km
-            if px < -rc or py < -rc or px > w + rc or py > h + rc:
-                continue
-            for bx in range(int((px - rc) // 16), int((px + rc) // 16) + 1):
-                for by in range(int((py - rc) // 16), int((py + rc) // 16) + 1):
-                    near.setdefault((bx, by), []).append((px, py, p[2], rc, p[3]))
         rows = []
         for y in range(h):
             row = []
@@ -240,25 +240,33 @@ def land_use(root, terrain, world, keep_squares=()):
                 if c in "swrm":
                     row.append(c)
                     continue
-                z = hgt[y * w + x] - off
-                best, bd = None, 1.0
-                for px, py, far, rc, rkm in near.get((x // 16, y // 16), ()):
-                    q = math.hypot(x + .5 - px, y + .5 - py) / rc
-                    if q <= bd:
-                        best, bd = (far, rkm, q * rkm), q
-                new = None
                 sq = (x0 + x // S, y0 + y // S)
-                if best and z < MAX_FARM_M and sq not in keep:
-                    far, rkm, dkm = best
-                    xl, xr = max(0, x - 1), min(w - 1, x + 1)
-                    yt, yb = max(0, y - 1), min(h - 1, y + 1)
-                    gx = (hgt[y * w + xr] - hgt[y * w + xl]) / ((xr - xl) * cell)
-                    gy = (hgt[yb * w + x] - hgt[yt * w + x]) / ((yb - yt) * cell)
-                    s = math.hypot(gx, gy)
-                    sun = gy > .02 and gy > .5 * abs(gx)            # rises to the south: faces north, to the sun
-                    new = FARMING[far][1](s, sun, dkm, rkm, hsh(x0 * S + x, y0 * S + y, 1), hsh(x0 * S + x, y0 * S + y, 2), c)
-                    if new == "f" and c == "h":
-                        new = "h"
+                z = hgt[y * w + x] - off
+                new = None
+                if z < MAX_FARM_M and sq not in keep:
+                    # the distance to the people who farm it: interpolated between the squares' centres
+                    fx, fy = x0 + (x + .5) / S - .5, y0 + (y + .5) / S - .5
+                    i0, j0 = int(math.floor(fx)), int(math.floor(fy))
+                    u, v = fx - i0, fy - j0
+                    i1, j1 = min(W - 1, i0 + 1), min(H - 1, j0 + 1)
+                    d = (D[i0][j0] * (1 - u) * (1 - v) + D[i1][j0] * u * (1 - v) + D[i0][j1] * (1 - u) * v
+                         + D[i1][j1] * u * v)
+                    reg = region(country[sq[1]][sq[0]], z, rain[y * w + x], RD.get(sq, 9) * 3.5)
+                    gxc, gyc = x0 * S + x, y0 * S + y
+                    if reg and d < REACH[reg] * (.7 + .6 * hsh(gxc // 2, gyc // 2, 4)):    # a ragged edge
+                        xl, xr = max(0, x - 1), min(w - 1, x + 1)
+                        yt, yb = max(0, y - 1), min(h - 1, y + 1)
+                        gx = (hgt[y * w + xr] - hgt[y * w + xl]) / ((xr - xl) * cell)
+                        gy = (hgt[yb * w + x] - hgt[yt * w + x]) / ((yb - yt) * cell)
+                        s = math.hypot(gx, gy)
+                        sun = gy > .02 and gy > .5 * abs(gx)        # rises to the south: faces north, to the sun
+                        flood = RD.get(sq) is not None and RD[sq] <= 1 and any(
+                            (sq[0] + a, sq[1] + b) in river and z < river[(sq[0] + a, sq[1] + b)] + 6
+                            for a in (-1, 0, 1) for b in (-1, 0, 1))
+                        new = use(reg, c, s, sun, d, REACH[reg], hsh(gxc, gyc, 1), hsh(gxc, gyc, 2),
+                                  hsh(gxc // 2, gyc // 2, 3), flood)
+                        if new == "f" and c == "h":
+                            new = "h"
                 if new is None:
                     new = "g" if c == "d" else c
                 row.append(new)
