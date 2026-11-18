@@ -12,7 +12,8 @@ Outputs: world/terrain.json        per 3.5 km square of the world model's grid (
                                    inputs make forest, worked in compartments of 875 m, each of one age); measures
                                    of the land;
          world/terrain/*.png       the fine rasters (875 m cells on the mainland, 437.5 m on Lisavu): height
-                                   (16-bit, metres + 1000) and land cover (8-bit, the class numbers), for the sheet.
+                                   (16-bit, metres + 1000), land cover (8-bit, the class numbers) and the yearly
+                                   rain (16-bit, mm; for the land use, tools/land_use.py), for the sheet and the model.
 The world model (tools/world_model.py) and the site build read only the outputs: they need neither scipy nor numba.
 
 Usage: python3 tools/terrain.py            generate (needs numpy, scipy, numba: pip install numpy scipy numba;
@@ -49,7 +50,8 @@ def check():
     if have != fingerprint():
         sys.exit("world/terrain.json is not current (world/terrain-inputs.json, tools/terrain.py or tools/terrain_lib.py "
                  "changed): run python3 tools/terrain.py (needs numpy, scipy, numba)")
-    for name in ("mainland-height.png", "mainland-cover.png", "lisavu-height.png", "lisavu-cover.png"):
+    for name in ("mainland-height.png", "mainland-cover.png", "mainland-rain.png", "lisavu-height.png", "lisavu-cover.png",
+                 "lisavu-rain.png"):
         if not os.path.exists(os.path.join(RASTERS, name)):
             sys.exit(f"world/terrain/{name} is missing: run python3 tools/terrain.py")
     print("world/terrain.json is current")
@@ -136,7 +138,10 @@ def generate():
         hgt = np.clip(np.round(d['z']) + OFFSET_M, 0, 65535).astype(np.uint16)
         Image.fromarray(hgt).save(os.path.join(RASTERS, f"{name}-height.png"), optimize=True)
         Image.fromarray(lc.astype(np.uint8)).save(os.path.join(RASTERS, f"{name}-cover.png"), optimize=True)
+        rain = np.clip(np.round(d['rain']), 0, 65535).astype(np.uint16)
+        Image.fromarray(rain).save(os.path.join(RASTERS, f"{name}-rain.png"), optimize=True)
         rasters[name] = {"height": f"world/terrain/{name}-height.png", "cover": f"world/terrain/{name}-cover.png",
+                         "rain": f"world/terrain/{name}-rain.png",
                          "x0": int(d['X0']), "y0": int(d['Y0']), "cells_per_square": int(d['S']),
                          "cell_m": d['cell'], "offset_m": OFFSET_M}
     # measures
