@@ -7,12 +7,12 @@
   <cbc:ID>ST-INV-26-0323</cbc:ID>
   <cbc:UUID>0228817f-8a56-5781-a34c-99eedb2ee7ee</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>11:19:00</cbc:IssueTime>
+  <cbc:IssueTime>11:19:00+00:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
+  <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
@@ -27,8 +27,6 @@
   </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">6110</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
@@ -48,7 +46,7 @@
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -57,12 +55,9 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
@@ -82,12 +77,12 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Business accounts</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Billing</cbc:Name>
+        <cbc:JobTitle>Billing officer</cbc:JobTitle>
+        <cbc:Department>Business sales</cbc:Department>
         <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
-        <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -97,21 +92,12 @@
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-041859</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -121,7 +107,7 @@
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -130,37 +116,14 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -238,16 +201,10 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XL-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>45 days net.</cbc:Note>
-    <cbc:PaymentTermsDetailsURI>https://www.selanutelecom.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:Note>21 days net from the bill.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:PenaltyInterestRate>
-      <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
-      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
-      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
-    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
@@ -256,28 +213,7 @@
     <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
     <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
     <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:Name>No general sales tax</cbc:Name>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
   </cac:AllowanceCharge>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">135.566</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">0.000</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
@@ -303,14 +239,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>ST-BL</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
@@ -334,14 +262,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>ST-GB</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:Name>No general sales tax</cbc:Name>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>

@@ -7,7 +7,7 @@
   <cbc:ID>CSWC-INV-26-0319</cbc:ID>
   <cbc:UUID>4d48b45e-73c0-5476-98a9-69e873037095</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>15:44:00</cbc:IssueTime>
+  <cbc:IssueTime>15:44:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-04-23</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -25,8 +25,6 @@
   </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.coastalwater.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3600</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
       </cac:PartyIdentification>
@@ -36,7 +34,7 @@
       <cac:Language>
         <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-782593</cbc:ID>
@@ -44,12 +42,11 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Reservoir Road</cbc:StreetName>
         <cbc:BuildingNumber>51</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38500</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -73,11 +70,8 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
+        <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
@@ -96,12 +90,12 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Billing</cbc:Name>
+        <cbc:JobTitle>Billing officer</cbc:JobTitle>
+        <cbc:Department>Customer service</cbc:Department>
         <cbc:Telephone>+999 2 38 2692 2192</cbc:Telephone>
-        <cbc:ElectronicMail>customer@coastalwater.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>billing@coastalwater.example</cbc:ElectronicMail>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -120,12 +114,12 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Gull Lane</cbc:StreetName>
         <cbc:BuildingNumber>57</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Old town</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Riverside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38516</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -277,17 +271,10 @@
     </cac:PaymentMandate>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>Collected by direct debit 21 days after the invoice date.</cbc:Note>
-    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">0.58</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.coastalwater.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:Note>21 days net from the bill. Collected by direct debit on that day.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-24</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
-    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -305,11 +292,10 @@
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">5.88</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
         <cac:TaxScheme>
@@ -336,14 +322,6 @@
       <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:PeriodDescriptionCode">MONTH</cbc:DescriptionCode>
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
-    <cac:BeneficiaryParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Public Works Department</cbc:Name>
-      </cac:PartyName>
-    </cac:BeneficiaryParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
@@ -360,10 +338,8 @@
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -400,7 +376,7 @@
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>

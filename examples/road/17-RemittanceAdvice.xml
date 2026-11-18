@@ -7,28 +7,22 @@
   <cbc:ID>LD-RM-26-0168</cbc:ID>
   <cbc:UUID>079daaa2-67ec-5103-9652-83ba2c17dabd</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-  <cbc:IssueTime>15:05:00</cbc:IssueTime>
+  <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">4862160</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
-  <cbc:PayerReference>LD-0149</cbc:PayerReference>
   <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeway Distribution</cbc:Name>
@@ -36,14 +30,13 @@
       <cac:Language>
         <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
-        <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
         <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
         <cbc:BuildingNumber>43</cbc:BuildingNumber>
         <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
@@ -51,60 +44,18 @@
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-        <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
-        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -115,117 +66,40 @@
   </cac:AccountingCustomerParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
       </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-        <cbc:StreetName languageID="en-XB">Via delle Officine</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
         <cbc:BuildingNumber>17</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
-        <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XU:CR</cbc:ID>
-          <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-        <cac:SecurityListing>
-          <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
-          <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
-          <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-          <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
-        </cac:SecurityListing>
-      </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-        <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        <cac:OtherCommunication>
-          <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-          <cbc:Value>+999 1 344 474 4274</cbc:Value>
-        </cac:OtherCommunication>
       </cac:Contact>
-      <cac:ServiceProviderParty>
-        <cbc:ID>VI-SP-2026-01</cbc:ID>
-        <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
-        <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
-        <cac:Party>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Castrano Logistics</cbc:Name>
-          </cac:PartyName>
-        </cac:Party>
-        <cac:SellerContact>
-          <cbc:Name>Key account desk</cbc:Name>
-        </cac:SellerContact>
-      </cac:ServiceProviderParty>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
@@ -289,12 +163,12 @@
           <cac:Address>
             <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
             <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
-            <cbc:StreetName languageID="en-XB">Piazza della Banca</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
             <cbc:BuildingNumber>8</cbc:BuildingNumber>
             <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
             <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:Region>Province of Ferrano</cbc:Region>
+            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               <cbc:Name>Urvania</cbc:Name>
@@ -303,7 +177,7 @@
         </cac:FinancialInstitution>
         <cac:Address>
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XB">Ferrano</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:Country>
@@ -320,36 +194,11 @@
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
-    <cac:AccountingSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeway Distribution</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:AccountingCustomerParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0166</cbc:ID>
         <cbc:IssueDate>2026-03-24</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>VI-INV-26-0166</cbc:ID>
-      <cbc:IssueDate>2026-03-24</cbc:IssueDate>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

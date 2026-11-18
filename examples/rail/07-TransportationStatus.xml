@@ -7,19 +7,16 @@
   <cbc:ID>FIH-TS-26-0333</cbc:ID>
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>13:11:00</cbc:IssueTime>
+  <cbc:IssueTime>13:11:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en-XU">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
     <cac:CarrierParty>
-      <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
       </cac:PartyIdentification>
@@ -39,62 +36,21 @@
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4150</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:PostalZone>4310</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007328060</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XU:CR</cbc:ID>
-          <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Freight desk</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
+        <cbc:JobTitle>Freight planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
         <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
         <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -107,19 +63,39 @@
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>17:00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:OptionalTakeoverTransportEvent>
       <cac:ActualPickupTransportEvent>
         <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:ActualPickupTransportEvent>
       <cac:DeliveryTransportEvent>
         <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+          <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+        </cac:Location>
       </cac:DeliveryTransportEvent>
       <cac:TerminalOperatorParty>
-        <cbc:WebsiteURI>https://www.ferranohub.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">5221</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
         </cac:PartyIdentification>
@@ -140,61 +116,20 @@
           <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
           <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
           <cbc:PostalZone>4180</cbc:PostalZone>
-          <cbc:Region>Province of Ferrano</cbc:Region>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             <cbc:Name>Urvania</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
-        <cac:PartyTaxScheme>
-          <cbc:RegistrationName>Ferrano Intermodal Hub SRU</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007356833</cbc:CompanyID>
-          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-          <cac:TaxScheme>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-            <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:TaxScheme>
-        </cac:PartyTaxScheme>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Ferrano Intermodal Hub SRU</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:CompanyID>
-          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
-          <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-          <cac:RegistrationAddress>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-          <cac:CorporateRegistrationScheme>
-            <cbc:ID>XU:CR</cbc:ID>
-            <cbc:Name>Commercial register of Urvania</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:CorporateRegistrationScheme>
-        </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Terminal control</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
+          <cbc:JobTitle>Terminal controller</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
           <cbc:Telephone>+999 1 041 672 5096</cbc:Telephone>
           <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
         <cac:ElectronicAddress>
           <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -204,20 +139,29 @@
       <cac:TransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+        <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:TransportEvent>
     </cac:MainCarriageShipmentStage>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">LOADING</cbc:TransportEventTypeCode>
     <cbc:Description>Two containers loaded on the container train.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
-  <cac:DocumentReference>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
-  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>FIH-SIG-TS-07</cbc:ID>
     <cac:SignatoryParty>
@@ -249,6 +193,7 @@
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
     <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>

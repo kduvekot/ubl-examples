@@ -55,13 +55,13 @@
             <SimpleValue>SVCABROAD</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Service to a business established outside Urvania</SimpleValue>
+            <SimpleValue>Service supplied outside Urvania</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Vekrir krir sir zhurstan dabek treskek Urvania</SimpleValue>
+            <SimpleValue>Vekrir zurhul treskek Urvania</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The service is taxed where the customer is established.</SimpleValue>
+            <SimpleValue>A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax (decision D17, which widened "a service to a business established outside Urvania").</SimpleValue>
          </Value>
       </Row>
       <Row>

@@ -6,20 +6,17 @@
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>PS-TS-26-0142</cbc:ID>
   <cbc:UUID>1713d8c6-6d60-56cc-af96-b2eb848695b4</cbc:UUID>
-  <cbc:IssueDate>2026-05-18</cbc:IssueDate>
-  <cbc:IssueTime>16:36:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-05-17</cbc:IssueDate>
+  <cbc:IssueTime>16:36:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
-  <cbc:Note languageID="qal">Keavate tafese lesama kanela temati kalale.</cbc:Note>
-  <cbc:Note languageID="en-XL">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-CS-26-0133</cbc:ShippingOrderID>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>
     <cac:ConsigneeParty>
-      <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
       </cac:PartyIdentification>
@@ -29,10 +26,6 @@
       <cac:PartyName>
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -42,148 +35,71 @@
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Goods-in</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
-        <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:ConsigneeParty>
     <cac:CarrierParty>
-      <cbc:WebsiteURI>https://www.tidewell.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">5012</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Tidewell Ocean Lines</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-547539</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Harbour Road</cbc:StreetName>
         <cbc:BuildingNumber>18</cbc:BuildingNumber>
-        <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38527</cbc:PostalZone>
         <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1235754</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Tidewell Ocean Lines Corp</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:CompanyID>
-        <cbc:RegistrationDate>1974-03-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Corporation (public)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">40000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Bookings</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
-        <cbc:Department>Operations</cbc:Department>
+        <cbc:JobTitle>Booking agent</cbc:JobTitle>
+        <cbc:Department>Bookings</cbc:Department>
         <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
         <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cac:DischargeTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>11:20:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:DischargeTransportEvent>
       <cac:TerminalOperatorParty>
-        <cbc:WebsiteURI>https://www.port-selanu.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">5222</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
         </cac:PartyIdentification>
@@ -191,8 +107,9 @@
           <cbc:Name>Port of Selanu</cbc:Name>
         </cac:PartyName>
         <cac:Language>
-          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-          <cbc:Name>Lisavan</cbc:Name>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
         </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">63597165</cbc:ID>
@@ -203,7 +120,7 @@
           <cbc:BuildingNumber>32</cbc:BuildingNumber>
           <cbc:CityName languageID="qal">Selanu</cbc:CityName>
           <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
             <cbc:Name>Lisavu</cbc:Name>
@@ -215,48 +132,21 @@
           <cbc:InformationURI>https://www.port-selanu.example</cbc:InformationURI>
           <cac:LocationCoordinate>
             <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
-            <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
-            <cbc:LatitudeMinutesMeasure unitCode="D61">1.20</cbc:LatitudeMinutesMeasure>
+            <cbc:LatitudeDegreesMeasure unitCode="DD">32</cbc:LatitudeDegreesMeasure>
+            <cbc:LatitudeMinutesMeasure unitCode="D61">56.22</cbc:LatitudeMinutesMeasure>
             <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
-            <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-            <cbc:LongitudeMinutesMeasure unitCode="D61">8.40</cbc:LongitudeMinutesMeasure>
+            <cbc:LongitudeDegreesMeasure unitCode="DD">2</cbc:LongitudeDegreesMeasure>
+            <cbc:LongitudeMinutesMeasure unitCode="D61">9.76</cbc:LongitudeMinutesMeasure>
             <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
           </cac:LocationCoordinate>
         </cac:PhysicalLocation>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Port of Selanu Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:CompanyID>
-          <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-          <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-          <cac:RegistrationAddress>
-            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-          <cac:CorporateRegistrationScheme>
-            <cbc:ID>XL:ICR</cbc:ID>
-            <cbc:Name>Island companies register</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:CorporateRegistrationScheme>
-        </cac:PartyLegalEntity>
         <cac:Contact>
           <cbc:Name>Port control</cbc:Name>
-          <cbc:JobTitle>Operations planner</cbc:JobTitle>
-          <cbc:Department>Operations</cbc:Department>
+          <cbc:JobTitle>Duty port controller</cbc:JobTitle>
+          <cbc:Department>Port operations</cbc:Department>
           <cbc:Telephone>+999 3 727 1037</cbc:Telephone>
           <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
         <cac:ElectronicAddress>
           <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -264,13 +154,31 @@
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
       <cac:DetentionTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
         <cbc:Description>Wooden pallets must carry the heat-treatment mark.</cbc:Description>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:DetentionTransportEvent>
       <cac:ActualArrivalTransportEvent>
-        <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
       </cac:ActualArrivalTransportEvent>
       <cac:ReportingPerson>
         <cbc:FirstName>Ama</cbc:FirstName>
@@ -282,13 +190,32 @@
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cac:QuarantineTransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:QuarantineTransportEvent>
         <cac:TransportEvent>
-          <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>11:40:00</cbc:OccurrenceTime>
+          <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:TransportEvent>
         <cac:ServiceAllowanceCharge>
           <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
@@ -300,14 +227,17 @@
     </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
-    <cbc:OccurrenceDate>2026-05-18</cbc:OccurrenceDate>
+    <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
     <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
     <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Name>Port of Selanu</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>PS-SIG-TS-17</cbc:ID>
@@ -329,8 +259,6 @@
     </cac:PartyName>
   </cac:SenderParty>
   <cac:ReceiverParty>
-    <cbc:WebsiteURI>https://www.bayforth.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">5229</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
     </cac:PartyIdentification>
@@ -340,7 +268,7 @@
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
       <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
@@ -348,61 +276,21 @@
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
       <cbc:StreetName>Dockside Way</cbc:StreetName>
       <cbc:BuildingNumber>4</cbc:BuildingNumber>
-      <cbc:CitySubdivisionName>Harbour quarter</cbc:CitySubdivisionName>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
       <cbc:CityName>Lumeport</cbc:CityName>
       <cbc:PostalZone>38525</cbc:PostalZone>
       <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Lumeport</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Export desk</cbc:Name>
-      <cbc:JobTitle>Operations planner</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
       <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
@@ -413,10 +301,11 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
     <cbc:Name>Port of Selanu</cbc:Name>
   </cac:StatusLocation>
   <cac:StatusPeriod>
-    <cbc:StartDate>2026-05-18</cbc:StartDate>
-    <cbc:EndDate>2026-05-18</cbc:EndDate>
+    <cbc:StartDate>2026-05-17</cbc:StartDate>
+    <cbc:EndDate>2026-05-17</cbc:EndDate>
   </cac:StatusPeriod>
 </TransportationStatus>

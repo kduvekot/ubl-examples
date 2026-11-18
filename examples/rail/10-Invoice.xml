@@ -7,22 +7,21 @@
   <cbc:ID>FRC-INV-26-0336</cbc:ID>
   <cbc:UUID>f02614a5-c969-547f-8808-35c583fe56d6</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
-  <cbc:IssueTime>12:04:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-17</cbc:DueDate>
+  <cbc:IssueTime>12:04:00-01:00</cbc:IssueTime>
+  <cbc:DueDate>2026-05-14</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Freight</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-WB-26-0334</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
       </cac:PartyIdentification>
@@ -42,9 +41,9 @@
         <cbc:BuildingNumber>38</cbc:BuildingNumber>
         <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
         <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4150</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:PostalZone>4310</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
@@ -67,12 +66,9 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
         <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
           <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
@@ -92,12 +88,12 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Freight desk</cbc:Name>
-        <cbc:JobTitle>Operations planner</cbc:JobTitle>
-        <cbc:Department>Operations</cbc:Department>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
-        <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>receivables@ferranorail.example</cbc:ElectronicMail>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -107,24 +103,15 @@
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
       </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-        <cbc:Name>Urvanian</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -135,90 +122,25 @@
         <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
         <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
         <cbc:PostalZone>4120</cbc:PostalZone>
-        <cbc:Region>Province of Ferrano</cbc:Region>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
-        <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XU:CR</cbc:ID>
-          <cbc:Name>Commercial register of Urvania</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-        <cac:SecurityListing>
-          <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
-          <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
-          <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-          <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
-        </cac:SecurityListing>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-        <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        <cac:OtherCommunication>
-          <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-          <cbc:Value>+999 1 344 474 4274</cbc:Value>
-        </cac:OtherCommunication>
       </cac:Contact>
-      <cac:ServiceProviderParty>
-        <cbc:ID>VI-SP-2026-01</cbc:ID>
-        <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
-        <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
-        <cac:Party>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Castrano Logistics</cbc:Name>
-          </cac:PartyName>
-        </cac:Party>
-        <cac:SellerContact>
-          <cbc:Name>Key account desk</cbc:Name>
-        </cac:SellerContact>
-      </cac:ServiceProviderParty>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
@@ -249,7 +171,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF13FRCINV260336</cbc:InstructionNote>
@@ -275,7 +197,7 @@
             <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
             <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
             <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:Region>Province of Ferrano</cbc:Region>
+            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
               <cbc:Name>Urvania</cbc:Name>
@@ -296,17 +218,9 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XU-STD</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
-    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">2621</cbc:SettlementDiscountAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.ferranorail.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
-    <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-17</cbc:StartDate>
-      <cbc:EndDate>2026-04-27</cbc:EndDate>
-    </cac:SettlementPeriod>
+    <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

@@ -6,16 +6,14 @@
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>NW-RA-26-0146</cbc:ID>
   <cbc:UUID>5c11e38e-6191-5e5e-892a-38c6eedf1df0</cbc:UUID>
-  <cbc:IssueDate>2026-05-21</cbc:IssueDate>
-  <cbc:IssueTime>17:22:00</cbc:IssueTime>
-  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">NoStatus</cbc:DocumentStatusCode>
+  <cbc:IssueDate>2026-05-20</cbc:IssueDate>
+  <cbc:IssueTime>17:22:00+00:00</cbc:IssueTime>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">PARTIAL</cbc:DeliveryAcceptanceCode>
   <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
-  <cbc:Note languageID="qal">Konete tofami tepaa momai liape-tefata.</cbc:Note>
-  <cbc:Note languageID="en-XL">Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -25,6 +23,7 @@
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>NW-SIG-26-RA</cbc:ID>
@@ -39,8 +38,6 @@
   </cac:Signature>
   <cac:DeliveryCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.nalevi.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">5210</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
       </cac:PartyIdentification>
@@ -48,8 +45,9 @@
         <cbc:Name>Nalevi Warehousing</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">95940358</cbc:ID>
@@ -60,46 +58,19 @@
         <cbc:BuildingNumber>9</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Nalevi Warehousing Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Goods inwards</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:JobTitle>Warehouse supervisor</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 3 722 1722</cbc:Telephone>
         <cbc:ElectronicMail>goods@nalevi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 07:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -109,16 +80,11 @@
   </cac:DeliveryCustomerParty>
   <cac:DespatchSupplierParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-410274</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeway Distribution</cbc:Name>
@@ -126,14 +92,13 @@
       <cac:Language>
         <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Distribution Drive</cbc:StreetName>
-        <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
         <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
         <cbc:BuildingNumber>43</cbc:BuildingNumber>
         <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
@@ -141,60 +106,18 @@
         <cbc:PostalZone>71214</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-        <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Dispatch office</cbc:Name>
+        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
-        <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>dispatch@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -205,21 +128,12 @@
   </cac:DespatchSupplierParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.velumi.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
       </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-041859</cbc:ID>
-      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -229,51 +143,20 @@
         <cbc:BuildingNumber>16</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Velumi Trading Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Purchasing</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
@@ -290,7 +173,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
-    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -298,16 +181,12 @@
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
-      <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
-      <cbc:Keyword>park bench, street furniture</cbc:Keyword>
-      <cbc:BrandName>Valdara</cbc:BrandName>
-      <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>LD-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
@@ -327,164 +206,6 @@
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
       </cac:AdditionalItemIdentification>
-      <cac:ItemSpecificationDocumentReference>
-        <cbc:ID>VI-DS-B180</cbc:ID>
-      </cac:ItemSpecificationDocumentReference>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
-      </cac:CommodityClassification>
-      <cac:TransactionConditions>
-        <cbc:ID>LD-TC-01</cbc:ID>
-        <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
-        <cac:DocumentReference>
-          <cbc:ID>LD-GTC-2026</cbc:ID>
-        </cac:DocumentReference>
-      </cac:TransactionConditions>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Frame material</cbc:Name>
-        <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Slat wood</cbc:Name>
-        <cbc:Value>Kiln-dried hardwood</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>Seats</cbc:Name>
-        <cbc:Value>3</cbc:Value>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:ID>COL</cbc:ID>
-        <cbc:Name>Frame colour</cbc:Name>
-        <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
-        <cbc:ListValue>Ferro grey</cbc:ListValue>
-        <cac:ItemPropertyGroup>
-          <cbc:ID>APP</cbc:ID>
-          <cbc:Name>Appearance</cbc:Name>
-          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">OPTIONAL</cbc:ImportanceCode>
-        </cac:ItemPropertyGroup>
-      </cac:AdditionalItemProperty>
-      <cac:AdditionalItemProperty>
-        <cbc:ID>LOAD</cbc:ID>
-        <cbc:Name>Load capacity</cbc:Name>
-        <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">LOAD</cbc:NameCode>
-        <cbc:TestMethod>Static load on the seat for one hour, three seats loaded evenly, no lasting deformation</cbc:TestMethod>
-        <cbc:ValueQuantity unitCode="KGM">450</cbc:ValueQuantity>
-        <cbc:ValueQualifier>Distributed over the seat</cbc:ValueQualifier>
-        <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-        <cac:ItemPropertyGroup>
-          <cbc:ID>SAF</cbc:ID>
-          <cbc:Name>Safety</cbc:Name>
-          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-        </cac:ItemPropertyGroup>
-        <cac:StandardPropertyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-SF-0450</cbc:ID>
-          <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
-          <cac:IssuerParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Codana Identification Agency</cbc:Name>
-            </cac:PartyName>
-          </cac:IssuerParty>
-        </cac:StandardPropertyIdentification>
-      </cac:AdditionalItemProperty>
-      <cac:ManufacturerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:ManufacturerParty>
-      <cac:Dimension>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        <cbc:Description>Over the armrests</cbc:Description>
-      </cac:Dimension>
-      <cac:Dimension>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">620</cbc:Measure>
-      </cac:Dimension>
-      <cac:Dimension>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">780</cbc:Measure>
-        <cbc:Description>Seat back at its highest point</cbc:Description>
-      </cac:Dimension>
-      <cac:Dimension>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">450</cbc:Measure>
-        <cbc:Description>Above the ground when anchored</cbc:Description>
-        <cbc:MinimumMeasure unitCode="MMT">440</cbc:MinimumMeasure>
-        <cbc:MaximumMeasure unitCode="MMT">460</cbc:MaximumMeasure>
-      </cac:Dimension>
-      <cac:EnvironmentalEmission>
-        <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
-        <cbc:ValueMeasure unitCode="KGM">96</cbc:ValueMeasure>
-        <cbc:ValueFactorNumeric>0.82</cbc:ValueFactorNumeric>
-        <cbc:ValueBaseMeasure unitCode="EA">1</cbc:ValueBaseMeasure>
-        <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
-        <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">MANUFACTURING</cbc:LifecycleStageCode>
-        <cbc:LifecycleStageDescription>From the ore at the mine to the bench leaving the factory gate.</cbc:LifecycleStageDescription>
-        <cbc:Description>Mining, steel making, casting, galvanising, sawing and the transport between them.</cbc:Description>
-        <cac:EmissionCalculationMethod>
-          <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
-          <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:EmissionBoundaryCode">CRADLETOGATE</cbc:FullnessIndicationCode>
-          <cbc:EmissionFactorSource>The steelworks' and sawmill's measured energy use of 2025</cbc:EmissionFactorSource>
-          <cac:EmissionFactorDocumentReference>
-            <cbc:ID>VI-LCA-2025</cbc:ID>
-          </cac:EmissionFactorDocumentReference>
-        </cac:EmissionCalculationMethod>
-        <cac:MeasurementPeriod>
-          <cbc:StartDate>2025-01-01</cbc:StartDate>
-          <cbc:EndDate>2025-12-31</cbc:EndDate>
-        </cac:MeasurementPeriod>
-      </cac:EnvironmentalEmission>
-      <cac:CircularityProfile>
-        <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
-        <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
-        <cac:ResourceConsumption>
-          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
-          <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
-          <cbc:ResourceOriginDescription>Steel made from Serravona ore in Urvania</cbc:ResourceOriginDescription>
-          <cac:MeasurementPeriod>
-            <cbc:StartDate>2025-01-01</cbc:StartDate>
-            <cbc:EndDate>2025-12-31</cbc:EndDate>
-          </cac:MeasurementPeriod>
-        </cac:ResourceConsumption>
-        <cac:ResourceConsumption>
-          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">HARDWOOD</cbc:ResourceTypeCode>
-          <cbc:ConsumptionMeasure unitCode="KGM">22.5</cbc:ConsumptionMeasure>
-          <cbc:ResourceOriginDescription>Slats from Upland State, Bayvarra</cbc:ResourceOriginDescription>
-          <cac:MeasurementPeriod>
-            <cbc:StartDate>2025-01-01</cbc:StartDate>
-            <cbc:EndDate>2025-12-31</cbc:EndDate>
-          </cac:MeasurementPeriod>
-        </cac:ResourceConsumption>
-        <cac:WasteGenerated>
-          <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
-          <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
-          <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
-          <cac:MeasurementPeriod>
-            <cbc:StartDate>2025-01-01</cbc:StartDate>
-            <cbc:EndDate>2025-12-31</cbc:EndDate>
-          </cac:MeasurementPeriod>
-        </cac:WasteGenerated>
-        <cac:RepairabilityScore>
-          <cbc:ScoreNumeric>8</cbc:ScoreNumeric>
-          <cbc:ScoringSystemCode listID="urn:ubl-examples:world:codelist:ScoringSystemCode">REPAIR10</cbc:ScoringSystemCode>
-        </cac:RepairabilityScore>
-        <cac:ProductDocumentationDocumentReference>
-          <cbc:ID>VI-RM-B180</cbc:ID>
-        </cac:ProductDocumentationDocumentReference>
-      </cac:CircularityProfile>
     </cac:Item>
   </cac:ReceiptLine>
   <cac:ReceiptLine>
@@ -496,7 +217,7 @@
     <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
-    <cbc:ReceivedDate>2026-05-21</cbc:ReceivedDate>
+    <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -504,13 +225,12 @@
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
-      <cbc:BrandName>Valdara</cbc:BrandName>
-      <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
         <cbc:ID>LD-10443</cbc:ID>
       </cac:SellersItemIdentification>
@@ -523,24 +243,6 @@
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
       </cac:AdditionalItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
-      </cac:CommodityClassification>
-      <cac:ManufacturerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Valdara Industries</cbc:Name>
-        </cac:PartyName>
-      </cac:ManufacturerParty>
     </cac:Item>
   </cac:ReceiptLine>
 </ReceiptAdvice>

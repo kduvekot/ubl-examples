@@ -314,6 +314,7 @@
       <ValueList xml:id="TemperatureAttribute" uri="gc/TemperatureAttributeCode.gc" />
       <ValueList xml:id="OtherAttribute" uri="gc/OtherAttributeCode.gc" />
       <ValueList xml:id="CardScheme" uri="gc/CardSchemeCode.gc" />
+      <ValueList xml:id="Locale" uri="gc/LocaleCode.gc" />
    </ValueLists>
    <InstanceMetadataSets>
       <InstanceMetadataSet xml:id="code">
@@ -367,7 +368,7 @@
       <Context address="*[local-name()='CatalogueLine']/cbc:ActionCode" values="CatalogueLineAction" metadata="code" />
       <Context address="*[local-name()='TransactionConditions']/cbc:ActionCode" values="ConditionsAction" metadata="code" />
       <Context address="*[local-name()='ForecastRevision']/cbc:PurposeCode" values="ForecastPurpose" metadata="code" />
-      <Context address="*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='DocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode" values="UBLDocumentType UNCL1001 DocumentType" metadata="code" />
+      <Context address="*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='DocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode | *[local-name()='SupportingDocumentReference']/cbc:DocumentTypeCode | *[local-name()='EvidenceDocumentReference']/cbc:DocumentTypeCode | *[local-name()='OriginatorDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ParentDocumentReference']/cbc:DocumentTypeCode | *[local-name()='PreviousDocumentReference']/cbc:DocumentTypeCode | *[local-name()='OriginalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='RequiredDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ProvidedDocumentReference']/cbc:DocumentTypeCode | *[local-name()='RequestedDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ShipmentDocumentReference']/cbc:DocumentTypeCode" values="UBLDocumentType UNCL1001 DocumentType" metadata="code" />
       <Context address="*[local-name()='Signature']/cbc:ReasonCode" values="SignatureReason" metadata="code" />
       <Context address="*[local-name()='Response']/cbc:ResponseCode" values="UNCL4343" metadata="code" />
       <Context address="*[local-name()='DiscrepancyResponse']/cbc:ResponseCode" values="UNCL4465" metadata="code" />
@@ -649,9 +650,9 @@
       <Context address="cbc:AddressTypeCode" values="AddressType" metadata="code" />
       <Context address="cbc:CompanyLiquidationStatusCode" values="CompanyLiquidationStatus" metadata="code" />
       <Context address="cbc:CorporateRegistrationTypeCode" values="CorporateRegistrationType" metadata="code" />
-      <Context address="cbc:LocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:LocaleCode" values="Locale" metadata="code" />
       <Context address="cbc:NoticeLanguageCode" values="Language" metadata="code" />
-      <Context address="cbc:PreferredLanguageLocaleCode" values="Language" metadata="code" />
+      <Context address="cbc:PreferredLanguageLocaleCode" values="Locale" metadata="code" />
       <Context address="cbc:TenderLanguageLocaleCode" values="Language" metadata="code" />
       <Context address="cbc:DefaultLanguageCode" values="Language" metadata="code" />
       <Context address="cbc:AddressFormatCode" values="AddressFormat" metadata="code" />

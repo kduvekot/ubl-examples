@@ -5,27 +5,29 @@
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FRC-WB-26-0334</cbc:ID>
-  <cbc:CarrierAssignedID>FRC-CMR-26-0325</cbc:CarrierAssignedID>
+  <cbc:CarrierAssignedID>FRC-CIM-26-0325</cbc:CarrierAssignedID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>13:10:00</cbc:IssueTime>
-  <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
+  <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
+  <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
   <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
-  <cbc:Note languageID="qau">Gurbul mizstan: dadrek, miran, sundraz.</cbc:Note>
-  <cbc:Note languageID="en-XU">Three originals: consignor, consignee, carrier.</cbc:Note>
-  <cbc:ShippingOrderID>VI-CS-26-0327</cbc:ShippingOrderID>
-  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CMR</cbc:WaybillTypeCode>
+  <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
+  <cbc:Note languageID="en-XU">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
+  <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CIM</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
-  <cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
-    <cbc:Name>Castrano Logistics</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+    <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:IssueLocation>
   <cac:SenderParty>
-    <cbc:WebsiteURI>https://www.ferranorail.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">4912</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
     </cac:PartyIdentification>
@@ -45,62 +47,21 @@
       <cbc:BuildingNumber>38</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
       <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-      <cbc:PostalZone>4150</cbc:PostalZone>
-      <cbc:Region>Province of Ferrano</cbc:Region>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:PostalZone>4310</cbc:PostalZone>
+      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007328060</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Ferrano Rail Cargo SRU</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SRU</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek sir trinnazhalhek tevul (hatran dudrul riskek)</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XU">Società a responsabilità urvaniana (private limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Freight desk</cbc:Name>
-      <cbc:JobTitle>Operations planner</cbc:JobTitle>
+      <cbc:JobTitle>Freight planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
       <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -108,8 +69,6 @@
     </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
-    <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
@@ -136,90 +95,21 @@
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:Region>Province of Ferrano</cbc:Region>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
-      <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-      <cac:SecurityListing>
-        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
-        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
-        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-        <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
-      </cac:SecurityListing>
-    </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Order desk</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Transport planning</cbc:Name>
+      <cbc:JobTitle>Logistics planner</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-      <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>logistics@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-      <cac:OtherCommunication>
-        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-        <cbc:Value>+999 1 344 474 4274</cbc:Value>
-      </cac:OtherCommunication>
     </cac:Contact>
-    <cac:ServiceProviderParty>
-      <cbc:ID>VI-SP-2026-01</cbc:ID>
-      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
-      <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Castrano Logistics</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SellerContact>
-        <cbc:Name>Key account desk</cbc:Name>
-      </cac:SellerContact>
-    </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
@@ -243,18 +133,16 @@
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0332</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">15768</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
-      <cbc:PerformingCarrierAssignedID>FRC-J-26-3318</cbc:PerformingCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
       <cac:ConsigneeParty>
-        <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
-        <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
         </cac:PartyIdentification>
@@ -267,17 +155,11 @@
         <cac:PartyName>
           <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
-        <cac:Language>
-          <cbc:ID schemeID="ISO 639">en</cbc:ID>
-          <cbc:Name>English</cbc:Name>
-          <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-        </cac:Language>
         <cac:PostalAddress>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
           <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
           <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
           <cbc:StreetName>Distribution Drive</cbc:StreetName>
-          <cbc:AdditionalStreetName>Gate 3</cbc:AdditionalStreetName>
           <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
           <cbc:BuildingNumber>43</cbc:BuildingNumber>
           <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
@@ -285,75 +167,21 @@
           <cbc:PostalZone>71214</cbc:PostalZone>
           <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
           <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-          <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
           <cac:Country>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
             <cbc:Name>Bayvarra</cbc:Name>
           </cac:Country>
         </cac:PostalAddress>
-        <cac:PartyTaxScheme>
-          <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1230822</cbc:CompanyID>
-          <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-          <cac:TaxScheme>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-            <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-            <cac:JurisdictionRegionAddress>
-              <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:TaxScheme>
-        </cac:PartyTaxScheme>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Lumeway Distribution Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:CompanyID>
-          <cbc:RegistrationDate>1988-10-03</cbc:RegistrationDate>
-          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-          <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">MEDIUM</cbc:EntitySizeCode>
-          <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-          <cbc:CorporateStockAmount currencyID="XBL">2500000</cbc:CorporateStockAmount>
-          <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-          <cac:RegistrationAddress>
-            <cbc:CityName>Marrowdale</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:RegistrationAddress>
-          <cac:CorporateRegistrationScheme>
-            <cbc:ID>XB:FBR</cbc:ID>
-            <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-            <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-            <cac:JurisdictionRegionAddress>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:JurisdictionRegionAddress>
-          </cac:CorporateRegistrationScheme>
-        </cac:PartyLegalEntity>
         <cac:Contact>
-          <cbc:Name>Customer service</cbc:Name>
-          <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-          <cbc:Department>Sales</cbc:Department>
+          <cbc:Name>Goods-in</cbc:Name>
+          <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+          <cbc:Department>Warehouse</cbc:Department>
           <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
-          <cbc:ElectronicMail>customer@lumeway.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
-        <cac:ElectronicAddress>
-          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
-        </cac:ElectronicAddress>
       </cac:ConsigneeParty>
-      <cac:PerformingCarrierParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Ferrano Rail Cargo</cbc:Name>
-        </cac:PartyName>
-      </cac:PerformingCarrierParty>
       <cac:TransportContract>
         <cbc:ID>FRC-CON-2026-005</cbc:ID>
         <cbc:IssueDate>2026-01-05</cbc:IssueDate>
@@ -384,33 +212,66 @@
         <cac:PlannedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:PlannedDepartureTransportEvent>
         <cac:PlannedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+            <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+          </cac:Location>
         </cac:PlannedArrivalTransportEvent>
         <cac:PlannedWaypointTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+          </cac:Location>
         </cac:PlannedWaypointTransportEvent>
         <cac:ActualDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
           <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
           </cac:Location>
         </cac:ActualDepartureTransportEvent>
         <cac:ActualWaypointTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:20:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+          </cac:Location>
         </cac:ActualWaypointTransportEvent>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
         </cac:EstimatedDepartureTransportEvent>
         <cac:EstimatedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+            <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+          </cac:Location>
         </cac:EstimatedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
@@ -503,23 +364,63 @@
           <cac:PositioningTransportEvent>
             <cbc:OccurrenceDate>2026-04-12</cbc:OccurrenceDate>
             <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
           </cac:PositioningTransportEvent>
           <cac:DeliveryTransportEvent>
             <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
             <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
             <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+            <cac:Location>
+              <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+              <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+            </cac:Location>
           </cac:DeliveryTransportEvent>
           <cac:PickupTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
             <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
           </cac:PickupTransportEvent>
           <cac:HandlingTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
             <cbc:OccurrenceTime>18:30:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
           </cac:HandlingTransportEvent>
           <cac:LoadingTransportEvent>
             <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
             <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
           </cac:LoadingTransportEvent>
           <cac:ApplicableTransportMeans>
             <cac:RailTransport>
@@ -548,7 +449,8 @@
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
             <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
-              <cbc:Name>Castrano Logistics warehouse, Ferrano</cbc:Name>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
             </cac:PickupLocation>
           </cac:Pickup>
           <cac:Despatch>
@@ -557,6 +459,7 @@
           </cac:Despatch>
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>
+            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
           </cac:ShipmentDocumentReference>
           <cac:ContainedInTransportEquipment>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:rail-vehicle-register">31 46 4521 042-3</cbc:ID>
@@ -567,10 +470,10 @@
           <cbc:ID>VI-TD-26-0331</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+              <cbc:Name>Valdara Industries</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:CustomsDeclaration>
@@ -599,10 +502,10 @@
           <cbc:ID>VI-TD-26-0331</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Customs Administration of Urvania</cbc:Name>
+              <cbc:Name>Valdara Industries</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:CustomsDeclaration>
@@ -617,9 +520,11 @@
         <cac:EmissionCalculationMethod>
           <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
           <cac:MeasurementFromLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
           </cac:MeasurementFromLocation>
           <cac:MeasurementToLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
             <cbc:Name>Marrowdale</cbc:Name>
           </cac:MeasurementToLocation>
           <cac:EmissionCalculationLocation>
@@ -628,12 +533,38 @@
         </cac:EmissionCalculationMethod>
       </cac:EnvironmentalEmission>
     </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">192</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Castrano Logistics</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
+  <cac:DocumentDistribution>
+    <cbc:ID>2</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALWITHGOODS</cbc:DistributionTypeCode>
     <cbc:DistributionType languageID="qau">Rikzhek, vek drek valnir: drek trelgir rikzhek</cbc:DistributionType>
@@ -644,21 +575,6 @@
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:DocumentDistribution>
-  <cac:DocumentDistribution>
-    <cbc:ID>2</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ELECTRONICCOPY</cbc:DistributionTypeCode>
-    <cbc:DistributionType languageID="qau">Viskir zuzzir</cbc:DistributionType>
-    <cbc:DistributionType languageID="en-XU">Electronic copy</cbc:DistributionType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

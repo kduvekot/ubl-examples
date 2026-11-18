@@ -142,5 +142,90 @@
             <SimpleValue>The goods are delivered.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ACCEPTANCE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Accepted</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zuzstan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Sapeta</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carrier or the terminal accepts the goods for carriage.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LOADING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Loaded</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dinskan</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Satau</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are loaded onto the means of transport.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DISCHARGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Discharged</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Skurtrir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kilulilo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are unloaded from the means of transport.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ENROUTE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>En route</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zersul zhuvir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Hanesi pounu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are on their way between two places.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>STORAGE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Stored</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Ginstek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Lusii</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are put in a store or a yard to wait for the next step.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

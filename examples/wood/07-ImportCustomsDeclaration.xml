@@ -7,28 +7,19 @@
   <cbc:ID>VI-IM-26-0634</cbc:ID>
   <cbc:UUID>5121b08c-34cb-5860-af6c-8ad49382d537</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
-  <cbc:IssueTime>11:05:00</cbc:IssueTime>
+  <cbc:IssueTime>11:05:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Tralbek zhan man drek sisir gakkaz hir garsul.</cbc:Note>
-  <cbc:Note languageID="en-XU">Duties paid by the importer's account at customs.</cbc:Note>
+  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,480,000 tezhul, 696,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,480,000 ferra, 696,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cac:ValidityPeriod>
-    <cbc:StartDate>2026-02-27</cbc:StartDate>
-    <cbc:DurationMeasure unitCode="DAY">30</cbc:DurationMeasure>
-  </cac:ValidityPeriod>
-  <cac:CustomsExitOfficeLocation>
-    <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
-  </cac:CustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
       <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
     </cac:Country>
   </cac:JurisdictionRegionAddress>
   <cac:ImporterParty>
-    <cbc:WebsiteURI>https://www.valdara.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
@@ -55,8 +46,8 @@
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
       <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:Region>Province of Ferrano</cbc:Region>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
@@ -79,74 +70,21 @@
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
-      <cbc:RegistrationDate>1962-04-12</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
-      <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">LARGE</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
-      <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-      <cac:SecurityListing>
-        <cbc:ID schemeID="ISO 6166">XU0001042501</cbc:ID>
-        <cbc:Description>Ordinary shares of Valdara Industries</cbc:Description>
-        <cbc:MarketName>Ferrano Stock Exchange</cbc:MarketName>
-        <cbc:MarketCode listID="urn:ubl-examples:world:codelist:MarketCode">XFER</cbc:MarketCode>
-      </cac:SecurityListing>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Order desk</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
-      <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>customs@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-      <cac:OtherCommunication>
-        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-        <cbc:Value>+999 1 344 474 4274</cbc:Value>
-      </cac:OtherCommunication>
     </cac:Contact>
-    <cac:ServiceProviderParty>
-      <cbc:ID>VI-SP-2026-01</cbc:ID>
-      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
-      <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Castrano Logistics</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SellerContact>
-        <cbc:Name>Key account desk</cbc:Name>
-      </cac:SellerContact>
-    </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImporterParty>
   <cac:ConsignorParty>
-    <cbc:WebsiteURI>https://www.marrowdalesawmill.example</cbc:WebsiteURI>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">1610</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
     </cac:PartyIdentification>
@@ -156,11 +94,6 @@
     <cac:PartyName>
       <cbc:Name>Marrowdale Sawmill</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      <cbc:Name>English</cbc:Name>
-      <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-    </cac:Language>
     <cac:PostalAddress>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-296778</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -171,64 +104,12 @@
       <cbc:PostalZone>71202</cbc:PostalZone>
       <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
       <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         <cbc:Name>Bayvarra</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1236987</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-    <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:CompanyID>
-      <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private)</cbc:CompanyLegalForm>
-      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XB:FBR</cbc:ID>
-        <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
-    </cac:PartyLegalEntity>
-    <cac:Contact>
-      <cbc:Name>Sales office</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
-      <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-    </cac:Contact>
-    <cac:ElectronicAddress>
-      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412329</cbc:ElectronicAddressID>
-    </cac:ElectronicAddress>
   </cac:ConsignorParty>
   <cac:ConsigneeParty>
     <cac:PartyIdentification>
@@ -239,114 +120,58 @@
     </cac:PartyName>
   </cac:ConsigneeParty>
   <cac:CustomsParty>
-    <cbc:IndustryClassificationCode listID="ISIC Rev.4">8411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Customs Administration of Urvania</cbc:Name>
     </cac:PartyName>
-    <cac:Language>
-      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-      <cbc:Name>Urvanian</cbc:Name>
-    </cac:Language>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202968066555</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4180202968066555</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">POSTAL</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
       <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Birran Stir Trurdrek</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Valico di Confine</cbc:StreetName>
+      <cbc:StreetName languageID="qau">Zalsul Han Trurdrek</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Strada del Confine</cbc:StreetName>
       <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4120</cbc:PostalZone>
-      <cbc:Region>Province of Ferrano</cbc:Region>
-      <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+      <cbc:CityName languageID="qau">Menbaz</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Valico Euridice</cbc:CityName>
+      <cbc:PostalZone>4530</cbc:PostalZone>
+      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         <cbc:Name>Urvania</cbc:Name>
       </cac:Country>
     </cac:PostalAddress>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007385602</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Customs Administration of Urvania</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-105507</cbc:CompanyID>
-      <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-      <cac:RegistrationAddress>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        <cbc:ID>XU:CR</cbc:ID>
-        <cbc:Name>Commercial register of Urvania</cbc:Name>
-        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-        <cac:JurisdictionRegionAddress>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Border office</cbc:Name>
-      <cbc:JobTitle>Public service officer</cbc:JobTitle>
-      <cbc:Department>Public services</cbc:Department>
+      <cbc:Name>Import office</cbc:Name>
+      <cbc:JobTitle>Customs officer</cbc:JobTitle>
+      <cbc:Department>Customs</cbc:Department>
       <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
-      <cbc:Telefax>+999 1 041 326 0018</cbc:Telefax>
-      <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:ElectronicMail>import@customs-xu.example</cbc:ElectronicMail>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105507</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
-  <cac:NotifierParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Valdara Industries</cbc:Name>
-    </cac:PartyName>
-  </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>MS-SH-26-0632</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Hardwood bench slat 1800</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XUF">3456000</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">3480000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-        <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
-        <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Hardwood bench slat 1800</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800</cbc:ID>
-          <cac:MeasurementDimension>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-          </cac:MeasurementDimension>
-        </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
@@ -356,91 +181,27 @@
           <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
-        <cac:AdditionalItemProperty>
-          <cbc:ID>MC</cbc:ID>
-          <cbc:Name>Moisture content</cbc:Name>
-          <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">MC</cbc:NameCode>
-          <cbc:TestMethod>Oven-dry method on samples from each kiln charge</cbc:TestMethod>
-          <cbc:ValueQuantity unitCode="P1">12</cbc:ValueQuantity>
-          <cbc:ValueQualifier>Average of the kiln charge</cbc:ValueQualifier>
-          <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-          <cac:ItemPropertyGroup>
-            <cbc:ID>QUA</cbc:ID>
-            <cbc:Name>Wood quality</cbc:Name>
-            <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
-          </cac:ItemPropertyGroup>
-          <cac:ItemPropertyRange>
-            <cbc:MinimumValue>10</cbc:MinimumValue>
-            <cbc:MaximumValue>14</cbc:MaximumValue>
-          </cac:ItemPropertyRange>
-          <cac:StandardPropertyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-WD-0012</cbc:ID>
-            <cbc:IssuerScopeID>WD</cbc:IssuerScopeID>
-            <cac:IssuerParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Codana Identification Agency</cbc:Name>
-              </cac:PartyName>
-            </cac:IssuerParty>
-          </cac:StandardPropertyIdentification>
-          <cac:SubItemProperty>
-            <cbc:Name>Moisture at the core</cbc:Name>
-            <cbc:ValueQuantity unitCode="P1">13</cbc:ValueQuantity>
-          </cac:SubItemProperty>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Thickness tolerance</cbc:Name>
-          <cac:RangeDimension>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">38</cbc:Measure>
-            <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
-            <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
-          </cac:RangeDimension>
-        </cac:AdditionalItemProperty>
-        <cac:AdditionalItemProperty>
-          <cbc:Name>Surface</cbc:Name>
-          <cbc:Value>Planed on four sides</cbc:Value>
-          <cac:UsabilityPeriod>
-            <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
-          </cac:UsabilityPeriod>
-        </cac:AdditionalItemProperty>
-        <cac:Certificate>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-2025-0118</cbc:ID>
-          <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">SUSTFOREST</cbc:CertificateTypeCode>
-          <cbc:CertificateType languageID="qau">Zhazdran zakrek</cbc:CertificateType>
-          <cbc:CertificateType languageID="en-XU">Sustainable forestry</cbc:CertificateType>
-          <cbc:CertificateReferenceID schemeID="urn:ubl-examples:world:XB:forestry-register">XB-FOR-REG-0118</cbc:CertificateReferenceID>
-          <cbc:ApplicableCategoryCode listID="urn:ubl-examples:world:codelist:CategoryCode">HW</cbc:ApplicableCategoryCode>
-          <cbc:ApplicableCategory>Hardwood sawn timber</cbc:ApplicableCategory>
-          <cbc:CertificateURI>https://forestry.xb.example/certificates/XB-FOR-2025-0118</cbc:CertificateURI>
-          <cbc:Remarks>The timber comes from forests in Upland State managed for regrowth.</cbc:Remarks>
-          <cac:CertificateValidityPeriod>
-            <cbc:EndDate>2027-12-31</cbc:EndDate>
-          </cac:CertificateValidityPeriod>
-          <cac:DocumentReference>
-            <cbc:ID>XB-FOR-AUD-2025-0118</cbc:ID>
-          </cac:DocumentReference>
-        </cac:Certificate>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">95</cbc:Measure>
-        </cac:Dimension>
-        <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">38</cbc:Measure>
-        </cac:Dimension>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>20</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+    </cac:ShipmentStage>
   </cac:Shipment>
-  <cac:PreviousCustomsDeclaration>
-    <cbc:ID>MS-CD-26-0631</cbc:ID>
-  </cac:PreviousCustomsDeclaration>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>MS-EX-26-0630</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>MS-INV-26-0635</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-IM-wood</cbc:ID>
     <cac:SignatoryParty>

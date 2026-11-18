@@ -7,11 +7,11 @@
   <cbc:ID>SE-INV-26-0719</cbc:ID>
   <cbc:UUID>40aff29f-0459-5985-901d-8a4a505d1f5d</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
-  <cbc:IssueTime>17:34:00</cbc:IssueTime>
-  <cbc:DueDate>2026-07-19</cbc:DueDate>
+  <cbc:IssueTime>17:34:00-01:00</cbc:IssueTime>
+  <cbc:DueDate>2026-07-04</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
@@ -22,7 +22,6 @@
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
       </cac:PartyIdentification>
@@ -32,7 +31,7 @@
       <cac:Language>
         <cbc:ID schemeID="ISO 639">en</cbc:ID>
         <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-587295</cbc:ID>
@@ -44,7 +43,7 @@
         <cbc:PostalZone>71218</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
@@ -68,7 +67,6 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
         <cac:RegistrationAddress>
           <cbc:CityName>Marrowdale</cbc:CityName>
           <cac:Country>
@@ -87,11 +85,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Bids office</cbc:Name>
-        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-        <cbc:Department>Procurement</cbc:Department>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
-        <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@saltmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -102,28 +100,22 @@
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">6110</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">34928611</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
         <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
-        <cbc:StreetName languageID="en-XB">Mast Hill Road</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-        <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
@@ -132,36 +124,14 @@
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm>Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XB">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Business accounts</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
-        <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>payables@selanutelecom.example</cbc:ElectronicMail>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -189,11 +159,17 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-06-04</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Selanu Telecom mast site</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-07-19</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF78SEINV260719</cbc:InstructionNote>
@@ -244,10 +220,9 @@
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">221.55</cbc:PenaltyAmount>
-    <cbc:PaymentDueDate>2026-07-19</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-07-20</cbc:StartDate>
-      <cbc:DurationMeasure unitCode="MON">1</cbc:DurationMeasure>
+      <cbc:StartDate>2026-07-05</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
@@ -295,29 +270,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SE-BAT-48100</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:HazardousItem>
-        <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-        <cbc:PlacardNotation>9</cbc:PlacardNotation>
-        <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
-        <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
-        <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-        <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-        <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
-        <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
-        <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
-        <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-        <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
-        <cbc:MarkingID>UN3480</cbc:MarkingID>
-        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
-      </cac:HazardousItem>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -348,35 +300,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SE-SMK-10</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:HazardousItem>
-        <cbc:ID>SE-SMK-10-DG</cbc:ID>
-        <cbc:PlacardNotation>7</cbc:PlacardNotation>
-        <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
-        <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-        <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-        <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
-        <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
-        <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-        <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
-        <cbc:MarkingID>UN2911</cbc:MarkingID>
-        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
-        <cac:RadioactiveMaterial>
-          <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
-          <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-          <cac:ApplicableRadioactiveIsotope>
-            <cbc:Name>Americium-241</cbc:Name>
-            <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>
-          </cac:ApplicableRadioactiveIsotope>
-        </cac:RadioactiveMaterial>
-      </cac:HazardousItem>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -407,42 +330,6 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SE-CS-05</cbc:ID>
       </cac:SellersItemIdentification>
-      <cac:OriginCountry>
-        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-      </cac:OriginCountry>
-      <cac:CommodityClassification>
-        <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
-      </cac:CommodityClassification>
-      <cac:HazardousItem>
-        <cbc:ID>SE-CS-05-DG</cbc:ID>
-        <cbc:PlacardNotation>8</cbc:PlacardNotation>
-        <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
-        <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
-        <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
-        <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
-        <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
-        <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
-        <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
-        <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
-        <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
-        <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-        <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
-        <cbc:MarkingID>UN2920</cbc:MarkingID>
-        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
-        <cac:SecondaryHazard>
-          <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
-          <cbc:PlacardNotation>3</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
-          <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
-          <cbc:Extension>Subsidiary risk 3</cbc:Extension>
-        </cac:SecondaryHazard>
-        <cac:FlashpointTemperature>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">28</cbc:Measure>
-        </cac:FlashpointTemperature>
-      </cac:HazardousItem>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>

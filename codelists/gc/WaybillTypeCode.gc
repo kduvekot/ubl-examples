@@ -125,5 +125,39 @@
             <SimpleValue>A non-negotiable transport document for carriage by sea (UN/EDIFACT 1001: 700).</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NATROAD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Domestic road consignment note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tehaz kraz silsan mek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nalesa natii lutatehi tamasu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A consignment note for carriage by road within one country, under the national road carriage law of that country, not the CMR, which covers only carriage between two countries.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NATRAIL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Domestic rail consignment note</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Tehaz kaz silsan mek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nalesa kepisu lutatehi tamasu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A consignment note for carriage by rail within one country, under the national rail carriage law of that country, not the CIM uniform rules, which cover only carriage between two countries.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

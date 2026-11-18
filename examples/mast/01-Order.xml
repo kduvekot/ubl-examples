@@ -7,14 +7,12 @@
   <cbc:ID>ST-PO-26-0713</cbc:ID>
   <cbc:UUID>b63839e1-7b35-5e81-a17d-ef60734d2fe6</cbc:UUID>
   <cbc:IssueDate>2026-06-01</cbc:IssueDate>
-  <cbc:IssueTime>08:15:00</cbc:IssueTime>
+  <cbc:IssueTime>08:15:00+00:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
-      <cbc:WebsiteURI>https://www.selanutelecom.example</cbc:WebsiteURI>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">6110</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
@@ -22,8 +20,9 @@
         <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-        <cbc:Name>Lisavan</cbc:Name>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
       </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">34928611</cbc:ID>
@@ -34,46 +33,19 @@
         <cbc:BuildingNumber>58</cbc:BuildingNumber>
         <cbc:CityName languageID="qal">Selanu</cbc:CityName>
         <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Selanu Telecom Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="qal">Tivufo kilika humaki</cbc:CompanyLegalForm>
-        <cbc:CompanyLegalForm languageID="en-XL">Island limited company</cbc:CompanyLegalForm>
-        <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XL:ICR</cbc:ID>
-          <cbc:Name>Island companies register</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Business accounts</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
-        <cbc:ElectronicMail>business@selanutelecom.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:ElectronicMail>purchasing@selanutelecom.example</cbc:ElectronicMail>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -83,18 +55,12 @@
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cac:Party>
-      <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Saltmere Engineering</cbc:Name>
       </cac:PartyName>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="ISO 639">en</cbc:LocaleCode>
-      </cac:Language>
       <cac:PostalAddress>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-587295</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -105,54 +71,18 @@
         <cbc:PostalZone>71218</cbc:PostalZone>
         <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
         <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-1</cbc:TimezoneOffset>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1232055</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
-        <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Marrowdale</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:CorporateRegistrationScheme>
-          <cbc:ID>XB:FBR</cbc:ID>
-          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
-          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
-          <cac:JurisdictionRegionAddress>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:CorporateRegistrationScheme>
-      </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Bids office</cbc:Name>
-        <cbc:JobTitle>Procurement officer</cbc:JobTitle>
-        <cbc:Department>Procurement</cbc:Department>
+        <cbc:Name>Sales office</cbc:Name>
+        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
         <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
-        <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>sales@saltmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -162,6 +92,10 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:RequestedDeliveryPeriod>
+      <cbc:StartDate>2026-06-04</cbc:StartDate>
+      <cbc:EndDate>2026-06-05</cbc:EndDate>
+    </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
@@ -213,30 +147,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-48100</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-          <cbc:PlacardNotation>9</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup languageID="qal">Lelaha palavo molasu maloli</cbc:UNPackingGroup>
-          <cbc:UNPackingGroup languageID="en-XL">No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
-          <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN3480</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -256,36 +166,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">853110</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46921</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-SMK-10-DG</cbc:ID>
-          <cbc:PlacardNotation>7</cbc:PlacardNotation>
-          <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup languageID="qal">Lelaha palavo molasu maloli</cbc:UNPackingGroup>
-          <cbc:UNPackingGroup languageID="en-XL">No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
-          <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN2911</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
-          <cac:RadioactiveMaterial>
-            <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
-            <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-            <cac:ApplicableRadioactiveIsotope>
-              <cbc:Name>Americium-241</cbc:Name>
-              <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>
-            </cac:ApplicableRadioactiveIsotope>
-          </cac:RadioactiveMaterial>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -305,43 +185,6 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-05</cbc:ID>
         </cac:SellersItemIdentification>
-        <cac:OriginCountry>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:OriginCountry>
-        <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
-        </cac:CommodityClassification>
-        <cac:HazardousItem>
-          <cbc:ID>SE-CS-05-DG</cbc:ID>
-          <cbc:PlacardNotation>8</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
-          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
-          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
-          <cbc:UNPackingGroup languageID="qal">Filupa vuhote</cbc:UNPackingGroup>
-          <cbc:UNPackingGroup languageID="en-XL">Medium danger</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
-          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
-          <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
-          <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
-          <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
-          <cbc:MarkingID>UN2920</cbc:MarkingID>
-          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
-          <cac:SecondaryHazard>
-            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
-            <cbc:PlacardNotation>3</cbc:PlacardNotation>
-            <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
-            <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
-            <cbc:Extension>Subsidiary risk 3</cbc:Extension>
-          </cac:SecondaryHazard>
-          <cac:FlashpointTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">FLASHPOINT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">28</cbc:Measure>
-          </cac:FlashpointTemperature>
-        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

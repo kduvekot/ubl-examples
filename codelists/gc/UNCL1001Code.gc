@@ -34,10 +34,34 @@
    <SimpleCodeList>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Certificate of analysis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>9</SimpleValue>
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Price/sales catalogue</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>101</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Registration document</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>174</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Drawing</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -74,6 +98,22 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>293</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Inspection report</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>315</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Contract</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>325</SimpleValue>
          </Value>
          <Value ColumnRef="name">
@@ -86,6 +126,14 @@
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Partial invoice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>361</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Price quote</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -146,6 +194,14 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>749</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport equipment gross mass verification message</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>774</SimpleValue>
          </Value>
          <Value ColumnRef="name">
@@ -166,6 +222,14 @@
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Certificate of origin</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>917</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Receipt (Customs)</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>
