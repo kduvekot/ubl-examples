@@ -213,7 +213,7 @@ def lay(world, terrain, land, log=print, upto=None):
     for r in world["routes"]:
         if r["id"] in laid:
             continue
-        if r["mode"] in ("road", "rail", "pipeline") and not r["id"].startswith("access-"):
+        if r["mode"] in ("road", "rail", "pipeline") and not r["id"].startswith(("access-", "village-")):
             raise SystemExit(f"route {r['id']} is on the map but not in the network")
     for rid in order:
         path, sts, cls, new = laid[rid]
