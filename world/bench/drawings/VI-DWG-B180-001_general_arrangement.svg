@@ -945,7 +945,7 @@
 <text class="txt" x="232.00" y="169.30" font-size="2.3" text-anchor="start" font-weight="normal">   two per side frame, through the Ø14 holes in the feet.</text>
 <text class="txt" x="232.00" y="173.00" font-size="2.3" text-anchor="start" font-weight="normal">3  Slats: 5, 1800 x 95 x 45, thermally modified ash;</text>
 <text class="txt" x="232.00" y="176.70" font-size="2.3" text-anchor="start" font-weight="normal">   3 on the seat (gaps 22), 2 on the back; 20 carriage</text>
-<text class="txt" x="232.00" y="180.40" font-size="2.3" text-anchor="start" font-weight="normal">   bolts M8 x 65, nuts, washers in stainless A2 (A4 at the coast).</text>
+<text class="txt" x="232.00" y="180.40" font-size="2.3" text-anchor="start" font-weight="normal">   bolts M8 x 65, nuts, washers in stainless A4.</text>
 <text class="txt" x="232.00" y="184.10" font-size="2.3" text-anchor="start" font-weight="normal">4  Overall: 1800 long over the slats, 1660 over the armrests,</text>
 <text class="txt" x="232.00" y="187.80" font-size="2.3" text-anchor="start" font-weight="normal">   620 deep, 780 high. Seat width between the</text>
 <text class="txt" x="232.00" y="191.50" font-size="2.3" text-anchor="start" font-weight="normal">   armrests 1540 = 3 x 513.</text>
@@ -963,7 +963,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-001</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">C</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">D</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">1:10</text>

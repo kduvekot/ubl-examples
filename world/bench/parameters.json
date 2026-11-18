@@ -10,7 +10,8 @@
     "drawing_prefix": "VI-DWG-B180",
     "drawing_date": "2026-11-18",
     "drawn_by": "model (world/bench)",
-    "revision": "B"
+    "revision": "B",
+    "description_frame": "ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated"
   },
   "overall": {
     "slat_length_overall": 1800,
@@ -102,13 +103,13 @@
       "hole_diameter": 14,
       "anchor": "M12 ground anchor with levelling nut (separate item)"
     },
-    "steel_hole_diameter": 10,
     "draft_deg": 1.5,
-    "draft_mass_allowance_pct": 2.0
+    "draft_mass_allowance_pct": 2.0,
+    "frame_hole_diameter": 10
   },
   "bolts": {
     "count": 20,
-    "type": "Cup square neck (carriage) bolt ISO 8677 M8 (60 mm with 38 mm slats, 65 mm with 45 mm slats), hex nut ISO 4032 M8, washer ISO 7089 8; stainless steel A2-70 / A2 (1.4301); A4 (1.4401) for coastal sites",
+    "type": "Cup square neck (carriage) bolt ISO 8677 M8 x 65, hex nut ISO 4032 M8 (A4-70), washer ISO 7089 8 (A4); stainless steel A4 (EN 1.4401) for every bench",
     "d": 8,
     "length": 60,
     "head_diameter": 20,
@@ -122,8 +123,8 @@
     "washer_id": 8.4,
     "washer_t": 1.6,
     "bag_mass": 0.02,
-    "material": "stainless steel A2 (EN 1.4301)",
-    "density": 7930,
+    "material": "stainless steel A4 (EN 1.4401)",
+    "density": 8000,
     "neck_seat": "square seat for the neck pre-formed in the slat (8.2 mm square, 5 mm deep) in thermally modified ash; holes pre-drilled Ø9 in both woods",
     "torque_Nm": {
       "tm_ash": 10,
@@ -140,23 +141,9 @@
     "min_protrusion_mm": 2.5
   },
   "materials": {
-    "steel_density": 7850,
     "zinc_density": 7140,
     "wood_density": 690,
     "pine_density_pallet": 500,
-    "cast_steel": {
-      "name": "cast steel",
-      "grade": "GE240+N (EN 10293, 1.0446)",
-      "density": 7850,
-      "Rp02": 240,
-      "Rm_min": 450,
-      "elongation_pct": 22,
-      "E": 210000,
-      "gamma_M": 1.0,
-      "min_wall_mm": 6,
-      "design_wall_mm": 8,
-      "galvanise": true
-    },
     "galvanising": {
       "standard": "EN ISO 1461, castings >= 6 mm",
       "mean_min_um": 80,
@@ -205,7 +192,7 @@
     },
     "frame_material": "ductile_iron",
     "frame_materials": {
-      "_note": "frame_material selects one; the frame geometry stays. Values: EN 10293 (cast steel), EN 1563 (ductile iron), EN 1706 (aluminium, sand cast T6). min_wall, yield and usage are judgements, see report section 9.",
+      "_note": "frame_material selects one: ductile_iron is the owner's choice (run 4). The other two entries are alternatives kept for the comparison in report section 9. Values: EN 1563 (ductile iron), EN 10293 (cast steel), EN 1706 (aluminium, sand cast T6).",
       "cast_steel": {
         "name": "cast steel",
         "grade": "GE240+N (EN 10293, 1.0446)",
@@ -295,8 +282,8 @@
     "en581_front_edge": 1300,
     "seat_pad_length": 300,
     "gamma_Q": 1.5,
-    "gamma_M0_steel": 1.0,
-    "back_force_height_above_seat": 300
+    "back_force_height_above_seat": 300,
+    "gamma_M0_frame": 1.0
   },
   "casting": {
     "frames_per_mould": 2,
@@ -482,7 +469,8 @@
       "slat_thickness": 45,
       "back_rail_u_top": 350,
       "bolt_length": 65,
-      "frame_revision": "C"
+      "frame_revision": "D",
+      "supply": "sawn, kiln-dried, thermally modified at about 212 °C and planed by Marrowdale Sawmill in its own thermal modification kiln; sold as finished modified slats"
     }
   },
   "sawmill_truck": {

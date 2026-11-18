@@ -219,7 +219,7 @@
 <text class="txt" x="30.00" y="198.30" font-size="2.4" text-anchor="start" font-weight="normal">770 x 660 x 90 for a frame of 730 x 620 x 70 (clearance 20/20/10 mm). Carton mass 1.11 kg.</text>
 <text class="txt" x="30.00" y="202.10" font-size="2.4" text-anchor="start" font-weight="normal">Bundle: five slats 3 + 2, corrugated edge protectors 5 mm, end caps, 4 PET straps, film; packing 0.59 kg.</text>
 <text class="txt" x="30.00" y="205.90" font-size="2.4" text-anchor="start" font-weight="normal">Marks on every parcel: "Serra 180  VI-B180  parcel n of 3", the lot number and the GTIN; on the bundle "two-person lift".</text>
-<text class="txt" x="30.00" y="209.70" font-size="2.4" text-anchor="start" font-weight="normal">Handling (ISO 11228-1): one person up to 25 kg, two people up to about 33 kg; parcels 12.2 / 13.0 / 21.8 kg; bench gross 46.9 kg.</text>
+<text class="txt" x="30.00" y="209.70" font-size="2.4" text-anchor="start" font-weight="normal">Handling (ISO 11228-1): one person up to 25 kg, two people up to about 33 kg; parcels 12.2 / 13.0 / 21.8 kg; bench gross 47.0 kg.</text>
 <text class="txt" x="30.00" y="213.50" font-size="2.4" text-anchor="start" font-weight="normal">Slats of thermally modified ash, 45 mm, 4.24 kg each.</text>
 <rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
 <polyline class="tbl" points="230.00,258.00 410.00,258.00"/>
@@ -232,7 +232,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-006</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">C</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">D</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">1:10</text>
@@ -251,6 +251,6 @@
 <text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
 <polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
 <text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
-<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">corrugated board, PET straps, PE film   mass 46.9 kg gross per bench</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">corrugated board, PET straps, PE film   mass 47.0 kg gross per bench</text>
 <text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
 <text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>

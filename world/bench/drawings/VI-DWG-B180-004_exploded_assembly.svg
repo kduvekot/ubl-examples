@@ -1044,7 +1044,7 @@
 <text class="txt" x="232.00" y="216.70" font-size="2.2" text-anchor="start" font-weight="normal">   1600 mm between frame centres with a slat (2).</text>
 <text class="txt" x="232.00" y="220.30" font-size="2.2" text-anchor="start" font-weight="normal">2  Level on the anchor nuts to the seat height; tighten the anchors.</text>
 <text class="txt" x="232.00" y="223.90" font-size="2.2" text-anchor="start" font-weight="normal">3  Lay the three seat slats and two back slats; push the carriage</text>
-<text class="txt" x="232.00" y="227.50" font-size="2.2" text-anchor="start" font-weight="normal">   bolts (3, stainless A2) through slat and flange; washer (4) and</text>
+<text class="txt" x="232.00" y="227.50" font-size="2.2" text-anchor="start" font-weight="normal">   bolts (3, stainless A4) through slat and flange; washer (4) and</text>
 <text class="txt" x="232.00" y="231.10" font-size="2.2" text-anchor="start" font-weight="normal">   nut (5) under the flange; tighten to 10 N m. Grout under the feet.</text>
 <text class="txt" x="232.00" y="234.70" font-size="2.2" text-anchor="start" font-weight="normal">4  Yearly: retighten the slat bolts; touch up the coating.</text>
 <rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
@@ -1058,7 +1058,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-004</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">C</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">D</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">not to scale</text>

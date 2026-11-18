@@ -277,7 +277,7 @@
 <text class="txt" x="232.00" y="51.90" font-size="2.3" text-anchor="start" font-weight="normal">Load: four slat bundles (2 x 2) at the bottom, a slip sheet,</text>
 <text class="txt" x="232.00" y="55.60" font-size="2.3" text-anchor="start" font-weight="normal">eight frame cartons in two columns of four, a top cap; stretch</text>
 <text class="txt" x="232.00" y="59.30" font-size="2.3" text-anchor="start" font-weight="normal">film; four corner boards. Moved by fork-lift, four-way entry.</text>
-<text class="txt" x="232.00" y="63.00" font-size="2.3" text-anchor="start" font-weight="normal">Goods 187.8 kg, pallet gross 215.9 kg.</text>
+<text class="txt" x="232.00" y="63.00" font-size="2.3" text-anchor="start" font-weight="normal">Goods 187.8 kg, pallet gross 216.0 kg.</text>
 <text class="txt" x="232.00" y="66.70" font-size="2.3" text-anchor="start" font-weight="normal">Stacking: up to 3 high (top load on the cartons only through</text>
 <text class="txt" x="232.00" y="70.40" font-size="2.3" text-anchor="start" font-weight="normal">the top cap and corner boards).</text>
 <rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
@@ -291,7 +291,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-007</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">C</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">D</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">1:20, 1:100</text>

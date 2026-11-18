@@ -129,7 +129,7 @@ window.renderScene = async function (cfg) {
   ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
   const root = await load(cfg.glb);
   const frameMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(cfg.frame || '#555D61'), metalness: 0.0, roughness: 0.5, envMapIntensity: 0.7 });
-  const zinc = new THREE.MeshStandardMaterial({ color: 0xc9ccd0, metalness: 0.9, roughness: 0.3 }); // stainless A2
+  const zinc = new THREE.MeshStandardMaterial({ color: 0xc9ccd0, metalness: 0.9, roughness: 0.3 }); // stainless A4
   const kraft = new THREE.MeshStandardMaterial({ color: 0xb98e5c, roughness: 0.9, metalness: 0 });
   const strap = new THREE.MeshStandardMaterial({ color: 0x24508c, roughness: 0.5 });
   const palletMat = new THREE.MeshStandardMaterial({ color: 0xd2b98d, roughness: 0.85 });

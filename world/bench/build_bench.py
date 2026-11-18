@@ -189,7 +189,7 @@ def frame_solid(pr, x_c):
     # bolt holes in the seat-rail and back-rail flanges
     for xb in bolt_x_offsets(x_c):
         for pnt, axis in bolt_points(pr):
-            solid = solid - hole_cyl(xb, pnt, axis, f["steel_hole_diameter"] / 2, pr.T - 1, pr.T + f["t_flange"] + 1)
+            solid = solid - hole_cyl(xb, pnt, axis, f["frame_hole_diameter"] / 2, pr.T - 1, pr.T + f["t_flange"] + 1)
     return solid, keys
 
 
@@ -683,7 +683,7 @@ def analyse(B):
     V_sl = sl.volume
     m_slat = V_sl / 1e9 * rho_w
     bt, ws, nt = B["bolt"], B["washer"], B["nut"]
-    rho_ss = P["bolts"]["density"]                  # stainless steel A2, no coating
+    rho_ss = P["bolts"]["density"]                  # stainless steel A4, no coating
     m_bolt = bt.volume / 1e9 * rho_ss * P["bolts"]["thread_mass_factor"]
     m_washer = ws.volume / 1e9 * rho_ss
     m_nut = nt.volume / 1e9 * rho_ss
@@ -727,7 +727,7 @@ def analyse(B):
                      frame_cg=[cg.X, cg.Y, cg.Z], slat_volume_l=V_sl / 1e6, slat=m_slat,
                      slat_box_volume_l=P["slats"]["length"] * P["slats"]["width"] * P["slats"]["thickness"] / 1e6,
                      bolt=m_bolt, washer=m_washer, nut=m_nut, fixing=m_fix, boltset=m_boltset, net=net,
-                     steel_in_product=2 * (m_fr_bare + m_draft),
+                     metal_in_product=2 * (m_fr_bare + m_draft),
                      stainless_fixings=P["bolts"]["count"] * m_fix, zinc_bench=2 * zinc_typ, zinc_bench_min=2 * zinc_min,
                      powder_bench=2 * powder, wood_bench=P["slats"]["count"] * m_slat, wood_key=mat["wood_key"],
                      bench_cg=cg_b.tolist())
@@ -857,7 +857,7 @@ def analyse(B):
     R["frame"] = dict(fractions=dict(end=frac_end, mid=frac_mid, far=frac_far), cases={})
     for k, r in lc_f.items():
         R["frame"]["cases"][k] = dict(sigma_max=r["sigma_max"], member=r["member"], disp_max=r["disp_max"],
-                                      util_test=r["sigma_max"] / Rp, util_uls=lo["gamma_Q"] * r["sigma_max"] / (Rp / lo["gamma_M0_steel"]),
+                                      util_test=r["sigma_max"] / Rp, util_uls=lo["gamma_Q"] * r["sigma_max"] / (Rp / lo["gamma_M0_frame"]),
                                       R_front=r["R_front"], R_rear=r["R_rear"], H_front=r["H_front"], H_rear=r["H_rear"])
     # out-of-plane hand check: 400 N sideways at the armrest front end, post as a cantilever from the seat rail
     h_post = float(p_pa[1] - p_ps[1])
@@ -1299,7 +1299,7 @@ def make_drawings(B, R, C, K):
         "   two per side frame, through the Ø14 holes in the feet.",
         f"3  Slats: 5, {fmt(P['slats']['length'])} x {fmt(P['slats']['width'])} x {fmt(P['slats']['thickness'])}, thermally modified ash;",
         f"   3 on the seat (gaps {fmt(P['slats']['seat_gap'])}), 2 on the back; 20 carriage",
-        f"   bolts M8 x {fmt(P['bolts']['length'])}, nuts, washers in stainless A2 (A4 at the coast).",
+        f"   bolts M8 x {fmt(P['bolts']['length'])}, nuts, washers in stainless A4.",
         f"4  Overall: {fmt(L)} long over the slats, {fmt(D['over_armrests'])} over the armrests,",
         f"   {fmt(D['depth'])} deep, {fmt(D['height'])} high. Seat width between the",
         f"   armrests {fmt(D['between_armrests'])} = 3 x {fmt(D['seat_width_per_person'])}.",
@@ -1377,7 +1377,7 @@ def make_drawings(B, R, C, K):
         q = pnt + pr.T * axis
         rows.append((f"H{i + 1}", "seat" if i < 3 else "back", q[0], q[1] - gap, math.degrees(math.atan2(-axis[0], -axis[1])) if i < 3 else math.degrees(math.atan2(axis[1], axis[0]))))
     tx, ty = 300, 140
-    s.text(tx, ty, "Bolt holes Ø" + fmt(f["steel_hole_diameter"]) + " through flange, 2 per point at x = web ±20", 2.4, weight="bold")
+    s.text(tx, ty, "Bolt holes Ø" + fmt(f["frame_hole_diameter"]) + " through flange, 2 per point at x = web ±20", 2.4, weight="bold")
     s.text(tx, ty + 5, "hole   rail    y        z (from A)   axis", 2.2)
     for i, r in enumerate(rows):
         s.text(tx, ty + 9.5 + i * 3.6, f"{r[0]:<5}  {r[1]:<5}  {r[2]:6.1f}   {r[3]:6.1f}       normal to rail", 2.2)
@@ -1480,7 +1480,7 @@ def make_drawings(B, R, C, K):
         f"   {fmt(R['dims']['slat_span'])} mm between frame centres with a slat (2).",
         "2  Level on the anchor nuts to the seat height; tighten the anchors.",
         "3  Lay the three seat slats and two back slats; push the carriage",
-        "   bolts (3, stainless A2) through slat and flange; washer (4) and",
+        "   bolts (3, stainless A4) through slat and flange; washer (4) and",
         f"   nut (5) under the flange; tighten to {P['bolts']['torque_Nm']['tm_ash']} N m. Grout under the feet.",
         "4  Yearly: retighten the slat bolts; touch up the coating.",
     ], size=2.2)
@@ -1508,7 +1508,7 @@ def make_drawings(B, R, C, K):
     s.text(x0 + tw_ - 2, yy, f"Bench net mass {mass['net']:.2f} kg", 3.2, anchor="end", weight="bold")
     s.notes(20, yy + 14, [
         "Not part of the bench: ground anchor set (4 x M12 with levelling nuts and washers), a separate item, supplied with it.",
-        f"Masses computed from the solid model: {FM()['name']} {FM()['density']} kg/m³, stainless A2 {P['bolts']['density']} kg/m³; thermally modified ash {P['woods']['tm_ash']['density']} kg/m³ (about 5 %); zinc per EN ISO 1461 for castings",
+        f"Masses computed from the solid model: {FM()['name']} {FM()['density']} kg/m³, stainless A4 {P['bolts']['density']} kg/m³; thermally modified ash {P['woods']['tm_ash']['density']} kg/m³ (about 5 %); zinc per EN ISO 1461 for castings",
         f"(≥ 575 g/m² mean, taken x {P['materials']['galvanising']['typical_factor']} as typical); powder {P['materials']['powder_coat']['thickness_um']} µm at {P['materials']['powder_coat']['density']} kg/m³; draft allowance {f['draft_mass_allowance_pct']} % of the casting.",
     ], size=2.4)
     s.title_block(mass=f"{mass['net']:.1f} kg net")
@@ -1655,9 +1655,9 @@ def bom_rows(R):
     rows = [
         ("1", "VI-C180", f"Side frame, {FM()['name']}, " + ("hot-dip galvanised, " if FM()["galvanise"] else "") + "powder coated", "2", FM()["grade"], f"{m['frame']:.2f}", f"{2 * m['frame']:.2f}"),
         ("2", "VI-B180-03", f"Slat {P['slats']['length']} x {P['slats']['width']} x {P['slats']['thickness']}, planed, 4 holes ", "5", "thermally modified ash, about 5 %", f"{m['slat']:.2f}", f"{5 * m['slat']:.2f}"),
-        ("3", "VI-B180-04", f"Cup square neck bolt M8 x {P['bolts']['length']}, ISO 8677", str(b["count"]), "stainless A2-70 (A4-70 coastal)", f"{m['bolt']:.3f}", f"{b['count'] * m['bolt']:.2f}"),
-        ("4", "VI-B180-05", "Washer 8, ISO 7089", str(b["count"]), "stainless A2 (A4 coastal)", f"{m['washer']:.4f}", f"{b['count'] * m['washer']:.3f}"),
-        ("5", "VI-B180-06", "Hex nut M8, ISO 4032", str(b["count"]), "stainless A2-70 (A4-70 coastal)", f"{m['nut']:.4f}", f"{b['count'] * m['nut']:.3f}"),
+        ("3", "VI-B180-04", f"Cup square neck bolt M8 x {P['bolts']['length']}, ISO 8677", str(b["count"]), "stainless A4-70", f"{m['bolt']:.3f}", f"{b['count'] * m['bolt']:.2f}"),
+        ("4", "VI-B180-05", "Washer 8, ISO 7089", str(b["count"]), "stainless A4", f"{m['washer']:.4f}", f"{b['count'] * m['washer']:.3f}"),
+        ("5", "VI-B180-06", "Hex nut M8, ISO 4032", str(b["count"]), "stainless A4-70", f"{m['nut']:.4f}", f"{b['count'] * m['nut']:.3f}"),
         ("6", "VI-B180-07", "Bag for the bolt set", "1", "PE", f"{b['bag_mass']:.2f}", f"{b['bag_mass']:.2f}"),
     ]
     return rows
