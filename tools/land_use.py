@@ -134,7 +134,7 @@ FARMING = {
     "pastoral": (16.0, _pastoral), "forestry": (3.0, _forestry), "cotton": (6.0, _cotton), "gardens": (3.5, _gardens),
     "fishing": (4.0, _fishing), "market": (8.0, _market),
 }
-BAND_REACH = {"small": .8, "middle": 1.0, "large": 1.2}     # a village's reach by its population band
+BAND_REACH = {"hamlet": .7, "village": .9, "large": 1.1, "town": 1.3}   # a village's reach by its population band
 MAX_FARM_M = 1000                                          # nothing is farmed above this height
 
 
@@ -204,7 +204,7 @@ def settlements(world):
         far = t.get("farming")
         if not far:
             continue
-        reach = t.get("farm_km") or FARMING[far][0] * BAND_REACH.get(t.get("band", "middle"), 1.0)
+        reach = t.get("farm_km") or FARMING[far][0] * BAND_REACH.get(t.get("band", "village"), 1.0)
         out.append((t["c"][0] + .5, t["c"][1] + .5, far, reach))
     return out
 

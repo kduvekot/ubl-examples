@@ -37,11 +37,16 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 CTY = {"U": "XU", "B": "XB", "L": "XL"}
-SPACING = {"valley": 2.8, "west": 3.2, "hills": 3.6, "wheat": 5.5, "pastoral": 8.5, "forest": 7.0, "lee": 3.4,
-           "windward": 4.2}                                  # squares of 3.5 km between villages, by region
+# how strongly each region draws settlement (the chance a well-watered square of good soil is settled), and the
+# least distance between two places (squares of 3.5 km)
+REGION_PULL = {"valley": 1.6, "west": 1.0, "hills": .45, "wheat": .09, "pastoral": .03, "forest": .05, "lee": .9,
+               "windward": .5}
+MIN_GAP = {"valley": 1.4, "west": 1.4, "hills": 1.9, "wheat": 2.8, "pastoral": 4.3, "forest": 3.0, "lee": 1.4,
+           "windward": 2.0}
 FARMING = {"valley": "valley", "west": "mixed", "hills": "dryland", "wheat": "wheat-sheep", "pastoral": "pastoral",
            "forest": "forestry", "lee": "cotton", "windward": "gardens"}
-BANDS = {"small": ([150, 500], .6), "middle": ([500, 1500], .8), "large": ([1500, 4000], 1.1)}
+BANDS = {"hamlet": ([40, 200], .45), "village": ([200, 1000], .7), "large": ([1000, 2500], 1.0),
+         "town": ([2500, 7000], 1.6)}                       # population band: people, width of the built-up area (km)
 
 # The named villages: square -> name (English; the Italian name in Urvania), the word(s) of its name in Urvanian
 # or Lisavan (made by tools/lexicon.py; the name is the word, capitalised), founded, why, lives on, band, farming.
@@ -53,50 +58,50 @@ NAMED = {
                 "At the head of the rapids above Ruldraz (Ferrano), where a large tributary joins the river: boats "
                 "coming down from the upper valley were unloaded here and their loads carried round the rapids.",
                 "Once the portage and its carters; now fields and market gardens on the valley floor, vines on the "
-                "slope that faces the sun, and Ferrano's market.", "large", "valley"),
+                "slope that faces the sun, and Ferrano's market.", "town", "valley"),
     (62, 109): ("San Ranieri del Guado", "ford", "Tuscan, about 1611 (the friars' chapel); the Urvanian hamlet older",
                 "At an old ford of the upper river, a day's walk above the rapids: friars of the Tuscan voyage of "
                 "1609-10 built a chapel to Pisa's saint beside the Urvanian hamlet at the ford; the chapel outlasted "
                 "the trading post.", "Fields on the valley floor, vineyards and orchards, a little pilgrimage to the "
-                "chapel.", "middle", "valley"),
+                "chapel.", "large", "valley"),
     (59, 106): ("Gradinella", "terrace", "Urvanian, before 1600",
                 "On a terrace of the upper valley above the river's floodplain, at the foot of the slope, where "
-                "springs rise.", "Vineyards and orchards on terraced slopes, fields below.", "middle", "valley"),
+                "springs rise.", "Vineyards and orchards on terraced slopes, fields below.", "large", "valley"),
     (74, 105): ("Pietramiglia", "milestone", "Urvanian, before 1600; named under Italian rule",
                 "On the valley road from Ruldraz up to the hills of Serravona, beside the railway, at a "
                 "stone the Sardinian road builders set at the tenth mile.",
-                "Fields and orchards, a carters' inn, and the commuters to Ferrano.", "large", "valley"),
+                "Fields and orchards, a carters' inn, and the commuters to Ferrano.", "town", "valley"),
     (80, 111): ("Pomarella", "orchard", "Urvanian, before 1600",
                 "On the gentle slope above Ferrano's northern edge, on the road and the railway north, on "
                 "well-drained ground facing the sun.", "Orchards and market gardens for Ferrano's markets.",
-                "large", "valley"),
+                "town", "valley"),
     (78, 125): ("Grancelle", "granary", "Urvanian, before 1600",
                 "At the end of Ferrano's farm road south across the river bridge, where the grain of the southern "
                 "hills was stored before it went down to the town.", "Wheat and barley, the granaries, and Ferrano's "
-                "commuters.", "large", "dryland"),
+                "commuters.", "town", "dryland"),
     (83, 113): ("Conciaro", "tannery", "Urvanian, before 1600",
                 "On a stream east of Ferrano, on the main road to the border: the hides of the cattle markets were "
                 "tanned here, downwind of the town.", "Farming, a leather works that grew from the tanneries.",
-                "middle", "dryland"),
+                "large", "dryland"),
     (87, 110): ("Fieravecchia", "market", "Urvanian, before 1600",
                 "Where two large rivers of the plateau meet north-east of Ferrano, on the drovers' way down from "
                 "the hills: the old cattle fair of the region.", "The yearly fair, cattle and sheep, wheat on the "
-                "terraces.", "large", "dryland"),
+                "terraces.", "town", "dryland"),
     (85, 102): ("Salicora", "willow", "Urvanian, before 1600",
                 "On the floodplain where two streams meet, among willows (cut for baskets and hurdles).",
-                "Wheat, willow-growing and baskets, sheep on the hills.", "middle", "dryland"),
+                "Wheat, willow-growing and baskets, sheep on the hills.", "large", "dryland"),
     (88, 100): ("Fontebrina", "spring", "Urvanian, before 1600",
                 "At the foot of the hills where springs rise along a line of harder rock, beside a confluence.",
-                "Wheat and sheep, the springs bottled since the Italian period.", "middle", "dryland"),
+                "Wheat and sheep, the springs bottled since the Italian period.", "large", "dryland"),
     (94, 121): ("Forte Carlo Alberto", "stronghold", "Sardinian, about 1842 (the fort); the village after it",
                 "On the north bank in the angle between the main river and the largest plateau river, just above "
                 "their confluence, where the land border meets the river: the Sardinian protectorate built a fort "
                 "here to watch the river and the British settlers beyond the plateau river; the boundary convention "
                 "of about 1857 made that river and the watershed the border.",
-                "The border crossing's traffic, the railway, fields on the valley floor.", "large", "valley"),
+                "The border crossing's traffic, the railway, fields on the valley floor.", "town", "valley"),
     (114, 124): ("Vignalunga", "vineyard", "Urvanian, before 1600",
                  "On the south bank of the lower valley, below a long slope that faces north, to the sun.",
-                 "Vineyards along the slope, fields on the floodplain.", "middle", "valley"),
+                 "Vineyards along the slope, fields on the floodplain.", "large", "valley"),
     (140, 136): ("Passobarca", "ferry", "Sardinian, about 1845",
                  "On the south shore of the estuary opposite Lumeport, where the ferry lands.",
                  "The ferry to Lumeport, fishing, market gardens for the capital across the water.", "large",
@@ -105,22 +110,22 @@ NAMED = {
     (54, 89): ("Fucinalta", "smithy", "Urvanian, before 1600",
                "Just below Serravona on the road up from the valley, where iron ore came out of the "
                "hillsides and charcoal from the woods: the Urvanians' smithies (the iron that named Ferrano).",
-               "Mixed farming, chestnut woods, a forge that still makes tools.", "middle", "mixed"),
+               "Mixed farming, chestnut woods, a forge that still makes tools.", "large", "mixed"),
     (29, 68): ("Faggiorna", "beech", "Urvanian, before 1600",
                "High on the wet western hills, on a shelf below the beech woods where two streams meet.",
-               "Dairy cattle and hay meadows, beech wood and charcoal.", "small", "mixed"),
+               "Dairy cattle and hay meadows, beech wood and charcoal.", "village", "mixed"),
     (29, 106): ("Duefiumi", "confluence", "Urvanian, before 1600",
                 "Where two rivers of the western hills meet, a few kilometres from the coast.",
-                "Mixed farming: small fields, meadows and dairy cattle, chestnut woods.", "large", "mixed"),
+                "Mixed farming: small fields, meadows and dairy cattle, chestnut woods.", "town", "mixed"),
     (28, 118): ("Ontanella", "alder", "Urvanian, before 1600",
                 "On a confluence in the western hills, among alder woods along the streams.",
-                "Mixed farming, alder and chestnut wood.", "middle", "mixed"),
+                "Mixed farming, alder and chestnut wood.", "large", "mixed"),
     (60, 125): ("Castagnoro", "chestnut", "Urvanian, before 1600",
                 "At a confluence in the hills south-west of Ferrano, among chestnut woods.",
-                "Chestnuts, small fields and meadows, pigs.", "middle", "mixed"),
+                "Chestnuts, small fields and meadows, pigs.", "large", "mixed"),
     (65, 52): ("Mandria Nova", "cattle", "Italian, 1880s",
                "On the plain of a large river near the north coast, where an Italian land company settled farmers "
-               "from the valley on a cattle estate.", "Cattle and hay meadows, wheat.", "middle", "dryland"),
+               "from the valley on a cattle estate.", "Cattle and hay meadows, wheat.", "large", "dryland"),
     (61, 46): ("Porto Riparo", "haven", "Urvanian, before 1600",
                "At the head of a long inlet on the north-west coast, the most sheltered anchorage of Urvania's "
                "coast, where a river comes in.", "Fishing, the small harbour, mixed farming behind it.", "large",
@@ -128,86 +133,86 @@ NAMED = {
     # ---- Urvania: the south coast
     (92, 146): ("Lanternino", "jetty", "Urvanian, before 1600; the harbour light Italian, 1890s",
                 "In a sheltered bay of the south coast, where the Italian administration put a harbour light and a "
-                "jetty.", "Fishing, small fields and meadows.", "middle", "fishing"),
+                "jetty.", "Fishing, small fields and meadows.", "large", "fishing"),
     (118, 153): ("Saline Brune", "saltpan", "Urvanian, before 1600",
                  "On a flat stretch of the south coast where a stream comes down to a lagoon: salt pans.",
-                 "Salt, fishing, wheat and vines behind the shore.", "middle", "fishing"),
+                 "Salt, fishing, wheat and vines behind the shore.", "large", "fishing"),
     (124, 153): ("Piccionara", "dovecote", "Urvanian, before 1600",
                  "At a stream mouth on the south coast, its farms known for their dovecotes.",
-                 "Wheat, vines and olives, pigeons, fishing.", "small", "dryland"),
+                 "Wheat, vines and olives, pigeons, fishing.", "village", "dryland"),
     (132, 151): ("Marina Ligure", "cove", "Sardinian, 1840s",
                  "In a cove of the south coast where a stream comes down: Ligurian fishermen from the Sardinian "
                  "kingdom's colony on the Plata settled here under the protectorate.",
-                 "Fishing, boatbuilding, gardens behind the shore.", "middle", "fishing"),
+                 "Fishing, boatbuilding, gardens behind the shore.", "large", "fishing"),
     # ---- Bayvarra
     (108, 120): ("Tallowford", None, "British settlers, 1840s",
                  "At the ford of the main river where the largest plateau river joins it, the drovers' crossing "
                  "between the plateau and the south; the railway and the border crossing came later.",
-                 "Stock sales, the railway, wheat and sheep.", "large", "wheat-sheep"),
+                 "Stock sales, the railway, wheat and sheep.", "town", "wheat-sheep"),
     (130, 117): ("Brackenmere", None, "British settlers, 1840s",
                  "Between Marrowdale and Lumeport on the road and the railway, by a spring-fed pond (the mere) in "
                  "bracken-covered ground: a stage on the road down to the capital.",
-                 "Sheep and wheat, the road; its joiners went to Marrowdale's furniture trade.", "middle",
+                 "Sheep and wheat, the road; its joiners went to Marrowdale's furniture trade.", "large",
                  "wheat-sheep"),
     (145, 107): ("Stockmans Rest", None, "British settlers, 1830s",
                  "On the coast road from Larkmouth to Lumeport, where it crosses a stream at a confluence: an inn "
-                 "where drovers rested their stock.", "The road, sheep and cattle runs.", "middle", "pastoral"),
+                 "where drovers rested their stock.", "The road, sheep and cattle runs.", "large", "pastoral"),
     (152, 89): ("Fleecewell", None, "British settlers, 1830s; the station 19th century",
                 "Just south of Larkmouth on the coast road and the wool line, at a well where the flocks were "
                 "watered and washed before shearing.", "Shearing sheds and wool, the station, sheep runs.",
-                "middle", "pastoral"),
+                "large", "pastoral"),
     (148, 98): ("Hartsedge", None, "British, 19th century (the station)",
                 "At a station on the wool line between Marrowdale and Larkmouth, on the edge of a rise.",
-                "The station's stock yards, sheep and cattle runs.", "small", "pastoral"),
+                "The station's stock yards, sheep and cattle runs.", "village", "pastoral"),
     (137, 72): ("Ewesbridge", None, "British settlers, 1830s",
                 "On the road north from Larkmouth over the dry east, at a bridge over a creek.",
-                "A sheep station's village: wool, the road.", "small", "pastoral"),
+                "A sheep station's village: wool, the road.", "village", "pastoral"),
     (115, 85): ("Wethercote", None, "British settlers, 1840s",
                 "Where two rivers of the plateau meet, the homestead of one of the first sheep runs.",
-                "Sheep (wethers, for wool), hay.", "middle", "pastoral"),
+                "Sheep (wethers, for wool), hay.", "large", "pastoral"),
     (96, 105): ("Harrowmead", None, "British settlers, 1850s",
                 "On the plateau near the border, on a confluence in the wetter western part of Bayvarra.",
-                "Wheat and sheep.", "middle", "wheat-sheep"),
+                "Wheat and sheep.", "large", "wheat-sheep"),
     (139, 116): ("Wadebank", None, "British settlers, 1840s",
                  "On the north shore of Lumeport's bay, on the road north, where the shore shelves gently.",
-                 "Oysters and fishing, market gardens for Lumeport.", "middle", "fishing"),
+                 "Oysters and fishing, market gardens for Lumeport.", "large", "fishing"),
     (161, 102): ("Ternhaven", None, "British settlers, 1830s",
                  "At a creek mouth on the east coast, behind a spit where terns nest.",
-                 "Fishing, sheep on the runs behind.", "small", "fishing"),
+                 "Fishing, sheep on the runs behind.", "village", "fishing"),
     (103, 51): ("Saltmere", None, "British settlers, 1830s",
                 "On a sheltered creek of the north coast among salt meadows, where a river comes in, on the road "
-                "along the coast.", "Fishing, salt-meadow lamb, a small harbour.", "middle", "fishing"),
+                "along the coast.", "Fishing, salt-meadow lamb, a small harbour.", "large", "fishing"),
     (92, 47): ("Shinglebeck", None, "British settlers, 1830s",
                "Where a stream comes down to a shingle shore of the north coast, on the coast road.",
-               "Sheep and fishing.", "small", "pastoral"),
+               "Sheep and fishing.", "village", "pastoral"),
     (124, 53): ("Ploverness", None, "British settlers, 1840s",
-                "On a low point of the north coast at a stream mouth.", "Fishing and sheep.", "small", "fishing"),
+                "On a low point of the north coast at a stream mouth.", "Fishing and sheep.", "village", "fishing"),
     (85, 44): ("Barleycombe", None, "British settlers, 1840s",
                "In a valley near the north coast, on the road, where the rain is enough for barley.",
-               "Barley and sheep.", "middle", "wheat-sheep"),
+               "Barley and sheep.", "large", "wheat-sheep"),
     # ---- Lisavu
     (227, 122): ("Linukaha", "rivermouth", "Lisavan, old",
                  "At the mouth of the largest stream of the south coast, where two streams meet.",
-                 "Fishing, gardens and cotton on the coastal flat.", "large", "cotton"),
+                 "Fishing, gardens and cotton on the coastal flat.", "town", "cotton"),
     (230, 106): ("Natahoma", "anchorage", "Lisavan, old",
                  "In the most sheltered bay of the north coast, where a stream comes in.",
-                 "Fishing and canoe building, gardens.", "middle", "fishing"),
+                 "Fishing and canoe building, gardens.", "large", "fishing"),
     (234, 106): ("Lintwell", "cottonfield", "English settlers, 19th century (a cotton estate)",
                  "On the dry north-eastern plain on the road north of the town, at a well dug for an English "
-                 "settler's cotton estate.", "Cotton.", "middle", "cotton"),
+                 "settler's cotton estate.", "Cotton.", "large", "cotton"),
     (239, 105): ("Bollworth", "landing", "English settlers, 19th century",
                  "On the coast of the cotton plain north of Selanu, where the estates landed their bales for the "
-                 "ships.", "Cotton, fishing.", "small", "cotton"),
+                 "ships.", "Cotton, fishing.", "village", "cotton"),
     (220, 101): ("Setahu", "headland", "Lisavan, old",
                  "On the north coast west of the cotton plain, under a headland that keeps off the westerly swell: "
                  "the last landing before the cliffs of the windward side.",
-                 "Fishing, gardens below the forest.", "small", "gardens"),
+                 "Fishing, gardens below the forest.", "village", "gardens"),
     (218, 123): ("Nihekemo", "waterfall", "Lisavan, old",
                  "On the south-west coast where a stream falls from the cliffs to the shore.",
-                 "Gardens and fishing.", "small", "gardens"),
+                 "Gardens and fishing.", "village", "gardens"),
     (211, 106): ("Felulaka", "landslide", "Lisavan, old",
                  "On a flat of old landslide debris at the foot of the west cliffs (a faja), reached by a "
-                 "track down the cliff.", "Gardens, fruit and fishing.", "small", "gardens"),
+                 "track down the cliff.", "Gardens, fruit and fishing.", "village", "gardens"),
 }
 ENGLISH_ON_LISAVU = {(234, 106), (239, 105)}         # settlers' names: English first, the Lisavan name beside it
 
@@ -359,29 +364,78 @@ def main():
             s += .9 - ft["coast"]
         return s
 
+    def hsh(x, y, salt):
+        h = (x * 374761393 + y * 668265263 + salt * 1442695041) & 0xFFFFFFFF
+        h = ((h ^ (h >> 13)) * 1274126177) & 0xFFFFFFFF
+        return ((h ^ (h >> 16)) & 0xFFFFFFFF) / 4294967295
+
+    def pull(q, ft, reg):
+        """How strongly a square draws settlement: water (the river, a confluence, a sheltered cove, a spring line,
+        a stream), soil (level open land), the routes, the region's way of life."""
+        f = F[q]
+        water = .08
+        for k, w in (("river", 1.0), ("confluence", 1.0), ("estuary", .8), ("foot", .55), ("stream", .45)):
+            if k in ft:
+                water = max(water, w)
+        if "coast" in ft:
+            water = max(water, .9 if ft["coast"] < .4 else .4)
+        soil = (f["fr"]["d"] + .5 * f["fr"]["g"]) * max(0., 1 - f["slope"] / .15)
+        route = .6 * ("road" in ft) + .5 * ("rail" in ft)
+        return REGION_PULL[reg] * water * (.2 + soil) * (1 + route)
+
     acc = []
     for q in NAMED:
         if q not in F or not free(q) or not region(q):
             sys.exit(f"named village at {q}: the square is not free or not habitable")
         acc.append((99.0, q, region(q), feats(q)))
+    # 1. the railway stations of Bayvarra's lines: about every 20 km along the line where it crosses the open land
+    #    (a station village beside the line; the named places on the line count as stations)
+    taken = {a[1] for a in acc}
+    stations = []
+    rails = [r for r in world["routes"] if r["mode"] == "rail"]
+    for r in rails:
+        run = 0.0
+        path = [tuple(q) for q in r["pts"]]
+        for k in range(1, len(path)):
+            run += math.dist(path[k - 1], path[k])
+            q = path[k]
+            if terr["country"][q[1]][q[0]] != "B":
+                continue
+            if any(math.dist(q, t) < 3 for t in taken | set(stations)) or any(
+                    math.dist(q, tw["c"]) < tw["built_km"] / 7 + 3 for tw in towns):
+                run = min(run, 0.0) if any(math.dist(q, t) < 2 for t in taken) else run
+                continue
+            if run < 5.5:
+                continue
+            side = [(q[0] + a, q[1] + b) for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1))]
+            side = [y for y in side if y in F and free(y) and region(y)]
+            if side:
+                y = max(side, key=lambda y: (F[y]["fr"]["d"] + F[y]["fr"]["g"] - F[y]["slope"], y))
+                stations.append(y)
+                acc.append((50.0, y, region(y), dict(feats(y), station=r["id"])))
+                run = 0.0
+    # 2. the villages and hamlets: each square draws settlement by its site (pull); a square is settled with that
+    #    chance (a hash of the square, so the pattern is fixed), the strongest first, and two places keep at least
+    #    their region's distance (a square apart in the farmland, 15 km between the stations of the dry east). The
+    #    chance is high along the rivers, the valley floors, the spring lines, the coves and the old roads, low on
+    #    dry or steep land: strings of villages along the valleys, close pairs, isolated hamlets, empty country.
     cands = []
     for q in F:
-        if q in NAMED or not free(q):
+        if q in NAMED or q in stations or not free(q):
             continue
         reg = region(q)
         if not reg:
             continue
         ft = feats(q)
-        s = score(q, ft, reg)
-        if terr["country"][q[1]][q[0]] == "L" and s < -.5:
-            continue                                     # Lisavu's steep interior: no village
-        cands.append((s, q, reg, ft))
+        lam = pull(q, ft, reg)
+        if hsh(q[0], q[1], 7) < min(.95, lam):
+            cands.append((lam * (.6 + .8 * hsh(q[0], q[1], 8)), q, reg, ft))
     cands.sort(key=lambda c: (-c[0], c[1]))
     for c in cands:
-        if all(math.hypot(c[1][0] - a[1][0], c[1][1] - a[1][1]) >= (SPACING[c[2]] + SPACING[a[2]]) / 2 for a in acc):
+        if all(math.dist(c[1], a[1]) >= max(MIN_GAP[c[2]], MIN_GAP[a[2]]) for a in acc):
             acc.append(c)
-    scores = sorted(s for s, q, *_ in acc if q not in NAMED)
-    cut = scores[int(len(scores) * .65)] if scores else 0
+    rest = sorted(s for s, q, *_ in acc if q not in NAMED)
+    cut = rest[int(len(rest) * .55)] if rest else 0
     out = []
     for s, q, reg, ft in acc:
         c = CTY[terr["country"][q[1]][q[0]]]
@@ -402,7 +456,7 @@ def main():
             else:
                 v["names"] = {"en": name}
         else:
-            band = "middle" if s >= cut else "small"
+            band = "village" if "station" in ft or s >= cut else "hamlet"
             farming = "fishing" if "coast" in ft and ft["coast"] < .5 and reg not in ("lee",) else FARMING[reg]
             founded, why, lives = story(c, reg, ft, F[q])
             v = {"name": None}
@@ -418,7 +472,9 @@ def main():
 
 def story(c, reg, ft, f):
     """The reason, the living and the founding of an unnamed village, read from its site."""
-    if "estuary" in ft:
+    if "station" in ft:
+        why = "At a station on the railway, where the line crosses the open land: stock yards and a store."
+    elif "estuary" in ft:
         why = "On the estuary shore, at a landing for boats."
     elif "coast" in ft:
         why = "In a sheltered cove of the coast." if ft["coast"] < .4 else "On the open coast, above a landing beach."
@@ -453,8 +509,8 @@ def story(c, reg, ft, f):
             founded = "Italian, about 1900 (a forest village)"
     elif c == "XB":
         founded = "British settlers, 1830s to 1860s"
-        if "rail" in ft and reg in ("wheat", "pastoral"):
-            founded = "British, 19th century, at the railway"
+        if "station" in ft or ("rail" in ft and reg in ("wheat", "pastoral")):
+            founded = "British, late 19th century, at the railway's station"
         if reg == "forest":
             founded = "British, about 1900 (a forest village)"
     else:
