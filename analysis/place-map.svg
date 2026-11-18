@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1426" height="1050" viewBox="0 0 1426 1050" font-family="DejaVu Sans, Arial, sans-serif">
+<style>.lbl{font-size:13px;fill:#1d2733}.sm{font-size:11px;fill:#334}.ttl{font-size:20px;font-weight:bold;fill:#1d2733}.grid{stroke:#7fa6c6;stroke-width:.6;stroke-dasharray:3 4}.gl{font-size:10px;fill:#4a6f8f}</style>
+<rect width="1426" height="1050" fill="#ffffff"/>
+<text x="60" y="34" class="ttl">The UBL example world — place list (O91), to scale</text>
+<text x="60" y="54" class="sm">Proposal of 2026-11-18, analysis/place-list.md. WGS 84; equirectangular, true to scale (see the scale bar). The 3D map is a diagram; this map follows the place list.</text>
+<rect x="60" y="70" width="1041" height="861" fill="#cfe3f3" stroke="#5a7a95"/>
+<clipPath id="cm"><rect x="60" y="70" width="1041" height="861"/></clipPath><g clip-path="url(#cm)">
+<line x1="60" y1="110" x2="1101" y2="110" class="grid"/>
+<line x1="60" y1="210" x2="1101" y2="210" class="grid"/>
+<line x1="60" y1="310" x2="1101" y2="310" class="grid"/>
+<line x1="60" y1="410" x2="1101" y2="410" class="grid"/>
+<line x1="60" y1="510" x2="1101" y2="510" class="grid"/>
+<line x1="60" y1="610" x2="1101" y2="610" class="grid"/>
+<line x1="60" y1="711" x2="1101" y2="711" class="grid"/>
+<line x1="60" y1="811" x2="1101" y2="811" class="grid"/>
+<line x1="60" y1="911" x2="1101" y2="911" class="grid"/>
+<line x1="60" y1="70" x2="60" y2="931" class="grid"/>
+<line x1="147" y1="70" x2="147" y2="931" class="grid"/>
+<line x1="234" y1="70" x2="234" y2="931" class="grid"/>
+<line x1="320" y1="70" x2="320" y2="931" class="grid"/>
+<line x1="407" y1="70" x2="407" y2="931" class="grid"/>
+<line x1="494" y1="70" x2="494" y2="931" class="grid"/>
+<line x1="581" y1="70" x2="581" y2="931" class="grid"/>
+<line x1="667" y1="70" x2="667" y2="931" class="grid"/>
+<line x1="754" y1="70" x2="754" y2="931" class="grid"/>
+<line x1="841" y1="70" x2="841" y2="931" class="grid"/>
+<line x1="928" y1="70" x2="928" y2="931" class="grid"/>
+<line x1="1014" y1="70" x2="1014" y2="931" class="grid"/>
+<line x1="1101" y1="70" x2="1101" y2="931" class="grid"/>
+<clipPath id="land"><path d="M129.4,230.1 L233.5,170.1 L372.4,140.1 L511.2,150.1 L615.3,130.0 L693.4,154.1 L823.5,170.1 L962.4,210.1 L1040.4,270.2 L1049.1,370.2 L997.1,470.3 L927.7,570.4 L858.2,670.5 L814.9,750.5 L801.0,782.6 L799.2,798.6 L780.2,830.6 L702.1,870.6 L580.6,890.7 L441.8,880.6 L302.9,860.6 L198.8,810.6 L129.4,710.5 L112.1,570.4 L120.7,410.3 L112.1,290.2 Z"/></clipPath>
+<path d="M129.4,230.1 L233.5,170.1 L372.4,140.1 L511.2,150.1 L615.3,130.0 L693.4,154.1 L823.5,170.1 L962.4,210.1 L1040.4,270.2 L1049.1,370.2 L997.1,470.3 L927.7,570.4 L858.2,670.5 L814.9,750.5 L801.0,782.6 L799.2,798.6 L780.2,830.6 L702.1,870.6 L580.6,890.7 L441.8,880.6 L302.9,860.6 L198.8,810.6 L129.4,710.5 L112.1,570.4 L120.7,410.3 L112.1,290.2 Z" fill="#f3ecd2" stroke="#6b7f5a" stroke-width="1.4"/>
+<path d="M-26.8,10.0 L554.6,146.1 L566.7,310.2 L597.9,510.4 L628.3,694.5 L618.8,790.6 L606.6,886.7 L606.6,1010.8 L-26.8,1010.8 Z" fill="#e6f0d6" clip-path="url(#land)"/>
+<path d="M129.4,230.1 L233.5,170.1 L372.4,140.1 L511.2,150.1 L615.3,130.0 L693.4,154.1 L823.5,170.1 L962.4,210.1 L1040.4,270.2 L1049.1,370.2 L997.1,470.3 L927.7,570.4 L858.2,670.5 L814.9,750.5 L801.0,782.6 L799.2,798.6 L780.2,830.6 L702.1,870.6 L580.6,890.7 L441.8,880.6 L302.9,860.6 L198.8,810.6 L129.4,710.5 L112.1,570.4 L120.7,410.3 L112.1,290.2 Z" fill="none" stroke="#6b7f5a" stroke-width="1.4"/>
+<path d="M250.9,350.2 L355.0,330.2 L424.4,390.3 L407.1,490.3 L285.6,510.4 L216.2,430.3 Z" fill="#d9cdb0" opacity=".8" clip-path="url(#land)"/>
+<path d="M667.4,700.5 L688.2,696.5 L702.1,704.5 L691.7,712.5 L670.8,710.5 Z" fill="#9cc58f"/>
+<path d="M554.6,146.1 L566.7,310.2 L597.9,510.4 L628.3,694.5 L618.8,790.6 L606.6,886.7" fill="none" stroke="#b03a2e" stroke-width="2" stroke-dasharray="9 4 2 4"/>
+<path d="M181.5,570.4 L242.2,600.4 L311.6,620.4 L372.4,638.5 L424.4,644.5 L485.2,654.5 L545.9,674.5 L606.6,700.5 L646.5,710.5 L683.0,718.5 L715.9,734.5 L745.4,754.5 L774.9,776.6 L799.2,790.6" fill="none" stroke="#3d7fb8" stroke-width="3" stroke-linecap="round"/>
+<path d="M702.1,96.0 L702.1,160.1 L650.0,230.1 L580.6,310.2 L467.8,360.2 L356.7,418.3" fill="none" stroke="#8a5aa8" stroke-width="2" stroke-dasharray="6 3"/>
+<path d="M580.6,310.2 L519.9,430.3 L459.1,530.4 L424.4,620.4" fill="none" stroke="#8a5aa8" stroke-width="1.6" stroke-dasharray="6 3"/>
+<path d="M355.0,404.3 L337.6,470.3 L358.5,540.4 L398.4,600.4 L431.4,630.4" fill="none" stroke="#333" stroke-width="3"/>
+<path d="M355.0,404.3 L337.6,470.3 L358.5,540.4 L398.4,600.4 L431.4,630.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="6 6"/>
+<path d="M431.4,630.4 L493.8,630.4 L563.2,650.5 L627.4,686.5 L658.7,702.5 L677.8,710.5" fill="none" stroke="#333" stroke-width="3"/>
+<path d="M431.4,630.4 L493.8,630.4 L563.2,650.5 L627.4,686.5 L658.7,702.5 L677.8,710.5" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="6 6"/>
+<path d="M424.4,630.4 L485.2,642.5 L554.6,666.5 L628.3,694.5 L658.7,708.5 L683.0,712.5 L719.4,734.5 L757.6,764.6 L788.8,790.6" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M719.4,734.5 L745.4,776.6 L766.3,810.6" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M788.8,790.6 L792.3,790.6" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<circle cx="424.4" cy="630.4" r="6" fill="#fff" stroke="#1d2733" stroke-width="2.2"/><circle cx="424.4" cy="630.4" r="2" fill="#1d2733"/>
+<text x="362.4" y="620.4" class="lbl" font-weight="bold">Ferrano</text>
+<circle cx="355.0" cy="410.3" r="4" fill="#1d2733"/>
+<text x="365.0" y="404.3" class="lbl" font-weight="normal">Serravona</text>
+<circle cx="683.0" cy="712.5" r="6" fill="#fff" stroke="#1d2733" stroke-width="2.2"/><circle cx="683.0" cy="712.5" r="2" fill="#1d2733"/>
+<text x="691.0" y="730.5" class="lbl" font-weight="bold">Marrowdale</text>
+<circle cx="788.8" cy="790.6" r="8" fill="#fff" stroke="#1d2733" stroke-width="2.2"/><circle cx="788.8" cy="790.6" r="4" fill="#1d2733"/>
+<text x="704.8" y="794.6" class="lbl" font-weight="bold">Lumeport</text>
+<g transform="translate(792.3,790.6)"><rect x="-5" y="-5" width="10" height="10" fill="#1f5f99"/><path d="M0,-3 L0,3 M-3,1 Q0,4 3,1" stroke="#fff" stroke-width="1.2" fill="none"/></g>
+<text x="800.3" y="794.6" class="sm" font-weight="normal">Lumeport port</text>
+<g transform="translate(766.3,810.6)"><circle r="7" fill="#fff" stroke="#1d2733" stroke-width="1.5"/><path d="M-5,0 L5,0 M0,-5 L0,5 M-3,4 L3,4" stroke="#1d2733" stroke-width="1.6"/></g>
+<text x="648.3" y="826.6" class="sm" font-weight="normal">Lumeport airport</text>
+<g transform="translate(628.3,694.5)"><rect x="-6" y="-4" width="12" height="8" fill="#fff" stroke="#b03a2e" stroke-width="1.6"/><line x1="0" y1="-4" x2="0" y2="4" stroke="#b03a2e"/></g>
+<text x="510.3" y="684.5" class="sm" font-weight="normal">Border crossing</text>
+<circle cx="702.1" cy="160.1" r="4" fill="#1d2733"/>
+<text x="712.1" y="174.1" class="lbl" font-weight="normal">Gullhaven</text>
+<g transform="translate(580.6,310.2)"><path d="M0,-7 L6,5 L-6,5 Z" fill="#8a5aa8" stroke="#fff"/></g>
+<text x="590.6" y="314.2" class="sm" font-weight="normal">Metering station</text>
+<g transform="translate(702.1,96.0)"><rect x="-5" y="-5" width="10" height="10" fill="#8a5aa8"/></g>
+<text x="712.1" y="100.0" class="sm" font-weight="normal">Gas platform</text>
+<text x="190" y="490" font-size="22" fill="#6a7a5a" letter-spacing="3" >URVANIA</text>
+<text x="745" y="460" font-size="22" fill="#6a7a5a" letter-spacing="3" >BAYVARRA</text>
+<text x="216" y="320" font-size="13" fill="#8a7a5a" letter-spacing="3" font-style="italic">hills</text>
+<text x="473" y="560" font-size="12" fill="#556" letter-spacing="3" font-style="italic">Province of Ferrano</text>
+<text x="676" y="634" font-size="12" fill="#556" letter-spacing="3" font-style="italic">Upland State</text>
+<text x="728" y="851" font-size="12" fill="#556" letter-spacing="3" font-style="italic">Coastal State</text>
+<text x="711" y="234" font-size="12" fill="#556" letter-spacing="3" font-style="italic">Northern Territory</text>
+<text x="381" y="674" font-size="12" fill="#3d7fb8" letter-spacing="3" font-style="italic">river</text>
+<text x="692" y="682" font-size="11" fill="#4f7f45" letter-spacing="3" font-style="italic">forest</text>
+<text x="945" y="370" font-size="14" fill="#4a6f8f" letter-spacing="3" font-style="italic">Atlantic Ocean</text>
+<text x="459" y="670" class="sm" fill="#7a2a20">road 182 km Ferrano – Marrowdale</text>
+<text x="763" y="743" class="sm" fill="#7a2a20">road 84 km</text>
+<text x="260" y="520" class="sm" fill="#7a2a20">ore rail 154 km</text>
+<text x="520" y="280" class="sm" fill="#7a2a20">gas pipeline ≈ 255 km</text>
+<text x="54" y="113" class="gl" text-anchor="end">28.0° S</text>
+<text x="54" y="213" class="gl" text-anchor="end">28.5° S</text>
+<text x="54" y="313" class="gl" text-anchor="end">29.0° S</text>
+<text x="54" y="413" class="gl" text-anchor="end">29.5° S</text>
+<text x="54" y="513" class="gl" text-anchor="end">30.0° S</text>
+<text x="54" y="613" class="gl" text-anchor="end">30.5° S</text>
+<text x="54" y="714" class="gl" text-anchor="end">31.0° S</text>
+<text x="54" y="814" class="gl" text-anchor="end">31.5° S</text>
+<text x="54" y="914" class="gl" text-anchor="end">32.0° S</text>
+<text x="60" y="945" class="gl" text-anchor="middle">18.0° W</text>
+<text x="147" y="945" class="gl" text-anchor="middle">17.5° W</text>
+<text x="234" y="945" class="gl" text-anchor="middle">17.0° W</text>
+<text x="320" y="945" class="gl" text-anchor="middle">16.5° W</text>
+<text x="407" y="945" class="gl" text-anchor="middle">16.0° W</text>
+<text x="494" y="945" class="gl" text-anchor="middle">15.5° W</text>
+<text x="581" y="945" class="gl" text-anchor="middle">15.0° W</text>
+<text x="667" y="945" class="gl" text-anchor="middle">14.5° W</text>
+<text x="754" y="945" class="gl" text-anchor="middle">14.0° W</text>
+<text x="841" y="945" class="gl" text-anchor="middle">13.5° W</text>
+<text x="928" y="945" class="gl" text-anchor="middle">13.0° W</text>
+<text x="1014" y="945" class="gl" text-anchor="middle">12.5° W</text>
+<text x="1101" y="945" class="gl" text-anchor="middle">12.0° W</text>
+<rect x="72" y="878.6880000000002" width="240" height="38" fill="#ffffffcc"/>
+<rect x="80.0" y="900.6880000000002" width="36.0" height="6" fill="#1d2733" stroke="#1d2733" stroke-width=".8"/>
+<rect x="116.0" y="900.6880000000002" width="36.0" height="6" fill="#fff" stroke="#1d2733" stroke-width=".8"/>
+<rect x="152.0" y="900.6880000000002" width="36.0" height="6" fill="#1d2733" stroke="#1d2733" stroke-width=".8"/>
+<rect x="188.0" y="900.6880000000002" width="36.0" height="6" fill="#fff" stroke="#1d2733" stroke-width=".8"/>
+<rect x="224.0" y="900.6880000000002" width="36.0" height="6" fill="#1d2733" stroke="#1d2733" stroke-width=".8"/>
+<text x="80.0" y="896.6880000000002" class="sm" text-anchor="middle">0</text>
+<text x="170.0" y="896.6880000000002" class="sm" text-anchor="middle">50</text>
+<text x="260.0" y="896.6880000000002" class="sm" text-anchor="middle">100</text>
+<text x="268" y="907.6880000000002" class="sm">km</text>
+<text x="1141.1842378522642" y="182" class="lbl" font-weight="bold">Inset: Lisavu (same scale)</text>
+<text x="1141.1842378522642" y="198" class="sm">about 1,000 km east-south-east of Lumeport</text>
+<text x="1141.1842378522642" y="212" class="sm">by sea ≈ 1,150 km (46 h) · by air 1,107 km</text>
+<rect x="1141.1842378522642" y="230" width="235" height="280" fill="#cfe3f3" stroke="#5a7a95"/>
+<path d="M1338.3,370.1 L1338.5,356.5 L1336.1,343.3 L1331.6,331.0 L1326.1,319.8 L1319.9,309.4 L1313.3,299.6 L1306.0,290.4 L1297.8,282.6 L1288.6,276.9 L1278.7,274.1 L1268.6,274.0 L1258.8,276.0 L1249.5,278.8 L1240.5,281.5 L1231.2,283.7 L1221.4,286.0 L1211.1,289.6 L1201.3,295.6 L1192.9,304.6 L1187.0,316.4 L1183.8,329.9 L1183.1,343.8 L1184.0,357.3 L1185.4,370.1 L1186.9,382.4 L1188.3,394.6 L1190.4,406.9 L1193.6,418.9 L1198.6,430.0 L1205.1,439.7 L1212.9,447.6 L1221.4,454.2 L1230.1,460.0 L1239.1,465.5 L1248.6,470.5 L1258.8,474.1 L1269.5,475.3 L1280.1,472.9 L1289.7,466.8 L1297.8,457.6 L1304.2,446.8 L1309.4,435.7 L1314.3,425.2 L1319.4,415.5 L1325.1,405.7 L1330.8,395.1 L1335.6,383.2 Z" fill="#f6e6c8" stroke="#6b7f5a" stroke-width="1.4"/>
+<text x="1192" y="370" class="sm" font-style="italic" fill="#6a5a3a" transform="rotate(-80 1192 370)">west cliffs</text>
+<path d="M1331.1,380.1 L1326.0,370.1 L1321.0,364.1" fill="none" stroke="#c0392b" stroke-width="2"/>
+<path d="M1331.1,380.1 L1317.6,330.1 L1300.8,280.0" fill="none" stroke="#c0392b" stroke-width="2"/>
+<path d="M1331.1,380.1 L1292.4,390.1" fill="none" stroke="#c0392b" stroke-width="2"/>
+<circle cx="1331.1" cy="380.1" r="6" fill="#fff" stroke="#1d2733" stroke-width="2.2"/><circle cx="1331.1" cy="380.1" r="2" fill="#1d2733"/>
+<text x="1279.1" y="370.1" class="lbl" font-weight="bold">Selanu</text>
+<g transform="translate(1334.4,380.1)"><rect x="-5" y="-5" width="10" height="10" fill="#1f5f99"/><path d="M0,-3 L0,3 M-3,1 Q0,4 3,1" stroke="#fff" stroke-width="1.2" fill="none"/></g>
+<text x="1342.4" y="384.1" class="sm" font-weight="normal">Selanu port</text>
+<g transform="translate(1321.0,364.1)"><circle r="7" fill="#fff" stroke="#1d2733" stroke-width="1.5"/><path d="M-5,0 L5,0 M0,-5 L0,5 M-3,4 L3,4" stroke="#1d2733" stroke-width="1.6"/></g>
+<text x="1209.0" y="358.1" class="sm" font-weight="normal">Selanu airport</text>
+<g transform="translate(1300.8,280.0)"><rect x="-6" y="-6" width="12" height="12" fill="#e9d97a" stroke="#7a6a1a"/></g>
+<text x="1308.8" y="274.0" class="sm" font-weight="normal">Cotton farm</text>
+<g transform="translate(1292.4,390.1)"><path d="M0,-8 L5,6 L-5,6 Z" fill="none" stroke="#1d2733" stroke-width="1.6"/><circle cy="-8" r="2" fill="#1d2733"/></g>
+<text x="1196.4" y="404.1" class="sm" font-weight="normal">Telecom mast</text>
+<text x="1137.1842378522642" y="273" class="gl" text-anchor="end">32.5°</text>
+<text x="1137.1842378522642" y="373" class="gl" text-anchor="end">33.0°</text>
+<text x="1137.1842378522642" y="473" class="gl" text-anchor="end">33.5°</text>
+<text x="1259" y="524" class="gl" text-anchor="middle">2.0–3.3° W</text>
+<text x="1259" y="260" font-size="18" fill="#6a7a5a" letter-spacing="3" text-anchor="middle">LISAVU</text>
+<text x="1141.1842378522642" y="560.2240000000011" class="lbl" font-weight="bold">Legend</text>
+<line x1="1141.1842378522642" y1="580.2240000000011" x2="1171.1842378522642" y2="580.2240000000011" stroke="#c0392b" stroke-width="2.6"/>
+<text x="1179.1842378522642" y="584.2240000000011" class="sm">road</text>
+<line x1="1141.1842378522642" y1="600.2240000000011" x2="1171.1842378522642" y2="600.2240000000011" stroke="#333" stroke-width="3"/><line x1="1141.1842378522642" y1="600.2240000000011" x2="1171.1842378522642" y2="600.2240000000011" stroke="#fff" stroke-width="1.6" stroke-dasharray="6 6"/>
+<text x="1179.1842378522642" y="604.2240000000011" class="sm">railway</text>
+<line x1="1141.1842378522642" y1="620.2240000000011" x2="1171.1842378522642" y2="620.2240000000011" stroke="#3d7fb8" stroke-width="2.6"/>
+<text x="1179.1842378522642" y="624.2240000000011" class="sm">river</text>
+<line x1="1141.1842378522642" y1="640.2240000000011" x2="1171.1842378522642" y2="640.2240000000011" stroke="#8a5aa8" stroke-width="2" stroke-dasharray="6 3"/>
+<text x="1179.1842378522642" y="644.2240000000011" class="sm">gas pipeline</text>
+<line x1="1141.1842378522642" y1="660.2240000000011" x2="1171.1842378522642" y2="660.2240000000011" stroke="#b03a2e" stroke-width="2" stroke-dasharray="9 4 2 4"/>
+<text x="1179.1842378522642" y="664.2240000000011" class="sm">border</text>
+<rect x="1141.1842378522642" y="673.2240000000011" width="14" height="12" fill="#e6f0d6" stroke="#6b7f5a"/><text x="1179.1842378522642" y="684.2240000000011" class="sm">Urvania</text>
+<rect x="1141.1842378522642" y="693.2240000000011" width="14" height="12" fill="#f3ecd2" stroke="#6b7f5a"/><text x="1179.1842378522642" y="704.2240000000011" class="sm">Bayvarra</text>
+<rect x="1141.1842378522642" y="713.2240000000011" width="14" height="12" fill="#f6e6c8" stroke="#6b7f5a"/><text x="1179.1842378522642" y="724.2240000000011" class="sm">Lisavu</text>
+<text x="60" y="1020" class="sm">Coastline, hills and forest are drawn freely; the positions of the places, the border crossing and the distances are those of the place list. Ferrano is drawn at 15.9° W (question 1 of the list).</text>
+<text x="60" y="1036" class="sm">The river is drawn through Marrowdale to Lumeport with Bayvarra on both banks east of the crossing (question 2 of the list).</text>
+</svg>
