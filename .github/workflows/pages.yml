@@ -42,7 +42,7 @@ jobs:
       # versions and downloads only what the cache lacks.
       - name: Restore the package cache
         if: steps.newest.outputs.newest == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/apt-cache
           key: apt-${{ runner.os }}-${{ runner.arch }}-xsltproc-libxml2-utils-pandoc-python3-lxml-v1
