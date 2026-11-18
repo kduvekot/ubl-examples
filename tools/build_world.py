@@ -45,7 +45,10 @@ page = open(os.path.join(root, "site", "world.html"), encoding="utf-8").read()
 data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"],
                    "towns": world["towns"], "platforms": world.get("platforms", []), "model": model}, ensure_ascii=False, separators=(",", ":"))
 assert "/*WORLD_JSON*/ null" in page
-page = page.replace("/*WORLD_JSON*/ null", data.replace("</", "<\\/"))
+# as a string for JSON.parse: a browser reads a large JSON string much faster than the same data as a JavaScript
+# object literal (the map's first frame, O152); "</" is escaped so that the string cannot end the <script>
+literal = json.dumps(data, ensure_ascii=False).replace("</", "<\\/").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
+page = page.replace("/*WORLD_JSON*/ null", "JSON.parse(" + literal + ")")
 open(os.path.join(out, "world.html"), "w", encoding="utf-8").write(page)
 
 CATEGORY = {"commerce": "Commerce", "logistics": "Logistics", "government": "Government",

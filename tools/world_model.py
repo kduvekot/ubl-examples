@@ -15,6 +15,9 @@ For every tile the model records:
   n   a stable noise value 0..1, for variation in the drawing
   rd  road connections, an 8-bit mask (DIRS8): 1 = +i, 2 = +j, 4 = -i, 8 = -j, and the diagonal steps 16 = (+i, +j),
       32 = (-i, +j), 64 = (-i, -j), 128 = (+i, -j), which pass through the corner the two squares share (O152 stage 3)
+  rm  the part of "rd" that belongs to main roads (map routes of class "main"), the same 8-bit mask; given where it
+      is not 0. The map draws the other connections (minor and access roads, streets) narrower, and the minor and
+      access roads only when zoomed in (O152)
   rl  rail pieces, each a pair of directions to the neighbours it leads to ([di, dj], diagonals included, or null
       for the centre)
   br  1 for a bridge square: a road or rail crosses water here, or a route lists it as a bridge (a viaduct over a
@@ -31,6 +34,8 @@ For every tile the model records:
   um  the built-up area of a town or village on this square: a mask of its SUB x SUB sub-squares of 875 m
       (bit a * SUB + b for the sub-square a along i, b along j), on every kind of square it covers (houses,
       parties, roads, rails)
+  vg  1 where the built-up area is a village's (map "villages"), not a town's or a locality's: the map shows it
+      only when zoomed in (O152)
   ul  the density of the built-up area on this square: 1 houses, 2 terraces, 3 blocks of flats, 4 towers (the
       centre of a capital)
   tr  1 for a single tree on open ground
@@ -396,6 +401,7 @@ def build(world):
     #    tunnel squares (model "tn": the way runs under the land). A road route has a class ("main", 7 %, or "minor",
     #    10 %; the model's own streets and access roads are minor).
     road, rails, edges, into = set(), {}, set(), {}
+    main_edges, main_into = set(), set()                  # the connections laid by main roads (model "rm")
     road_rise = {}                                     # road square -> the rise it may have (the strictest road on it)
     struct = {}                                        # square -> "bridge" | "tunnel"
     laid = []                                          # (name, mode, path) of every road and rail laid: for the checks
@@ -427,6 +433,8 @@ def build(world):
             road_rise[q] = min(road_rise.get(q, 1e9), rise)
             if k:
                 link(path[k - 1], q)
+                if rise == ROAD_RISE:
+                    main_edges.add(frozenset((path[k - 1], q)))
         if path:
             if name != "chain":
                 laid.append((name, "road", list(path)))
@@ -440,8 +448,10 @@ def build(world):
                     if y is not None and not (struct.get(y) and struct_way.get(y) == mode):
                         abut[y] = name_of.get(mode, mode)
 
-    def enter(q, building_tile):
+    def enter(q, building_tile, main=False):
         into.setdefault(q, set()).add((building_tile[0] - q[0], building_tile[1] - q[1]))
+        if main:
+            main_into.add((q, (building_tile[0] - q[0], building_tile[1] - q[1])))
 
     for r in world["routes"]:
         if r["mode"] in ("road", "rail"):
@@ -458,12 +468,12 @@ def build(world):
                         if 0 < k < len(path) - 1:
                             problems.append(f"#{p['n']} {p['name']} stands on road route '{r['id']}' at {q}")
                         if chain:
-                            enter(chain[-1], q)          # the road ends at this building
+                            enter(chain[-1], q, rise == ROAD_RISE)   # the road ends at this building
                         lay_road(chain, rise, sts, "chain")
                         chain, after = [], q
                         continue
                     if not chain and after and abs(after[0] - q[0]) + abs(after[1] - q[1]) == 1:
-                        enter(q, after)                  # the road leaves this building
+                        enter(q, after, rise == ROAD_RISE)   # the road leaves this building
                     chain.append(q)
                 lay_road(chain, rise, sts, "chain")
                 laid.append((r["id"], "road", list(path)))  # the whole way, its buildings included: for the checks
@@ -720,6 +730,7 @@ def build(world):
         return bool(t) and t["k"] not in ("s", "w") and q not in approach and q not in near_pipe and q not in stations \
             and not (o and o["kind"] == "airport")
 
+    villages = {id(v) for v in world.get("villages", [])}
     for tw in world.get("towns", []) + world.get("localities", []) + world.get("villages", []):
         ci, cj, rad = tw["c"][0], tw["c"][1], tw["r"]
         pop = max(tw["population"]) if isinstance(tw.get("population"), list) else tw.get("population", 0)
@@ -766,6 +777,8 @@ def build(world):
             t = tile(*q)
             t["um"] = t.get("um", 0) | 1 << (a2 * SUB + b2)
             built[q] = tw
+            if id(tw) in villages:
+                t["vg"] = 1
             if dists:                                  # the district of each built sub-square (model "ud")
                 x, y = q[0] - .5 + (a2 + .5) / SUB, q[1] - .5 + (b2 + .5) / SUB
                 k = district(x, y)[0]
@@ -848,11 +861,16 @@ def build(world):
     # road connections per tile: edges to neighbouring road tiles (the eight neighbours: bits 0..7 of DIRS8), plus
     # the building a road ends at
     for (i, j) in road:
-        mask = 0
+        mask = main = 0
         for bit, (di, dj) in enumerate(DIRS8):
-            if frozenset(((i, j), (i + di, j + dj))) in edges or (di, dj) in into.get((i, j), ()):
+            e = frozenset(((i, j), (i + di, j + dj)))
+            if e in edges or (di, dj) in into.get((i, j), ()):
                 mask |= 1 << bit
+                if e in main_edges or ((i, j), (di, dj)) in main_into:
+                    main |= 1 << bit
         T[i][j]["rd"] = mask
+        if main:
+            T[i][j]["rm"] = main
     for (i, j), pieces in rails.items():
         T[i][j]["rl"] = pieces
 
