@@ -610,6 +610,8 @@ def address(pid, register=False):
                                          + ("; the Italian names the British kept are part of English now"
                                             if p["c"] == "XU" else "") + f"; {src}.", languageID=f"en-{p['c']}")]
     if a.get("CityName"):
+        if idn.get("city_why"):                     # a party not in the town nearest to it (O152, 2026-11-18)
+            out["CityName"] = V(a["CityName"], f"{idn['city_why']} {src}.")
         out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
     out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, {c['name']}'s legal time, "
@@ -2476,8 +2478,7 @@ def known_places():
 
 
 # names the documents give places the world identifies under another name
-PLACE_ALIASES = {"Lumeport": "Port of Lumeport", "Selanu": "Port of Selanu", "Mine siding, Serravona": "Serravona",
-                 "Serravona mine siding": "Serravona",
+PLACE_ALIASES = {"Lumeport": "Port of Lumeport", "Selanu": "Port of Selanu",
                  "Rail siding of Lumeway Distribution, Marrowdale": "Rail siding of the distribution centre, Marrowdale",
                  "Brightmarket Stores, goods-in": "Goods-in of the Lumeport store",
                  "Brightmarket Stores, goods-in, Lumeport": "Goods-in of the Lumeport store",

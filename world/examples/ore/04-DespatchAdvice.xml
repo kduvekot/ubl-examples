@@ -45,7 +45,7 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:PhysicalLocation>
-        <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+        <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
         <cbc:Description>The mine and its rail siding</cbc:Description>
         <cbc:Conditions>Unpaved access road; heavy vehicles only.</cbc:Conditions>
         <cbc:InformationURI>https://www.serravona.example</cbc:InformationURI>

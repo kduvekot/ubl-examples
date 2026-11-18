@@ -95,7 +95,7 @@ Inside `AccountingSupplierParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Party/PhysicalLocation/ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+- `Party/PhysicalLocation/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Party/PhysicalLocation/Description` = **The mine and its rail siding**  
   Where the party actually operates, apart from its postal address.
@@ -506,7 +506,7 @@ Inside `InvoiceLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:PhysicalLocation>
-        <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+        <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
         <cbc:Description>The mine and its rail siding</cbc:Description>
         <cbc:Conditions>Unpaved access road; heavy vehicles only.</cbc:Conditions>
         <cbc:InformationURI>https://www.serravona.example</cbc:InformationURI>

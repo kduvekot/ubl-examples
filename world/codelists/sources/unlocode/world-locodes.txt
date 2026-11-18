@@ -1,0 +1,29 @@
+# Location codes of the UBL example world (scheme "UN/LOCODE"), looked up in UN/LOCODE
+# Checked 2026-11-18. UNECE's own download (https://unlocode.unece.org/downloads/unlocode-latest.zip) blocks
+# automated access, so its copy in the datasets/un-locode repository on GitHub was read, which is built from that
+# same "Pre-Release (Latest)" zip:
+#
+#   CL    https://raw.githubusercontent.com/datasets/un-locode/main/data/code-list.csv
+#         (116,476 entries, newest entry date 9912; SHA-256 1dc3bf5baf762ae644ec4247fefcb58f92cb1720fa84170417d71598b77843f0)
+#   AL    https://raw.githubusercontent.com/datasets/un-locode/main/data/alias.csv
+#         (the alias rows, Change "="; 52 rows; SHA-256 7ad7c802d3411f4dd83d74323fdd85df2b09e6a85314cdc88a20ed9e09bffe93)
+#   CC    https://raw.githubusercontent.com/datasets/un-locode/main/data/country-codes.csv
+#         (SHA-256 93eddb3db01b829723c78fb3009b3437a5aa38f5a12d0ba59bc2c6686cc38fe2)
+#
+# A UN/LOCODE is the ISO 3166-1 alpha-2 country code and three characters for the place. The world's codes use the
+# user-assigned country codes XU, XB and XL, which ISO 3166 never gives to a country: no entry of CL or AL has country
+# XU, XB or XL, and CC lists only XZ ("Installations in International Waters") among the X codes. So no world code
+# can be read as a real place. The three characters follow the place's name.
+#
+# code   CL   AL   place in the world
+XUFER    -    -    Ferrano
+XUSRV    -    -    Serravona
+XUFNT    -    -    Fucinalta mine siding: the ore mine's loading siding and weighbridge at its portal by Fucinalta,
+                   25-29 km from Serravona (Serravona Mining, 4-xu; flow ore). Given 2026-11-18 (O152): until then the
+                   siding carried Serravona's code XUSRV. FNT from FuciNalTa; FNT itself is used in other countries
+                   (ESFNT, FRFNT, GBFNT, ITFNT, MTFNT, SKFNT, USFNT), never with an X country.
+XBMRW    -    -    Marrowdale
+XBLMP    -    -    Port of Lumeport
+XBLMA    -    -    Lumeport airport
+XLSEL    -    -    Port of Selanu
+XLSLA    -    -    Selanu airport

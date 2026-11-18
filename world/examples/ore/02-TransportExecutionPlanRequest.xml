@@ -161,8 +161,8 @@
     <cbc:EndDate>2026-03-13</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
-    <cbc:Name>Serravona mine siding</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+    <cbc:Name>Fucinalta mine siding</cbc:Name>
     <cac:Address>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -179,8 +179,8 @@
     </cac:Address>
   </cac:ToLocation>
   <cac:AtLocation>
-    <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
-    <cbc:Name>Serravona mine siding</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+    <cbc:Name>Fucinalta mine siding</cbc:Name>
   </cac:AtLocation>
   <cac:TransportExecutionTerms>
     <cbc:TransportUserSpecialTerms>Wagons sheeted against dust.</cbc:TransportUserSpecialTerms>

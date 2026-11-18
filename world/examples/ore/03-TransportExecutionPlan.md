@@ -291,9 +291,9 @@ Inside `ServiceEndTimePeriod`:
 
 Inside `FromLocation`:
 
-- `ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+- `ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Name` = **Serravona mine siding**  
+- `Name` = **Fucinalta mine siding**  
   Where the goods are taken over.
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
@@ -594,8 +594,8 @@ Inside `Consignment`:
     <cbc:EndDate>2026-03-13</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
-    <cbc:Name>Serravona mine siding</cbc:Name>
+    <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+    <cbc:Name>Fucinalta mine siding</cbc:Name>
     <cac:Address>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

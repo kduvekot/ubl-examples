@@ -42,7 +42,7 @@ def ore(n, doc):
         return kit.order(f, n, doc, 0, "The first working day of the month: the monthly ore call-off.",
                          "Free carrier at the mine: the buyer arranges and pays the main transport, so the order names "
                          "the carrier the buyer has booked. Stated, because leaving it out would carry no meaning "
-                         "(UBL rule IND6).", "Serravona mine siding",
+                         "(UBL rule IND6).", "Fucinalta mine siding",
                          {"Note": V("Monthly call-off, one train.", "Says in words what the order is for."),
                           "Delivery": {"RequestedDeliveryPeriod": {
                               "StartDate": V(f.date(7), "The week in which the factory wants the ore."),
@@ -7731,7 +7731,7 @@ def _(f, n, doc, out):
                                                                                    "shown).")},
             "AdditionalDocumentReference": {"ID": V("SM-ASSAY-26-11", "The assay of the ore lot.")},
             "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TEPR"),
-            "AtLocation": {"Name": V("Serravona mine siding", "Where the wagons are loaded.")},
+            "AtLocation": {"Name": V("Fucinalta mine siding", "Where the wagons are loaded.")},
             "AdditionalTransportationService": {"TransportServiceCode": V("WEIGH", "The wagons are weighed at "
                                                                                      "the siding."),
                                                 "TariffClassCode": V("B", "The carrier's tariff class.")},

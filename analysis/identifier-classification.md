@@ -130,7 +130,7 @@ Kind: **L** local to the sender or issuer · **W** issued by a world authority �
 | AircraftID | AirTransport (2) | XL-KAC | – | W | Opt | `XL:S:AircraftRegister` | XL civil aviation | `^XL-[A-Z]{3}$` | – |
 | RailCarID, StowagePositionID | RailTransport, TransportEquipment (2) | XU-FRC 4521 0042 | – | W | Opt | `XU:S:RailVehicleRegister` | XU rail register | – | Not the UIC 12-digit format (fine) |
 | TrainID, JourneyID | Rail/TransportMeans (17) | FRC 4417, KAC207, TH-26-19E | – | L | No | – | – | – | – |
-| ID | Location, PhysicalLocation, *PortLocation, Loading/Unloading/Delivery/FreightCharge/WHOAffectedArea (36) | XUFER, XBLMP | `UN/LOCODE` | X (world entries) | Yes | `UN/LOCODE` (keep) | UNECE; world copy | `^X[UBL][A-Z]{3}$` | ✓ 7 known places; needs a world LOCODE copy to validate |
+| ID | Location, PhysicalLocation, *PortLocation, Loading/Unloading/Delivery/FreightCharge/WHOAffectedArea (36) | XUFER, XBLMP | `UN/LOCODE` | X (world entries) | Yes | `UN/LOCODE` (keep) | UNECE; world copy | `^X[UBL][A-Z]{3}$` | ✓ 8 known places (XUFNT, the Fucinalta mine siding, added 2026-11-18, O152); none in UN/LOCODE, which has no entry for XU, XB or XL (`world/codelists/sources/unlocode/world-locodes.txt`); needs a world LOCODE copy to validate |
 | ID | OriginAddress (3) | 33/03 | `…:grid` | W | Yes | `S:MapGrid` | world map | `^\d{2}/\d{2}$` | – |
 | LocationID, StowagePositionID | Stowage, TransportEquipment (2) | 140282 | – | X-shaped (bay/row/tier) | Opt | `ISO 9711` (doubtful) | – | BBRRTT | – |
 | LocationID, GateID, PositionInPortID, ID | PositionOnBoardStowage, Storage, DestinationPortCall | MD-L2, Gate B, BERTH-2, XLSEL-26-0517 | – | L | No | – | – | – | – |

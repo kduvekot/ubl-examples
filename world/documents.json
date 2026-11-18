@@ -15,8 +15,8 @@
      "service": "RAILWAGON",
      "transit_days": 0,
      "from_place": {
-      "name": "Serravona mine siding",
-      "locode": "XUSRV"
+      "name": "Fucinalta mine siding",
+      "locode": "XUFNT"
      },
      "to_place": {
       "name": "Valdara Industries works, Ferrano",

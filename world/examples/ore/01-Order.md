@@ -132,7 +132,7 @@ Inside `SellerSupplierParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Party/PhysicalLocation/ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+- `Party/PhysicalLocation/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Party/PhysicalLocation/Description` = **The mine and its rail siding**  
   Where the party actually operates, apart from its postal address.
@@ -236,9 +236,9 @@ Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
   Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning (UBL rule IND6). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryLocation/ID` = **XUSRV** (schemeID `UN/LOCODE`)  
+- `DeliveryLocation/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
-- `DeliveryLocation/Description` = **Serravona mine siding**  
+- `DeliveryLocation/Description` = **Fucinalta mine siding**  
   Where the delivery terms place the handover of the goods.
 
 ### Tax Total
@@ -386,7 +386,7 @@ Inside `OrderLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:PhysicalLocation>
-        <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+        <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
         <cbc:Description>The mine and its rail siding</cbc:Description>
         <cbc:Conditions>Unpaved access road; heavy vehicles only.</cbc:Conditions>
         <cbc:InformationURI>https://www.serravona.example</cbc:InformationURI>
@@ -474,8 +474,8 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
-      <cbc:Description>Serravona mine siding</cbc:Description>
+      <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+      <cbc:Description>Fucinalta mine siding</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>

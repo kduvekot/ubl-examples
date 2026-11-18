@@ -1423,7 +1423,8 @@ def container_number(owner, serial):
 
 
 # ---------------------------------------------------------------- transport: places, means, events, units
-PLACES = {"XUFER": ("Ferrano", "XU"), "XUSRV": ("Serravona", "XU"), "XBMRW": ("Marrowdale", "XB"),
+PLACES = {"XUFER": ("Ferrano", "XU"), "XUSRV": ("Serravona", "XU"), "XUFNT": ("Fucinalta mine siding", "XU"),
+          "XBMRW": ("Marrowdale", "XB"),
           "XBLMP": ("Port of Lumeport", "XB"), "XBLMA": ("Lumeport airport", "XB"), "XLSEL": ("Port of Selanu", "XL"),
           "XLSLA": ("Selanu airport", "XL")}
 

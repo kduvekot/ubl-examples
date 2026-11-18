@@ -57,7 +57,7 @@
      "capital": 120000000
     },
     "site": {
-     "locode": "XUSRV",
+     "locode": "XUFNT",
      "description": "The mine and its rail siding",
      "conditions": "Unpaved access road; heavy vehicles only."
     },
@@ -2368,9 +2368,10 @@
     "address": {
      "StreetName": "Airfield Road",
      "BuildingNumber": "39",
-     "CityName": "Selanu",
+     "CityName": "Lintwell",
      "ID": "78560776"
     },
+    "city_why": "The locality the airport lies in: the airfield is on the plain north of Selanu, within Lintwell, and bears the name of the capital it serves, as airports often do that lie in a neighbouring place (O152).",
     "industry": "5223",
     "website": "https://www.selanu-cargo.example",
     "language": "en",

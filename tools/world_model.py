@@ -82,9 +82,11 @@ Structural rules (the build stops when one is broken):
     terrace that follows the land in a small step (their corners within TERRACE_M = 80 m of each other, 2.3 %; a
     runway within RUNWAY_M = 20 m), so that a town sits near its natural ground and not at the level of the
     water its edge touches (O152 stage 2 B); a road or rail square a way passes straight through,
-    or bends 45 degrees in, is a ramp, level across, rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
+    or bends 45 degrees in, is a ramp rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
     (a main road, 7 %) or ROAD_RISE_MINOR = 350 m (a minor road, 10 %) along its direction; on a diagonal the
-    ramp runs from corner to corner, level across the other two corners;
+    ramp runs from corner to corner; a rail ramp is level across, a road ramp may also slope across, its two sides
+    within ROAD_CROSS = 150 m (a road follows the land's side slope; O152, owner 2026-11-18), so that a town whose
+    streets reach its quay is not tied to the water's level;
   * roads, rails and pipelines are given square by square (O152 stage 3, tools/lay_routes.py), each square a
     neighbour of the last, diagonals included; no way crosses another, or passes between two squares of water,
     through the corner two squares share;
@@ -170,6 +172,8 @@ LEVEL_M = 1                                       # model "v" holds metres (sinc
 RAIL_RISE = 70                                    # metres a rail square may rise along its direction (2 % of 3.5 km)
 ROAD_RISE = 245                                   # metres a main road square may rise along its direction (7 %)
 ROAD_RISE_MINOR = 350                             # metres a minor road square may rise (10 %; access roads, streets)
+ROAD_CROSS = 150                                  # metres a road square's two sides may differ across it (its side slope;
+                                                  # O152, owner 2026-11-18: so a town is not tied to its quay's level)
 BRIDGE_FREE = 25                                  # metres the ground may stand above a bridge deck's line (its abutments)
 TUNNEL_COVER = 20                                 # metres of ground at least above a tunnel's line
 FLAT_TOL = 1                                      # metres: a platform's corners may differ by this much (rounding)
@@ -902,8 +906,8 @@ def build(world):
     #    a port, a quay, a metering station, a level crossing and a harbour stand on a platform (their four corners level); a
     #    building, a house square, a yard, a junction, an end or a bend of a road or rail and an airport's approach
     #    square on a terrace (corners within TERRACE_M of each other; a runway RUNWAY_M); a straight road or rail
-    #    square is a ramp, level across and rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its
-    #    direction.
+    #    square is a ramp rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its direction, a rail
+    #    ramp level across, a road ramp within ROAD_CROSS across.
     V = [[float(E[vi][vj]) for vj in range(H + 1)] for vi in range(W + 1)]
     fixed = [[False] * (H + 1) for _ in range(W + 1)]        # corners at the water keep their height
     touches = lambda vi, vj: [tile(vi - a2, vj - b2) for a2 in (0, 1) for b2 in (0, 1) if tile(vi - a2, vj - b2)]
@@ -977,6 +981,11 @@ def build(world):
         elif p["kind"] in ("port", "quay") or p.get("water") or p["id"] in at_quay:
             level_party |= set(footprint(p))
 
+    def tilt(sh):
+        """A road square's ramp: like a rail square's, but its sides may also differ across it (a road follows the
+        land's side slope; O152, owner 2026-11-18), by at most ROAD_CROSS."""
+        return "tilt" + sh[4:]
+
     def ground_rule(q):
         """(shape, rise limit in metres for a whole square) or None (free terrain) for the tile at q. Shapes: 'flat'
         (four corners level), 'ramp-i', 'ramp-j', 'ramp-d', 'ramp-a' (see shape())."""
@@ -990,7 +999,9 @@ def build(world):
             if not under:
                 return None                                 # a bridge spans the ground, a tunnel runs under it
             ls = links(q, under)                            # an overpass: the ground fitted to the way below
-            return (shape(ls), RAIL_RISE if under == "rail" else road_rise.get(q, ROAD_RISE_MINOR)) if len(ls) == 2 else ("flat", 0)
+            if len(ls) != 2:
+                return ("flat", 0)
+            return (shape(ls), RAIL_RISE) if under == "rail" else (tilt(shape(ls)), road_rise.get(q, ROAD_RISE_MINOR))
         if t["k"] in ("s", "w") or "ms" in t or "hb" in t:
             return ("flat", 0)
         if q in approach and t["k"] != "s":
@@ -1010,13 +1021,24 @@ def build(world):
             sh = shape(ls)
             if sh == "flat":
                 return ("terrace", TERRACE_M)               # a bend of 90 degrees
-            return (sh, road_rise.get(q, ROAD_RISE_MINOR) if q in road else RAIL_RISE)
+            return (tilt(sh), road_rise.get(q, ROAD_RISE_MINOR)) if q in road else (sh, RAIL_RISE)
         return None
 
-    def corner_groups(q, rule):
+    def corner_groups(q, rule, limit=None):
         """The corners of square q that stand level together, in order along the way; and the ramps between them
-        (pairs of group indexes, the share of the square's rise limit)."""
+        (pairs of group indexes, the share of the square's rise limit). A road's ramp ('tilt-...') keeps its four
+        corners apart: along the road within its rise limit, across it within ROAD_CROSS."""
         i, j = q
+        if rule.startswith("tilt"):
+            a, b, c, d = (i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)
+            x = ROAD_CROSS / limit
+            if rule == "tilt-i":                            # along i: a-b and c-d; across: a-c and b-d
+                return [[a], [b], [c], [d]], [(0, 1, 1.0), (2, 3, 1.0), (0, 2, x), (1, 3, x)]
+            if rule == "tilt-j":
+                return [[a], [b], [c], [d]], [(0, 2, 1.0), (1, 3, 1.0), (0, 1, x), (2, 3, x)]
+            if rule == "tilt-d":                            # from a to d, across b-c
+                return [[a], [b], [c], [d]], [(0, 1, HALF), (0, 2, HALF), (1, 3, HALF), (2, 3, HALF), (1, 2, x)]
+            return [[b], [a], [d], [c]], [(0, 1, HALF), (0, 2, HALF), (1, 3, HALF), (2, 3, HALF), (1, 2, x)]
         if rule == "flat":
             return [[(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]], []
         if rule == "terrace":                               # each corner on its own, all within the step of each other
@@ -1093,7 +1115,7 @@ def build(world):
             parent[find(x)] = find(y)
         ramps = []
         for i, j, (rule, limit) in RULES:
-            groups, pairs = corner_groups((i, j), rule)
+            groups, pairs = corner_groups((i, j), rule, limit)
             for g in groups:
                 find(g[0])
                 for c2 in g[1:]:
@@ -1245,7 +1267,7 @@ def build(world):
                 problems.append(f"route on the river without a bridge at {(i, j)}")
             rule = ground_rule((i, j)) if t["k"] != "s" or "b" in t or "rd" in t or "rl" in t else None
             if rule:
-                groups, pairs = corner_groups((i, j), rule[0])
+                groups, pairs = corner_groups((i, j), rule[0], rule[1])
                 lv = [[V[a2][b2] for a2, b2 in g2] for g2 in groups]
                 if any(max(g2) - min(g2) > FLAT_TOL for g2 in lv):
                     problems.append(f"{'something built on a slope' if rule[0] == 'flat' else 'a ramp that is not level across'} at {(i, j)}")

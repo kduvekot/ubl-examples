@@ -87,7 +87,7 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:PhysicalLocation>
-        <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
+        <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
         <cbc:Description>The mine and its rail siding</cbc:Description>
         <cbc:Conditions>Unpaved access road; heavy vehicles only.</cbc:Conditions>
         <cbc:InformationURI>https://www.serravona.example</cbc:InformationURI>
@@ -175,8 +175,8 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XUSRV</cbc:ID>
-      <cbc:Description>Serravona mine siding</cbc:Description>
+      <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+      <cbc:Description>Fucinalta mine siding</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>
