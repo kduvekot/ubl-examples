@@ -96,7 +96,8 @@ def generate():
     # countries: Lisavu; on the mainland the border along the high ground north of the crossing, the river below it
     east, crossing = T.border(md, inp, log)
     country = np.full((H, W), ".")
-    eb = east.reshape(ny // S, S, nx // S, S).mean(axis=(1, 3))
+    landc = ~md['sea']
+    eb = east.reshape(ny // S, S, nx // S, S).sum(axis=(1, 3)) / np.maximum(1, landc.reshape(ny // S, S, nx // S, S).sum(axis=(1, 3)))
     land_t = kinds != T.SEA
     for a in range(ny // S):
         for b in range(nx // S):

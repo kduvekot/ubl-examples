@@ -745,6 +745,19 @@ def border(d, inp, log=print):
         r, c = rc(sd)
         if lab[r, c] > 0:
             xb |= lab == lab[r, c]
+    # what is left (islets, slivers cut off by the river's band) goes to the nearer country
+    xu = xu_north.copy()
+    xu[stem[:, 0], stem[:, 1]] = True
+    for sd in b["urvania_seeds"]:
+        r, c = rc(sd)
+        if lab[r, c] > 0:
+            xu |= lab == lab[r, c]
+    rest = ~sea & ~xb & ~xu
+    if rest.any():
+        dxb = ndimage.distance_transform_edt(~xb)
+        dxu = ndimage.distance_transform_edt(~xu)
+        xb |= rest & (dxb < dxu)
+    xb &= ~sea
     cr, cc = divmod(int(rec[t9]), nx)
     crossing = [round(float(X[cr, cc]), 2), round(float(Y[cr, cc]), 2)]
     log(f"border: crossing at the confluence {crossing}, the tributary's basin {int(((term == t9) & ~seaf).sum() * (d['cell'] / 1000) ** 2)} km2")

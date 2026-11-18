@@ -8,8 +8,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    48,
-    76
+    51,
+    88
    ],
    "h": 2,
    "kind": "mine",
@@ -85,8 +85,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    71,
-    111
+    79,
+    114
    ],
    "h": 3,
    "kind": "factory",
@@ -247,8 +247,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    74,
-    112
+    82,
+    115
    ],
    "h": 2,
    "kind": "warehouse",
@@ -350,8 +350,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    71,
-    116
+    77,
+    118
    ],
    "h": 2,
    "kind": "waste",
@@ -463,8 +463,8 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    50,
-    77
+    56,
+    89
    ],
    "h": 2,
    "kind": "depot",
@@ -561,8 +561,8 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    71,
-    114
+    80,
+    116
    ],
    "h": 1,
    "kind": "depot",
@@ -656,7 +656,7 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    69,
+    73,
     116
    ],
    "h": 1,
@@ -742,8 +742,8 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    72,
-    115
+    79,
+    118
    ],
    "h": 2,
    "kind": "terminal",
@@ -799,8 +799,8 @@
    "cat": "finance",
    "c": "XU",
    "at": [
-    68,
-    112
+    76,
+    115
    ],
    "h": 3,
    "kind": "bank",
@@ -880,8 +880,8 @@
    "cat": "government",
    "c": "XU",
    "at": [
-    70,
-    112
+    78,
+    115
    ],
    "h": 2,
    "kind": "office",
@@ -935,8 +935,8 @@
    "cat": "government",
    "c": "XU",
    "at": [
-    118,
-    113
+    96,
+    120
    ],
    "h": 1,
    "kind": "customs",
@@ -999,8 +999,8 @@
    "cat": "government",
    "c": "XU",
    "at": [
-    68,
-    114
+    76,
+    117
    ],
    "h": 2,
    "kind": "office",
@@ -1041,8 +1041,8 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    119,
-    113
+    97,
+    120
    ],
    "h": 1,
    "kind": "customs",
@@ -1097,7 +1097,7 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    125,
+    124,
     113
    ],
    "h": 3,
@@ -1248,8 +1248,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    135,
-    126
+    137,
+    125
    ],
    "h": 2,
    "kind": "shop",
@@ -1401,8 +1401,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    134,
-    129
+    136,
+    128
    ],
    "h": 1,
    "kind": "house",
@@ -1465,7 +1465,7 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    137,
+    139,
     127
    ],
    "h": 4,
@@ -1550,8 +1550,8 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    130,
-    114
+    125,
+    111
    ],
    "h": 2,
    "kind": "office",
@@ -1621,8 +1621,8 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    135,
-    129
+    140,
+    127
    ],
    "h": 3,
    "kind": "office",
@@ -1664,8 +1664,8 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    137,
-    129
+    140,
+    125
    ],
    "h": 3,
    "kind": "office",
@@ -1706,8 +1706,8 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    137,
-    126
+    139,
+    124
    ],
    "h": 2,
    "kind": "office",
@@ -1749,8 +1749,8 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    135,
-    127
+    139,
+    125
    ],
    "h": 3,
    "kind": "bank",
@@ -1816,7 +1816,7 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    134,
+    137,
     127
    ],
    "h": 2,
@@ -1898,8 +1898,8 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    138,
-    129
+    139,
+    128
    ],
    "h": 3,
    "kind": "bank",
@@ -1953,8 +1953,8 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    138,
-    126
+    136,
+    125
    ],
    "h": 2,
    "kind": "office",
@@ -2052,20 +2052,20 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    139,
-    127
+    136,
+    129
    ],
    "h": 2,
    "kind": "port",
    "what": "Port of loading: berths, container yard and vessel traffic.",
    "how": "The seaport loads the ship. UBL transport reports and status messages tell the port which containers are coming, and tell carriers and authorities what was loaded, on which vessel and when.",
    "size": [
-    1,
-    2
+    2,
+    1
    ],
    "water": [
-    1,
-    0
+    0,
+    1
    ],
    "identity": {
     "name": "Port of Lumeport",
@@ -2118,8 +2118,8 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    139,
-    126
+    140,
+    128
    ],
    "h": 2,
    "kind": "office",
@@ -2218,16 +2218,16 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    132,
-    126
+    136,
+    122
    ],
    "h": 1,
    "kind": "airport",
    "what": "Air cargo terminal for urgent shipments overseas.",
    "how": "The airport handles urgent cargo. UBL status messages let it report acceptance, loading and departure, with the air waybill reference the carrier and forwarder use.",
    "size": [
-    1,
-    2
+    2,
+    1
    ],
    "identity": {
     "name": "Lumeport Airport Cargo Terminal",
@@ -2281,8 +2281,8 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    243,
-    109
+    238,
+    110
    ],
    "h": 2,
    "kind": "port",
@@ -2395,7 +2395,7 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    236,
+    235,
     108
    ],
    "h": 2,
@@ -2501,8 +2501,8 @@
    "cat": "government",
    "c": "XL",
    "at": [
-    241,
-    108
+    237,
+    110
    ],
    "h": 1,
    "kind": "customs",
@@ -2554,8 +2554,8 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    241,
-    111
+    236,
+    113
    ],
    "h": 2,
    "kind": "office",
@@ -2608,7 +2608,7 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    241,
+    235,
     113
    ],
    "h": 2,
@@ -2679,8 +2679,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    239,
-    110
+    236,
+    111
    ],
    "h": 3,
    "kind": "office",
@@ -2790,8 +2790,8 @@
    "cat": "finance",
    "c": "XL",
    "at": [
-    239,
-    112
+    238,
+    113
    ],
    "h": 3,
    "kind": "bank",
@@ -2858,8 +2858,8 @@
    "cat": "government",
    "c": "XL",
    "at": [
-    241,
-    112
+    236,
+    114
    ],
    "h": 2,
    "kind": "office",
@@ -2910,8 +2910,8 @@
    "cat": "government",
    "c": "XL",
    "at": [
-    242,
-    112
+    235,
+    111
    ],
    "h": 2,
    "kind": "office",
@@ -2949,8 +2949,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    70,
-    114
+    78,
+    117
    ],
    "h": 2,
    "kind": "office",
@@ -3037,8 +3037,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    133,
-    127
+    134,
+    125
    ],
    "h": 2,
    "kind": "waterworks",
@@ -3114,8 +3114,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    232,
-    112
+    231,
+    113
    ],
    "h": 2,
    "kind": "telecom",
@@ -3205,8 +3205,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    128,
-    116
+    121,
+    114
    ],
    "size": [
     2,
@@ -3313,8 +3313,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    129,
-    113
+    121,
+    111
    ],
    "h": 2,
    "kind": "warehouse",
@@ -3422,8 +3422,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    138,
-    125
+    139,
+    123
    ],
    "h": 2,
    "kind": "factory",
@@ -3536,7 +3536,7 @@
    "c": "XB",
    "at": [
     133,
-    131
+    125
    ],
    "h": 2,
    "kind": "factory",
@@ -3732,8 +3732,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    238,
-    108
+    239,
+    107
    ],
    "h": 2,
    "kind": "ginnery",
@@ -3839,8 +3839,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    72,
-    44
+    76,
+    39
    ],
    "size": [
     2,
@@ -3942,8 +3942,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    50,
-    80
+    57,
+    82
    ],
    "size": [
     2,
@@ -4042,8 +4042,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    69,
-    110
+    72,
+    112
    ],
    "h": 2,
    "kind": "grid",
