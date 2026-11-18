@@ -13,7 +13,8 @@ region, by its own soil, slope, rain and aspect (in the southern hemisphere a sl
     (over 880 mm): a mosaic of small fields, hay meadows, orchards and woodlots; the drier hills: wheat and barley
     on the level, olives and vines on the sunny slopes, sheep;
   * Bayvarra: wheat land (over 540 mm) in large paddocks on the level open land, sheep runs on the rougher ground;
-    the dry east: open sheep and cattle runs, with home paddocks near the homesteads;
+    the dry east: open sheep and cattle runs, with home paddocks near the homesteads; the Northern Territory (north
+    of row 60, thinly peopled): open runs only;
   * Lisavu: cotton on the dry lee side's level land, gardens and fruit in the wet windward valleys;
   * a cell is farmed only within reach of the people who farm it (REACH: the distance, km, to the nearest town,
     village or road; the dispersed farmsteads lie along the roads; the edge is ragged, paddock by paddock, and
@@ -33,16 +34,20 @@ import zlib
 CLASSES = "swdfghrm"           # the terrain's cover classes (tools/terrain_lib.py), by number
 MAX_FARM_M = 1000              # nothing is farmed above this height
 # how far from a town, a village or a road the land of each way of farming is worked (km)
-REACH = {"valley": 9.0, "mixed": 8.0, "dryland": 10.0, "wheat": 14.0, "pastoral": 22.0, "cotton": 7.0, "gardens": 3.0}
+REACH = {"territory": 15.0, "valley": 9.0, "mixed": 8.0, "dryland": 10.0, "wheat": 14.0, "pastoral": 22.0, "cotton": 7.0, "gardens": 3.0}
 
 
-def region(cty, z, rain, river_km):
-    """The way of farming of a cell, from its country, height, rain and distance to the main river (km)."""
+def region(cty, z, rain, river_km, y=99, x=0):
+    """The way of farming of a cell, from its country, height, rain, distance to the main river (km) and the row of
+    its square (Bayvarra's land north of row 60 is the Northern Territory)."""
     if cty == "U":
         if river_km < 9 and z < 400:
             return "valley"
         return "mixed" if rain >= 880 else "dryland"
     if cty == "B":
+        if y < 60 + 3 * math.sin(x / 7) + 2 * math.sin(x / 3.3 + 1):
+            return "territory"                       # the Northern Territory's thinly peopled north (row 60), its farmed
+                                                     # edge following the land rather than the line
         return "wheat" if rain >= 540 else "pastoral"
     if cty == "L":
         return "cotton" if rain < 1150 else "gardens"
@@ -92,6 +97,8 @@ def use(reg, c, s, sun, d, r, h1, h2, hb, flood):
         if d < 2.5 and s < .04 and hb < .5:
             return "d"                                   # the home paddocks: hay, lucerne, the garden
         return "g"
+    if reg == "territory":
+        return "g" if c != "f" and s < .12 else None   # open runs; no ploughing
     if reg == "cotton":
         if s < .07 and c in "dg":
             return "d"
@@ -251,7 +258,8 @@ def land_use(root, terrain, world, keep_squares=(), W=256, H=192):
                     i1, j1 = min(W - 1, i0 + 1), min(H - 1, j0 + 1)
                     d = (D[i0][j0] * (1 - u) * (1 - v) + D[i1][j0] * u * (1 - v) + D[i0][j1] * (1 - u) * v
                          + D[i1][j1] * u * v)
-                    reg = region(country[sq[1]][sq[0]], z, rain[y * w + x], RD.get(sq, 9) * 3.5)
+                    reg = region(country[sq[1]][sq[0]], z, rain[y * w + x], RD.get(sq, 9) * 3.5,
+                                 y=y0 + (y + .5) / S, x=x0 + (x + .5) / S)
                     gxc, gyc = x0 * S + x, y0 * S + y
                     if reg and d < REACH[reg] * (.7 + .6 * hsh(gxc // 2, gyc // 2, 4)):    # a ragged edge
                         xl, xr = max(0, x - 1), min(w - 1, x + 1)

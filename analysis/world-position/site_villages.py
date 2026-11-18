@@ -39,11 +39,11 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 CTY = {"U": "XU", "B": "XB", "L": "XL"}
 # how strongly each region draws settlement (the chance a well-watered square of good soil is settled), and the
 # least distance between two places (squares of 3.5 km)
-REGION_PULL = {"valley": 1.6, "west": 1.0, "hills": .45, "wheat": .09, "pastoral": .03, "forest": .05, "lee": .9,
+REGION_PULL = {"territory": .004, "valley": 1.0, "west": 1.0, "hills": .45, "wheat": .09, "pastoral": .03, "forest": .05, "lee": .9,
                "windward": .5}
-MIN_GAP = {"valley": 1.4, "west": 1.4, "hills": 1.9, "wheat": 2.8, "pastoral": 4.3, "forest": 3.0, "lee": 1.4,
+MIN_GAP = {"territory": 6.0, "valley": 1.4, "west": 1.4, "hills": 1.9, "wheat": 2.8, "pastoral": 4.3, "forest": 3.0, "lee": 1.4,
            "windward": 2.0}
-FARMING = {"valley": "valley", "west": "mixed", "hills": "dryland", "wheat": "wheat-sheep", "pastoral": "pastoral",
+FARMING = {"territory": "pastoral", "valley": "valley", "west": "mixed", "hills": "dryland", "wheat": "wheat-sheep", "pastoral": "pastoral",
            "forest": "forestry", "lee": "cotton", "windward": "gardens"}
 # the population (owner, 2026-11-18): per country the total, the rural population outside the towns of the map
 # (villages, hamlets and the dispersed farms and homesteads, which are too small to draw and have no dot), the part
@@ -62,8 +62,11 @@ DENSITY = {"hamlet": 1200, "village": 1500, "large village": 1800, "small town":
 # Bayvarra (3,000 to 15,000, about 70,000): their people (the other named places get theirs from their site)
 PEOPLE = {(68, 116): 28000, (87, 110): 26000, (92, 146): 25000, (29, 106): 22000, (61, 46): 20000, (74, 105): 15000,
           (94, 121): 14000,
-          (108, 120): 12000, (139, 116): 9000, (130, 117): 8000, (145, 107): 7000, (152, 89): 6000, (103, 51): 6000,
-          (115, 85): 6000, (85, 44): 6000, (96, 105): 5000, (148, 98): 5000}
+          (108, 120): 12000, (139, 116): 9000, (130, 117): 8000, (145, 107): 7000, (152, 89): 6000, (155, 109): 6000,
+          (115, 85): 6000, (103, 111): 6000, (96, 105): 5000, (148, 98): 5000}
+# named places kept small: Fucinalta below Serravona, the mining village (the story's village at the mine);
+# Ploverness, a fishing hamlet of the thinly peopled Northern Territory
+SMALL = {(54, 89): 900, (124, 53): 250}
 # what the country towns and the railway and coast towns live on (their size outgrew the village's living)
 TOWN_LIVES = {
     (68, 116): "The market of the upper valley and its wine, food works, workshops; commuters to Ferrano.",
@@ -78,9 +81,9 @@ TOWN_LIVES = {
     (130, 117): "Its station and the road, the farms round it, joinery for Marrowdale's furniture trade.",
     (145, 107): "The coast road's trade, the farms and sheep runs behind it.",
     (152, 89): "Shearing sheds and wool stores by the station, sheep runs.",
-    (103, 51): "The north coast's small harbour, fishing, salt-meadow lamb, the market of the coast's farms.",
+    (155, 109): "The east coast's small harbour, fishing, salt-meadow lamb, the market of the coast's farms.",
     (115, 85): "The market of the plateau's sheep runs and wheat farms.",
-    (85, 44): "The market of the north coast's barley and sheep farms.",
+    (103, 111): "The market of the western wheat land's barley, wheat and sheep farms.",
     (96, 105): "The market of the western wheat land.",
     (148, 98): "The station's stock yards and grain store, the sheep and cattle runs.",
 }
@@ -92,7 +95,7 @@ GROWTH = {
                 ("Quartiere della Diga", "independence", "after 1962", "suburb", (-.4, .4), 1.1, "Housing and workshops by the weir built across the tributary after independence.")],
     (87, 110): [("La Fiera", "urvanian", "before 1600", "core", (0, 0), .9, "The old fair ground at the confluence and the lanes round it."),
                 ("Borgo Stazione", "italian", "1880s to 1930s", "residential", (-.45, .3), .9, "The Italian quarter towards Ferrano: the cattle market's offices and the inns."),
-                ("Fieravecchia Nuova", "independence", "after 1962", "suburb", (.45, -.4), 1.2, "Housing and the meat works on the terrace above the confluence.")],
+                ("Fierabruna Nuova", "independence", "after 1962", "suburb", (.45, -.4), 1.2, "Housing and the meat works on the terrace above the confluence.")],
     (92, 146): [("Marina", "urvanian", "before 1600", "port", (0, 0), .9, "The fishermen's quarter round the old landing in the bay."),
                 ("Il Faro", "italian", "1890s to 1930s", "administration", (.4, .3), .8, "The Italian harbour works: the light, the jetty, the customs house and the promenade."),
                 ("Lanternino Alta", "independence", "after 1962", "suburb", (-.35, -.45), 1.2, "Housing on the slope above the bay and the fish cannery.")],
@@ -146,7 +149,7 @@ NAMED = {
                 "On a stream east of Ferrano, on the main road to the border: the hides of the cattle markets were "
                 "tanned here, downwind of the town.", "Farming, a leather works that grew from the tanneries.",
                 "large", "dryland"),
-    (87, 110): ("Fieravecchia", "market", "Urvanian, before 1600",
+    (87, 110): ("Fierabruna", "market", "Urvanian, before 1600",
                 "Where two large rivers of the plateau meet north-east of Ferrano, on the drovers' way down from "
                 "the hills: the old cattle fair of the region.", "The yearly fair, cattle and sheep, wheat on the "
                 "terraces.", "town", "dryland"),
@@ -156,14 +159,16 @@ NAMED = {
     (88, 100): ("Fontebrina", "spring", "Urvanian, before 1600",
                 "At the foot of the hills where springs rise along a line of harder rock, beside a confluence.",
                 "Wheat and sheep, the springs bottled since the Italian period.", "large", "dryland"),
-    (94, 121): ("Forte Carlo Alberto", "stronghold", "Sardinian, about 1842 (the fort); the village after it",
+    (94, 121): ("Forte Euridice", "stronghold", "Sardinian, about 1842 (the fort); the village after it",
                 "On the north bank in the angle between the main river and the largest plateau river, just above "
                 "their confluence, where the land border meets the river: the Sardinian protectorate built a fort "
-                "here to watch the river and the British settlers beyond the plateau river; the boundary convention "
+                "here to watch the river and the British settlers beyond the plateau river, and named it after the "
+                "corvette Euridice of its station on the Plata, which had first shown the flag on the river; the "
+                "boundary convention "
                 "of about 1857 made that river and the watershed the border.",
                 "The border crossing's traffic, the railway, fields on the valley floor.", "town", "valley"),
-    (114, 124): ("Vignalunga", "vineyard", "Urvanian, before 1600",
-                 "On the south bank of the lower valley, below a long slope that faces north, to the sun.",
+    (114, 124): ("Vignacorta", "vineyard", "Urvanian, before 1600",
+                 "On the south bank of the lower valley, below a short, steep slope that faces north, to the sun.",
                  "Vineyards along the slope, fields on the floodplain.", "large", "valley"),
     (140, 136): ("Passobarca", "ferry", "Sardinian, about 1845",
                  "On the south shore of the estuary opposite Lumeport, where the ferry lands.",
@@ -200,7 +205,7 @@ NAMED = {
     (118, 153): ("Saline Brune", "saltpan", "Urvanian, before 1600",
                  "On a flat stretch of the south coast where a stream comes down to a lagoon: salt pans.",
                  "Salt, fishing, wheat and vines behind the shore.", "large", "fishing"),
-    (124, 153): ("Piccionara", "dovecote", "Urvanian, before 1600",
+    (124, 153): ("Torre Colombina", "dovecote", "Urvanian, before 1600",
                  "At a stream mouth on the south coast, its farms known for their dovecotes.",
                  "Wheat, vines and olives, pigeons, fishing.", "village", "dryland"),
     (132, 151): ("Marina Ligure", "cove", "Sardinian, 1840s",
@@ -217,7 +222,7 @@ NAMED = {
                  "bracken-covered ground: a stage on the road down to the capital.",
                  "Sheep and wheat, the road; its joiners went to Marrowdale's furniture trade.", "large",
                  "wheat-sheep"),
-    (145, 107): ("Stockmans Rest", None, "British settlers, 1830s",
+    (145, 107): ("Drovers Halt", None, "British settlers, 1830s",
                  "On the coast road from Larkmouth to Lumeport, where it crosses a stream at a confluence: an inn "
                  "where drovers rested their stock.", "The road, sheep and cattle runs.", "large", "pastoral"),
     (152, 89): ("Fleecewell", None, "British settlers, 1830s; the station 19th century",
@@ -230,7 +235,7 @@ NAMED = {
     (137, 72): ("Ewesbridge", None, "British settlers, 1830s",
                 "On the road north from Larkmouth over the dry east, at a bridge over a creek.",
                 "A sheep station's village: wool, the road.", "village", "pastoral"),
-    (115, 85): ("Wethercote", None, "British settlers, 1840s",
+    (115, 85): ("Wetherholme", None, "British settlers, 1840s",
                 "Where two rivers of the plateau meet, the homestead of one of the first sheep runs.",
                 "Sheep (wethers, for wool), hay.", "large", "pastoral"),
     (96, 105): ("Harrowmead", None, "British settlers, 1850s",
@@ -242,17 +247,18 @@ NAMED = {
     (161, 102): ("Ternhaven", None, "British settlers, 1830s",
                  "At a creek mouth on the east coast, behind a spit where terns nest.",
                  "Fishing, sheep on the runs behind.", "village", "fishing"),
-    (103, 51): ("Saltmere", None, "British settlers, 1830s",
-                "On a sheltered creek of the north coast among salt meadows, where a river comes in, on the road "
-                "along the coast.", "Fishing, salt-meadow lamb, a small harbour.", "large", "fishing"),
+    (155, 109): ("Saltmere", None, "British settlers, 1830s",
+                 "On a sheltered creek of the east coast between Larkmouth and Lumeport, among salt meadows behind "
+                 "the shore, a few kilometres off the coast road.", "Fishing, salt-meadow lamb, a small harbour.",
+                 "large", "fishing"),
     (92, 47): ("Shinglebeck", None, "British settlers, 1830s",
                "Where a stream comes down to a shingle shore of the north coast, on the coast road.",
                "Sheep and fishing.", "village", "pastoral"),
     (124, 53): ("Ploverness", None, "British settlers, 1840s",
                 "On a low point of the north coast at a stream mouth.", "Fishing and sheep.", "village", "fishing"),
-    (85, 44): ("Barleycombe", None, "British settlers, 1840s",
-               "In a valley near the north coast, on the road, where the rain is enough for barley.",
-               "Barley and sheep.", "large", "wheat-sheep"),
+    (103, 111): ("Barleycombe", None, "British settlers, 1850s",
+                 "In a valley of the western wheat land between Marrowdale and the border, where two streams meet.",
+                 "Barley, wheat and sheep.", "large", "wheat-sheep"),
     # ---- Lisavu
     (227, 122): ("Linukaha", "rivermouth", "Lisavan, old",
                  "At the mouth of the largest stream of the south coast, where two streams meet.",
@@ -336,6 +342,9 @@ def main():
     T = model["tiles"]
     F = features_per_square(terr, fields)
     river = {(x, y) for x, y, _ in terr["river"]}
+    level = {}
+    for x, y, lv in terr["river"]:
+        level[(x, y)] = min(lv, level.get((x, y), 1e9))
     est = {tuple(q) for q in terr["estuary"]}
     pipes = {tuple(q) for r in world["routes"] if r["mode"] == "pipeline" for q in r["pts"]}
     managed = {(i, j) for f in terr["managed_forests"] for i, j, _ in f["squares"]}
@@ -372,7 +381,9 @@ def main():
             if f["z"] < 400 and min(math.hypot(q[0] - x, q[1] - y) for x, y in river) <= 3:
                 return "valley"
             return "west" if f["rain"] >= 880 else "hills"
-        return "wheat" if f["rain"] >= 720 else "pastoral"
+        if q[1] < 60:
+            return "territory"                       # the Northern Territory: the thinly peopled north coast
+        return "wheat" if f["rain"] >= 540 else "pastoral"
 
     def free(q):
         t = T[q[0]][q[1]]
@@ -398,6 +409,13 @@ def main():
         nb8 = [(q[0] + a, q[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1) if a or b]
         if any(n in river for n in nb8):
             out["river"] = 1
+            lv = min(level[n] for n in nb8 if n in river)
+            if F[q]["z"] - lv < 12:
+                out["floodplain"] = 1                    # low beside the river: it floods
+        else:
+            ring2_ = [(q[0] + a, q[1] + b) for a in range(-2, 3) for b in range(-2, 3) if (q[0] + a, q[1] + b) in river]
+            if ring2_ and 12 <= F[q]["z"] - min(level[n] for n in ring2_) <= 90:
+                out["terrace"] = 1                       # a terrace above the flood plain, a little back from the river
         if f.get("conf", 0) > 300 and f.get("stream", 0) > 600:
             out["confluence"] = 1
         if f.get("stream", 0) > 250:
@@ -437,14 +455,15 @@ def main():
         a stream), soil (level open land), the routes, the region's way of life."""
         f = F[q]
         water = .08
-        for k, w in (("river", 1.0), ("confluence", 1.0), ("estuary", .8), ("foot", .55), ("stream", .45)):
+        for k, w in (("terrace", 1.0), ("river", .3), ("confluence", 1.0), ("estuary", .8), ("foot", .55), ("stream", .45)):
             if k in ft:
                 water = max(water, w)
         if "coast" in ft:
             water = max(water, .9 if ft["coast"] < .4 else .4)
         soil = (f["fr"]["d"] + .5 * f["fr"]["g"]) * max(0., 1 - f["slope"] / .15)
         route = .6 * ("road" in ft) + .5 * ("rail" in ft)
-        return REGION_PULL[reg] * water * (.2 + soil) * (1 + route)
+        flood = .25 if "floodplain" in ft else 1.0       # the valley floor that floods is farmed, not built on
+        return REGION_PULL[reg] * water * (.2 + soil) * (1 + route) * flood
 
     acc = []
     for q in NAMED:
@@ -523,21 +542,23 @@ def main():
     #    dispersed, not in the localities) shared out by the strength of the site, a named place's three times, with
     #    a fixed noise; a named place has at least 1,000, no village more than 4,500
     people = {}
+    CAP = {"XU": 4500, "XB": 4500, "XL": 2500}         # the largest village: Selanu is Lisavu's only town
     for c in ("XU", "XB", "XL"):
         mine = [(s_, q, reg, ft) for s_, q, reg, ft in acc if CTY[terr["country"][q[1]][q[0]]] == c and q not in PEOPLE]
         local = sum(2000 for t in world["localities"] if t["country"] == c)
         share = POPULATION[c]["rural"] - POPULATION[c]["dispersed"] - local
-        wt = {q: (pull(q, ft, reg) + .05) ** 1.2 * (.15 + 1.7 * hsh(q[0], q[1], 9) ** 2) * (3 if q in NAMED else 1.5 if "station" in ft else 1)
+        wt = {q: (pull(q, ft, reg) + .05) ** .6 * (.08 + 2.4 * hsh(q[0], q[1], 9) ** 3) * (3 if q in NAMED else 1.5 if "station" in ft else 1)
+              * (.5 if "river" in ft and "confluence" not in ft and q not in NAMED else 1)
               for s_, q, reg, ft in mine}
-        fixed = {}
+        fixed = {q: n for q, n in SMALL.items() if q in wt}
         for _ in range(20):
             k = (share - sum(fixed.values())) / sum(w for q, w in wt.items() if q not in fixed)
-            low = {q for q in wt if q in NAMED and q not in fixed and wt[q] * k < 1000}
-            high = {q for q in wt if q not in fixed and wt[q] * k > 4500}
+            low = {q for q in wt if q in NAMED and q not in fixed and wt[q] * k < 1000 and q[1] >= 60}
+            high = {q for q in wt if q not in fixed and wt[q] * k > CAP[c]}
             if not low and not high:
                 break
             fixed.update({q: 1000 for q in low})
-            fixed.update({q: 4500 for q in high})
+            fixed.update({q: CAP[c] for q in high})
         for q, w in wt.items():
             people[q] = fixed.get(q) or max(30, int(round(w * k / 10) * 10))
     people.update(PEOPLE)
@@ -628,7 +649,8 @@ def story(c, reg, ft, f):
              "hills": "Wheat and barley, olives and vines on the sunny slopes, sheep.",
              "wheat": "Wheat and sheep.", "pastoral": "A sheep and cattle station: wool and meat from big paddocks.",
              "forest": "Timber and charcoal, gardens in the clearing.", "lee": "Cotton, gardens and pasture.",
-             "windward": "Fruit and vegetable gardens, the forest."}[reg]
+             "windward": "Fruit and vegetable gardens, the forest.",
+             "territory": "A cattle and sheep station on the open runs of the north."}[reg]
     if "coast" in ft or "estuary" in ft:
         lives = "Fishing; " + lives[0].lower() + lives[1:]
     if c == "XU":
