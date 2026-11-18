@@ -689,15 +689,15 @@ def labels_flat(img, px):
     for q_, t_, sz_ in (((5 * G, 30 * G), "URVANIA", 1.1), ((29 * G, 19 * G), "BAYVARRA", 1.1), ((52 * G, 33.5 * G), "LISAVU", 1.0)):
         x_, y_ = P(q_)
         placed.append(d.textbbox((x_, y_), sp_(t_), font=F(False, U * sz_), anchor="lm"))
-    R_BAND = {"hamlet": .055, "village": .075, "large": .1, "town": .13}
+    R_BAND = {"hamlet": .045, "village": .065, "large village": .085, "small town": .11, "country town": .14}
     for v in WORLD.get("villages", []):
         x, y = P(v["c"])
         r = U * R_BAND[v["band"]]
         d.ellipse([x - r, y - r, x + r, y + r], fill=PAL["village"], outline=(120, 70, 60), width=max(1, U // 40))
-    vf = F(False, U * .44)
-    for v in WORLD.get("villages", []):
+    for v in sorted(WORLD.get("villages", []), key=lambda v: -v["people"]):
         if not v["name"]:
             continue
+        vf = F(v["band"] == "country town", U * (.6 if v["band"] == "country town" else .5 if v["band"] == "small town" else .44))
         x, y = P(v["c"])
         tw_, th_ = d.textbbox((0, 0), v["name"], font=vf)[2:]
         g = U * .16

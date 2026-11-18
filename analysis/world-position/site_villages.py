@@ -64,6 +64,26 @@ PEOPLE = {(68, 116): 28000, (87, 110): 26000, (92, 146): 25000, (29, 106): 22000
           (94, 121): 14000,
           (108, 120): 12000, (139, 116): 9000, (130, 117): 8000, (145, 107): 7000, (152, 89): 6000, (103, 51): 6000,
           (115, 85): 6000, (85, 44): 6000, (96, 105): 5000, (148, 98): 5000}
+# what the country towns and the railway and coast towns live on (their size outgrew the village's living)
+TOWN_LIVES = {
+    (68, 116): "The market of the upper valley and its wine, food works, workshops; commuters to Ferrano.",
+    (87, 110): "The cattle fair and the meat works, the market of the plateau's farms, schools and the hospital of the hills.",
+    (92, 146): "The south coast's fishing harbour and cannery, its market, summer visitors.",
+    (29, 106): "The market and services of the wet west, dairy works, a small harbour at the river mouth.",
+    (61, 46): "The north-west's harbour: fishing, fish processing, the coastal shipping, the market of the inlet's farms.",
+    (74, 105): "Brick works and workshops by the railway, the valley's farms; commuters to Ferrano.",
+    (94, 121): "The border crossing: customs agents, hauliers and warehouses, the railway, the valley's farms.",
+    (108, 120): "The stock sales and the railway, the market of the wheat and sheep land, the border crossing.",
+    (139, 116): "Oysters and fishing, market gardens for Lumeport, and its commuters.",
+    (130, 117): "Its station and the road, the farms round it, joinery for Marrowdale's furniture trade.",
+    (145, 107): "The coast road's trade, the farms and sheep runs behind it.",
+    (152, 89): "Shearing sheds and wool stores by the station, sheep runs.",
+    (103, 51): "The north coast's small harbour, fishing, salt-meadow lamb, the market of the coast's farms.",
+    (115, 85): "The market of the plateau's sheep runs and wheat farms.",
+    (85, 44): "The market of the north coast's barley and sheep farms.",
+    (96, 105): "The market of the western wheat land.",
+    (148, 98): "The station's stock yards and grain store, the sheep and cattle runs.",
+}
 # the growth of the country towns: districts as the towns' (map "towns", "districts"): name, period, years,
 # character, offset from the centre (squares), relative size (km), note
 GROWTH = {
@@ -91,7 +111,8 @@ GROWTH = {
 }
 
 # The named villages: square -> name (English; the Italian name in Urvania), the word(s) of its name in Urvanian
-# or Lisavan (made by tools/lexicon.py; the name is the word, capitalised), founded, why, lives on, band, farming.
+# or Lisavan (made by tools/lexicon.py; the name is the word, capitalised), founded, why, lives on, a size (no longer
+# used: the people come from POPULATION and PEOPLE above), farming.
 # Names checked against GeoNames (Italy, the UK, Ireland, the US, Canada, Australia, New Zealand, South Africa,
 # and every place of 500 people or more): none is a real place.
 NAMED = {
@@ -544,6 +565,7 @@ def main():
             founded, why, lives = story(c, reg, ft, F[q])
             v = {"name": None}
         n = people[q]
+        lives = TOWN_LIVES.get(q, lives)
         band, lo, hi = next(b for b in BANDS if b[1] <= n < b[2])
         v.update({"c": list(q), "country": c, "region": reg, "founded": founded, "why": why, "lives_on": lives,
                   "people": n, "population": [lo, hi], "band": band,

@@ -16550,7 +16550,7 @@
    "region": "wheat",
    "founded": "British settlers, 1840s",
    "why": "In a valley near the north coast, on the road, where the rain is enough for barley.",
-   "lives_on": "Barley and sheep.",
+   "lives_on": "The market of the north coast's barley and sheep farms.",
    "people": 6000,
    "population": [
     3000,
@@ -16596,7 +16596,7 @@
    "region": "wheat",
    "founded": "British settlers, 1850s",
    "why": "On the plateau near the border, on a confluence in the wetter western part of Bayvarra.",
-   "lives_on": "Wheat and sheep.",
+   "lives_on": "The market of the western wheat land.",
    "people": 5000,
    "population": [
     3000,
@@ -16619,7 +16619,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1830s",
    "why": "On a sheltered creek of the north coast among salt meadows, where a river comes in, on the road along the coast.",
-   "lives_on": "Fishing, salt-meadow lamb, a small harbour.",
+   "lives_on": "The north coast's small harbour, fishing, salt-meadow lamb, the market of the coast's farms.",
    "people": 6000,
    "population": [
     3000,
@@ -16642,7 +16642,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1840s",
    "why": "At the ford of the main river where the largest plateau river joins it, the drovers' crossing between the plateau and the south; the railway and the border crossing came later.",
-   "lives_on": "Stock sales, the railway, wheat and sheep.",
+   "lives_on": "The stock sales and the railway, the market of the wheat and sheep land, the border crossing.",
    "people": 12000,
    "population": [
     10000,
@@ -16665,7 +16665,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1840s",
    "why": "Where two rivers of the plateau meet, the homestead of one of the first sheep runs.",
-   "lives_on": "Sheep (wethers, for wool), hay.",
+   "lives_on": "The market of the plateau's sheep runs and wheat farms.",
    "people": 6000,
    "population": [
     3000,
@@ -16711,7 +16711,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1840s",
    "why": "Between Marrowdale and Lumeport on the road and the railway, by a spring-fed pond (the mere) in bracken-covered ground: a stage on the road down to the capital.",
-   "lives_on": "Sheep and wheat, the road; its joiners went to Marrowdale's furniture trade.",
+   "lives_on": "Its station and the road, the farms round it, joinery for Marrowdale's furniture trade.",
    "people": 8000,
    "population": [
     3000,
@@ -16757,7 +16757,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1840s",
    "why": "On the north shore of Lumeport's bay, on the road north, where the shore shelves gently.",
-   "lives_on": "Oysters and fishing, market gardens for Lumeport.",
+   "lives_on": "Oysters and fishing, market gardens for Lumeport, and its commuters.",
    "people": 9000,
    "population": [
     3000,
@@ -16780,7 +16780,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1830s",
    "why": "On the coast road from Larkmouth to Lumeport, where it crosses a stream at a confluence: an inn where drovers rested their stock.",
-   "lives_on": "The road, sheep and cattle runs.",
+   "lives_on": "The coast road's trade, the farms and sheep runs behind it.",
    "people": 7000,
    "population": [
     3000,
@@ -16803,7 +16803,7 @@
    "region": "pastoral",
    "founded": "British, 19th century (the station)",
    "why": "At a station on the wool line between Marrowdale and Larkmouth, on the edge of a rise.",
-   "lives_on": "The station's stock yards, sheep and cattle runs.",
+   "lives_on": "The station's stock yards and grain store, the sheep and cattle runs.",
    "people": 5000,
    "population": [
     3000,
@@ -16826,7 +16826,7 @@
    "region": "pastoral",
    "founded": "British settlers, 1830s; the station 19th century",
    "why": "Just south of Larkmouth on the coast road and the wool line, at a well where the flocks were watered and washed before shearing.",
-   "lives_on": "Shearing sheds and wool, the station, sheep runs.",
+   "lives_on": "Shearing sheds and wool stores by the station, sheep runs.",
    "people": 6000,
    "population": [
     3000,
@@ -17114,7 +17114,7 @@
    "region": "west",
    "founded": "Urvanian, before 1600",
    "why": "Where two rivers of the western hills meet, a few kilometres from the coast.",
-   "lives_on": "Mixed farming: small fields, meadows and dairy cattle, chestnut woods.",
+   "lives_on": "The market and services of the wet west, dairy works, a small harbour at the river mouth.",
    "people": 22000,
    "population": [
     10000,
@@ -17260,7 +17260,7 @@
    "region": "west",
    "founded": "Urvanian, before 1600",
    "why": "At the head of a long inlet on the north-west coast, the most sheltered anchorage of Urvania's coast, where a river comes in.",
-   "lives_on": "Fishing, the small harbour, mixed farming behind it.",
+   "lives_on": "The north-west's harbour: fishing, fish processing, the coastal shipping, the market of the inlet's farms.",
    "people": 20000,
    "population": [
     10000,
@@ -17379,7 +17379,7 @@
    "region": "valley",
    "founded": "Urvanian, before 1600",
    "why": "At the head of the rapids above Ruldraz (Ferrano), where a large tributary joins the river: boats coming down from the upper valley were unloaded here and their loads carried round the rapids.",
-   "lives_on": "Once the portage and its carters; now fields and market gardens on the valley floor, vines on the slope that faces the sun, and Ferrano's market.",
+   "lives_on": "The market of the upper valley and its wine, food works, workshops; commuters to Ferrano.",
    "people": 28000,
    "population": [
     10000,
@@ -17444,7 +17444,7 @@
    "region": "hills",
    "founded": "Urvanian, before 1600; named under Italian rule",
    "why": "On the valley road from Ruldraz up to the hills of Serravona, beside the railway, at a stone the Sardinian road builders set at the tenth mile.",
-   "lives_on": "Fields and orchards, a carters' inn, and the commuters to Ferrano.",
+   "lives_on": "Brick works and workshops by the railway, the valley's farms; commuters to Ferrano.",
    "people": 15000,
    "population": [
     10000,
@@ -17617,7 +17617,7 @@
    "region": "hills",
    "founded": "Urvanian, before 1600",
    "why": "Where two large rivers of the plateau meet north-east of Ferrano, on the drovers' way down from the hills: the old cattle fair of the region.",
-   "lives_on": "The yearly fair, cattle and sheep, wheat on the terraces.",
+   "lives_on": "The cattle fair and the meat works, the market of the plateau's farms, schools and the hospital of the hills.",
    "people": 26000,
    "population": [
     10000,
@@ -17709,7 +17709,7 @@
    "region": "west",
    "founded": "Urvanian, before 1600; the harbour light Italian, 1890s",
    "why": "In a sheltered bay of the south coast, where the Italian administration put a harbour light and a jetty.",
-   "lives_on": "Fishing, small fields and meadows.",
+   "lives_on": "The south coast's fishing harbour and cannery, its market, summer visitors.",
    "people": 25000,
    "population": [
     10000,
@@ -17774,7 +17774,7 @@
    "region": "valley",
    "founded": "Sardinian, about 1842 (the fort); the village after it",
    "why": "On the north bank in the angle between the main river and the largest plateau river, just above their confluence, where the land border meets the river: the Sardinian protectorate built a fort here to watch the river and the British settlers beyond the plateau river; the boundary convention of about 1857 made that river and the watershed the border.",
-   "lives_on": "The border crossing's traffic, the railway, fields on the valley floor.",
+   "lives_on": "The border crossing: customs agents, hauliers and warehouses, the railway, the valley's farms.",
    "people": 14000,
    "population": [
     10000,
