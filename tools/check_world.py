@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check the UBL world: checks that the terrain (world/terrain.json) was made from its current inputs
-(tools/terrain.py --check), builds the tile model (tools/world_model.py) and
+(tools/terrain.py --check) and that the place list (analysis/place-list.md) is current
+(tools/place_list.py --check), builds the tile model (tools/world_model.py) and
 reports every broken structural rule, then checks the documents of
 the world against the UBL 2.5 model (tools/world_docs.py), the identities of the parties
 (tools/world_parties.py), the items (tools/world_items.py), and that the world code lists
@@ -14,7 +15,7 @@ import sys
 
 sys.argv = [sys.argv[0]]
 failed = False
-for script, args in (("terrain.py", ["--check"]), ("world_model.py", []), ("world_docs.py", []), ("world_parties.py", []), ("world_items.py", []), ("build_codelists.py", ["--check"])):
+for script, args in (("terrain.py", ["--check"]), ("place_list.py", ["--check"]), ("world_model.py", []), ("world_docs.py", []), ("world_parties.py", []), ("world_items.py", []), ("build_codelists.py", ["--check"])):
     sys.argv = [script] + args
     try:
         runpy.run_path(os.path.join(os.path.dirname(__file__), script), run_name="__main__")
