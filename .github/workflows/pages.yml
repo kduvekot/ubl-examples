@@ -36,11 +36,27 @@ jobs:
             echo "::notice::main is now at ${head::7}, newer than ${GITHUB_SHA::7}: skipping, the run for the newer commit publishes the site"
           fi
 
+      # The packages (pandoc alone is about 29 MB) are kept between runs: on
+      # 2026-11-18 the Ubuntu mirror served them at about 55 kB/s and the install
+      # took ten minutes instead of twenty seconds. apt still checks for newer
+      # versions and downloads only what the cache lacks.
+      - name: Restore the package cache
+        if: steps.newest.outputs.newest == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/apt-cache
+          key: apt-${{ runner.os }}-${{ runner.arch }}-xsltproc-libxml2-utils-pandoc-python3-lxml-v1
+
       - name: Install tools
         if: steps.newest.outputs.newest == 'true'
         run: |
+          mkdir -p ~/apt-cache/partial
           sudo apt-get update -q
-          sudo apt-get install -y -q xsltproc libxml2-utils pandoc python3-lxml
+          sudo apt-get install -y -q --no-install-recommends \
+            -o Dir::Cache::Archives="$HOME/apt-cache" \
+            -o Acquire::http::Timeout=30 -o Acquire::Retries=3 \
+            xsltproc libxml2-utils pandoc python3-lxml
+          sudo chown -R "$(id -u):$(id -g)" ~/apt-cache
 
       - name: Build site
         if: steps.newest.outputs.newest == 'true'
