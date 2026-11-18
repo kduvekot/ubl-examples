@@ -7,7 +7,8 @@ square and adds one finer octave of the model's own noise, which bends the edges
 (the coast, the forest edges, the fields) into natural lines, so that every square keeps what the 3D map shows.
 The relief is shaded, and the land tinted by height, from the model's height alone (the noise only adds a little
 texture). Roads, rail, the river and the pipelines follow the model's own paths, with their corners cut (Chaikin);
-towns, buildings and airports stay on their squares.
+towns are drawn as their built-up areas, true to size (the model's sub-squares "um", 875 m), with their names beside
+them; buildings and airports stay on their squares.
 
 Usage (from the repository root): python3 tools/world_model.py model.json, then
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 6 roadmap   (road-map style)
@@ -331,7 +332,7 @@ def strip(levels_list, px, out_path):
 
 # ---------------------------------------------------------------- road-map style (flat, like a web map)
 PAL = {"water": (170, 211, 223), "land": (242, 239, 233), "forest": (205, 230, 196), "field": (238, 238, 222),
-     "hills": (232, 228, 214), "urban": (232, 227, 220), "building": (217, 210, 200),
+     "hills": (232, 228, 214), "urban": (238, 196, 186), "urban_edge": (196, 140, 128), "building": (217, 210, 200),
      "road_main": (252, 214, 112), "road_main_edge": (226, 176, 70), "road": (255, 255, 255),
      "road_edge": (214, 208, 198), "rail": (150, 150, 150), "border": (150, 130, 170), "airport": (220, 220, 228),
      "label": (60, 64, 67), "label_soft": (110, 110, 110), "water_label": (80, 130, 175)}
@@ -357,26 +358,23 @@ def overlay_flat(img, px):
     for q, wv in zip(dense, wsm):
         x, y = P(q); r = max(1.5, px * wv * .26)
         d.ellipse([x - r, y - r, x + r, y + r], fill=PAL["water"])
-    # built-up areas: the house squares merged into one smooth area per town
+    # built-up areas: the model's built-up sub-squares ("um", SUB x SUB per square, 875 m), merged into one area
+    # per town with a smoothed edge (blurred and cut at the middle, which keeps the area), in the urban colour
+    # with a fine darker edge; nothing else marks a town (no building blocks: at 1 : 2,500,000 a road map shows
+    # the built-up area only)
+    S = wm.SUB
     mask = Image.new("L", img.size, 0)
     md = ImageDraw.Draw(mask)
     for i in range(W):
         for j in range(H):
-            if T[i][j].get("hs"):
-                x, y = P((i, j)); r = px * (.72 + .2 * wm.hsh(i * 7, j * 3))
-                md.ellipse([x - r, y - r, x + r, y + r], fill=255)
-    mask = mask.filter(ImageFilter.GaussianBlur(px * .35)).point(lambda v: 255 if v > 110 else 0)
-    img.paste(Image.new("RGB", img.size, PAL["urban"]), (0, 0), mask)
-    d = ImageDraw.Draw(img, "RGBA")
-    for i in range(W):
-        for j in range(H):
-            if T[i][j].get("hs") or T[i][j].get("b"):
-                x, y = P((i, j))
-                for q in range(6 if T[i][j].get("hs") else 2):
-                    ox = (wm.hsh(i * 13 + q, j * 5) - .5) * px * .8
-                    oy = (wm.hsh(i * 3, j * 11 + q) - .5) * px * .8
-                    s2 = px * (.05 + .05 * wm.hsh(i + q, j - q))
-                    d.rectangle([x + ox - s2, y + oy - s2 * .8, x + ox + s2, y + oy + s2 * .8], fill=PAL["building"])
+            um = T[i][j].get("um", 0)
+            for a in range(S):
+                for b in range(S):
+                    if um >> (a * S + b) & 1:
+                        x0, y0 = i * px + a * px / S, j * px + b * px / S
+                        md.rectangle([x0, y0, x0 + px / S - 1, y0 + px / S - 1], fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(px / S * .7)).point(lambda v: 255 if v >= 128 else 0)
+    BUILT_MASK[0] = mask
     # airports: grey ground with a runway
     for i in range(W):
         for j in range(H):
@@ -394,6 +392,7 @@ def overlay_flat(img, px):
                 if m & (1 << bit):
                     adj.setdefault((i, j), set()).add((i + di, j + dj))
     chains, seen = [], set()
+    town = lambda q: "um" in T[q[0]][q[1]]
     for a in adj:
         for b in adj[a]:
             e = frozenset((a, b))
@@ -405,6 +404,8 @@ def overlay_flat(img, px):
                 if not nxt or frozenset((chain[-1], nxt[0])) in seen:
                     break
                 seen.add(frozenset((chain[-1], nxt[0]))); chain.append(nxt[0])
+            if all(town(q) for q in chain):
+                continue                          # the streets of a town: its built-up area stands for them
             chains.append([P(q) for q in chaikin(chain, 2)])
     for xy in chains:
         d.line(xy, fill=PAL["road_edge"], width=max(3, U // 6), joint="curve")
@@ -428,6 +429,12 @@ def overlay_flat(img, px):
             xy = [P(p) for p in chaikin([tuple(p) for p in r["path"]], 3)]
             d.line(xy, fill=PAL["road_edge"], width=max(3, U // 6), joint="curve")
             d.line(xy, fill=PAL["road"], width=max(2, U // 9), joint="curve")
+    # the built-up areas over the minor roads and the rail (a town of 4 km is 1.6 mm on the sheet, narrower than
+    # the road symbols through it), under the main roads
+    edge = mask.filter(ImageFilter.MaxFilter(3))
+    img.paste(Image.new("RGB", img.size, PAL["urban_edge"]), (0, 0), edge)
+    img.paste(Image.new("RGB", img.size, PAL["urban"]), (0, 0), mask)
+    d = ImageDraw.Draw(img, "RGBA")
     for r in ROUTES:
         if r["mode"] == "road" and r["id"] in MAIN:
             xy = [P(p) for p in chaikin([tuple(p) for p in r["path"]], 3)]
@@ -462,14 +469,7 @@ def labels_flat(img, px):
         d.line([(x0, k), (x0, min(y1, k + U * .2))], fill=PAL["water_label"], width=max(1, U // 16))
     INSET_FRAME and d.multiline_text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport:\ndrawn nearer, at the same scale",
                      font=F(False, U * .45), fill=PAL["water_label"], anchor="la")
-    for t in WORLD["towns"]:
-        dot(t["c"], (90, 90, 90), .28)
-        right = t["c"][0] > W - 40                                  # near the right edge: the name on the left
-        txt(t["c"], t["name"], F(True, U * .85), PAL["label"], dx=-U * .45 if right else U * .45, dy=U * .9 if right else -U * .7,
-            anchor="rm" if right else "lm")
-    for l in WORLD["localities"]:
-        dot(l["c"], (120, 120, 120), .18)
-        txt(l["c"], l["name"], F(False, U * .62), PAL["label"], dx=U * .35, dy=-U * .5)
+    placed = []
     # ports and airports from the model's parties
     POI = {"16-xb": "Port of Lumeport", "16-xl": "Port of Selanu", "17-xb": "Lumeport Airport", "17-xl": "Selanu Airport"}
     where = {}
@@ -485,6 +485,48 @@ def labels_flat(img, px):
         dot(q, col, .3)
         dx, dy, anchor = PLACE[b]
         txt(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else PAL["label_soft"], dx=U * dx, dy=U * dy, anchor=anchor)
+        x, y = P(q)
+        placed.append(d.textbbox((x + U * dx, y + U * dy), POI[b], font=F(False, U * .58), anchor=anchor))
+        placed.append((x - U * .3, y - U * .3, x + U * .3, y + U * .3))
+    # towns: the built-up area is the symbol; the name stands beside it, on the side where it covers the least
+    # built-up land, other names and roads. Villages (about 1 km, under half a millimetre) get a dot.
+    occupied = BUILT_MASK[0]
+    busy_cols = [PAL[k] for k in ("road_main", "road_main_edge", "road", "road_edge", "rail", "urban", "urban_edge")] + [(190, 170, 205)]
+    def free_score(box):
+        x0, y0, x1, y1 = (int(v) for v in box)
+        if x0 < 0 or y0 < 0 or x1 >= img.size[0] or y1 >= img.size[1]:
+            return 1e9
+        built = sum(occupied.crop((x0, y0, x1, y1)).histogram()[128:]) / max(1, (x1 - x0) * (y1 - y0))
+        pix = [img.getpixel((x, y)) for x in range(x0, x1, 3) for y in range(y0, y1, 3)]
+        busy = sum(1 for c in pix if any(abs(c[0] - k[0]) + abs(c[1] - k[1]) + abs(c[2] - k[2]) < 24 for k in busy_cols)) / max(1, len(pix))
+        clash = sum(1 for b in placed if box[0] < b[2] and box[2] > b[0] and box[1] < b[3] and box[3] > b[1])
+        return built * 10 + busy * 4 + clash * 100
+    S = wm.SUB
+    for t in WORLD["towns"]:
+        ci, cj = t["c"]
+        reach = 8
+        cells = [(i * S + a, j * S + b) for i in range(ci - reach, ci + reach + 1) for j in range(cj - reach, cj + reach + 1)
+                 if 0 <= i < W and 0 <= j < H for a in range(S) for b in range(S) if T[i][j].get("um", 0) >> (a * S + b) & 1]
+        x0 = min(x for x, _ in cells) * px / S; x1 = (max(x for x, _ in cells) + 1) * px / S
+        y0 = min(y for _, y in cells) * px / S; y1 = (max(y for _, y in cells) + 1) * px / S
+        font = F(True, U * .85)
+        tw_, th_ = d.textbbox((0, 0), t["name"], font=font)[2:]
+        gap = U * .25
+        cands = [("lm", (x1 + gap, (y0 + y1) / 2)), ("rm", (x0 - gap, (y0 + y1) / 2)),
+                 ("lb", (x1 + gap * .4, y0 + gap * .4)), ("rb", (x0 - gap * .4, y0 + gap * .4)),
+                 ("ms", ((x0 + x1) / 2, y0 - gap)), ("ma", ((x0 + x1) / 2, y1 + gap)),
+                 ("lt", (x1 + gap * .4, y1 - gap * .4)), ("rt", (x0 - gap * .4, y1 - gap * .4))]
+        def box(anchor, xy):
+            x, y = xy
+            bx = x if anchor[0] == "l" else x - tw_ if anchor[0] == "r" else x - tw_ / 2
+            by = y - th_ / 2 if anchor[1] == "m" else y - th_ if anchor[1] in "sb" else y
+            return (bx, by, bx + tw_, by + th_)
+        anchor, xy = min(cands, key=lambda c: free_score(box(*c)))
+        placed.append(box(anchor, xy))
+        d.text(xy, t["name"], font=font, fill=PAL["label"], anchor=anchor, stroke_width=max(2, U // 10), stroke_fill=(255, 255, 255, 230))
+    for l in WORLD["localities"]:
+        dot(l["c"], (120, 120, 120), .14)
+        txt(l["c"], l["name"], F(False, U * .62), PAL["label"], dx=U * .3, dy=-U * .4)
     sp = lambda t: " ".join(t)
     txt((5 * G, 30 * G), sp("URVANIA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
     txt((29 * G, 19 * G), sp("BAYVARRA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
@@ -501,6 +543,7 @@ def labels_flat(img, px):
     d.text((x0 + L + U * .4, y0), "100 km", font=F(False, U * .55), fill=(80, 80, 80), anchor="lm")
 
 INSET_FRAME = True
+BUILT_MASK = [None]                               # the built-up areas drawn by overlay_flat, for placing the names
 
 # ---------------------------------------------------------------- the printed sheet (O151)
 SCALE = 2_500_000                                 # 1 : 2,500,000

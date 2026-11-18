@@ -16,7 +16,13 @@ For every tile the model records:
   rl  rail pieces, each a pair of edge directions ([di, dj] or null for the centre)
   br  1 if a road or rail crosses water here (a bridge)
   b   id of the party standing here
-  hs  a house: [level 1..3, facing direction 0..3 towards its street]
+  hs  a house: [level 1..4, facing direction 0..3 towards its street]; in a town, a square of houses (the
+      built-up area's own streets run within it), outside the towns a single house (a farmstead)
+  um  the built-up area of a town or village on this square: a mask of its SUB x SUB sub-squares of 875 m
+      (bit a * SUB + b for the sub-square a along i, b along j), on every kind of square it covers (houses,
+      parties, roads, rails)
+  ul  the density of the built-up area on this square: 1 houses, 2 terraces, 3 blocks of flats, 4 towers (the
+      centre of a capital)
   tr  1 for a single tree on open ground
   yd  1 for the fenced yard around an industry
   az  1 in the approach zone of an airport runway
@@ -29,7 +35,10 @@ Structural rules (the build stops when one is broken):
     except parties marked "on" a route (customs posts, rail stations);
   * every party has access: a road next to it, or rail for rail parties,
     or water for ports and quays; missing access roads are laid by the model;
-  * every house stands next to a street, facing it;
+  * every town and village is built up over the area its built_km gives (map "towns", "localities"), on land,
+    off the airports and their approach zones and TOWN_CLEAR from a pipeline (step 6);
+  * every house faces a street: the road next to it, or, in a town, the next square of houses on the way to
+    one (the town's own streets);
   * every landmass has one connected road network; every party lies on it
     (an access road is laid where needed, ending at the building);
   * a dead end must lead somewhere: to a party or a house (a road that ends
@@ -101,9 +110,11 @@ TALL_CLEARANCE = 2                                # squares (7 km) they keep fro
 APPROACH = 3                                      # squares (10.5 km) of approach zone beyond each runway end
 BORDER_POST = 3                                   # squares (10.5 km) along the road within which a border crossing has its customs post
 METERING = 3                                      # squares (10.5 km) along a pipeline within which a border crossing is metered
-TOWN_CLEAR = 1                                    # squares (3.5 km) a pipeline keeps beyond a town's radius
+TOWN_CLEAR = 1                                    # squares (3.5 km) a pipeline keeps from a town's built-up area
 PORT_BASIN = 2                                    # squares (7 km) of open water kept in front of a port's quay
 STREETS = 3                                       # squares between a town's side streets (the street pattern, not a distance)
+SUB = 4                                           # sub-squares per square side for the built-up areas (875 m)
+BUILT_WARP = .35                                  # how far the noise moves a built-up area's edge, as a share of its radius
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
 ESTUARY = 1.5                                     # a river this wide (squares, 5 km) is open water: an estuary
 LEVEL_M = 100                                     # metres of one height level (model "v")
@@ -298,6 +309,9 @@ def footprint(p):
 
 def build(world):
     problems = []
+    # a town's radius in squares, from the width of its built-up area (map "built_km")
+    for tw in world.get("towns", []) + world.get("localities", []):
+        tw["r"] = tw["built_km"] / 2 / KM
     T = [[None] * H for _ in range(W)]
     # the land border's line, in squares (it is drawn in chart units: 14 km)
     def line(j):
@@ -537,7 +551,7 @@ def build(world):
     # 5. towns: streets as lines (a main cross, side streets every third tile); only the part
     #    connected to the town centre stays
     for tw in world.get("towns", []):
-        ci, cj, rad = tw["c"][0], tw["c"][1], tw["r"]
+        ci, cj, rad = tw["c"][0], tw["c"][1], max(1, round(tw["r"]))
         lines = [("i", cj, rad), ("j", ci, rad)]
         for k in range(STREETS, rad + 1, STREETS):
             lines += [("i", cj + k, rad * .75), ("i", cj - k, rad * .75), ("j", ci + k, rad * .75), ("j", ci - k, rad * .75)]
@@ -723,23 +737,107 @@ def build(world):
                     problems.append(f"#{o['n']} {o['name']} ({o['kind']}) is {gap} tiles from the runway or approach "
                                     f"of #{p['n']} {p['name']}; tall structures keep {TALL_CLEARANCE} tiles clear")
 
-    # 6. houses: in towns, on free tiles next to a street, facing it; taller in the centre
+    # 6. built-up areas and houses. Every town and village (map "towns", "localities") is built up over the area
+    #    of a circle as wide as its built_km (owner, 2026-11-18), counted on sub-squares of KM / SUB (875 m), SUB x
+    #    SUB per square (model "um"). Its edge is made irregular by the model's noise (a warp of BUILT_WARP of
+    #    its radius), it reaches out along the roads, and it follows the land: not on the sea or the river, not on an airport or in its approach zones, and
+    #    TOWN_CLEAR from a pipeline's right of way. The area is found by scaling that shape until it holds the
+    #    decided area. Party squares, roads and rails inside it are part of it; every other square in it holds
+    #    houses ("hs"), denser and taller towards the centre (level 4, towers, only in the capitals).
     def degree(q):
         return sum(1 for e in edges if q in e)
 
-    for tw in world.get("towns", []):
+    near_pipe = {(i + a2, j + b2) for (i, j) in corridor for a2 in range(-TOWN_CLEAR, TOWN_CLEAR + 1)
+                 for b2 in range(-TOWN_CLEAR, TOWN_CLEAR + 1)}
+    built = {}                                            # square -> the town or village built up there
+
+    def buildable(q):
+        t = tile(*q)
+        o = owner.get(q)
+        return bool(t) and t["k"] not in ("s", "w") and q not in approach and q not in near_pipe and q not in stations \
+            and not (o and o["kind"] == "airport")
+
+    for tw in world.get("towns", []) + world.get("localities", []):
         ci, cj, rad = tw["c"][0], tw["c"][1], tw["r"]
-        for i in range(ci - rad - 1, ci + rad + 2):
-            for j in range(cj - rad - 1, cj + rad + 2):
-                t = tile(i, j)
-                d = math.hypot(i - ci, j - cj)
-                if not t or d > rad + .6 or not free((i, j)) or (i, j) in road or (i, j) in rails or "hs" in t or (i, j) in approach or (i, j) in corridor:
-                    continue
-                face = next((b2 for b2, (di, dj) in enumerate(DIRS) if (i + di, j + dj) in road), None)
-                if face is None or hsh(i * 13, j * 7) > .9:        # a few gardens stay open
-                    continue
-                level = 3 if d < rad * .35 else 2 if d < rad * .7 else 1
-                t["k"], t["hs"] = "g", [level, face]
+        pop = max(tw["population"]) if isinstance(tw.get("population"), list) else tw.get("population", 0)
+        reach = math.ceil(rad * 3) + 2
+        box_ = [(i, j) for i in range(ci - reach, ci + reach + 1) for j in range(cj - reach, cj + reach + 1)
+                if buildable((i, j)) and (i, j) not in built]
+        ways = [q for q in road if abs(q[0] - ci) <= reach + 1 and abs(q[1] - cj) <= reach + 1]
+
+        def spread(x, y):
+            """How far (x, y) lies out, in squares: from the centre, warped by the noise, nearer along the roads."""
+            wx = (noise(x * 1.7 + 31.7, y * 1.7 - 12.9) - .5) * 2 * BUILT_WARP * rad
+            wy = (noise(x * 1.7 - 7.3, y * 1.7 + 45.1) - .5) * 2 * BUILT_WARP * rad
+            d = math.hypot(x - ci + wx, y - cj + wy)
+            dr = min((max(abs(x - a2), abs(y - b2)) for a2, b2 in ways), default=9)
+            if dr < 1:
+                d *= .78 + .22 * dr                    # ribbons along the roads
+            return d
+
+        subs = [(q, a2, b2, spread(q[0] - .5 + (a2 + .5) / SUB, q[1] - .5 + (b2 + .5) / SUB))
+                for q in box_ for a2 in range(SUB) for b2 in range(SUB)]
+        want = max(1, round(math.pi * (tw["built_km"] / 2) ** 2 / (KM / SUB) ** 2))     # sub-squares
+        lo, hi = 0.0, 4 * rad + 4
+        for _ in range(40):
+            mid_ = (lo + hi) / 2
+            if sum(1 for *_, d in subs if d < mid_) < want:
+                lo = mid_
+            else:
+                hi = mid_
+        scale = hi
+        cells = [(q, a2, b2) for q, a2, b2, d in subs if d < scale]
+        for q, a2, b2 in cells:
+            t = tile(*q)
+            t["um"] = t.get("um", 0) | 1 << (a2 * SUB + b2)
+            built[q] = tw
+        top = 4 if pop >= 250_000 else 3 if pop >= 20_000 else 1
+        for q in {q for q, _, _ in cells}:
+            t = tile(*q)
+            u = spread(*q) / scale
+            t["ul"] = min(top, 4 if u < .22 else 3 if u < .45 else 2 if u < .75 else 1)
+            if q in owner or q in road or q in rails or q in corridor or "hs" in t:
+                continue
+            t["k"], t["hs"] = "g", [t["ul"], None]
+        n = len(cells)
+        xs = [q[0] * SUB + a2 for q, a2, _ in cells]
+        ys = [q[1] * SUB + b2 for q, _, b2 in cells]
+        tw["built"] = {"km2": round(n * (KM / SUB) ** 2, 1), "across_km": round(2 * math.sqrt(n / math.pi) * KM / SUB, 1),
+                       "west_east_km": round((max(xs) - min(xs) + 1) * KM / SUB, 1) if n else 0,
+                       "north_south_km": round((max(ys) - min(ys) + 1) * KM / SUB, 1) if n else 0}
+
+    # where each party stands to the built-up area of its place (its address's CityName): inside, at the edge
+    # (on the next square), or outside; reported, not a rule (works and depots may stand outside their town)
+    for tw in world.get("towns", []) + world.get("localities", []):
+        where = tw["built"]["parties"] = {}
+        for p in world["parties"]:
+            if p.get("identity", {}).get("address", {}).get("CityName") != tw["name"]:
+                continue
+            fp = footprint(p)
+            if any(built.get(q) is tw for q in fp):
+                where[p["id"]] = "inside"
+            elif any(built.get((q[0] + a2, q[1] + b2)) is tw for q in fp for a2 in (-1, 0, 1) for b2 in (-1, 0, 1)):
+                where[p["id"]] = "edge"
+            else:
+                where[p["id"]] = "outside"
+
+    # every house square of a town faces its street: a road next to it, or the next house square on the way to
+    # one (the town's own streets run within its squares); a house square with no way to a road stays open land
+    todo = deque(q for q in road)
+    seen = set(road)
+    while todo:
+        q = todo.popleft()
+        for b2, (di, dj) in enumerate(DIRS):
+            y = (q[0] + di, q[1] + dj)
+            t = tile(*y)
+            if t and y not in seen and t.get("hs") and t["hs"][1] is None:
+                t["hs"][1] = DIRS.index((-di, -dj))
+                seen.add(y)
+                todo.append(y)
+    for q, tw in built.items():
+        t = tile(*q)
+        if t.get("hs") and t["hs"][1] is None:
+            del t["hs"]
 
     # 7. dead ends must lead somewhere: a road that ends at nothing gets a farmstead if there is
     #    room, otherwise it is removed
@@ -945,8 +1043,11 @@ def build(world):
                 if not ok:
                     problems.append(f"level crossing at {(i, j)} is not a straight road across a straight rail")
             if "hs" in t:
-                di, dj = DIRS[t["hs"][1]]
-                if (i + di, j + dj) not in road:
+                q, n = (i, j), 0                              # in a town, along the squares of houses to a road
+                while q not in road and n < 64 and "hs" in (tile(*q) or {}) and (n == 0 or "um" in tile(*q)):
+                    di, dj = DIRS[tile(*q)["hs"][1]]
+                    q, n = (q[0] + di, q[1] + dj), n + 1
+                if q not in road:
                     problems.append(f"house at {(i, j)} does not face a street")
     for p in world["parties"]:
         fp = set(footprint(p))
@@ -1022,9 +1123,10 @@ def build(world):
                 problems.append(f"{name} runs through #{owner[q]['n']} {owner[q]['name']} at {q}")
             if "hs" in t or "yd" in t or "tr" in t or t["k"] == "f":
                 problems.append(f"{name}: its right of way at {q} is built on or planted")
-            for tw in world.get("towns", []):
-                if math.hypot(q[0] - tw["c"][0], q[1] - tw["c"][1]) <= tw["r"] + TOWN_CLEAR:
-                    problems.append(f"{name} runs through the town of {tw['name']} at {q}")
+            near = {built[y]["name"] for y in ((q[0] + a2, q[1] + b2) for a2 in range(-TOWN_CLEAR, TOWN_CLEAR + 1)
+                                               for b2 in range(-TOWN_CLEAR, TOWN_CLEAR + 1)) if y in built}
+            for town in sorted(near):
+                problems.append(f"{name} runs through or within {TOWN_CLEAR} squares of the built-up area of {town} at {q}")
             crossed = [what for what, there in (("road", "rd" in t), ("rail line", "rl" in t), ("river", t["k"] == "w")) if there]
             if not crossed:
                 continue
@@ -1205,6 +1307,13 @@ def main():
           f"{houses} houses, {roads} road tiles, {sum(1 for t in flat if t['k'] == 'w')} river tiles, "
           f"{sum(1 for t in flat if t.get('br'))} bridges: "
           + ("no problems" if not problems else f"{len(problems)} problems"), file=sys.stderr)
+    for tw in world.get("towns", []) + world.get("localities", []):
+        b = tw["built"]
+        out = {k: [p for p, v in b["parties"].items() if v == k] for k in ("edge", "outside")}
+        print(f"  {tw['name']}: built up {b['km2']} km2, {b['across_km']} km across (a circle of that area), "
+              f"{b['west_east_km']} km west-east, {b['north_south_km']} km north-south; "
+              f"{sum(1 for v in b['parties'].values() if v == 'inside')} parties inside, at the edge: "
+              f"{', '.join(out['edge']) or '-'}, outside: {', '.join(out['outside']) or '-'}", file=sys.stderr)
     if len(sys.argv) > 1:
         json.dump({"model": model, "routes": world["routes"]}, open(sys.argv[1], "w"), separators=(",", ":"))
     sys.exit(1 if problems else 0)

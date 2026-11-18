@@ -1,5 +1,5 @@
 {
- "description": "The map of the UBL example world: routes, towns, fields, forests and the relief, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it and from the parties. Stations are the pipelines' border metering stations. Localities are small places without houses on the map; they give the parties outside the towns a place in their address. The relief gives the height of the ground (control points, cliff coasts, the river's heights along its course). The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
+ "description": "The map of the UBL example world: routes, towns, fields, forests and the relief, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it and from the parties. Stations are the pipelines' border metering stations. Towns and localities (villages) give their population (for the villages the decided range) and the width of their built-up area in km (built_km, owner 2026-11-18, O92): the model draws a built-up area of that size around the centre c. Localities give the parties outside the towns a place in their address. The relief gives the height of the ground (control points, cliff coasts, the river's heights along its course). The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
  "routes": [
   {
    "id": "ore",
@@ -370,8 +370,9 @@
     69,
     113
    ],
-   "r": 2,
-   "country": "XU"
+   "country": "XU",
+   "population": 600000,
+   "built_km": 15
   },
   {
    "name": "Lumeport",
@@ -379,8 +380,9 @@
     136,
     128
    ],
-   "r": 2,
-   "country": "XB"
+   "country": "XB",
+   "population": 400000,
+   "built_km": 12
   },
   {
    "name": "Marrowdale",
@@ -388,18 +390,20 @@
     128,
     114
    ],
-   "r": 1,
    "country": "XB",
+   "population": 40000,
+   "built_km": 5,
    "note": "An inland town in Upland State, near the border: the distributor with its rail siding, the sawmill, the furniture maker and the engineering works."
   },
   {
    "name": "Selanu",
    "c": [
-    240,
+    241,
     111
    ],
-   "r": 1,
-   "country": "XL"
+   "country": "XL",
+   "population": 30000,
+   "built_km": 4
   }
  ],
  "fields": [
@@ -436,6 +440,11 @@
     77
    ],
    "country": "XU",
+   "population": [
+    1000,
+    3000
+   ],
+   "built_km": 1,
    "note": "The mining village at the ore mine."
   },
   {
@@ -445,6 +454,11 @@
     45
    ],
    "country": "XB",
+   "population": [
+    1000,
+    3000
+   ],
+   "built_km": 1,
    "note": "A fishing village on Bayvarra's north coast, by the gas plant."
   }
  ],
