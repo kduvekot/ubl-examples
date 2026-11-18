@@ -690,6 +690,44 @@ def cover(d, island=False):
     return lc
 
 
+def cover_overrides(d, lc, items, log=print):
+    """Land the world's story gives a cover of its own, whatever the landscape made it (terrain inputs
+    "cover_overrides"): a managed forest is forest within its polygon (squares, x, y), on land. It is worked in
+    compartments, one cell of the cover raster each (875 m on the mainland): blocks of 2 x 2 cells, some split in
+    two, each block of one age (the classes of "ages", drawn from its seed with their shares). Changes lc in place;
+    returns per item its id, name, note, area, size, the age classes and its squares: [x, y, ages], ages a string of
+    S x S characters, the cell at a along x and b along y at index a * S + b, the age class's number or "." where
+    the cell is not in the forest."""
+    S, X0, Y0 = d['S'], d['X0'], d['Y0']
+    out = []
+    for it in items:
+        mask = polygon_mask(it["polygon"], X0, Y0, S, lc.shape) & ~d['sea']
+        lc[mask] = {"forest": FOREST}[it["cover"]]
+        names = list(it["ages"])
+        p = np.array([it["ages"][k] for k in names], float)
+        rng = np.random.default_rng(it["seed"])
+        ny, nx = lc.shape
+        bage = rng.choice(len(names), size=((ny + 1) // 2, (nx + 1) // 2, 2), p=p / p.sum())
+        split = rng.random(((ny + 1) // 2, (nx + 1) // 2)) < .25         # a block cut in two along x
+        rr, cc = np.nonzero(mask)
+        sq = {}
+        for r, c in zip(rr, cc):
+            br, bc = r // 2, c // 2
+            age = bage[br, bc, 1 if split[br, bc] and r % 2 else 0]
+            key = (X0 + c // S, Y0 + r // S)
+            cells = sq.setdefault(key, ["."] * (S * S))
+            cells[(c % S) * S + (r % S)] = str(int(age))
+        km2 = float(mask.sum()) * (d['cell'] / 1000) ** 2
+        xs, ys = cc / S + X0, rr / S + Y0
+        across = ((xs.max() - xs.min() + 1 / S) * KM, (ys.max() - ys.min() + 1 / S) * KM)
+        log(f"{it['id']}: {km2:.0f} km2, {across[0]:.1f} km west-east, {across[1]:.1f} km north-south, "
+            f"{len(sq)} squares")
+        out.append({"id": it["id"], "name": it["name"], "kind": it["kind"], "note": it["note"], "km2": round(km2),
+                    "west_east_km": round(float(across[0]), 1), "north_south_km": round(float(across[1]), 1),
+                    "ages": names, "squares": [[int(x), int(y), "".join(v)] for (x, y), v in sorted(sq.items())]})
+    return out
+
+
 # ------------------------------------------------------------------------------------------- tiles
 def tiles(d, lc, W=256, H=192):
     """Per 3.5 km square of the window: the kind (the most common class of its land cells; sea where most of

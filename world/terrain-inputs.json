@@ -1739,6 +1739,72 @@
     ],
     "min_km2": 2
    }
+  ],
+  "cover_overrides": [
+   {
+    "id": "upland-forest",
+    "name": "Upland State Forest",
+    "kind": "managed_forest",
+    "note": "The managed forest of Upland State (O152 audit, owner 2026-11-18): a state forest planted on the slopes north of Marrowdale, where the upland falls towards the town, on ground too steep for the best fields; the sawmill at Marrowdale (36-xb) buys its logs here. Its land is forest whatever the landscape made it; it is worked in compartments of 875 m (the cells of the cover raster), each of one age: felled and replanted, young, pole and mature stands, felled in turn over the rotation (ages from seed). polygon: the forest's edge in squares (x, y).",
+    "cover": "forest",
+    "seed": 3611,
+    "ages": {
+     "felled": 0.12,
+     "young": 0.26,
+     "pole": 0.3,
+     "mature": 0.32
+    },
+    "polygon": [
+     [
+      116.2,
+      106.0
+     ],
+     [
+      117.4,
+      104.6
+     ],
+     [
+      119.2,
+      104.3
+     ],
+     [
+      120.6,
+      104.9
+     ],
+     [
+      122.1,
+      104.6
+     ],
+     [
+      122.6,
+      106.2
+     ],
+     [
+      122.3,
+      108.0
+     ],
+     [
+      121.2,
+      109.4
+     ],
+     [
+      119.4,
+      109.8
+     ],
+     [
+      117.6,
+      109.5
+     ],
+     [
+      116.4,
+      108.4
+     ],
+     [
+      115.9,
+      107.2
+     ]
+    ]
+   }
   ]
  },
  "lisavu": {

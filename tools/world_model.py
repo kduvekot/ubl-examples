@@ -39,6 +39,9 @@ For every tile the model records:
   es  1 for river water at least ESTUARY wide (the estuary): drawn as open water, the
       rest of the river as a narrower stream within its tiles
   ms  1 for a pipeline's border metering station (map "stations")
+  mf  on a square of a managed forest (world/terrain.json "managed_forests", the forest of Upland State): its
+      compartments, a string of SUB x SUB characters (the sub-square a along i, b along j at a * SUB + b), each the
+      number of its age class (0 felled and replanted, 1 young, 2 pole, 3 mature) or "." outside the forest
 
 Structural rules (the build stops when one is broken):
   * buildings do not share tiles and do not stand on roads, rails or water,
@@ -269,6 +272,9 @@ def build(world):
             if (i, j) in estuary:
                 t["es"] = 1
             T[i][j] = t
+    for mf in terrain.get("managed_forests", []):
+        for i, j, ages in mf["squares"]:
+            T[i][j]["mf"] = ages
     tile = lambda i, j: T[i][j] if 0 <= i < W and 0 <= j < H else None
 
     # 2. the river: its squares (world/terrain.json "river", source to mouth) are water at their own level, falling
@@ -1305,7 +1311,10 @@ def build(world):
 
     model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
              "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs, "structures": structures,
-             "rapids": [list(q) for q in rapids], "access": access}
+             "rapids": [list(q) for q in rapids], "access": access,
+             # the border on the water (the river below the crossing, the estuary's axis), in tile coordinates (a
+             # square's centre at its index)
+             "border_water": [[round(x - .5, 2), round(y - .5, 2)] for x, y in terrain.get("border_water", [])]}
     return model, problems
 
 

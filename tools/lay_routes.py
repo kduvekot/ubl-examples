@@ -67,6 +67,10 @@ NETWORK = [
     ("road-north", "minor", ["t:Larkmouth", "t:Gullhaven"],
      {"mode": "road", "layer": "transport", "label": "Larkmouth north-west to Gullhaven on the north coast (domestic XB)"}),
     ("road-c", "minor", ["s:237,109", "p:19-xl", "t:Selanu"]),
+    # the waste road: the works' hazardous production waste by truck to the recovery plant (flow waste; a
+    # supply-chain route since the first map, de34b46)
+    ("waste", "minor", ["p:5-xu", "p:7-xu"],
+     {"mode": "road", "layer": "chain", "label": "Production waste"}),
     # the pipelines: the subsea line from the platform to the gas plant, the main line from the plant across the
     # border to the power station, the branch to Ferrano's city gate from a tee east of the power station, where
     # the line to Ferrano and the line to the power station part (D44: the branch about 98 km)

@@ -8,7 +8,9 @@ Outputs: world/terrain.json        per 3.5 km square of the world model's grid (
                                    r rock, m marsh), the country, the corner heights in metres, the main river's
                                    squares with their water level, the estuary's squares, the rapids above
                                    Ferrano (O153); the streams, the small brooks the map shows as well (Lumeport's,
-                                   O153) and the border line for the printed map; measures of the land;
+                                   O153) and the border line for the printed map; the managed forests (land the
+                                   inputs make forest, worked in compartments of 875 m, each of one age); measures
+                                   of the land;
          world/terrain/*.png       the fine rasters (875 m cells on the mainland, 437.5 m on Lisavu): height
                                    (16-bit, metres + 1000) and land cover (8-bit, the class numbers), for the sheet.
 The world model (tools/world_model.py) and the site build read only the outputs: they need neither scipy nor numba.
@@ -72,6 +74,8 @@ def generate():
     log("Lisavu ...")
     ld = T.lisavu(inp, log)
     lcm, lcl = T.cover(md), T.cover(ld, island=True)
+    # land the story gives a cover of its own (the managed forest of Upland State)
+    managed = T.cover_overrides(md, lcm, inp["mainland"].get("cover_overrides", []), log)
     km, cm = T.tiles(md, lcm, W, H)
     kl, cl = T.tiles(ld, lcl, W, H)
     kinds = np.where(kl >= 0, kl, np.where(km >= 0, km, T.SEA))
@@ -168,6 +172,23 @@ def generate():
         lines, km2, at = T.brook(md, b["mouth"], b["min_km2"])
         brooks[b["id"]] = {"note": b["note"], "mouth": at, "km2": km2, "lines": lines}
         log(f"brook {b['id']}: {km2} km2, mouth {at}, {len(lines)} channels")
+    # the border on the water (owner, 2026-11-18, option A): the main river from the crossing to its mouth, then the
+    # estuary's axis to the open bay (estuary_until_x), for the maps that draw the border line
+    k0 = min(range(len(river)), key=lambda k: math.hypot(river[k][0] + .5 - crossing[0], river[k][1] + .5 - crossing[1]))
+    border_water = [[round(float(crossing[0]), 2), round(float(crossing[1]), 2)]]
+    for x, y, _ in river[k0 + 1:]:
+        q = [x + .5, y + .5]
+        if len(border_water) > 1 and border_water[-2] == q:     # the course steps back: keep the line straight
+            border_water.pop()
+        elif border_water[-1] != q:
+            border_water.append(q)
+    for x, y in inp["mainland"]["river_axis"]["points"]:
+        if border_water[-1][0] < x < until:
+            border_water.append([x, y])
+        elif x >= until > border_water[-1][0]:
+            (ax, ay) = border_water[-1]
+            border_water.append([until, round(ay + (y - ay) * (until - ax) / (x - ax), 2)])
+            break
     if rapids:
         lv = {(x, y): l for x, y, l in river}
         log(f"rapids: squares {rapids[0]} to {rapids[-1]}, the water {lv[tuple(rapids[0])]:.0f} -> {lv[tuple(rapids[-1])]:.0f} m")
@@ -176,9 +197,11 @@ def generate():
         "description": "The world's terrain, made by tools/terrain.py from world/terrain-inputs.json (O152): per 3.5 km "
                        "square of the world model's grid the kind and the country, per square corner the height in "
                        "metres, the main river's squares with their water level (source to mouth) and the estuary's "
-                       "squares; the rapids above Ferrano (the river's squares through them: the barges stay below); the border "
+                       "squares; the border on the water (the river from the crossing, then the estuary's axis "
+                       "to the open bay; a line in squares, x, y); the rapids above Ferrano (the river's squares through them: the barges stay below); the border "
                        "crossing on the river; streams for the printed map and the small brooks it shows "
-                       "as well; the fine rasters in world/terrain/. "
+                       "as well; the managed forests (their compartments of 875 m and the age of each); the fine "
+                       "rasters in world/terrain/. "
                        "Do not edit: change the inputs and run the script.",
         "made_from": fingerprint(),
         "W": W, "H": H, "km": T.KM,
@@ -190,9 +213,11 @@ def generate():
         "river": [[int(x), int(y), round(float(lv))] for x, y, lv in river],
         "estuary": sorted([[int(x), int(y)] for x, y in estuary]),
         "crossing": crossing,
+        "border_water": border_water,
         "rapids": rapids,
         "streams": {"mainland": T.streams(md, 150, 2), "lisavu": T.streams(ld, 25, 2)},
         "brooks": brooks,
+        "managed_forests": managed,
         "rasters": rasters,
         "measures": meas,
     }

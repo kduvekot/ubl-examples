@@ -160,6 +160,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.az) t.approach = 1;
   if (m.es) t.estuary = 1;
   if (m.ms) t.station = 1;
+  if (m.mf) t.mf = m.mf;                               // a managed forest's compartments (ages of its sub-squares)
   if (m.tn) t.tunnel = 1;
   if (m.dk != null) t.deck = m.dk;                     // the height of a bridge's deck or a tunnel's way (metres)
   if (m.ab) t.abut = 1;                                // a bridge's or a tunnel's approach (an embankment, a cutting)
@@ -330,6 +331,7 @@ function paintWorld(g, box, detail) {
       : t.t === "heath" ? (t.n > .5 ? COLORS.heath : COLORS.heath2) : t.t === "marsh" ? COLORS.marsh
       : t.t === "forest" ? COLORS.forest : (t.n > .5 ? COLORS.grass2 : COLORS.grass);
     groundTile(g, i, j, base);
+    if (t.mf) managedGround(g, i, j, t);
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
     const cut = coastCorners(g, i, j, true);
     const steepCoast = Math.max(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1]) > 60;   // a cliff, not a beach
@@ -350,8 +352,9 @@ function paintWorld(g, box, detail) {
   // up and back from it: hence the wide margin)
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j); if (!vis(x, y, t.building ? 12 * TW : 2 * TW)) continue;
-    if (detail && t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
-    if (!detail && t.t === "forest" && !t.building && !t.links && hash(i, j) < .5) tree(g, x, y, hash(i * 3, j));
+    if (t.mf) { if (detail && !t.building && !t.links) plantation(g, i, j, t); }
+    else if (detail && t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
+    else if (!detail && t.t === "forest" && !t.building && !t.links && hash(i, j) < .5) tree(g, x, y, hash(i * 3, j));
     if (detail && t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     if (t.urban && !t.building) townBlocks(g, i, j, t, detail);
     else if (t.house) { if (detail) house(g, x, y, t.house[0], hash(i, j * 7)); else block(g, x, y + 2, .6, .6, 6 + 8 * t.house[0], "#ddd3c2", "#9a5a48"); }
@@ -371,15 +374,7 @@ function paintWorld(g, box, detail) {
     g.strokeStyle = "#6b7177"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(x + 9, y - 12); g.lineTo(x + 15, y - 34); g.stroke();
     g.fillStyle = "#f39c12"; g.beginPath(); g.moveTo(x + 13, y - 34); g.quadraticCurveTo(x + 15, y - 44, x + 18, y - 35); g.quadraticCurveTo(x + 15.5, y - 32, x + 13, y - 34); g.fill();
     g.fillStyle = "#ffe08a"; g.beginPath(); g.arc(x + 15.5, y - 36, 1.6, 0, 7); g.fill(); }
-  // country borders: dashed line along tile edges where the country changes on land
-  g.strokeStyle = "#d94a4a"; g.lineWidth = 2; g.setLineDash([5, 4]);
-  const T = (ri, rj) => { const [i, j] = RI(ri, rj); return tiles[i][j]; };
-  const cw = (ri, rj) => { const [x, y] = iso(ri, rj), [i, j] = RI(ri, rj); return [x + OX, y + OY - heightAt(i, j) * HU]; };   // a corner, on the ground
-  for (let i = 0; i < RW() - 1; i++) for (let j = 0; j < RH(); j++) { const a = T(i, j), b = T(i + 1, j);
-    if (a.land && b.land && a.country !== b.country) { const p1 = cw(i + .5, j + .5), p2 = cw(i + .5, j - .5); if (!vis(p1[0], p1[1], TW)) continue; g.beginPath(); g.moveTo(...p1); g.lineTo(...p2); g.stroke(); } }
-  for (let i = 0; i < RW(); i++) for (let j = 0; j < RH() - 1; j++) { const a = T(i, j), b = T(i, j + 1);
-    if (a.land && b.land && a.country !== b.country) { const p1 = cw(i + .5, j + .5), p2 = cw(i - .5, j + .5); if (!vis(p1[0], p1[1], TW)) continue; g.beginPath(); g.moveTo(...p1); g.lineTo(...p2); g.stroke(); } }
-  g.setLineDash([]);
+  // the country borders are drawn over the view at every zoom (drawBorder, in frame)
 }
 // ---- building kit: walls with windows, roofs and details, all on the isometric grid
 // A block stands on (x, y); w and d are fractions of a tile, h is its wall height in pixels.
@@ -444,6 +439,31 @@ function rockMound(g, x, y, n) { const top = [x - 1, y - 4 - n * 9]; const sz = 
   g.fillStyle = "#9b968a"; g.beginPath(); g.moveTo(x - sz, y + 1); g.lineTo(top[0], top[1]); g.lineTo(x, y + 5); g.closePath(); g.fill();
   g.fillStyle = "#6f6a5f"; g.beginPath(); g.moveTo(x, y + 5); g.lineTo(top[0], top[1]); g.lineTo(x + sz, y + 1); g.closePath(); g.fill();
   if (n > .6) { g.fillStyle = "#eeeae0"; g.beginPath(); g.moveTo(top[0] - 3, top[1] + 4); g.lineTo(top[0], top[1]); g.lineTo(top[0] + 3, top[1] + 4); g.fill(); } }
+// A managed forest (model "mf", the forest of Upland State): worked in compartments of 875 m (the SUB x SUB
+// sub-squares of a square), each of one age: felled and replanted (brash and stumps), young, pole and mature
+// stands of conifers in rows; the rides between the compartments show as light lines. The overview shows the
+// patchwork of the compartments, the detail also the rows of trees.
+const MF_COL = ["#a59a64", "#8dba5c", "#4f8f3d", "#2f6a2b"], MF_RIDE = "#b9b383";
+function tileLight(i, j) { const h00 = V[i][j], h10 = V[i + 1][j], h11 = V[i + 1][j + 1], h01 = V[i][j + 1];
+  const dx = (h10 + h11 - h00 - h01) / 2 / 3500, dy = (h01 + h11 - h00 - h10) / 2 / 3500;
+  return [Math.max(-.45, Math.min(.35, (-dx - dy) * 6)), (h00 + h10 + h11 + h01) / 4]; }
+function managedGround(g, i, j, t) { const [lit, h] = tileLight(i, j), e = .035;
+  const cell = (a, b, e2, col) => { const u0 = a / SUB - .5 + e2, v0 = b / SUB - .5 + e2, u1 = (a + 1) / SUB - .5 - e2, v1 = (b + 1) / SUB - .5 - e2;
+    poly(g, [tp(i, j, u0, v0), tp(i, j, u1, v0), tp(i, j, u1, v1), tp(i, j, u0, v1)], shade(tint(col, h), lit)); };
+  for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) { const c = t.mf[a * SUB + b];
+    if (c === ".") { cell(a, b, 0, t.n > .5 ? COLORS.grass2 : COLORS.grass); continue; }   // open land outside the forest's edge
+    cell(a, b, 0, MF_RIDE); cell(a, b, e, MF_COL[+c]); } }
+function conifer(g, x, y, s, c) { g.fillStyle = c; g.beginPath(); g.moveTo(x - 2 * s, y); g.lineTo(x, y - 6 * s); g.lineTo(x + 2 * s, y); g.fill();
+  g.fillStyle = shade(c, .2); g.beginPath(); g.moveTo(x - 2 * s, y); g.lineTo(x, y - 6 * s); g.lineTo(x - .3 * s, y); g.fill(); }
+function plantation(g, i, j, t) { const out = [];
+  for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) { const c = t.mf[a * SUB + b]; if (c === "." || c === "0") {
+      if (c === "0") for (const [du, dv] of [[.3, .35], [.7, .6], [.45, .8]]) { const [x, y] = tp(i, j, (a + du) / SUB - .5, (b + dv) / SUB - .5); g.fillStyle = "#6e5a3e"; g.fillRect(x - .7, y - .7, 1.4, 1.4); }
+      continue; }
+    const n = c === "1" ? 3 : 2;                         // trees per compartment side: rows of young trees, then fewer and taller
+    for (let p = 0; p < n; p++) for (let q = 0; q < n; q++) { const [x, y] = tp(i, j, (a + (p + .5) / n) / SUB - .5, (b + (q + .5) / n) / SUB - .5); out.push([x, y, c]); } }
+  out.sort((A, B) => A[1] - B[1]);
+  for (const [x, y, c] of out) if (c === "1") { g.fillStyle = "#6fa84a"; g.beginPath(); g.arc(x, y - 1, 1.1, 0, 7); g.fill(); }
+    else conifer(g, x, y + 1, c === "2" ? .75 : 1.05, c === "2" ? "#3f7f35" : "#2c5f29"); }
 // The built-up areas of the towns and villages (model "um"): each square is cut into SUB x SUB blocks of 875 m;
 // the blocks inside the area are paved (the streets show between the buildings), and every block off the roads
 // and rails holds buildings by the square's density (model "ul"): 1 houses, 2 terraces, 3 blocks of flats, 4
@@ -550,16 +570,50 @@ function multiTile(g, p, k, col, glass) {
   return false;
 }
 
+// An underground iron mine on the hillside (Serravona Mining, 4-xu; owner, 2026-11-18): the adit portal driven into
+// the slope on the uphill side of the square, a small headframe over the service shaft beside it, the crushing and
+// screening plant (lump ore of 10-30 mm) with its conveyor to the ore bin over the siding, where the ore line
+// comes in and the wagons are loaded and weighed (the weighbridge, its hut), a modest spoil heap, the offices and
+// sheds. Laid out in the square's own directions: U towards the hill, P across.
+function mine(g, p, col) { const [i, j] = p.at;
+  const dr = DIRS8.find(d => tiles[i + d[0]]?.[j + d[1]]?.links?.rail?.has([-d[0], -d[1]].join())) || [1, 0];
+  const rise = d => heightAt(i + 2 * d[0], j + 2 * d[1]) + heightAt(i + 3 * d[0], j + 3 * d[1]);   // beyond the levelled yard
+  const up = DIRS.filter(d => d[0] * dr[0] + d[1] * dr[1] <= 0).sort((a, b) => rise(b) - rise(a))[0];
+  const P = [-up[1], up[0]], side = P[0] * dr[0] + P[1] * dr[1] > 0 ? -1 : 1;   // +b: across, away from the siding
+  const uv = (a, b) => [up[0] * a + P[0] * side * b, up[1] * a + P[1] * side * b], at = (a, b) => tp(i, j, ...uv(a, b));
+  // the siding: the track from the line in to the ore bin, the weighbridge (a dark plate on the track) and its hut
+  drawRailPiece(g, i, j, dr, null, false);
+  const wb = [dr[0] * .4, dr[1] * .4], pv = [-dr[1] * .19, dr[0] * .19], dd = [dr[0] * .09, dr[1] * .09];
+  poly(g, [[1, 1], [-1, 1], [-1, -1], [1, -1]].map(([a, b]) => tp(i, j, wb[0] + pv[0] * a + dd[0] * b, wb[1] + pv[1] * a + dd[1] * b)), "rgba(55,57,60,.85)");
+  const parts = [], add = (q, f) => parts.push([q[1], () => f(q[0], q[1])]);
+  add(tp(i, j, wb[0] - dr[1] * side * .28, wb[1] + dr[0] * side * .28), (x, y) => { const G = geo(x, y, .13, .11, 4); walls(g, G, "#e2dccf"); flatRoof(g, G, "#7d8a91"); });
+  // the ore bin on its legs over the end of the track: the wagons are loaded under it
+  add(tp(i, j, dr[0] * .2, dr[1] * .2), (x, y) => { g.fillStyle = "#4a4640"; for (const dx of [-4, 3]) g.fillRect(x + dx, y - 8, 1.4, 8);
+    const G = geo(x, y - 7, .26, .2, 8); walls(g, G, "#6f665a"); flatRoof(g, G, "#4d463d"); });
+  // the adit portal: a stone headwall cut into the slope on the uphill side, the dark arch, the track out of it
+  const a0 = at(.47, -.38), a1 = at(.47, -.02), ac = at(.47, -.2);
+  parts.push([Math.min(a0[1], a1[1]) - 30, () => {
+    tline(g, i, j, [uv(.45, -.2), uv(0, -.2), uv(-.05, .15)], "#3b3631", 1.3);
+    poly(g, [a0, a1, [a1[0], a1[1] - 10], [a0[0], a0[1] - 10]], "#9a9384");
+    poly(g, [[a0[0], a0[1] - 10], [a1[0], a1[1] - 10], [a1[0], a1[1] - 12], [a0[0], a0[1] - 12]], "#7b7466");
+    g.fillStyle = "#15120f"; g.beginPath(); g.moveTo(ac[0] - 2.4, ac[1]); g.lineTo(ac[0] - 2.4, ac[1] - 3.5); g.arc(ac[0], ac[1] - 3.5, 2.4, Math.PI, 0); g.lineTo(ac[0] + 2.4, ac[1]); g.fill(); }]);
+  // the crushing and screening plant (lump ore 10-30 mm), its conveyor gallery to the top of the bin
+  add(at(-.15, .45), (x, y) => { const G = geo(x, y, .24, .2, 10); walls(g, G, "#cdc3ac"); windows(g, G, "L", 2, 2, "rgba(40,50,60,.8)");
+    gableRoof(g, G, 3, col, "#cdc3ac");
+    const [bx, by] = tp(i, j, dr[0] * .2, dr[1] * .2); g.strokeStyle = "#57534c"; g.lineWidth = 2.5; g.beginPath(); g.moveTo(x + 2, y - 9); g.lineTo(bx, by - 15); g.stroke(); });
+  // the spoil heap: the waste rock of the drives, a modest tip beside the portal
+  add(at(.55, -.42), (x, y) => { g.fillStyle = "#7d7568"; g.beginPath(); g.moveTo(x - 8, y + 2); g.quadraticCurveTo(x - 3, y - 8, x + 2, y - 7); g.lineTo(x + 8, y + 2); g.closePath(); g.fill();
+    g.fillStyle = "#9a9180"; g.beginPath(); g.moveTo(x - 8, y + 2); g.quadraticCurveTo(x - 4, y - 5, x - 1, y - 6.5); g.lineTo(x, y + 2); g.closePath(); g.fill(); });
+  // the offices and a store shed
+  add(at(-.45, .1), (x, y) => { const G = geo(x, y, .2, .14, 6); walls(g, G, "#ece6d8"); windows(g, G, "L", 3, 1, "rgba(40,70,110,.9)"); gableRoof(g, G, 3, "#8a4a3a", "#ece6d8"); });
+  add(at(-.42, .42), (x, y) => { const G = geo(x, y, .14, .12, 4); walls(g, G, "#a99f8c"); gableRoof(g, G, 2, "#6d6d6d", "#a99f8c"); });
+  parts.sort((a, b) => a[0] - b[0]).forEach(([, f]) => f()); }
 function drawBuilding(g, x, y, p) {
   const col = css(CAT[p.cat]) || "#888", glass = "rgba(40,70,110,.9)", lit = "rgba(250,220,140,.85)";
   const k = p.kind, official = p.cat === "government" || p.cat === "procurement", big = (p.size || [1, 1]).join() !== "1,1";
   ({ x, y } = footGeo(p, 0, 0));                        // draw at the centre of the footprint
   if (big && multiTile(g, p, k, col, glass)) return;
-  if (k === "mine") {                                   // headframe with winding wheel, shed, ore heap
-    g.fillStyle = "#6b5a45"; g.beginPath(); g.ellipse(x + 7, y + 3, 7, 3.5, 0, 0, 7); g.fill(); g.fillStyle = "#857057"; g.beginPath(); g.ellipse(x + 7, y + 1, 4, 2, 0, 0, 7); g.fill();
-    const S = geo(x - 4, y + 3, .45, .4, 7); walls(g, S, "#b9ab94"); gableRoof(g, S, 3, col, "#b9ab94");
-    g.strokeStyle = "#3a3a3a"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(x - 6, y - 2); g.lineTo(x - 1, y - 26); g.lineTo(x + 4, y - 2); g.moveTo(x - 4.6, y - 9); g.lineTo(x + 2.6, y - 9); g.moveTo(x - 3.3, y - 16); g.lineTo(x + 1.3, y - 16); g.stroke();
-    g.beginPath(); g.arc(x - 1, y - 26, 3.5, 0, 7); g.stroke(); return; }
+  if (k === "mine") { mine(g, p, col); return; }
   if (k === "factory") {                                // hall with saw-tooth roof, two chimneys with smoke
     const G = geo(x, y + 3, .95, .9, 13); walls(g, G, "#b9a487"); windows(g, G, "L", 4, 1, glass); door(g, G, "R", .55, .3, 8, "#4a4a4a");
     flatRoof(g, G, shade(col, -.2));
@@ -904,10 +958,40 @@ function sign(g, x, y, text, col, active) {
   g.fillStyle = col; g.fillRect(Math.round(x - w / 2), Math.round(y - h), 3, h);
   g.fillStyle = active ? "#11151f" : "#ffffff"; g.textBaseline = "middle"; g.fillText(text, Math.round(x - w / 2 + 7), Math.round(y - h / 2 + 1));
 }
+// The country borders: a red dashed line along the square edges where the country changes on land, and on the
+// water where the river (below the crossing) and then the estuary's axis are the border (model "border_water").
+// They are drawn over the view, not into the overview or the chunks, so that they keep the same width and dashes
+// at every zoom: the lines in tile coordinates (BORDER), their world points for the current rotation (borderWorld).
+const BORDER = (() => { const adj = new Map(), key = q => q.join(), add = (a, b) => { for (const [x, y] of [[a, b], [b, a]]) { if (!adj.has(key(x))) adj.set(key(x), { q: x, nb: [] }); adj.get(key(x)).nb.push(y); } };
+  for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const a = tiles[i][j]; if (!a.land || !a.country) continue;
+    const b = tiles[i + 1]?.[j], c = tiles[i]?.[j + 1];
+    if (b && b.land && b.country && b.country !== a.country) add([i + .5, j - .5], [i + .5, j + .5]);
+    if (c && c.land && c.country && c.country !== a.country) add([i - .5, j + .5], [i + .5, j + .5]); }
+  const done = new Set(), ek = (a, b) => key(a) < key(b) ? key(a) + "|" + key(b) : key(b) + "|" + key(a), lines = [];
+  const walk = start => { for (const nb of adj.get(key(start)).nb) { if (done.has(ek(start, nb))) continue; const line = [start]; let a = start, b = nb;
+      while (b && !done.has(ek(a, b))) { done.add(ek(a, b)); line.push(b); const nx = adj.get(key(b)).nb.filter(y => !done.has(ek(b, y))); a = b; b = adj.get(key(b)).nb.length === 2 ? nx[0] : null; }
+      lines.push(line); } };
+  for (const v of adj.values()) if (v.nb.length !== 2) walk(v.q);           // from the ends and junctions first, then the loops
+  for (const v of adj.values()) walk(v.q);
+  const water = WORLD.model.border_water || [];
+  if (water.length > 1) lines.push(chaikin(water, 3));
+  return lines; })();
+function chaikin(pts, it) { for (let n = 0; n < it; n++) { const out = [pts[0]];
+    for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [pts[k], pts[k + 1]]; out.push([.75 * a[0] + .25 * b[0], .75 * a[1] + .25 * b[1]], [.25 * a[0] + .75 * b[0], .25 * a[1] + .75 * b[1]]); }
+    out.push(pts[pts.length - 1]); pts = out; } return pts; }
+let borderRot = -1, borderWorld = [];
+function drawBorder(r) { if (borderRot !== rot) { borderRot = rot; borderWorld = BORDER.map(l => l.map(q => tileWorld(q[0], q[1]))); }
+  const s = view.s, w = Math.max(1.6, Math.min(3.2, 2 * s));
+  const path = () => { ctx.beginPath(); for (const l of borderWorld) l.forEach((p, k) => { const x = p[0] * s + view.x, y = p[1] * s + view.y; k ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); };
+  ctx.lineJoin = "round"; ctx.lineCap = "butt";
+  ctx.strokeStyle = "rgba(255,255,255,.35)"; ctx.lineWidth = w + 1.5; ctx.setLineDash([]); path(); ctx.stroke();
+  ctx.strokeStyle = "#d94a4a"; ctx.lineWidth = w; ctx.setLineDash([Math.max(5, 5 * s), Math.max(4, 4 * s)]); path(); ctx.stroke();
+  ctx.setLineDash([]); ctx.lineJoin = "miter"; }
 function frame(t) {
   const r = cv.getBoundingClientRect(); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, r.width, r.height);
   ctx.fillStyle = "#2b5d8f"; ctx.fillRect(0, 0, r.width, r.height);
   const pending = paintView(r);
+  drawBorder(r);
   // routes overlay for sea and air, highlighted when a layer is on
   for (const ro of ROUTES) { if (!layers[ro.layer]) continue;
     if (ro.mode === "sea" || ro.mode === "air") { ctx.strokeStyle = ro.mode === "sea" ? "rgba(255,255,255,.65)" : "rgba(255,255,255,.5)"; ctx.lineWidth = 2; ctx.setLineDash(ro.mode === "air" ? [2, 6] : [8, 6]);

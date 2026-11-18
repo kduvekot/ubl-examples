@@ -3,7 +3,9 @@
 The 3D map has 256 x 192 squares of 3.5 km (world_model.GRID = 4 squares per 14 km). The land itself is drawn
 from the terrain's fine rasters (world/terrain/*.png, made by tools/terrain.py, O152: heights and land cover in cells
 of 875 m on the mainland and 437.5 m on Lisavu): coast, relief (shaded, the land tinted by height), forests, fields,
-heath, rock and marsh as the terrain has them, and the rivers from the terrain's streams, wider as they drain more.
+heath, rock and marsh as the terrain has them, and the rivers from the terrain's streams, wider as they drain more;
+the managed forest of Upland State with its compartments by age (terrain "managed_forests"), the mine sign at the
+mine.
 The countries are the model's squares, their edge bent a little by the model's noise. Roads, rail and the
 pipelines follow the model's own paths, with their corners cut (Chaikin);
 towns are drawn as their built-up areas, true to size (the model's sub-squares "um", 875 m), with their names beside
@@ -43,6 +45,7 @@ for name, r_ in TERRAIN["rasters"].items():
                  np.array(Image.open(r_["height"]), dtype=np.float32).T - r_["offset_m"],     # [x][y], metres
                  COVER_TO_KIND[np.array(Image.open(r_["cover"])).T]))
 COUNTRY = {None: 0, "XU": 1, "XB": 2, "XL": 3}
+PARTIES = json.load(open("world/parties.json", encoding="utf-8"))["parties"]
 OWNED = {(i, j) for i in range(W) for j in range(H) if T[i][j].get("b")}
 K = np.array([[KIND[T[i][j]["k"]] if not T[i][j].get("es") else 0 for j in range(H)] for i in range(W)], dtype=np.int8)
 CTY = np.array([[COUNTRY[T[i][j]["c"]] for j in range(H)] for i in range(W)], dtype=np.int8)
@@ -320,6 +323,11 @@ def overlay_flat(img, px):
     d = ImageDraw.Draw(img, "RGBA")
     U = px * G                                    # pixels per 14 km: widths and lettering
     P = lambda q: ((q[0] + .5) * px, (q[1] + .5) * px)
+    # the managed forest (world/terrain.json "managed_forests", the forest of Upland State): over the forest tint,
+    # its compartments of 875 m in a lighter or deeper green by their age (felled and replanted, young, pole,
+    # mature), a fine line where two compartments of different ages meet, and the forest's edge
+    managed_forest(img, px)
+    d = ImageDraw.Draw(img, "RGBA")
     # rivers: the terrain's streams, wider downstream (the estuary is open water in the terrain)
     streams(d, px, PAL["water"])
     # the rapids above Ferrano (O153): short bars across the river, the map sign for rapids
@@ -491,6 +499,38 @@ def overlay_flat(img, px):
     # land border: dotted, traced where the country changes
     border_dots(img, px, 3, PAL["border"], U * .045)
 
+MF_TINT = [(232, 234, 206), (204, 228, 188), (184, 216, 170), (166, 204, 154)]   # felled, young, pole, mature
+
+def managed_forest(img, px):
+    S = wm.SUB
+    cells = {}
+    for i in range(W):
+        for j in range(H):
+            ages = T[i][j].get("mf")
+            if ages:
+                for a in range(S):
+                    for b in range(S):
+                        if ages[a * S + b] != ".":
+                            cells[(i * S + a, j * S + b)] = int(ages[a * S + b])
+    if not cells:
+        return
+    c = px / S
+    lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(lay)
+    for (x, y), age in cells.items():
+        d.rectangle([x * c, y * c, (x + 1) * c - 1, (y + 1) * c - 1], fill=MF_TINT[age] + (190,))
+    line, edge = (112, 156, 104, 200), (86, 130, 80, 230)
+    w = max(1, round(px / 24))
+    for (x, y), age in cells.items():
+        for dx, dy in ((1, 0), (0, 1), (-1, 0), (0, -1)):
+            o = cells.get((x + dx, y + dy))
+            if o is not None and (o == age or (dx, dy) in ((-1, 0), (0, -1))):
+                continue                              # one line per pair of compartments
+            x0, y0 = (x + (dx > 0)) * c, (y + (dy > 0)) * c
+            seg = [(x0, y0), (x0, y0 + c)] if dx else [(x0, y0), (x0 + c, y0)]
+            d.line(seg, fill=edge if o is None else line, width=w)
+    img.paste(Image.alpha_composite(img.convert("RGBA"), lay).convert("RGB"))
+
 def labels_flat(img, px):
     d = ImageDraw.Draw(img, "RGBA")
     U = px * G                                    # pixels per 14 km: widths and lettering
@@ -533,6 +573,13 @@ def labels_flat(img, px):
         x, y = P(q)
         placed.append(d.textbbox((x + U * dx, y + U * dy), POI[b], font=F(False, U * .58), anchor=anchor))
         placed.append((x - U * .3, y - U * .3, x + U * .3, y + U * .3))
+    # mines: the map sign for a mine (hammer and pick) at the mine's square, the adit (Serravona Mining, 4-xu)
+    for p in PARTIES:
+        if p.get("kind") == "mine":
+            x, y = P(p["at"])
+            f = F(True, U * .55)
+            d.text((x, y), "\u2692", font=f, fill=(50, 50, 55), anchor="mm", stroke_width=max(2, U // 10), stroke_fill=(255, 255, 255, 235))
+            placed.append(d.textbbox((x, y), "\u2692", font=f, anchor="mm"))
     # towns: the built-up area is the symbol; the name stands beside it, on the side where it covers the least
     # built-up land, other names and roads. Villages (about 1 km, under half a millimetre) get a dot.
     occupied = BUILT_MASK[0]
