@@ -12,6 +12,7 @@ towns, buildings and airports stay on their squares.
 Usage (from the repository root): python3 tools/world_model.py model.json, then
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 6 roadmap   (road-map style)
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 2 strip     (the levels)
+  python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 0 sheet     (A3, 1 : 2,500,000)
 (the fifth argument is the number of pixels per 3.5 km square)
 """
 import json, math, sys
@@ -449,16 +450,17 @@ def labels_flat(img, px):
                stroke_width=max(2, U // 10) if halo else 0, stroke_fill=(255, 255, 255, 230))
     def dot(q, col, r=.22):
         x, y = P(q); d.ellipse([x - U * r, y - U * r, x + U * r, y + U * r], fill=col, outline=(255, 255, 255), width=max(1, U // 14))
-    # Lisavu is an inset: about 1,000 km east of Lumeport, drawn nearer (a frame and a note say so)
+    # Lisavu is an inset: about 1,000 km east of Lumeport, drawn nearer (a frame and a note say so; on the sheet
+    # the island has a panel of its own instead)
     isle = [(i, j) for i in range(W) for j in range(H) if T[i][j]["c"] == "XL"]
     x0, y0 = P((min(i for i, _ in isle) - 4, min(j for _, j in isle) - 7))
     x1, y1 = P((W - 1.5, max(j for _, j in isle) + 4))
-    for k in range(int(x0), int(x1), int(U * .4)):
+    for k in (range(int(x0), int(x1), int(U * .4)) if INSET_FRAME else ()):
         d.line([(k, y0), (min(x1, k + U * .2), y0)], fill=PAL["water_label"], width=max(1, U // 16))
         d.line([(k, y1), (min(x1, k + U * .2), y1)], fill=PAL["water_label"], width=max(1, U // 16))
-    for k in range(int(y0), int(y1), int(U * .4)):
+    for k in (range(int(y0), int(y1), int(U * .4)) if INSET_FRAME else ()):
         d.line([(x0, k), (x0, min(y1, k + U * .2))], fill=PAL["water_label"], width=max(1, U // 16))
-    d.multiline_text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport:\ndrawn nearer, at the same scale",
+    INSET_FRAME and d.multiline_text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport:\ndrawn nearer, at the same scale",
                      font=F(False, U * .45), fill=PAL["water_label"], anchor="la")
     for t in WORLD["towns"]:
         dot(t["c"], (90, 90, 90), .28)
@@ -489,12 +491,74 @@ def labels_flat(img, px):
     txt((52 * G, 33.5 * G), sp("LISAVU"), F(False, U * 1.0), (125, 125, 125, 255), anchor="lm")
     txt((42 * G, 41 * G), "Atlantic Ocean", F(False, U * .75), PAL["water_label"], anchor="lm", halo=False)
     # scale bar
+    if not INSET_FRAME:
+        return
     x0, y0 = U * 2.2, img.size[1] - U * 1.6
     L = 100 / KM * px
     d.line([(x0, y0), (x0 + L, y0)], fill=(80, 80, 80), width=max(2, U // 10))
     for xx in (x0, x0 + L / 2, x0 + L):
         d.line([(xx, y0 - U * .25), (xx, y0)], fill=(80, 80, 80), width=max(2, U // 10))
     d.text((x0 + L + U * .4, y0), "100 km", font=F(False, U * .55), fill=(80, 80, 80), anchor="lm")
+
+INSET_FRAME = True
+
+# ---------------------------------------------------------------- the printed sheet (O151)
+SCALE = 2_500_000                                 # 1 : 2,500,000
+DPI = 300
+SHEET_MM = (420, 297)                             # A3 landscape
+MM = DPI / 25.4                                   # pixels per mm
+
+def sheet(out_path, levels=5):
+    """The map as a printed sheet: A3 landscape at 1 : 2,500,000 and 300 dpi, in two panels in one frame (style C
+    of O151): the mainland, and Lisavu, which lies about 1,000 km east and is shown at the same scale."""
+    global INSET_FRAME
+    INSET_FRAME = False
+    px_true = KM * 1e6 / SCALE * MM               # pixels per square at the sheet's scale (16.5 at 300 dpi)
+    px = math.ceil(px_true)
+    img = render_flat(levels, px)
+    overlay_flat(img, px)
+    labels_flat(img, px)
+    f = px_true / px
+    img = img.resize((round(img.size[0] * f), round(img.size[1] * f)), Image.LANCZOS)
+    sea = PAL["sea"] if "sea" in PAL else img.getpixel((2, 2))
+    paper, ink = (255, 255, 255), (60, 64, 67)
+    Wp, Hp = (round(v * MM) for v in SHEET_MM)
+    out = Image.new("RGB", (Wp, Hp), paper)
+    d = ImageDraw.Draw(out)
+    F = lambda bold, mm: ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans%s.ttf" % ("-Bold" if bold else ""), round(mm * MM))
+    m, gut, head, foot = 10 * MM, 6 * MM, 11 * MM, 16 * MM
+    top, bottom = m + head, Hp - m - foot
+    w_isle = 94 * MM
+    w_main = Wp - 2 * m - gut - w_isle
+    def panel(x0, w, cols, title):
+        """A panel of the sheet, centred on the land of the given columns."""
+        land = [(i, j) for i in cols for j in range(H) if K[i, j] != 0]
+        ci = (min(i for i, _ in land) + max(i for i, _ in land) + 1) / 2
+        cj = (min(j for _, j in land) + max(j for _, j in land) + 1) / 2
+        h = bottom - top
+        sx, sy = ci * px_true - w / 2, cj * px_true - h / 2
+        tile = Image.new("RGB", (round(w), round(h)), sea)
+        tile.paste(img, (round(-sx), round(-sy)))
+        out.paste(tile, (round(x0), round(top)))
+        d.rectangle([x0, top, x0 + w, bottom], outline=ink, width=round(.35 * MM))
+        d.text((x0, top - 2.5 * MM), title, font=F(True, 4.2), fill=ink, anchor="ls")
+    isle_from = min(i for i in range(W) for j in range(H) if CTY[i, j] == 3) - 2
+    panel(m, w_main, range(0, isle_from), "URVANIA AND BAYVARRA")
+    xi = m + w_main + gut
+    panel(xi, w_isle, range(isle_from, W), "LISAVU")
+    # the footer: scale bar, scale, note
+    x0, y0 = m, bottom + 8 * MM
+    L = 100 * 1e6 / SCALE * MM                    # 100 km on the sheet
+    lw = round(.4 * MM)
+    for k in range(4):                            # alternating 25 km blocks
+        d.rectangle([x0 + k * L / 4, y0 - 1.2 * MM, x0 + (k + 1) * L / 4, y0], fill=ink if k % 2 == 0 else paper, outline=ink, width=lw)
+    for k, t in ((0, "0"), (2, "50"), (4, "100 km")):
+        d.text((x0 + k * L / 4, y0 + 1.2 * MM), t, font=F(False, 2.6), fill=ink, anchor="ma" if k < 4 else "la")
+    d.text((x0 + L + 8 * MM, y0 - .6 * MM), "Scale 1 : 2,500,000", font=F(True, 3.2), fill=ink, anchor="lm")
+    d.text((xi, bottom + 4 * MM), "Same scale. Lisavu lies about 1,000 km\neast of Lumeport.", font=F(False, 2.6), fill=ink, anchor="la")
+    d.rectangle([m - 3 * MM, m - 3 * MM, Wp - m + 3 * MM, Hp - m + 3 * MM], outline=ink, width=round(.25 * MM))
+    out.save(out_path, dpi=(DPI, DPI))
+    print(out_path, out.size, "px per square", round(px_true, 3))
 
 def road_map(out_path, levels=5, px=24, ss=2):
     big = render_flat(levels, px * ss)
@@ -507,6 +571,10 @@ def road_map(out_path, levels=5, px=24, ss=2):
 
 if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "roadmap":
     road_map(out, LEVELS, PX)
+    sys.exit()
+
+if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "sheet":
+    sheet(out, LEVELS)
     sys.exit()
 
 if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "strip":
