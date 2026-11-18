@@ -154,15 +154,15 @@ dry grassland behind it. They spread over the dry east and the plateau as
 graziers and wheat farmers. Larkmouth was their first town and first
 capital, and Bayvarra keeps the landing as Settlers' Day. The settlers held
 the coast through their own company, without the Crown: Britain's Colonial
-Office avoided new colonies in those years for what they cost. About 1840
-the company founded Lumeport at the narrows of the estuary, on the shore of
-the bay, where a brook gave fresh water; the narrows command the entry to
-the river.
+Office avoided new colonies in those years for what they cost. In the late
+1830s the company kept a small trading station at the narrows of the
+estuary, on the shore of the bay, where a brook gave fresh water; the
+narrows command the entry to the river.
 
 About 1840 the Sardinian corvette *Euridice* came from Sardinia's naval
-station on the Río de la Plata. Because Lumeport was a company town and the
+station on the Río de la Plata. Because the station was the company's and the
 Crown had no sovereignty over the river, the warship of a friendly kingdom
-could sail past it up the river to Ruldraz. The Urvanian rulers signed a
+could sail past the station up the river to Ruldraz. The Urvanian rulers signed a
 treaty of protection with Sardinia, which revived the old Tuscan claim, and
 Forte Euridice was built about 1842 in the angle of the main river and the
 largest river of the plateau. The station on the Plata and the corvette are
@@ -175,9 +175,9 @@ state in 1882. Ligurian fishermen from the Plata settled under the
 protectorate at Marina Ligure on the south coast.
 
 The treaty made Britain act. It annexed the coast and the dry east, as
-cheaply as it could, and Lumeport, which commands the river, became the
-colony's seat and, as the river trade grew, its capital in Larkmouth's
-place. Britain did not take the valley: Sardinia protected it, it was
+cheaply as it could, fortified the station at the narrows and laid out the
+town of Lumeport there, about 1841, as the colony's seat; as the river trade
+grew it became the capital in Larkmouth's place. Britain did not take the valley: Sardinia protected it, it was
 densely peopled and would have been costly to conquer, and the settlers
 wanted the grazing land, not the valley. A real parallel is New Zealand, which Britain annexed in
 1840 only under pressure, among it the fear of a French settlement at
@@ -349,8 +349,8 @@ bridge, 78 m high, and a viaduct over a side valley; no tunnel was worth its
 cost. The railways are the ore line from the mine down to Valdara's works at
 Ferrano, the line from Ferrano across the border to Lumeway's siding at
 Marrowdale, a line to the Port of Lumeport, and the wool line from Marrowdale
-down to Larkmouth's harbour. The land south of the main river is reached by
-minor roads only, over Ferrano's bridge and from the border crossing.
+down to Larkmouth's harbour. No main road runs south of the main river: the farmland there is served by
+minor roads, which reach the rest of the country over Ferrano's bridge.
 
 Some places of the examples:
 
@@ -395,7 +395,7 @@ The printed map is an A3 landscape sheet at 1 : 2,500,000, with clear sea
 around the mainland. Lisavu stands beside it in a panel of its own, at the
 same scale: two panels in one frame, with a gutter between them and each
 with its own header and border, and a note that the island lies about
-1,000 km east of Lumeport. The island is drawn nearer than it lies; the
+1,100 km east of Lumeport. The island is drawn nearer than it lies; the
 coordinates in the documents are its true position.
 
 ## Languages
@@ -1224,7 +1224,7 @@ Kingdom's civil time. A time is written with its offset from UTC, as
 ISO 8601 writes it (`07:00:00-01:00`), at least wherever a document crosses
 the zone boundary, and an address states its zone as an offset. A flight
 that leaves Lumeport at 07:00 is timetabled into Selanu at 10:45 island
-time: a block time of 2 h 45, of which about 2 h 15 to 2 h 20 are needed
+time: a block time of 2 h 45, of which about 2 h 10 to 2 h 15 are needed
 eastbound with the westerly winds, so it usually lands early.
 
 The week starts on Monday in all three countries, and weeks are numbered as

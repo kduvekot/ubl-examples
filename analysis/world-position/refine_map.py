@@ -603,7 +603,7 @@ def labels_flat(img, px):
                stroke_width=max(2, U // 10) if halo else 0, stroke_fill=(255, 255, 255, 230))
     def dot(q, col, r=.22):
         x, y = P(q); d.ellipse([x - U * r, y - U * r, x + U * r, y + U * r], fill=col, outline=(255, 255, 255), width=max(1, U // 14))
-    # Lisavu is an inset: about 1,000 km east of Lumeport, drawn nearer (a frame and a note say so; on the sheet
+    # Lisavu is an inset: about 1,100 km east of Lumeport, drawn nearer (a frame and a note say so; on the sheet
     # the island has a panel of its own instead)
     isle = [(i, j) for i in range(W) for j in range(H) if T[i][j]["c"] == "XL"]
     x0, y0 = P((min(i for i, _ in isle) - 4, min(j for _, j in isle) - 7))
@@ -613,7 +613,7 @@ def labels_flat(img, px):
         d.line([(k, y1), (min(x1, k + U * .2), y1)], fill=PAL["water_label"], width=max(1, U // 16))
     for k in (range(int(y0), int(y1), int(U * .4)) if INSET_FRAME else ()):
         d.line([(x0, k), (x0, min(y1, k + U * .2))], fill=PAL["water_label"], width=max(1, U // 16))
-    INSET_FRAME and d.multiline_text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport:\ndrawn nearer, at the same scale",
+    INSET_FRAME and d.multiline_text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,100 km east of Lumeport:\ndrawn nearer, at the same scale",
                      font=F(False, U * .45), fill=PAL["water_label"], anchor="la")
     placed = []
     # ports and airports from the model's parties
@@ -739,7 +739,7 @@ MM = DPI / 25.4                                   # pixels per mm
 
 def sheet(out_path, levels=5):
     """The map as a printed sheet: A3 landscape at 1 : 2,500,000 and 300 dpi, in two panels in one frame (style C
-    of O151): the mainland, and Lisavu, which lies about 1,000 km east and is shown at the same scale."""
+    of O151): the mainland, and Lisavu, which lies about 1,100 km east and is shown at the same scale."""
     global INSET_FRAME
     INSET_FRAME = False
     px_true = KM * 1e6 / SCALE * MM               # pixels per square at the sheet's scale (16.5 at 300 dpi)
@@ -784,7 +784,7 @@ def sheet(out_path, levels=5):
     for k, t in ((0, "0"), (2, "50"), (4, "100 km")):
         d.text((x0 + k * L / 4, y0 + 1.2 * MM), t, font=F(False, 2.6), fill=ink, anchor="ma" if k < 4 else "la")
     d.text((x0 + L + 8 * MM, y0 - .6 * MM), "Scale 1 : 2,500,000", font=F(True, 3.2), fill=ink, anchor="lm")
-    d.text((xi, bottom + 4 * MM), "Same scale. Lisavu lies about 1,000 km\neast of Lumeport.", font=F(False, 2.6), fill=ink, anchor="la")
+    d.text((xi, bottom + 4 * MM), "Same scale. Lisavu lies about 1,100 km\neast of Lumeport.", font=F(False, 2.6), fill=ink, anchor="la")
     d.rectangle([m - 3 * MM, m - 3 * MM, Wp - m + 3 * MM, Hp - m + 3 * MM], outline=ink, width=round(.25 * MM))
     out.save(out_path, dpi=(DPI, DPI))
     print(out_path, out.size, "px per square", round(px_true, 3))
