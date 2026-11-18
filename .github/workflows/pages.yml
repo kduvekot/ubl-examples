@@ -17,7 +17,8 @@ concurrency:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    # Pinned, so that a new Ubuntu comes only when chosen (with a fresh package cache and a test run).
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v6
 
@@ -45,7 +46,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: ~/apt-cache
-          key: apt-${{ runner.os }}-${{ runner.arch }}-xsltproc-libxml2-utils-pandoc-python3-lxml-v1
+          key: apt-ubuntu-26.04-${{ runner.arch }}-xsltproc-libxml2-utils-pandoc-python3-lxml-v1
 
       - name: Install tools
         if: steps.newest.outputs.newest == 'true'

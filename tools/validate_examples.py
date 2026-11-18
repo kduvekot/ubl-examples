@@ -24,8 +24,10 @@ Phase 2  code values, twice:
          language of the world's ISO 639 list and an optional region subtag).
 
 Usage: python3 tools/validate_examples.py world/examples/<flow>/*.xml
+(VALIDATE_JOBS=n sets the number of parallel workers; the default is the number of processors.)
 Needs .ubl/ (sh tools/fetch_ubl_validation.sh <DocumentType>...) and Java for (a).
 """
+import concurrent.futures
 import json
 import os
 import re
@@ -48,9 +50,15 @@ def doc_type(path):
     return etree.parse(path).getroot().tag.split("}")[1]
 
 
+_SCHEMAS = {}
+
+
 def phase1(path):
-    xsd = os.path.join(UBL, "endorsed", "xsdrt", "maindoc", f"UBL-{doc_type(path)}-2.5.xsd")
-    schema = etree.XMLSchema(etree.parse(xsd))
+    kind = doc_type(path)
+    if kind not in _SCHEMAS:                      # each schema is compiled once per process
+        xsd = os.path.join(UBL, "endorsed", "xsdrt", "maindoc", f"UBL-{kind}-2.5.xsd")
+        _SCHEMAS[kind] = etree.XMLSchema(etree.parse(xsd))
+    schema = _SCHEMAS[kind]
     ok = schema.validate(etree.parse(path))
     return [] if ok else [f"phase 1: line {e.line}: {e.message}" for e in schema.error_log]
 
@@ -66,15 +74,35 @@ def world_cva():
     return cva
 
 
-def phase2a(path, replaced):
-    """UBL's own phase 2. Returns the problems in contexts of lists the world does not replace, and the number of
-    objections to values in lists it replaces, per list."""
+def run_saxon(paths, workers):
+    """UBL's own phase 2 for many documents at once: Saxon transforms a whole directory in one run, so the
+    stylesheet is compiled once per batch instead of once per document, and the batches run side by side.
+    Returns the SVRL report text of each document."""
+    out = {}
     with tempfile.TemporaryDirectory() as tmp:
-        svrl = os.path.join(tmp, "svrl.xml")
-        subprocess.run(["java", "-jar", os.path.join(UBL, "val", "saxon9he.jar"), f"-s:{path}",
-                        f"-xsl:{os.path.join(UBL, 'val', 'UBL-DefaultDTQ-2.5.xsl')}", f"-o:{svrl}"],
-                       check=True, capture_output=True)
-        text = open(svrl, encoding="utf-8").read()
+        names = {p: f"{i:05d}.xml" for i, p in enumerate(paths)}
+        batches = [paths[k::workers] for k in range(workers) if paths[k::workers]]
+        jobs = []
+        for b, batch in enumerate(batches):
+            src, dst = os.path.join(tmp, f"in{b}"), os.path.join(tmp, f"out{b}")
+            os.makedirs(src); os.makedirs(dst)
+            for p in batch:
+                os.symlink(os.path.abspath(p), os.path.join(src, names[p]))
+            jobs.append(subprocess.Popen(["java", "-jar", os.path.join(UBL, "val", "saxon9he.jar"), f"-s:{src}",
+                                          f"-xsl:{os.path.join(UBL, 'val', 'UBL-DefaultDTQ-2.5.xsl')}", f"-o:{dst}"],
+                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE))
+        for b, job in enumerate(jobs):
+            _, err = job.communicate()
+            if job.returncode:
+                sys.exit(f"Saxon failed: {err.decode(errors='replace')[:2000]}")
+            for p in batches[b]:
+                out[p] = open(os.path.join(tmp, f"out{b}", names[p]), encoding="utf-8").read()
+    return out
+
+
+def phase2a(text, replaced):
+    """UBL's own phase 2, from the document's SVRL report. Returns the problems in contexts of lists the world does
+    not replace, and the number of objections to values in lists it replaces, per list."""
     problems, expected = [], {}
     for m in re.finditer(r"<svrl:failed-assert.*?<svrl:text>(.*?)</svrl:text>", text, re.S):
         msg = " ".join(m.group(1).split())
@@ -145,6 +173,20 @@ def phase2b(path, cva):
     return problems
 
 
+_CVA = None
+
+
+def _init(cva):
+    global _CVA
+    _CVA = cva
+
+
+def _check(path):
+    """Phase 1, and phase 2b if phase 1 passes, in a worker process."""
+    problems = phase1(path)
+    return problems, ([] if problems else phase2b(path, _CVA))
+
+
 def main(paths):
     cva = world_cva()
     failed = 0
@@ -152,12 +194,18 @@ def main(paths):
           f"attribute contexts (world/codelists/world-codes.json), in place of UBL's; UBL's own phase 2 may object "
           f"only in the contexts of the lists the world replaces: {', '.join(sorted(cva['replaced']))}."
           + (f" Not yet bound to a list of the world: {len(cva['pending'])} code elements." if cva.get("pending") else ""))
-    for path in paths:
-        problems = phase1(path)
+    workers = max(1, min(int(os.environ.get("VALIDATE_JOBS", os.cpu_count() or 1)), len(paths) or 1))
+    # phase 1 and the world's phase 2b in parallel processes, UBL's phase 2a in a few Saxon runs beside them;
+    # the report keeps the order of the paths given
+    with concurrent.futures.ProcessPoolExecutor(max_workers=workers, initializer=_init, initargs=(cva,)) as pool:
+        local = pool.map(_check, paths, chunksize=max(1, len(paths) // (workers * 4) or 1))
+        svrl = run_saxon(list(paths), workers)
+        local = list(local)
+    for path, (problems, p2b) in zip(paths, local):
         expected = {}
         if not problems:
-            p2a, expected = phase2a(path, cva["replaced"])
-            problems = p2a + phase2b(path, cva)
+            p2a, expected = phase2a(svrl[path], cva["replaced"])
+            problems = p2a + p2b
         name = os.path.relpath(path, ROOT)
         if problems:
             failed += 1
