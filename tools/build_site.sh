@@ -8,6 +8,7 @@
 #   _site/coverage.html               element coverage analysis
 #   _site/coverage-details.html       every missing element
 #   _site/world.html, world-*.html    the example world: map and party pages
+#   _site/map-sheet.html, map-sheet.png  the printed map sheet (A3, 1 : 2,500,000)
 #   _site/examples.html, example-*    the example documents, with the reason for every value
 #   _site/examples/<flow>/*.xml       the example documents themselves
 #
@@ -49,7 +50,7 @@ CODE_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16
 nav() { # root-prefix, current-page
   section=$2
   [ "$section" = coverage-details.html ] && section=coverage.html  # sub-page of Coverage
-  case "$section" in world-*.html) section=world.html ;; esac       # party pages belong to World
+  case "$section" in world-*.html|map-sheet.html) section=world.html ;; esac  # party pages and the map sheet belong to World
   case "$section" in example-*.html) section=examples.html ;; esac  # example pages belong to Examples
   printf '<header class="site-header"><div class="bar">'
   printf '<a class="brand" href="%sindex.html">%s<span>UBL Example Documents</span></a>' "$1" "$LOGO"
@@ -83,6 +84,23 @@ page history/README.md history.html "How the history was built" 2
 page README.md releases.html "Releases" 3
 page analysis/element-coverage.md coverage.html "Element coverage" 2
 page analysis/element-coverage-details.md coverage-details.html "Element coverage: details" 3
+# The printed map sheet (O151): the A3 sheet at 1 : 2,500,000, made by analysis/world-position/refine_map.py
+cp analysis/world-position/world-roadmap.png "$OUT/map-sheet.png"
+cat > "$OUT/.map-sheet.md" <<'SHEET'
+# The map sheet
+
+The printed map of the example world: an A3 landscape sheet at 1 : 2,500,000, drawn
+from the same terrain, places and routes as the [interactive map](world.html). It
+shows the landscape, the towns and villages, the roads, railways and pipelines, and
+the border between Urvania and Bayvarra. Lisavu, about 1,100 km east of Lumeport,
+stands in a panel of its own at the same scale.
+
+[Open the sheet at full size](map-sheet.png) (4,961 × 3,508 pixels, 300 dpi, about 6 MB).
+
+[![The A3 map sheet of the example world](map-sheet.png)](map-sheet.png)
+SHEET
+page "$OUT/.map-sheet.md" map-sheet.html "The map sheet"
+rm -f "$OUT/.map-sheet.md"
 
 cp site/site.css "$OUT/site.css"
 mkdir -p "$OUT/codelists/gc" && cp world/codelists/*.gc "$OUT/codelists/"   # the world code lists, at their LocationUri
