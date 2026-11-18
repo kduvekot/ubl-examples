@@ -697,53 +697,55 @@ def streams(d, min_km2, step=2):
 
 
 def border(d, inp, log=print):
-    """The land border: from the crossing on the river along the high ground to the north coast (the least-cost
-    way, cheap on ground high above the nearest stream), and the river from the crossing to the sea. Returns a
-    cell mask of the land east of it (Bayvarra's mainland)."""
+    """The land border between Urvania and Bayvarra (owner, 2026-11-18, option A: the watershed). The main river
+    is the border from the crossing, at the confluence of its largest plateau tributary, to the estuary: all land
+    south of it is Urvania. North of the crossing the border follows the watershed: Urvania keeps the basins of
+    every tributary that joins the main river at or upstream of the crossing (that tributary's whole valley
+    included), and the coastal basins whose outlet lies at or west of a given column; the rest of the land north
+    of the river is Bayvarra's. Returns a cell mask of Bayvarra's mainland, and the crossing (squares)."""
     b = inp["border"]
-    z, sea, X, Y, S, X0, Y0, cell = d['z'], d['sea'], d['X'], d['Y'], d['S'], d['X0'], d['Y0'], d['cell']
-    h = hand(z, d['rec'], d['akm2'], 5.0)
-    cost = 1 + 20 * np.exp(-np.maximum(h, 0) / 40.0)
-    cost[sea] = 1e6
+    z, sea, X, Y, S, X0, Y0 = d['z'], d['sea'], d['X'], d['Y'], d['S'], d['X0'], d['Y0']
+    ny, nx = z.shape
+    rec = d['rec'].ravel()
+    seaf = sea.ravel()
+    stem = d['stem']
+    stem_idx = stem[:, 0] * nx + stem[:, 1]
+    pos = np.full(rec.size, -1); pos[stem_idx] = np.arange(len(stem_idx))
+    on_stem = pos >= 0
+    # every cell's terminal: the last cell before the main river (a tributary's mouth) or before the sea (a
+    # coastal outlet); pointer jumping along the receivers
+    stop = on_stem | seaf | on_stem[rec] | seaf[rec] | (rec == np.arange(rec.size))
+    nxt = np.where(stop, np.arange(rec.size), rec)
+    for _ in range(40):
+        nn = nxt[nxt]
+        if np.array_equal(nn, nxt):
+            break
+        nxt = nn
+    term = nxt
     def rc(p):
         return (int((p[1] - Y0) * S), int((p[0] - X0) * S))
-    pts = [b["crossing"]] + b["via"] + [b["north_end_near"]]
-    path = []
-    for a_, b_ in zip(pts, pts[1:]):
-        _, prev = least_cost(cost, np.ones(z.shape, bool), np.array(rc(a_)))
-        nx_ = z.shape[1]
-        j = rc(b_)[0] * nx_ + rc(b_)[1]
-        seg = []
-        while j != -1:
-            seg.append(divmod(j, nx_)); j = prev[j]
-        path += seg[::-1]
-    # continue north to the sea from the last point, along the same cost
-    wall = np.zeros(z.shape, bool)
-    for (r, c) in path:
-        wall[max(0, r - 1):r + 2, max(0, c - 1):c + 2] = True
-    # the river from the crossing to the sea is the border
-    stem = d['stem']
-    cr = rc(b["crossing"])
-    k0 = int(np.argmin([(r - cr[0]) ** 2 + (c - cr[1]) ** 2 for r, c in stem]))
-    for (r, c) in stem[k0:]:
-        wall[max(0, r - 1):r + 2, max(0, c - 1):c + 2] = True
-    # join the line's start to the river
-    rr0, cc0 = path[0]
-    rr1, cc1 = stem[k0]
-    for t in np.linspace(0, 1, 50):
-        r = int(round(rr0 + t * (rr1 - rr0))); c = int(round(cc0 + t * (cc1 - cc0)))
-        wall[max(0, r - 1):r + 2, max(0, c - 1):c + 2] = True
-    # the north end: walk straight north to the sea
-    r, c = path[-1]
-    while r > 0 and not sea[r, c]:
-        wall[r, max(0, c - 1):c + 2] = True
-        r -= 1
-    lab, n = ndimage.label(~sea & ~wall)
-    # Bayvarra: the piece that holds the east (Lumeport's side); Urvania: the rest
-    probe = rc((136, 120))
-    east = lab == lab[probe]
-    # the wall itself goes to the side of its nearer neighbour
-    idx = ndimage.distance_transform_edt(~(lab > 0), return_distances=False, return_indices=True)
-    nearest = lab[idx[0], idx[1]]
-    east = (~sea) & (nearest == lab[probe])
-    return east, [[round(float(X[r, c]), 2), round(float(Y[r, c]), 2)] for r, c in path[::4]]
+    # the crossing tributary: the tributary mouth nearest the given point
+    mouths = np.unique(term[~seaf & ~on_stem & on_stem[rec[term]]])
+    r0, c0 = rc(b["crossing_tributary"])
+    mr, mc = mouths // nx, mouths % nx
+    t9 = mouths[np.argmin((mr - r0) ** 2 + (mc - c0) ** 2)]
+    k9 = pos[rec[t9]]                                   # where it joins the main river
+    trib = ~seaf & ~on_stem & on_stem[rec[term]]
+    up = trib & (pos[rec[term]] <= k9)                  # tributaries joining at or upstream of the crossing
+    coastal = ~seaf & ~on_stem & ~on_stem[rec[term]]
+    west_coast = coastal & (X.ravel()[term] <= b["coastal_west_of_x"])
+    xu_north = (up | west_coast | (on_stem & (pos <= k9))).reshape(ny, nx)
+    river = np.zeros((ny, nx), bool)
+    river[stem[:, 0], stem[:, 1]] = True
+    river |= d['estuary']
+    barrier = ndimage.binary_dilation(river, iterations=1) & ~sea | river | xu_north
+    lab, n = ndimage.label(~sea & ~barrier)
+    xb = np.zeros((ny, nx), bool)
+    for sd in b["bayvarra_seeds"]:
+        r, c = rc(sd)
+        if lab[r, c] > 0:
+            xb |= lab == lab[r, c]
+    cr, cc = divmod(int(rec[t9]), nx)
+    crossing = [round(float(X[cr, cc]), 2), round(float(Y[cr, cc]), 2)]
+    log(f"border: crossing at the confluence {crossing}, the tributary's basin {int(((term == t9) & ~seaf).sum() * (d['cell'] / 1000) ** 2)} km2")
+    return xb & ~sea, crossing
