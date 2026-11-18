@@ -20,7 +20,7 @@ ROOT=$(pwd)
 
 tools/fetch_oasis_stylesheets.sh .oasis
 tools/md2docbook.sh --check
-python3 tools/check_world.py
+python3 tools/check_world.py   # includes tools/terrain.py --check: the committed terrain is made from its current inputs
 # The example documents: up to date with the world, and valid (UBL schemas, code lists)
 python3 tools/build_examples.py --check
 sh tools/fetch_ubl_validation.sh $(ls world/examples/*/*.xml | sed 's#.*/[0-9]*-\(.*\)\.xml#\1#' | sort -u)

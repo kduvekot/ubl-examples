@@ -181,7 +181,7 @@ def streams(d, px, colour_, scale=1.0):
             for (ax, ay, aa), (bx, by, ba) in zip(pts, pts[1:]):
                 if ba < thr:
                     continue
-                wdt = max(1, round(scale * px * (.06 + .05 * math.log10(ba / thr + 1) * 2.2)))
+                wdt = max(1, round(scale * px * (.07 + .08 * math.log10(ba / thr + 1) * 2.2)))
                 d.line([P((ax, ay)), P((bx, by))], fill=colour_, width=wdt)
 
 def overlay(img, px, full=True):

@@ -316,9 +316,10 @@ function paintWorld(g, box, detail) {
     groundTile(g, i, j, base);
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
     const cut = coastCorners(g, i, j, true);
+    const steepCoast = Math.max(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1]) > 60;   // a cliff, not a beach
     DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || stream(nb) || cut.has(di + "," + dj)) return; const pv = [-dj, di];
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
-        tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : COLORS.sand); });
+        tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : steepCoast ? "#8a8272" : COLORS.sand); });
     if (t.urban) urbanGround(g, i, j, t);
     // hedges around fields, fences around industry yards
     if (!detail) continue;
